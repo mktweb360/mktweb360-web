@@ -5,7 +5,17 @@
       "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && pnpm approve-builds\" 2>&1)",
       "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && echo yes | pnpm approve-builds --yes 2>&1 || true\")",
       "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && pnpm build 2>&1\")",
-      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat: páginas Nosotros, Auditoría, Audiovisual, Casos + nav actualizada' && git push\" 2>&1)"
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat: páginas Nosotros, Auditoría, Audiovisual, Casos + nav actualizada' && git push\" 2>&1)",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git log --oneline -3 && git status\" 2>&1)",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git push origin main\" 2>&1)",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git status --short && git log --oneline -2\" 2>&1)",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git push origin main 2>&1\")",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git remote -v && git rev-parse origin/main 2>&1 || echo 'REMOTE_FETCH_FAILED'\")",
+      "PowerShell(wsl --exec bash -c \"cd ~/mktweb360-web && GIT_TERMINAL_PROMPT=0 timeout 30 git push origin main\" 2>&1; echo \"Exit: $LASTEXITCODE\")",
+      "PowerShell(wsl --exec bash -ic \"gh auth status 2>&1; ssh -T git@github.com 2>&1 | head -3\")",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git remote set-url origin git@github.com:mktweb360/mktweb360-web.git && git push origin main\" 2>&1)",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git log --oneline -2\" 2>&1)",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat\\(blog\\): 10 artículos optimizados SEO — clusters captación, web, IA, ecommerce, autónomos' && git push origin main\" 2>&1)"
     ]
   }
 }
