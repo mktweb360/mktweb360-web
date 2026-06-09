@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Diseño de Tiendas Online — E-commerce Profesional",
   description: "Diseño y desarrollo de tiendas online profesionales con WooCommerce y Shopify. Vende tus productos en internet con un e-commerce optimizado.",
@@ -10,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function TiendasOnlinePage() {
   return (
+    <>
     <div className="max-w-4xl mx-auto px-4 py-12">
       <Breadcrumbs crumbs={[
         { label: "Inicio", href: "/" },
@@ -59,5 +62,7 @@ export default function TiendasOnlinePage() {
         </Link>
       </div>
     </div>
+    <RelatedArticles category="Ecommerce" />
+    </>
   );
 }

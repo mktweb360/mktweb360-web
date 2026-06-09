@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Diseño de Páginas Web para Empresas — Soluciones a Medida",
   description: "Diseño de páginas web para empresas con funcionalidades avanzadas. Soluciones a medida, intranets, portales y plataformas web empresariales.",
@@ -10,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function PaginasWebEmpresaPage() {
   return (
+    <>
     <div className="max-w-4xl mx-auto px-4 py-12">
       <Breadcrumbs crumbs={[
         { label: "Inicio", href: "/" },
@@ -64,5 +67,7 @@ export default function PaginasWebEmpresaPage() {
         </Link>
       </div>
     </div>
+    <RelatedArticles category="Diseño Web" />
+    </>
   );
 }

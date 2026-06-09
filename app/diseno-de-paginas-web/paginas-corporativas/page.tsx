@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Diseño de Páginas Corporativas — Webs Empresariales",
   description: "Diseño de páginas web corporativas profesionales para empresas. Proyecta imagen de marca, genera confianza y consigue clientes online.",
@@ -10,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function PaginasCorporativasPage() {
   return (
+    <>
     <div className="max-w-4xl mx-auto px-4 py-12">
       <Breadcrumbs crumbs={[
         { label: "Inicio", href: "/" },
@@ -56,5 +59,7 @@ export default function PaginasCorporativasPage() {
         </Link>
       </div>
     </div>
+    <RelatedArticles category="Diseño Web" />
+    </>
   );
 }

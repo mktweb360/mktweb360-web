@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "SEO o Google Ads: qué conviene más para tu negocio en 2025",
@@ -187,6 +189,7 @@ export default function SeoOGoogleAdsPage() {
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
       </article>
+      <RelatedArticles currentSlug="seo-o-google-ads-que-conviene-mas" />
     </>
   );
 }

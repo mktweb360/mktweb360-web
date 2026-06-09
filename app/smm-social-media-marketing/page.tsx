@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Gestión Redes Sociales — Community Manager España",
   description:
@@ -79,6 +81,7 @@ export default function SmmPage() {
           </div>
         </section>
       </div>
+      <RelatedArticles category="Social Media" title="Más sobre redes sociales y marketing" />
     </>
   );
 }

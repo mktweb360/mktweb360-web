@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Campañas Google Ads — Gestión SEM España",
   description:
@@ -80,6 +82,7 @@ export default function SemPage() {
           </div>
         </section>
       </div>
+      <RelatedArticles category="SEO" title="Más sobre captación digital" />
     </>
   );
 }

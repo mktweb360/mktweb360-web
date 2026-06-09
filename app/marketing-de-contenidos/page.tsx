@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Marketing de Contenidos — Estrategia de Contenidos Digitales",
   description:
@@ -59,6 +61,7 @@ export default function ContentMarketingPage() {
           </div>
         </section>
       </div>
+      <RelatedArticles category="Estrategia" />
     </>
   );
 }

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Quiénes Somos | Mkt Web 360 — Agencia de Marketing Digital",
   description:
@@ -145,6 +147,7 @@ export default function NosotrosPage() {
           </Link>
         </section>
       </div>
+      <RelatedArticles />
     </>
   );
 }

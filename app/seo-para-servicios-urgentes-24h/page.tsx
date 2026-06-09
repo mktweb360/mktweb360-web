@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
+
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "SEO para Servicios Urgentes 24h — Cómo Posicionar en Google",
@@ -94,6 +96,7 @@ export default function SeoServiciosUrgentesPage() {
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
       </article>
+      <RelatedArticles currentSlug="seo-para-servicios-urgentes-24h" />
     </>
   );
 }

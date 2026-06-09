@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Casos de Éxito y Proyectos | Mkt Web 360 — Agencia de Marketing Digital",
   description:
@@ -123,6 +125,7 @@ export default function CasosPage() {
           </Link>
         </section>
       </div>
+      <RelatedArticles />
     </>
   );
 }

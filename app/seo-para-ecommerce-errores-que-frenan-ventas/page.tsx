@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "SEO para ecommerce: errores que frenan ventas en tu tienda online",
@@ -202,6 +204,7 @@ export default function SeoEcommercePage() {
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
       </article>
+      <RelatedArticles currentSlug="seo-para-ecommerce-errores-que-frenan-ventas" />
     </>
   );
 }

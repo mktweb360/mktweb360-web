@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Diseño de Páginas Web Profesionales — Mkt Web 360",
   description:
@@ -34,6 +36,7 @@ const SUB_SERVICES = [
 
 export default function WebDesignPage() {
   return (
+    <>
     <div className="max-w-4xl mx-auto px-4 py-12">
       <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Diseño Web" }]} />
       <h1 className="text-4xl font-bold text-primary-600 mb-4">
@@ -84,5 +87,7 @@ export default function WebDesignPage() {
         </Link>
       </div>
     </div>
+    <RelatedArticles category="Diseño Web" title="Más sobre diseño web" />
+    </>
   );
 }

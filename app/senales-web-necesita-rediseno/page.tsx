@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "Señales de que tu web necesita un rediseño urgente en 2025",
@@ -191,6 +193,7 @@ export default function SenalesRedisenoPage() {
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
       </article>
+      <RelatedArticles currentSlug="senales-web-necesita-rediseno" />
     </>
   );
 }

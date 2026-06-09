@@ -15,7 +15,11 @@
       "PowerShell(wsl --exec bash -ic \"gh auth status 2>&1; ssh -T git@github.com 2>&1 | head -3\")",
       "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git remote set-url origin git@github.com:mktweb360/mktweb360-web.git && git push origin main\" 2>&1)",
       "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git log --oneline -2\" 2>&1)",
-      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat\\(blog\\): 10 artículos optimizados SEO — clusters captación, web, IA, ecommerce, autónomos' && git push origin main\" 2>&1)"
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat\\(blog\\): 10 artículos optimizados SEO — clusters captación, web, IA, ecommerce, autónomos' && git push origin main\" 2>&1)",
+      "PowerShell(wsl -d Ubuntu -e bash -c \"cd ~/mktweb360-web && pnpm build 2>&1\" 2>&1)",
+      "PowerShell(wsl -d Ubuntu -e bash -c \"cd ~/mktweb360-web && ~/.local/share/pnpm/pnpm build 2>&1\" 2>&1)",
+      "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && which pnpm && pnpm build 2>&1\" 2>&1)",
+      "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat\\(seo\\): módulo artículos relacionados en todas las páginas — enlazado interno automático' && git push && git rev-parse HEAD\" 2>&1)"
     ]
   }
 }

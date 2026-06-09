@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "IA aplicada a marketing: dónde aporta valor real en 2025",
@@ -215,6 +217,7 @@ export default function IaMarketingPage() {
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
       </article>
+      <RelatedArticles currentSlug="ia-aplicada-a-marketing-valor-real-o-humo" />
     </>
   );
 }

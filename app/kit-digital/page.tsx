@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Kit Digital — Agente Digitalizador Autorizado",
   description:
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
 
 export default function KitDigitalPage() {
   return (
+    <>
     <div className="max-w-4xl mx-auto px-4 py-12">
       <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Kit Digital" }]} />
       <h1 className="text-4xl font-bold text-primary-600 mb-4">Kit Digital — Digitaliza tu Empresa con Subvenciones</h1>
@@ -79,5 +82,7 @@ export default function KitDigitalPage() {
         </div>
       </section>
     </div>
+    <RelatedArticles category="Estrategia" />
+    </>
   );
 }

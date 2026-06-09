@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Comunicación Audiovisual para Empresas | Vídeo Marketing | Mkt Web 360",
   description:
@@ -120,6 +122,7 @@ export default function ComunicacionAudiovisualPage() {
           </div>
         </section>
       </div>
+      <RelatedArticles category="Estrategia" />
     </>
   );
 }

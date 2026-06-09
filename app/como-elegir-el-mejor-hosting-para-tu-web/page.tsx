@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
+
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "Cómo Elegir el Mejor Hosting para tu Web — Guía Completa 2024",
@@ -120,6 +122,7 @@ export default function MejorHostingPage() {
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
       </article>
+      <RelatedArticles currentSlug="como-elegir-el-mejor-hosting-para-tu-web" />
     </>
   );
 }

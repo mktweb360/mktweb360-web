@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Auditoría Digital para Empresas | Diagnóstico SEO y Marketing | Mkt Web 360",
   description:
@@ -149,6 +151,7 @@ export default function AuditoriaDigitalPage() {
           </div>
         </section>
       </div>
+      <RelatedArticles category="Estrategia" title="Artículos sobre estrategia y auditoría" />
     </>
   );
 }

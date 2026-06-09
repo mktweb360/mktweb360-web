@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Posicionamiento Web SEO — Agencia SEO España",
   description:
@@ -112,6 +114,7 @@ export default function SeoPage() {
           </div>
         </section>
       </div>
+      <RelatedArticles category="SEO" title="Más sobre SEO y posicionamiento" />
     </>
   );
 }

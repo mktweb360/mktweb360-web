@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
+
+import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "Cómo Crear una Página Web para Pintores y Conseguir Clientes en Google",
@@ -91,6 +93,7 @@ export default function PaginaWebPintoresPage() {
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
       </article>
+      <RelatedArticles currentSlug="como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google" />
     </>
   );
 }

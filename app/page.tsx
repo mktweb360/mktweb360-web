@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 
+import { RelatedArticles } from "@/components/RelatedArticles";
+
 export const metadata: Metadata = {
   title: "Agencia de Marketing Digital para PYMEs — Mkt Web 360",
   description:
@@ -294,6 +296,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <RelatedArticles title="Últimas ideas y consejos" />
     </>
   );
 }
