@@ -8,6 +8,8 @@ const SERVICES = [
   { label: "Redes Sociales", href: "/smm-social-media-marketing/" },
   { label: "Diseño Web", href: "/diseno-de-paginas-web/" },
   { label: "Marketing de Contenidos", href: "/marketing-de-contenidos/" },
+  { label: "Auditoría Digital", href: "/auditoria-digital/" },
+  { label: "Audiovisual", href: "/comunicacion-audiovisual/" },
   { label: "Kit Digital", href: "/kit-digital/" },
 ];
 
@@ -52,8 +54,9 @@ export function Header() {
               </div>
             )}
           </div>
+          <Link href="/nosotros/" className="hover:text-accent-500 transition-colors">Nosotros</Link>
+          <Link href="/casos/" className="hover:text-accent-500 transition-colors">Casos</Link>
           <Link href="/blog/" className="hover:text-accent-500 transition-colors">Blog</Link>
-          <Link href="/kit-digital/" className="hover:text-accent-500 transition-colors">Kit Digital</Link>
           <Link
             href="/contacto/"
             className="bg-accent-500 text-white px-4 py-2 rounded-full hover:bg-accent-600 transition-colors"
@@ -96,8 +99,9 @@ export function Header() {
                 </div>
               )}
             </div>
+            <Link href="/nosotros/" onClick={() => setMenuOpen(false)} className="hover:text-accent-500">Nosotros</Link>
+            <Link href="/casos/" onClick={() => setMenuOpen(false)} className="hover:text-accent-500">Casos</Link>
             <Link href="/blog/" onClick={() => setMenuOpen(false)} className="hover:text-accent-500">Blog</Link>
-            <Link href="/kit-digital/" onClick={() => setMenuOpen(false)} className="hover:text-accent-500">Kit Digital</Link>
             <Link
               href="/contacto/"
               onClick={() => setMenuOpen(false)}

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && pnpm build\" 2>&1)",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && pnpm approve-builds\" 2>&1)",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && echo yes | pnpm approve-builds --yes 2>&1 || true\")",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && pnpm build 2>&1\")",
+      "PowerShell(wsl --exec bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat: páginas Nosotros, Auditoría, Audiovisual, Casos + nav actualizada' && git push\" 2>&1)"
+    ]
+  }
+}

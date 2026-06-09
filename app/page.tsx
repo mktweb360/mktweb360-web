@@ -177,10 +177,10 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contacto/"
+              href="/auditoria-digital/"
               className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors"
             >
-              Solicita presupuesto gratis
+              Solicitar diagnóstico gratuito
             </Link>
             <Link
               href="#servicios"
