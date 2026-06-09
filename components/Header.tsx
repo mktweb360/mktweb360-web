@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const SERVICES = [
@@ -20,9 +21,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl text-primary-600">
-          <span className="text-accent-500">Mkt</span>
-          <span>Web 360</span>
+        <Link href="/">
+          <Image src="/logo.png" alt="Mkt Web 360 — Agencia de Marketing Digital" width={180} height={50} priority />
         </Link>
 
         {/* Desktop nav */}
