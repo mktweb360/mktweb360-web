@@ -24,7 +24,9 @@
       "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat\\(seo\\): llms.txt, llms-full.txt, schemas IA, robots AI crawlers' && git push && git rev-parse HEAD\" 2>&1)",
       "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat: logo real en header' && git push && git rev-parse HEAD\" 2>&1)",
       "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat\\(legal\\): páginas legales RGPD + banner cookies consentimiento' && git push && git rev-parse HEAD\" 2>&1)",
-      "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat\\(seo\\): RSS feed + autodiscovery' && git push && git rev-parse HEAD\" 2>&1)"
+      "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat\\(seo\\): RSS feed + autodiscovery' && git push && git rev-parse HEAD\" 2>&1)",
+      "PowerShell(wsl -d Ubuntu -e bash -ic \"ls ~/mktweb360-web/app/\" 2>&1)",
+      "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat: landing page oferta web + SEO 999€' && git push && git rev-parse HEAD\" 2>&1)"
     ]
   }
 }
