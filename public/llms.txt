@@ -31,6 +31,9 @@
 - [Automatización en marketing y ventas para pymes](https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/)
 - [Cómo conseguir clientes siendo autónomo](https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/)
 
+## Feeds
+- RSS Feed: https://www.mktweb360.com/feed.xml
+
 ## Sobre nosotros
 - [Quiénes somos](https://www.mktweb360.com/nosotros/)
 - [Casos de éxito](https://www.mktweb360.com/casos/)

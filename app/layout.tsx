@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   description:
     "Agencia de marketing digital especializada en SEO, SEM, Redes Sociales y Diseño Web para PYMEs y empresas. Servicio nacional desde Toledo, España.",
   robots: { index: true, follow: true },
+  alternates: {
+    types: {
+      "application/rss+xml": "https://www.mktweb360.com/feed.xml",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "es_ES",
