@@ -13,43 +13,55 @@ export const metadata: Metadata = {
     title: "Mkt Web 360 — Agencia de Marketing Digital para PYMEs",
     description: "SEO, SEM, Social Media y Diseño Web. Servicio nacional desde Toledo, España.",
     url: "https://www.mktweb360.com/",
-    images: [{ url: "/og-home.jpg", width: 1200, height: 630, alt: "Mkt Web 360 Agencia Marketing Digital" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Mkt Web 360 Agencia Marketing Digital" }],
   },
 };
 
 const SERVICES = [
   {
-    icon: "🔍",
+    icon: (
+      <svg className="w-10 h-10 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/></svg>
+    ),
     title: "SEO Posicionamiento",
     desc: "Mejora tu visibilidad en Google con estrategias SEO sólidas y duraderas.",
     href: "/seo-posicionamiento-web-organico/",
   },
   {
-    icon: "📢",
+    icon: (
+      <svg className="w-10 h-10 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+    ),
     title: "SEM / Google Ads",
     desc: "Campañas de publicidad de pago que generan resultados desde el primer día.",
     href: "/sem-publicidad-ppc/",
   },
   {
-    icon: "📱",
+    icon: (
+      <svg className="w-10 h-10 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+    ),
     title: "Redes Sociales",
     desc: "Gestión profesional de tus redes sociales para conectar con tu audiencia.",
     href: "/smm-social-media-marketing/",
   },
   {
-    icon: "💻",
+    icon: (
+      <svg className="w-10 h-10 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    ),
     title: "Diseño Web",
     desc: "Páginas web modernas, rápidas y optimizadas para convertir visitas en clientes.",
     href: "/diseno-de-paginas-web/",
   },
   {
-    icon: "✍️",
+    icon: (
+      <svg className="w-10 h-10 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+    ),
     title: "Marketing de Contenidos",
     desc: "Contenido de valor que posiciona tu marca como referente en tu sector.",
     href: "/marketing-de-contenidos/",
   },
   {
-    icon: "🎯",
+    icon: (
+      <svg className="w-10 h-10 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+    ),
     title: "Kit Digital",
     desc: "Ayudas del Gobierno para digitalizar tu negocio. Te acompañamos en el proceso.",
     href: "/kit-digital/",
@@ -58,34 +70,34 @@ const SERVICES = [
 
 const TESTIMONIALS = [
   {
-    name: "Carlos M.",
-    company: "Empresa de Reformas, Madrid",
-    text: "Gracias a Mkt Web 360 hemos multiplicado por 3 las consultas desde Google. El trabajo de SEO ha sido excepcional y los resultados llegaron antes de lo esperado.",
+    name: "Nathalie B.",
+    company: "Cliente desde 2012",
+    text: "El tiempo que llevo confiando el posicionamiento de mi sitio web a Marcos refleja la confianza y los resultados que ha sabido generar. Profesionalidad y dedicación totales.",
   },
   {
-    name: "Laura G.",
-    company: "Clínica Dental, Valencia",
-    text: "La gestión de nuestras redes sociales ha mejorado enormemente. El equipo entiende nuestro sector y crea contenido que conecta de verdad con nuestros pacientes.",
+    name: "Luisantonio Saezruiz",
+    company: "Cliente satisfecho",
+    text: "Muy contentos con vosotros. Quería agradecer vuestro trabajo y que os ocupéis de todo lo relacionado con la página web. El que me conoce sabe que no soy dado a hacer estas cosas.",
   },
   {
-    name: "Javier R.",
-    company: "Tienda Online, Sevilla",
-    text: "Las campañas de Google Ads que gestionan son muy eficientes. El ROAS ha mejorado un 240% desde que empezamos con ellos hace un año.",
+    name: "Yves Billiet",
+    company: "Cliente multisede",
+    text: "Mkt Web 360 es desde hace ya 4 años nuestro proveedor en posicionamiento y web de nuestros diferentes negocios. Estamos realmente contentos del trabajo.",
   },
   {
-    name: "Ana P.",
-    company: "Consultoría Legal, Barcelona",
-    text: "Nos diseñaron una web profesional que representa perfectamente nuestra firma. El proceso fue ágil y el resultado superó nuestras expectativas.",
+    name: "Miguel Palomino",
+    company: "Cliente web + SEO",
+    text: "Encargamos una web y nos la pusieron los primeros en Google en dos meses y con un precio muy ajustado. Muy recomendables.",
   },
   {
-    name: "Roberto S.",
-    company: "Restaurante, Toledo",
-    text: "Con el Kit Digital nos ayudaron a digitalizar nuestro negocio sin complicaciones. Ahora tenemos presencia online sólida y captamos clientes nuevos cada semana.",
+    name: "CC LASER",
+    company: "Empresa cliente",
+    text: "Muy profesionales, siempre están disponibles y resuelven rápido todo lo que necesites. Los recomiendo 100x100.",
   },
   {
-    name: "María T.",
-    company: "E-commerce Moda, Bilbao",
-    text: "El blog y los contenidos SEO que crean han posicionado nuestra tienda para keywords muy competidas. Recomiendo su servicio de marketing de contenidos al 100%.",
+    name: "Chema Quiros",
+    company: "Cliente",
+    text: "Increíble el trato. Nuestra empresa cambió en dos meses. Un 11 sobre 10.",
   },
 ];
 
@@ -118,7 +130,7 @@ const localBusinessSchema = {
   name: "Mkt Web 360 SLU",
   image: "https://www.mktweb360.com/logo.png",
   url: "https://www.mktweb360.com",
-  telephone: "+34696714476",
+  telephone: "+34622748897",
   email: "info@mktweb360.com",
   address: {
     "@type": "PostalAddress",
@@ -210,13 +222,30 @@ export default function HomePage() {
                 href={s.href}
                 className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-primary-200 transition-all group"
               >
-                <span className="text-4xl mb-4 block">{s.icon}</span>
+                <div className="mb-4">{s.icon}</div>
                 <h3 className="text-xl font-bold text-primary-600 mb-2 group-hover:text-accent-500 transition-colors">{s.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
                 <span className="mt-4 inline-block text-accent-500 text-sm font-medium">Saber más →</span>
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Metrics bar */}
+      <section className="py-10 px-4 bg-primary-600 text-white">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {[
+            { value: "+10 años", label: "de experiencia" },
+            { value: "+100", label: "clientes atendidos" },
+            { value: "100%", label: "proyectos entregados" },
+            { value: "Nacional", label: "servicio en toda España" },
+          ].map((m) => (
+            <div key={m.label}>
+              <div className="text-3xl font-bold text-accent-400">{m.value}</div>
+              <div className="text-sm text-primary-200 mt-1">{m.label}</div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -228,12 +257,30 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: "🏆", title: "+10 años de experiencia", desc: "Una década ayudando a empresas españolas a crecer online con estrategias de marketing digital." },
-              { icon: "🤝", title: "Equipo comprometido", desc: "No somos una gran agencia impersonal. Cada cliente tiene un responsable dedicado y atención cercana." },
-              { icon: "🎯", title: "Exclusividad sectorial", desc: "No trabajamos con tu competencia en tu zona. Tu sector es exclusivamente tuyo en tu área geográfica." },
+              {
+                icon: (
+                  <svg className="w-12 h-12 text-accent-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                ),
+                title: "+10 años de experiencia",
+                desc: "Una década ayudando a empresas españolas a crecer online con estrategias de marketing digital.",
+              },
+              {
+                icon: (
+                  <svg className="w-12 h-12 text-accent-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                ),
+                title: "Trato cercano y dedicado",
+                desc: "No somos una gran agencia impersonal. Cada cliente tiene un responsable dedicado y atención directa.",
+              },
+              {
+                icon: (
+                  <svg className="w-12 h-12 text-accent-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                ),
+                title: "Exclusividad sectorial",
+                desc: "No trabajamos con tu competencia en tu zona. Tu sector es exclusivamente tuyo en tu área geográfica.",
+              },
             ].map((item) => (
               <div key={item.title} className="text-center p-6">
-                <span className="text-5xl mb-4 block">{item.icon}</span>
+                <div className="mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-primary-600 mb-3">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
@@ -253,6 +300,10 @@ export default function HomePage() {
               <blockquote key={t.name} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                 <p className="text-gray-700 italic leading-relaxed mb-4">&ldquo;{t.text}&rdquo;</p>
                 <footer className="text-sm">
+                  <div className="flex items-center gap-1 mb-1">
+                    <span className="text-yellow-400 text-xs">★★★★★</span>
+                    <span className="text-xs text-gray-400">Google</span>
+                  </div>
                   <span className="font-semibold text-primary-600">{t.name}</span>
                   <span className="text-gray-500 ml-2">— {t.company}</span>
                 </footer>
