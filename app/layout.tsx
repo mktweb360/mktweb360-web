@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     url: "https://www.mktweb360.com",
     siteName: "Mkt Web 360",
   },
+  other: {
+    copyright: "Mkt Web 360 SLU — Todos los derechos reservados",
+  },
 };
 
 const organizationSchema = {
@@ -83,6 +86,20 @@ const websiteSchema = {
   },
 };
 
+const copyProtectionScript = `
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a')) {
+      e.preventDefault();
+    }
+  });
+  document.addEventListener('selectstart', function(e) {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+    }
+  });
+`;
+
 export default function RootLayout({
   children,
 }: {
@@ -90,7 +107,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>
+      <body className="select-none">
+        <script dangerouslySetInnerHTML={{ __html: copyProtectionScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

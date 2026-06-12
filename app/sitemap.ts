@@ -49,6 +49,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/errores-digitales-negocio-nuevo/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/como-gestionar-reputacion-online-empresa/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/google-merchant-center-ecommerce-guia/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/google-business-profile/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/creacion-de-blog/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/whatsapp-marketing/", priority: 0.8, changeFrequency: "monthly" as const },
   ];
 
   return pages.map((p) => ({
