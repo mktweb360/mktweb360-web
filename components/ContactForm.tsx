@@ -1,18 +1,67 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
-export function ContactForm() {
+interface UtmData {
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_content?: string;
+  utm_term?: string;
+  page_origin?: string;
+}
+
+interface ContactFormProps {
+  formType?: string;
+}
+
+export function ContactForm({ formType = "contacto" }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
+  const utmRef = useRef<UtmData>({});
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const utm: UtmData = {
+      utm_source: params.get("utm_source") || undefined,
+      utm_medium: params.get("utm_medium") || undefined,
+      utm_campaign: params.get("utm_campaign") || undefined,
+      utm_content: params.get("utm_content") || undefined,
+      utm_term: params.get("utm_term") || undefined,
+      page_origin: window.location.pathname,
+    };
+    // Also check sessionStorage for UTMs set on a previous page in the same session
+    try {
+      const stored = sessionStorage.getItem("mktweb360_utm");
+      if (stored) {
+        const storedUtm = JSON.parse(stored);
+        Object.keys(storedUtm).forEach((key) => {
+          if (!utm[key as keyof UtmData]) {
+            utm[key as keyof UtmData] = storedUtm[key];
+          }
+        });
+      }
+      // Store current UTMs in sessionStorage if present
+      if (utm.utm_source) {
+        sessionStorage.setItem("mktweb360_utm", JSON.stringify(utm));
+      }
+    } catch {}
+    utmRef.current = utm;
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
+    const payload = {
+      ...data,
+      form_type: formType,
+      ...utmRef.current,
+    };
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify(payload),
     });
     setStatus(res.ok ? "ok" : "error");
     if (res.ok) {
@@ -20,8 +69,11 @@ export function ContactForm() {
       if (typeof window !== "undefined" && (window as any).dataLayer) {
         (window as any).dataLayer.push({
           event: "form_submit_success",
-          form_type: "contacto",
-          form_location: window.location.pathname,
+          form_type: formType,
+          form_location: utmRef.current.page_origin || window.location.pathname,
+          utm_source: utmRef.current.utm_source || "",
+          utm_medium: utmRef.current.utm_medium || "",
+          utm_campaign: utmRef.current.utm_campaign || "",
         });
       }
     }
@@ -74,7 +126,7 @@ export function ContactForm() {
         <p className="text-emerald-600 font-medium">✓ Mensaje enviado. Te contactaremos pronto.</p>
       )}
       {status === "error" && (
-        <p className="text-red-600 font-medium">Error al enviar. Por favor, llámanos al +34 696 714 476.</p>
+        <p className="text-red-600 font-medium">Error al enviar. Por favor, llámanos al +34 622 748 97.</p>
       )}
     </form>
   );
