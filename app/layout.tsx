@@ -107,7 +107,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="select-none">
+      <body>
         <script dangerouslySetInnerHTML={{ __html: copyProtectionScript }} />
         <script
           type="application/ld+json"
