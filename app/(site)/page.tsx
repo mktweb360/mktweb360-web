@@ -13,12 +13,14 @@ const SERVICE_GROUPS = [
         title: "SEO Posicionamiento",
         desc: "Lleva tu web a las primeras posiciones de Google con estrategias duraderas.",
         href: "/seo-posicionamiento-web-organico/",
+        img: "/imagen-seo.jpg",
       },
       {
         icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/></svg>,
         title: "SEM / Google Ads",
         desc: "Campañas de publicidad que generan resultados desde el primer día.",
         href: "/sem-publicidad-ppc/",
+        img: "/imagen-sem.jpg",
       },
     ],
   },
@@ -30,12 +32,14 @@ const SERVICE_GROUPS = [
         title: "Diseño Web",
         desc: "Webs profesionales, rápidas y optimizadas para convertir visitas en clientes.",
         href: "/diseno-de-paginas-web/",
+        img: "/imagen-diseno-web.jpg",
       },
       {
         icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/></svg>,
         title: "Tiendas Online",
         desc: "Ecommerce profesional sin comisiones ni licencias. Tú gestionas, nosotros construimos.",
         href: "/diseno-de-paginas-web/diseno-tiendas-online/",
+        img: "/imagen-tiendas-online.jpg",
       },
     ],
   },
@@ -244,12 +248,19 @@ export default function HomePage() {
                     <Link
                       key={s.href}
                       href={s.href}
-                      className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:border-primary-200 transition-all group flex gap-4 items-start"
+                      className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-primary-200 transition-all group"
                     >
-                      <div className="shrink-0 mt-1">{s.icon}</div>
-                      <div>
-                        <h3 className="font-bold text-primary-600 mb-1 group-hover:text-accent-500 transition-colors">{s.title}</h3>
-                        <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+                      {(s as { img?: string }).img && (
+                        <div className="w-full h-36 overflow-hidden">
+                          <img src={(s as { img?: string }).img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+                      )}
+                      <div className="p-5 flex gap-3 items-start">
+                        <div className="shrink-0 mt-1">{s.icon}</div>
+                        <div>
+                          <h3 className="font-bold text-primary-600 mb-1 group-hover:text-accent-500 transition-colors">{s.title}</h3>
+                          <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+                        </div>
                       </div>
                     </Link>
                   ))}
@@ -264,10 +275,10 @@ export default function HomePage() {
       <section className="py-10 px-4 bg-primary-600 text-white">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
-            { value: "+10 años", label: "de experiencia" },
             { value: "Resultados", label: "medibles y reportados" },
             { value: "100%", label: "proyectos entregados" },
             { value: "Nacional", label: "servicio en toda España" },
+            { value: "Tu cliente", label: "aún no te conoce" },
           ].map((m) => (
             <div key={m.label}>
               <div className="text-3xl font-bold text-accent-400">{m.value}</div>
@@ -328,7 +339,7 @@ export default function HomePage() {
       </section>
 
       {/* Offer banner */}
-      <section className="py-12 px-4 bg-primary-900">
+      <section className="py-12 px-4 bg-primary-700">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Oferta especial</span>
@@ -344,7 +355,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/seo-posicionamiento-web-organico/"
-              className="border-2 border-accent-500 text-accent-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-500 hover:text-white transition-colors text-center"
+              className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary-700 transition-colors text-center"
             >
               Ver servicios SEO
             </Link>

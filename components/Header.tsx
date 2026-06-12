@@ -120,13 +120,15 @@ export function Header() {
             className="relative"
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
+            style={{ paddingBottom: servicesOpen ? '8px' : '0' }}
           >
             <button className="flex items-center gap-1 hover:text-accent-500 transition-colors">
               Servicios <span className="text-xs">▾</span>
             </button>
             {servicesOpen && (
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[720px] bg-white border border-gray-200 rounded-2xl shadow-xl py-6 px-6 z-50"
+                className="absolute left-1/2 -translate-x-1/2 w-[720px] bg-white border border-gray-200 rounded-2xl shadow-xl py-6 px-6 z-50"
+                style={{ top: 'calc(100% - 2px)' }}
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
               >
