@@ -344,7 +344,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/seo-posicionamiento-web-organico/"
-              className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors text-center"
+              className="border-2 border-accent-500 text-accent-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-500 hover:text-white transition-colors text-center"
             >
               Ver servicios SEO
             </Link>

@@ -17,7 +17,7 @@ export function RelatedArticles({ currentSlug, category, title = "Artículos rel
   if (posts.length === 0) return null;
 
   return (
-    <section className="bg-gray-50 pt-12 pb-0 px-4">
+    <section className="bg-white pt-12 pb-8 px-4">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-2xl font-bold text-primary-900 mb-8">{title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
