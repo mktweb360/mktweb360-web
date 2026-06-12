@@ -31,7 +31,7 @@ const organizationSchema = {
   url: "https://www.mktweb360.com",
   logo: "https://www.mktweb360.com/logo.png",
   email: "info@mktweb360.com",
-  telephone: "+34696714476",
+  telephone: "+34622748897",
   address: {
     "@type": "PostalAddress",
     streetAddress: "El Viso de San Juan",
