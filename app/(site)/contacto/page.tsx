@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contacto — Mkt Web 360 Agencia de Marketing Digital",
-  description: "Contacta con Mkt Web 360. Solicita tu presupuesto gratuito de marketing digital, SEO, Google Ads, redes sociales o diseño web. Tel: +34 696 714 476.",
+  description: "Contacta con Mkt Web 360. Solicita tu presupuesto gratuito de marketing digital, SEO, Google Ads, redes sociales o diseño web. Tel: +34 622 748 897.",
   alternates: { canonical: "https://www.mktweb360.com/contacto/" },
 };
 
@@ -30,7 +30,7 @@ export default function ContactPage() {
           </div>
           <div>
             <h2 className="font-semibold text-primary-700 mb-2">Teléfono</h2>
-            <a href="tel:+34696714476" className="text-accent-500 font-medium hover:underline">+34 696 714 476</a>
+            <a href="tel:+34622748897" className="text-accent-500 font-medium hover:underline">+34 622 748 897</a>
           </div>
           <div>
             <h2 className="font-semibold text-primary-700 mb-2">Email</h2>

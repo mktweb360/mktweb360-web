@@ -190,11 +190,11 @@ export default function OfertaWebSeoPage() {
             <Image src="/logo.png" alt="Mkt Web 360" width={150} height={42} priority />
           </Link>
           <a
-            href="tel:+34696714476"
+            href="tel:+34622748897"
             className="flex items-center gap-2 font-semibold text-sm text-[#1e3a5f] hover:text-[#f97316] transition-colors"
           >
             <span>📞</span>
-            <span>696 71 44 76</span>
+            <span>622 74 88 97</span>
           </a>
         </div>
       </header>
@@ -239,10 +239,10 @@ export default function OfertaWebSeoPage() {
           </div>
 
           <a
-            href="tel:+34696714476"
+            href="tel:+34622748897"
             className="text-blue-300 hover:text-white text-sm transition-colors block mb-6"
           >
-            ¿Tienes dudas? Llámanos: 696 71 44 76
+            ¿Tienes dudas? Llámanos: 622 74 88 97
           </a>
 
           <p className="text-xs text-blue-400">
@@ -428,10 +428,10 @@ export default function OfertaWebSeoPage() {
           <div className="mt-8 pt-6 border-t border-white/20 text-center space-y-2">
             <p className="text-blue-200 text-sm">¿Prefieres hablar primero?</p>
             <a
-              href="tel:+34696714476"
+              href="tel:+34622748897"
               className="text-white font-semibold text-lg hover:text-[#f97316] transition-colors block"
             >
-              📞 696 71 44 76
+              📞 622 74 88 97
             </a>
             <a
               href="mailto:info@mktweb360.com"

@@ -46,7 +46,7 @@ export function Footer() {
           <h4 className="font-semibold mb-3 text-primary-100">Contacto</h4>
           <address className="text-sm text-primary-300 not-italic space-y-2">
             <p>El Viso de San Juan, Toledo, España</p>
-            <p><a href="tel:+34696714476" className="hover:text-white">+34 696 714 476</a></p>
+            <p><a href="tel:+34622748897" className="hover:text-white">+34 622 748 897</a></p>
             <p><a href="mailto:info@mktweb360.com" className="hover:text-white">info@mktweb360.com</a></p>
           </address>
         </div>
