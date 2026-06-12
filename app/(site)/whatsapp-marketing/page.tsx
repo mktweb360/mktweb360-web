@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "WhatsApp Marketing para Empresas | Mkt Web 360",
     description: "Capta y fideliza clientes por WhatsApp. Tasas de apertura del 98%. Automatizaciones y campañas personalizadas.",
     url: "https://www.mktweb360.com/whatsapp-marketing/",
+    images: [{ url: "/imagen-whatsapp-marketing.jpg", width: 1200, height: 900, alt: "WhatsApp marketing Mkt Web 360" }],
   },
 };
 
@@ -46,19 +47,8 @@ export default function WhatsAppMarketingPage() {
               </a>
             </div>
           </div>
-          <div className="hidden md:flex flex-col gap-3">
-            {[
-              { msg: "Hola, vi tu web y me interesa el servicio de SEO", time: "10:32", out: false },
-              { msg: "Perfecto. Te llamo en 5 minutos para explicarte cómo podemos ayudarte 👍", time: "10:33", out: true },
-              { msg: "Genial, muchas gracias por la rapidez!", time: "10:34", out: false },
-            ].map((m, i) => (
-              <div key={i} className={`flex ${m.out ? "justify-end" : "justify-start"}`}>
-                <div className={`max-w-xs px-4 py-3 rounded-2xl text-sm ${m.out ? "bg-accent-500 text-white" : "bg-white/15 text-white"}`}>
-                  <p>{m.msg}</p>
-                  <p className={`text-xs mt-1 ${m.out ? "text-accent-100" : "text-primary-300"}`}>{m.time}</p>
-                </div>
-              </div>
-            ))}
+          <div>
+            <img src="/imagen-whatsapp-marketing.jpg" alt="WhatsApp Marketing" className="rounded-2xl shadow-2xl w-full object-cover hidden md:block" />
           </div>
         </div>
       </section>

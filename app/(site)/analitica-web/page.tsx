@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Analítica Web para Empresas | Mkt Web 360",
     description: "Servicio profesional de analítica web para empresas. Configuración de GA4, GTM, dashboards de negocio y seguimiento de conversiones. Servicio nacional.",
     url: "https://www.mktweb360.com/analitica-web/",
+    images: [{ url: "/imagen-analitica-web.jpg", width: 1200, height: 900, alt: "Analítica web Mkt Web 360" }],
   },
 };
 
@@ -29,14 +30,30 @@ export default function AnaliticaWebPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+
+      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Analítica Web" }]} />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
+              Analítica Web para Empresas — Datos que Generan Decisiones
+            </h1>
+            <p className="text-xl text-primary-200 mb-8 leading-relaxed">
+              Sin datos no hay estrategia. Configuramos y gestionamos tu analítica web para que sepas exactamente qué funciona, qué no funciona y dónde invertir para crecer. Cada decisión de marketing respaldada por datos reales.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#contacto" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
+                Solicitar presupuesto
+              </a>
+            </div>
+          </div>
+          <div>
+            <img src="/imagen-analitica-web.jpg" alt="Analítica web" className="rounded-2xl shadow-2xl w-full object-cover hidden md:block" />
+          </div>
+        </div>
+      </section>
+
       <div className="max-w-4xl mx-auto px-4 py-12">
-        <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Analítica Web" }]} />
-        <h1 className="text-4xl font-bold text-primary-600 mb-4">
-          Analítica Web para Empresas — Datos que Generan Decisiones
-        </h1>
-        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-          Sin datos no hay estrategia. Configuramos y gestionamos tu analítica web para que sepas exactamente qué funciona, qué no funciona y dónde invertir para crecer. Cada decisión de marketing respaldada por datos reales.
-        </p>
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-primary-50 rounded-2xl p-6">
             <h2 className="text-xl font-bold text-primary-600 mb-4">Qué configuramos</h2>
@@ -80,7 +97,7 @@ export default function AnaliticaWebPage() {
             Configuramos una medición limpia, fiable y orientada a negocio — no a métricas de vanidad. Sabrás cuántos leads genera cada canal, cuál es tu coste por conversión real y qué contenidos impulsan las ventas.
           </p>
         </section>
-        <section className="bg-primary-600 text-white rounded-2xl p-8">
+        <section id="contacto" className="bg-primary-600 text-white rounded-2xl p-8">
           <h2 className="text-2xl font-bold mb-4">¿Hablamos de tu analítica?</h2>
           <p className="text-primary-200 mb-6">Auditamos tu configuración actual sin compromiso y te decimos qué datos te estás perdiendo y qué decisiones podrías estar tomando mejor.</p>
           <div className="bg-white rounded-xl p-6">

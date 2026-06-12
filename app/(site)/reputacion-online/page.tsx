@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Gestión Reputación Online para Empresas | Mkt Web 360",
     description: "Servicio profesional de gestión y mejora de reputación online para empresas y marcas. Monitorización, gestión de reseñas y estrategia de imagen digital. Servicio nacional.",
     url: "https://www.mktweb360.com/reputacion-online/",
+    images: [{ url: "/imagen-reputacion-online.jpg", width: 1200, height: 900, alt: "Reputación online Mkt Web 360" }],
   },
 };
 
@@ -29,14 +30,30 @@ export default function ReputacionOnlinePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+
+      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Reputación Online" }]} />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
+              Gestión de Reputación Online para Empresas
+            </h1>
+            <p className="text-xl text-primary-200 mb-8 leading-relaxed">
+              Tu reputación online es lo primero que ven tus clientes potenciales antes de contactarte. Gestionamos y mejoramos la imagen digital de tu empresa para que las primeras impresiones trabajen a tu favor.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#contacto" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
+                Solicitar presupuesto
+              </a>
+            </div>
+          </div>
+          <div>
+            <img src="/imagen-reputacion-online.jpg" alt="Reputación online" className="rounded-2xl shadow-2xl w-full object-cover hidden md:block" />
+          </div>
+        </div>
+      </section>
+
       <div className="max-w-4xl mx-auto px-4 py-12">
-        <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Reputación Online" }]} />
-        <h1 className="text-4xl font-bold text-primary-600 mb-4">
-          Gestión de Reputación Online para Empresas
-        </h1>
-        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-          Tu reputación online es lo primero que ven tus clientes potenciales antes de contactarte. Gestionamos y mejoramos la imagen digital de tu empresa para que las primeras impresiones trabajen a tu favor.
-        </p>
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-primary-50 rounded-2xl p-6">
             <h2 className="text-xl font-bold text-primary-600 mb-4">Qué incluye el servicio</h2>
@@ -80,7 +97,7 @@ export default function ReputacionOnlinePage() {
             Gestionamos tanto la parte reactiva — responder reseñas negativas de forma profesional — como la proactiva: generar un flujo constante de reseñas positivas que refuercen la confianza en tu marca y mejoren tu posicionamiento local en Google.
           </p>
         </section>
-        <section className="bg-primary-600 text-white rounded-2xl p-8">
+        <section id="contacto" className="bg-primary-600 text-white rounded-2xl p-8">
           <h2 className="text-2xl font-bold mb-4">¿Hablamos de tu reputación online?</h2>
           <p className="text-primary-200 mb-6">Analizamos tu situación actual sin compromiso y te explicamos qué está afectando a tu imagen digital.</p>
           <div className="bg-white rounded-xl p-6">

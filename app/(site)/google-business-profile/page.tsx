@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "Google Business Profile para Empresas | Mkt Web 360",
     description: "Optimiza tu ficha de Google y aparece cuando tus clientes te buscan cerca.",
     url: "https://www.mktweb360.com/google-business-profile/",
+    images: [{ url: "/imagen-google-business-profile.jpg", width: 1200, height: 900, alt: "Google Business Profile Mkt Web 360" }],
   },
 };
 
@@ -46,19 +47,8 @@ export default function GoogleBusinessProfilePage() {
               </a>
             </div>
           </div>
-          <div className="hidden md:flex flex-col gap-4">
-            <div className="bg-white/10 rounded-2xl p-6 backdrop-blur">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-full bg-accent-500 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
-                </div>
-                <div>
-                  <p className="font-bold text-white text-sm">Tu negocio en Google Maps</p>
-                  <div className="flex text-accent-400 text-xs">★★★★★ <span className="text-primary-200 ml-1">4.9 · 127 reseñas</span></div>
-                </div>
-              </div>
-              <p className="text-primary-200 text-xs">Así ve tu ficha un cliente potencial cuando busca en Google. Optimizada, con reseñas y toda la información correcta.</p>
-            </div>
+          <div>
+            <img src="/imagen-google-business-profile.jpg" alt="Google Business Profile" className="rounded-2xl shadow-2xl w-full object-cover hidden md:block" />
           </div>
         </div>
       </section>
