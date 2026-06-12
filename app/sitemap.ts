@@ -40,6 +40,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/", priority: 0.6, changeFrequency: "yearly" as const },
     { url: "/descubre-el-analisis-pestel-en-el-marketing-digital/", priority: 0.6, changeFrequency: "yearly" as const },
     { url: "/como-elegir-el-mejor-hosting-para-tu-web/", priority: 0.6, changeFrequency: "yearly" as const },
+    { url: "/ha-muerto-el-seo-con-la-ia/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/como-darse-de-alta-autonomo/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/factura-electronica-obligatoria-autonomos-pymes/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/como-digitalizar-tu-negocio/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/google-my-business-empresas-guia/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/como-crear-propuesta-de-valor/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/errores-digitales-negocio-nuevo/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/como-gestionar-reputacion-online-empresa/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/google-merchant-center-ecommerce-guia/", priority: 0.8, changeFrequency: "monthly" as const },
   ];
 
   return pages.map((p) => ({
