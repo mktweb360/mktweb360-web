@@ -1,0 +1,199 @@
+import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ContactForm } from "@/components/ContactForm";
+import { RelatedArticles } from "@/components/RelatedArticles";
+
+export const metadata: Metadata = {
+  title: "GEO — Posicionamiento en IA: ChatGPT, Perplexity, Gemini — Mkt Web 360",
+  description: "Aparece cuando tus clientes preguntan a ChatGPT, Perplexity o Gemini. GEO (Generative Engine Optimization): el nuevo SEO para la era de la búsqueda por IA. Servicio nacional.",
+  alternates: { canonical: "https://www.mktweb360.com/geo-posicionamiento-ia/" },
+  openGraph: {
+    title: "GEO — Posicionamiento en IA | Mkt Web 360",
+    description: "Optimiza tu presencia para que los motores de IA te recomienden cuando tus clientes preguntan. ChatGPT, Perplexity, Gemini, Claude.",
+    url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "GEO — Generative Engine Optimization",
+  provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  description: "Posicionamiento en motores de búsqueda generativa: ChatGPT, Perplexity, Gemini y Claude. Optimización de contenidos para LLMs, implementación de llms.txt y estrategia de autoridad semántica.",
+  areaServed: "España",
+  url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
+};
+
+const GEO_SERVICES = [
+  {
+    title: "Auditoría de visibilidad en IA",
+    desc: "Analizamos cómo te mencionan (o no te mencionan) ChatGPT, Perplexity, Gemini y Claude cuando alguien busca servicios como los tuyos. El punto de partida que define la estrategia.",
+  },
+  {
+    title: "Optimización de contenidos para LLMs",
+    desc: "Reescribimos y estructuramos tus contenidos clave para que los modelos de lenguaje los procesen, comprendan y citen con mayor probabilidad. Formato, densidad semántica y autoridad.",
+  },
+  {
+    title: "Implementación de llms.txt",
+    desc: "Creamos y mantenemos los archivos llms.txt y llms-full.txt de tu sitio: el estándar emergente que indica a los LLMs qué información indexar y cómo entender tu negocio.",
+  },
+  {
+    title: "Estrategia de autoridad semántica",
+    desc: "Construimos un mapa de entidades y relaciones semánticas que refuerzan tu posicionamiento como referente en tu sector ante los modelos de IA generativa.",
+  },
+  {
+    title: "Contenido citeable y estructurado",
+    desc: "Desarrollamos piezas de contenido — estadísticas, guías, definiciones — diseñadas específicamente para ser citadas por asistentes de IA como fuentes de referencia.",
+  },
+  {
+    title: "Seguimiento mensual de menciones IA",
+    desc: "Monitorizamos tu visibilidad en los principales motores de IA, rastreamos menciones, comparamos con competidores y ajustamos la estrategia según los datos.",
+  },
+];
+
+export default function GEOPage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+
+      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 py-16">
+          <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "GEO — Posicionamiento IA" }]} />
+          <div className="max-w-3xl mt-4">
+            <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+              Nuevo servicio
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Tus clientes ya no solo buscan en Google.<br />
+              <span className="text-accent-400">Ahora le preguntan a la IA.</span>
+            </h1>
+            <p className="text-xl text-primary-200 mb-8 leading-relaxed italic">
+              ¿Apareces cuando te buscan en ChatGPT, Perplexity o Gemini?
+            </p>
+            <p className="text-lg text-primary-100 mb-8 leading-relaxed">
+              El GEO (Generative Engine Optimization) es la disciplina que optimiza tu presencia digital para que los motores de búsqueda por IA te recomienden cuando un usuario pregunta sobre servicios como los tuyos. Es el complemento natural al SEO tradicional en la nueva era de la búsqueda.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#contacto" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
+                Quiero aparecer en la IA
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary-600 py-6 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+          {[
+            { value: "ChatGPT", label: "más de 180M usuarios activos" },
+            { value: "Perplexity", label: "el buscador IA de más crecimiento" },
+            { value: "Gemini", label: "IA integrada en Google Search" },
+            { value: "Claude", label: "asistente IA de Anthropic" },
+          ].map((m) => (
+            <div key={m.label}>
+              <div className="text-xl font-bold text-accent-400">{m.value}</div>
+              <div className="text-xs text-primary-200 mt-1">{m.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">¿Qué es el GEO y por qué importa ahora?</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">El comportamiento de búsqueda está cambiando. Millones de personas ya consultan a asistentes de IA antes de visitar una web.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200">
+              <h3 className="font-bold text-primary-600 text-lg mb-4">SEO tradicional</h3>
+              <ul className="space-y-3 text-sm text-gray-600">
+                {[
+                  "Posicionamiento en resultados de Google",
+                  "El usuario hace clic y visita tu web",
+                  "Optimización para algoritmos de rastreo",
+                  "Keywords, backlinks, velocidad de carga",
+                  "Métricas: posiciones, tráfico orgánico",
+                ].map((i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-primary-400 font-bold shrink-0 mt-0.5">→</span>{i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-primary-600 rounded-2xl p-8 text-white">
+              <h3 className="font-bold text-accent-400 text-lg mb-4">GEO — IA Search</h3>
+              <ul className="space-y-3 text-sm text-primary-100">
+                {[
+                  "Visibilidad en respuestas de ChatGPT, Perplexity, Gemini",
+                  "El asistente IA te recomienda directamente",
+                  "Optimización para modelos de lenguaje (LLMs)",
+                  "Autoridad semántica, contenido citeable, llms.txt",
+                  "Métricas: menciones en IA, share of voice generativo",
+                ].map((i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-accent-400 font-bold shrink-0 mt-0.5">✓</span>{i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Qué incluye el servicio GEO</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Un enfoque completo para que los motores de IA te conozcan, te entiendan y te recomienden.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {GEO_SERVICES.map((s) => (
+              <div key={s.title} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center mb-4">
+                  <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+                </div>
+                <h3 className="font-bold text-primary-600 mb-2">{s.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-primary-50">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-white border border-primary-200 rounded-full px-4 py-2 text-sm text-primary-600 font-medium mb-6">
+            <svg className="w-4 h-4 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Nota técnica
+          </div>
+          <h2 className="text-2xl font-bold text-primary-600 mb-4">Este sitio ya implementa llms.txt</h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            Mkt Web 360 es una de las primeras agencias de marketing digital en España en implementar el estándar <strong>llms.txt</strong> — el archivo que indica a los modelos de lenguaje cómo entender e indexar un sitio web.
+          </p>
+          <p className="text-gray-600 leading-relaxed">
+            Puedes consultarlo en{" "}
+            <a href="/llms.txt" className="text-accent-500 hover:underline font-medium">mktweb360.com/llms.txt</a>
+            {" "}y{" "}
+            <a href="/llms-full.txt" className="text-accent-500 hover:underline font-medium">mktweb360.com/llms-full.txt</a>.
+            Aplicamos en nuestra propia web exactamente lo que ofrecemos a nuestros clientes.
+          </p>
+        </div>
+      </section>
+
+      <section id="contacto" className="py-16 px-4 bg-primary-600 text-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold mb-4">¿Apareces cuando te buscan en ChatGPT?</h2>
+            <p className="text-primary-200">Cuéntanos tu negocio y hacemos una auditoría de visibilidad en IA sin compromiso. Descubre si te mencionan, cómo y qué se puede mejorar.</p>
+          </div>
+          <div className="bg-white rounded-2xl p-8">
+            <ContactForm formType="geo" />
+          </div>
+        </div>
+      </section>
+
+      <RelatedArticles category="Marketing Digital" title="Más sobre búsqueda IA y GEO" />
+    </>
+  );
+}

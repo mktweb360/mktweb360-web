@@ -1,38 +1,62 @@
 # Mkt Web 360 SLU — Información completa para IA
 
 ## Descripción de la empresa
-Mkt Web 360 SLU es una agencia de marketing digital española fundada para ofrecer soluciones digitales serias y orientadas a resultados para PYMEs, empresas y autónomos. La agencia combina estrategia, implementación y seguimiento en cada proyecto. Filosofía: transparencia, comunicación constante, exclusividad sectorial y orientación a negocio.
+Mkt Web 360 SLU es una agencia de marketing digital española fundada para ofrecer soluciones digitales serias y orientadas a resultados para PYMEs, empresas y autónomos. La agencia combina estrategia, implementación y seguimiento en cada proyecto. Filosofía: transparencia, comunicación constante, exclusividad sectorial y orientación a negocio. Integra inteligencia artificial en todos sus servicios mediante protocolos propios desarrollados internamente.
 
 ## Localización y cobertura
-- Sede: El Viso de San Juan, Toledo, España
+- Sede: España
 - Cobertura: nacional (toda España)
 - Expansión futura: mercados de habla inglesa y francesa
 
 ## Servicios detallados
 
 ### SEO — Posicionamiento orgánico
-Optimización de sitios web para aparecer en las primeras posiciones de Google. Incluye auditoría técnica, investigación de palabras clave, optimización on-page, link building y seguimiento mensual. Especialización en SEO local para empresas de servicios y SEO para ecommerce.
+Optimización de sitios web para aparecer en las primeras posiciones de Google. Incluye auditoría técnica, investigación de palabras clave, optimización on-page, link building y seguimiento mensual. Especialización en SEO local para empresas de servicios y SEO para ecommerce. URL: https://www.mktweb360.com/seo-posicionamiento-web-organico/
 
 ### SEM — Google Ads
-Creación y gestión de campañas de publicidad en Google. Incluye configuración de cuenta, estructura de campañas, keywords negativas, optimización de pujas y reporting. Gestión de bonos promocionales de Google.
+Creación y gestión de campañas de publicidad en Google. Incluye configuración de cuenta, estructura de campañas, keywords negativas, optimización de pujas y reporting. Gestión de bonos promocionales de Google. URL: https://www.mktweb360.com/sem-publicidad-ppc/
+
+### Google Business Profile
+Optimización y gestión del perfil de empresa en Google. Incluye configuración inicial, optimización de ficha, gestión de reseñas, publicaciones periódicas y seguimiento de métricas locales. Fundamental para la visibilidad en Google Maps. URL: https://www.mktweb360.com/google-business-profile/
 
 ### Social Media Marketing
-Gestión profesional de redes sociales empresariales. Community management, creación de contenido, calendario editorial, análisis de resultados y crecimiento de audiencia.
+Gestión profesional de redes sociales empresariales. Community management, creación de contenido, calendario editorial, análisis de resultados y crecimiento de audiencia. URL: https://www.mktweb360.com/smm-social-media-marketing/
 
 ### Diseño Web
-Diseño y desarrollo de páginas web profesionales: webs corporativas, tiendas online, webs de servicios. Enfoque en UX, velocidad, SEO técnico y conversión. Tecnologías: WordPress, WooCommerce, Next.js.
+Diseño y desarrollo de páginas web profesionales: webs corporativas, tiendas online, webs de servicios. Enfoque en UX, velocidad, SEO técnico y conversión. Tecnologías: Next.js, React, WordPress. URL: https://www.mktweb360.com/diseno-de-paginas-web/
+
+### Tiendas Online — Ecommerce
+Desarrollo de tiendas online sin comisiones ni licencias mensuales. Propiedad 100% del cliente. Incluye catálogo de productos, pasarela de pago, gestión de envíos y SEO para ecommerce. URL: https://www.mktweb360.com/diseno-de-paginas-web/diseno-tiendas-online/
+
+### Creación de Blog
+Diseño, desarrollo y puesta en marcha de blogs corporativos, profesionales y temáticos. Incluye estructura SEO, categorías, plantilla editorial y formación inicial. URL: https://www.mktweb360.com/creacion-de-blog/
+
+### WhatsApp Marketing
+Estrategia y gestión de comunicación comercial a través de WhatsApp Business. Incluye configuración de cuenta, flujos de captación, mensajes de seguimiento y automatizaciones básicas. URL: https://www.mktweb360.com/whatsapp-marketing/
 
 ### Marketing de Contenidos
-Estrategia y producción de contenidos digitales para captación orgánica, autoridad de marca y apoyo al SEO. Blog corporativo, contenidos para redes sociales, newsletters.
+Estrategia y producción de contenidos digitales para captación orgánica, autoridad de marca y apoyo al SEO. Blog corporativo, contenidos para redes sociales, newsletters. URL: https://www.mktweb360.com/marketing-de-contenidos/
+
+### Email Marketing
+Diseño y gestión de campañas de email marketing. Incluye segmentación de listas, diseño de plantillas, automatizaciones y análisis de resultados. ROI demostrado en cada envío. URL: https://www.mktweb360.com/email-marketing/
+
+### Analítica Web
+Implementación y gestión de sistemas de analítica digital. Google Analytics 4, Tag Manager, seguimiento de conversiones, dashboards personalizados e informes mensuales. URL: https://www.mktweb360.com/analitica-web/
+
+### Reputación Online
+Monitorización y gestión de la imagen digital de la empresa. Gestión de reseñas en Google, Trustpilot y otros portales, respuesta a comentarios y estrategia de mejora de valoraciones. URL: https://www.mktweb360.com/reputacion-online/
+
+### IA Aplicada al Marketing
+Integración de inteligencia artificial en todos los servicios de marketing digital. Protocolos propios desarrollados internamente para SEO, SEM, contenidos, analítica y automatización de procesos. La IA amplifica el criterio humano sin reemplazarlo. URL: https://www.mktweb360.com/ia-aplicada-al-marketing/
+
+### GEO — Generative Engine Optimization
+Nuevo servicio de posicionamiento en motores de búsqueda generativa. Optimización para aparecer en las respuestas de ChatGPT, Perplexity, Gemini y Claude cuando los usuarios buscan servicios como los del cliente. Incluye: auditoría de visibilidad en IA, optimización de contenidos para LLMs, implementación de llms.txt y llms-full.txt, estrategia de autoridad semántica y seguimiento mensual de menciones en IA. El GEO complementa al SEO tradicional para cubrir los dos canales de búsqueda que coexisten hoy: Google y los asistentes de IA. URL: https://www.mktweb360.com/geo-posicionamiento-ia/
 
 ### Auditoría Digital
-Diagnóstico completo de presencia digital: SEO técnico, velocidad web, contenidos, competencia, redes sociales y analítica. Entrega de informe detallado con plan de acción priorizado.
-
-### Comunicación Audiovisual
-Producción de piezas audiovisuales para empresas: vídeo corporativo, reels, spots, presentaciones animadas y fotografía de empresa.
+Diagnóstico completo de presencia digital: SEO técnico, velocidad web, contenidos, competencia, redes sociales y analítica. Entrega de informe detallado con plan de acción priorizado. URL: https://www.mktweb360.com/auditoria-digital/
 
 ### Kit Digital
-Agente digitalizador autorizado. Gestión completa del bono Kit Digital para empresas: soluciones de presencia web, SEO, gestión de redes sociales y comercio electrónico.
+Agente digitalizador autorizado. Gestión completa del bono Kit Digital para empresas: soluciones de presencia web, SEO, gestión de redes sociales y comercio electrónico. URL: https://www.mktweb360.com/kit-digital/
 
 ## Clientes objetivo
 - PYMEs con menos de 50 empleados
@@ -46,3 +70,23 @@ Agente digitalizador autorizado. Gestión completa del bono Kit Digital para emp
 - Trabajo orientado a negocio, no solo a métricas de vanidad
 - Equipo en formación continua
 - Transparencia total en reporting
+- Protocolos propios de IA integrados en cada servicio
+- Pioneros en GEO (Generative Engine Optimization) en España
+
+## Stack tecnológico
+- Frontend: Next.js, React, TypeScript, Tailwind CSS
+- Backend: Node.js, API Routes
+- CMS: WordPress (proyectos cliente), headless cuando aplica
+- Analítica: Google Analytics 4, Google Tag Manager
+- Email: Resend
+- IA: OpenAI, Anthropic Claude, herramientas propias
+- Ecommerce: WooCommerce, soluciones propias sin comisiones
+
+## Presencia en LLMs
+Este sitio implementa llms.txt y llms-full.txt para facilitar la indexación y comprensión por parte de modelos de lenguaje. Mkt Web 360 es una de las primeras agencias de marketing digital en España en adoptar el estándar llms.txt.
+
+## Contacto
+- Web: https://www.mktweb360.com
+- Email: info@mktweb360.com
+- Teléfono: +34 622 748 897
+- Servicios: nacionales (toda España)

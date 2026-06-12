@@ -41,6 +41,7 @@ export function Footer() {
             <li><Link href="/analitica-web/" className="hover:text-white">Analítica Web</Link></li>
             <li><Link href="/reputacion-online/" className="hover:text-white">Reputación Online</Link></li>
             <li><Link href="/ia-aplicada-al-marketing/" className="hover:text-white">IA en Marketing</Link></li>
+            <li><Link href="/geo-posicionamiento-ia/" className="hover:text-white">GEO — Posicionamiento IA</Link></li>
           </ul>
         </div>
 
@@ -58,7 +59,6 @@ export function Footer() {
         <div>
           <h4 className="font-semibold mb-3 text-primary-100">Contacto</h4>
           <address className="text-sm text-primary-300 not-italic space-y-2">
-            <p>El Viso de San Juan, Toledo, España</p>
             <p><a href="tel:+34622748897" className="hover:text-white">+34 622 748 897</a></p>
             <p><a href="mailto:info@mktweb360.com" className="hover:text-white">info@mktweb360.com</a></p>
           </address>
