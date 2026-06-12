@@ -207,8 +207,8 @@ export default function HomePage() {
             Agencia de Marketing Digital<br />
             <span className="text-accent-400">para PYMEs y Empresas</span>
           </h1>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Aumenta tu visibilidad online, genera más clientes y haz crecer tu negocio con estrategias de marketing digital probadas. Servicio nacional desde Toledo.
+          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto italic">
+            Aumenta tu visibilidad online, genera más clientes y haz crecer tu negocio con estrategias de marketing digital probadas. Servicio nacional.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
