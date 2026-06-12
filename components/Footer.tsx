@@ -3,13 +3,13 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="bg-primary-600 text-white mt-16">
-      <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         <div>
           <h3 className="font-bold text-lg mb-3">
             <span className="text-accent-400">Mkt</span> Web 360
           </h3>
           <p className="text-primary-200 text-sm leading-relaxed">
-            Agencia de marketing digital para PYMEs y empresas. Servicio nacional desde Toledo, España.
+            Agencia de marketing digital para PYMEs y empresas. Servicio nacional.
           </p>
           <div className="flex gap-3 mt-4">
             <a href="https://www.facebook.com/mktweb360" target="_blank" rel="noopener noreferrer" className="text-primary-300 hover:text-white text-sm" aria-label="Facebook">FB</a>
@@ -24,10 +24,22 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-primary-300">
             <li><Link href="/seo-posicionamiento-web-organico/" className="hover:text-white">SEO Posicionamiento</Link></li>
             <li><Link href="/sem-publicidad-ppc/" className="hover:text-white">SEM / Google Ads</Link></li>
-            <li><Link href="/smm-social-media-marketing/" className="hover:text-white">Redes Sociales</Link></li>
+            <li><Link href="/google-business-profile/" className="hover:text-white">Google Business Profile</Link></li>
             <li><Link href="/diseno-de-paginas-web/" className="hover:text-white">Diseño Web</Link></li>
+            <li><Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="hover:text-white">Tiendas Online</Link></li>
+            <li><Link href="/creacion-de-blog/" className="hover:text-white">Creación de Blog</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-semibold mb-3 text-primary-100">Más servicios</h4>
+          <ul className="space-y-2 text-sm text-primary-300">
+            <li><Link href="/smm-social-media-marketing/" className="hover:text-white">Redes Sociales</Link></li>
+            <li><Link href="/whatsapp-marketing/" className="hover:text-white">WhatsApp Marketing</Link></li>
+            <li><Link href="/email-marketing/" className="hover:text-white">Email Marketing</Link></li>
             <li><Link href="/marketing-de-contenidos/" className="hover:text-white">Marketing de Contenidos</Link></li>
-            <li><Link href="/kit-digital/" className="hover:text-white">Kit Digital</Link></li>
+            <li><Link href="/analitica-web/" className="hover:text-white">Analítica Web</Link></li>
+            <li><Link href="/reputacion-online/" className="hover:text-white">Reputación Online</Link></li>
           </ul>
         </div>
 
