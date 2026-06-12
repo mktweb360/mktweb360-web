@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
-
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Posicionamiento Web SEO — Agencia SEO España",
-  description:
-    "Servicio profesional de SEO y posicionamiento web orgánico para empresas españolas. Auditorías, estrategia y contenidos que te llevan a la primera página de Google.",
+  title: "Posicionamiento Web SEO — Agencia SEO España | Mkt Web 360",
+  description: "Servicio profesional de SEO y posicionamiento web para empresas españolas. Auditorías, estrategia de keywords y contenidos que llevan tu web a la primera página de Google.",
   alternates: { canonical: "https://www.mktweb360.com/seo-posicionamiento-web-organico/" },
   openGraph: {
     title: "Posicionamiento Web SEO — Agencia SEO España | Mkt Web 360",
-    description: "Posiciona tu web en Google con estrategias SEO probadas. Servicio nacional.",
+    description: "Posiciona tu web en Google con estrategias SEO probadas. Resultados duraderos. Servicio nacional.",
     url: "https://www.mktweb360.com/seo-posicionamiento-web-organico/",
+    images: [{ url: "/imagen-seo.jpg", width: 1200, height: 900, alt: "SEO posicionamiento web Mkt Web 360" }],
   },
 };
 
@@ -21,7 +20,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "Posicionamiento Web SEO",
   provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
-  description: "Servicio de posicionamiento web orgánico (SEO) para empresas. Auditorías técnicas, estrategia de keywords, optimización on-page y link building.",
+  description: "Servicio de posicionamiento web orgánico SEO para empresas. Auditorías técnicas, estrategia de keywords, optimización on-page y link building.",
   areaServed: "España",
   url: "https://www.mktweb360.com/seo-posicionamiento-web-organico/",
 };
@@ -29,8 +28,9 @@ const serviceSchema = {
 const FAQS = [
   { q: "¿Qué incluye vuestro servicio SEO?", a: "Auditoría técnica inicial, investigación de palabras clave, optimización on-page, creación de contenido optimizado, link building ético, seguimiento mensual de posiciones e informe de resultados." },
   { q: "¿En cuánto tiempo se ven resultados SEO?", a: "Los primeros movimientos de posiciones suelen verse entre 2 y 4 meses. Para resultados consolidados, esperamos entre 6 y 12 meses, aunque esto depende de la competencia y el estado inicial de la web." },
-  { q: "¿Trabajáis con Panda, Penguin y las actualizaciones de Google?", a: "Sí, seguimos de cerca todas las actualizaciones del algoritmo de Google y adaptamos las estrategias para estar siempre dentro de las buenas prácticas (white hat SEO)." },
+  { q: "¿Trabajáis con las actualizaciones del algoritmo de Google?", a: "Sí, seguimos de cerca todas las actualizaciones del algoritmo de Google y adaptamos las estrategias para estar siempre dentro de las buenas prácticas (white hat SEO)." },
   { q: "¿Hacéis SEO local y SEO nacional?", a: "Hacemos ambos. El SEO local es ideal para negocios con presencia física que quieren atraer clientes de su zona. El SEO nacional se orienta a keywords de mayor alcance geográfico." },
+  { q: "¿Cómo medís los resultados?", a: "Monitorizamos posiciones en Google, tráfico orgánico, conversiones atribuidas a SEO y visibilidad de marca. Recibes un informe mensual detallado con evolución y próximos pasos." },
 ];
 
 const faqSchema = {
@@ -43,77 +43,191 @@ const faqSchema = {
   })),
 };
 
+const METHODOLOGY = [
+  { step: "01", title: "Auditoría técnica SEO", desc: "Análisis completo de tu web: velocidad, indexación, errores técnicos, arquitectura, backlinks y competencia." },
+  { step: "02", title: "Investigación de keywords", desc: "Identificamos las palabras clave con mayor potencial de tráfico y conversión para tu sector y zona." },
+  { step: "03", title: "Optimización on-page", desc: "Mejoramos títulos, metas, contenidos, estructura de URLs, enlaces internos y datos estructurados." },
+  { step: "04", title: "Contenido SEO", desc: "Artículos, páginas de servicio y landings optimizadas para posicionar keywords estratégicas." },
+  { step: "05", title: "Link building ético", desc: "Construcción de autoridad con enlaces naturales de sitios relevantes y de calidad en tu sector." },
+  { step: "06", title: "Seguimiento y reportes", desc: "Monitorizamos posiciones, tráfico y conversiones. Informe mensual con evolución y próximos pasos." },
+];
+
 export default function SeoPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "SEO Posicionamiento Web" }]} />
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "SEO Posicionamiento Web" }]} />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
+              Primeras posiciones<br />
+              <span className="text-accent-400">clientes que te encuentran</span>
+            </h1>
+            <p className="text-xl text-primary-200 mb-8 leading-relaxed">
+              El 93% de las experiencias online empiezan en Google. Si no apareces en la primera página, tu competencia se lleva esos clientes cada día. El SEO es la inversión con mayor retorno a largo plazo.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#auditoria" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
+                Auditoría SEO gratuita
+              </a>
+              <a href="#metodologia" className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors text-center">
+                Ver metodología
+              </a>
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <img src="/imagen-seo.jpg" alt="SEO posicionamiento web" className="rounded-2xl shadow-2xl w-full object-cover" />
+          </div>
+        </div>
+      </section>
 
-        <h1 className="text-4xl font-bold text-primary-600 mb-4">
-          Posicionamiento Web SEO — Agencia SEO España
-        </h1>
-        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-          Lleva tu web a las primeras posiciones de Google con estrategias SEO sólidas, éticas y orientadas a resultados. Servicio nacional para empresas de todos los sectores.
-        </p>
+      {/* Trust bar */}
+      <section className="bg-primary-600 py-6 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+          {[
+            { value: "93%", label: "búsquedas empiezan en Google" },
+            { value: "Orgánico", label: "tráfico sin coste por clic" },
+            { value: "Duradero", label: "resultados que se mantienen" },
+            { value: "Nacional", label: "y SEO local" },
+          ].map((m) => (
+            <div key={m.label}>
+              <div className="text-xl font-bold text-accent-400">{m.value}</div>
+              <div className="text-xs text-primary-200 mt-1">{m.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        <section className="bg-primary-50 rounded-2xl p-8 mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">¿Por qué invertir en SEO?</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            El 93% de las experiencias online comienzan con un motor de búsqueda. Si tu empresa no aparece en las primeras posiciones de Google, estás perdiendo clientes frente a tu competencia. El SEO es la inversión de marketing digital con mayor retorno a largo plazo.
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            A diferencia de la publicidad de pago, el posicionamiento orgánico genera tráfico constante y gratuito mes tras mes. Una vez que tu web está posicionada, los resultados se mantienen y se amplían con el tiempo.
-          </p>
-        </section>
+      {/* Why SEO */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-primary-600 mb-6">SEO vs Publicidad de pago</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Google Ads genera tráfico inmediato pero cuando dejas de pagar, desaparece. El SEO construye una base sólida que genera tráfico constante mes tras mes, sin coste adicional por visita.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Una web bien posicionada es el activo digital más rentable de un negocio. A los 12 meses el coste por lead orgánico es significativamente menor que cualquier canal de pago.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: "Google Ads", sub: "Pagas por cada clic. Sin presupuesto, sin tráfico.", bad: true },
+                  { label: "SEO", sub: "Inviertes una vez. El tráfico crece con el tiempo.", bad: false },
+                ].map((c) => (
+                  <div key={c.label} className={`rounded-xl p-4 border-2 ${c.bad ? "border-gray-200 bg-white" : "border-accent-500 bg-accent-50"}`}>
+                    <p className={`font-bold mb-1 ${c.bad ? "text-gray-400" : "text-accent-600"}`}>{c.label}</p>
+                    <p className="text-xs text-gray-500">{c.sub}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-primary-600 rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-6">¿Qué incluye el servicio?</h3>
+              <ul className="space-y-3">
+                {[
+                  "Auditoría técnica SEO completa",
+                  "Investigación de keywords por sector",
+                  "Optimización on-page de todas las páginas clave",
+                  "Creación de contenido SEO mensual",
+                  "Link building ético y natural",
+                  "Seguimiento de posiciones semanal",
+                  "Informe mensual con métricas y próximos pasos",
+                  "Integración con Google Search Console y GA4",
+                ].map((i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm">
+                    <span className="text-accent-400 font-bold shrink-0">✓</span>{i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-6">Nuestra metodología SEO</h2>
+      {/* Methodology */}
+      <section id="metodologia" className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Nuestra metodología SEO</h2>
+            <p className="text-gray-600">Un proceso probado, transparente y orientado a resultados reales.</p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { step: "01", title: "Auditoría técnica SEO", desc: "Análisis completo de tu web: velocidad, indexación, errores técnicos, arquitectura, backlinks y competencia." },
-              { step: "02", title: "Investigación de palabras clave", desc: "Identificamos las keywords con mayor potencial de tráfico y conversión para tu sector y zona geográfica." },
-              { step: "03", title: "Optimización on-page", desc: "Mejoramos títulos, meta-descripciones, contenidos, estructura de URLs, enlaces internos y datos estructurados." },
-              { step: "04", title: "Creación de contenido SEO", desc: "Artículos, páginas de servicio y landings optimizadas para posicionar keywords estratégicas." },
-              { step: "05", title: "Link building ético", desc: "Construcción de autoridad con enlaces naturales de sitios relevantes y de calidad en tu sector." },
-              { step: "06", title: "Seguimiento y reportes", desc: "Monitorizamos posiciones, tráfico y conversiones. Informe mensual con evolución y próximos pasos." },
-            ].map((item) => (
-              <div key={item.step} className="flex gap-4 p-4 border border-gray-200 rounded-xl">
-                <span className="text-accent-500 font-bold text-2xl shrink-0">{item.step}</span>
+            {METHODOLOGY.map((item) => (
+              <div key={item.step} className="flex gap-4 p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                <span className="text-accent-500 font-bold text-3xl shrink-0 leading-none">{item.step}</span>
                 <div>
-                  <h3 className="font-semibold text-primary-700 mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                  <h3 className="font-bold text-primary-700 mb-2">{item.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-6">Preguntas frecuentes sobre SEO</h2>
+      {/* Offer banner */}
+      <section className="py-12 px-4 bg-primary-700">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Oferta especial junio</span>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">6 meses de SEO por el precio de 3</h2>
+          <p className="text-primary-200 max-w-xl mx-auto mb-8">Contrata cualquier servicio SEO este mes y llévate 6 meses de posicionamiento pagando solo 3. Plazas limitadas.</p>
+          <a href="#auditoria" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block">
+            Quiero esta oferta
+          </a>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Preguntas frecuentes sobre SEO</h2>
+          </div>
           <div className="space-y-4">
             {FAQS.map((faq) => (
-              <details key={faq.q} className="border border-gray-200 rounded-xl overflow-hidden group">
+              <details key={faq.q} className="border border-gray-200 rounded-xl overflow-hidden group bg-white">
                 <summary className="px-6 py-4 cursor-pointer font-semibold text-primary-700 hover:bg-primary-50 list-none flex justify-between items-center">
                   {faq.q}
                   <span className="text-accent-500 group-open:rotate-180 transition-transform">▾</span>
                 </summary>
-                <div className="px-6 py-4 text-gray-600 border-t border-gray-100">{faq.a}</div>
+                <div className="px-6 py-4 text-gray-600 border-t border-gray-100 text-sm leading-relaxed">{faq.a}</div>
               </details>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="bg-primary-600 text-white rounded-2xl p-8">
-          <h2 className="text-2xl font-bold mb-4">¿Quieres una auditoría SEO gratuita?</h2>
-          <p className="text-primary-200 mb-6">Analizamos tu web sin compromiso y te indicamos qué mejoras te ayudarán a posicionar mejor.</p>
-          <div className="bg-white rounded-xl p-6">
-            <ContactForm />
+      {/* IA badge */}
+      <section className="py-10 px-4 bg-white border-y border-gray-100">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+          <div className="shrink-0 w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center">
+            <svg className="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
           </div>
-        </section>
-      </div>
+          <div>
+            <p className="text-lg font-semibold text-primary-700">La experiencia de un equipo senior. La precisión de la inteligencia artificial.</p>
+            <p className="text-gray-500 text-sm mt-1">Protocolos propios de IA aplicados a cada proyecto para resultados más rápidos y precisos.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Form */}
+      <section id="auditoria" className="py-16 px-4 bg-primary-600 text-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold mb-4">Auditoría SEO gratuita</h2>
+            <p className="text-primary-200">Analizamos tu web sin compromiso y te decimos exactamente qué está frenando tu posicionamiento.</p>
+          </div>
+          <div className="bg-white rounded-2xl p-8">
+            <ContactForm formType="seo" />
+          </div>
+        </div>
+      </section>
+
       <RelatedArticles category="SEO" title="Más sobre SEO y posicionamiento" />
     </>
   );
