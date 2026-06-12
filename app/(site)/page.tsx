@@ -22,6 +22,12 @@ const SERVICE_GROUPS = [
         href: "/sem-publicidad-ppc/",
         img: "/imagen-sem.jpg",
       },
+      {
+        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>,
+        title: "Google Business Profile",
+        desc: "Visibilidad local en Google Maps cuando tus clientes te buscan cerca.",
+        href: "/google-business-profile/",
+      },
     ],
   },
   {
@@ -41,6 +47,12 @@ const SERVICE_GROUPS = [
         href: "/diseno-de-paginas-web/diseno-tiendas-online/",
         img: "/imagen-tiendas-online.jpg",
       },
+      {
+        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"/></svg>,
+        title: "Creación de Blog",
+        desc: "Blogs corporativos y profesionales que posicionan y generan tráfico constante.",
+        href: "/creacion-de-blog/",
+      },
     ],
   },
   {
@@ -57,6 +69,12 @@ const SERVICE_GROUPS = [
         title: "Marketing de Contenidos",
         desc: "Contenido que posiciona tu marca como referente y atrae clientes de forma orgánica.",
         href: "/marketing-de-contenidos/",
+      },
+      {
+        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V20.25a.75.75 0 0 0 1.28.53l3.58-3.58A48.29 48.29 0 0 0 11.25 17c.527 0 1.049-.022 1.566-.064"/></svg>,
+        title: "WhatsApp Marketing",
+        desc: "Capta y fideliza clientes por el canal con mayor tasa de apertura.",
+        href: "/whatsapp-marketing/",
       },
     ],
   },
@@ -118,6 +136,44 @@ const TESTIMONIALS = [
   },
 ];
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Mkt Web 360 SLU",
+  image: "https://www.mktweb360.com/logo.png",
+  url: "https://www.mktweb360.com",
+  telephone: "+34622748897",
+  email: "info@mktweb360.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "El Viso de San Juan",
+    addressLocality: "El Viso de San Juan",
+    addressRegion: "Toledo",
+    postalCode: "45215",
+    addressCountry: "ES",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 40.0219,
+    longitude: -3.9714,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "18:00",
+  },
+  sameAs: [
+    "https://www.facebook.com/mktweb360",
+    "https://twitter.com/mktweb360",
+    "https://www.instagram.com/mktweb360",
+    "https://www.linkedin.com/company/mktweb360",
+  ],
+  description: "Agencia de marketing digital para PYMEs y empresas. Especialistas en SEO, SEM, gestión de redes sociales y diseño web. Servicio nacional desde Toledo, España.",
+  priceRange: "$$",
+  areaServed: "España",
+};
+
 const FAQS = [
   {
     q: "¿Dónde está ubicada la agencia y a qué zonas dais servicio?",
@@ -140,6 +196,16 @@ const FAQS = [
     a: "Sí, enviamos informes mensuales detallados con todas las métricas relevantes: posiciones SEO, tráfico, conversiones, rendimiento de campañas y evolución de redes sociales.",
   },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 function TestimonialsCarousel({ testimonials }: { testimonials: typeof TESTIMONIALS }) {
   const [current, setCurrent] = useState(0);
@@ -200,6 +266,8 @@ function TestimonialsCarousel({ testimonials }: { testimonials: typeof TESTIMONI
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">

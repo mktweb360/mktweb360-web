@@ -40,6 +40,7 @@ export function Footer() {
             <li><Link href="/marketing-de-contenidos/" className="hover:text-white">Marketing de Contenidos</Link></li>
             <li><Link href="/analitica-web/" className="hover:text-white">Analítica Web</Link></li>
             <li><Link href="/reputacion-online/" className="hover:text-white">Reputación Online</Link></li>
+            <li><Link href="/ia-aplicada-al-marketing/" className="hover:text-white">IA en Marketing</Link></li>
           </ul>
         </div>
 

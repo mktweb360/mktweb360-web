@@ -53,6 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/creacion-de-blog/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/whatsapp-marketing/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/tienda-online/", priority: 0.9, changeFrequency: "monthly" as const },
+    { url: "/ia-aplicada-al-marketing/", priority: 0.8, changeFrequency: "monthly" as const },
   ];
 
   return pages.map((p) => ({
