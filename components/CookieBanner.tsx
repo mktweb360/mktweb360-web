@@ -5,10 +5,50 @@ import Link from "next/link";
 
 type Consent = { analytics: boolean; date: string };
 
+function pushToDataLayer(data: Record<string, unknown>) {
+  if (typeof window === "undefined") return;
+  const w = window as unknown as Record<string, unknown>;
+  w.dataLayer = (w.dataLayer as unknown[]) || [];
+  (w.dataLayer as unknown[]).push(data);
+}
+
+function setConsentDefault() {
+  pushToDataLayer({
+    event: "consent_default",
+    "consent": {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+      functionality_storage: "denied",
+      personalization_storage: "denied",
+      security_storage: "granted",
+      wait_for_update: 500,
+      region: ["ES"],
+    },
+  });
+}
+
+function updateConsent(analytics: boolean) {
+  const granted = analytics ? "granted" : "denied";
+  pushToDataLayer({
+    event: "consent_update",
+    "consent": {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: granted,
+      functionality_storage: granted,
+      personalization_storage: "denied",
+      security_storage: "granted",
+    },
+  });
+}
+
 function loadGTM() {
   if (typeof window === "undefined") return;
-  (window as unknown as Record<string, unknown>).dataLayer =
-    (window as unknown as Record<string, unknown>).dataLayer || [];
+  const w = window as unknown as Record<string, unknown>;
+  w.dataLayer = (w.dataLayer as unknown[]) || [];
   if (document.querySelector('script[src*="GTM-KVB3R3H"]')) return;
   const script = document.createElement("script");
   script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-KVB3R3H";
@@ -19,6 +59,7 @@ function loadGTM() {
 function saveConsent(analytics: boolean) {
   const consent: Consent = { analytics, date: new Date().toISOString() };
   localStorage.setItem("mktweb360_consent", JSON.stringify(consent));
+  updateConsent(analytics);
   if (analytics) loadGTM();
 }
 
@@ -28,11 +69,13 @@ export function CookieBanner() {
   const [analyticsEnabled, setAnalyticsEnabled] = useState(true);
 
   useEffect(() => {
+    setConsentDefault();
     const stored = localStorage.getItem("mktweb360_consent");
     if (!stored) {
       setVisible(true);
     } else {
       const consent: Consent = JSON.parse(stored);
+      updateConsent(consent.analytics);
       if (consent.analytics) loadGTM();
     }
   }, []);
