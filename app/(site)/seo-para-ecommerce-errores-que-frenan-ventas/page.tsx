@@ -31,12 +31,12 @@ const articleSchema = {
 
 const FAQS = [
   {
-    q: "¿Por qué mi tienda online no aparece en Google?",
-    a: "Las causas más frecuentes son: indexación bloqueada por error, contenido duplicado entre categorías y fichas de producto, arquitectura web incorrecta que dificulta el rastreo, ausencia de contenido optimizado en categorías o velocidad de carga muy baja. Una auditoría SEO técnica suele identificar el problema principal.",
+    q: "¿Qué páginas son más importantes en el SEO de un ecommerce?",
+    a: "Normalmente categorías y subcategorías con intención de búsqueda clara, seguidas de fichas con búsqueda específica de producto.",
   },
   {
-    q: "¿Qué páginas debo optimizar primero en un ecommerce?",
-    a: "Las páginas de categoría son el mayor activo SEO de un ecommerce porque tienen mayor volumen de búsqueda y mayor potencial de tráfico. Después las fichas de producto para keywords de alta intención de compra. El blog puede complementar con contenido informacional.",
+    q: "¿Los filtros pueden perjudicar el SEO?",
+    a: "Sí. Si se dejan sin control, generan URLs de poco valor, duplicidades y rastreo ineficiente que diluye la autoridad del sitio.",
   },
   {
     q: "¿El contenido duplicado afecta al SEO de mi tienda?",
@@ -92,36 +92,16 @@ export default function SeoEcommercePage() {
             A diferencia de una web de servicios, en ecommerce el SEO trabaja en varias capas: la arquitectura del sitio, las páginas de categoría, las fichas de producto y el contenido editorial. Cada capa tiene sus propias oportunidades y sus propios errores frecuentes.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los 8 errores SEO que más frenan ventas en ecommerce</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="bg-primary-600 text-white">
-                  <th className="px-4 py-3 text-left font-semibold">Error</th>
-                  <th className="px-4 py-3 text-left font-semibold">Impacto SEO</th>
-                  <th className="px-4 py-3 text-left font-semibold">Impacto ventas</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Contenido duplicado entre productos", "Alto — dilución de autoridad y confusión en indexación", "Medio — posiciones más bajas que los competidores"],
-                  ["Páginas de categoría sin contenido", "Alto — Google no entiende de qué trata la categoría", "Alto — posicionamiento muy limitado en keywords de categoría"],
-                  ["Fichas de producto con textos del proveedor", "Alto — contenido idéntico a cientos de otras webs", "Medio — menor diferenciación y menor confianza del usuario"],
-                  ["Arquitectura de URLs compleja o inestable", "Alto — dificulta el rastreo y pierde link equity", "Bajo — impacto indirecto en posicionamiento"],
-                  ["Velocidad de carga lenta en móvil", "Alto — Core Web Vitals afectan directamente al ranking", "Alto — abandono del carrito antes de la compra"],
-                  ["Sin datos estructurados de producto", "Medio — no aparecen rich results con precio y disponibilidad", "Alto — menor CTR en resultados de búsqueda"],
-                  ["Indexación de páginas de filtro", "Alto — miles de URLs de poco valor que diluyen el presupuesto de rastreo", "Bajo — impacto indirecto"],
-                  ["Sin estrategia de enlaces internos", "Alto — productos y categorías no reciben la autoridad que deberían", "Medio — peor posicionamiento de páginas de alta intención"],
-                ].map(([err, seo, ventas]) => (
-                  <tr key={err} className="border-b border-gray-200 even:bg-gray-50">
-                    <td className="px-4 py-3 font-medium text-gray-800">{err}</td>
-                    <td className="px-4 py-3 text-gray-600 text-xs">{seo}</td>
-                    <td className="px-4 py-3 text-gray-600 text-xs">{ventas}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <h2 className="text-2xl font-bold text-primary-600">Errores estructurales que más frenan</h2>
+          <p>Los problemas de arquitectura, la falta de contenido útil en categorías, los textos de proveedor duplicados, la indexación de páginas de filtro sin valor y la lentitud en móvil son los errores que más frenan el rendimiento orgánico de una tienda. La mayoría no se ven a simple vista, pero tienen un impacto directo en qué páginas indexa Google y con qué posiciones las muestra.</p>
+          <ul className="space-y-2">
+            {["Contenido duplicado en fichas y variantes", "Categorías sin texto útil para SEO", "Filtros que generan miles de URLs sin valor", "Velocidad en móvil que perjudica experiencia y ranking"].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
+                <span className="text-accent-500 font-bold shrink-0 mt-0.5">▸</span>
+                {item}
+              </li>
+            ))}
+          </ul>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Tu tienda online depende demasiado de Ads para vender?</p>
@@ -131,37 +111,14 @@ export default function SeoEcommercePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Checklist SEO para ecommerce por capas</h2>
-          {[
-            {
-              layer: "Arquitectura",
-              items: ["URLs limpias y estables", "Máx. 3 clics del inicio a cualquier producto", "Paginación correcta (rel=next/prev o canonical)", "No indexar páginas de filtro sin valor"],
-            },
-            {
-              layer: "Páginas de categoría",
-              items: ["Texto descriptivo único de al menos 150 palabras", "H1 con keyword principal de la categoría", "Datos estructurados de BreadcrumbList", "Enlace a subcategorías relevantes"],
-            },
-            {
-              layer: "Fichas de producto",
-              items: ["Texto descriptivo único (no del proveedor)", "Datos estructurados Product con precio y disponibilidad", "Imágenes con alt text descriptivo", "Reseñas de producto con schema Review"],
-            },
-            {
-              layer: "Indexación",
-              items: ["Canonical correctos en variantes de producto", "No indexar páginas de carrito y cuenta", "Sitemap actualizado automáticamente", "Search Console sin errores de cobertura"],
-            },
-          ].map(({ layer, items }) => (
-            <div key={layer}>
-              <h3 className="text-lg font-semibold text-primary-700 mb-2">{layer}</h3>
-              <ul className="space-y-2">
-                {items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
-                    <span className="text-accent-500 font-bold shrink-0 mt-0.5">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <h2 className="text-2xl font-bold text-primary-600">Qué páginas conviene potenciar primero</h2>
+          <p>Las páginas de categoría suelen ser las que más volumen de búsqueda captan. Una categoría bien construida, con texto útil, buena estructura interna y enlazado correcto, puede traer tráfico cualificado de forma constante. Después vienen las fichas con búsquedas específicas de producto. La home y las páginas de información tienen un papel secundario en la captación orgánica en ecommerce.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">SEO y CRO no deberían separarse</h2>
+          <p>Atraer tráfico es solo la primera parte. Si la ficha de producto no convierte, si el proceso de compra tiene fricciones o si la velocidad penaliza la experiencia, el tráfico orgánico no se traduce en ventas. SEO y optimización de conversión deberían trabajarse juntos, no como proyectos separados. Una tienda que posiciona pero no convierte tiene el mismo problema que una que convierte pero no posiciona.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Qué revisar antes de subir Ads</h2>
+          <p>Antes de aumentar presupuesto en campañas, conviene revisar si el SEO base está resuelto, si las páginas de destino convierten bien y si la tienda no tiene problemas técnicos que afecten a la experiencia. Escalar Ads sobre una tienda con errores estructurales multiplica el gasto sin mejorar proporcionalmente los resultados.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/senales-web-necesita-rediseno/" className="text-accent-500 hover:underline">Señales de que tu web necesita un rediseño</Link> · <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">SEM / Google Ads para ecommerce</Link>

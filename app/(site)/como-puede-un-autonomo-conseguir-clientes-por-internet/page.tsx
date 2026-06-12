@@ -31,12 +31,12 @@ const articleSchema = {
 
 const FAQS = [
   {
-    q: "¿Necesita un autónomo una web para conseguir clientes online?",
-    a: "No es imprescindible para empezar, pero sí muy recomendable para crecer de forma sostenida. Una web permite posicionar en Google búsquedas de tu servicio en tu zona, transmitir profesionalidad y generar contactos mientras duermes. Sin web, dependes exclusivamente de redes sociales y del boca a boca.",
+    q: "¿Es mejor tener web o redes sociales?",
+    a: "En muchos casos, una web sencilla y una ficha de Google bien trabajada aportan una base más sólida que depender solo de redes sociales.",
   },
   {
-    q: "¿Cuánto debería invertir un autónomo en marketing digital?",
-    a: "No hay una cifra fija, pero un autónomo que empieza puede obtener buenos resultados con una inversión de entre 100 € y 300 € al mes entre herramientas, publicidad local y mantenimiento web. Lo más importante es priorizar bien: primero la ficha de Google, después la web, después la publicidad.",
+    q: "¿Qué debería priorizar un autónomo con poco presupuesto?",
+    a: "Claridad de servicio, presencia digital mínima útil, SEO local si aplica y facilidad de contacto. Primero la base, luego los canales adicionales.",
   },
   {
     q: "¿Las redes sociales ayudan a conseguir clientes siendo autónomo?",
@@ -92,34 +92,19 @@ export default function AutonomoClientesInternetPage() {
             No hace falta una presencia digital compleja ni una inversión grande. La mayoría de autónomos que consiguen clientes online lo hacen con tres elementos bien ejecutados: una ficha de Google optimizada, una web con la página de su servicio bien escrita y reseñas activas. Eso ya marca la diferencia frente a la mayoría de la competencia.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Si solo pudieras hacer 3 cosas este mes</h2>
-          <div className="space-y-4">
-            {[
-              {
-                num: "01",
-                title: "Optimizar tu ficha de Google Business Profile",
-                desc: "Si no tienes ficha, créala ahora. Si la tienes, asegúrate de que tiene: fotos reales (de ti, de tu trabajo, de antes y después), descripción clara de tus servicios, horario correcto, zona de servicio definida y categoría principal bien elegida. Esta sola acción puede generar llamadas directas sin web ni inversión publicitaria.",
-              },
-              {
-                num: "02",
-                title: "Tener una web con página de servicio clara",
-                desc: "No necesitas una web enorme. Necesitas una página que explique qué haces, para quién, en qué zona, qué incluye, y cuánto cuesta orientativamente. Con un formulario o número de teléfono visible. Una sola página bien escrita puede posicionar para búsquedas de tu servicio en tu zona.",
-              },
-              {
-                num: "03",
-                title: "Pedir reseñas activamente",
-                desc: "Después de cada trabajo, envía un mensaje de WhatsApp con el enlace directo a tu ficha de Google. La mayoría de clientes satisfechos dejan reseña si se lo pones fácil. Cinco reseñas positivas ya te diferencian de competidores que tienen cero.",
-              },
-            ].map(({ num, title, desc }) => (
-              <div key={num} className="flex gap-4 p-5 border border-gray-200 rounded-xl">
-                <span className="text-accent-500 font-bold text-3xl shrink-0 w-12">{num}</span>
-                <div>
-                  <h3 className="font-semibold text-primary-700 mb-2">{title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
-                </div>
-              </div>
+          <h2 className="text-2xl font-bold text-primary-600">Qué necesita de verdad un autónomo</h2>
+          <p>Un autónomo necesita ser encontrado cuando alguien busca lo que ofrece, generar confianza rápida y facilitar el contacto sin fricción. No necesita una presencia digital enorme ni estar en todos los canales. Necesita que los canales que usa estén bien ejecutados y orientados a generar oportunidades reales, no solo visibilidad.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Qué priorizar si el presupuesto es limitado</h2>
+          <p>La ficha de Google bien hecha, una página de servicio clara en la web y reseñas activas son la base que más retorno da con menos inversión. Están orientadas exactamente a cuando el potencial cliente tiene intención de buscar y contratar. Añadir más canales antes de tener esa base sólida suele diluir el esfuerzo sin mejorar los resultados.</p>
+          <ul className="space-y-2">
+            {["Ficha de Google con fotos reales, servicios y zona", "Página de servicio que explica qué haces, para quién y cómo contactar", "Reseñas pedidas activamente después de cada trabajo"].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
+                <span className="text-accent-500 font-bold shrink-0 mt-0.5">▸</span>
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Dependes demasiado de recomendaciones para conseguir trabajo?</p>
@@ -129,52 +114,11 @@ export default function AutonomoClientesInternetPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuándo priorizar cada canal</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="bg-primary-600 text-white">
-                  <th className="px-4 py-3 text-left font-semibold">Canal</th>
-                  <th className="px-4 py-3 text-left font-semibold">Cuándo priorizarlo</th>
-                  <th className="px-4 py-3 text-left font-semibold">Qué necesitas</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Ficha de Google (GMB)", "Siempre — es el primer paso", "15 minutos para crearla, fotos y descripción"],
-                  ["Web propia", "Cuando quieres escalar más allá del pack local", "Inversión de 800–2.000 € bien hecha"],
-                  ["Redes sociales", "Si tu servicio es visual o tu cliente está en redes", "Consistencia — mejor 2 redes bien que 5 mal"],
-                  ["Google Ads local", "Si necesitas clientes ya y tienes presupuesto", "Mínimo 200–300 €/mes + gestión"],
-                  ["Blog / contenido", "Para posicionar búsquedas informacionales y diferenciarte", "Tiempo o presupuesto para crear contenido de calidad"],
-                ].map(([canal, cuando, que]) => (
-                  <tr key={canal} className="border-b border-gray-200 even:bg-gray-50">
-                    <td className="px-4 py-3 font-medium text-gray-800">{canal}</td>
-                    <td className="px-4 py-3 text-gray-600 text-xs">{cuando}</td>
-                    <td className="px-4 py-3 text-gray-600 text-xs">{que}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <h2 className="text-2xl font-bold text-primary-600">Web, ficha de Google o redes: qué va primero</h2>
+          <p>En la mayoría de sectores de servicios, la ficha de Google va primero porque capta demanda activa con muy poco esfuerzo. La web va segundo porque refuerza la credibilidad y permite posicionar búsquedas orgánicas. Las redes sociales, en la mayoría de casos, tienen un papel más de mantenimiento de imagen que de captación directa. Si el tiempo es limitado, en esas prioridades conviene centrarse.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Checklist: base digital mínima para un autónomo</h2>
-          <ul className="space-y-2">
-            {[
-              "Ficha de Google Business Profile creada y verificada",
-              "Fotos reales de tu trabajo subidas a la ficha",
-              "Al menos 5 reseñas positivas en Google",
-              "Web con página de servicio principal (qué haces, para quién, zona, contacto)",
-              "Teléfono clickable en la web para móvil",
-              "Respuesta a todas las reseñas (positivas y negativas)",
-              "Email profesional con tu dominio (no gmail.com)",
-              "SSL activo en tu web (https://)",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
-                <span className="text-accent-500 font-bold shrink-0 mt-0.5">✓</span>
-                {item}
-              </li>
-            ))}
-          </ul>
+          <h2 className="text-2xl font-bold text-primary-600">Plan mínimo viable</h2>
+          <p>Ficha de Google creada y verificada, fotos reales del trabajo, descripción clara del servicio, cinco o más reseñas, una página web sencilla con la información clave, teléfono clickable en móvil y formulario de contacto. Con eso bien resuelto, un autónomo tiene una base que muchos competidores no tienen, y desde ahí ya se puede crecer con criterio.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local para empresas de servicios</Link> · <Link href="/cuanto-cuesta-pagina-web-profesional/" className="text-accent-500 hover:underline">Cuánto cuesta una página web profesional</Link>

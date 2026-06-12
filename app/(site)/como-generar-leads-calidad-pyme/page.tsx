@@ -32,11 +32,11 @@ const articleSchema = {
 const FAQS = [
   {
     q: "¿Qué es un lead de calidad?",
-    a: "Un lead de calidad es un contacto que cumple el perfil de cliente que tu empresa puede servir bien, tiene una necesidad real y tiene intención de compra. No todos los contactos son leads de calidad — muchos son curiosos, competidores o personas fuera de tu mercado objetivo.",
+    a: "Un contacto con encaje real en tu oferta, intención razonable y posibilidades de avanzar en el proceso comercial sin necesitar demasiado convencimiento previo.",
   },
   {
-    q: "¿Cómo mejorar la calidad de los leads sin aumentar el presupuesto?",
-    a: "Mejorando la segmentación de los mensajes (habla directamente al perfil exacto que quieres atraer), añadiendo fricción cualificadora en los formularios (pregunta por presupuesto, plazo, tipo de proyecto), y revisando la propuesta de valor para que filtre naturalmente a los no ideales.",
+    q: "¿Qué canal trae leads más cualificados?",
+    a: "Depende del negocio y la intención, pero SEO con keywords de problema real, Google Ads bien segmentado y contenido que educa y filtra pueden traer muy buenos leads si aterrizan en páginas que cualifican.",
   },
   {
     q: "¿Es mejor tener muchos leads baratos o pocos leads cualificados?",
@@ -92,32 +92,19 @@ export default function LeadsCalidadPage() {
             Generar más tráfico sobre un sistema que no filtra bien solo multiplica el problema. La solución no es siempre más volumen — es mejor mensaje, mejor segmentación y un proceso que filtre desde el primer contacto.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Más leads vs mejores leads: la diferencia que importa</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="bg-primary-600 text-white">
-                  <th className="px-4 py-3 text-left font-semibold"></th>
-                  <th className="px-4 py-3 text-left font-semibold">Más leads</th>
-                  <th className="px-4 py-3 text-left font-semibold">Mejores leads</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Enfoque", "Máximo volumen de contactos", "Atraer al perfil de cliente ideal"],
-                  ["Resultado", "Muchos contactos, pocos cierres", "Menos contactos, más cierres"],
-                  ["Coste", "Mayor inversión en captación", "Mayor inversión en mensaje y segmentación"],
-                  ["Cierre", "5–10% de tasa media", "20–40% de tasa media"],
-                  ["Tiempo comercial", "Alto, muchas gestiones inútiles", "Bajo, conversaciones más productivas"],
-                ].map(([row, ...cols]) => (
-                  <tr key={row} className="border-b border-gray-200 even:bg-gray-50">
-                    <td className="px-4 py-3 font-medium text-gray-800">{row}</td>
-                    {cols.map((c, i) => <td key={i} className="px-4 py-3 text-gray-600">{c}</td>)}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <h2 className="text-2xl font-bold text-primary-600">Por qué llegan contactos que no valen lo suficiente</h2>
+          <p>El problema suele estar en el mensaje, la segmentación o la página de aterrizaje, no en el canal. Si el mensaje es demasiado amplio, atrae a cualquiera. Si la landing no filtra, cualquiera puede rellenar el formulario. Si el canal tiene poca intención de compra, el perfil será más frío. El problema de lead no cualificado casi siempre viene de uno de estos tres puntos.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Las piezas de un sistema de captación de calidad</h2>
+          <p>Un mensaje que filtra, un canal con intención adecuada, una landing que cualifica y un seguimiento rápido y bien ejecutado son las cuatro piezas que, cuando funcionan juntas, cambian radicalmente la calidad de los contactos. Mejorar solo una no suele ser suficiente si otra falla gravemente.</p>
+          <ul className="space-y-2">
+            {["Propuesta de valor que habla al cliente correcto", "Canal con intención real de compra o consulta", "Página de aterrizaje que convierte y pre-cualifica", "Seguimiento rápido y con criterio"].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
+                <span className="text-accent-500 font-bold shrink-0 mt-0.5">▸</span>
+                {item}
+              </li>
+            ))}
+          </ul>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Estás generando contactos pero no encajan con lo que vendes?</p>
@@ -127,21 +114,11 @@ export default function LeadsCalidadPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los 4 pilares para generar leads de calidad</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              { num: "01", title: "Mensaje claro", desc: "Si tu propuesta de valor filtra bien desde el primer momento, los que contactan ya saben qué van a encontrar — y son los que encajan." },
-              { num: "02", title: "Canal adecuado", desc: "No todos los canales generan el mismo perfil de lead. El canal correcto depende de dónde está tu cliente ideal cuando tiene la intención de compra." },
-              { num: "03", title: "Landing que convierte y filtra", desc: "Una buena landing page no solo convierte — también cualifica. Las preguntas del formulario, el tono y los casos de uso filtran antes del primer contacto." },
-              { num: "04", title: "Seguimiento rápido", desc: "Un lead no respondido en menos de una hora pierde entre 4 y 7 veces más probabilidad de cerrar. La velocidad de respuesta es parte del proceso de captación." },
-            ].map(({ num, title, desc }) => (
-              <div key={num} className="border border-gray-200 rounded-xl p-5">
-                <span className="text-accent-500 font-bold text-2xl">{num}</span>
-                <h3 className="font-semibold text-primary-700 mt-1 mb-2">{title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
+          <h2 className="text-2xl font-bold text-primary-600">Qué papel juegan SEO, Ads y automatización</h2>
+          <p>El SEO trae demanda con intención real y suele generar leads más maduros porque el usuario ya buscaba algo concreto. Google Ads permite afinar el perfil con más rapidez pero exige buena página de aterrizaje. La automatización ayuda a no perder leads por tiempo de respuesta o falta de seguimiento. Lo que no se puede delegar a ninguno de los tres es la claridad del mensaje ni la calidad del proceso comercial posterior.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Qué métricas importan de verdad</h2>
+          <p>El volumen de leads, la tasa de cualificación, el coste por oportunidad útil y la tasa de cierre son los indicadores que permiten entender si el sistema funciona bien o mal. Si solo se mide el número de contactos, se optimiza para cantidad, no para calidad. Y si se mide solo el coste por lead, se puede estar ante una cifra engañosamente buena mientras los cierres son escasos.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/seo-o-google-ads-que-conviene-mas/" className="text-accent-500 hover:underline">SEO o Google Ads: qué conviene más</Link> · <Link href="/que-puede-automatizar-una-pyme-en-marketing-y-ventas/" className="text-accent-500 hover:underline">Qué puede automatizar una pyme en marketing y ventas</Link>

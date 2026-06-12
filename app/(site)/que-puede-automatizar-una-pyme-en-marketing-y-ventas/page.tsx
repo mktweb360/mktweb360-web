@@ -31,12 +31,12 @@ const articleSchema = {
 
 const FAQS = [
   {
-    q: "¿Qué herramientas de automatización son adecuadas para una pyme?",
-    a: "Para una pyme, las herramientas con mejor relación coste-beneficio son: HubSpot (CRM + automatización gratuita limitada), Mailchimp o Brevo para email automation, Make (antes Integromat) o Zapier para conectar aplicaciones, y Meta Business Suite para publicaciones programadas en redes sociales.",
+    q: "¿Qué conviene automatizar primero?",
+    a: "Normalmente la entrada y clasificación de leads, el seguimiento inicial y ciertas tareas repetitivas con alto volumen y bajo criterio necesario.",
   },
   {
-    q: "¿Cuánto cuesta implementar automatización de marketing en una pyme?",
-    a: "Hay opciones gratuitas que cubren necesidades básicas (HubSpot Free, Brevo, Zapier con límites). Para una automatización más completa, el coste suele estar entre 50 € y 300 € al mes en herramientas, más el tiempo de configuración inicial. El retorno suele verse en semanas si se implementa bien.",
+    q: "¿La automatización sustituye al equipo comercial?",
+    a: "No. Lo refuerza. Ayuda a no perder oportunidades y a reducir trabajo manual, pero el criterio humano sigue siendo clave en las decisiones importantes.",
   },
   {
     q: "¿La automatización reduce la calidad de la atención al cliente?",
@@ -92,36 +92,11 @@ export default function AutomatizarPymePage() {
             Automatizar no significa eliminar el trato humano — significa liberarlo para donde más importa. Las conversaciones de valor, las decisiones complejas y la relación con el cliente siguen necesitando personas. Lo que no las necesita son las tareas administrativas repetitivas.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Procesos de marketing y ventas que conviene automatizar</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="bg-primary-600 text-white">
-                  <th className="px-4 py-3 text-left font-semibold">Proceso</th>
-                  <th className="px-4 py-3 text-left font-semibold">¿Conviene automatizar?</th>
-                  <th className="px-4 py-3 text-left font-semibold">Impacto</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Notificación de nuevo lead al comercial", "Sí — alta prioridad", "Reduce tiempo de respuesta de horas a minutos"],
-                  ["Email de confirmación al lead", "Sí — alta prioridad", "Mejora percepción de profesionalidad y reduce ansiedad del cliente"],
-                  ["Programación de publicaciones en RRSS", "Sí — muy recomendable", "Ahorra 2–4h semanales y mantiene consistencia"],
-                  ["Seguimiento de leads sin respuesta", "Sí — si tienes CRM", "Recupera entre 15–30% de leads que no responden al primer contacto"],
-                  ["Envío de newsletter mensual", "Sí — con segmentación", "Mantiene relación con base de datos sin esfuerzo semanal"],
-                  ["Informe mensual de métricas", "Sí — con herramientas BI", "Ahorra tiempo de análisis y mejora la toma de decisiones"],
-                  ["Solicitud de reseñas post-servicio", "Sí — muy recomendable", "Multiplica el número de reseñas en Google sin esfuerzo"],
-                  ["Clasificación automática de leads", "Sí — si tienes volumen", "Prioriza el tiempo comercial en los leads con mayor potencial"],
-                ].map(([proc, conviene, impacto]) => (
-                  <tr key={proc} className="border-b border-gray-200 even:bg-gray-50">
-                    <td className="px-4 py-3 font-medium text-gray-800">{proc}</td>
-                    <td className="px-4 py-3 text-green-700 font-medium text-xs">{conviene}</td>
-                    <td className="px-4 py-3 text-gray-600 text-xs">{impacto}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <h2 className="text-2xl font-bold text-primary-600">Qué problemas resuelve de verdad</h2>
+          <p>La automatización resuelve principalmente tres problemas: la pérdida de oportunidades por tiempo de respuesta lento, la falta de seguimiento sistemático a leads que no responden al primer contacto, y el desgaste de tiempo en tareas repetitivas que no necesitan criterio humano. Son problemas reales con coste de negocio concreto, y la automatización tiene mucho sentido en ellos.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Qué no conviene automatizar todavía</h2>
+          <p>La primera conversación comercial real, la gestión de reclamaciones, las decisiones estratégicas y cualquier interacción donde el contexto y la empatía son determinantes no son buenos candidatos. Automatizar esas partes suele alejar al cliente o generar fricciones que costaban menos resolverse de forma humana directa.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Pierdes tiempo en tareas repetitivas que podrían automatizarse?</p>
@@ -131,42 +106,11 @@ export default function AutomatizarPymePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Flujo de ejemplo: del lead a la primera llamada</h2>
-          <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-            <div className="flex flex-col gap-3">
-              {[
-                { step: "1", label: "Lead entra por formulario web", icon: "📩" },
-                { step: "2", label: "CRM crea ficha automáticamente y clasifica por servicio", icon: "🗂️" },
-                { step: "3", label: "Comercial recibe alerta en móvil en menos de 1 minuto", icon: "📱" },
-                { step: "4", label: "Lead recibe email de confirmación con info de próximos pasos", icon: "✉️" },
-                { step: "5", label: "Si no hay respuesta en 48h, seguimiento automático", icon: "🔄" },
-              ].map(({ step, label, icon }) => (
-                <div key={step} className="flex items-center gap-4">
-                  <span className="w-8 h-8 bg-accent-500 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">{step}</span>
-                  <span className="text-2xl shrink-0">{icon}</span>
-                  <span className="text-gray-700 text-sm font-medium">{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <h2 className="text-2xl font-bold text-primary-600">Cómo empezar bien</h2>
+          <p>Lo más útil suele ser empezar por automatizaciones simples con impacto inmediato: notificación de lead al comercial, email de confirmación al contacto, solicitud de reseña tras el servicio. Estas tres acciones son fáciles de implementar con herramientas accesibles, tienen un efecto claro y no requieren transformar todo el proceso desde cero.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué NO conviene automatizar</h2>
-          <ul className="space-y-3">
-            {[
-              { proc: "La primera conversación comercial", razon: "El cliente quiere sentir que habla con una persona, no con un bot. La primera llamada o reunión define la relación." },
-              { proc: "La gestión de reclamaciones", razon: "Una reclamación mal gestionada de forma automática se convierte en reseña negativa. Requiere empatía y juicio humano." },
-              { proc: "La estrategia y el mensaje de marca", razon: "La automatización ejecuta — no decide. La dirección estratégica, el tono y la identidad no pueden delegarse a una herramienta." },
-              { proc: "Las decisiones de inversión en marketing", razon: "Los datos automatizados son inputs para la decisión humana, no sustitutos de ella. La interpretación y el contexto requieren personas." },
-            ].map(({ proc, razon }) => (
-              <li key={proc} className="flex items-start gap-3 p-4 border border-gray-200 rounded-xl">
-                <span className="text-red-500 font-bold shrink-0 mt-0.5">✗</span>
-                <div>
-                  <span className="font-semibold text-gray-800">{proc}: </span>
-                  <span className="text-gray-600 text-sm">{razon}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <h2 className="text-2xl font-bold text-primary-600">Qué debe buscar una pyme</h2>
+          <p>Una pyme no necesita la automatización más compleja, sino la más adecuada a su momento. Herramientas modulares, fáciles de ajustar y que no requieran mantenimiento intensivo son mejores opciones que sistemas potentes pero frágiles o difíciles de supervisar. El objetivo es liberar tiempo y reducir errores, no añadir complejidad operativa.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/ia-aplicada-a-marketing-valor-real-o-humo/" className="text-accent-500 hover:underline">IA aplicada a marketing: dónde aporta valor real</Link> · <Link href="/como-generar-leads-calidad-pyme/" className="text-accent-500 hover:underline">Cómo generar leads de calidad para una pyme</Link>

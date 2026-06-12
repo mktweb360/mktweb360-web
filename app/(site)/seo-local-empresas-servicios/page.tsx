@@ -31,12 +31,12 @@ const articleSchema = {
 
 const FAQS = [
   {
-    q: "¿Qué es el SEO local?",
-    a: "El SEO local es el conjunto de técnicas para mejorar la visibilidad de un negocio en las búsquedas de Google con intención geográfica — como 'fontanero en Toledo' o 'clínica dental Madrid centro'. Incluye optimización de Google Business Profile, menciones locales, reseñas y páginas web con contenido geolocalizado.",
+    q: "¿Necesito web si ya tengo ficha de Google?",
+    a: "Sí. La ficha ayuda a aparecer, pero la web refuerza confianza, relevancia y capacidad de conversión.",
   },
   {
-    q: "¿Cómo aparecer primero en Google Maps?",
-    a: "Para aparecer en el Pack de 3 de Google Maps debes tener tu ficha de Google Business Profile completamente optimizada, con fotos reales, horario correcto, categorías adecuadas y muchas reseñas positivas respondidas. La distancia del buscador y la relevancia de tu ficha son los factores principales.",
+    q: "¿Vale la pena crear páginas por ciudad?",
+    a: "Solo cuando existe intención real, servicio real en esa zona y capacidad de crear contenido útil. Las páginas locales vacías no aportan valor y pueden perjudicar.",
   },
   {
     q: "¿Cuánto tiempo tarda el SEO local?",
@@ -92,22 +92,16 @@ export default function SeoLocalPage() {
             Google Business Profile (antes Google My Business) es la palanca más importante del SEO local. Una ficha bien optimizada, con fotos reales, horario correcto, categorías adecuadas y reseñas activas puede generar contactos directos sin necesidad de web ni de publicidad de pago.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Checklist de SEO local: qué necesitas tener</h2>
-          <ul className="space-y-3">
-            {[
-              { item: "Ficha de Google Business Profile optimizada", desc: "Categorías correctas, descripción completa, fotos reales, horario actualizado y respuesta a todas las reseñas." },
-              { item: "Web con páginas de servicio locales", desc: "Una página específica por servicio y zona: 'Fontanero en Toledo', 'Fontanero en Talavera'. Contenido único en cada una." },
-              { item: "Reseñas activas y respondidas", desc: "Más reseñas positivas y respondidas = mayor visibilidad en el Pack Local. Pide reseñas activamente a clientes satisfechos." },
-              { item: "NAP consistente en todos los directorios", desc: "Name, Address, Phone idénticos en web, ficha de Google, páginas amarillas, redes sociales y cualquier directorio sectorial." },
-              { item: "Contenido con referencias geográficas", desc: "Menciona barrios, zonas, municipios que atiendes. Google asocia tu negocio a esas áreas geográficas." },
-              { item: "Velocidad y mobile-first", desc: "Las búsquedas locales se hacen mayoritariamente desde el móvil. Una web lenta o no adaptada pierde clics y posiciones." },
-            ].map(({ item, desc }) => (
-              <li key={item} className="flex items-start gap-3 p-4 border border-gray-200 rounded-xl">
+          <h2 className="text-2xl font-bold text-primary-600">Cómo busca un cliente local</h2>
+          <p>El proceso suele ser bastante directo: detecta una necesidad, busca por servicio y ubicación, compara varias opciones y contacta con una o dos. Esto hace que el SEO local no se gane solo por "estar", sino por aparecer bien y convencer rápido. Por eso importan tanto la ficha, la web, las reseñas y la claridad del servicio.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Los pilares que sí importan</h2>
+          <p>Google Business Profile, la coherencia del NAP, la web orientada a servicio, las páginas bien planteadas por servicio y la reputación visible son las piezas que más suelen marcar la diferencia. También importa mucho que la web deje claro qué haces, a quién ayudas, en qué zona trabajas y cómo se puede contactar sin fricción.</p>
+          <ul className="space-y-2">
+            {["Ficha de Google bien gestionada y actualizada", "Web clara con páginas de servicio útiles y bien enfocadas", "Reseñas y señales de confianza", "Experiencia móvil y medición de llamadas o formularios"].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
                 <span className="text-accent-500 font-bold shrink-0 mt-0.5">✓</span>
-                <div>
-                  <span className="font-semibold text-gray-800">{item}: </span>
-                  <span className="text-gray-600 text-sm">{desc}</span>
-                </div>
+                {item}
               </li>
             ))}
           </ul>
@@ -120,24 +114,11 @@ export default function SeoLocalPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Errores frecuentes que frenan tu visibilidad local</h2>
-          <ul className="space-y-3">
-            {[
-              { error: "No tener ficha de Google Business Profile", consecuencia: "Invisible en Google Maps y en el Pack Local para cualquier búsqueda con intención geográfica." },
-              { error: "Ficha sin fotos ni actualizaciones", consecuencia: "Google penaliza las fichas abandonadas. Además los usuarios no confían en negocios sin imagen real." },
-              { error: "Web sin menciones locales", consecuencia: "Google no asocia tu web a ninguna zona, lo que limita tu posicionamiento en búsquedas locales." },
-              { error: "No pedir reseñas sistemáticamente", consecuencia: "Tu competencia acumula valoraciones mientras tú dependes de que algún cliente lo haga espontáneamente." },
-              { error: "Ignorar las búsquedas de voz", consecuencia: "Búsquedas como '¿dónde hay un electricista cerca?' tienen intención de compra inmediata y se responden desde Google Business Profile." },
-            ].map(({ error, consecuencia }) => (
-              <li key={error} className="flex items-start gap-3 p-4 bg-red-50 border border-red-100 rounded-xl">
-                <span className="text-red-500 font-bold shrink-0 mt-0.5">✗</span>
-                <div>
-                  <span className="font-semibold text-gray-800">{error}: </span>
-                  <span className="text-gray-600 text-sm">{consecuencia}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <h2 className="text-2xl font-bold text-primary-600">Errores frecuentes</h2>
+          <p>Depender solo de la ficha, tener una web genérica, crear páginas locales vacías, no cuidar la reputación o no medir son fallos muy habituales que reducen bastante el rendimiento local. También es un error intentar forzar decenas de páginas por ciudades sin una lógica real de servicio o sin contenido útil.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Qué debe tener una web local para convertir</h2>
+          <p>Una buena web local debe presentar con claridad el servicio, la zona de trabajo, las señales de credibilidad y la forma de contacto. La versión móvil tiene que estar muy bien resuelta porque gran parte de la demanda local llega desde el teléfono. El objetivo no es solo atraer clics, sino generar oportunidades útiles en el mercado local.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/seo-o-google-ads-que-conviene-mas/" className="text-accent-500 hover:underline">SEO o Google Ads: qué conviene más</Link> · <Link href="/como-puede-un-autonomo-conseguir-clientes-por-internet/" className="text-accent-500 hover:underline">Cómo puede un autónomo conseguir clientes por internet</Link>

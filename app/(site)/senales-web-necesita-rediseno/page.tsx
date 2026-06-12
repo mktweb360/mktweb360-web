@@ -31,12 +31,12 @@ const articleSchema = {
 
 const FAQS = [
   {
-    q: "¿Cuándo conviene rediseñar la web en lugar de optimizarla?",
-    a: "Cuando los problemas son estructurales — tecnología obsoleta, diseño no adaptable a móvil, arquitectura de contenidos errónea o mensajes de marca que ya no representan a tu empresa — la optimización no es suficiente. Si el coste de optimizar supera el 60% del coste de rehacerla, suele convenir rediseñar.",
+    q: "¿Cómo saber si necesito un rediseño completo?",
+    a: "Cuando varias señales estructurales se acumulan: mala conversión, mala UX, lentitud, mala escalabilidad y mensaje débil que ya no representa bien al negocio.",
   },
   {
-    q: "¿Con qué frecuencia debe rediseñarse una web?",
-    a: "No hay un ciclo fijo, pero una web con más de 4-5 años suele necesitar revisión profunda: el diseño ha envejecido, la tecnología puede quedarse obsoleta y las prácticas de SEO y UX han evolucionado. Lo importante es evaluar si la web está cumpliendo su función de negocio.",
+    q: "¿Una web antigua puede afectar al SEO?",
+    a: "Sí. Puede perjudicar rendimiento, estructura, experiencia móvil y capacidad de crear páginas útiles para captar intención de búsqueda real.",
   },
   {
     q: "¿Perderé posicionamiento SEO si rediseño mi web?",
@@ -92,27 +92,11 @@ export default function SenalesRedisenoPage() {
             Optimizar una web con problemas estructurales es como pintar un coche con el motor averiado. Hay momentos en que la solución más rentable no es parchear sino reconstruir sobre una base sólida.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">8 señales de que tu web necesita un rediseño</h2>
-          <ul className="space-y-3">
-            {[
-              { signal: "Carga lenta en móvil", desc: "Más de 3 segundos para cargar en móvil. Google lo penaliza en posicionamiento y los usuarios la abandonan antes de ver nada." },
-              { signal: "Tasa de rebote superior al 80%", desc: "Los usuarios llegan y se van sin interactuar. El contenido, el diseño o la velocidad no retienen al visitante." },
-              { signal: "No convierte visitas en contactos", desc: "Tráfico constante pero apenas formularios o llamadas. El problema suele estar en los CTAs, el mensaje o la confianza transmitida." },
-              { signal: "Diseño anterior a 2020", desc: "Los estándares de UX, tipografía y diseño han cambiado mucho. Una web con aspecto de 2018 transmite que tu empresa también se ha quedado atrás." },
-              { signal: "No es mobile-first", desc: "Si la web no está diseñada pensando primero en el móvil, Google la penaliza y los usuarios con smartphone tienen una experiencia degradada." },
-              { signal: "Sin CTAs claros en cada página", desc: "El usuario no sabe qué hacer después de leer. Si no hay una acción obvia y visible, no la toma." },
-              { signal: "Mensaje confuso o genérico", desc: "La web no explica claramente qué haces, para quién y por qué contigo. Si el valor no es obvio en 5 segundos, el visitante se va." },
-              { signal: "Tecnología obsoleta", desc: "Flash, jQuery desactualizado, PHP 5, WordPress sin actualizar años. La deuda técnica genera vulnerabilidades y ralentiza la web." },
-            ].map(({ signal, desc }) => (
-              <li key={signal} className="flex items-start gap-3 p-4 border border-red-100 bg-red-50 rounded-xl">
-                <span className="text-red-500 font-bold shrink-0 mt-0.5">!</span>
-                <div>
-                  <span className="font-semibold text-gray-800">{signal}: </span>
-                  <span className="text-gray-600 text-sm">{desc}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <h2 className="text-2xl font-bold text-primary-600">Por qué muchas webs siguen activas más tiempo del que deberían</h2>
+          <p>Una web puede seguir técnicamente operativa durante años mientras acumula problemas silenciosos: mensajes que ya no representan bien al negocio, estructura que no responde a cómo busca el cliente actual, rendimiento que penaliza la experiencia y base SEO que nunca se resolvió bien. El problema es que esos problemas raramente son obvios de golpe; se acumulan despacio hasta que la web se convierte en un freno.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Señales que indican que algo no funciona</h2>
+          <p>Hay señales técnicas, comerciales y estratégicas. Las técnicas incluyen lentitud, mala experiencia móvil y problemas de indexación. Las comerciales incluyen tráfico que no convierte, formularios que no generan oportunidades útiles y mensajes que no conectan. Las estratégicas incluyen una arquitectura que ya no refleja el negocio actual, servicios que han cambiado y una imagen que ya no transmite el nivel real de la empresa.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Tu web tiene visitas pero no genera contactos?</p>
@@ -122,35 +106,11 @@ export default function SenalesRedisenoPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Rediseñar u optimizar? Cuándo conviene cada opción</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="bg-primary-600 text-white">
-                  <th className="px-4 py-3 text-left font-semibold">Situación</th>
-                  <th className="px-4 py-3 text-left font-semibold">Rediseñar</th>
-                  <th className="px-4 py-3 text-left font-semibold">Optimizar</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Tecnología obsoleta (Flash, PHP 5)", "✓", "✗"],
-                  ["Diseño pre-2020 sin responsive", "✓", "✗"],
-                  ["Mensaje de marca que ha cambiado", "✓", "Parcial"],
-                  ["Velocidad lenta con buen código base", "✗", "✓"],
-                  ["CTAs poco visibles", "✗", "✓"],
-                  ["Arquitectura de URLs incorrecta", "✓ con cuidado", "Depende"],
-                  ["Conversión baja sin otros problemas técnicos", "✗", "✓"],
-                ].map(([sit, red, opt]) => (
-                  <tr key={sit} className="border-b border-gray-200 even:bg-gray-50">
-                    <td className="px-4 py-3 text-gray-700">{sit}</td>
-                    <td className="px-4 py-3 font-medium text-center">{red}</td>
-                    <td className="px-4 py-3 font-medium text-center">{opt}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <h2 className="text-2xl font-bold text-primary-600">Cuándo tiene sentido rediseñar y cuándo no</h2>
+          <p>No siempre la respuesta correcta es rehacer desde cero. A veces basta con mejorar la arquitectura, actualizar mensajes, resolver problemas técnicos o añadir páginas bien pensadas. El rediseño completo tiene sentido cuando la base es tan limitante que no permite crecer sin arrastrar esas limitaciones.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Qué debe resolver un buen rediseño</h2>
+          <p>Un rediseño bien planteado no solo cambia el aspecto visual. Debe resolver el mensaje, la arquitectura, la experiencia móvil, la base SEO, los CTAs, la medición y la escalabilidad. Si solo se cambia el diseño sin tocar la estrategia, el resultado suele ser una web más bonita con los mismos problemas de fondo.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/cuanto-cuesta-pagina-web-profesional/" className="text-accent-500 hover:underline">Cuánto cuesta una página web profesional</Link> · <Link href="/como-generar-leads-calidad-pyme/" className="text-accent-500 hover:underline">Cómo generar leads de calidad para una pyme</Link>

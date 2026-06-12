@@ -31,12 +31,12 @@ const articleSchema = {
 
 const FAQS = [
   {
-    q: "¿Cuánto cuesta una web profesional?",
-    a: "Una web profesional orientada a captar clientes cuesta habitualmente entre 1.500 € y 5.000 €, dependiendo de la complejidad, número de páginas, necesidades de integración y nivel de personalización. Las opciones por debajo de 500 € suelen ser plantillas con muy poca optimización y sin enfoque de conversión.",
+    q: "¿Incluye SEO una web profesional?",
+    a: "Como mínimo debería salir con una base SEO correcta: estructura lógica, jerarquía, URLs limpias, metadatos y versión móvil cuidada.",
   },
   {
-    q: "¿Qué diferencia una web barata de una profesional?",
-    a: "Una web barata suele ser una plantilla sin personalización real, sin SEO técnico, sin optimización de velocidad y sin enfoque en la conversión. Una web profesional está diseñada pensando en el usuario, en Google y en el negocio: genera confianza, posiciona y convierte visitas en contactos.",
+    q: "¿Siempre hace falta rehacer una web desde cero?",
+    a: "No. A veces basta con optimizar. La decisión depende de la base técnica, la arquitectura actual y la capacidad de la web para crecer sin arrastrar limitaciones.",
   },
   {
     q: "¿Puedo hacer mi propia web con WordPress?",
@@ -92,38 +92,16 @@ export default function CuantoCuestaWebPage() {
             La opción más barata suele ser la más cara a largo plazo: si la web no posiciona en Google, no convierte visitas y no genera confianza, el coste real son los clientes que pierdes cada mes frente a tu competencia.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Comparativa: qué incluye cada tipo de web</h2>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="bg-primary-600 text-white">
-                  <th className="px-4 py-3 text-left font-semibold"></th>
-                  <th className="px-4 py-3 text-left font-semibold">Web básica</th>
-                  <th className="px-4 py-3 text-left font-semibold">Web profesional</th>
-                  <th className="px-4 py-3 text-left font-semibold">Web orientada a captación</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Precio orientativo", "300–800 €", "1.500–3.500 €", "3.500–8.000 €"],
-                  ["Diseño", "Plantilla genérica", "Personalizado", "Personalizado + UX orientado a conversión"],
-                  ["SEO técnico", "Básico o ninguno", "Correcto", "Optimizado y auditado"],
-                  ["Velocidad", "Variable", "Optimizada", "Muy optimizada (Core Web Vitals)"],
-                  ["CRO", "No", "Básico", "Sí, CTAs y flujos probados"],
-                  ["Actualizaciones", "No incluidas", "Plan de mantenimiento", "Plan de mantenimiento + mejoras continuas"],
-                  ["Resultado esperado", "Presencia online", "Visibilidad y contactos", "Captación activa de clientes"],
-                ].map(([row, ...cols]) => (
-                  <tr key={row} className="border-b border-gray-200 even:bg-gray-50">
-                    <td className="px-4 py-3 font-medium text-gray-800">{row}</td>
-                    {cols.map((c, i) => (
-                      <td key={i} className="px-4 py-3 text-gray-600">{c}</td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <h2 className="text-2xl font-bold text-primary-600">Por qué no todas las webs cuestan lo mismo</h2>
+          <p>El precio cambia según el tipo de proyecto, el nivel de personalización, la calidad del diseño, la estrategia previa, el trabajo de copy, la base SEO, las integraciones y la medición. No es lo mismo una web corporativa simple que una web de servicios bien estructurada, una landing de captación o una tienda online con lógica comercial.</p>
+          <ul className="space-y-2">
+            {["Tipo de negocio y complejidad del proyecto", "Número y función real de las páginas", "Necesidad de copywriting, SEO y arquitectura", "Integraciones, formularios, automatizaciones o comercio electrónico"].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
+                <span className="text-accent-500 font-bold shrink-0 mt-0.5">▸</span>
+                {item}
+              </li>
+            ))}
+          </ul>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿No sabes si necesitas una web nueva o mejorar la actual?</p>
@@ -133,41 +111,23 @@ export default function CuantoCuestaWebPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué debe incluir una web profesional</h2>
-          <p>Estos son los 8 elementos que no pueden faltar si quieres que tu web trabaje para tu negocio:</p>
-          <ul className="space-y-3">
-            {[
-              { item: "Diseño responsive", desc: "Adaptado perfectamente a móvil, tablet y escritorio. Más del 60% del tráfico viene del móvil." },
-              { item: "Velocidad optimizada", desc: "Carga en menos de 3 segundos. La velocidad afecta directamente al posicionamiento y a la tasa de conversión." },
-              { item: "SEO técnico base", desc: "Estructura de URLs correcta, metadatos optimizados, datos estructurados y sitemap. Sin esto no posicionas." },
-              { item: "Textos orientados a conversión", desc: "No basta con describir lo que haces: el texto debe comunicar beneficios y guiar al usuario hacia el contacto." },
-              { item: "Formularios funcionando", desc: "Formularios de contacto probados, con confirmación y sin spam. El número de teléfono visible en móvil." },
-              { item: "Analytics configurado", desc: "Google Analytics 4 y Search Console activos para medir tráfico, comportamiento y conversiones desde el primer día." },
-              { item: "SSL y seguridad", desc: "Certificado HTTPS, protección contra malware y copias de seguridad periódicas." },
-              { item: "Plan de mantenimiento", desc: "Actualizaciones regulares, monitoreo de errores y soporte técnico para que la web no se degrade con el tiempo." },
-            ].map(({ item, desc }) => (
-              <li key={item} className="flex items-start gap-3 p-4 border border-gray-200 rounded-xl">
+          <h2 className="text-2xl font-bold text-primary-600">Qué debe incluir una web profesional orientada a negocio</h2>
+          <p>Una web profesional debería dejar claro en pocos segundos qué hace la empresa, para quién trabaja y qué paso quiere que dé el usuario. También debería ordenar bien la información, reforzar la credibilidad y preparar el terreno para SEO, campañas y medición. Cuando falta esa capa estratégica, aparecen webs bonitas pero confusas, con poca capacidad de conversión y demasiado dependientes de explicaciones posteriores.</p>
+          <ul className="space-y-2">
+            {["Mensaje principal claro y diferenciador", "Estructura y jerarquía orientadas a intención de búsqueda y conversión", "Diseño profesional y experiencia móvil correcta", "CTAs bien planteados y pruebas de confianza", "Base SEO y sistema de medición"].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
                 <span className="text-accent-500 font-bold shrink-0 mt-0.5">✓</span>
-                <div>
-                  <span className="font-semibold text-gray-800">{item}: </span>
-                  <span className="text-gray-600 text-sm">{desc}</span>
-                </div>
+                {item}
               </li>
             ))}
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">5 preguntas que hacer antes de aceptar un presupuesto web</h2>
-          <ol className="space-y-3 list-decimal pl-5">
-            {[
-              "¿El diseño incluye optimización SEO técnica o solo el aspecto visual?",
-              "¿Cómo garantizáis la velocidad de carga en móvil?",
-              "¿Los textos los escribís vosotros o aporto yo el contenido?",
-              "¿Qué incluye el mantenimiento y cuánto cuesta mensualmente?",
-              "¿Puedo ver ejemplos de webs que hayáis hecho que estén posicionando en Google?",
-            ].map((q) => (
-              <li key={q} className="text-gray-700 pl-2">{q}</li>
-            ))}
-          </ol>
+          <h2 className="text-2xl font-bold text-primary-600">Cuándo una web barata sale cara</h2>
+          <p>Una web barata puede servir en algunos contextos, pero muchas veces el ahorro inicial desaparece rápido cuando la página no convierte, no posiciona bien, no transmite confianza o requiere rehacerse en poco tiempo. En términos de negocio, una web que no apoya la captación ni acompaña la estrategia comercial suele salir más cara que una inversión bien hecha desde el principio.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Qué conviene preguntar antes de contratar</h2>
+          <p>Antes de aceptar un presupuesto, conviene saber qué incluye exactamente: estrategia, arquitectura, diseño, copy, SEO base, analítica, integraciones, revisiones y soporte. También conviene aclarar si la web está pensada solo para verse o también para captar, y si será mantenible y escalable cuando el negocio evolucione.</p>
+
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/senales-web-necesita-rediseno/" className="text-accent-500 hover:underline">Señales de que tu web necesita un rediseño urgente</Link> · <Link href="/seo-o-google-ads-que-conviene-mas/" className="text-accent-500 hover:underline">SEO o Google Ads: qué conviene más</Link>
           </p>

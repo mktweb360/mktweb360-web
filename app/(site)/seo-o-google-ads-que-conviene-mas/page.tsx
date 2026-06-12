@@ -31,12 +31,12 @@ const articleSchema = {
 
 const FAQS = [
   {
-    q: "¿Es mejor SEO o Google Ads?",
-    a: "Depende de tu situación. Google Ads da resultados inmediatos pero requiere inversión continua. El SEO tarda más en dar resultados pero genera tráfico constante sin coste por clic. Para la mayoría de negocios, la combinación estratégica de ambos en función del momento es la opción más rentable.",
+    q: "¿Qué da resultados más rápidos, SEO o Google Ads?",
+    a: "Google Ads suele generar visibilidad antes. El SEO necesita más tiempo pero puede construir una base más estable y duradera.",
   },
   {
-    q: "¿Cuánto cuesta Google Ads para una pyme?",
-    a: "Un presupuesto mínimo razonable para Google Ads en una pyme suele estar entre 300 € y 800 € mensuales en inversión publicitaria, más la gestión de la campaña. Con presupuestos muy pequeños, el alcance es limitado y es difícil obtener suficientes datos para optimizar.",
+    q: "¿Tiene sentido hacer SEO y Ads a la vez?",
+    a: "Sí, en muchos casos es la mejor combinación: Ads activa la captación mientras el SEO consolida un activo propio a medio plazo.",
   },
   {
     q: "¿Cuánto tarda el SEO en dar resultados?",
@@ -92,33 +92,27 @@ export default function SeoOGoogleAdsPage() {
             La decisión correcta depende de tres factores: urgencia de resultados, presupuesto disponible y estado actual de tu web. Un negocio que acaba de lanzar y necesita clientes ya no puede esperar meses al SEO. Uno con presencia consolidada y poco presupuesto de publicidad debería priorizar el orgánico.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Matriz de decisión: cuándo conviene cada opción</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="bg-primary-600 text-white">
-                  <th className="px-4 py-3 text-left font-semibold">Situación</th>
-                  <th className="px-4 py-3 text-left font-semibold">Recomendación</th>
-                  <th className="px-4 py-3 text-left font-semibold">Por qué</th>
-                  <th className="px-4 py-3 text-left font-semibold">Plazo</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Necesitas resultados ya", "Google Ads", "Visibilidad inmediata mientras el SEO madura", "Días"],
-                  ["Presupuesto muy limitado", "SEO", "Inversión puntual con retorno creciente sin coste por clic", "6–12 meses"],
-                  ["Negocio establecido con web", "SEO + Ads combinados", "Ads cubre corto plazo, SEO construye base sólida", "3–6 meses"],
-                  ["Ecommerce con competencia fuerte", "Ads para productos + SEO para categorías", "Ads convierte directamente, SEO da tráfico cualificado", "Continuo"],
-                  ["Servicio local con zona concreta", "SEO local + Google Business", "Búsquedas locales tienen muy alta conversión sin pagar por clic", "2–4 meses"],
-                ].map(([sit, ...rest]) => (
-                  <tr key={sit} className="border-b border-gray-200 even:bg-gray-50">
-                    <td className="px-4 py-3 font-medium text-gray-800">{sit}</td>
-                    {rest.map((c, i) => <td key={i} className="px-4 py-3 text-gray-600">{c}</td>)}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <h2 className="text-2xl font-bold text-primary-600">Qué aporta el SEO</h2>
+          <p>El SEO ayuda a captar búsquedas con intención real, mejorar la arquitectura y convertir la web en un activo más estable. Suele tener mucho sentido cuando el negocio puede trabajar a medio plazo, quiere reducir dependencia de publicidad y dispone de servicios bien definidos. Su principal limitación es que exige constancia y no suele ser la vía más rápida para generar resultados inmediatos.</p>
+          <ul className="space-y-2">
+            {["Capta demanda orgánica sostenida", "Mejora estructura, contenidos y autoridad temática", "Tiene potencial alto en servicios, SEO local y ecommerce"].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
+                <span className="text-accent-500 font-bold shrink-0 mt-0.5">▸</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="text-2xl font-bold text-primary-600">Qué aporta Google Ads</h2>
+          <p>Google Ads permite aparecer desde el inicio para búsquedas concretas y acelerar la captación si la oferta está clara, la landing convierte y la medición es fiable. Funciona especialmente bien cuando el negocio necesita validar demanda, generar tracción a corto plazo o empujar servicios concretos con intención clara. Su límite es que, si la base falla, el presupuesto se degrada rápido.</p>
+          <ul className="space-y-2">
+            {["Visibilidad inmediata", "Control sobre mensajes y segmentación", "Útil para testar oferta y captar a corto plazo"].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
+                <span className="text-accent-500 font-bold shrink-0 mt-0.5">▸</span>
+                {item}
+              </li>
+            ))}
+          </ul>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿No tienes claro si te conviene más SEO, Ads o una combinación?</p>
@@ -128,25 +122,11 @@ export default function SeoOGoogleAdsPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">6 preguntas para decidir antes de invertir</h2>
-          <ul className="space-y-3">
-            {[
-              { q: "¿Cuánta urgencia tienes?", desc: "Si necesitas clientes este mes, Ads. Si puedes esperar 6 meses a cambio de resultados sostenibles, SEO." },
-              { q: "¿Cuál es tu presupuesto mensual?", desc: "Con menos de 300 €/mes en publicidad, el alcance de Ads es muy limitado. El SEO puede ser más rentable." },
-              { q: "¿Tu web convierte bien?", desc: "Si la web no convierte, ni el SEO ni los Ads harán magia. Primero la base, después el tráfico." },
-              { q: "¿Tienes competencia fuerte en Ads?", desc: "En sectores con CPCs muy altos, el SEO puede ser la única vía rentable a largo plazo." },
-              { q: "¿Tu ticket es alto o bajo?", desc: "Tickets altos justifican CPCs elevados. Tickets bajos necesitan canales con menor coste por conversión." },
-              { q: "¿Tienes contenido trabajado?", desc: "El SEO necesita contenido de calidad. Si partes de cero, el esfuerzo inicial es mayor pero el activo dura años." },
-            ].map(({ q, desc }) => (
-              <li key={q} className="flex items-start gap-3 p-4 border border-gray-200 rounded-xl">
-                <span className="text-accent-500 font-bold shrink-0 mt-0.5">?</span>
-                <div>
-                  <span className="font-semibold text-gray-800">{q} </span>
-                  <span className="text-gray-600 text-sm">{desc}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <h2 className="text-2xl font-bold text-primary-600">Cuándo conviene uno, el otro o ambos</h2>
+          <p>El SEO suele encajar mejor cuando el negocio quiere construir base, puede trabajar con horizonte de meses y dispone de intención de búsqueda relevante. Google Ads suele encajar mejor cuando hay urgencia, oferta clara y capacidad de medir y responder rápido. En muchos casos, la mejor respuesta es combinarlos: Ads para activar y aprender antes; SEO para consolidar un activo propio y mejorar rentabilidad futura.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Cómo decidir con criterio</h2>
+          <p>Antes de invertir, conviene revisar la web, la propuesta de valor, la calidad del seguimiento comercial, el margen y el coste por oportunidad útil. No sirve de mucho activar campañas si la landing no convence, ni exigir resultados inmediatos al SEO si el negocio no puede sostener el plazo de maduración. La decisión buena no sale de modas ni de opiniones generales; sale de negocio, contexto y preparación real.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/que-revisar-antes-de-invertir-mas-en-marketing-digital/" className="text-accent-500 hover:underline">Qué revisar antes de invertir más en marketing digital</Link> · <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local para empresas de servicios</Link>

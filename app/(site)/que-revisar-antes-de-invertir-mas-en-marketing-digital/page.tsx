@@ -31,12 +31,12 @@ const articleSchema = {
 
 const FAQS = [
   {
-    q: "¿Por qué no me funcionan las acciones de marketing digital?",
-    a: "La causa más frecuente es invertir en captación antes de tener la base resuelta: web que no convierte, propuesta de valor poco clara, analítica mal configurada o proceso comercial deficiente. El marketing amplifica lo que ya tienes — si la base falla, amplifica los problemas.",
+    q: "¿Qué es una auditoría digital?",
+    a: "Un análisis estructurado de la presencia digital de una empresa: web, SEO, campañas, medición y embudo comercial, para identificar qué está fallando antes de invertir más.",
   },
   {
-    q: "¿Cuánto debo invertir en marketing digital?",
-    a: "No hay una cifra universal. Lo relevante es la rentabilidad de la inversión. Antes de aumentar el presupuesto, asegúrate de medir bien las conversiones para saber qué te cuesta captar un cliente y si ese coste tiene sentido con tu margen.",
+    q: "¿Cuándo tiene sentido escalar el presupuesto de marketing?",
+    a: "Cuando la base está bien resuelta: web que convierte, mensaje claro, medición fiable y proceso comercial que puede absorber más demanda.",
   },
   {
     q: "¿Qué métricas debo revisar antes de invertir más?",
@@ -102,18 +102,16 @@ export default function QueRevisarPage() {
             El marketing digital funciona como un amplificador. Si lo que tienes es bueno, lo amplifica. Si tiene fallos, los amplifica también. Revisar estas 7 áreas antes de escalar es lo que separa las empresas que crecen de las que gastan sin resultados.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">7 áreas que debes revisar antes de invertir más</h2>
-          <div className="space-y-4">
-            {AREAS.map((area) => (
-              <div key={area.num} className="flex gap-4 p-4 border border-gray-200 rounded-xl">
-                <span className="text-accent-500 font-bold text-2xl shrink-0 w-10">{area.num}</span>
-                <div>
-                  <h3 className="font-semibold text-primary-700 mb-1">{area.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{area.desc}</p>
-                </div>
-              </div>
+          <h2 className="text-2xl font-bold text-primary-600">Las áreas que conviene auditar primero</h2>
+          <p>La propuesta de valor y el mensaje, la web y su capacidad de conversión, el SEO, las campañas activas o previstas, la medición, el embudo comercial y la alineación entre marketing y negocio son las capas que más suelen explicar el bajo rendimiento. Si una o varias de estas piezas fallan, aumentar inversión rara vez corrige el problema principal.</p>
+          <ul className="space-y-2">
+            {["Propuesta de valor y claridad del mensaje", "Web, estructura de páginas y confianza", "SEO, indexación y páginas con intención", "Campañas, segmentación y calidad del tráfico", "Analítica, medición y seguimiento comercial"].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
+                <span className="text-accent-500 font-bold shrink-0 mt-0.5">▸</span>
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Estás invirtiendo en marketing sin ver resultados?</p>
@@ -123,21 +121,14 @@ export default function QueRevisarPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Señales de que estás invirtiendo mal en marketing</h2>
-          <ul className="space-y-3">
-            {[
-              "Generas muchos leads pero pocos cierran o son muy poco cualificados",
-              "El tráfico web sube pero los contactos no aumentan proporcionalmente",
-              "No sabes cuánto te cuesta captar un cliente ni de dónde vienen los mejores",
-              "Cada canal parece funcionar un poco pero ninguno lo suficiente",
-              "Cambias de agencia o de estrategia frecuentemente sin ver mejoras claras",
-            ].map((signal) => (
-              <li key={signal} className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
-                <span className="text-amber-500 font-bold shrink-0 mt-0.5">!</span>
-                <span className="text-gray-700 text-sm">{signal}</span>
-              </li>
-            ))}
-          </ul>
+          <h2 className="text-2xl font-bold text-primary-600">Señales de que se está invirtiendo sin base suficiente</h2>
+          <p>Hay varios síntomas recurrentes: tráfico que no convierte, campañas con métricas de actividad pero poco negocio, falta de claridad sobre qué canal funciona mejor, leads que no se atienden bien y decisiones tomadas con prisa o intuición. Cuando ocurre esto, la prioridad no es meter más presupuesto, sino entender qué está rompiendo el sistema.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Qué errores se repiten</h2>
+          <p>Pensar que el problema es solo de tráfico, no revisar la web antes de escalar campañas, querer hacerlo todo a la vez y medir solo clics o leads sin conectarlos con valor real son errores muy frecuentes. También es habitual invertir en canales sin haber definido bien la propuesta de valor ni el proceso comercial posterior.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Qué revisar antes de escalar</h2>
+          <p>Antes de subir presupuesto, conviene revisar si la web convierte, si el mensaje es claro para el cliente correcto, si el SEO base está resuelto, si las campañas tienen datos suficientes para optimizar y si el equipo comercial puede absorber más demanda con criterio. Escalar sobre una base débil amplifica los problemas, no los resuelve.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/seo-o-google-ads-que-conviene-mas/" className="text-accent-500 hover:underline">SEO o Google Ads: qué conviene más</Link> · <Link href="/como-generar-leads-calidad-pyme/" className="text-accent-500 hover:underline">Cómo generar leads de calidad para una pyme</Link>
