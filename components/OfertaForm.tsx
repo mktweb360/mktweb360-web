@@ -27,6 +27,15 @@ export function OfertaForm() {
         }),
       });
       setStatus(res.ok ? "ok" : "error");
+      if (res.ok) {
+        if (typeof window !== "undefined" && (window as any).dataLayer) {
+          (window as any).dataLayer.push({
+            event: "form_submit_success",
+            form_type: "oferta",
+            form_location: window.location.pathname,
+          });
+        }
+      }
     } catch {
       setStatus("error");
     }

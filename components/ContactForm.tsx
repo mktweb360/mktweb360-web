@@ -15,7 +15,16 @@ export function ContactForm() {
       body: JSON.stringify(data),
     });
     setStatus(res.ok ? "ok" : "error");
-    if (res.ok) form.reset();
+    if (res.ok) {
+      form.reset();
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({
+          event: "form_submit_success",
+          form_type: "contacto",
+          form_location: window.location.pathname,
+        });
+      }
+    }
   }
 
   const INPUT = "w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent";
