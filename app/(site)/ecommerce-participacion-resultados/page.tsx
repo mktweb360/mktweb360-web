@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
@@ -31,22 +32,27 @@ export default function EcommerceParticipacionPage() {
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Ecommerce con Participación" }]} />
-          <div className="max-w-3xl mt-4">
-            <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">Modelo innovador</span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Montamos tu ecommerce.<br />
-              <span className="text-accent-400">Crecemos juntos.</span>
-            </h1>
-            <p className="text-xl text-primary-200 mb-8 leading-relaxed">
-              Construimos toda tu infraestructura digital — tienda online, campañas, SEO — y participamos en el éxito cuando superas objetivos definidos. Nuestros incentivos están alineados con los tuyos.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#modelo" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
-                Ver el modelo
-              </a>
-              <a href="#contacto" className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors text-center">
-                Hablar con nosotros
-              </a>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-4">
+            <div>
+              <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">Modelo innovador</span>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Montamos tu ecommerce.<br />
+                <span className="text-accent-400">Crecemos juntos.</span>
+              </h1>
+              <p className="text-xl text-primary-200 mb-8 leading-relaxed">
+                Construimos toda tu infraestructura digital — tienda online, campañas, SEO — y participamos en el éxito cuando superas objetivos definidos. Nuestros incentivos están alineados con los tuyos.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="#modelo" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
+                  Ver el modelo
+                </a>
+                <a href="#contacto" className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors text-center">
+                  Hablar con nosotros
+                </a>
+              </div>
+            </div>
+            <div>
+              <Image src="/imagen-ecommerce-participacion.jpg" alt="Ecommerce con participación en resultados" width={600} height={400} className="rounded-2xl shadow-lg w-full object-cover" />
             </div>
           </div>
         </div>

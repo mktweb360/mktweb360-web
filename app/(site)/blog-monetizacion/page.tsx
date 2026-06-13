@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
@@ -80,25 +81,30 @@ export default function BlogMonetizacionPage() {
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog para Monetización" }]} />
-          <div className="max-w-3xl mt-4">
-            <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">Ingresos pasivos</span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Un blog que genera ingresos<br />
-              <span className="text-accent-400">mientras tú duermes</span>
-            </h1>
-            <p className="text-xl text-primary-200 mb-4 leading-relaxed">
-              Creamos tu blog de monetización desde cero — análisis de nicho, diseño, SEO y los primeros artículos optimizados para AdSense y afiliación. Tú te llevas el activo digital, nosotros lo construimos.
-            </p>
-            <p className="text-primary-300 italic mb-8 text-sm">
-              ⚠️ Importante: los ingresos relevantes de un blog tardan entre 6 y 18 meses. Esto es una inversión a largo plazo, no un ingreso inmediato.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#paquetes" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
-                Ver paquetes
-              </a>
-              <a href="#contacto" className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors text-center">
-                Hablar con un experto
-              </a>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-4">
+            <div>
+              <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">Ingresos pasivos</span>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Un blog que genera ingresos<br />
+                <span className="text-accent-400">mientras tú duermes</span>
+              </h1>
+              <p className="text-xl text-primary-200 mb-4 leading-relaxed">
+                Creamos tu blog de monetización desde cero — análisis de nicho, diseño, SEO y los primeros artículos optimizados para AdSense y afiliación. Tú te llevas el activo digital, nosotros lo construimos.
+              </p>
+              <p className="text-primary-300 italic mb-8 text-sm">
+                ⚠️ Importante: los ingresos relevantes de un blog tardan entre 6 y 18 meses. Esto es una inversión a largo plazo, no un ingreso inmediato.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="#paquetes" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
+                  Ver paquetes
+                </a>
+                <a href="#contacto" className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors text-center">
+                  Hablar con un experto
+                </a>
+              </div>
+            </div>
+            <div>
+              <Image src="/imagen-blog-monetizacion.jpg" alt="Blog para monetización con ingresos pasivos" width={600} height={400} className="rounded-2xl shadow-lg w-full object-cover" />
             </div>
           </div>
         </div>
