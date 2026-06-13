@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const SERVICE_GROUPS_NAV = [
   {
@@ -43,9 +44,26 @@ const SERVICE_GROUPS_NAV = [
 
 const SERVICES = SERVICE_GROUPS_NAV.flatMap((g) => g.services);
 
-export function Header() {
+const LANG_LINKS = [
+  { code: "es", label: "ES" },
+  { code: "en", label: "EN" },
+  { code: "fr", label: "FR" },
+] as const;
+
+export function Header({ lang }: { lang?: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const pathname = usePathname();
+  const currentLang = lang ?? "es";
+
+  const getLangUrl = (target: string) => {
+    if (target === "es") {
+      if (pathname.startsWith("/en")) return pathname.slice(3) || "/";
+      if (pathname.startsWith("/fr")) return pathname.slice(3) || "/";
+      return pathname;
+    }
+    return `/${target}/`;
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
@@ -101,6 +119,21 @@ export function Header() {
           <Link href="/nosotros/" className="hover:text-accent-500 transition-colors">Nosotros</Link>
           <Link href="/casos/" className="hover:text-accent-500 transition-colors">Casos</Link>
           <Link href="/blog/" className="hover:text-accent-500 transition-colors">Blog</Link>
+          <div className="flex items-center gap-0.5 border border-gray-200 rounded-full px-1.5 py-1">
+            {LANG_LINKS.map(({ code, label }) => (
+              <Link
+                key={code}
+                href={getLangUrl(code)}
+                className={`px-2 py-0.5 rounded-full text-xs font-bold transition-colors ${
+                  currentLang === code
+                    ? "bg-primary-600 text-white"
+                    : "text-gray-400 hover:text-primary-600"
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
           <Link
             href="/contacto/"
             className="bg-accent-500 text-white px-4 py-2 rounded-full hover:bg-accent-600 transition-colors"
@@ -146,6 +179,23 @@ export function Header() {
             <Link href="/nosotros/" onClick={() => setMenuOpen(false)} className="hover:text-accent-500">Nosotros</Link>
             <Link href="/casos/" onClick={() => setMenuOpen(false)} className="hover:text-accent-500">Casos</Link>
             <Link href="/blog/" onClick={() => setMenuOpen(false)} className="hover:text-accent-500">Blog</Link>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-gray-400 font-normal">Idioma:</span>
+              {LANG_LINKS.map(({ code, label }) => (
+                <Link
+                  key={code}
+                  href={getLangUrl(code)}
+                  onClick={() => setMenuOpen(false)}
+                  className={`px-2.5 py-1 rounded-full text-xs font-bold transition-colors ${
+                    currentLang === code
+                      ? "bg-primary-600 text-white"
+                      : "border border-gray-200 text-gray-500 hover:text-primary-600"
+                  }`}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
             <Link
               href="/contacto/"
               onClick={() => setMenuOpen(false)}
