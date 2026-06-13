@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-
-import { RelatedArticles } from "@/components/RelatedArticles";
+import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Quiénes Somos | Mkt Web 360 — Agencia de Marketing Digital",
-  description:
-    "Conoce el equipo y la filosofía de Mkt Web 360. Una agencia de marketing digital que trabaja tu proyecto con compromiso, transparencia y orientación a resultados.",
+  title: "Quiénes Somos — Agencia de Marketing Digital | Mkt Web 360",
+  description: "Equipo senior con protocolos propios de IA. Conoce la metodología, los valores y la historia de Mkt Web 360. Agencia de marketing digital para PYMEs. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/nosotros/" },
   openGraph: {
     title: "Quiénes Somos | Mkt Web 360 — Agencia de Marketing Digital",
-    description: "Agencia de marketing digital fundada para ofrecer servicio serio a PYMEs. Conoce nuestra historia, filosofía y cómo trabajamos.",
+    description: "La experiencia de un equipo senior. La precisión de la inteligencia artificial. Conoce cómo trabajamos.",
     url: "https://www.mktweb360.com/nosotros/",
   },
 };
@@ -22,7 +20,7 @@ const orgSchema = {
   name: "Mkt Web 360 SLU",
   url: "https://www.mktweb360.com",
   logo: "https://www.mktweb360.com/logo.png",
-  telephone: "+34696714476",
+  telephone: "+34622748897",
   email: "info@mktweb360.com",
   address: {
     "@type": "PostalAddress",
@@ -38,25 +36,24 @@ const orgSchema = {
     "https://www.instagram.com/mktweb360",
     "https://www.linkedin.com/company/mktweb360",
   ],
-  description:
-    "Agencia de marketing digital para PYMEs y empresas. Especialistas en SEO, SEM, gestión de redes sociales y diseño web. Servicio nacional desde Toledo, España.",
+  description: "Agencia de marketing digital para PYMEs y empresas. Especialistas en SEO, SEM, gestión de redes sociales y diseño web. Servicio nacional.",
 };
 
 const VALORES = [
-  { icon: "🤝", title: "Compromiso", desc: "Tratamos cada proyecto como si fuera nuestro propio negocio. Tu éxito es nuestro éxito." },
-  { icon: "🔍", title: "Transparencia", desc: "Informes claros, métricas reales y comunicación honesta sobre lo que funciona y lo que no." },
-  { icon: "🎯", title: "Orientación a resultados", desc: "Cada acción tiene un objetivo medible. No hacemos marketing por hacer, hacemos marketing que convierte." },
-  { icon: "💬", title: "Comunicación", desc: "Respuesta ágil, reuniones periódicas y contacto directo con tu responsable de cuenta." },
-  { icon: "⚡", title: "Adaptabilidad", desc: "El marketing digital cambia cada mes. Nos formamos continuamente para aplicar lo que mejor funciona hoy." },
-  { icon: "📚", title: "Formación continua", desc: "Nuestro equipo se actualiza de forma constante para ofrecerte siempre estrategias al día." },
+  { title: "Compromiso", desc: "Tratamos cada proyecto como si fuera nuestro propio negocio. Tu éxito es nuestro éxito." },
+  { title: "Transparencia", desc: "Informes claros, métricas reales y comunicación honesta sobre lo que funciona y lo que no." },
+  { title: "Resultados", desc: "Cada acción tiene un objetivo medible. No hacemos marketing por hacer, hacemos marketing que convierte." },
+  { title: "Comunicación", desc: "Respuesta en menos de 24h y contacto directo con tu responsable de cuenta en todo momento." },
+  { title: "Exclusividad", desc: "No trabajamos con tu competencia en tu zona. Tu sector es exclusivamente tuyo en tu área." },
+  { title: "IA aplicada", desc: "Protocolos propios de inteligencia artificial integrados en cada servicio para resultados más rápidos y precisos." },
 ];
 
 const PASOS = [
-  { num: "01", title: "Diagnóstico inicial", desc: "Analizamos tu situación digital actual: web, SEO, competencia, redes y analítica. Sin coste y sin compromiso." },
-  { num: "02", title: "Estrategia", desc: "Diseñamos un plan de acción personalizado con objetivos claros, plazos y métricas de seguimiento." },
-  { num: "03", title: "Implementación", desc: "Ejecutamos las acciones acordadas con precisión y calidad, manteniéndote informado en cada paso." },
-  { num: "04", title: "Seguimiento", desc: "Monitorizamos los resultados semanalmente y reportamos mensualmente con datos reales." },
-  { num: "05", title: "Optimización", desc: "Analizamos lo que funciona, ajustamos lo que no y seguimos mejorando de forma continua." },
+  { num: "01", title: "Diagnóstico gratuito", desc: "Analizamos tu situación digital: web, SEO, competencia, redes y analítica. Sin coste y sin compromiso." },
+  { num: "02", title: "Estrategia personalizada", desc: "Diseñamos un plan de acción con objetivos claros, plazos y métricas de seguimiento adaptado a tu negocio." },
+  { num: "03", title: "Implementación con IA", desc: "Ejecutamos con protocolos propios de IA que aceleran los tiempos y mejoran la precisión de cada acción." },
+  { num: "04", title: "Seguimiento continuo", desc: "Monitorizamos resultados semanalmente y reportamos mensualmente con datos reales y próximos pasos." },
+  { num: "05", title: "Optimización constante", desc: "Analizamos lo que funciona, ajustamos lo que no y seguimos mejorando de forma continua mes a mes." },
 ];
 
 export default function NosotrosPage() {
@@ -64,90 +61,175 @@ export default function NosotrosPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
 
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Quiénes Somos" }]} />
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 py-16">
+          <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Quiénes Somos" }]} />
+          <div className="max-w-3xl mt-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              La experiencia de un equipo senior.<br />
+              <span className="text-accent-400">La precisión de la inteligencia artificial.</span>
+            </h1>
+            <p className="text-xl text-primary-200 mb-4 leading-relaxed">
+              En Mkt Web 360 no somos una agencia más. Somos un equipo comprometido con resultados reales para empresas reales — con protocolos propios de IA que nos permiten trabajar más rápido, analizar más datos y tomar mejores decisiones que una agencia tradicional.
+            </p>
+            <p className="text-lg text-primary-100 italic mb-8">
+              "Céntrate en tu negocio. Nosotros ponemos el foco en que te encuentren."
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#contacto" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
+                Cuéntanos tu proyecto
+              </a>
+              <Link href="/seo-posicionamiento-web-organico/" className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors text-center">
+                Ver nuestros servicios
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <h1 className="text-4xl font-bold text-primary-600 mb-4">
-          Una agencia que trabaja tu proyecto como si fuera el suyo
-        </h1>
-        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-          En Mkt Web 360 no somos una agencia más. Somos un equipo comprometido con resultados reales para empresas reales.
-        </p>
+      {/* Trust bar */}
+      <section className="bg-primary-600 py-6 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+          {[
+            { value: "+10 años", label: "de experiencia" },
+            { value: "Nacional", label: "servicio en toda España" },
+            { value: "IA propia", label: "protocolos desarrollados" },
+            { value: "Exclusivo", label: "un cliente por sector y zona" },
+          ].map((m) => (
+            <div key={m.label}>
+              <div className="text-xl font-bold text-accent-400">{m.value}</div>
+              <div className="text-xs text-primary-200 mt-1">{m.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* Historia */}
-        <section className="bg-primary-50 rounded-2xl p-8 mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">Nuestra historia</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Mkt Web 360 nació con un objetivo claro: ofrecer a las PYMEs españolas el mismo nivel de marketing digital serio y profesional que hasta entonces solo estaba al alcance de las grandes empresas. Vimos que existía una brecha enorme entre lo que las pequeñas empresas necesitaban y lo que el mercado les ofrecía.
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            Desde nuestros inicios en Toledo hemos trabajado con empresas de sectores muy distintos — desde servicios asistenciales hasta industria metalúrgica — y en todos los casos con el mismo nivel de implicación y rigor. Hoy damos servicio a empresas de toda España manteniendo la cercanía y el trato personalizado que nos diferencia.
-          </p>
-        </section>
+      {/* Historia */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-primary-600 mb-6">Nuestra historia</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Mkt Web 360 nació con un objetivo claro: ofrecer a las PYMEs españolas el mismo nivel de marketing digital serio y profesional que hasta entonces solo estaba al alcance de las grandes empresas.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Vimos que existía una brecha enorme entre lo que las pequeñas empresas necesitaban y lo que el mercado les ofrecía — agencias que prometían mucho, reportaban poco y desaparecían cuando llegaban las preguntas difíciles.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                Desde entonces hemos trabajado con empresas de sectores muy distintos — desde servicios asistenciales hasta industria metalúrgica — manteniendo siempre el mismo nivel de implicación, rigor y cercanía que nos diferencia.
+              </p>
+            </div>
+            <div className="bg-primary-600 rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-6">Por qué somos diferentes</h3>
+              <ul className="space-y-4">
+                {[
+                  "Equipo senior — no practicantes ni perfiles júnior",
+                  "Protocolos propios de IA en cada servicio",
+                  "Exclusividad sectorial y geográfica por cliente",
+                  "Reporting real — datos buenos y datos malos",
+                  "Acceso directo a tu responsable, siempre",
+                  "Orientación a negocio, no a métricas de vanidad",
+                ].map((i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm">
+                    <span className="text-accent-400 font-bold shrink-0 mt-0.5">✓</span>
+                    <span className="text-primary-100">{i}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        {/* Filosofía */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">Nuestra filosofía</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* IA methodology */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">IA integrada en nuestra metodología</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">No usamos la IA como todos. Hemos desarrollado protocolos propios integrados en cada servicio — para trabajar más rápido, analizar más datos y tomar mejores decisiones.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             {[
-              { title: "Transparencia total", desc: "Te mostramos los datos reales, tanto los buenos como los malos. Solo así podemos mejorar juntos." },
-              { title: "Colaboración constante", desc: "No somos proveedores externos, somos parte de tu equipo. Tu negocio nos importa más allá del contrato." },
-              { title: "Comunicación abierta", desc: "Acceso directo a tu responsable, respuesta en menos de 24h y reuniones periódicas de seguimiento." },
-              { title: "Mejora continua", desc: "Cada mes analizamos qué ha funcionado y ajustamos la estrategia para hacerlo mejor el siguiente." },
-            ].map((item) => (
-              <div key={item.title} className="border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-primary-700 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              { title: "Más rápido", desc: "Lo que antes tardaba días lo resolvemos en horas. Más tiempo para estrategia y menos para tareas repetitivas." },
+              { title: "Más preciso", desc: "Analizamos más datos en menos tiempo. Detectamos oportunidades y amenazas antes que una agencia tradicional." },
+              { title: "Mejores decisiones", desc: "Cada recomendación está respaldada por datos reales, no por intuición o por lo que se lleva de moda." },
+            ].map((c) => (
+              <div key={c.title} className="bg-primary-50 rounded-2xl p-6 text-center border border-primary-100">
+                <h3 className="font-bold text-primary-600 mb-2 text-lg">{c.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
-        </section>
+          <div className="bg-primary-700 rounded-2xl p-8 text-white text-center">
+            <p className="text-xl font-semibold mb-2">"Un equipo cualificado con protocolos propios de IA.</p>
+            <p className="text-primary-200">Trabajamos más rápido, analizamos más datos y tomamos mejores decisiones que una agencia tradicional. Y todo eso revierte en tus resultados."</p>
+          </div>
+        </div>
+      </section>
 
-        {/* Cómo trabajamos */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-6">Cómo trabajamos</h2>
-          <div className="space-y-4">
+      {/* Process */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Cómo trabajamos</h2>
+            <p className="text-gray-600">Un proceso transparente, medible y orientado a resultados desde el primer día.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             {PASOS.map((paso) => (
-              <div key={paso.num} className="flex gap-4 p-4 border border-gray-200 rounded-xl">
-                <span className="text-accent-500 font-bold text-2xl shrink-0 w-10">{paso.num}</span>
-                <div>
-                  <h3 className="font-semibold text-primary-700 mb-1">{paso.title}</h3>
-                  <p className="text-gray-600 text-sm">{paso.desc}</p>
-                </div>
+              <div key={paso.num} className="text-center">
+                <div className="w-12 h-12 rounded-full bg-accent-500 text-white font-bold text-lg flex items-center justify-center mx-auto mb-3">{paso.num}</div>
+                <h3 className="font-bold text-primary-600 mb-2 text-sm">{paso.title}</h3>
+                <p className="text-gray-500 text-xs leading-relaxed">{paso.desc}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Valores */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-6">Nuestros valores</h2>
+      {/* Valores */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Nuestros valores</h2>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {VALORES.map((v) => (
-              <div key={v.title} className="bg-gray-50 rounded-xl p-6 text-center">
-                <span className="text-4xl mb-3 block">{v.icon}</span>
-                <h3 className="font-bold text-primary-700 mb-2">{v.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
+              <div key={v.title} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <h3 className="font-bold text-primary-600 mb-2">{v.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA */}
-        <section className="bg-primary-600 text-white rounded-2xl p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Cuéntanos tu proyecto</h2>
-          <p className="text-primary-200 mb-6">
-            Hablamos sin compromiso. Analizamos tu situación y te decimos honestamente qué podemos hacer por ti.
-          </p>
-          <Link
-            href="/contacto/"
-            className="inline-block bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors"
-          >
-            Contactar ahora
-          </Link>
-        </section>
-      </div>
-      <RelatedArticles />
+      {/* GEO badge */}
+      <section className="py-10 px-4 bg-primary-50 border-y border-primary-100">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+          <div className="shrink-0 w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm">
+            <svg className="w-7 h-7 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
+          </div>
+          <div>
+            <p className="text-lg font-semibold text-primary-700">Pioneros en GEO — Generative Engine Optimization</p>
+            <p className="text-gray-500 text-sm mt-1">Somos una de las primeras agencias en España en implementar optimización para aparecer en ChatGPT, Perplexity y Gemini. <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">Conoce el servicio GEO →</Link></p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Form */}
+      <section id="contacto" className="py-16 px-4 bg-primary-600 text-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold mb-4">Tu mejor cliente aún no te conoce</h2>
+            <p className="text-primary-200">Vamos a presentaros. Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
+          </div>
+          <div className="bg-white rounded-2xl p-8">
+            <ContactForm formType="nosotros" />
+          </div>
+        </div>
+      </section>
     </>
   );
 }
