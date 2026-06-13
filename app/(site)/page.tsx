@@ -271,36 +271,114 @@ function TestimonialsCarousel({ testimonials }: { testimonials: typeof TESTIMONI
   );
 }
 
+function HeroSlider() {
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const slides = [
+    {
+      badge: null,
+      headline: "Agencia de Marketing Digital",
+      subheadline: "para PYMEs y Empresas",
+      subtitle: "Aumenta tu visibilidad online, genera más clientes y haz crecer tu negocio con estrategias de marketing digital probadas. Servicio nacional.",
+      cta: { text: "Diagnóstico gratuito", href: "/contacto/" },
+      cta2: { text: "Ver servicios", href: "#servicios" },
+    },
+    {
+      badge: "Oferta especial junio",
+      headline: "6 meses de SEO",
+      subheadline: "por el precio de 3",
+      subtitle: "Contrata cualquier servicio SEO este mes y llévate 6 meses de posicionamiento pagando solo 3. Plazas limitadas.",
+      cta: { text: "Quiero esta oferta", href: "/seo-posicionamiento-web-organico/" },
+      cta2: { text: "Ver servicio SEO", href: "/seo-posicionamiento-web-organico/" },
+    },
+    {
+      badge: "Solo 5 plazas este mes",
+      headline: "Tu tienda online",
+      subheadline: "profesional desde 490€",
+      subtitle: "Sin comisiones por venta. Sin licencias mensuales. Diseño 100% personalizado. SEO incluido 12 meses.",
+      cta: { text: "Reservar mi plaza", href: "/tienda-online/" },
+      cta2: { text: "Ver la oferta", href: "/diseno-de-paginas-web/diseno-tiendas-online/" },
+    },
+  ];
+
+  useEffect(() => {
+    if (paused) return;
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [paused, slides.length]);
+
+  const slide = slides[current];
+
+  return (
+    <div
+      className="max-w-4xl mx-auto px-4 py-20 text-center"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {/* Badge */}
+      <div className="h-8 mb-4 flex items-center justify-center">
+        {slide.badge && (
+          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest animate-fade-in">
+            {slide.badge}
+          </span>
+        )}
+      </div>
+
+      {/* Headline */}
+      <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem]">
+        {slide.headline}<br />
+        <span className="text-accent-400">{slide.subheadline}</span>
+      </h1>
+
+      {/* Subtitle */}
+      <p className="text-xl text-primary-200 mb-10 max-w-2xl mx-auto leading-relaxed italic min-h-[4rem]">
+        {slide.subtitle}
+      </p>
+
+      {/* CTAs */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+        <Link
+          href={slide.cta.href}
+          className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors"
+        >
+          {slide.cta.text}
+        </Link>
+        <Link
+          href={slide.cta2.href}
+          className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors"
+        >
+          {slide.cta2.text}
+        </Link>
+      </div>
+
+      {/* Dots */}
+      <div className="flex items-center justify-center gap-2">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+              i === current ? "bg-accent-400 w-6" : "bg-white/40 hover:bg-white/70"
+            }`}
+            aria-label={`Slide ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Agencia de Marketing Digital<br />
-            <span className="text-accent-400">para PYMEs y Empresas</span>
-          </h1>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto italic">
-            Aumenta tu visibilidad online, genera más clientes y haz crecer tu negocio con estrategias de marketing digital probadas. Servicio nacional.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/auditoria-digital/"
-              className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors"
-            >
-              Solicitar diagnóstico gratuito
-            </Link>
-            <Link
-              href="#servicios"
-              className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors"
-            >
-              Ver servicios
-            </Link>
-          </div>
-        </div>
+      {/* Hero Slider */}
+      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden">
+        <HeroSlider />
       </section>
 
       {/* Services */}

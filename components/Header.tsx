@@ -119,21 +119,25 @@ export function Header({ lang }: { lang?: string }) {
           <Link href="/nosotros/" className="hover:text-accent-500 transition-colors">Nosotros</Link>
           <Link href="/casos/" className="hover:text-accent-500 transition-colors">Casos</Link>
           <Link href="/blog/" className="hover:text-accent-500 transition-colors">Blog</Link>
-          <div className="flex items-center gap-0.5 border border-gray-200 rounded-full px-1.5 py-1">
-            {LANG_LINKS.map(({ code, label }) => (
-              <Link
-                key={code}
-                href={getLangUrl(code)}
-                className={`px-2 py-0.5 rounded-full text-xs font-bold transition-colors ${
-                  currentLang === code
-                    ? "bg-primary-600 text-white"
-                    : "text-gray-400 hover:text-primary-600"
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
+              {/* Lang dropdown */}
+              <div className="relative group">
+                <button className="flex items-center gap-1.5 border border-gray-200 rounded-full px-3 py-1.5 text-sm font-semibold text-gray-600 hover:border-primary-400 hover:text-primary-600 transition-colors">
+                  {currentLang === "es" ? "🇪🇸" : currentLang === "en" ? "🇬🇧" : "🇫🇷"}
+                  <span className="uppercase">{currentLang}</span>
+                  <svg className="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg py-1 min-w-[130px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <Link href={getLangUrl("es")} className={`flex items-center gap-2 px-4 py-2 text-sm hover:bg-primary-50 transition-colors ${currentLang === "es" ? "text-primary-600 font-bold" : "text-gray-600"}`}>
+                    <span>🇪🇸</span> <span>Español</span>
+                  </Link>
+                  <Link href={getLangUrl("en")} className={`flex items-center gap-2 px-4 py-2 text-sm hover:bg-primary-50 transition-colors ${currentLang === "en" ? "text-primary-600 font-bold" : "text-gray-600"}`}>
+                    <span>🇬🇧</span> <span>English</span>
+                  </Link>
+                  <Link href={getLangUrl("fr")} className={`flex items-center gap-2 px-4 py-2 text-sm hover:bg-primary-50 transition-colors ${currentLang === "fr" ? "text-primary-600 font-bold" : "text-gray-600"}`}>
+                    <span>🇫🇷</span> <span>Français</span>
+                  </Link>
+                </div>
+              </div>
           <Link
             href="/contacto/"
             className="bg-accent-500 text-white px-4 py-2 rounded-full hover:bg-accent-600 transition-colors"
@@ -179,22 +183,19 @@ export function Header({ lang }: { lang?: string }) {
             <Link href="/nosotros/" onClick={() => setMenuOpen(false)} className="hover:text-accent-500">Nosotros</Link>
             <Link href="/casos/" onClick={() => setMenuOpen(false)} className="hover:text-accent-500">Casos</Link>
             <Link href="/blog/" onClick={() => setMenuOpen(false)} className="hover:text-accent-500">Blog</Link>
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-gray-400 font-normal">Idioma:</span>
-              {LANG_LINKS.map(({ code, label }) => (
-                <Link
-                  key={code}
-                  href={getLangUrl(code)}
-                  onClick={() => setMenuOpen(false)}
-                  className={`px-2.5 py-1 rounded-full text-xs font-bold transition-colors ${
-                    currentLang === code
-                      ? "bg-primary-600 text-white"
-                      : "border border-gray-200 text-gray-500 hover:text-primary-600"
-                  }`}
-                >
-                  {label}
+            <div className="pt-2 border-t border-gray-100">
+              <p className="text-xs text-gray-400 font-medium mb-2 px-1">Idioma / Language</p>
+              <div className="flex gap-2">
+                <Link href={getLangUrl("es")} onClick={() => setMenuOpen(false)} className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${currentLang === "es" ? "bg-primary-600 text-white" : "border border-gray-200 text-gray-600 hover:border-primary-400"}`}>
+                  🇪🇸 ES
                 </Link>
-              ))}
+                <Link href={getLangUrl("en")} onClick={() => setMenuOpen(false)} className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${currentLang === "en" ? "bg-primary-600 text-white" : "border border-gray-200 text-gray-600 hover:border-primary-400"}`}>
+                  🇬🇧 EN
+                </Link>
+                <Link href={getLangUrl("fr")} onClick={() => setMenuOpen(false)} className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${currentLang === "fr" ? "bg-primary-600 text-white" : "border border-gray-200 text-gray-600 hover:border-primary-400"}`}>
+                  🇫🇷 FR
+                </Link>
+              </div>
             </div>
             <Link
               href="/contacto/"

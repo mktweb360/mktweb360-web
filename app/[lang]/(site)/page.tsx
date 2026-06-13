@@ -1,6 +1,7 @@
 import type { Lang } from "@/lib/i18n";
 import { ContactForm } from "@/components/ContactForm";
 import Link from "next/link";
+import { LangHeroSlider } from "@/components/LangHeroSlider";
 
 export default async function LangHomePage({
   params,
@@ -73,31 +74,8 @@ export default async function LangHomePage({
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
-        <div className="max-w-5xl mx-auto px-4 py-20 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-            {c.headline}
-            <br />
-            <span className="text-accent-400">{c.subheadline}</span>
-          </h1>
-          <p className="text-xl text-primary-200 mb-10 max-w-2xl mx-auto leading-relaxed italic">
-            {c.subtitle}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`/${lang}/contact/`}
-              className="bg-accent-500 text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-accent-600 transition-colors"
-            >
-              {c.cta}
-            </a>
-            <a
-              href="#services"
-              className="border-2 border-white text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-white/10 transition-colors"
-            >
-              {c.cta2}
-            </a>
-          </div>
-        </div>
+      <section className="relative bg-gradient-to-br from-primary-700 to-primary-900 text-white overflow-hidden">
+        <LangHeroSlider lang={lang} />
       </section>
 
       <section className="bg-primary-600 py-6 px-4">
