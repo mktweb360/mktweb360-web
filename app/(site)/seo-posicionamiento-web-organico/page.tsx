@@ -31,6 +31,7 @@ const FAQS = [
   { q: "¿Trabajáis con las actualizaciones del algoritmo de Google?", a: "Sí, seguimos de cerca todas las actualizaciones del algoritmo de Google y adaptamos las estrategias para estar siempre dentro de las buenas prácticas (white hat SEO)." },
   { q: "¿Hacéis SEO local y SEO nacional?", a: "Hacemos ambos. El SEO local es ideal para negocios con presencia física que quieren atraer clientes de su zona. El SEO nacional se orienta a keywords de mayor alcance geográfico." },
   { q: "¿Cómo medís los resultados?", a: "Monitorizamos posiciones en Google, tráfico orgánico, conversiones atribuidas a SEO y visibilidad de marca. Recibes un informe mensual detallado con evolución y próximos pasos." },
+  { q: "¿Qué diferencia hay entre SEO y GEO?", a: "El SEO (Search Engine Optimization) optimiza tu web para aparecer en los resultados de Google. El GEO (Generative Engine Optimization) optimiza tu presencia para aparecer en las respuestas de ChatGPT, Perplexity, Gemini y Claude. Son complementarios — juntos te dan visibilidad completa en todos los canales de búsqueda actuales y futuros." },
 ];
 
 const faqSchema = {
@@ -179,6 +180,42 @@ export default function SeoPage() {
           <a href="#auditoria" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block">
             Quiero esta oferta
           </a>
+        </div>
+      </section>
+
+      {/* GEO differentiator */}
+      <section className="py-12 px-4 bg-primary-50 border-y border-primary-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Nuevo</span>
+              <h2 className="text-2xl font-bold text-primary-600 mb-4">SEO + GEO: visibilidad completa en la era de la IA</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                El SEO te posiciona en Google. El GEO te posiciona en ChatGPT, Perplexity y Gemini. Cada vez más personas hacen sus búsquedas directamente a la IA — si tu marca no aparece en esas respuestas, estás perdiendo clientes que nunca llegarán a Google.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                En Mkt Web 360 somos pioneros en GEO en España. Nuestros servicios SEO ya incluyen la base técnica necesaria para visibilidad en IA: schemas estructurados, llms.txt, arquitectura de contenido optimizada para LLMs y estrategia de autoridad semántica.
+              </p>
+              <a href="/geo-posicionamiento-ia/" className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
+                Conocer el servicio GEO →
+              </a>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { channel: "Google Search", tool: "SEO", color: "bg-primary-600" },
+                { channel: "ChatGPT", tool: "GEO", color: "bg-accent-500" },
+                { channel: "Google Maps", tool: "SEO Local", color: "bg-primary-600" },
+                { channel: "Perplexity", tool: "GEO", color: "bg-accent-500" },
+                { channel: "Bing", tool: "SEO", color: "bg-primary-600" },
+                { channel: "Gemini", tool: "GEO", color: "bg-accent-500" },
+              ].map((c) => (
+                <div key={c.channel} className="bg-white rounded-xl p-4 flex items-center justify-between shadow-sm border border-gray-100">
+                  <span className="text-sm font-semibold text-gray-700">{c.channel}</span>
+                  <span className={`text-xs font-bold text-white px-2 py-0.5 rounded-full ${c.color}`}>{c.tool}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

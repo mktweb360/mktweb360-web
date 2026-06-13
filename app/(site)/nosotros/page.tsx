@@ -205,15 +205,32 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* GEO badge */}
-      <section className="py-10 px-4 bg-primary-50 border-y border-primary-100">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-          <div className="shrink-0 w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm">
-            <svg className="w-7 h-7 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
+      <section className="py-16 px-4 bg-primary-50 border-y border-primary-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Diferenciador estratégico</span>
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Pioneros en GEO en España</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Somos una de las primeras agencias en España en implementar GEO — Generative Engine Optimization — la disciplina de optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini.</p>
           </div>
-          <div>
-            <p className="text-lg font-semibold text-primary-700">Pioneros en GEO — Generative Engine Optimization</p>
-            <p className="text-gray-500 text-sm mt-1">Somos una de las primeras agencias en España en implementar optimización para aparecer en ChatGPT, Perplexity y Gemini. <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">Conoce el servicio GEO →</Link></p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {[
+              { title: "SEO", desc: "Te posicionamos en Google con estrategias probadas y duraderas.", href: "/seo-posicionamiento-web-organico/", badge: "Consolidado" },
+              { title: "GEO", desc: "Optimizamos tu presencia para aparecer en las respuestas de ChatGPT, Perplexity y Gemini.", href: "/geo-posicionamiento-ia/", badge: "Pioneros" },
+              { title: "SEO + GEO", desc: "La estrategia completa para visibilidad total en todos los canales de búsqueda actuales y futuros.", href: "/contacto/", badge: "Recomendado" },
+            ].map((s) => (
+              <a key={s.title} href={s.href} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-bold text-primary-600 text-xl group-hover:text-accent-500 transition-colors">{s.title}</h3>
+                  <span className="text-xs font-bold bg-primary-100 text-primary-600 px-2 py-0.5 rounded-full">{s.badge}</span>
+                </div>
+                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+              </a>
+            ))}
+          </div>
+          <div className="text-center">
+            <a href="/geo-posicionamiento-ia/" className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
+              Conocer el servicio GEO completo →
+            </a>
           </div>
         </div>
       </section>

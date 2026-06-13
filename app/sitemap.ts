@@ -88,6 +88,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/geo-vs-seo-diferencias/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/seo-zaragoza/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/cuando-elegir-seo-vs-google-ads/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/blog-monetizacion/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/ecommerce-participacion-resultados/", priority: 0.8, changeFrequency: "monthly" as const },
   ];
 
   return pages.map((p) => ({
