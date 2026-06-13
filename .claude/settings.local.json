@@ -26,7 +26,14 @@
       "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat\\(legal\\): páginas legales RGPD + banner cookies consentimiento' && git push && git rev-parse HEAD\" 2>&1)",
       "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat\\(seo\\): RSS feed + autodiscovery' && git push && git rev-parse HEAD\" 2>&1)",
       "PowerShell(wsl -d Ubuntu -e bash -ic \"ls ~/mktweb360-web/app/\" 2>&1)",
-      "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat: landing page oferta web + SEO 999€' && git push && git rev-parse HEAD\" 2>&1)"
+      "PowerShell(wsl -d Ubuntu -e bash -ic \"cd ~/mktweb360-web && git add -A && git commit -m 'feat: landing page oferta web + SEO 999€' && git push && git rev-parse HEAD\" 2>&1)",
+      "Bash(pnpm build *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(sed -n '110,135p' /home/mktadmin/mktweb360-web/app/\\\\\\(site\\\\\\)/ia-aplicada-a-marketing-valor-real-o-humo/page.tsx)",
+      "Bash(sed -n '1,15p' /home/mktadmin/mktweb360-web/app/\\\\\\(site\\\\\\)/ia-aplicada-a-marketing-valor-real-o-humo/page.tsx)",
+      "Bash(python3 *)"
     ]
   }
 }

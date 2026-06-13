@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Cómo crear una propuesta de valor que atraiga a los clientes que quieres",
@@ -115,6 +116,8 @@ export default function PropuestaDeValorPage() {
               Ver servicio de diseño web
             </Link>
           </div>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Dónde debe aparecer tu propuesta de valor</h2>
           <p>La propuesta de valor debe ser visible y comprensible en menos de 10 segundos en la página de inicio de tu web. En el encabezado, antes de cualquier scroll. También debe estar presente en tus anuncios, en el perfil de redes sociales y en cualquier presentación comercial. Si necesita ser explicada, no está suficientemente bien construida. El objetivo es que sea inmediatamente clara para el cliente que sí es para ti.</p>

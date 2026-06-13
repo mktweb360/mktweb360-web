@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Qué es el GEO (Generative Engine Optimization) y por qué importa en 2025 | Mkt Web 360",
@@ -39,6 +40,8 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Formato del contenido:</strong> El SEO tradicional se ha optimizado para responder a la intención de búsqueda con una página web que el usuario visita. El GEO requiere contenido que sea fácilmente "consumible" por un modelo de lenguaje: declaraciones claras, hechos verificables, definiciones precisas y contenido que responda directamente a preguntas concretas.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Autoridad:</strong> En SEO, la autoridad se construye principalmente con enlaces (backlinks). En GEO, la autoridad se construye con menciones en múltiples fuentes relevantes: medios de comunicación, publicaciones del sector, podcasts, estudios que te citan, colaboraciones con otros expertos. Una marca que es mencionada frecuentemente en contextos de calidad tiene más probabilidades de aparecer en respuestas de IA.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Métricas:</strong> El SEO se mide con posiciones en Google, tráfico orgánico y conversiones. El GEO se mide con herramientas específicas de monitorización de visibilidad en LLMs: con qué frecuencia te menciona cada IA, en qué contexto, y cómo evoluciona esa visibilidad en el tiempo.</p>
+
+        <BlogBanner variant="geo" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cómo optimizar tu web para aparecer en respuestas de IA</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Hay varias acciones concretas que puedes empezar a implementar para mejorar tu visibilidad en los motores generativos.</p>

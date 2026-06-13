@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Tiendas Online en Toledo — Cómo Vender Más Allá de tu Provincia | Mkt Web 360",
@@ -39,6 +40,8 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Shopify</strong> tiene ventajas claras: es intuitiva, tiene todas las funciones integradas, el soporte es excelente y no necesitas conocimientos técnicos para mantenerla. El inconveniente es el coste recurrente (entre 29 y 299 € al mes según el plan) y las comisiones por transacción si no usas su pasarela de pago.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>WooCommerce o solución propia</strong> tiene mayor flexibilidad y el coste recurrente es más bajo una vez está desarrollada, pero requiere mantenimiento técnico, actualizaciones y mayor inversión inicial en desarrollo. Para negocios que quieren control total y no quieren pagar comisiones, es la opción más rentable a largo plazo.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para la mayoría de PYMEs toledanas que empiezan con el ecommerce, nuestra recomendación es una solución propia bien desarrollada: mayor control, sin comisiones por venta y con un SEO más potente que el que permite Shopify en su configuración estándar.</p>
+
+        <BlogBanner variant="ecommerce" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">SEO para tiendas online en Toledo</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Una tienda online sin SEO es como una tienda física en un callejón sin salida. Puedes tener los mejores productos del mundo, pero si Google no sabe que existes o no te posiciona para las búsquedas relevantes, nadie llegará a comprarte.</p>

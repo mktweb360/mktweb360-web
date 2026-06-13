@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "SEO o Google Ads: qué conviene más para tu negocio en 2025",
@@ -124,6 +125,8 @@ export default function SeoOGoogleAdsPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Cuándo conviene uno, el otro o ambos</h2>
           <p>El SEO suele encajar mejor cuando el negocio quiere construir base, puede trabajar con horizonte de meses y dispone de intención de búsqueda relevante. Google Ads suele encajar mejor cuando hay urgencia, oferta clara y capacidad de medir y responder rápido. En muchos casos, la mejor respuesta es combinarlos: Ads para activar y aprender antes; SEO para consolidar un activo propio y mejorar rentabilidad futura.</p>
+
+          <BlogBanner variant="seo" />
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo decidir con criterio</h2>
           <p>Antes de invertir, conviene revisar la web, la propuesta de valor, la calidad del seguimiento comercial, el margen y el coste por oportunidad útil. No sirve de mucho activar campañas si la landing no convence, ni exigir resultados inmediatos al SEO si el negocio no puede sostener el plazo de maduración. La decisión buena no sale de modas ni de opiniones generales; sale de negocio, contexto y preparación real.</p>

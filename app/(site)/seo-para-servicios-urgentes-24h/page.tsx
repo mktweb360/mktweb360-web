@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "SEO para Servicios Urgentes 24h — Cómo Posicionar en Google",
@@ -79,6 +80,8 @@ export default function SeoServiciosUrgentesPage() {
 
           <h3 className="text-xl font-semibold text-primary-700">5. Google Ads como complemento</h3>
           <p>Para servicios urgentes, combinar SEO con Google Ads es especialmente efectivo. Las campañas de búsqueda permiten aparecer inmediatamente para las búsquedas más competidas mientras el SEO va ganando posiciones de forma orgánica.</p>
+
+          <BlogBanner variant="seo" />
 
           <h2 className="text-2xl font-bold text-primary-600">Conclusión</h2>
           <p>El SEO para servicios urgentes es una de las inversiones más rentables que puede hacer un negocio de este tipo. Una buena posición en Google significa el teléfono sonando constantemente, las 24 horas del día.</p>

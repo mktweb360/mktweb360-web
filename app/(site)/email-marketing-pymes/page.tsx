@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Email Marketing para PYMEs — Primeros Pasos y Estrategia | Mkt Web 360",
@@ -42,6 +43,8 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Brevo (antes Sendinblue):</strong> Plan gratuito con contactos ilimitados y hasta 300 emails al día. Muy buena relación calidad-precio en los planes de pago. Incluye SMS marketing y CRM básico.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>MailerLite:</strong> Plan gratuito hasta 1.000 suscriptores. Interfaz muy limpia e intuitiva. Buenas opciones de automatización y landing pages incluidas.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>ActiveCampaign:</strong> La opción más potente para PYMEs en crecimiento. No tiene plan gratuito, pero su CRM integrado y sus automatizaciones avanzadas lo hacen especialmente valioso si quieres conectar el email marketing con el proceso de ventas.</p>
+
+        <BlogBanner variant="default" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Tipos de emails que debe enviar tu empresa</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Una estrategia de email marketing sólida combina distintos tipos de emails con objetivos diferentes.</p>

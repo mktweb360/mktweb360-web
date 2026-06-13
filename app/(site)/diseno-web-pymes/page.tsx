@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Diseño Web para PYMEs — Qué Debe Tener tu Web para Vender | Mkt Web 360",
@@ -45,6 +46,8 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Los elementos técnicos básicos que toda web de PYME debe tener son: estructura de URLs limpia y descriptiva (no "/page?id=123" sino "/servicios/fontaneria/"), etiquetas de título y meta descripción únicas para cada página, encabezados jerárquicos correctos (un solo H1 por página, H2 para secciones), texto alternativo en imágenes, sitemap XML y archivo robots.txt correctamente configurados.</p>
         <p className="text-gray-700 leading-relaxed mb-4">El HTTPS (certificado SSL) es obligatorio hoy en día. Los navegadores marcan las webs sin HTTPS como "no seguras" y Google las penaliza en rankings. La mayoría de hostings modernos ofrecen certificados SSL gratuitos con Let's Encrypt.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para negocios locales, los datos estructurados (Schema.org) son especialmente valiosos. Implementar el marcado LocalBusiness con tu nombre, dirección, teléfono y horario ayuda a Google a entender y mostrar correctamente tu información en los resultados de búsqueda local.</p>
+
+        <BlogBanner variant="default" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Copywriting web: cómo hablarle a tu cliente ideal</h2>
         <p className="text-gray-700 leading-relaxed mb-4">El copywriting es el texto de tu web. Y es probablemente el elemento más subestimado en el diseño web de PYMEs. Muchas webs se diseñan visualmente de forma impecable pero fallan porque el texto habla de la empresa en lugar de hablar al cliente.</p>

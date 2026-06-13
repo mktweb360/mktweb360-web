@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "SEO para ecommerce: errores que frenan ventas en tu tienda online",
@@ -116,6 +117,8 @@ export default function SeoEcommercePage() {
 
           <h2 className="text-2xl font-bold text-primary-600">SEO y CRO no deberían separarse</h2>
           <p>Atraer tráfico es solo la primera parte. Si la ficha de producto no convierte, si el proceso de compra tiene fricciones o si la velocidad penaliza la experiencia, el tráfico orgánico no se traduce en ventas. SEO y optimización de conversión deberían trabajarse juntos, no como proyectos separados. Una tienda que posiciona pero no convierte tiene el mismo problema que una que convierte pero no posiciona.</p>
+
+          <BlogBanner variant="ecommerce" />
 
           <h2 className="text-2xl font-bold text-primary-600">Qué revisar antes de subir Ads</h2>
           <p>Antes de aumentar presupuesto en campañas, conviene revisar si el SEO base está resuelto, si las páginas de destino convierten bien y si la tienda no tiene problemas técnicos que afecten a la experiencia. Escalar Ads sobre una tienda con errores estructurales multiplica el gasto sin mejorar proporcionalmente los resultados.</p>

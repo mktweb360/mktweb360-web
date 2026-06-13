@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "WhatsApp Business para Empresas — Guía Completa 2025 | Mkt Web 360",
@@ -42,6 +43,8 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">El catálogo de WhatsApp Business permite crear una vitrina de tus productos o servicios directamente en la app. Los clientes pueden ver el catálogo desde tu perfil sin necesidad de visitar tu web, y pueden enviar pedidos o consultas sobre productos específicos directamente en el chat.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para cada ítem del catálogo puedes añadir: nombre, descripción, precio, enlace al producto en tu web y código de referencia. Para negocios de hostelería, retail o servicios profesionales, tener el catálogo bien configurado puede ser la diferencia entre que un cliente te pregunte por precio (y quizás no compre) a que llegue al chat ya con la intención de compra formada.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para negocios de servicios, el catálogo funciona igualmente bien: presenta cada servicio con una descripción clara, el tiempo estimado y el precio orientativo. Esto reduce el tiempo de cualificación en cada conversación.</p>
+
+        <BlogBanner variant="default" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Respuestas automáticas y mensajes de bienvenida</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Las automatizaciones básicas de WhatsApp Business son sencillas pero muy efectivas para mejorar la experiencia del cliente y reducir el tiempo de gestión manual.</p>

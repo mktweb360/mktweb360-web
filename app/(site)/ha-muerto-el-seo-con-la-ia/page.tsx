@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "¿Ha muerto el SEO con la IA? La analogía del Ferrari y Fernando Alonso",
@@ -116,6 +117,8 @@ export default function HaMuertoElSeoPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">IA + técnico cualificado = excelencia</h2>
           <p>Un profesional del SEO que trabaja con IA puede analizar más datos, detectar patrones antes, generar contenido de apoyo más rápido y escalar tareas que antes llevaban semanas. La IA multiplica su capacidad. Pero sigue siendo el profesional quien decide la estrategia, interpreta los datos con contexto real de negocio, identifica oportunidades que un modelo no puede ver y corrige los errores que cualquier herramienta comete cuando no entiende el negocio en profundidad.</p>
+
+          <BlogBanner variant="geo" />
 
           <h2 className="text-2xl font-bold text-primary-600">IA + persona no cualificada = resultado aceptable, no competitivo</h2>
           <p>Una persona sin experiencia en SEO que usa herramientas de IA puede conseguir resultados razonables. Puede generar contenido, hacer algunas optimizaciones básicas y publicar páginas. Pero no tendrá la capacidad de competir con quien combina conocimiento técnico, experiencia acumulada y las mismas herramientas. Es como la diferencia entre trabajar el campo con un tractor sin saber agricultura versus hacerlo con décadas de conocimiento agrícola y el mismo tractor. La herramienta es la misma. El resultado, no.</p>

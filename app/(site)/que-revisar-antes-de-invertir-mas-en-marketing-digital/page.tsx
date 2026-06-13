@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Qué revisar antes de invertir más en marketing digital en 2025",
@@ -126,6 +127,8 @@ export default function QueRevisarPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Qué errores se repiten</h2>
           <p>Pensar que el problema es solo de tráfico, no revisar la web antes de escalar campañas, querer hacerlo todo a la vez y medir solo clics o leads sin conectarlos con valor real son errores muy frecuentes. También es habitual invertir en canales sin haber definido bien la propuesta de valor ni el proceso comercial posterior.</p>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Qué revisar antes de escalar</h2>
           <p>Antes de subir presupuesto, conviene revisar si la web convierte, si el mensaje es claro para el cliente correcto, si el SEO base está resuelto, si las campañas tienen datos suficientes para optimizar y si el equipo comercial puede absorber más demanda con criterio. Escalar sobre una base débil amplifica los problemas, no los resuelve.</p>

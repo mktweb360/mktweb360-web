@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Cómo digitalizar tu negocio sin complicarte la vida: guía práctica para pymes 2026",
@@ -115,6 +116,8 @@ export default function DigitalizarNegocioPage() {
               Solicitar diagnóstico gratuito
             </Link>
           </div>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Errores habituales en la digitalización de pymes</h2>
           <p>Digitalizar sin objetivos claros, comprar software antes de entender qué problema resuelve, delegar todo a un proveedor sin implicación interna y creer que digitalizar es solo tener presencia en redes son los errores más frecuentes. También lo es hacer todo a la vez — la sobrecarga de cambios simultáneos hace que nada se consolide bien. La digitalización exitosa es gradual, ordenada y medida.</p>

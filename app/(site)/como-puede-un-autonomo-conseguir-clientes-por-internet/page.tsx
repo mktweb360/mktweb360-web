@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Cómo puede un autónomo conseguir clientes por Internet en 2025",
@@ -116,6 +117,8 @@ export default function AutonomoClientesInternetPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Web, ficha de Google o redes: qué va primero</h2>
           <p>En la mayoría de sectores de servicios, la ficha de Google va primero porque capta demanda activa con muy poco esfuerzo. La web va segundo porque refuerza la credibilidad y permite posicionar búsquedas orgánicas. Las redes sociales, en la mayoría de casos, tienen un papel más de mantenimiento de imagen que de captación directa. Si el tiempo es limitado, en esas prioridades conviene centrarse.</p>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Plan mínimo viable</h2>
           <p>Ficha de Google creada y verificada, fotos reales del trabajo, descripción clara del servicio, cinco o más reseñas, una página web sencilla con la información clave, teléfono clickable en móvil y formulario de contacto. Con eso bien resuelto, un autónomo tiene una base que muchos competidores no tienen, y desde ahí ya se puede crecer con criterio.</p>

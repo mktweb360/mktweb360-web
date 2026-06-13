@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Análisis DAFO en Marketing Digital — Guía Completa",
@@ -80,6 +81,8 @@ export default function AnalisisDAFOPage() {
             <li><strong>F + A (Estrategias defensivas):</strong> Usa tus fortalezas para minimizar amenazas. Si entra nueva competencia, refuerza la fidelización de clientes actuales con un programa de retención.</li>
             <li><strong>D + A (Estrategias de supervivencia):</strong> Minimiza debilidades y amenazas simultáneamente. Si tu presencia digital es débil y la competencia online crece, la acción urgente es el SEO y la presencia en redes.</li>
           </ul>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Ejemplo práctico: DAFO para una clínica dental</h2>
           <p>Supongamos una clínica dental con 10 años de experiencia en una ciudad mediana:</p>

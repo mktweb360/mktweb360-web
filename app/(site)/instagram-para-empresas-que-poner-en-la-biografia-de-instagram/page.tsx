@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Qué poner en la biografía de Instagram para empresas — Guía 2025",
@@ -172,6 +173,8 @@ export default function InstagramBioEmpresasPage() {
               </li>
             ))}
           </ul>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Checklist: 8 elementos que debe tener tu bio</h2>
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">

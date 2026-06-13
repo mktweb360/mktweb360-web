@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Google Business Profile para empresas: guía completa 2026",
@@ -115,6 +116,8 @@ export default function GoogleMyBusinessGuiaPage() {
               Ver servicio SEO Local
             </Link>
           </div>
+
+          <BlogBanner variant="seo" />
 
           <h2 className="text-2xl font-bold text-primary-600">Las reseñas: el factor más importante</h2>
           <p>Las reseñas son el indicador de confianza más visible en tu ficha. Influyen directamente en el posicionamiento local y en la decisión de nuevos clientes. La estrategia más efectiva es simple: pide la reseña justo después de terminar el trabajo, cuando el cliente está más satisfecho, con un enlace directo a la ficha. Responder a todas las reseñas — especialmente las negativas, con calma y profesionalidad — muestra que el negocio está activo y se preocupa por sus clientes.</p>

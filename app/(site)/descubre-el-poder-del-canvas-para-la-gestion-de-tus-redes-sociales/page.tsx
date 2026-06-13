@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Canvas para la Gestión de Redes Sociales — Guía Práctica",
@@ -81,6 +82,8 @@ export default function CanvasRedesSocialesPage() {
             <li>Completa cada bloque del Canvas de forma colaborativa.</li>
             <li>Revisa el Canvas cada trimestre y ajusta según los resultados obtenidos.</li>
           </ol>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Beneficios para tu negocio</h2>
           <p>Las empresas que planifican su estrategia de redes sociales con herramientas como el Canvas obtienen resultados hasta 3 veces mejores que las que publican sin una estrategia definida. El Canvas elimina la improvisación, reduce el tiempo de producción de contenidos y asegura que cada publicación tiene un propósito claro y medible.</p>

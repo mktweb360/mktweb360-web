@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Marketing Digital para Empresas en Toledo — Guía Práctica | Mkt Web 360",
@@ -41,6 +42,8 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Los tres pilares del SEO local son: la optimización de tu ficha de Google Business Profile, el SEO on-page de tu web (con páginas que mencionen explícitamente tu localización) y la construcción de autoridad local mediante reseñas, menciones en medios y directorios locales.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para negocios en Toledo, hay keywords locales con volumen de búsqueda interesante y competencia baja-media: "asesoría en Toledo", "reformas en Toledo", "abogado Toledo", "peluquería Talavera". Muchas de estas búsquedas tienen intención de compra clara, lo que las convierte en altamente valiosas.</p>
         <p className="text-gray-700 leading-relaxed mb-4">La velocidad de posicionamiento en Toledo es mayor que en grandes ciudades. En Madrid o Barcelona, posicionarse para una keyword competitiva puede llevar 12-18 meses. En Toledo, en muchos sectores es posible ver resultados significativos en 3-4 meses con una estrategia bien ejecutada.</p>
+
+        <BlogBanner variant="default" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Google Ads en Toledo: cuándo invertir en publicidad</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Google Ads es la opción correcta cuando necesitas resultados inmediatos o cuando tu servicio tiene una demanda urgente que no puede esperar a que el SEO madure. También es muy eficaz para validar una propuesta de valor antes de invertir en SEO a largo plazo.</p>

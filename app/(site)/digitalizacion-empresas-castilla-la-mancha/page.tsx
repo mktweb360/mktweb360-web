@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Digitalización de Empresas en Castilla-La Mancha — Guía 2025 | Mkt Web 360",
@@ -42,6 +43,8 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>CRM básico:</strong> HubSpot Free, Zoho CRM o incluso una hoja de cálculo bien estructurada. El objetivo es no perder ningún cliente potencial y hacer seguimiento de cada oportunidad.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Facturación electrónica:</strong> Con la obligatoriedad próxima para autónomos y PYMEs, herramientas como Holded, Factura Directa o Quipu permiten emitir facturas electrónicas cumpliendo con la normativa vigente.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Google Analytics 4 + Google Search Console:</strong> Si tienes web, estas herramientas gratuitas de Google te dicen cuántas personas la visitan, desde dónde llegan y qué buscan antes de encontrarte.</p>
+
+        <BlogBanner variant="default" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Kit Digital: ayudas para digitalizar tu empresa en CLM</h2>
         <p className="text-gray-700 leading-relaxed mb-4">El programa Kit Digital, financiado con fondos europeos Next Generation EU, ofrece bonos de digitalización para PYMEs y autónomos españoles. Las empresas de Castilla-La Mancha pueden acceder a estas ayudas a través de la plataforma acelerapyme.es.</p>

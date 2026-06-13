@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Cómo Crear una Página Web para Pintores y Conseguir Clientes en Google",
@@ -76,6 +77,8 @@ export default function PaginaWebPintoresPage() {
             <li>presupuesto pintura [ciudad] — usuario listo para contratar</li>
           </ul>
           <p>Cada una de estas keywords merece su propia página o sección en la web, con contenido relevante y orientado a resolver las dudas del cliente.</p>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Google Business Profile: el complemento perfecto</h2>
           <p>Además de la web, es imprescindible tener una ficha de Google Business Profile bien optimizada. Esta ficha te permite aparecer en el Pack Local de Google (el mapa) cuando alguien busca &ldquo;pintor cerca de mí&rdquo; o &ldquo;empresa de pintura [ciudad]&rdquo;.</p>

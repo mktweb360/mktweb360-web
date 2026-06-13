@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Agencias de Marketing Digital en Toledo — Qué Buscar y Qué Evitar | Mkt Web 360",
@@ -44,6 +45,8 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Presupuestos sin desglose.</strong> Un presupuesto serio desglosa qué se hace, quién lo hace, cuántas horas dedica y qué herramientas se usan. Una cifra global sin explicación es una señal de falta de transparencia.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>No tienen web o sus redes están abandonadas.</strong> Una agencia que no cuida su propia presencia digital difícilmente va a cuidar la tuya.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Contacto solo por WhatsApp.</strong> Una agencia profesional tiene correo corporativo, proceso de onboarding estructurado y herramientas de seguimiento. La comunicación solo por mensajería instantánea no es un buen signo de profesionalidad.</p>
+
+        <BlogBanner variant="default" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cómo comparar presupuestos de agencias en Toledo</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Comparar presupuestos de marketing digital es complicado porque no siempre se está comparando lo mismo. Una agencia puede ofrecer "gestión de redes sociales" por 200€ al mes y otra por 800€ — y la diferencia puede ser radical en términos de calidad, dedicación y resultados.</p>

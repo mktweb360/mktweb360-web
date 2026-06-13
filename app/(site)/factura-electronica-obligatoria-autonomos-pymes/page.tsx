@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Factura electrónica obligatoria para autónomos y pymes: qué debes saber en 2026",
@@ -115,6 +116,8 @@ export default function FacturaElectronicaPage() {
               Solicitar auditoría digital
             </Link>
           </div>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Qué pasa si no te adaptas a tiempo</h2>
           <p>El incumplimiento puede acarrear sanciones económicas. Además, no poder emitir facturas electrónicas puede generar problemas operativos con clientes que ya las exigen o que trabajan con sistemas automatizados de recepción. La adaptación temprana evita urgencias y permite resolver problemas de proceso con margen.</p>

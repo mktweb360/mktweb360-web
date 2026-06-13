@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Cómo Medir el ROI de tus Campañas de Marketing Digital | Mkt Web 360",
@@ -40,6 +41,8 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Un cliente típico puede descubrirte a través de un anuncio de Instagram, buscarte en Google días después, leer uno de tus artículos del blog, suscribirse a tu newsletter y finalmente comprar después de recibir un email de promoción. ¿A qué canal atribuyes esa venta?</p>
         <p className="text-gray-700 leading-relaxed mb-4">GA4 usa por defecto un modelo de atribución basado en datos (data-driven) que distribuye el crédito entre múltiples puntos de contacto según su contribución real al proceso de conversión. Este modelo es más preciso que los modelos simplistas de "último clic" o "primer clic" que sobrevaloran un solo canal y subestiman los demás.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para PYMEs con menos volumen de datos, el modelo de "último clic no directo" sigue siendo útil: asigna el crédito al último canal que el usuario usó antes de convertir, ignorando el tráfico directo. Es simple pero da una imagen razonablemente útil de qué canales son los últimos en "cerrar" la conversión.</p>
+
+        <BlogBanner variant="default" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">ROI por canal: SEO vs SEM vs redes sociales</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Cada canal de marketing digital tiene un perfil de ROI diferente, con distintos horizontes temporales y estructuras de coste.</p>

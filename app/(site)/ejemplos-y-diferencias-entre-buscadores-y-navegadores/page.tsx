@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Ejemplos y diferencias entre buscadores y navegadores web — Guía completa",
@@ -180,6 +181,8 @@ export default function BuscadoresNavegadoresPage() {
               </tbody>
             </table>
           </div>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">¿Cuál es la relación entre navegador y buscador?</h2>
           <p>

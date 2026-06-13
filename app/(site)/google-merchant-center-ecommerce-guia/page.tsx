@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Google Merchant Center para ecommerce: guía completa 2026",
@@ -115,6 +116,8 @@ export default function GoogleMerchantCenterPage() {
               Ver servicio SEM y Google Ads
             </Link>
           </div>
+
+          <BlogBanner variant="ecommerce" />
 
           <h2 className="text-2xl font-bold text-primary-600">Errores frecuentes que generan productos rechazados</h2>
           <p>Los rechazos más habituales son imágenes con marca de agua o fondo blanco incorrecto, precios que no coinciden entre el feed y la web, disponibilidad desactualizada, URLs de producto rotas o redirigidas incorrectamente, y políticas de devolución que no cumplen los requisitos de Google. Mantener el feed actualizado en tiempo real y con datos coherentes entre el feed y la web es lo que evita la mayoría de rechazos.</p>

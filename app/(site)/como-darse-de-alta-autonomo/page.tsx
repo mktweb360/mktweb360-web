@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Cómo darse de alta como autónomo en 2026: pasos, costes y errores a evitar",
@@ -107,6 +108,8 @@ export default function DarseDeAltaAutonomoPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Paso 2 — Alta en la Seguridad Social (RETA)</h2>
           <p>Una vez dado de alta en Hacienda, tienes 30 días naturales para inscribirte en el Régimen Especial de Trabajadores Autónomos. Aquí eliges tu base de cotización, que determinará tu cuota mensual y tus prestaciones futuras. Desde 2023 existe el sistema de cotización por ingresos reales, que permite ajustar la base según lo que realmente ganes cada mes. La cuota mínima en 2026 para ingresos bajos puede beneficiarse de la tarifa plana o cuota reducida durante los primeros meses.</p>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Errores más frecuentes al darse de alta</h2>
           <p>Los errores más habituales son darse de alta en Seguridad Social antes que en Hacienda, elegir un epígrafe IAE que no corresponde a la actividad real, no calcular bien la base de cotización desde el inicio, y no revisar si la actividad tiene obligaciones específicas de IVA o retenciones. También es frecuente no tener claro el régimen de estimación más conveniente antes de empezar.</p>

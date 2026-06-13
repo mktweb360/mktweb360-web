@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Qué puede automatizar una pyme en marketing y ventas en 2025",
@@ -108,6 +109,8 @@ export default function AutomatizarPymePage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo empezar bien</h2>
           <p>Lo más útil suele ser empezar por automatizaciones simples con impacto inmediato: notificación de lead al comercial, email de confirmación al contacto, solicitud de reseña tras el servicio. Estas tres acciones son fáciles de implementar con herramientas accesibles, tienen un efecto claro y no requieren transformar todo el proceso desde cero.</p>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Qué debe buscar una pyme</h2>
           <p>Una pyme no necesita la automatización más compleja, sino la más adecuada a su momento. Herramientas modulares, fáciles de ajustar y que no requieran mantenimiento intensivo son mejores opciones que sistemas potentes pero frágiles o difíciles de supervisar. El objetivo es liberar tiempo y reducir errores, no añadir complejidad operativa.</p>

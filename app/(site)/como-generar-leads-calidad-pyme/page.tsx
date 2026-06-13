@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Cómo generar leads de calidad para una pyme sin gastar más en publicidad",
@@ -116,6 +117,8 @@ export default function LeadsCalidadPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Qué papel juegan SEO, Ads y automatización</h2>
           <p>El SEO trae demanda con intención real y suele generar leads más maduros porque el usuario ya buscaba algo concreto. Google Ads permite afinar el perfil con más rapidez pero exige buena página de aterrizaje. La automatización ayuda a no perder leads por tiempo de respuesta o falta de seguimiento. Lo que no se puede delegar a ninguno de los tres es la claridad del mensaje ni la calidad del proceso comercial posterior.</p>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Qué métricas importan de verdad</h2>
           <p>El volumen de leads, la tasa de cualificación, el coste por oportunidad útil y la tasa de cierre son los indicadores que permiten entender si el sistema funciona bien o mal. Si solo se mide el número de contactos, se optimiza para cantidad, no para calidad. Y si se mide solo el coste por lead, se puede estar ante una cifra engañosamente buena mientras los cierres son escasos.</p>

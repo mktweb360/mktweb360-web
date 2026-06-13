@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "SEO local para empresas de servicios: cómo captar clientes en 2025",
@@ -116,6 +117,8 @@ export default function SeoLocalPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Errores frecuentes</h2>
           <p>Depender solo de la ficha, tener una web genérica, crear páginas locales vacías, no cuidar la reputación o no medir son fallos muy habituales que reducen bastante el rendimiento local. También es un error intentar forzar decenas de páginas por ciudades sin una lógica real de servicio o sin contenido útil.</p>
+
+          <BlogBanner variant="seo" />
 
           <h2 className="text-2xl font-bold text-primary-600">Qué debe tener una web local para convertir</h2>
           <p>Una buena web local debe presentar con claridad el servicio, la zona de trabajo, las señales de credibilidad y la forma de contacto. La versión móvil tiene que estar muy bien resuelta porque gran parte de la demanda local llega desde el teléfono. El objetivo no es solo atraer clics, sino generar oportunidades útiles en el mercado local.</p>

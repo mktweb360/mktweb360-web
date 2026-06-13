@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Cómo gestionar la reputación online de tu empresa: guía práctica 2026",
@@ -115,6 +116,8 @@ export default function ReputacionOnlinePage() {
               Solicitar diagnóstico de reputación online
             </Link>
           </div>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Monitorizar menciones y alertas</h2>
           <p>Saber qué se dice de tu empresa en internet es el primer paso para gestionarlo. Configurar alertas de Google con el nombre del negocio, revisar periódicamente las principales plataformas de reseñas de tu sector y tener un proceso para detectar menciones en redes sociales permite actuar a tiempo en lugar de descubrir problemas cuando ya se han amplificado.</p>

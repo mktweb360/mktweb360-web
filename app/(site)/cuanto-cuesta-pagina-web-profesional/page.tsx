@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Precio de una página web profesional en 2025: qué debe incluir",
@@ -124,6 +125,8 @@ export default function CuantoCuestaWebPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Cuándo una web barata sale cara</h2>
           <p>Una web barata puede servir en algunos contextos, pero muchas veces el ahorro inicial desaparece rápido cuando la página no convierte, no posiciona bien, no transmite confianza o requiere rehacerse en poco tiempo. En términos de negocio, una web que no apoya la captación ni acompaña la estrategia comercial suele salir más cara que una inversión bien hecha desde el principio.</p>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Qué conviene preguntar antes de contratar</h2>
           <p>Antes de aceptar un presupuesto, conviene saber qué incluye exactamente: estrategia, arquitectura, diseño, copy, SEO base, analítica, integraciones, revisiones y soporte. También conviene aclarar si la web está pensada solo para verse o también para captar, y si será mantenible y escalable cuando el negocio evolucione.</p>

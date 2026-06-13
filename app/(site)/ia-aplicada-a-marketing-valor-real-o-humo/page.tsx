@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "IA aplicada a marketing: dónde aporta valor real en 2025",
@@ -116,6 +117,8 @@ export default function IaMarketingPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Qué necesita una empresa antes de aplicar IA con criterio</h2>
           <p>La IA trabaja bien cuando el problema está bien definido, los datos son fiables y la supervisión existe. Si no hay claridad sobre qué se quiere resolver, si los datos son escasos o de mala calidad, o si nadie en la empresa va a revisar lo que genera la herramienta, el resultado será mediocre o contraproducente. Antes de implementar IA, lo que conviene revisar es si la base del marketing está bien resuelta.</p>
+
+          <BlogBanner variant="geo" />
 
           <h2 className="text-2xl font-bold text-primary-600">IA y agentes: enfoque correcto</h2>
           <p>Los agentes de IA permiten automatizar flujos más complejos con mayor autonomía, pero también tienen más puntos de fallo y exigen supervisión más cuidadosa. Para una pyme, el enfoque más útil suele ser empezar por usos concretos y bien acotados en lugar de implementar sistemas de agentes complejos. La complejidad sin propósito claro es un coste sin retorno.</p>

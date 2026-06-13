@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "10 errores digitales al montar un negocio desde cero (y cómo evitarlos)",
@@ -115,6 +116,8 @@ export default function ErroresDigitalesNegocioNuevoPage() {
               Ver opciones de diseño web
             </Link>
           </div>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Invertir en publicidad antes de tener la base resuelta</h2>
           <p>Arrancar Google Ads o Meta Ads cuando la web no convierte, el mensaje no está claro o no hay capacidad de responder los contactos es gastar dinero para atraer tráfico que no se va a convertir. La publicidad amplifica lo que ya funciona — si nada funciona bien, la amplificación del problema es cara. La base primero, la publicidad después.</p>

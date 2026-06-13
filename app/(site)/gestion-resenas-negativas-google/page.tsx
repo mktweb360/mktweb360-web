@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Cómo Gestionar las Reseñas Negativas en Google — Guía Práctica | Mkt Web 360",
@@ -42,6 +43,8 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Para una queja legítima:</strong> "Gracias por tomarte el tiempo de contarnos tu experiencia, [Nombre]. Lamentamos que tu visita no haya cumplido las expectativas. Tienes razón en que [punto específico] no estuvo a la altura de nuestros estándares habituales. Nos gustaría tener la oportunidad de compensarte. Por favor, contáctanos en [email/teléfono] para que podamos resolverlo directamente."</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Para una crítica que no reconoces:</strong> "Hola, [Nombre]. Gracias por tu reseña. Sentimos que tu experiencia no haya sido satisfactoria. No hemos podido identificar tu visita con los datos que disponemos. Te agradeceríamos que te pusieras en contacto con nosotros en [email/teléfono] para poder entender qué ocurrió y buscar una solución."</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Para una reseña que parece de la competencia o falsa:</strong> "Hola. No hemos encontrado ningún registro que coincida con la experiencia descrita. Si eres cliente nuestro, te invitamos a contactarnos directamente en [email/teléfono] para aclarar cualquier malentendido. Estamos a tu disposición."</p>
+
+        <BlogBanner variant="default" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cuándo y cómo solicitar la eliminación de una reseña falsa</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Google permite solicitar la eliminación de reseñas que violan sus políticas, pero no todas las reseñas negativas califican para ser eliminadas. Las que sí pueden denunciarse son: spam o contenido falso (el usuario nunca fue cliente), contenido que contiene insultos u odio, conflictos de interés (empleados actuales o de la competencia) y contenido que incluye información personal.</p>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Cómo Crear una Landing Page que Convierte — Guía Práctica | Mkt Web 360",
@@ -42,6 +43,8 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Las fórmulas de titular más efectivas son: el beneficio directo ("Consigue 10 nuevos clientes al mes con SEO local"), la transformación ("De invisible en Google a primera posición en 90 días"), y la pregunta que toca el dolor ("¿Inviertes en publicidad y no ves resultados?").</p>
         <p className="text-gray-700 leading-relaxed mb-4">Evita los titulares vagos y corporativos como "Soluciones integrales de marketing para empresas". Nadie se siente identificado con eso. Sé específico sobre a quién va dirigido y qué problema resuelve.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Testea siempre al menos dos versiones de tu titular con un test A/B si tienes suficiente tráfico. Cambiar el titular puede duplicar la tasa de conversión sin modificar nada más de la página.</p>
+
+        <BlogBanner variant="default" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">El CTA perfecto: cómo diseñarlo y dónde colocarlo</h2>
         <p className="text-gray-700 leading-relaxed mb-4">El Call to Action es el botón, enlace o formulario que define la conversión. Su diseño, texto y posición tienen un impacto enorme en la tasa de conversión.</p>

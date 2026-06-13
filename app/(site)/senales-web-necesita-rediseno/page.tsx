@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
   title: "Señales de que tu web necesita un rediseño urgente en 2025",
@@ -108,6 +109,8 @@ export default function SenalesRedisenoPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Cuándo tiene sentido rediseñar y cuándo no</h2>
           <p>No siempre la respuesta correcta es rehacer desde cero. A veces basta con mejorar la arquitectura, actualizar mensajes, resolver problemas técnicos o añadir páginas bien pensadas. El rediseño completo tiene sentido cuando la base es tan limitante que no permite crecer sin arrastrar esas limitaciones.</p>
+
+          <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Qué debe resolver un buen rediseño</h2>
           <p>Un rediseño bien planteado no solo cambia el aspecto visual. Debe resolver el mensaje, la arquitectura, la experiencia móvil, la base SEO, los CTAs, la medición y la escalabilidad. Si solo se cambia el diseño sin tocar la estrategia, el resultado suele ser una web más bonita con los mismos problemas de fondo.</p>
