@@ -55,6 +55,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/tienda-online/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/ia-aplicada-al-marketing/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/geo-posicionamiento-ia/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/marketing-digital-toledo/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/seo-toledo/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/digitalizacion-empresas-castilla-la-mancha/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/agencias-marketing-digital-toledo/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/tiendas-online-toledo/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/google-business-profile-toledo/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/que-es-geo-generative-engine-optimization/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/como-crear-landing-page-que-convierte/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/whatsapp-business-para-empresas/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/email-marketing-pymes/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/como-medir-roi-marketing-digital/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/gestion-resenas-negativas-google/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/diseno-web-pymes/", priority: 0.7, changeFrequency: "monthly" as const },
   ];
 
   return pages.map((p) => ({
