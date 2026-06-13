@@ -78,6 +78,9 @@ export default function TiendaOnlineLandingPage() {
               "Sin licencia mensual de plataforma",
               "Formación completa para gestión autónoma",
               "Soporte post-entrega incluido",
+              "Migración completa desde tu tienda actual — productos, clientes y pedidos",
+              "Conexión con TPV físico si tienes tienda física",
+              "Importación masiva de catálogo desde Excel, CSV o plataforma anterior",
             ].map((f) => (
               <div key={f} className="flex items-center gap-3 bg-white rounded-xl px-5 py-4 shadow-sm border border-gray-100">
                 <span className="text-accent-500 font-bold text-lg shrink-0">✓</span>

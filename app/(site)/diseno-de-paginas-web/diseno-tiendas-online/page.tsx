@@ -187,6 +187,57 @@ export default function TiendasOnlinePage() {
         </div>
       </section>
 
+      {/* Migración */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">¿Tienes tienda y quieres cambiarte?</h2>
+            <p className="text-gray-600 max-w-xl mx-auto">Migramos tu tienda desde Shopify, Prestashop, Wix o cualquier plataforma sin perder productos, pedidos ni historial de SEO.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: "📦", title: "Migración de catálogo", desc: "Trasladamos todos tus productos, variantes, imágenes, precios y descripciones sin pérdida de datos. También desde Excel o CSV." },
+              { icon: "👥", title: "Clientes y pedidos", desc: "Importamos el histórico completo de clientes y pedidos para que no pierdas ningún dato de tu actividad anterior." },
+              { icon: "🔗", title: "SEO preservado", desc: "Redireccionamos las URLs antiguas para conservar el posicionamiento que ya tienes en Google. Sin caídas de tráfico." },
+            ].map((item) => (
+              <div key={item.title} className="bg-primary-50 rounded-2xl p-6 text-center">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="font-bold text-primary-600 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 bg-white border border-gray-200 rounded-2xl p-6 text-center">
+            <p className="text-gray-600 text-sm leading-relaxed">Plataformas de origen habituales: <strong>Shopify, Prestashop, WooCommerce antiguo, Wix, Squarespace, Magento.</strong> Si tienes dudas sobre si podemos migrar tu plataforma, consúltanos.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Funcionalidades avanzadas */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Funcionalidades avanzadas disponibles</h2>
+            <p className="text-gray-600 max-w-xl mx-auto">Más allá de la tienda base, ofrecemos integraciones adicionales para escalar tu negocio sin cambiar de plataforma.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: "Google Shopping", desc: "Conecta tu catálogo con Google Merchant Center y aparece en los resultados de compra de Google." },
+              { title: "TPV físico integrado", desc: "Sincroniza tu tienda online con tu punto de venta físico. Stock unificado, un solo panel de gestión." },
+              { title: "Suscripciones y pagos recurrentes", desc: "Vende productos por suscripción mensual o anual con gestión automática de cobros." },
+              { title: "Importación masiva de catálogo", desc: "Sube miles de productos desde Excel, CSV o tu plataforma anterior sin trabajo manual." },
+              { title: "Marketplace multi-vendedor", desc: "Transforma tu tienda en un marketplace donde otros vendedores puedan publicar sus productos." },
+              { title: "B2B y precios por cliente", desc: "Precios diferenciados por tipo de cliente, volumen de pedido o condiciones específicas de cuenta." },
+            ].map((f) => (
+              <div key={f.title} className="bg-white rounded-xl p-6 border border-gray-200">
+                <h3 className="font-bold text-primary-600 mb-2">{f.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Offer banner */}
       <section id="oferta" className="py-12 px-4 bg-primary-700">
         <div className="max-w-4xl mx-auto text-center">
