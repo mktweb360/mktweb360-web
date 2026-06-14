@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /area-privada/
+
+Sitemap: https://www.mktweb360.com/sitemap.xml
