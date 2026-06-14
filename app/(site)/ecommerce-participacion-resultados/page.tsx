@@ -51,7 +51,7 @@ export default function EcommerceParticipacionPage() {
                 </a>
               </div>
             </div>
-            <div>
+            <div className="hidden md:block">
               <Image src="/imagen-ecommerce-participacion.jpg" alt="Ecommerce con participación en resultados" width={600} height={400} className="rounded-2xl shadow-lg w-full object-cover" />
             </div>
           </div>

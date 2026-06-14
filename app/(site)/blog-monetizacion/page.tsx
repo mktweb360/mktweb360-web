@@ -103,7 +103,7 @@ export default function BlogMonetizacionPage() {
                 </a>
               </div>
             </div>
-            <div>
+            <div className="hidden md:block">
               <Image src="/imagen-blog-monetizacion.jpg" alt="Blog para monetización con ingresos pasivos" width={600} height={400} className="rounded-2xl shadow-lg w-full object-cover" />
             </div>
           </div>
