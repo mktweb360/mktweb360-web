@@ -296,7 +296,7 @@ function HeroSlider() {
       badge: "Solo 5 plazas este mes",
       headline: "Tu tienda online",
       subheadline: "profesional desde 490€",
-      subtitle: "Sin comisiones por venta. Sin licencias mensuales. Diseño 100% personalizado. SEO incluido 12 meses.",
+      subtitle: "Sin comisiones por venta. Sin licencias mensuales. Diseño 100% personalizado. Web técnicamente optimizada para SEO desde el primer día.",
       cta: { text: "Reservar mi plaza", href: "/tienda-online/" },
       cta2: { text: "Ver la oferta", href: "/diseno-de-paginas-web/diseno-tiendas-online/" },
     },

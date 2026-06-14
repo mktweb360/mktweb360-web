@@ -4,11 +4,11 @@ import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Tienda Online Profesional desde 490€ — Sin Comisiones | Mkt Web 360",
-  description: "Crea tu tienda online profesional desde 490€ con SEO incluido 12 meses. Sin comisiones por venta, sin licencias. Diseño 100% personalizado. Solo 5 plazas este mes.",
+  description: "Crea tu tienda online profesional desde 490€. Sin comisiones por venta, sin licencias. Diseño 100% personalizado. Web orientada al SEO desde el primer día. Solo 5 plazas este mes.",
   alternates: { canonical: "https://www.mktweb360.com/tienda-online/" },
   openGraph: {
     title: "Tienda Online desde 490€ Sin Comisiones | Mkt Web 360",
-    description: "Tu tienda online profesional desde 490€ con SEO 12 meses incluido. Sin comisiones. Solo 5 plazas.",
+    description: "Tu tienda online profesional desde 490€. Sin comisiones. Web orientada al SEO. Solo 5 plazas.",
     url: "https://www.mktweb360.com/tienda-online/",
     images: [{ url: "/imagen-tiendas-online.jpg", width: 1200, height: 900, alt: "Tienda online profesional desde 490€" }],
   },
@@ -26,7 +26,7 @@ export default function TiendaOnlineLandingPage() {
             <span className="text-accent-400">desde 490€</span>
           </h1>
           <p className="text-xl text-primary-200 mb-4 max-w-2xl mx-auto">
-            Sin comisiones por venta. Sin licencias mensuales. Diseño 100% personalizado. SEO incluido durante 12 meses.
+            Sin comisiones por venta. Sin licencias mensuales. Diseño 100% personalizado. Web técnicamente optimizada para SEO desde el primer día.
           </p>
           <p className="text-primary-300 mb-10 italic">Mientras tú trabajas, nosotros conseguimos que te llamen.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -44,7 +44,7 @@ export default function TiendaOnlineLandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             {[
               { icon: "🚫", title: "Shopify Basic", desc: "39€/mes + 2% por venta = +1.500€/año solo en fees", bad: true },
-              { icon: "✅", title: "Mkt Web 360", desc: "490€ una vez + 0€ comisiones + SEO 12 meses incluido", bad: false },
+              { icon: "✅", title: "Mkt Web 360", desc: "490€ una vez + 0€ comisiones + web orientada al SEO", bad: false },
               { icon: "🚫", title: "Wix eCommerce", desc: "17€/mes + comisiones + diseño genérico de plantilla", bad: true },
             ].map((c) => (
               <div key={c.title} className={`rounded-2xl p-6 border-2 ${c.bad ? "border-gray-200 bg-gray-50" : "border-accent-500 bg-accent-50"}`}>
@@ -73,7 +73,7 @@ export default function TiendaOnlineLandingPage() {
               "Catálogo, variantes, stock y pedidos",
               "Integración con transportistas y seguimiento",
               "SEO técnico incluido desde el primer día",
-              "12 meses de SEO incluidos en la oferta",
+              "Oferta SEO 6x3 disponible al contratar la tienda",
               "Sin comisiones por venta — 0€ por transacción",
               "Sin licencia mensual de plataforma",
               "Formación completa para gestión autónoma",
