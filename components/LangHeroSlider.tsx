@@ -67,13 +67,19 @@ export function LangHeroSlider({ lang }: { lang: string }) {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-700"
-        style={{ backgroundImage: `url(${slide.bg})` }}
-      />
+      {/* Background images — crossfade */}
+      {slides.map((s, i) => (
+        <div
+          key={s.bg}
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+          style={{
+            backgroundImage: `url(${s.bg})`,
+            opacity: i === current ? 1 : 0,
+          }}
+        />
+      ))}
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-primary-900/70" />
+      <div className="absolute inset-0 bg-primary-900/65" />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center text-white">
