@@ -184,9 +184,6 @@ const localBusinessSchema = {
 
 const FAQS = [
   {
-    q: "¿Dónde está ubicada la agencia y a qué zonas dais servicio?",
-    a: "Estamos en El Viso de San Juan, Toledo, pero damos servicio a empresas de toda España. Trabajamos de forma remota con clientes en Madrid, Barcelona, Valencia, Sevilla y cualquier otra ciudad española.",
-  },
   {
     q: "¿Cuánto tiempo tarda en verse resultados con el SEO?",
     a: "Los primeros resultados del SEO suelen verse entre 3 y 6 meses, aunque depende de la competencia del sector y el estado actual de la web. El SEO es una inversión a largo plazo con resultados duraderos.",
