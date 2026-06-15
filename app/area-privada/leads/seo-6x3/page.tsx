@@ -62,13 +62,18 @@ export default function SeoLeadForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
-    await fetch("/api/admin/leads/seo-6x3", {
+    const res = await fetch("/api/admin/leads/seo-6x3", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...form, oferta: "seo-6x3", fecha: new Date().toISOString() }),
     });
-    setSaved(true);
-    setSaving(false);
+    const data = await res.json();
+    if (data.ok && data.id) {
+      router.push(`/area-privada/leads/seo-6x3/contrato/${data.id}`);
+    } else {
+      setSaved(true);
+      setSaving(false);
+    }
   };
 
   if (saved) {

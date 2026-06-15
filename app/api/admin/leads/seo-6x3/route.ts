@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
+import { appendFile, mkdir } from "fs/promises";
+import { join } from "path";
+import { randomUUID } from "crypto";
 
 export async function POST(req: NextRequest) {
   const cookieStore = await cookies();
@@ -9,16 +12,13 @@ export async function POST(req: NextRequest) {
   }
 
   const data = await req.json();
-
-  // Store in a simple JSON file for now — will connect to app DB tomorrow
-  const { appendFile, mkdir } = await import("fs/promises");
-  const { join } = await import("path");
+  const id = randomUUID();
+  const lead = { id, ...data, savedAt: new Date().toISOString() };
 
   const dir = join(process.cwd(), "data");
   await mkdir(dir, { recursive: true });
-
-  const line = JSON.stringify({ ...data, savedAt: new Date().toISOString() }) + "\n";
+  const line = JSON.stringify(lead) + "\n";
   await appendFile(join(dir, "leads-seo-6x3.jsonl"), line, "utf-8");
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, id });
 }
