@@ -275,7 +275,15 @@ function HeroSlider() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const slides = [
+  const slides: {
+    badge: string | null;
+    headline: string;
+    subheadline: string;
+    subtitle: string;
+    cta: { text: string; href: string };
+    cta2: { text: string; href: string };
+    bg: string;
+  }[] = [
     {
       badge: null,
       headline: "Agencia de Marketing Digital",
@@ -283,6 +291,7 @@ function HeroSlider() {
       subtitle: "Aumenta tu visibilidad online, genera más clientes y haz crecer tu negocio con estrategias de marketing digital probadas. Servicio nacional.",
       cta: { text: "Diagnóstico gratuito", href: "/contacto/" },
       cta2: { text: "Ver servicios", href: "#servicios" },
+      bg: "/hero-slide-1.jpg",
     },
     {
       badge: "Oferta especial junio",
@@ -291,6 +300,7 @@ function HeroSlider() {
       subtitle: "Contrata cualquier servicio SEO este mes y llévate 6 meses de posicionamiento pagando solo 3. Plazas limitadas.",
       cta: { text: "Quiero esta oferta", href: "/seo-posicionamiento-web-organico/" },
       cta2: { text: "Ver servicio SEO", href: "/seo-posicionamiento-web-organico/" },
+      bg: "/hero-slide-2.jpg",
     },
     {
       badge: "Solo 5 plazas este mes",
@@ -299,6 +309,7 @@ function HeroSlider() {
       subtitle: "Sin comisiones por venta. Sin licencias mensuales. Diseño 100% personalizado. Web técnicamente optimizada para SEO desde el primer día.",
       cta: { text: "Reservar mi plaza", href: "/tienda-online/" },
       cta2: { text: "Ver la oferta", href: "/diseno-de-paginas-web/diseno-tiendas-online/" },
+      bg: "/hero-slide-3.jpg",
     },
   ];
 
@@ -314,58 +325,69 @@ function HeroSlider() {
 
   return (
     <div
-      className="max-w-4xl mx-auto px-4 py-20 text-center"
+      className="relative w-full min-h-[560px] md:min-h-[600px] flex items-center justify-center overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Badge */}
-      <div className="h-8 mb-4 flex items-center justify-center">
-        {slide.badge && (
-          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest animate-fade-in">
-            {slide.badge}
-          </span>
-        )}
-      </div>
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-all duration-700"
+        style={{ backgroundImage: `url(${slide.bg})` }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-primary-900/70" />
 
-      {/* Headline */}
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem]">
-        {slide.headline}<br />
-        <span className="text-accent-400">{slide.subheadline}</span>
-      </h1>
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center text-white">
+        {/* Badge */}
+        <div className="h-8 mb-4 flex items-center justify-center">
+          {slide.badge && (
+            <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+              {slide.badge}
+            </span>
+          )}
+        </div>
 
-      {/* Subtitle */}
-      <p className="text-xl text-primary-200 mb-10 max-w-2xl mx-auto leading-relaxed italic min-h-[4rem]">
-        {slide.subtitle}
-      </p>
+        {/* Headline */}
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem]">
+          {slide.headline}<br />
+          <span className="text-accent-400">{slide.subheadline}</span>
+        </h1>
 
-      {/* CTAs */}
-      <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-        <Link
-          href={slide.cta.href}
-          className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors"
-        >
-          {slide.cta.text}
-        </Link>
-        <Link
-          href={slide.cta2.href}
-          className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors"
-        >
-          {slide.cta2.text}
-        </Link>
-      </div>
+        {/* Subtitle */}
+        <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed italic min-h-[4rem]">
+          {slide.subtitle}
+        </p>
 
-      {/* Dots */}
-      <div className="flex items-center justify-center gap-2">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-              i === current ? "bg-accent-400 w-6" : "bg-white/40 hover:bg-white/70"
-            }`}
-            aria-label={`Slide ${i + 1}`}
-          />
-        ))}
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+          <Link
+            href={slide.cta.href}
+            className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors"
+          >
+            {slide.cta.text}
+          </Link>
+          <Link
+            href={slide.cta2.href}
+            className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors"
+          >
+            {slide.cta2.text}
+          </Link>
+        </div>
+
+        {/* Dots */}
+        <div className="flex items-center justify-center gap-2">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                i === current ? "bg-accent-400 w-6" : "bg-white/40 w-2.5 hover:bg-white/70"
+              }`}
+              aria-label={`Slide ${i + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
