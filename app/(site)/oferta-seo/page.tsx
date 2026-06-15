@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ContactForm } from "@/components/ContactForm";
+import { OfertaSeoForm } from "@/components/OfertaSeoForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -279,7 +279,7 @@ export default function OfertaSeoPage() {
             <p className="text-primary-200">Rellena este formulario en menos de 2 minutos. Analizamos tu caso y te contactamos en menos de 24 horas.</p>
           </div>
           <div className="bg-white rounded-2xl p-8">
-            <ContactForm formType="oferta-seo-6x3" />
+            <OfertaSeoForm />
           </div>
           <p className="text-center text-primary-300 text-xs mt-4">
             No es un formulario de contacto genérico. Analizamos tu dominio antes de llamarte.
