@@ -28,6 +28,7 @@ export function Footer({ lang }: { lang?: string }) {
             <li><Link href="/diseno-de-paginas-web/" className="hover:text-white">Diseño Web</Link></li>
             <li><Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="hover:text-white">Tiendas Online</Link></li>
             <li><Link href="/creacion-de-blog/" className="hover:text-white">Creación de Blog</Link></li>
+            <li><Link href="/oferta-seo/" className="hover:text-white transition-colors font-semibold text-accent-400">Oferta SEO 6x3</Link></li>
           </ul>
         </div>
 

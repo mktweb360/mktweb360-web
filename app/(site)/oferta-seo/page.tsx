@@ -1,0 +1,291 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ContactForm } from "@/components/ContactForm";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+export const metadata: Metadata = {
+  title: "Oferta SEO 6x3 — 6 Meses de Posicionamiento por el Precio de 3 | Mkt Web 360",
+  description: "Oferta limitada: 6 meses de SEO profesional por el precio de 3. Solo 5 plazas este mes. Comprueba si tu dominio cumple los requisitos.",
+  alternates: { canonical: "https://www.mktweb360.com/oferta-seo/" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "Oferta SEO 6x3 — Mkt Web 360",
+    description: "6 meses de posicionamiento web por el precio de 3. Plazas limitadas. Comprueba si tu dominio cumple los requisitos.",
+    url: "https://www.mktweb360.com/oferta-seo/",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Qué incluye la oferta SEO 6x3?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "6 meses completos de servicio SEO profesional: auditoría técnica, investigación de keywords, optimización on-page, creación de contenido, seguimiento de posiciones e informes mensuales. Todo por el precio de 3 meses.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto cuesta?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "El precio de esta oferta es de 600€ por los 6 meses completos. Disponible en pago único o en cuotas.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuándo se verán resultados?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los primeros movimientos de posiciones suelen verse entre el mes 2 y el mes 3. Tráfico orgánico real y consistente, entre el mes 4 y el mes 6.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿Para qué tipo de negocio es esta oferta?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Para cualquier negocio con web propia que quiera aparecer en Google. Tanto si nunca has trabajado el SEO como si lo has intentado sin resultados.",
+      },
+    },
+  ],
+};
+
+const INCLUDES = [
+  "Auditoría técnica completa del dominio",
+  "Investigación de keywords por sector y zona",
+  "Optimización on-page de las páginas principales",
+  "Creación de contenido SEO mensual",
+  "Seguimiento semanal de posiciones",
+  "Informe mensual con métricas reales",
+  "Acceso a Google Search Console y GA4 — siempre tuyos",
+  "Contacto directo con tu responsable de cuenta",
+];
+
+const PAGO = [
+  { opcion: "A", label: "Pago único", precio: "600€", desc: "A la firma del acuerdo. Arrancamos en 48h." },
+  { opcion: "B", label: "Flex 50/50", precio: "2 × 300€", desc: "300€ a la firma + 300€ el mes siguiente." },
+  { opcion: "C", label: "Cuotas", precio: "6 × 100€", desc: "Domiciliación mensual desde la firma." },
+];
+
+export default function OfertaSeoPage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      {/* HERO */}
+      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: "url(/hero-slide-2.jpg)" }} />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 py-16 md:py-24">
+          <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Oferta SEO 6x3" }]} />
+          <div className="max-w-3xl mt-4">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Oferta especial junio</span>
+              <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full">Solo 5 plazas</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              6 meses de SEO<br />
+              <span className="text-accent-400">por el precio de 3</span>
+            </h1>
+            <p className="text-xl text-primary-200 mb-4 leading-relaxed">
+              Posicionamiento web profesional durante 6 meses completos. Trabajo real, métricas reales, resultados verificables. Precio especial de esta campaña: <strong className="text-white">600€</strong>.
+            </p>
+            <p className="text-primary-300 text-sm italic mb-8">
+              Esta oferta no está disponible en nuestra tarifa habitual. Es una campaña limitada para incorporar nuevas cuentas este mes.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#elegibilidad" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
+                Comprobar si soy elegible
+              </a>
+              <a href="#incluye" className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors text-center">
+                Ver qué incluye
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST BAR */}
+      <section className="bg-primary-600 py-5 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+          {[
+            { value: "6 meses", label: "de trabajo SEO completo" },
+            { value: "600€", label: "precio total de la oferta" },
+            { value: "5 plazas", label: "disponibles este mes" },
+            { value: "48h", label: "para arrancar tras la firma" },
+          ].map((m) => (
+            <div key={m.label}>
+              <div className="text-lg font-bold text-accent-400">{m.value}</div>
+              <div className="text-xs text-primary-200 mt-1">{m.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* QUÉ INCLUYE */}
+      <section id="incluye" className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Qué incluye la oferta</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">6 meses de trabajo SEO real. No prometemos posiciones — prometemos el trabajo que las genera.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+            {INCLUDES.map((item) => (
+              <div key={item} className="flex items-center gap-3 bg-white rounded-xl px-5 py-4 shadow-sm border border-gray-100">
+                <span className="text-accent-500 font-bold shrink-0">✓</span>
+                <span className="text-gray-700 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Timeline visual */}
+          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            <h3 className="font-bold text-primary-600 mb-6 text-center">Cómo se distribuye el trabajo</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                {
+                  periodo: "Mes 1",
+                  titulo: "Base y diagnóstico",
+                  color: "bg-primary-600",
+                  items: ["Auditoría técnica completa", "Mapa de keywords", "Optimización on-page principal", "Configuración de métricas"],
+                },
+                {
+                  periodo: "Meses 2-3",
+                  titulo: "Construcción",
+                  color: "bg-primary-500",
+                  items: ["Contenido SEO mensual", "Optimización de páginas secundarias", "Google Business Profile", "Primer informe de evolución"],
+                },
+                {
+                  periodo: "Meses 4-6",
+                  titulo: "Consolidación",
+                  color: "bg-accent-500",
+                  items: ["Link building ético", "Optimización de posiciones 10-20", "Análisis de conversión", "Informe mensual acumulado"],
+                },
+              ].map((fase) => (
+                <div key={fase.periodo} className="rounded-xl overflow-hidden border border-gray-100">
+                  <div className={`${fase.color} text-white px-4 py-3`}>
+                    <p className="text-xs font-bold uppercase tracking-widest opacity-80">{fase.periodo}</p>
+                    <p className="font-bold">{fase.titulo}</p>
+                  </div>
+                  <div className="p-4">
+                    <ul className="space-y-2">
+                      {fase.items.map((i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
+                          <span className="text-accent-500 shrink-0 mt-0.5">→</span>
+                          <span>{i}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PARA QUIÉN ES */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">¿Esta oferta es para ti?</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-primary-50 rounded-2xl p-6 border border-primary-100">
+              <h3 className="font-bold text-primary-600 mb-4">✅ Encaja si...</h3>
+              <ul className="space-y-3">
+                {[
+                  "Tienes web propia y quieres que Google te encuentre",
+                  "Nunca has trabajado el SEO de tu web",
+                  "Has trabajado el SEO pero no has visto resultados reales",
+                  "Quieres clientes que te buscan, no solo los que ya te conocen",
+                  "Puedes comprometerte 6 meses y quieres hacerlo bien",
+                ].map((i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                    <span className="text-accent-500 shrink-0 mt-0.5">✓</span>
+                    <span>{i}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <h3 className="font-bold text-gray-500 mb-4">❌ No encaja si...</h3>
+              <ul className="space-y-3">
+                {[
+                  "No tienes web propia todavía",
+                  "Buscas resultados en menos de 2 meses",
+                  "No puedes facilitar acceso a tu web y herramientas",
+                  "Quieres garantía de posiciones concretas en Google",
+                ].map((i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-500">
+                    <span className="shrink-0 mt-0.5">✗</span>
+                    <span>{i}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OPCIONES DE PAGO */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Opciones de pago</h2>
+            <p className="text-gray-500">Sin permanencia adicional. 6 meses de trabajo, precio cerrado.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {PAGO.map((p) => (
+              <div key={p.opcion} className={`bg-white rounded-2xl p-6 border-2 ${p.opcion === "A" ? "border-accent-500" : "border-gray-200"}`}>
+                {p.opcion === "A" && (
+                  <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-0.5 rounded-full mb-3">Recomendado</span>
+                )}
+                <p className="font-bold text-primary-600 mb-1">{p.label}</p>
+                <p className="text-2xl font-bold text-accent-500 mb-2">{p.precio}</p>
+                <p className="text-gray-500 text-xs leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Preguntas frecuentes</h2>
+          </div>
+          <div className="space-y-4">
+            {faqSchema.mainEntity.map((faq) => (
+              <div key={faq.name} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <h3 className="font-bold text-primary-600 mb-2">{faq.name}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{faq.acceptedAnswer.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FORMULARIO DE ELEGIBILIDAD */}
+      <section id="elegibilidad" className="py-16 px-4 bg-primary-600 text-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Paso 1 de 2</span>
+            <h2 className="text-3xl font-bold mb-4">Comprueba si tu dominio cumple los requisitos</h2>
+            <p className="text-primary-200">Rellena este formulario en menos de 2 minutos. Analizamos tu caso y te contactamos en menos de 24 horas.</p>
+          </div>
+          <div className="bg-white rounded-2xl p-8">
+            <ContactForm formType="oferta-seo-6x3" />
+          </div>
+          <p className="text-center text-primary-300 text-xs mt-4">
+            No es un formulario de contacto genérico. Analizamos tu dominio antes de llamarte.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
