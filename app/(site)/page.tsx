@@ -184,7 +184,6 @@ const localBusinessSchema = {
 
 const FAQS = [
   {
-  {
     q: "¿Cuánto tiempo tarda en verse resultados con el SEO?",
     a: "Los primeros resultados del SEO suelen verse entre 3 y 6 meses, aunque depende de la competencia del sector y el estado actual de la web. El SEO es una inversión a largo plazo con resultados duraderos.",
   },

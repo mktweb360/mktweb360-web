@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { MetodologiaSeo } from "@/components/MetodologiaSeo";
 
 export const metadata: Metadata = {
   title: "Posicionamiento Web SEO — Agencia SEO España | Mkt Web 360",
@@ -182,6 +183,8 @@ export default function SeoPage() {
           </a>
         </div>
       </section>
+
+      <MetodologiaSeo />
 
       {/* GEO differentiator */}
       <section className="py-12 px-4 bg-primary-50 border-y border-primary-100">

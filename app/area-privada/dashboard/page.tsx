@@ -37,6 +37,14 @@ export default function AdminDashboard() {
             <h3 className="font-bold text-gray-400 mb-1">Tienda online 490€</h3>
             <p className="text-gray-400 text-sm">Formulario guiado — en desarrollo</p>
           </div>
+          <Link href="/area-privada/metodologia-seo" className="bg-white rounded-2xl p-6 border-2 border-primary-100 hover:border-primary-400 transition-colors group">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-2xl">📋</span>
+              <span className="text-xs font-bold bg-accent-100 text-accent-600 px-2 py-0.5 rounded-full">Interno</span>
+            </div>
+            <h3 className="font-bold text-primary-600 group-hover:text-accent-500 transition-colors mb-1">Plan de trabajo SEO</h3>
+            <p className="text-gray-500 text-sm">Referencia operativa por escenario — virgen e historial</p>
+          </Link>
         </div>
       </main>
     </div>
