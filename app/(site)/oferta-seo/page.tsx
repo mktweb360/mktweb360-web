@@ -4,12 +4,12 @@ import { OfertaSeoForm } from "@/components/OfertaSeoForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Oferta SEO 6x3 — 6 Meses de Posicionamiento por el Precio de 3 | Mkt Web 360",
+  title: "Oferta SEO 6x3 â 6 Meses de Posicionamiento por el Precio de 3 | Mkt Web 360",
   description: "Oferta limitada: 6 meses de SEO profesional por el precio de 3. Solo 5 plazas este mes. Comprueba si tu dominio cumple los requisitos.",
   alternates: { canonical: "https://www.mktweb360.com/oferta-seo/" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Oferta SEO 6x3 — Mkt Web 360",
+    title: "Oferta SEO 6x3 â Mkt Web 360",
     description: "6 meses de posicionamiento web por el precio de 3. Plazas limitadas. Comprueba si tu dominio cumple los requisitos.",
     url: "https://www.mktweb360.com/oferta-seo/",
   },
@@ -24,15 +24,7 @@ const faqSchema = {
       name: "¿Qué incluye la oferta SEO 6x3?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "6 meses completos de servicio SEO profesional: auditoría técnica, investigación de keywords, optimización on-page, creación de contenido, seguimiento de posiciones e informes mensuales. Todo por el precio de 3 meses.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Cuánto cuesta?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "El precio de esta oferta es de 600€ por los 6 meses completos. Disponible en pago único o en cuotas.",
+        text: "6 meses completos de servicio SEO profesional: auditoría técnica, investigación de keywords, optimización on-page, creación de contenido, seguimiento de posiciones e informes mensuales.",
       },
     },
     {
@@ -51,6 +43,22 @@ const faqSchema = {
         text: "Para cualquier negocio con web propia que quiera aparecer en Google. Tanto si nunca has trabajado el SEO como si lo has intentado sin resultados.",
       },
     },
+    {
+      "@type": "Question",
+      name: "¿Por qué solo 5 plazas?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Cada cuenta recibe atención directa de un responsable. Para mantener la calidad del trabajo y los resultados, limitamos el número de incorporaciones por mes.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "¿En qué se diferencia de lo que ya contraté y no funcionó?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Trabajo real con métricas verificables desde el mes 1. Tus datos de Google Search Console y GA4 siempre son tuyos. Sin informes opacos ni promesas sin respaldo.",
+      },
+    },
   ],
 };
 
@@ -63,12 +71,6 @@ const INCLUDES = [
   "Informe mensual con métricas reales",
   "Acceso a Google Search Console y GA4 — siempre tuyos",
   "Contacto directo con tu responsable de cuenta",
-];
-
-const PAGO = [
-  { opcion: "A", label: "Pago único", precio: "600€", desc: "A la firma del acuerdo. Arrancamos en 48h." },
-  { opcion: "B", label: "Flex 50/50", precio: "2 × 300€", desc: "300€ a la firma + 300€ el mes siguiente." },
-  { opcion: "C", label: "Cuotas", precio: "6 × 100€", desc: "Domiciliación mensual desde la firma." },
 ];
 
 export default function OfertaSeoPage() {
@@ -91,16 +93,22 @@ export default function OfertaSeoPage() {
               <span className="text-accent-400">por el precio de 3</span>
             </h1>
             <p className="text-xl text-primary-200 mb-4 leading-relaxed">
-              Posicionamiento web profesional durante 6 meses completos. Trabajo real, métricas reales, resultados verificables. Precio especial de esta campaña: <strong className="text-white">600€</strong>.
+              Posicionamiento web profesional durante 6 meses completos. Trabajo real, métricas reales, resultados verificables.
             </p>
             <p className="text-primary-300 text-sm italic mb-8">
               Esta oferta no está disponible en nuestra tarifa habitual. Es una campaña limitada para incorporar nuevas cuentas este mes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#elegibilidad" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
-                Comprobar si soy elegible
+              
+                href="#elegibilidad"
+                className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center shadow-lg shadow-accent-900/20"
+              >
+                Solicitar información →
               </a>
-              <a href="#incluye" className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors text-center">
+              
+                href="#incluye"
+                className="border border-white/40 text-white/80 px-7 py-4 rounded-full font-medium text-base hover:bg-white/10 transition-colors text-center"
+              >
                 Ver qué incluye
               </a>
             </div>
@@ -113,9 +121,9 @@ export default function OfertaSeoPage() {
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {[
             { value: "6 meses", label: "de trabajo SEO completo" },
-            { value: "600€", label: "precio total de la oferta" },
-            { value: "5 plazas", label: "disponibles este mes" },
+            { value: "Solo 5", label: "plazas disponibles este mes" },
             { value: "48h", label: "para arrancar tras la firma" },
+            { value: "100%", label: "tus datos, siempre tuyos" },
           ].map((m) => (
             <div key={m.label}>
               <div className="text-lg font-bold text-accent-400">{m.value}</div>
@@ -124,6 +132,13 @@ export default function OfertaSeoPage() {
           ))}
         </div>
       </section>
+
+      {/* BANNER URGENCIA */}
+      <div className="bg-accent-500 py-3 px-4 text-center">
+        <p className="text-white text-sm font-semibold">
+          ⏳ Quedan <strong>5 plazas disponibles</strong> · La oferta cierra el <strong>30 de junio de 2026</strong>
+        </p>
+      </div>
 
       {/* QUÉ INCLUYE */}
       <section id="incluye" className="py-16 px-4 bg-gray-50">
@@ -140,30 +155,13 @@ export default function OfertaSeoPage() {
               </div>
             ))}
           </div>
-
-          {/* Timeline visual */}
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
             <h3 className="font-bold text-primary-600 mb-6 text-center">Cómo se distribuye el trabajo</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                {
-                  periodo: "Mes 1",
-                  titulo: "Base y diagnóstico",
-                  color: "bg-primary-600",
-                  items: ["Auditoría técnica completa", "Mapa de keywords", "Optimización on-page principal", "Configuración de métricas"],
-                },
-                {
-                  periodo: "Meses 2-3",
-                  titulo: "Construcción",
-                  color: "bg-primary-500",
-                  items: ["Contenido SEO mensual", "Optimización de páginas secundarias", "Google Business Profile", "Primer informe de evolución"],
-                },
-                {
-                  periodo: "Meses 4-6",
-                  titulo: "Consolidación",
-                  color: "bg-accent-500",
-                  items: ["Link building ético", "Optimización de posiciones 10-20", "Análisis de conversión", "Informe mensual acumulado"],
-                },
+                { periodo: "Mes 1", titulo: "Base y diagnóstico", color: "bg-primary-600", items: ["Auditoría técnica completa", "Mapa de keywords", "Optimización on-page principal", "Configuración de métricas"] },
+                { periodo: "Meses 2-3", titulo: "Construcción", color: "bg-primary-500", items: ["Contenido SEO mensual", "Optimización de páginas secundarias", "Google Business Profile", "Primer informe de evolución"] },
+                { periodo: "Meses 4-6", titulo: "Consolidación", color: "bg-accent-500", items: ["Link building ético", "Optimización de posiciones 10-20", "Análisis de conversión", "Informe mensual acumulado"] },
               ].map((fase) => (
                 <div key={fase.periodo} className="rounded-xl overflow-hidden border border-gray-100">
                   <div className={`${fase.color} text-white px-4 py-3`}>
@@ -197,16 +195,9 @@ export default function OfertaSeoPage() {
             <div className="bg-primary-50 rounded-2xl p-6 border border-primary-100">
               <h3 className="font-bold text-primary-600 mb-4">✅ Encaja si...</h3>
               <ul className="space-y-3">
-                {[
-                  "Tienes web propia y quieres que Google te encuentre",
-                  "Nunca has trabajado el SEO de tu web",
-                  "Has trabajado el SEO pero no has visto resultados reales",
-                  "Quieres clientes que te buscan, no solo los que ya te conocen",
-                  "Puedes comprometerte 6 meses y quieres hacerlo bien",
-                ].map((i) => (
+                {["Tienes web propia y quieres que Google te encuentre","Nunca has trabajado el SEO de tu web","Has trabajado el SEO pero no has visto resultados reales","Quieres clientes que te buscan, no solo los que ya te conocen","Puedes comprometerte 6 meses y quieres hacerlo bien"].map((i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                    <span className="text-accent-500 shrink-0 mt-0.5">✓</span>
-                    <span>{i}</span>
+                    <span className="text-accent-500 shrink-0 mt-0.5">✓</span><span>{i}</span>
                   </li>
                 ))}
               </ul>
@@ -214,15 +205,9 @@ export default function OfertaSeoPage() {
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
               <h3 className="font-bold text-gray-500 mb-4">❌ No encaja si...</h3>
               <ul className="space-y-3">
-                {[
-                  "No tienes web propia todavía",
-                  "Buscas resultados en menos de 2 meses",
-                  "No puedes facilitar acceso a tu web y herramientas",
-                  "Quieres garantía de posiciones concretas en Google",
-                ].map((i) => (
+                {["No tienes web propia todavía","Buscas resultados en menos de 2 meses","No puedes facilitar acceso a tu web y herramientas","Quieres garantía de posiciones concretas en Google"].map((i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-gray-500">
-                    <span className="shrink-0 mt-0.5">✗</span>
-                    <span>{i}</span>
+                    <span className="shrink-0 mt-0.5">✗</span><span>{i}</span>
                   </li>
                 ))}
               </ul>
@@ -231,30 +216,8 @@ export default function OfertaSeoPage() {
         </div>
       </section>
 
-      {/* OPCIONES DE PAGO */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Opciones de pago</h2>
-            <p className="text-gray-500">Sin permanencia adicional. 6 meses de trabajo, precio cerrado.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {PAGO.map((p) => (
-              <div key={p.opcion} className={`bg-white rounded-2xl p-6 border-2 ${p.opcion === "A" ? "border-accent-500" : "border-gray-200"}`}>
-                {p.opcion === "A" && (
-                  <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-0.5 rounded-full mb-3">Recomendado</span>
-                )}
-                <p className="font-bold text-primary-600 mb-1">{p.label}</p>
-                <p className="text-2xl font-bold text-accent-500 mb-2">{p.precio}</p>
-                <p className="text-gray-500 text-xs leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-primary-600 mb-4">Preguntas frecuentes</h2>
@@ -270,7 +233,7 @@ export default function OfertaSeoPage() {
         </div>
       </section>
 
-      {/* FORMULARIO DE ELEGIBILIDAD */}
+      {/* FORMULARIO */}
       <section id="elegibilidad" className="py-16 px-4 bg-primary-600 text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
