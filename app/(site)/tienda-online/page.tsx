@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
+import { HostingBanner } from "@/components/HostingModal";
 
 export const metadata: Metadata = {
   title: "Tienda Online Profesional desde 490€ — Sin Comisiones | Mkt Web 360",
@@ -99,6 +100,12 @@ export default function TiendaOnlineLandingPage() {
           <a href="#contacto" className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block">
             Quiero mi plaza — 490€
           </a>
+        </div>
+      </section>
+
+      <section className="py-8 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <HostingBanner />
         </div>
       </section>
 

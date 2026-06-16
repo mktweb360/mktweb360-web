@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { HostingBanner } from "@/components/HostingModal";
 
 export const metadata: Metadata = {
   title: "Tiendas Online Profesionales Sin Comisiones — Mkt Web 360",
@@ -265,6 +266,12 @@ export default function TiendasOnlinePage() {
             <p className="text-lg font-semibold text-primary-700">La experiencia de un equipo senior. La precisión de la inteligencia artificial.</p>
             <p className="text-gray-500 text-sm mt-1">Protocolos propios de IA aplicados a cada proyecto para resultados más rápidos y precisos.</p>
           </div>
+        </div>
+      </section>
+
+      <section className="py-8 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <HostingBanner />
         </div>
       </section>
 
