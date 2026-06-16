@@ -551,6 +551,87 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Social proof — sectores y testimonios */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+
+          {/* Posicionamiento */}
+          <div className="text-center mb-12">
+            <span className="inline-block bg-primary-100 text-primary-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Lo que dicen nuestros clientes</span>
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+              El sector cambia.<br />
+              <span className="text-accent-500">El método no.</span>
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+              Trabajamos con negocios de sectores muy distintos. Lo que tienen en común: quieren más clientes y resultados medibles.
+            </p>
+          </div>
+
+          {/* Testimonios anónimos */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                texto: "Pasamos de no aparecer en Google a recibir 3-4 llamadas semanales de clientes nuevos. En menos de 4 meses.",
+                sector: "Empresa de servicios",
+                ciudad: "Toledo",
+                servicio: "SEO",
+              },
+              {
+                texto: "Nuestra tienda online genera pedidos todos los días. Antes solo vendíamos en el local y dependíamos del boca a boca.",
+                sector: "Comercio local",
+                ciudad: "Castilla-La Mancha",
+                servicio: "Tienda online",
+              },
+              {
+                texto: "Llevábamos años con una web que no convertía nada. En dos meses teníamos la nueva web y empezamos a recibir consultas.",
+                sector: "Clínica de salud",
+                ciudad: "Madrid",
+                servicio: "Diseño web",
+              },
+              {
+                texto: "Mi competencia llevaba años por delante en Google. Ahora aparezco yo primero. No me lo creía hasta que empezaron a llamarme diciendo que me habían buscado.",
+                sector: "Servicio de reformas",
+                ciudad: "España",
+                servicio: "SEO",
+              },
+              {
+                texto: "Las redes sociales las llevábamos nosotros sin criterio. Desde que las gestionan ellos tenemos el doble de seguidores y, sobre todo, clientes que vienen de Instagram.",
+                sector: "Negocio de hostelería",
+                ciudad: "Sevilla",
+                servicio: "Redes sociales",
+              },
+              {
+                texto: "Necesitaba vender online pero no quería pagar comisiones a Shopify. La tienda que me montaron no tiene nada que envidiar y es completamente mía.",
+                sector: "Empresa de productos artesanales",
+                ciudad: "Valencia",
+                servicio: "Tienda online",
+              },
+            ].map((t, i) => (
+              <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col justify-between">
+                <div>
+                  <div className="flex gap-0.5 mb-4">
+                    {[...Array(5)].map((_, s) => (
+                      <svg key={s} className="w-4 h-4 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed italic mb-4">&ldquo;{t.texto}&rdquo;</p>
+                </div>
+                <div className="flex items-center justify-between mt-2">
+                  <div>
+                    <p className="text-xs font-bold text-primary-600">{t.sector}</p>
+                    <p className="text-xs text-gray-400">{t.ciudad}</p>
+                  </div>
+                  <span className="text-xs bg-primary-100 text-primary-600 font-semibold px-2 py-0.5 rounded-full">{t.servicio}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       {/* Testimonials carousel */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
