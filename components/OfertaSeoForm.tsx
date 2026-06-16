@@ -86,8 +86,8 @@ export function OfertaSeoForm() {
         body: JSON.stringify({ ...p1, ...p2, ...utmRef.current }),
       });
       if (!res.ok) throw new Error("api_error");
-      if (typeof window !== "undefined" && (window as Window & { dataLayer?: unknown[] }).dataLayer) {
-        (window as Window & { dataLayer: unknown[] }).dataLayer.push({
+      if (typeof window !== "undefined" && (window as unknown as { dataLayer?: unknown[] }).dataLayer) {
+        (window as unknown as { dataLayer: unknown[] }).dataLayer.push({
           event: "form_submit_success", form_type: "oferta-seo-6x3",
           form_location: utmRef.current.page_origin || "/oferta-seo/",
           utm_source: utmRef.current.utm_source || "",

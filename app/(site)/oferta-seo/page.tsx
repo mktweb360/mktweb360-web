@@ -99,13 +99,13 @@ export default function OfertaSeoPage() {
               Esta oferta no está disponible en nuestra tarifa habitual. Es una campaña limitada para incorporar nuevas cuentas este mes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              
+              <a
                 href="#elegibilidad"
                 className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center shadow-lg shadow-accent-900/20"
               >
                 Solicitar información →
               </a>
-              
+              <a
                 href="#incluye"
                 className="border border-white/40 text-white/80 px-7 py-4 rounded-full font-medium text-base hover:bg-white/10 transition-colors text-center"
               >

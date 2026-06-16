@@ -1,7 +1,7 @@
 import type { Lang } from "@/lib/i18n";
 import { ContactForm } from "@/components/ContactForm";
-import Link from "next/link";
 import { LangHeroSlider } from "@/components/LangHeroSlider";
+import { LangServicesTab } from "@/components/LangServicesTab";
 
 export default async function LangHomePage({
   params,
@@ -10,6 +10,7 @@ export default async function LangHomePage({
 }) {
   const { lang: langStr } = await params;
   const lang = langStr as Lang;
+  const isEn = lang === "en";
 
   const content = {
     en: {
@@ -95,22 +96,18 @@ export default async function LangHomePage({
       </section>
 
       <section id="services" className="py-16 px-4 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">{c.servicesTitle}</h2>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-3">
+              {isEn ? "What do you want to achieve?" : "Qu'est-ce que vous voulez accomplir ?"}
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              {isEn
+                ? "Choose your objective and discover the services that help you achieve it."
+                : "Choisissez votre objectif et découvrez les services qui vous aident à l'atteindre."}
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {c.services.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group"
-              >
-                <h3 className="font-bold text-primary-600 mb-2 group-hover:text-accent-500 transition-colors">{s.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
-              </Link>
-            ))}
-          </div>
+          <LangServicesTab lang={lang} />
         </div>
       </section>
 

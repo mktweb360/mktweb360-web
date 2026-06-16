@@ -4,109 +4,76 @@ import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
-const SERVICE_GROUPS = [
+type ServiceItem = { title: string; desc: string; href: string; icon: string; badge?: string };
+type ServiceTab = { id: string; tipo: string; objetivo: string; emoji: string; servicios: ServiceItem[] };
+
+const SERVICE_TABS: ServiceTab[] = [
   {
-    group: "Visibilidad",
-    services: [
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>,
-        title: "SEO Posicionamiento",
-        desc: "Lleva tu web a las primeras posiciones de Google con estrategias duraderas.",
-        href: "/seo-posicionamiento-web-organico/",
-        img: "/imagen-seo.jpg",
-      },
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/></svg>,
-        title: "SEM / Google Ads",
-        desc: "Campañas de publicidad que generan resultados desde el primer día.",
-        href: "/sem-publicidad-ppc/",
-        img: "/imagen-sem.jpg",
-      },
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>,
-        title: "Google Business Profile",
-        desc: "Visibilidad local en Google Maps cuando tus clientes te buscan cerca.",
-        href: "/google-business-profile/",
-        img: "/imagen-google-business-profile.jpg",
-      },
+    id: "presencia",
+    tipo: "PRESENCIA",
+    objetivo: "Construye tu base digital",
+    emoji: "🏗️",
+    servicios: [
+      { title: "Diseño Web Profesional", desc: "Tu web, tu activo más importante. Rápida, optimizada y diseñada para convertir visitas en clientes.", href: "/diseno-de-paginas-web/", icon: "🌐" },
+      { title: "Tienda Online", desc: "Vende en toda España sin comisiones por venta ni licencias mensuales. Diseño 100% personalizado.", href: "/diseno-de-paginas-web/diseno-tiendas-online/", icon: "🛒" },
+      { title: "Google Business Profile", desc: "Aparece en Google Maps cuando tus clientes buscan lo que ofreces en tu zona.", href: "/google-business-profile/", icon: "📍" },
+      { title: "Reputación Online", desc: "Gestiona tus reseñas y construye una imagen digital que genera confianza antes del primer contacto.", href: "/reputacion-online/", icon: "⭐" },
     ],
   },
   {
-    group: "Presencia",
-    services: [
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0H3"/></svg>,
-        title: "Diseño Web",
-        desc: "Webs profesionales, rápidas y optimizadas para convertir visitas en clientes.",
-        href: "/diseno-de-paginas-web/",
-        img: "/imagen-diseno-web.jpg",
-      },
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/></svg>,
-        title: "Tiendas Online",
-        desc: "Ecommerce profesional sin comisiones ni licencias. Tú gestionas, nosotros construimos.",
-        href: "/diseno-de-paginas-web/diseno-tiendas-online/",
-        img: "/imagen-tiendas-online.jpg",
-      },
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"/></svg>,
-        title: "Creación de Blog",
-        desc: "Blogs corporativos y profesionales que posicionan y generan tráfico constante.",
-        href: "/creacion-de-blog/",
-        img: "/imagen-marketing-contenidos.jpg",
-      },
+    id: "visibilidad",
+    tipo: "VISIBILIDAD",
+    objetivo: "Aparece cuando te buscan",
+    emoji: "🔍",
+    servicios: [
+      { title: "SEO Posicionamiento Web", desc: "Primera página de Google. Tráfico orgánico sin pagar por cada clic. Resultados que se mantienen.", href: "/seo-posicionamiento-web-organico/", icon: "📈" },
+      { title: "GEO — Posicionamiento en IA", desc: "Aparece en ChatGPT, Perplexity y Gemini. El SEO de la era de la inteligencia artificial.", href: "/geo-posicionamiento-ia/", icon: "🤖" },
+      { title: "Google Ads", desc: "Aparece en el top de Google desde el primer día. Solo pagas cuando alguien hace clic.", href: "/sem-publicidad-ppc/", icon: "⚡" },
+      { title: "SEO Local", desc: "Domina los resultados de búsqueda en tu ciudad y zona de influencia.", href: "/seo-posicionamiento-web-organico/", icon: "📌" },
     ],
   },
   {
-    group: "Comunidad",
-    services: [
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>,
-        title: "Redes Sociales",
-        desc: "Gestión profesional de tus redes para conectar con tu audiencia y generar confianza.",
-        href: "/smm-social-media-marketing/",
-        img: "/imagen-redes-sociales.jpg",
-      },
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"/></svg>,
-        title: "Marketing de Contenidos",
-        desc: "Contenido que posiciona tu marca como referente y atrae clientes de forma orgánica.",
-        href: "/marketing-de-contenidos/",
-        img: "/imagen-marketing-contenidos.jpg",
-      },
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V20.25a.75.75 0 0 0 1.28.53l3.58-3.58A48.29 48.29 0 0 0 11.25 17c.527 0 1.049-.022 1.566-.064"/></svg>,
-        title: "WhatsApp Marketing",
-        desc: "Capta y fideliza clientes por el canal con mayor tasa de apertura.",
-        href: "/whatsapp-marketing/",
-        img: "/imagen-whatsapp-marketing.jpg",
-      },
+    id: "captacion",
+    tipo: "CAPTACIÓN",
+    objetivo: "Genera leads y ventas",
+    emoji: "🎯",
+    servicios: [
+      { title: "Google Ads", desc: "Genera clientes potenciales desde el primer día. Campañas optimizadas para tu sector y objetivo.", href: "/sem-publicidad-ppc/", icon: "🎯" },
+      { title: "Email Marketing", desc: "El canal con mayor ROI del marketing digital. Secuencias automatizadas que convierten.", href: "/email-marketing/", icon: "✉️" },
+      { title: "WhatsApp Marketing", desc: "98% de tasa de apertura. Comunica con tus clientes donde ya están.", href: "/whatsapp-marketing/", icon: "💬" },
+      { title: "Oferta SEO 6x3", desc: "6 meses de posicionamiento por el precio de 3. Solo 5 plazas este mes.", href: "/oferta-seo/", icon: "🔥", badge: "Oferta" },
     ],
   },
   {
-    group: "Crecimiento",
-    services: [
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>,
-        title: "Email Marketing",
-        desc: "Campañas de email con ROI demostrado. Convierte suscriptores en clientes recurrentes.",
-        href: "/email-marketing/",
-        img: "/imagen-email-marketing.jpg",
-      },
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 13.5l4.5-4.5 4 4L15 9l6 6"/></svg>,
-        title: "Analítica Web",
-        desc: "Datos que generan decisiones. GA4, GTM y dashboards orientados a negocio.",
-        href: "/analitica-web/",
-        img: "/imagen-analitica-web.jpg",
-      },
-      {
-        icon: <svg className="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/></svg>,
-        title: "Reputación Online",
-        desc: "Gestión de reseñas y monitorización de tu imagen digital en todas las plataformas.",
-        href: "/reputacion-online/",
-        img: "/imagen-reputacion-online.jpg",
-      },
+    id: "comunidad",
+    tipo: "COMUNIDAD",
+    objetivo: "Construye audiencia y marca",
+    emoji: "👥",
+    servicios: [
+      { title: "Redes Sociales", desc: "Gestión profesional de Instagram, LinkedIn, Facebook y TikTok. Comunidades reales, no seguidores vacíos.", href: "/smm-social-media-marketing/", icon: "📱" },
+      { title: "Marketing de Contenidos", desc: "Contenido que posiciona tu marca como referencia en tu sector y atrae clientes de forma orgánica.", href: "/marketing-de-contenidos/", icon: "✍️" },
+      { title: "Creación de Blog", desc: "Tu blog como activo digital permanente. Tráfico orgánico constante sin pagar por cada visita.", href: "/creacion-de-blog/", icon: "📝" },
+    ],
+  },
+  {
+    id: "monetizacion",
+    tipo: "MONETIZACIÓN",
+    objetivo: "Genera ingresos adicionales",
+    emoji: "💰",
+    servicios: [
+      { title: "Blog para Monetización", desc: "Crea un activo digital que genera ingresos pasivos con AdSense, Amazon Associates y afiliación.", href: "/blog-monetizacion/", icon: "💸" },
+      { title: "Ecommerce con Participación", desc: "Modelo híbrido: montamos tu infraestructura y participamos en el éxito cuando superas objetivos.", href: "/ecommerce-participacion-resultados/", icon: "🤝" },
+    ],
+  },
+  {
+    id: "crecimiento",
+    tipo: "CRECIMIENTO",
+    objetivo: "Mejora constante basada en datos",
+    emoji: "📊",
+    servicios: [
+      { title: "Analítica Web", desc: "GA4, GTM y dashboards de negocio. Cada decisión respaldada por datos reales, no suposiciones.", href: "/analitica-web/", icon: "📊" },
+      { title: "IA Aplicada al Marketing", desc: "Protocolos propios de IA integrados en cada servicio. Más rápido, más preciso, mejores decisiones.", href: "/ia-aplicada-al-marketing/", icon: "🧠" },
+      { title: "Auditoría Digital", desc: "Diagnóstico completo de tu presencia digital. Sabe exactamente dónde estás antes de invertir más.", href: "/auditoria-digital/", icon: "🔬" },
     ],
   },
 ];
@@ -395,6 +362,110 @@ function HeroSlider() {
   );
 }
 
+function ServicesTab() {
+  const [activeTab, setActiveTab] = useState(0);
+  const active = SERVICE_TABS[activeTab];
+
+  const tabHref: Record<string, string> = {
+    presencia: "diseno-de-paginas-web",
+    visibilidad: "seo-posicionamiento-web-organico",
+    captacion: "oferta-seo",
+    comunidad: "smm-social-media-marketing",
+    monetizacion: "blog-monetizacion",
+    crecimiento: "analitica-web",
+  };
+
+  return (
+    <div>
+      {/* Desktop tabs */}
+      <div className="hidden md:block">
+        <div className="flex border-b border-gray-200 overflow-x-auto">
+          {SERVICE_TABS.map((tab, i) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(i)}
+              className={`flex-1 min-w-[140px] px-4 py-4 text-center transition-all border-b-2 ${
+                activeTab === i
+                  ? "border-accent-500 bg-white"
+                  : "border-transparent hover:border-gray-300 bg-gray-50 hover:bg-white"
+              }`}
+            >
+              <div className="text-xl mb-1">{tab.emoji}</div>
+              <div className={`text-xs font-bold uppercase tracking-widest ${activeTab === i ? "text-accent-500" : "text-gray-400"}`}>
+                {tab.tipo}
+              </div>
+              <div className={`text-xs mt-0.5 leading-tight ${activeTab === i ? "text-gray-600" : "text-gray-400"}`}>
+                {tab.objetivo}
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <div className="bg-white p-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {active.servicios.map((s) => (
+              <Link
+                key={s.href + s.title}
+                href={s.href}
+                className="group relative bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-accent-300 hover:shadow-md transition-all"
+              >
+                {s.badge && (
+                  <span className="absolute top-3 right-3 bg-accent-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                    {s.badge}
+                  </span>
+                )}
+                <div className="text-2xl mb-3">{s.icon}</div>
+                <h3 className="font-bold text-primary-600 text-sm mb-2 group-hover:text-accent-500 transition-colors leading-tight">
+                  {s.title}
+                </h3>
+                <p className="text-gray-500 text-xs leading-relaxed">{s.desc}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-6 text-center">
+            <Link
+              href={`/${tabHref[active.id] ?? active.id}/`}
+              className="inline-flex items-center gap-2 text-accent-500 font-semibold text-sm hover:underline"
+            >
+              Ver todos los servicios de {active.tipo.toLowerCase()} →
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile — simple grid of all categories */}
+      <div className="md:hidden space-y-6">
+        {SERVICE_TABS.map((tab) => (
+          <div key={tab.id}>
+            <div className="flex items-center gap-2 mb-3 px-1">
+              <span className="text-lg">{tab.emoji}</span>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-accent-500">{tab.tipo}</p>
+                <p className="text-xs text-gray-400">{tab.objetivo}</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 gap-3">
+              {tab.servicios.map((s) => (
+                <Link
+                  key={s.href + s.title}
+                  href={s.href}
+                  className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-100 hover:border-accent-300 transition-colors"
+                >
+                  <span className="text-xl shrink-0">{s.icon}</span>
+                  <div>
+                    <p className="font-semibold text-primary-600 text-sm">{s.title}</p>
+                    <p className="text-gray-400 text-xs leading-tight mt-0.5">{s.desc}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -408,44 +479,11 @@ export default function HomePage() {
       {/* Services */}
       <section id="servicios" className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Nuestros Servicios de Marketing Digital</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Soluciones integrales para que tu empresa crezca online. Cada servicio, orientado a resultados medibles.
-            </p>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-3">¿Qué quieres conseguir?</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">Elige tu objetivo y descubre los servicios que te ayudan a conseguirlo.</p>
           </div>
-          <div className="space-y-10">
-            {SERVICE_GROUPS.map((group) => (
-              <div key={group.group}>
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="text-xs font-bold text-accent-500 uppercase tracking-widest">{group.group}</span>
-                  <div className="flex-1 h-px bg-gray-200" />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {group.services.map((s) => (
-                    <Link
-                      key={s.href}
-                      href={s.href}
-                      className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:border-primary-200 transition-all group"
-                    >
-                      {(s as { img?: string }).img && (
-                        <div className="w-full h-36 overflow-hidden">
-                          <img src={(s as { img?: string }).img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                        </div>
-                      )}
-                      <div className="p-5 flex gap-3 items-start">
-                        <div className="shrink-0 mt-1">{s.icon}</div>
-                        <div>
-                          <h3 className="font-bold text-primary-600 mb-1 group-hover:text-accent-500 transition-colors">{s.title}</h3>
-                          <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <ServicesTab />
         </div>
       </section>
 
