@@ -23,7 +23,10 @@ export default function PrivacidadPage() {
             <p><strong>Denominación social:</strong> Mkt Web 360 SLU</p>
             <p><strong>CIF:</strong> B87679304</p>
             <p><strong>Responsable:</strong> José Marcos Galindo Sánchez</p>
-            <p><strong>Dirección:</strong> El Viso de San Juan, Toledo, España</p>
+            <p><strong>Denominación social:</strong> MKTWEB360, S.L.U.</p>
+            <p><strong>CIF:</strong> B87679304</p>
+            <p><strong>Dirección:</strong> Calle Chopo 98, El Viso de San Juan, 45215 Toledo</p>
+            <p><strong>Registro Mercantil:</strong> Tomo 35360, Folio 45, Sección 8, Hoja M-635651</p>
             <p><strong>Email de contacto:</strong> <a href="mailto:info@mktweb360.com" className="text-accent-500 hover:underline">info@mktweb360.com</a></p>
           </div>
           <p className="mt-3">Mkt Web 360 SLU no cuenta con Delegado de Protección de Datos (DPD) designado, al no estar obligada a ello según el artículo 37 del RGPD. Para cualquier consulta en materia de protección de datos, puede dirigirse a la dirección de correo electrónico indicada.</p>
