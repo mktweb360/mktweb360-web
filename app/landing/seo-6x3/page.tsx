@@ -33,10 +33,10 @@ export default function LandingSeo6x3Page() {
     <main className="min-h-screen bg-white">
 
       {/* HEADER MÍNIMO */}
-      <header className="bg-primary-700 py-4 px-4">
+      <header className="bg-white border-b border-gray-100 py-4 px-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Image src="/logo.png" alt="Mkt Web 360" width={150} height={42} priority />
-          <a href="tel:+34622748987" className="text-white text-sm font-semibold hover:text-accent-400 transition-colors">
+          <a href="tel:+34622748987" className="text-primary-700 text-sm font-semibold hover:text-accent-500 transition-colors">
             📞 622 74 89 87
           </a>
         </div>
