@@ -5,6 +5,8 @@ import Link from "next/link";
 
 type Consent = { analytics: boolean; date: string };
 
+let gtmLoaded = false;
+
 function pushToDataLayer(data: Record<string, unknown>) {
   if (typeof window === "undefined") return;
   const w = window as unknown as Record<string, unknown>;
@@ -47,9 +49,10 @@ function updateConsent(analytics: boolean) {
 
 function loadGTM() {
   if (typeof window === "undefined") return;
+  if (gtmLoaded) return;
+  gtmLoaded = true;
   const w = window as unknown as Record<string, unknown>;
   w.dataLayer = (w.dataLayer as unknown[]) || [];
-  if (document.querySelector('script[src*="GTM-KVB3R3H"]')) return;
   const script = document.createElement("script");
   script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-KVB3R3H";
   script.async = true;
