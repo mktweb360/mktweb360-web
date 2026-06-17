@@ -180,11 +180,7 @@ export function OfertaSeoForm() {
             ))}
           </div>
         </div>
-        <p className="text-xs text-gray-400 mt-0.5">{op.desc}</p>
-              </button>
-            ))}
-          </div>
-        </div>
+
         <div>
           <Label>¿Algo más que quieras contarnos? <span className="text-gray-400 font-normal">(opcional)</span></Label>
           <textarea className={INPUT} rows={3} placeholder="Cuéntanos algo sobre tu negocio, tus objetivos o lo que no ha funcionado antes..."
