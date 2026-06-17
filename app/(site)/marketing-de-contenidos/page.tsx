@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -48,7 +49,7 @@ export default function ContentMarketingPage() {
             </div>
           </div>
           <div>
-            <img src="/imagen-marketing-contenidos.jpg" alt="Marketing de contenidos" className="rounded-2xl shadow-2xl w-full object-cover hidden md:block" />
+            <Image src="/imagen-marketing-contenidos.jpg" alt="Marketing de contenidos" className="rounded-2xl shadow-2xl w-full object-cover hidden md:block" width={800} height={600} />
           </div>
         </div>
       </section>

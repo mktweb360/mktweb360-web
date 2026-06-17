@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -48,7 +49,7 @@ export default function GoogleBusinessProfilePage() {
             </div>
           </div>
           <div>
-            <img src="/imagen-google-business-profile.jpg" alt="Google Business Profile" className="rounded-2xl shadow-2xl w-full object-cover hidden md:block" />
+            <Image src="/imagen-google-business-profile.jpg" alt="Google Business Profile" className="rounded-2xl shadow-2xl w-full object-cover hidden md:block" width={800} height={600} />
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -74,7 +75,7 @@ export default function TiendasOnlinePage() {
             </div>
           </div>
           <div className="hidden md:block">
-            <img src="/imagen-tiendas-online.jpg" alt="Tienda online profesional" className="rounded-2xl shadow-2xl w-full object-cover" />
+            <Image src="/imagen-tiendas-online.jpg" alt="Tienda online profesional" className="rounded-2xl shadow-2xl w-full object-cover" width={800} height={600} />
           </div>
         </div>
       </section>

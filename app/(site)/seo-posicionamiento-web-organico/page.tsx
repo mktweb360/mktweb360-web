@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -82,7 +83,7 @@ export default function SeoPage() {
             </div>
           </div>
           <div className="hidden md:block">
-            <img src="/imagen-seo.jpg" alt="SEO posicionamiento web" className="rounded-2xl shadow-2xl w-full object-cover" />
+            <Image src="/imagen-seo.jpg" alt="SEO posicionamiento web" className="rounded-2xl shadow-2xl w-full object-cover" width={800} height={600} />
           </div>
         </div>
       </section>
