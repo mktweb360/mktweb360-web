@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ContactForm } from "@/components/ContactForm";
+import { TiendaOnlineForm } from "@/components/TiendaOnlineForm";
 import { HostingBanner } from "@/components/HostingModal";
 
 export const metadata: Metadata = {
@@ -117,7 +117,7 @@ export default function TiendaOnlineLandingPage() {
             <p className="text-primary-200">Cuéntanos tu proyecto y te contactamos en menos de 24 horas para confirmar disponibilidad.</p>
           </div>
           <div className="bg-white rounded-2xl p-8">
-            <ContactForm formType="tienda-online-landing" />
+            <TiendaOnlineForm />
           </div>
         </div>
       </section>
