@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { OfertaForm } from "@/components/OfertaForm";
+import { OfertaWebSeoForm } from "@/components/OfertaWebSeoForm";
 
 export const metadata: Metadata = {
   title: "Oferta Web + SEO — Presencia Digital Completa desde 999€ | Mkt Web 360",
@@ -204,7 +204,7 @@ export default function OfertaWebSeoPage() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm font-medium mb-8">
             <span>⚡</span>
-            <span>Solo quedan 5 plazas — Oferta válida hasta 31 julio 2025</span>
+            <span>Oferta especial junio 2026 — Solo 5 plazas</span>
           </div>
 
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
@@ -423,7 +423,7 @@ export default function OfertaWebSeoPage() {
             </p>
           </div>
 
-          <OfertaForm />
+          <OfertaWebSeoForm />
 
           <div className="mt-8 pt-6 border-t border-white/20 text-center space-y-2">
             <p className="text-blue-200 text-sm">¿Prefieres hablar primero?</p>
@@ -445,7 +445,7 @@ export default function OfertaWebSeoPage() {
 
       {/* ── Minimal footer ── */}
       <footer className="bg-gray-900 text-gray-400 text-xs text-center py-4 px-4">
-        © 2025 Mkt Web 360 SLU &nbsp;·&nbsp;
+        © 2026 Mkt Web 360 SLU &nbsp;·&nbsp;
         <Link href="/aviso-legal/" className="hover:text-white transition-colors">Aviso Legal</Link>
         &nbsp;·&nbsp;
         <Link href="/politica-de-privacidad/" className="hover:text-white transition-colors">Privacidad</Link>
