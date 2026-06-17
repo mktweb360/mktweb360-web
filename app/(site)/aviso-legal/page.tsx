@@ -29,7 +29,7 @@ export default function AvisoLegalPage() {
             <p><strong>CIF:</strong> B87679304</p>
             <p><strong>Domicilio social:</strong> Calle Chopo 98, El Viso de San Juan, 45215 Toledo</p>
             <p><strong>Registro Mercantil:</strong> Tomo 35360, Folio 45, Sección 8, Hoja M-635651</p>
-            <p><strong>Teléfono:</strong> <a href="tel:+34622748897" className="text-accent-500 hover:underline">+34 622 74 88 97</a></p>
+            <p><strong>Teléfono:</strong> <a href="tel:+34622748987" className="text-accent-500 hover:underline">+34 622 74 89 87</a></p>
             <p><strong>Email:</strong> <a href="mailto:info@mktweb360.com" className="text-accent-500 hover:underline">info@mktweb360.com</a></p>
             <p><strong>Sitio web:</strong> <a href="https://www.mktweb360.com" className="text-accent-500 hover:underline">https://www.mktweb360.com</a></p>
           </div>

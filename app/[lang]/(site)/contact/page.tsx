@@ -54,8 +54,8 @@ export default async function ContactPage({
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
             <div className="bg-primary-50 rounded-2xl p-6">
               <p className="font-bold text-primary-600 mb-1">{isEn ? "Phone" : "Téléphone"}</p>
-              <a href="tel:+34622748897" className="text-accent-500 hover:underline">
-                +34 622 748 897
+              <a href="tel:+34622748987" className="text-accent-500 hover:underline">
+                +34 622 748 987
               </a>
             </div>
             <div className="bg-primary-50 rounded-2xl p-6">

@@ -37,8 +37,8 @@ export default function GraciasTiendaOnlinePage() {
           </ol>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="tel:+34622748897" className="flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">&#128222; Llamar ahora</a>
-          <a href="https://wa.me/34622748897?text=Hola%2C%20acabo%20de%20solicitar%20informacion%20sobre%20la%20tienda%20online" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">&#128172; WhatsApp</a>
+          <a href="tel:+34622748987" className="flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">&#128222; Llamar ahora</a>
+          <a href="https://wa.me/34622748987?text=Hola%2C%20acabo%20de%20solicitar%20informacion%20sobre%20la%20tienda%20online" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">&#128172; WhatsApp</a>
         </div>
         <div className="mt-8">
           <Link href="/" className="text-sm text-gray-400 hover:text-primary-600 transition-colors">&#8592; Volver a la web</Link>

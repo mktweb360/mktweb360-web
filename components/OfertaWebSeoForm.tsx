@@ -134,7 +134,7 @@ export function OfertaWebSeoForm() {
           <input type="checkbox" checked={p2.gdpr} onChange={e => setP2(v => ({ ...v, gdpr: e.target.checked }))} className="mt-0.5 h-4 w-4 rounded border-gray-300 accent-[#f97316] shrink-0" />
           <span className="text-xs text-gray-500 leading-relaxed">He leÃ­do y acepto la <Link href="/politica-de-privacidad/" target="_blank" className="text-[#1e3a5f] hover:underline">polÃ­tica de privacidad</Link>. Consiento el tratamiento de mis datos. *</span>
         </label>
-        {status === "error" && <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-700">Error al enviar. LlÃ¡manos al <a href="tel:+34622748897" className="font-semibold underline">622 74 88 97</a>.</div>}
+        {status === "error" && <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-700">Error al enviar. LlÃ¡manos al <a href="tel:+34622748987" className="font-semibold underline">622 74 89 87</a>.</div>}
         <button type="submit" disabled={!paso2OK || status === "sending"} className="w-full bg-[#f97316] hover:bg-orange-600 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-4 rounded-full text-base transition-colors shadow-md">{status === "sending" ? "Enviando..." : "Solicitar informaciÃ³n â"}</button>
         <p className="text-xs text-center text-gray-400">Te contactamos en menos de 24 horas. Sin compromiso.</p>
       </div>

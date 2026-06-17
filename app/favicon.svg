@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Bar 1: dark purple (shortest) -->
+  <rect x="1" y="14" width="8" height="17" rx="1" fill="#2D1E78"/>
+  <!-- Bar 2: mid purple (medium) -->
+  <rect x="12" y="8" width="8" height="23" rx="1" fill="#6455B9"/>
+  <!-- Bar 3: orange (tallest) -->
+  <rect x="23" y="2" width="8" height="29" rx="1" fill="#F09614"/>
+</svg>

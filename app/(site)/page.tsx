@@ -117,7 +117,7 @@ const localBusinessSchema = {
   name: "Mkt Web 360 SLU",
   image: "https://www.mktweb360.com/logo.png",
   url: "https://www.mktweb360.com",
-  telephone: "+34622748897",
+  telephone: "+34622748987",
   email: "info@mktweb360.com",
   address: {
     "@type": "PostalAddress",

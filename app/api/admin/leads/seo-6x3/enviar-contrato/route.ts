@@ -117,7 +117,7 @@ ${ibanCliente ? `<div class="highlight"><p><strong>Datos de domiciliación SEPA:
 </div>
 
 <div class="footer">
-  <p>Mkt Web 360 S.L.U. · CIF B87679304 · El Viso de San Juan, Toledo · info@mktweb360.com · +34 622 74 88 97</p>
+  <p>Mkt Web 360 S.L.U. · CIF B87679304 · El Viso de San Juan, Toledo · info@mktweb360.com · +34 622 74 89 87</p>
 </div>
 
 </body>
