@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mktweb360.com"),
@@ -87,20 +87,6 @@ const websiteSchema = {
   },
 };
 
-const copyProtectionScript = `
-  document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
-  document.addEventListener('keydown', function(e) {
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a')) {
-      e.preventDefault();
-    }
-  });
-  document.addEventListener('selectstart', function(e) {
-    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-      e.preventDefault();
-    }
-  });
-`;
-
 export default function RootLayout({
   children,
 }: {
@@ -109,7 +95,14 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <script dangerouslySetInnerHTML={{ __html: copyProtectionScript }} />
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KVB3R3H"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -119,7 +112,17 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         {children}
-        <GoogleAnalytics id="G-GWDMPMPB3V" />
+        <Script
+          id="gtm"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KVB3R3H');`,
+          }}
+        />
       </body>
     </html>
   );
