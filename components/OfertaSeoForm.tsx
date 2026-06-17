@@ -9,7 +9,7 @@ interface UtmData {
   utm_content?: string; utm_term?: string; page_origin?: string;
 }
 interface Paso1 { nombre: string; email: string; telefono: string; dominio: string; sector: string; tiempoWeb: string; }
-interface Paso2 { historialSeo: string; buscadorActual: string; opcionPago: string; notas: string; gdpr: boolean; }
+interface Paso2 { historialSeo: string; buscadorActual: string; notas: string; gdpr: boolean; }
 type Status = "idle" | "sending" | "error";
 
 const SECTORES = ["Fontanería / Electricidad / Reformas","Clínica dental / Fisioterapia / Psicología","Abogados / Gestoría / Asesoría","Hostelería / Restauración","Tienda física con presencia online","Ecommerce","Otro"];
@@ -43,7 +43,7 @@ export function OfertaSeoForm() {
   const [paso, setPaso] = useState<1 | 2>(1);
   const [status, setStatus] = useState<Status>("idle");
   const [p1, setP1] = useState<Paso1>({ nombre: "", email: "", telefono: "", dominio: "", sector: "", tiempoWeb: "" });
-  const [p2, setP2] = useState<Paso2>({ historialSeo: "", buscadorActual: "", opcionPago: "", notas: "", gdpr: false });
+  const [p2, setP2] = useState<Paso2>({ historialSeo: "", buscadorActual: "", notas: "", gdpr: false });
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -68,7 +68,7 @@ export function OfertaSeoForm() {
   }, []);
 
   const paso1Valido = p1.nombre.trim() !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p1.email) && p1.telefono.trim() !== "" && p1.sector !== "" && p1.tiempoWeb !== "";
-  const paso2Valido = p2.historialSeo !== "" && p2.buscadorActual !== "" && p2.opcionPago !== "" && p2.gdpr;
+  const paso2Valido = p2.historialSeo !== "" && p2.buscadorActual !== "" && p2.gdpr;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
