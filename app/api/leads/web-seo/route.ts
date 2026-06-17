@@ -38,8 +38,7 @@ function buildMktOSPayload(body: Record<string, unknown>) {
 }
 
 const MKTOS_URL    = "https://mktos360.app/api/webhooks/web-lead";
-const MKTOS_SECRET = process.env.MKTOS_WEBHOOK_SECRET ||
-                     "wl_d3e90c800dc05f24f9e17f437aa345657b2a03dd343aab501d950b84730f5a75";
+const MKTOS_SECRET = process.env.MKTOS_WEBHOOK_SECRET!;
 
 export async function POST(req: NextRequest) {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.headers.get("x-real-ip") || "unknown";
