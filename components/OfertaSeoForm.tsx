@@ -26,11 +26,6 @@ const BUSCADOR = [
   { val: "si", label: "Aparezco en primera página para alguna keyword" },
   { val: "no-se", label: "No lo sé" },
 ];
-const OPCIONES_PAGO = [
-  { val: "unico", label: "💳 Pago único", precio: "600€", desc: "A la firma. Arrancamos en 48h." },
-  { val: "flex", label: "📅 Flex 50/50", precio: "2 × 300€", desc: "300€ firma + 300€ mes siguiente." },
-  { val: "cuotas", label: "📆 Cuotas", precio: "6 × 100€", desc: "Domiciliación mensual." },
-];
 
 const INPUT = "w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white text-gray-800 placeholder:text-gray-400";
 
@@ -185,17 +180,7 @@ export function OfertaSeoForm() {
             ))}
           </div>
         </div>
-        <div>
-          <Label required>¿Qué opción de pago te encajaría mejor?</Label>
-          <div className="space-y-2">
-            {OPCIONES_PAGO.map((op) => (
-              <button key={op.val} type="button" onClick={() => setP2((v) => ({ ...v, opcionPago: op.label }))}
-                className={`w-full text-left px-4 py-3 rounded-xl border-2 transition-colors ${p2.opcionPago === op.label ? "border-primary-600 bg-primary-50" : "border-gray-200 hover:border-primary-300"}`}>
-                <div className="flex items-center justify-between">
-                  <p className={`text-sm font-semibold ${p2.opcionPago === op.label ? "text-primary-700" : "text-gray-700"}`}>{op.label}</p>
-                  <span className="text-accent-500 font-bold text-sm">{op.precio}</span>
-                </div>
-                <p className="text-xs text-gray-400 mt-0.5">{op.desc}</p>
+        <p className="text-xs text-gray-400 mt-0.5">{op.desc}</p>
               </button>
             ))}
           </div>
