@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { getLatestPosts } from "@/lib/blog";
+import { OfertasSlider } from "@/components/OfertasSlider";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
@@ -643,59 +644,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Ofertas actuales */}
-      <section className="py-16 px-4 bg-primary-700">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Ofertas especiales junio</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Ofertas del mes</h2>
-            <p className="text-primary-200 max-w-xl mx-auto">Plazas limitadas. Cuando se cubran, las ofertas cierran.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                badge: "SEO",
-                title: "6 meses de SEO por el precio de 3",
-                desc: "Posicionamiento web profesional durante 6 meses completos pagando solo 3. Trabajo real, métricas reales.",
-                price: "Precio de 3 meses",
-                cta: "Ver oferta",
-                href: "/oferta-seo/",
-              },
-              {
-                badge: "Web + SEO",
-                title: "Web profesional + 6 meses de SEO",
-                desc: "Tu web profesional lista en 2 semanas más 6 meses de posicionamiento. Hosting, dominio y correo incluidos.",
-                price: "desde 999€",
-                cta: "Ver oferta",
-                href: "/oferta-web-seo/",
-              },
-              {
-                badge: "Tienda Online",
-                title: "Tienda online profesional sin comisiones",
-                desc: "Diseño 100% personalizado, sin licencias mensuales ni comisiones por venta. SEO técnico incluido desde el primer día.",
-                price: "desde 490€",
-                cta: "Ver oferta",
-                href: "/tienda-online/",
-              },
-            ].map((oferta) => (
-              <div key={oferta.href} className="bg-white/10 rounded-2xl p-6 border border-white/10 flex flex-col">
-                <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 self-start">
-                  {oferta.badge}
-                </span>
-                <h3 className="text-lg font-bold text-white mb-3 leading-snug">{oferta.title}</h3>
-                <p className="text-primary-200 text-sm leading-relaxed mb-4 flex-1">{oferta.desc}</p>
-                <p className="text-accent-400 font-bold text-xl mb-5">{oferta.price}</p>
-                <Link
-                  href={oferta.href}
-                  className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors text-center"
-                >
-                  {oferta.cta}
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Slider ofertas */}
+      <OfertasSlider />
 
       {/* Últimas publicaciones */}
       <section className="py-16 px-4 bg-gray-50">

@@ -18,6 +18,13 @@ const SLIDES = [
     cta: "Ver oferta completa",
     href: "/oferta-web-seo/",
   },
+  {
+    badge: "Tienda Online",
+    title: "Tienda online profesional desde 490€",
+    desc: "Sin comisiones por venta, sin licencias mensuales. Diseño 100% personalizado. SEO técnico incluido desde el primer día. Solo 5 plazas.",
+    cta: "Ver oferta",
+    href: "/tienda-online/",
+  },
 ];
 
 export function OfertasSlider() {
