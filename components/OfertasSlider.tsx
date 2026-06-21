@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -38,42 +37,35 @@ export function OfertasSlider() {
   }, []);
 
   return (
-    <section className="py-12 px-4 bg-primary-700 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto text-center relative min-h-[200px]">
-        {SLIDES.map((slide, i) => (
-          <div
-            key={i}
-            className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ${
-              i === active ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-            }`}
-          >
-            <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
-              {slide.badge}
-            </span>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{slide.title}</h2>
-            <p className="text-primary-200 max-w-xl mx-auto mb-8">{slide.desc}</p>
-            <Link
-              href={slide.href}
-              className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block"
-            >
-              {slide.cta}
-            </Link>
-          </div>
-        ))}
-      </div>
-
-      {/* Dots */}
-      <div className="flex justify-center gap-2 mt-4 relative z-10" style={{ marginTop: "220px" }}>
-        {SLIDES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setActive(i)}
-            className={`w-2.5 h-2.5 rounded-full transition-colors ${
-              i === active ? "bg-accent-500" : "bg-white/30 hover:bg-white/60"
-            }`}
-            aria-label={`Ir a diapositiva ${i + 1}`}
-          />
-        ))}
+    <section className="py-16 px-4 bg-primary-700">
+      <div className="max-w-3xl mx-auto text-center">
+        <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">
+          {SLIDES[active].badge}
+        </span>
+        <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight min-h-[4rem]">
+          {SLIDES[active].title}
+        </h2>
+        <p className="text-primary-200 max-w-xl mx-auto mb-8 min-h-[3rem]">
+          {SLIDES[active].desc}
+        </p>
+        <Link
+          href={SLIDES[active].href}
+          className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block mb-10"
+        >
+          {SLIDES[active].cta}
+        </Link>
+        <div className="flex justify-center gap-3">
+          {SLIDES.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                i === active ? "bg-accent-500" : "bg-white/30 hover:bg-white/60"
+              }`}
+              aria-label={`Ir a diapositiva ${i + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
