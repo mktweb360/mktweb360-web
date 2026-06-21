@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Lang } from "@/lib/i18n";
 import { supportedLangs, langLocales } from "@/lib/i18n";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   return supportedLangs
@@ -41,10 +42,16 @@ export async function generateMetadata({
   };
 }
 
-export default function LangLayout({
+export default async function LangLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }) {
+  const { lang } = await params;
+  if (!supportedLangs.includes(lang as Lang)) {
+    notFound();
+  }
   return <>{children}</>;
 }
