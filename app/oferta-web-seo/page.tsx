@@ -73,7 +73,7 @@ const INCLUDED = [
     items: [
       "Diseño web profesional completo",
       "Responsive — perfecta en móvil y tablet",
-      "Velocidad optimizada (Vercel)",
+      "Velocidad optimizada (SiteGround)",
       "SSL incluido",
       "Formulario de contacto funcionando",
       "Google Analytics 4 + Search Console",
@@ -86,7 +86,7 @@ const INCLUDED = [
     icon: "✉️",
     items: [
       "Dominio .com o .es (1 año incluido)",
-      "Hosting profesional (Vercel)",
+      "Hosting profesional (SiteGround)",
       "Correo corporativo configurado",
       "Migración del correo actual (sin perder nada)",
       "Creación de cuentas de correo necesarias",
