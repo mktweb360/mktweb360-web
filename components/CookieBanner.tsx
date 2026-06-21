@@ -6,6 +6,7 @@ import Link from "next/link";
 type Consent = { analytics: boolean; date: string };
 
 let gtmLoaded = false;
+let adsLoaded = false;
 
 function pushToDataLayer(data: Record<string, unknown>) {
   if (typeof window === "undefined") return;
@@ -59,11 +60,26 @@ function loadGTM() {
   document.head.appendChild(script);
 }
 
+function loadGoogleAds() {
+  if (typeof window === "undefined") return;
+  if (adsLoaded) return;
+  adsLoaded = true;
+  const script = document.createElement("script");
+  script.src = "https://www.googletagmanager.com/gtag/js?id=AW-870698032";
+  script.async = true;
+  document.head.appendChild(script);
+  const w = window as unknown as Record<string, unknown>;
+  w.dataLayer = (w.dataLayer as unknown[]) || [];
+  const inline = document.createElement("script");
+  inline.innerHTML = "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-870698032');";
+  document.head.appendChild(inline);
+}
+
 function saveConsent(analytics: boolean) {
   const consent: Consent = { analytics, date: new Date().toISOString() };
   localStorage.setItem("mktweb360_consent", JSON.stringify(consent));
   updateConsent(analytics);
-  if (analytics) loadGTM();
+  if (analytics) { loadGTM(); loadGoogleAds(); }
 }
 
 export function CookieBanner() {
@@ -79,7 +95,7 @@ export function CookieBanner() {
     } else {
       const consent: Consent = JSON.parse(stored);
       updateConsent(consent.analytics);
-      if (consent.analytics) loadGTM();
+      if (consent.analytics) { loadGTM(); loadGoogleAds(); }
     }
   }, []);
 
