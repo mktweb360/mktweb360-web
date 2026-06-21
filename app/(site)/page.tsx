@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { getLatestPosts } from "@/lib/blog";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
@@ -692,6 +693,44 @@ export default function HomePage() {
                 </Link>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Últimas publicaciones */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3">Blog</span>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary-700">Últimas publicaciones</h2>
+            </div>
+            <Link href="/blog/" className="text-accent-500 font-semibold text-sm hover:underline hidden md:block">
+              Ver todos los artículos →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {getLatestPosts(3).map((post) => (
+              <Link
+                key={post.slug}
+                href={`/${post.slug}/`}
+                className="bg-white rounded-2xl border border-gray-100 p-6 hover:border-accent-400 hover:shadow-md transition-all group flex flex-col"
+              >
+                <span className="text-xs font-semibold text-accent-500 uppercase tracking-wide mb-2">
+                  {post.category}
+                </span>
+                <h3 className="font-bold text-primary-700 group-hover:text-accent-500 transition-colors line-clamp-3 text-sm leading-snug flex-1 mb-3">
+                  {post.title}
+                </h3>
+                <p className="text-xs text-gray-500 line-clamp-2 mb-4">{post.excerpt}</p>
+                <span className="text-xs font-semibold text-accent-500">Leer artículo →</span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8 md:hidden">
+            <Link href="/blog/" className="text-accent-500 font-semibold text-sm hover:underline">
+              Ver todos los artículos →
+            </Link>
           </div>
         </div>
       </section>
