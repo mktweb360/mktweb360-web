@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { MetodologiaSeo } from "@/components/MetodologiaSeo";
+import { OfertasSlider } from "@/components/OfertasSlider";
 
 export const metadata: Metadata = {
   title: "Posicionamiento Web SEO — Agencia SEO España | Mkt Web 360",
@@ -173,17 +174,8 @@ export default function SeoPage() {
         </div>
       </section>
 
-      {/* Offer banner */}
-      <section className="py-12 px-4 bg-primary-700">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Oferta especial junio</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">6 meses de SEO por el precio de 3</h2>
-          <p className="text-primary-200 max-w-xl mx-auto mb-8">Contrata cualquier servicio SEO este mes y llévate 6 meses de posicionamiento pagando solo 3. Plazas limitadas.</p>
-          <a href="#auditoria" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block">
-            Quiero esta oferta
-          </a>
-        </div>
-      </section>
+      {/* Offer slider */}
+      <OfertasSlider />
 
       <MetodologiaSeo />
 
