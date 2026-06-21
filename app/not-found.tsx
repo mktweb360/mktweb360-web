@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const NAV_LINKS = [
+  { label: "Inicio", href: "/" },
+  { label: "Posicionamiento SEO", href: "/seo-posicionamiento-web-organico/" },
+  { label: "Tiendas Online", href: "/diseno-de-paginas-web/diseno-tiendas-online/" },
+];
+
 export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-primary-700 to-primary-900">
@@ -24,15 +30,11 @@ export default function NotFound() {
             Puede que la URL haya cambiado, que el enlace esté desactualizado o que hayamos movido el contenido. Lo que sí existe es todo lo que necesitas para crecer online.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10">
-            {[
-              { label: "Inicio", href: "/" },
-              { label: "Posicionamiento SEO", href: "/seo-posicionamiento-web-organico/" },
-              { label: "Tiendas Online", href: "/diseno-de-paginas-web/diseno-tiendas-online/" },
-            ].map((link) => (
+            {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="bg-white/10 hover:bg-white/20 text-white text-sm font-semibold px-4 py-3 rounded-xl transition-colors border border-white/10"
+                className="block bg-white/10 hover:bg-white/20 text-white text-sm font-semibold px-4 py-3 rounded-xl transition-colors border border-white/20"
               >
                 {link.label}
               </Link>
