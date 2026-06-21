@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Header lang="es" />
-      <section className="min-h-[80vh] bg-gradient-to-br from-primary-700 to-primary-900 flex items-center justify-center px-4 py-16">
+      <section className="flex-1 bg-gradient-to-br from-primary-700 to-primary-900 flex items-center justify-center px-4 py-16">
         <div className="text-center max-w-xl">
           <p className="text-[120px] md:text-[160px] font-bold text-white/10 leading-none mb-0 select-none">
             404
@@ -57,6 +57,6 @@ export default function NotFound() {
         </div>
       </section>
       <Footer lang="es" />
-    </>
+    </div>
   );
 }
