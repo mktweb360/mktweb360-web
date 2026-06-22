@@ -150,6 +150,68 @@ export default function CreacionBlogPage() {
         </div>
       </section>
 
+
+      {/* Por qué un blog */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Por qué un blog es el activo digital más rentable a largo plazo</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            La publicidad de pago genera tráfico mientras pagas. Cuando paras, el tráfico desaparece. Un blog bien construido genera tráfico orgánico de forma acumulativa y permanente — un artículo bien posicionado puede atraer visitas y clientes durante años sin coste adicional.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Cada artículo que publicas es una nueva puerta de entrada a tu web. Cada keyword que posicionas es un cliente potencial que llega buscando exactamente lo que ofreces. Y cada artículo construye la autoridad temática de tu dominio, lo que mejora el posicionamiento de toda la web, incluyendo tus páginas de servicio comerciales.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            El blog no es un canal de vanidad ni un diario corporativo. Es una herramienta de captación que funciona cuando está construida con criterio SEO, con intención de búsqueda clara y con un objetivo de conversión definido en cada artículo. En Mkt Web 360 diseñamos blogs que generan tráfico cualificado y lo convierten en leads y ventas.
+          </p>
+        </div>
+      </section>
+
+      {/* Proceso */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8">Cómo creamos tu blog</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { num: "01", title: "Estrategia y keyword research", desc: "Investigamos las keywords con mayor potencial para tu negocio y sector. Definimos los pilares temáticos, los clusters de contenido y el calendario editorial para los primeros 3 meses." },
+              { num: "02", title: "Arquitectura y diseño", desc: "Diseñamos la estructura del blog: categorías, etiquetas, navegación interna, plantilla de artículo y CTAs. Todo orientado a SEO y conversión desde el primer momento." },
+              { num: "03", title: "Desarrollo e integración", desc: "Integramos el blog en tu web existente o lo desarrollamos como proyecto independiente. Configuramos el sitemap, los esquemas de datos estructurados y todas las bases técnicas SEO." },
+              { num: "04", title: "Producción y seguimiento", desc: "Redactamos los primeros artículos, los publicamos y monitorizamos su posicionamiento. Ajustamos la estrategia mensualmente según los resultados obtenidos." },
+            ].map(step => (
+              <div key={step.num} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <span className="inline-block text-3xl font-bold text-accent-500 mb-3">{step.num}</span>
+                <h3 className="font-bold text-primary-700 text-lg mb-2">{step.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre creación de blog</h2>
+          <div className="space-y-4">
+            {[
+              { q: "¿Cuánto tarda en posicionar un blog nuevo?",
+                a: "Los primeros artículos bien optimizados empiezan a aparecer en Google entre 4 y 12 semanas. El tráfico orgánico significativo llega entre los 3 y 6 meses, dependiendo de la competencia del sector y la autoridad del dominio. Es una inversión a medio plazo con retorno acumulativo." },
+              { q: "¿Redactáis vosotros los artículos o lo hago yo?",
+                a: "Ofrecemos ambas opciones. Podemos encargarnos de la redacción completa con nuestro equipo de especialistas en contenido SEO, o podemos entregarte la estructura, el briefing y las keywords para que redactes tú. La opción más habitual es que nosotros redactemos y tú revises antes de publicar." },
+              { q: "¿El blog tiene que estar en mi web o puede ser independiente?",
+                a: "Lo más eficiente para el SEO es integrarlo en tu dominio principal (ejemplo: tuempresa.com/blog). Así cada artículo que posiciona refuerza la autoridad de tu dominio y beneficia también a tus páginas de servicios. Un subdomain o dominio separado no transfiere autoridad al dominio principal." },
+              { q: "¿Con cuántos artículos al mes empezáis?",
+                a: "Recomendamos empezar con 2 artículos mensuales de calidad antes que publicar más con menos profundidad. Google premia el contenido que responde en profundidad a la intención de búsqueda. A partir de los primeros resultados, ajustamos el ritmo de publicación según lo que funciona." },
+            ].map(faq => (
+              <div key={faq.q} className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+                <h3 className="font-bold text-primary-700 mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contacto" className="py-16 px-4 bg-primary-600 text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
