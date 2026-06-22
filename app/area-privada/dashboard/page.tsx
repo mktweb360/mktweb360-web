@@ -19,7 +19,10 @@ export default function AdminDashboard() {
         </a>
       </header>
       <main className="max-w-4xl mx-auto px-4 py-10">
-        <h2 className="text-xl font-bold text-primary-600 mb-6">Ofertas activas</h2>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl font-bold text-primary-600">Ofertas activas</h2>
+          <Link href="/area-privada/leads" className="bg-primary-600 hover:bg-primary-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition-colors">📋 Ver leads CRM</Link>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Link href="/area-privada/leads/seo-6x3" className="bg-white rounded-2xl p-6 border-2 border-primary-100 hover:border-primary-400 transition-colors group">
             <div className="flex items-center justify-between mb-3">
@@ -29,14 +32,14 @@ export default function AdminDashboard() {
             <h3 className="font-bold text-primary-600 group-hover:text-accent-500 transition-colors mb-1">SEO 6x3</h3>
             <p className="text-gray-500 text-sm">Formulario guiado para la llamada de cualificación</p>
           </Link>
-          <div className="bg-white rounded-2xl p-6 border-2 border-gray-100 opacity-50">
+          <Link href="/area-privada/leads/tienda-online" className="bg-white rounded-2xl p-6 border-2 border-primary-100 hover:border-primary-400 transition-colors group">
             <div className="flex items-center justify-between mb-3">
               <span className="text-2xl">🛒</span>
-              <span className="text-xs font-bold bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full">Próximamente</span>
+              <span className="text-xs font-bold bg-accent-100 text-accent-600 px-2 py-0.5 rounded-full">Activa</span>
             </div>
-            <h3 className="font-bold text-gray-400 mb-1">Tienda online 490€</h3>
-            <p className="text-gray-400 text-sm">Formulario guiado — en desarrollo</p>
-          </div>
+            <h3 className="font-bold text-primary-600 group-hover:text-accent-500 transition-colors mb-1">Tienda online 490€</h3>
+            <p className="text-gray-500 text-sm">Formulario guiado para la llamada de cualificación</p>
+          </Link>
           <Link href="/area-privada/metodologia-seo" className="bg-white rounded-2xl p-6 border-2 border-primary-100 hover:border-primary-400 transition-colors group">
             <div className="flex items-center justify-between mb-3">
               <span className="text-2xl">📋</span>
