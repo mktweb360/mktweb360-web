@@ -151,6 +151,47 @@ export default function IAMarketingPage() {
         </div>
       </section>
 
+
+      {/* Qué significa IA en la práctica */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Qué significa realmente integrar IA en marketing digital</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            La mayoría de agencias que dicen usar inteligencia artificial se refieren a usar ChatGPT para redactar textos o Midjourney para generar imágenes. Eso no es integración de IA — es usar herramientas genéricas sin criterio ni protocolo.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            En Mkt Web 360 hemos desarrollado protocolos propios que integran la IA en cada fase del trabajo: análisis de keywords, auditorías técnicas, creación de contenido, optimización de campañas, interpretación de datos y detección de oportunidades. No como sustituto del criterio humano sino como amplificador de la capacidad analítica del equipo.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            El resultado concreto para el cliente es simple: los mismos resultados en menos tiempo, o mejores resultados en el mismo tiempo. Una auditoría SEO que antes tardaba 3 días ahora tarda 4 horas. Un análisis de competidores que antes era superficial ahora cubre 50 variables. Una estrategia de contenidos que antes se basaba en intuición ahora se basa en datos de intención de búsqueda en tiempo real.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre IA en marketing digital</h2>
+          <div className="space-y-4">
+            {[
+              { q: "¿El contenido que generáis con IA es original y de calidad?",
+                a: "Sí. La IA es una herramienta de trabajo, no el autor final. Todos los textos, artículos y copies pasan por revisión y edición humana antes de publicarse. La IA acelera la investigación y la estructura, pero el criterio editorial, el tono de marca y la calidad final los garantiza el equipo." },
+              { q: "¿Cómo sé que la IA no va a perjudicar mi posicionamiento en Google?",
+                a: "Google no penaliza el contenido generado con IA — penaliza el contenido de baja calidad, independientemente de cómo se haya creado. Nuestros protocolos producen contenido que responde en profundidad a la intención de búsqueda del usuario, que es exactamente lo que Google premia." },
+              { q: "¿Qué herramientas de IA utilizáis?",
+                a: "Usamos una combinación de herramientas propietarias y plataformas especializadas según la tarea: modelos de lenguaje para análisis y contenido, herramientas de análisis semántico para SEO, plataformas de automatización para reporting y flujos de trabajo, y herramientas de análisis de datos para campañas. No dependemos de una sola herramienta." },
+              { q: "¿La IA reemplaza al equipo humano en vuestro caso?",
+                a: "No. La IA amplifica la capacidad del equipo pero no toma decisiones estratégicas, no gestiona la relación con el cliente y no asume responsabilidad sobre los resultados. Todo eso lo hace el equipo humano. La IA nos permite hacer más y mejor, no hacer menos." },
+            ].map(faq => (
+              <div key={faq.q} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                <h3 className="font-bold text-primary-700 mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contacto" className="py-16 px-4 bg-primary-600 text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
