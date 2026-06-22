@@ -4,12 +4,12 @@ import { OfertaSeoForm } from "@/components/OfertaSeoForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Oferta SEO 6x3 â 6 Meses de Posicionamiento por el Precio de 3 | Mkt Web 360",
+  title: "Oferta SEO 6x3 — 6 Meses de Posicionamiento por el Precio de 3 | Mkt Web 360",
   description: "Oferta limitada: 6 meses de SEO profesional por el precio de 3. Solo 5 plazas este mes. Comprueba si tu dominio cumple los requisitos.",
   alternates: { canonical: "https://www.mktweb360.com/oferta-seo/" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Oferta SEO 6x3 â Mkt Web 360",
+    title: "Oferta SEO 6x3 — Mkt Web 360",
     description: "6 meses de posicionamiento web por el precio de 3. Plazas limitadas. Comprueba si tu dominio cumple los requisitos.",
     url: "https://www.mktweb360.com/oferta-seo/",
   },
@@ -213,6 +213,23 @@ export default function OfertaSeoPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+
+      {/* Por qué 6 meses */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Por qué el SEO necesita al menos 6 meses para dar resultados reales</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            El SEO no es publicidad de pago. No hay un botón que active el tráfico orgánico inmediatamente. Google necesita tiempo para rastrear los cambios, evaluar la relevancia del contenido y determinar en qué posición debe aparecer tu web para cada búsqueda. Este proceso tiene fases: las primeras semanas son de diagnóstico y base técnica, los primeros meses de construcción de contenido y autoridad, y los últimos meses de consolidación y optimización de posiciones.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Las agencias que prometen resultados en 30 días o te garantizan posiciones concretas mienten o trabajan con técnicas que Google penaliza. El SEO real y sostenible requiere entre 4 y 6 meses para generar tráfico orgánico consistente, dependiendo del sector, la competencia y el estado actual de tu dominio.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Esta oferta existe porque 6 meses es exactamente el tiempo mínimo necesario para hacer el trabajo bien y ver resultados verificables. Lo que ofrecemos es ese trabajo completo — auditoría, optimización, contenido, seguimiento e informes — a la mitad del precio habitual, para facilitar el acceso a empresas que quieren hacer las cosas bien sin asumir un compromiso económico de entrada excesivo.
+          </p>
         </div>
       </section>
 
