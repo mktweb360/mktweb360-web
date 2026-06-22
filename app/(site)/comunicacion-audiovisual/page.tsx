@@ -111,6 +111,66 @@ export default function ComunicacionAudiovisualPage() {
           </div>
         </section>
 
+
+        {/* Por qué profesional */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Por qué la calidad audiovisual define cómo te percibe tu cliente</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            El vídeo corporativo no es un lujo reservado a grandes empresas. Es la herramienta que más rápidamente comunica quién eres, qué haces y por qué confiar en ti — en menos de 90 segundos y sin que el usuario tenga que leer nada. En un entorno donde la atención es el recurso más escaso, el vídeo es el formato que más se consume, más se recuerda y más se comparte.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            El problema es que un vídeo mal producido causa el efecto contrario: transmite falta de profesionalidad y genera desconfianza. La diferencia entre un vídeo grabado con el móvil sin criterio y una pieza producida con guión, iluminación, edición y música no es solo estética — es la diferencia entre un cliente que confía y uno que sigue buscando.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            En Mkt Web 360 integramos la comunicación audiovisual con la estrategia de marketing digital. Cada pieza que producimos tiene un objetivo concreto — posicionarte en YouTube, mejorar la conversión de tu landing, generar confianza en redes sociales o fortalecer tu propuesta comercial — y está diseñada para cumplirlo.
+          </p>
+        </section>
+
+        {/* Sectores */}
+        <section className="mb-12 bg-gray-50 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">¿Para qué tipo de empresa producimos contenido audiovisual?</h2>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Producimos contenido audiovisual para empresas de todos los sectores. Algunos de los casos más habituales:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { sector: "Servicios profesionales", desc: "Vídeos corporativos que transmiten confianza y autoridad. Presentaciones del equipo, testimoniales de clientes y vídeos de proceso de trabajo." },
+              { sector: "Clínicas y salud", desc: "Presentación de instalaciones, vídeos de equipo médico, explicación de tratamientos y testimoniales de pacientes que reducen las objeciones de nuevos clientes." },
+              { sector: "Hostelería y turismo", desc: "Vídeos atmosféricos de establecimiento, reels de producto y experiencia, contenido para redes sociales que muestra el ambiente y genera reservas." },
+              { sector: "Ecommerce y retail", desc: "Vídeos de producto, unboxing, tutoriales de uso y spots publicitarios para campañas de Meta Ads y YouTube Ads que mejoran la tasa de conversión." },
+              { sector: "Formación y academias", desc: "Presentación del centro y metodología, vídeos de aula, testimoniales de alumnos y spots de captación para campañas de inicio de curso." },
+              { sector: "Industria y B2B", desc: "Vídeos corporativos para ferias y presentaciones comerciales, documentación de procesos productivos y piezas que generan confianza en clientes empresariales." },
+            ].map(s => (
+              <div key={s.sector} className="bg-white rounded-xl p-4 border border-gray-100">
+                <p className="font-bold text-primary-700 text-sm mb-1">{s.sector}</p>
+                <p className="text-gray-600 text-xs leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre producción audiovisual</h2>
+          <div className="space-y-4">
+            {[
+              { q: "¿Tenéis equipo propio o subcontratáis la producción?",
+                a: "Trabajamos con un equipo de producción propio para proyectos en la zona de Castilla-La Mancha y Madrid, y con colaboradores especializados en otras provincias. En todos los casos, la dirección creativa, el guión y la estrategia los gestionamos nosotros directamente." },
+              { q: "¿Cuánto tarda en entregarse un vídeo corporativo?",
+                a: "El plazo estándar desde el briefing hasta la entrega del vídeo final es de 2 a 3 semanas. Incluye reunión de briefing, redacción de guión, rodaje, montaje y revisiones. Para proyectos más complejos con animaciones o varios días de rodaje, el plazo se ajusta antes de empezar." },
+              { q: "¿Qué formatos de entrega incluís?",
+                a: "Entregamos la pieza en todos los formatos necesarios para cada canal: versión horizontal para web y YouTube, versión vertical para Instagram Reels y TikTok, versión cuadrada para feed de Instagram, y versiones adaptadas a las especificaciones de cada plataforma publicitaria." },
+              { q: "¿Podemos usar el vídeo en campañas de Google Ads o Meta Ads?",
+                a: "Sí, y lo recomendamos. Producimos las piezas teniendo en cuenta los requisitos técnicos y creativos de cada plataforma publicitaria. Si además gestionamos tus campañas de Ads, coordinamos la producción con la estrategia publicitaria para maximizar el rendimiento de cada pieza." },
+            ].map(faq => (
+              <div key={faq.q} className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+                <h3 className="font-bold text-primary-700 mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="bg-primary-600 text-white rounded-2xl p-8">
           <h2 className="text-2xl font-bold mb-4">Solicitar presupuesto</h2>
