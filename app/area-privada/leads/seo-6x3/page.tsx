@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 type FormData = {
   // Obligatorios
@@ -40,6 +40,8 @@ const OBJETIVOS_OPTIONS = [
 
 export default function SeoLeadForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const opportunityId = searchParams.get("opportunity_id") || "";
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [form, setForm] = useState<FormData>({
@@ -65,7 +67,7 @@ export default function SeoLeadForm() {
     const res = await fetch("/api/admin/leads/seo-6x3", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...form, oferta: "seo-6x3", fecha: new Date().toISOString() }),
+      body: JSON.stringify({ ...form, oferta: "seo-6x3", fecha: new Date().toISOString(), opportunity_id: opportunityId }),
     });
     const data = await res.json();
     if (data.ok && data.id) {

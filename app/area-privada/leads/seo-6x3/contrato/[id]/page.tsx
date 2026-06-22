@@ -42,6 +42,9 @@ export default function ContratoPage() {
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [cerrando, setCerrando] = useState(false);
+  const [cerrado, setCerrado] = useState(false);
+  const [precioAcordado, setPrecioAcordado] = useState("600");
   const [error, setError] = useState("");
 
   // Client data fields
@@ -63,6 +66,40 @@ export default function ContratoPage() {
         setLoading(false);
       });
   }, [id]);
+
+  const handleCerrar = async () => {
+    if (!emailCliente || !nombreEmpresa || !nifCliente) {
+      setError("Completa email, empresa y NIF antes de cerrar el contrato.");
+      return;
+    }
+    setCerrando(true);
+    setError("");
+    const res = await fetch("/api/admin/leads/seo-6x3/cerrar-contrato", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        opportunity_id: lead.opportunity_id || "",
+        nombre: lead.nombre,
+        email: emailCliente,
+        telefono: lead.telefono,
+        empresa: nombreEmpresa,
+        cif: nifCliente,
+        direccion: direccionCliente,
+        precio: Number(precioAcordado),
+        forma_pago: lead.opcionPago === "flex" ? "flex" : lead.opcionPago === "cuotas" ? "installments" : "single",
+        cuotas: lead.opcionPago === "cuotas" ? 6 : undefined,
+        notas: lead.notas || "",
+      }),
+    });
+    const data = await res.json();
+    if (data.ok && data.redirect_url) {
+      setCerrado(true);
+      window.open(data.redirect_url, "_blank");
+    } else {
+      setError("Error al registrar el cierre en MktOS. Inténtalo de nuevo.");
+    }
+    setCerrando(false);
+  };
 
   const today = new Date().toLocaleDateString("es-ES", {
     day: "numeric",
@@ -240,6 +277,25 @@ export default function ContratoPage() {
         )}
 
         {/* Send button */}
+        {/* PRECIO ACORDADO */}
+        <section className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+          <h2 className="font-bold text-primary-600 mb-3 flex items-center gap-2">
+            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">€</span>
+            Precio acordado
+          </h2>
+          <div className="flex items-center gap-3">
+            <input
+              type="number"
+              value={precioAcordado}
+              onChange={(e) => setPrecioAcordado(e.target.value)}
+              className="w-40 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 font-bold"
+              placeholder="600"
+              min="1"
+            />
+            <span className="text-sm text-gray-500">€ + IVA — precio real del acuerdo</span>
+          </div>
+        </section>
+
         <button
           onClick={handleSend}
           disabled={sending || !emailCliente || !nombreEmpresa || !nifCliente}
@@ -247,6 +303,16 @@ export default function ContratoPage() {
         >
           {sending ? "Enviando contrato..." : "📨 Enviar contrato por email"}
         </button>
+
+        {sent && (
+          <button
+            onClick={handleCerrar}
+            disabled={cerrando || cerrado}
+            className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl font-bold text-lg transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-lg"
+          >
+            {cerrando ? "Registrando en MktOS..." : cerrado ? "✅ Contrato registrado en MktOS" : "✅ Contrato firmado — Registrar cierre"}
+          </button>
+        )}
 
       </div>
     </div>
