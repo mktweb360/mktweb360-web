@@ -72,6 +72,20 @@ export default function CasosPage() {
           Cada empresa tiene sus retos y sus objetivos. Aquí mostramos algunos de los proyectos en los que hemos trabajado y los resultados que hemos conseguido juntos.
         </p>
 
+
+        <div className="bg-gray-50 rounded-2xl p-8 mb-12">
+          <h2 className="text-2xl font-bold text-primary-600 mb-4">Cómo medimos el éxito de un proyecto</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            En Mkt Web 360 no trabajamos con métricas de vanidad. No medimos el éxito de un proyecto por el número de seguidores, las impresiones o el tráfico genérico. Medimos el éxito por resultados de negocio reales: más consultas entrantes, más clientes, más ventas, mejor posicionamiento en las búsquedas que realmente generan negocio.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Cada proyecto empieza con un diagnóstico honesto de la situación actual y unos objetivos concretos y medibles. Definimos qué vamos a conseguir, en qué plazo y cómo lo vamos a medir. Y al final de cada mes, los datos hablan por sí solos.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Los casos que mostramos a continuación son proyectos reales con clientes reales. No incluimos métricas exactas cuando el cliente prefiere mantenerlas confidenciales, pero sí describimos la situación de partida, el trabajo realizado y los resultados obtenidos con la mayor precisión posible.
+          </p>
+        </div>
+
         {/* Casos */}
         <div className="space-y-10 mb-16">
           {CASOS.map((caso, index) => (
@@ -110,6 +124,28 @@ export default function CasosPage() {
             </article>
           ))}
         </div>
+
+
+        {/* Metodología */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Nuestra forma de trabajar</h2>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Independientemente del sector o del tamaño del proyecto, todos los proyectos de Mkt Web 360 siguen el mismo proceso:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { titulo: "Diagnóstico honesto", desc: "Antes de proponer nada, analizamos la situación real. Si hay problemas técnicos, de contenido o de estrategia, los decimos claramente con evidencias." },
+              { titulo: "Objetivos medibles", desc: "Definimos qué vamos a conseguir y cómo lo vamos a medir. Sin promesas vacías, sin KPIs de vanidad. Solo métricas que se traducen en negocio real." },
+              { titulo: "Ejecución sin rodeos", desc: "Implementamos lo acordado con rigor y en los plazos comprometidos. Comunicación clara, sin sorpresas y con el cliente informado en todo momento." },
+              { titulo: "Seguimiento y ajuste", desc: "El trabajo no termina con la entrega. Monitorizamos los resultados, identificamos oportunidades de mejora y ajustamos la estrategia cada mes." },
+            ].map(m => (
+              <div key={m.titulo} className="bg-primary-50 rounded-xl p-5 border border-primary-100">
+                <p className="font-bold text-primary-700 mb-1">{m.titulo}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{m.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* CTA */}
         <section className="bg-primary-600 text-white rounded-2xl p-8 text-center">
