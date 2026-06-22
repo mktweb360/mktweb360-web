@@ -141,6 +141,89 @@ export default function SemPage() {
         </div>
       </section>
 
+
+      {/* Por qué Google Ads */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Por qué Google Ads es el canal de captación más rápido para tu negocio</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            El SEO tarda entre 3 y 6 meses en generar resultados. Google Ads genera clientes desde el primer día. Si necesitas leads ahora, si acabas de lanzar un producto o servicio, o si quieres testear qué mensajes funcionan mejor antes de invertir en contenido orgánico, Google Ads es la herramienta más eficiente que existe.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            El problema es que la mayoría de empresas pierde dinero en Google Ads no por culpa de la plataforma sino por una gestión deficiente: keywords mal segmentadas, anuncios genéricos, páginas de aterrizaje que no convierten, pujas sin estrategia y sin seguimiento de conversiones real. El resultado es gasto sin retorno y la conclusión equivocada de que Google Ads no funciona.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Una cuenta bien gestionada tiene keywords negativas actualizadas, anuncios RSA con extensiones completas, seguimiento de conversiones configurado correctamente, tests A/B activos y optimización mensual de pujas. La diferencia entre una cuenta gestionada profesionalmente y una no gestionada puede ser de 3x en el coste por lead con el mismo presupuesto.
+          </p>
+        </div>
+      </section>
+
+      {/* Proceso */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8">Cómo gestionamos tus campañas</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { num: "01", title: "Auditoría y estrategia", desc: "Si tienes cuenta activa, auditamos el estado actual: estructura, keywords, negativos, anuncios y conversiones. Si empiezas desde cero, diseñamos la estructura óptima para tu negocio y sector." },
+              { num: "02", title: "Configuración y lanzamiento", desc: "Configuramos la estructura de campañas, grupos de anuncios, keywords con sus tipos de concordancia, keywords negativas, extensiones y seguimiento de conversiones. Lanzamos con presupuesto controlado." },
+              { num: "03", title: "Optimización continua", desc: "Monitorizamos el rendimiento diariamente las primeras semanas. Ajustamos pujas, pausamos keywords que no convierten, añadimos negativos de los términos de búsqueda reales y testeamos variaciones de anuncios." },
+              { num: "04", title: "Informe y estrategia mensual", desc: "Cada mes recibes un informe con las métricas que importan: impresiones, clics, conversiones, coste por lead y ROAS. Revisamos la estrategia y definimos las acciones del mes siguiente." },
+            ].map(step => (
+              <div key={step.num} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <span className="inline-block text-3xl font-bold text-accent-500 mb-3">{step.num}</span>
+                <h3 className="font-bold text-primary-700 text-lg mb-2">{step.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sectores */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Sectores en los que tenemos más experiencia</h2>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Google Ads funciona en prácticamente cualquier sector donde haya demanda de búsqueda. Estos son los sectores donde tenemos mayor experiencia y datos de rendimiento acumulados:
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {[
+              "Servicios del hogar", "Clínicas y salud", "Formación y academias",
+              "Ecommerce y retail", "Inmobiliarias", "Servicios profesionales",
+              "Hostelería y turismo", "Software y SaaS", "Construcción y reformas",
+            ].map(s => (
+              <div key={s} className="bg-primary-50 rounded-xl p-3 text-center border border-primary-100">
+                <p className="text-primary-700 text-sm font-medium">{s}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre Google Ads</h2>
+          <div className="space-y-4">
+            {[
+              { q: "¿Cuánto presupuesto mínimo necesito para empezar con Google Ads?",
+                a: "Depende del sector y la competencia. Para la mayoría de negocios locales o de servicios, 300-500€/mes de inversión publicitaria es suficiente para obtener datos relevantes. En sectores muy competitivos como seguros o préstamos, el mínimo sube considerablemente. Te hacemos una estimación gratuita antes de empezar." },
+              { q: "¿Cuánto cobráis de gestión?",
+                a: "Cobramos una tarifa fija mensual de gestión que no depende del presupuesto que inviertas en Google. No cobramos porcentaje sobre la inversión publicitaria — ese modelo incentiva a gastar más, no a optimizar. La tarifa fija nos alinea con tu objetivo: conseguir más al mismo coste." },
+              { q: "¿Los clics que pago son míos o de vosotros?",
+                a: "Todo es tuyo. La cuenta de Google Ads es tuya, la tienes en tu propiedad y tienes acceso completo en todo momento. Si decides cambiar de agencia o gestionar tú mismo, te llevas la cuenta con todo su historial, conversiones y datos acumulados." },
+              { q: "¿Puedo ver en tiempo real lo que se gasta?",
+                a: "Sí. Tienes acceso completo a tu cuenta de Google Ads donde puedes ver en tiempo real el gasto, los clics, las impresiones y las conversiones. Además recibes un informe mensual con el análisis e interpretación de los datos más relevantes." },
+            ].map(faq => (
+              <div key={faq.q} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                <h3 className="font-bold text-primary-700 mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* IA badge */}
       <section className="py-10 px-4 bg-white border-y border-gray-100">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
