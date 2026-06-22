@@ -17,7 +17,7 @@ Optimización de sitios web para aparecer en las primeras posiciones de Google. 
 Creación y gestión de campañas de publicidad en Google. Incluye configuración de cuenta, estructura de campañas, keywords negativas, optimización de pujas y reporting. Gestión de bonos promocionales de Google. URL: https://www.mktweb360.com/sem-publicidad-ppc/
 
 ### Google Business Profile
-Optimización y gestión del perfil de empresa en Google. Incluye configuración inicial, optimización de ficha, gestión de reseñas, publicaciones periódicas y seguimiento de métricas locales. Fundamental para la visibilidad en Google Maps. URL: https://www.mktweb360.com/google-business-profile/
+Optimización y gestión del perfil de empresa en Google. Incluye configuración inicial, optimización de ficha, gestión de reseñas, publicaciones periódicas y seguimiento de métricas locales. Fundamental para la visibilidad en Google Maps. URL: https://www.mktweb360.com/google-my-business-empresas-guia/
 
 ### Social Media Marketing
 Gestión profesional de redes sociales empresariales. Community management, creación de contenido, calendario editorial, análisis de resultados y crecimiento de audiencia. URL: https://www.mktweb360.com/smm-social-media-marketing/
@@ -26,7 +26,7 @@ Gestión profesional de redes sociales empresariales. Community management, crea
 Diseño y desarrollo de páginas web profesionales: webs corporativas, tiendas online, webs de servicios. Enfoque en UX, velocidad, SEO técnico y conversión. Tecnologías: Next.js, React, WordPress. URL: https://www.mktweb360.com/diseno-de-paginas-web/
 
 ### Tiendas Online — Ecommerce
-Desarrollo de tiendas online sin comisiones ni licencias mensuales. Propiedad 100% del cliente. Incluye catálogo de productos, pasarela de pago, gestión de envíos y SEO para ecommerce. URL: https://www.mktweb360.com/diseno-de-paginas-web/diseno-tiendas-online/
+Desarrollo de tiendas online sin comisiones ni licencias mensuales. Propiedad 100% del cliente. Incluye catálogo de productos, pasarela de pago, gestión de envíos y SEO para ecommerce. URL: https://www.mktweb360.com/tienda-online/
 
 ### Creación de Blog
 Diseño, desarrollo y puesta en marcha de blogs corporativos, profesionales y temáticos. Incluye estructura SEO, categorías, plantilla editorial y formación inicial. URL: https://www.mktweb360.com/creacion-de-blog/
@@ -47,7 +47,7 @@ Implementación y gestión de sistemas de analítica digital. Google Analytics 4
 Monitorización y gestión de la imagen digital de la empresa. Gestión de reseñas en Google, Trustpilot y otros portales, respuesta a comentarios y estrategia de mejora de valoraciones. URL: https://www.mktweb360.com/reputacion-online/
 
 ### IA Aplicada al Marketing
-Integración de inteligencia artificial en todos los servicios de marketing digital. Protocolos propios desarrollados internamente para SEO, SEM, contenidos, analítica y automatización de procesos. La IA amplifica el criterio humano sin reemplazarlo. URL: https://www.mktweb360.com/ia-aplicada-al-marketing/
+Integración de inteligencia artificial en todos los servicios de marketing digital. Protocolos propios desarrollados internamente para SEO, SEM, contenidos, analítica y automatización de procesos. La IA amplifica el criterio humano sin reemplazarlo. URL: https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/
 
 ### GEO — Generative Engine Optimization
 Nuevo servicio de posicionamiento en motores de búsqueda generativa. Optimización para aparecer en las respuestas de ChatGPT, Perplexity, Gemini y Claude cuando los usuarios buscan servicios como los del cliente. Incluye: auditoría de visibilidad en IA, optimización de contenidos para LLMs, implementación de llms.txt y llms-full.txt, estrategia de autoridad semántica y seguimiento mensual de menciones en IA. El GEO complementa al SEO tradicional para cubrir los dos canales de búsqueda que coexisten hoy: Google y los asistentes de IA. URL: https://www.mktweb360.com/geo-posicionamiento-ia/
@@ -55,8 +55,6 @@ Nuevo servicio de posicionamiento en motores de búsqueda generativa. Optimizaci
 ### Auditoría Digital
 Diagnóstico completo de presencia digital: SEO técnico, velocidad web, contenidos, competencia, redes sociales y analítica. Entrega de informe detallado con plan de acción priorizado. URL: https://www.mktweb360.com/auditoria-digital/
 
-### Kit Digital
-Agente digitalizador autorizado. Gestión completa del bono Kit Digital para empresas: soluciones de presencia web, SEO, gestión de redes sociales y comercio electrónico. URL: https://www.mktweb360.com/kit-digital/
 
 ## Clientes objetivo
 - PYMEs con menos de 50 empleados
@@ -90,3 +88,15 @@ Este sitio implementa llms.txt y llms-full.txt para facilitar la indexación y c
 - Email: info@mktweb360.com
 - Teléfono: +34 622 748 897
 - Servicios: nacionales (toda España)
+
+## Ofertas activas
+- SEO 6 meses por el precio de 3: 600€ + IVA. URL: https://www.mktweb360.com/oferta-seo/
+- Web profesional + 6 meses de SEO: 999€ + IVA. URL: https://www.mktweb360.com/oferta-web-seo/
+- Tienda online profesional: 490€ + IVA. URL: https://www.mktweb360.com/tienda-online/
+
+## Stack tecnológico
+- Framework web: Next.js 15 App Router con TypeScript
+- Hosting producción: Vercel
+- Analytics: Google Analytics 4 + Google Tag Manager
+- Email transaccional: Resend
+- CRM interno: MktOS 360 (mktos360.app)

@@ -1,38 +1,47 @@
 # Mkt Web 360 SLU — Agencia de Marketing Digital
-
-> Agencia de marketing digital especializada en SEO, Google Ads, gestión de redes sociales, diseño web y marketing de contenidos para PYMEs y empresas en España. Servicios nacionales desde El Viso de San Juan, Toledo.
+> Agencia de marketing digital especializada en SEO, Google Ads, diseño web, tiendas online, redes sociales, email marketing y GEO para PYMEs y empresas en España. Servicios nacionales desde El Viso de San Juan, Toledo.
 
 ## Empresa
 - Nombre: Mkt Web 360 SLU
+- CIF: B87679304
 - Web: https://www.mktweb360.com
 - Email: info@mktweb360.com
-- Teléfono: +34 696 71 44 76
-- Dirección: El Viso de San Juan, Toledo, España
-- Servicios: nacionales
+- Teléfono: +34 622 74 89 87
+- Dirección: Calle Chopo 98, El Viso de San Juan, 45215 Toledo, España
+- Cobertura: nacional (toda España)
 
 ## Servicios principales
 - [Posicionamiento SEO](https://www.mktweb360.com/seo-posicionamiento-web-organico/)
-- [Campañas Google Ads / SEM](https://www.mktweb360.com/sem-publicidad-ppc/)
+- [Google Ads / SEM](https://www.mktweb360.com/sem-publicidad-ppc/)
 - [Gestión Redes Sociales](https://www.mktweb360.com/smm-social-media-marketing/)
 - [Diseño de Páginas Web](https://www.mktweb360.com/diseno-de-paginas-web/)
+- [Tiendas Online](https://www.mktweb360.com/diseno-de-paginas-web/diseno-tiendas-online/)
 - [Marketing de Contenidos](https://www.mktweb360.com/marketing-de-contenidos/)
+- [Email Marketing](https://www.mktweb360.com/email-marketing/)
+- [WhatsApp Marketing](https://www.mktweb360.com/whatsapp-marketing/)
+- [Google Business Profile](https://www.mktweb360.com/google-my-business-empresas-guia/)
+- [Analítica Web](https://www.mktweb360.com/analitica-web/)
+- [Reputación Online](https://www.mktweb360.com/reputacion-online/)
+- [GEO — Generative Engine Optimization](https://www.mktweb360.com/geo-posicionamiento-ia/)
+- [IA Aplicada al Marketing](https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/)
 - [Auditoría Digital](https://www.mktweb360.com/auditoria-digital/)
-- [Comunicación Audiovisual](https://www.mktweb360.com/comunicacion-audiovisual/)
-- [Kit Digital](https://www.mktweb360.com/kit-digital/)
+
+## Ofertas activas
+- [SEO 6 meses por el precio de 3 — 600€](https://www.mktweb360.com/oferta-seo/)
+- [Web profesional + 6 meses SEO — 999€](https://www.mktweb360.com/oferta-web-seo/)
+- [Tienda online profesional — 490€](https://www.mktweb360.com/tienda-online/)
 
 ## Blog — Artículos recientes
-- [IA aplicada a marketing: dónde aporta valor real](https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/)
+- [¿Ha muerto el SEO con la IA?](https://www.mktweb360.com/ha-muerto-el-seo-con-la-ia/)
+- [IA aplicada a marketing: valor real o humo](https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/)
+- [Cómo darse de alta como autónomo en 2026](https://www.mktweb360.com/como-darse-de-alta-autonomo/)
+- [Google Business Profile para empresas: guía 2026](https://www.mktweb360.com/google-my-business-empresas-guia/)
+- [Factura electrónica obligatoria para autónomos y pymes](https://www.mktweb360.com/factura-electronica-obligatoria-autonomos-pymes/)
+- [Cómo digitalizar tu negocio en 2026](https://www.mktweb360.com/como-digitalizar-tu-negocio/)
 - [SEO o Google Ads: qué conviene más](https://www.mktweb360.com/seo-o-google-ads-que-conviene-mas/)
-- [Cuánto cuesta una página web profesional](https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/)
-- [SEO local para empresas de servicios](https://www.mktweb360.com/seo-local-empresas-servicios/)
 - [Señales de que tu web necesita rediseño](https://www.mktweb360.com/senales-web-necesita-rediseno/)
 - [Cómo generar leads de calidad para una pyme](https://www.mktweb360.com/como-generar-leads-calidad-pyme/)
-- [SEO para ecommerce](https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/)
-- [Automatización en marketing y ventas para pymes](https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/)
-- [Cómo conseguir clientes siendo autónomo](https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/)
-
-## Feeds
-- RSS Feed: https://www.mktweb360.com/feed.xml
+- [SEO para ecommerce: errores que frenan ventas](https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/)
 
 ## Sobre nosotros
 - [Quiénes somos](https://www.mktweb360.com/nosotros/)
