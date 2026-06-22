@@ -3,3 +3,11 @@ Allow: /
 Disallow: /area-privada/
 
 Sitemap: https://www.mktweb360.com/sitemap.xml
+
+# Bloquear parámetros Divi/ET (URLs basura de WordPress)
+Disallow: /*?et_blog
+Disallow: /*?et_core_page_resource
+Disallow: /*?et_core_page_resource=
+Disallow: /*/page/*/?et_blog
+Disallow: /feed.xml
+Disallow: /favicon.ico?*
