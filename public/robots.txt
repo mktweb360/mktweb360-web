@@ -11,3 +11,20 @@ Disallow: /*?et_core_page_resource=
 Disallow: /*/page/*/?et_blog
 Disallow: /feed.xml
 Disallow: /favicon.ico?*
+
+# LLM crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# LLMs context files
+# llms.txt: https://www.mktweb360.com/llms.txt
+# llms-full.txt: https://www.mktweb360.com/llms-full.txt
