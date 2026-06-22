@@ -92,6 +92,28 @@ const nextConfig: NextConfig = {
       { source: '/la-importancia-del-contenido-en-internet-para-las-empresas/page/:page/', destination: '/marketing-de-contenidos/', permanent: true },
       { source: '/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/page/:page/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/por-que-la-campana-seo-no-me-funciona/page/:page/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+
+      // Slugs con mayúscula y variantes raras
+      { source: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/Ejemplos', destination: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', permanent: true },
+      // URLs EN sin página real
+      { source: '/en/google-ads-management', destination: '/en/', permanent: true },
+      // Tags WordPress sin valor
+      { source: '/tag/analisis/', destination: '/blog/', permanent: true },
+      { source: '/tag/analisis', destination: '/blog/', permanent: true },
+      { source: '/tag/publicidad-en-buscadores/', destination: '/blog/', permanent: true },
+      { source: '/tag/publicidad-en-buscadores', destination: '/blog/', permanent: true },
+      { source: '/tag/canvas/', destination: '/blog/', permanent: true },
+      { source: '/tag/canvas', destination: '/blog/', permanent: true },
+      { source: '/tag/sem/', destination: '/blog/', permanent: true },
+      { source: '/tag/sem', destination: '/blog/', permanent: true },
+      { source: '/tag/estrategia-de-contenidos/', destination: '/blog/', permanent: true },
+      { source: '/tag/estrategia-de-contenidos', destination: '/blog/', permanent: true },
+      // Paginaciones adicionales con ?et_blog — redirect base
+      { source: '/seo-posicionamiento-web-organico/page/:page/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/seo-posicionamiento-web-organico/page/:page', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/blog/page/:page/', destination: '/blog/', permanent: true },
+      { source: '/blog/page/:page', destination: '/blog/', permanent: true },
+      { source: '/geo-posicionamiento-ia/', destination: '/geo-posicionamiento-ia/', permanent: false },
       // WordPress blog pagination
       { source: '/blog/page/:page/', destination: '/blog/', permanent: true },
       { source: '/blog/page/:page', destination: '/blog/', permanent: true },
