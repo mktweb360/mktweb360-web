@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 type FormData = {
@@ -38,7 +38,7 @@ const OBJETIVOS_OPTIONS = [
   "Mejorar mi presencia local en mi ciudad",
 ];
 
-export default function SeoLeadForm() {
+function SeoLeadFormInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const opportunityId = searchParams.get("opportunity_id") || "";
@@ -274,5 +274,13 @@ export default function SeoLeadForm() {
 
       </form>
     </div>
+  );
+}
+
+export default function SeoLeadForm() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center"><p className="text-gray-400">Cargando...</p></div>}>
+      <SeoLeadFormInner />
+    </Suspense>
   );
 }

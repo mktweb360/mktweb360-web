@@ -15,6 +15,7 @@ type Lead = {
   opcionPago: string;
   notas: string;
   savedAt: string;
+  opportunity_id?: string;
 };
 
 const PAGO_LABELS: Record<string, { label: string; descripcion: string; cuotas: string }> = {
@@ -68,6 +69,7 @@ export default function ContratoPage() {
   }, [id]);
 
   const handleCerrar = async () => {
+    if (!lead) return;
     if (!emailCliente || !nombreEmpresa || !nifCliente) {
       setError("Completa email, empresa y NIF antes de cerrar el contrato.");
       return;
