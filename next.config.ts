@@ -114,6 +114,9 @@ const nextConfig: NextConfig = {
       { source: '/blog/page/:page/', destination: '/blog/', permanent: true },
       { source: '/blog/page/:page', destination: '/blog/', permanent: true },
       { source: '/geo-posicionamiento-ia/', destination: '/geo-posicionamiento-ia/', permanent: false },
+      // Kit Digital — eliminado
+      { source: "/kit-digital", destination: "/diseno-de-paginas-web/", permanent: true },
+      { source: "/kit-digital/:path*", destination: "/diseno-de-paginas-web/", permanent: true },
       // WordPress blog pagination
       { source: '/blog/page/:page/', destination: '/blog/', permanent: true },
       { source: '/blog/page/:page', destination: '/blog/', permanent: true },
