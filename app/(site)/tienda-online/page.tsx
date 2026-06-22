@@ -103,6 +103,130 @@ export default function TiendaOnlineLandingPage() {
         </div>
       </section>
 
+
+      {/* Por qué WooCommerce */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Por qué una tienda propia es mejor que Shopify o Wix</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Shopify y Wix son cómodos para empezar, pero tienen un coste oculto que no aparece en su precio mensual: las comisiones por venta. Si facturas 50.000€ al año con Shopify Basic, pagas 1.000€ solo en comisiones de transacción, más los 468€ anuales de suscripción. Son 1.500€ al año que se van sin que hayas vendido nada más.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Con una tienda propia en WooCommerce, pagas una vez y es tuya para siempre. Sin comisiones por venta, sin licencia mensual, sin dependencia de una plataforma que puede cambiar sus precios o sus condiciones cuando quiera. El código es tuyo, los datos son tuyos y el diseño es 100% personalizado.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Además, WooCommerce sobre WordPress es la plataforma de ecommerce con mayor presencia en Google. Las tiendas bien construidas sobre esta base tienen una ventaja SEO estructural que las plataformas SaaS difícilmente pueden igualar. Incluimos SEO técnico desde el primer día: velocidad, estructura de URLs, datos estructurados, sitemap y configuración de indexación.
+          </p>
+        </div>
+      </section>
+
+      {/* Proceso */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8 text-center">Cómo es el proceso de entrega</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { num: "01", title: "Reunión de briefing", desc: "Recibimos tu solicitud y te contactamos en menos de 24 horas para una reunión de briefing. Definimos el diseño, el catálogo, las funcionalidades específicas y el calendario de entrega." },
+              { num: "02", title: "Diseño y desarrollo", desc: "Diseñamos tu tienda desde cero — sin plantillas genéricas. Implementamos el catálogo, las pasarelas de pago, los métodos de envío y todas las funcionalidades acordadas." },
+              { num: "03", title: "Revisión y ajustes", desc: "Te mostramos la tienda en un entorno de pruebas. Hacemos todos los ajustes necesarios hasta que quede exactamente como lo necesitas. Sin límite de rondas de revisión." },
+              { num: "04", title: "Lanzamiento y formación", desc: "Publicamos la tienda, hacemos las pruebas finales de compra y te formamos para gestionar productos, pedidos, stock y promociones de forma autónoma." },
+            ].map(step => (
+              <div key={step.num} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <span className="inline-block text-3xl font-bold text-accent-500 mb-3">{step.num}</span>
+                <h3 className="font-bold text-primary-700 text-lg mb-2">{step.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8 text-center">Preguntas frecuentes</h2>
+          <div className="space-y-4">
+            {[
+              { q: "¿Cuánto tarda en estar lista la tienda?",
+                a: "El plazo estándar es de 3 a 4 semanas desde el briefing inicial hasta el lanzamiento. Para tiendas con catálogos grandes o funcionalidades específicas puede ser algo más. Lo acordamos antes de empezar y lo cumplimos." },
+              { q: "¿Qué pasa si ya tengo una tienda en Shopify o WooCommerce?",
+                a: "Migramos tu tienda completa: productos, categorías, imágenes, clientes y pedidos históricos. El proceso es transparente para tus clientes — no pierden sus cuentas ni su historial de compras." },
+              { q: "¿Quién gestiona la tienda después del lanzamiento?",
+                a: "Tú. Te formamos para gestionar productos, stock, pedidos, descuentos y envíos de forma completamente autónoma. Si prefieres que lo gestionemos nosotros, tenemos planes de mantenimiento mensual." },
+              { q: "¿El precio de 490€ es todo o hay costes adicionales?",
+                a: "El precio de 490€ cubre el diseño y desarrollo completo de la tienda. Aparte necesitas un hosting y dominio (entre 80 y 150€/año según el proveedor) y las pasarelas de pago cobran una comisión estándar de Stripe o similar (entre 1,4% y 2,9% por transacción, que es el coste del procesador, no nuestro)." },
+            ].map(faq => (
+              <div key={faq.q} className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+                <h3 className="font-bold text-primary-700 mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* Por qué WooCommerce */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Por qué una tienda propia es mejor que Shopify o Wix</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Shopify y Wix son cómodos para empezar, pero tienen un coste oculto que no aparece en su precio mensual: las comisiones por venta. Si facturas 50.000€ al año con Shopify Basic, pagas 1.000€ solo en comisiones de transacción, más los 468€ anuales de suscripción. Son 1.500€ al año que se van sin que hayas vendido nada más.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Con una tienda propia en WooCommerce, pagas una vez y es tuya para siempre. Sin comisiones por venta, sin licencia mensual, sin dependencia de una plataforma que puede cambiar sus precios o sus condiciones cuando quiera. El código es tuyo, los datos son tuyos y el diseño es 100% personalizado.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Además, WooCommerce sobre WordPress es la plataforma de ecommerce con mayor presencia en Google. Las tiendas bien construidas sobre esta base tienen una ventaja SEO estructural que las plataformas SaaS difícilmente pueden igualar. Incluimos SEO técnico desde el primer día: velocidad, estructura de URLs, datos estructurados, sitemap y configuración de indexación.
+          </p>
+        </div>
+      </section>
+
+      {/* Proceso */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8 text-center">Cómo es el proceso de entrega</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { num: "01", title: "Reunión de briefing", desc: "Recibimos tu solicitud y te contactamos en menos de 24 horas para una reunión de briefing. Definimos el diseño, el catálogo, las funcionalidades específicas y el calendario de entrega." },
+              { num: "02", title: "Diseño y desarrollo", desc: "Diseñamos tu tienda desde cero — sin plantillas genéricas. Implementamos el catálogo, las pasarelas de pago, los métodos de envío y todas las funcionalidades acordadas." },
+              { num: "03", title: "Revisión y ajustes", desc: "Te mostramos la tienda en un entorno de pruebas. Hacemos todos los ajustes necesarios hasta que quede exactamente como lo necesitas. Sin límite de rondas de revisión." },
+              { num: "04", title: "Lanzamiento y formación", desc: "Publicamos la tienda, hacemos las pruebas finales de compra y te formamos para gestionar productos, pedidos, stock y promociones de forma autónoma." },
+            ].map(step => (
+              <div key={step.num} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <span className="inline-block text-3xl font-bold text-accent-500 mb-3">{step.num}</span>
+                <h3 className="font-bold text-primary-700 text-lg mb-2">{step.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8 text-center">Preguntas frecuentes</h2>
+          <div className="space-y-4">
+            {[
+              { q: "¿Cuánto tarda en estar lista la tienda?",
+                a: "El plazo estándar es de 3 a 4 semanas desde el briefing inicial hasta el lanzamiento. Para tiendas con catálogos grandes o funcionalidades específicas puede ser algo más. Lo acordamos antes de empezar y lo cumplimos." },
+              { q: "¿Qué pasa si ya tengo una tienda en Shopify o WooCommerce?",
+                a: "Migramos tu tienda completa: productos, categorías, imágenes, clientes y pedidos históricos. El proceso es transparente para tus clientes — no pierden sus cuentas ni su historial de compras." },
+              { q: "¿Quién gestiona la tienda después del lanzamiento?",
+                a: "Tú. Te formamos para gestionar productos, stock, pedidos, descuentos y envíos de forma completamente autónoma. Si prefieres que lo gestionemos nosotros, tenemos planes de mantenimiento mensual." },
+              { q: "¿El precio de 490€ es todo o hay costes adicionales?",
+                a: "El precio de 490€ cubre el diseño y desarrollo completo de la tienda. Aparte necesitas un hosting y dominio (entre 80 y 150€/año según el proveedor) y las pasarelas de pago cobran una comisión estándar de Stripe o similar (entre 1,4% y 2,9% por transacción, que es el coste del procesador, no nuestro)." },
+            ].map(faq => (
+              <div key={faq.q} className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
+                <h3 className="font-bold text-primary-700 mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-8 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <HostingBanner />
