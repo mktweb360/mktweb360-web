@@ -6,7 +6,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "Google Business Profile para Empresas — Visibilidad Local | Mkt Web 360",
-  description: "Optimización y gestión de Google Business Profile para empresas. Aparece en Google Maps, consigue más reseñas y atrae clientes locales. Servicio nacional.",
+  description: "Optimización y gestión de Google Business Profile para empresas. Aparece en Google Maps, consigue más reseñas y atrae clientes locales. Auditoría, configuración y gestión mensual. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/google-business-profile/" },
   openGraph: {
     title: "Google Business Profile para Empresas | Mkt Web 360",
@@ -26,6 +26,17 @@ const serviceSchema = {
   url: "https://www.mktweb360.com/google-business-profile/",
 };
 
+const FAQS = [
+  { q: "¿Cuánto tarda en verse el resultado de optimizar la ficha?",
+    a: "Los primeros cambios son inmediatos: la ficha actualizada aparece en Google en 24-48 horas. La mejora en el posicionamiento dentro del Local Pack (los 3 primeros resultados del mapa) suele verse entre 4 y 8 semanas, dependiendo de la competencia en tu zona y sector." },
+  { q: "¿Necesito tener una dirección física para tener Google Business Profile?",
+    a: "No necesariamente. Si prestas servicios a domicilio o en casa del cliente (fontaneros, electricistas, asesores, etc.) puedes crear una ficha de área de servicio sin mostrar tu dirección. Configuramos la ficha según tu modelo de negocio." },
+  { q: "¿Cómo conseguís más reseñas para mi negocio?",
+    a: "Diseñamos una estrategia de captación de reseñas adaptada a tu sector: email automatizado post-servicio, QR en el punto de venta, formación al equipo para solicitar reseñas de forma natural. También gestionamos las respuestas a todas las reseñas, positivas y negativas." },
+  { q: "¿Qué pasa si tengo reseñas negativas?",
+    a: "Las reseñas negativas bien gestionadas generan más confianza que no tenerlas. Respondemos de forma profesional y constructiva a cada reseña negativa. Si son falsas o incumplen las políticas de Google, tramitamos su eliminación ante Google." },
+];
+
 export default function GoogleBusinessProfilePage() {
   return (
     <>
@@ -40,7 +51,7 @@ export default function GoogleBusinessProfilePage() {
               <span className="text-accent-400">te están buscando</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
-              El 46% de las búsquedas en Google tienen intención local. Si tu ficha de Google no está optimizada, estás regalando clientes a tu competencia cada día.
+              El 46% de las búsquedas en Google tienen intención local. Si tu ficha de Google Business Profile no está optimizada, estás regalando clientes a tu competencia cada día.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#contacto" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
@@ -70,82 +81,140 @@ export default function GoogleBusinessProfilePage() {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Qué incluye el servicio</h2>
-          </div>
+      <div className="max-w-4xl mx-auto px-4 py-12">
+
+        {/* Por qué GBP */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Por qué Google Business Profile es la herramienta de captación local más potente</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Cuando alguien busca "fontanero en Toledo", "clínica dental cerca de mí" o "restaurante italiano Madrid", Google muestra el Local Pack: los 3 negocios que aparecen en el mapa antes que cualquier resultado orgánico. Si no estás en esos 3, no existes para ese cliente potencial.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Google Business Profile es completamente gratuito, pero la mayoría de empresas tiene la ficha a medias, sin fotos actualizadas, sin responder reseñas, sin publicaciones y con información incorrecta. Eso penaliza directamente su posición en el mapa y destruye la confianza del cliente antes de que te contacte.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Una ficha bien optimizada y gestionada activamente genera un 3x más de visitas al sitio web, más llamadas directas y más solicitudes de ruta — que son las acciones que más se correlacionan con clientes reales. El ROI de optimizar Google Business Profile es de los más altos de cualquier acción de marketing local.
+          </p>
+        </section>
+
+        {/* Qué incluye */}
+        <section className="mb-16 bg-gray-50 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8">Qué incluye el servicio</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-primary-600 mb-6">Optimización inicial</h3>
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <h3 className="text-lg font-bold text-primary-600 mb-4">Optimización inicial</h3>
               <ul className="space-y-3">
                 {[
                   "Auditoría completa de tu ficha actual",
                   "Categorías y atributos optimizados",
-                  "Descripción persuasiva y con keywords",
-                  "Fotos profesionales del negocio",
+                  "Descripción persuasiva con keywords locales",
+                  "Fotos y vídeos del negocio",
                   "Horarios, servicios y precios actualizados",
                   "NAP consistente con tu web y directorios",
                 ].map((i) => (
-                  <li key={i} className="flex gap-3 text-gray-700 text-sm">
-                    <span className="text-accent-500 font-bold shrink-0">✓</span>{i}
-                  </li>
+                  <li key={i} className="flex gap-3 text-gray-700 text-sm"><span className="text-accent-500 font-bold shrink-0">✓</span>{i}</li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-primary-600 mb-6">Gestión mensual</h3>
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+              <h3 className="text-lg font-bold text-primary-600 mb-4">Gestión mensual</h3>
               <ul className="space-y-3">
                 {[
                   "Publicaciones semanales en Google",
-                  "Respuesta profesional a reseñas",
-                  "Estrategia para conseguir más reseñas",
+                  "Respuesta profesional a todas las reseñas",
+                  "Estrategia de captación de reseñas",
                   "Seguimiento de posiciones en Maps",
                   "Análisis de búsquedas y llamadas",
                   "Informe mensual de rendimiento",
                 ].map((i) => (
-                  <li key={i} className="flex gap-3 text-gray-700 text-sm">
-                    <span className="text-accent-500 font-bold shrink-0">✓</span>{i}
-                  </li>
+                  <li key={i} className="flex gap-3 text-gray-700 text-sm"><span className="text-accent-500 font-bold shrink-0">✓</span>{i}</li>
                 ))}
               </ul>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6 text-center">Por qué Google Business Profile es clave</h2>
-          <p className="text-gray-700 leading-relaxed mb-4 text-center max-w-2xl mx-auto">
-            Cuando alguien busca "fontanero en Toledo" o "clínica dental cerca de mí", Google muestra el Local Pack — esos 3 negocios que aparecen en el mapa. Si no estás ahí, no existes para ese cliente.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        {/* Proceso */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8">Cómo trabajamos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { title: "Visibilidad inmediata", desc: "Aparece en Google Maps y en los resultados locales antes que la competencia." },
-              { title: "Más llamadas directas", desc: "Los clientes te llaman directamente desde la ficha sin pasar por la web." },
-              { title: "Confianza con reseñas", desc: "Un negocio con reseñas positivas y bien gestionadas convierte hasta 3 veces más." },
+              { num: "01", title: "Auditoría de la ficha actual", desc: "Analizamos el estado actual de tu Google Business Profile: información incompleta, categorías incorrectas, fotos desactualizadas, reseñas sin responder y coherencia NAP con tu web." },
+              { num: "02", title: "Optimización completa", desc: "Completamos y optimizamos todos los campos: descripción con keywords locales, categorías primaria y secundarias, atributos de negocio, horarios, servicios, precios y fotos." },
+              { num: "03", title: "Estrategia de reseñas", desc: "Diseñamos e implementamos el sistema de captación de reseñas: email post-servicio, QR en el local, formación al equipo. Y respondemos a todas las reseñas existentes." },
+              { num: "04", title: "Gestión y seguimiento", desc: "Publicamos contenido semanal en la ficha, monitorizamos las métricas de visibilidad local y enviamos un informe mensual con evolución de posiciones, llamadas y visitas." },
+            ].map(step => (
+              <div key={step.num} className="bg-primary-50 rounded-2xl p-6 border border-primary-100">
+                <span className="inline-block text-3xl font-bold text-accent-500 mb-3">{step.num}</span>
+                <h3 className="font-bold text-primary-700 text-lg mb-2">{step.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Sectores */}
+        <section className="mb-16 bg-primary-50 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">¿Para qué tipo de negocio es imprescindible?</h2>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Google Business Profile es especialmente crítico para negocios con clientes locales o que prestan servicios en un área geográfica concreta:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { sector: "Servicios del hogar", desc: "Fontaneros, electricistas, pintores, cerrajeros, reformas. El Local Pack es el primer punto de contacto cuando el cliente tiene una urgencia." },
+              { sector: "Clínicas y salud", desc: "Dentistas, fisioterapeutas, psicólogos, clínicas estéticas. Las reseñas son determinantes en la decisión del paciente." },
+              { sector: "Hostelería y restauración", desc: "Restaurantes, bares, hoteles, cafeterías. Google Maps es el directorio de referencia para encontrar dónde comer o dormir." },
+              { sector: "Comercio local y retail", desc: "Tiendas físicas que quieren captar clientes de su zona. La ficha muestra horarios, productos y facilita la visita." },
+              { sector: "Servicios profesionales", desc: "Asesorías, gestorías, abogados, consultoras. La presencia en Maps refuerza la confianza y facilita el primer contacto." },
+              { sector: "Centros de formación", desc: "Academias, autoescuelas, centros de idiomas. Las búsquedas locales de cursos y formación tienen alta intención de compra." },
+            ].map(s => (
+              <div key={s.sector} className="bg-white rounded-xl p-4 border border-primary-100">
+                <p className="font-bold text-primary-700 text-sm mb-1">{s.sector}</p>
+                <p className="text-gray-600 text-xs leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Beneficios */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8">Por qué Google Business Profile es clave para tu negocio local</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: "Visibilidad inmediata", desc: "Aparece en Google Maps y en el Local Pack antes que los resultados orgánicos. Es el escaparate digital más visible para búsquedas locales." },
+              { title: "Más llamadas directas", desc: "Los clientes te llaman o solicitan ruta directamente desde la ficha sin necesidad de visitar tu web. Menos fricción, más conversiones." },
+              { title: "Confianza con reseñas", desc: "Un negocio con reseñas positivas y gestionadas activamente convierte hasta 3 veces más que uno sin reseñas o con críticas sin responder." },
             ].map((c) => (
-              <div key={c.title} className="bg-primary-50 rounded-2xl p-6 text-center">
+              <div key={c.title} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                 <h3 className="font-bold text-primary-600 mb-2">{c.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="contacto" className="py-16 px-4 bg-primary-600 text-white">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">Céntrate en tu negocio</h2>
-            <p className="text-primary-200">Nosotros ponemos el foco en que te encuentren. Cuéntanos tu situación y te decimos cómo mejorar tu visibilidad local.</p>
+        {/* FAQs */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre Google Business Profile</h2>
+          <div className="space-y-4">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                <h3 className="font-bold text-primary-700 mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
           </div>
-          <div className="bg-white rounded-2xl p-8">
-            <ContactForm formType="google-business-profile" />
+        </section>
+
+        {/* Contacto */}
+        <section id="contacto" className="bg-primary-600 text-white rounded-2xl p-8">
+          <h2 className="text-2xl font-bold mb-4">Céntrate en tu negocio</h2>
+          <p className="text-primary-200 mb-6">Nosotros ponemos el foco en que te encuentren. Cuéntanos tu situación y te decimos cómo mejorar tu visibilidad local.</p>
+          <div className="bg-white rounded-xl p-6">
+            <ContactForm />
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <RelatedArticles category="SEO" title="Más sobre posicionamiento local" />
     </>
