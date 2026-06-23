@@ -161,6 +161,98 @@ export default function GEOPage() {
         </div>
       </section>
 
+      {/* POR QUÉ GEO */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-8">Por qué el GEO es el próximo gran cambio en captación digital</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            El SEO tradicional optimiza para aparecer en Google. Pero el comportamiento del usuario está cambiando: cada vez más personas hacen sus búsquedas directamente en ChatGPT, Perplexity, Claude o Gemini y toman decisiones basándose en lo que estos sistemas responden — sin llegar a visitar Google. Si tu empresa no aparece en esas respuestas, no existes para ese segmento de usuarios.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            El GEO — Generative Engine Optimization — es la disciplina que optimiza tu presencia digital para que los modelos de lenguaje te recomienden cuando un usuario pregunta por servicios como los tuyos. No se trata de trucos técnicos ni de engañar a la IA. Se trata de que tu contenido sea suficientemente claro, estructurado y autoritativo para que los LLMs lo consideren una fuente relevante.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            En Mkt Web 360 fuimos de los primeros en España en desarrollar un servicio de GEO estructurado. Mantenemos llms.txt y llms-full.txt activos, optimizamos el contenido para intención de búsqueda conversacional y monitorizamos mensualmente la visibilidad de la marca en los principales motores de IA.
+          </p>
+        </div>
+      </section>
+
+      {/* CÓMO TRABAJAMOS EL GEO */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Cómo trabajamos el GEO</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Un proceso estructurado en cuatro fases para construir y mantener tu visibilidad en los motores de IA.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                num: "01",
+                title: "Auditoría de visibilidad en IA",
+                desc: "Comprobamos cómo aparece tu marca y tus servicios en ChatGPT, Perplexity, Gemini y Claude. Identificamos si apareces, con qué frecuencia, en qué contexto y qué dicen los modelos sobre ti o sobre tu sector.",
+              },
+              {
+                num: "02",
+                title: "Optimización de contenido para LLMs",
+                desc: "Reescribimos o ampliamos el contenido de las páginas clave para que responda con claridad a las preguntas que los usuarios hacen a los asistentes de IA. Prosa natural, datos verificables, autoridad temática.",
+              },
+              {
+                num: "03",
+                title: "Implementación técnica",
+                desc: "Configuramos llms.txt y llms-full.txt con la información estructurada de tu empresa y servicios. Implementamos schema markup avanzado y aseguramos que los crawlers de LLMs tienen acceso correcto a tu contenido.",
+              },
+              {
+                num: "04",
+                title: "Seguimiento mensual",
+                desc: "Monitorizamos la visibilidad de tu marca en los principales motores generativos. Cada mes recibes un informe con cómo apareces, qué ha cambiado y qué acciones tomamos para mejorar.",
+              },
+            ].map((step) => (
+              <div key={step.num} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex gap-5">
+                <span className="text-4xl font-bold text-primary-100 shrink-0 leading-none">{step.num}</span>
+                <div>
+                  <h3 className="font-bold text-primary-600 mb-2">{step.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs GEO */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Preguntas frecuentes sobre GEO</h2>
+          </div>
+          <div className="space-y-4">
+            {[
+              {
+                q: "¿El GEO reemplaza al SEO?",
+                a: "No — son complementarios. El SEO sigue siendo esencial para captar tráfico de Google, que representa la mayoría del volumen de búsqueda actual. El GEO añade visibilidad en el canal que está creciendo más rápido: los asistentes de IA. La estrategia más sólida trabaja los dos canales simultáneamente.",
+              },
+              {
+                q: "¿Cuánto tarda en verse el impacto del GEO?",
+                a: "Los cambios técnicos como llms.txt se implementan en días. La mejora en la frecuencia con la que los modelos de IA mencionan tu marca depende de la autoridad de tu contenido y puede tardar entre 2 y 4 meses en ser perceptible. Es un canal en construcción — quien empiece antes tendrá ventaja.",
+              },
+              {
+                q: "¿Cómo se mide la visibilidad en IA?",
+                a: "Hacemos consultas periódicas a los principales LLMs con las preguntas que haría un cliente potencial tuyo y registramos si apareces, cómo apareces y qué se dice. Es una metodología en evolución porque el sector es muy nuevo, pero ya permite detectar tendencias y oportunidades claras.",
+              },
+              {
+                q: "¿El GEO funciona para cualquier sector?",
+                a: "Sí, aunque el impacto varía según el volumen de búsquedas conversacionales que exista en tu sector. Servicios profesionales, salud, tecnología, formación y marketing digital son los sectores donde el GEO tiene mayor impacto inmediato. Para sectores más locales o de nicho, la oportunidad está en posicionarse antes de que la competencia lo descubra.",
+              },
+            ].map((faq) => (
+              <div key={faq.q} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <h3 className="font-bold text-primary-600 mb-2">{faq.q}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 px-4 bg-primary-50">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-white border border-primary-200 rounded-full px-4 py-2 text-sm text-primary-600 font-medium mb-6">
