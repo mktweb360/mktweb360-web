@@ -15,9 +15,20 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "SEO en Madrid: Cómo Posicionar tu Negocio en la Capital | Mkt Web 360",
+  provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  description: "Guía de SEO para negocios en Madrid. Competencia, keywords locales, Google Business Profile y estrategia para destacar en el mercado más competitivo de España.",
+  areaServed: "España",
+  url: "https://www.mktweb360.com/seo-madrid/",
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "SEO Madrid" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>

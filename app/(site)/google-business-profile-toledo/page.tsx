@@ -16,9 +16,20 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Google Business Profile para Negocios en Toledo — Guía Completa | Mkt Web 360",
+  provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  description: "Cómo optimizar tu Google Business Profile si tienes un negocio en Toledo. Aparece en Google Maps y consigue más clientes locales. Guía paso a paso.",
+  areaServed: "España",
+  url: "https://www.mktweb360.com/google-business-profile-toledo/",
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "GBP Toledo" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>

@@ -16,9 +16,20 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Agencias de Marketing Digital en Toledo — Qué Buscar y Qué Evitar | Mkt Web 360",
+  provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  description: "Guía para elegir una agencia de marketing digital en Toledo. Qué preguntar, qué red flags detectar y cómo comparar propuestas antes de contratar.",
+  areaServed: "España",
+  url: "https://www.mktweb360.com/agencias-marketing-digital-toledo/",
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Agencias marketing Toledo" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Estrategia Digital</p>

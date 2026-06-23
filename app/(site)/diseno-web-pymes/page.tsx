@@ -16,9 +16,20 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Diseño Web para PYMEs — Qué Debe Tener tu Web para Vender | Mkt Web 360",
+  provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  description: "Guía de diseño web para PYMEs. Qué elementos no pueden faltar, qué errores evitar y cómo hacer que tu web genere clientes de forma constante.",
+  areaServed: "España",
+  url: "https://www.mktweb360.com/diseno-web-pymes/",
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Diseño web PYMEs" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Diseño Web</p>

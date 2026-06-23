@@ -16,9 +16,20 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "SEO en Toledo — Posicionamiento Web para Negocios Locales | Mkt Web 360",
+  provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  description: "Cómo mejorar el SEO de tu negocio en Toledo. Aparece en Google cuando tus clientes te buscan. Guía de posicionamiento web para empresas toledanas.",
+  areaServed: "España",
+  url: "https://www.mktweb360.com/seo-toledo/",
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "SEO en Toledo" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>

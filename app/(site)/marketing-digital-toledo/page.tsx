@@ -16,9 +16,20 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Marketing Digital para Empresas en Toledo — Guía Práctica | Mkt Web 360",
+  provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  description: "Guía de marketing digital para empresas en Toledo. SEO, Google Ads, redes sociales y diseño web para negocios toledanos que quieren crecer online.",
+  areaServed: "España",
+  url: "https://www.mktweb360.com/marketing-digital-toledo/",
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Marketing digital en Toledo" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>

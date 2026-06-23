@@ -15,9 +15,20 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Cómo Elegir una Agencia de Marketing Digital en Madrid Sin Equivocarte | Mkt Web 360",
+  provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  description: "Guía para elegir una agencia de marketing digital en Madrid. Qué preguntar, qué red flags detectar, cómo comparar presupuestos y qué resultados son realistas.",
+  areaServed: "España",
+  url: "https://www.mktweb360.com/agencias-marketing-digital-madrid/",
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Agencias marketing digital Madrid" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>

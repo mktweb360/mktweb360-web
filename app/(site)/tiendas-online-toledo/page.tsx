@@ -16,9 +16,20 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Tiendas Online en Toledo — Cómo Vender Más Allá de tu Provincia | Mkt Web 360",
+  provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  description: "Crea tu tienda online en Toledo y vende a toda España. Sin comisiones ni licencias mensuales. Guía para negocios toledanos que quieren vender por internet.",
+  areaServed: "España",
+  url: "https://www.mktweb360.com/tiendas-online-toledo/",
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Tiendas online Toledo" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>

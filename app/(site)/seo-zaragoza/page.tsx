@@ -15,9 +15,20 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "SEO en Zaragoza: Cómo Aparecer en Google si Tienes un Negocio Local | Mkt Web 360",
+  provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  description: "Guía de SEO local para negocios en Zaragoza. Posicionamiento en Google, Google Business Profile, estrategia de contenido y sectores con mayor oportunidad digital.",
+  areaServed: "España",
+  url: "https://www.mktweb360.com/seo-zaragoza/",
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "SEO Zaragoza" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
