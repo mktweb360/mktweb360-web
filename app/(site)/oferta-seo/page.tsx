@@ -140,6 +140,12 @@ export default function OfertaSeoPage() {
         </p>
       </div>
 
+      <div className="bg-white text-center py-2 px-4">
+        <a href="#por-que-5-plazas" className="text-accent-500 font-bold text-sm hover:underline">
+          ¿Por qué solo 5 plazas? ↓
+        </a>
+      </div>
+
       {/* QUÉ INCLUYE */}
       <section id="incluye" className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
@@ -216,6 +222,23 @@ export default function OfertaSeoPage() {
         </div>
       </section>
 
+
+      {/* POR QUÉ 5 PLAZAS */}
+      <section id="por-que-5-plazas" className="py-16 px-4 bg-primary-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Por qué limitamos las incorporaciones a 5 empresas por mes</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            El SEO no es un producto que se entrega y se olvida. Cada cliente nuevo entra en un proceso que consume entre 40 y 60 horas de trabajo durante el primer mes: auditoría técnica completa, investigación de keywords, optimización de las páginas principales, configuración de métricas y creación del primer contenido. Es el mes más intenso de toda la relación, y también el que menos se amortiza económicamente.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-10">
+            A partir del tercer o cuarto mes el trabajo se estabiliza y los resultados empiezan a ser visibles. Pero esa curva inicial existe, y si incorporamos más clientes de los que podemos atender bien, la calidad del trabajo baja para todos. Por eso limitamos las incorporaciones — es una decisión operativa que protege los resultados de todos.
+          </p>
+          <h3 className="text-xl font-bold text-primary-600 mb-4">Qué tipo de empresa buscamos</h3>
+          <p className="text-gray-700 leading-relaxed">
+            Buscamos empresas con un proyecto serio y un horizonte real. El SEO empieza a generar retorno entre el cuarto y el sexto mes. Si tu expectativa es ver resultados en 30 días, esta oferta no es para ti y te lo decimos antes de empezar. Si tienes un negocio que funciona y quieres que más clientes te encuentren en Google, queremos crecer contigo. Nuestro éxito es el tuyo — cuando tus resultados mejoran, nuestra relación tiene sentido.
+          </p>
+        </div>
+      </section>
 
       {/* Por qué 6 meses */}
       <section className="py-16 px-4 bg-white">
