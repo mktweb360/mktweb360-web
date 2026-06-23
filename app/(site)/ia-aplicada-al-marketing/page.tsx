@@ -51,10 +51,22 @@ const IA_SERVICES = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿El contenido que generáis con IA es original y de calidad?", acceptedAnswer: { "@type": "Answer", text: "Sí. La IA es una herramienta de trabajo, no el autor final. Todos los textos, artículos y copies pasan por revisión y edición humana antes de publicarse. La IA acelera la investigación y la estructura, pero el criterio editorial, el tono de marca y la calidad final los garantiza el equipo." } },
+    { "@type": "Question", name: "¿Cómo sé que la IA no va a perjudicar mi posicionamiento en Google?", acceptedAnswer: { "@type": "Answer", text: "Google no penaliza el contenido generado con IA — penaliza el contenido de baja calidad, independientemente de cómo se haya creado. Nuestros protocolos producen contenido que responde en profundidad a la intención de búsqueda del usuario, que es exactamente lo que Google premia." } },
+    { "@type": "Question", name: "¿Qué herramientas de IA utilizáis?", acceptedAnswer: { "@type": "Answer", text: "Usamos una combinación de herramientas propietarias y plataformas especializadas según la tarea: modelos de lenguaje para análisis y contenido, herramientas de análisis semántico para SEO, plataformas de automatización para reporting y flujos de trabajo, y herramientas de análisis de datos para campañas. No dependemos de una sola herramienta." } },
+    { "@type": "Question", name: "¿La IA reemplaza al equipo humano en vuestro caso?", acceptedAnswer: { "@type": "Answer", text: "No. La IA amplifica la capacidad del equipo pero no toma decisiones estratégicas, no gestiona la relación con el cliente y no asume responsabilidad sobre los resultados. Todo eso lo hace el equipo humano. La IA nos permite hacer más y mejor, no hacer menos." } },
+  ],
+};
+
 export default function IAMarketingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">

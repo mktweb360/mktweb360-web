@@ -35,10 +35,22 @@ const CAMPAIGNS = [
   { title: "Performance Max", desc: "Campañas inteligentes que optimizan automáticamente en todos los canales de Google." },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Cuánto presupuesto mínimo necesito para empezar con Google Ads?", acceptedAnswer: { "@type": "Answer", text: "Depende del sector y la competencia. Para la mayoría de negocios locales o de servicios, 300-500€/mes de inversión publicitaria es suficiente para obtener datos relevantes. En sectores muy competitivos como seguros o préstamos, el mínimo sube considerablemente. Te hacemos una estimación gratuita antes de empezar." } },
+    { "@type": "Question", name: "¿Cuánto cobráis de gestión?", acceptedAnswer: { "@type": "Answer", text: "Cobramos una tarifa fija mensual de gestión que no depende del presupuesto que inviertas en Google. No cobramos porcentaje sobre la inversión publicitaria — ese modelo incentiva a gastar más, no a optimizar. La tarifa fija nos alinea con tu objetivo: conseguir más al mismo coste." } },
+    { "@type": "Question", name: "¿Los clics que pago son míos o de vosotros?", acceptedAnswer: { "@type": "Answer", text: "Todo es tuyo. La cuenta de Google Ads es tuya, la tienes en tu propiedad y tienes acceso completo en todo momento. Si decides cambiar de agencia o gestionar tú mismo, te llevas la cuenta con todo su historial, conversiones y datos acumulados." } },
+    { "@type": "Question", name: "¿Puedo ver en tiempo real lo que se gasta?", acceptedAnswer: { "@type": "Answer", text: "Sí. Tienes acceso completo a tu cuenta de Google Ads donde puedes ver en tiempo real el gasto, los clics, las impresiones y las conversiones. Además recibes un informe mensual con el análisis e interpretación de los datos más relevantes." } },
+  ],
+};
+
 export default function SemPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">

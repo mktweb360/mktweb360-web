@@ -37,10 +37,22 @@ const FAQS = [
     a: "El informe mensual incluye evolución del tráfico por canal, conversiones por fuente, páginas más visitadas, embudo de conversión completo, comparativa con el mes anterior y recomendaciones de acción. Todo en un formato legible, no una exportación cruda de datos." },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Qué diferencia hay entre Google Analytics 4 y Universal Analytics?", acceptedAnswer: { "@type": "Answer", text: "Universal Analytics fue retirado en julio de 2023. GA4 es el estándar actual y funciona de forma diferente: mide eventos en lugar de sesiones, tiene un modelo de datos más flexible y está diseñado para medir tanto webs como apps. Si todavía tienes datos de UA y quieres migrarlos o entender GA4, te ayudamos con la transición." } },
+    { "@type": "Question", name: "¿Qué es Google Tag Manager y por qué lo necesito?", acceptedAnswer: { "@type": "Answer", text: "Google Tag Manager es un sistema que centraliza todos los códigos de seguimiento de tu web (GA4, Google Ads, Meta Pixel, etc.) sin tocar el código de la web directamente. Facilita la gestión, reduce errores y permite implementar nuevos tags de forma ágil. Es la base de una medición profesional." } },
+    { "@type": "Question", name: "¿Cómo sé si mi analítica actual está bien configurada?", acceptedAnswer: { "@type": "Answer", text: "La mayoría de empresas tienen GA4 instalado pero con datos incorrectos: conversiones no registradas, tráfico interno contaminando los datos, fuentes de tráfico mal atribuidas o eventos que no se disparan. Realizamos una auditoría de medición inicial que identifica todos los problemas y los priorizamos por impacto." } },
+    { "@type": "Question", name: "¿Qué incluye el informe mensual?", acceptedAnswer: { "@type": "Answer", text: "El informe mensual incluye evolución del tráfico por canal, conversiones por fuente, páginas más visitadas, embudo de conversión completo, comparativa con el mes anterior y recomendaciones de acción. Todo en un formato legible, no una exportación cruda de datos." } },
+  ],
+};
+
 export default function AnaliticaWebPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

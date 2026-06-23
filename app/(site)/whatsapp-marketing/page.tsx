@@ -37,10 +37,22 @@ const FAQS = [
     a: "Sí. La API de WhatsApp Business se integra con los principales CRM (HubSpot, Salesforce, Zoho), plataformas de ecommerce (WooCommerce, Shopify) y herramientas de automatización. Valoramos tu caso concreto y proponemos la integración más eficiente." },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Necesito WhatsApp Business API o vale con la app normal?", acceptedAnswer: { "@type": "Answer", text: "Para uso personal o negocios muy pequeños, WhatsApp Business gratuito es suficiente. Si quieres enviar campañas masivas, automatizar secuencias, integrar con tu CRM o gestionar múltiples agentes, necesitas la API oficial de WhatsApp Business. Nosotros gestionamos la configuración completa." } },
+    { "@type": "Question", name: "¿Es legal enviar mensajes de marketing por WhatsApp?", acceptedAnswer: { "@type": "Answer", text: "Sí, siempre que los contactos hayan dado su consentimiento explícito para recibir comunicaciones comerciales. La API oficial de WhatsApp exige el opt-in previo del usuario. Nosotros te ayudamos a construir tu lista de contactos de forma legal y a cumplir con el RGPD." } },
+    { "@type": "Question", name: "¿Cuánto tarda en verse resultados?", acceptedAnswer: { "@type": "Answer", text: "WhatsApp tiene resultados mucho más rápidos que otros canales. Las primeras campañas suelen generar respuestas en las primeras horas. En 30 días ya tienes datos reales de apertura, respuesta y conversión para optimizar la estrategia." } },
+    { "@type": "Question", name: "¿Puedo integrar WhatsApp con mi CRM o tienda online?", acceptedAnswer: { "@type": "Answer", text: "Sí. La API de WhatsApp Business se integra con los principales CRM (HubSpot, Salesforce, Zoho), plataformas de ecommerce (WooCommerce, Shopify) y herramientas de automatización. Valoramos tu caso concreto y proponemos la integración más eficiente." } },
+  ],
+};
+
 export default function WhatsAppMarketingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

@@ -37,10 +37,22 @@ const FAQS = [
     a: "Los primeros resultados se ven desde el primer envío: aperturas, clics y conversiones directas. El impacto en ventas recurrentes y fidelización crece progresivamente en los primeros 3 meses a medida que se optimizan los segmentos, los asuntos y los horarios de envío." },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Qué plataforma de email marketing utilizáis?", acceptedAnswer: { "@type": "Answer", text: "Trabajamos con las principales plataformas: Mailchimp, Brevo (antes Sendinblue), ActiveCampaign, Klaviyo y HubSpot. La elección depende de tu volumen de contactos, presupuesto y necesidades de automatización. Te recomendamos la más adecuada para tu caso." } },
+    { "@type": "Question", name: "¿Cuántos emails se envían al mes?", acceptedAnswer: { "@type": "Answer", text: "Depende de la estrategia y el sector. Para la mayoría de negocios, entre 2 y 4 envíos mensuales es lo óptimo para mantener presencia sin saturar. Las automatizaciones (bienvenida, carrito abandonado, postventa) funcionan de forma independiente y no cuentan como envíos manuales." } },
+    { "@type": "Question", name: "¿Puedo usar mi lista de contactos actual?", acceptedAnswer: { "@type": "Answer", text: "Sí, siempre que los contactos hayan dado su consentimiento para recibir comunicaciones comerciales conforme al RGPD. Auditamos tu lista antes de empezar para eliminar contactos inválidos, reducir la tasa de rebote y proteger la reputación de tu dominio de envío." } },
+    { "@type": "Question", name: "¿Cuánto tiempo tarda en verse el retorno?", acceptedAnswer: { "@type": "Answer", text: "Los primeros resultados se ven desde el primer envío: aperturas, clics y conversiones directas. El impacto en ventas recurrentes y fidelización crece progresivamente en los primeros 3 meses a medida que se optimizan los segmentos, los asuntos y los horarios de envío." } },
+  ],
+};
+
 export default function EmailMarketingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

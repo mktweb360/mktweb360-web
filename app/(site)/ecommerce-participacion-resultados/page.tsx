@@ -24,10 +24,22 @@ const serviceSchema = {
   url: "https://www.mktweb360.com/ecommerce-participacion-resultados/",
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Cómo se define el bonus de resultados?", acceptedAnswer: { "@type": "Answer", text: "Lo acordamos antes de empezar basándonos en los datos reales de tu negocio: ticket medio, margen bruto y objetivo de ventas mensual. El bonus se activa cuando las ventas superan un umbral definido conjuntamente. Los términos exactos se recogen en el contrato antes de empezar." } },
+    { "@type": "Question", name: "¿Qué pasa si los resultados no llegan?", acceptedAnswer: { "@type": "Answer", text: "El setup inicial y la gestión mensual cubren el trabajo independientemente de los resultados. Si las ventas no alcanzan el umbral de bonus, analizamos conjuntamente las causas — producto, precio, mercado, logística — y ajustamos la estrategia. Si tras un periodo razonable el proyecto no tiene viabilidad, lo decimos claramente." } },
+    { "@type": "Question", name: "¿Gestionáis también el stock y la logística?", acceptedAnswer: { "@type": "Answer", text: "No. Nuestra responsabilidad es la parte digital: web, SEO, campañas de Ads, email marketing y analítica. La logística, el stock y la atención al cliente son responsabilidad del cliente. Es un requisito previo que esa parte esté resuelta — escalar un ecommerce con problemas logísticos solo amplifica los problemas." } },
+    { "@type": "Question", name: "¿Cuánto tiempo tarda en estar operativo el ecommerce?", acceptedAnswer: { "@type": "Answer", text: "El desarrollo de la tienda tarda entre 3 y 6 semanas dependiendo del catálogo y las integraciones necesarias. A partir del lanzamiento, la fase de crecimiento inicial dura entre 3 y 6 meses. Los primeros resultados significativos en ventas orgánicas llegan entre el mes 4 y el mes 8." } },
+  ],
+};
+
 export default function EcommerceParticipacionPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">

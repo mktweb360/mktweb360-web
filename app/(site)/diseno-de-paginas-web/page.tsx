@@ -62,10 +62,22 @@ const serviceSchema = {
   url: "https://www.mktweb360.com/diseno-de-paginas-web/",
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Cuánto tarda en estar lista la web?", acceptedAnswer: { "@type": "Answer", text: "El plazo estándar para una web corporativa es de 2 a 3 semanas desde el briefing. Para webs más complejas con funcionalidades específicas o integraciones puede ser algo más. Siempre acordamos el plazo antes de empezar y lo cumplimos." } },
+    { "@type": "Question", name: "¿Qué tecnología usáis para construir las webs?", acceptedAnswer: { "@type": "Answer", text: "Usamos Next.js con React para webs corporativas que requieren máxima velocidad y SEO técnico, y WordPress para proyectos donde el cliente necesita gestionar el contenido de forma autónoma. En ambos casos el resultado es una web rápida, segura y optimizada para Google." } },
+    { "@type": "Question", name: "¿Puedo gestionar la web yo mismo después?", acceptedAnswer: { "@type": "Answer", text: "Sí. Si el proyecto lo requiere, usamos WordPress como backend de gestión de contenidos. Te formamos para actualizar textos, imágenes, blog y cualquier contenido de forma autónoma sin necesidad de conocimientos técnicos." } },
+    { "@type": "Question", name: "¿El SEO está incluido o es un servicio aparte?", acceptedAnswer: { "@type": "Answer", text: "El SEO técnico básico está incluido en todos los proyectos: estructura de URLs, velocidad de carga, Core Web Vitals, meta tags, sitemap y configuración de Search Console. El posicionamiento orgánico continuado (creación de contenido, link building, seguimiento mensual) es un servicio complementario." } },
+  ],
+};
+
 export default function WebDesignPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

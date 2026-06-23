@@ -51,10 +51,22 @@ const GEO_SERVICES = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿El GEO reemplaza al SEO?", acceptedAnswer: { "@type": "Answer", text: "No — son complementarios. El SEO sigue siendo esencial para captar tráfico de Google, que representa la mayoría del volumen de búsqueda actual. El GEO añade visibilidad en el canal que está creciendo más rápido: los asistentes de IA. La estrategia más sólida trabaja los dos canales simultáneamente." } },
+    { "@type": "Question", name: "¿Cuánto tarda en verse el impacto del GEO?", acceptedAnswer: { "@type": "Answer", text: "Los cambios técnicos como llms.txt se implementan en días. La mejora en la frecuencia con la que los modelos de IA mencionan tu marca depende de la autoridad de tu contenido y puede tardar entre 2 y 4 meses en ser perceptible. Es un canal en construcción — quien empiece antes tendrá ventaja." } },
+    { "@type": "Question", name: "¿Cómo se mide la visibilidad en IA?", acceptedAnswer: { "@type": "Answer", text: "Hacemos consultas periódicas a los principales LLMs con las preguntas que haría un cliente potencial tuyo y registramos si apareces, cómo apareces y qué se dice. Es una metodología en evolución porque el sector es muy nuevo, pero ya permite detectar tendencias y oportunidades claras." } },
+    { "@type": "Question", name: "¿El GEO funciona para cualquier sector?", acceptedAnswer: { "@type": "Answer", text: "Sí, aunque el impacto varía según el volumen de búsquedas conversacionales que exista en tu sector. Servicios profesionales, salud, tecnología, formación y marketing digital son los sectores donde el GEO tiene mayor impacto inmediato. Para sectores más locales o de nicho, la oportunidad está en posicionarse antes de que la competencia lo descubra." } },
+  ],
+};
+
 export default function GEOPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">

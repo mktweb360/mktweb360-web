@@ -42,10 +42,22 @@ const BLOG_TYPES = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Cuánto tarda en posicionar un blog nuevo?", acceptedAnswer: { "@type": "Answer", text: "Los primeros artículos bien optimizados empiezan a aparecer en Google entre 4 y 12 semanas. El tráfico orgánico significativo llega entre los 3 y 6 meses, dependiendo de la competencia del sector y la autoridad del dominio. Es una inversión a medio plazo con retorno acumulativo." } },
+    { "@type": "Question", name: "¿Redactáis vosotros los artículos o lo hago yo?", acceptedAnswer: { "@type": "Answer", text: "Ofrecemos ambas opciones. Podemos encargarnos de la redacción completa con nuestro equipo de especialistas en contenido SEO, o podemos entregarte la estructura, el briefing y las keywords para que redactes tú. La opción más habitual es que nosotros redactemos y tú revises antes de publicar." } },
+    { "@type": "Question", name: "¿El blog tiene que estar en mi web o puede ser independiente?", acceptedAnswer: { "@type": "Answer", text: "Lo más eficiente para el SEO es integrarlo en tu dominio principal (ejemplo: tuempresa.com/blog). Así cada artículo que posiciona refuerza la autoridad de tu dominio y beneficia también a tus páginas de servicios. Un subdomain o dominio separado no transfiere autoridad al dominio principal." } },
+    { "@type": "Question", name: "¿Con cuántos artículos al mes empezáis?", acceptedAnswer: { "@type": "Answer", text: "Recomendamos empezar con 2 artículos mensuales de calidad antes que publicar más con menos profundidad. Google premia el contenido que responde en profundidad a la intención de búsqueda. A partir de los primeros resultados, ajustamos el ritmo de publicación según lo que funciona." } },
+  ],
+};
+
 export default function CreacionBlogPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">

@@ -15,9 +15,21 @@ export const metadata: Metadata = {
   },
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Cuánto tarda en estar lista la tienda?", acceptedAnswer: { "@type": "Answer", text: "El plazo estándar es de 3 a 4 semanas desde el briefing inicial hasta el lanzamiento. Para tiendas con catálogos grandes o funcionalidades específicas puede ser algo más. Lo acordamos antes de empezar y lo cumplimos." } },
+    { "@type": "Question", name: "¿Qué pasa si ya tengo una tienda en Shopify o WooCommerce?", acceptedAnswer: { "@type": "Answer", text: "Migramos tu tienda completa: productos, categorías, imágenes, clientes y pedidos históricos. El proceso es transparente para tus clientes — no pierden sus cuentas ni su historial de compras." } },
+    { "@type": "Question", name: "¿Quién gestiona la tienda después del lanzamiento?", acceptedAnswer: { "@type": "Answer", text: "Tú. Te formamos para gestionar productos, stock, pedidos, descuentos y envíos de forma completamente autónoma. Si prefieres que lo gestionemos nosotros, tenemos planes de mantenimiento mensual." } },
+    { "@type": "Question", name: "¿El precio de 490€ es todo o hay costes adicionales?", acceptedAnswer: { "@type": "Answer", text: "El precio de 490€ cubre el diseño y desarrollo completo de la tienda. Aparte necesitas un hosting y dominio (entre 80 y 150€/año según el proveedor) y las pasarelas de pago cobran una comisión estándar de Stripe o similar (entre 1,4% y 2,9% por transacción, que es el coste del procesador, no nuestro)." } },
+  ],
+};
+
 export default function TiendaOnlineLandingPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-5xl mx-auto px-4 py-20 text-center">

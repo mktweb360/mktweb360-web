@@ -46,10 +46,22 @@ const FAQS = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Cuántas publicaciones incluye el servicio mensual?", acceptedAnswer: { "@type": "Answer", text: "Depende del plan contratado. El plan básico incluye 12 publicaciones mensuales en 2 redes sociales. El plan avanzado sube a 20 publicaciones en 3 redes, incluyendo reels y stories. Cada publicación incluye diseño gráfico y copy optimizado." } },
+    { "@type": "Question", name: "¿Tengo que darles el contenido o lo crean ellos?", acceptedAnswer: { "@type": "Answer", text: "Nosotros creamos el contenido completo: diseño, texto y publicación. Solo necesitamos una sesión inicial para entender tu negocio, tu tono de comunicación y tus objetivos. A partir de ahí trabajamos de forma autónoma con tu aprobación mensual." } },
+    { "@type": "Question", name: "¿Qué resultados puedo esperar y en cuánto tiempo?", acceptedAnswer: { "@type": "Answer", text: "Los primeros resultados visibles en términos de alcance e interacción suelen verse a partir del segundo mes. El crecimiento sostenido de seguidores cualificados y la generación de consultas desde redes sociales requieren entre 3 y 6 meses de trabajo constante." } },
+    { "@type": "Question", name: "¿Gestionáis también la publicidad en redes sociales?", acceptedAnswer: { "@type": "Answer", text: "Sí. La gestión de Social Ads (Meta Ads, LinkedIn Ads) es un servicio complementario al community management. Combinarlo con una buena estrategia orgánica es la fórmula más eficiente para crecer en redes y captar clientes." } },
+  ],
+};
+
 export default function SmmPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

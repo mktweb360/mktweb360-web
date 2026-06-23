@@ -37,10 +37,22 @@ const FAQS = [
     a: "Sí. Monitorizamos menciones en Instagram, Facebook, X (Twitter) y LinkedIn, además de foros y webs de opinión del sector. La gestión de reseñas en Google es el núcleo del servicio, pero la monitorización es completa en todos los canales donde tu marca puede ser mencionada." },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Podéis eliminar reseñas negativas de Google?", acceptedAnswer: { "@type": "Answer", text: "Las reseñas solo se pueden eliminar si incumplen las políticas de Google: contenido falso, spam, conflicto de intereses o lenguaje inapropiado. Tramitamos la solicitud de eliminación ante Google cuando procede. Para el resto, la mejor estrategia es responder de forma profesional y generar un volumen de reseñas positivas que diluya el impacto de las negativas." } },
+    { "@type": "Question", name: "¿Cuánto tiempo tarda en mejorar la reputación online?", acceptedAnswer: { "@type": "Answer", text: "Los primeros resultados visibles suelen verse en 60-90 días: mejora en la valoración media, más reseñas recientes y respuestas profesionales a todas las existentes. La mejora en el posicionamiento local de Google Maps como resultado de una mejor reputación tarda entre 3 y 6 meses." } },
+    { "@type": "Question", name: "¿Qué pasa si recibo una reseña negativa falsa de un competidor?", acceptedAnswer: { "@type": "Answer", text: "Es más frecuente de lo que parece. Documentamos la situación, tramitamos la denuncia ante Google con las pruebas disponibles y aplicamos la respuesta más adecuada mientras se resuelve. También te asesoramos sobre las acciones legales disponibles si el daño es significativo." } },
+    { "@type": "Question", name: "¿Gestionáis la reputación en redes sociales también?", acceptedAnswer: { "@type": "Answer", text: "Sí. Monitorizamos menciones en Instagram, Facebook, X (Twitter) y LinkedIn, además de foros y webs de opinión del sector. La gestión de reseñas en Google es el núcleo del servicio, pero la monitorización es completa en todos los canales donde tu marca puede ser mencionada." } },
+  ],
+};
+
 export default function ReputacionOnlinePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

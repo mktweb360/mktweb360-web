@@ -44,10 +44,22 @@ const PROCESO = [
   { num: "05", title: "Entrega y adaptación", desc: "Entrega de la pieza final en todos los formatos y tamaños que necesitas para cada canal." },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Tenéis equipo propio o subcontratáis la producción?", acceptedAnswer: { "@type": "Answer", text: "Trabajamos con un equipo de producción propio para proyectos en la zona de Castilla-La Mancha y Madrid, y con colaboradores especializados en otras provincias. En todos los casos, la dirección creativa, el guión y la estrategia los gestionamos nosotros directamente." } },
+    { "@type": "Question", name: "¿Cuánto tarda en entregarse un vídeo corporativo?", acceptedAnswer: { "@type": "Answer", text: "El plazo estándar desde el briefing hasta la entrega del vídeo final es de 2 a 3 semanas. Incluye reunión de briefing, redacción de guión, rodaje, montaje y revisiones. Para proyectos más complejos con animaciones o varios días de rodaje, el plazo se ajusta antes de empezar." } },
+    { "@type": "Question", name: "¿Qué formatos de entrega incluís?", acceptedAnswer: { "@type": "Answer", text: "Entregamos la pieza en todos los formatos necesarios para cada canal: versión horizontal para web y YouTube, versión vertical para Instagram Reels y TikTok, versión cuadrada para feed de Instagram, y versiones adaptadas a las especificaciones de cada plataforma publicitaria." } },
+    { "@type": "Question", name: "¿Podemos usar el vídeo en campañas de Google Ads o Meta Ads?", acceptedAnswer: { "@type": "Answer", text: "Sí, y lo recomendamos. Producimos las piezas teniendo en cuenta los requisitos técnicos y creativos de cada plataforma publicitaria. Si además gestionamos tus campañas de Ads, coordinamos la producción con la estrategia publicitaria para maximizar el rendimiento de cada pieza." } },
+  ],
+};
+
 export default function ComunicacionAudiovisualPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div className="max-w-4xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Comunicación Audiovisual" }]} />

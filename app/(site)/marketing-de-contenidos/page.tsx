@@ -37,10 +37,22 @@ const FAQS = [
     a: "El contenido SEO tarda entre 3 y 6 meses en posicionar, dependiendo de la competencia de las keywords y la autoridad actual de tu dominio. El contenido para redes sociales genera impacto desde el primer día. Por eso recomendamos combinar ambas estrategias." },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "¿Cuántos artículos al mes necesito para ver resultados en SEO?", acceptedAnswer: { "@type": "Answer", text: "Para la mayoría de webs de empresa, entre 2 y 4 artículos mensuales bien optimizados son suficientes para construir autoridad temática y mejorar el posicionamiento orgánico. Lo más importante no es la cantidad sino la calidad, la relevancia para tu audiencia y la optimización SEO de cada pieza." } },
+    { "@type": "Question", name: "¿Quién redacta los artículos, vosotros o yo?", acceptedAnswer: { "@type": "Answer", text: "Nosotros nos encargamos de todo: investigación de keywords, estructura del artículo, redacción, optimización SEO, imágenes y publicación. Tu papel es revisar y aprobar el contenido antes de publicarlo. Puedes aportar información técnica de tu sector si lo deseas." } },
+    { "@type": "Question", name: "¿El contenido que creáis es original y exclusivo?", acceptedAnswer: { "@type": "Answer", text: "Sí. Todo el contenido que producimos es original, redactado por personas y optimizado para tu dominio específico. No usamos plantillas genéricas ni contenido duplicado. Cada artículo tiene como objetivo posicionar una keyword concreta y responder a la intención de búsqueda del usuario." } },
+    { "@type": "Question", name: "¿En cuánto tiempo empieza a posicionar el contenido?", acceptedAnswer: { "@type": "Answer", text: "El contenido SEO tarda entre 3 y 6 meses en posicionar, dependiendo de la competencia de las keywords y la autoridad actual de tu dominio. El contenido para redes sociales genera impacto desde el primer día. Por eso recomendamos combinar ambas estrategias." } },
+  ],
+};
+
 export default function ContentMarketingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
