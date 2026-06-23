@@ -16,9 +16,24 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Cómo Crear una Landing Page que Convierte — Guía Práctica | Mkt Web 360",
+  description: "Aprende a crear landing pages que convierten visitas en leads y clientes. Estructura, copy, CTA y errores que debes evitar. Guía con ejemplos reales.",
+  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  datePublished: "2026-06-13",
+  dateModified: "2026-06-23",
+  image: "https://www.mktweb360.com/og-image.jpg",
+  url: "https://www.mktweb360.com/como-crear-landing-page-que-convierte/",
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/como-crear-landing-page-que-convierte/" },
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Landing pages que convierten" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Diseño Web</p>

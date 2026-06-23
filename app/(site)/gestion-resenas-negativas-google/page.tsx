@@ -16,9 +16,24 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Cómo Gestionar las Reseñas Negativas en Google — Guía Práctica | Mkt Web 360",
+  description: "Aprende a responder y gestionar reseñas negativas en Google de forma profesional. Estrategia, plantillas de respuesta y cómo convertir críticas en oportunidades.",
+  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  datePublished: "2026-06-13",
+  dateModified: "2026-06-23",
+  image: "https://www.mktweb360.com/og-image.jpg",
+  url: "https://www.mktweb360.com/gestion-resenas-negativas-google/",
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/gestion-resenas-negativas-google/" },
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Reseñas negativas Google" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Reputación Online</p>

@@ -15,9 +15,24 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "GEO vs SEO: Diferencias Clave y Cómo Compaginarlos en 2025 | Mkt Web 360",
+  description: "Qué diferencia el GEO (Generative Engine Optimization) del SEO tradicional, por qué importan los dos y cómo integrar ambas estrategias para máxima visibilidad.",
+  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  datePublished: "2026-06-13",
+  dateModified: "2026-06-23",
+  image: "https://www.mktweb360.com/og-image.jpg",
+  url: "https://www.mktweb360.com/geo-vs-seo-diferencias/",
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/geo-vs-seo-diferencias/" },
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "GEO vs SEO diferencias" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">IA · Estrategia</p>

@@ -15,9 +15,24 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Cuándo Elegir SEO y Cuándo Google Ads: Guía para Decidir Bien | Mkt Web 360",
+  description: "Cómo decidir entre SEO y Google Ads según tu negocio, presupuesto, urgencia y horizonte temporal. Con ejemplos reales y una matriz de decisión práctica.",
+  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  datePublished: "2026-06-13",
+  dateModified: "2026-06-23",
+  image: "https://www.mktweb360.com/og-image.jpg",
+  url: "https://www.mktweb360.com/cuando-elegir-seo-vs-google-ads/",
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/cuando-elegir-seo-vs-google-ads/" },
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "SEO vs Google Ads: cuándo elegir cada uno" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Estrategia</p>

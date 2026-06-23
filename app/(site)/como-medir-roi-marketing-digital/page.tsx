@@ -16,9 +16,24 @@ export const metadata: Metadata = {
   },
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "Cómo Medir el ROI de tus Campañas de Marketing Digital | Mkt Web 360",
+  description: "Aprende a calcular y medir el ROI de tus inversiones en marketing digital. Google Analytics 4, atribución, métricas clave y errores que debes evitar.",
+  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  datePublished: "2026-06-13",
+  dateModified: "2026-06-23",
+  image: "https://www.mktweb360.com/og-image.jpg",
+  url: "https://www.mktweb360.com/como-medir-roi-marketing-digital/",
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/como-medir-roi-marketing-digital/" },
+};
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Medir ROI marketing digital" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Analítica</p>
