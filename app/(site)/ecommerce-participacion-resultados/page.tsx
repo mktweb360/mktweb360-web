@@ -181,6 +181,78 @@ export default function EcommerceParticipacionPage() {
         </div>
       </section>
 
+      {/* POR QUÉ MODELO HÍBRIDO */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-8">Por qué el modelo híbrido es el único que tiene sentido para ambas partes</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            El modelo de comisión pura sobre ventas parece atractivo para el cliente a primera vista — si no vendo, no pago. Pero en la práctica crea un incentivo perverso: la agencia solo gana si el ecommerce escala rápido, lo que lleva a priorizar volumen sobre rentabilidad, tráfico barato sobre tráfico cualificado, y resultados a corto plazo sobre construcción sostenible del negocio.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            El modelo híbrido que proponemos alinea los intereses de forma real. Un setup inicial que cubre el coste de construcción, una gestión mensual que garantiza dedicación continua, y un bonus de resultados que nos incentiva a crecer contigo — no a inflar métricas. Cuando tu ecommerce vende más, nosotros cobramos más. Cuando no, tenemos un incentivo directo para encontrar qué está fallando y corregirlo.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Hemos rechazado el modelo de comisión pura después de analizar los conflictos de interés que genera: atribución de ventas discutible, presión para aumentar inversión publicitaria independientemente del ROAS, y tensión cuando los resultados no llegan en el plazo esperado. El modelo híbrido elimina esas fricciones y permite una relación profesional a largo plazo.
+          </p>
+        </div>
+      </section>
+
+      {/* QUÉ NECESITAS */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-4">Qué necesitas tener para que este modelo funcione</h2>
+          <p className="text-gray-600 mb-8">Este servicio no es para todos los proyectos. Para que el modelo híbrido tenga sentido necesitas:</p>
+          <div className="space-y-4">
+            {[
+              "Un producto con margen suficiente para absorber los costes fijos de gestión y dejar espacio al bonus de resultados.",
+              "Capacidad de cumplir con los pedidos — logística, stock y atención al cliente tienen que estar resueltos antes de escalar.",
+              "Horizonte mínimo de 12 meses — los ecommerce bien construidos tardan entre 6 y 12 meses en alcanzar velocidad de crucero.",
+              "Disposición a compartir datos reales de negocio — márgenes, costes logísticos, ticket medio — para definir métricas de bonus justas.",
+              "Un producto que pueda venderse online con garantías legales y sin restricciones de distribución.",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-4 bg-primary-50 rounded-xl px-5 py-4 border border-primary-100">
+                <span className="text-accent-500 font-bold shrink-0 mt-0.5">✓</span>
+                <span className="text-gray-700 text-sm leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Preguntas frecuentes</h2>
+          </div>
+          <div className="space-y-4">
+            {[
+              {
+                q: "¿Cómo se define el bonus de resultados?",
+                a: "Lo acordamos antes de empezar basándonos en los datos reales de tu negocio: ticket medio, margen bruto y objetivo de ventas mensual. El bonus se activa cuando las ventas superan un umbral definido conjuntamente — por ejemplo, el 10% de las ventas por encima de 15.000€/mes. Los términos exactos se recogen en el contrato antes de empezar.",
+              },
+              {
+                q: "¿Qué pasa si los resultados no llegan?",
+                a: "El setup inicial y la gestión mensual cubren el trabajo independientemente de los resultados. Si las ventas no alcanzan el umbral de bonus, analizamos conjuntamente las causas — producto, precio, mercado, logística — y ajustamos la estrategia. Si tras un periodo razonable el proyecto no tiene viabilidad, lo decimos claramente.",
+              },
+              {
+                q: "¿Gestionáis también el stock y la logística?",
+                a: "No. Nuestra responsabilidad es la parte digital: web, SEO, campañas de Ads, email marketing y analítica. La logística, el stock y la atención al cliente son responsabilidad del cliente. Es un requisito previo que esa parte esté resuelta — escalar un ecommerce con problemas logísticos solo amplifica los problemas.",
+              },
+              {
+                q: "¿Cuánto tiempo tarda en estar operativo el ecommerce?",
+                a: "El desarrollo de la tienda tarda entre 3 y 6 semanas dependiendo del catálogo y las integraciones necesarias. A partir del lanzamiento, la fase de crecimiento inicial dura entre 3 y 6 meses. Los primeros resultados significativos en ventas orgánicas llegan entre el mes 4 y el mes 8.",
+              },
+            ].map((faq) => (
+              <div key={faq.q} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <h3 className="font-bold text-primary-600 mb-2">{faq.q}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contacto" className="py-16 px-4 bg-primary-600 text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
