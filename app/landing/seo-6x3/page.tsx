@@ -44,9 +44,10 @@ export default function LandingSeo6x3Page() {
 
       {/* BANNER URGENCIA */}
       <div className="bg-accent-500 py-2.5 px-4 text-center">
-        <p className="text-white text-sm font-semibold">
-          ⏳ Quedan <strong>5 plazas disponibles</strong> · Oferta válida hasta el <strong>30 de junio de 2026</strong>
-        </p>
+        <div className="max-w-2xl mx-auto">
+          <p className="text-white text-sm font-bold mb-1">Solo 5 incorporaciones al mes — y tiene una razón</p>
+          <p className="text-white/90 text-xs leading-relaxed">Cada cliente nuevo requiere entre 40 y 60 horas de trabajo en el primer mes. Limitamos las incorporaciones para garantizar que cada proyecto recibe esa dedicación completa. Buscamos empresas con un proyecto serio que quieran crecer con nosotros. Nuestro éxito es el tuyo.</p>
+        </div>
       </div>
 
       {/* HERO + FORMULARIO */}
