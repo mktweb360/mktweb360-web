@@ -48,6 +48,10 @@ const nextConfig: NextConfig = {
       { source: '/wp-content/:path*', destination: '/', permanent: true },
 
       // Sin barra final → con barra (errores de redirección GSC)
+      { source: '/diseno-web-para-dentistas', destination: '/diseno-web-para-dentistas/', permanent: true },
+      { source: '/diseno-web-para-clinicas', destination: '/diseno-web-para-clinicas/', permanent: true },
+      { source: '/diseno-web-para-coaches', destination: '/diseno-web-para-coaches/', permanent: true },
+      { source: '/diseno-web-tienda-online', destination: '/diseno-web-tienda-online/', permanent: true },
       { source: '/errores-digitales-negocio-nuevo', destination: '/errores-digitales-negocio-nuevo/', permanent: true },
       { source: '/como-darse-de-alta-autonomo', destination: '/como-darse-de-alta-autonomo/', permanent: true },
       { source: '/ha-muerto-el-seo-con-la-ia', destination: '/ha-muerto-el-seo-con-la-ia/', permanent: true },
