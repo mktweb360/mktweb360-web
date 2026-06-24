@@ -57,9 +57,18 @@ export function Header({ lang }: { lang?: string }) {
   const currentLang = lang ?? "es";
 
   const getLangUrl = (target: string) => {
-    if (target === "es") {
-      if (pathname.startsWith("/en")) return pathname.slice(3) || "/";
-      if (pathname.startsWith("/fr")) return pathname.slice(3) || "/";
+    if (currentLang === "es") {
+      if (target === "es") return pathname;
+      return `/${target}${pathname}`;
+    }
+    if (currentLang === "en") {
+      if (target === "es") return pathname.replace(/^\/en/, "") || "/";
+      if (target === "fr") return pathname.replace(/^\/en/, "/fr");
+      return pathname;
+    }
+    if (currentLang === "fr") {
+      if (target === "es") return pathname.replace(/^\/fr/, "") || "/";
+      if (target === "en") return pathname.replace(/^\/fr/, "/en");
       return pathname;
     }
     return `/${target}/`;
