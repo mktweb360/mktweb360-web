@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Link Building para PYMEs: Consigue Backlinks de Calidad | Mkt Web 360",
     description: "Estrategias de link building para pequeñas empresas sin presupuesto para comprar enlaces. Cómo conseguir backlinks de calidad de forma natural y sostenible.",
     url: "https://www.mktweb360.com/link-building-pymes/",
+    images: [{ url: "/og-link-building-pymes.jpg", width: 1200, height: 630 }],
   },
 };
 

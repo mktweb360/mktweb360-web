@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "SEO en Madrid: Posiciona tu Negocio en la Capital | Mkt Web 360",
     description: "Guía de SEO para negocios en Madrid. Competencia, keywords locales, Google Business Profile y estrategia para destacar en el mercado más competitivo de España.",
     url: "https://www.mktweb360.com/seo-madrid/",
+    images: [{ url: "/og-seo-madrid.jpg", width: 1200, height: 630 }],
   },
 };
 

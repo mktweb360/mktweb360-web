@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "La factura electrónica será obligatoria para autónomos y pymes. Descubre qué implica, cuándo entra en vigor, qué necesitas y cómo prepararte.",
     url: "https://www.mktweb360.com/factura-electronica-obligatoria-autonomos-pymes/",
     type: "article",
+    images: [{ url: "/og-factura-electronica-obligatoria.jpg", width: 1200, height: 630 }],
   },
 };
 

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "Ecommerce con Participación en Resultados | Mkt Web 360",
     description: "Modelo híbrido: setup fijo + gestión mensual garantizada + bonus por resultados. Alineamos incentivos sin riesgo para el cliente.",
     url: "https://www.mktweb360.com/ecommerce-participacion-resultados/",
+    images: [{ url: "/og-ecommerce-participacion-resultados.jpg", width: 1200, height: 630 }],
   },
 };
 

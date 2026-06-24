@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Digitalización de Empresas en Castilla-La Mancha — Guía 2025 | Mkt Web 360",
     description: "Cómo digitalizar tu empresa en Castilla-La Mancha. Ayudas, herramientas y estrategia digital para PYMEs de la región. Guía actualizada 2025.",
     url: "https://www.mktweb360.com/digitalizacion-empresas-castilla-la-mancha/",
+    images: [{ url: "/og-digitalizacion-empresas-castilla-la-mancha.jpg", width: 1200, height: 630 }],
   },
 };
 

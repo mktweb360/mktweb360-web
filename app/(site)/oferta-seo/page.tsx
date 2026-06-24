@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Oferta SEO 6x3 — Mkt Web 360",
     description: "6 meses de posicionamiento web por el precio de 3. Plazas limitadas. Comprueba si tu dominio cumple los requisitos.",
     url: "https://www.mktweb360.com/oferta-seo/",
+    images: [{ url: "/og-oferta-seo.jpg", width: 1200, height: 630 }],
   },
 };
 

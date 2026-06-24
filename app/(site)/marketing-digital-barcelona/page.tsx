@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Marketing Digital para Empresas en Barcelona | Mkt Web 360",
     description: "Qué canales de marketing digital funcionan mejor para negocios en Barcelona. SEO, Google Ads, redes sociales y estrategia omnicanal adaptada al mercado catalán.",
     url: "https://www.mktweb360.com/marketing-digital-barcelona/",
+    images: [{ url: "/og-marketing-digital-barcelona.jpg", width: 1200, height: 630 }],
   },
 };
 

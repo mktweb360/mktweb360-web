@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Cómo crear una web para una empresa de pintura y posicionarla en Google para conseguir clientes locales.",
     url: "https://www.mktweb360.com/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/",
     type: "article",
+    images: [{ url: "/og-como-crear-una-pagina-web-para-pintores.jpg", width: 1200, height: 630 }],
   },
 };
 

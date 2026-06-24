@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Descubre cómo puede un autónomo conseguir clientes por Internet con una base digital clara, rentable y sin depender solo del boca a boca.",
     url: "https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/",
     type: "article",
+    images: [{ url: "/og-como-puede-un-autonomo-conseguir-clientes.jpg", width: 1200, height: 630 }],
   },
 };
 

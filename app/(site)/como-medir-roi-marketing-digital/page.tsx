@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Cómo Medir el ROI de tus Campañas de Marketing Digital | Mkt Web 360",
     description: "Aprende a calcular y medir el ROI de tus inversiones en marketing digital. Google Analytics 4, atribución, métricas clave y errores que debes evitar.",
     url: "https://www.mktweb360.com/como-medir-roi-marketing-digital/",
+    images: [{ url: "/og-como-medir-roi-marketing-digital.jpg", width: 1200, height: 630 }],
   },
 };
 

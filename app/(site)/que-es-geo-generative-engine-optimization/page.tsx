@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Qué es el GEO (Generative Engine Optimization) y por qué importa en 2025 | Mkt Web 360",
     description: "GEO: qué es, cómo funciona y por qué optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini es la nueva frontera del SEO.",
     url: "https://www.mktweb360.com/que-es-geo-generative-engine-optimization/",
+    images: [{ url: "/og-que-es-geo-generative-engine-optimization.jpg", width: 1200, height: 630 }],
   },
 };
 

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Descubre dónde la IA aplicada a marketing aporta valor real, qué usos conviene priorizar y dónde sigue habiendo demasiado ruido.",
     url: "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/",
     type: "article",
+    images: [{ url: "/og-ia-aplicada-a-marketing-valor-real-o-humo.jpg", width: 1200, height: 630 }],
   },
 };
 

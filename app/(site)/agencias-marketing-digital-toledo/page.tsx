@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Agencias de Marketing Digital en Toledo — Qué Buscar y Qué Evitar | Mkt Web 360",
     description: "Guía para elegir una agencia de marketing digital en Toledo. Qué preguntar, qué red flags detectar y cómo comparar propuestas antes de contratar.",
     url: "https://www.mktweb360.com/agencias-marketing-digital-toledo/",
+    images: [{ url: "/og-agencias-marketing-digital-toledo.jpg", width: 1200, height: 630 }],
   },
 };
 

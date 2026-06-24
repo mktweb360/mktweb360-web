@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Descubre si te conviene más invertir en SEO, Google Ads o una combinación de ambos según tu negocio, presupuesto y urgencia.",
     url: "https://www.mktweb360.com/seo-o-google-ads-que-conviene-mas/",
     type: "article",
+    images: [{ url: "/og-seo-o-google-ads-que-conviene-mas.jpg", width: 1200, height: 630 }],
   },
 };
 

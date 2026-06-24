@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Aprende cómo generar leads de calidad para tu pyme mejorando mensaje, segmentación, canales, web y proceso comercial.",
     url: "https://www.mktweb360.com/como-generar-leads-calidad-pyme/",
     type: "article",
+    images: [{ url: "/og-como-generar-leads-calidad-pyme.jpg", width: 1200, height: 630 }],
   },
 };
 

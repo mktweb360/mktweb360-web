@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Google Shopping para Tiendas Online | Mkt Web 360",
     description: "Guía completa de Google Shopping para ecommerce. Cómo configurar Merchant Center, optimizar el feed de productos y aumentar las ventas con Shopping Ads.",
     url: "https://www.mktweb360.com/google-shopping-tiendas-online/",
+    images: [{ url: "/og-google-shopping-tiendas-online.jpg", width: 1200, height: 630 }],
   },
 };
 

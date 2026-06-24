@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Diseño Web en Barcelona: Guía para Contratar Bien | Mkt Web 360",
     description: "Guía para contratar diseño web en Barcelona. Precios orientativos, qué debe incluir una web profesional, cómo comparar agencias y errores que cuestan clientes.",
     url: "https://www.mktweb360.com/diseno-web-barcelona/",
+    images: [{ url: "/og-diseno-web-barcelona.jpg", width: 1200, height: 630 }],
   },
 };
 

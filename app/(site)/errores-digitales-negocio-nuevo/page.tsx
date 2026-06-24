@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Arrancar un negocio con errores digitales cuesta dinero y tiempo. Descubre los más frecuentes y cómo evitarlos desde el principio.",
     url: "https://www.mktweb360.com/errores-digitales-negocio-nuevo/",
     type: "article",
+    images: [{ url: "/og-errores-digitales-negocio-nuevo.jpg", width: 1200, height: 630 }],
   },
 };
 

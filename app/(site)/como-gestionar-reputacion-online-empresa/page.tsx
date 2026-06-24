@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "La reputación online se construye o destruye en público. Descubre cómo gestionarla con criterio: reseñas, menciones, respuestas y prevención de crisis.",
     url: "https://www.mktweb360.com/como-gestionar-reputacion-online-empresa/",
     type: "article",
+    images: [{ url: "/og-como-gestionar-reputacion-online-empresa.jpg", width: 1200, height: 630 }],
   },
 };
 

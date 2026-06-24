@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Aprende qué necesita una empresa de servicios para mejorar su presencia local y captar más clientes desde Google en su zona.",
     url: "https://www.mktweb360.com/seo-local-empresas-servicios/",
     type: "article",
+    images: [{ url: "/og-seo-local-empresas-servicios.jpg", width: 1200, height: 630 }],
   },
 };
 

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Email Marketing para PYMEs — Primeros Pasos y Estrategia | Mkt Web 360",
     description: "Guía de email marketing para PYMEs. Cómo empezar, qué herramientas usar, cómo construir tu lista y diseñar campañas que convierten. Resultados reales.",
     url: "https://www.mktweb360.com/email-marketing-pymes/",
+    images: [{ url: "/og-email-marketing-pymes.jpg", width: 1200, height: 630 }],
   },
 };
 

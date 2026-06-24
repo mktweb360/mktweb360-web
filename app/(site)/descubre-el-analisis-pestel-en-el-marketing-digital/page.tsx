@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Cómo el análisis PESTEL afecta a tu estrategia de marketing digital. Guía práctica para PYMEs españolas.",
     url: "https://www.mktweb360.com/descubre-el-analisis-pestel-en-el-marketing-digital/",
     type: "article",
+    images: [{ url: "/og-descubre-el-analisis-pestel.jpg", width: 1200, height: 630 }],
   },
 };
 

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Cómo Importar Productos en WooCommerce con CSV | Mkt Web 360",
     description: "Aprende a importar productos en WooCommerce usando archivos CSV. Formato correcto, errores comunes y cómo subir miles de productos sin trabajo manual.",
     url: "https://www.mktweb360.com/importar-productos-woocommerce/",
+    images: [{ url: "/og-importar-productos-woocommerce.jpg", width: 1200, height: 630 }],
   },
 };
 

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Diseño Web para PYMEs — Qué Debe Tener tu Web para Vender | Mkt Web 360",
     description: "Guía de diseño web para PYMEs. Qué elementos no pueden faltar, qué errores evitar y cómo hacer que tu web genere clientes de forma constante.",
     url: "https://www.mktweb360.com/diseno-web-pymes/",
+    images: [{ url: "/og-diseno-web-pymes.jpg", width: 1200, height: 630 }],
   },
 };
 

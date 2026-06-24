@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Antes de invertir más en marketing digital, revisa estas áreas clave para no amplificar errores y tomar mejores decisiones.",
     url: "https://www.mktweb360.com/que-revisar-antes-de-invertir-mas-en-marketing-digital/",
     type: "article",
+    images: [{ url: "/og-que-revisar-antes-de-invertir-en-marketing.jpg", width: 1200, height: 630 }],
   },
 };
 

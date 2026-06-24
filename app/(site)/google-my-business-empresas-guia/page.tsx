@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Aprende a optimizar tu ficha de Google Business Profile para aparecer en búsquedas locales, conseguir más reseñas y convertir visitas en clientes.",
     url: "https://www.mktweb360.com/google-my-business-empresas-guia/",
     type: "article",
+    images: [{ url: "/og-google-my-business-empresas-guia.jpg", width: 1200, height: 630 }],
   },
 };
 

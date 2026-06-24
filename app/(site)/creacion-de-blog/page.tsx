@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "Creación de Blog Profesional para Empresas | Mkt Web 360",
     description: "Blogs que posicionan en Google y convierten visitas en clientes. Corporativos, profesionales y temáticos.",
     url: "https://www.mktweb360.com/creacion-de-blog/",
+    images: [{ url: "/og-creacion-de-blog.jpg", width: 1200, height: 630 }],
   },
 };
 

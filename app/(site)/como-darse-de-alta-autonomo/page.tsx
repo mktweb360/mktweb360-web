@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Guía completa para darse de alta como autónomo en 2026. Pasos en Hacienda y Seguridad Social, cuota, errores frecuentes y qué necesitas tener listo.",
     url: "https://www.mktweb360.com/como-darse-de-alta-autonomo/",
     type: "article",
+    images: [{ url: "/og-como-darse-de-alta-autonomo.jpg", width: 1200, height: 630 }],
   },
 };
 

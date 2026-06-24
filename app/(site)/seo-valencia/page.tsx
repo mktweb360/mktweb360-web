@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "SEO en Valencia: Posiciona tu Negocio Local | Mkt Web 360",
     description: "Guía de SEO local para negocios en Valencia. Posicionamiento, Google Business Profile, keywords en valenciano y castellano, y estrategia para cada sector.",
     url: "https://www.mktweb360.com/seo-valencia/",
+    images: [{ url: "/og-seo-valencia.jpg", width: 1200, height: 630 }],
   },
 };
 

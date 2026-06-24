@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Marketing Digital para Empresas en Sevilla | Mkt Web 360",
     description: "Estrategia de marketing digital para negocios en Sevilla. SEO, Google Ads, redes sociales y cómo aprovechar el turismo y el crecimiento económico de la capital andaluza.",
     url: "https://www.mktweb360.com/marketing-digital-sevilla/",
+    images: [{ url: "/og-marketing-digital-sevilla.jpg", width: 1200, height: 630 }],
   },
 };
 

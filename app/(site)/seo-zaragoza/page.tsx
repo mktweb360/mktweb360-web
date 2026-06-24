@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "SEO en Zaragoza: Posiciona tu Negocio Local | Mkt Web 360",
     description: "Guía de SEO local para negocios en Zaragoza. Posicionamiento en Google, Google Business Profile, estrategia de contenido y sectores con mayor oportunidad.",
     url: "https://www.mktweb360.com/seo-zaragoza/",
+    images: [{ url: "/og-seo-zaragoza.jpg", width: 1200, height: 630 }],
   },
 };
 

@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Descubre las principales diferencias entre buscadores y navegadores con ejemplos reales. Guía clara para entender cómo funcionan Google, Chrome, Firefox y más.",
     url: "https://www.mktweb360.com/ejemplos-y-diferencias-entre-buscadores-y-navegadores/",
     type: "article",
+    images: [{ url: "/og-ejemplos-y-diferencias-buscadores-navegadores.jpg", width: 1200, height: 630 }],
   },
 };
 

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "Quiénes Somos | Mkt Web 360 — Agencia de Marketing Digital",
     description: "La experiencia de un equipo senior. La precisión de la inteligencia artificial. Conoce cómo trabajamos.",
     url: "https://www.mktweb360.com/nosotros/",
+    images: [{ url: "/og-nosotros.jpg", width: 1200, height: 630 }],
   },
 };
 

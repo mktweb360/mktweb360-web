@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Cómo Conectar el TPV Físico con tu Tienda Online | Mkt Web 360",
     description: "Guía para integrar tu TPV físico con WooCommerce. Stock unificado, ventas sincronizadas y gestión centralizada para negocios con presencia online y física.",
     url: "https://www.mktweb360.com/conectar-tpv-tienda-online/",
+    images: [{ url: "/og-conectar-tpv-tienda-online.jpg", width: 1200, height: 630 }],
   },
 };
 

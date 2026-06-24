@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "SEO en Toledo — Posicionamiento Web para Negocios Locales | Mkt Web 360",
     description: "Cómo mejorar el SEO de tu negocio en Toledo. Aparece en Google cuando tus clientes te buscan. Guía de posicionamiento web para empresas toledanas.",
     url: "https://www.mktweb360.com/seo-toledo/",
+    images: [{ url: "/og-seo-toledo.jpg", width: 1200, height: 630 }],
   },
 };
 

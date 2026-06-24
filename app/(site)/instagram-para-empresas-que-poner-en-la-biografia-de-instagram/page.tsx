@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Descubre qué poner en la biografía de Instagram de tu empresa para captar más seguidores y clientes. Ejemplos reales y consejos prácticos.",
     url: "https://www.mktweb360.com/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/",
     type: "article",
+    images: [{ url: "/og-instagram-para-empresas-biografia.jpg", width: 1200, height: 630 }],
   },
 };
 

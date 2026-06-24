@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Cómo Crear una Landing Page que Convierte — Guía Práctica | Mkt Web 360",
     description: "Aprende a crear landing pages que convierten visitas en leads y clientes. Estructura, copy, CTA y errores que debes evitar. Guía con ejemplos reales.",
     url: "https://www.mktweb360.com/como-crear-landing-page-que-convierte/",
+    images: [{ url: "/og-como-crear-landing-page-que-convierte.jpg", width: 1200, height: 630 }],
   },
 };
 

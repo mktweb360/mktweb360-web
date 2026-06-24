@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "IA Aplicada al Marketing Digital | Mkt Web 360",
     description: "La experiencia de un equipo senior. La precisión de la inteligencia artificial. Protocolos propios de IA en cada servicio.",
     url: "https://www.mktweb360.com/ia-aplicada-al-marketing/",
+    images: [{ url: "/og-ia-aplicada-al-marketing.jpg", width: 1200, height: 630 }],
   },
 };
 

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Blog Marketing Digital | Mkt Web 360",
     description: "Artículos y guías de marketing digital para empresas.",
     url: "https://www.mktweb360.com/blog/",
+    images: [{ url: "/og-blog.jpg", width: 1200, height: 630 }],
   },
 };
 

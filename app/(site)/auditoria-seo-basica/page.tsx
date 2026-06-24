@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Cómo Hacer una Auditoría SEO Básica de tu Web | Mkt Web 360",
     description: "Guía paso a paso para hacer una auditoría SEO básica. Qué herramientas usar, qué errores buscar y cómo priorizar las mejoras para aumentar el tráfico orgánico.",
     url: "https://www.mktweb360.com/auditoria-seo-basica/",
+    images: [{ url: "/og-auditoria-seo-basica.jpg", width: 1200, height: 630 }],
   },
 };
 

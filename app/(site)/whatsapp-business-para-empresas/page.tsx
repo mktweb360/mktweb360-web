@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "WhatsApp Business para Empresas — Guía Completa 2025 | Mkt Web 360",
     description: "Cómo usar WhatsApp Business para captar y fidelizar clientes. Configuración, automatizaciones, catálogo y estrategia para empresas. Guía actualizada 2025.",
     url: "https://www.mktweb360.com/whatsapp-business-para-empresas/",
+    images: [{ url: "/og-whatsapp-business-para-empresas.jpg", width: 1200, height: 630 }],
   },
 };
 

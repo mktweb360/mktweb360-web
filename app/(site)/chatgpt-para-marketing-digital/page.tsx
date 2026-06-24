@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Cómo Usar ChatGPT para Marketing Digital | Mkt Web 360",
     description: "Guía práctica para usar ChatGPT en marketing digital. Qué tareas delegar, cómo mantener la voz de marca, prompts efectivos y qué no dejar en manos de la IA.",
     url: "https://www.mktweb360.com/chatgpt-para-marketing-digital/",
+    images: [{ url: "/og-chatgpt-para-marketing-digital.jpg", width: 1200, height: 630 }],
   },
 };
 

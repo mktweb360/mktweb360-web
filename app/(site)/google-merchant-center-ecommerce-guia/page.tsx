@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Aprende a configurar Google Merchant Center, crear tu feed de productos y aparecer en Google Shopping para aumentar las ventas de tu tienda online.",
     url: "https://www.mktweb360.com/google-merchant-center-ecommerce-guia/",
     type: "article",
+    images: [{ url: "/og-google-merchant-center-ecommerce-guia.jpg", width: 1200, height: 630 }],
   },
 };
 

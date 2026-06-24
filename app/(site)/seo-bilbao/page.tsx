@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "SEO en Bilbao: Posiciona tu Negocio en el País Vasco | Mkt Web 360",
     description: "Guía de SEO local para negocios en Bilbao y el País Vasco. Estrategia de posicionamiento, Google Business Profile y keywords para el mercado vasco.",
     url: "https://www.mktweb360.com/seo-bilbao/",
+    images: [{ url: "/og-seo-bilbao.jpg", width: 1200, height: 630 }],
   },
 };
 

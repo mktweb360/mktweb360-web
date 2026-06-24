@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Marketing Digital para Empresas en Toledo — Guía Práctica | Mkt Web 360",
     description: "Guía de marketing digital para empresas en Toledo. SEO, Google Ads, redes sociales y diseño web para negocios toledanos que quieren crecer online.",
     url: "https://www.mktweb360.com/marketing-digital-toledo/",
+    images: [{ url: "/og-marketing-digital-toledo.jpg", width: 1200, height: 630 }],
   },
 };
 

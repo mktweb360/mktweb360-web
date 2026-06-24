@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Estrategias SEO para posicionar servicios urgentes en Google. Cerrajeros, fontaneros, electricistas.",
     url: "https://www.mktweb360.com/seo-para-servicios-urgentes-24h/",
     type: "article",
+    images: [{ url: "/og-seo-para-servicios-urgentes-24h.jpg", width: 1200, height: 630 }],
   },
 };
 

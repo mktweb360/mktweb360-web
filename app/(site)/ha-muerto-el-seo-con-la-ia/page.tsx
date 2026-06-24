@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Muchos creen que la IA ha matado el SEO. Analizamos por qué eso no es cierto y por qué IA + técnico cualificado es la fórmula ganadora.",
     url: "https://www.mktweb360.com/ha-muerto-el-seo-con-la-ia/",
     type: "article",
+    images: [{ url: "/og-ha-muerto-el-seo-con-la-ia.jpg", width: 1200, height: 630 }],
   },
 };
 

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Casos de Éxito y Proyectos | Mkt Web 360 — Agencia de Marketing Digital",
     description: "Descubre cómo hemos ayudado a empresas reales a mejorar su presencia digital y conseguir resultados medibles.",
     url: "https://www.mktweb360.com/casos/",
+    images: [{ url: "/og-casos.jpg", width: 1200, height: 630 }],
   },
 };
 

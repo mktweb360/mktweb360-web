@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Descubre qué influye de verdad en el precio de una web profesional y qué debe incluir para captar clientes.",
     url: "https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/",
     type: "article",
+    images: [{ url: "/og-cuanto-cuesta-pagina-web-profesional.jpg", width: 1200, height: 630 }],
   },
 };
 

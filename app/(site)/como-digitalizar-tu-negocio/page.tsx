@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Digitalizar un negocio no significa comprar software caro. Descubre qué pasos dar primero, qué herramientas tienen sentido y cómo hacerlo con orden.",
     url: "https://www.mktweb360.com/como-digitalizar-tu-negocio/",
     type: "article",
+    images: [{ url: "/og-como-digitalizar-tu-negocio.jpg", width: 1200, height: 630 }],
   },
 };
 

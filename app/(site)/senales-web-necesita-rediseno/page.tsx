@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Descubre las señales más claras de que tu web está frenando ventas y cuándo conviene rediseñar en lugar de seguir optimizando.",
     url: "https://www.mktweb360.com/senales-web-necesita-rediseno/",
     type: "article",
+    images: [{ url: "/og-senales-web-necesita-rediseno.jpg", width: 1200, height: 630 }],
   },
 };
 

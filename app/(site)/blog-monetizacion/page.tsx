@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: "Blog para Monetización — Afiliación y AdSense | Mkt Web 360",
     description: "Tu blog de ingresos pasivos. Análisis de nicho, diseño, SEO y artículos optimizados para monetización.",
     url: "https://www.mktweb360.com/blog-monetizacion/",
+    images: [{ url: "/og-blog-monetizacion.jpg", width: 1200, height: 630 }],
   },
 };
 

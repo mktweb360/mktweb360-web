@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Google Business Profile para Negocios en Toledo — Guía Completa | Mkt Web 360",
     description: "Cómo optimizar tu Google Business Profile si tienes un negocio en Toledo. Aparece en Google Maps y consigue más clientes locales. Guía paso a paso.",
     url: "https://www.mktweb360.com/google-business-profile-toledo/",
+    images: [{ url: "/og-google-business-profile-toledo.jpg", width: 1200, height: 630 }],
   },
 };
 

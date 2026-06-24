@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Aprende a usar el Social Media Canvas para planificar tu estrategia de contenidos en redes sociales.",
     url: "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/",
     type: "article",
+    images: [{ url: "/og-descubre-el-poder-del-canvas.jpg", width: 1200, height: 630 }],
   },
 };
 

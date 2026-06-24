@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Descubre qué procesos puede automatizar una pyme en marketing y ventas para ahorrar tiempo, mejorar seguimiento y captar mejor.",
     url: "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/",
     type: "article",
+    images: [{ url: "/og-que-puede-automatizar-una-pyme.jpg", width: 1200, height: 630 }],
   },
 };
 

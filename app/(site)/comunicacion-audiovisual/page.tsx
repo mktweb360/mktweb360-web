@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "Comunicación Audiovisual para Empresas | Vídeo Marketing | Mkt Web 360",
     description: "Vídeo corporativo, reels, spots publicitarios y fotografía profesional para empresas que quieren destacar.",
     url: "https://www.mktweb360.com/comunicacion-audiovisual/",
+    images: [{ url: "/og-comunicacion-audiovisual.jpg", width: 1200, height: 630 }],
   },
 };
 

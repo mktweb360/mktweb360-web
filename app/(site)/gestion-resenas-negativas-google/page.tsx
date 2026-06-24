@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Cómo Gestionar las Reseñas Negativas en Google — Guía Práctica | Mkt Web 360",
     description: "Aprende a responder y gestionar reseñas negativas en Google de forma profesional. Estrategia, plantillas de respuesta y cómo convertir críticas en oportunidades.",
     url: "https://www.mktweb360.com/gestion-resenas-negativas-google/",
+    images: [{ url: "/og-gestion-resenas-negativas-google.jpg", width: 1200, height: 630 }],
   },
 };
 

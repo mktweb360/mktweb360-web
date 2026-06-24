@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Guía para elegir el hosting adecuado según tu tipo de web, presupuesto y necesidades de rendimiento.",
     url: "https://www.mktweb360.com/como-elegir-el-mejor-hosting-para-tu-web/",
     type: "article",
+    images: [{ url: "/og-como-elegir-el-mejor-hosting-para-tu-web.jpg", width: 1200, height: 630 }],
   },
 };
 

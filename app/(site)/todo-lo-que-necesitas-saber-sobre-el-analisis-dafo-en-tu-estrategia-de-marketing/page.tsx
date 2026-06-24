@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Aprende a aplicar el análisis DAFO en marketing digital con ejemplos prácticos para empresas españolas.",
     url: "https://www.mktweb360.com/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/",
     type: "article",
+    images: [{ url: "/og-todo-lo-que-necesitas-saber-sobre-el-analisis-dafo.jpg", width: 1200, height: 630 }],
   },
 };
 

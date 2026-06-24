@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "Auditoría Digital para Empresas | Diagnóstico SEO y Marketing | Mkt Web 360",
     description: "Auditoría digital completa para saber exactamente por qué tu empresa no consigue los resultados que merece online.",
     url: "https://www.mktweb360.com/auditoria-digital/",
+    images: [{ url: "/og-auditoria-digital.jpg", width: 1200, height: 630 }],
   },
 };
 

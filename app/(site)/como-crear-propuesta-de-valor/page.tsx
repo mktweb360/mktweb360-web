@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "Una propuesta de valor clara es la base de cualquier estrategia de marketing efectiva. Aprende a construirla con ejemplos prácticos para pymes.",
     url: "https://www.mktweb360.com/como-crear-propuesta-de-valor/",
     type: "article",
+    images: [{ url: "/og-como-crear-propuesta-de-valor.jpg", width: 1200, height: 630 }],
   },
 };
 

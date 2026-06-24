@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: "Cómo Elegir Agencia de Marketing Digital en Madrid | Mkt Web 360",
     description: "Guía para elegir una agencia de marketing digital en Madrid. Qué preguntar, qué red flags detectar, cómo comparar presupuestos y qué resultados son realistas.",
     url: "https://www.mktweb360.com/agencias-marketing-digital-madrid/",
+    images: [{ url: "/og-agencias-marketing-digital-madrid.jpg", width: 1200, height: 630 }],
   },
 };
 

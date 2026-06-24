@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Tiendas Online en Toledo — Cómo Vender Más Allá de tu Provincia | Mkt Web 360",
     description: "Crea tu tienda online en Toledo y vende a toda España. Sin comisiones ni licencias mensuales. Guía para negocios toledanos que quieren vender por internet.",
     url: "https://www.mktweb360.com/tiendas-online-toledo/",
+    images: [{ url: "/og-tiendas-online-toledo.jpg", width: 1200, height: 630 }],
   },
 };
 

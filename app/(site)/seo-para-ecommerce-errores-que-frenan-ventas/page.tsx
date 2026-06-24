@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     description: "Descubre los errores SEO más comunes en ecommerce y qué revisar para mejorar visibilidad, tráfico cualificado y ventas.",
     url: "https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/",
     type: "article",
+    images: [{ url: "/og-seo-para-ecommerce-errores-que-frenan-ventas.jpg", width: 1200, height: 630 }],
   },
 };
 
