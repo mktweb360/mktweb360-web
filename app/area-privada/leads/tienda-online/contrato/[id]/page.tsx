@@ -28,7 +28,11 @@ export default function ContratoTiendaPage() {
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [cerrando, setCerrando] = useState(false);
+  const [cerrado, setCerrado] = useState(false);
   const [error, setError] = useState("");
+  const [errorCierre, setErrorCierre] = useState("");
+  const precioFinal = 490;
   const [emailCliente, setEmailCliente] = useState("");
   const [nombreEmpresa, setNombreEmpresa] = useState("");
   const [nifCliente, setNifCliente] = useState("");
@@ -47,6 +51,40 @@ export default function ContratoTiendaPage() {
 
   const today = new Date().toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
   const pagoInfo = PAGO_LABELS[lead?.opcionPago ?? ""] ?? PAGO_LABELS.unico;
+
+  const handleCerrar = async () => {
+    if (!lead) return;
+    if (!emailCliente || !nombreEmpresa || !nifCliente) {
+      setErrorCierre("Completa email, empresa y NIF antes de registrar el cierre.");
+      return;
+    }
+    setCerrando(true);
+    setErrorCierre("");
+    const res = await fetch("/api/admin/leads/tienda-online/cerrar-contrato", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        lead_id: lead.id,
+        nombre: lead.nombre,
+        email: emailCliente,
+        telefono: lead.telefono,
+        empresa: nombreEmpresa,
+        cif: nifCliente,
+        direccion: direccionCliente,
+        precio: precioFinal,
+        opcion_pago: lead.opcionPago,
+        notas: lead.notas || "",
+      }),
+    });
+    const data = await res.json();
+    if (data.ok && data.redirect_url) {
+      setCerrado(true);
+      window.open(data.redirect_url, "_blank");
+    } else {
+      setErrorCierre("Error al registrar el cierre en MktOS. Inténtalo de nuevo.");
+    }
+    setCerrando(false);
+  };
 
   const handleSend = async () => {
     if (!emailCliente || !nombreEmpresa || !nifCliente) {
@@ -155,6 +193,18 @@ export default function ContratoTiendaPage() {
         <button onClick={handleSend} disabled={sending || !emailCliente || !nombreEmpresa || !nifCliente} className="w-full bg-accent-500 text-white py-4 rounded-2xl font-bold text-lg hover:bg-accent-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed sticky bottom-4 shadow-lg">
           {sending ? "Enviando contrato..." : "📨 Enviar contrato por email"}
         </button>
+        {sent && (
+          <>
+            {errorCierre && <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-red-600 text-sm">{errorCierre}</div>}
+            <button
+              onClick={handleCerrar}
+              disabled={cerrando || cerrado}
+              className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-2xl font-bold text-lg transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-lg"
+            >
+              {cerrando ? "Registrando en MktOS..." : cerrado ? "✅ Contrato registrado en MktOS" : "✅ Contrato firmado — Registrar en MktOS"}
+            </button>
+          </>
+        )}
       </div>
     </div>
   );
