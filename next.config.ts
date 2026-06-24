@@ -31,6 +31,7 @@ const nextConfig: NextConfig = {
       { source: '/crear-una-pagina-web-de-empresa-que-necesito/', destination: '/diseno-de-paginas-web/', permanent: true },
       // Old portfolio/offer pages
       { source: '/portfolio-mktweb360/', destination: '/casos/', permanent: true },
+      { source: '/oferta-diseno-paginas-web', destination: '/diseno-de-paginas-web/', permanent: true },
       { source: '/oferta-diseno-paginas-web/', destination: '/diseno-de-paginas-web/', permanent: true },
       { source: '/oferta-diseno-paginas-web/diseno-pagina-web-para-academia/', destination: '/diseno-de-paginas-web/', permanent: true },
       { source: '/oferta-diseno-paginas-web/pagina-web-para-pintores/', destination: '/diseno-de-paginas-web/', permanent: true },
@@ -43,6 +44,7 @@ const nextConfig: NextConfig = {
       { source: '/category/:slug', destination: '/blog/', permanent: true },
       { source: '/tag/:slug', destination: '/blog/', permanent: true },
       // WordPress media/uploads
+      { source: '/wp-content/uploads/:path*', destination: '/', permanent: true },
       { source: '/wp-content/:path*', destination: '/', permanent: true },
 
       // Sin barra final → con barra (errores de redirección GSC)
