@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
       // Blog articles
       { source: '/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/', destination: '/smm-social-media-marketing/', permanent: true },
       { source: '/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
-      { source: '/como-usar-planificador-de-palabras-clave-google-ads/', destination: '/sem-publicidad-ppc/', permanent: true },
+      { source: '/como-usar-planificador-de-palabras-clave-google-ads', destination: '/como-usar-planificador-de-palabras-clave-google-ads/', permanent: true },
       { source: '/como-eliminar-resenas-negativas-en-google/', destination: '/smm-social-media-marketing/', permanent: true },
       { source: '/guia-posicionamiento-seo-wordpress/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/el-diseno-web-orientado-al-seo/', destination: '/diseno-de-paginas-web/', permanent: true },
@@ -64,7 +64,7 @@ const nextConfig: NextConfig = {
       { source: '/2021/08/11/como-eliminar-resenas-negativas-en-google/', destination: '/smm-social-media-marketing/', permanent: true },
       { source: '/2021/08/12/estrategia-de-contenido-mejora-los-contenidos-de-tu-web/', destination: '/marketing-de-contenidos/', permanent: true },
       { source: '/2021/08/20/pagos-y-facturas-en-google-ads/', destination: '/sem-publicidad-ppc/', permanent: true },
-      { source: '/2021/08/25/como-usar-planificador-de-palabras-clave-google-ads/', destination: '/sem-publicidad-ppc/', permanent: true },
+      { source: '/2021/08/25/como-usar-planificador-de-palabras-clave-google-ads/', destination: '/como-usar-planificador-de-palabras-clave-google-ads/', permanent: true },
       { source: '/2021/10/22/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/', destination: '/smm-social-media-marketing/', permanent: true },
       // Patrones con fecha genérica
       { source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug/', destination: '/blog/', permanent: true },
