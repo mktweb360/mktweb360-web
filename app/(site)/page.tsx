@@ -366,6 +366,7 @@ function HeroSlider() {
 
 function ServicesTab() {
   const [activeTab, setActiveTab] = useState(0);
+  const [openTab, setOpenTab] = useState<string | null>(null);
   const active = SERVICE_TABS[activeTab];
 
   const tabHref: Record<string, string> = {
@@ -435,34 +436,53 @@ function ServicesTab() {
         </div>
       </div>
 
-      {/* Mobile — simple grid of all categories */}
-      <div className="md:hidden space-y-6">
-        {SERVICE_TABS.map((tab) => (
-          <div key={tab.id}>
-            <div className="flex items-center gap-2 mb-3 px-1">
-              <span className="text-lg">{tab.emoji}</span>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-accent-500">{tab.tipo}</p>
-                <p className="text-xs text-gray-400">{tab.objetivo}</p>
+      {/* Mobile — accordion */}
+      <div className="md:hidden border border-gray-200 rounded-xl overflow-hidden divide-y divide-gray-100">
+        {SERVICE_TABS.map((tab) => {
+          const isOpen = openTab === tab.id;
+          return (
+            <div key={tab.id}>
+              <button
+                onClick={() => setOpenTab(isOpen ? null : tab.id)}
+                className="w-full flex items-center justify-between px-4 py-4 bg-white hover:bg-gray-50 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">{tab.emoji}</span>
+                  <div className="text-left">
+                    <p className="text-xs font-bold uppercase tracking-widest text-accent-500">{tab.tipo}</p>
+                    <p className="text-xs text-gray-400">{tab.objetivo}</p>
+                  </div>
+                </div>
+                <span className="text-gray-400 text-xl font-light">{isOpen ? "−" : "+"}</span>
+              </button>
+              <div className={`overflow-hidden transition-[max-height] duration-300 ${isOpen ? "max-h-[1000px]" : "max-h-0"}`}>
+                <div className="px-4 pb-4 grid grid-cols-1 gap-3 bg-white">
+                  {tab.servicios.map((s) => (
+                    <Link
+                      key={s.href + s.title}
+                      href={s.href}
+                      className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-100 hover:border-accent-300 transition-colors"
+                    >
+                      <span className="text-xl shrink-0">{s.icon}</span>
+                      <div>
+                        <p className="font-semibold text-primary-600 text-sm">{s.title}</p>
+                        <p className="text-gray-400 text-xs leading-tight mt-0.5">{s.desc}</p>
+                      </div>
+                    </Link>
+                  ))}
+                  <div className="text-center mt-2">
+                    <Link
+                      href={`/${tabHref[tab.id] ?? tab.id}/`}
+                      className="inline-flex items-center gap-1 text-accent-500 font-semibold text-sm hover:underline"
+                    >
+                      Ver todos los servicios de {tab.tipo.toLowerCase()} →
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-3">
-              {tab.servicios.map((s) => (
-                <Link
-                  key={s.href + s.title}
-                  href={s.href}
-                  className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-100 hover:border-accent-300 transition-colors"
-                >
-                  <span className="text-xl shrink-0">{s.icon}</span>
-                  <div>
-                    <p className="font-semibold text-primary-600 text-sm">{s.title}</p>
-                    <p className="text-gray-400 text-xs leading-tight mt-0.5">{s.desc}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
