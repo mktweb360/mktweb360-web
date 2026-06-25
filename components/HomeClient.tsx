@@ -43,7 +43,7 @@ const SERVICE_TABS: ServiceTab[] = [
       { title: "Google Ads", desc: "Genera clientes potenciales desde el primer día. Campañas optimizadas para tu sector y objetivo.", href: "/sem-publicidad-ppc/", icon: "🎯" },
       { title: "Email Marketing", desc: "El canal con mayor ROI del marketing digital. Secuencias automatizadas que convierten.", href: "/email-marketing/", icon: "✉️" },
       { title: "WhatsApp Marketing", desc: "98% de tasa de apertura. Comunica con tus clientes donde ya están.", href: "/whatsapp-marketing/", icon: "💬" },
-      { title: "Oferta SEO 6x3", desc: "6 meses de posicionamiento por el precio de 3. Solo 5 plazas este mes.", href: "/oferta-seo/", icon: "🔥", badge: "Oferta" },
+      { title: "Oferta SEO 6x3", desc: "6 meses de posicionamiento por el precio de 3. Solo 5 incorporaciones al mes.", href: "/oferta-seo/", icon: "🔥", badge: "Oferta" },
     ],
   },
   {
