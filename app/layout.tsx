@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     url: "https://www.mktweb360.com",
     siteName: "Mkt Web 360",
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@MktWeb360",
+    creator: "@MktWeb360",
+  },
   other: {
     copyright: "Mkt Web 360 SLU — Todos los derechos reservados",
   },
