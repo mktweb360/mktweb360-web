@@ -126,7 +126,7 @@ export function ContactForm({ formType = "contacto" }: ContactFormProps) {
         <p className="text-emerald-600 font-medium">✓ Mensaje enviado. Te contactaremos pronto.</p>
       )}
       {status === "error" && (
-        <p className="text-red-600 font-medium">Error al enviar. Por favor, llámanos al +34 622 748 97.</p>
+        <p className="text-red-600 font-medium">Error al enviar. Por favor, llámanos al +34 622 748 987.</p>
       )}
     </form>
   );
