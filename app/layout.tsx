@@ -43,12 +43,15 @@ const organizationSchema = {
   telephone: "+34622748987",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "El Viso de San Juan",
+    streetAddress: "Calle Chopo 98",
     addressLocality: "El Viso de San Juan",
-    addressRegion: "Castilla-La Mancha",
+    addressRegion: "Toledo",
     postalCode: "45215",
     addressCountry: "ES",
   },
+  geo: { "@type": "GeoCoordinates", latitude: 39.8878, longitude: -4.0647 },
+  openingHours: "Mo-Fr 09:00-18:00",
+  priceRange: "€€",
   areaServed: { "@type": "Country", name: "España" },
   knowsAbout: [
     "SEO",

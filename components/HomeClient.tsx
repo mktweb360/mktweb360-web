@@ -131,8 +131,8 @@ const localBusinessSchema = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 40.0219,
-    longitude: -3.9714,
+    latitude: 39.8878,
+    longitude: -4.0647,
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
@@ -513,10 +513,10 @@ export default function HomeClient() {
       <section className="py-10 px-4 bg-primary-600 text-white">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
-            { value: "Resultados", label: "medibles y reportados" },
-            { value: "100%", label: "proyectos entregados" },
+            { value: "+1.000", label: "proyectos entregados" },
+            { value: "+9 años", label: "de experiencia digital" },
             { value: "Nacional", label: "servicio en toda España" },
-            { value: "Tu cliente", label: "aún no te conoce" },
+            { value: "Exclusivo", label: "un cliente por sector y zona" },
           ].map((m) => (
             <div key={m.label}>
               <div className="text-3xl font-bold text-accent-400">{m.value}</div>

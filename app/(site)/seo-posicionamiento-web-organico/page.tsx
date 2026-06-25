@@ -95,7 +95,7 @@ export default function SeoPage() {
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {[
             { value: "93%", label: "búsquedas empiezan en Google" },
-            { value: "Orgánico", label: "tráfico sin coste por clic" },
+            { value: "SEO + GEO", label: "visibilidad en Google y en IA" },
             { value: "Duradero", label: "resultados que se mantienen" },
             { value: "Nacional", label: <>y <Link href="/seo-local/" className="underline decoration-accent-400 hover:text-white">SEO local</Link></> },
           ].map((m) => (

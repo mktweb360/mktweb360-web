@@ -15,54 +15,6 @@ export const metadata: Metadata = {
   },
 };
 
-const orgSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Mkt Web 360 SLU",
-  url: "https://www.mktweb360.com",
-  logo: "https://www.mktweb360.com/logo.png",
-  telephone: "+34622748987",
-  email: "info@mktweb360.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "El Viso de San Juan",
-    addressLocality: "El Viso de San Juan",
-    addressRegion: "Toledo",
-    postalCode: "45215",
-    addressCountry: "ES",
-  },
-  sameAs: [
-    "https://www.facebook.com/mktweb360",
-    "https://twitter.com/mktweb360",
-    "https://www.instagram.com/mktweb360",
-    "https://www.linkedin.com/company/mktweb360",
-  ],
-  description: "Agencia de marketing digital para PYMEs y empresas. Especialistas en SEO, SEM, gestión de redes sociales y diseño web. Servicio nacional.",
-};
-
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Mkt Web 360 SLU",
-  url: "https://www.mktweb360.com",
-  telephone: "+34622748987",
-  email: "info@mktweb360.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Calle Chopo 98",
-    addressLocality: "El Viso de San Juan",
-    postalCode: "45215",
-    addressRegion: "Toledo",
-    addressCountry: "ES",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 39.8878, longitude: -4.0647 },
-  openingHours: "Mo-Fr 09:00-18:00",
-  priceRange: "€€",
-  description: "Agencia de marketing digital especializada en SEO, Google Ads, diseño web y GEO para PYMEs y empresas en España.",
-  areaServed: "España",
-  sameAs: ["https://www.linkedin.com/company/mkt-web-360"],
-};
-
 const VALORES = [
   { title: "Compromiso", desc: "Tratamos cada proyecto como si fuera nuestro propio negocio. Tu éxito es nuestro éxito." },
   { title: "Transparencia", desc: "Informes claros, métricas reales y comunicación honesta sobre lo que funciona y lo que no." },
@@ -83,9 +35,6 @@ const PASOS = [
 export default function NosotrosPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
