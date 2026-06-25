@@ -39,7 +39,10 @@ export const allPosts: BlogPost[] = [
 ];
 
 export function getLatestPosts(n: number): BlogPost[] {
-  return [...allPosts].sort((a, b) => b.date.localeCompare(a.date)).slice(0, n);
+  return [...allPosts]
+    .filter(p => p.category !== "Autónomos")
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, n);
 }
 
 export function getRelatedPosts(currentSlug: string, n: number): BlogPost[] {
