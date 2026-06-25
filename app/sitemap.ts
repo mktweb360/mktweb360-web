@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     { url: "/", priority: 1.0, changeFrequency: "weekly" as const },
     { url: "/seo-posicionamiento-web-organico/", priority: 0.9, changeFrequency: "monthly" as const },
+    { url: "/seo-local/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/sem-publicidad-ppc/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/smm-social-media-marketing/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/diseno-de-paginas-web/", priority: 0.9, changeFrequency: "monthly" as const },

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -96,9 +97,9 @@ export default function SeoPage() {
             { value: "93%", label: "búsquedas empiezan en Google" },
             { value: "Orgánico", label: "tráfico sin coste por clic" },
             { value: "Duradero", label: "resultados que se mantienen" },
-            { value: "Nacional", label: "y SEO local" },
+            { value: "Nacional", label: <>y <Link href="/seo-local/" className="underline decoration-accent-400 hover:text-white">SEO local</Link></> },
           ].map((m) => (
-            <div key={m.label}>
+            <div key={m.value}>
               <div className="text-xl font-bold text-accent-400">{m.value}</div>
               <div className="text-xs text-primary-200 mt-1">{m.label}</div>
             </div>
