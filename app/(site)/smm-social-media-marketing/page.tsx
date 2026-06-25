@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Gestión Redes Sociales — Community Manager España | Mkt Web 360",
+  title: "Gestión Redes Sociales — Community Manager España",
   description:
     "Servicio profesional de gestión de redes sociales y community management para empresas. Instagram, Facebook, LinkedIn y TikTok. Estrategia, contenido, publicaciones e informes mensuales. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/smm-social-media-marketing/" },

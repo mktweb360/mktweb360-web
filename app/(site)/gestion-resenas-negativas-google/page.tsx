@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Cómo Gestionar las Reseñas Negativas en Google — Guía Práctica | Mkt Web 360",
+  title: "Cómo Gestionar las Reseñas Negativas en Google — Guía Práctica",
   description: "Aprende a responder y gestionar reseñas negativas en Google de forma profesional. Estrategia, plantillas de respuesta y cómo convertir críticas en oportunidades.",
   alternates: { canonical: "https://www.mktweb360.com/gestion-resenas-negativas-google/" },
   openGraph: {

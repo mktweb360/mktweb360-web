@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "WhatsApp Business para Empresas — Guía Completa 2025 | Mkt Web 360",
+  title: "WhatsApp Business para Empresas — Guía Completa 2025",
   description: "Cómo usar WhatsApp Business para captar y fidelizar clientes. Configuración, automatizaciones, catálogo y estrategia para empresas. Guía actualizada 2025.",
   alternates: { canonical: "https://www.mktweb360.com/whatsapp-business-para-empresas/" },
   openGraph: {

@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "SEO en Madrid: Cómo Posicionar tu Negocio en la Capital | Mkt Web 360",
+  title: "SEO en Madrid: Cómo Posicionar tu Negocio en la Capital",
   description: "Guía de SEO para negocios en Madrid. Competencia, keywords locales, Google Business Profile y estrategia para destacar en el mercado más competitivo de España.",
   alternates: { canonical: "https://www.mktweb360.com/seo-madrid/" },
   openGraph: {

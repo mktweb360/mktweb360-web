@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Analítica Web para Empresas — Datos que Generan Decisiones | Mkt Web 360",
+  title: "Analítica Web para Empresas — Datos que Generan Decisiones",
   description: "Servicio profesional de analítica web para empresas. Configuración de GA4, GTM, seguimiento de conversiones, dashboards de negocio e informes mensuales. Decisiones basadas en datos reales. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/analitica-web/" },
   openGraph: {

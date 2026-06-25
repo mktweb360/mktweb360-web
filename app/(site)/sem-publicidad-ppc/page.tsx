@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Campañas Google Ads — Gestión SEM España | Mkt Web 360",
+  title: "Campañas Google Ads — Gestión SEM España",
   description: "Gestión profesional de campañas Google Ads y SEM/PPC para empresas españolas. Maximizamos tu inversión publicitaria con campañas optimizadas desde el primer día.",
   alternates: { canonical: "https://www.mktweb360.com/sem-publicidad-ppc/" },
   openGraph: {

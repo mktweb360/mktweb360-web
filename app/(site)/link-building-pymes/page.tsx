@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Link Building para PYMEs: Cómo Conseguir Enlaces Sin Spam | Mkt Web 360",
+  title: "Link Building para PYMEs: Cómo Conseguir Enlaces Sin Spam",
   description: "Estrategias de link building para pequeñas empresas sin presupuesto para comprar enlaces. Cómo conseguir backlinks de calidad de forma natural y sostenible.",
   alternates: { canonical: "https://www.mktweb360.com/link-building-pymes/" },
   openGraph: {

@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Cómo Migrar de Shopify a WooCommerce Sin Perder tu Tienda ni tu SEO | Mkt Web 360",
+  title: "Cómo Migrar de Shopify a WooCommerce Sin Perder tu Tienda ni tu SEO",
   description: "Guía completa para migrar de Shopify a WooCommerce. Qué datos migrar, cómo preservar el SEO, redireccionamientos y comparativa de costes a largo plazo.",
   alternates: { canonical: "https://www.mktweb360.com/migrar-shopify-woocommerce/" },
   openGraph: {

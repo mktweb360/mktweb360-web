@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Cómo Usar el Planificador de Palabras Clave de Google Ads — Guía Completa | Mkt Web 360",
+  title: "Cómo Usar el Planificador de Palabras Clave de Google Ads — Guía Completa",
   description:
     "Guía paso a paso para usar el Planificador de Palabras Clave de Google Ads. Cómo encontrar keywords, analizar volumen de búsqueda y crear tu estrategia SEO y SEM.",
   alternates: { canonical: "https://www.mktweb360.com/como-usar-planificador-de-palabras-clave-google-ads/" },

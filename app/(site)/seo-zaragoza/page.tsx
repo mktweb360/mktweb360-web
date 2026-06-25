@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "SEO en Zaragoza — Posicionamiento Local | Mkt Web 360",
+  title: "SEO en Zaragoza — Posicionamiento Local",
   description: "Guía de SEO local para negocios en Zaragoza. Posicionamiento en Google, Google Business Profile, estrategia de contenido y sectores con mayor oportunidad digital.",
   alternates: { canonical: "https://www.mktweb360.com/seo-zaragoza/" },
   openGraph: {

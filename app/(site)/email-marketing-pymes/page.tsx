@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Email Marketing para PYMEs — Primeros Pasos y Estrategia | Mkt Web 360",
+  title: "Email Marketing para PYMEs — Primeros Pasos y Estrategia",
   description: "Guía de email marketing para PYMEs. Cómo empezar, qué herramientas usar, cómo construir tu lista y diseñar campañas que convierten. Resultados reales.",
   alternates: { canonical: "https://www.mktweb360.com/email-marketing-pymes/" },
   openGraph: {

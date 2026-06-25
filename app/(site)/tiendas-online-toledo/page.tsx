@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Tiendas Online en Toledo — Cómo Vender Más Allá de tu Provincia | Mkt Web 360",
+  title: "Tiendas Online en Toledo — Cómo Vender Más Allá de tu Provincia",
   description: "Crea tu tienda online en Toledo y vende a toda España. Sin comisiones ni licencias mensuales. Guía para negocios toledanos que quieren vender por internet.",
   alternates: { canonical: "https://www.mktweb360.com/tiendas-online-toledo/" },
   openGraph: {

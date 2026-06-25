@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Email Marketing para Empresas — Campañas que Convierten | Mkt Web 360",
+  title: "Email Marketing para Empresas — Campañas que Convierten",
   description: "Servicio profesional de email marketing para empresas y pymes. Diseño de newsletters, secuencias automatizadas, segmentación y campañas de captación. ROI medio de 36€ por euro invertido. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/email-marketing/" },
   openGraph: {

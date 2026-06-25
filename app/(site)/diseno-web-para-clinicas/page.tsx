@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Diseño Web para Clínicas y Centros de Salud | Mkt Web 360",
+  title: "Diseño Web para Clínicas y Centros de Salud",
   description:
     "Diseño web profesional para clínicas, centros médicos y de salud. Web optimizada para SEO local y captación de pacientes. Fisioterapia, psicología, estética y más.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-web-para-clinicas/" },

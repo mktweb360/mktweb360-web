@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Diseño Web en Barcelona | Mkt Web 360",
+  title: "Diseño Web en Barcelona",
   description: "Guía para contratar diseño web en Barcelona. Precios orientativos, qué debe incluir una web profesional, cómo comparar agencias y errores que cuestan clientes.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-web-barcelona/" },
   openGraph: {

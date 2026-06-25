@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "WhatsApp Marketing para Empresas — Capta y Fideliza Clientes | Mkt Web 360",
+  title: "WhatsApp Marketing para Empresas — Capta y Fideliza Clientes",
   description: "Estrategia y gestión de WhatsApp Marketing para empresas. WhatsApp Business API, campañas de captación, automatizaciones y seguimiento de leads. Tasas de apertura del 98%. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/whatsapp-marketing/" },
   openGraph: {

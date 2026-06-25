@@ -4,7 +4,7 @@ import { OfertaSeoForm } from "@/components/OfertaSeoForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Oferta SEO 6x3 — 6 Meses de Posicionamiento por el Precio de 3 | Mkt Web 360",
+  title: "Oferta SEO 6x3 — 6 Meses de Posicionamiento por el Precio de 3",
   description: "Oferta limitada: 6 meses de SEO profesional por el precio de 3. Solo 5 plazas este mes. Comprueba si tu dominio cumple los requisitos.",
   alternates: { canonical: "https://www.mktweb360.com/oferta-seo/" },
   robots: { index: true, follow: true },

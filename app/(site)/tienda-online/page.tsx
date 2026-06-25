@@ -4,7 +4,7 @@ import { TiendaOnlineForm } from "@/components/TiendaOnlineForm";
 import { HostingBanner } from "@/components/HostingModal";
 
 export const metadata: Metadata = {
-  title: "Tienda Online Profesional desde 490€ — Sin Comisiones | Mkt Web 360",
+  title: "Tienda Online Profesional desde 490€ — Sin Comisiones",
   description: "Crea tu tienda online profesional desde 490€. Sin comisiones por venta, sin licencias. Diseño 100% personalizado. Web orientada al SEO desde el primer día. Solo 5 plazas este mes.",
   alternates: { canonical: "https://www.mktweb360.com/tienda-online/" },
   openGraph: {

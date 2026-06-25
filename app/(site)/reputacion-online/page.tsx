@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Gestión de Reputación Online para Empresas — España | Mkt Web 360",
+  title: "Gestión de Reputación Online para Empresas — España",
   description: "Servicio profesional de gestión y mejora de reputación online para empresas. Monitorización, gestión de reseñas en Google, estrategia de imagen digital e informes mensuales. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/reputacion-online/" },
   openGraph: {

@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Auditoría Digital para Empresas | Diagnóstico SEO y Marketing | Mkt Web 360",
+  title: "Auditoría Digital para Empresas | Diagnóstico SEO y Marketing",
   description:
     "Diagnóstico completo de tu presencia online: SEO técnico, velocidad, contenidos, competencia, redes sociales y analítica. Informe detallado + plan de acción.",
   alternates: { canonical: "https://www.mktweb360.com/auditoria-digital/" },

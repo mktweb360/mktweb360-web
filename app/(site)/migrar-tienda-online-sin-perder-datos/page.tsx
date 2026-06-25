@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Cómo Migrar tu Tienda Online Sin Perder Datos, Pedidos ni SEO | Mkt Web 360",
+  title: "Cómo Migrar tu Tienda Online Sin Perder Datos, Pedidos ni SEO",
   description: "Guía completa para migrar una tienda online a WooCommerce sin perder productos, clientes, pedidos ni posicionamiento en Google. Proceso y errores a evitar.",
   alternates: { canonical: "https://www.mktweb360.com/migrar-tienda-online-sin-perder-datos/" },
   openGraph: {

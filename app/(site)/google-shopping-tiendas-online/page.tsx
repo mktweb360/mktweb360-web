@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Google Shopping para Tiendas Online | Mkt Web 360",
+  title: "Google Shopping para Tiendas Online",
   description: "Guía completa de Google Shopping para ecommerce. Cómo configurar Merchant Center, optimizar el feed de productos y aumentar las ventas con Shopping Ads.",
   alternates: { canonical: "https://www.mktweb360.com/google-shopping-tiendas-online/" },
   openGraph: {

@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Diseño Web para Dentistas y Clínicas | Mkt Web 360",
+  title: "Diseño Web para Dentistas y Clínicas",
   description:
     "Diseño web profesional para dentistas y clínicas dentales. Web optimizada para SEO local, Google Maps y captación de nuevos pacientes. Sin comisiones.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-web-para-dentistas/" },

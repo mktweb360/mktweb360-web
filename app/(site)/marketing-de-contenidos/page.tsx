@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Marketing de Contenidos — Estrategia de Contenidos Digitales | Mkt Web 360",
+  title: "Marketing de Contenidos — Estrategia de Contenidos Digitales",
   description: "Servicio de marketing de contenidos para empresas. Artículos de blog SEO, contenidos para redes sociales, guías, ebooks y estrategia editorial. Contenido que posiciona, atrae y convierte. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/marketing-de-contenidos/" },
   openGraph: {

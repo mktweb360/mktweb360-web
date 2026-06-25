@@ -7,7 +7,7 @@ import { MetodologiaSeo } from "@/components/MetodologiaSeo";
 import { OfertasSlider } from "@/components/OfertasSlider";
 
 export const metadata: Metadata = {
-  title: "Posicionamiento Web SEO — Agencia SEO España | Mkt Web 360",
+  title: "Posicionamiento Web SEO — Agencia SEO España",
   description: "Servicio profesional de SEO y posicionamiento web para empresas españolas. Auditorías, estrategia de keywords y contenidos que llevan tu web a la primera página de Google.",
   alternates: { canonical: "https://www.mktweb360.com/seo-posicionamiento-web-organico/" },
   openGraph: {

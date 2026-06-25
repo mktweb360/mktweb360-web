@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Comunicación Audiovisual para Empresas | Vídeo Marketing | Mkt Web 360",
+  title: "Comunicación Audiovisual para Empresas | Vídeo Marketing",
   description:
     "Producción de vídeo corporativo, reels, spots, presentaciones animadas y fotografía para empresas. Piezas audiovisuales que comunican, conectan y convierten.",
   alternates: { canonical: "https://www.mktweb360.com/comunicacion-audiovisual/" },

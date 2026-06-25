@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "GEO vs SEO: Diferencias Clave y Cómo Compaginarlos en 2025 | Mkt Web 360",
+  title: "GEO vs SEO: Diferencias Clave y Cómo Compaginarlos en 2025",
   description: "Qué diferencia el GEO (Generative Engine Optimization) del SEO tradicional, por qué importan los dos y cómo integrar ambas estrategias para máxima visibilidad.",
   alternates: { canonical: "https://www.mktweb360.com/geo-vs-seo-diferencias/" },
   openGraph: {

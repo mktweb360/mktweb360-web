@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Métodos de Pago Tienda Online España | Mkt Web 360",
+  title: "Métodos de Pago Tienda Online España",
   description: "Comparativa de pasarelas de pago para ecommerce en España: Stripe, Bizum, PayPal, Redsys y alternativas. Comisiones, integración con WooCommerce y cuál funciona mejor.",
   alternates: { canonical: "https://www.mktweb360.com/metodos-pago-tienda-online-espana/" },
   openGraph: {

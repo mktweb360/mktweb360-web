@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Cómo Crear una Landing Page que Convierte — Guía Práctica | Mkt Web 360",
+  title: "Cómo Crear una Landing Page que Convierte — Guía Práctica",
   description: "Aprende a crear landing pages que convierten visitas en leads y clientes. Estructura, copy, CTA y errores que debes evitar. Guía con ejemplos reales.",
   alternates: { canonical: "https://www.mktweb360.com/como-crear-landing-page-que-convierte/" },
   openGraph: {

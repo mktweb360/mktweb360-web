@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Cómo Importar Productos en WooCommerce con CSV: Guía Paso a Paso | Mkt Web 360",
+  title: "Cómo Importar Productos en WooCommerce con CSV: Guía Paso a Paso",
   description: "Aprende a importar productos en WooCommerce usando archivos CSV. Formato correcto, errores comunes y cómo subir miles de productos sin trabajo manual.",
   alternates: { canonical: "https://www.mktweb360.com/importar-productos-woocommerce/" },
   openGraph: {

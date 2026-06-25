@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Google Business Profile para Empresas — Visibilidad Local | Mkt Web 360",
+  title: "Google Business Profile para Empresas — Visibilidad Local",
   description: "Optimización y gestión de Google Business Profile para empresas. Aparece en Google Maps, consigue más reseñas y atrae clientes locales. Auditoría, configuración y gestión mensual. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/google-business-profile/" },
   openGraph: {

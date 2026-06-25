@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Marketing Digital para Empresas en Barcelona: Guía Práctica | Mkt Web 360",
+  title: "Marketing Digital para Empresas en Barcelona: Guía Práctica",
   description: "Qué canales de marketing digital funcionan mejor para negocios en Barcelona. SEO, Google Ads, redes sociales y estrategia omnicanal adaptada al mercado catalán.",
   alternates: { canonical: "https://www.mktweb360.com/marketing-digital-barcelona/" },
   openGraph: {

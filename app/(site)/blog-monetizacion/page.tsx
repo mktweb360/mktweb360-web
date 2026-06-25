@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Creación de Blog para Monetización — Afiliación y AdSense | Mkt Web 360",
+  title: "Creación de Blog para Monetización — Afiliación y AdSense",
   description: "Creamos tu blog de monetización listo para generar ingresos pasivos con AdSense, Amazon Associates y afiliación. Análisis de nicho, diseño, SEO y primeros artículos incluidos.",
   alternates: { canonical: "https://www.mktweb360.com/blog-monetizacion/" },
   openGraph: {

@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Cómo Hacer una Auditoría SEO Básica de tu Web en 2025 | Mkt Web 360",
+  title: "Cómo Hacer una Auditoría SEO Básica de tu Web en 2025",
   description: "Guía paso a paso para hacer una auditoría SEO básica. Qué herramientas usar, qué errores buscar y cómo priorizar las mejoras para aumentar el tráfico orgánico.",
   alternates: { canonical: "https://www.mktweb360.com/auditoria-seo-basica/" },
   openGraph: {

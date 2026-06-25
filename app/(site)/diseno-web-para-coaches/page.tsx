@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Diseño Web para Coaches | Mkt Web 360",
+  title: "Diseño Web para Coaches",
   description:
     "Diseño web profesional para coaches, consultores y formadores. Web que transmite autoridad, capta leads y convierte visitas en clientes. Sin comisiones.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-web-para-coaches/" },

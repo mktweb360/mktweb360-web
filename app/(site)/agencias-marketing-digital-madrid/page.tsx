@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Agencias Marketing Digital Madrid | Mkt Web 360",
+  title: "Agencias Marketing Digital Madrid",
   description: "Guía para elegir una agencia de marketing digital en Madrid. Qué preguntar, qué red flags detectar, cómo comparar presupuestos y qué resultados son realistas.",
   alternates: { canonical: "https://www.mktweb360.com/agencias-marketing-digital-madrid/" },
   openGraph: {
