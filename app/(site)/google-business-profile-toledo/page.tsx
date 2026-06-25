@@ -6,11 +6,11 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Google Business Profile para Negocios en Toledo — Guía Completa | Mkt Web 360",
+  title: "Google Business Profile Toledo | Mkt Web 360",
   description: "Cómo optimizar tu Google Business Profile si tienes un negocio en Toledo. Aparece en Google Maps y consigue más clientes locales. Guía paso a paso.",
   alternates: { canonical: "https://www.mktweb360.com/google-business-profile-toledo/" },
   openGraph: {
-    title: "Google Business Profile para Negocios en Toledo — Guía Completa | Mkt Web 360",
+    title: "Google Business Profile Toledo | Mkt Web 360",
     description: "Cómo optimizar tu Google Business Profile si tienes un negocio en Toledo. Aparece en Google Maps y consigue más clientes locales. Guía paso a paso.",
     url: "https://www.mktweb360.com/google-business-profile-toledo/",
     images: [{ url: "/og-google-business-profile-toledo.jpg", width: 1200, height: 630 }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Google Business Profile para Negocios en Toledo — Guía Completa | Mkt Web 360",
+  name: "Google Business Profile Toledo | Mkt Web 360",
   provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   description: "Cómo optimizar tu Google Business Profile si tienes un negocio en Toledo. Aparece en Google Maps y consigue más clientes locales. Guía paso a paso.",
   areaServed: "España",

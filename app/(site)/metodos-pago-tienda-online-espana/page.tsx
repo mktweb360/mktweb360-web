@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Métodos de Pago para Tiendas Online en España: Cuál Elegir en 2025 | Mkt Web 360",
+  title: "Métodos de Pago Tienda Online España | Mkt Web 360",
   description: "Comparativa de pasarelas de pago para ecommerce en España: Stripe, Bizum, PayPal, Redsys y alternativas. Comisiones, integración con WooCommerce y cuál funciona mejor.",
   alternates: { canonical: "https://www.mktweb360.com/metodos-pago-tienda-online-espana/" },
   openGraph: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  headline: "Métodos de Pago para Tiendas Online en España: Cuál Elegir en 2025 | Mkt Web 360",
+  headline: "Métodos de Pago Tienda Online España | Mkt Web 360",
   description: "Comparativa de pasarelas de pago para ecommerce en España: Stripe, Bizum, PayPal, Redsys y alternativas. Comisiones, integración con WooCommerce y cuál funciona mejor.",
   author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },

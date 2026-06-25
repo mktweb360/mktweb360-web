@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Diseño Web en Barcelona: Qué Debes Saber Antes de Contratar una Agencia | Mkt Web 360",
+  title: "Diseño Web en Barcelona | Mkt Web 360",
   description: "Guía para contratar diseño web en Barcelona. Precios orientativos, qué debe incluir una web profesional, cómo comparar agencias y errores que cuestan clientes.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-web-barcelona/" },
   openGraph: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Diseño Web en Barcelona: Qué Debes Saber Antes de Contratar una Agencia | Mkt Web 360",
+  name: "Diseño Web en Barcelona | Mkt Web 360",
   provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   description: "Guía para contratar diseño web en Barcelona. Precios orientativos, qué debe incluir una web profesional, cómo comparar agencias y errores que cuestan clientes.",
   areaServed: "España",

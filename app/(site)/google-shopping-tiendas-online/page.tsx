@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 
 export const metadata: Metadata = {
-  title: "Google Shopping para Tiendas Online: Cómo Aparecer en los Resultados de Compra | Mkt Web 360",
+  title: "Google Shopping para Tiendas Online | Mkt Web 360",
   description: "Guía completa de Google Shopping para ecommerce. Cómo configurar Merchant Center, optimizar el feed de productos y aumentar las ventas con Shopping Ads.",
   alternates: { canonical: "https://www.mktweb360.com/google-shopping-tiendas-online/" },
   openGraph: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  headline: "Google Shopping para Tiendas Online: Cómo Aparecer en los Resultados de Compra | Mkt Web 360",
+  headline: "Google Shopping para Tiendas Online | Mkt Web 360",
   description: "Guía completa de Google Shopping para ecommerce. Cómo configurar Merchant Center, optimizar el feed de productos y aumentar las ventas con Shopping Ads.",
   author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
