@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Blog de Marketing Digital — Mkt Web 360",
+  title: "Blog de Marketing Digital",
   description: "Artículos, guías y consejos de marketing digital, SEO, SEM, redes sociales y diseño web para empresas españolas.",
   alternates: { canonical: "https://www.mktweb360.com/blog/" },
   openGraph: {
