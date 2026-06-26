@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description: "Migra a Shopware sin perder SEO: auditoría de URLs, mapa de redirecciones 301 y protocolo de lanzamiento paso a paso.",
     url: "https://www.mktweb360.com/migrar-shopware-prestashop-woocommerce-seo/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-migrar-shopware-seo.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -68,6 +69,14 @@ export default function MigrarShopwarePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Una migración bien planificada conserva más del 90% del tráfico desde la primera semana. Te explicamos el proceso que separa una migración exitosa de un desastre.
           </p>
+          <Image
+            src="/og-migrar-shopware-seo.jpg"
+            alt="Migrar a Shopware desde PrestaShop o WooCommerce sin perder SEO"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

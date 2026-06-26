@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description: "CRO para Shopware: eventos GA4, causas de abandono y optimización de fichas y checkout para vender más con el mismo tráfico.",
     url: "https://www.mktweb360.com/cro-shopware-optimizar-conversion-tienda/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-cro-shopware-optimizar-conversion.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -68,6 +69,14 @@ export default function CroShopwarePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Atraer visitas es media batalla; que compren es la otra media. Te enseñamos a subir la conversión de tu tienda Shopware quitando fricción donde de verdad importa.
           </p>
+          <Image
+            src="/og-cro-shopware-optimizar-conversion.jpg"
+            alt="CRO para Shopware: cómo optimizar la conversión de tu tienda"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

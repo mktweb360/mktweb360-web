@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description: "Google Ads para Shopware: tracking, Merchant Center, Performance Max y optimización por ROAS para que tus campañas vendan.",
     url: "https://www.mktweb360.com/google-ads-shopware-campanas-que-venden/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-google-ads-shopware-campanas-que-venden.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -68,6 +69,14 @@ export default function GoogleAdsShopwarePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Las campañas no fallan por las campañas, fallan por lo que hay debajo. Te explicamos el orden correcto para que Google Ads sea rentable en tu tienda Shopware.
           </p>
+          <Image
+            src="/og-google-ads-shopware-campanas-que-venden.jpg"
+            alt="Google Ads para Shopware: campañas que venden de verdad"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

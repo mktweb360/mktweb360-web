@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description: "SEO técnico para Shopware 6: facetas, canonical, schema y Core Web Vitals para posicionar tu tienda en Google.",
     url: "https://www.mktweb360.com/seo-shopware-posicionar-tienda-google/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-seo-shopware-posicionar-tienda-google.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -68,6 +69,14 @@ export default function SeoShopwarePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Shopware tiene una base técnica excelente para SEO, pero solo vende si se configura bien. Te explicamos los puntos que de verdad mueven posiciones en una tienda Shopware.
           </p>
+          <Image
+            src="/og-seo-shopware-posicionar-tienda-google.jpg"
+            alt="SEO para Shopware: cómo posicionar tu tienda en Google"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     description: "GEO y Agentic Commerce en Shopware 6.7.9: prepara tu tienda para que ChatGPT y Perplexity recomienden y vendan tus productos.",
     url: "https://www.mktweb360.com/geo-shopware-agentic-commerce-chatgpt/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-geo-shopware-agentic-commerce.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -68,6 +69,14 @@ export default function GeoShopwarePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Shopware 6.7.9 trae Agentic Commerce nativo y muy pocas tiendas lo aprovechan. Te explicamos cómo preparar la tuya para vender a través de la IA antes que tu competencia.
           </p>
+          <Image
+            src="/og-geo-shopware-agentic-commerce.jpg"
+            alt="GEO para Shopware: vende desde ChatGPT con Agentic Commerce"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
