@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Guía paso a paso para usar el Planificador de Palabras Clave de Google Ads. Cómo encontrar keywords, analizar volumen de búsqueda y crear tu estrategia SEO y SEM.",
     url: "https://www.mktweb360.com/como-usar-planificador-de-palabras-clave-google-ads/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-como-usar-planificador-de-palabras-clave-google-ads.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -93,6 +94,14 @@ export default function PlanificadorPalabrasClavePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El Planificador de Palabras Clave de Google Ads es la herramienta gratuita más potente para investigar qué busca tu audiencia. Sirve para campañas de pago, pero también es una mina de oro para SEO. Esta guía te explica cómo usarla paso a paso.
           </p>
+          <Image
+            src="/og-como-usar-planificador-de-palabras-clave-google-ads.jpg"
+            alt="Cómo usar el Planificador de Palabras Clave de Google Ads"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
