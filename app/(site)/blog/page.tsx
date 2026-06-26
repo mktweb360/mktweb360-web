@@ -15,6 +15,10 @@ export const metadata: Metadata = {
 };
 
 const BLOG_POSTS = [
+  { slug: "/geo-posicionamiento-ia-chatgpt-empresas-espana/", title: "Qué es el GEO y cómo aparecer en ChatGPT si tienes un negocio en España", excerpt: "El GEO posiciona tu negocio en ChatGPT y Perplexity. Si la IA no te menciona cuando alguien pregunta por tu sector, pierdes clientes. Guía práctica para negocios en España.", date: "2026-06-26", category: "GEO · IA" },
+  { slug: "/cuanto-cuesta-agencia-marketing-digital-espana-2026/", title: "Cuánto cuesta una agencia de marketing digital en España en 2026", excerpt: "Precios reales de agencias de marketing digital en España 2026: SEO, Google Ads y redes sociales. Lo que incluye cada rango y cómo no equivocarte al elegir.", date: "2026-06-26", category: "Estrategia Digital" },
+  { slug: "/seo-para-clinicas-centros-salud-captar-pacientes-google/", title: "SEO para clínicas y centros de salud: cómo captar pacientes en Google", excerpt: "El 74% de los pacientes busca en Google antes de llamar. SEO específico para clínicas dentales, fisioterapia y centros de salud en España. Capta más pacientes desde el primer mes.", date: "2026-06-26", category: "SEO · Salud" },
+  { slug: "/woocommerce-vs-shopify-cual-elegir-tienda-online/", title: "WooCommerce vs Shopify: cuál elegir para tu tienda online en España en 2026", excerpt: "WooCommerce es gratuito con control total. Shopify es más rápido de lanzar pero tiene comisiones. Comparativa honesta con recomendación por tipo de negocio y coste real a 3 años.", date: "2026-06-26", category: "Ecommerce" },
   {
     slug: "/ia-aplicada-a-marketing-valor-real-o-humo/",
     title: "IA aplicada a marketing: dónde aporta valor real y dónde sigue siendo humo",
