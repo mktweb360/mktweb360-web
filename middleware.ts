@@ -13,6 +13,34 @@ export function middleware(request: NextRequest) {
     }
   }
 
+  // Protect /portal (client portal) — except login and the magic-link callback
+  if (
+    pathname.startsWith("/portal") &&
+    !pathname.startsWith("/portal/login") &&
+    !pathname.startsWith("/portal/auth/callback")
+  ) {
+    const loginUrl = new URL("/portal/login/", request.url);
+    const token = request.cookies.get("client_session")?.value;
+    if (!token) {
+      return NextResponse.redirect(loginUrl);
+    }
+    // Decodificamos el payload (sin verificar firma, igual que el portal client-side)
+    // y comprobamos únicamente la expiración.
+    let expired = true;
+    try {
+      const base64 = token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+      const payload = JSON.parse(atob(base64)) as { exp?: number };
+      expired = typeof payload.exp !== "number" || payload.exp <= Date.now() / 1000;
+    } catch {
+      expired = true;
+    }
+    if (expired) {
+      const res = NextResponse.redirect(loginUrl);
+      res.cookies.delete("client_session");
+      return res;
+    }
+  }
+
   // Skip static files, API routes, and existing Spanish routes
   if (
     pathname.startsWith("/_next") ||

@@ -32,10 +32,14 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
   const [clientName, setClientName] = useState<string | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const isLoginPage = pathname === "/portal/login" || pathname === "/portal/login/";
+  const isPublicPage =
+    pathname === "/portal/login" ||
+    pathname === "/portal/login/" ||
+    pathname === "/portal/auth/callback" ||
+    pathname === "/portal/auth/callback/";
 
   useEffect(() => {
-    if (isLoginPage) return;
+    if (isPublicPage) return;
     const token = getCookie("client_session");
     if (!token) {
       router.replace("/portal/login/");
@@ -47,14 +51,14 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
       return;
     }
     setClientName((payload.name as string) || (payload.email as string) || "Cliente");
-  }, [isLoginPage, router]);
+  }, [isPublicPage, router]);
 
   const handleLogout = () => {
     document.cookie = "client_session=; Max-Age=0; path=/";
     router.replace("/portal/login/");
   };
 
-  if (isLoginPage) return <>{children}</>;
+  if (isPublicPage) return <>{children}</>;
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
