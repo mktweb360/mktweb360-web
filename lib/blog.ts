@@ -42,10 +42,31 @@ export const allPosts: BlogPost[] = [
   { slug: "woocommerce-vs-shopify-cual-elegir-tienda-online", title: "WooCommerce vs Shopify: cuál elegir para tu tienda online en España en 2026", excerpt: "WooCommerce es gratuito con control total. Shopify es más rápido de lanzar pero tiene comisiones. Comparativa honesta con recomendación por tipo de negocio y coste real a 3 años.", date: "2026-06-26", category: "Ecommerce", tags: ["woocommerce","shopify","tienda-online","ecommerce","plataformas"], relatedSlugs: ["seo-para-ecommerce-errores-que-frenan-ventas","google-merchant-center-ecommerce-guia"] },
 ];
 
+function interleaveByCategory(items: BlogPost[]): BlogPost[] {
+  const groups = new Map<string, BlogPost[]>();
+  for (const it of items) {
+    if (!groups.has(it.category)) groups.set(it.category, []);
+    groups.get(it.category)!.push(it);
+  }
+  const result: BlogPost[] = [];
+  let prev: string | null = null;
+  while (result.length < items.length) {
+    let cands = [...groups.entries()].filter(([c, g]) => g.length > 0 && c !== prev);
+    if (cands.length === 0) cands = [...groups.entries()].filter(([, g]) => g.length > 0);
+    cands.sort((a, b) => b[1].length - a[1].length);
+    const chosen = cands[0][0];
+    result.push(groups.get(chosen)!.shift()!);
+    prev = chosen;
+  }
+  return result;
+}
+
 export function getVisiblePosts(): BlogPost[] {
-  return [...allPosts]
+  const sorted = [...allPosts]
     .filter(p => p.category !== "Autónomos")
     .sort((a, b) => b.date.localeCompare(a.date));
+  const head = interleaveByCategory(sorted.slice(0, 9));
+  return [...head, ...sorted.slice(9)];
 }
 
 export function getLatestPosts(n: number): BlogPost[] {
