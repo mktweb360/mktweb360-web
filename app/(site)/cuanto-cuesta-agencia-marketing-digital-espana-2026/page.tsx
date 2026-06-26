@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "Precios reales por servicio, qué incluye cada rango y cómo no equivocarte al elegir agencia en España en 2026.",
     url: "https://www.mktweb360.com/cuanto-cuesta-agencia-marketing-digital-espana-2026/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-cuanto-cuesta-agencia-marketing-digital-espana-2026.jpg", width: 1200, height: 630 }],
   },
 };
 

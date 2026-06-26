@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "El GEO posiciona tu negocio en ChatGPT y Perplexity. Guía práctica para negocios en España.",
     url: "https://www.mktweb360.com/geo-posicionamiento-ia-chatgpt-empresas-espana/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-geo-chatgpt-negocios-espana.jpg", width: 1200, height: 630 }],
   },
 };
 

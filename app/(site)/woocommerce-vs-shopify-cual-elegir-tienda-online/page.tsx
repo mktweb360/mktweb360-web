@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "Comparativa honesta entre WooCommerce y Shopify con coste real a 3 años y recomendación por tipo de negocio.",
     url: "https://www.mktweb360.com/woocommerce-vs-shopify-cual-elegir-tienda-online/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-woocommerce-vs-shopify-cual-elegir-2026.jpg", width: 1200, height: 630 }],
   },
 };
 
