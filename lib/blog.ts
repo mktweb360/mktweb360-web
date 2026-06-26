@@ -38,11 +38,14 @@ export const allPosts: BlogPost[] = [
   { slug: "google-merchant-center-ecommerce-guia", title: "Google Merchant Center para ecommerce: guía completa 2026", excerpt: "Aprende a configurar Google Merchant Center, crear tu feed de productos y aparecer en Google Shopping para aumentar las ventas de tu tienda online.", date: "2026-06-12", category: "Ecommerce", tags: ["ecommerce","google-shopping","merchant-center","google-ads"], relatedSlugs: ["seo-para-ecommerce-errores-que-frenan-ventas","senales-web-necesita-rediseno"] },
 ];
 
-export function getLatestPosts(n: number): BlogPost[] {
+export function getVisiblePosts(): BlogPost[] {
   return [...allPosts]
     .filter(p => p.category !== "Autónomos")
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, n);
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export function getLatestPosts(n: number): BlogPost[] {
+  return getVisiblePosts().slice(0, n);
 }
 
 export function getRelatedPosts(currentSlug: string, n: number): BlogPost[] {

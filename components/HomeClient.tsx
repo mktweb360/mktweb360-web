@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { getLatestPosts } from "@/lib/blog";
+import { getVisiblePosts } from "@/lib/blog";
 import { OfertasSlider } from "@/components/OfertasSlider";
 import { ContactForm } from "@/components/ContactForm";
-import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogCarousel } from "@/components/BlogCarousel";
 
 type ServiceItem = { title: string; desc: string; href: string; icon: string; badge?: string };
 type ServiceTab = { id: string; tipo: string; objetivo: string; emoji: string; servicios: ServiceItem[] };
@@ -679,24 +679,7 @@ export default function HomeClient() {
               Ver todos los artículos →
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {getLatestPosts(3).map((post) => (
-              <Link
-                key={post.slug}
-                href={`/${post.slug}/`}
-                className="bg-white rounded-2xl border border-gray-100 p-6 hover:border-accent-400 hover:shadow-md transition-all group flex flex-col"
-              >
-                <span className="text-xs font-semibold text-accent-500 uppercase tracking-wide mb-2">
-                  {post.category}
-                </span>
-                <h3 className="font-bold text-primary-700 group-hover:text-accent-500 transition-colors line-clamp-3 text-sm leading-snug flex-1 mb-3">
-                  {post.title}
-                </h3>
-                <p className="text-xs text-gray-500 line-clamp-2 mb-4">{post.excerpt}</p>
-                <span className="text-xs font-semibold text-accent-500">Leer artículo →</span>
-              </Link>
-            ))}
-          </div>
+          <BlogCarousel posts={getVisiblePosts()} />
           <div className="text-center mt-8 md:hidden">
             <Link href="/blog/" className="text-accent-500 font-semibold text-sm hover:underline">
               Ver todos los artículos →
@@ -739,7 +722,6 @@ export default function HomeClient() {
           </div>
         </div>
       </section>
-      <RelatedArticles title="Últimas ideas y consejos" />
     </>
   );
 }
