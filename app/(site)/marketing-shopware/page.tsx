@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Marketing digital para tiendas Shopware en España | Mkt Web 360",
     description: "SEO, Google Ads, GEO y CRO para tu tienda Shopware. Tienes la plataforma, nosotros hacemos que venda más.",
     url: "https://www.mktweb360.com/marketing-shopware/",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Marketing digital para tiendas Shopware — Mkt Web 360" }],
+    images: [{ url: "/og-marketing-shopware.jpg", width: 1200, height: 630, alt: "Marketing digital para tiendas Shopware — Mkt Web 360" }],
   },
 };
 

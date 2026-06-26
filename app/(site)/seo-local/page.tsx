@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "SEO Local — Posicionamiento en Google Maps | Mkt Web 360",
     description: "Posiciona tu negocio en Google Maps y en las búsquedas de tu zona. Más clientes locales con SEO local profesional.",
     url: "https://www.mktweb360.com/seo-local/",
-    images: [{ url: "/imagen-seo.jpg", width: 1200, height: 900, alt: "SEO local y Google Maps — Mkt Web 360" }],
+    images: [{ url: "/og-seo-local.jpg", width: 1200, height: 630, alt: "SEO local y Google Maps — Mkt Web 360" }],
   },
 };
 
