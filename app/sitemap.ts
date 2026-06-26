@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/", priority: 1.0, changeFrequency: "weekly" as const },
     { url: "/seo-posicionamiento-web-organico/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/seo-local/", priority: 0.9, changeFrequency: "monthly" as const },
+    { url: "/marketing-shopware/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/geo-posicionamiento-ia-chatgpt-empresas-espana/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/cuanto-cuesta-agencia-marketing-digital-espana-2026/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/seo-para-clinicas-centros-salud-captar-pacientes-google/", priority: 0.8, changeFrequency: "monthly" as const },
