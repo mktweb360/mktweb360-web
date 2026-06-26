@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -84,6 +85,14 @@ export default function CuantoCuestaWebPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El precio de una web varía enormemente según quién la hace y con qué criterio. Pero la pregunta relevante no es cuánto cuesta hacerla, sino cuánto te cuesta no tenerla bien hecha.
           </p>
+          <Image
+            src="/og-cuanto-cuesta-pagina-web-profesional.jpg"
+            alt="Precio de una página web profesional en 2025: qué debe incluir"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

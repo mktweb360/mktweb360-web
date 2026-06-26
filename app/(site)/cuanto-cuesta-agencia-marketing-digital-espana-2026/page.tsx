@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -83,6 +84,14 @@ export default function CuantoCuestaAgenciaPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Es la pregunta que toda pyme se hace antes de contratar, y la que más respuestas vagas recibe. Aquí van precios reales del mercado español en 2026, qué incluye cada rango y cómo detectar un presupuesto que no te conviene.
           </p>
+          <Image
+            src="/og-cuanto-cuesta-agencia-marketing-digital-espana-2026.jpg"
+            alt="Cuánto cuesta una agencia de marketing digital en España en 2026"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

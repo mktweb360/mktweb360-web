@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -83,6 +84,14 @@ export default function WooCommerceShopifyPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Es la decisión que marca los próximos años de tu tienda online. WooCommerce te da control total sin comisiones; Shopify te pone a vender rápido a cambio de cuotas. Aquí tienes la comparativa honesta, con números reales a tres años.
           </p>
+          <Image
+            src="/og-woocommerce-vs-shopify-cual-elegir-2026.jpg"
+            alt="WooCommerce vs Shopify: cuál elegir para tu tienda online en España en 2026"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

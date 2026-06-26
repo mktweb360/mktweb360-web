@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -106,6 +107,14 @@ export default function BuscadoresNavegadoresPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Mucha gente confunde navegadores y buscadores. Son herramientas distintas con funciones distintas — y entenderlo marca la diferencia si quieres mejorar la visibilidad de tu web en internet.
           </p>
+          <Image
+            src="/og-ejemplos-y-diferencias-buscadores-navegadores.jpg"
+            alt="Ejemplos y diferencias entre buscadores y navegadores web — Guía completa"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

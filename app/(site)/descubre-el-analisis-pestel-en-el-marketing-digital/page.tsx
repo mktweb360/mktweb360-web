@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
@@ -47,6 +48,14 @@ export default function AnalisisPESTELPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El análisis PESTEL te ayuda a comprender el entorno macro que rodea a tu empresa y a adaptar tu estrategia de marketing digital a los factores externos que no puedes controlar pero sí anticipar.
           </p>
+          <Image
+            src="/og-descubre-el-analisis-pestel.jpg"
+            alt="Análisis PESTEL en el Marketing Digital — Guía para PYMEs"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <h2 className="text-2xl font-bold text-primary-600">¿Qué es el análisis PESTEL?</h2>

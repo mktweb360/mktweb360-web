@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -84,6 +85,14 @@ export default function SeoEcommercePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El SEO para tiendas online es más complejo que el SEO para webs de servicios. La arquitectura, las categorías y las fichas de producto tienen reglas propias — y los errores más frecuentes son también los más costosos.
           </p>
+          <Image
+            src="/og-seo-para-ecommerce-errores-que-frenan-ventas.jpg"
+            alt="SEO para ecommerce: errores que frenan ventas en tu tienda online"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

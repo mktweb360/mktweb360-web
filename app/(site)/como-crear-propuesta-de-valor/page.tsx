@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -94,6 +95,14 @@ export default function PropuestaDeValorPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             La propuesta de valor es la respuesta a la pregunta más importante del marketing: ¿por qué debería elegirte a ti? Si no tienes una respuesta clara, concisa y diferenciadora, todo lo que inviertas en marketing estará trabajando con un freno de mano puesto.
           </p>
+          <Image
+            src="/og-como-crear-propuesta-de-valor.jpg"
+            alt="Cómo crear una propuesta de valor que atraiga a los clientes que quieres"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

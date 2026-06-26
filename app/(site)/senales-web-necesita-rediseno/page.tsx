@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -84,6 +85,14 @@ export default function SenalesRedisenoPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Una web puede tener visitas y aun así no generar clientes. A veces el problema no es el marketing — es la web. Estas son las señales que indican que ha llegado el momento de rediseñar.
           </p>
+          <Image
+            src="/og-senales-web-necesita-rediseno.jpg"
+            alt="Señales de que tu web necesita un rediseño urgente en 2025"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
@@ -47,6 +48,14 @@ export default function MejorHostingPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El hosting es la base de tu presencia online. Una mala elección puede afectar gravemente a la velocidad de tu web, a tu posicionamiento SEO y a la experiencia de tus usuarios.
           </p>
+          <Image
+            src="/og-como-elegir-el-mejor-hosting-para-tu-web.jpg"
+            alt="Cómo Elegir el Mejor Hosting para tu Web — Guía Completa 2024"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <h2 className="text-2xl font-bold text-primary-600">¿Qué es un hosting y por qué es importante?</h2>

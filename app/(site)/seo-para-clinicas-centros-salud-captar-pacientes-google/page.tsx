@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -83,6 +84,14 @@ export default function SeoClinicasPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El 74% de los pacientes busca en Google antes de llamar a una clínica. Si tu centro no aparece cuando alguien busca tu especialidad en tu zona, ese paciente acaba en la consulta de al lado. El SEO sanitario tiene reglas propias, y conviene conocerlas.
           </p>
+          <Image
+            src="/og-seo-clinicas-centros-salud-captar-pacientes.jpg"
+            alt="SEO para clínicas y centros de salud: cómo captar pacientes en Google"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

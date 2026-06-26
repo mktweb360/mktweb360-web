@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -94,6 +95,14 @@ export default function DigitalizarNegocioPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Digitalizar no es comprar software caro ni contratar a alguien para que gestione tus redes sociales. Es resolver con herramientas digitales los problemas reales de tu negocio — en el orden que tiene sentido para ti.
           </p>
+          <Image
+            src="/og-como-digitalizar-tu-negocio.jpg"
+            alt="Cómo digitalizar tu negocio sin complicarte la vida: guía práctica para pymes 2026"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

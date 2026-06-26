@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
@@ -47,6 +48,14 @@ export default function PaginaWebPintoresPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Una web profesional es la herramienta más potente para que una empresa de pintura capte nuevos clientes. Te explicamos todo lo que necesitas saber para tener presencia online y posicionarte en Google.
           </p>
+          <Image
+            src="/og-como-crear-una-pagina-web-para-pintores.jpg"
+            alt="Cómo Crear una Página Web para Pintores y Conseguir Clientes en Google"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <h2 className="text-2xl font-bold text-primary-600">¿Por qué un pintor necesita página web?</h2>

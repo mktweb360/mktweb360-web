@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -94,6 +95,14 @@ export default function ErroresDigitalesNegocioNuevoPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Cuando montas un negocio nuevo, los errores digitales son los que más se repiten y los que más coste silencioso generan. La mayoría son evitables con información y un poco de orden. Aquí los más frecuentes.
           </p>
+          <Image
+            src="/og-errores-digitales-negocio-nuevo.jpg"
+            alt="10 errores digitales al montar un negocio desde cero (y cómo evitarlos)"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

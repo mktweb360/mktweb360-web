@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -84,6 +85,14 @@ export default function AutomatizarPymePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             La automatización no es solo para grandes empresas. Una pyme puede ahorrar horas semanales y mejorar el seguimiento de leads con herramientas accesibles y configuraciones sencillas.
           </p>
+          <Image
+            src="/og-que-puede-automatizar-una-pyme.jpg"
+            alt="Qué puede automatizar una pyme en marketing y ventas en 2025"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

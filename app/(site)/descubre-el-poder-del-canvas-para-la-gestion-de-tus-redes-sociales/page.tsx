@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
@@ -47,6 +48,14 @@ export default function CanvasRedesSocialesPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El modelo Canvas, famoso en el mundo del emprendimiento, tiene una adaptación muy potente para planificar estrategias de redes sociales. Te explicamos cómo aprovecharlo.
           </p>
+          <Image
+            src="/og-descubre-el-poder-del-canvas.jpg"
+            alt="Canvas para la Gestión de Redes Sociales — Guía Práctica"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <h2 className="text-2xl font-bold text-primary-600">¿Qué es el Social Media Canvas?</h2>

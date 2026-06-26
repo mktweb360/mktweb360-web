@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -84,6 +85,14 @@ export default function SeoOGoogleAdsPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Ambos son canales de Google, pero funcionan de forma muy distinta en tiempo, coste e intención. Elegir mal no significa que no funcione — significa que funciona peor de lo que podría.
           </p>
+          <Image
+            src="/og-seo-o-google-ads-que-conviene-mas.jpg"
+            alt="SEO o Google Ads: qué conviene más para tu negocio en 2025"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

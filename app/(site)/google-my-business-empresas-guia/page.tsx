@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -94,6 +95,14 @@ export default function GoogleMyBusinessGuiaPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Tu ficha de Google Business Profile es la primera impresión que tienes en las búsquedas locales. Bien optimizada, es la herramienta de captación local más efectiva y económica que existe. Aquí te explicamos cómo sacarle el máximo partido.
           </p>
+          <Image
+            src="/og-google-my-business-empresas-guia.jpg"
+            alt="Google Business Profile para empresas: guía completa 2026"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

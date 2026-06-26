@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -94,6 +95,14 @@ export default function FacturaElectronicaPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             La Ley Crea y Crece establece la obligatoriedad progresiva de la factura electrónica para autónomos y pymes en sus relaciones entre empresas. Si todavía no te has preparado, este artículo te explica qué implica y por dónde empezar.
           </p>
+          <Image
+            src="/og-factura-electronica-obligatoria.jpg"
+            alt="Factura electrónica obligatoria para autónomos y pymes: qué debes saber en 2026"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

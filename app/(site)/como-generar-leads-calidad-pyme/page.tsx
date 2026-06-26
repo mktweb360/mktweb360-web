@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -84,6 +85,14 @@ export default function LeadsCalidadPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Más leads no significa mejor negocio. Un embudo lleno de contactos que no encajan con lo que vendes es una carga, no un activo. La clave está en atraer menos pero mejores.
           </p>
+          <Image
+            src="/og-como-generar-leads-calidad-pyme.jpg"
+            alt="Cómo generar leads de calidad para una pyme sin gastar más en publicidad"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

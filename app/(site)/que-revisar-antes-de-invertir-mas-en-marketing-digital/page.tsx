@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -94,6 +95,14 @@ export default function QueRevisarPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Invertir más en marketing sin revisar la base no acelera los resultados — amplifica los errores. Este artículo te ayuda a identificar qué revisar antes de activar más acciones.
           </p>
+          <Image
+            src="/og-que-revisar-antes-de-invertir-en-marketing.jpg"
+            alt="Qué revisar antes de invertir más en marketing digital en 2025"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

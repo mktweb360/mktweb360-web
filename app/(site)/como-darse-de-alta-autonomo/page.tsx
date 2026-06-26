@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -94,6 +95,14 @@ export default function DarseDeAltaAutonomoPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Empezar a trabajar por cuenta propia implica cumplir con dos obligaciones antes de emitir la primera factura: el alta en Hacienda y el alta en la Seguridad Social. Este artículo te explica el proceso completo sin tecnicismos.
           </p>
+          <Image
+            src="/og-como-darse-de-alta-autonomo.jpg"
+            alt="Cómo darse de alta como autónomo en 2026: pasos, costes y errores a evitar"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

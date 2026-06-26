@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -83,6 +84,14 @@ export default function GeoChatgptEmpresasEspanaPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Cada vez más personas no buscan en Google: le preguntan directamente a una IA. Si ChatGPT o Perplexity no mencionan tu negocio cuando alguien pregunta por tu sector, estás perdiendo clientes que ni siquiera llegan a hacer la búsqueda tradicional.
           </p>
+          <Image
+            src="/og-geo-chatgpt-negocios-espana.jpg"
+            alt="Qué es el GEO y cómo aparecer en ChatGPT si tienes un negocio en España"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

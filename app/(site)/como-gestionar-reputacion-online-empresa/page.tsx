@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -94,6 +95,14 @@ export default function ReputacionOnlinePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Antes de contratar, la mayoría de personas busca opiniones sobre el negocio. Lo que encuentran — reseñas, menciones, respuestas — forma la primera impresión que determina si te llaman o se van a la competencia. Gestionar eso no es opcional.
           </p>
+          <Image
+            src="/og-como-gestionar-reputacion-online-empresa.jpg"
+            alt="Cómo gestionar la reputación online de tu empresa: guía práctica 2026"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

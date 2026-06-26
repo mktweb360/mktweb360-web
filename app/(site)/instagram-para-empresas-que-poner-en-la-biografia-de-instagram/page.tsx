@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -124,6 +125,14 @@ export default function InstagramBioEmpresasPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             La biografía de Instagram es tu tarjeta de presentación digital. Tienes 150 caracteres para convencer a un visitante de que merece la pena seguirte o contactarte. Cada palabra cuenta.
           </p>
+          <Image
+            src="/og-instagram-para-empresas-biografia.jpg"
+            alt="Qué poner en la biografía de Instagram para empresas — Guía 2025"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

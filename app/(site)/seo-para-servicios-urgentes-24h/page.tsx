@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
@@ -47,6 +48,14 @@ export default function SeoServiciosUrgentesPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Los negocios de servicios urgentes tienen una oportunidad única en Google: captar clientes en el momento exacto que más te necesitan. Descubre cómo posicionarte.
           </p>
+          <Image
+            src="/og-seo-para-servicios-urgentes-24h.jpg"
+            alt="SEO para Servicios Urgentes 24h — Cómo Posicionar en Google"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <h2 className="text-2xl font-bold text-primary-600">¿Por qué el SEO es crítico para servicios urgentes?</h2>

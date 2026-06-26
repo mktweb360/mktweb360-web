@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -84,6 +85,14 @@ export default function IaMarketingPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             La inteligencia artificial en marketing está entre lo más hypeado de 2025 y una de las herramientas más útiles si sabes dónde aplicarla. Este artículo separa la señal del ruido.
           </p>
+          <Image
+            src="/og-ia-aplicada-a-marketing-valor-real-o-humo.jpg"
+            alt="IA aplicada a marketing: dónde aporta valor real en 2025"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

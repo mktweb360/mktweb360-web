@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -84,6 +85,14 @@ export default function AutonomoClientesInternetPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Las recomendaciones funcionan, pero son impredecibles. Construir una presencia digital te permite generar un flujo constante de clientes que te encuentran cuando te necesitan, no solo cuando alguien te recomienda.
           </p>
+          <Image
+            src="/og-como-puede-un-autonomo-conseguir-clientes.jpg"
+            alt="Cómo puede un autónomo conseguir clientes por Internet en 2025"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

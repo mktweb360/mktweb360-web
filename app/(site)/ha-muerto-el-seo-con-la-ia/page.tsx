@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -94,6 +95,14 @@ export default function HaMuertoElSeoPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Desde que la inteligencia artificial irrumpió en el mundo digital, la pregunta se repite constantemente: ¿tiene sentido seguir invirtiendo en SEO si la IA ya lo hace todo? La respuesta es sí, y mucho — pero conviene entender por qué.
           </p>
+          <Image
+            src="/og-ha-muerto-el-seo-con-la-ia.jpg"
+            alt="¿Ha muerto el SEO con la IA? La analogía del Ferrari y Fernando Alonso"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

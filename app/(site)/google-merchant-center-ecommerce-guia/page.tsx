@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -94,6 +95,14 @@ export default function GoogleMerchantCenterPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Si tienes una tienda online y no estás en Google Merchant Center, estás perdiendo visibilidad en el canal donde los compradores buscan productos con intención de compra. Esta guía te explica qué es, cómo configurarlo y cómo sacarle el máximo partido.
           </p>
+          <Image
+            src="/og-google-merchant-center-ecommerce-guia.jpg"
+            alt="Google Merchant Center para ecommerce: guía completa 2026"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

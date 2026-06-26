@@ -1,3 +1,4 @@
+import Image from "next/image";
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -84,6 +85,14 @@ export default function SeoLocalPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Más del 46% de las búsquedas en Google tienen intención local. Si tienes una empresa de servicios y no apareces cuando alguien busca lo que haces en tu zona, estás dejando clientes para la competencia.
           </p>
+          <Image
+            src="/og-seo-local-empresas-servicios.jpg"
+            alt="SEO local para empresas de servicios: cómo captar clientes en 2025"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
