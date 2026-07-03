@@ -24,7 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/diseno-de-paginas-web/diseno-tiendas-online/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/diseno-de-paginas-web/diseno-paginas-web-empresa/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/marketing-de-contenidos/", priority: 0.9, changeFrequency: "monthly" as const },
-    { url: "/kit-digital/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/cuanto-cuesta-pagina-web-profesional/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/seo-o-google-ads-que-conviene-mas/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/seo-local-empresas-servicios/", priority: 0.8, changeFrequency: "monthly" as const },
@@ -102,6 +101,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/cuando-elegir-seo-vs-google-ads/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/blog-monetizacion/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/ecommerce-participacion-resultados/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/analitica-web/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/email-marketing/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/reputacion-online/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/diseno-web-para-clinicas/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/diseno-web-para-coaches/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/diseno-web-para-dentistas/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/diseno-web-tienda-online/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/como-usar-planificador-de-palabras-clave-google-ads/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/ejemplos-y-diferencias-entre-buscadores-y-navegadores/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/", priority: 0.7, changeFrequency: "monthly" as const },
   ];
 
   return pages.map((p) => ({
