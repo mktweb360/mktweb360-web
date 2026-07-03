@@ -5,14 +5,14 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Cómo Usar el Planificador de Palabras Clave de Google Ads — Guía Completa",
+  title: "Planificador de Palabras Clave de Google Ads: Guía 2026",
   description:
-    "Guía paso a paso para usar el Planificador de Palabras Clave de Google Ads. Cómo encontrar keywords, analizar volumen de búsqueda y crear tu estrategia SEO y SEM.",
+    "Aprende a usar el Planificador de Palabras Clave de Google paso a paso. Encuentra keywords rentables, analiza volúmenes y construye tu estrategia desde cero.",
   alternates: { canonical: "https://www.mktweb360.com/como-usar-planificador-de-palabras-clave-google-ads/" },
   openGraph: {
-    title: "Cómo Usar el Planificador de Palabras Clave de Google Ads — Guía Completa | Mkt Web 360",
+    title: "Planificador de Palabras Clave de Google Ads: Guía 2026 | Mkt Web 360",
     description:
-      "Guía paso a paso para usar el Planificador de Palabras Clave de Google Ads. Cómo encontrar keywords, analizar volumen de búsqueda y crear tu estrategia SEO y SEM.",
+      "Aprende a usar el Planificador de Palabras Clave de Google paso a paso. Encuentra keywords rentables, analiza volúmenes y construye tu estrategia desde cero.",
     url: "https://www.mktweb360.com/como-usar-planificador-de-palabras-clave-google-ads/",
     type: "article",
     images: [{ url: "/og-como-usar-planificador-de-palabras-clave-google-ads.jpg", width: 1200, height: 630 }],
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  headline: "Cómo Usar el Planificador de Palabras Clave de Google Ads — Guía Completa",
+  headline: "Planificador de Palabras Clave de Google Ads: Guía 2026",
   description:
-    "Guía paso a paso para usar el Planificador de Palabras Clave de Google Ads. Cómo encontrar keywords, analizar volumen de búsqueda y crear tu estrategia SEO y SEM.",
+    "Aprende a usar el Planificador de Palabras Clave de Google paso a paso. Encuentra keywords rentables, analiza volúmenes y construye tu estrategia desde cero.",
   author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
