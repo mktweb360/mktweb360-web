@@ -140,7 +140,7 @@ export default function InstagramBioEmpresasPage() {
             Cuando alguien llega a tu perfil de Instagram, tarda menos de 3 segundos en decidir si te sigue o se va. La biografía es lo primero que lee después de tu foto de perfil. Una bio bien construida puede marcar la diferencia entre un visitante que rebota y un cliente que contacta.
           </p>
           <p>
-            El problema es que la mayoría de empresas desperdician esos 150 caracteres con frases genéricas, demasiados hashtags o información irrelevante. Esta guía te explica exactamente qué incluir, con ejemplos reales y un checklist final.
+            El problema es que la mayoría de empresas desperdician esos 150 caracteres con frases genéricas, demasiados hashtags o información irrelevante. Como en cualquier <Link href="/como-crear-propuesta-de-valor/" className="text-accent-500 hover:underline">propuesta de valor</Link>, cada palabra debe ganarse su sitio: esta guía te explica exactamente qué incluir, con ejemplos reales y un checklist final.
           </p>
 
           <h2 className="text-2xl font-bold text-primary-600">Elementos imprescindibles en tu bio de Instagram</h2>
