@@ -243,9 +243,9 @@ export default function TiendasOnlinePage() {
       {/* Offer banner */}
       <section id="oferta" className="py-12 px-4 bg-primary-700">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Oferta especial junio</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Tienda online desde 490€ + oferta SEO 6x3 este mes</h2>
-          <p className="text-primary-200 max-w-xl mx-auto mb-8">Contrata tu tienda online este mes y añade SEO con nuestra oferta 6x3 — 6 meses de posicionamiento pagando solo 3. Solo 5 plazas disponibles.</p>
+          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Oferta especial</span>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Tienda online desde 490€ + oferta SEO 6x3</h2>
+          <p className="text-primary-200 max-w-xl mx-auto mb-8">Contrata tu tienda online y añade SEO con nuestra oferta 6x3 — 6 meses de posicionamiento pagando solo 3. Solo 5 plazas disponibles.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contacto/" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors">
               Reservar mi plaza
