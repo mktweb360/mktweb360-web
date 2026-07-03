@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Creación de Blog Profesional para Empresas — Mkt Web 360",
+  title: "Creación de Blog Profesional para Empresas",
   description: "Creamos y gestionamos blogs corporativos, profesionales y temáticos que posicionan tu marca en Google y generan tráfico orgánico constante. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/creacion-de-blog/" },
   openGraph: {

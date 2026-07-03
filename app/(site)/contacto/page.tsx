@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contacto — Mkt Web 360 Agencia de Marketing Digital",
+  title: "Contacto con Mkt Web 360",
   description: "Contacta con Mkt Web 360. Solicita tu presupuesto gratuito de marketing digital, SEO, Google Ads, redes sociales o diseño web. Tel: +34 622 748 987.",
   alternates: { canonical: "https://www.mktweb360.com/contacto/" },
 };

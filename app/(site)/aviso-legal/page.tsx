@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Aviso Legal — Mkt Web 360 SLU",
+  title: "Aviso Legal",
   description: "Aviso legal y condiciones de uso del sitio web de Mkt Web 360 SLU, CIF B87679304.",
   alternates: { canonical: "https://www.mktweb360.com/aviso-legal/" },
   robots: { index: false, follow: false },

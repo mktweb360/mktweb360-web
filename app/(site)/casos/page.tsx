@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Casos de Éxito y Proyectos | Mkt Web 360 — Agencia de Marketing Digital",
+  title: "Casos de Éxito en Marketing Digital y Diseño Web",
   description:
     "Proyectos reales y resultados concretos. Casos de éxito de Mkt Web 360 en SEO, diseño web y marketing digital para empresas de distintos sectores.",
   alternates: { canonical: "https://www.mktweb360.com/casos/" },

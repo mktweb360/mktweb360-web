@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Política de Cookies — Mkt Web 360 SLU",
+  title: "Política de Cookies",
   description: "Información sobre el uso de cookies en el sitio web de Mkt Web 360 SLU conforme al art. 22 LSSI y el RGPD.",
   alternates: { canonical: "https://www.mktweb360.com/politica-de-cookies/" },
   robots: { index: false, follow: false },

@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "IA Aplicada al Marketing Digital — Mkt Web 360",
+  title: "IA Aplicada al Marketing Digital",
   description: "Integramos inteligencia artificial en cada servicio de marketing digital. Protocolos propios de IA para resultados más rápidos, análisis más precisos y mejores decisiones. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/ia-aplicada-al-marketing/" },
   openGraph: {

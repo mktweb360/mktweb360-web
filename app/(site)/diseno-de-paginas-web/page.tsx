@@ -7,7 +7,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { HostingBanner } from "@/components/HostingModal";
 
 export const metadata: Metadata = {
-  title: "Diseño de Páginas Web Profesionales — Mkt Web 360",
+  title: "Diseño de Páginas Web Profesionales",
   description: "Diseño de páginas web profesionales, tiendas online y webs corporativas. Webs rápidas, modernas y optimizadas para SEO y conversión. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/" },
   openGraph: {

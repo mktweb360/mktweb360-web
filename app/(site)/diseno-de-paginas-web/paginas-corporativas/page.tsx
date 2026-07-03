@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Páginas Web Corporativas Profesionales — Diseño para Empresas | Mkt Web 360",
+  title: "Páginas Web Corporativas: Diseño Profesional para Empresas",
   description:
     "Diseño de páginas web corporativas para empresas. Web profesional que genera confianza, capta leads y posiciona en Google. SEO técnico incluido desde el primer día.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/" },

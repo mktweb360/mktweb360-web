@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "GEO — Posicionamiento en IA: ChatGPT, Perplexity, Gemini — Mkt Web 360",
+  title: "Posicionamiento en IA: GEO para ChatGPT, Perplexity y Gemini",
   description: "Aparece cuando tus clientes preguntan a ChatGPT, Perplexity o Gemini. GEO (Generative Engine Optimization): el nuevo SEO para la era de la búsqueda por IA. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/geo-posicionamiento-ia/" },
   openGraph: {

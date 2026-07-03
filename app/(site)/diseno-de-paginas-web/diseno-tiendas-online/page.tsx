@@ -7,7 +7,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { HostingBanner } from "@/components/HostingModal";
 
 export const metadata: Metadata = {
-  title: "Tiendas Online Profesionales Sin Comisiones — Mkt Web 360",
+  title: "Tiendas Online Profesionales Sin Comisiones",
   description: "Diseño y desarrollo de tiendas online profesionales sin comisiones ni licencias mensuales. WooCommerce + React. Stripe, Apple Pay y Google Pay incluidos. Servicio nacional.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/diseno-tiendas-online/" },
   openGraph: {
