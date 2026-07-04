@@ -28,6 +28,17 @@ const serviceSchema = {
   url: "https://www.mktweb360.com/diseno-de-paginas-web/diseno-tiendas-online/",
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuánto tarda en estar lista la tienda?", "acceptedAnswer": { "@type": "Answer", "text": "El desarrollo técnico está resuelto. El plazo real depende de la velocidad con la que el cliente facilita el material: catálogo, imágenes, textos y datos de la empresa. Con el material entregado en tiempo, la tienda puede estar operativa en pocos días." } },
+    { "@type": "Question", "name": "¿La subida de productos está incluida en el precio?", "acceptedAnswer": { "@type": "Answer", "text": "No. El precio de 490€ incluye el desarrollo, la configuración de la pasarela de pago, el SEO técnico inicial y una hora de formación online. La carga del catálogo se presupuesta aparte según volumen y formato." } },
+    { "@type": "Question", "name": "¿Podré gestionar la tienda sin conocimientos técnicos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. El panel de gestión es WordPress. Añadir productos, modificar precios, gestionar pedidos y actualizar el stock son operaciones que cualquier persona puede aprender en la formación inicial." } },
+    { "@type": "Question", "name": "¿Qué pasa si ya tengo una tienda en Shopify o Prestashop?", "acceptedAnswer": { "@type": "Answer", "text": "Migramos tu tienda sin perder productos, clientes, historial de pedidos ni posicionamiento en Google. Trabajamos con Shopify, Prestashop, WooCommerce, Wix, Squarespace y Magento." } },
+  ]
+};
+
 const INCLUDES = [
   "Diseño 100% personalizado — no es una plantilla",
   "Frontend React + WooCommerce backend",
@@ -52,6 +63,7 @@ export default function TiendasOnlinePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
@@ -110,10 +122,11 @@ export default function TiendasOnlinePage() {
               <div className="space-y-4">
                 {[
                   { label: "Licencia mensual", value: "~39€/mes = 1.404€" },
-                  { label: "Comisión por venta (2%)", value: "~720€/año = 2.160€" },
-                  { label: "Diseño (plantilla)", value: "200-500€" },
-                  { label: "Apps y plugins", value: "300-600€" },
-                  { label: "Total estimado 3 años", value: "~4.864€", highlight: true },
+                  { label: "Comisión por transacción (1,5–2%)", value: "variable según ventas" },
+                  { label: "Diseño (plantilla)", value: "200–500€" },
+                  { label: "Apps y plugins esenciales", value: "50–150€/mes = 1.800–5.400€" },
+                  { label: "Dominio", value: "~15€/año = 45€" },
+                  { label: "Total estimado 3 años", value: "3.450€ – 7.350€", highlight: true },
                 ].map((r) => (
                   <div key={r.label} className={`flex justify-between text-sm ${r.highlight ? "font-bold text-red-500 border-t pt-4" : "text-gray-600"}`}>
                     <span>{r.label}</span>
@@ -126,11 +139,12 @@ export default function TiendasOnlinePage() {
               <h3 className="text-xl font-bold text-primary-600 mb-6">Mkt Web 360 — 3 años</h3>
               <div className="space-y-4">
                 {[
-                  { label: "Desarrollo tienda", value: "desde 1.490€" },
+                  { label: "Desarrollo tienda", value: "desde 490€" },
                   { label: "Comisión por venta", value: "0€" },
                   { label: "Licencia plataforma", value: "0€" },
                   { label: "Hosting anual", value: "~150€/año = 450€" },
-                  { label: "Total estimado 3 años", value: "~1.940€", highlight: true },
+                  { label: "Dominio", value: "~15€/año = 45€" },
+                  { label: "Total estimado 3 años", value: "desde 985€", highlight: true },
                 ].map((r) => (
                   <div key={r.label} className={`flex justify-between text-sm ${r.highlight ? "font-bold text-accent-500 border-t pt-4" : "text-gray-600"}`}>
                     <span>{r.label}</span>
@@ -140,6 +154,9 @@ export default function TiendasOnlinePage() {
               </div>
             </div>
           </div>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">El problema de Shopify no es solo el precio de la licencia. Es el modelo. Shopify cobra una comisión por cada venta que haces — para siempre. Cuando tu negocio crece y factura más, Shopify gana más sin hacer nada adicional. A 3.000€/mes en ventas, la comisión supone más de 700€ al año que salen de tu margen.</p>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">Wix y Squarespace tienen el mismo problema desde otro ángulo: la personalización tiene un techo. La estructura de la tienda, la lógica de navegación y la experiencia de compra están definidas por la plantilla. Nosotros construimos la tienda sobre tecnología propia. Pagas el desarrollo una vez y la tienda es tuya — sin comisiones, sin licencia, sin techo.</p>
+          <p className="text-center text-sm text-gray-500 mt-4 max-w-2xl mx-auto">* Cálculo basado en ventas medias de 2.000–3.000€/mes. El coste de Shopify escala con tu volumen de ventas. El de Mkt Web 360, no.</p>
         </div>
       </section>
 
@@ -236,6 +253,55 @@ export default function TiendasOnlinePage() {
                 <p className="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ¿Para quién es este servicio? */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-6 text-center">¿Para quién es este servicio?</h2>
+          <div className="max-w-2xl mx-auto text-gray-600 space-y-4">
+            <p>Este servicio encaja con cualquier negocio que quiera vender online sin depender de plataformas que cobran por cada transacción. Funciona bien para negocios con catálogo propio — físico o digital — que necesitan una tienda con identidad propia, no una plantilla genérica.</p>
+            <p>También es la solución natural para negocios que ya venden en Shopify, Prestashop o Wix y han llegado al techo de lo que esa plataforma permite, o que simplemente no quieren seguir pagando comisiones cuando su volumen de ventas crece.</p>
+            <p>Y es especialmente adecuado para negocios que quieren gestionar su tienda de forma autónoma desde el primer día. El panel de WordPress es el gestor de contenidos más utilizado del mundo, con una curva de aprendizaje baja para operaciones cotidianas como subir productos, gestionar pedidos o actualizar precios.</p>
+            <p>Si necesitas funcionalidades avanzadas — precios por tipo de cliente, marketplace multi-vendedor o integración con TPV físico — también está cubierto, sin cambiar de plataforma.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Qué pasa después de la entrega */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-6 text-center">Qué pasa después de la entrega</h2>
+          <div className="max-w-2xl mx-auto text-gray-600 space-y-4">
+            <p>La entrega incluye una hora de formación online en la que repasamos las operaciones más habituales del panel: subir y editar productos, gestionar pedidos, actualizar precios y controlar el stock. La formación se adapta al equipo que vaya a gestionar la tienda.</p>
+            <p>Si prefieres que nos encarguemos del mantenimiento técnico, la actualización de productos o la gestión de contenido de forma continuada, es un servicio que presupuestamos aparte según las necesidades de cada tienda. Sin paquetes cerrados — definimos juntos qué tiene sentido externalizar.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Preguntas frecuentes */}
+      <section className="py-16 px-4">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">Preguntas frecuentes</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">¿Cuánto tarda en estar lista la tienda?</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">El desarrollo técnico está resuelto. El plazo real depende de la velocidad con la que el cliente facilita el material: catálogo, imágenes, textos y datos de la empresa. Con el material entregado en tiempo, la tienda puede estar operativa en pocos días.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">¿La subida de productos está incluida en el precio?</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">No. El precio de 490€ incluye el desarrollo, la configuración de la pasarela de pago, el SEO técnico inicial y una hora de formación online. La carga del catálogo se presupuesta aparte según volumen y formato.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">¿Podré gestionar la tienda sin conocimientos técnicos?</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Sí. El panel de gestión es WordPress. Añadir productos, modificar precios, gestionar pedidos y actualizar el stock son operaciones que cualquier persona puede aprender en la formación inicial.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">¿Qué pasa si ya tengo una tienda en Shopify o Prestashop?</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Migramos tu tienda sin perder productos, clientes, historial de pedidos ni posicionamiento en Google. Trabajamos con Shopify, Prestashop, WooCommerce, Wix, Squarespace y Magento.</p>
+            </div>
           </div>
         </div>
       </section>
