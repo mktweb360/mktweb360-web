@@ -4,7 +4,7 @@ import { OfertaSeoForm } from "@/components/OfertaSeoForm";
 
 export const metadata: Metadata = {
   title: "6 Meses de SEO por el Precio de 3 — Oferta Limitada | Mkt Web 360",
-  description: "Posicionamiento web profesional durante 6 meses completos pagando solo 3. Solo 5 plazas este mes. Trabajo real, métricas reales.",
+  description: "Posicionamiento web profesional durante 6 meses completos pagando solo 3. Solo 5 plazas. Trabajo real, métricas reales.",
   alternates: { canonical: "https://www.mktweb360.com/landing/seo-6x3/" },
   robots: { index: false, follow: false },
 };
@@ -57,7 +57,7 @@ export default function LandingSeo6x3Page() {
           {/* COPY IZQUIERDA */}
           <div>
             <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-5">
-              Oferta especial junio
+              Oferta especial
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
               6 meses de SEO<br />
@@ -67,7 +67,7 @@ export default function LandingSeo6x3Page() {
               Posicionamiento web profesional durante 6 meses completos. Trabajo real, métricas reales, resultados verificables.
             </p>
             <p className="text-primary-300 text-sm italic mb-8">
-              Esta oferta no está disponible en nuestra tarifa habitual. Es una campaña limitada para incorporar nuevas cuentas este mes.
+              Esta oferta no está disponible en nuestra tarifa habitual. Es una campaña limitada para incorporar nuevas cuentas.
             </p>
 
             {/* TRUST PILLS */}

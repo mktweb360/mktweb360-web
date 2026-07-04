@@ -5,7 +5,7 @@ import { HostingBanner } from "@/components/HostingModal";
 
 export const metadata: Metadata = {
   title: "Tienda Online Profesional desde 490€ — Sin Comisiones",
-  description: "Crea tu tienda online profesional desde 490€. Sin comisiones por venta, sin licencias. Diseño 100% personalizado. Web orientada al SEO desde el primer día. Solo 5 plazas este mes.",
+  description: "Crea tu tienda online profesional desde 490€. Sin comisiones por venta, sin licencias. Diseño 100% personalizado. Web orientada al SEO desde el primer día. Solo 5 plazas.",
   alternates: { canonical: "https://www.mktweb360.com/tienda-online/" },
   openGraph: {
     title: "Tienda Online desde 490€ Sin Comisiones | Mkt Web 360",
@@ -33,7 +33,7 @@ export default function TiendaOnlineLandingPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
         <div className="max-w-5xl mx-auto px-4 py-20 text-center">
-          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">Oferta especial junio — Solo 5 plazas</span>
+          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">Oferta especial — Solo 5 plazas</span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Tu tienda online profesional<br />
             <span className="text-accent-400">desde 490€</span>
@@ -47,7 +47,7 @@ export default function TiendaOnlineLandingPage() {
               Reservar mi plaza ahora
             </a>
           </div>
-          <p className="text-primary-300 text-sm mt-6">Solo quedan 5 plazas disponibles este mes</p>
+          <p className="text-primary-300 text-sm mt-6">Solo quedan 5 plazas disponibles</p>
         </div>
       </section>
 
@@ -107,7 +107,7 @@ export default function TiendaOnlineLandingPage() {
       {/* Urgencia */}
       <section className="py-12 px-4 bg-primary-700 text-white text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold mb-3">Solo 5 plazas disponibles este mes</h2>
+          <h2 className="text-2xl font-bold mb-3">Solo 5 plazas disponibles</h2>
           <p className="text-primary-200 mb-6">Nuestra capacidad de producción es limitada para garantizar la calidad. Cuando se cubran las 5 plazas, cerramos la oferta.</p>
           <a href="#contacto" className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block">
             Quiero mi plaza — 490€

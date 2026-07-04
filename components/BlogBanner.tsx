@@ -6,16 +6,16 @@ interface BlogBannerProps {
 
 const BANNERS = {
   seo: {
-    badge: "Oferta especial junio",
+    badge: "Oferta especial",
     title: "6 meses de SEO por el precio de 3",
-    desc: "Contrata cualquier servicio SEO este mes y llévate 6 meses de posicionamiento pagando solo 3. Plazas limitadas.",
+    desc: "Contrata cualquier servicio SEO y llévate 6 meses de posicionamiento pagando solo 3. Plazas limitadas.",
     cta: "Quiero esta oferta",
     href: "/seo-posicionamiento-web-organico/",
   },
   ecommerce: {
-    badge: "Oferta especial junio",
+    badge: "Oferta especial",
     title: "Tienda online profesional desde 490€",
-    desc: "Sin comisiones por venta, sin licencias mensuales. SEO incluido 12 meses. Solo 5 plazas disponibles este mes.",
+    desc: "Sin comisiones por venta, sin licencias mensuales. SEO incluido 12 meses. Solo 5 plazas disponibles.",
     cta: "Reservar mi plaza",
     href: "/tienda-online/",
   },

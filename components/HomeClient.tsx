@@ -259,10 +259,10 @@ function HeroSlider() {
       bg: "/hero-slide-1.jpg",
     },
     {
-      badge: "Oferta especial del mes",
+      badge: "Oferta especial",
       headline: "6 meses de SEO",
       subheadline: "por el precio de 3",
-      subtitle: "Contrata cualquier servicio SEO este mes y llévate 6 meses de posicionamiento pagando solo 3. Incorporaciones limitadas.",
+      subtitle: "Contrata cualquier servicio SEO y llévate 6 meses de posicionamiento pagando solo 3. Incorporaciones limitadas.",
       cta: { text: "Quiero esta oferta", href: "/seo-posicionamiento-web-organico/" },
       cta2: { text: "Ver servicio SEO", href: "/seo-posicionamiento-web-organico/" },
       bg: "/hero-slide-2.jpg",

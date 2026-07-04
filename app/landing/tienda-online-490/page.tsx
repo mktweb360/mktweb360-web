@@ -4,7 +4,7 @@ import { TiendaOnlineForm } from "@/components/TiendaOnlineForm";
 
 export const metadata: Metadata = {
   title: "Tienda Online Profesional desde 490€ — Sin Comisiones | Mkt Web 360",
-  description: "Crea tu tienda online profesional desde 490€. Sin comisiones por venta, sin licencias mensuales. Diseño 100% personalizado. Solo 5 plazas este mes.",
+  description: "Crea tu tienda online profesional desde 490€. Sin comisiones por venta, sin licencias mensuales. Diseño 100% personalizado. Solo 5 plazas.",
   alternates: { canonical: "https://www.mktweb360.com/landing/tienda-online-490/" },
   robots: { index: false, follow: false },
 };
@@ -46,7 +46,7 @@ export default function LandingTiendaOnline490Page() {
       {/* BANNER URGENCIA */}
       <div className="bg-accent-500 py-2.5 px-4 text-center">
         <p className="text-white text-sm font-semibold">
-          ⏳ Quedan <strong>5 plazas disponibles</strong> · Oferta válida hasta el <strong>30 de junio de 2026</strong>
+          ⏳ Quedan <strong>5 plazas disponibles</strong> · <strong>Oferta por tiempo limitado</strong>
         </p>
       </div>
 
@@ -57,7 +57,7 @@ export default function LandingTiendaOnline490Page() {
           {/* COPY IZQUIERDA */}
           <div>
             <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-5">
-              Oferta especial junio
+              Oferta especial
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
               Tu tienda online<br />
@@ -67,7 +67,7 @@ export default function LandingTiendaOnline490Page() {
               Shopify te cobra licencia mensual y hasta un 2% por cada venta. Nosotros construimos tu tienda — pagas una vez y vendes para siempre sin coste adicional.
             </p>
             <p className="text-primary-300 text-sm italic mb-8">
-              Solo 5 plazas disponibles este mes. Cuando se cubran, la oferta cierra.
+              Solo 5 plazas disponibles. Cuando se cubran, la oferta cierra.
             </p>
 
             {/* TRUST PILLS */}

@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const SLIDES = [
   {
-    badge: "Oferta especial junio",
+    badge: "Oferta especial",
     title: "6 meses de SEO por el precio de 3",
-    desc: "Contrata cualquier servicio SEO este mes y llévate 6 meses de posicionamiento pagando solo 3. Plazas limitadas.",
+    desc: "Contrata cualquier servicio SEO y llévate 6 meses de posicionamiento pagando solo 3. Plazas limitadas.",
     cta: "Quiero esta oferta",
     href: "/oferta-seo/",
     bg: "/hero-slide-2.jpg",

@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Oferta SEO 6x3 — 6 Meses de Posicionamiento por el Precio de 3",
-  description: "Oferta limitada: 6 meses de SEO profesional por el precio de 3. Solo 5 plazas este mes. Comprueba si tu dominio cumple los requisitos.",
+  description: "Oferta limitada: 6 meses de SEO profesional por el precio de 3. Solo 5 plazas. Comprueba si tu dominio cumple los requisitos.",
   alternates: { canonical: "https://www.mktweb360.com/oferta-seo/" },
   robots: { index: true, follow: true },
   openGraph: {
@@ -86,7 +86,7 @@ export default function OfertaSeoPage() {
           <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Oferta SEO 6x3" }]} />
           <div className="max-w-3xl mt-4">
             <div className="flex items-center gap-3 mb-6">
-              <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Oferta especial junio</span>
+              <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Oferta especial</span>
               <span className="inline-block bg-white/10 text-white text-xs font-semibold px-3 py-1 rounded-full">Solo 5 plazas</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -97,7 +97,7 @@ export default function OfertaSeoPage() {
               Posicionamiento web profesional durante 6 meses completos. Trabajo real, métricas reales, resultados verificables.
             </p>
             <p className="text-primary-300 text-sm italic mb-8">
-              Esta oferta no está disponible en nuestra tarifa habitual. Es una campaña limitada para incorporar nuevas cuentas este mes.
+              Esta oferta no está disponible en nuestra tarifa habitual. Es una campaña limitada para incorporar nuevas cuentas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -122,7 +122,7 @@ export default function OfertaSeoPage() {
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {[
             { value: "6 meses", label: "de trabajo SEO completo" },
-            { value: "Solo 5", label: "plazas disponibles este mes" },
+            { value: "Solo 5", label: "plazas disponibles" },
             { value: "48h", label: "para arrancar tras la firma" },
             { value: "100%", label: "tus datos, siempre tuyos" },
           ].map((m) => (
@@ -137,7 +137,7 @@ export default function OfertaSeoPage() {
       {/* BANNER URGENCIA */}
       <div className="bg-accent-500 py-3 px-4 text-center">
         <p className="text-white text-sm font-semibold">
-          ⏳ Quedan <strong>5 plazas disponibles</strong> · La oferta cierra el <strong>30 de junio de 2026</strong>
+          ⏳ Quedan <strong>5 plazas disponibles</strong> · <strong>Incorporaciones abiertas, plazas limitadas</strong>
         </p>
       </div>
 
