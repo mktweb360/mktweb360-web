@@ -60,7 +60,7 @@ export default function SeoServiciosUrgentesPage() {
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <h2 className="text-2xl font-bold text-primary-600">¿Por qué el SEO es crítico para servicios urgentes?</h2>
           <p>Cuando alguien tiene una emergencia — una tubería rota, una cerradura bloqueada o un cortocircuito — lo primero que hace es buscar en Google. La búsqueda es inmediata, la intención de compra es máxima y la decisión se toma en segundos.</p>
-          <p>El que aparece en primeras posiciones en ese momento se lleva el cliente. No hay tiempo para comparar mucho: si estás arriba y tienes buenas reseñas, el teléfono suena.</p>
+          <p>El que aparece en <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">primeras posiciones</Link> en ese momento se lleva el cliente. No hay tiempo para comparar mucho: si estás arriba y tienes buenas reseñas, el teléfono suena.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Palabras clave para servicios urgentes</h2>
           <p>La clave está en combinar el tipo de servicio con la urgencia y la localización:</p>
@@ -76,7 +76,7 @@ export default function SeoServiciosUrgentesPage() {
           <h2 className="text-2xl font-bold text-primary-600">Estrategias SEO clave para urgencias</h2>
 
           <h3 className="text-xl font-semibold text-primary-700">1. Google Business Profile optimizado</h3>
-          <p>Para servicios locales urgentes, el Pack Local de Google (el mapa con los 3 resultados destacados) es el objetivo principal. Necesitas tu ficha de Google Business Profile completa, con horario 24h si es el caso, fotos reales y respuestas a todas las reseñas.</p>
+          <p>Para servicios locales urgentes, el Pack Local de Google (el mapa con los 3 resultados destacados) es el objetivo principal. Necesitas tu ficha de <Link href="/google-business-profile/" className="text-accent-500 hover:underline">Google Business Profile</Link> completa, con horario 24h si es el caso, fotos reales y respuestas a todas las reseñas.</p>
           <p>Las reseñas son especialmente críticas: cuando alguien tiene una urgencia a las 2 de la madrugada, va a elegir al cerrajero con más y mejores valoraciones. Anima a tus clientes satisfechos a dejarte reseñas en Google.</p>
 
           <h3 className="text-xl font-semibold text-primary-700">2. Velocidad de carga en móvil</h3>

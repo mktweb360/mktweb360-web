@@ -89,7 +89,7 @@ export default function AnalisisDAFOPage() {
             <li><strong>F + O (Estrategias ofensivas):</strong> Usa tus fortalezas para aprovechar las oportunidades. Si eres experto en tu sector y hay demanda creciente online, crea contenido que te posicione como referente.</li>
             <li><strong>D + O (Estrategias de reorientación):</strong> Supera tus debilidades aprovechando oportunidades. Si tu web está desactualizada pero el Kit Digital ofrece financiación, es el momento de renovarla.</li>
             <li><strong>F + A (Estrategias defensivas):</strong> Usa tus fortalezas para minimizar amenazas. Si entra nueva competencia, refuerza la fidelización de clientes actuales con un programa de retención.</li>
-            <li><strong>D + A (Estrategias de supervivencia):</strong> Minimiza debilidades y amenazas simultáneamente. Si tu presencia digital es débil y la competencia online crece, la acción urgente es el SEO y la presencia en redes.</li>
+            <li><strong>D + A (Estrategias de supervivencia):</strong> Minimiza debilidades y amenazas simultáneamente. Si tu <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">presencia digital</Link> es débil y la competencia online crece, la acción urgente es el SEO y la presencia en redes.</li>
           </ul>
 
           <BlogBanner variant="default" />

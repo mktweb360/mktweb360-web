@@ -118,6 +118,10 @@ export default function AnalisisPESTELPage() {
             ))}
           </div>
 
+          <p>Antes de definir cualquier estrategia de marketing, conviene hacer una revisión honesta de tu estado digital actual. Una <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría digital</Link> te da los datos reales sobre los que aplicar el análisis PESTEL.</p>
+          <p>El factor tecnológico del PESTEL tiene una consecuencia directa en el canal online: si tus competidores están mejor posicionados en Google, eso es una amenaza medible. Una buena <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">estrategia de publicidad en buscadores</Link> puede compensar esa desventaja mientras trabajas el SEO a largo plazo.</p>
+          <p>Las oportunidades que detectes en el análisis se traducen en contenidos, campañas y mensajes. Una <Link href="/marketing-de-contenidos/" className="text-accent-500 hover:underline">estrategia de contenidos</Link> bien construida convierte esas oportunidades en visibilidad real y clientes potenciales.</p>
+
           <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo integrar el PESTEL en tu plan de marketing digital</h2>

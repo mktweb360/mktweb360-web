@@ -59,7 +59,7 @@ export default function CanvasRedesSocialesPage() {
         </header>
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <h2 className="text-2xl font-bold text-primary-600">¿Qué es el Social Media Canvas?</h2>
-          <p>El Business Model Canvas de Osterwalder ha inspirado múltiples adaptaciones sectoriales. El Social Media Canvas es una herramienta visual que permite planificar de forma estructurada la presencia en redes sociales de una empresa, respondiendo a las preguntas clave de cualquier estrategia de contenidos.</p>
+          <p>El Business Model Canvas de Osterwalder ha inspirado múltiples adaptaciones sectoriales. El Social Media Canvas es una herramienta visual que permite planificar de forma estructurada la presencia en redes sociales de una empresa, respondiendo a las preguntas clave de cualquier <Link href="/marketing-de-contenidos/" className="text-accent-500 hover:underline">estrategia de contenidos</Link>.</p>
           <p>Su gran ventaja es que permite tener una visión global de toda la estrategia en un solo documento visual, facilitando la comunicación entre el equipo y el cliente, y asegurando la coherencia de todos los elementos.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Los bloques del Social Media Canvas</h2>
@@ -96,7 +96,7 @@ export default function CanvasRedesSocialesPage() {
           <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">Beneficios para tu negocio</h2>
-          <p>Las empresas que planifican su estrategia de redes sociales con herramientas como el Canvas obtienen resultados hasta 3 veces mejores que las que publican sin una estrategia definida. El Canvas elimina la improvisación, reduce el tiempo de producción de contenidos y asegura que cada publicación tiene un propósito claro y medible.</p>
+          <p>Las empresas que planifican su <Link href="/smm-social-media-marketing/" className="text-accent-500 hover:underline">estrategia de redes sociales</Link> con herramientas como el Canvas obtienen resultados hasta 3 veces mejores que las que publican sin una estrategia definida. El Canvas elimina la improvisación, reduce el tiempo de producción de contenidos y asegura que cada publicación tiene un propósito claro y medible.</p>
           <p>Además, al tener todo documentado en un solo lugar, es mucho más fácil incorporar a nuevos miembros del equipo o comunicar la estrategia a stakeholders y directivos.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
