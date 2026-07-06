@@ -21,11 +21,24 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Diseño de Páginas Web Corporativas",
+  serviceType: "Web Design",
   provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
-  description:
-    "Diseño y desarrollo de páginas web corporativas profesionales para empresas. Web optimizada para SEO, captación de leads y conversión.",
+  description: "Diseño y desarrollo de páginas web corporativas profesionales para empresas. Web optimizada para SEO, captación de leads y conversión.",
   areaServed: "España",
   url: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/",
+  offers: {
+    "@type": "Offer",
+    price: "790",
+    priceCurrency: "EUR",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: "790",
+      priceCurrency: "EUR",
+      description: "Precio desde 790€ para web corporativa profesional con SEO técnico incluido",
+    },
+    availability: "https://schema.org/InStock",
+    url: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/",
+  },
 };
 
 const breadcrumbSchema = {

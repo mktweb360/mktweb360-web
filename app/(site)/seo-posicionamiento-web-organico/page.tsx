@@ -23,10 +23,18 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Posicionamiento Web SEO",
+  serviceType: "Search Engine Optimization",
   provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   description: "Servicio de posicionamiento web orgánico SEO para empresas. Auditorías técnicas, estrategia de keywords, optimización on-page y link building.",
   areaServed: "España",
   url: "https://www.mktweb360.com/seo-posicionamiento-web-organico/",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "EUR",
+    description: "Presupuesto personalizado según proyecto",
+    availability: "https://schema.org/InStock",
+    url: "https://www.mktweb360.com/seo-posicionamiento-web-organico/",
+  },
 };
 
 const FAQS = [
@@ -48,6 +56,15 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
+    { "@type": "ListItem", position: 2, name: "SEO Posicionamiento Web", item: "https://www.mktweb360.com/seo-posicionamiento-web-organico/" },
+  ],
+};
+
 const METHODOLOGY = [
   { step: "01", title: "Auditoría técnica SEO", desc: "Análisis completo de tu web: velocidad, indexación, errores técnicos, arquitectura, backlinks y competencia." },
   { step: "02", title: "Investigación de keywords", desc: "Identificamos las palabras clave con mayor potencial de tráfico y conversión para tu sector y zona." },
@@ -61,6 +78,7 @@ export default function SeoPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
