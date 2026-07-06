@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { CookieBanner } from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
   alternates: {
@@ -19,7 +18,6 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <Header />
       <main>{children}</main>
       <Footer />
-      <CookieBanner />
     </>
   );
 }
