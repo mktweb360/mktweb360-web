@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
@@ -41,8 +42,8 @@ export default function Page() {
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">Subir 500 productos uno a uno llevaría semanas. La importación masiva con CSV lo hace en minutos, pero hay que preparar bien el archivo. Esta guía explica el proceso completo para que salga a la primera.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Por qué usar CSV para importar productos en WooCommerce</h2>
-        <p className="text-gray-700 leading-relaxed mb-4">WooCommerce incluye de forma nativa un importador de productos basado en archivos CSV (Comma Separated Values). Es la forma más eficiente de cargar catálogos grandes, actualizar precios de forma masiva o migrar productos desde otra plataforma como Shopify, Prestashop o una hoja de cálculo Excel.</p>
-        <p className="text-gray-700 leading-relaxed mb-4">La alternativa — introducir cada producto manualmente desde el panel — tiene sentido para catálogos pequeños de 10-20 productos, pero a partir de 50 artículos el tiempo invertido se dispara. Si además necesitas mantener precios actualizados con frecuencia o trabajas con un proveedor que te envía tarifas en Excel, el flujo de trabajo basado en CSV se convierte en imprescindible.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">WooCommerce incluye de forma nativa un importador de productos basado en archivos CSV (Comma Separated Values). Es la forma más eficiente de cargar catálogos grandes, actualizar precios de forma masiva o <Link href="/migrar-shopify-woocommerce/" className="text-accent-500 hover:underline">migrar productos desde otra plataforma como Shopify</Link>, Prestashop o una hoja de cálculo Excel.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">La alternativa — introducir cada producto manualmente desde el panel — tiene sentido para catálogos pequeños de 10-20 productos, pero a partir de 50 artículos el tiempo invertido se dispara. Si además necesitas mantener precios actualizados con frecuencia o trabajas con un proveedor que te envía tarifas en Excel, el flujo de trabajo basado en CSV se convierte en imprescindible. Si estás montando una <Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="text-accent-500 hover:underline">tienda online profesional</Link> desde cero, la importación masiva es parte del proceso de lanzamiento.</p>
         <p className="text-gray-700 leading-relaxed mb-4">El importador nativo de WooCommerce (disponible desde la versión 3.1) funciona bien para la mayoría de casos. Para necesidades más avanzadas — como importación de imágenes desde URL, productos variables con muchas combinaciones o sincronización automática con un ERP — existen plugins como WP All Import o Product Import Export for WooCommerce que amplían las capacidades.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cómo preparar el archivo CSV correctamente</h2>
@@ -73,7 +74,7 @@ export default function Page() {
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cuándo usar un plugin en lugar del importador nativo</h2>
         <p className="text-gray-700 leading-relaxed mb-4">El importador nativo de WooCommerce es suficiente para la mayoría de tiendas, pero hay situaciones donde un plugin especializado aporta más valor. Si necesitas importar más de 5.000 productos de forma regular, el importador nativo puede tener problemas de tiempo de ejecución (timeout). Plugins como WP All Import procesan en lotes y no tienen este problema.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Si tu proveedor te envía un XML en lugar de CSV, o si necesitas mapear campos de un ERP a campos personalizados de WooCommerce, un plugin de importación avanzada te dará la flexibilidad necesaria. También son útiles si necesitas programar importaciones automáticas — por ejemplo, actualizar precios y stock cada noche desde el catálogo de tu proveedor.</p>
-        <p className="text-gray-700 leading-relaxed mb-4">Para catálogos que provienen de plataformas como Shopify o Prestashop, existen plugins específicos de migración que entienden el formato de origen y lo traducen correctamente a WooCommerce, incluyendo pedidos, clientes e historial de compras — no solo productos.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">Para catálogos que provienen de plataformas como Shopify o Prestashop, existen plugins específicos de <Link href="/migrar-tienda-online-sin-perder-datos/" className="text-accent-500 hover:underline">migración completa de tu tienda</Link> que entienden el formato de origen y lo traducen correctamente a WooCommerce, incluyendo pedidos, clientes e historial de compras — no solo productos.</p>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>

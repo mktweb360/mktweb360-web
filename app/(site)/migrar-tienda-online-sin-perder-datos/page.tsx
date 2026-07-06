@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
@@ -38,7 +39,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Migrar tienda online sin perder datos" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo migrar tu tienda online sin perder datos, pedidos ni posicionamiento en Google</h1>
-        <p className="text-xl text-gray-500 mb-8 leading-relaxed">Cambiar de plataforma de ecommerce es una de las decisiones más delicadas para un negocio online. Una migración mal planificada puede destruir años de SEO y perder datos críticos. Esta guía explica cómo hacerlo bien.</p>
+        <p className="text-xl text-gray-500 mb-8 leading-relaxed">Cambiar de <Link href="/woocommerce-vs-shopify-cual-elegir-tienda-online/" className="text-accent-500 hover:underline">plataforma de ecommerce</Link> es una de las decisiones más delicadas para un negocio online. Una migración mal planificada puede destruir años de SEO y perder datos críticos. Esta guía explica cómo hacerlo bien.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cuándo tiene sentido migrar tu tienda a otra plataforma</h2>
         <p className="text-gray-700 leading-relaxed mb-4">No todas las migraciones están justificadas. Antes de emprender el proceso, conviene tener claro por qué te cambias y asegurarte de que el problema real se resolverá con la migración y no con una optimización de la plataforma actual.</p>
@@ -54,7 +55,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>5. URLs y estructura de categorías (crítico para SEO):</strong> Las URLs de productos y categorías son las que están indexadas en Google. Si cambian sin redirecciones, perderás todo el posicionamiento acumulado.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cómo preservar el SEO durante la migración</h2>
-        <p className="text-gray-700 leading-relaxed mb-4">La pérdida de SEO es el riesgo más grave de una migración de tienda online. He visto tiendas perder el 60-80% de su tráfico orgánico por una migración mal gestionada, y recuperarlo puede llevar entre 6 y 18 meses. Evitarlo requiere trabajo específico, no se hace solo.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">La pérdida de SEO es el riesgo más grave de una migración de tienda online. He visto tiendas perder el 60-80% de su <Link href="/seo-para-ecommerce-errores-que-frenan-ventas/" className="text-accent-500 hover:underline">tráfico orgánico</Link> por una migración mal gestionada, y recuperarlo puede llevar entre 6 y 18 meses. Evitarlo requiere trabajo específico, no se hace solo.</p>
         <p className="text-gray-700 leading-relaxed mb-4">El primer paso es rastrear todas las URLs actuales que tienen tráfico orgánico. Usa Google Search Console (descarga el informe de Rendimiento con las URLs que generan impresiones) y Screaming Frog para un mapa completo de la estructura de URLs. Esto te da la lista de URLs que debes redirigir sí o sí.</p>
         <p className="text-gray-700 leading-relaxed mb-4">El segundo paso es mapear cada URL antigua a su equivalente en la nueva plataforma. Si la estructura de URLs no puede replicarse exactamente (lo ideal), define redirecciones 301 permanentes de las URLs antiguas a las nuevas. Las redirecciones 301 le dicen a Google que la página se ha movido permanentemente y transfieren el "valor SEO" (autoridad de enlace) a la nueva URL.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Una vez lanzada la nueva tienda, envía inmediatamente el nuevo sitemap a Google Search Console y comprueba que no hay errores de rastreo. Monitoriza el tráfico orgánico durante las primeras semanas — una caída temporal de 10-20% es normal; una caída de más del 30% indica que algo en las redirecciones no está funcionando.</p>
@@ -64,7 +65,7 @@ export default function Page() {
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Plan de migración: fases y plazos realistas</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Una migración bien ejecutada tiene fases claras. Intentar hacerlo todo en un fin de semana es una de las causas más frecuentes de problemas graves.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Fase 1 — Preparación (1-2 semanas):</strong> Exportar todos los datos de la plataforma actual, mapear URLs para redirecciones, preparar el entorno de staging (un servidor de pruebas donde montar la nueva tienda antes de ponerla en producción) y definir la fecha de lanzamiento.</p>
-        <p className="text-gray-700 leading-relaxed mb-4"><strong>Fase 2 — Desarrollo en staging (2-6 semanas según tamaño del catálogo):</strong> Importar productos, configurar pasarela de pago, métodos de envío, impuestos y lógica de negocio. Probar el proceso de compra completo desde distintos dispositivos y países si vendes internacionalmente.</p>
+        <p className="text-gray-700 leading-relaxed mb-4"><strong>Fase 2 — Desarrollo en staging (2-6 semanas según tamaño del catálogo):</strong> Importar productos, configurar pasarela de pago, <Link href="/configurar-envios-woocommerce/" className="text-accent-500 hover:underline">métodos de envío</Link>, impuestos y lógica de negocio. Probar el proceso de compra completo desde distintos dispositivos y países si vendes internacionalmente.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Fase 3 — Lanzamiento:</strong> Poner la nueva tienda en producción, activar las redirecciones 301, enviar el nuevo sitemap a Google Search Console y deshabilitar la tienda antigua (mantenerla activa redireccionando las URLs, no simplemente apagándola).</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Fase 4 — Monitorización post-lanzamiento (4-8 semanas):</strong> Seguimiento diario del tráfico orgánico, errores 404 en Search Console, rendimiento del proceso de compra y cualquier incidencia reportada por clientes.</p>
 

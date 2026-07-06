@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
@@ -38,7 +39,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Métodos de pago tienda online España" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Métodos de pago para tiendas online en España: cuál elegir y cuánto cobran en 2025</h1>
-        <p className="text-xl text-gray-500 mb-8 leading-relaxed">La pasarela de pago que elijas afecta directamente a cuántos clientes terminan la compra. Una mala experiencia en el checkout es la principal causa de abandono de carrito. Esta guía compara las opciones disponibles en España para que elijas con datos.</p>
+        <p className="text-xl text-gray-500 mb-8 leading-relaxed">La pasarela de pago que elijas afecta directamente a cuántos clientes terminan la compra. Una mala experiencia en el checkout es la principal causa de abandono de carrito. Si tu <Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="text-accent-500 hover:underline">tienda online</Link> no está bien estructurada, ni la mejor pasarela de pago compensará los problemas de UX. Esta guía compara las opciones disponibles en España para que elijas con datos.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Qué métodos de pago prefieren los compradores españoles</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Según datos de la Comisión Nacional de los Mercados y la Competencia (CNMC) y estudios de ecommerce en España, los métodos de pago más usados en tiendas online españolas son, por orden de preferencia: tarjeta de crédito/débito (60-70% de las transacciones), PayPal (15-20%), Bizum (en crecimiento acelerado), transferencia bancaria y contra reembolso (en declive pero todavía relevante para productos de alto valor).</p>
@@ -46,7 +47,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Apple Pay y Google Pay (carteras digitales) han ganado relevancia, especialmente en compras desde móvil. Permiten completar una compra en 2-3 toques sin introducir datos manualmente, lo que reduce el abandono en el checkout móvil — que históricamente tiene tasas de conversión inferiores al desktop por la fricción de introducir datos en pantalla pequeña.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Stripe: la opción más completa para WooCommerce</h2>
-        <p className="text-gray-700 leading-relaxed mb-4">Stripe es la pasarela de pago más popular entre tiendas WooCommerce por sus comisiones transparentes, su integración nativa de alta calidad y la amplitud de métodos de pago soportados. La tarifa estándar en España es del 1,5% + 0,25€ para tarjetas europeas, y del 2,9% + 0,25€ para tarjetas no europeas. No hay cuotas mensuales ni costes de setup.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">Stripe es la pasarela de pago más popular entre tiendas <Link href="/woocommerce-vs-shopify-cual-elegir-tienda-online/" className="text-accent-500 hover:underline">WooCommerce</Link> por sus comisiones transparentes, su integración nativa de alta calidad y la amplitud de métodos de pago soportados. La tarifa estándar en España es del 1,5% + 0,25€ para tarjetas europeas, y del 2,9% + 0,25€ para tarjetas no europeas. No hay cuotas mensuales ni costes de setup.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Stripe soporta de forma nativa: tarjetas Visa, Mastercard y American Express, Apple Pay, Google Pay, SEPA Direct Debit (domiciliación bancaria para suscripciones), Klarna (compra ahora, paga después) e iDEAL (relevante si vendes a Países Bajos). También es la única pasarela con soporte completo para Bizum a través de su integración con Stripe Payment Element.</p>
         <p className="text-gray-700 leading-relaxed mb-4">El plugin oficial de Stripe para WooCommerce es robusto, gratuito y muy bien mantenido. La experiencia de checkout es personalizable y puede integrarse directamente en la página del carrito sin redirigir al usuario a otra página — lo que mejora las conversiones al reducir el número de pasos.</p>
 
@@ -69,7 +70,7 @@ export default function Page() {
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Buy Now Pay Later: Klarna, Aplazame y Cofidis</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Las soluciones de "compra ahora, paga después" (BNPL) han ganado mucha tracción en España en los últimos años. Permiten al cliente fraccionar el pago en 3, 6 o más cuotas sin intereses (para el cliente; el comercio paga una comisión más alta). El impacto en la conversión es especialmente notable para productos de ticket medio-alto (200€ o más).</p>
-        <p className="text-gray-700 leading-relaxed mb-4">Klarna está disponible para WooCommerce en España a través del plugin oficial. Las comisiones son más altas que las pasarelas de pago estándar (2,99% + 0,35€), pero el aumento de conversión y del ticket medio puede compensar este sobrecoste. Aplazame (integrado con muchos bancos españoles) y Cofidis son alternativas con mayor penetración en ciertos sectores del retail español.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">Klarna está disponible para WooCommerce en España a través del plugin oficial. Las comisiones son más altas que las pasarelas de pago estándar (2,99% + 0,35€), pero el <Link href="/seo-para-ecommerce-errores-que-frenan-ventas/" className="text-accent-500 hover:underline">aumento de conversión</Link> y del ticket medio puede compensar este sobrecoste. Aplazame (integrado con muchos bancos españoles) y Cofidis son alternativas con mayor penetración en ciertos sectores del retail español.</p>
         <p className="text-gray-700 leading-relaxed mb-4">La decisión de incluir BNPL depende principalmente del ticket medio de tu tienda. Para productos de menos de 50€, no suele justificarse el coste adicional de integración y gestión. Para productos de 100€ o más, la opción de fraccionar puede ser el factor que cierre la venta para clientes que de otro modo abandonarían el carrito por el precio total.</p>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">

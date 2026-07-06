@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
@@ -38,12 +39,12 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Migrar Shopify a WooCommerce" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo migrar de Shopify a WooCommerce sin perder tu tienda ni tu posicionamiento</h1>
-        <p className="text-xl text-gray-500 mb-8 leading-relaxed">Muchos propietarios de tiendas Shopify llegan a un punto en que los costes mensuales y las comisiones dejan de tener sentido. Migrar a WooCommerce es la solución, pero hacerlo mal puede destruir años de SEO. Esta guía explica cómo hacerlo bien.</p>
+        <p className="text-xl text-gray-500 mb-8 leading-relaxed">Muchos propietarios de tiendas Shopify llegan a un punto en que los costes mensuales y las comisiones dejan de tener sentido. Migrar a WooCommerce es la solución, pero hacerlo mal puede destruir años de SEO. Antes de migrar, puede ser útil revisar una <Link href="/woocommerce-vs-shopify-cual-elegir-tienda-online/" className="text-accent-500 hover:underline">comparativa completa entre WooCommerce y Shopify</Link> para confirmar que es el movimiento correcto. Esta guía explica cómo hacerlo bien.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Por qué muchas tiendas Shopify migran a WooCommerce</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Shopify es una plataforma excelente para empezar: intuitiva, fiable y con pocos requisitos técnicos. Pero a medida que el negocio crece, los costes se vuelven difíciles de justificar. En el plan Basic, la tarifa mensual son 39€. Si además usas la pasarela de pago propia de Shopify Payments, hay un coste adicional por transacción. Si usas pasarela externa, Shopify cobra hasta un 2% por venta.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para una tienda con 3.000€ de ventas mensuales, ese 2% son 60€ al mes en comisiones, más los 39€ de licencia: casi 100€ mensuales, 1.200€ anuales. Con WooCommerce ese mismo coste se reduce a la tarifa de hosting (15-30€/mes) sin comisiones por venta, amortizando el coste de la migración en menos de 12 meses.</p>
-        <p className="text-gray-700 leading-relaxed mb-4">Pero el ahorro en costes no es la única razón. WooCommerce, al estar basado en WordPress, ofrece mayor flexibilidad para personalizar el diseño sin pagar por temas premium, mayor control sobre el SEO técnico, acceso a un ecosistema de plugins más amplio y libertad para elegir el proveedor de hosting sin estar atado a la infraestructura de Shopify.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">Pero el ahorro en costes no es la única razón. WooCommerce, al estar basado en WordPress, ofrece mayor flexibilidad para personalizar el diseño sin pagar por temas premium, mayor control sobre el <Link href="/seo-para-ecommerce-errores-que-frenan-ventas/" className="text-accent-500 hover:underline">SEO técnico</Link>, acceso a un ecosistema de plugins más amplio y libertad para elegir el proveedor de hosting sin estar atado a la infraestructura de Shopify.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Qué puedes exportar de Shopify y en qué formato</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Shopify permite exportar los datos principales de tu tienda desde el panel de administración. Las exportaciones disponibles son: productos (con variantes, precios, imágenes e inventario), clientes (con datos de contacto y direcciones) y pedidos (con historial de transacciones).</p>
@@ -59,7 +60,7 @@ export default function Page() {
         <BlogBanner variant="ecommerce" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Proceso de migración paso a paso</h2>
-        <p className="text-gray-700 leading-relaxed mb-4"><strong>Semana 1 — Preparación:</strong> Exporta todos los datos de Shopify (productos, clientes, pedidos). Documenta las URLs de todos los productos y categorías con tráfico orgánico (desde Google Search Console). Instala WooCommerce en un entorno de staging.</p>
+        <p className="text-gray-700 leading-relaxed mb-4"><strong>Semana 1 — Preparación:</strong> Exporta todos los datos de Shopify (productos, clientes, pedidos). Documenta las URLs de todos los productos y categorías con tráfico orgánico (desde Google Search Console). Instala <Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="text-accent-500 hover:underline">WooCommerce</Link> en un entorno de staging.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Semanas 2-3 — Importación en staging:</strong> Transforma el CSV de Shopify al formato de WooCommerce e importa los productos. Configura categorías, métodos de pago (Stripe, Bizum, transferencia), métodos de envío, impuestos y la apariencia de la tienda. Importa clientes.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Semana 4 — Testing:</strong> Realiza compras de prueba con distintos métodos de pago, verifica que los emails de confirmación funcionan, comprueba que el stock se actualiza correctamente y que todas las páginas cargan sin errores.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Día del lanzamiento:</strong> Apunta el dominio a los servidores del nuevo hosting, activa las redirecciones 301, envía el nuevo sitemap a Google Search Console y deja la tienda Shopify activa redireccionando (no la canceles inmediatamente — espera 2-3 meses hasta que Google haya indexado las nuevas URLs).</p>
