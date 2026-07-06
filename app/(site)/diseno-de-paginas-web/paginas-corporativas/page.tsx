@@ -108,6 +108,9 @@ export default function PaginasCorporativasPage() {
           <p>
             El tercer factor es la conversión. Una web corporativa no existe solo para informar — existe para convertir visitantes en leads. Formularios bien colocados, llamadas a la acción claras, tiempos de carga rápidos y una experiencia fluida en móvil son elementos técnicos que marcan la diferencia entre una web que genera contactos y una web que solo ocupa espacio en internet.
           </p>
+          <p className="text-gray-600 leading-relaxed mt-4">El problema real no es carecer de web. Es tener una web que no trabaja.</p>
+          <p className="text-gray-600 leading-relaxed mt-4">Una web corporativa que trabaja tiene un objetivo claro en cada página: que el visitante entienda qué hace la empresa, por qué debería confiar en ella, y qué tiene que hacer a continuación. Eso no se consigue con un diseño bonito. Se consigue con una arquitectura de contenido bien pensada, mensajes alineados con lo que el cliente potencial está buscando, y elementos de confianza correctamente posicionados.</p>
+          <p className="text-gray-600 leading-relaxed mt-4">Las webs que no trabajan tienen en común lo mismo: fueron diseñadas pensando en cómo quería verse la empresa, no en qué necesita ver el cliente para dar el siguiente paso. El resultado es una presencia digital que existe pero no genera.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Qué debe incluir una web corporativa</h2>
           <p>Una web corporativa efectiva no es una colección de páginas — es una arquitectura pensada para guiar al visitante desde el descubrimiento hasta el contacto. Estos son los elementos imprescindibles:</p>
@@ -161,15 +164,12 @@ export default function PaginasCorporativasPage() {
           </div>
 
           <h2 className="text-2xl font-bold text-primary-600">Web corporativa vs tienda online: ¿cuál necesitas?</h2>
-          <p>
-            Una <strong>web corporativa</strong> está diseñada para presentar la empresa, sus servicios y generar contactos o solicitudes de presupuesto. Es la opción adecuada para empresas de servicios, profesionales, B2B, despachos, clínicas y cualquier negocio donde la venta se cierra fuera de internet — por teléfono, email o reunión presencial.
-          </p>
-          <p>
-            Una <strong>tienda online</strong> está diseñada para completar la venta directamente en la web: catálogo de productos, carrito de compra, pasarela de pago y gestión de pedidos. Es la opción para negocios con productos físicos o digitales que quieren vender sin intermediarios.
-          </p>
-          <p>
-            Muchas empresas necesitan las dos cosas: una web corporativa sólida como base de credibilidad, con una sección de tienda integrada para ciertos productos o servicios. Podemos combinar ambos enfoques en un mismo proyecto.
-          </p>
+          <div className="space-y-4 text-gray-600">
+            <p>La diferencia entre una web corporativa y una tienda online no es solo funcional — es estratégica. Una web corporativa está diseñada para generar confianza, presentar la empresa y convertir visitantes en contactos o llamadas. Una tienda online está diseñada para convertir visitantes en compradores directos.</p>
+            <p>Necesitas una web corporativa si tu proceso de venta implica contacto previo, si vendes servicios o proyectos que requieren personalización, si tus clientes son empresas (B2B), o si el ticket de tu producto o servicio hace que la decisión de compra requiera tiempo y confianza antes del cierre.</p>
+            <p>Necesitas una tienda online si vendes productos físicos o digitales con precio fijo, si el proceso de compra puede completarse sin intervención humana, y si tienes un catálogo que gestionar con stock, variantes, envíos y cobro online.</p>
+            <p>Hay negocios que necesitan las dos cosas: una web corporativa que presenta la empresa y construye confianza, más una tienda online integrada para el canal de venta directa. En esos casos desarrollamos ambas como un sistema cohesionado, no como dos proyectos independientes.</p>
+          </div>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿No sabes qué tipo de web necesita tu empresa?</p>
@@ -177,6 +177,14 @@ export default function PaginasCorporativasPage() {
             <Link href="/contacto/" className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
               Hablar con un especialista
             </Link>
+          </div>
+
+          <h2 className="text-2xl font-bold text-primary-600">Tecnología y por qué usamos WordPress</h2>
+          <div className="space-y-4 text-gray-600">
+            <p>Desarrollamos webs corporativas sobre WordPress porque es la plataforma que mejor equilibra tres factores críticos para el cliente: capacidad de gestión autónoma, coste de mantenimiento a largo plazo, y flexibilidad para crecer.</p>
+            <p>WordPress alimenta más del 40% de todos los sitios web del mundo. Eso significa que cualquier profesional puede hacer cambios en tu web si en algún momento necesitas soporte externo — no quedas atado a nosotros ni a ningún otro proveedor. El código, el dominio y el hosting son tuyos desde el primer día.</p>
+            <p>El SEO técnico está integrado desde la arquitectura: URLs limpias, velocidad de carga optimizada, sitemap automático, schema markup, metadatos editables, y estructura de cabeceras correcta. No es algo que añadimos al final — es parte del diseño desde el inicio.</p>
+            <p>La formación incluida en el precio no es un tutorial genérico. Es una sesión de trabajo contigo o con tu equipo sobre tu web real, donde repasamos exactamente las operaciones que necesitarás hacer: editar textos, añadir páginas, subir imágenes, publicar en el blog y gestionar el formulario de contacto.</p>
           </div>
 
           <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>

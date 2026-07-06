@@ -154,6 +154,18 @@ export default function SeoPage() {
         </div>
       </section>
 
+      {/* When SEO makes sense */}
+      <section className="py-12 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-6">¿Cuándo tiene sentido invertir en SEO?</h2>
+          <div className="space-y-4 text-gray-600">
+            <p>El SEO no es la respuesta correcta para todos los negocios en todos los momentos. Tiene sentido cuando el negocio tiene un horizonte temporal de al menos 6-12 meses, cuando existe volumen de búsqueda real para los productos o servicios que ofrece, y cuando el objetivo es construir un canal de captación sostenible que no dependa de presupuesto publicitario continuo.</p>
+            <p>No tiene sentido como canal único cuando se necesitan resultados en semanas, cuando el producto es completamente nuevo sin demanda de búsqueda existente, o cuando el presupuesto no permite mantener el trabajo durante el tiempo necesario para ver resultados. En esos casos, Google Ads es la herramienta correcta para el corto plazo mientras el SEO construye a largo plazo.</p>
+            <p>Para la mayoría de pymes y autónomos en España, la combinación más rentable es arrancar con una campaña de Google Ads para generar tráfico y ventas inmediatas, mientras el SEO trabaja en paralelo para reducir progresivamente la dependencia del presupuesto publicitario. A los 12-18 meses, el canal orgánico suele superar al de pago en volumen de tráfico cualificado y coste por cliente adquirido.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Methodology */}
       <section id="metodologia" className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
@@ -171,6 +183,19 @@ export default function SeoPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Local vs national SEO */}
+      <section className="py-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-6">SEO local y SEO nacional: dos estrategias distintas</h2>
+          <div className="space-y-4 text-gray-600">
+            <p>El SEO local y el SEO nacional responden a intenciones de búsqueda diferentes y requieren estrategias distintas. No es mejor uno que otro — es una cuestión de qué tipo de cliente busca tu servicio y desde dónde.</p>
+            <p>El SEO local es la estrategia correcta para negocios que atienden clientes en una zona geográfica específica: clínicas, despachos, tiendas físicas, talleres, restaurantes, academias, instaladores, reformistas. En este caso, las búsquedas que importan incluyen un modificador local — "fontanero Toledo", "gestoría Madrid centro", "clínica dental Salamanca" — o se hacen desde el dispositivo móvil con la ubicación activada. El canal más importante para SEO local es Google Business Profile: la ficha que aparece en el mapa cuando alguien busca tu servicio cerca.</p>
+            <p>El SEO nacional se orienta a keywords sin modificador geográfico: "agencia de marketing digital", "software de gestión para pymes", "tienda online de moda sostenible". Compite en un universo más amplio y más competido, lo que requiere mayor autoridad de dominio, más contenido y más tiempo para ver resultados significativos.</p>
+            <p>En Mkt Web 360 trabajamos ambas modalidades. Para negocios con presencia física en Toledo y Castilla-La Mancha, el SEO local es generalmente la inversión con mayor retorno a corto plazo: menor competencia, búsquedas con alta intención de compra, y resultados visibles en 2-4 meses en lugar de 6-12.</p>
           </div>
         </div>
       </section>
@@ -212,6 +237,18 @@ export default function SeoPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What SEO does not include */}
+      <section className="py-12 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-6">Qué no incluye el SEO (y por qué es importante saberlo)</h2>
+          <div className="space-y-4 text-gray-600">
+            <p>El SEO orgánico posiciona tu web en los resultados de búsqueda de Google. No incluye la creación de contenido de redes sociales, la gestión de publicidad de pago, el diseño gráfico para campañas, ni la gestión de tu reputación online más allá de las acciones directamente vinculadas al posicionamiento.</p>
+            <p>Tampoco garantiza posiciones específicas ni fechas exactas de resultados. Cualquier agencia que garantice "primera posición en Google en X semanas" está vendiendo algo que no puede cumplir — el algoritmo de Google no lo controla nadie.</p>
+            <p>Lo que sí garantizamos: un trabajo técnico y estratégico riguroso, transparencia total en los informes mensuales, y una metodología consistente con las directrices de Google que protege tu dominio de penalizaciones. Los resultados dependen de factores que controlamos — calidad del trabajo — y factores que no controlamos: competencia, actualizaciones del algoritmo, velocidad de indexación de Google. Si en 6 meses de trabajo no hay movimiento observable en las posiciones de las keywords objetivo, revisamos la estrategia conjuntamente y ajustamos el enfoque.</p>
           </div>
         </div>
       </section>
