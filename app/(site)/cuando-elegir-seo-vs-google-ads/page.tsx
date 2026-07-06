@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
@@ -42,8 +43,8 @@ export default function Page() {
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Las diferencias fundamentales entre SEO y Google Ads</h2>
         <p className="text-gray-700 leading-relaxed mb-4">SEO y Google Ads son dos formas de aparecer en Google ante personas que buscan lo que ofreces, pero con características radicalmente diferentes en tiempo, coste, riesgo y retorno a largo plazo.</p>
-        <p className="text-gray-700 leading-relaxed mb-4"><strong>SEO:</strong> Inversión con retorno diferido pero acumulativo. Pagas por el trabajo de optimización (agencia, freelance o tiempo propio), no por cada clic. Los resultados tardan entre 3 y 12 meses en llegar, pero una vez que posicionas, el tráfico llega sin coste adicional por clic. Es como plantar un árbol: el esfuerzo es al principio, la fruta es a largo plazo y no desaparece si dejas de regar.</p>
-        <p className="text-gray-700 leading-relaxed mb-4"><strong>Google Ads:</strong> Inversión con retorno inmediato pero continuo. Pagas por cada clic de usuario que hace en tu anuncio. Los resultados son visibles desde el primer día, pero cuando paras de invertir, los resultados desaparecen inmediatamente. Es como el alquiler de una vivienda: tienes el beneficio mientras pagas, pero no construyes ningún activo propio.</p>
+        <p className="text-gray-700 leading-relaxed mb-4"><strong>SEO:</strong> Inversión con retorno diferido pero acumulativo. Pagas por el trabajo de optimización (agencia, freelance o tiempo propio), no por cada clic. Los resultados tardan entre 3 y 12 meses en llegar, pero una vez que tu <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">posicionamiento web orgánico</Link> madura, el tráfico llega sin coste adicional por clic. Es como plantar un árbol: el esfuerzo es al principio, la fruta es a largo plazo y no desaparece si dejas de regar.</p>
+        <p className="text-gray-700 leading-relaxed mb-4"><strong>Google Ads:</strong> Inversión con retorno inmediato pero continuo. Pagas por cada clic de usuario que hace en tu anuncio. Con una <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">campaña de publicidad en buscadores</Link> bien configurada, los resultados son visibles desde el primer día, pero cuando paras de invertir, los resultados desaparecen inmediatamente. Es como el alquiler de una vivienda: tienes el beneficio mientras pagas, pero no construyes ningún activo propio.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Esta diferencia estructural — SEO como construcción de activo vs. Google Ads como arrendamiento de visibilidad — es el criterio más importante para elegir entre uno u otro según las circunstancias de cada negocio.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cuándo Google Ads es claramente la mejor opción</h2>
