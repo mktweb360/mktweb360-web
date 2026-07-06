@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
@@ -66,7 +65,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">El programa Kit Digital, financiado con fondos europeos Next Generation EU, ofrece bonos de digitalización para PYMEs y autónomos españoles. Las empresas de Castilla-La Mancha pueden acceder a estas ayudas a través de la plataforma acelerapyme.es.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Los bonos van desde 2.000€ para autónomos sin empleados hasta 12.000€ para empresas de entre 10 y 49 empleados. Se pueden destinar a soluciones digitales homologadas en categorías como: presencia en internet, comercio electrónico, gestión de redes sociales, gestión de clientes, inteligencia empresarial y analítica, gestión de procesos, factura electrónica y ciberseguridad.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para acceder a las ayudas, la empresa debe estar al corriente de pagos con Hacienda y Seguridad Social, tener el nivel de madurez digital mínimo requerido (evaluado en la plataforma), solicitar el bono y después contratar a un Agente Digitalizador homologado que ejecute la solución.</p>
-        <p className="text-gray-700 leading-relaxed mb-4">Somos Agentes Digitalizadores homologados y podemos gestionar todo el proceso para empresas de Toledo y Castilla-La Mancha. <Link href="/kit-digital/" className="text-accent-500 hover:underline">Consulta nuestra página del Kit Digital</Link> para más información.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">Somos Agentes Digitalizadores homologados y podemos gestionar todo el proceso para empresas de Toledo y Castilla-La Mancha. Consúltanos sin compromiso.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Casos de éxito: empresas de CLM que se han digitalizado</h2>
         <p className="text-gray-700 leading-relaxed mb-4">La digitalización de empresas en Castilla-La Mancha avanza despacio pero con casos concretos de éxito que muestran el camino. Bodegas familiares de la Mancha que han pasado de vender exclusivamente en el mercado local a exportar a través de su tienda online. Empresas de servicios técnicos que antes dependían exclusivamente del boca a boca y ahora reciben la mayoría de sus clientes desde Google.</p>

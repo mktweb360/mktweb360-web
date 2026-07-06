@@ -168,7 +168,7 @@ export default function FacturaElectronicaPage() {
           </div>
 
           <p className="text-sm text-gray-500 pt-4">
-            Servicio relacionado: <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">Auditoría Digital</Link> · <Link href="/kit-digital/" className="text-accent-500 hover:underline">Kit Digital para empresas</Link>
+            Servicio relacionado: <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">Auditoría Digital</Link>
           </p>
         </div>
 

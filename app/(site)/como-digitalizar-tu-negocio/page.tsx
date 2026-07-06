@@ -148,9 +148,6 @@ export default function DigitalizarNegocioPage() {
               <Link href="/contacto/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
                 Hablar con un especialista
               </Link>
-              <Link href="/kit-digital/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                Ver Kit Digital
-              </Link>
             </div>
           </div>
 
@@ -168,7 +165,7 @@ export default function DigitalizarNegocioPage() {
           </div>
 
           <p className="text-sm text-gray-500 pt-4">
-            Servicio relacionado: <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">Auditoría Digital</Link> · <Link href="/kit-digital/" className="text-accent-500 hover:underline">Kit Digital para empresas</Link>
+            Servicio relacionado: <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">Auditoría Digital</Link>
           </p>
         </div>
 
