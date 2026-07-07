@@ -111,6 +111,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/como-usar-planificador-de-palabras-clave-google-ads/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/ejemplos-y-diferencias-entre-buscadores-y-navegadores/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/", priority: 0.7, changeFrequency: "weekly" as const },
   ];
 
   return pages.map((p) => ({
