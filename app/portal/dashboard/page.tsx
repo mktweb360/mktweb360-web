@@ -114,7 +114,9 @@ export default function PortalDashboardPage() {
     <div className="space-y-6 max-w-5xl">
       <div>
         <h1 className="text-2xl font-bold text-primary-600 mb-1">Dashboard</h1>
-        <p className="text-sm text-gray-500">Resumen de tu cuenta — junio 2026</p>
+        <p className="text-sm text-gray-500">
+          Resumen de tu cuenta — {new Date().toLocaleDateString('es-ES', { month: 'long', year: 'numeric' })}
+        </p>
       </div>
 
       {/* Servicios contratados */}
