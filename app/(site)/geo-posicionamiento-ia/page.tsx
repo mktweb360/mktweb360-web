@@ -19,10 +19,26 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "GEO — Generative Engine Optimization",
+  serviceType: "Generative Engine Optimization",
   provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   description: "Posicionamiento en motores de búsqueda generativa: ChatGPT, Perplexity, Gemini y Claude. Optimización de contenidos para LLMs, implementación de llms.txt y estrategia de autoridad semántica.",
   areaServed: "España",
   url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
+  offers: {
+    "@type": "Offer",
+    description: "Posicionamiento en motores de IA (ChatGPT, Gemini, Perplexity) integrado con SEO. Presupuesto personalizado según proyecto.",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
+  },
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
+    { "@type": "ListItem", position: 2, name: "GEO Posicionamiento IA", item: "https://www.mktweb360.com/geo-posicionamiento-ia/" },
+  ],
 };
 
 const GEO_SERVICES = [
@@ -67,6 +83,7 @@ export default function GEOPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">

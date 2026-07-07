@@ -21,10 +21,27 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Gestión de Redes Sociales y Community Management",
+  serviceType: "Social Media Marketing",
   provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   description: "Servicio de gestión de redes sociales para empresas. Estrategia de contenidos, diseño gráfico, publicaciones, atención al cliente y análisis de resultados mensuales.",
   areaServed: "España",
   url: "https://www.mktweb360.com/smm-social-media-marketing/",
+  offers: {
+    "@type": "Offer",
+    price: "350",
+    priceCurrency: "EUR",
+    description: "Gestión profesional de redes sociales desde 350€/mes. Estrategia, contenido e informes mensuales incluidos.",
+    availability: "https://schema.org/InStock",
+    url: "https://www.mktweb360.com/smm-social-media-marketing/",
+  },
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
+    { "@type": "ListItem", position: 2, name: "Social Media Marketing", item: "https://www.mktweb360.com/smm-social-media-marketing/" },
+  ],
 };
 
 const FAQS = [
@@ -61,6 +78,7 @@ export default function SmmPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">

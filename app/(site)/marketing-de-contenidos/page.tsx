@@ -20,10 +20,27 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Marketing de Contenidos",
+  serviceType: "Content Marketing",
   provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   description: "Servicio de marketing de contenidos para empresas. Artículos SEO, estrategia editorial y contenidos para redes sociales.",
   areaServed: "España",
   url: "https://www.mktweb360.com/marketing-de-contenidos/",
+  offers: {
+    "@type": "Offer",
+    price: "390",
+    priceCurrency: "EUR",
+    description: "Estrategia y creación de contenidos SEO desde 390€/mes. Artículos optimizados, calendario editorial y análisis de resultados.",
+    availability: "https://schema.org/InStock",
+    url: "https://www.mktweb360.com/marketing-de-contenidos/",
+  },
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
+    { "@type": "ListItem", position: 2, name: "Marketing de Contenidos", item: "https://www.mktweb360.com/marketing-de-contenidos/" },
+  ],
 };
 
 const FAQS = [
@@ -52,6 +69,7 @@ export default function ContentMarketingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">

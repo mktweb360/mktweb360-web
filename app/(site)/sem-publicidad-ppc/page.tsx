@@ -20,10 +20,26 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Gestión de Campañas Google Ads SEM",
+  serviceType: "Search Engine Marketing",
   provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   description: "Gestión de campañas de publicidad SEM en Google Ads para empresas. Search, Display, Shopping y YouTube Ads.",
   areaServed: "España",
   url: "https://www.mktweb360.com/sem-publicidad-ppc/",
+  offers: {
+    "@type": "Offer",
+    description: "Gestión de campañas Google Ads desde 100€/mes. Precio según volumen de inversión publicitaria gestionada.",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    url: "https://www.mktweb360.com/sem-publicidad-ppc/",
+  },
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
+    { "@type": "ListItem", position: 2, name: "SEM Publicidad PPC", item: "https://www.mktweb360.com/sem-publicidad-ppc/" },
+  ],
 };
 
 const CAMPAIGNS = [
@@ -50,6 +66,7 @@ export default function SemPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
