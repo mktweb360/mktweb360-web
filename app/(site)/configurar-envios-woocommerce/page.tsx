@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Cómo Configurar los Envíos en WooCommerce para España | Mkt Web 360",
     description: "Guía para configurar métodos de envío en WooCommerce. Zonas de envío, tarifas planas, envío gratis y integración con transportistas en España.",
     url: "https://www.mktweb360.com/configurar-envios-woocommerce/",
-    images: [{ url: "/og-configurar-envios-woocommerce.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-configurar-envios-woocommerce.jpg", width: 1200, height: 630 }],
   },
 };
 

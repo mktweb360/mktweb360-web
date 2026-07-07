@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Diseño web profesional para coaches, consultores y formadores. Web que transmite autoridad, capta leads y convierte visitas en clientes. Sin comisiones.",
     url: "https://www.mktweb360.com/diseno-web-para-coaches/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-diseno-web-para-coaches.jpg", width: 1200, height: 630 }],
   },
 };
 

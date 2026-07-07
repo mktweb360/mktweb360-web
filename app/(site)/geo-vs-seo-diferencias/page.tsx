@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "GEO vs SEO: Diferencias y Cómo Usarlos Juntos | Mkt Web 360",
     description: "Qué diferencia el GEO del SEO tradicional, por qué importan los dos y cómo integrar ambas estrategias para máxima visibilidad en buscadores y en IAs.",
     url: "https://www.mktweb360.com/geo-vs-seo-diferencias/",
-    images: [{ url: "/og-geo-vs-seo-diferencias.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-geo-vs-seo-diferencias.jpg", width: 1200, height: 630 }],
   },
 };
 

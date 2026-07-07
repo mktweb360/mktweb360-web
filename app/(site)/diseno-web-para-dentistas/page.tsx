@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Diseño web profesional para dentistas y clínicas dentales. Web optimizada para SEO local, Google Maps y captación de nuevos pacientes. Sin comisiones.",
     url: "https://www.mktweb360.com/diseno-web-para-dentistas/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-diseno-web-para-dentistas.jpg", width: 1200, height: 630 }],
   },
 };
 

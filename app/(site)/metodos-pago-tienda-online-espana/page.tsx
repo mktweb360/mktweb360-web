@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Métodos de Pago para Tiendas Online en España | Mkt Web 360",
     description: "Comparativa de pasarelas de pago para ecommerce en España: Stripe, Bizum, PayPal, Redsys y alternativas. Comisiones, integración y cuál funciona mejor.",
     url: "https://www.mktweb360.com/metodos-pago-tienda-online-espana/",
-    images: [{ url: "/og-metodos-pago-tienda-online-espana.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-metodos-pago-tienda-online-espana.jpg", width: 1200, height: 630 }],
   },
 };
 

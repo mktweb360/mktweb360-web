@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Migrar Tienda Online Sin Perder Datos ni SEO | Mkt Web 360",
     description: "Guía completa para migrar una tienda online a WooCommerce sin perder productos, clientes, pedidos ni posicionamiento en Google.",
     url: "https://www.mktweb360.com/migrar-tienda-online-sin-perder-datos/",
-    images: [{ url: "/og-migrar-tienda-online-sin-perder-datos.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-migrar-tienda-online-sin-perder-datos.jpg", width: 1200, height: 630 }],
   },
 };
 

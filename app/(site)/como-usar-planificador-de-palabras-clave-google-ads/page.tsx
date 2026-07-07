@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       "Aprende a usar el Planificador de Palabras Clave de Google paso a paso. Encuentra keywords rentables, analiza volúmenes y construye tu estrategia desde cero.",
     url: "https://www.mktweb360.com/como-usar-planificador-de-palabras-clave-google-ads/",
     type: "article",
-    images: [{ url: "/og-como-usar-planificador-de-palabras-clave-google-ads.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-como-usar-planificador-palabras-clave.jpg", width: 1200, height: 630 }],
   },
 };
 

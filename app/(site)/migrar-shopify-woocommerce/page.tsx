@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Migrar de Shopify a WooCommerce Sin Perder SEO ni Datos | Mkt Web 360",
     description: "Guía completa para migrar de Shopify a WooCommerce. Qué datos migrar, cómo preservar el SEO, redireccionamientos y comparativa de costes a largo plazo.",
     url: "https://www.mktweb360.com/migrar-shopify-woocommerce/",
-    images: [{ url: "/og-migrar-shopify-woocommerce.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-migrar-shopify-woocommerce.jpg", width: 1200, height: 630 }],
   },
 };
 

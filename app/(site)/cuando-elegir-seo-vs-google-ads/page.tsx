@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Cuándo Elegir SEO y Cuándo Google Ads | Mkt Web 360",
     description: "Cómo decidir entre SEO y Google Ads según tu negocio, presupuesto, urgencia y horizonte temporal. Con ejemplos reales y una matriz de decisión práctica.",
     url: "https://www.mktweb360.com/cuando-elegir-seo-vs-google-ads/",
-    images: [{ url: "/og-cuando-elegir-seo-vs-google-ads.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-cuando-elegir-seo-vs-google-ads.jpg", width: 1200, height: 630 }],
   },
 };
 

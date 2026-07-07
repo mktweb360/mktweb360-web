@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       "Diseño web profesional para clínicas, centros médicos y de salud. Web optimizada para SEO local y captación de pacientes. Fisioterapia, psicología, estética y más.",
     url: "https://www.mktweb360.com/diseno-web-para-clinicas/",
     type: "article",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-diseno-web-para-clinicas.jpg", width: 1200, height: 630 }],
   },
 };
 
