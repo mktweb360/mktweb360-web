@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Google Ads y SEM — Gestión de Campañas PPC | Mkt Web 360",
     description: "Campañas de Google Ads que generan clientes desde el primer día. Servicio nacional.",
     url: "https://www.mktweb360.com/sem-publicidad-ppc/",
-    images: [{ url: "/imagen-sem.jpg", width: 1200, height: 900, alt: "Google Ads SEM Mkt Web 360" }],
+    images: [{ url: "https://www.mktweb360.com/og-sem.jpg", width: 1200, height: 630 }],
   },
 };
 

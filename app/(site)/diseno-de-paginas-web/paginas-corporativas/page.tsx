@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Diseño de páginas web corporativas para empresas. Web profesional que genera confianza, capta leads y posiciona en Google. SEO técnico incluido desde el primer día.",
     url: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/",
-    images: [{ url: "/imagen-diseno-web.jpg", width: 1200, height: 900 }],
+    images: [{ url: "https://www.mktweb360.com/og-paginas-corporativas.jpg", width: 1200, height: 630 }],
   },
 };
 

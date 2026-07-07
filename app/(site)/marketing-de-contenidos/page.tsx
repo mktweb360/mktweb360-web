@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Marketing de Contenidos para Empresas | Mkt Web 360",
     description: "Estrategia y producción de contenidos digitales para captación orgánica, autoridad de marca y SEO.",
     url: "https://www.mktweb360.com/marketing-de-contenidos/",
-    images: [{ url: "/imagen-marketing-contenidos.jpg", width: 1200, height: 900, alt: "Marketing de contenidos Mkt Web 360" }],
+    images: [{ url: "https://www.mktweb360.com/og-marketing-contenidos.jpg", width: 1200, height: 630 }],
   },
 };
 

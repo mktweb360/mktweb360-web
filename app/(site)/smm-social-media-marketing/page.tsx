@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Gestión Redes Sociales — Community Manager | Mkt Web 360",
     description: "Community management profesional para tu empresa. Instagram, Facebook, LinkedIn, TikTok.",
     url: "https://www.mktweb360.com/smm-social-media-marketing/",
-    images: [{ url: "/imagen-redes-sociales.jpg", width: 1200, height: 900, alt: "Gestión redes sociales Mkt Web 360" }],
+    images: [{ url: "https://www.mktweb360.com/og-smm.jpg", width: 1200, height: 630 }],
   },
 };
 

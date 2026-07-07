@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Posicionamiento Web SEO — Agencia SEO España | Mkt Web 360",
     description: "Posiciona tu web en Google con estrategias SEO probadas. Resultados duraderos. Servicio nacional.",
     url: "https://www.mktweb360.com/seo-posicionamiento-web-organico/",
-    images: [{ url: "/imagen-seo.jpg", width: 1200, height: 900, alt: "SEO posicionamiento web Mkt Web 360" }],
+    images: [{ url: "https://www.mktweb360.com/og-seo.jpg", width: 1200, height: 630 }],
   },
 };
 

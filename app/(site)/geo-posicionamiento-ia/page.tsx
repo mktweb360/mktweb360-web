@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "GEO — Posicionamiento en IA | Mkt Web 360",
     description: "Optimiza tu presencia para que los motores de IA te recomienden cuando tus clientes preguntan. ChatGPT, Perplexity, Gemini, Claude.",
     url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
-    images: [{ url: "/og-geo-posicionamiento-ia.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-geo.jpg", width: 1200, height: 630 }],
   },
 };
 
