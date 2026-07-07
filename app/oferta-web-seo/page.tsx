@@ -4,7 +4,7 @@ import Link from "next/link";
 import { OfertaWebSeoForm } from "@/components/OfertaWebSeoForm";
 
 export const metadata: Metadata = {
-  title: "Oferta Web + SEO — Presencia Digital Completa desde 999€ | Mkt Web 360",
+  title: "Oferta Web + SEO — Presencia Digital Completa desde 999€",
   description:
     "Web profesional + 6 meses de SEO por solo 999€ + IVA. Hosting, dominio, correo corporativo, páginas legales y soporte incluidos. Solo 5 plazas. Oferta limitada.",
   alternates: { canonical: "https://www.mktweb360.com/oferta-web-seo/" },

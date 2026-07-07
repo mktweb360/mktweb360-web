@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Página no encontrada — Mkt Web 360",
+  title: "Página no encontrada",
   robots: { index: false, follow: false },
 };
 

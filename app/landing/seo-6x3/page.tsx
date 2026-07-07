@@ -3,7 +3,7 @@ import Image from "next/image";
 import { OfertaSeoForm } from "@/components/OfertaSeoForm";
 
 export const metadata: Metadata = {
-  title: "6 Meses de SEO por el Precio de 3 — Oferta Limitada | Mkt Web 360",
+  title: "6 Meses de SEO por el Precio de 3 — Oferta Limitada",
   description: "Posicionamiento web profesional durante 6 meses completos pagando solo 3. Solo 5 plazas. Trabajo real, métricas reales.",
   alternates: { canonical: "https://www.mktweb360.com/landing/seo-6x3/" },
   robots: { index: false, follow: false },

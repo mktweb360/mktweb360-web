@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Panel Interno — Mkt Web 360",
+  title: "Panel Interno",
   robots: { index: false, follow: false },
 };
 
