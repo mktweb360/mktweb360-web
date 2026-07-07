@@ -40,6 +40,7 @@ const organizationSchema = {
   name: "Mkt Web 360 SLU",
   url: "https://www.mktweb360.com",
   logo: "https://www.mktweb360.com/logo.png",
+  image: "https://www.mktweb360.com/og-image.jpg",
   email: "info@mktweb360.com",
   telephone: "+34622748987",
   address: {
