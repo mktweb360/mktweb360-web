@@ -6,10 +6,10 @@ interface BlogBannerProps {
 
 const BANNERS = {
   seo: {
-    badge: "Oferta especial",
-    title: "6 meses de SEO por el precio de 3",
-    desc: "Contrata cualquier servicio SEO y llévate 6 meses de posicionamiento pagando solo 3. Plazas limitadas.",
-    cta: "Quiero esta oferta",
+    badge: "Posicionamiento SEO",
+    title: "Aparece en la primera página de Google",
+    desc: "Auditoría técnica, estrategia de keywords, optimización on-page y link building para captar clientes de forma orgánica y sostenible.",
+    cta: "Ver servicio SEO",
     href: "/seo-posicionamiento-web-organico/",
   },
   ecommerce: {

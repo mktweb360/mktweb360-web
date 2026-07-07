@@ -24,14 +24,6 @@ export default function AdminDashboard() {
           <Link href="/area-privada/leads" className="bg-primary-600 hover:bg-primary-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition-colors">📋 Ver leads CRM</Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <Link href="/area-privada/leads/seo-6x3" className="bg-white rounded-2xl p-6 border-2 border-primary-100 hover:border-primary-400 transition-colors group">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-2xl">📈</span>
-              <span className="text-xs font-bold bg-accent-100 text-accent-600 px-2 py-0.5 rounded-full">Activa</span>
-            </div>
-            <h3 className="font-bold text-primary-600 group-hover:text-accent-500 transition-colors mb-1">SEO 6x3</h3>
-            <p className="text-gray-500 text-sm">Formulario guiado para la llamada de cualificación</p>
-          </Link>
           <Link href="/area-privada/leads/tienda-online" className="bg-white rounded-2xl p-6 border-2 border-primary-100 hover:border-primary-400 transition-colors group">
             <div className="flex items-center justify-between mb-3">
               <span className="text-2xl">🛒</span>
