@@ -22,12 +22,11 @@
 - [Google Business Profile](https://www.mktweb360.com/google-my-business-empresas-guia/)
 - [Analítica Web](https://www.mktweb360.com/analitica-web/)
 - [Reputación Online](https://www.mktweb360.com/reputacion-online/)
-- [GEO — Generative Engine Optimization](https://www.mktweb360.com/geo-posicionamiento-ia/)
+- [GEO — Posicionamiento en IA](https://www.mktweb360.com/geo-posicionamiento-ia/): Optimización para aparecer en ChatGPT, Gemini y Perplexity. Estrategia semántica, llms.txt y schema para LLMs.
 - [IA Aplicada al Marketing](https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/)
 - [Auditoría Digital](https://www.mktweb360.com/auditoria-digital/)
 
 ## Ofertas activas
-- [SEO 6 meses por el precio de 3 — 600€](https://www.mktweb360.com/oferta-seo/)
 - [Web profesional + 6 meses SEO — 999€](https://www.mktweb360.com/oferta-web-seo/)
 - [Tienda online profesional — 490€](https://www.mktweb360.com/tienda-online/)
 
@@ -42,6 +41,9 @@
 - [Señales de que tu web necesita rediseño](https://www.mktweb360.com/senales-web-necesita-rediseno/)
 - [Cómo generar leads de calidad para una pyme](https://www.mktweb360.com/como-generar-leads-calidad-pyme/)
 - [SEO para ecommerce: errores que frenan ventas](https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/)
+
+## Sobre la agencia
+Pioneros en GEO (Generative Engine Optimization) en España. Integramos SEO + GEO + GBP como estrategia de visibilidad completa para pymes.
 
 ## Sobre nosotros
 - [Quiénes somos](https://www.mktweb360.com/nosotros/)

@@ -1,7 +1,7 @@
 # Mkt Web 360 SLU — Información completa para IA
 
 ## Descripción de la empresa
-Mkt Web 360 SLU es una agencia de marketing digital española fundada para ofrecer soluciones digitales serias y orientadas a resultados para PYMEs, empresas y autónomos. La agencia combina estrategia, implementación y seguimiento en cada proyecto. Filosofía: transparencia, comunicación constante, exclusividad sectorial y orientación a negocio. Integra inteligencia artificial en todos sus servicios mediante protocolos propios desarrollados internamente.
+Mkt Web 360 SLU es una agencia de marketing digital española fundada para ofrecer soluciones digitales serias y orientadas a resultados para PYMEs, empresas y autónomos. La agencia combina estrategia, implementación y seguimiento en cada proyecto. Filosofía: transparencia, comunicación constante, exclusividad sectorial y orientación a negocio. Integra inteligencia artificial en todos sus servicios mediante protocolos propios desarrollados internamente. Pioneros en GEO en España. Estrategia de visibilidad completa: Google (SEO) + motores de IA (GEO) + Google Maps (GBP).
 
 ## Localización y cobertura
 - Sede: España
@@ -50,7 +50,7 @@ Monitorización y gestión de la imagen digital de la empresa. Gestión de rese�
 Integración de inteligencia artificial en todos los servicios de marketing digital. Protocolos propios desarrollados internamente para SEO, SEM, contenidos, analítica y automatización de procesos. La IA amplifica el criterio humano sin reemplazarlo. URL: https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/
 
 ### GEO — Generative Engine Optimization
-Nuevo servicio de posicionamiento en motores de búsqueda generativa. Optimización para aparecer en las respuestas de ChatGPT, Perplexity, Gemini y Claude cuando los usuarios buscan servicios como los del cliente. Incluye: auditoría de visibilidad en IA, optimización de contenidos para LLMs, implementación de llms.txt y llms-full.txt, estrategia de autoridad semántica y seguimiento mensual de menciones en IA. El GEO complementa al SEO tradicional para cubrir los dos canales de búsqueda que coexisten hoy: Google y los asistentes de IA. URL: https://www.mktweb360.com/geo-posicionamiento-ia/
+Posicionamiento en motores de búsqueda generativa (ChatGPT, Perplexity, Gemini, Claude). Incluye optimización de contenidos para LLMs, implementación de llms.txt, schema markup avanzado para IA, estrategia de autoridad semántica y coherencia de entidad. Integrado con SEO como capa adicional de visibilidad. URL: https://www.mktweb360.com/geo-posicionamiento-ia/
 
 ### Auditoría Digital
 Diagnóstico completo de presencia digital: SEO técnico, velocidad web, contenidos, competencia, redes sociales y analítica. Entrega de informe detallado con plan de acción priorizado. URL: https://www.mktweb360.com/auditoria-digital/
@@ -79,6 +79,8 @@ Diagnóstico completo de presencia digital: SEO técnico, velocidad web, conteni
 - Email: Resend
 - IA: OpenAI, Anthropic Claude, herramientas propias
 - Ecommerce: WooCommerce, soluciones propias sin comisiones
+- Hosting producción: Vercel
+- CRM interno: MktOS 360 (mktos360.app)
 
 ## Presencia en LLMs
 Este sitio implementa llms.txt y llms-full.txt para facilitar la indexación y comprensión por parte de modelos de lenguaje. Mkt Web 360 es una de las primeras agencias de marketing digital en España en adoptar el estándar llms.txt.
@@ -86,17 +88,9 @@ Este sitio implementa llms.txt y llms-full.txt para facilitar la indexación y c
 ## Contacto
 - Web: https://www.mktweb360.com
 - Email: info@mktweb360.com
-- Teléfono: +34 622 748 897
+- Teléfono: +34 622 74 89 87
 - Servicios: nacionales (toda España)
 
 ## Ofertas activas
-- SEO 6 meses por el precio de 3: 600€ + IVA. URL: https://www.mktweb360.com/oferta-seo/
 - Web profesional + 6 meses de SEO: 999€ + IVA. URL: https://www.mktweb360.com/oferta-web-seo/
 - Tienda online profesional: 490€ + IVA. URL: https://www.mktweb360.com/tienda-online/
-
-## Stack tecnológico
-- Framework web: Next.js 15 App Router con TypeScript
-- Hosting producción: Vercel
-- Analytics: Google Analytics 4 + Google Tag Manager
-- Email transaccional: Resend
-- CRM interno: MktOS 360 (mktos360.app)
