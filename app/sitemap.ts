@@ -123,6 +123,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/", priority: 0.7, changeFrequency: "weekly" as const },
     { url: "/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/", priority: 0.7, changeFrequency: "weekly" as const },
     { url: "/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/chatbot-para-tienda-online-guia-completa-2026/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/chatbot-wordpress-como-instalarlo-que-evitar/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/atencion-cliente-24-7-pymes-sin-contratar-personal/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/chatbot-para-clinicas-centros-salud-automatizar-citas/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/cuanto-cuesta-un-chatbot-para-empresas-espana-2026/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/chatbot-captacion-cualificacion-leads-guia-practica/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/chatbot-vs-live-chat-diferencias-cual-elegir-empresa/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/como-elegir-chatbot-para-empresa-checklist-2026/", priority: 0.7, changeFrequency: "weekly" as const },
   ];
 
   return pages.map((p) => ({
