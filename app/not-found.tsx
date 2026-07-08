@@ -48,7 +48,7 @@ export default function NotFound() {
               Volver al inicio
             </Link>
             <a
-              href="https://wa.me/34622748987?text=Hola%2C%20no%20encuentro%20lo%20que%20buscaba%20en%20vuestra%20web"
+              href="https://wa.me/34696714760?text=Hola%2C%20no%20encuentro%20lo%20que%20buscaba%20en%20vuestra%20web"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-full transition-colors shadow-lg"

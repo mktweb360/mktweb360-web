@@ -27,7 +27,7 @@ const COMPARATIVA = [
   { plataforma: "Mkt Web 360 — 3 años", items: ["Desarrollo desde 490€", "Comisión por venta: 0€", "Licencia plataforma: 0€", "Hosting ~150€/año = 450€"], total: "~940€", color: "bg-primary-50 border-primary-200" },
 ];
 
-const WA = "https://wa.me/34622748987?text=Hola%2C%20me%20interesa%20la%20tienda%20online%20desde%20490%E2%82%AC";
+const WA = "https://wa.me/34696714760?text=Hola%2C%20me%20interesa%20la%20tienda%20online%20desde%20490%E2%82%AC";
 
 export default function LandingTiendaOnline490Page() {
   return (

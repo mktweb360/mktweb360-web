@@ -41,7 +41,7 @@ export default function GraciasPage() {
           <a href="tel:+34622748987" className="flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">
             📞 Llamar ahora
           </a>
-          <a href="https://wa.me/34622748987?text=Hola%2C%20acabo%20de%20enviar%20mi%20solicitud%20para%20la%20oferta%20SEO%206x3" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">
+          <a href="https://wa.me/34696714760?text=Hola%2C%20acabo%20de%20enviar%20mi%20solicitud%20para%20la%20oferta%20SEO%206x3" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">
             💬 WhatsApp
           </a>
         </div>

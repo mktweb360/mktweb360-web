@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const WA = "https://wa.me/34622748987?text=Hola,%20me%20interesa%20el%20paquete%20SEO+GEO+GBP";
+const WA = "https://wa.me/34696714760?text=Hola,%20me%20interesa%20el%20paquete%20SEO+GEO+GBP";
 
 const FEATURES = [
   {

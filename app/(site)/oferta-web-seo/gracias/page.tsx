@@ -39,7 +39,7 @@ export default function GraciasWebSeoPage() {
         <p className="text-gray-400 text-sm mb-4">¿Prefieres hablar ahora mismo?</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a href="tel:+34622748987" className="flex items-center justify-center gap-2 bg-[#1e3a5f] hover:bg-[#1e3a5f]/90 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">📞 Llamar ahora</a>
-          <a href="https://wa.me/34622748987?text=Hola%2C%20acabo%20de%20solicitar%20informaci%C3%B3n%20sobre%20la%20oferta%20Web%20%2B%20SEO" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">💬 WhatsApp</a>
+          <a href="https://wa.me/34696714760?text=Hola%2C%20acabo%20de%20solicitar%20informaci%C3%B3n%20sobre%20la%20oferta%20Web%20%2B%20SEO" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">💬 WhatsApp</a>
         </div>
         <div className="mt-8">
           <Link href="/" className="text-sm text-gray-400 hover:text-[#1e3a5f] transition-colors">← Volver a la web</Link>
