@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { MetodologiaSeo } from "@/components/MetodologiaSeo";
 import { OfertasSlider } from "@/components/OfertasSlider";
+import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 
 export const metadata: Metadata = {
   title: "Posicionamiento Web SEO — Agencia SEO España",
@@ -270,6 +271,9 @@ export default function SeoPage() {
           </div>
         </div>
       </section>
+
+      {/* Oferta verano */}
+      <OfertaVeranoBanner />
 
       {/* FAQ */}
       <section className="py-16 px-4 bg-gray-50">

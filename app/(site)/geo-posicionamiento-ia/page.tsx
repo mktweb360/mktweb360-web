@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 
 export const metadata: Metadata = {
   title: "Posicionamiento en IA: GEO para ChatGPT, Perplexity y Gemini",
@@ -248,6 +249,9 @@ export default function GEOPage() {
           </div>
         </div>
       </section>
+
+      {/* Oferta verano */}
+      <OfertaVeranoBanner />
 
       {/* FAQs GEO */}
       <section className="py-16 px-4 bg-gray-50">

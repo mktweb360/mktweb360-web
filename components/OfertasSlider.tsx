@@ -2,7 +2,26 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const SLIDES = [
+type Slide = {
+  badge: string;
+  title: string;
+  desc: string;
+  cta: string;
+  href: string;
+  bg: string;
+  price?: { old: string; new: string };
+};
+
+const SLIDES: Slide[] = [
+  {
+    badge: "Oferta verano · Julio y agosto",
+    title: "Prepara tu septiembre ahora",
+    desc: "SEO + IA + Google Maps al 50% del precio de mercado. Solo 5 plazas.",
+    price: { old: "699€/mes", new: "349€/mes" },
+    cta: "Ver oferta",
+    href: "/landing/seo-geo-gbp-verano/",
+    bg: "/hero-slide-1.jpg",
+  },
   {
     badge: "Oferta Web + SEO",
     title: "Tu web profesional + 6 meses de SEO por 999€",
@@ -46,9 +65,15 @@ export function OfertasSlider() {
         <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight min-h-[4rem]">
           {slide.title}
         </h2>
-        <p className="text-white/80 max-w-xl mx-auto mb-8 min-h-[3rem]">
+        <p className="text-white/80 max-w-xl mx-auto mb-6 min-h-[3rem]">
           {slide.desc}
         </p>
+        {slide.price && (
+          <p className="mb-8 flex items-center justify-center gap-3">
+            <span className="text-white/60 line-through text-xl">{slide.price.old}</span>
+            <span className="text-accent-400 text-3xl font-bold">{slide.price.new}</span>
+          </p>
+        )}
         <Link
           href={slide.href}
           className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block mb-10"
