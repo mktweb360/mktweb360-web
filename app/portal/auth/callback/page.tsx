@@ -13,8 +13,11 @@ function CallbackInner() {
       router.replace("/portal/login/");
       return;
     }
-    document.cookie = `client_session=${token}; path=/; max-age=86400; SameSite=Lax`;
-    router.replace("/portal/dashboard/");
+    // Delegamos en la ruta de servidor: verifica la firma del JWT y fija la cookie
+    // HttpOnly + Secure. Navegación completa para que el Set-Cookie del servidor surta efecto.
+    window.location.replace(
+      `/api/portal/auth/callback?token=${encodeURIComponent(token)}`
+    );
   }, [router, searchParams]);
 
   return (

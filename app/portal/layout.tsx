@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,51 +11,21 @@ const NAV = [
   { href: "/portal/tickets", label: "Tickets", icon: "🎫" },
 ];
 
-function getCookie(name: string): string | null {
-  if (typeof document === "undefined") return null;
-  const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
-  return match ? decodeURIComponent(match[2]) : null;
-}
-
-function parseJwtPayload(token: string): Record<string, unknown> | null {
-  try {
-    const base64 = token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
-    return JSON.parse(atob(base64));
-  } catch {
-    return null;
-  }
-}
-
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
-  const router = useRouter();
   const pathname = usePathname();
-  const [clientName, setClientName] = useState<string | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  // La autenticación la garantiza el middleware (verifica la firma del JWT en el
+  // edge). La cookie client_session es HttpOnly y no es legible desde el cliente.
   const isPublicPage =
     pathname === "/portal/login" ||
     pathname === "/portal/login/" ||
     pathname === "/portal/auth/callback" ||
     pathname === "/portal/auth/callback/";
 
-  useEffect(() => {
-    if (isPublicPage) return;
-    const token = getCookie("client_session");
-    if (!token) {
-      router.replace("/portal/login/");
-      return;
-    }
-    const payload = parseJwtPayload(token);
-    if (!payload) {
-      router.replace("/portal/login/");
-      return;
-    }
-    setClientName((payload.name as string) || (payload.email as string) || "Cliente");
-  }, [isPublicPage, router]);
-
   const handleLogout = () => {
-    document.cookie = "client_session=; Max-Age=0; path=/";
-    router.replace("/portal/login/");
+    // La cookie es HttpOnly: la borra la ruta de servidor, que además redirige al login.
+    window.location.href = "/api/portal/auth/logout";
   };
 
   if (isPublicPage) return <>{children}</>;
@@ -119,7 +89,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
               <span className="block w-5 h-0.5 bg-current" />
             </button>
             <span className="text-sm text-gray-500">
-              Hola, <strong className="text-primary-600">{clientName ?? "..."}</strong>
+              <strong className="text-primary-600">Portal de cliente</strong>
             </span>
           </div>
           <button

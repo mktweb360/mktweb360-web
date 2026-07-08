@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import { jwtVerify } from "jose";
 
 const SUPPORTED_LANGS = ["en", "fr"];
+const CLIENT_JWT_SECRET = process.env.CLIENT_JWT_SECRET;
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Protect /area-privada routes (except the login page itself)
@@ -24,17 +26,15 @@ export function middleware(request: NextRequest) {
     if (!token) {
       return NextResponse.redirect(loginUrl);
     }
-    // Decodificamos el payload (sin verificar firma, igual que el portal client-side)
-    // y comprobamos únicamente la expiración.
-    let expired = true;
+    // Verificamos la firma del JWT (y su expiración) con jose, fijando HS256.
+    // Si falla la firma, el token ha expirado o es un refresh token, forzamos re-login.
     try {
-      const base64 = token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
-      const payload = JSON.parse(atob(base64)) as { exp?: number };
-      expired = typeof payload.exp !== "number" || payload.exp <= Date.now() / 1000;
+      const secret = new TextEncoder().encode(CLIENT_JWT_SECRET);
+      const { payload } = await jwtVerify(token, secret, { algorithms: ["HS256"] });
+      if (payload.token_type === "refresh") {
+        throw new Error("refresh token not allowed in web portal");
+      }
     } catch {
-      expired = true;
-    }
-    if (expired) {
       const res = NextResponse.redirect(loginUrl);
       res.cookies.delete("client_session");
       return res;
