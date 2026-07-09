@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 
 export const metadata: Metadata = {
   title: "Cómo Gestionar las Reseñas Negativas en Google — Guía Práctica",
@@ -60,6 +61,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Para una crítica que no reconoces:</strong> "Hola, [Nombre]. Gracias por tu reseña. Sentimos que tu experiencia no haya sido satisfactoria. No hemos podido identificar tu visita con los datos que disponemos. Te agradeceríamos que te pusieras en contacto con nosotros en [email/teléfono] para poder entender qué ocurrió y buscar una solución."</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Para una reseña que parece de la competencia o falsa:</strong> "Hola. No hemos encontrado ningún registro que coincida con la experiencia descrita. Si eres cliente nuestro, te invitamos a contactarnos directamente en [email/teléfono] para aclarar cualquier malentendido. Estamos a tu disposición."</p>
 
+        <OfertaVeranoBanner />
         <BlogBanner variant="default" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cuándo y cómo solicitar la eliminación de una reseña falsa</h2>

@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 
 export const metadata: Metadata = {
   title: "Link Building para PYMEs: Cómo Conseguir Enlaces Sin Spam",
@@ -56,6 +57,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">¿Cómo conseguir cobertura en medios locales? La clave es tener algo que contar. Los medios locales publican sobre: inauguraciones de negocios, contrataciones relevantes, premios y reconocimientos, iniciativas solidarias o comunitarias, opiniones de expertos sobre temas de actualidad local, y novedades de sector que sean de interés general. Crear un gabinete de prensa básico con comunicados periódicos a los medios locales puede generar menciones regulares sin coste.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para facilitar la cobertura, crea una página de "Sala de prensa" en tu web con materiales listos para usar: fotografías de alta resolución del equipo y el local, descripción del negocio lista para publicar, datos de contacto del responsable de comunicación. Cuando un periodista tiene que escribir sobre tu sector, si tiene todos los materiales a mano en tu web, es más probable que te incluya.</p>
 
+        <OfertaVeranoBanner />
         <BlogBanner variant="seo" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Estrategia 3: colaboraciones y co-marketing con negocios complementarios</h2>

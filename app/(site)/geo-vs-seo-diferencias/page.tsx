@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 
 export const metadata: Metadata = {
   title: "GEO vs SEO: Diferencias Clave y Cómo Compaginarlos en 2025",
@@ -58,6 +59,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Tipo de contenido óptimo:</strong> El SEO favorece contenido detallado, con keywords bien trabajadas y estructura técnica impecable. El GEO favorece contenido que demuestra autoridad real, con datos, experiencias concretas y posicionamiento de marca claro.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Backlinks:</strong> En SEO, los backlinks son un factor de ranking fundamental. En GEO, los backlinks desde fuentes de alta autoridad (medios, asociaciones, publicaciones académicas) también son importantes, pero más como señal de credibilidad que como factor de ranking algorítmico.</p>
 
+        <OfertaVeranoBanner />
         <BlogBanner variant="geo" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Por qué necesitas los dos: SEO y GEO como estrategia integrada</h2>

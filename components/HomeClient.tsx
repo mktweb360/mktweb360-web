@@ -258,6 +258,15 @@ function HeroSlider() {
       bg: "/hero-slide-1.jpg",
     },
     {
+      badge: "Oferta verano · Julio y agosto",
+      headline: "Prepara tu",
+      subheadline: "septiembre ahora",
+      subtitle: "SEO + IA + Google Maps al 50%. 699€/mes → 349€/mes. Solo julio y agosto. 5 plazas.",
+      cta: { text: "Ver oferta", href: "/landing/seo-geo-gbp-verano/" },
+      cta2: { text: "Más información", href: "/oferta-seo-geo-gbp/" },
+      bg: "/hero-slide-2.jpg",
+    },
+    {
       badge: "Solo 5 incorporaciones al mes",
       headline: "Tu tienda online",
       subheadline: "profesional desde 490€",

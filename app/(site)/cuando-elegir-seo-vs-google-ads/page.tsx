@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 
 export const metadata: Metadata = {
   title: "Cuándo Elegir SEO y Cuándo Google Ads: Guía para Decidir Bien",
@@ -59,6 +60,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Cuando el contenido informativo puede captar clientes en fases tempranas del proceso de compra:</strong> Para servicios donde la decisión de compra tiene un proceso largo (reformas del hogar, servicios legales complejos, consultoras), el SEO con contenido informativo permite llegar al cliente antes de que esté comparando proveedores. Quien educó al cliente es más probable que lo convierta.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Cuando los CPCs son muy elevados:</strong> En sectores con CPC medio de 10-20€ (abogados, cirugías estéticas, servicios financieros), la publicidad puede ser rentable solo con tasas de conversión muy altas y tickets medios elevados. El SEO, con el mismo coste mensual que una pequeña campaña de Ads, puede generar más tráfico cualificado a los 12 meses.</p>
 
+        <OfertaVeranoBanner />
         <BlogBanner variant="seo" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">La estrategia combinada: cuándo usar los dos a la vez</h2>
