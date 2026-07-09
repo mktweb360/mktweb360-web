@@ -126,8 +126,9 @@ const nextConfig: NextConfig = {
       // WordPress blog pagination
       { source: '/blog/page/:page/', destination: '/blog/', permanent: true },
       { source: '/blog/page/:page', destination: '/blog/', permanent: true },
-      // Expired SEO 6x3 offer — retired, redirect to the evergreen SEO service page
-      { source: '/landing/seo-6x3/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      // Expired SEO 6x3 offer — retired, redirect to the evergreen SEO service page.
+      // Sources are slash-less because trailingSlash is off (Next strips '/x/' → '/x' before matching).
+      { source: '/landing/seo-6x3', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/oferta-seo/:path*', destination: '/seo-posicionamiento-web-organico/', permanent: true },
     ];
   },
