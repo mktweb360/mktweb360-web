@@ -126,8 +126,9 @@ const nextConfig: NextConfig = {
       // WordPress blog pagination
       { source: '/blog/page/:page/', destination: '/blog/', permanent: true },
       { source: '/blog/page/:page', destination: '/blog/', permanent: true },
-      // Deprecated landing → oferta page
-      { source: '/landing/seo-6x3/', destination: '/oferta-seo/', permanent: true },
+      // Expired SEO 6x3 offer — retired, redirect to the evergreen SEO service page
+      { source: '/landing/seo-6x3/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/oferta-seo/:path*', destination: '/seo-posicionamiento-web-organico/', permanent: true },
     ];
   },
 };

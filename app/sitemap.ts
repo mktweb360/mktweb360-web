@@ -40,7 +40,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/casos/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/blog/", priority: 0.8, changeFrequency: "weekly" as const },
     { url: "/oferta-web-seo/", priority: 0.9, changeFrequency: "monthly" as const },
-    { url: "/oferta-seo/", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/oferta-seo-geo-gbp/", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/contacto/", priority: 0.7, changeFrequency: "yearly" as const },
     { url: "/aviso-legal/", priority: 0.3, changeFrequency: "yearly" as const },

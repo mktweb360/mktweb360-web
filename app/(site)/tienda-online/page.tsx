@@ -86,7 +86,6 @@ export default function TiendaOnlineLandingPage() {
               "Catálogo, variantes, stock y pedidos",
               "Integración con transportistas y seguimiento",
               "SEO técnico incluido desde el primer día",
-              "Oferta SEO 6x3 disponible al contratar la tienda",
               "Sin comisiones por venta — 0€ por transacción",
               "Sin licencia mensual de plataforma",
               "Formación completa para gestión autónoma",
