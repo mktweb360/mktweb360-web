@@ -1,4 +1,5 @@
 "use client";
+// chore: force cache invalidation for slider
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
