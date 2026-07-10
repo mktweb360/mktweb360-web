@@ -27,10 +27,21 @@ const serviceSchema = {
   url: "https://www.mktweb360.com/google-business-profile-toledo/",
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
+    { "@type": "ListItem", position: 3, name: "Google Business Profile en Toledo", item: "https://www.mktweb360.com/google-business-profile-toledo/" }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "GBP Toledo" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>

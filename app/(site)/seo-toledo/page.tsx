@@ -71,7 +71,8 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "SEO en Toledo", item: "https://www.mktweb360.com/seo-toledo/" }
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
+    { "@type": "ListItem", position: 3, name: "SEO en Toledo", item: "https://www.mktweb360.com/seo-toledo/" }
   ]
 };
 
