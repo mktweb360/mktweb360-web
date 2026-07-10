@@ -40,7 +40,8 @@ const nextConfig: NextConfig = {
       { source: '/oferta-diseno-paginas-web/pagina-web-para-restaurantes/', destination: '/diseno-de-paginas-web/', permanent: true },
       { source: '/oferta-diseno-paginas-web/diseno-paginas-web-para-empresas-de-limpieza/', destination: '/diseno-de-paginas-web/', permanent: true },
       // WordPress category/tag pages
-      { source: '/category/diseno-web/', destination: '/diseno-de-paginas-web/', permanent: true },
+      // Slash-less so it matches before the /category/:slug catch-all (trailingSlash:false strips '/x/' → '/x')
+      { source: '/category/diseno-web', destination: '/diseno-de-paginas-web/', permanent: true },
       { source: '/category/:slug', destination: '/blog/', permanent: true },
       { source: '/tag/:slug', destination: '/blog/', permanent: true },
       // WordPress media/uploads
@@ -103,17 +104,7 @@ const nextConfig: NextConfig = {
       { source: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/Ejemplos', destination: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', permanent: true },
       // URLs EN sin página real
       { source: '/en/google-ads-management', destination: '/en/', permanent: true },
-      // Tags WordPress sin valor
-      { source: '/tag/analisis/', destination: '/blog/', permanent: true },
-      { source: '/tag/analisis', destination: '/blog/', permanent: true },
-      { source: '/tag/publicidad-en-buscadores/', destination: '/blog/', permanent: true },
-      { source: '/tag/publicidad-en-buscadores', destination: '/blog/', permanent: true },
-      { source: '/tag/canvas/', destination: '/blog/', permanent: true },
-      { source: '/tag/canvas', destination: '/blog/', permanent: true },
-      { source: '/tag/sem/', destination: '/blog/', permanent: true },
-      { source: '/tag/sem', destination: '/blog/', permanent: true },
-      { source: '/tag/estrategia-de-contenidos/', destination: '/blog/', permanent: true },
-      { source: '/tag/estrategia-de-contenidos', destination: '/blog/', permanent: true },
+      // Nota: los redirects individuales de /tag/* se eliminaron — cubiertos por el catch-all /tag/:slug
       // Paginaciones adicionales con ?et_blog — redirect base
       { source: '/seo-posicionamiento-web-organico/page/:page/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/seo-posicionamiento-web-organico/page/:page', destination: '/seo-posicionamiento-web-organico/', permanent: true },
