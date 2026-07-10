@@ -41,6 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/blog/", priority: 0.8, changeFrequency: "weekly" as const },
     { url: "/oferta-web-seo/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/oferta-seo-geo-gbp/", priority: 0.9, changeFrequency: "weekly" as const },
+    { url: "/blog-para-monetizacion/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/ecommerce-dropshipping-con-participacion/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/contacto/", priority: 0.7, changeFrequency: "yearly" as const },
     { url: "/aviso-legal/", priority: 0.3, changeFrequency: "yearly" as const },
     { url: "/politica-de-privacidad/", priority: 0.3, changeFrequency: "yearly" as const },
