@@ -27,10 +27,60 @@ const serviceSchema = {
   url: "https://www.mktweb360.com/seo-toledo/",
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Cuánto tarda en dar resultados el SEO local en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los primeros resultados visibles en Google Maps suelen aparecer entre 4 y 8 semanas tras optimizar la ficha de Google Business Profile y conseguir nuevas reseñas. El posicionamiento web orgánico para búsquedas locales requiere entre 3 y 6 meses de trabajo constante. Toledo tiene menos competencia digital que grandes ciudades, lo que acelera los plazos."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué diferencia hay entre SEO local y SEO nacional?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "El SEO local optimiza tu presencia para búsquedas con intención geográfica: 'dentista en Toledo', 'abogado Talavera de la Reina'. El SEO nacional apunta a keywords sin modificador geográfico. Para negocios con presencia física en Toledo, el SEO local tiene mayor ROI porque la competencia es menor y la intención de compra de quien busca es más alta."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Es necesario tener web para hacer SEO local en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Google Business Profile puede generar llamadas y visitas sin web. Pero combinar una ficha de GBP bien optimizada con una web que tenga páginas de servicio locales multiplica los resultados. La web permite posicionar para más keywords, captar leads fuera del horario y construir autoridad a largo plazo."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto cuesta el SEO local para un negocio en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende del punto de partida y los objetivos. La optimización inicial de Google Business Profile y la auditoría SEO local pueden resolverse desde 300-500€. Un servicio de SEO local continuado — con trabajo mensual de contenido, reseñas y autoridad — parte desde 300€/mes. El ROI suele ser positivo desde el primer trimestre para negocios en sectores con demanda local activa."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
+    { "@type": "ListItem", position: 2, name: "SEO en Toledo", item: "https://www.mktweb360.com/seo-toledo/" }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "SEO en Toledo" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
@@ -70,6 +120,30 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Si tu negocio todavía no tiene una estrategia de SEO local activa, el primer paso es hacer un diagnóstico de tu situación actual: ¿cómo apareces en Google Maps? ¿Tienes ficha de GBP verificada y completa? ¿Tu web tiene páginas específicas para los servicios y la localización que ofreces? ¿Cuántas reseñas tienes y cuándo fue la última?</p>
         <p className="text-gray-700 leading-relaxed mb-4">Con esa información puedes identificar las acciones de mayor impacto y priorizarlas. En la mayoría de casos, optimizar la ficha de GBP y conseguir nuevas reseñas es lo que genera resultados más rápidos. El SEO web (páginas de servicio locales, contenido optimizado) requiere más tiempo pero tiene mayor impacto a largo plazo.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Si prefieres que lo hagamos nosotros, ofrecemos una <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría digital gratuita</Link> donde analizamos tu situación actual y te explicamos exactamente qué deberías priorizar para tu negocio específico en Toledo.</p>
+
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre SEO local en Toledo</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados el SEO local en Toledo?</h3>
+                <p className="text-gray-600">Los primeros resultados visibles en Google Maps suelen aparecer entre 4 y 8 semanas tras optimizar la ficha de Google Business Profile y conseguir nuevas reseñas. El posicionamiento web orgánico para búsquedas locales requiere entre 3 y 6 meses de trabajo constante. Toledo tiene menos competencia digital que grandes ciudades, lo que acelera los plazos.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué diferencia hay entre SEO local y SEO nacional?</h3>
+                <p className="text-gray-600">El SEO local optimiza tu presencia para búsquedas con intención geográfica: "dentista en Toledo", "abogado Talavera de la Reina". El SEO nacional apunta a keywords sin modificador geográfico. Para negocios con presencia física en Toledo, el SEO local tiene mayor ROI porque la competencia es menor y la intención de compra de quien busca es más alta.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Es necesario tener web para hacer SEO local en Toledo?</h3>
+                <p className="text-gray-600">Google Business Profile puede generar llamadas y visitas sin web. Pero combinar una ficha de GBP bien optimizada con una web que tenga páginas de servicio locales multiplica los resultados. La web permite posicionar para más keywords, captar leads fuera del horario y construir autoridad a largo plazo.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta el SEO local para un negocio en Toledo?</h3>
+                <p className="text-gray-600">Depende del punto de partida y los objetivos. La optimización inicial de Google Business Profile y la auditoría SEO local pueden resolverse desde 300-500€. Un servicio de SEO local continuado — con trabajo mensual de contenido, reseñas y autoridad — parte desde 300€/mes. El ROI suele ser positivo desde el primer trimestre para negocios en sectores con demanda local activa.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
