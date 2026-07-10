@@ -36,11 +36,51 @@ const breadcrumbSchema = {
   ]
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Cómo elegir una agencia de marketing digital en Madrid?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los criterios clave son: especialización real en los servicios que necesitas (no todas las agencias hacen bien todo), casos de éxito verificables, transparencia en informes y metodología, y una relación precio-valor coherente. Desconfía de agencias que garantizan posiciones en Google o resultados en plazos muy cortos — no es posible garantizarlos."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto cobra una agencia de marketing digital en Madrid?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los precios varían enormemente. Un servicio de SEO local parte desde 300€/mes en agencias pequeñas especializadas. Agencias medianas en Madrid cobran entre 800 y 2.500€/mes por servicios integrales. Las grandes agencias o las especializadas en sectores premium pueden superar los 5.000€/mes. El precio debe estar justificado por resultados medibles."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Es mejor contratar una agencia de Madrid o una agencia que trabaje en remoto?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Lo relevante no es la ubicación sino la especialización, la metodología y los resultados. Una agencia de marketing digital que trabaja en remoto puede ofrecer el mismo nivel de servicio que una agencia presencial en Madrid, con la ventaja de poder elegir al especialista más adecuado para tu sector independientemente de su ubicación."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué servicios debe incluir una agencia de marketing digital completa?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Una agencia completa debe cubrir: SEO técnico y de contenidos, gestión de Google Business Profile y SEO local, campañas de Google Ads y Meta Ads, gestión de redes sociales, diseño y desarrollo web, y analítica con informes periódicos. Lo más importante es que cada servicio tenga objetivos medibles y un responsable claro."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Agencias marketing digital Madrid" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
@@ -76,6 +116,30 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Contratar una agencia de marketing completa no siempre es la mejor opción para todas las empresas. En función del presupuesto, los objetivos y las capacidades internas, puede tener más sentido: contratar un freelance especializado en el canal que más necesitas (más barato que una agencia para tareas específicas), contratar un responsable de marketing interno (mejor para empresas con volumen de trabajo continuo), o usar una combinación de herramientas de marketing digital con apoyo puntual de consultores.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Una agencia tiene sentido cuando: no tienes tiempo ni conocimientos para gestionar el marketing internamente, necesitas una estrategia integral que cubra varios canales, tienes presupuesto suficiente para que la relación sea rentable para la agencia (por debajo de ciertos presupuestos, las agencias no pueden dedicar suficiente tiempo para generar resultados reales), y quieres un socio externo que traiga perspectiva externa y actualización constante en tendencias.</p>
         <p className="text-gray-700 leading-relaxed mb-4">En Madrid, el mercado de freelancers de marketing digital de alta calidad es muy amplio. Para tareas específicas como gestión de redes sociales, redacción de contenido SEO o configuración de campañas de Google Ads, un buen freelance especializado puede ofrecer mejor calidad-precio que una agencia generalista.</p>
+
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre agencias de marketing digital en Madrid</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cómo elegir una agencia de marketing digital en Madrid?</h3>
+                <p className="text-gray-600">Los criterios clave son: especialización real en los servicios que necesitas (no todas las agencias hacen bien todo), casos de éxito verificables, transparencia en informes y metodología, y una relación precio-valor coherente. Desconfía de agencias que garantizan posiciones en Google o resultados en plazos muy cortos — no es posible garantizarlos.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cobra una agencia de marketing digital en Madrid?</h3>
+                <p className="text-gray-600">Los precios varían enormemente. Un servicio de SEO local parte desde 300€/mes en agencias pequeñas especializadas. Agencias medianas en Madrid cobran entre 800 y 2.500€/mes por servicios integrales. Las grandes agencias o las especializadas en sectores premium pueden superar los 5.000€/mes. El precio debe estar justificado por resultados medibles.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Es mejor contratar una agencia de Madrid o una agencia que trabaje en remoto?</h3>
+                <p className="text-gray-600">Lo relevante no es la ubicación sino la especialización, la metodología y los resultados. Una agencia de marketing digital que trabaja en remoto puede ofrecer el mismo nivel de servicio que una agencia presencial en Madrid, con la ventaja de poder elegir al especialista más adecuado para tu sector independientemente de su ubicación.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué servicios debe incluir una agencia de marketing digital completa?</h3>
+                <p className="text-gray-600">Una agencia completa debe cubrir: SEO técnico y de contenidos, gestión de Google Business Profile y SEO local, campañas de Google Ads y Meta Ads, gestión de redes sociales, diseño y desarrollo web, y analítica con informes periódicos. Lo más importante es que cada servicio tenga objetivos medibles y un responsable claro.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>

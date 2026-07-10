@@ -36,11 +36,51 @@ const breadcrumbSchema = {
   ]
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Qué incluye un servicio de marketing digital para empresas en Sevilla?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Un servicio completo de marketing digital en Sevilla incluye SEO local, gestión de Google Business Profile, campañas de Google Ads, gestión de redes sociales, diseño web y analítica. Lo más habitual es empezar con los canales de mayor ROI para el tipo de negocio — normalmente SEO local y GBP para negocios con presencia física — y escalar progresivamente."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto cuesta el marketing digital para una pyme en Sevilla?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende de los servicios contratados. Un servicio básico de SEO local + Google Business Profile parte desde 300€/mes. Una estrategia más completa con SEO, redes sociales y campañas de pago puede estar entre 500 y 1.500€/mes. Sevilla tiene un mercado digital activo con oportunidades claras para negocios que empiecen a trabajar su presencia online de forma profesional."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto tarda en dar resultados el marketing digital en Sevilla?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende del canal. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 4-8 semanas y se consolida en 3-6 meses. Las redes sociales construyen comunidad de forma progresiva. Sevilla tiene competencia digital media, lo que hace que un trabajo bien ejecutado tenga impacto visible en plazos razonables."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Necesita una empresa de Sevilla una agencia de marketing digital o puede gestionarlo internamente?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende de los recursos internos y los objetivos. El SEO técnico y las campañas de pago requieren conocimiento especializado y herramientas específicas. Para la mayoría de pymes en Sevilla, externalizar el marketing digital con una agencia especializada es más eficiente que contratar un perfil interno a tiempo completo."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Marketing digital Sevilla" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
@@ -73,6 +113,30 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Google Ads en Sevilla tiene costes por clic más bajos que en Madrid o Barcelona en la mayoría de sectores, lo que mejora el retorno potencial de la inversión. Para servicios con demanda urgente (urgencias médicas, servicios de hogar, reparaciones) y tickets medios altos, Google Ads puede ser rentable desde el primer mes si la configuración es correcta.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Los errores más comunes en campañas de Google Ads de PYMEs sevillanas son: segmentación geográfica demasiado amplia (pagando por clics de fuera del área de servicio), uso exclusivo de concordancia amplia sin negativas (mostrando el anuncio para consultas irrelevantes) y páginas de destino que no están optimizadas para convertir (llevar el tráfico pagado a la portada en lugar de a una landing específica del servicio anunciado).</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para negocios de turismo en Sevilla, Google Ads en inglés y en temporada alta (primavera y otoño) puede ser especialmente rentable. Los turistas internacionales que buscan "things to do in Seville", "flamenco show Seville" o "tapas tour Seville" tienen alta intención de compra y están dispuestos a pagar por experiencias curadas.</p>
+
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre marketing digital en Sevilla</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué incluye un servicio de marketing digital para empresas en Sevilla?</h3>
+                <p className="text-gray-600">Un servicio completo de marketing digital en Sevilla incluye SEO local, gestión de Google Business Profile, campañas de Google Ads, gestión de redes sociales, diseño web y analítica. Lo más habitual es empezar con los canales de mayor ROI para el tipo de negocio — normalmente SEO local y GBP para negocios con presencia física — y escalar progresivamente.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta el marketing digital para una pyme en Sevilla?</h3>
+                <p className="text-gray-600">Depende de los servicios contratados. Un servicio básico de SEO local + Google Business Profile parte desde 300€/mes. Una estrategia más completa con SEO, redes sociales y campañas de pago puede estar entre 500 y 1.500€/mes. Sevilla tiene un mercado digital activo con oportunidades claras para negocios que empiecen a trabajar su presencia online de forma profesional.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados el marketing digital en Sevilla?</h3>
+                <p className="text-gray-600">Depende del canal. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 4-8 semanas y se consolida en 3-6 meses. Las redes sociales construyen comunidad de forma progresiva. Sevilla tiene competencia digital media, lo que hace que un trabajo bien ejecutado tenga impacto visible en plazos razonables.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Necesita una empresa de Sevilla una agencia de marketing digital o puede gestionarlo internamente?</h3>
+                <p className="text-gray-600">Depende de los recursos internos y los objetivos. El SEO técnico y las campañas de pago requieren conocimiento especializado y herramientas específicas. Para la mayoría de pymes en Sevilla, externalizar el marketing digital con una agencia especializada es más eficiente que contratar un perfil interno a tiempo completo.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>

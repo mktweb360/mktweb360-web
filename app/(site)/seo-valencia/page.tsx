@@ -36,11 +36,51 @@ const breadcrumbSchema = {
   ]
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Cuánto tarda en dar resultados el SEO local en Valencia?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los primeros resultados visibles en Google Maps suelen aparecer entre 4 y 8 semanas tras optimizar la ficha de Google Business Profile y conseguir nuevas reseñas. El posicionamiento web orgánico para búsquedas locales en Valencia requiere entre 3 y 6 meses. Valencia tiene un mercado digital activo pero con menos saturación que Madrid o Barcelona."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué diferencia hay entre SEO local y SEO nacional para un negocio en Valencia?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "El SEO local optimiza tu presencia para búsquedas con intención geográfica en el área de Valencia: 'clínica dental Valencia', 'asesoría fiscal Paterna'. El SEO nacional apunta a keywords sin modificador geográfico. Para negocios con presencia física en Valencia, el SEO local tiene mayor ROI porque la intención de compra de quien busca es más alta."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Es necesario tener web para hacer SEO local en Valencia?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Google Business Profile puede generar llamadas y visitas sin web. Pero combinar una ficha de GBP bien optimizada con una web que tenga páginas de servicio locales multiplica los resultados. La web permite posicionar para más keywords, captar leads fuera del horario y construir autoridad a largo plazo."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto cuesta el SEO local para un negocio en Valencia?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende del punto de partida y los objetivos. La optimización inicial de Google Business Profile y la auditoría SEO local pueden resolverse desde 300-500€. Un servicio de SEO local continuado — con trabajo mensual de contenido, reseñas y autoridad — parte desde 300€/mes. El ROI suele ser positivo desde el primer trimestre para negocios en sectores con demanda local activa."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "SEO Valencia" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
@@ -78,6 +118,30 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">En Valencia, los negocios que empiezan a trabajar el SEO con una estrategia coherente suelen ver primeros resultados (entrar en el top 20 para términos de long tail y mejorar la visibilidad en Google Maps) entre los 3 y los 6 meses. Para posicionarse de forma sólida en los primeros 5 resultados de términos competitivos, el plazo habitual es de 8 a 14 meses.</p>
         <p className="text-gray-700 leading-relaxed mb-4">El ritmo de resultados depende de tres factores principales: el punto de partida (una web con historial de dominio, aunque sin SEO activo, progresa más rápido que una web nueva), la consistencia del trabajo (publicar contenido de calidad cada mes vs. publicar en ráfagas irregulares marca una diferencia enorme) y la competitividad del sector específico.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Una recomendación específica para negocios valencianos que empiezan: mientras el SEO madura, complementa con Google Business Profile optimizado y con una pequeña inversión en Google Ads para términos de alta conversión. Esta combinación genera clientes desde el primer mes mientras el SEO orgánico construye su base de forma sostenida.</p>
+
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre SEO local en Valencia</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados el SEO local en Valencia?</h3>
+                <p className="text-gray-600">Los primeros resultados visibles en Google Maps suelen aparecer entre 4 y 8 semanas tras optimizar la ficha de Google Business Profile y conseguir nuevas reseñas. El posicionamiento web orgánico para búsquedas locales en Valencia requiere entre 3 y 6 meses. Valencia tiene un mercado digital activo pero con menos saturación que Madrid o Barcelona.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué diferencia hay entre SEO local y SEO nacional para un negocio en Valencia?</h3>
+                <p className="text-gray-600">El SEO local optimiza tu presencia para búsquedas con intención geográfica en el área de Valencia: 'clínica dental Valencia', 'asesoría fiscal Paterna'. El SEO nacional apunta a keywords sin modificador geográfico. Para negocios con presencia física en Valencia, el SEO local tiene mayor ROI porque la intención de compra de quien busca es más alta.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Es necesario tener web para hacer SEO local en Valencia?</h3>
+                <p className="text-gray-600">Google Business Profile puede generar llamadas y visitas sin web. Pero combinar una ficha de GBP bien optimizada con una web que tenga páginas de servicio locales multiplica los resultados. La web permite posicionar para más keywords, captar leads fuera del horario y construir autoridad a largo plazo.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta el SEO local para un negocio en Valencia?</h3>
+                <p className="text-gray-600">Depende del punto de partida y los objetivos. La optimización inicial de Google Business Profile y la auditoría SEO local pueden resolverse desde 300-500€. Un servicio de SEO local continuado — con trabajo mensual de contenido, reseñas y autoridad — parte desde 300€/mes. El ROI suele ser positivo desde el primer trimestre para negocios en sectores con demanda local activa.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>

@@ -37,11 +37,51 @@ const breadcrumbSchema = {
   ]
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Qué es Google Business Profile y para qué sirve?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Google Business Profile (antes Google My Business) es la ficha gratuita que aparece en Google Maps y en el panel de la derecha cuando alguien busca tu negocio. Es la herramienta más importante para el SEO local: determina si apareces en el mapa cuando alguien busca tu tipo de negocio cerca de tu ubicación. Una ficha bien optimizada puede ser la principal fuente de nuevos clientes para un negocio local en Toledo."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto tarda en dar resultados la optimización de Google Business Profile?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los primeros resultados son visibles en 2-4 semanas tras la optimización inicial. La visibilidad en Google Maps mejora progresivamente con el tiempo a medida que se acumulan reseñas recientes, publicaciones periódicas y señales de actividad. Es uno de los canales con ROI más rápido para negocios con presencia física en Toledo."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuántas reseñas necesito para posicionar bien en Google Maps en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No hay un número mágico, pero la tendencia y la recencia importan más que el total. Un negocio con 20 reseñas recientes (últimos 3 meses) puede superar a uno con 200 reseñas antiguas. En Toledo, donde la competencia digital es menor que en grandes ciudades, conseguir 15-30 reseñas de calidad puede ser suficiente para aparecer en el top 3 del mapa en muchas búsquedas."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Puedo gestionar Google Business Profile yo mismo o necesito una agencia?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La gestión básica (mantener la ficha actualizada, responder reseñas, publicar novedades) la puede hacer cualquier propietario con un par de horas al mes. La optimización avanzada — estrategia de categorías, gestión de atributos, análisis de competencia, campañas de reseñas — tiene más impacto con soporte especializado. Para negocios que quieren resultados rápidos en Toledo, contar con ayuda profesional en la fase inicial acelera significativamente los resultados."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "GBP Toledo" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
@@ -82,6 +122,30 @@ export default function Page() {
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Métricas que debes monitorizar en tu GBP</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Google Business Profile ofrece estadísticas gratuitas sobre el rendimiento de tu ficha. Las métricas más importantes que debes revisar mensualmente son: número de búsquedas directas (usuarios que buscan tu nombre) vs. búsquedas de descubrimiento (usuarios que buscan una categoría o servicio), número de visualizaciones en Maps vs. en Search, número de clics en el teléfono, clics en la web y solicitudes de ruta.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Estas métricas te dicen si tu ficha está generando impacto y te permiten identificar qué tipo de búsquedas generan más interacción. Si tienes muchas visualizaciones pero pocos clics en el teléfono, puede indicar que tu ficha no está siendo suficientemente persuasiva (pocas fotos, pocas reseñas, descripción floja). Si tienes pocas visualizaciones, el problema está en el posicionamiento y hay que trabajar los factores de relevancia y prominencia.</p>
+
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre Google Business Profile en Toledo</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué es Google Business Profile y para qué sirve?</h3>
+                <p className="text-gray-600">Google Business Profile (antes Google My Business) es la ficha gratuita que aparece en Google Maps y en el panel de la derecha cuando alguien busca tu negocio. Es la herramienta más importante para el SEO local: determina si apareces en el mapa cuando alguien busca tu tipo de negocio cerca de tu ubicación. Una ficha bien optimizada puede ser la principal fuente de nuevos clientes para un negocio local en Toledo.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados la optimización de Google Business Profile?</h3>
+                <p className="text-gray-600">Los primeros resultados son visibles en 2-4 semanas tras la optimización inicial. La visibilidad en Google Maps mejora progresivamente con el tiempo a medida que se acumulan reseñas recientes, publicaciones periódicas y señales de actividad. Es uno de los canales con ROI más rápido para negocios con presencia física en Toledo.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuántas reseñas necesito para posicionar bien en Google Maps en Toledo?</h3>
+                <p className="text-gray-600">No hay un número mágico, pero la tendencia y la recencia importan más que el total. Un negocio con 20 reseñas recientes (últimos 3 meses) puede superar a uno con 200 reseñas antiguas. En Toledo, donde la competencia digital es menor que en grandes ciudades, conseguir 15-30 reseñas de calidad puede ser suficiente para aparecer en el top 3 del mapa en muchas búsquedas.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Puedo gestionar Google Business Profile yo mismo o necesito una agencia?</h3>
+                <p className="text-gray-600">La gestión básica (mantener la ficha actualizada, responder reseñas, publicar novedades) la puede hacer cualquier propietario con un par de horas al mes. La optimización avanzada — estrategia de categorías, gestión de atributos, análisis de competencia, campañas de reseñas — tiene más impacto con soporte especializado. Para negocios que quieren resultados rápidos en Toledo, contar con ayuda profesional en la fase inicial acelera significativamente los resultados.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>

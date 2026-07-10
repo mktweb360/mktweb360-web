@@ -37,11 +37,51 @@ const breadcrumbSchema = {
   ]
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Cuánto cuesta crear una tienda online en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Una tienda online profesional sin comisiones por venta parte desde 490€ con diseño personalizado y SEO técnico incluido. El precio final depende del número de productos, funcionalidades (pasarelas de pago, métodos de envío, integraciones) y nivel de personalización. El hosting y el dominio se contratan aparte o incluidos según el proveedor."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto tarda en estar lista una tienda online?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Una tienda online estándar puede estar operativa en 3-5 semanas desde el inicio del proyecto. El plazo depende principalmente de la velocidad en la aportación de productos, imágenes y contenidos por parte del cliente. Tiendas con catálogos grandes o funcionalidades avanzadas pueden requerir 6-10 semanas."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué plataforma es mejor para una tienda online en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "WooCommerce (sobre WordPress) es la opción más recomendable para la mayoría de negocios: sin comisiones por venta, sin licencias mensuales, con control total sobre el diseño y el SEO. Para catálogos muy grandes o requisitos B2B complejos, PrestaShop o Shopware pueden ser más adecuados."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Puedo gestionar la tienda online yo mismo una vez entregada?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sí. Las tiendas desarrolladas sobre WooCommerce incluyen formación para que puedas gestionar productos, pedidos, precios y contenidos de forma autónoma. La web es tuya desde el primer día — sin dependencias ni costes de mantenimiento obligatorios, aunque el soporte técnico está disponible si lo necesitas."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Tiendas online Toledo" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
@@ -79,6 +119,30 @@ export default function Page() {
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cuánto cuesta crear y mantener una tienda online en Toledo</h2>
         <p className="text-gray-700 leading-relaxed mb-4">El coste de una tienda online varía enormemente según la complejidad, el número de productos y las integraciones necesarias. Como referencia orientativa para un ecommerce básico para una PYME toledana: el desarrollo inicial puede estar entre 2.000 y 6.000€ para una solución propia bien construida. A esto hay que añadir el hosting (60-120€ al año), el dominio (10-15€ al año) y el mantenimiento técnico.</p>
         <p className="text-gray-700 leading-relaxed mb-4">El mayor error que cometen los negocios es calcular solo el coste de creación y olvidar el coste de captación de tráfico. Una tienda online sin inversión en SEO, publicidad o marketplace no va a vender. El presupuesto de lanzamiento debería incluir desde el principio al menos 6 meses de trabajo SEO o una partida inicial para publicidad de pago que genere las primeras ventas y valide el modelo.</p>
+
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre tiendas online en Toledo</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta crear una tienda online en Toledo?</h3>
+                <p className="text-gray-600">Una tienda online profesional sin comisiones por venta parte desde 490€ con diseño personalizado y SEO técnico incluido. El precio final depende del número de productos, funcionalidades (pasarelas de pago, métodos de envío, integraciones) y nivel de personalización. El hosting y el dominio se contratan aparte o incluidos según el proveedor.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en estar lista una tienda online?</h3>
+                <p className="text-gray-600">Una tienda online estándar puede estar operativa en 3-5 semanas desde el inicio del proyecto. El plazo depende principalmente de la velocidad en la aportación de productos, imágenes y contenidos por parte del cliente. Tiendas con catálogos grandes o funcionalidades avanzadas pueden requerir 6-10 semanas.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué plataforma es mejor para una tienda online en Toledo?</h3>
+                <p className="text-gray-600">WooCommerce (sobre WordPress) es la opción más recomendable para la mayoría de negocios: sin comisiones por venta, sin licencias mensuales, con control total sobre el diseño y el SEO. Para catálogos muy grandes o requisitos B2B complejos, PrestaShop o Shopware pueden ser más adecuados.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Puedo gestionar la tienda online yo mismo una vez entregada?</h3>
+                <p className="text-gray-600">Sí. Las tiendas desarrolladas sobre WooCommerce incluyen formación para que puedas gestionar productos, pedidos, precios y contenidos de forma autónoma. La web es tuya desde el primer día — sin dependencias ni costes de mantenimiento obligatorios, aunque el soporte técnico está disponible si lo necesitas.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>

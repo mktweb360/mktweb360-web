@@ -36,11 +36,51 @@ const breadcrumbSchema = {
   ]
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Qué incluye un servicio de marketing digital para empresas en Barcelona?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Un servicio completo de marketing digital en Barcelona incluye SEO local, gestión de Google Business Profile, campañas de Google Ads, gestión de redes sociales, diseño web y analítica. Barcelona tiene un mercado digital muy competitivo, por lo que la especialización sectorial y la estrategia bien definida son especialmente importantes."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto cuesta el marketing digital para una pyme en Barcelona?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende de los servicios contratados y la competencia del sector. Un servicio básico de SEO local + Google Business Profile parte desde 300€/mes. Una estrategia más completa con SEO, redes sociales y campañas de pago puede estar entre 600 y 2.000€/mes en Barcelona, donde la competencia digital es mayor que en otras ciudades."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto tarda en dar resultados el marketing digital en Barcelona?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende del canal y la competencia del sector. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 4-8 semanas pero puede requerir 6-12 meses para consolidarse en sectores competitivos de Barcelona. La constancia y la calidad del trabajo determinan los resultados."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Necesita una empresa de Barcelona una agencia de marketing digital o puede gestionarlo internamente?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende de los recursos internos y los objetivos. En un mercado tan competitivo como Barcelona, el SEO técnico y las campañas de pago requieren conocimiento especializado actualizado. Para la mayoría de pymes, externalizar el marketing digital con una agencia especializada es más eficiente que contratar un perfil interno a tiempo completo."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Marketing digital Barcelona" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
@@ -78,6 +118,30 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">El presupuesto mínimo para tener una presencia digital relevante en Barcelona es superior al de ciudades más pequeñas, simplemente por la mayor competencia. Para SEO, un trabajo profesional básico parte de 500-800€ mensuales; para Google Ads con impacto real, la inversión en el canal debe ser de al menos 600-1.000€/mes en sectores competitivos.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Un enfoque pragmático para PYMEs barcelonesas con presupuesto limitado es invertir primero en lo más rentable según el tipo de negocio: Google Business Profile y reseñas (bajo coste, alto impacto para negocios físicos), SEO de long tail en el barrio específico (coste medio, retorno sostenible), y Google Ads para términos de alta intención cuando el presupuesto lo permita.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Lo que no tiene sentido en Barcelona es intentar competir en todos los canales con presupuesto insuficiente para ninguno. Mejor ser excelente en dos o tres canales que mediocre en seis. La concentración de recursos en los canales con mayor potencial para tu tipo de negocio específico siempre supera a la dispersión.</p>
+
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre marketing digital en Barcelona</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué incluye un servicio de marketing digital para empresas en Barcelona?</h3>
+                <p className="text-gray-600">Un servicio completo de marketing digital en Barcelona incluye SEO local, gestión de Google Business Profile, campañas de Google Ads, gestión de redes sociales, diseño web y analítica. Barcelona tiene un mercado digital muy competitivo, por lo que la especialización sectorial y la estrategia bien definida son especialmente importantes.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta el marketing digital para una pyme en Barcelona?</h3>
+                <p className="text-gray-600">Depende de los servicios contratados y la competencia del sector. Un servicio básico de SEO local + Google Business Profile parte desde 300€/mes. Una estrategia más completa con SEO, redes sociales y campañas de pago puede estar entre 600 y 2.000€/mes en Barcelona, donde la competencia digital es mayor que en otras ciudades.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados el marketing digital en Barcelona?</h3>
+                <p className="text-gray-600">Depende del canal y la competencia del sector. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 4-8 semanas pero puede requerir 6-12 meses para consolidarse en sectores competitivos de Barcelona. La constancia y la calidad del trabajo determinan los resultados.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Necesita una empresa de Barcelona una agencia de marketing digital o puede gestionarlo internamente?</h3>
+                <p className="text-gray-600">Depende de los recursos internos y los objetivos. En un mercado tan competitivo como Barcelona, el SEO técnico y las campañas de pago requieren conocimiento especializado actualizado. Para la mayoría de pymes, externalizar el marketing digital con una agencia especializada es más eficiente que contratar un perfil interno a tiempo completo.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
