@@ -13,7 +13,6 @@ const nextConfig: NextConfig = {
       // Blog articles
       { source: '/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/', destination: '/smm-social-media-marketing/', permanent: true },
       { source: '/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
-      { source: '/como-usar-planificador-de-palabras-clave-google-ads', destination: '/como-usar-planificador-de-palabras-clave-google-ads/', permanent: true },
       { source: '/como-eliminar-resenas-negativas-en-google/', destination: '/smm-social-media-marketing/', permanent: true },
       { source: '/guia-posicionamiento-seo-wordpress/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/el-diseno-web-orientado-al-seo/', destination: '/diseno-de-paginas-web/', permanent: true },
@@ -48,18 +47,18 @@ const nextConfig: NextConfig = {
       { source: '/wp-content/uploads/:path*', destination: '/', permanent: true },
       { source: '/wp-content/:path*', destination: '/', permanent: true },
 
-      // Sin barra final → con barra (errores de redirección GSC)
-      { source: '/diseno-web-para-dentistas', destination: '/diseno-web-para-dentistas/', permanent: true },
-      { source: '/diseno-web-para-clinicas', destination: '/diseno-web-para-clinicas/', permanent: true },
-      { source: '/diseno-web-para-coaches', destination: '/diseno-web-para-coaches/', permanent: true },
-      { source: '/diseno-web-tienda-online', destination: '/diseno-web-tienda-online/', permanent: true },
-      { source: '/errores-digitales-negocio-nuevo', destination: '/errores-digitales-negocio-nuevo/', permanent: true },
-      { source: '/como-darse-de-alta-autonomo', destination: '/como-darse-de-alta-autonomo/', permanent: true },
-      { source: '/ha-muerto-el-seo-con-la-ia', destination: '/ha-muerto-el-seo-con-la-ia/', permanent: true },
-      { source: '/como-crear-propuesta-de-valor', destination: '/como-crear-propuesta-de-valor/', permanent: true },
-      { source: '/google-my-business-empresas-guia', destination: '/google-my-business-empresas-guia/', permanent: true },
-      { source: '/como-gestionar-reputacion-online-empresa', destination: '/como-gestionar-reputacion-online-empresa/', permanent: true },
-      { source: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores', destination: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', permanent: true },
+      // Estas 12 reglas eran un intento manual de replicar `trailingSlash: true`.
+      // El canonical declarado en el HTML lleva barra final (.../slug/), pero
+      // trailingSlash está en false: el router sirve sin barra y normaliza
+      // /x/ -> /x. La regla /x -> /x/ rebotaba contra esa normalización =>
+      // bucle infinito (ERR_TOO_MANY_REDIRECTS). Eliminadas.
+      //
+      // NO añadir reglas /x -> /x/ MIENTRAS trailingSlash siga en false.
+      //
+      // PENDIENTE (Deploy 2): activar `trailingSlash: true` para alinear
+      // canonical == URL servida == sitemap == llms.txt. El 99,4% de las
+      // impresiones del índice viven en URLs con barra (GSC 14abr-13jul 2026).
+      // Plan completo: PROYECTO-mktweb360-baseline-seo-v1.0.md (Drive, Sistema Operativo).
       // URLs WordPress con fecha /YYYY/MM/DD/slug/
       { source: '/2019/05/03/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', destination: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', permanent: true },
       { source: '/2019/05/04/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
@@ -114,9 +113,6 @@ const nextConfig: NextConfig = {
       // Kit Digital — eliminado
       { source: "/kit-digital", destination: "/diseno-de-paginas-web/", permanent: true },
       { source: "/kit-digital/:path*", destination: "/diseno-de-paginas-web/", permanent: true },
-      // WordPress blog pagination
-      { source: '/blog/page/:page/', destination: '/blog/', permanent: true },
-      { source: '/blog/page/:page', destination: '/blog/', permanent: true },
       // Expired SEO 6x3 offer — retired, redirect to the evergreen SEO service page.
       // Sources are slash-less because trailingSlash is off (Next strips '/x/' → '/x' before matching).
       { source: '/landing/seo-6x3', destination: '/seo-posicionamiento-web-organico/', permanent: true },
