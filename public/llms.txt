@@ -19,11 +19,11 @@
 - [Marketing de Contenidos](https://www.mktweb360.com/marketing-de-contenidos/)
 - [Email Marketing](https://www.mktweb360.com/email-marketing/)
 - [WhatsApp Marketing](https://www.mktweb360.com/whatsapp-marketing/)
-- [Google Business Profile](https://www.mktweb360.com/google-my-business-empresas-guia/)
+- [Google Business Profile](https://www.mktweb360.com/google-business-profile/)
 - [Analítica Web](https://www.mktweb360.com/analitica-web/)
 - [Reputación Online](https://www.mktweb360.com/reputacion-online/)
 - [GEO — Posicionamiento en IA](https://www.mktweb360.com/geo-posicionamiento-ia/): Optimización para aparecer en ChatGPT, Gemini y Perplexity. Estrategia semántica, llms.txt y schema para LLMs.
-- [IA Aplicada al Marketing](https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/)
+- [IA Aplicada al Marketing](https://www.mktweb360.com/ia-aplicada-al-marketing/)
 - [Auditoría Digital](https://www.mktweb360.com/auditoria-digital/)
 
 ## Ofertas activas
