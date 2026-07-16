@@ -6,6 +6,9 @@ const withMDX = createMDX({});
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
   trailingSlash: true,
+  // La normalización automática de barra la hacemos en middleware.ts (solo páginas),
+  // para que /api/* NO reciba el 308 de trailingSlash. Ver middleware.
+  skipTrailingSlashRedirect: true,
   experimental: {
     mdxRs: true,
   },
@@ -47,18 +50,14 @@ const nextConfig: NextConfig = {
       { source: '/wp-content/uploads/:path*', destination: '/', permanent: true },
       { source: '/wp-content/:path*', destination: '/', permanent: true },
 
-      // Estas 12 reglas eran un intento manual de replicar `trailingSlash: true`.
-      // El canonical declarado en el HTML lleva barra final (.../slug/), pero
-      // trailingSlash está en false: el router sirve sin barra y normaliza
-      // /x/ -> /x. La regla /x -> /x/ rebotaba contra esa normalización =>
-      // bucle infinito (ERR_TOO_MANY_REDIRECTS). Eliminadas.
-      //
-      // NO añadir reglas /x -> /x/ MIENTRAS trailingSlash siga en false.
-      //
-      // PENDIENTE (Deploy 2): activar `trailingSlash: true` para alinear
-      // canonical == URL servida == sitemap == llms.txt. El 99,4% de las
-      // impresiones del índice viven en URLs con barra (GSC 14abr-13jul 2026).
-      // Plan completo: PROYECTO-mktweb360-baseline-seo-v1.0.md (Drive, Sistema Operativo).
+      // (Deploy 1) Aquí vivían 12 reglas /x -> /x/ que, con trailingSlash:false,
+      // rebotaban contra la normalización /x/ -> /x y hacían bucle infinito. Se
+      // eliminaron para desbloquear.
+      // (Deploy 2) Ya está activo trailingSlash:true + skipTrailingSlashRedirect:true;
+      // la normalización de barra de páginas la hace middleware.ts (excluyendo /api,
+      // /_next y ficheros). El canonical == URL servida == sitemap == llms.txt.
+      // Con skipTrailingSlashRedirect NO hay auto-normalización: las reglas casan su
+      // source literal, así que TODO source de página debe llevar barra final.
       // URLs WordPress con fecha /YYYY/MM/DD/slug/
       { source: '/2019/05/03/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', destination: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', permanent: true },
       { source: '/2019/05/04/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
