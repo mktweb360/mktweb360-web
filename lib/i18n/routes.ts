@@ -38,12 +38,15 @@ export const ROUTES: Route[] = [
   { es: "/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/", aliases: [{ lang: "en", slug: "canvas-for-social-media" }] },
   { es: "/digitalizacion-empresas-castilla-la-mancha/", aliases: [{ lang: "en", slug: "digitalization-castilla-la-mancha" }] },
   { es: "/diseno-de-paginas-web/", en: "web-design", fr: "creation-site-web", aliases: [{ lang: "fr", slug: "creation-site-web-entreprises" }, { lang: "en", slug: "web-design-services" }] },
-  { es: "/diseno-de-paginas-web/diseno-tiendas-online/", en: "online-store", fr: "boutique-en-ligne", aliases: [{ lang: "fr", slug: "boutique-en-ligne-sans-commissions" }, { lang: "en", slug: "ecommerce-no-commissions" }, { lang: "fr", slug: "offre-boutique-en-ligne" }, { lang: "en", slug: "online-store-offer" }] },
+  { es: "/diseno-de-paginas-web/diseno-tiendas-online/", en: "online-store", fr: "boutique-en-ligne" },
+  // Ecommerce sin comisiones — pagina propia (0€ comision como argumento comercial),
+  // NO alias de online-store: contenido comercial exclusivo con su propia landing ES.
+  { es: "/diseno-web-tienda-online/", en: "ecommerce-no-commissions", fr: "boutique-en-ligne-sans-commissions" },
   { es: "/ejemplos-y-diferencias-entre-buscadores-y-navegadores/", aliases: [{ lang: "en", slug: "search-engines-vs-browsers" }] },
   { es: "/email-marketing/", en: "email-marketing-campaigns", fr: "campagnes-email-marketing", aliases: [{ lang: "fr", slug: "email-marketing-entreprises" }, { lang: "en", slug: "email-marketing-service" }] },
   { es: "/errores-digitales-negocio-nuevo/", aliases: [{ lang: "en", slug: "digital-errors-new-business" }] },
   { es: "/factura-electronica-obligatoria-autonomos-pymes/", aliases: [{ lang: "en", slug: "electronic-invoice-spain" }] },
-  { es: "/geo-posicionamiento-ia/", en: "geo-generative-engine-optimization", fr: "geo-optimisation-moteurs-generatifs", aliases: [{ lang: "en", slug: "geo-generative-seo" }, { lang: "fr", slug: "geo-seo-generatif" }, { lang: "fr", slug: "qu-est-ce-que-le-geo" }, { lang: "en", slug: "what-is-geo-generative-engine-optimization" }] },
+  { es: "/geo-posicionamiento-ia/", en: "geo-generative-engine-optimization", fr: "geo-optimisation-moteurs-generatifs", aliases: [{ lang: "en", slug: "geo-generative-seo" }, { lang: "fr", slug: "geo-seo-generatif" }] },
   { es: "/gestion-resenas-negativas-google/", aliases: [{ lang: "fr", slug: "gerer-avis-negatifs-google" }, { lang: "en", slug: "manage-negative-reviews-google" }] },
   { es: "/google-business-profile-toledo/", aliases: [{ lang: "en", slug: "google-business-profile-toledo" }] },
   { es: "/google-business-profile/", en: "google-business-profile-service", fr: "gestion-google-business-profile", aliases: [{ lang: "en", slug: "google-business-profile-management" }, { lang: "en", slug: "service-google-business-profile" }] },
@@ -65,6 +68,8 @@ export const ROUTES: Route[] = [
   { es: "/nosotros/", en: "about", fr: "about" },
   { es: "/politica-de-cookies/" },      // solo ES (ver nota en /aviso-legal/)
   { es: "/politica-de-privacidad/" },   // solo ES (ver nota en /aviso-legal/)
+  // Articulo de blog "que es GEO" — pagina informativa propia, NO el servicio GEO.
+  { es: "/que-es-geo-generative-engine-optimization/", en: "what-is-geo-generative-engine-optimization", fr: "qu-est-ce-que-le-geo" },
   { es: "/que-puede-automatizar-una-pyme-en-marketing-y-ventas/", aliases: [{ lang: "en", slug: "what-can-sme-automate-marketing" }] },
   { es: "/que-revisar-antes-de-invertir-mas-en-marketing-digital/", aliases: [{ lang: "en", slug: "what-to-review-before-investing-marketing" }] },
   { es: "/reputacion-online/", en: "online-reputation", fr: "reputation-en-ligne", aliases: [{ lang: "fr", slug: "gestion-reputation-en-ligne" }, { lang: "fr", slug: "online-reputation-management" }, { lang: "fr", slug: "online-reputation-management-guide" }] },
@@ -81,6 +86,10 @@ export const ROUTES: Route[] = [
   { es: "/seo-valencia/", aliases: [{ lang: "en", slug: "seo-valencia-guide" }] },
   { es: "/seo-zaragoza/", aliases: [{ lang: "en", slug: "seo-zaragoza-guide" }] },
   { es: "/smm-social-media-marketing/", en: "social-media-marketing", fr: "marketing-reseaux-sociaux", aliases: [{ lang: "fr", slug: "gestion-reseaux-sociaux" }, { lang: "en", slug: "social-media-management" }] },
+  // Landing de oferta (490€, sin comisiones, plazas limitadas). NO es alias de
+  // /diseno-de-paginas-web/diseno-tiendas-online/: es una pagina propia con
+  // contenido comercial exclusivo, asi que se declara como route independiente.
+  { es: "/tienda-online/", en: "online-store-offer", fr: "offre-boutique-en-ligne" },
   { es: "/tiendas-online-toledo/", aliases: [{ lang: "en", slug: "online-stores-toledo" }] },
   { es: "/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/", aliases: [{ lang: "en", slug: "swot-analysis-marketing" }] },
   { es: "/whatsapp-marketing/", en: "whatsapp-marketing-service", fr: "service-whatsapp-marketing" },

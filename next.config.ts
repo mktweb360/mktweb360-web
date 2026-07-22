@@ -8,12 +8,9 @@ const withMDX = createMDX({});
 // mas contenido que su canonica (~21 lineas / 1 <section> extra), asi que
 // redirigirlos publicaria la version pobre y perderia la rica. Se excluyen del
 // cableado automatico hasta decidir, para cada ruta, que version se conserva.
-const ALIAS_FASE_2B = new Set([
-  "boutique-en-ligne-sans-commissions", "ecommerce-no-commissions",
-  "offre-boutique-en-ligne", "online-store-offer",
-  "qu-est-ce-que-le-geo", "seo-positioning",
-  "what-is-geo-generative-engine-optimization",
-]);
+// Fase 2b completada: todos los alias con contenido propio se resolvieron
+// (portados a su canonica o declarados como routes independientes). Sin exclusiones.
+const ALIAS_FASE_2B = new Set<string>([]);
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],

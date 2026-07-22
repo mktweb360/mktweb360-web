@@ -1,4 +1,4 @@
-import { generateMetadata as _gm } from "../seo-positioning/page";
+import { generateMetadata as _gm } from "../seo-web-positioning/page";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -10,4 +10,4 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   };
 }
 
-export { default } from "../seo-positioning/page";
+export { default } from "../seo-web-positioning/page";
