@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 
 export const metadata: Metadata = {
   title: "Google Business Profile para empresas: guía completa 2026",
@@ -127,6 +128,7 @@ export default function GoogleMyBusinessGuiaPage() {
             </Link>
           </div>
 
+          <OfertaVeranoBanner />
           <BlogBanner variant="seo" />
 
           <h2 className="text-2xl font-bold text-primary-600">Las reseñas: el factor más importante</h2>

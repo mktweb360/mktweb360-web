@@ -27,10 +27,61 @@ const serviceSchema = {
   url: "https://www.mktweb360.com/agencias-marketing-digital-toledo/",
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
+    { "@type": "ListItem", position: 3, name: "Agencias de Marketing Digital en Toledo", item: "https://www.mktweb360.com/agencias-marketing-digital-toledo/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Cómo elegir una agencia de marketing digital en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los criterios clave son: especialización real en los servicios que necesitas, casos de éxito con negocios de la zona, transparencia en informes y metodología, y una relación precio-valor coherente con el mercado local. Una agencia que conoce el mercado de Toledo y Castilla-La Mancha aporta contexto que una agencia generalista no tiene."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto cobra una agencia de marketing digital en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los precios en Toledo son más competitivos que en grandes ciudades. Un servicio de SEO local parte desde 300€/mes. Servicios integrales de marketing digital están entre 500 y 1.500€/mes dependiendo de los canales incluidos. La clave es que el precio esté justificado por resultados medibles y adaptados a los objetivos de tu negocio."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué ventajas tiene contratar una agencia de marketing digital local en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Una agencia local conoce el mercado, la competencia y las oportunidades específicas de Toledo y la provincia. Puede identificar nichos con poca competencia digital, conoce los medios locales relevantes para construir autoridad, y entiende el perfil del cliente de la zona. Además, la cercanía facilita la comunicación y el seguimiento del proyecto."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué servicios debe ofrecer una agencia de marketing digital en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los servicios más relevantes para negocios en Toledo son SEO local, optimización de Google Business Profile, campañas de Google Ads para búsquedas locales, gestión de redes sociales y diseño web optimizado para SEO. Una agencia especializada en el mercado local puede priorizar los canales con mayor retorno para cada tipo de negocio en la zona."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Agencias marketing Toledo" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Estrategia Digital</p>
@@ -73,6 +124,30 @@ export default function Page() {
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Qué debe incluir un buen contrato con una agencia digital</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Un contrato con una agencia de marketing digital debe protegerte a ti, no solo a la agencia. Los elementos mínimos que debe incluir son: descripción detallada de los servicios incluidos, objetivos y métricas de seguimiento, periodicidad y formato de los informes de resultados, titularidad de los activos digitales creados (dominio, cuentas de anuncios, perfiles sociales), condiciones de resolución anticipada y lo que sucede si no se alcanzan los objetivos acordados.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Un punto crítico que muchos empresarios pasan por alto: la titularidad de las cuentas. Si la agencia crea tu cuenta de Google Ads o gestiona tu perfil de redes sociales, asegúrate de que tú eres el propietario de esas cuentas y que la agencia tiene acceso de gestión, no al revés. Si la relación termina, debes poder recuperar el control de todos tus activos digitales sin perder el historial de campañas ni los datos acumulados.</p>
+
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre agencias de marketing digital en Toledo</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cómo elegir una agencia de marketing digital en Toledo?</h3>
+                <p className="text-gray-600">Los criterios clave son: especialización real en los servicios que necesitas, casos de éxito con negocios de la zona, transparencia en informes y metodología, y una relación precio-valor coherente con el mercado local. Una agencia que conoce el mercado de Toledo y Castilla-La Mancha aporta contexto que una agencia generalista no tiene.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cobra una agencia de marketing digital en Toledo?</h3>
+                <p className="text-gray-600">Los precios en Toledo son más competitivos que en grandes ciudades. Un servicio de SEO local parte desde 300€/mes. Servicios integrales de marketing digital están entre 500 y 1.500€/mes dependiendo de los canales incluidos. La clave es que el precio esté justificado por resultados medibles y adaptados a los objetivos de tu negocio.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué ventajas tiene contratar una agencia de marketing digital local en Toledo?</h3>
+                <p className="text-gray-600">Una agencia local conoce el mercado, la competencia y las oportunidades específicas de Toledo y la provincia. Puede identificar nichos con poca competencia digital, conoce los medios locales relevantes para construir autoridad, y entiende el perfil del cliente de la zona. Además, la cercanía facilita la comunicación y el seguimiento del proyecto.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué servicios debe ofrecer una agencia de marketing digital en Toledo?</h3>
+                <p className="text-gray-600">Los servicios más relevantes para negocios en Toledo son SEO local, optimización de Google Business Profile, campañas de Google Ads para búsquedas locales, gestión de redes sociales y diseño web optimizado para SEO. Una agencia especializada en el mercado local puede priorizar los canales con mayor retorno para cada tipo de negocio en la zona.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>

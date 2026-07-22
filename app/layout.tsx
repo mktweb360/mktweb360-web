@@ -79,7 +79,7 @@ const organizationSchema = {
   },
   sameAs: [
     "https://www.facebook.com/mktweb360/",
-    "https://twitter.com/MktWeb360",
+    "https://x.com/MktWeb360",
     "https://www.instagram.com/mktweb360/",
     "https://www.linkedin.com/company/mkt-web-360-s-l/",
   ],

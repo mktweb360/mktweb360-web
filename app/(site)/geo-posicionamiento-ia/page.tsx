@@ -205,6 +205,25 @@ export default function GEOPage() {
           <p className="text-gray-700 leading-relaxed">
             En Mkt Web 360 fuimos de los primeros en España en desarrollar un servicio de GEO estructurado. Mantenemos llms.txt y llms-full.txt activos, optimizamos el contenido para intención de búsqueda conversacional y monitorizamos mensualmente la visibilidad de la marca en los principales motores de IA.
           </p>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            Los datos respaldan el cambio. ChatGPT supera los 800 millones de usuarios semanales en 2026. Google AI Overviews aparece ya en más del 58% de las búsquedas. Perplexity procesa cientos de millones de consultas al mes. El 94% de los grupos de compra B2B utilizan herramientas de IA generativa antes de hablar con ningún proveedor. Esto no es una tendencia futura — es el comportamiento actual de tus clientes potenciales.
+          </p>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            La ventana de oportunidad es estrecha. Las empresas que construyan autoridad en la IA ahora tendrán una ventaja acumulada similar a la del dominio authority en SEO: cuanto antes empieces, mayor ventaja. Las que esperen partirán desde cero en un entorno donde la competencia ya habrá construido presencia. En SEO, sabemos lo que cuesta recuperar posiciones perdidas. En GEO, el mecanismo es el mismo.
+          </p>
+        </div>
+      </section>
+
+      {/* CUÁNDO TIENE SENTIDO GEO */}
+      <section className="py-12 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-6">¿Cuándo tiene sentido contratar GEO?</h2>
+          <div className="space-y-4 text-gray-600">
+            <p>El GEO no es la solución correcta para todos los negocios en todos los momentos. Tiene sentido cuando tu sector tiene volumen de búsquedas conversacionales — cuando tus clientes potenciales preguntan a la IA cosas como "qué agencia de marketing me recomiendas" o "cuál es la mejor clínica dental de Toledo". Si esas preguntas existen, la IA las responde con o sin ti.</p>
+            <p>Tiene especial impacto en servicios profesionales, tecnología, salud, formación y marketing digital — sectores donde el proceso de decisión es largo y el cliente investiga antes de comprar. En estos sectores, aparecer en la respuesta de ChatGPT antes de que el cliente visite Google puede ser la diferencia entre ser evaluado o no existir en el proceso de compra.</p>
+            <p>Para negocios locales — clínicas, despachos, talleres, tiendas físicas — el GEO local tiene una oportunidad enorme y poco explotada. Cuando alguien le pregunta a ChatGPT "qué fontanero de confianza me recomiendas en Salamanca", el modelo intenta dar una respuesta específica. Un negocio local con contenido bien estructurado, NAP coherente en todos sus canales y autoridad local puede aparecer en esa respuesta antes que competidores más grandes.</p>
+            <p>El GEO no tiene sentido como canal único sin base SEO. Un sitio técnicamente deficiente, sin contenido de calidad o sin autoridad de dominio tiene poco que ofrecer a los modelos de IA. La secuencia correcta es: SEO técnico sólido primero, GEO encima como capa adicional de visibilidad.</p>
+          </div>
         </div>
       </section>
 
@@ -246,6 +265,18 @@ export default function GEOPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GEO LOCAL */}
+      <section className="py-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-6">GEO local: la oportunidad que la mayoría todavía no ha visto</h2>
+          <div className="space-y-4 text-gray-600">
+            <p>La mayoría de las conversaciones sobre GEO se centran en marcas nacionales o internacionales. Pero la oportunidad más inmediata está en los negocios locales. Los modelos de IA reciben miles de consultas diarias con intención local: "mejor fisioterapeuta en Bilbao", "asesoría fiscal para autónomos en Zaragoza", "taller mecánico de confianza en Toledo". Y tienen que responder con algo.</p>
+            <p>El negocio local que trabaje su GEO ahora — con contenido bien estructurado sobre su zona, con Google Business Profile optimizado, con NAP coherente en todos los directorios, con reseñas que refuercen su autoridad local — será el que aparezca en esas respuestas. La competencia local en GEO es casi inexistente todavía. Es la misma ventana que existió en SEO local hace diez años.</p>
+            <p>En Mkt Web 360 trabajamos el GEO local integrado con la estrategia de SEO local de nuestros clientes. No son dos proyectos separados — son dos capas del mismo trabajo de visibilidad digital: una para que Google te encuentre, otra para que la IA te recomiende.</p>
           </div>
         </div>
       </section>

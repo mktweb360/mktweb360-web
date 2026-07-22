@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 
 export const metadata: Metadata = {
   title: "GEO para pymes: cómo aparecer en ChatGPT sin ser una gran marca",
@@ -107,6 +108,7 @@ export default function GeoParaPymesPage() {
           <p>Tercero, añadir schema markup de tipo FAQPage a tus páginas clave, para que la máquina procese tus respuestas sin ambigüedad. Cuarto, cuidar la coherencia del NAP —nombre, dirección y teléfono— en todos los canales, algo que se solapa con un buen trabajo de <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local</Link>. Y quinto, producir contenido específico de tu nicho, ese que solo tú puedes escribir con conocimiento real.</p>
           <p>Ninguno de estos pasos exige un presupuesto de gran empresa. La mayoría se apoyan en una base de <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO orgánico</Link> que muchas pymes ya tienen a medio construir; el GEO simplemente la ordena con la lógica de que ahora también lee una máquina.</p>
 
+          <OfertaVeranoBanner />
           <BlogBanner variant="geo" />
 
           <h2 className="text-2xl font-bold text-primary-600">El error que cometen la mayoría de pymes al empezar con GEO</h2>

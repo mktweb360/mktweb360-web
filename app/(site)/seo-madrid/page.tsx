@@ -26,10 +26,61 @@ const serviceSchema = {
   url: "https://www.mktweb360.com/seo-madrid/",
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
+    { "@type": "ListItem", position: 3, name: "SEO en Madrid", item: "https://www.mktweb360.com/seo-madrid/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Cuánto tarda en dar resultados el SEO local en Madrid?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los primeros resultados visibles en Google Maps suelen aparecer entre 4 y 8 semanas tras optimizar la ficha de Google Business Profile y conseguir nuevas reseñas. El posicionamiento web orgánico para búsquedas locales en Madrid requiere entre 3 y 6 meses. La alta competencia en Madrid hace que el trabajo de autoridad y contenido sea especialmente importante."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Es rentable el SEO local en Madrid frente a Google Ads?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ambos canales son complementarios. Google Ads genera resultados inmediatos pero cesa cuando paras la inversión. El SEO local construye visibilidad orgánica que permanece y crece. Para negocios en Madrid con presupuesto limitado, empezar por Google Business Profile y SEO local ofrece el mejor ROI a largo plazo."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué sectores se benefician más del SEO local en Madrid?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Servicios profesionales (abogados, asesores, consultores), salud (clínicas, dentistas, fisioterapeutas), hostelería, talleres y comercios locales son los sectores con mayor impacto. En Madrid, la densidad de competencia hace que aparecer en el mapa para búsquedas de proximidad sea especialmente valioso."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto cuesta el SEO local para un negocio en Madrid?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende del sector y la competencia. Un servicio de SEO local continuado para un negocio en Madrid parte desde 300€/mes. La optimización inicial de Google Business Profile y auditoría SEO local pueden resolverse desde 300-500€. El ROI suele ser positivo desde el primer trimestre en sectores con demanda local activa."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "SEO Madrid" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
@@ -62,6 +113,30 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">En Madrid, los plazos de resultados SEO son más largos que en ciudades menos competitivas. Para términos de competencia media-alta en sectores concurridos, los primeros resultados visibles (entrar en el top 20 de Google) pueden tardar entre 4 y 8 meses. Llegar al top 5 para términos competitivos puede requerir 12-18 meses de trabajo consistente.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Esto no significa que no haya resultados antes: el tráfico orgánico suele crecer de forma gradual. A los 3 meses se empiezan a ver las primeras entradas de long tail. A los 6 meses, si el trabajo técnico y de contenido es sólido, el tráfico orgánico puede haberse multiplicado por 3-5 respecto al punto de partida. A los 12 meses, para negocios en sectores de competencia media, el SEO suele convertirse en el canal de captación con mejor retorno.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Lo que marca la diferencia en Madrid respecto a otras ciudades es la consistencia: necesitas más contenido, más enlaces y más reseñas que tu competencia. Las empresas que hacen SEO durante 3 meses y lo abandonan no verán resultados. Las que mantienen una estrategia consistente durante 12-24 meses construyen una ventaja competitiva difícil de alcanzar por quienes empiecen después.</p>
+
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre SEO local en Madrid</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados el SEO local en Madrid?</h3>
+                <p className="text-gray-600">Los primeros resultados visibles en Google Maps suelen aparecer entre 4 y 8 semanas tras optimizar la ficha de Google Business Profile y conseguir nuevas reseñas. El posicionamiento web orgánico para búsquedas locales en Madrid requiere entre 3 y 6 meses. La alta competencia en Madrid hace que el trabajo de autoridad y contenido sea especialmente importante.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Es rentable el SEO local en Madrid frente a Google Ads?</h3>
+                <p className="text-gray-600">Ambos canales son complementarios. Google Ads genera resultados inmediatos pero cesa cuando paras la inversión. El SEO local construye visibilidad orgánica que permanece y crece. Para negocios en Madrid con presupuesto limitado, empezar por Google Business Profile y SEO local ofrece el mejor ROI a largo plazo.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué sectores se benefician más del SEO local en Madrid?</h3>
+                <p className="text-gray-600">Servicios profesionales (abogados, asesores, consultores), salud (clínicas, dentistas, fisioterapeutas), hostelería, talleres y comercios locales son los sectores con mayor impacto. En Madrid, la densidad de competencia hace que aparecer en el mapa para búsquedas de proximidad sea especialmente valioso.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta el SEO local para un negocio en Madrid?</h3>
+                <p className="text-gray-600">Depende del sector y la competencia. Un servicio de SEO local continuado para un negocio en Madrid parte desde 300€/mes. La optimización inicial de Google Business Profile y auditoría SEO local pueden resolverse desde 300-500€. El ROI suele ser positivo desde el primer trimestre en sectores con demanda local activa.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>

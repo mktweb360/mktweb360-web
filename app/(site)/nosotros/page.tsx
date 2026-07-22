@@ -184,7 +184,7 @@ export default function NosotrosPage() {
           <div className="text-center mb-10">
             <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Diferenciador estratégico</span>
             <h2 className="text-3xl font-bold text-primary-600 mb-4">Pioneros en GEO en España</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Somos una de las primeras agencias en España en implementar GEO — Generative Engine Optimization — la disciplina de optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">Somos una de las primeras agencias en España en implementar GEO — Generative Engine Optimization — la disciplina de optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini. Implementamos <code className="font-mono text-sm bg-gray-100 px-1 rounded">llms.txt</code> y <code className="font-mono text-sm bg-gray-100 px-1 rounded">llms-full.txt</code> desde principios de 2026 — uno de los primeros sitios de agencia en España en adoptar el estándar emergente que indica a los modelos de IA cómo indexar y entender un negocio.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {[

@@ -43,7 +43,6 @@ const SERVICE_TABS: ServiceTab[] = [
       { title: "Google Ads", desc: "Genera clientes potenciales desde el primer día. Campañas optimizadas para tu sector y objetivo.", href: "/sem-publicidad-ppc/", icon: "🎯" },
       { title: "Email Marketing", desc: "El canal con mayor ROI del marketing digital. Secuencias automatizadas que convierten.", href: "/email-marketing/", icon: "✉️" },
       { title: "WhatsApp Marketing", desc: "98% de tasa de apertura. Comunica con tus clientes donde ya están.", href: "/whatsapp-marketing/", icon: "💬" },
-      { title: "Oferta SEO 6x3", desc: "6 meses de posicionamiento por el precio de 3. Solo 5 incorporaciones al mes.", href: "/oferta-seo/", icon: "🔥", badge: "Oferta" },
     ],
   },
   {
@@ -63,7 +62,7 @@ const SERVICE_TABS: ServiceTab[] = [
     objetivo: "Genera ingresos adicionales",
     emoji: "💰",
     servicios: [
-      { title: "Blog para Monetización", desc: "Crea un activo digital que genera ingresos pasivos con AdSense, Amazon Associates y afiliación.", href: "/blog-monetizacion/", icon: "💸" },
+      { title: "Blog para Monetización", desc: "Crea un activo digital que genera ingresos pasivos con AdSense, Amazon Associates y afiliación.", href: "/blog-para-monetizacion/", icon: "💸" },
       { title: "Ecommerce con Participación", desc: "Modelo híbrido: montamos tu infraestructura y participamos en el éxito cuando superas objetivos.", href: "/ecommerce-participacion-resultados/", icon: "🤝" },
     ],
   },
@@ -259,12 +258,12 @@ function HeroSlider() {
       bg: "/hero-slide-1.jpg",
     },
     {
-      badge: "Oferta especial",
-      headline: "6 meses de SEO",
-      subheadline: "por el precio de 3",
-      subtitle: "Contrata cualquier servicio SEO y llévate 6 meses de posicionamiento pagando solo 3. Incorporaciones limitadas.",
-      cta: { text: "Quiero esta oferta", href: "/seo-posicionamiento-web-organico/" },
-      cta2: { text: "Ver servicio SEO", href: "/seo-posicionamiento-web-organico/" },
+      badge: "Oferta verano · Julio y agosto",
+      headline: "Prepara tu",
+      subheadline: "septiembre ahora",
+      subtitle: "SEO + IA + Google Maps al 50%. 699€/mes → 349€/mes. Solo julio y agosto. 5 plazas.",
+      cta: { text: "Ver oferta", href: "/landing/seo-geo-gbp-verano/" },
+      cta2: { text: "Más información", href: "/oferta-seo-geo-gbp/" },
       bg: "/hero-slide-2.jpg",
     },
     {
@@ -374,7 +373,7 @@ function ServicesTab() {
     visibilidad: "seo-posicionamiento-web-organico",
     captacion: "oferta-seo",
     comunidad: "smm-social-media-marketing",
-    monetizacion: "blog-monetizacion",
+    monetizacion: "blog-para-monetizacion",
     crecimiento: "analitica-web",
   };
 

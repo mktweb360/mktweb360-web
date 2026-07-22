@@ -1,17 +1,39 @@
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
-const SUPPORTED_LANGS = ["en", "fr"];
 const CLIENT_JWT_SECRET = process.env.CLIENT_JWT_SECRET;
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Protect /area-privada routes (except the login page itself)
-  if (pathname.startsWith("/area-privada") && pathname !== "/area-privada/login") {
+  // --- Normalización de barra final SOLO para páginas ---
+  // next.config tiene skipTrailingSlashRedirect:true, que desactiva la
+  // normalización automática de Next (también en /api/*). La replicamos aquí
+  // SOLO para páginas para que trailingSlash:true no meta un 308 en las APIs.
+  // Debe ejecutarse ANTES de los checks de auth de /portal y /area-privada.
+  // Excluye /api/*, /_next/* y cualquier ruta con extensión de fichero.
+  const lastSegment = pathname.split("/").pop() ?? "";
+  const isFile = lastSegment.includes(".");
+  if (
+    !pathname.startsWith("/api") &&
+    !pathname.startsWith("/_next") &&
+    !isFile &&
+    !pathname.endsWith("/")
+  ) {
+    // Nota: usar new URL(request.url), NO request.nextUrl.clone(): bajo
+    // trailingSlash:true + skipTrailingSlashRedirect, el NextURL re-serializa
+    // quitando la barra final y provoca un bucle (/x -> /x -> ...).
+    const url = new URL(request.url);
+    url.pathname = `${pathname}/`;
+    return NextResponse.redirect(url, 308);
+  }
+
+  // Protect /area-privada routes (except the login page itself).
+  // Tras la normalización, la ruta de login canónica lleva barra final.
+  if (pathname.startsWith("/area-privada") && pathname !== "/area-privada/login/") {
     const session = request.cookies.get("admin_session");
     if (!session || session.value !== "authenticated") {
-      return NextResponse.redirect(new URL("/area-privada/login", request.url));
+      return NextResponse.redirect(new URL("/area-privada/login/", request.url));
     }
   }
 
@@ -39,17 +61,6 @@ export async function middleware(request: NextRequest) {
       res.cookies.delete("client_session");
       return res;
     }
-  }
-
-  // Skip static files, API routes, and existing Spanish routes
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/api") ||
-    pathname.startsWith("/feed.xml") ||
-    pathname.includes(".") ||
-    SUPPORTED_LANGS.some((lang) => pathname.startsWith(`/${lang}`))
-  ) {
-    return NextResponse.next();
   }
 
   return NextResponse.next();

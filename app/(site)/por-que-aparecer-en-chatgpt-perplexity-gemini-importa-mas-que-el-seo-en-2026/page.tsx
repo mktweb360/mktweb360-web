@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 
 export const metadata: Metadata = {
   title: "Por qué aparecer en ChatGPT y Gemini importa más que el SEO en 2026",
@@ -115,6 +116,7 @@ export default function AparecerEnChatGPTGeminiPage() {
           <p>Aquí está la buena noticia para los negocios pequeños. Los modelos de IA no reparten citas por tamaño de empresa ni por presupuesto de marketing, sino por autoridad semántica sobre un tema concreto. Cuando el asistente busca la mejor fuente para responder una pregunta específica, valora que el contenido sea claro, estructurado y demostrablemente competente en ese nicho.</p>
           <p>Eso rompe la jerarquía habitual. Una gran marca puede dominar cientos de términos genéricos y, sin embargo, no ser la referencia sobre una consulta muy específica de tu sector. Una pyme con contenido bien trabajado, schema markup correcto y foco en su especialidad puede convertirse justo en esa referencia, y la IA no tiene ningún incentivo para preferir al grande si el pequeño responde mejor a la pregunta.</p>
 
+          <OfertaVeranoBanner />
           <BlogBanner variant="geo" />
 
           <h2 className="text-2xl font-bold text-primary-600">Las tres señales que la IA busca en tu contenido</h2>

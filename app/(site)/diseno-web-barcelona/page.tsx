@@ -26,10 +26,61 @@ const serviceSchema = {
   url: "https://www.mktweb360.com/diseno-web-barcelona/",
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
+    { "@type": "ListItem", position: 3, name: "Diseño Web en Barcelona", item: "https://www.mktweb360.com/diseno-web-barcelona/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Cuánto cuesta un diseño web profesional en Barcelona?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Los precios varían según la complejidad. Una web corporativa profesional con SEO técnico incluido parte desde 790€ en agencias especializadas. Webs con funcionalidades avanzadas, ecommerce o integraciones específicas tienen presupuesto personalizado. En Barcelona, los precios de agencias medianas y grandes son más altos, pero hay opciones de calidad a precios competitivos trabajando con agencias especializadas fuera de la ciudad."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto tarda en estar lista una web profesional?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "El plazo habitual para una web corporativa es de 3 a 5 semanas desde el inicio del proyecto, dependiendo de la velocidad en la aportación de contenidos por parte del cliente. Webs más complejas o con ecommerce pueden requerir 6-10 semanas. La clave es un proceso estructurado con entregas parciales para validar el avance."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Qué tecnología es mejor para una web de empresa en Barcelona?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Para la mayoría de empresas, WordPress es la plataforma más adecuada: flexible, bien soportada, con SEO técnico integrable y gestión autónoma sin conocimientos técnicos. Para proyectos con requisitos específicos de rendimiento o funcionalidades muy avanzadas, Next.js u otras tecnologías pueden ser más adecuadas."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿El SEO está incluido en el diseño web profesional?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "El SEO técnico debe estar incluido desde el diseño: estructura de URLs, velocidad de carga, schema markup, metadatos y optimización para móvil. El posicionamiento continuo en Google — link building, contenido SEO, estrategia de keywords — es un servicio aparte que complementa la web para conseguir resultados orgánicos a largo plazo."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Diseño web Barcelona" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
@@ -67,6 +118,30 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">El portfolio es el principal criterio de evaluación de una agencia o freelance de diseño web, pero hay que saber leerlo. Un portfolio visualmente atractivo no garantiza que las webs mostradas funcionen bien técnicamente, posicionen en Google o conviertan visitas en clientes.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Cuando evalúes un portfolio, haz estas comprobaciones: visita las webs en el portfolio desde tu móvil para ver cómo funcionan en pantalla pequeña, introduce la URL en PageSpeed Insights para ver la velocidad real, busca en Google el nombre de alguna de las empresas del portfolio para ver su posicionamiento, y si puedes, contacta con algún cliente del portfolio para preguntarles directamente sobre su experiencia.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Pide también ver proyectos del mismo sector que el tuyo. El diseño web de una tienda de moda tiene requerimientos muy diferentes al de una clínica dental o un despacho jurídico. Una agencia con proyectos relevantes en tu sector tendrá un punto de partida más sólido para entender las necesidades específicas de tu negocio.</p>
+
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre diseño web en Barcelona</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta un diseño web profesional en Barcelona?</h3>
+                <p className="text-gray-600">Los precios varían según la complejidad. Una web corporativa profesional con SEO técnico incluido parte desde 790€ en agencias especializadas. Webs con funcionalidades avanzadas, ecommerce o integraciones específicas tienen presupuesto personalizado. En Barcelona, los precios de agencias medianas y grandes son más altos, pero hay opciones de calidad a precios competitivos trabajando con agencias especializadas fuera de la ciudad.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en estar lista una web profesional?</h3>
+                <p className="text-gray-600">El plazo habitual para una web corporativa es de 3 a 5 semanas desde el inicio del proyecto, dependiendo de la velocidad en la aportación de contenidos por parte del cliente. Webs más complejas o con ecommerce pueden requerir 6-10 semanas. La clave es un proceso estructurado con entregas parciales para validar el avance.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué tecnología es mejor para una web de empresa en Barcelona?</h3>
+                <p className="text-gray-600">Para la mayoría de empresas, WordPress es la plataforma más adecuada: flexible, bien soportada, con SEO técnico integrable y gestión autónoma sin conocimientos técnicos. Para proyectos con requisitos específicos de rendimiento o funcionalidades muy avanzadas, Next.js u otras tecnologías pueden ser más adecuadas.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿El SEO está incluido en el diseño web profesional?</h3>
+                <p className="text-gray-600">El SEO técnico debe estar incluido desde el diseño: estructura de URLs, velocidad de carga, schema markup, metadatos y optimización para móvil. El posicionamiento continuo en Google — link building, contenido SEO, estrategia de keywords — es un servicio aparte que complementa la web para conseguir resultados orgánicos a largo plazo.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>

@@ -27,10 +27,61 @@ const serviceSchema = {
   url: "https://www.mktweb360.com/marketing-digital-toledo/",
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
+    { "@type": "ListItem", position: 3, name: "Marketing Digital en Toledo", item: "https://www.mktweb360.com/marketing-digital-toledo/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "¿Qué incluye un servicio de marketing digital para empresas en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Un servicio completo de marketing digital en Toledo incluye SEO local, gestión de Google Business Profile, campañas de Google Ads, gestión de redes sociales, diseño web y analítica. Lo más habitual es empezar con los canales de mayor ROI para el tipo de negocio — normalmente SEO local y GBP para negocios con presencia física — y escalar progresivamente."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto cuesta el marketing digital para una pyme en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende de los servicios contratados. Un servicio básico de SEO local + Google Business Profile parte desde 300€/mes. Una estrategia más completa con SEO, redes sociales y campañas de pago puede estar entre 500 y 1.500€/mes. Para pymes en Toledo, la clave es priorizar los canales con mayor retorno en lugar de estar en todos a la vez."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Cuánto tarda en dar resultados el marketing digital en Toledo?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende del canal. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 4-8 semanas y se consolida en 3-6 meses. Las redes sociales construyen comunidad de forma progresiva. Toledo tiene menos competencia digital que grandes ciudades, lo que acelera los plazos del SEO."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "¿Necesita una empresa de Toledo una agencia de marketing digital o puede gestionarlo internamente?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Depende de los recursos internos y los objetivos. El SEO técnico y las campañas de pago requieren conocimiento especializado y herramientas específicas — la curva de aprendizaje es alta y los errores tienen coste. Para la mayoría de pymes en Toledo, externalizar el marketing digital con una agencia especializada es más eficiente que contratar un perfil interno a tiempo completo."
+      }
+    }
+  ]
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Marketing digital en Toledo" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
@@ -72,6 +123,30 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Como referencia orientativa para negocios en Toledo: una estrategia de SEO local básica puede costar entre 300 y 600€ al mes. La gestión de Google Ads con un presupuesto de inversión de 300-500€ puede sumar 150-250€ adicionales en honorarios de gestión. La gestión de redes sociales con publicación de contenido original suele estar entre 250 y 500€ al mes según la frecuencia y la plataforma.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Lo importante es entender el marketing digital como una inversión, no como un gasto. Un negocio que invierte 500€ al mes en SEO local y genera 5 nuevos clientes recurrentes con un valor promedio de 300€ cada uno, está obteniendo un retorno de 1.500€ sobre una inversión de 500€. Ese ROI es difícil de conseguir con cualquier otro canal de captación.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Si quieres saber qué estrategia tiene más sentido para tu negocio específico en Toledo, lo más útil es solicitar una auditoría gratuita que analice tu situación actual y la de tu competencia antes de proponer ninguna inversión.</p>
+
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre marketing digital en Toledo</h2>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué incluye un servicio de marketing digital para empresas en Toledo?</h3>
+                <p className="text-gray-600">Un servicio completo de marketing digital en Toledo incluye SEO local, gestión de Google Business Profile, campañas de Google Ads, gestión de redes sociales, diseño web y analítica. Lo más habitual es empezar con los canales de mayor ROI para el tipo de negocio — normalmente SEO local y GBP para negocios con presencia física — y escalar progresivamente.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta el marketing digital para una pyme en Toledo?</h3>
+                <p className="text-gray-600">Depende de los servicios contratados. Un servicio básico de SEO local + Google Business Profile parte desde 300€/mes. Una estrategia más completa con SEO, redes sociales y campañas de pago puede estar entre 500 y 1.500€/mes. Para pymes en Toledo, la clave es priorizar los canales con mayor retorno en lugar de estar en todos a la vez.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados el marketing digital en Toledo?</h3>
+                <p className="text-gray-600">Depende del canal. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 4-8 semanas y se consolida en 3-6 meses. Las redes sociales construyen comunidad de forma progresiva. Toledo tiene menos competencia digital que grandes ciudades, lo que acelera los plazos del SEO.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Necesita una empresa de Toledo una agencia de marketing digital o puede gestionarlo internamente?</h3>
+                <p className="text-gray-600">Depende de los recursos internos y los objetivos. El SEO técnico y las campañas de pago requieren conocimiento especializado y herramientas específicas — la curva de aprendizaje es alta y los errores tienen coste. Para la mayoría de pymes en Toledo, externalizar el marketing digital con una agencia especializada es más eficiente que contratar un perfil interno a tiempo completo.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>

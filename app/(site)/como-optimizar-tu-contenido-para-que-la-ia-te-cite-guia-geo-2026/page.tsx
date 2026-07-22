@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 
 export const metadata: Metadata = {
   title: "Cómo optimizar tu contenido para que la IA te cite: guía GEO 2026",
@@ -110,6 +111,7 @@ export default function OptimizarContenidoGEOPage() {
           <p>El llms.txt es el equivalente al robots.txt, pero pensado para los modelos de lenguaje. En él indicas a crawlers como GPTBot, ClaudeBot o Google-Extended qué contenido pueden acceder e indexar. No es un requisito obligatorio, pero es una señal cada vez más habitual y aumenta la probabilidad de que la IA encuentre y entienda bien tus páginas más importantes.</p>
           <p>Configurarlo bien pasa por revisar primero qué bots de IA quieres permitir y cuáles no, y por señalar de forma ordenada los recursos que quieres que la máquina priorice. Es un archivo pequeño, pero forma parte de esa capa técnica que separa a quien improvisa de quien trabaja el GEO con criterio.</p>
 
+          <OfertaVeranoBanner />
           <BlogBanner variant="geo" />
 
           <h2 className="text-2xl font-bold text-primary-600">4. Autoridad de entidad: que todo diga lo mismo sobre ti</h2>

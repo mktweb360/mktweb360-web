@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 
 export const metadata: Metadata = {
   title: "Actualizaciones del algoritmo de Google en 2026: qué ha cambiado y cómo afecta a tu web",
@@ -110,6 +111,7 @@ export default function AlgoritmoGoogle2026Page() {
           <p>Los AI Overviews resumen la respuesta encima de los resultados orgánicos y, en búsquedas informacionales puras, pueden reducir los clics hacia las webs. La reacción sensata no es lamentarse, sino adaptar el enfoque: en las búsquedas con intención comercial el impacto es mucho menor, porque el usuario necesita profundizar antes de decidir.</p>
           <p>Aparecer como fuente citada dentro de un AI Overview aporta visibilidad de marca y sigue enviando visitas cualificadas. Estructurar el contenido en formato pregunta-respuesta, con datos verificables y schema markup correcto, aumenta las probabilidades de ser la fuente elegida. Aquí el SEO se acerca al terreno del <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">posicionamiento en IA</Link>.</p>
 
+          <OfertaVeranoBanner />
           <BlogBanner variant="seo" />
 
           <h2 className="text-2xl font-bold text-primary-600">Contenido y IA: lo que Google premia y penaliza</h2>
