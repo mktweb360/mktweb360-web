@@ -62,7 +62,7 @@ const SERVICE_TABS: ServiceTab[] = [
     objetivo: "Genera ingresos adicionales",
     emoji: "💰",
     servicios: [
-      { title: "Blog para Monetización", desc: "Crea un activo digital que genera ingresos pasivos con AdSense, Amazon Associates y afiliación.", href: "/blog-monetizacion/", icon: "💸" },
+      { title: "Blog para Monetización", desc: "Crea un activo digital que genera ingresos pasivos con AdSense, Amazon Associates y afiliación.", href: "/blog-para-monetizacion/", icon: "💸" },
       { title: "Ecommerce con Participación", desc: "Modelo híbrido: montamos tu infraestructura y participamos en el éxito cuando superas objetivos.", href: "/ecommerce-participacion-resultados/", icon: "🤝" },
     ],
   },
@@ -373,7 +373,7 @@ function ServicesTab() {
     visibilidad: "seo-posicionamiento-web-organico",
     captacion: "oferta-seo",
     comunidad: "smm-social-media-marketing",
-    monetizacion: "blog-monetizacion",
+    monetizacion: "blog-para-monetizacion",
     crecimiento: "analitica-web",
   };
 

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Blog para Monetización — Ingresos Pasivos con AdSense y Afiliados | Mkt Web 360",
     description: "Creamos tu blog de nicho optimizado para generar ingresos pasivos con AdSense y marketing de afiliados. Setup completo desde 990€ con 15 artículos SEO, configuración de monetización y formación.",
     url: "https://www.mktweb360.com/blog-para-monetizacion/",
-    images: [{ url: "https://www.mktweb360.com/og-marketing-contenidos.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-blog-monetizacion.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -51,7 +51,7 @@ const FAQS = [
   { q: "¿Qué nicho debo elegir para que el blog sea rentable?",
     a: "Los nichos más rentables combinan tres factores: volumen de búsquedas suficiente, competencia moderada y alta intención de compra o interés publicitario. Nichos como hogar y jardín, mascotas, fitness, tecnología de consumo, juguetes o emprendimiento digital tienen buen rendimiento en España con AdSense y Amazon Associates. Analizamos el potencial del nicho antes de empezar para elegir la mejor oportunidad." },
   { q: "¿Puedo gestionar el blog yo mismo después del setup?",
-    a: "Sí. Desarrollamos el blog sobre WordPress con formación incluida para que puedas publicar artículos, actualizar productos de afiliados, revisar el rendimiento de AdSense y gestionar el blog de forma completamente autónoma. Si prefieres que lo gestionemos nosotros, tenemos un plan de mantenimiento mensual de 290€ que incluye 4 artículos SEO mensuales, actualización de productos de afiliados y informe de ingresos." },
+    a: "Sí. Desarrollamos el blog sobre WordPress con formación incluida para que puedas publicar artículos, actualizar productos de afiliados, revisar el rendimiento de AdSense y gestionar el blog de forma completamente autónoma. Si prefieres que lo gestionemos nosotros, tenemos un plan de mantenimiento mensual de 290€ que incluye 10 artículos SEO mensuales, actualización de productos de afiliados y informe de ingresos." },
 ];
 
 const faqSchema = {
@@ -140,7 +140,7 @@ export default function BlogMonetizacionPage() {
         <section className="mb-16">
           <h2 className="text-2xl font-bold text-primary-600 mb-6">Plan de mantenimiento mensual</h2>
           <p className="text-gray-700 leading-relaxed">
-            Si prefieres que gestionemos el crecimiento del blog, el plan de mantenimiento mensual de 290€/mes incluye: 4 artículos SEO nuevos cada mes (800-1.200 palabras, optimizados para keywords de alto potencial), actualización y optimización de artículos de afiliados existentes (precios actualizados, nuevos productos, mejora de CTR), revisión del rendimiento de AdSense y ajuste de posición de anuncios, e informe mensual de tráfico, ingresos y próximas acciones. El mantenimiento es opcional — el blog queda en tus manos tras el setup — pero acelera significativamente el crecimiento.
+            Si prefieres que gestionemos el crecimiento del blog, el plan de mantenimiento mensual de 290€/mes incluye: 10 artículos SEO nuevos cada mes (800-1.200 palabras, optimizados para keywords de alto potencial), actualización y optimización de artículos de afiliados existentes (precios actualizados, nuevos productos, mejora de CTR), revisión del rendimiento de AdSense y ajuste de posición de anuncios, e informe mensual de tráfico, ingresos y próximas acciones. El mantenimiento es opcional — el blog queda en tus manos tras el setup — pero acelera significativamente el crecimiento.
           </p>
         </section>
 
@@ -162,7 +162,7 @@ export default function BlogMonetizacionPage() {
           <h2 className="text-2xl font-bold mb-4">¿Quieres crear tu blog de monetización?</h2>
           <p className="text-primary-200 mb-6">¿Tienes ya un nicho en mente o quieres que te ayudemos a identificar la mejor oportunidad? Cuéntanos y en 24 horas te decimos si tiene potencial y por dónde empezar.</p>
           <div className="bg-white rounded-xl p-6">
-            <ContactForm />
+            <ContactForm formType="blog-monetizacion" />
           </div>
         </section>
       </div>
