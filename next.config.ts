@@ -1,7 +1,21 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
+import { aliasRedirects } from "./lib/i18n/routes";
 
 const withMDX = createMDX({});
+
+// Fase 2b — PENDIENTE de decision. Estos alias tienen implementacion propia con
+// mas contenido que su canonica (~21 lineas / 1 <section> extra), asi que
+// redirigirlos publicaria la version pobre y perderia la rica. Se excluyen del
+// cableado automatico hasta decidir, para cada ruta, que version se conserva.
+const ALIAS_FASE_2B = new Set([
+  "ai-marketing-service", "boutique-en-ligne-sans-commissions", "campagnes-google-ads",
+  "content-marketing-service", "creation-site-web-entreprises", "ecommerce-no-commissions",
+  "geo-generative-seo", "geo-seo-generatif", "offre-boutique-en-ligne", "online-store-offer",
+  "ppc-google-ads", "qu-est-ce-que-le-geo", "seo-positioning", "service-analytique-web",
+  "service-ia-marketing", "service-marketing-contenu", "web-analytics-service",
+  "web-design-services", "what-is-geo-generative-engine-optimization",
+]);
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
@@ -99,8 +113,6 @@ const nextConfig: NextConfig = {
 
       // Slugs con mayúscula y variantes raras
       { source: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/Ejemplos/', destination: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', permanent: true },
-      // URLs EN sin página real
-      { source: '/en/google-ads-management/', destination: '/en/', permanent: true },
       // Nota: los redirects individuales de /tag/* se eliminaron — cubiertos por el catch-all /tag/:slug
       // Paginaciones adicionales con ?et_blog — redirect base
       { source: '/seo-posicionamiento-web-organico/page/:page/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
@@ -114,6 +126,14 @@ const nextConfig: NextConfig = {
       // Sources are slash-less because trailingSlash is off (Next strips '/x/' → '/x' before matching).
       { source: '/landing/seo-6x3/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/oferta-seo/:path*/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+
+      // --- Alias i18n (fase 2a) generados desde lib/i18n/routes.ts, fuente de verdad.
+      // 146 reglas / 73 alias. Van al final: las literales de arriba tienen prioridad.
+      // Todos los sources llevan barra final (obligatorio con skipTrailingSlashRedirect).
+      // permanent:false mientras se valida en produccion; pasar a true despues.
+      ...aliasRedirects()
+        .filter((r) => !ALIAS_FASE_2B.has(r.source.split("/")[2]))
+        .map((r) => ({ ...r, permanent: false })),
     ];
   },
 };
