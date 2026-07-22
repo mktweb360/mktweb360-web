@@ -46,4 +46,4 @@ public/Descargas/
 .env.local
 
 # WSL metadata (Zone.Identifier)
-*:Zone.Identifier
+*Zone.Identifier
