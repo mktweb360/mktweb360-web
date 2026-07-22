@@ -44,6 +44,20 @@ export default async function GoogleAdsManagementPage({ params }: { params: Prom
     "Analyse de compte gratuite avant de commencer",
   ];
 
+  const metrics = isEn
+    ? [
+        { value: "Day 1", label: "results from the start" },
+        { value: "Certified", label: "Google Ads specialists" },
+        { value: "No %", label: "on ad spend" },
+        { value: "National", label: "service across Spain" },
+      ]
+    : [
+        { value: "Jour 1", label: "résultats dès le début" },
+        { value: "Certifiés", label: "spécialistes Google Ads" },
+        { value: "Sans %", label: "sur les dépenses" },
+        { value: "National", label: "service en Espagne" },
+      ];
+
   return (
     <>
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
@@ -76,6 +90,18 @@ export default async function GoogleAdsManagementPage({ params }: { params: Prom
           </div>
         </div>
       </section>
+
+      <section className="bg-primary-600 py-6 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+          {metrics.map((m) => (
+            <div key={m.label}>
+              <div className="text-xl font-bold text-accent-400">{m.value}</div>
+              <div className="text-xs text-primary-200 mt-1">{m.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">

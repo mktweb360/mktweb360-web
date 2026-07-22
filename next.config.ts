@@ -9,12 +9,10 @@ const withMDX = createMDX({});
 // redirigirlos publicaria la version pobre y perderia la rica. Se excluyen del
 // cableado automatico hasta decidir, para cada ruta, que version se conserva.
 const ALIAS_FASE_2B = new Set([
-  "ai-marketing-service", "boutique-en-ligne-sans-commissions", "campagnes-google-ads",
-  "content-marketing-service", "creation-site-web-entreprises", "ecommerce-no-commissions",
-  "geo-generative-seo", "geo-seo-generatif", "offre-boutique-en-ligne", "online-store-offer",
-  "ppc-google-ads", "qu-est-ce-que-le-geo", "seo-positioning", "service-analytique-web",
-  "service-ia-marketing", "service-marketing-contenu", "web-analytics-service",
-  "web-design-services", "what-is-geo-generative-engine-optimization",
+  "boutique-en-ligne-sans-commissions", "ecommerce-no-commissions",
+  "offre-boutique-en-ligne", "online-store-offer",
+  "qu-est-ce-que-le-geo", "seo-positioning",
+  "what-is-geo-generative-engine-optimization",
 ]);
 
 const nextConfig: NextConfig = {
