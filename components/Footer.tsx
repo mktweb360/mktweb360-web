@@ -50,7 +50,7 @@ export function Footer({ lang }: { lang?: string }) {
             <li><Link href="/reputacion-online/" className="hover:text-white">Reputación Online</Link></li>
             <li><Link href="/ia-aplicada-al-marketing/" className="hover:text-white">IA en Marketing</Link></li>
             <li><Link href="/geo-posicionamiento-ia/" className="hover:text-white">GEO — Posicionamiento IA</Link></li>
-            <li><Link href="/blog-monetizacion/" className="hover:text-white transition-colors">Blog para Monetización</Link></li>
+            <li><Link href="/blog-para-monetizacion/" className="hover:text-white transition-colors">Blog para Monetización</Link></li>
             <li><Link href="/ecommerce-participacion-resultados/" className="hover:text-white transition-colors">Ecommerce con Participación</Link></li>
           </ul>
         </div>

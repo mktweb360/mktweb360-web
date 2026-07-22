@@ -50,6 +50,10 @@ const nextConfig: NextConfig = {
       { source: '/wp-content/uploads/:path*', destination: '/', permanent: true },
       { source: '/wp-content/:path*', destination: '/', permanent: true },
 
+      // Consolidación duplicado blog monetización → canónica /blog-para-monetizacion/
+      { source: '/blog-monetizacion', destination: '/blog-para-monetizacion/', permanent: true },
+      { source: '/blog-monetizacion/', destination: '/blog-para-monetizacion/', permanent: true },
+
       // (Deploy 1) Aquí vivían 12 reglas /x -> /x/ que, con trailingSlash:false,
       // rebotaban contra la normalización /x/ -> /x y hacían bucle infinito. Se
       // eliminaron para desbloquear.
