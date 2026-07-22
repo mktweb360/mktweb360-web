@@ -44,3 +44,6 @@ yarn-error.log*
 next-env.d.ts
 public/Descargas/
 .env.local
+
+# WSL metadata (Zone.Identifier)
+*:Zone.Identifier
