@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional SEO service for businesses in Spain and abroad. Audits, keyword strategy and content that takes your website to the first page of Google."
       : "Service SEO professionnel pour les entreprises en Espagne et à l'étranger. Audits, stratégie de mots-clés et contenu pour hisser votre site en première page de Google.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/seo-web-positioning/` },
+    alternates: alternatesFor(`/${lang}/seo-web-positioning/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/seo-web-positioning/`,
+    },
   };
 }
 
