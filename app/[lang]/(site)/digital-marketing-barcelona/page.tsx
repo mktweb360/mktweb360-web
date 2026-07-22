@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Digital Marketing for Businesses in Barcelona — Practical Guide | Mkt Web 360" : "Marketing Digital pour les Entreprises à Barcelone — Guide Pratique | Mkt Web 360",
     description: isEn ? "Digital marketing strategy for businesses in Barcelona. What works in the Catalan market, how to do local SEO and choose a digital agency in Barcelona." : "Stratégie de marketing digital pour les entreprises à Barcelone. Ce qui fonctionne sur le marché catalan, comment faire du SEO local et choisir une agence digitale à Barcelone.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/digital-marketing-barcelona/` },
+    alternates: alternatesFor(`/${lang}/digital-marketing-barcelona/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/digital-marketing-barcelona/`,
+    },
   };
 }
 

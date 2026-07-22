@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Digital Marketing for Businesses in Toledo — Practical Guide | Mkt Web 360" : "Marketing Digital pour les Entreprises à Tolède — Guide Pratique | Mkt Web 360",
     description: isEn ? "Practical guide to digital marketing for businesses in Toledo. Which channels work best, local SEO, Google Ads and how much it costs." : "Guide pratique du marketing digital pour les entreprises à Tolède. Quels canaux fonctionnent le mieux, SEO local, Google Ads et combien ça coûte.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/digital-marketing-toledo/` },
+    alternates: alternatesFor(`/${lang}/digital-marketing-toledo/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/digital-marketing-toledo/`,
+    },
   };
 }
 

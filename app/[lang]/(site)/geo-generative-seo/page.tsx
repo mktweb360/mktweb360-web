@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Generative Engine Optimisation (GEO) service. Optimise your brand to appear in ChatGPT, Perplexity, Gemini and Claude responses."
       : "Service d'optimisation pour moteurs génératifs (GEO). Optimisez votre marque pour apparaître dans les réponses de ChatGPT, Perplexity, Gemini et Claude.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/geo-generative-seo/` },
+    alternates: alternatesFor(`/${lang}/geo-generative-seo/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/geo-generative-seo/`,
+    },
   };
 }
 

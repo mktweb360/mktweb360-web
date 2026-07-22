@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Synchronise stock, sales and customers between your physical POS and your online store. WooCommerce and other solutions."
       : "Synchronisez le stock, les ventes et les clients entre votre TPV physique et votre boutique en ligne. WooCommerce et autres solutions.",
-    alternates: {
+    alternates: alternatesFor(`/${lang}/${lang === "en" ? "connect-pos-to-online-store" : "connecter-tpv-boutique-ligne"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "connect-pos-to-online-store" : "connecter-tpv-boutique-ligne"}/`,
     },
   };

@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Online Stores in Toledo — How to Sell Beyond Your Province | Mkt Web 360" : "Boutiques en Ligne à Tolède — Comment Vendre au-delà de votre Province | Mkt Web 360",
     description: isEn ? "Create your online store in Toledo and sell across all of Spain. Without commissions or monthly fees. Guide for Toledo businesses." : "Créez votre boutique en ligne à Tolède et vendez dans toute l'Espagne. Sans commissions ni frais mensuels. Guide pour les entreprises de Tolède.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/online-stores-toledo/` },
+    alternates: alternatesFor(`/${lang}/online-stores-toledo/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/online-stores-toledo/`,
+    },
   };
 }
 

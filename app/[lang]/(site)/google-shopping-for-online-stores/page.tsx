@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "How to set up Google Shopping, optimise your product feed and appear in Google product results."
       : "Comment configurer Google Shopping, optimiser votre flux de produits et apparaître dans les résultats produits de Google.",
-    alternates: {
+    alternates: alternatesFor(`/${lang}/${lang === "en" ? "google-shopping-for-online-stores" : "google-shopping-boutiques-en-ligne"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "google-shopping-for-online-stores" : "google-shopping-boutiques-en-ligne"}/`,
     },
   };

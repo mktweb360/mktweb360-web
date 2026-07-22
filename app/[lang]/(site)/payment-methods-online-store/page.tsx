@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Which payment gateways to use for your online store, how to configure them and which buyers prefer."
       : "Quelles passerelles de paiement utiliser pour votre boutique en ligne, comment les configurer et lesquelles les acheteurs préfèrent.",
-    alternates: {
+    alternates: alternatesFor(`/${lang}/${lang === "en" ? "payment-methods-online-store" : "methodes-paiement-boutique-en-ligne"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "payment-methods-online-store" : "methodes-paiement-boutique-en-ligne"}/`,
     },
   };

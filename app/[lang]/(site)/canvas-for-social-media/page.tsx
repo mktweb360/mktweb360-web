@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "How to Use the Canvas Framework for Social Media Management | Mkt Web 360" : "Comment utiliser le Canvas pour la gestion des réseaux sociaux | Mkt Web 360",
     description: isEn ? "How to apply the Canvas business model framework to your social media strategy. Practical guide with examples." : "Comment appliquer le modèle Canvas à votre stratégie de réseaux sociaux. Guide pratique avec exemples.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/canvas-for-social-media/` },
+    alternates: alternatesFor(`/${lang}/canvas-for-social-media/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/canvas-for-social-media/`,
+    },
   };
 }
 

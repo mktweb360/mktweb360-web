@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "How to Manage Your Business Online Reputation — Complete Guide | Mkt Web 360" : "Comment Gérer la Réputation en Ligne de votre Entreprise — Guide Complet | Mkt Web 360",
     description: isEn ? "Step by step guide to managing your business online reputation. How to monitor, respond to reviews and build a positive digital image." : "Guide étape par étape pour gérer la réputation en ligne de votre entreprise. Comment surveiller, répondre aux avis et construire une image numérique positive.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/online-reputation-management-guide/` },
+    alternates: alternatesFor(`/${lang}/online-reputation-management-guide/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/online-reputation-management-guide/`,
+    },
   };
 }
 

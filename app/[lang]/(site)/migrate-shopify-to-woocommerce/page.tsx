@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Complete guide to migrate from Shopify to WooCommerce: products, customers, orders, SEO and step-by-step process."
       : "Guide complet pour migrer de Shopify vers WooCommerce : produits, clients, commandes, SEO et processus étape par étape.",
-    alternates: {
+    alternates: alternatesFor(`/${lang}/${lang === "en" ? "migrate-shopify-to-woocommerce" : "migrer-shopify-vers-woocommerce"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "migrate-shopify-to-woocommerce" : "migrer-shopify-vers-woocommerce"}/`,
     },
   };

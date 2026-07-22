@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "How to Digitalise Your Business — Practical Guide | Mkt Web 360" : "Comment digitaliser votre entreprise — Guide pratique | Mkt Web 360",
     description: isEn ? "Practical guide to digitalise your business step by step. Tools, strategy and priorities to take your business online without complications." : "Guide pratique pour digitaliser votre entreprise étape par étape. Outils, stratégie et priorités pour mettre votre entreprise en ligne sans complications.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/how-to-digitalise-your-business/` },
+    alternates: alternatesFor(`/${lang}/how-to-digitalise-your-business/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/how-to-digitalise-your-business/`,
+    },
   };
 }
 

@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Electronic Invoice — Obligations for Freelancers and SMEs in Spain | Mkt Web 360" : "Facture Électronique — Obligations pour Indépendants et PME en Espagne | Mkt Web 360",
     description: isEn ? "Everything you need to know about electronic invoicing obligations in Spain for autónomos and SMEs. When, who, and how to comply." : "Tout ce que vous devez savoir sur les obligations de facturation électronique en Espagne pour les indépendants et PME. Quand, qui, et comment se conformer.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/electronic-invoice-spain/` },
+    alternates: alternatesFor(`/${lang}/electronic-invoice-spain/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/electronic-invoice-spain/`,
+    },
   };
 }
 

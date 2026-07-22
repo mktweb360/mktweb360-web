@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional social media management for businesses. Community management, content creation and growth strategy for Instagram, LinkedIn, Facebook and TikTok."
       : "Gestion professionnelle des réseaux sociaux pour entreprises. Community management, création de contenu et stratégie de croissance pour Instagram, LinkedIn, Facebook et TikTok.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/social-media-marketing/` },
+    alternates: alternatesFor(`/${lang}/social-media-marketing/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/social-media-marketing/`,
+    },
   };
 }
 

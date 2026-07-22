@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional Google Ads PPC campaign management. Generate leads from day one with optimised, profitable campaigns. No percentage on ad spend."
       : "Gestion professionnelle de campagnes PPC Google Ads. Générez des leads dès le premier jour avec des campagnes optimisées et rentables. Sans pourcentage sur les dépenses.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/ppc-google-ads/` },
+    alternates: alternatesFor(`/${lang}/ppc-google-ads/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/ppc-google-ads/`,
+    },
   };
 }
 

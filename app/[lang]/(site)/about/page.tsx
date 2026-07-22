@@ -1,6 +1,7 @@
 import type { Lang } from "@/lib/i18n";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -10,7 +11,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       lang === "en"
         ? "Meet the Mkt Web 360 team. Senior experience, AI protocols and sector exclusivity. Digital marketing agency for SMEs. Nationwide service."
         : "Découvrez l'équipe Mkt Web 360. Expérience senior, protocoles IA et exclusivité sectorielle. Agence de marketing digital pour PME.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/about/` },
+    alternates: alternatesFor(`/${lang}/about/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/about/`,
+    },
   };
 }
 

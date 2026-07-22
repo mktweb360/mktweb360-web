@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Link Building for SMEs — How to Get Quality Links Without Risk | Mkt Web 360" : "Link Building pour PME — Comment Obtenir des Liens de Qualité Sans Risque | Mkt Web 360",
     description: isEn ? "Link building strategies that work for SMEs. How to get quality backlinks without risking a Google penalty or wasting budget on low-quality links." : "Stratégies de link building qui fonctionnent pour les PME. Comment obtenir des backlinks de qualité sans risquer une pénalité Google ou gaspiller le budget sur des liens de faible qualité.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/link-building-for-smes/` },
+    alternates: alternatesFor(`/${lang}/link-building-for-smes/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/link-building-for-smes/`,
+    },
   };
 }
 

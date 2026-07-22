@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Instagram for Businesses — What to Put in Your Bio | Mkt Web 360" : "Instagram pour les Entreprises — Quoi Mettre dans votre Bio | Mkt Web 360",
     description: isEn ? "How to optimise your Instagram business profile. What to write in your bio, how to attract followers and convert them into customers." : "Comment optimiser votre profil Instagram d'entreprise. Quoi écrire dans votre bio, comment attirer des abonnés et les convertir en clients.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/instagram-for-businesses/` },
+    alternates: alternatesFor(`/${lang}/instagram-for-businesses/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/instagram-for-businesses/`,
+    },
   };
 }
 

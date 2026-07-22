@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional online store without commissions per sale or monthly fees. React + WooCommerce. Migration included. Offer from €490."
       : "Boutique en ligne professionnelle sans commissions par vente ni frais mensuels. React + WooCommerce. Migration incluse. Offre à partir de 490€.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/ecommerce-no-commissions/` },
+    alternates: alternatesFor(`/${lang}/ecommerce-no-commissions/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/ecommerce-no-commissions/`,
+    },
   };
 }
 

@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Content strategy and production for businesses. SEO articles, corporate blogs and social media content to attract organic customers. Nationwide service."
       : "Stratégie et production de contenu pour les entreprises. Articles SEO, blogs d'entreprise et contenu pour réseaux sociaux pour attirer des clients organiques.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/content-marketing/` },
+    alternates: alternatesFor(`/${lang}/content-marketing/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/content-marketing/`,
+    },
   };
 }
 

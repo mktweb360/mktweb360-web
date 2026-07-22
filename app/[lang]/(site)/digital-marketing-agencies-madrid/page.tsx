@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "How to Choose a Digital Marketing Agency in Madrid | Mkt Web 360" : "Comment choisir une agence de marketing digital à Madrid | Mkt Web 360",
     description: isEn ? "Guide to choosing a digital marketing agency in Madrid. What to ask, red flags to detect and how to compare proposals." : "Guide pour choisir une agence de marketing digital à Madrid. Quoi demander, red flags à détecter et comment comparer les propositions.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/digital-marketing-agencies-madrid/` },
+    alternates: alternatesFor(`/${lang}/digital-marketing-agencies-madrid/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/digital-marketing-agencies-madrid/`,
+    },
   };
 }
 

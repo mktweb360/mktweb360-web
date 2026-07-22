@@ -1,6 +1,7 @@
 import type { Lang } from "@/lib/i18n";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({
   params,
@@ -14,7 +15,9 @@ export async function generateMetadata({
       lang === "en"
         ? "Contact Mkt Web 360. Tell us about your project and we will get back to you within 24 hours."
         : "Contactez Mkt Web 360. Parlez-nous de votre projet et nous vous répondrons dans les 24 heures.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/contact/` },
+    alternates: alternatesFor(`/${lang}/contact/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/contact/`,
+    },
   };
 }
 

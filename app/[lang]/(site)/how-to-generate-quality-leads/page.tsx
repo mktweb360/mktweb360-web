@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "How to generate quality leads for your SME by improving message, segmentation, channels, website and sales process."
       : "Comment générer des leads de qualité pour votre PME en améliorant votre message, segmentation, canaux, site web et processus commercial.",
-    alternates: {
+    alternates: alternatesFor(`/${lang}/${lang === "en" ? "how-to-generate-quality-leads" : "comment-generer-leads-qualite"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "how-to-generate-quality-leads" : "comment-generer-leads-qualite"}/`,
     },
   };

@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "SEO for Ecommerce — Errors That Slow Down Your Sales | Mkt Web 360" : "SEO pour E-commerce — Erreurs qui Freinent vos Ventes | Mkt Web 360",
     description: isEn ? "The most common SEO errors in ecommerce and what to review to improve visibility, qualified traffic and sales." : "Les erreurs SEO les plus courantes en e-commerce et ce qu'il faut vérifier pour améliorer la visibilité, le trafic qualifié et les ventes.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/seo-for-ecommerce-errors/` },
+    alternates: alternatesFor(`/${lang}/seo-for-ecommerce-errors/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/seo-for-ecommerce-errors/`,
+    },
   };
 }
 

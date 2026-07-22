@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Google Business Profile optimisation and management for businesses. Appear on Google Maps and attract local customers. Nationwide service."
       : "Optimisation et gestion de fiche Google Business Profile pour les entreprises. Apparaissez sur Google Maps et attirez des clients locaux.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/google-business-profile-management/` },
+    alternates: alternatesFor(`/${lang}/google-business-profile-management/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/google-business-profile-management/`,
+    },
   };
 }
 

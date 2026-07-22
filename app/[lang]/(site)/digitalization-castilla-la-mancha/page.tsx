@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Business Digitalisation in Castilla-La Mancha — 2025 Guide | Mkt Web 360" : "Digitalisation des Entreprises en Castille-La Manche — Guide 2025 | Mkt Web 360",
     description: isEn ? "How businesses in Castilla-La Mancha can digitalise in 2025. Available aids, essential tools and how to choose a digitalisation partner in the region." : "Comment les entreprises de Castille-La Manche peuvent se digitaliser en 2025. Aides disponibles, outils essentiels et comment choisir un partenaire de digitalisation dans la région.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/digitalization-castilla-la-mancha/` },
+    alternates: alternatesFor(`/${lang}/digitalization-castilla-la-mancha/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/digitalization-castilla-la-mancha/`,
+    },
   };
 }
 

@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Digital Mistakes New Businesses Make and How to Avoid Them | Mkt Web 360" : "Erreurs Digitales des Nouvelles Entreprises et Comment les Éviter | Mkt Web 360",
     description: isEn ? "The most common digital mistakes new businesses make and how to avoid them from day one to save time and money." : "Les erreurs digitales les plus courantes des nouvelles entreprises et comment les éviter dès le premier jour pour économiser du temps et de l'argent.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/digital-errors-new-business/` },
+    alternates: alternatesFor(`/${lang}/digital-errors-new-business/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/digital-errors-new-business/`,
+    },
   };
 }
 

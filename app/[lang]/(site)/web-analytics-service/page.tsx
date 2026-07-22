@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional web analytics service. GA4, GTM, conversion tracking and business dashboards. Make every decision based on real data."
       : "Service d'analytique web professionnel. GA4, GTM, suivi des conversions et tableaux de bord métier. Prenez chaque décision sur la base de données réelles.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/web-analytics-service/` },
+    alternates: alternatesFor(`/${lang}/web-analytics-service/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/web-analytics-service/`,
+    },
   };
 }
 

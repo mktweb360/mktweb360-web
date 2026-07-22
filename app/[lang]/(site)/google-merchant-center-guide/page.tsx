@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Google Merchant Center for Ecommerce — Complete Guide | Mkt Web 360" : "Google Merchant Center pour E-commerce — Guide Complet | Mkt Web 360",
     description: isEn ? "Complete guide to setting up Google Merchant Center for your online store. Product feed, common errors and link with Google Ads." : "Guide complet pour configurer Google Merchant Center pour votre boutique en ligne. Flux de produits, erreurs courantes et lien avec Google Ads.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/google-merchant-center-guide/` },
+    alternates: alternatesFor(`/${lang}/google-merchant-center-guide/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/google-merchant-center-guide/`,
+    },
   };
 }
 

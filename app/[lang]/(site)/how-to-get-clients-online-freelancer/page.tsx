@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "How a Freelancer Can Get Clients Online | Mkt Web 360" : "Comment un indépendant peut obtenir des clients en ligne | Mkt Web 360",
     description: isEn ? "Strategies for freelancers to attract clients online. SEO, LinkedIn, referrals, portfolio and positioning to grow your client base." : "Stratégies pour que les indépendants attirent des clients en ligne. SEO, LinkedIn, références, portfolio et positionnement pour développer votre clientèle.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/how-to-get-clients-online-freelancer/` },
+    alternates: alternatesFor(`/${lang}/how-to-get-clients-online-freelancer/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/how-to-get-clients-online-freelancer/`,
+    },
   };
 }
 

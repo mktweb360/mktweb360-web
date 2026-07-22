@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional online store without commissions or monthly fees. React + WooCommerce. Stripe, Apple Pay and Google Pay included. SEO included."
       : "Boutique en ligne professionnelle sans commissions ni abonnement mensuel. React + WooCommerce. Stripe, Apple Pay et Google Pay inclus. SEO inclus.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/online-store/` },
+    alternates: alternatesFor(`/${lang}/online-store/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/online-store/`,
+    },
   };
 }
 

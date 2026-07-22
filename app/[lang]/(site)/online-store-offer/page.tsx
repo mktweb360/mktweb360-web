@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional online store from €490. No commissions per sale, no monthly fees. Custom design, SEO included 12 months. Only 5 places available this month."
       : "Boutique en ligne professionnelle à partir de 490€. Sans commissions par vente, sans frais mensuels. Design personnalisé, SEO inclus 12 mois. Seulement 5 places ce mois-ci.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/online-store-offer/` },
+    alternates: alternatesFor(`/${lang}/online-store-offer/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/online-store-offer/`,
+    },
   };
 }
 

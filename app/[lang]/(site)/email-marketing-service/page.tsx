@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional email marketing service for businesses. Newsletter design, automated sequences and acquisition campaigns. Proven ROI."
       : "Service d'email marketing professionnel pour les entreprises. Design de newsletters, séquences automatisées et campagnes d'acquisition. ROI prouvé.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/email-marketing-service/` },
+    alternates: alternatesFor(`/${lang}/email-marketing-service/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/email-marketing-service/`,
+    },
   };
 }
 

@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Should you invest in SEO or Google Ads? Find out which channel suits your business, budget and urgency best."
       : "SEO ou Google Ads ? Découvrez quel canal convient le mieux à votre entreprise selon votre budget et vos objectifs.",
-    alternates: {
+    alternates: alternatesFor(`/${lang}/${lang === "en" ? "seo-vs-google-ads" : "seo-vs-google-ads-fr"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "seo-vs-google-ads" : "seo-vs-google-ads-fr"}/`,
     },
   };

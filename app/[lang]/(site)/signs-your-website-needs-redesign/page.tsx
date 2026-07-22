@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Signs Your Website Needs an Urgent Redesign | Mkt Web 360" : "Signes que votre site web a besoin d'une refonte urgente | Mkt Web 360",
     description: isEn ? "The clearest signs that your website is losing you sales and when it makes sense to redesign rather than keep optimising." : "Les signes les plus clairs que votre site web vous fait perdre des ventes et quand il est logique de refondre plutôt que de continuer à optimiser.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/signs-your-website-needs-redesign/` },
+    alternates: alternatesFor(`/${lang}/signs-your-website-needs-redesign/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/signs-your-website-needs-redesign/`,
+    },
   };
 }
 

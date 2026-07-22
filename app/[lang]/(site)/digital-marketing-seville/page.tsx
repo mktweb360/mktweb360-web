@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Digital Marketing for Businesses in Seville — Practical Guide | Mkt Web 360" : "Marketing Digital pour les Entreprises à Séville — Guide Pratique | Mkt Web 360",
     description: isEn ? "How to grow online if you have a business in Seville. Digital marketing guide with local SEO, Google Ads, best channels and how to choose a digital agency." : "Comment croître en ligne si vous avez une entreprise à Séville. Guide de marketing digital avec SEO local, Google Ads, meilleurs canaux et comment choisir une agence digitale.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/digital-marketing-seville/` },
+    alternates: alternatesFor(`/${lang}/digital-marketing-seville/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/digital-marketing-seville/`,
+    },
   };
 }
 

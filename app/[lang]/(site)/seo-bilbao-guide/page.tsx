@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "SEO in Bilbao — Web Positioning for Businesses in the Basque Country | Mkt Web 360" : "SEO à Bilbao — Positionnement Web pour les Entreprises du Pays Basque | Mkt Web 360",
     description: isEn ? "How to position your business on Google in Bilbao. Local SEO guide for the Basque Country with strategies, keywords and how to stand out in this competitive market." : "Comment positionner votre entreprise sur Google à Bilbao. Guide SEO local pour le Pays Basque avec stratégies, mots-clés et comment se démarquer dans ce marché compétitif.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/seo-bilbao-guide/` },
+    alternates: alternatesFor(`/${lang}/seo-bilbao-guide/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/seo-bilbao-guide/`,
+    },
   };
 }
 

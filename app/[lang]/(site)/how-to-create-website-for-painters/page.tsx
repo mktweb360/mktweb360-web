@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "How to Create a Website for Painters and Get Customers on Google | Mkt Web 360" : "Comment créer un site web pour peintres et obtenir des clients sur Google | Mkt Web 360",
     description: isEn ? "How to create a professional website for painters that attracts customers through Google. SEO, Google Business Profile and local strategy." : "Comment créer un site web professionnel pour peintres qui attire des clients via Google. SEO, Google Business Profile et stratégie locale.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/how-to-create-website-for-painters/` },
+    alternates: alternatesFor(`/${lang}/how-to-create-website-for-painters/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/how-to-create-website-for-painters/`,
+    },
   };
 }
 

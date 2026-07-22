@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "What to Review Before Investing More in Digital Marketing | Mkt Web 360" : "Ce qu'il faut vérifier avant d'investir davantage en marketing digital | Mkt Web 360",
     description: isEn ? "Before investing more in digital marketing, review these 7 key areas to avoid amplifying mistakes and make better investment decisions." : "Avant d'investir davantage en marketing digital, vérifiez ces 7 domaines clés pour éviter d'amplifier les erreurs et prendre de meilleures décisions d'investissement.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/what-to-review-before-investing-marketing/` },
+    alternates: alternatesFor(`/${lang}/what-to-review-before-investing-marketing/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/what-to-review-before-investing-marketing/`,
+    },
   };
 }
 

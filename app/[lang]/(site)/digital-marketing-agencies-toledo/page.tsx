@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Digital Marketing Agencies in Toledo — What to Look For | Mkt Web 360" : "Agences de Marketing Digital à Tolède — Ce qu'il faut chercher | Mkt Web 360",
     description: isEn ? "Guide to choosing a digital marketing agency in Toledo. What to ask, what to avoid and how to compare proposals before signing." : "Guide pour choisir une agence de marketing digital à Tolède. Quoi demander, quoi éviter et comment comparer les propositions avant de signer.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/digital-marketing-agencies-toledo/` },
+    alternates: alternatesFor(`/${lang}/digital-marketing-agencies-toledo/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/digital-marketing-agencies-toledo/`,
+    },
   };
 }
 

@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Import products to WooCommerce from CSV, Excel, Shopify or PrestaShop. Step-by-step guide to avoid errors."
       : "Importez des produits dans WooCommerce depuis CSV, Excel, Shopify ou PrestaShop. Guide étape par étape pour éviter les erreurs.",
-    alternates: {
+    alternates: alternatesFor(`/${lang}/${lang === "en" ? "import-products-woocommerce" : "importer-produits-woocommerce"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "import-products-woocommerce" : "importer-produits-woocommerce"}/`,
     },
   };

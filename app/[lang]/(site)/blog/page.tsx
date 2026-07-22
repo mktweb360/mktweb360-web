@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -10,7 +11,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       lang === "en"
         ? "Articles, guides and tips on digital marketing, SEO, Google Ads, social media and web design for businesses."
         : "Articles, guides et conseils en marketing digital, SEO, Google Ads, réseaux sociaux et création de sites web pour entreprises.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/blog/` },
+    alternates: alternatesFor(`/${lang}/blog/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/blog/`,
+    },
   };
 }
 

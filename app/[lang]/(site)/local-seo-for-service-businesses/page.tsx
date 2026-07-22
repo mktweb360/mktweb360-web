@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "What a service business needs to improve its local presence and attract more customers from Google in its area."
       : "Ce dont une entreprise de services a besoin pour améliorer sa présence locale et attirer plus de clients depuis Google dans sa zone.",
-    alternates: {
+    alternates: alternatesFor(`/${lang}/${lang === "en" ? "local-seo-for-service-businesses" : "seo-local-entreprises-de-services"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "local-seo-for-service-businesses" : "seo-local-entreprises-de-services"}/`,
     },
   };

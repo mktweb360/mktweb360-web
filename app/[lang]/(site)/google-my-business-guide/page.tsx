@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Google My Business for Businesses — Complete Guide | Mkt Web 360" : "Google My Business pour les Entreprises — Guide Complet | Mkt Web 360",
     description: isEn ? "Complete guide to Google My Business (now Google Business Profile). How to create, verify, optimise and manage your listing to attract local customers." : "Guide complet de Google My Business (maintenant Google Business Profile). Comment créer, vérifier, optimiser et gérer votre fiche pour attirer des clients locaux.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/google-my-business-guide/` },
+    alternates: alternatesFor(`/${lang}/google-my-business-guide/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/google-my-business-guide/`,
+    },
   };
 }
 

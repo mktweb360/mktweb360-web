@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "SEO for Urgent Services — How to Appear When Someone Needs You Now | Mkt Web 360" : "SEO pour Services Urgents — Comment Apparaître Quand Quelqu'un a Besoin de Vous Maintenant | Mkt Web 360",
     description: isEn ? "SEO strategy for emergency and urgent service businesses. How to appear at the top of Google when someone needs you urgently." : "Stratégie SEO pour les entreprises de services d'urgence. Comment apparaître en tête de Google quand quelqu'un a besoin de vous d'urgence.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/seo-for-urgent-services/` },
+    alternates: alternatesFor(`/${lang}/seo-for-urgent-services/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/seo-for-urgent-services/`,
+    },
   };
 }
 

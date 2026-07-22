@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "How to Register as a Self-Employed Freelancer in Spain | Mkt Web 360" : "Comment s'inscrire comme travailleur indépendant en Espagne | Mkt Web 360",
     description: isEn ? "Complete guide to registering as a self-employed freelancer (autónomo) in Spain. Steps, costs, social security and tax obligations." : "Guide complet pour s'inscrire comme travailleur indépendant (autónomo) en Espagne. Étapes, coûts, sécurité sociale et obligations fiscales.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/how-to-register-as-freelancer/` },
+    alternates: alternatesFor(`/${lang}/how-to-register-as-freelancer/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/how-to-register-as-freelancer/`,
+    },
   };
 }
 

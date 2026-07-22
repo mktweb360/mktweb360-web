@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "SEO in Zaragoza — Web Positioning for Local Businesses | Mkt Web 360" : "SEO à Saragosse — Positionnement Web pour les Entreprises Locales | Mkt Web 360",
     description: isEn ? "How to position your business on Google in Zaragoza. Local SEO guide for businesses in Aragon." : "Comment positionner votre entreprise sur Google à Saragosse. Guide SEO local pour les entreprises d'Aragon.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/seo-zaragoza-guide/` },
+    alternates: alternatesFor(`/${lang}/seo-zaragoza-guide/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/seo-zaragoza-guide/`,
+    },
   };
 }
 

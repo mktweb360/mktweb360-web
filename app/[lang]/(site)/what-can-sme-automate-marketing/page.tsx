@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "What Can an SME Automate in Marketing and Sales | Mkt Web 360" : "Ce qu'une PME peut automatiser en marketing et ventes | Mkt Web 360",
     description: isEn ? "What marketing and sales processes can an SME automate to save time, improve follow-up and capture better leads." : "Quels processus de marketing et de vente une PME peut automatiser pour gagner du temps, améliorer le suivi et mieux capturer des leads.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/what-can-sme-automate-marketing/` },
+    alternates: alternatesFor(`/${lang}/what-can-sme-automate-marketing/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/what-can-sme-automate-marketing/`,
+    },
   };
 }
 

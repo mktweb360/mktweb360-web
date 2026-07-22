@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -9,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "SEO in Toledo — Web Positioning for Local Businesses | Mkt Web 360" : "SEO à Tolède — Positionnement Web pour les Entreprises Locales | Mkt Web 360",
     description: isEn ? "How to appear on Google if you have a local business in Toledo. Local SEO guide with practical tips, local keywords and where to start." : "Comment apparaître sur Google si vous avez une entreprise locale à Tolède. Guide SEO local avec des conseils pratiques, des mots-clés locaux et par où commencer.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/seo-toledo-guide/` },
+    alternates: alternatesFor(`/${lang}/seo-toledo-guide/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/seo-toledo-guide/`,
+    },
   };
 }
 

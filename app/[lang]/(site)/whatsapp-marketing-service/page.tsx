@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "WhatsApp Business API marketing service for businesses. 98% open rate, automated sequences and segmented campaigns to convert more customers."
       : "Service de marketing WhatsApp Business API pour entreprises. 98% de taux d'ouverture, séquences automatisées et campagnes segmentées pour convertir plus de clients.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/whatsapp-marketing-service/` },
+    alternates: alternatesFor(`/${lang}/whatsapp-marketing-service/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/whatsapp-marketing-service/`,
+    },
   };
 }
 

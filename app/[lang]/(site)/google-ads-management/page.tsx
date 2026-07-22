@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional Google Ads campaign management for businesses. Generate leads from day one with optimised, profitable campaigns. Nationwide service."
       : "Gestion professionnelle de campagnes Google Ads pour les entreprises. Générez des leads dès le premier jour avec des campagnes optimisées et rentables.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/google-ads-management/` },
+    alternates: alternatesFor(`/${lang}/google-ads-management/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/google-ads-management/`,
+    },
   };
 }
 

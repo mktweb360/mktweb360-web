@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "How to respond to negative Google reviews professionally. Strategy, response templates and how to turn criticism into opportunities."
       : "Comment répondre aux avis négatifs sur Google de manière professionnelle. Stratégie, modèles de réponse et comment transformer les critiques en opportunités.",
-    alternates: {
+    alternates: alternatesFor(`/${lang}/${lang === "en" ? "manage-negative-reviews-google" : "gerer-avis-negatifs-google"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "manage-negative-reviews-google" : "gerer-avis-negatifs-google"}/`,
     },
   };

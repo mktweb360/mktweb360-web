@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "With ChatGPT and AI search engines on the rise, many wonder if SEO is still worth investing in. Here is the honest answer."
       : "Avec la montée de ChatGPT et des moteurs IA, beaucoup se demandent si le SEO vaut encore la peine. Voici la réponse honnête.",
-    alternates: {
+    alternates: alternatesFor(`/${lang}/${lang === "en" ? "is-seo-dead-with-ai" : "le-seo-est-il-mort-avec-ia"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "is-seo-dead-with-ai" : "le-seo-est-il-mort-avec-ia"}/`,
     },
   };

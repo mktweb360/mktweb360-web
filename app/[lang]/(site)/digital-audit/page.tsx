@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Complete digital audit for businesses. SEO, speed, competition and tracking analysis with a detailed report and prioritised action plan."
       : "Audit digital complet pour entreprises. Analyse SEO, vitesse, concurrence et tracking avec rapport détaillé et plan d'action priorisé.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/digital-audit/` },
+    alternates: alternatesFor(`/${lang}/digital-audit/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/digital-audit/`,
+    },
   };
 }
 

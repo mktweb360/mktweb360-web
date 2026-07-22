@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional web design and development for businesses. Fast, SEO-optimised websites built to convert visitors into customers."
       : "Création de sites web professionnels pour entreprises. Sites rapides, optimisés SEO et conçus pour convertir les visiteurs en clients.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/web-design-services/` },
+    alternates: alternatesFor(`/${lang}/web-design-services/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/web-design-services/`,
+    },
   };
 }
 

@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional online reputation management service. Review monitoring and management on Google, Trustpilot and other platforms. Nationwide service."
       : "Service professionnel de gestion de la réputation en ligne. Surveillance et gestion des avis sur Google, Trustpilot et autres plateformes.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/online-reputation-management/` },
+    alternates: alternatesFor(`/${lang}/online-reputation-management/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/online-reputation-management/`,
+    },
   };
 }
 

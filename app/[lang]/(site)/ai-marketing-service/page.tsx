@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -11,7 +12,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "AI applied to digital marketing. Own protocols integrated into every service — faster, more data, better strategic decisions than a traditional agency."
       : "IA appliquée au marketing digital. Protocoles propres intégrés dans chaque service — plus rapide, plus de données, meilleures décisions stratégiques qu'une agence traditionnelle.",
-    alternates: { canonical: `https://www.mktweb360.com/${lang}/ai-marketing-service/` },
+    alternates: alternatesFor(`/${lang}/ai-marketing-service/`) ?? {
+      canonical: `https://www.mktweb360.com/${lang}/ai-marketing-service/`,
+    },
   };
 }
 
