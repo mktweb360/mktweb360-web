@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { switcherFor } from "@/lib/i18n/routes";
 
 const SERVICE_GROUPS_NAV = [
   {
@@ -47,35 +48,26 @@ const SERVICE_GROUPS_NAV = [
 
 const SERVICES = SERVICE_GROUPS_NAV.flatMap((g) => g.services);
 
-const LANG_LINKS = [
-  { code: "es", label: "ES" },
-  { code: "en", label: "EN" },
-  { code: "fr", label: "FR" },
-] as const;
-
 export function Header({ lang }: { lang?: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
   const currentLang = lang ?? "es";
 
-  const getLangUrl = (target: string) => {
-    if (currentLang === "es") {
-      if (target === "es") return pathname;
-      return `/${target}${pathname}`;
-    }
-    if (currentLang === "en") {
-      if (target === "es") return pathname.replace(/^\/en/, "") || "/";
-      if (target === "fr") return pathname.replace(/^\/en/, "/fr");
-      return pathname;
-    }
-    if (currentLang === "fr") {
-      if (target === "es") return pathname.replace(/^\/fr/, "") || "/";
-      if (target === "en") return pathname.replace(/^\/fr/, "/en");
-      return pathname;
-    }
-    return `/${target}/`;
+  // Las URLs por idioma salen de ROUTES (fuente de verdad), nunca de manipular
+  // el prefijo: los slugs están traducidos y construirlos a mano lleva a 404.
+  const switcher = switcherFor(pathname);
+
+  const getLangUrl = (target: string): string | null => {
+    const match = switcher.find((s) => s.lang === target);
+    if (match) return match.url;
+    // Ruta no declarada en ROUTES: solo es seguro el idioma actual.
+    return target === currentLang ? pathname : null;
   };
+
+  const esUrl = getLangUrl("es");
+  const enUrl = getLangUrl("en");
+  const frUrl = getLangUrl("fr");
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
@@ -139,15 +131,33 @@ export function Header({ lang }: { lang?: string }) {
                   <svg className="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg py-1 min-w-[130px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                  <Link href={getLangUrl("es")} className={`flex items-center gap-2 px-4 py-2 text-sm hover:bg-primary-50 transition-colors ${currentLang === "es" ? "text-primary-600 font-bold" : "text-gray-600"}`}>
-                    <span>🇪🇸</span> <span>Español</span>
-                  </Link>
-                  <Link href={getLangUrl("en")} className={`flex items-center gap-2 px-4 py-2 text-sm hover:bg-primary-50 transition-colors ${currentLang === "en" ? "text-primary-600 font-bold" : "text-gray-600"}`}>
-                    <span>🇬🇧</span> <span>English</span>
-                  </Link>
-                  <Link href={getLangUrl("fr")} className={`flex items-center gap-2 px-4 py-2 text-sm hover:bg-primary-50 transition-colors ${currentLang === "fr" ? "text-primary-600 font-bold" : "text-gray-600"}`}>
-                    <span>🇫🇷</span> <span>Français</span>
-                  </Link>
+                  {esUrl ? (
+                    <Link href={esUrl} className={`flex items-center gap-2 px-4 py-2 text-sm hover:bg-primary-50 transition-colors ${currentLang === "es" ? "text-primary-600 font-bold" : "text-gray-600"}`}>
+                      <span>🇪🇸</span> <span>Español</span>
+                    </Link>
+                  ) : (
+                    <span aria-disabled="true" title="Esta página no está disponible en español" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-300 cursor-not-allowed">
+                      <span>🇪🇸</span> <span>Español</span>
+                    </span>
+                  )}
+                  {enUrl ? (
+                    <Link href={enUrl} className={`flex items-center gap-2 px-4 py-2 text-sm hover:bg-primary-50 transition-colors ${currentLang === "en" ? "text-primary-600 font-bold" : "text-gray-600"}`}>
+                      <span>🇬🇧</span> <span>English</span>
+                    </Link>
+                  ) : (
+                    <span aria-disabled="true" title="Esta página no está disponible en inglés" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-300 cursor-not-allowed">
+                      <span>🇬🇧</span> <span>English</span>
+                    </span>
+                  )}
+                  {frUrl ? (
+                    <Link href={frUrl} className={`flex items-center gap-2 px-4 py-2 text-sm hover:bg-primary-50 transition-colors ${currentLang === "fr" ? "text-primary-600 font-bold" : "text-gray-600"}`}>
+                      <span>🇫🇷</span> <span>Français</span>
+                    </Link>
+                  ) : (
+                    <span aria-disabled="true" title="Esta página no está disponible en francés" className="flex items-center gap-2 px-4 py-2 text-sm text-gray-300 cursor-not-allowed">
+                      <span>🇫🇷</span> <span>Français</span>
+                    </span>
+                  )}
                 </div>
               </div>
           <Link
@@ -198,15 +208,33 @@ export function Header({ lang }: { lang?: string }) {
             <div className="pt-2 border-t border-gray-100">
               <p className="text-xs text-gray-400 font-medium mb-2 px-1">Idioma / Language</p>
               <div className="flex gap-2">
-                <Link href={getLangUrl("es")} onClick={() => setMenuOpen(false)} className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${currentLang === "es" ? "bg-primary-600 text-white" : "border border-gray-200 text-gray-600 hover:border-primary-400"}`}>
-                  🇪🇸 ES
-                </Link>
-                <Link href={getLangUrl("en")} onClick={() => setMenuOpen(false)} className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${currentLang === "en" ? "bg-primary-600 text-white" : "border border-gray-200 text-gray-600 hover:border-primary-400"}`}>
-                  🇬🇧 EN
-                </Link>
-                <Link href={getLangUrl("fr")} onClick={() => setMenuOpen(false)} className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${currentLang === "fr" ? "bg-primary-600 text-white" : "border border-gray-200 text-gray-600 hover:border-primary-400"}`}>
-                  🇫🇷 FR
-                </Link>
+                {esUrl ? (
+                  <Link href={esUrl} onClick={() => setMenuOpen(false)} className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${currentLang === "es" ? "bg-primary-600 text-white" : "border border-gray-200 text-gray-600 hover:border-primary-400"}`}>
+                    🇪🇸 ES
+                  </Link>
+                ) : (
+                  <span aria-disabled="true" className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold border border-gray-100 text-gray-300 cursor-not-allowed">
+                    🇪🇸 ES
+                  </span>
+                )}
+                {enUrl ? (
+                  <Link href={enUrl} onClick={() => setMenuOpen(false)} className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${currentLang === "en" ? "bg-primary-600 text-white" : "border border-gray-200 text-gray-600 hover:border-primary-400"}`}>
+                    🇬🇧 EN
+                  </Link>
+                ) : (
+                  <span aria-disabled="true" className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold border border-gray-100 text-gray-300 cursor-not-allowed">
+                    🇬🇧 EN
+                  </span>
+                )}
+                {frUrl ? (
+                  <Link href={frUrl} onClick={() => setMenuOpen(false)} className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${currentLang === "fr" ? "bg-primary-600 text-white" : "border border-gray-200 text-gray-600 hover:border-primary-400"}`}>
+                    🇫🇷 FR
+                  </Link>
+                ) : (
+                  <span aria-disabled="true" className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold border border-gray-100 text-gray-300 cursor-not-allowed">
+                    🇫🇷 FR
+                  </span>
+                )}
               </div>
             </div>
             <Link
