@@ -49,7 +49,7 @@ const FAQS = [
   },
   {
     q: "¿Puedo aparecer dentro de un AI Overview de Google?",
-    a: "Sí. Google selecciona las fuentes para sus AI Overviews basándose en autoridad y relevancia. Las páginas con buen SEO técnico, schema markup correcto y contenido de alta calidad tienen más probabilidad de ser citadas dentro del AI Overview.",
+    a: "Sí, aunque Google no publica el mecanismo exacto de selección. Las páginas con autoridad demostrada, SEO técnico sólido y contenido de alta calidad tienen más probabilidad de ser citadas. El schema markup ayuda a desambiguar entidades y facilita la comprensión semántica, pero Google no lo define como criterio directo de acceso a AI Overviews.",
   },
   {
     q: "¿Vale la pena hacer SEO si Google responde directamente con IA?",
@@ -112,7 +112,7 @@ export default function SeoEraIaPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo optimizar para aparecer dentro de un AI Overview</h2>
           <p>Aparecer como fuente citada dentro de un AI Overview se ha convertido en un objetivo de SEO en sí mismo. Google elige esas fuentes en función de la autoridad de la página y de lo fácil que sea extraer una respuesta clara de ella. Un contenido bien estructurado, con encabezados que responden preguntas y párrafos directos, tiene ventaja.</p>
-          <p>El schema markup correcto (FAQPage, Article, Organization) ayuda a que Gemini interprete y confíe en tu contenido, igual que un SEO técnico impecable. Si además entiendes las <Link href="/geo-vs-seo-diferencias/" className="text-accent-500 hover:underline">diferencias entre GEO y SEO</Link>, podrás preparar cada página para ambos escenarios a la vez.</p>
+          <p>El schema markup correcto (FAQPage, Article, Organization) ayuda a desambiguar entidades y facilita que Gemini procese tu contenido con mayor precisión semántica. Google no lo define como requisito para aparecer en AI Overviews, pero forma parte de una base técnica sólida. Un SEO técnico impecable, combinado con contenido bien estructurado, te posiciona mejor tanto en resultados orgánicos como en fuentes citadas. Si además entiendes las <Link href="/geo-vs-seo-diferencias/" className="text-accent-500 hover:underline">diferencias entre GEO y SEO</Link>, podrás preparar cada página para ambos escenarios a la vez.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">La estrategia de contenido que funciona en 2026</h2>
           <p>El contenido que gana en 2026 combina profundidad con claridad. Responder con precisión a una pregunta concreta, aportar experiencia real y estructurar la información para que sea fácil de citar es lo que separa a las webs que siguen captando tráfico de las que se quedan sin visitas.</p>

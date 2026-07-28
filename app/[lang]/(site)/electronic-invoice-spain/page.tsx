@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Electronic Invoice — Obligations for Freelancers and SMEs in Spain | Mkt Web 360" : "Facture Électronique — Obligations pour Indépendants et PME en Espagne | Mkt Web 360",
+    title: isEn ? "Electronic Invoice — Obligations for Freelancers and SMEs in Spain" : "Facture Électronique — Obligations pour Indépendants et PME en Espagne",
     description: isEn ? "Everything you need to know about electronic invoicing obligations in Spain for autónomos and SMEs. When, who, and how to comply." : "Tout ce que vous devez savoir sur les obligations de facturation électronique en Espagne pour les indépendants et PME. Quand, qui, et comment se conformer.",
     alternates: alternatesFor(`/${lang}/electronic-invoice-spain/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/electronic-invoice-spain/`,

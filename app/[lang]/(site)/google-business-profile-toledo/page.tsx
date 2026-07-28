@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Google Business Profile for Businesses in Toledo — Step by Step Guide | Mkt Web 360" : "Google Business Profile pour les Entreprises à Tolède — Guide Étape par Étape | Mkt Web 360",
+    title: isEn ? "Google Business Profile for Businesses in Toledo — Step by Step Guide" : "Google Business Profile pour les Entreprises à Tolède — Guide Étape par Étape",
     description: isEn ? "How to optimise your Google Business Profile if you have a business in Toledo. Appear on Google Maps and attract more local customers." : "Comment optimiser votre Google Business Profile si vous avez une entreprise à Tolède. Apparaissez sur Google Maps et attirez plus de clients locaux.",
     alternates: alternatesFor(`/${lang}/google-business-profile-toledo/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/google-business-profile-toledo/`,

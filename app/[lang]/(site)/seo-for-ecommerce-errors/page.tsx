@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "SEO for Ecommerce — Errors That Slow Down Your Sales | Mkt Web 360" : "SEO pour E-commerce — Erreurs qui Freinent vos Ventes | Mkt Web 360",
+    title: isEn ? "SEO for Ecommerce — Errors That Slow Down Your Sales" : "SEO pour E-commerce — Erreurs qui Freinent vos Ventes",
     description: isEn ? "The most common SEO errors in ecommerce and what to review to improve visibility, qualified traffic and sales." : "Les erreurs SEO les plus courantes en e-commerce et ce qu'il faut vérifier pour améliorer la visibilité, le trafic qualifié et les ventes.",
     alternates: alternatesFor(`/${lang}/seo-for-ecommerce-errors/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-for-ecommerce-errors/`,

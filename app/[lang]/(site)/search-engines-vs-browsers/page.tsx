@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Search Engines vs Browsers — Examples and Differences | Mkt Web 360" : "Moteurs de Recherche vs Navigateurs — Exemples et Différences | Mkt Web 360",
+    title: isEn ? "Search Engines vs Browsers — Examples and Differences" : "Moteurs de Recherche vs Navigateurs — Exemples et Différences",
     description: isEn ? "The key difference between search engines and browsers, with examples of each, and why this distinction matters for digital marketing." : "La différence clé entre moteurs de recherche et navigateurs, avec des exemples de chacun, et pourquoi cette distinction compte pour le marketing digital.",
     alternates: alternatesFor(`/${lang}/search-engines-vs-browsers/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/search-engines-vs-browsers/`,

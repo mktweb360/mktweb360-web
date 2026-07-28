@@ -4,13 +4,13 @@ import Link from "next/link";
 import { OfertaVeranoForm } from "@/components/OfertaVeranoForm";
 
 export const metadata: Metadata = {
-  title: "Paquete SEO + GEO + GBP al 50% — Oferta Verano 2026 | Mkt Web 360",
+  title: "Paquete SEO + GEO + GBP al 50% — Oferta Verano 2026",
   description: "Posiciónate en Google, en ChatGPT y en Google Maps antes de septiembre. Paquete completo SEO + GEO + GBP desde 349€/mes. Solo julio y agosto. 5 plazas.",
   alternates: { canonical: "https://www.mktweb360.com/landing/seo-geo-gbp-verano/" },
   robots: { index: false, follow: false },
 };
 
-const WA = "https://wa.me/34696714760?text=Hola,%20me%20interesa%20el%20paquete%20SEO+GEO+GBP";
+const WA = "https://wa.me/34622748987?text=Hola,%20me%20interesa%20el%20paquete%20SEO+GEO+GBP";
 
 const FEATURES = [
   {

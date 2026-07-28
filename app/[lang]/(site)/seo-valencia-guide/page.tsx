@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "SEO in Valencia — Web Positioning for Local Businesses | Mkt Web 360" : "SEO à Valence — Positionnement Web pour les Entreprises Locales | Mkt Web 360",
+    title: isEn ? "SEO in Valencia — Web Positioning for Local Businesses" : "SEO à Valence — Positionnement Web pour les Entreprises Locales",
     description: isEn ? "Complete guide to SEO in Valencia. How to position your business on Google in Valencia with local SEO strategies, keywords and practical tips." : "Guide complet du SEO à Valence. Comment positionner votre entreprise sur Google à Valence avec des stratégies SEO locales, des mots-clés et des conseils pratiques.",
     alternates: alternatesFor(`/${lang}/seo-valencia-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-valencia-guide/`,

@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "How to Choose the Best Hosting for Your Website | Mkt Web 360" : "Comment choisir le meilleur hébergement pour votre site web | Mkt Web 360",
+    title: isEn ? "How to Choose the Best Hosting for Your Website" : "Comment choisir le meilleur hébergement pour votre site web",
     description: isEn ? "Guide to choosing the best web hosting for your website. Shared, VPS, managed WordPress and cloud hosting compared." : "Guide pour choisir le meilleur hébergement web pour votre site. Hébergement partagé, VPS, WordPress géré et cloud comparés.",
     alternates: alternatesFor(`/${lang}/how-to-choose-best-hosting/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-choose-best-hosting/`,

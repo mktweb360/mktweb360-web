@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Digital Marketing for Businesses in Toledo — Practical Guide | Mkt Web 360" : "Marketing Digital pour les Entreprises à Tolède — Guide Pratique | Mkt Web 360",
+    title: isEn ? "Digital Marketing for Businesses in Toledo — Practical Guide" : "Marketing Digital pour les Entreprises à Tolède — Guide Pratique",
     description: isEn ? "Practical guide to digital marketing for businesses in Toledo. Which channels work best, local SEO, Google Ads and how much it costs." : "Guide pratique du marketing digital pour les entreprises à Tolède. Quels canaux fonctionnent le mieux, SEO local, Google Ads et combien ça coûte.",
     alternates: alternatesFor(`/${lang}/digital-marketing-toledo/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/digital-marketing-toledo/`,

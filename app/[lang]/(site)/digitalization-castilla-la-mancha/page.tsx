@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Business Digitalisation in Castilla-La Mancha — 2025 Guide | Mkt Web 360" : "Digitalisation des Entreprises en Castille-La Manche — Guide 2025 | Mkt Web 360",
+    title: isEn ? "Business Digitalisation in Castilla-La Mancha — 2025 Guide" : "Digitalisation des Entreprises en Castille-La Manche — Guide 2025",
     description: isEn ? "How businesses in Castilla-La Mancha can digitalise in 2025. Available aids, essential tools and how to choose a digitalisation partner in the region." : "Comment les entreprises de Castille-La Manche peuvent se digitaliser en 2025. Aides disponibles, outils essentiels et comment choisir un partenaire de digitalisation dans la région.",
     alternates: alternatesFor(`/${lang}/digitalization-castilla-la-mancha/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/digitalization-castilla-la-mancha/`,

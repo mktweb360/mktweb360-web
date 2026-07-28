@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Link Building for SMEs — How to Get Quality Links Without Risk | Mkt Web 360" : "Link Building pour PME — Comment Obtenir des Liens de Qualité Sans Risque | Mkt Web 360",
+    title: isEn ? "Link Building for SMEs — How to Get Quality Links Without Risk" : "Link Building pour PME — Comment Obtenir des Liens de Qualité Sans Risque",
     description: isEn ? "Link building strategies that work for SMEs. How to get quality backlinks without risking a Google penalty or wasting budget on low-quality links." : "Stratégies de link building qui fonctionnent pour les PME. Comment obtenir des backlinks de qualité sans risquer une pénalité Google ou gaspiller le budget sur des liens de faible qualité.",
     alternates: alternatesFor(`/${lang}/link-building-for-smes/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/link-building-for-smes/`,

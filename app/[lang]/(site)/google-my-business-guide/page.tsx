@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Google My Business for Businesses — Complete Guide | Mkt Web 360" : "Google My Business pour les Entreprises — Guide Complet | Mkt Web 360",
+    title: isEn ? "Google My Business for Businesses — Complete Guide" : "Google My Business pour les Entreprises — Guide Complet",
     description: isEn ? "Complete guide to Google My Business (now Google Business Profile). How to create, verify, optimise and manage your listing to attract local customers." : "Guide complet de Google My Business (maintenant Google Business Profile). Comment créer, vérifier, optimiser et gérer votre fiche pour attirer des clients locaux.",
     alternates: alternatesFor(`/${lang}/google-my-business-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/google-my-business-guide/`,

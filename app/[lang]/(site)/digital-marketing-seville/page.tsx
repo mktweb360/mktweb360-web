@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Digital Marketing for Businesses in Seville — Practical Guide | Mkt Web 360" : "Marketing Digital pour les Entreprises à Séville — Guide Pratique | Mkt Web 360",
+    title: isEn ? "Digital Marketing for Businesses in Seville — Practical Guide" : "Marketing Digital pour les Entreprises à Séville — Guide Pratique",
     description: isEn ? "How to grow online if you have a business in Seville. Digital marketing guide with local SEO, Google Ads, best channels and how to choose a digital agency." : "Comment croître en ligne si vous avez une entreprise à Séville. Guide de marketing digital avec SEO local, Google Ads, meilleurs canaux et comment choisir une agence digitale.",
     alternates: alternatesFor(`/${lang}/digital-marketing-seville/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/digital-marketing-seville/`,

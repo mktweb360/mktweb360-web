@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Signs Your Website Needs an Urgent Redesign | Mkt Web 360" : "Signes que votre site web a besoin d'une refonte urgente | Mkt Web 360",
+    title: isEn ? "Signs Your Website Needs an Urgent Redesign" : "Signes que votre site web a besoin d'une refonte urgente",
     description: isEn ? "The clearest signs that your website is losing you sales and when it makes sense to redesign rather than keep optimising." : "Les signes les plus clairs que votre site web vous fait perdre des ventes et quand il est logique de refondre plutôt que de continuer à optimiser.",
     alternates: alternatesFor(`/${lang}/signs-your-website-needs-redesign/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/signs-your-website-needs-redesign/`,

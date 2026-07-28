@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "SEO in Bilbao — Web Positioning for Businesses in the Basque Country | Mkt Web 360" : "SEO à Bilbao — Positionnement Web pour les Entreprises du Pays Basque | Mkt Web 360",
+    title: isEn ? "SEO in Bilbao — Web Positioning for Businesses in the Basque Country" : "SEO à Bilbao — Positionnement Web pour les Entreprises du Pays Basque",
     description: isEn ? "How to position your business on Google in Bilbao. Local SEO guide for the Basque Country with strategies, keywords and how to stand out in this competitive market." : "Comment positionner votre entreprise sur Google à Bilbao. Guide SEO local pour le Pays Basque avec stratégies, mots-clés et comment se démarquer dans ce marché compétitif.",
     alternates: alternatesFor(`/${lang}/seo-bilbao-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-bilbao-guide/`,

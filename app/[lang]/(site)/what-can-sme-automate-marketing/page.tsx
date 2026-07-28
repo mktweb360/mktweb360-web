@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "What Can an SME Automate in Marketing and Sales | Mkt Web 360" : "Ce qu'une PME peut automatiser en marketing et ventes | Mkt Web 360",
+    title: isEn ? "What Can an SME Automate in Marketing and Sales" : "Ce qu'une PME peut automatiser en marketing et ventes",
     description: isEn ? "What marketing and sales processes can an SME automate to save time, improve follow-up and capture better leads." : "Quels processus de marketing et de vente une PME peut automatiser pour gagner du temps, améliorer le suivi et mieux capturer des leads.",
     alternates: alternatesFor(`/${lang}/what-can-sme-automate-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/what-can-sme-automate-marketing/`,

@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "SEO in Zaragoza — Web Positioning for Local Businesses | Mkt Web 360" : "SEO à Saragosse — Positionnement Web pour les Entreprises Locales | Mkt Web 360",
+    title: isEn ? "SEO in Zaragoza — Web Positioning for Local Businesses" : "SEO à Saragosse — Positionnement Web pour les Entreprises Locales",
     description: isEn ? "How to position your business on Google in Zaragoza. Local SEO guide for businesses in Aragon." : "Comment positionner votre entreprise sur Google à Saragosse. Guide SEO local pour les entreprises d'Aragon.",
     alternates: alternatesFor(`/${lang}/seo-zaragoza-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-zaragoza-guide/`,

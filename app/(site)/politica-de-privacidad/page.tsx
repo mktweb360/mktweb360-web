@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Política de Privacidad",
   description: "Política de privacidad y protección de datos personales de Mkt Web 360 SLU conforme al RGPD y la LOPDGDD.",
   alternates: { canonical: "https://www.mktweb360.com/politica-de-privacidad/" },
+  openGraph: { url: "https://www.mktweb360.com/politica-de-privacidad/" },
   robots: { index: false, follow: false },
 };
 

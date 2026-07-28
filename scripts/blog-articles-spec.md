@@ -43,9 +43,9 @@ Cada artículo sigue este patrón TSX:
 - H2s: 1. La estructura del contenido es la señal más importante | 2. Schema markup avanzado: más allá del básico | 3. El fichero llms.txt: la señal que los crawlers de IA leen | 4. Autoridad de entidad: que todo diga lo mismo sobre ti | 5. Contenido que demuestra experiencia real | Cómo medir si el GEO está funcionando
 - FAQs:
   Q1: ¿Qué es llms.txt y necesito tenerlo?
-  A1: El llms.txt es un archivo equivalente al robots.txt pero para modelos de lenguaje. Indica a los crawlers de IA (GPTBot, ClaudeBot, Google-Extended) qué contenido pueden indexar. No es obligatorio pero mejora la probabilidad de que la IA indexe y entienda bien tu contenido.
+  A1: El llms.txt es una representación orientativa y legible del sitio para sistemas de IA. No es una señal oficial de Google, no controla el acceso de crawlers y no garantiza indexación ni citación. Su utilidad es estructural: facilita que los modelos de lenguaje encuentren y entiendan tus páginas más relevantes.
   Q2: ¿El schema markup ayuda a que la IA me cite?
-  A2: Sí. El schema markup estructurado (FAQPage, Article, Organization, Service) hace que tu contenido sea más fácil de procesar para los modelos de IA. Google también usa el schema para construir los AI Overviews.
+  A2: Sí, parcialmente. El schema markup estructurado (FAQPage, Article, Organization, Service) ayuda a desambiguar entidades y facilita que los modelos de IA procesen tu contenido con mayor precisión semántica. Google no define el schema como mecanismo de acceso a los AI Overviews, pero un marcado limpio contribuye a la comprensión semántica y puede facilitar la aparición en rich results.
   Q3: ¿Cuántas palabras debe tener un artículo para posicionar en IA?
   A3: La longitud importa menos que la profundidad. Un artículo de 1.200 palabras que responde con precisión a una pregunta concreta tiene más probabilidad de ser citado que uno de 3.000 palabras genérico. La clave es la densidad semántica.
   Q4: ¿Cómo sé si ChatGPT me está citando?
@@ -104,7 +104,7 @@ Cada artículo sigue este patrón TSX:
   Q1: ¿Debo cambiar mi estrategia de keywords con los AI Overviews?
   A1: Sí, parcialmente. Las keywords informacionales puras están siendo más captadas por AI Overviews. Las keywords con intención comercial siguen generando clics porque el usuario necesita profundizar. Ajusta tu mix hacia keywords con mayor intención comercial.
   Q2: ¿Puedo aparecer dentro de un AI Overview de Google?
-  A2: Sí. Google selecciona las fuentes para sus AI Overviews basándose en autoridad y relevancia. Las páginas con buen SEO técnico, schema markup correcto y contenido de alta calidad tienen más probabilidad de ser citadas dentro del AI Overview.
+  A2: Sí, aunque Google no publica el mecanismo exacto de selección. Las páginas con autoridad demostrada, SEO técnico sólido y contenido de alta calidad tienen más probabilidad de ser citadas. El schema markup ayuda a desambiguar entidades y facilita la comprensión semántica, pero Google no lo define como criterio directo de acceso a AI Overviews.
   Q3: ¿Vale la pena hacer SEO si Google responde directamente con IA?
   A3: Sí. No todas las búsquedas tienen AI Overview, especialmente las comerciales. Aparecer como fuente dentro del AI Overview tiene valor de marca. Los usuarios que hacen clic después de ver un AI Overview tienen mejor tasa de conversión.
   Q4: ¿El SEO local se ve afectado por los AI Overviews?

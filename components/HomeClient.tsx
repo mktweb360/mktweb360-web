@@ -141,7 +141,7 @@ const localBusinessSchema = {
   },
   sameAs: [
     "https://www.facebook.com/mktweb360",
-    "https://twitter.com/mktweb360",
+    "https://x.com/MktWeb360",
     "https://www.instagram.com/mktweb360",
     "https://www.linkedin.com/company/mktweb360",
   ],
@@ -513,7 +513,7 @@ export default function HomeClient() {
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
             { value: "+1.000", label: "proyectos entregados" },
-            { value: "+9 años", label: "de experiencia digital" },
+            { value: "+10 años", label: "de experiencia digital" },
             { value: "Nacional", label: "servicio en toda España" },
             { value: "Exclusivo", label: "un cliente por sector y zona" },
           ].map((m) => (

@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "SEO in Toledo — Web Positioning for Local Businesses | Mkt Web 360" : "SEO à Tolède — Positionnement Web pour les Entreprises Locales | Mkt Web 360",
+    title: isEn ? "SEO in Toledo — Web Positioning for Local Businesses" : "SEO à Tolède — Positionnement Web pour les Entreprises Locales",
     description: isEn ? "How to appear on Google if you have a local business in Toledo. Local SEO guide with practical tips, local keywords and where to start." : "Comment apparaître sur Google si vous avez une entreprise locale à Tolède. Guide SEO local avec des conseils pratiques, des mots-clés locaux et par où commencer.",
     alternates: alternatesFor(`/${lang}/seo-toledo-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-toledo-guide/`,

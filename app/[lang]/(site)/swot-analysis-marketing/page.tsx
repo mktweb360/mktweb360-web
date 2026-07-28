@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "SWOT Analysis in Digital Marketing — Practical Guide | Mkt Web 360" : "Analyse SWOT en Marketing Digital — Guide Pratique | Mkt Web 360",
+    title: isEn ? "SWOT Analysis in Digital Marketing — Practical Guide" : "Analyse SWOT en Marketing Digital — Guide Pratique",
     description: isEn ? "How to use SWOT analysis in digital marketing. Practical guide with examples to identify your strengths, weaknesses, opportunities and threats." : "Comment utiliser l'analyse SWOT dans le marketing digital. Guide pratique avec exemples pour identifier vos forces, faiblesses, opportunités et menaces.",
     alternates: alternatesFor(`/${lang}/swot-analysis-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/swot-analysis-marketing/`,

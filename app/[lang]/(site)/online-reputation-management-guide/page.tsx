@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "How to Manage Your Business Online Reputation — Complete Guide | Mkt Web 360" : "Comment Gérer la Réputation en Ligne de votre Entreprise — Guide Complet | Mkt Web 360",
+    title: isEn ? "How to Manage Your Business Online Reputation — Complete Guide" : "Comment Gérer la Réputation en Ligne de votre Entreprise — Guide Complet",
     description: isEn ? "Step by step guide to managing your business online reputation. How to monitor, respond to reviews and build a positive digital image." : "Guide étape par étape pour gérer la réputation en ligne de votre entreprise. Comment surveiller, répondre aux avis et construire une image numérique positive.",
     alternates: alternatesFor(`/${lang}/online-reputation-management-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/online-reputation-management-guide/`,

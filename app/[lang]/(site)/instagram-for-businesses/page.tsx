@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Instagram for Businesses — What to Put in Your Bio | Mkt Web 360" : "Instagram pour les Entreprises — Quoi Mettre dans votre Bio | Mkt Web 360",
+    title: isEn ? "Instagram for Businesses — What to Put in Your Bio" : "Instagram pour les Entreprises — Quoi Mettre dans votre Bio",
     description: isEn ? "How to optimise your Instagram business profile. What to write in your bio, how to attract followers and convert them into customers." : "Comment optimiser votre profil Instagram d'entreprise. Quoi écrire dans votre bio, comment attirer des abonnés et les convertir en clients.",
     alternates: alternatesFor(`/${lang}/instagram-for-businesses/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/instagram-for-businesses/`,

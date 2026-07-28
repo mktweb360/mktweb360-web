@@ -45,11 +45,11 @@ const breadcrumbSchema = {
 const FAQS = [
   {
     q: "¿Qué es llms.txt y necesito tenerlo?",
-    a: "El llms.txt es un archivo equivalente al robots.txt pero para modelos de lenguaje. Indica a los crawlers de IA (GPTBot, ClaudeBot, Google-Extended) qué contenido pueden indexar. No es obligatorio pero mejora la probabilidad de que la IA indexe y entienda bien tu contenido.",
+    a: "El llms.txt es una representación orientativa y legible del sitio para sistemas de IA. No es una señal oficial de Google, no controla el acceso de crawlers y no garantiza indexación ni citación. Tenerlo bien estructurado puede facilitar que los modelos encuentren y entiendan tus páginas más relevantes, pero no sustituye a una buena estrategia de contenido.",
   },
   {
     q: "¿El schema markup ayuda a que la IA me cite?",
-    a: "Sí. El schema markup estructurado (FAQPage, Article, Organization, Service) hace que tu contenido sea más fácil de procesar para los modelos de IA. Google también usa el schema para construir los AI Overviews.",
+    a: "Sí. El schema markup estructurado (FAQPage, Article, Organization, Service) ayuda a desambiguar entidades y facilita que los modelos de IA procesen tu contenido con mayor precisión. Google no define el schema como mecanismo de acceso a los AI Overviews, pero un marcado limpio contribuye a la comprensión semántica y puede facilitar la aparición en rich results.",
   },
   {
     q: "¿Cuántas palabras debe tener un artículo para posicionar en IA?",
@@ -105,10 +105,10 @@ export default function OptimizarContenidoGEOPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">2. Schema markup avanzado: más allá del básico</h2>
           <p>El schema markup traduce tu contenido a un lenguaje que las máquinas entienden sin ambigüedad. Ir más allá de lo básico significa combinar varios tipos de forma coherente: FAQPage para las preguntas frecuentes, Article para el cuerpo del contenido, Organization para identificar quién publica y Service para lo que ofreces.</p>
-          <p>Este marcado tiene un doble beneficio. Facilita que los modelos de IA procesen y relacionen tu información, y a la vez alimenta los AI Overviews de Google, que se apoyan en datos estructurados para decidir qué fuentes citar. Un schema limpio y completo es de las inversiones técnicas con mejor relación esfuerzo-resultado en GEO.</p>
+          <p>Este marcado tiene un doble beneficio. Facilita que los modelos de IA procesen y relacionen tu información con mayor precisión, y contribuye a que Google pueda mostrar rich results en la búsqueda orgánica. Google no define el schema como mecanismo de acceso a los AI Overviews, pero un marcado limpio y coherente refuerza la comprensión semántica de tu contenido, que sí es un factor relevante para GEO. Un schema bien implementado sigue siendo una de las inversiones técnicas con mejor relación esfuerzo-resultado.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">3. El fichero llms.txt: la señal que los crawlers de IA leen</h2>
-          <p>El llms.txt es el equivalente al robots.txt, pero pensado para los modelos de lenguaje. En él indicas a crawlers como GPTBot, ClaudeBot o Google-Extended qué contenido pueden acceder e indexar. No es un requisito obligatorio, pero es una señal cada vez más habitual y aumenta la probabilidad de que la IA encuentre y entienda bien tus páginas más importantes.</p>
+          <p>El llms.txt es una representación orientativa y legible del sitio para sistemas de IA. A diferencia del robots.txt, no controla el acceso de los crawlers ni garantiza indexación ni citación; tampoco es una señal oficial de Google. Su utilidad real es estructural: permite que los modelos de lenguaje encuentren y relacionen más fácilmente tus páginas más relevantes, siempre que el contenido detrás de esas URLs sea de calidad.</p>
           <p>Configurarlo bien pasa por revisar primero qué bots de IA quieres permitir y cuáles no, y por señalar de forma ordenada los recursos que quieres que la máquina priorice. Es un archivo pequeño, pero forma parte de esa capa técnica que separa a quien improvisa de quien trabaja el GEO con criterio.</p>
 
           <OfertaVeranoBanner />

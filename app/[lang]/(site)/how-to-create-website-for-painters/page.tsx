@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "How to Create a Website for Painters and Get Customers on Google | Mkt Web 360" : "Comment créer un site web pour peintres et obtenir des clients sur Google | Mkt Web 360",
+    title: isEn ? "How to Create a Website for Painters and Get Customers on Google" : "Comment créer un site web pour peintres et obtenir des clients sur Google",
     description: isEn ? "How to create a professional website for painters that attracts customers through Google. SEO, Google Business Profile and local strategy." : "Comment créer un site web professionnel pour peintres qui attire des clients via Google. SEO, Google Business Profile et stratégie locale.",
     alternates: alternatesFor(`/${lang}/how-to-create-website-for-painters/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-create-website-for-painters/`,

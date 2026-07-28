@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "SEO in Madrid — Web Positioning for Businesses and Companies | Mkt Web 360" : "SEO à Madrid — Positionnement Web pour les Entreprises | Mkt Web 360",
+    title: isEn ? "SEO in Madrid — Web Positioning for Businesses and Companies" : "SEO à Madrid — Positionnement Web pour les Entreprises",
     description: isEn ? "How to position your business on Google in Madrid. Complete guide to SEO in Spain's most competitive market with strategies, sectors and how to choose an agency." : "Comment positionner votre entreprise sur Google à Madrid. Guide complet du SEO dans le marché le plus compétitif d'Espagne avec stratégies, secteurs et comment choisir une agence.",
     alternates: alternatesFor(`/${lang}/seo-madrid-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-madrid-guide/`,

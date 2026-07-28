@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Digital Marketing Agencies in Toledo — What to Look For | Mkt Web 360" : "Agences de Marketing Digital à Tolède — Ce qu'il faut chercher | Mkt Web 360",
+    title: isEn ? "Digital Marketing Agencies in Toledo — What to Look For" : "Agences de Marketing Digital à Tolède — Ce qu'il faut chercher",
     description: isEn ? "Guide to choosing a digital marketing agency in Toledo. What to ask, what to avoid and how to compare proposals before signing." : "Guide pour choisir une agence de marketing digital à Tolède. Quoi demander, quoi éviter et comment comparer les propositions avant de signer.",
     alternates: alternatesFor(`/${lang}/digital-marketing-agencies-toledo/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/digital-marketing-agencies-toledo/`,

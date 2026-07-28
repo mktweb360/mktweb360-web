@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "How to Choose a Digital Marketing Agency in Madrid | Mkt Web 360" : "Comment choisir une agence de marketing digital à Madrid | Mkt Web 360",
+    title: isEn ? "How to Choose a Digital Marketing Agency in Madrid" : "Comment choisir une agence de marketing digital à Madrid",
     description: isEn ? "Guide to choosing a digital marketing agency in Madrid. What to ask, red flags to detect and how to compare proposals." : "Guide pour choisir une agence de marketing digital à Madrid. Quoi demander, red flags à détecter et comment comparer les propositions.",
     alternates: alternatesFor(`/${lang}/digital-marketing-agencies-madrid/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/digital-marketing-agencies-madrid/`,

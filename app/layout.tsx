@@ -104,6 +104,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        {/* Consent Mode v2 — debe ejecutarse ANTES de que GTM cargue */}
+        <script dangerouslySetInnerHTML={{ __html:
+          "window.dataLayer=window.dataLayer||[];" +
+          "function gtag(){window.dataLayer.push(arguments);}" +
+          "gtag('consent','default',{" +
+            "'ad_storage':'denied'," +
+            "'ad_user_data':'denied'," +
+            "'ad_personalization':'denied'," +
+            "'analytics_storage':'denied'," +
+            "'wait_for_update':500" +
+          "});"
+        }} />
+      </head>
       <body>
         <script
           type="application/ld+json"

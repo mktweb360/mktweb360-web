@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Google Merchant Center for Ecommerce — Complete Guide | Mkt Web 360" : "Google Merchant Center pour E-commerce — Guide Complet | Mkt Web 360",
+    title: isEn ? "Google Merchant Center for Ecommerce — Complete Guide" : "Google Merchant Center pour E-commerce — Guide Complet",
     description: isEn ? "Complete guide to setting up Google Merchant Center for your online store. Product feed, common errors and link with Google Ads." : "Guide complet pour configurer Google Merchant Center pour votre boutique en ligne. Flux de produits, erreurs courantes et lien avec Google Ads.",
     alternates: alternatesFor(`/${lang}/google-merchant-center-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/google-merchant-center-guide/`,

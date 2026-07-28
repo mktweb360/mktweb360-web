@@ -92,7 +92,7 @@ export default function SeoPage() {
               <span className="text-accent-400">clientes que te encuentran</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
-              El 93% de las experiencias online empiezan en Google. Si no apareces en la primera página, tu competencia se lleva esos clientes cada día. El SEO es la inversión con mayor retorno a largo plazo.
+              La gran mayoría de las experiencias online comienzan en un buscador. Si no apareces en la primera página, tu competencia se lleva esos clientes cada día. El SEO es la inversión con mayor retorno a largo plazo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#auditoria" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
@@ -113,7 +113,7 @@ export default function SeoPage() {
       <section className="bg-primary-600 py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {[
-            { value: "93%", label: "búsquedas empiezan en Google" },
+            { value: "#1 canal", label: "buscadores, inicio del viaje digital" },
             { value: "SEO + GEO", label: "visibilidad en Google y en IA" },
             { value: "Duradero", label: "resultados que se mantienen" },
             { value: "Nacional", label: <>y <Link href="/seo-local/" className="underline decoration-accent-400 hover:text-white">SEO local</Link></> },

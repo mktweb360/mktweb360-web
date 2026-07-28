@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /area-privada/
+Disallow: /portal/
 
 Sitemap: https://www.mktweb360.com/sitemap.xml
 

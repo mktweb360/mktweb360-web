@@ -8,43 +8,33 @@ type Consent = { analytics: boolean; date: string };
 let gtmLoaded = false;
 let adsLoaded = false;
 
-function pushToDataLayer(data: Record<string, unknown>) {
+// Consent Mode v2 — formato correcto para GTM: push de array de argumentos
+function gtagConsent(type: "default" | "update", params: Record<string, string | number>) {
   if (typeof window === "undefined") return;
-  const w = window as unknown as Record<string, unknown>;
-  w.dataLayer = (w.dataLayer as unknown[]) || [];
-  (w.dataLayer as unknown[]).push(data);
+  const w = window as unknown as { dataLayer: unknown[] };
+  w.dataLayer = w.dataLayer || [];
+  // Equivalente a gtag('consent', type, params) — GTM procesa arrays como IArguments
+  w.dataLayer.push(["consent", type, params]);
 }
 
 function setConsentDefault() {
-  pushToDataLayer({
-    event: "consent_default",
-    "consent": {
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      analytics_storage: "denied",
-      functionality_storage: "denied",
-      personalization_storage: "denied",
-      security_storage: "granted",
-      wait_for_update: 500,
-      region: ["ES"],
-    },
+  // Redundante con el script inline de layout.tsx, pero protege si el script no carga
+  gtagConsent("default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied",
+    wait_for_update: 500,
   });
 }
 
 function updateConsent(analytics: boolean) {
   const granted = analytics ? "granted" : "denied";
-  pushToDataLayer({
-    event: "consent_update",
-    "consent": {
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      analytics_storage: granted,
-      functionality_storage: granted,
-      personalization_storage: "denied",
-      security_storage: "granted",
-    },
+  gtagConsent("update", {
+    ad_storage: granted,
+    ad_user_data: granted,
+    ad_personalization: granted,
+    analytics_storage: granted,
   });
 }
 
@@ -68,11 +58,11 @@ function loadGoogleAds() {
   script.src = "https://www.googletagmanager.com/gtag/js?id=AW-870698032";
   script.async = true;
   document.head.appendChild(script);
-  const w = window as unknown as Record<string, unknown>;
-  w.dataLayer = (w.dataLayer as unknown[]) || [];
-  const inline = document.createElement("script");
-  inline.innerHTML = "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-870698032');";
-  document.head.appendChild(inline);
+  // gtag ya definida globalmente en app/layout.tsx — inicializa la propiedad Ads
+  const w = window as unknown as { dataLayer: unknown[]; gtag: (...args: unknown[]) => void };
+  w.dataLayer = w.dataLayer || [];
+  w.gtag("js", new Date());
+  w.gtag("config", "AW-870698032");
 }
 
 function saveConsent(analytics: boolean) {

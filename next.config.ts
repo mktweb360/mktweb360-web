@@ -128,7 +128,7 @@ const nextConfig: NextConfig = {
       // permanent:false mientras se valida en produccion; pasar a true despues.
       ...aliasRedirects()
         .filter((r) => !ALIAS_FASE_2B.has(r.source.split("/")[2]))
-        .map((r) => ({ ...r, permanent: false })),
+        .map((r) => ({ ...r, permanent: true })),
     ];
   },
 };

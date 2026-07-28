@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "How to Create a Value Proposition That Differentiates You | Mkt Web 360" : "Comment créer une proposition de valeur qui vous différencie | Mkt Web 360",
+    title: isEn ? "How to Create a Value Proposition That Differentiates You" : "Comment créer une proposition de valeur qui vous différencie",
     description: isEn ? "Step-by-step guide to create a value proposition that clearly explains why customers should choose you over the competition." : "Guide étape par étape pour créer une proposition de valeur qui explique clairement pourquoi les clients devraient vous choisir plutôt que la concurrence.",
     alternates: alternatesFor(`/${lang}/how-to-create-value-proposition/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-create-value-proposition/`,

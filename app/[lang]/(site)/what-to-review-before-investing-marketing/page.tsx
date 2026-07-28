@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "What to Review Before Investing More in Digital Marketing | Mkt Web 360" : "Ce qu'il faut vérifier avant d'investir davantage en marketing digital | Mkt Web 360",
+    title: isEn ? "What to Review Before Investing More in Digital Marketing" : "Ce qu'il faut vérifier avant d'investir davantage en marketing digital",
     description: isEn ? "Before investing more in digital marketing, review these 7 key areas to avoid amplifying mistakes and make better investment decisions." : "Avant d'investir davantage en marketing digital, vérifiez ces 7 domaines clés pour éviter d'amplifier les erreurs et prendre de meilleures décisions d'investissement.",
     alternates: alternatesFor(`/${lang}/what-to-review-before-investing-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/what-to-review-before-investing-marketing/`,

@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "How a Freelancer Can Get Clients Online | Mkt Web 360" : "Comment un indépendant peut obtenir des clients en ligne | Mkt Web 360",
+    title: isEn ? "How a Freelancer Can Get Clients Online" : "Comment un indépendant peut obtenir des clients en ligne",
     description: isEn ? "Strategies for freelancers to attract clients online. SEO, LinkedIn, referrals, portfolio and positioning to grow your client base." : "Stratégies pour que les indépendants attirent des clients en ligne. SEO, LinkedIn, références, portfolio et positionnement pour développer votre clientèle.",
     alternates: alternatesFor(`/${lang}/how-to-get-clients-online-freelancer/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-get-clients-online-freelancer/`,

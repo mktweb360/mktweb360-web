@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "How to Use the Canvas Framework for Social Media Management | Mkt Web 360" : "Comment utiliser le Canvas pour la gestion des réseaux sociaux | Mkt Web 360",
+    title: isEn ? "How to Use the Canvas Framework for Social Media Management" : "Comment utiliser le Canvas pour la gestion des réseaux sociaux",
     description: isEn ? "How to apply the Canvas business model framework to your social media strategy. Practical guide with examples." : "Comment appliquer le modèle Canvas à votre stratégie de réseaux sociaux. Guide pratique avec exemples.",
     alternates: alternatesFor(`/${lang}/canvas-for-social-media/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/canvas-for-social-media/`,
