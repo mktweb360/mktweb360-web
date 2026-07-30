@@ -158,6 +158,13 @@ export const ROUTES: Route[] = [
   { es: "/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/", en: "freelancer-social-security-spain-2026", fr: "freelancer-social-security-spain-2026" },
   { es: "/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/", en: "digital-marketing-for-freelancers-2026", fr: "digital-marketing-for-freelancers-2026" },
   { es: "/cuanto-cuesta-agencia-marketing-digital-espana-2026/", en: "cost-digital-marketing-agency-spain-2026", fr: "cost-digital-marketing-agency-spain-2026" },
+
+  // Páginas huérfanas registradas — julio 2026
+  { es: "/geo-vs-seo-diferencias/", en: "geo-vs-seo-differences", fr: "geo-vs-seo-differences" },
+  { es: "/por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026/", en: "why-appearing-in-chatgpt-gemini-matters-more-seo-2026", fr: "why-appearing-in-chatgpt-gemini-matters-more-seo-2026" },
+  { es: "/oferta-seo-geo-gbp/" },
+  { es: "/diseno-de-paginas-web/diseno-paginas-web-empresa/", en: "web-design-for-businesses", fr: "web-design-for-businesses" },
+  { es: "/diseno-de-paginas-web/paginas-corporativas/", en: "corporate-website-design", fr: "corporate-website-design" },
 ];
 
 // ---------- helpers derivados ----------
