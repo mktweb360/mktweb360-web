@@ -8,8 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Social Media for Businesses in 2026: What the Data Actually Says Works"
-      : "Réseaux Sociaux pour Entreprises en 2026 : Ce que Disent Vraiment les Données"}
-    ,
+      : "Réseaux Sociaux pour Entreprises en 2026 : Ce que Disent Vraiment les Données",
     description: isEn
       ? "The Social Media 2026 study by Cyberclick and Metricool analyses millions of posts. TikTok leads on impressions, Instagram on stability, LinkedIn on B2B. What it means for your strategy."
       : "L'étude Social Media 2026 de Cyberclick et Metricool analyse des millions de publications. TikTok domine les impressions, Instagram la stabilité, LinkedIn le B2B. Ce que cela signifie pour votre stratégie.",

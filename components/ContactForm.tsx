@@ -12,6 +12,7 @@ interface UtmData {
 
 interface ContactFormProps {
   formType?: string;
+  lang?: string;
 }
 
 export function ContactForm({ formType = "contacto" }: ContactFormProps) {

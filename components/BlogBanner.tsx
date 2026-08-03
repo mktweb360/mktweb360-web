@@ -2,6 +2,7 @@ import Link from "next/link";
 
 interface BlogBannerProps {
   variant?: "seo" | "ecommerce" | "geo" | "default";
+  lang?: string;
 }
 
 const BANNERS = {
