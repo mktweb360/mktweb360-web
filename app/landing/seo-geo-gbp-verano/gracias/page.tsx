@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "¡Tu plaza está reservada! — Mkt Web 360",
+  title: "¡Tu plaza está reservada!",
   robots: { index: false, follow: false },
 };
 
