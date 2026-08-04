@@ -1,5 +1,5 @@
 # Mkt Web 360 SLU — Agencia de Marketing Digital
-> Agencia de marketing digital especializada en SEO, Google Ads, diseño web, tiendas online, redes sociales, email marketing y GEO para PYMEs y empresas en España. Servicios nacionales desde El Viso de San Juan, Toledo.
+> Agencia de marketing digital especializada en SEO, GEO, Google Ads, diseño web, tiendas online, redes sociales, email marketing, blog para monetización y chatbot empresarial IA para PYMEs y empresas en España. Servicios nacionales desde El Viso de San Juan, Toledo.
 
 ## Empresa
 - Nombre: Mkt Web 360 SLU
@@ -24,6 +24,8 @@
 - [Reputación Online](https://www.mktweb360.com/reputacion-online/)
 - [GEO — Posicionamiento en IA](https://www.mktweb360.com/geo-posicionamiento-ia/): Optimización para aparecer en ChatGPT, Gemini y Perplexity. Estrategia semántica, llms.txt y schema para LLMs.
 - [IA Aplicada al Marketing](https://www.mktweb360.com/ia-aplicada-al-marketing/)
+- [Blog para Monetización](https://www.mktweb360.com/blog-para-monetizacion/): Blog profesional SEO para posicionamiento orgánico y monetización. 15 artículos de lanzamiento + 10 artículos/mes. Setup 990€ + 290€/mes.
+- Chatbot Empresarial IA: Asistente conversacional conectado a datos reales del negocio (web, PDF, catálogo, CRM, stock). Plataforma gestionada con 4 niveles: FAQs/web → recuperación de documentos → acciones (reservas/pedidos/CRM) → recomendación. Cumplimiento RGPD + AI Act. Setup 300–500€ + 149–299€/mes.
 - [Auditoría Digital](https://www.mktweb360.com/auditoria-digital/)
 
 ## Ofertas activas
