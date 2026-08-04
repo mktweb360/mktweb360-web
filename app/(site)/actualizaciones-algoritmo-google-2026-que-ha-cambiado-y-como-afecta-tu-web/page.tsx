@@ -4,12 +4,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Actualizaciones del algoritmo de Google en 2026: qué ha cambiado y cómo afecta a tu web",
   description:
     "Google ha lanzado varias actualizaciones de algoritmo en 2026 con foco en experiencia de usuario, contenido de IA y señales E-E-A-T. Analizamos qué ha cambiado y qué tienes que hacer.",
-  alternates: { canonical: "https://www.mktweb360.com/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/" },
+  alternates: alternatesFor("/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/") ?? { canonical: "https://www.mktweb360.com/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/" },
   openGraph: {
     title: "Actualizaciones del algoritmo de Google en 2026: qué ha cambiado y cómo afecta a tu web | Mkt Web 360",
     description: "Google ha lanzado varias actualizaciones de algoritmo en 2026 con foco en experiencia de usuario, contenido de IA y señales E-E-A-T. Analizamos qué ha cambiado y qué tienes que hacer.",

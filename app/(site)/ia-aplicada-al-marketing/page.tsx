@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "IA Aplicada al Marketing Digital",
   description: "Integramos inteligencia artificial en cada servicio de marketing digital. Protocolos propios de IA para resultados más rápidos, análisis más precisos y mejores decisiones. Servicio nacional.",
-  alternates: { canonical: "https://www.mktweb360.com/ia-aplicada-al-marketing/" },
+  alternates: alternatesFor("/ia-aplicada-al-marketing/") ?? { canonical: "https://www.mktweb360.com/ia-aplicada-al-marketing/" },
   openGraph: {
     title: "IA Aplicada al Marketing Digital | Mkt Web 360",
     description: "La experiencia de un equipo senior. La precisión de la inteligencia artificial. Protocolos propios de IA en cada servicio.",

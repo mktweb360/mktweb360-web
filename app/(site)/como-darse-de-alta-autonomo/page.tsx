@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Cómo darse de alta como autónomo en 2026: pasos, costes y errores a evitar",
   description:
     "Guía completa para darse de alta como autónomo en 2026. Pasos en Hacienda y Seguridad Social, cuota, errores frecuentes y qué necesitas tener listo.",
-  alternates: { canonical: "https://www.mktweb360.com/como-darse-de-alta-autonomo/" },
+  alternates: alternatesFor("/como-darse-de-alta-autonomo/") ?? { canonical: "https://www.mktweb360.com/como-darse-de-alta-autonomo/" },
   openGraph: {
     title: "Cómo darse de alta como autónomo en 2026: pasos, costes y errores a evitar | Mkt Web 360",
     description: "Guía completa para darse de alta como autónomo en 2026. Pasos en Hacienda y Seguridad Social, cuota, errores frecuentes y qué necesitas tener listo.",

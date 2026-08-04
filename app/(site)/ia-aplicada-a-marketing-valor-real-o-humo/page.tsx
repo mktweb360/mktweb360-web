@@ -5,12 +5,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "IA aplicada a marketing: dónde aporta valor real en 2025",
   description:
     "Descubre dónde la IA aplicada a marketing aporta valor real, qué usos conviene priorizar y dónde sigue habiendo demasiado ruido.",
-  alternates: { canonical: "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/" },
+  alternates: alternatesFor("/ia-aplicada-a-marketing-valor-real-o-humo/") ?? { canonical: "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/" },
   openGraph: {
     title: "IA aplicada a marketing: dónde aporta valor real en 2025 | Mkt Web 360",
     description: "Descubre dónde la IA aplicada a marketing aporta valor real, qué usos conviene priorizar y dónde sigue habiendo demasiado ruido.",

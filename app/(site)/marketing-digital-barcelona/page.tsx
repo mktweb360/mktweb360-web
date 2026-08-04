@@ -3,11 +3,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Marketing Digital para Empresas en Barcelona: Guía Práctica",
   description: "Qué canales de marketing digital funcionan mejor para negocios en Barcelona. SEO, Google Ads, redes sociales y estrategia omnicanal adaptada al mercado catalán.",
-  alternates: { canonical: "https://www.mktweb360.com/marketing-digital-barcelona/" },
+  alternates: alternatesFor("/marketing-digital-barcelona/") ?? { canonical: "https://www.mktweb360.com/marketing-digital-barcelona/" },
   openGraph: {
     title: "Marketing Digital para Empresas en Barcelona | Mkt Web 360",
     description: "Qué canales de marketing digital funcionan mejor para negocios en Barcelona. SEO, Google Ads, redes sociales y estrategia omnicanal adaptada al mercado catalán.",

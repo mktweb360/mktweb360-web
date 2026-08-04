@@ -4,11 +4,12 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "SEO Local para Empresas — Posicionamiento en tu Zona",
   description: "SEO local para captar clientes de tu zona: Google Maps, Google Business Profile y reseñas. Posicionamiento local para empresas con o sin local físico.",
-  alternates: { canonical: "https://www.mktweb360.com/seo-local/" },
+  alternates: alternatesFor("/seo-local/") ?? { canonical: "https://www.mktweb360.com/seo-local/" },
   openGraph: {
     title: "SEO Local — Posicionamiento en Google Maps | Mkt Web 360",
     description: "Posiciona tu negocio en Google Maps y en las búsquedas de tu zona. Más clientes locales con SEO local profesional.",

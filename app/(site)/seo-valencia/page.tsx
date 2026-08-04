@@ -3,11 +3,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "SEO en Valencia — Posicionamiento Local",
   description: "Guía de SEO local para negocios en Valencia. Posicionamiento, Google Business Profile, keywords en valenciano y castellano, y estrategia para cada sector.",
-  alternates: { canonical: "https://www.mktweb360.com/seo-valencia/" },
+  alternates: alternatesFor("/seo-valencia/") ?? { canonical: "https://www.mktweb360.com/seo-valencia/" },
   openGraph: {
     title: "SEO en Valencia: Posiciona tu Negocio Local | Mkt Web 360",
     description: "Guía de SEO local para negocios en Valencia. Posicionamiento, Google Business Profile, keywords en valenciano y castellano, y estrategia para cada sector.",

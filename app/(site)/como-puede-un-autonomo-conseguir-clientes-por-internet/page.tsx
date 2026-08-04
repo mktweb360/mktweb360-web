@@ -5,12 +5,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Cómo puede un autónomo conseguir clientes por Internet en 2025",
   description:
     "Descubre cómo puede un autónomo conseguir clientes por Internet con una base digital clara, rentable y sin depender solo del boca a boca.",
-  alternates: { canonical: "https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/" },
+  alternates: alternatesFor("/como-puede-un-autonomo-conseguir-clientes-por-internet/") ?? { canonical: "https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/" },
   openGraph: {
     title: "Cómo puede un autónomo conseguir clientes por Internet en 2025 | Mkt Web 360",
     description: "Descubre cómo puede un autónomo conseguir clientes por Internet con una base digital clara, rentable y sin depender solo del boca a boca.",

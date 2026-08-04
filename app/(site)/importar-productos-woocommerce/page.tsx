@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Cómo Importar Productos en WooCommerce con CSV: Guía Paso a Paso",
   description: "Aprende a importar productos en WooCommerce usando archivos CSV. Formato correcto, errores comunes y cómo subir miles de productos sin trabajo manual.",
-  alternates: { canonical: "https://www.mktweb360.com/importar-productos-woocommerce/" },
+  alternates: alternatesFor("/importar-productos-woocommerce/") ?? { canonical: "https://www.mktweb360.com/importar-productos-woocommerce/" },
   openGraph: {
     title: "Cómo Importar Productos en WooCommerce con CSV | Mkt Web 360",
     description: "Aprende a importar productos en WooCommerce usando archivos CSV. Formato correcto, errores comunes y cómo subir miles de productos sin trabajo manual.",

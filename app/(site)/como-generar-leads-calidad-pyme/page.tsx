@@ -5,12 +5,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Cómo generar leads de calidad para una pyme sin gastar más en publicidad",
   description:
     "Aprende cómo generar leads de calidad para tu pyme mejorando mensaje, segmentación, canales, web y proceso comercial.",
-  alternates: { canonical: "https://www.mktweb360.com/como-generar-leads-calidad-pyme/" },
+  alternates: alternatesFor("/como-generar-leads-calidad-pyme/") ?? { canonical: "https://www.mktweb360.com/como-generar-leads-calidad-pyme/" },
   openGraph: {
     title: "Cómo generar leads de calidad para una pyme sin gastar más en publicidad | Mkt Web 360",
     description: "Aprende cómo generar leads de calidad para tu pyme mejorando mensaje, segmentación, canales, web y proceso comercial.",

@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Diseño Web para Coaches",
   description:
     "Diseño web profesional para coaches, consultores y formadores. Web que transmite autoridad, capta leads y convierte visitas en clientes. Sin comisiones.",
-  alternates: { canonical: "https://www.mktweb360.com/diseno-web-para-coaches/" },
+  alternates: alternatesFor("/diseno-web-para-coaches/") ?? { canonical: "https://www.mktweb360.com/diseno-web-para-coaches/" },
   openGraph: {
     title: "Diseño Web para Coaches | Mkt Web 360",
     description:

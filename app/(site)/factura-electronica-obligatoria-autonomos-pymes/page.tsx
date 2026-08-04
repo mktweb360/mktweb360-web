@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Factura electrónica obligatoria para autónomos y pymes: qué debes saber en 2026",
   description:
     "La factura electrónica será obligatoria para autónomos y pymes. Descubre qué implica, cuándo entra en vigor, qué necesitas y cómo prepararte.",
-  alternates: { canonical: "https://www.mktweb360.com/factura-electronica-obligatoria-autonomos-pymes/" },
+  alternates: alternatesFor("/factura-electronica-obligatoria-autonomos-pymes/") ?? { canonical: "https://www.mktweb360.com/factura-electronica-obligatoria-autonomos-pymes/" },
   openGraph: {
     title: "Factura electrónica obligatoria para autónomos y pymes: qué debes saber en 2026 | Mkt Web 360",
     description: "La factura electrónica será obligatoria para autónomos y pymes. Descubre qué implica, cuándo entra en vigor, qué necesitas y cómo prepararte.",

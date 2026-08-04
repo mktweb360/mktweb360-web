@@ -5,11 +5,12 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Link Building para PYMEs: Cómo Conseguir Enlaces Sin Spam",
   description: "Estrategias de link building para pequeñas empresas sin presupuesto para comprar enlaces. Cómo conseguir backlinks de calidad de forma natural y sostenible.",
-  alternates: { canonical: "https://www.mktweb360.com/link-building-pymes/" },
+  alternates: alternatesFor("/link-building-pymes/") ?? { canonical: "https://www.mktweb360.com/link-building-pymes/" },
   openGraph: {
     title: "Link Building para PYMEs: Consigue Backlinks de Calidad | Mkt Web 360",
     description: "Estrategias de link building para pequeñas empresas sin presupuesto para comprar enlaces. Cómo conseguir backlinks de calidad de forma natural y sostenible.",

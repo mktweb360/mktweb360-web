@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Cómo crear una propuesta de valor que atraiga a los clientes que quieres",
   description:
     "Una propuesta de valor clara es la base de cualquier estrategia de marketing efectiva. Aprende a construirla con ejemplos prácticos para pymes.",
-  alternates: { canonical: "https://www.mktweb360.com/como-crear-propuesta-de-valor/" },
+  alternates: alternatesFor("/como-crear-propuesta-de-valor/") ?? { canonical: "https://www.mktweb360.com/como-crear-propuesta-de-valor/" },
   openGraph: {
     title: "Cómo crear una propuesta de valor que atraiga a los clientes que quieres | Mkt Web 360",
     description: "Una propuesta de valor clara es la base de cualquier estrategia de marketing efectiva. Aprende a construirla con ejemplos prácticos para pymes.",

@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Qué es un chatbot para empresas y por qué lo necesitas en 2026",
   description:
     "Un chatbot para empresas ya no es tecnología de grandes corporaciones. En 2026, las pymes españolas que automatizan su atención al cliente con IA reducen costes, captan más leads y venden más. Guía completa.",
-  alternates: { canonical: "https://www.mktweb360.com/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/" },
+  alternates: alternatesFor("/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/") ?? { canonical: "https://www.mktweb360.com/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/" },
   openGraph: {
     title: "Qué es un chatbot para empresas y por qué lo necesitas en 2026 | Mkt Web 360",
     description:

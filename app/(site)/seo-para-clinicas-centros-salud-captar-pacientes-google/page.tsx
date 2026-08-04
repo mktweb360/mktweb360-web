@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "SEO para clínicas y centros de salud: cómo captar pacientes en Google",
   description:
     "El 74% de los pacientes busca en Google antes de llamar. SEO específico para clínicas dentales, fisioterapia y centros de salud en España. Capta más pacientes desde el primer mes.",
-  alternates: { canonical: "https://www.mktweb360.com/seo-para-clinicas-centros-salud-captar-pacientes-google/" },
+  alternates: alternatesFor("/seo-para-clinicas-centros-salud-captar-pacientes-google/") ?? { canonical: "https://www.mktweb360.com/seo-para-clinicas-centros-salud-captar-pacientes-google/" },
   openGraph: {
     title: "SEO para clínicas y centros de salud: cómo captar pacientes en Google | Mkt Web 360",
     description: "SEO específico para clínicas dentales, fisioterapia y centros de salud en España. Capta más pacientes desde Google.",

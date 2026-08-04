@@ -3,11 +3,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Diseño Web en Barcelona",
   description: "Guía para contratar diseño web en Barcelona. Precios orientativos, qué debe incluir una web profesional, cómo comparar agencias y errores que cuestan clientes.",
-  alternates: { canonical: "https://www.mktweb360.com/diseno-web-barcelona/" },
+  alternates: alternatesFor("/diseno-web-barcelona/") ?? { canonical: "https://www.mktweb360.com/diseno-web-barcelona/" },
   openGraph: {
     title: "Diseño Web en Barcelona: Guía para Contratar Bien | Mkt Web 360",
     description: "Guía para contratar diseño web en Barcelona. Precios orientativos, qué debe incluir una web profesional, cómo comparar agencias y errores que cuestan clientes.",

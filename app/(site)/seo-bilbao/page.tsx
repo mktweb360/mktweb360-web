@@ -3,11 +3,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "SEO en Bilbao: Cómo Posicionar tu Negocio en el País Vasco",
   description: "Guía de SEO local para negocios en Bilbao y el País Vasco. Estrategia de posicionamiento, Google Business Profile, keywords en euskera y castellano.",
-  alternates: { canonical: "https://www.mktweb360.com/seo-bilbao/" },
+  alternates: alternatesFor("/seo-bilbao/") ?? { canonical: "https://www.mktweb360.com/seo-bilbao/" },
   openGraph: {
     title: "SEO en Bilbao: Posiciona tu Negocio en el País Vasco | Mkt Web 360",
     description: "Guía de SEO local para negocios en Bilbao y el País Vasco. Estrategia de posicionamiento, Google Business Profile y keywords para el mercado vasco.",

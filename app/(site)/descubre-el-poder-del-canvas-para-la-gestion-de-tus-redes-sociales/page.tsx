@@ -5,11 +5,12 @@ import Link from "next/link";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Canvas para la Gestión de Redes Sociales — Guía Práctica",
   description: "Descubre cómo usar el modelo Canvas adaptado a las redes sociales para planificar tu estrategia de contenidos. Herramienta práctica para empresas.",
-  alternates: { canonical: "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/" },
+  alternates: alternatesFor("/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/") ?? { canonical: "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/" },
   openGraph: {
     title: "Canvas para Redes Sociales: Planifica tu Estrategia | Mkt Web 360",
     description: "Aprende a usar el Social Media Canvas para planificar tu estrategia de contenidos en redes sociales.",

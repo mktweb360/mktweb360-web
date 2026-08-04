@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Chatbot para WordPress: cómo instalarlo, qué evitar y qué esperar",
   description:
     "WordPress tiene decenas de plugins de chatbot. La mayoría no merece el tiempo que cuesta probarlos. Guía honesta sobre qué funciona de verdad y cómo implementar un chatbot útil en una web WordPress en 2026.",
-  alternates: { canonical: "https://www.mktweb360.com/chatbot-wordpress-como-instalarlo-que-evitar/" },
+  alternates: alternatesFor("/chatbot-wordpress-como-instalarlo-que-evitar/") ?? { canonical: "https://www.mktweb360.com/chatbot-wordpress-como-instalarlo-que-evitar/" },
   openGraph: {
     title: "Chatbot para WordPress: cómo instalarlo, qué evitar y qué esperar | Mkt Web 360",
     description:

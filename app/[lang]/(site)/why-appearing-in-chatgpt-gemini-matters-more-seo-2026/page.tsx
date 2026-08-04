@@ -149,7 +149,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 Des millions de personnes ne tapent plus de requêtes dans Google — elles demandent directement à
                 ChatGPT, Perplexity ou Gemini. Si votre entreprise n&apos;apparaît pas dans ces réponses, vous perdez
                 des clients sans même le savoir.{" "}
-                <Link href={`/${lang}/geo-generative-engine-optimization/`} className="text-accent-500 hover:underline">
+                <Link href={`/${lang}/geo-optimisation-moteurs-generatifs/`} className="text-accent-500 hover:underline">
                   Le GEO ou positionnement IA
                 </Link>{" "}
                 est la discipline qui détermine si la machine vous mentionne ou mentionne votre concurrence.
@@ -206,7 +206,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               <>
                 Le GEO (Generative Engine Optimization) est la discipline qui optimise votre contenu pour que les
                 modèles d&apos;IA vous citent dans leurs réponses. Il partage des fondements avec le{" "}
-                <Link href={`/${lang}/seo-web-positioning/`} className="text-accent-500 hover:underline">
+                <Link href={`/${lang}/positionnement-seo/`} className="text-accent-500 hover:underline">
                   SEO organique
                 </Link>
                 , mais poursuit un objectif différent : ne pas se battre pour une position dans une liste, mais être la
@@ -292,7 +292,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 {isEn ? "Talk to a specialist" : "Parler à un spécialiste"}
               </Link>
               <Link
-                href={`/${lang}/geo-generative-engine-optimization/`}
+                href={`/${lang}/${isEn ? "geo-generative-engine-optimization" : "geo-optimisation-moteurs-generatifs"}/`}
                 className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {isEn ? "View GEO service" : "Voir le service GEO"}
@@ -333,7 +333,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
           <p className="text-sm text-gray-500 pt-4">
             {isEn ? "Related service:" : "Service lié :"}{" "}
-            <Link href={`/${lang}/geo-generative-engine-optimization/`} className="text-accent-500 hover:underline">
+            <Link href={`/${lang}/${isEn ? "geo-generative-engine-optimization" : "geo-optimisation-moteurs-generatifs"}/`} className="text-accent-500 hover:underline">
               {isEn ? "GEO · AI Positioning" : "GEO · Positionnement IA"}
             </Link>
           </p>

@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Google Business Profile Toledo",
   description: "Cómo optimizar tu Google Business Profile si tienes un negocio en Toledo. Aparece en Google Maps y consigue más clientes locales. Guía paso a paso.",
-  alternates: { canonical: "https://www.mktweb360.com/google-business-profile-toledo/" },
+  alternates: alternatesFor("/google-business-profile-toledo/") ?? { canonical: "https://www.mktweb360.com/google-business-profile-toledo/" },
   openGraph: {
     title: "Google Business Profile Toledo | Mkt Web 360",
     description: "Cómo optimizar tu Google Business Profile si tienes un negocio en Toledo. Aparece en Google Maps y consigue más clientes locales. Guía paso a paso.",

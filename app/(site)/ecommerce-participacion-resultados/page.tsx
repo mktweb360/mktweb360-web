@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Ecommerce con Participación en Resultados — Modelo Híbrido",
   description: "Modelo híbrido de ecommerce: montamos toda la infraestructura digital y participamos en el éxito. Setup fijo + gestión mensual + bonus por resultados. Sin comisión por venta.",
-  alternates: { canonical: "https://www.mktweb360.com/ecommerce-participacion-resultados/" },
+  alternates: alternatesFor("/ecommerce-participacion-resultados/") ?? { canonical: "https://www.mktweb360.com/ecommerce-participacion-resultados/" },
   openGraph: {
     title: "Ecommerce con Participación en Resultados | Mkt Web 360",
     description: "Modelo híbrido: setup fijo + gestión mensual garantizada + bonus por resultados. Alineamos incentivos sin riesgo para el cliente.",

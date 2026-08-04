@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Ejemplos y diferencias entre buscadores y navegadores web — Guía completa",
   description:
     "Descubre las principales diferencias entre buscadores y navegadores con ejemplos reales. Guía clara para entender cómo funcionan Google, Chrome, Firefox y más.",
-  alternates: { canonical: "https://www.mktweb360.com/ejemplos-y-diferencias-entre-buscadores-y-navegadores/" },
+  alternates: alternatesFor("/ejemplos-y-diferencias-entre-buscadores-y-navegadores/") ?? { canonical: "https://www.mktweb360.com/ejemplos-y-diferencias-entre-buscadores-y-navegadores/" },
   openGraph: {
     title: "Ejemplos y diferencias entre buscadores y navegadores web — Guía completa | Mkt Web 360",
     description: "Descubre las principales diferencias entre buscadores y navegadores con ejemplos reales. Guía clara para entender cómo funcionan Google, Chrome, Firefox y más.",

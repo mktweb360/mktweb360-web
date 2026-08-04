@@ -4,11 +4,12 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Marketing digital para tiendas Shopware en España",
   description: "Marketing Shopware: SEO, Google Ads, GEO y CRO para tiendas ya construidas en Shopware. Tienes la plataforma, nosotros hacemos que venda. Agencia en España.",
-  alternates: { canonical: "https://www.mktweb360.com/marketing-shopware/" },
+  alternates: alternatesFor("/marketing-shopware/") ?? { canonical: "https://www.mktweb360.com/marketing-shopware/" },
   openGraph: {
     title: "Marketing digital para tiendas Shopware en España | Mkt Web 360",
     description: "SEO, Google Ads, GEO y CRO para tu tienda Shopware. Tienes la plataforma, nosotros hacemos que venda más.",

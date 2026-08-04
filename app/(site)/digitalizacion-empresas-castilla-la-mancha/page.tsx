@@ -3,11 +3,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Digitalización de Empresas en Castilla-La Mancha — Guía 2025",
   description: "Cómo digitalizar tu empresa en Castilla-La Mancha. Ayudas, herramientas y estrategia digital para PYMEs de la región. Guía actualizada 2025.",
-  alternates: { canonical: "https://www.mktweb360.com/digitalizacion-empresas-castilla-la-mancha/" },
+  alternates: alternatesFor("/digitalizacion-empresas-castilla-la-mancha/") ?? { canonical: "https://www.mktweb360.com/digitalizacion-empresas-castilla-la-mancha/" },
   openGraph: {
     title: "Digitalización de Empresas en Castilla-La Mancha — Guía 2025 | Mkt Web 360",
     description: "Cómo digitalizar tu empresa en Castilla-La Mancha. Ayudas, herramientas y estrategia digital para PYMEs de la región. Guía actualizada 2025.",

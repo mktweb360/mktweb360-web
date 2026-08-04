@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Casos de Éxito en Marketing Digital y Diseño Web",
   description:
     "Proyectos reales y resultados concretos. Casos de éxito de Mkt Web 360 en SEO, diseño web y marketing digital para empresas de distintos sectores.",
-  alternates: { canonical: "https://www.mktweb360.com/casos/" },
+  alternates: alternatesFor("/casos/") ?? { canonical: "https://www.mktweb360.com/casos/" },
   openGraph: {
     title: "Casos de Éxito y Proyectos | Mkt Web 360 — Agencia de Marketing Digital",
     description: "Descubre cómo hemos ayudado a empresas reales a mejorar su presencia digital y conseguir resultados medibles.",

@@ -3,11 +3,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Marketing Digital para Empresas en Sevilla: Guía Práctica",
   description: "Estrategia de marketing digital para negocios en Sevilla. SEO, Google Ads, redes sociales y cómo aprovechar el turismo y el crecimiento económico de la capital andaluza.",
-  alternates: { canonical: "https://www.mktweb360.com/marketing-digital-sevilla/" },
+  alternates: alternatesFor("/marketing-digital-sevilla/") ?? { canonical: "https://www.mktweb360.com/marketing-digital-sevilla/" },
   openGraph: {
     title: "Marketing Digital para Empresas en Sevilla | Mkt Web 360",
     description: "Estrategia de marketing digital para negocios en Sevilla. SEO, Google Ads, redes sociales y cómo aprovechar el turismo y el crecimiento económico de la capital andaluza.",

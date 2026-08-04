@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { allUrls } from "@/lib/i18n/routes";
 
 const BASE = "https://www.mktweb360.com";
 
@@ -136,10 +137,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/como-elegir-chatbot-para-empresa-checklist-2026/", priority: 0.7, changeFrequency: "weekly" as const },
   ];
 
-  return pages.map((p) => ({
+  const esSitemap: MetadataRoute.Sitemap = pages.map((p) => ({
     url: `${BASE}${p.url}`,
     lastModified: new Date(),
     changeFrequency: p.changeFrequency,
     priority: p.priority,
   }));
+
+  // EN and FR pages from the i18n routes source of truth.
+  // Appended here so new routes in lib/i18n/routes.ts are automatically indexed.
+  const intlSitemap: MetadataRoute.Sitemap = allUrls()
+    .filter((u) => u.startsWith("/en/") || u.startsWith("/fr/"))
+    .map((u) => ({
+      url: `${BASE}${u}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+
+  return [...esSitemap, ...intlSitemap];
 }

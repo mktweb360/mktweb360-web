@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Herramientas de IA para marketing digital en 2026: las que realmente funcionan",
   description:
     "No todas las herramientas de IA para marketing merecen el tiempo que cuesta aprenderlas. Análisis honesto de las que aportan valor real a pymes y agencias en 2026.",
-  alternates: { canonical: "https://www.mktweb360.com/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/" },
+  alternates: alternatesFor("/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/") ?? { canonical: "https://www.mktweb360.com/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/" },
   openGraph: {
     title: "Herramientas de IA para marketing digital en 2026: las que realmente funcionan | Mkt Web 360",
     description: "No todas las herramientas de IA para marketing merecen el tiempo que cuesta aprenderlas. Análisis honesto de las que aportan valor real a pymes y agencias en 2026.",

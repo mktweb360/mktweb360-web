@@ -3,11 +3,12 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Campañas Google Ads — Gestión SEM España",
   description: "Gestión profesional de campañas Google Ads y SEM/PPC para empresas españolas. Maximizamos tu inversión publicitaria con campañas optimizadas desde el primer día.",
-  alternates: { canonical: "https://www.mktweb360.com/sem-publicidad-ppc/" },
+  alternates: alternatesFor("/sem-publicidad-ppc/") ?? { canonical: "https://www.mktweb360.com/sem-publicidad-ppc/" },
   openGraph: {
     title: "Google Ads y SEM — Gestión de Campañas PPC | Mkt Web 360",
     description: "Campañas de Google Ads que generan clientes desde el primer día. Servicio nacional.",

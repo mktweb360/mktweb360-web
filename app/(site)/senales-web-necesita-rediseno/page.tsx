@@ -5,12 +5,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Señales de que tu web necesita un rediseño urgente en 2025",
   description:
     "Descubre las señales más claras de que tu web está frenando ventas y cuándo conviene rediseñar en lugar de seguir optimizando.",
-  alternates: { canonical: "https://www.mktweb360.com/senales-web-necesita-rediseno/" },
+  alternates: alternatesFor("/senales-web-necesita-rediseno/") ?? { canonical: "https://www.mktweb360.com/senales-web-necesita-rediseno/" },
   openGraph: {
     title: "Señales de que tu web necesita un rediseño urgente en 2025 | Mkt Web 360",
     description: "Descubre las señales más claras de que tu web está frenando ventas y cuándo conviene rediseñar en lugar de seguir optimizando.",

@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { allPosts } from "@/lib/blog";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Blog de Marketing Digital",
   description: "Artículos, guías y consejos de marketing digital, SEO, SEM, redes sociales y diseño web para empresas españolas.",
-  alternates: { canonical: "https://www.mktweb360.com/blog/" },
+  alternates: alternatesFor("/blog/") ?? { canonical: "https://www.mktweb360.com/blog/" },
   openGraph: {
     title: "Blog Marketing Digital | Mkt Web 360",
     description: "Artículos y guías de marketing digital para empresas.",

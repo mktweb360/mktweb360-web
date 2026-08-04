@@ -3,11 +3,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "SEO en Zaragoza — Posicionamiento Local",
   description: "Guía de SEO local para negocios en Zaragoza. Posicionamiento en Google, Google Business Profile, estrategia de contenido y sectores con mayor oportunidad digital.",
-  alternates: { canonical: "https://www.mktweb360.com/seo-zaragoza/" },
+  alternates: alternatesFor("/seo-zaragoza/") ?? { canonical: "https://www.mktweb360.com/seo-zaragoza/" },
   openGraph: {
     title: "SEO en Zaragoza: Posiciona tu Negocio Local | Mkt Web 360",
     description: "Guía de SEO local para negocios en Zaragoza. Posicionamiento en Google, Google Business Profile, estrategia de contenido y sectores con mayor oportunidad.",

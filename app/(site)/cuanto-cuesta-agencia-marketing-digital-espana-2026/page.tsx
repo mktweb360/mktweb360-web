@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Cuánto cuesta una agencia de marketing digital en España en 2026",
   description:
     "Precios reales de agencias de marketing digital en España 2026: SEO, Google Ads y redes sociales. Lo que incluye cada rango y cómo no equivocarte al elegir.",
-  alternates: { canonical: "https://www.mktweb360.com/cuanto-cuesta-agencia-marketing-digital-espana-2026/" },
+  alternates: alternatesFor("/cuanto-cuesta-agencia-marketing-digital-espana-2026/") ?? { canonical: "https://www.mktweb360.com/cuanto-cuesta-agencia-marketing-digital-espana-2026/" },
   openGraph: {
     title: "Cuánto cuesta una agencia de marketing digital en España en 2026 | Mkt Web 360",
     description: "Precios reales por servicio, qué incluye cada rango y cómo no equivocarte al elegir agencia en España en 2026.",

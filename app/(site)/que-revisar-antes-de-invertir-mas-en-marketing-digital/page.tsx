@@ -5,12 +5,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Qué revisar antes de invertir más en marketing digital en 2025",
   description:
     "Antes de invertir más en marketing digital, revisa estas áreas clave para no amplificar errores y tomar mejores decisiones.",
-  alternates: { canonical: "https://www.mktweb360.com/que-revisar-antes-de-invertir-mas-en-marketing-digital/" },
+  alternates: alternatesFor("/que-revisar-antes-de-invertir-mas-en-marketing-digital/") ?? { canonical: "https://www.mktweb360.com/que-revisar-antes-de-invertir-mas-en-marketing-digital/" },
   openGraph: {
     title: "Qué revisar antes de invertir más en marketing digital en 2025 | Mkt Web 360",
     description: "Antes de invertir más en marketing digital, revisa estas áreas clave para no amplificar errores y tomar mejores decisiones.",

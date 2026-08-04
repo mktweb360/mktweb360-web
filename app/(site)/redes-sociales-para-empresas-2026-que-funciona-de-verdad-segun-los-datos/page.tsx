@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Redes sociales para empresas en 2026: qué funciona de verdad según los datos",
   description:
     "El estudio Social Media 2026 de Cyberclick y Metricool analiza millones de publicaciones. TikTok lidera en impresiones, Instagram en estabilidad, LinkedIn en B2B. Qué significa para tu estrategia.",
-  alternates: { canonical: "https://www.mktweb360.com/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/" },
+  alternates: alternatesFor("/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/") ?? { canonical: "https://www.mktweb360.com/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/" },
   openGraph: {
     title: "Redes sociales para empresas en 2026: qué funciona de verdad según los datos | Mkt Web 360",
     description:

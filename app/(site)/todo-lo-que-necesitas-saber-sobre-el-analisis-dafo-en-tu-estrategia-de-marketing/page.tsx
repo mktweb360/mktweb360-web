@@ -5,11 +5,12 @@ import Link from "next/link";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Análisis DAFO en Marketing Digital — Guía Completa",
   description: "Todo lo que necesitas saber sobre el análisis DAFO en tu estrategia de marketing digital. Debilidades, Amenazas, Fortalezas y Oportunidades con ejemplos prácticos.",
-  alternates: { canonical: "https://www.mktweb360.com/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/" },
+  alternates: alternatesFor("/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/") ?? { canonical: "https://www.mktweb360.com/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/" },
   openGraph: {
     title: "Análisis DAFO en tu Estrategia de Marketing Digital | Mkt Web 360",
     description: "Aprende a aplicar el análisis DAFO en marketing digital con ejemplos prácticos para empresas españolas.",

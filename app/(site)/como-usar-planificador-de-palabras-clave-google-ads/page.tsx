@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Planificador de Palabras Clave de Google Ads: Guía 2026",
   description:
     "Aprende a usar el Planificador de Palabras Clave de Google paso a paso. Encuentra keywords rentables, analiza volúmenes y construye tu estrategia desde cero.",
-  alternates: { canonical: "https://www.mktweb360.com/como-usar-planificador-de-palabras-clave-google-ads/" },
+  alternates: alternatesFor("/como-usar-planificador-de-palabras-clave-google-ads/") ?? { canonical: "https://www.mktweb360.com/como-usar-planificador-de-palabras-clave-google-ads/" },
   openGraph: {
     title: "Planificador de Palabras Clave de Google Ads: Guía 2026 | Mkt Web 360",
     description:

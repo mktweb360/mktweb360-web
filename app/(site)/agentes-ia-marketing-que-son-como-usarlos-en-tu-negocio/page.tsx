@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Agentes de IA para marketing: qué son y cómo puede usarlos una pyme",
   description:
     "Los agentes de IA ya no son ciencia ficción. En 2026, herramientas accesibles permiten que cualquier pyme automatice tareas de marketing con agentes que trabajan de forma autónoma. Guía práctica.",
-  alternates: { canonical: "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/" },
+  alternates: alternatesFor("/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/") ?? { canonical: "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/" },
   openGraph: {
     title: "Agentes de IA para marketing: qué son y cómo puede usarlos una pyme | Mkt Web 360",
     description: "Los agentes de IA ya no son ciencia ficción. En 2026, herramientas accesibles permiten que cualquier pyme automatice tareas de marketing con agentes que trabajan de forma autónoma. Guía práctica.",

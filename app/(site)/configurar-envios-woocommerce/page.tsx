@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Cómo Configurar los Envíos en WooCommerce para España: Guía Completa",
   description: "Guía para configurar métodos de envío en WooCommerce. Zonas de envío, tarifas planas, envío gratis a partir de importe, integración con Correos, MRW y Correos Express.",
-  alternates: { canonical: "https://www.mktweb360.com/configurar-envios-woocommerce/" },
+  alternates: alternatesFor("/configurar-envios-woocommerce/") ?? { canonical: "https://www.mktweb360.com/configurar-envios-woocommerce/" },
   openGraph: {
     title: "Cómo Configurar los Envíos en WooCommerce para España | Mkt Web 360",
     description: "Guía para configurar métodos de envío en WooCommerce. Zonas de envío, tarifas planas, envío gratis y integración con transportistas en España.",

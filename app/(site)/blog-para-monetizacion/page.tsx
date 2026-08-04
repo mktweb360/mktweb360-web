@@ -3,11 +3,12 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Blog para Monetización — Ingresos Pasivos con AdSense y Afiliados",
   description: "Creamos tu blog de nicho optimizado para generar ingresos pasivos con AdSense y marketing de afiliados. Setup completo desde 990€ con 15 artículos SEO, configuración de monetización y formación.",
-  alternates: { canonical: "https://www.mktweb360.com/blog-para-monetizacion/" },
+  alternates: alternatesFor("/blog-para-monetizacion/") ?? { canonical: "https://www.mktweb360.com/blog-para-monetizacion/" },
   openGraph: {
     title: "Blog para Monetización — Ingresos Pasivos con AdSense y Afiliados | Mkt Web 360",
     description: "Creamos tu blog de nicho optimizado para generar ingresos pasivos con AdSense y marketing de afiliados. Setup completo desde 990€ con 15 artículos SEO, configuración de monetización y formación.",

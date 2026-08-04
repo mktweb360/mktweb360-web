@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Diseño Web para PYMEs — Qué Debe Tener tu Web para Vender",
   description: "Guía de diseño web para PYMEs. Qué elementos no pueden faltar, qué errores evitar y cómo hacer que tu web genere clientes de forma constante.",
-  alternates: { canonical: "https://www.mktweb360.com/diseno-web-pymes/" },
+  alternates: alternatesFor("/diseno-web-pymes/") ?? { canonical: "https://www.mktweb360.com/diseno-web-pymes/" },
   openGraph: {
     title: "Diseño Web para PYMEs — Qué Debe Tener tu Web para Vender | Mkt Web 360",
     description: "Guía de diseño web para PYMEs. Qué elementos no pueden faltar, qué errores evitar y cómo hacer que tu web genere clientes de forma constante.",

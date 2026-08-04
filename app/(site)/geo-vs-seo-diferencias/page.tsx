@@ -5,11 +5,12 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "GEO vs SEO: Diferencias Clave y Cómo Compaginarlos en 2025",
   description: "Qué diferencia el GEO (Generative Engine Optimization) del SEO tradicional, por qué importan los dos y cómo integrar ambas estrategias para máxima visibilidad.",
-  alternates: { canonical: "https://www.mktweb360.com/geo-vs-seo-diferencias/" },
+  alternates: alternatesFor("/geo-vs-seo-diferencias/") ?? { canonical: "https://www.mktweb360.com/geo-vs-seo-diferencias/" },
   openGraph: {
     title: "GEO vs SEO: Diferencias y Cómo Usarlos Juntos | Mkt Web 360",
     description: "Qué diferencia el GEO del SEO tradicional, por qué importan los dos y cómo integrar ambas estrategias para máxima visibilidad en buscadores y en IAs.",

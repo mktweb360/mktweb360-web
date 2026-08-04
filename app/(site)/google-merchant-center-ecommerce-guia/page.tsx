@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Google Merchant Center para ecommerce: guía completa 2026",
   description:
     "Aprende a configurar Google Merchant Center, crear tu feed de productos y aparecer en Google Shopping para aumentar las ventas de tu tienda online.",
-  alternates: { canonical: "https://www.mktweb360.com/google-merchant-center-ecommerce-guia/" },
+  alternates: alternatesFor("/google-merchant-center-ecommerce-guia/") ?? { canonical: "https://www.mktweb360.com/google-merchant-center-ecommerce-guia/" },
   openGraph: {
     title: "Google Merchant Center para ecommerce: guía completa 2026 | Mkt Web 360",
     description: "Aprende a configurar Google Merchant Center, crear tu feed de productos y aparecer en Google Shopping para aumentar las ventas de tu tienda online.",

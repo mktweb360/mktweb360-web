@@ -5,12 +5,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "SEO local para empresas de servicios: cómo captar clientes en 2025",
   description:
     "Aprende qué necesita una empresa de servicios para mejorar su presencia local y captar más clientes desde Google en su zona.",
-  alternates: { canonical: "https://www.mktweb360.com/seo-local-empresas-servicios/" },
+  alternates: alternatesFor("/seo-local-empresas-servicios/") ?? { canonical: "https://www.mktweb360.com/seo-local-empresas-servicios/" },
   openGraph: {
     title: "SEO local para empresas de servicios: cómo captar clientes en 2025 | Mkt Web 360",
     description: "Aprende qué necesita una empresa de servicios para mejorar su presencia local y captar más clientes desde Google en su zona.",

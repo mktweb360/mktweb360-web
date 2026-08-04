@@ -4,12 +4,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Auditoría Digital para Empresas | Diagnóstico SEO y Marketing",
   description:
     "Diagnóstico completo de tu presencia online: SEO técnico, velocidad, contenidos, competencia, redes sociales y analítica. Informe detallado + plan de acción.",
-  alternates: { canonical: "https://www.mktweb360.com/auditoria-digital/" },
+  alternates: alternatesFor("/auditoria-digital/") ?? { canonical: "https://www.mktweb360.com/auditoria-digital/" },
   openGraph: {
     title: "Auditoría Digital para Empresas | Diagnóstico SEO y Marketing | Mkt Web 360",
     description: "Auditoría digital completa para saber exactamente por qué tu empresa no consigue los resultados que merece online.",

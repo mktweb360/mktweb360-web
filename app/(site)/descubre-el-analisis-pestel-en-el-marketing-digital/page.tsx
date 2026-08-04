@@ -5,11 +5,12 @@ import Link from "next/link";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Análisis PESTEL en el Marketing Digital — Guía para PYMEs",
   description: "Descubre cómo aplicar el análisis PESTEL en tu estrategia de marketing digital. Factores Políticos, Económicos, Sociales, Tecnológicos, Ambientales y Legales.",
-  alternates: { canonical: "https://www.mktweb360.com/descubre-el-analisis-pestel-en-el-marketing-digital/" },
+  alternates: alternatesFor("/descubre-el-analisis-pestel-en-el-marketing-digital/") ?? { canonical: "https://www.mktweb360.com/descubre-el-analisis-pestel-en-el-marketing-digital/" },
   openGraph: {
     title: "Análisis PESTEL en Marketing Digital | Mkt Web 360",
     description: "Cómo el análisis PESTEL afecta a tu estrategia de marketing digital. Guía práctica para PYMEs españolas.",

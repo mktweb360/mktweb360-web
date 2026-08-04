@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "GEO para Shopware: vende desde ChatGPT con Agentic Commerce",
   description:
     "Shopware 6.7.9 trae Agentic Commerce nativo. Prepara tu tienda con GEO para que ChatGPT y Perplexity recomienden y vendan tus productos directamente.",
-  alternates: { canonical: "https://www.mktweb360.com/geo-shopware-agentic-commerce-chatgpt/" },
+  alternates: alternatesFor("/geo-shopware-agentic-commerce-chatgpt/") ?? { canonical: "https://www.mktweb360.com/geo-shopware-agentic-commerce-chatgpt/" },
   openGraph: {
     title: "GEO para Shopware: vende desde ChatGPT con Agentic Commerce | Mkt Web 360",
     description: "GEO y Agentic Commerce en Shopware 6.7.9: prepara tu tienda para que ChatGPT y Perplexity recomienden y vendan tus productos.",

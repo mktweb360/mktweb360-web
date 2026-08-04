@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Cómo gestionar la reputación online de tu empresa: guía práctica 2026",
   description:
     "La reputación online se construye o destruye en público. Descubre cómo gestionarla con criterio: reseñas, menciones, respuestas y prevención de crisis.",
-  alternates: { canonical: "https://www.mktweb360.com/como-gestionar-reputacion-online-empresa/" },
+  alternates: alternatesFor("/como-gestionar-reputacion-online-empresa/") ?? { canonical: "https://www.mktweb360.com/como-gestionar-reputacion-online-empresa/" },
   openGraph: {
     title: "Cómo gestionar la reputación online de tu empresa: guía práctica 2026 | Mkt Web 360",
     description: "La reputación online se construye o destruye en público. Descubre cómo gestionarla con criterio: reseñas, menciones, respuestas y prevención de crisis.",

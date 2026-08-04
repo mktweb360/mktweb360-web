@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "LinkedIn para pymes españolas en 2026: guía práctica para generar leads",
   description:
     "LinkedIn ha cambiado más en 2026 que en los 5 años anteriores. Nuevo algoritmo, vídeo como formato dominante, Employee Generated Content y social selling. Cómo aprovecharlo si eres una pyme.",
-  alternates: { canonical: "https://www.mktweb360.com/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/" },
+  alternates: alternatesFor("/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/") ?? { canonical: "https://www.mktweb360.com/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/" },
   openGraph: {
     title: "LinkedIn para pymes españolas en 2026: guía práctica para generar leads | Mkt Web 360",
     description: "LinkedIn ha cambiado más en 2026 que en los 5 años anteriores. Nuevo algoritmo, vídeo como formato dominante, Employee Generated Content y social selling. Cómo aprovecharlo si eres una pyme.",

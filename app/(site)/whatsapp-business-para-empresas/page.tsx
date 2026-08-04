@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "WhatsApp Business para Empresas — Guía Completa 2025",
   description: "Cómo usar WhatsApp Business para captar y fidelizar clientes. Configuración, automatizaciones, catálogo y estrategia para empresas. Guía actualizada 2025.",
-  alternates: { canonical: "https://www.mktweb360.com/whatsapp-business-para-empresas/" },
+  alternates: alternatesFor("/whatsapp-business-para-empresas/") ?? { canonical: "https://www.mktweb360.com/whatsapp-business-para-empresas/" },
   openGraph: {
     title: "WhatsApp Business para Empresas — Guía Completa 2025 | Mkt Web 360",
     description: "Cómo usar WhatsApp Business para captar y fidelizar clientes. Configuración, automatizaciones, catálogo y estrategia para empresas. Guía actualizada 2025.",

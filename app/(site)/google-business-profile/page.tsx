@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Google Business Profile para Empresas — Visibilidad Local",
   description: "Optimización y gestión de Google Business Profile para empresas. Aparece en Google Maps, consigue más reseñas y atrae clientes locales. Auditoría, configuración y gestión mensual. Servicio nacional.",
-  alternates: { canonical: "https://www.mktweb360.com/google-business-profile/" },
+  alternates: alternatesFor("/google-business-profile/") ?? { canonical: "https://www.mktweb360.com/google-business-profile/" },
   openGraph: {
     title: "Google Business Profile para Empresas | Mkt Web 360",
     description: "Optimiza tu ficha de Google y aparece cuando tus clientes te buscan cerca.",

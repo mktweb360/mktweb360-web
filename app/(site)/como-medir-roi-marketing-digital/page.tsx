@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Cómo Medir el ROI de tus Campañas de Marketing Digital",
   description: "Aprende a calcular y medir el ROI de tus inversiones en marketing digital. Google Analytics 4, atribución, métricas clave y errores que debes evitar.",
-  alternates: { canonical: "https://www.mktweb360.com/como-medir-roi-marketing-digital/" },
+  alternates: alternatesFor("/como-medir-roi-marketing-digital/") ?? { canonical: "https://www.mktweb360.com/como-medir-roi-marketing-digital/" },
   openGraph: {
     title: "Cómo Medir el ROI de tus Campañas de Marketing Digital | Mkt Web 360",
     description: "Aprende a calcular y medir el ROI de tus inversiones en marketing digital. Google Analytics 4, atribución, métricas clave y errores que debes evitar.",

@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Chatbot vs live chat: diferencias reales y cuál elegir para tu empresa",
   description:
     "¿Chatbot o live chat? No son opciones excluyentes, pero tampoco son lo mismo. Guía de las diferencias reales, cuándo conviene cada uno, y por qué la combinación correcta es mejor que elegir solo uno.",
-  alternates: { canonical: "https://www.mktweb360.com/chatbot-vs-live-chat-diferencias-cual-elegir-empresa/" },
+  alternates: alternatesFor("/chatbot-vs-live-chat-diferencias-cual-elegir-empresa/") ?? { canonical: "https://www.mktweb360.com/chatbot-vs-live-chat-diferencias-cual-elegir-empresa/" },
   openGraph: {
     title: "Chatbot vs live chat: diferencias reales y cuál elegir para tu empresa | Mkt Web 360",
     description:

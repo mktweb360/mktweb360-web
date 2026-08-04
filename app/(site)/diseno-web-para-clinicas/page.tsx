@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Diseño Web para Clínicas y Centros de Salud",
   description:
     "Diseño web profesional para clínicas, centros médicos y de salud. Web optimizada para SEO local y captación de pacientes. Fisioterapia, psicología, estética y más.",
-  alternates: { canonical: "https://www.mktweb360.com/diseno-web-para-clinicas/" },
+  alternates: alternatesFor("/diseno-web-para-clinicas/") ?? { canonical: "https://www.mktweb360.com/diseno-web-para-clinicas/" },
   openGraph: {
     title: "Diseño Web para Clínicas y Centros de Salud | Mkt Web 360",
     description:

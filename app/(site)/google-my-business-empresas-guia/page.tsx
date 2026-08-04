@@ -5,12 +5,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Google Business Profile para empresas: guía completa 2026",
   description:
     "Aprende a optimizar tu ficha de Google Business Profile para aparecer en búsquedas locales, conseguir más reseñas y convertir visitas en clientes.",
-  alternates: { canonical: "https://www.mktweb360.com/google-my-business-empresas-guia/" },
+  alternates: alternatesFor("/google-my-business-empresas-guia/") ?? { canonical: "https://www.mktweb360.com/google-my-business-empresas-guia/" },
   openGraph: {
     title: "Google Business Profile para empresas: guía completa 2026 | Mkt Web 360",
     description: "Aprende a optimizar tu ficha de Google Business Profile para aparecer en búsquedas locales, conseguir más reseñas y convertir visitas en clientes.",

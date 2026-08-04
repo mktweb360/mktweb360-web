@@ -3,11 +3,12 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "WhatsApp Marketing para Empresas — Capta y Fideliza Clientes",
   description: "Estrategia y gestión de WhatsApp Marketing para empresas. WhatsApp Business API, campañas de captación, automatizaciones y seguimiento de leads. Tasas de apertura del 98%. Servicio nacional.",
-  alternates: { canonical: "https://www.mktweb360.com/whatsapp-marketing/" },
+  alternates: alternatesFor("/whatsapp-marketing/") ?? { canonical: "https://www.mktweb360.com/whatsapp-marketing/" },
   openGraph: {
     title: "WhatsApp Marketing para Empresas | Mkt Web 360",
     description: "Capta y fideliza clientes por WhatsApp. Tasas de apertura del 98%. Automatizaciones y campañas personalizadas.",

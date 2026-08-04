@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "¿Ha muerto el SEO con la IA? La analogía del Ferrari y Fernando Alonso",
   description:
     "Muchos creen que la IA ha matado el SEO. Analizamos por qué eso no es cierto y por qué IA + técnico cualificado es la fórmula ganadora.",
-  alternates: { canonical: "https://www.mktweb360.com/ha-muerto-el-seo-con-la-ia/" },
+  alternates: alternatesFor("/ha-muerto-el-seo-con-la-ia/") ?? { canonical: "https://www.mktweb360.com/ha-muerto-el-seo-con-la-ia/" },
   openGraph: {
     title: "¿Ha muerto el SEO con la IA? La analogía del Ferrari y Fernando Alonso | Mkt Web 360",
     description: "Muchos creen que la IA ha matado el SEO. Analizamos por qué eso no es cierto y por qué IA + técnico cualificado es la fórmula ganadora.",

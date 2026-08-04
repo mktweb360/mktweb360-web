@@ -3,11 +3,12 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Analítica Web para Empresas — Datos que Generan Decisiones",
   description: "Servicio profesional de analítica web para empresas. Configuración de GA4, GTM, seguimiento de conversiones, dashboards de negocio e informes mensuales. Decisiones basadas en datos reales. Servicio nacional.",
-  alternates: { canonical: "https://www.mktweb360.com/analitica-web/" },
+  alternates: alternatesFor("/analitica-web/") ?? { canonical: "https://www.mktweb360.com/analitica-web/" },
   openGraph: {
     title: "Analítica Web para Empresas | Mkt Web 360",
     description: "Configuración de GA4, GTM, dashboards de negocio y seguimiento de conversiones. Decisiones basadas en datos reales.",

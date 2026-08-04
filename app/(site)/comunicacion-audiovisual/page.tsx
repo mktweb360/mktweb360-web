@@ -4,12 +4,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Comunicación Audiovisual para Empresas | Vídeo Marketing",
   description:
     "Producción de vídeo corporativo, reels, spots, presentaciones animadas y fotografía para empresas. Piezas audiovisuales que comunican, conectan y convierten.",
-  alternates: { canonical: "https://www.mktweb360.com/comunicacion-audiovisual/" },
+  alternates: alternatesFor("/comunicacion-audiovisual/") ?? { canonical: "https://www.mktweb360.com/comunicacion-audiovisual/" },
   openGraph: {
     title: "Comunicación Audiovisual para Empresas | Vídeo Marketing | Mkt Web 360",
     description: "Vídeo corporativo, reels, spots publicitarios y fotografía profesional para empresas que quieren destacar.",

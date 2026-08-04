@@ -3,11 +3,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Agencias Marketing Digital Madrid",
   description: "Guía para elegir una agencia de marketing digital en Madrid. Qué preguntar, qué red flags detectar, cómo comparar presupuestos y qué resultados son realistas.",
-  alternates: { canonical: "https://www.mktweb360.com/agencias-marketing-digital-madrid/" },
+  alternates: alternatesFor("/agencias-marketing-digital-madrid/") ?? { canonical: "https://www.mktweb360.com/agencias-marketing-digital-madrid/" },
   openGraph: {
     title: "Cómo Elegir Agencia de Marketing Digital en Madrid | Mkt Web 360",
     description: "Guía para elegir una agencia de marketing digital en Madrid. Qué preguntar, qué red flags detectar, cómo comparar presupuestos y qué resultados son realistas.",

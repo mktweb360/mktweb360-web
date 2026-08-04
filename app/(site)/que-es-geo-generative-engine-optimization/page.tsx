@@ -5,11 +5,12 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Qué es el GEO (Generative Engine Optimization) y por qué importa en 2025",
   description: "GEO: qué es, cómo funciona y por qué optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini es la nueva frontera del SEO.",
-  alternates: { canonical: "https://www.mktweb360.com/que-es-geo-generative-engine-optimization/" },
+  alternates: alternatesFor("/que-es-geo-generative-engine-optimization/") ?? { canonical: "https://www.mktweb360.com/que-es-geo-generative-engine-optimization/" },
   openGraph: {
     title: "Qué es el GEO (Generative Engine Optimization) y por qué importa en 2025 | Mkt Web 360",
     description: "GEO: qué es, cómo funciona y por qué optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini es la nueva frontera del SEO.",

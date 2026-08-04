@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Gestión Redes Sociales — Community Manager España",
   description:
     "Servicio profesional de gestión de redes sociales y community management para empresas. Instagram, Facebook, LinkedIn y TikTok. Estrategia, contenido, publicaciones e informes mensuales. Servicio nacional.",
-  alternates: { canonical: "https://www.mktweb360.com/smm-social-media-marketing/" },
+  alternates: alternatesFor("/smm-social-media-marketing/") ?? { canonical: "https://www.mktweb360.com/smm-social-media-marketing/" },
   openGraph: {
     title: "Gestión Redes Sociales — Community Manager | Mkt Web 360",
     description: "Community management profesional para tu empresa. Instagram, Facebook, LinkedIn, TikTok.",

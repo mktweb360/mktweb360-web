@@ -5,11 +5,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { HostingBanner } from "@/components/HostingModal";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Diseño de Páginas Web Profesionales",
   description: "Diseño de páginas web profesionales, tiendas online y webs corporativas. Webs rápidas, modernas y optimizadas para SEO y conversión. Servicio nacional.",
-  alternates: { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/" },
+  alternates: alternatesFor("/diseno-de-paginas-web/") ?? { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/" },
   openGraph: {
     title: "Diseño de Páginas Web Profesionales | Mkt Web 360",
     description: "Webs profesionales, rápidas y optimizadas para SEO y conversión. Servicio nacional.",

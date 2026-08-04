@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "CRO para Shopware: cómo optimizar la conversión de tu tienda",
   description:
     "Sube la conversión de tu tienda Shopware: eventos GA4 clave, las 5 causas reales de abandono de carrito y optimización de fichas de producto y checkout.",
-  alternates: { canonical: "https://www.mktweb360.com/cro-shopware-optimizar-conversion-tienda/" },
+  alternates: alternatesFor("/cro-shopware-optimizar-conversion-tienda/") ?? { canonical: "https://www.mktweb360.com/cro-shopware-optimizar-conversion-tienda/" },
   openGraph: {
     title: "CRO para Shopware: cómo optimizar la conversión de tu tienda | Mkt Web 360",
     description: "CRO para Shopware: eventos GA4, causas de abandono y optimización de fichas y checkout para vender más con el mismo tráfico.",

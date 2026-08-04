@@ -5,12 +5,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Precio de una página web profesional en 2025: qué debe incluir",
   description:
     "Descubre qué influye de verdad en el precio de una web profesional y qué debe incluir para ayudarte a captar clientes.",
-  alternates: { canonical: "https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/" },
+  alternates: alternatesFor("/cuanto-cuesta-pagina-web-profesional/") ?? { canonical: "https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/" },
   openGraph: {
     title: "Precio de una página web profesional en 2025: qué debe incluir | Mkt Web 360",
     description: "Descubre qué influye de verdad en el precio de una web profesional y qué debe incluir para captar clientes.",

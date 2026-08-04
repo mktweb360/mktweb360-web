@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Email Marketing para PYMEs — Primeros Pasos y Estrategia",
   description: "Guía de email marketing para PYMEs. Cómo empezar, qué herramientas usar, cómo construir tu lista y diseñar campañas que convierten. Resultados reales.",
-  alternates: { canonical: "https://www.mktweb360.com/email-marketing-pymes/" },
+  alternates: alternatesFor("/email-marketing-pymes/") ?? { canonical: "https://www.mktweb360.com/email-marketing-pymes/" },
   openGraph: {
     title: "Email Marketing para PYMEs — Primeros Pasos y Estrategia | Mkt Web 360",
     description: "Guía de email marketing para PYMEs. Cómo empezar, qué herramientas usar, cómo construir tu lista y diseñar campañas que convierten. Resultados reales.",

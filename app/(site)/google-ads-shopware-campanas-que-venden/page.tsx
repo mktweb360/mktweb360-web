@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Google Ads para Shopware: campañas que venden de verdad",
   description:
     "Cómo montar Google Ads para tu tienda Shopware: tracking de conversiones, conexión con Merchant Center, Performance Max, Shopping y optimización por ROAS.",
-  alternates: { canonical: "https://www.mktweb360.com/google-ads-shopware-campanas-que-venden/" },
+  alternates: alternatesFor("/google-ads-shopware-campanas-que-venden/") ?? { canonical: "https://www.mktweb360.com/google-ads-shopware-campanas-que-venden/" },
   openGraph: {
     title: "Google Ads para Shopware: campañas que venden de verdad | Mkt Web 360",
     description: "Google Ads para Shopware: tracking, Merchant Center, Performance Max y optimización por ROAS para que tus campañas vendan.",

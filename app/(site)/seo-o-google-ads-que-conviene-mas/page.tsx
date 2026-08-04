@@ -5,12 +5,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "SEO o Google Ads: qué conviene más para tu negocio en 2025",
   description:
     "Descubre si te conviene más invertir en SEO, Google Ads o una combinación de ambos según tu negocio, presupuesto y urgencia.",
-  alternates: { canonical: "https://www.mktweb360.com/seo-o-google-ads-que-conviene-mas/" },
+  alternates: alternatesFor("/seo-o-google-ads-que-conviene-mas/") ?? { canonical: "https://www.mktweb360.com/seo-o-google-ads-que-conviene-mas/" },
   openGraph: {
     title: "SEO o Google Ads: qué conviene más para tu negocio en 2025 | Mkt Web 360",
     description: "Descubre si te conviene más invertir en SEO, Google Ads o una combinación de ambos según tu negocio, presupuesto y urgencia.",

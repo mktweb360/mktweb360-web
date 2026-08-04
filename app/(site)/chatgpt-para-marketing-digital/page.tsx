@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Cómo Usar ChatGPT para Marketing Digital Sin Perder la Autenticidad",
   description: "Guía práctica para usar ChatGPT en marketing digital. Qué tareas delegar, cómo mantener la voz de marca, prompts efectivos y qué no dejar en manos de la IA.",
-  alternates: { canonical: "https://www.mktweb360.com/chatgpt-para-marketing-digital/" },
+  alternates: alternatesFor("/chatgpt-para-marketing-digital/") ?? { canonical: "https://www.mktweb360.com/chatgpt-para-marketing-digital/" },
   openGraph: {
     title: "Cómo Usar ChatGPT para Marketing Digital | Mkt Web 360",
     description: "Guía práctica para usar ChatGPT en marketing digital. Qué tareas delegar, cómo mantener la voz de marca, prompts efectivos y qué no dejar en manos de la IA.",

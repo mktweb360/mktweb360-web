@@ -5,12 +5,13 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Qué puede automatizar una pyme en marketing y ventas en 2025",
   description:
     "Descubre qué procesos puede automatizar una pyme en marketing y ventas para ahorrar tiempo, mejorar seguimiento y captar mejor.",
-  alternates: { canonical: "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/" },
+  alternates: alternatesFor("/que-puede-automatizar-una-pyme-en-marketing-y-ventas/") ?? { canonical: "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/" },
   openGraph: {
     title: "Qué puede automatizar una pyme en marketing y ventas en 2025 | Mkt Web 360",
     description: "Descubre qué procesos puede automatizar una pyme en marketing y ventas para ahorrar tiempo, mejorar seguimiento y captar mejor.",

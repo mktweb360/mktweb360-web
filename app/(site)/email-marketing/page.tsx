@@ -3,11 +3,12 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Email Marketing para Empresas — Campañas que Convierten",
   description: "Servicio profesional de email marketing para empresas y pymes. Diseño de newsletters, secuencias automatizadas, segmentación y campañas de captación. ROI medio de 36€ por euro invertido. Servicio nacional.",
-  alternates: { canonical: "https://www.mktweb360.com/email-marketing/" },
+  alternates: alternatesFor("/email-marketing/") ?? { canonical: "https://www.mktweb360.com/email-marketing/" },
   openGraph: {
     title: "Email Marketing para Empresas | Mkt Web 360",
     description: "Servicio profesional de email marketing para empresas y pymes. Newsletters, automatizaciones y campañas de captación.",

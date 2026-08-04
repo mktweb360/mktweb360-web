@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Cómo digitalizar tu negocio sin complicarte la vida: guía práctica para pymes 2026",
   description:
     "Digitalizar un negocio no significa comprar software caro. Descubre qué pasos dar primero, qué herramientas tienen sentido y cómo hacerlo con orden.",
-  alternates: { canonical: "https://www.mktweb360.com/como-digitalizar-tu-negocio/" },
+  alternates: alternatesFor("/como-digitalizar-tu-negocio/") ?? { canonical: "https://www.mktweb360.com/como-digitalizar-tu-negocio/" },
   openGraph: {
     title: "Cómo digitalizar tu negocio sin complicarte la vida: guía práctica para pymes 2026 | Mkt Web 360",
     description: "Digitalizar un negocio no significa comprar software caro. Descubre qué pasos dar primero, qué herramientas tienen sentido y cómo hacerlo con orden.",

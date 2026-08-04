@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "WooCommerce vs Shopify: cuál elegir para tu tienda online en España en 2026",
   description:
     "WooCommerce es gratuito con control total. Shopify es más rápido de lanzar pero tiene comisiones. Comparativa honesta con recomendación por tipo de negocio y coste real a 3 años.",
-  alternates: { canonical: "https://www.mktweb360.com/woocommerce-vs-shopify-cual-elegir-tienda-online/" },
+  alternates: alternatesFor("/woocommerce-vs-shopify-cual-elegir-tienda-online/") ?? { canonical: "https://www.mktweb360.com/woocommerce-vs-shopify-cual-elegir-tienda-online/" },
   openGraph: {
     title: "WooCommerce vs Shopify: cuál elegir para tu tienda online en 2026 | Mkt Web 360",
     description: "Comparativa honesta entre WooCommerce y Shopify con coste real a 3 años y recomendación por tipo de negocio.",

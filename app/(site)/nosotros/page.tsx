@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Quiénes Somos — Agencia de Marketing Digital",
   description: "Equipo senior con protocolos propios de IA. Conoce la metodología, los valores y la historia de Mkt Web 360. Agencia de marketing digital para PYMEs. Servicio nacional.",
-  alternates: { canonical: "https://www.mktweb360.com/nosotros/" },
+  alternates: alternatesFor("/nosotros/") ?? { canonical: "https://www.mktweb360.com/nosotros/" },
   openGraph: {
     title: "Quiénes Somos | Mkt Web 360 — Agencia de Marketing Digital",
     description: "La experiencia de un equipo senior. La precisión de la inteligencia artificial. Conoce cómo trabajamos.",

@@ -4,11 +4,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Métodos de Pago Tienda Online España",
   description: "Comparativa de pasarelas de pago para ecommerce en España: Stripe, Bizum, PayPal, Redsys y alternativas. Comisiones, integración con WooCommerce y cuál funciona mejor.",
-  alternates: { canonical: "https://www.mktweb360.com/metodos-pago-tienda-online-espana/" },
+  alternates: alternatesFor("/metodos-pago-tienda-online-espana/") ?? { canonical: "https://www.mktweb360.com/metodos-pago-tienda-online-espana/" },
   openGraph: {
     title: "Métodos de Pago para Tiendas Online en España | Mkt Web 360",
     description: "Comparativa de pasarelas de pago para ecommerce en España: Stripe, Bizum, PayPal, Redsys y alternativas. Comisiones, integración y cuál funciona mejor.",
