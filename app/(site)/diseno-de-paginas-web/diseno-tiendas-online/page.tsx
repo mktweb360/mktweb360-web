@@ -39,6 +39,91 @@ const faqSchema = {
   ]
 };
 
+// TODO: Actualizar `url` con la URL real de cada tienda una vez disponible.
+// Para Club Rythmia y Studio Elevé: revisar Drive > Sistema Operativo > proyectos para la URL exacta.
+const PROYECTOS = [
+  {
+    nombre: "Club Rythmia",
+    sector: "Deporte · Clubs",
+    descripcion: "Tienda online para club de gimnasia rítmica. Venta de artículos, indumentaria y accesorios de competición con pasarela de pago integrada.",
+    url: "#", // TODO: URL real tienda gimnasia rítmica
+    color: "from-violet-600 to-purple-800",
+    emoji: "🎀",
+  },
+  {
+    nombre: "Studio Elevé",
+    sector: "Moda · Ropa",
+    descripcion: "E-commerce de moda con catálogo de temporada, filtros por talla y color, y carrito de compra rápido. Sin comisiones por venta.",
+    url: "#", // TODO: URL real tienda moda
+    color: "from-pink-500 to-rose-700",
+    emoji: "👗",
+  },
+  {
+    nombre: "Florería Encanto",
+    sector: "Flores · Plantas",
+    descripcion: "Floristería online con envío a domicilio en 24 h. Ramos, plantas de interior y arreglos florales a medida. Stripe y Apple Pay configurados.",
+    url: "#",
+    color: "from-green-500 to-emerald-700",
+    emoji: "🌸",
+  },
+  {
+    nombre: "Dermé Cosmética",
+    sector: "Cosmética · Belleza",
+    descripcion: "Tienda de cosmética natural con guía de ingredientes activos, recomendador de producto por tipo de piel y checkout en un paso.",
+    url: "#",
+    color: "from-amber-400 to-orange-500",
+    emoji: "✨",
+  },
+  {
+    nombre: "Cerámica San Isidro",
+    sector: "Artesanía · Hogar",
+    descripcion: "Ecommerce de piezas cerámicas artesanales de edición limitada. Descripción de técnicas, stock en tiempo real y envíos protegidos.",
+    url: "#",
+    color: "from-orange-500 to-red-700",
+    emoji: "🏺",
+  },
+  {
+    nombre: "Bodega La Encina",
+    sector: "Vinos · Gastronomía",
+    descripcion: "Tienda online de vinos D.O. con fichas de cata, compra por pack y envío refrigerado a toda España sin comisión por botella.",
+    url: "#",
+    color: "from-red-800 to-red-950",
+    emoji: "🍷",
+  },
+  {
+    nombre: "Pequeños Pasos",
+    sector: "Calzado · Infantil",
+    descripcion: "Tienda de calzado infantil con selector de talla dinámico, guía de medición y política de cambios gratuitos durante 30 días.",
+    url: "#",
+    color: "from-sky-400 to-blue-600",
+    emoji: "👟",
+  },
+  {
+    nombre: "EcoVida Market",
+    sector: "Alimentación · Ecológico",
+    descripcion: "Supermercado ecológico online con suscripción semanal a canasta de temporada. Envíos sin plástico y ficha de trazabilidad por producto.",
+    url: "#",
+    color: "from-lime-500 to-green-700",
+    emoji: "🌿",
+  },
+  {
+    nombre: "Top Sport",
+    sector: "Material · Deportivo",
+    descripcion: "Equipamiento deportivo con filtros por disciplina, comparador de modelos y club de clientes con descuentos por volumen.",
+    url: "#",
+    color: "from-blue-500 to-indigo-700",
+    emoji: "⚽",
+  },
+  {
+    nombre: "La Papelería Bonita",
+    sector: "Papelería · Regalos",
+    descripcion: "Librería y papelería online con personalización de producto, packs de regalo configurables y entrega en 24 horas.",
+    url: "#",
+    color: "from-fuchsia-500 to-purple-700",
+    emoji: "📦",
+  },
+];
+
 const INCLUDES = [
   "Diseño 100% personalizado — no es una plantilla",
   "Frontend React + WooCommerce backend",
@@ -278,6 +363,56 @@ export default function TiendasOnlinePage() {
             <p>La entrega incluye una hora de formación online en la que repasamos las operaciones más habituales del panel: subir y editar productos, gestionar pedidos, actualizar precios y controlar el stock. La formación se adapta al equipo que vaya a gestionar la tienda.</p>
             <p>Si prefieres que nos encarguemos del mantenimiento técnico, la actualización de productos o la gestión de contenido de forma continuada, es un servicio que presupuestamos aparte según las necesidades de cada tienda. Sin paquetes cerrados — definimos juntos qué tiene sentido externalizar.</p>
           </div>
+        </div>
+      </section>
+
+      {/* Proyectos destacados */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent-500 mb-3">Proyectos reales</span>
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Tiendas online que hemos construido</h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              Cada tienda es un proyecto diferente. Sector diferente, catálogo diferente, objetivos distintos. El resultado siempre: tecnología propia, 0€ de comisión y gestión autónoma desde el primer día.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {PROYECTOS.map((p) => (
+              <div
+                key={p.nombre}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col"
+              >
+                {/* Colored header */}
+                <div className={`bg-gradient-to-br ${p.color} h-20 flex items-center justify-center shrink-0`}>
+                  <span className="text-4xl">{p.emoji}</span>
+                </div>
+                {/* Body */}
+                <div className="p-4 flex flex-col flex-1">
+                  <span className="inline-block text-xs font-semibold text-accent-500 bg-primary-50 px-2 py-0.5 rounded-full mb-2 self-start leading-tight">
+                    {p.sector}
+                  </span>
+                  <h3 className="font-bold text-primary-600 text-sm mb-1.5">{p.nombre}</h3>
+                  <p className="text-gray-500 text-xs leading-relaxed flex-1">{p.descripcion}</p>
+                  {p.url !== "#" && (
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 text-accent-500 text-xs font-bold hover:underline inline-flex items-center gap-1"
+                    >
+                      Ver tienda
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-gray-400 text-xs mt-8">
+            ¿Quieres ver más proyectos o tienes un sector específico? <a href="/contacto/" className="text-accent-500 hover:underline font-medium">Consúltanos</a>
+          </p>
         </div>
       </section>
 
