@@ -17,11 +17,13 @@ export default async function LangHomePage({
   const isEn = lang === "en";
 
   // Blog posts — translated
+  // [lang]/(site)/page.tsx only serves "en" | "fr" — cast is safe
+  const langI18n = lang as "en" | "fr";
   const rawPosts = getLatestPosts(9);
   const blogPosts = rawPosts.map((p) => {
-    const t = getPostI18n(p.slug, lang, { title: p.title, excerpt: p.excerpt });
-    const category = getCategoryI18n(p.category, lang);
-    const translatedSlug = translatedSlugFor(p.slug, lang);
+    const t = getPostI18n(p.slug, langI18n, { title: p.title, excerpt: p.excerpt });
+    const category = getCategoryI18n(p.category, langI18n);
+    const translatedSlug = translatedSlugFor(p.slug, langI18n);
     const href = translatedSlug ? `/${lang}/${translatedSlug}/` : `/${p.slug}/`;
     return { slug: p.slug, title: t.title, excerpt: t.excerpt, category, href };
   });
