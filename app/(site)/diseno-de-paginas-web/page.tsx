@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Diseño de Páginas Web Profesionales | Mkt Web 360",
     description: "Webs profesionales, rápidas y optimizadas para SEO y conversión. Servicio nacional.",
     url: "https://www.mktweb360.com/diseno-de-paginas-web/",
-    images: [{ url: "/imagen-diseno-web.jpg", width: 1200, height: 900, alt: "Diseño web profesional Mkt Web 360" }],
+    images: [{ url: "https://www.mktweb360.com/og-paginas-corporativas.jpg", width: 1200, height: 630, alt: "Diseño de páginas web profesionales Mkt Web 360" }],
   },
 };
 
