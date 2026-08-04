@@ -29,7 +29,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
-  image: "/og-image.jpg",
+  image: "https://www.mktweb360.com/og-diseno-web-para-clinicas.jpg",
   url: "https://www.mktweb360.com/diseno-web-para-clinicas/",
   mainEntityOfPage: "https://www.mktweb360.com/diseno-web-para-clinicas/",
 };

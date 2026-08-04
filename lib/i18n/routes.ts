@@ -17,9 +17,7 @@ export const ROUTES: Route[] = [
   { es: "/agencias-marketing-digital-toledo/", en: "digital-marketing-agencies-toledo", fr: "digital-marketing-agencies-toledo" },
   { es: "/analitica-web/", en: "web-analytics", fr: "analytique-web", aliases: [{ lang: "fr", slug: "service-analytique-web" }, { lang: "en", slug: "web-analytics-service" }] },
   { es: "/auditoria-digital/", en: "digital-audit", fr: "audit-digital" },
-  // Legales: solo ES. Las traducciones requieren revisión jurídica; hasta
-  // entonces no se declaran para que el switcher no enlace a 404.
-  { es: "/aviso-legal/" },
+  { es: "/aviso-legal/", en: "legal-notice", fr: "mentions-legales" },
   { es: "/blog/", en: "blog", fr: "blog" },
   { es: "/chatgpt-para-marketing-digital/", en: "chatgpt-for-digital-marketing", fr: "chatgpt-pour-marketing-digital" },
   { es: "/como-crear-propuesta-de-valor/", en: "how-to-create-value-proposition", fr: "how-to-create-value-proposition" },
@@ -66,8 +64,8 @@ export const ROUTES: Route[] = [
   { es: "/migrar-shopify-woocommerce/", en: "migrate-shopify-to-woocommerce", fr: "migrer-shopify-vers-woocommerce" },
   { es: "/migrar-tienda-online-sin-perder-datos/", en: "migrate-online-store-without-losing-data", fr: "migrer-boutique-sans-perdre-donnees" },
   { es: "/nosotros/", en: "about", fr: "about" },
-  { es: "/politica-de-cookies/" },      // solo ES (ver nota en /aviso-legal/)
-  { es: "/politica-de-privacidad/" },   // solo ES (ver nota en /aviso-legal/)
+  { es: "/politica-de-cookies/", en: "cookie-policy", fr: "politique-de-cookies" },
+  { es: "/politica-de-privacidad/", en: "privacy-policy", fr: "politique-de-confidentialite" },
   // Articulo de blog "que es GEO" — pagina informativa propia, NO el servicio GEO.
   { es: "/que-es-geo-generative-engine-optimization/", en: "what-is-geo-generative-engine-optimization", fr: "qu-est-ce-que-le-geo" },
   { es: "/que-puede-automatizar-una-pyme-en-marketing-y-ventas/", en: "what-can-sme-automate-marketing", fr: "what-can-sme-automate-marketing" },
@@ -234,6 +232,26 @@ export function allUrls(): string[] {
     if (u) urls.push(u);
   }
   return urls;
+}
+
+/**
+ * Dado un slug EN o FR (sin prefijo de idioma, sin barras), devuelve el slug ES
+ * limpio (sin barras). Útil para hacer lookup inverso desde páginas [lang].
+ * Ejemplo: esSlugFor("google-algorithm-updates-2026") → "actualizaciones-algoritmo-google-2026-..."
+ */
+export function esSlugFor(langSlug: string): string | undefined {
+  const r = ROUTES.find((r) => r.en === langSlug || r.fr === langSlug);
+  return r?.es.replace(/^\/|\/$/g, "");
+}
+
+/**
+ * Dado un slug ES limpio y un idioma destino, devuelve el slug traducido (sin barras).
+ * Devuelve undefined si no existe traducción para ese idioma.
+ * Ejemplo: translatedSlugFor("auditoria-seo-basica", "en") → "basic-seo-audit" (o el que corresponda)
+ */
+export function translatedSlugFor(esSlug: string, lang: "en" | "fr"): string | undefined {
+  const r = ROUTES.find((r) => r.es.replace(/^\/|\/$/g, "") === esSlug);
+  return lang === "en" ? r?.en : r?.fr;
 }
 
 // Redirects 301 de alias -> canónico (o -> ES si ese idioma no se mantiene). Cubre AMBOS prefijos

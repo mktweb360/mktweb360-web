@@ -18,9 +18,21 @@ const nextConfig: NextConfig = {
   // La normalización automática de barra la hacemos en middleware.ts (solo páginas),
   // para que /api/* NO reciba el 308 de trailingSlash. Ver middleware.
   skipTrailingSlashRedirect: true,
-  experimental: {
-    mdxRs: true,
+  async rewrites() {
+    // fallback: solo se activa cuando no existe un archivo estático con ese nombre.
+    // Sirve OG images dinámicas para artículos de blog que no tienen JPG estático.
+    // Las imágenes de servicio (og-seo.jpg, og-geo.jpg, etc.) ya existen en /public/
+    // y se sirven estáticamente, por lo que no llegan a este fallback.
+    return {
+      fallback: [
+        {
+          source: "/og-:slug.jpg",
+          destination: "/api/og?slug=:slug",
+        },
+      ],
+    };
   },
+
   async redirects() {
     return [
       // Blog articles

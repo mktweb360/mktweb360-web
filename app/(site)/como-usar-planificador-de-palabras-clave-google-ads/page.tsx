@@ -30,7 +30,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
-  image: "/og-image.jpg",
+  image: "https://www.mktweb360.com/og-como-usar-planificador-de-palabras-clave-google-ads.jpg",
   url: "https://www.mktweb360.com/como-usar-planificador-de-palabras-clave-google-ads/",
   mainEntityOfPage: "https://www.mktweb360.com/como-usar-planificador-de-palabras-clave-google-ads/",
 };

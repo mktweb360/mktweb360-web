@@ -103,8 +103,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    // suppressHydrationWarning: LangSetter updates lang attr client-side for EN/FR pages.
+    // The attribute starts as "es" (SSR) and is corrected immediately after hydration.
+    <html lang="es" suppressHydrationWarning>
       <head>
+        {/* Preconnect para GTM y GA4: reduce latencia cuando el usuario da consentimiento.
+            También elimina la advertencia de DevTools "connection not preconnected". */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         {/* Consent Mode v2 — debe ejecutarse ANTES de que GTM cargue */}
         <script dangerouslySetInnerHTML={{ __html:
           "window.dataLayer=window.dataLayer||[];" +

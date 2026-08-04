@@ -27,7 +27,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
-  image: "https://www.mktweb360.com/og-image.jpg",
+  image: "https://www.mktweb360.com/og-configurar-envios-woocommerce.jpg",
   url: "https://www.mktweb360.com/configurar-envios-woocommerce/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/configurar-envios-woocommerce/" },
 };

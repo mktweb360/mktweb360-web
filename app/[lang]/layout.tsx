@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Lang } from "@/lib/i18n";
 import { supportedLangs, langLocales } from "@/lib/i18n";
+import { LangSetter } from "@/components/LangSetter";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -53,5 +54,13 @@ export default async function LangLayout({
   if (!supportedLangs.includes(lang as Lang)) {
     notFound();
   }
-  return <>{children}</>;
+  return (
+    <>
+      {/* Fix html lang attribute for EN/FR pages. Root layout hardcodes lang="es"
+          (only root layout can render <html> in Next.js App Router).
+          LangSetter corrects it client-side immediately after hydration. */}
+      <LangSetter lang={lang} />
+      {children}
+    </>
+  );
 }
