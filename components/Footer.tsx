@@ -1,6 +1,128 @@
 import Link from "next/link";
 
+type FooterContent = {
+  tagline: string;
+  col1: string;
+  col2: string;
+  col3: string;
+  col4: string;
+  copyright: string;
+  services: { label: string; href: string }[];
+  moreServices: { label: string; href: string }[];
+  company: { label: string; href: string }[];
+};
+
+const CONTENT: Record<string, FooterContent> = {
+  es: {
+    tagline: "Agencia de marketing digital para PYMEs y empresas. Servicio nacional.",
+    col1: "Mkt Web 360",
+    col2: "Servicios",
+    col3: "Más servicios",
+    col4: "Empresa",
+    copyright: "Todos los derechos reservados",
+    services: [
+      { label: "SEO Posicionamiento", href: "/seo-posicionamiento-web-organico/" },
+      { label: "SEM / Google Ads", href: "/sem-publicidad-ppc/" },
+      { label: "Google Business Profile", href: "/google-business-profile/" },
+      { label: "Diseño Web", href: "/diseno-de-paginas-web/" },
+      { label: "Tiendas Online", href: "/diseno-de-paginas-web/diseno-tiendas-online/" },
+      { label: "Creación de Blog", href: "/creacion-de-blog/" },
+    ],
+    moreServices: [
+      { label: "Redes Sociales", href: "/smm-social-media-marketing/" },
+      { label: "WhatsApp Marketing", href: "/whatsapp-marketing/" },
+      { label: "Email Marketing", href: "/email-marketing/" },
+      { label: "Marketing de Contenidos", href: "/marketing-de-contenidos/" },
+      { label: "Analítica Web", href: "/analitica-web/" },
+      { label: "Reputación Online", href: "/reputacion-online/" },
+      { label: "IA en Marketing", href: "/ia-aplicada-al-marketing/" },
+      { label: "GEO — Posicionamiento IA", href: "/geo-posicionamiento-ia/" },
+      { label: "Blog para Monetización", href: "/blog-para-monetizacion/" },
+      { label: "Ecommerce con Participación", href: "/ecommerce-participacion-resultados/" },
+    ],
+    company: [
+      { label: "Blog", href: "/blog/" },
+      { label: "Contacto", href: "/contacto/" },
+      { label: "Aviso Legal", href: "/aviso-legal/" },
+      { label: "Política de Privacidad", href: "/politica-de-privacidad/" },
+      { label: "Política de Cookies", href: "/politica-de-cookies/" },
+    ],
+  },
+  en: {
+    tagline: "Digital marketing agency for SMEs and businesses. Nationwide service across Spain.",
+    col1: "Mkt Web 360",
+    col2: "Services",
+    col3: "More services",
+    col4: "Company",
+    copyright: "All rights reserved",
+    services: [
+      { label: "SEO Positioning", href: "/en/seo-web-positioning/" },
+      { label: "Google Ads", href: "/en/google-ads-management/" },
+      { label: "Google Business Profile", href: "/en/google-business-profile-management/" },
+      { label: "Web Design", href: "/en/web-design/" },
+      { label: "Online Stores", href: "/en/online-store/" },
+      { label: "Blog Creation", href: "/en/blog-creation-service/" },
+    ],
+    moreServices: [
+      { label: "Social Media", href: "/en/social-media-management/" },
+      { label: "WhatsApp Marketing", href: "/en/whatsapp-marketing-service/" },
+      { label: "Email Marketing", href: "/en/email-marketing-service/" },
+      { label: "Content Marketing", href: "/en/content-marketing/" },
+      { label: "Web Analytics", href: "/en/web-analytics/" },
+      { label: "Online Reputation", href: "/en/online-reputation-management/" },
+      { label: "AI in Marketing", href: "/en/ai-applied-marketing/" },
+      { label: "GEO — AI Positioning", href: "/en/geo-generative-engine-optimization/" },
+      { label: "Monetisation Blog", href: "/en/blog-creation-service/" },
+      { label: "Ecommerce Partnership", href: "/en/ecommerce-no-commissions/" },
+    ],
+    company: [
+      { label: "Blog", href: "/en/blog/" },
+      { label: "Contact", href: "/en/contact/" },
+      { label: "Legal Notice", href: "/en/legal-notice/" },
+      { label: "Privacy Policy", href: "/en/privacy-policy/" },
+      { label: "Cookie Policy", href: "/en/cookie-policy/" },
+    ],
+  },
+  fr: {
+    tagline: "Agence de marketing digital pour PME et entreprises. Service national en Espagne.",
+    col1: "Mkt Web 360",
+    col2: "Services",
+    col3: "Plus de services",
+    col4: "Entreprise",
+    copyright: "Tous droits réservés",
+    services: [
+      { label: "Référencement SEO", href: "/fr/positionnement-seo/" },
+      { label: "Google Ads", href: "/fr/gestion-google-ads/" },
+      { label: "Google Business Profile", href: "/fr/google-business-profile-service/" },
+      { label: "Création Web", href: "/fr/creation-site-web/" },
+      { label: "Boutique en Ligne", href: "/fr/boutique-en-ligne/" },
+      { label: "Création de Blog", href: "/fr/service-creation-blog/" },
+    ],
+    moreServices: [
+      { label: "Réseaux Sociaux", href: "/fr/marketing-reseaux-sociaux/" },
+      { label: "WhatsApp Marketing", href: "/fr/service-whatsapp-marketing/" },
+      { label: "Email Marketing", href: "/fr/campagnes-email-marketing/" },
+      { label: "Marketing de Contenu", href: "/fr/marketing-de-contenu/" },
+      { label: "Analytique Web", href: "/fr/analytique-web/" },
+      { label: "Réputation en Ligne", href: "/fr/reputation-en-ligne/" },
+      { label: "IA en Marketing", href: "/fr/marketing-intelligence-artificielle/" },
+      { label: "GEO — Positionnement IA", href: "/fr/geo-optimisation-moteurs-generatifs/" },
+      { label: "Blog de Monétisation", href: "/fr/service-creation-blog/" },
+      { label: "E-commerce Participatif", href: "/fr/boutique-en-ligne-sans-commissions/" },
+    ],
+    company: [
+      { label: "Blog", href: "/fr/blog/" },
+      { label: "Contact", href: "/fr/contact/" },
+      { label: "Mentions Légales", href: "/fr/mentions-legales/" },
+      { label: "Politique de Confidentialité", href: "/fr/politique-de-confidentialite/" },
+      { label: "Politique de Cookies", href: "/fr/politique-des-cookies/" },
+    ],
+  },
+};
+
 export function Footer({ lang }: { lang?: string }) {
+  const c = CONTENT[(lang ?? "es") as keyof typeof CONTENT] ?? CONTENT.es;
+
   return (
     <footer className="bg-primary-600 text-white mt-16">
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -9,7 +131,7 @@ export function Footer({ lang }: { lang?: string }) {
             <span className="text-accent-400">Mkt</span> Web 360
           </h3>
           <p className="text-primary-200 text-sm leading-relaxed">
-            Agencia de marketing digital para PYMEs y empresas. Servicio nacional.
+            {c.tagline}
           </p>
           <div className="flex gap-3 mt-4">
             <a href="https://www.facebook.com/mktweb360" target="_blank" rel="noopener noreferrer" className="text-primary-300 hover:text-white transition-colors" aria-label="Facebook">
@@ -28,41 +150,29 @@ export function Footer({ lang }: { lang?: string }) {
         </div>
 
         <div>
-          <h4 className="font-semibold mb-3 text-primary-100">Servicios</h4>
+          <h4 className="font-semibold mb-3 text-primary-100">{c.col2}</h4>
           <ul className="space-y-2 text-sm text-primary-300">
-            <li><Link href="/seo-posicionamiento-web-organico/" className="hover:text-white">SEO Posicionamiento</Link></li>
-            <li><Link href="/sem-publicidad-ppc/" className="hover:text-white">SEM / Google Ads</Link></li>
-            <li><Link href="/google-business-profile/" className="hover:text-white">Google Business Profile</Link></li>
-            <li><Link href="/diseno-de-paginas-web/" className="hover:text-white">Diseño Web</Link></li>
-            <li><Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="hover:text-white">Tiendas Online</Link></li>
-            <li><Link href="/creacion-de-blog/" className="hover:text-white">Creación de Blog</Link></li>
+            {c.services.map((s) => (
+              <li key={s.href}><Link href={s.href} className="hover:text-white">{s.label}</Link></li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <h4 className="font-semibold mb-3 text-primary-100">Más servicios</h4>
+          <h4 className="font-semibold mb-3 text-primary-100">{c.col3}</h4>
           <ul className="space-y-2 text-sm text-primary-300">
-            <li><Link href="/smm-social-media-marketing/" className="hover:text-white">Redes Sociales</Link></li>
-            <li><Link href="/whatsapp-marketing/" className="hover:text-white">WhatsApp Marketing</Link></li>
-            <li><Link href="/email-marketing/" className="hover:text-white">Email Marketing</Link></li>
-            <li><Link href="/marketing-de-contenidos/" className="hover:text-white">Marketing de Contenidos</Link></li>
-            <li><Link href="/analitica-web/" className="hover:text-white">Analítica Web</Link></li>
-            <li><Link href="/reputacion-online/" className="hover:text-white">Reputación Online</Link></li>
-            <li><Link href="/ia-aplicada-al-marketing/" className="hover:text-white">IA en Marketing</Link></li>
-            <li><Link href="/geo-posicionamiento-ia/" className="hover:text-white">GEO — Posicionamiento IA</Link></li>
-            <li><Link href="/blog-para-monetizacion/" className="hover:text-white transition-colors">Blog para Monetización</Link></li>
-            <li><Link href="/ecommerce-participacion-resultados/" className="hover:text-white transition-colors">Ecommerce con Participación</Link></li>
+            {c.moreServices.map((s) => (
+              <li key={s.href}><Link href={s.href} className="hover:text-white transition-colors">{s.label}</Link></li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <h4 className="font-semibold mb-3 text-primary-100">Empresa</h4>
+          <h4 className="font-semibold mb-3 text-primary-100">{c.col4}</h4>
           <ul className="space-y-2 text-sm text-primary-300">
-            <li><Link href="/blog/" className="hover:text-white">Blog</Link></li>
-            <li><Link href="/contacto/" className="hover:text-white">Contacto</Link></li>
-            <li><Link href="/aviso-legal/" className="hover:text-white">Aviso Legal</Link></li>
-            <li><Link href="/politica-de-privacidad/" className="hover:text-white">Política de Privacidad</Link></li>
-            <li><Link href="/politica-de-cookies/" className="hover:text-white">Política de Cookies</Link></li>
+            {c.company.map((s) => (
+              <li key={s.href}><Link href={s.href} className="hover:text-white">{s.label}</Link></li>
+            ))}
           </ul>
         </div>
 
@@ -75,7 +185,7 @@ export function Footer({ lang }: { lang?: string }) {
         </div>
       </div>
       <div className="border-t border-primary-700 py-4 text-center text-xs text-primary-400">
-        © {new Date().getFullYear()} Mkt Web 360 SLU · Todos los derechos reservados
+        © {new Date().getFullYear()} Mkt Web 360 SLU · {c.copyright}
       </div>
     </footer>
   );

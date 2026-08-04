@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 type LangServiceItem = { title: string; desc: string; href: string; icon: string };
-type LangServiceTab = { id: string; tipo: string; objetivo: string; emoji: string; servicios: LangServiceItem[] };
+type LangServiceTab = { id: string; tipo: string; objetivo: string; emoji: string; servicios: LangServiceItem[]; allHref?: string };
 
 const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
   en: [
@@ -12,6 +12,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "PRESENCE",
       objetivo: "Build your digital foundation",
       emoji: "🏗️",
+      allHref: "/en/web-design/",
       servicios: [
         { title: "Professional Web Design", desc: "Your website, your most important digital asset. Fast, optimised and designed to convert visitors into customers.", href: "/en/web-design/", icon: "🌐" },
         { title: "Online Store", desc: "Sell across Spain with no commissions per sale and no monthly fees. 100% custom design.", href: "/en/online-store/", icon: "🛒" },
@@ -24,6 +25,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "VISIBILITY",
       objetivo: "Appear when people search for you",
       emoji: "🔍",
+      allHref: "/en/seo-web-positioning/",
       servicios: [
         { title: "SEO Web Positioning", desc: "First page of Google. Organic traffic without paying per click. Results that last.", href: "/en/seo-web-positioning/", icon: "📈" },
         { title: "GEO — AI Positioning", desc: "Appear in ChatGPT, Perplexity and Gemini. SEO for the AI era.", href: "/en/geo-generative-engine-optimization/", icon: "🤖" },
@@ -36,6 +38,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "ACQUISITION",
       objetivo: "Generate leads and sales",
       emoji: "🎯",
+      allHref: "/en/google-ads-management/",
       servicios: [
         { title: "Google Ads", desc: "Generate potential customers from day one. Campaigns optimised for your sector.", href: "/en/google-ads-management/", icon: "🎯" },
         { title: "Email Marketing", desc: "The channel with the highest ROI in digital marketing. Automated sequences that convert.", href: "/en/email-marketing-service/", icon: "✉️" },
@@ -47,6 +50,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "COMMUNITY",
       objetivo: "Build audience and brand",
       emoji: "👥",
+      allHref: "/en/social-media-management/",
       servicios: [
         { title: "Social Media Management", desc: "Professional management of Instagram, LinkedIn, Facebook and TikTok.", href: "/en/social-media-management/", icon: "📱" },
         { title: "Content Marketing", desc: "Content that positions your brand as a reference in your sector.", href: "/en/content-marketing/", icon: "✍️" },
@@ -58,6 +62,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "MONETIZATION",
       objetivo: "Generate additional income",
       emoji: "💰",
+      allHref: "/en/blog-creation-service/",
       servicios: [
         { title: "Monetisation Blog", desc: "Create a digital asset that generates passive income with AdSense and affiliate marketing.", href: "/en/blog-creation-service/", icon: "💸" },
         { title: "Ecommerce Partnership", desc: "Hybrid model: we build your infrastructure and share in the success.", href: "/en/ecommerce-no-commissions/", icon: "🤝" },
@@ -68,6 +73,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "GROWTH",
       objetivo: "Constant improvement based on data",
       emoji: "📊",
+      allHref: "/en/web-analytics/",
       servicios: [
         { title: "Web Analytics", desc: "GA4, GTM and business dashboards. Every decision backed by real data.", href: "/en/web-analytics/", icon: "📊" },
         { title: "AI Applied to Marketing", desc: "Our own AI protocols integrated into every service.", href: "/en/ai-applied-marketing/", icon: "🧠" },
@@ -81,6 +87,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "PRÉSENCE",
       objetivo: "Construisez votre base digitale",
       emoji: "🏗️",
+      allHref: "/fr/creation-site-web/",
       servicios: [
         { title: "Création de Site Web", desc: "Votre site, votre actif le plus important. Rapide, optimisé et conçu pour convertir.", href: "/fr/creation-site-web/", icon: "🌐" },
         { title: "Boutique en Ligne", desc: "Vendez dans toute l'Espagne sans commissions ni frais mensuels.", href: "/fr/boutique-en-ligne/", icon: "🛒" },
@@ -93,6 +100,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "VISIBILITÉ",
       objetivo: "Apparaissez quand on vous cherche",
       emoji: "🔍",
+      allHref: "/fr/positionnement-seo/",
       servicios: [
         { title: "SEO Positionnement Web", desc: "Première page de Google. Trafic organique sans payer par clic.", href: "/fr/seo-positionnement-web/", icon: "📈" },
         { title: "GEO — Positionnement IA", desc: "Apparaissez dans ChatGPT, Perplexity et Gemini.", href: "/fr/geo-optimisation-moteurs-generatifs/", icon: "🤖" },
@@ -105,6 +113,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "ACQUISITION",
       objetivo: "Générez des leads et des ventes",
       emoji: "🎯",
+      allHref: "/fr/gestion-google-ads/",
       servicios: [
         { title: "Google Ads", desc: "Générez des clients potentiels dès le premier jour.", href: "/fr/gestion-google-ads/", icon: "🎯" },
         { title: "Email Marketing", desc: "Le canal avec le meilleur ROI du marketing digital.", href: "/fr/email-marketing-entreprises/", icon: "✉️" },
@@ -116,6 +125,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "COMMUNAUTÉ",
       objetivo: "Construisez audience et marque",
       emoji: "👥",
+      allHref: "/fr/marketing-reseaux-sociaux/",
       servicios: [
         { title: "Réseaux Sociaux", desc: "Gestion professionnelle d'Instagram, LinkedIn, Facebook et TikTok.", href: "/fr/gestion-reseaux-sociaux/", icon: "📱" },
         { title: "Marketing de Contenu", desc: "Du contenu qui positionne votre marque comme référence.", href: "/fr/marketing-de-contenu/", icon: "✍️" },
@@ -127,6 +137,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "MONÉTISATION",
       objetivo: "Générez des revenus supplémentaires",
       emoji: "💰",
+      allHref: "/fr/service-creation-blog/",
       servicios: [
         { title: "Blog de Monétisation", desc: "Créez un actif digital qui génère des revenus passifs.", href: "/fr/service-creation-blog/", icon: "💸" },
         { title: "E-commerce Participatif", desc: "Modèle hybride : nous construisons votre infrastructure.", href: "/fr/boutique-en-ligne/", icon: "🤝" },
@@ -137,6 +148,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "CROISSANCE",
       objetivo: "Amélioration constante basée sur les données",
       emoji: "📊",
+      allHref: "/fr/analytique-web/",
       servicios: [
         { title: "Analytique Web", desc: "GA4, GTM et tableaux de bord métier. Chaque décision basée sur des données réelles.", href: "/fr/analytique-web/", icon: "📊" },
         { title: "IA Appliquée au Marketing", desc: "Nos propres protocoles IA intégrés dans chaque service.", href: "/fr/service-ia-marketing/", icon: "🧠" },
@@ -146,10 +158,16 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
   ],
 };
 
+const ALL_LABEL: Record<string, string> = {
+  en: "View all",
+  fr: "Voir tout",
+};
+
 export function LangServicesTab({ lang }: { lang: string }) {
   const [activeTab, setActiveTab] = useState(0);
   const tabs = SERVICE_TABS_LANG[lang] ?? SERVICE_TABS_LANG.en;
   const active = tabs[activeTab];
+  const allLabel = ALL_LABEL[lang] ?? "View all";
 
   return (
     <div>
@@ -192,6 +210,16 @@ export function LangServicesTab({ lang }: { lang: string }) {
               </Link>
             ))}
           </div>
+          {active.allHref && (
+            <div className="mt-6 text-center">
+              <Link
+                href={active.allHref}
+                className="inline-flex items-center gap-2 text-accent-500 font-semibold text-sm hover:underline"
+              >
+                {allLabel} {active.tipo.toLowerCase()} →
+              </Link>
+            </div>
+          )}
         </div>
       </div>
 
