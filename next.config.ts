@@ -132,7 +132,8 @@ const nextConfig: NextConfig = {
       // Expired SEO 6x3 offer — retired, redirect to the evergreen SEO service page.
       // Sources are slash-less because trailingSlash is off (Next strips '/x/' → '/x' before matching).
       { source: '/landing/seo-6x3/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
-      { source: '/oferta-seo/:path*/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      // /oferta-seo/ was used by retired Google Ads campaign — now redirects to active August offer landing.
+      { source: '/oferta-seo/:path*/', destination: '/landing/seo-geo-gbp-verano/', permanent: false },
 
       // --- Alias i18n (fase 2a) generados desde lib/i18n/routes.ts, fuente de verdad.
       // 146 reglas / 73 alias. Van al final: las literales de arriba tienen prioridad.

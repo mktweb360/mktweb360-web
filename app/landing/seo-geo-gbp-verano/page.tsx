@@ -5,7 +5,7 @@ import { OfertaVeranoForm } from "@/components/OfertaVeranoForm";
 
 export const metadata: Metadata = {
   title: "Paquete SEO + GEO + GBP al 50% — Oferta Verano 2026",
-  description: "Posiciónate en Google, en ChatGPT y en Google Maps antes de septiembre. Paquete completo SEO + GEO + GBP desde 349€/mes. Solo julio y agosto. 5 plazas.",
+  description: "Vete de vacaciones tranquilo. Cuando vuelvas, tu empresa ya aparece en Google, en la IA y en el mapa. Paquete SEO + GEO + GBP al 50% solo en agosto. 5 plazas.",
   alternates: { canonical: "https://www.mktweb360.com/landing/seo-geo-gbp-verano/" },
   robots: { index: false, follow: false },
 };
@@ -47,7 +47,7 @@ export default function LandingSeoGeoGbpVeranoPage() {
       {/* BANNER URGENCIA */}
       <div className="bg-accent-500 py-2.5 px-4 text-center">
         <p className="text-white text-sm font-semibold">
-          🌞 Oferta julio-agosto · <strong>Solo 5 plazas</strong> · <strong>349€/mes en lugar de 699€</strong>
+          ☀️ Oferta solo agosto · <strong>Solo 5 plazas</strong> · <strong>349€/mes en lugar de 699€</strong>
         </p>
       </div>
 
@@ -58,13 +58,13 @@ export default function LandingSeoGeoGbpVeranoPage() {
           {/* COPY IZQUIERDA */}
           <div>
             <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-5">
-              Oferta julio-agosto · Solo 5 plazas
+              Oferta agosto · Solo 5 plazas
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
-              Prepara tu septiembre ahora
+              Vete de vacaciones. Cuando vuelvas, tu empresa ya aparece en la IA.
             </h1>
             <p className="text-xl text-primary-200 mb-6 leading-relaxed">
-              Mientras tu competencia descansa, tú te posicionas en Google, en la IA y en el mapa.
+              Mientras descansas, nosotros posicionamos tu empresa en Google, en ChatGPT y en el mapa. En septiembre, los clientes ya te encuentran.
             </p>
 
             {/* BLOQUE PRECIO */}
@@ -73,7 +73,7 @@ export default function LandingSeoGeoGbpVeranoPage() {
                 <span className="text-primary-300 line-through text-xl">699 €/mes</span>
                 <span className="text-accent-400 text-4xl font-bold">349 €/mes</span>
               </div>
-              <p className="text-primary-200 text-xs mt-1">Solo julio y agosto · Precio real de mercado: 699€/mes</p>
+              <p className="text-primary-200 text-xs mt-1">Solo agosto 2026 · Precio real de mercado: 699€/mes</p>
             </div>
 
             {/* WHATSAPP */}
@@ -107,10 +107,10 @@ export default function LandingSeoGeoGbpVeranoPage() {
       {/* COPY URGENCIA / VUELTA AL COLE */}
       <section className="py-14 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">Septiembre es la vuelta al cole del mundo empresarial</h2>
+          <h2 className="text-2xl font-bold text-primary-600 mb-4">El último cuatrimestre del año empieza en agosto</h2>
           <p className="text-gray-600 leading-relaxed">
-            Presupuestos aprobados, decisiones tomadas, proveedores elegidos. Si empiezas el SEO en septiembre,
-            estarás posicionado en marzo. <strong className="text-primary-700">Si empiezas ahora, en septiembre ya eres visible.</strong>
+            Octubre, noviembre y diciembre son cuando las empresas toman decisiones de compra y cierran proveedores para el año siguiente.
+            El SEO y el GEO tardan meses en dar resultados. <strong className="text-primary-700">Si empiezas en agosto, el Q4 ya te encuentra visible. Si esperas a septiembre, llegas tarde.</strong>
           </p>
         </div>
       </section>
@@ -135,7 +135,7 @@ export default function LandingSeoGeoGbpVeranoPage() {
       {/* SECCIÓN ESCASEZ / 5 PLAZAS */}
       <section className="py-14 px-4 bg-primary-900 text-white">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-5">5 plazas este verano — y tiene una razón</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-5">5 plazas en agosto — y tiene una razón</h2>
           <p className="text-primary-200 leading-relaxed">
             Cada nuevo cliente requiere entre <strong className="text-white">40 y 60 horas de trabajo</strong> en el primer mes.
             Limitamos las incorporaciones para garantizar esa dedicación completa a cada proyecto.

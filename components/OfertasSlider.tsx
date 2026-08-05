@@ -15,9 +15,9 @@ type Slide = {
 
 const SLIDES: Slide[] = [
   {
-    badge: "Oferta verano · Julio y agosto",
-    title: "Prepara tu septiembre ahora",
-    desc: "SEO + IA + Google Maps al 50% del precio de mercado. Solo 5 plazas.",
+    badge: "Oferta agosto · Solo 5 plazas",
+    title: "Vete de vacaciones. Cuando vuelvas, tu empresa ya aparece en la IA.",
+    desc: "SEO + GEO + GBP al 50%. Llega al Q4 visible en Google, ChatGPT y el mapa.",
     price: { old: "699€/mes", new: "349€/mes" },
     cta: "Ver oferta",
     href: "/landing/seo-geo-gbp-verano/",
@@ -36,7 +36,7 @@ const SLIDES: Slide[] = [
     title: "Tienda online profesional desde 490€",
     desc: "Sin comisiones por venta, sin licencias mensuales. Diseño 100% personalizado. SEO técnico incluido desde el primer día. Solo 5 plazas.",
     cta: "Ver oferta",
-    href: "/tienda-online/",
+    href: "/landing/tienda-online-490/",
     bg: "/hero-slide-3.jpg",
   },
 ];
