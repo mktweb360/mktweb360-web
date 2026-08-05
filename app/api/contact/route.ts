@@ -43,10 +43,26 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const { name, email, phone, website, message, gdpr,
           form_type, page_origin,
-          utm_source, utm_medium, utm_campaign, utm_content, utm_term } = body;
+          utm_source, utm_medium, utm_campaign, utm_content, utm_term,
+          _hp } = body;
 
   if (!name || !email || !message || !gdpr)
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+
+  // Anti-spam capa 1: honeypot — campo oculto que solo rellenan los bots
+  if (_hp) {
+    console.warn("[contact] Honeypot triggered:", { ip, email });
+    return NextResponse.json({ ok: true, id: randomUUID() });
+  }
+
+  // Anti-spam capa 2: detección de patrón de cadena aleatoria bot
+  // (sin espacios, solo alfanumérico, 12+ chars → típico de bots de form spam)
+  const isRandomBotString = (s: string) =>
+    typeof s === "string" && /^[a-zA-Z0-9]{12,}$/.test(s.trim());
+  if (isRandomBotString(name) || isRandomBotString(message)) {
+    console.warn("[contact] Bot string pattern detected:", { ip, email, name });
+    return NextResponse.json({ ok: true, id: randomUUID() });
+  }
 
   const id = randomUUID();
   const { oferta, canal } = getMktOSMeta(form_type);
