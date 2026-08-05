@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -37,6 +38,14 @@ const FAQS = [
     a: "Diseñamos una estrategia de captación de reseñas adaptada a tu sector: email automatizado post-servicio, QR en el punto de venta, formación al equipo para solicitar reseñas de forma natural. También gestionamos las respuestas a todas las reseñas, positivas y negativas." },
   { q: "¿Qué pasa si tengo reseñas negativas?",
     a: "Las reseñas negativas bien gestionadas generan más confianza que no tenerlas. Respondemos de forma profesional y constructiva a cada reseña negativa. Si son falsas o incumplen las políticas de Google, tramitamos su eliminación ante Google." },
+  { q: "¿Qué es el Local Pack de Google y cómo aparecer en él?",
+    a: "El Local Pack es el bloque de 3 negocios con mapa que aparece en Google antes que los resultados orgánicos cuando alguien hace una búsqueda local ('fontanero Toledo', 'dentista cerca de mí'). Para aparecer en él influyen tres factores: relevancia de la ficha de Google Business Profile, proximidad del negocio al usuario y prominencia (reseñas, actividad, menciones online). Optimizamos los tres." },
+  { q: "¿En qué se diferencia Google Business Profile del SEO web?",
+    a: "Google Business Profile posiciona tu negocio en Google Maps y en el Local Pack de búsqueda local — sin necesidad de tener web. El SEO web trabaja el posicionamiento orgánico de tu sitio web en los resultados generales de Google. Son complementarios: GBP es esencial para búsquedas locales con intención inmediata; el SEO web amplía la visibilidad a búsquedas informacionales y no locales." },
+  { q: "¿Puedo gestionar Google Business Profile yo mismo?",
+    a: "Sí, el acceso a la ficha es tuyo y siempre lo será. Lo que ofrecemos es la gestión activa: publicaciones semanales, respuesta profesional a todas las reseñas, seguimiento de métricas, estrategia de captación de nuevas reseñas y optimización continua. Muchos negocios tienen ficha pero no tienen tiempo o conocimiento para sacarle rendimiento real." },
+  { q: "¿Qué son las publicaciones de Google Business Profile y para qué sirven?",
+    a: "Las publicaciones son actualizaciones que aparecen directamente en tu ficha de Google — similares a posts de redes sociales pero visibles en el buscador. Pueden ser novedades, ofertas, eventos o productos. Google valora la actividad reciente de la ficha: negocios que publican con regularidad tienden a posicionar mejor en el Local Pack y generan más interacciones con los usuarios." },
 ];
 
 const faqSchema = {
@@ -47,6 +56,10 @@ const faqSchema = {
     { "@type": "Question", name: "¿Necesito tener una dirección física para tener Google Business Profile?", acceptedAnswer: { "@type": "Answer", text: "No necesariamente. Si prestas servicios a domicilio o en casa del cliente (fontaneros, electricistas, asesores, etc.) puedes crear una ficha de área de servicio sin mostrar tu dirección. Configuramos la ficha según tu modelo de negocio." } },
     { "@type": "Question", name: "¿Cómo conseguís más reseñas para mi negocio?", acceptedAnswer: { "@type": "Answer", text: "Diseñamos una estrategia de captación de reseñas adaptada a tu sector: email automatizado post-servicio, QR en el punto de venta, formación al equipo para solicitar reseñas de forma natural. También gestionamos las respuestas a todas las reseñas, positivas y negativas." } },
     { "@type": "Question", name: "¿Qué pasa si tengo reseñas negativas?", acceptedAnswer: { "@type": "Answer", text: "Las reseñas negativas bien gestionadas generan más confianza que no tenerlas. Respondemos de forma profesional y constructiva a cada reseña negativa. Si son falsas o incumplen las políticas de Google, tramitamos su eliminación ante Google." } },
+    { "@type": "Question", name: "¿Qué es el Local Pack de Google y cómo aparecer en él?", acceptedAnswer: { "@type": "Answer", text: "El Local Pack es el bloque de 3 negocios con mapa que aparece en Google antes que los resultados orgánicos cuando alguien hace una búsqueda local ('fontanero Toledo', 'dentista cerca de mí'). Para aparecer en él influyen tres factores: relevancia de la ficha de Google Business Profile, proximidad del negocio al usuario y prominencia (reseñas, actividad, menciones online). Optimizamos los tres." } },
+    { "@type": "Question", name: "¿En qué se diferencia Google Business Profile del SEO web?", acceptedAnswer: { "@type": "Answer", text: "Google Business Profile posiciona tu negocio en Google Maps y en el Local Pack de búsqueda local — sin necesidad de tener web. El SEO web trabaja el posicionamiento orgánico de tu sitio web en los resultados generales de Google. Son complementarios: GBP es esencial para búsquedas locales con intención inmediata; el SEO web amplía la visibilidad a búsquedas informacionales y no locales." } },
+    { "@type": "Question", name: "¿Puedo gestionar Google Business Profile yo mismo?", acceptedAnswer: { "@type": "Answer", text: "Sí, el acceso a la ficha es tuyo y siempre lo será. Lo que ofrecemos es la gestión activa: publicaciones semanales, respuesta profesional a todas las reseñas, seguimiento de métricas, estrategia de captación de nuevas reseñas y optimización continua. Muchos negocios tienen ficha pero no tienen tiempo o conocimiento para sacarle rendimiento real." } },
+    { "@type": "Question", name: "¿Qué son las publicaciones de Google Business Profile y para qué sirven?", acceptedAnswer: { "@type": "Answer", text: "Las publicaciones son actualizaciones que aparecen directamente en tu ficha de Google — similares a posts de redes sociales pero visibles en el buscador. Pueden ser novedades, ofertas, eventos o productos. Google valora la actividad reciente de la ficha: negocios que publican con regularidad tienden a posicionar mejor en el Local Pack y generan más interacciones con los usuarios." } },
   ],
 };
 
@@ -203,6 +216,26 @@ export default function GoogleBusinessProfilePage() {
                 <h3 className="font-bold text-primary-600 mb-2">{c.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{c.desc}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Servicios relacionados */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Servicios que potencian tu visibilidad local</h2>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Google Business Profile es el primer paso. Para una estrategia de captación local completa, estos servicios lo complementan directamente:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { href: "/reputacion-online/", title: "Gestión de reputación online", desc: "Las reseñas son el pilar de GBP. Gestionamos tu reputación en todas las plataformas donde tus clientes hablan de ti." },
+              { href: "/seo-local/", title: "SEO local para empresas", desc: "Posicionamiento orgánico en búsquedas locales de Google, complementario a tu ficha de Maps para captar más clientes de tu zona." },
+              { href: "/seo-posicionamiento-web-organico/", title: "SEO y posicionamiento web", desc: "Visibilidad en búsquedas no locales. Aumenta la autoridad de dominio, que también influye en el posicionamiento en Maps." },
+            ].map(s => (
+              <Link key={s.href} href={s.href} className="bg-primary-50 rounded-xl p-5 border border-primary-100 hover:border-primary-300 transition-colors block">
+                <p className="font-bold text-primary-700 text-sm mb-1">{s.title}</p>
+                <p className="text-gray-600 text-xs leading-relaxed">{s.desc}</p>
+              </Link>
             ))}
           </div>
         </section>

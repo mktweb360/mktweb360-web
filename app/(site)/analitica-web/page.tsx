@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -36,6 +37,14 @@ const FAQS = [
     a: "La mayoría de empresas tienen GA4 instalado pero con datos incorrectos: conversiones no registradas, tráfico interno contaminando los datos, fuentes de tráfico mal atribuidas o eventos que no se disparan. Realizamos una auditoría de medición inicial que identifica todos los problemas y los priorizamos por impacto." },
   { q: "¿Qué incluye el informe mensual?",
     a: "El informe mensual incluye evolución del tráfico por canal, conversiones por fuente, páginas más visitadas, embudo de conversión completo, comparativa con el mes anterior y recomendaciones de acción. Todo en un formato legible, no una exportación cruda de datos." },
+  { q: "¿Cuánto tarda la configuración inicial de GA4 y GTM?",
+    a: "La implementación técnica estándar — auditoría, configuración de GA4, GTM con las tags necesarias, definición de eventos de conversión y activación del Consent Mode v2 — se completa en 2 a 4 semanas. El plazo exacto depende de la complejidad de la web y los eventos a medir. La primera sesión de revisión de datos suele hacerse en la quinta semana." },
+  { q: "¿Funciona la analítica si los usuarios rechazan las cookies?",
+    a: "Con el Consent Mode v2 de Google activado, GA4 y Google Ads siguen operando de forma modelada incluso cuando el usuario rechaza el consentimiento. Google utiliza modelos estadísticos para estimar el comportamiento de usuarios que no consintieron, manteniendo la medición sin incumplir el RGPD. Es una de las primeras cosas que configuramos en cada implementación." },
+  { q: "¿Puedo acceder a los datos yo mismo o solo recibo el informe mensual?",
+    a: "Ambas opciones son compatibles. Creamos el dashboard en Looker Studio (antes Google Data Studio) con acceso permanente y en tiempo real para ti. El informe mensual es una interpretación estructurada de esos datos con recomendaciones concretas de acción. Si quieres formación para leer los datos tú mismo, incluimos sesiones de formación en el servicio." },
+  { q: "¿La analítica web es útil si mi negocio no vende online?",
+    a: "Especialmente útil. Los negocios sin ecommerce miden conversiones como llamadas telefónicas, formularios de contacto, reservas, solicitudes de presupuesto o clics en WhatsApp. Cada uno de esos eventos se configura como conversión en GA4 para que sepas qué canal y qué contenido genera más clientes potenciales reales, no solo visitas." },
 ];
 
 const faqSchema = {
@@ -46,6 +55,10 @@ const faqSchema = {
     { "@type": "Question", name: "¿Qué es Google Tag Manager y por qué lo necesito?", acceptedAnswer: { "@type": "Answer", text: "Google Tag Manager es un sistema que centraliza todos los códigos de seguimiento de tu web (GA4, Google Ads, Meta Pixel, etc.) sin tocar el código de la web directamente. Facilita la gestión, reduce errores y permite implementar nuevos tags de forma ágil. Es la base de una medición profesional." } },
     { "@type": "Question", name: "¿Cómo sé si mi analítica actual está bien configurada?", acceptedAnswer: { "@type": "Answer", text: "La mayoría de empresas tienen GA4 instalado pero con datos incorrectos: conversiones no registradas, tráfico interno contaminando los datos, fuentes de tráfico mal atribuidas o eventos que no se disparan. Realizamos una auditoría de medición inicial que identifica todos los problemas y los priorizamos por impacto." } },
     { "@type": "Question", name: "¿Qué incluye el informe mensual?", acceptedAnswer: { "@type": "Answer", text: "El informe mensual incluye evolución del tráfico por canal, conversiones por fuente, páginas más visitadas, embudo de conversión completo, comparativa con el mes anterior y recomendaciones de acción. Todo en un formato legible, no una exportación cruda de datos." } },
+    { "@type": "Question", name: "¿Cuánto tarda la configuración inicial de GA4 y GTM?", acceptedAnswer: { "@type": "Answer", text: "La implementación técnica estándar — auditoría, configuración de GA4, GTM con las tags necesarias, definición de eventos de conversión y activación del Consent Mode v2 — se completa en 2 a 4 semanas. El plazo exacto depende de la complejidad de la web y los eventos a medir. La primera sesión de revisión de datos suele hacerse en la quinta semana." } },
+    { "@type": "Question", name: "¿Funciona la analítica si los usuarios rechazan las cookies?", acceptedAnswer: { "@type": "Answer", text: "Con el Consent Mode v2 de Google activado, GA4 y Google Ads siguen operando de forma modelada incluso cuando el usuario rechaza el consentimiento. Google utiliza modelos estadísticos para estimar el comportamiento de usuarios que no consintieron, manteniendo la medición sin incumplir el RGPD. Es una de las primeras cosas que configuramos en cada implementación." } },
+    { "@type": "Question", name: "¿Puedo acceder a los datos yo mismo o solo recibo el informe mensual?", acceptedAnswer: { "@type": "Answer", text: "Ambas opciones son compatibles. Creamos el dashboard en Looker Studio (antes Google Data Studio) con acceso permanente y en tiempo real para ti. El informe mensual es una interpretación estructurada de esos datos con recomendaciones concretas de acción. Si quieres formación para leer los datos tú mismo, incluimos sesiones de formación en el servicio." } },
+    { "@type": "Question", name: "¿La analítica web es útil si mi negocio no vende online?", acceptedAnswer: { "@type": "Answer", text: "Especialmente útil. Los negocios sin ecommerce miden conversiones como llamadas telefónicas, formularios de contacto, reservas, solicitudes de presupuesto o clics en WhatsApp. Cada uno de esos eventos se configura como conversión en GA4 para que sepas qué canal y qué contenido genera más clientes potenciales reales, no solo visitas." } },
   ],
 };
 
@@ -74,6 +87,22 @@ export default function AnaliticaWebPage() {
           <div>
             <Image src="/imagen-analitica-web.jpg" alt="Analítica web" className="rounded-2xl shadow-2xl w-full object-cover hidden md:block" width={800} height={600} />
           </div>
+        </div>
+      </section>
+
+      <section className="bg-primary-600 py-6 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+          {[
+            { value: "GA4 + GTM", label: "configuración técnica completa" },
+            { value: "4 semanas", label: "implementación inicial estándar" },
+            { value: "Looker Studio", label: "dashboard de negocio incluido" },
+            { value: "Consent Mode v2", label: "medición compatible con RGPD" },
+          ].map((m) => (
+            <div key={m.label}>
+              <div className="text-base font-bold text-accent-400 leading-tight">{m.value}</div>
+              <div className="text-xs text-primary-200 mt-1">{m.label}</div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -180,6 +209,26 @@ export default function AnaliticaWebPage() {
                 <h3 className="font-bold text-primary-700 mb-2">{faq.q}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Servicios relacionados */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Servicios que complementan la analítica web</h2>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Una analítica bien configurada multiplica el rendimiento de cualquier otro canal digital. Si ya tienes datos fiables, el siguiente paso es invertirlos de forma eficiente en captación:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { href: "/seo-posicionamiento-web-organico/", title: "SEO y posicionamiento web", desc: "La analítica revela qué keywords generan conversiones reales. Conectamos los datos de GA4 con la estrategia SEO." },
+              { href: "/sem-publicidad-ppc/", title: "Google Ads y SEM", desc: "Vinculamos GA4 con Google Ads para medir el ROAS real, incluyendo conversiones asistidas y rutas de conversión completas." },
+              { href: "/auditoria-digital/", title: "Auditoría digital completa", desc: "Si tienes dudas sobre el estado general de tu presencia digital, la auditoría parte siempre del análisis de datos de tu web." },
+            ].map(s => (
+              <Link key={s.href} href={s.href} className="bg-primary-50 rounded-xl p-5 border border-primary-100 hover:border-primary-300 transition-colors block">
+                <p className="font-bold text-primary-700 text-sm mb-1">{s.title}</p>
+                <p className="text-gray-600 text-xs leading-relaxed">{s.desc}</p>
+              </Link>
             ))}
           </div>
         </section>

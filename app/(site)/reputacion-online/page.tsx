@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -36,6 +37,14 @@ const FAQS = [
     a: "Es más frecuente de lo que parece. Documentamos la situación, tramitamos la denuncia ante Google con las pruebas disponibles y aplicamos la respuesta más adecuada mientras se resuelve. También te asesoramos sobre las acciones legales disponibles si el daño es significativo." },
   { q: "¿Gestionáis la reputación en redes sociales también?",
     a: "Sí. Monitorizamos menciones en Instagram, Facebook, X (Twitter) y LinkedIn, además de foros y webs de opinión del sector. La gestión de reseñas en Google es el núcleo del servicio, pero la monitorización es completa en todos los canales donde tu marca puede ser mencionada." },
+  { q: "¿Cuántas reseñas necesito para posicionar bien en Google Maps?",
+    a: "No hay un número mínimo oficial, pero Google valora especialmente la combinación de cantidad, valoración media, frecuencia y respuestas del propietario. En sectores de baja competencia local pueden bastar 20-30 reseñas con una media superior a 4,5. En sectores más competitivos (clínicas, restaurantes, servicios del hogar) conviene estar por encima de 50 y mantener un flujo constante de nuevas reseñas." },
+  { q: "¿Qué impacto tienen las reseñas en el posicionamiento local de Google?",
+    a: "Las reseñas son uno de los factores de ranking más importantes para el Local Pack de Google Maps, junto con la relevancia de la ficha y la proximidad geográfica. Una gestión activa de reseñas — generar nuevas de forma regular, responder a todas, tramitar eliminaciones cuando procede — mejora directamente la visibilidad local. Es una de las pocas variables de posicionamiento local que puedes controlar de forma continua." },
+  { q: "¿Podéis gestionar mi reputación aunque tenga pocas reseñas ahora?",
+    a: "Es el momento ideal para empezar. Con pocas reseñas, el impacto de cada nueva es mucho mayor: pasar de 5 a 25 reseñas positivas puede cambiar significativamente la percepción y el posicionamiento. Implementamos el sistema de captación desde el primer mes y los resultados se ven antes que en negocios con una base de reseñas ya deteriorada." },
+  { q: "¿En qué se diferencia la gestión de reputación del SEO local?",
+    a: "El SEO local trabaja la visibilidad orgánica: posicionamiento en Google, estructura web, contenido localizado y autoridad de dominio. La gestión de reputación trabaja la confianza: reseñas, respuestas, imagen en plataformas de opinión y control de menciones. Los dos servicios se complementan: aparecer en Google es el primer paso, pero las reseñas determinan si el usuario te elige o elige al siguiente." },
 ];
 
 const faqSchema = {
@@ -46,6 +55,10 @@ const faqSchema = {
     { "@type": "Question", name: "¿Cuánto tiempo tarda en mejorar la reputación online?", acceptedAnswer: { "@type": "Answer", text: "Los primeros resultados visibles suelen verse en 60-90 días: mejora en la valoración media, más reseñas recientes y respuestas profesionales a todas las existentes. La mejora en el posicionamiento local de Google Maps como resultado de una mejor reputación tarda entre 3 y 6 meses." } },
     { "@type": "Question", name: "¿Qué pasa si recibo una reseña negativa falsa de un competidor?", acceptedAnswer: { "@type": "Answer", text: "Es más frecuente de lo que parece. Documentamos la situación, tramitamos la denuncia ante Google con las pruebas disponibles y aplicamos la respuesta más adecuada mientras se resuelve. También te asesoramos sobre las acciones legales disponibles si el daño es significativo." } },
     { "@type": "Question", name: "¿Gestionáis la reputación en redes sociales también?", acceptedAnswer: { "@type": "Answer", text: "Sí. Monitorizamos menciones en Instagram, Facebook, X (Twitter) y LinkedIn, además de foros y webs de opinión del sector. La gestión de reseñas en Google es el núcleo del servicio, pero la monitorización es completa en todos los canales donde tu marca puede ser mencionada." } },
+    { "@type": "Question", name: "¿Cuántas reseñas necesito para posicionar bien en Google Maps?", acceptedAnswer: { "@type": "Answer", text: "No hay un número mínimo oficial, pero Google valora especialmente la combinación de cantidad, valoración media, frecuencia y respuestas del propietario. En sectores de baja competencia local pueden bastar 20-30 reseñas con una media superior a 4,5. En sectores más competitivos (clínicas, restaurantes, servicios del hogar) conviene estar por encima de 50 y mantener un flujo constante de nuevas reseñas." } },
+    { "@type": "Question", name: "¿Qué impacto tienen las reseñas en el posicionamiento local de Google?", acceptedAnswer: { "@type": "Answer", text: "Las reseñas son uno de los factores de ranking más importantes para el Local Pack de Google Maps, junto con la relevancia de la ficha y la proximidad geográfica. Una gestión activa de reseñas — generar nuevas de forma regular, responder a todas, tramitar eliminaciones cuando procede — mejora directamente la visibilidad local. Es una de las pocas variables de posicionamiento local que puedes controlar de forma continua." } },
+    { "@type": "Question", name: "¿Podéis gestionar mi reputación aunque tenga pocas reseñas ahora?", acceptedAnswer: { "@type": "Answer", text: "Es el momento ideal para empezar. Con pocas reseñas, el impacto de cada nueva es mucho mayor: pasar de 5 a 25 reseñas positivas puede cambiar significativamente la percepción y el posicionamiento. Implementamos el sistema de captación desde el primer mes y los resultados se ven antes que en negocios con una base de reseñas ya deteriorada." } },
+    { "@type": "Question", name: "¿En qué se diferencia la gestión de reputación del SEO local?", acceptedAnswer: { "@type": "Answer", text: "El SEO local trabaja la visibilidad orgánica: posicionamiento en Google, estructura web, contenido localizado y autoridad de dominio. La gestión de reputación trabaja la confianza: reseñas, respuestas, imagen en plataformas de opinión y control de menciones. Los dos servicios se complementan: aparecer en Google es el primer paso, pero las reseñas determinan si el usuario te elige o elige al siguiente." } },
   ],
 };
 
@@ -74,6 +87,22 @@ export default function ReputacionOnlinePage() {
           <div>
             <Image src="/imagen-reputacion-online.jpg" alt="Reputación online" className="rounded-2xl shadow-2xl w-full object-cover hidden md:block" width={800} height={600} />
           </div>
+        </div>
+      </section>
+
+      <section className="bg-primary-600 py-6 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+          {[
+            { value: "93%", label: "consumidores lee reseñas antes de comprar" },
+            { value: "60-90 días", label: "primeros resultados visibles" },
+            { value: "7 plataformas", label: "monitorizadas de forma continua" },
+            { value: "3-6 meses", label: "mejora en Google Maps" },
+          ].map((m) => (
+            <div key={m.label}>
+              <div className="text-xl font-bold text-accent-400">{m.value}</div>
+              <div className="text-xs text-primary-200 mt-1">{m.label}</div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -180,6 +209,26 @@ export default function ReputacionOnlinePage() {
                 <h3 className="font-bold text-primary-700 mb-2">{faq.q}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Servicios relacionados */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Servicios que se combinan con la gestión de reputación</h2>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            La reputación online y la visibilidad local están directamente conectadas. Una buena imagen digital refuerza el posicionamiento; un buen posicionamiento amplifica el impacto de las reseñas:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { href: "/google-business-profile/", title: "Google Business Profile", desc: "La ficha de Google es el primer punto de contacto de tus reseñas. Optimizamos y gestionamos tu GBP para maximizar visibilidad y confianza." },
+              { href: "/seo-local/", title: "SEO local para empresas", desc: "Posicionamiento orgánico en búsquedas locales de Google. Complementa la reputación con visibilidad real en los resultados de búsqueda." },
+              { href: "/seo-posicionamiento-web-organico/", title: "SEO y posicionamiento web", desc: "Controlar qué aparece cuando buscan tu marca en Google es parte de la reputación digital. Trabajamos la SERP de marca como parte de la estrategia." },
+            ].map(s => (
+              <Link key={s.href} href={s.href} className="bg-primary-50 rounded-xl p-5 border border-primary-100 hover:border-primary-300 transition-colors block">
+                <p className="font-bold text-primary-700 text-sm mb-1">{s.title}</p>
+                <p className="text-gray-600 text-xs leading-relaxed">{s.desc}</p>
+              </Link>
             ))}
           </div>
         </section>
