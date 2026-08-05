@@ -21,7 +21,7 @@ const SLIDES: Slide[] = [
     price: { old: "699€/mes", new: "349€/mes" },
     cta: "Ver oferta",
     href: "/landing/seo-geo-gbp-verano/",
-    bg: "/hero-slide-1.jpg",
+    bg: "/hero-agosto-seo-geo-gbp.svg",
   },
   {
     badge: "Oferta Web + SEO",
@@ -29,7 +29,7 @@ const SLIDES: Slide[] = [
     desc: "Web profesional + 6 meses de SEO por solo 999€ + IVA. Hosting, dominio, correo corporativo y soporte incluidos. Solo 5 plazas.",
     cta: "Ver oferta completa",
     href: "/oferta-web-seo/",
-    bg: "/hero-slide-1.jpg",
+    bg: "/hero-web-seo.svg",
   },
   {
     badge: "Tienda Online",
@@ -37,7 +37,7 @@ const SLIDES: Slide[] = [
     desc: "Sin comisiones por venta, sin licencias mensuales. Diseño 100% personalizado. SEO técnico incluido desde el primer día. Solo 5 plazas.",
     cta: "Ver oferta",
     href: "/landing/tienda-online-490/",
-    bg: "/hero-slide-3.jpg",
+    bg: "/hero-tienda-online.svg",
   },
 ];
 

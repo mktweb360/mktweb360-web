@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgT" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1f3a"/>
+      <stop offset="50%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#080e1c"/>
+    </linearGradient>
+    <radialGradient id="glowOrange" cx="65%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBlueT" cx="15%" cy="60%" r="40%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softT">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1920" height="600" fill="url(#bgT)"/>
+  <rect width="1920" height="600" fill="url(#glowOrange)"/>
+  <rect width="1920" height="600" fill="url(#glowBlueT)"/>
+
+  <!-- Abstract shopping bag / cart — large, center-left -->
+  <g opacity="0.1" transform="translate(140, 80)">
+    <!-- Shopping bag shape -->
+    <path d="M80,120 L40,420 L360,420 L320,120 Z" fill="none" stroke="#60a5fa" stroke-width="2"/>
+    <!-- Handle -->
+    <path d="M120,120 Q200,40 280,120" fill="none" stroke="#60a5fa" stroke-width="2"/>
+    <!-- Price tag -->
+    <rect x="130" y="200" width="140" height="80" rx="8" fill="none" stroke="#f97316" stroke-width="1.5"/>
+    <line x1="130" y1="226" x2="270" y2="226" stroke="#f97316" stroke-width="0.8" opacity="0.6"/>
+  </g>
+
+  <!-- Abstract package boxes — right side -->
+  <g opacity="0.09" transform="translate(1300, 100)">
+    <!-- Box 1 (front face) -->
+    <rect x="0" y="100" width="200" height="180" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+    <!-- Box 1 top face (isometric) -->
+    <path d="M0,100 L60,40 L260,40 L200,100 Z" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+    <!-- Box 1 right face -->
+    <path d="M200,100 L260,40 L260,220 L200,280 Z" fill="none" stroke="#60a5fa" stroke-width="1.2"/>
+    <!-- Tape cross on front -->
+    <line x1="20" y1="120" x2="180" y2="260" stroke="#f97316" stroke-width="1" opacity="0.5"/>
+    <line x1="180" y1="120" x2="20" y2="260" stroke="#f97316" stroke-width="1" opacity="0.5"/>
+
+    <!-- Box 2 (smaller, behind-right) -->
+    <rect x="240" y="200" width="150" height="130" fill="none" stroke="#93c5fd" stroke-width="1" opacity="0.6"/>
+    <path d="M240,200 L290,150 L440,150 L390,200 Z" fill="none" stroke="#93c5fd" stroke-width="1" opacity="0.6"/>
+    <path d="M390,200 L440,150 L440,280 L390,330 Z" fill="none" stroke="#93c5fd" stroke-width="0.8" opacity="0.5"/>
+  </g>
+
+  <!-- Dynamic upward arrows / momentum lines -->
+  <g opacity="0.15">
+    <!-- Arrow 1 -->
+    <line x1="700" y1="500" x2="700" y2="100" stroke="#f97316" stroke-width="1.5"/>
+    <polyline points="680,130 700,100 720,130" fill="none" stroke="#f97316" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- Arrow 2 -->
+    <line x1="820" y1="500" x2="820" y2="150" stroke="#f97316" stroke-width="1.2" opacity="0.7"/>
+    <polyline points="803,178 820,150 837,178" fill="none" stroke="#f97316" stroke-width="1.2" stroke-linejoin="round" opacity="0.7"/>
+    <!-- Arrow 3 -->
+    <line x1="940" y1="500" x2="940" y2="200" stroke="#60a5fa" stroke-width="1.2" opacity="0.6"/>
+    <polyline points="923,228 940,200 957,228" fill="none" stroke="#60a5fa" stroke-width="1.2" stroke-linejoin="round" opacity="0.6"/>
+    <!-- Arrow 4 -->
+    <line x1="1060" y1="500" x2="1060" y2="120" stroke="#f97316" stroke-width="1" opacity="0.5"/>
+    <polyline points="1045,148 1060,120 1075,148" fill="none" stroke="#f97316" stroke-width="1" stroke-linejoin="round" opacity="0.5"/>
+  </g>
+
+  <!-- Bar chart silhouette — lower center -->
+  <g opacity="0.08" transform="translate(600, 350)">
+    <rect x="0" y="0" width="60" height="160" rx="4" fill="#3b82f6"/>
+    <rect x="80" y="-60" width="60" height="220" rx="4" fill="#f97316"/>
+    <rect x="160" y="-20" width="60" height="180" rx="4" fill="#3b82f6"/>
+    <rect x="240" y="-100" width="60" height="260" rx="4" fill="#f97316"/>
+    <rect x="320" y="-40" width="60" height="200" rx="4" fill="#3b82f6"/>
+  </g>
+
+  <!-- Curved flow lines suggesting transactions -->
+  <g opacity="0.1" fill="none" stroke="#60a5fa" stroke-width="1">
+    <path d="M0,300 Q400,100 800,350 Q1200,500 1600,200 Q1800,100 1920,250"/>
+    <path d="M0,400 Q400,200 800,450 Q1200,550 1600,300 Q1800,200 1920,350" opacity="0.6"/>
+  </g>
+
+  <!-- Fine grid texture -->
+  <g opacity="0.05">
+    <pattern id="grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <line x1="60" y1="0" x2="0" y2="0" stroke="#93c5fd" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="0" y2="60" stroke="#93c5fd" stroke-width="0.5"/>
+    </pattern>
+    <rect width="1920" height="600" fill="url(#grid)"/>
+  </g>
+</svg>
