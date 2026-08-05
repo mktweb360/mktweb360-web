@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { getLatestPosts, getRelatedPosts, getPostsByCategory } from "@/lib/blog";
 import { esSlugFor, translatedSlugFor } from "@/lib/i18n/routes";
@@ -94,18 +95,29 @@ export function RelatedArticles({ currentSlug, category, title }: Props) {
               <Link
                 key={post.slug}
                 href={href}
-                className="bg-white rounded-xl border border-gray-200 p-5 hover:border-accent-500 hover:shadow-md transition-all group"
+                className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-accent-500 hover:shadow-md transition-all group"
               >
-                <span className="text-xs font-semibold text-accent-500 uppercase tracking-wide">
-                  {translatedCategory}
-                </span>
-                <h3 className="mt-2 font-bold text-primary-900 group-hover:text-accent-500 transition-colors line-clamp-3 text-sm leading-snug">
-                  {t.title}
-                </h3>
-                <p className="mt-2 text-xs text-gray-500 line-clamp-2">{t.excerpt}</p>
-                <span className="mt-3 inline-block text-xs font-semibold text-accent-500">
-                  {readMore}
-                </span>
+                <div className="relative w-full overflow-hidden" style={{ aspectRatio: "1200/630" }}>
+                  <Image
+                    src={`/og-${post.slug}.jpg`}
+                    alt={t.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-5">
+                  <span className="text-xs font-semibold text-accent-500 uppercase tracking-wide">
+                    {translatedCategory}
+                  </span>
+                  <h3 className="mt-2 font-bold text-primary-900 group-hover:text-accent-500 transition-colors line-clamp-3 text-sm leading-snug">
+                    {t.title}
+                  </h3>
+                  <p className="mt-2 text-xs text-gray-500 line-clamp-2">{t.excerpt}</p>
+                  <span className="mt-3 inline-block text-xs font-semibold text-accent-500">
+                    {readMore}
+                  </span>
+                </div>
               </Link>
             );
           })}

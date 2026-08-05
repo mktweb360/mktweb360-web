@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { allPosts } from "@/lib/blog";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -28,6 +29,15 @@ export default function BlogPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {posts.map((post) => (
           <article key={post.slug} className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+            <Link href={`/${post.slug}/`} className="block relative w-full overflow-hidden" style={{ aspectRatio: "1200/630" }}>
+              <Image
+                src={`/og-${post.slug}.jpg`}
+                alt={post.title}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </Link>
             <div className="p-6">
               <div className="flex items-center gap-3 mb-3">
                 <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">{post.category}</span>

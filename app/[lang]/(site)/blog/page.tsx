@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { alternatesFor, ROUTES } from "@/lib/i18n/routes";
 import { allPosts } from "@/lib/blog";
@@ -80,6 +81,15 @@ export default async function LangBlogPage({ params }: { params: Promise<{ lang:
                       key={post.slug}
                       className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow"
                     >
+                      <Link href={href} className="block relative w-full overflow-hidden" style={{ aspectRatio: "1200/630" }}>
+                        <Image
+                          src={`/og-${post.slug}.jpg`}
+                          alt={post.title}
+                          fill
+                          className="object-cover hover:scale-105 transition-transform duration-300"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </Link>
                       <div className="p-6">
                         <div className="flex items-center gap-3 mb-3">
                           <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">
@@ -128,17 +138,28 @@ export default async function LangBlogPage({ params }: { params: Promise<{ lang:
                 {untranslatedPosts.map((post) => (
                   <article
                     key={post.slug}
-                    className="border border-gray-100 rounded-xl p-5 hover:border-gray-300 transition-colors"
+                    className="border border-gray-100 rounded-xl overflow-hidden hover:border-gray-300 transition-colors"
                   >
-                    <span className="bg-gray-100 text-gray-500 text-xs font-medium px-2 py-0.5 rounded-full mb-2 inline-block">
-                      ES
-                    </span>
-                    <h3 className="text-base font-semibold text-gray-700 line-clamp-2 mb-1">
-                      <Link href={`/${post.slug}/`} className="hover:text-primary-600 transition-colors">
-                        {post.title}
-                      </Link>
-                    </h3>
-                    <p className="text-gray-500 text-xs line-clamp-2">{post.excerpt}</p>
+                    <Link href={`/${post.slug}/`} className="block relative w-full overflow-hidden" style={{ aspectRatio: "1200/630" }}>
+                      <Image
+                        src={`/og-${post.slug}.jpg`}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </Link>
+                    <div className="p-5">
+                      <span className="bg-gray-100 text-gray-500 text-xs font-medium px-2 py-0.5 rounded-full mb-2 inline-block">
+                        ES
+                      </span>
+                      <h3 className="text-base font-semibold text-gray-700 line-clamp-2 mb-1">
+                        <Link href={`/${post.slug}/`} className="hover:text-primary-600 transition-colors">
+                          {post.title}
+                        </Link>
+                      </h3>
+                      <p className="text-gray-500 text-xs line-clamp-2">{post.excerpt}</p>
+                    </div>
                   </article>
                 ))}
               </div>
