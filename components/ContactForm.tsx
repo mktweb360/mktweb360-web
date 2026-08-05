@@ -131,15 +131,17 @@ export function ContactForm({ formType = "contacto" }: ContactFormProps) {
     setStatus(res.ok ? "ok" : "error");
     if (res.ok) {
       form.reset();
-      if (typeof window !== "undefined" && (window as any).dataLayer) {
-        (window as any).dataLayer.push({
-          event: "form_submit_success",
-          form_type: formType,
-          form_location: utmRef.current.page_origin || window.location.pathname,
-          utm_source: utmRef.current.utm_source || "",
-          utm_medium: utmRef.current.utm_medium || "",
-          utm_campaign: utmRef.current.utm_campaign || "",
-        });
+      if (typeof window !== "undefined") {
+        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
+          "event", "send_form_seo",
+          {
+            form_type: formType,
+            page_location: utmRef.current.page_origin || window.location.pathname,
+            utm_source: utmRef.current.utm_source || "",
+            utm_medium: utmRef.current.utm_medium || "",
+            utm_campaign: utmRef.current.utm_campaign || "",
+          }
+        );
       }
     }
   }

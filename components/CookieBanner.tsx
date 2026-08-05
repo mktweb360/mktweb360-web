@@ -63,6 +63,8 @@ function loadGoogleAds() {
   w.dataLayer = w.dataLayer || [];
   w.gtag("js", new Date());
   w.gtag("config", "AW-870698032");
+  // Inicializa GA4 directamente: permite llamar gtag('event',...) sin depender de GTM tags
+  w.gtag("config", "G-GWDMPMPB3V");
 }
 
 function saveConsent(analytics: boolean) {

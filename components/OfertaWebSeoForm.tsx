@@ -59,8 +59,11 @@ export function OfertaWebSeoForm() {
     try {
       const res = await fetch("/api/leads/web-seo", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...p1, ...p2, oferta: "web-seo-999", ...utmRef.current }) });
       if (!res.ok) throw new Error();
-      if (typeof window !== "undefined" && (window as Window & { dataLayer?: unknown[] }).dataLayer) {
-        (window as unknown as { dataLayer: unknown[] }).dataLayer.push({ event: "form_submit_success", form_type: "oferta-web-seo" });
+      if (typeof window !== "undefined") {
+        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
+          "event", "send_form_seo",
+          { form_type: "oferta-web-seo", page_location: window.location.pathname }
+        );
       }
       router.push("/oferta-web-seo/gracias/");
     } catch { setStatus("error"); }

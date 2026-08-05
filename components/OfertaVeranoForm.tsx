@@ -47,8 +47,11 @@ export function OfertaVeranoForm() {
         body: JSON.stringify({ ...d, oferta: "seo-geo-gbp", ...utmRef.current }),
       });
       if (!res.ok) throw new Error();
-      if (typeof window !== "undefined" && (window as Window & { dataLayer?: unknown[] }).dataLayer) {
-        (window as unknown as { dataLayer: unknown[] }).dataLayer.push({ event: "form_submit_success", form_type: "seo-geo-gbp-verano" });
+      if (typeof window !== "undefined") {
+        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
+          "event", "send_form_seo",
+          { form_type: "seo-geo-gbp-verano", page_location: window.location.pathname }
+        );
       }
       router.push("/landing/seo-geo-gbp-verano/gracias/");
     } catch { setStatus("error"); }

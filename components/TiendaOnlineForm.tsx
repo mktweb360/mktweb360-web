@@ -63,8 +63,11 @@ export function TiendaOnlineForm() {
     try {
       const res = await fetch("/api/leads/tienda-online", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...p1, ...p2, oferta: "tienda-online-490", ...utmRef.current }) });
       if (!res.ok) throw new Error();
-      if (typeof window !== "undefined" && (window as Window & { dataLayer?: unknown[] }).dataLayer) {
-        (window as unknown as { dataLayer: unknown[] }).dataLayer.push({ event: "form_submit_success", form_type: "tienda-online-landing" });
+      if (typeof window !== "undefined") {
+        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
+          "event", "send_form_seo",
+          { form_type: "tienda-online-landing", page_location: window.location.pathname }
+        );
       }
       router.push("/tienda-online/gracias/");
     } catch { setStatus("error"); }

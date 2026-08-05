@@ -28,12 +28,11 @@ export function OfertaForm() {
       });
       setStatus(res.ok ? "ok" : "error");
       if (res.ok) {
-        if (typeof window !== "undefined" && (window as any).dataLayer) {
-          (window as any).dataLayer.push({
-            event: "form_submit_success",
-            form_type: "oferta",
-            form_location: window.location.pathname,
-          });
+        if (typeof window !== "undefined") {
+          (window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
+            "event", "send_form_seo",
+            { form_type: "oferta", page_location: window.location.pathname }
+          );
         }
       }
     } catch {
@@ -138,7 +137,7 @@ export function OfertaForm() {
       {status === "error" && (
         <p className="text-red-300 text-sm text-center">
           Ha ocurrido un error. Por favor inténtalo de nuevo o llámanos al{" "}
-          <a href="tel:+34696714476" className="underline">696 71 44 76</a>.
+          <a href="tel:+34622748987" className="underline">622 74 89 87</a>.
         </p>
       )}
     </form>
