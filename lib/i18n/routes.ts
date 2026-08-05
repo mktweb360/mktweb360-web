@@ -163,6 +163,13 @@ export const ROUTES: Route[] = [
   { es: "/oferta-seo-geo-gbp/" },
   { es: "/diseno-de-paginas-web/diseno-paginas-web-empresa/", en: "web-design-for-businesses", fr: "web-design-for-businesses" },
   { es: "/diseno-de-paginas-web/paginas-corporativas/", en: "corporate-website-design", fr: "corporate-website-design" },
+
+  // ── Agosto 2026 — 5 nuevos artículos de blog ──────────────────────────────
+  { es: "/brandformance-como-unir-marca-y-performance/", en: "brandformance-brand-performance-strategy", fr: "brandformance-strategie-marque-performance" },
+  { es: "/marketing-digital-con-ia-y-respuestas-cero-clic/", en: "digital-marketing-ai-search-zero-click", fr: "marketing-digital-ia-zero-clic" },
+  { es: "/como-escribir-contenido-que-no-suene-a-ia/", en: "how-to-write-content-that-doesnt-sound-like-ai", fr: "comment-ecrire-contenu-qui-ne-sonne-pas-ia" },
+  { es: "/seo-social-instagram-tiktok-linkedin-como-buscadores/", en: "social-seo-instagram-tiktok-linkedin", fr: "seo-social-instagram-tiktok-linkedin-moteurs-recherche" },
+  { es: "/atribucion-de-marketing-como-medir-impacto-real/", en: "marketing-attribution-measure-real-impact", fr: "attribution-marketing-mesurer-impact-reel" },
 ];
 
 // ---------- helpers derivados ----------

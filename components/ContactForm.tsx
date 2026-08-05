@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 interface UtmData {
   utm_source?: string;
@@ -15,7 +16,70 @@ interface ContactFormProps {
   lang?: string;
 }
 
+const T = {
+  es: {
+    name: "Nombre",
+    namePh: "Tu nombre",
+    email: "Email",
+    phone: "Teléfono",
+    phonePh: "+34 600 000 000",
+    website: "Web (opcional)",
+    websitePh: "https://tuweb.com",
+    message: "Mensaje",
+    messagePh: "Cuéntanos tu proyecto...",
+    gdpr: "He leído y acepto la",
+    gdprLink: "política de privacidad",
+    gdprLinkHref: "/politica-de-privacidad/",
+    gdprSuffix: "y consiento el tratamiento de mis datos.",
+    send: "Enviar consulta",
+    sending: "Enviando...",
+    ok: "✓ Mensaje enviado. Te contactaremos pronto.",
+    error: "Error al enviar. Por favor, llámanos al +34 622 748 987.",
+  },
+  en: {
+    name: "Name",
+    namePh: "Your name",
+    email: "Email",
+    phone: "Phone",
+    phonePh: "+44 7700 000 000",
+    website: "Website (optional)",
+    websitePh: "https://yourwebsite.com",
+    message: "Message",
+    messagePh: "Tell us about your project...",
+    gdpr: "I have read and accept the",
+    gdprLink: "privacy policy",
+    gdprLinkHref: "/en/privacy-policy/",
+    gdprSuffix: "and consent to the processing of my data.",
+    send: "Send enquiry",
+    sending: "Sending...",
+    ok: "✓ Message sent. We'll contact you soon.",
+    error: "Error sending. Please call us at +34 622 748 987.",
+  },
+  fr: {
+    name: "Nom",
+    namePh: "Votre nom",
+    email: "Email",
+    phone: "Téléphone",
+    phonePh: "+33 6 00 00 00 00",
+    website: "Site web (optionnel)",
+    websitePh: "https://votresite.com",
+    message: "Message",
+    messagePh: "Parlez-nous de votre projet...",
+    gdpr: "J'ai lu et j'accepte la",
+    gdprLink: "politique de confidentialité",
+    gdprLinkHref: "/fr/politique-de-confidentialite/",
+    gdprSuffix: "et je consens au traitement de mes données.",
+    send: "Envoyer ma demande",
+    sending: "Envoi en cours...",
+    ok: "✓ Message envoyé. Nous vous contacterons bientôt.",
+    error: "Erreur d'envoi. Veuillez nous appeler au +34 622 748 987.",
+  },
+} as const;
+
 export function ContactForm({ formType = "contacto" }: ContactFormProps) {
+  const pathname = usePathname();
+  const detectedLang = pathname?.startsWith("/en") ? "en" : pathname?.startsWith("/fr") ? "fr" : "es";
+  const t = T[detectedLang];
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
   const utmRef = useRef<UtmData>({});
 
@@ -86,34 +150,34 @@ export function ContactForm({ formType = "contacto" }: ContactFormProps) {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Nombre *</label>
-          <input name="name" type="text" required className={INPUT} placeholder="Tu nombre" />
+          <label className="block text-sm font-medium text-gray-700 mb-1">{t.name} *</label>
+          <input name="name" type="text" required className={INPUT} placeholder={t.namePh} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">{t.email} *</label>
           <input name="email" type="email" required className={INPUT} placeholder="tu@email.com" />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-          <input name="phone" type="tel" className={INPUT} placeholder="+34 600 000 000" />
+          <label className="block text-sm font-medium text-gray-700 mb-1">{t.phone}</label>
+          <input name="phone" type="tel" className={INPUT} placeholder={t.phonePh} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Web (opcional)</label>
-          <input name="website" type="url" className={INPUT} placeholder="https://tuweb.com" />
+          <label className="block text-sm font-medium text-gray-700 mb-1">{t.website}</label>
+          <input name="website" type="url" className={INPUT} placeholder={t.websitePh} />
         </div>
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Mensaje *</label>
-        <textarea name="message" required rows={5} className={INPUT} placeholder="Cuéntanos tu proyecto..." />
+        <label className="block text-sm font-medium text-gray-700 mb-1">{t.message} *</label>
+        <textarea name="message" required rows={5} className={INPUT} placeholder={t.messagePh} />
       </div>
       <div className="flex items-start gap-3">
         <input type="checkbox" name="gdpr" id="gdpr" required className="mt-1 h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-400" />
         <label htmlFor="gdpr" className="text-sm text-gray-600">
-          He leído y acepto la{" "}
-          <a href="/politica-de-privacidad/" className="text-primary-600 hover:underline">
-            política de privacidad
+          {t.gdpr}{" "}
+          <a href={t.gdprLinkHref} className="text-primary-600 hover:underline">
+            {t.gdprLink}
           </a>{" "}
-          y consiento el tratamiento de mis datos. *
+          {t.gdprSuffix} *
         </label>
       </div>
       <button
@@ -121,13 +185,13 @@ export function ContactForm({ formType = "contacto" }: ContactFormProps) {
         disabled={status === "sending"}
         className="bg-accent-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors disabled:opacity-60"
       >
-        {status === "sending" ? "Enviando..." : "Enviar consulta"}
+        {status === "sending" ? t.sending : t.send}
       </button>
       {status === "ok" && (
-        <p className="text-emerald-600 font-medium">✓ Mensaje enviado. Te contactaremos pronto.</p>
+        <p className="text-emerald-600 font-medium">{t.ok}</p>
       )}
       {status === "error" && (
-        <p className="text-red-600 font-medium">Error al enviar. Por favor, llámanos al +34 622 748 987.</p>
+        <p className="text-red-600 font-medium">{t.error}</p>
       )}
     </form>
   );
