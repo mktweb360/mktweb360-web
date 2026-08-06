@@ -45,80 +45,70 @@ const PROYECTOS = [
     sector: "Deporte · Clubs",
     descripcion: "Tienda online para club de gimnasia rítmica. Venta de artículos, indumentaria y accesorios de competición con pasarela de pago integrada.",
     url: "https://deporte-demo.mktweb360.com",
-    color: "from-violet-600 to-purple-800",
-    emoji: "🎀",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=75",
   },
   {
     nombre: "Studio Elevé",
     sector: "Moda · Ropa",
     descripcion: "E-commerce de moda con catálogo de temporada, filtros por talla y color, y carrito de compra rápido. Sin comisiones por venta.",
     url: "https://tienda-moda-demo.mktweb360.com",
-    color: "from-pink-500 to-rose-700",
-    emoji: "👗",
+    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=75",
   },
   {
     nombre: "Florería Encanto",
     sector: "Flores · Plantas",
     descripcion: "Floristería online con envío a domicilio en 24 h. Ramos, plantas de interior y arreglos florales a medida. Stripe y Apple Pay configurados.",
     url: "https://flores-demo.mktweb360.com",
-    color: "from-green-500 to-emerald-700",
-    emoji: "🌸",
+    image: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=600&q=75",
   },
   {
     nombre: "Dermé Cosmética",
     sector: "Cosmética · Belleza",
     descripcion: "Tienda de cosmética natural con guía de ingredientes activos, recomendador de producto por tipo de piel y checkout en un paso.",
     url: "https://cosmetica-demo.mktweb360.com",
-    color: "from-amber-400 to-orange-500",
-    emoji: "✨",
+    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=75",
   },
   {
     nombre: "Cerámica San Isidro",
     sector: "Artesanía · Hogar",
     descripcion: "Ecommerce de piezas cerámicas artesanales de edición limitada. Descripción de técnicas, stock en tiempo real y envíos protegidos.",
     url: "https://artesania-demo.mktweb360.com",
-    color: "from-orange-500 to-red-700",
-    emoji: "🏺",
+    image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=75",
   },
   {
     nombre: "Bodega La Encina",
     sector: "Vinos · Gastronomía",
     descripcion: "Tienda online de vinos D.O. con fichas de cata, compra por pack y envío refrigerado a toda España sin comisión por botella.",
     url: "https://vinos-demo.mktweb360.com",
-    color: "from-red-800 to-red-950",
-    emoji: "🍷",
+    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=75",
   },
   {
     nombre: "Pequeños Pasos",
     sector: "Calzado · Infantil",
     descripcion: "Tienda de calzado infantil con selector de talla dinámico, guía de medición y política de cambios gratuitos durante 30 días.",
     url: "https://calzado-demo.mktweb360.com",
-    color: "from-sky-400 to-blue-600",
-    emoji: "👟",
+    image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=75",
   },
   {
     nombre: "EcoVida Market",
     sector: "Alimentación · Ecológico",
     descripcion: "Supermercado ecológico online con suscripción semanal a canasta de temporada. Envíos sin plástico y ficha de trazabilidad por producto.",
     url: "https://alimentacion-demo.mktweb360.com",
-    color: "from-lime-500 to-green-700",
-    emoji: "🌿",
+    image: "https://images.unsplash.com/photo-1506617564039-2f3b650b7010?w=600&q=75",
   },
   {
     nombre: "Top Sport",
     sector: "Material · Deportivo",
     descripcion: "Equipamiento deportivo con filtros por disciplina, comparador de modelos y club de clientes con descuentos por volumen.",
     url: "https://material-demo.mktweb360.com",
-    color: "from-blue-500 to-indigo-700",
-    emoji: "⚽",
+    image: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=600&q=75",
   },
   {
     nombre: "La Papelería Bonita",
     sector: "Papelería · Regalos",
     descripcion: "Librería y papelería online con personalización de producto, packs de regalo configurables y entrega en 24 horas.",
     url: "https://papeleria-demo.mktweb360.com",
-    color: "from-fuchsia-500 to-purple-700",
-    emoji: "📦",
+    image: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?w=600&q=75",
   },
 ];
 
@@ -376,34 +366,42 @@ export default function TiendasOnlinePage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {PROYECTOS.map((p) => (
-              <div
+              <a
                 key={p.nombre}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col"
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
               >
-                {/* Colored header */}
-                <div className={`bg-gradient-to-br ${p.color} h-20 flex items-center justify-center shrink-0`}>
-                  <span className="text-4xl">{p.emoji}</span>
+                {/* Image header with zoom + overlay effect */}
+                <div className="relative h-36 overflow-hidden shrink-0">
+                  <img
+                    src={p.image}
+                    alt={p.nombre}
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-primary-700/0 group-hover:bg-primary-700/20 transition-colors duration-300" />
+                  <span className="absolute bottom-2 left-3 inline-block text-xs font-semibold text-white bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full leading-tight">
+                    {p.sector}
+                  </span>
+                  <span className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-accent-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                    Ver demo →
+                  </span>
                 </div>
                 {/* Body */}
                 <div className="p-4 flex flex-col flex-1">
-                  <span className="inline-block text-xs font-semibold text-accent-500 bg-primary-50 px-2 py-0.5 rounded-full mb-2 self-start leading-tight">
-                    {p.sector}
-                  </span>
-                  <h3 className="font-bold text-primary-600 text-sm mb-1.5">{p.nombre}</h3>
+                  <h3 className="font-bold text-primary-600 text-sm mb-1.5 group-hover:text-accent-500 transition-colors">{p.nombre}</h3>
                   <p className="text-gray-500 text-xs leading-relaxed flex-1">{p.descripcion}</p>
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 text-accent-500 text-xs font-bold hover:underline inline-flex items-center gap-1"
-                  >
+                  <span className="mt-3 text-accent-500 text-xs font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                     Ver tienda
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
           <p className="text-center text-gray-400 text-xs mt-8">

@@ -37,6 +37,27 @@ const SUB_SERVICES = [
   },
 ];
 
+const SERVICE_DEMOS = [
+  { nombre: "Clínica Dental", sector: "Salud", url: "https://clinica-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=75" },
+  { nombre: "Restaurante", sector: "Hostelería", url: "https://restaurante-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=75" },
+  { nombre: "Despacho Abogados", sector: "Legal", url: "https://abogados-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?w=600&q=75" },
+  { nombre: "Reformas", sector: "Construcción", url: "https://reformas-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=75" },
+  { nombre: "Gimnasio", sector: "Deporte", url: "https://gimnasio-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=75" },
+  { nombre: "Inmobiliaria", sector: "Propiedades", url: "https://inmobiliaria-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75" },
+  { nombre: "Centro Estética", sector: "Belleza", url: "https://estetica-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=75" },
+  { nombre: "Academia", sector: "Educación", url: "https://academia-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=75" },
+  { nombre: "Psicólogo", sector: "Salud Mental", url: "https://psicologo-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600&q=75" },
+  { nombre: "Taller Mecánico", sector: "Automoción", url: "https://taller-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=75" },
+];
+
+const TIENDAS_DEMOS = [
+  { nombre: "Club Rythmia", sector: "Deporte", url: "https://deporte-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=75" },
+  { nombre: "Studio Elevé", sector: "Moda", url: "https://tienda-moda-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=75" },
+  { nombre: "Florería Encanto", sector: "Flores", url: "https://flores-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=600&q=75" },
+  { nombre: "Dermé Cosmética", sector: "Cosmética", url: "https://cosmetica-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=75" },
+  { nombre: "Bodega La Encina", sector: "Vinos", url: "https://vinos-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=75" },
+];
+
 const FEATURES = [
   "Diseño responsive adaptado a móvil",
   "Velocidad optimizada — Core Web Vitals",
@@ -136,6 +157,60 @@ export default function WebDesignPage() {
                 <span className="text-accent-500 text-sm font-semibold group-hover:underline">Ver más →</span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Demos en vivo */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent-500 mb-3">Demos navegables en vivo</span>
+            <h2 className="text-3xl font-bold text-primary-600 mb-3">Así quedan las webs que construimos</h2>
+            <p className="text-gray-600 max-w-xl mx-auto">Haz clic en cualquier demo para verla en tiempo real. Webs reales por sector — navegables, no capturas de pantalla.</p>
+          </div>
+          {/* Service demos */}
+          <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Webs corporativas y de servicios</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-8">
+            {SERVICE_DEMOS.map((p) => (
+              <a key={p.nombre} href={p.url} target="_blank" rel="noopener noreferrer"
+                className="group bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div className="relative h-24 overflow-hidden shrink-0">
+                  <img src={p.image} alt={p.nombre} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-primary-700/0 group-hover:bg-primary-700/20 transition-colors duration-300" />
+                  <span className="absolute bottom-1.5 left-2 text-xs font-semibold text-white bg-black/40 backdrop-blur-sm px-1.5 py-0.5 rounded-full">{p.sector}</span>
+                  <span className="absolute top-1.5 right-1.5 opacity-0 group-hover:opacity-100 transition-opacity bg-accent-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">→</span>
+                </div>
+                <div className="p-2.5">
+                  <h3 className="font-bold text-primary-600 text-xs group-hover:text-accent-500 transition-colors">{p.nombre}</h3>
+                </div>
+              </a>
+            ))}
+          </div>
+          {/* Tiendas demos */}
+          <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Tiendas online</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
+            {TIENDAS_DEMOS.map((p) => (
+              <a key={p.nombre} href={p.url} target="_blank" rel="noopener noreferrer"
+                className="group bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div className="relative h-24 overflow-hidden shrink-0">
+                  <img src={p.image} alt={p.nombre} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-primary-700/0 group-hover:bg-primary-700/20 transition-colors duration-300" />
+                  <span className="absolute bottom-1.5 left-2 text-xs font-semibold text-white bg-black/40 backdrop-blur-sm px-1.5 py-0.5 rounded-full">{p.sector}</span>
+                  <span className="absolute top-1.5 right-1.5 opacity-0 group-hover:opacity-100 transition-opacity bg-accent-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">→</span>
+                </div>
+                <div className="p-2.5">
+                  <h3 className="font-bold text-primary-600 text-xs group-hover:text-accent-500 transition-colors">{p.nombre}</h3>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="text-accent-500 text-sm font-semibold hover:underline">
+              Ver todas las demos de tiendas online →
+            </Link>
           </div>
         </div>
       </section>

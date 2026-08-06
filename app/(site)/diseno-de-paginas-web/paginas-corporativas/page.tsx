@@ -80,6 +80,19 @@ const faqSchema = {
   })),
 };
 
+const SERVICE_DEMOS = [
+  { nombre: "Clínica Dental Sonrisa", sector: "Salud · Dental", url: "https://clinica-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=75", desc: "Web para clínica dental con servicios, equipo y citas online." },
+  { nombre: "Restaurante El Roble", sector: "Hostelería · Gastronomía", url: "https://restaurante-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=75", desc: "Web para restaurante con carta, reservas y eventos privados." },
+  { nombre: "García & Asociados", sector: "Legal · Abogados", url: "https://abogados-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?w=600&q=75", desc: "Despacho de abogados con áreas de práctica y consulta online." },
+  { nombre: "Reformas Integral BCN", sector: "Construcción · Reformas", url: "https://reformas-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=75", desc: "Empresa de reformas con servicios, presupuesto y portfolio." },
+  { nombre: "FitCenter Pro", sector: "Deporte · Fitness", url: "https://gimnasio-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=75", desc: "Centro deportivo con actividades, tarifas y prueba gratuita." },
+  { nombre: "Premium Homes", sector: "Inmobiliaria · Propiedades", url: "https://inmobiliaria-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75", desc: "Inmobiliaria con catálogo de propiedades y valoración gratuita." },
+  { nombre: "Studio Belle", sector: "Estética · Belleza", url: "https://estetica-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=75", desc: "Centro de estética con tratamientos, precios y cita online." },
+  { nombre: "Academia Saber+", sector: "Educación · Formación", url: "https://academia-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=75", desc: "Academia con cursos, oposiciones y clase de prueba gratuita." },
+  { nombre: "Psicología Bienestar", sector: "Salud · Psicología", url: "https://psicologo-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600&q=75", desc: "Centro de psicología con terapias presenciales y online." },
+  { nombre: "Taller Auto Express", sector: "Automoción · Mecánica", url: "https://taller-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=75", desc: "Taller mecánico con servicios, cita online y diagnóstico." },
+];
+
 export default function PaginasCorporativasPage() {
   return (
     <>
@@ -87,25 +100,109 @@ export default function PaginasCorporativasPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="max-w-3xl mx-auto px-4 py-12">
-        <Breadcrumbs crumbs={[
-          { label: "Inicio", href: "/" },
-          { label: "Diseño Web", href: "/diseno-de-paginas-web/" },
-          { label: "Páginas Corporativas" },
-        ]} />
-
-        <header className="mb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Diseño Web · Empresas</span>
+      {/* ── HERO ── */}
+      <section className="relative min-h-[72vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&q=85"
+            alt="Páginas web corporativas profesionales"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-800/75 to-primary-700/40" />
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 w-full">
+          <Breadcrumbs crumbs={[
+            { label: "Inicio", href: "/" },
+            { label: "Diseño Web", href: "/diseno-de-paginas-web/" },
+            { label: "Páginas Corporativas" },
+          ]} />
+          <div className="mt-6 max-w-2xl">
+            <span className="inline-block bg-accent-500/20 text-accent-300 border border-accent-400/30 text-xs font-semibold px-3 py-1 rounded-full mb-5 tracking-wide uppercase">
+              Diseño Web Corporativo
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              Tu empresa, visible<br />
+              <span className="text-accent-400">y profesional en Google</span>
+            </h1>
+            <p className="text-xl text-primary-100 leading-relaxed mb-8">
+              Una web corporativa que genera confianza, capta leads y trabaja por ti 24 horas al día. Diseño profesional, SEO técnico incluido y gestión autónoma desde el primer día.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/contacto/" className="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors text-center">
+                Solicitar presupuesto
+              </Link>
+              <Link href="#demos" className="border-2 border-white/60 text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-colors text-center">
+                Ver demos reales
+              </Link>
+            </div>
           </div>
-          <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
-            Páginas Web Corporativas: Tu Empresa, Visible y Profesional en Google
-          </h1>
-          <p className="text-xl text-gray-600 leading-relaxed">
-            Una página web corporativa no es solo un escaparate — es la herramienta de ventas más potente que tiene tu empresa. La que trabaja 24 horas al día, los 365 días del año, generando confianza y captando clientes mientras tú te dedicas a tu negocio.
-          </p>
-        </header>
+        </div>
+      </section>
 
+      {/* ── Trust bar ── */}
+      <section className="bg-primary-700 py-5 px-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+          {[
+            { value: "desde 790€", label: "Precio todo incluido" },
+            { value: "3–5 sem.", label: "Plazo de entrega" },
+            { value: "SEO", label: "Técnico incluido" },
+            { value: "100%", label: "Gestión autónoma" },
+          ].map((m) => (
+            <div key={m.label}>
+              <div className="text-lg font-bold text-accent-400">{m.value}</div>
+              <div className="text-xs text-primary-200 mt-0.5">{m.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── SERVICE DEMOS ── */}
+      <section id="demos" className="py-16 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent-500 mb-3">Webs reales que hemos construido</span>
+            <h2 className="text-3xl font-bold text-primary-600 mb-3">Demos en vivo — así queda tu web</h2>
+            <p className="text-gray-600 max-w-xl mx-auto">Haz clic en cualquier demo para ver cómo quedaría la web de tu sector. Cada una es navegable y representa un proyecto real.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {SERVICE_DEMOS.map((p) => (
+              <a
+                key={p.nombre}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              >
+                <div className="relative h-32 overflow-hidden shrink-0">
+                  <img
+                    src={p.image}
+                    alt={p.nombre}
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-primary-700/0 group-hover:bg-primary-700/20 transition-colors duration-300" />
+                  <span className="absolute bottom-2 left-2 inline-block text-xs font-semibold text-white bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full leading-tight">
+                    {p.sector}
+                  </span>
+                  <span className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-accent-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                    Ver demo →
+                  </span>
+                </div>
+                <div className="p-3 flex flex-col flex-1">
+                  <h3 className="font-bold text-primary-600 text-sm mb-1 group-hover:text-accent-500 transition-colors">{p.nombre}</h3>
+                  <p className="text-gray-500 text-xs leading-relaxed flex-1">{p.desc}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+          <p className="text-center text-gray-400 text-xs mt-6">
+            ¿Tu sector no aparece? <Link href="/contacto/" className="text-accent-500 hover:underline font-medium">Consúltanos</Link> — trabajamos en todos los sectores.
+          </p>
+        </div>
+      </section>
+
+      <article className="max-w-3xl mx-auto px-4 py-12">
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Cuando un potencial cliente quiere saber si puede confiar en tu empresa, lo primero que hace es buscar tu web. Ese momento — los primeros 5 segundos en tu página — decide si sigue leyendo o vuelve a Google a buscar a tu competencia. Una web corporativa profesional convierte ese momento de duda en una primera impresión que genera confianza.
@@ -236,6 +333,7 @@ export default function PaginasCorporativasPage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver a Diseño Web</Link>
         </nav>
+        </div>
       </article>
       <RelatedArticles category="Diseño Web" />
     </>
