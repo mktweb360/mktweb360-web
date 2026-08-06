@@ -39,14 +39,12 @@ const faqSchema = {
   ]
 };
 
-// TODO: Actualizar `url` con la URL real de cada tienda una vez disponible.
-// Para Club Rythmia y Studio Elevé: revisar Drive > Sistema Operativo > proyectos para la URL exacta.
 const PROYECTOS = [
   {
     nombre: "Club Rythmia",
     sector: "Deporte · Clubs",
     descripcion: "Tienda online para club de gimnasia rítmica. Venta de artículos, indumentaria y accesorios de competición con pasarela de pago integrada.",
-    url: "#", // TODO: URL real tienda gimnasia rítmica
+    url: "https://deporte-demo.mktweb360.com",
     color: "from-violet-600 to-purple-800",
     emoji: "🎀",
   },
@@ -54,7 +52,7 @@ const PROYECTOS = [
     nombre: "Studio Elevé",
     sector: "Moda · Ropa",
     descripcion: "E-commerce de moda con catálogo de temporada, filtros por talla y color, y carrito de compra rápido. Sin comisiones por venta.",
-    url: "#", // TODO: URL real tienda moda
+    url: "https://tienda-moda-demo.mktweb360.com",
     color: "from-pink-500 to-rose-700",
     emoji: "👗",
   },
@@ -62,7 +60,7 @@ const PROYECTOS = [
     nombre: "Florería Encanto",
     sector: "Flores · Plantas",
     descripcion: "Floristería online con envío a domicilio en 24 h. Ramos, plantas de interior y arreglos florales a medida. Stripe y Apple Pay configurados.",
-    url: "#",
+    url: "https://flores-demo.mktweb360.com",
     color: "from-green-500 to-emerald-700",
     emoji: "🌸",
   },
@@ -70,7 +68,7 @@ const PROYECTOS = [
     nombre: "Dermé Cosmética",
     sector: "Cosmética · Belleza",
     descripcion: "Tienda de cosmética natural con guía de ingredientes activos, recomendador de producto por tipo de piel y checkout en un paso.",
-    url: "#",
+    url: "https://cosmetica-demo.mktweb360.com",
     color: "from-amber-400 to-orange-500",
     emoji: "✨",
   },
@@ -78,7 +76,7 @@ const PROYECTOS = [
     nombre: "Cerámica San Isidro",
     sector: "Artesanía · Hogar",
     descripcion: "Ecommerce de piezas cerámicas artesanales de edición limitada. Descripción de técnicas, stock en tiempo real y envíos protegidos.",
-    url: "#",
+    url: "https://artesania-demo.mktweb360.com",
     color: "from-orange-500 to-red-700",
     emoji: "🏺",
   },
@@ -86,7 +84,7 @@ const PROYECTOS = [
     nombre: "Bodega La Encina",
     sector: "Vinos · Gastronomía",
     descripcion: "Tienda online de vinos D.O. con fichas de cata, compra por pack y envío refrigerado a toda España sin comisión por botella.",
-    url: "#",
+    url: "https://vinos-demo.mktweb360.com",
     color: "from-red-800 to-red-950",
     emoji: "🍷",
   },
@@ -94,7 +92,7 @@ const PROYECTOS = [
     nombre: "Pequeños Pasos",
     sector: "Calzado · Infantil",
     descripcion: "Tienda de calzado infantil con selector de talla dinámico, guía de medición y política de cambios gratuitos durante 30 días.",
-    url: "#",
+    url: "https://calzado-demo.mktweb360.com",
     color: "from-sky-400 to-blue-600",
     emoji: "👟",
   },
@@ -102,7 +100,7 @@ const PROYECTOS = [
     nombre: "EcoVida Market",
     sector: "Alimentación · Ecológico",
     descripcion: "Supermercado ecológico online con suscripción semanal a canasta de temporada. Envíos sin plástico y ficha de trazabilidad por producto.",
-    url: "#",
+    url: "https://alimentacion-demo.mktweb360.com",
     color: "from-lime-500 to-green-700",
     emoji: "🌿",
   },
@@ -110,7 +108,7 @@ const PROYECTOS = [
     nombre: "Top Sport",
     sector: "Material · Deportivo",
     descripcion: "Equipamiento deportivo con filtros por disciplina, comparador de modelos y club de clientes con descuentos por volumen.",
-    url: "#",
+    url: "https://material-demo.mktweb360.com",
     color: "from-blue-500 to-indigo-700",
     emoji: "⚽",
   },
@@ -118,7 +116,7 @@ const PROYECTOS = [
     nombre: "La Papelería Bonita",
     sector: "Papelería · Regalos",
     descripcion: "Librería y papelería online con personalización de producto, packs de regalo configurables y entrega en 24 horas.",
-    url: "#",
+    url: "https://papeleria-demo.mktweb360.com",
     color: "from-fuchsia-500 to-purple-700",
     emoji: "📦",
   },
@@ -393,19 +391,17 @@ export default function TiendasOnlinePage() {
                   </span>
                   <h3 className="font-bold text-primary-600 text-sm mb-1.5">{p.nombre}</h3>
                   <p className="text-gray-500 text-xs leading-relaxed flex-1">{p.descripcion}</p>
-                  {p.url !== "#" && (
-                    <a
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 text-accent-500 text-xs font-bold hover:underline inline-flex items-center gap-1"
-                    >
-                      Ver tienda
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  )}
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 text-accent-500 text-xs font-bold hover:underline inline-flex items-center gap-1"
+                  >
+                    Ver tienda
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             ))}
