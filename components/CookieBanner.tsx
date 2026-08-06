@@ -5,27 +5,20 @@ import Link from "next/link";
 
 type Consent = { analytics: boolean; date: string };
 
-let gtmLoaded = false;
 let adsLoaded = false;
 
-// Consent Mode v2 — formato correcto para GTM: push de array de argumentos
+// Consent Mode v2 — usa gtag() directamente (IArguments), no array push.
+// GTM ya está cargado incondicionalmente desde layout.tsx; aquí solo enviamos señales.
 function gtagConsent(type: "default" | "update", params: Record<string, string | number>) {
   if (typeof window === "undefined") return;
-  const w = window as unknown as { dataLayer: unknown[] };
-  w.dataLayer = w.dataLayer || [];
-  // Equivalente a gtag('consent', type, params) — GTM procesa arrays como IArguments
-  w.dataLayer.push(["consent", type, params]);
-}
-
-function setConsentDefault() {
-  // Redundante con el script inline de layout.tsx, pero protege si el script no carga
-  gtagConsent("default", {
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-    analytics_storage: "denied",
-    wait_for_update: 500,
-  });
+  const w = window as unknown as { gtag?: (...args: unknown[]) => void; dataLayer?: unknown[] };
+  if (typeof w.gtag === "function") {
+    w.gtag("consent", type, params);
+  } else {
+    // Fallback: si gtag no está disponible aún, push directo a dataLayer
+    w.dataLayer = w.dataLayer || [];
+    w.dataLayer.push({ 0: "consent", 1: type, 2: params });
+  }
 }
 
 function updateConsent(analytics: boolean) {
@@ -38,19 +31,9 @@ function updateConsent(analytics: boolean) {
   });
 }
 
-function loadGTM() {
-  if (typeof window === "undefined") return;
-  if (gtmLoaded) return;
-  gtmLoaded = true;
-  const w = window as unknown as Record<string, unknown>;
-  w.dataLayer = (w.dataLayer as unknown[]) || [];
-  const script = document.createElement("script");
-  script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-KVB3R3H";
-  script.async = true;
-  document.head.appendChild(script);
-}
-
 function loadGoogleAds() {
+  // Carga el tag de Google Ads directamente (complementa GTM con inicialización explícita de AW-).
+  // Solo se llama cuando el usuario acepta cookies.
   if (typeof window === "undefined") return;
   if (adsLoaded) return;
   adsLoaded = true;
@@ -58,12 +41,10 @@ function loadGoogleAds() {
   script.src = "https://www.googletagmanager.com/gtag/js?id=AW-870698032";
   script.async = true;
   document.head.appendChild(script);
-  // gtag ya definida globalmente en app/layout.tsx — inicializa la propiedad Ads
   const w = window as unknown as { dataLayer: unknown[]; gtag: (...args: unknown[]) => void };
   w.dataLayer = w.dataLayer || [];
   w.gtag("js", new Date());
   w.gtag("config", "AW-870698032");
-  // Inicializa GA4 directamente: permite llamar gtag('event',...) sin depender de GTM tags
   w.gtag("config", "G-GWDMPMPB3V");
 }
 
@@ -71,7 +52,7 @@ function saveConsent(analytics: boolean) {
   const consent: Consent = { analytics, date: new Date().toISOString() };
   localStorage.setItem("mktweb360_consent", JSON.stringify(consent));
   updateConsent(analytics);
-  if (analytics) { loadGTM(); loadGoogleAds(); }
+  if (analytics) { loadGoogleAds(); }
 }
 
 export function CookieBanner() {
@@ -80,14 +61,13 @@ export function CookieBanner() {
   const [analyticsEnabled, setAnalyticsEnabled] = useState(true);
 
   useEffect(() => {
-    setConsentDefault();
     const stored = localStorage.getItem("mktweb360_consent");
     if (!stored) {
       setVisible(true);
     } else {
       const consent: Consent = JSON.parse(stored);
       updateConsent(consent.analytics);
-      if (consent.analytics) { loadGTM(); loadGoogleAds(); }
+      if (consent.analytics) { loadGoogleAds(); }
     }
   }, []);
 
@@ -165,7 +145,7 @@ export function CookieBanner() {
 
             <div className="border border-gray-200 rounded-xl p-4 mb-6">
               <div className="flex items-center justify-between mb-1.5">
-                <span className="font-semibold text-sm text-primary-900">Cookies analíticas</span>
+                <span className="font-semibold text-sm text-primary-900">Cookies analíticas y publicitarias</span>
                 <button
                   role="switch"
                   aria-checked={analyticsEnabled}
@@ -182,7 +162,7 @@ export function CookieBanner() {
                 </button>
               </div>
               <p className="text-xs text-gray-500 leading-relaxed">
-                Google Analytics 4 y Google Tag Manager. Nos permiten entender cómo interactúan los visitantes con el sitio de forma anónima y mejorar nuestros contenidos.
+                Google Analytics 4 y Google Ads. Nos permiten entender cómo interactúan los visitantes con el sitio y medir el rendimiento de nuestras campañas publicitarias.
               </p>
             </div>
 

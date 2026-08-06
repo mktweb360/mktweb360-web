@@ -125,8 +125,14 @@ export default function RootLayout({
             "'wait_for_update':500" +
           "});"
         }} />
+        {/* GTM — carga siempre, incondicionalmente. El consent default=denied arriba garantiza cumplimiento RGPD.
+            Sin esto Google nunca recibe señales de consentimiento de usuarios EEE que no interactúan
+            con el banner, bloqueando la modelización de conversiones (Consent Mode v2). */}
+        <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KVB3R3H" />
       </head>
       <body>
+        {/* GTM noscript — fallback para navegadores sin JavaScript */}
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVB3R3H" height="0" width="0" style={{display:"none",visibility:"hidden"}} /></noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
