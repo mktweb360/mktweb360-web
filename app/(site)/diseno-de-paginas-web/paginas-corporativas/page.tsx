@@ -333,7 +333,6 @@ export default function PaginasCorporativasPage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver a Diseño Web</Link>
         </nav>
-        </div>
       </article>
       <RelatedArticles category="Diseño Web" />
     </>
