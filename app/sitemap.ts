@@ -40,7 +40,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/comunicacion-audiovisual/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/casos/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/blog/", priority: 0.8, changeFrequency: "weekly" as const },
-    { url: "/oferta-web-seo/", priority: 0.9, changeFrequency: "monthly" as const },
+    // /oferta-web-seo/ excluida del sitemap — landing de Ads, noindex
+    { url: "/oferta-web-seo-organico/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/oferta-seo-geo-gbp/", priority: 0.9, changeFrequency: "weekly" as const },
     { url: "/blog-para-monetizacion/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/ecommerce-dropshipping-con-participacion/", priority: 0.8, changeFrequency: "monthly" as const },
