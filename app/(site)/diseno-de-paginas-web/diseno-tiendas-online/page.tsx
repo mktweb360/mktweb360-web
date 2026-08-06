@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { HostingBanner } from "@/components/HostingModal";
+import { OfferBannerTiendaOnline } from "@/components/offers/OfferBannerTiendaOnline";
 
 export const metadata: Metadata = {
   title: "Tiendas Online Profesionales Sin Comisiones",
@@ -436,21 +437,9 @@ export default function TiendasOnlinePage() {
       </section>
 
       {/* Offer banner */}
-      <section id="oferta" className="py-12 px-4 bg-primary-700">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Tienda + SEO</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Tienda online desde 490€ + posicionamiento SEO</h2>
-          <p className="text-primary-200 max-w-xl mx-auto mb-8">Contrata tu tienda online y súmale nuestro servicio de SEO para posicionarla en Google desde el primer día.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contacto/" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors">
-              Solicitar información
-            </Link>
-            <Link href="/seo-posicionamiento-web-organico/" className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary-700 transition-colors">
-              Ver servicio SEO
-            </Link>
-          </div>
-        </div>
-      </section>
+      <div id="oferta">
+        <OfferBannerTiendaOnline />
+      </div>
 
       {/* IA badge */}
       <section className="py-10 px-4 bg-white border-y border-gray-100">

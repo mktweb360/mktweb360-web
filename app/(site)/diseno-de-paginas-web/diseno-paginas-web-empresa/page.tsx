@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
+import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
@@ -86,7 +87,7 @@ export default function PaginasWebEmpresaPage() {
               <Link href="/contacto/" className="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors text-center">
                 Hablar de mi proyecto
               </Link>
-              <Link href="#demos" className="border-2 border-white/60 text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-colors text-center">
+              <Link href="#demos" className="bg-white text-primary-700 hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-colors text-center">
                 Ver demos en vivo
               </Link>
             </div>
@@ -230,6 +231,8 @@ export default function PaginasWebEmpresaPage() {
           </div>
         </div>
       </section>
+
+      <OfferBannerWebSeo />
 
       {/* ── CTA ── */}
       <section className="py-16 px-4 bg-primary-600 text-white">

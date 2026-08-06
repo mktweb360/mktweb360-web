@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 
 export const metadata: Metadata = {
   title: "Páginas Web Corporativas: Diseño Profesional para Empresas",
@@ -131,7 +132,7 @@ export default function PaginasCorporativasPage() {
               <Link href="/contacto/" className="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors text-center">
                 Solicitar presupuesto
               </Link>
-              <Link href="#demos" className="border-2 border-white/60 text-white hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-colors text-center">
+              <Link href="#demos" className="bg-white text-primary-700 hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-colors text-center">
                 Ver demos reales
               </Link>
             </div>
@@ -201,6 +202,8 @@ export default function PaginasCorporativasPage() {
           </p>
         </div>
       </section>
+
+      <OfferBannerWebSeo />
 
       <article className="max-w-3xl mx-auto px-4 py-12">
         <div className="text-gray-700 space-y-6 leading-relaxed">
