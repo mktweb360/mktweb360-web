@@ -45,7 +45,8 @@ function loadGoogleAds() {
   w.dataLayer = w.dataLayer || [];
   w.gtag("js", new Date());
   w.gtag("config", "AW-870698032");
-  w.gtag("config", "G-GWDMPMPB3V");
+  // G-GWDMPMPB3V eliminado — GA4 ya inicializa via GTM (Etiqueta de Google, All Pages).
+  // Mantenerlo aquí causaría doble page_view para usuarios con consentimiento.
 }
 
 function saveConsent(analytics: boolean) {
