@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       description: isEn
         ? "Practical guide for foreign companies operating in Spain. What to look for, what to avoid, and how to evaluate proposals from Spanish agencies."
         : "Guide pratique pour les entreprises étrangères opérant en Espagne. Ce qu'il faut chercher, éviter et comment évaluer les propositions des agences espagnoles.",
-      images: [{ url: "https://www.mktweb360.com/og-seo.jpg", width: 1200, height: 630 }],
+      images: [{ url: "https://www.mktweb360.com/og-how-to-choose-digital-marketing-agency-spain.jpg", width: 1200, height: 630 }],
     },
   };
 }

@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       description: isEn
         ? "Practical SEO guide for French and British companies operating in Spain. Spanish search behaviour, keyword strategy and technical requirements."
         : "Guide SEO pratique pour entreprises françaises et britanniques opérant en Espagne. Comportement de recherche espagnol, stratégie de mots-clés et exigences techniques.",
-      images: [{ url: "https://www.mktweb360.com/og-seo.jpg", width: 1200, height: 630 }],
+      images: [{ url: "https://www.mktweb360.com/og-seo-spain-foreign-companies.jpg", width: 1200, height: 630 }],
     },
   };
 }

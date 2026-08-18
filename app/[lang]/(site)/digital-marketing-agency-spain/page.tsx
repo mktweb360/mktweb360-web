@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       description: isEn
         ? "SEO, Google Ads, GEO and web design for foreign companies in Spain. English-speaking team. No sector exclusivity conflicts."
         : "SEO, Google Ads, GEO et création de sites pour entreprises étrangères en Espagne. Équipe francophone. Pas de conflits d'exclusivité sectorielle.",
-      images: [{ url: "https://www.mktweb360.com/og-seo.jpg", width: 1200, height: 630 }],
+      images: [{ url: "https://www.mktweb360.com/og-digital-marketing-agency-spain.jpg", width: 1200, height: 630 }],
     },
   };
 }
