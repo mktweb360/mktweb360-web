@@ -38,6 +38,7 @@ export const ROUTES: Route[] = [
   // Página estratégica EN/FR para captar empresas extranjeras en España
   { es: "/agencia-marketing-digital-espana/", en: "digital-marketing-agency-spain", fr: "agence-marketing-digital-espagne" },
   { es: "/como-elegir-agencia-marketing-digital-espana/", en: "how-to-choose-digital-marketing-agency-spain", fr: "choisir-agence-marketing-digital-espagne" },
+  { es: "/seo-espana-empresas-extranjeras/", en: "seo-spain-foreign-companies", fr: "seo-espagne-entreprises-etrangeres" },
   { es: "/diseno-de-paginas-web/", en: "web-design", fr: "creation-site-web", aliases: [{ lang: "fr", slug: "creation-site-web-entreprises" }, { lang: "en", slug: "web-design-services" }] },
   { es: "/diseno-de-paginas-web/diseno-tiendas-online/", en: "online-store", fr: "boutique-en-ligne" },
   // Ecommerce sin comisiones — pagina propia (0€ comision como argumento comercial),
