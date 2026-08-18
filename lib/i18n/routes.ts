@@ -37,6 +37,7 @@ export const ROUTES: Route[] = [
   { es: "/digitalizacion-empresas-castilla-la-mancha/", en: "digitalization-castilla-la-mancha", fr: "digitalization-castilla-la-mancha" },
   // Página estratégica EN/FR para captar empresas extranjeras en España
   { es: "/agencia-marketing-digital-espana/", en: "digital-marketing-agency-spain", fr: "agence-marketing-digital-espagne" },
+  { es: "/como-elegir-agencia-marketing-digital-espana/", en: "how-to-choose-digital-marketing-agency-spain", fr: "choisir-agence-marketing-digital-espagne" },
   { es: "/diseno-de-paginas-web/", en: "web-design", fr: "creation-site-web", aliases: [{ lang: "fr", slug: "creation-site-web-entreprises" }, { lang: "en", slug: "web-design-services" }] },
   { es: "/diseno-de-paginas-web/diseno-tiendas-online/", en: "online-store", fr: "boutique-en-ligne" },
   // Ecommerce sin comisiones — pagina propia (0€ comision como argumento comercial),
