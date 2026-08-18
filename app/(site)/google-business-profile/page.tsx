@@ -8,8 +8,8 @@ import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Google Business Profile para Empresas — Visibilidad Local",
-  description: "Optimización y gestión de Google Business Profile para empresas. Aparece en Google Maps, consigue más reseñas y atrae clientes locales. Auditoría, configuración y gestión mensual. Servicio nacional.",
+  title: "Google Business Profile — Aparece en Google Maps y Gana Clientes Locales",
+  description: "Optimiza tu ficha de Google Maps y aparece cuando tus clientes te buscan cerca. Más reseñas, más llamadas, más visitas. Gestión mensual sin permanencia.",
   alternates: alternatesFor("/google-business-profile/") ?? { canonical: "https://www.mktweb360.com/google-business-profile/" },
   openGraph: {
     title: "Google Business Profile para Empresas | Mkt Web 360",

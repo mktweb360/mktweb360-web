@@ -8,11 +8,11 @@ import { HostingBanner } from "@/components/HostingModal";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Diseño de Páginas Web Profesionales",
-  description: "Diseño de páginas web profesionales, tiendas online y webs corporativas. Webs rápidas, modernas y optimizadas para SEO y conversión. Servicio nacional.",
+  title: "Diseño Web Profesional para Empresas — Rápida, SEO y que Convierte",
+  description: "Páginas web que venden: rápidas, posicionadas en Google y optimizadas para convertir visitantes en clientes. Presupuesto sin compromiso en 24h.",
   alternates: alternatesFor("/diseno-de-paginas-web/") ?? { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/" },
   openGraph: {
-    title: "Diseño de Páginas Web Profesionales | Mkt Web 360",
+    title: "Diseño Web Profesional para Empresas — Rápida, SEO y que Convierte | Mkt Web 360",
     description: "Webs profesionales, rápidas y optimizadas para SEO y conversión. Servicio nacional.",
     url: "https://www.mktweb360.com/diseno-de-paginas-web/",
     images: [{ url: "https://www.mktweb360.com/og-paginas-corporativas.jpg", width: 1200, height: 630, alt: "Diseño de páginas web profesionales Mkt Web 360" }],
@@ -77,7 +77,7 @@ const PROCESS = [
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Diseño de Páginas Web Profesionales",
+  name: "Diseño Web Profesional para Empresas — Rápida, SEO y que Convierte",
   provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   description: "Diseño y desarrollo de páginas web profesionales, tiendas online y webs corporativas.",
   areaServed: "España",

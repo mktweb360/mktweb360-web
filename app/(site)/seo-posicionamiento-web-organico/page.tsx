@@ -10,11 +10,11 @@ import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Posicionamiento Web SEO — Agencia SEO España",
-  description: "Servicio profesional de SEO y posicionamiento web para empresas españolas. Auditorías, estrategia de keywords y contenidos que llevan tu web a la primera página de Google.",
+  title: "Agencia SEO España — Primera Página de Google para tu Empresa",
+  description: "Posiciona tu empresa en Google con resultados verificables. SEO técnico, contenido y autoridad. Auditoría gratuita + estrategia personalizada. Sin permanencia.",
   alternates: alternatesFor("/seo-posicionamiento-web-organico/") ?? { canonical: "https://www.mktweb360.com/seo-posicionamiento-web-organico/" },
   openGraph: {
-    title: "Posicionamiento Web SEO — Agencia SEO España | Mkt Web 360",
+    title: "Agencia SEO España — Primera Página de Google para tu Empresa | Mkt Web 360",
     description: "Posiciona tu web en Google con estrategias SEO probadas. Resultados duraderos. Servicio nacional.",
     url: "https://www.mktweb360.com/seo-posicionamiento-web-organico/",
     images: [{ url: "https://www.mktweb360.com/og-seo.jpg", width: 1200, height: 630 }],

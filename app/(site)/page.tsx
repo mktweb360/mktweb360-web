@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import HomeClient from "@/components/HomeClient";
 
 export const metadata: Metadata = {
-  description: "Agencia de marketing digital para PYMEs y empresas. SEO, GEO, Google Ads y diseño web con protocolos propios de IA, +10 años y exclusividad por sector.",
+  title: "Agencia Marketing Digital para Empresas — SEO, GEO y Ads | Mkt Web 360",
+  description: "Agencia de marketing digital con IA propia para PYMEs. SEO, GEO (ChatGPT/Perplexity), Google Ads y diseño web. +10 años. Exclusividad por sector. Resultados verificables.",
   alternates: {
     canonical: "/",
   },
