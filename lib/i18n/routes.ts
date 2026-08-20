@@ -6,7 +6,8 @@ export interface Route {
   es: string;                               // ruta ES completa, con barra final
   en?: string;                              // slug EN canónico (sin prefijo); "" = home. undefined = no existe en EN
   fr?: string;                              // slug FR canónico. undefined = no existe en FR
-  aliases?: { lang: Lang; slug: string }[]; // slugs [lang] duplicados/retirados -> 301
+  aliases?: { lang: Lang; slug: string }[  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+]; // slugs [lang] duplicados/retirados -> 301
 }
 
 const BASE = "https://www.mktweb360.com";
@@ -175,6 +176,7 @@ export const ROUTES: Route[] = [
   { es: "/como-escribir-contenido-que-no-suene-a-ia/", en: "how-to-write-content-that-doesnt-sound-like-ai", fr: "comment-ecrire-contenu-qui-ne-sonne-pas-ia" },
   { es: "/seo-social-instagram-tiktok-linkedin-como-buscadores/", en: "social-seo-instagram-tiktok-linkedin", fr: "seo-social-instagram-tiktok-linkedin-moteurs-recherche" },
   { es: "/atribucion-de-marketing-como-medir-impacto-real/", en: "marketing-attribution-measure-real-impact", fr: "attribution-marketing-mesurer-impact-reel" },
+  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
 ];
 
 // ---------- helpers derivados ----------
@@ -189,12 +191,14 @@ export function urlFor(r: Route, lang: Lang): string | null {
 
 // Idiomas para los que un slug [lang] es CANÓNICO (para generateStaticParams por página)
 export function langsForSlug(slug: string): Lang[] {
-  const out: Lang[] = [];
+  const out: Lang[] = [  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+];
   for (const r of ROUTES) {
     if (r.en === slug) out.push("en");
     if (r.fr === slug) out.push("fr");
   }
-  return [...new Set(out)];
+  return [...new Set(out)  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+];
 }
 
 // Encuentra la route a la que pertenece un path (canónico) servido
@@ -227,8 +231,10 @@ export function alternatesFor(path: string) {
 // Selector de idioma: SOLO idiomas que EXISTEN para esa route (nunca 404)
 export function switcherFor(path: string): { lang: Lang; url: string }[] {
   const hit = findByPath(path);
-  if (!hit) return [];
-  const out: { lang: Lang; url: string }[] = [];
+  if (!hit) return [  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+];
+  const out: { lang: Lang; url: string }[] = [  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+];
   for (const lang of ["es", "en", "fr"] as Lang[]) {
     const u = urlFor(hit.route, lang);
     if (u) out.push({ lang, url: u });
@@ -238,7 +244,8 @@ export function switcherFor(path: string): { lang: Lang; url: string }[] {
 
 // Todas las URLs existentes (para sitemap.ts); ES + EN/FR donde estén definidos
 export function allUrls(): string[] {
-  const urls: string[] = [];
+  const urls: string[] = [  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+];
   for (const r of ROUTES) for (const lang of ["es", "en", "fr"] as Lang[]) {
     const u = urlFor(r, lang);
     if (u) urls.push(u);
@@ -269,7 +276,8 @@ export function translatedSlugFor(esSlug: string, lang: "en" | "fr"): string | u
 // Redirects 301 de alias -> canónico (o -> ES si ese idioma no se mantiene). Cubre AMBOS prefijos
 // porque cada dir [lang] se sirve bajo /en/ y /fr/.
 export function aliasRedirects(): { source: string; destination: string }[] {
-  const out: { source: string; destination: string }[] = [];
+  const out: { source: string; destination: string }[] = [  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+];
   for (const r of ROUTES) {
     if (!r.aliases) continue;
     for (const a of r.aliases) {

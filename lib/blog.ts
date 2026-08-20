@@ -8,7 +8,17 @@ export type BlogPost = {
   relatedSlugs: string[];
 };
 
-export const allPosts: BlogPost[] = [
+export const allPosts: BlogPost[
+  {
+    slug: "google-ads-sin-comision-agencia-marketing",
+    title: "Google Ads sin comisión sobre presupuesto: por qué cambia todo",
+    excerpt: "Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras ...",
+    category: "SEM",
+    date: "2026-08-20",
+    readTime: "8 min",
+    image: "/og-google-ads-sin-comision-agencia-marketing.jpg",
+    lang: "es",
+  },] = [
   { slug: 'cuando-elegir-seo-vs-google-ads', title: 'Cuándo elegir SEO y cuándo Google Ads: guía para tomar la decisión correcta según tu negocio', excerpt: 'SEO o Google Ads: aprende cuándo invertir en posicionamiento orgánico y cuándo en publicidad de pago según tu situación, sector y objetivos de negocio.', date: '2026-02-23', category: 'SEO', tags: ['seo', 'google ads', 'estrategia', 'sem'], relatedSlugs: ['seo-posicionamiento-web-organico', 'sem-publicidad-ppc', 'auditoria-seo-basica'] },
   { slug: 'geo-vs-seo-diferencias', title: 'GEO vs SEO: diferencias clave y cómo compaginar ambas estrategias en 2025', excerpt: 'GEO y SEO no son lo mismo. Descubre qué diferencia el posicionamiento en buscadores del posicionamiento en IA y cómo usar ambas estrategias juntas.', date: '2026-02-09', category: 'GEO', tags: ['geo', 'seo', 'ia', 'estrategia'], relatedSlugs: ['geo-posicionamiento-ia', 'que-es-geo-generative-engine-optimization', 'seo-posicionamiento-web-organico'] },
   { slug: 'configurar-envios-woocommerce', title: 'Cómo configurar los envíos en WooCommerce para España: guía completa paso a paso', excerpt: 'Configura los métodos de envío en WooCommerce correctamente: zonas de envío, transportistas, envío gratis y tarifas por peso para tu tienda online en España.', date: '2026-01-26', category: 'Ecommerce', tags: ['woocommerce', 'envíos', 'tienda online', 'ecommerce'], relatedSlugs: ['diseno-de-paginas-web/diseno-tiendas-online', 'metodos-pago-tienda-online-espana', 'importar-productos-woocommerce'] },
