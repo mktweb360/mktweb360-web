@@ -7,6 +7,7 @@ export interface Route {
   en?: string;                              // slug EN canónico (sin prefijo); "" = home. undefined = no existe en EN
   fr?: string;                              // slug FR canónico. undefined = no existe en FR
   aliases?: { lang: Lang; slug: string }[  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+  { es: "/redes-sociales-para-empresas-b2b-2026/", en: "social-media-b2b-companies-2026", fr: "reseaux-sociaux-entreprises-b2b-2026" },
 ]; // slugs [lang] duplicados/retirados -> 301
 }
 
@@ -177,6 +178,7 @@ export const ROUTES: Route[] = [
   { es: "/seo-social-instagram-tiktok-linkedin-como-buscadores/", en: "social-seo-instagram-tiktok-linkedin", fr: "seo-social-instagram-tiktok-linkedin-moteurs-recherche" },
   { es: "/atribucion-de-marketing-como-medir-impacto-real/", en: "marketing-attribution-measure-real-impact", fr: "attribution-marketing-mesurer-impact-reel" },
   { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+  { es: "/redes-sociales-para-empresas-b2b-2026/", en: "social-media-b2b-companies-2026", fr: "reseaux-sociaux-entreprises-b2b-2026" },
 ];
 
 // ---------- helpers derivados ----------
@@ -192,12 +194,14 @@ export function urlFor(r: Route, lang: Lang): string | null {
 // Idiomas para los que un slug [lang] es CANÓNICO (para generateStaticParams por página)
 export function langsForSlug(slug: string): Lang[] {
   const out: Lang[] = [  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+  { es: "/redes-sociales-para-empresas-b2b-2026/", en: "social-media-b2b-companies-2026", fr: "reseaux-sociaux-entreprises-b2b-2026" },
 ];
   for (const r of ROUTES) {
     if (r.en === slug) out.push("en");
     if (r.fr === slug) out.push("fr");
   }
   return [...new Set(out)  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+  { es: "/redes-sociales-para-empresas-b2b-2026/", en: "social-media-b2b-companies-2026", fr: "reseaux-sociaux-entreprises-b2b-2026" },
 ];
 }
 
@@ -232,8 +236,10 @@ export function alternatesFor(path: string) {
 export function switcherFor(path: string): { lang: Lang; url: string }[] {
   const hit = findByPath(path);
   if (!hit) return [  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+  { es: "/redes-sociales-para-empresas-b2b-2026/", en: "social-media-b2b-companies-2026", fr: "reseaux-sociaux-entreprises-b2b-2026" },
 ];
   const out: { lang: Lang; url: string }[] = [  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+  { es: "/redes-sociales-para-empresas-b2b-2026/", en: "social-media-b2b-companies-2026", fr: "reseaux-sociaux-entreprises-b2b-2026" },
 ];
   for (const lang of ["es", "en", "fr"] as Lang[]) {
     const u = urlFor(hit.route, lang);
@@ -245,6 +251,7 @@ export function switcherFor(path: string): { lang: Lang; url: string }[] {
 // Todas las URLs existentes (para sitemap.ts); ES + EN/FR donde estén definidos
 export function allUrls(): string[] {
   const urls: string[] = [  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+  { es: "/redes-sociales-para-empresas-b2b-2026/", en: "social-media-b2b-companies-2026", fr: "reseaux-sociaux-entreprises-b2b-2026" },
 ];
   for (const r of ROUTES) for (const lang of ["es", "en", "fr"] as Lang[]) {
     const u = urlFor(r, lang);
@@ -277,6 +284,7 @@ export function translatedSlugFor(esSlug: string, lang: "en" | "fr"): string | u
 // porque cada dir [lang] se sirve bajo /en/ y /fr/.
 export function aliasRedirects(): { source: string; destination: string }[] {
   const out: { source: string; destination: string }[] = [  { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
+  { es: "/redes-sociales-para-empresas-b2b-2026/", en: "social-media-b2b-companies-2026", fr: "reseaux-sociaux-entreprises-b2b-2026" },
 ];
   for (const r of ROUTES) {
     if (!r.aliases) continue;

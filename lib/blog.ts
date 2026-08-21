@@ -10,6 +10,16 @@ export type BlogPost = {
 
 export const allPosts: BlogPost[
   {
+    slug: "redes-sociales-para-empresas-b2b-2026",
+    title: "Redes sociales para empresas B2B en 2026: qué funciona realmente",
+    excerpt: "Guía práctica de social media B2B para 2026: qué redes priorizar, qué contenido genera leads y cómo ...",
+    category: "Social Media",
+    date: "2026-08-21",
+    readTime: "8 min",
+    image: "/og-redes-sociales-para-empresas-b2b-2026.jpg",
+    lang: "es",
+  },
+  {
     slug: "google-ads-sin-comision-agencia-marketing",
     title: "Google Ads sin comisión sobre presupuesto: por qué cambia todo",
     excerpt: "Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras ...",
