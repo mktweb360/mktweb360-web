@@ -2,11 +2,11 @@ import Link from "next/link";
 
 type Crumb = { label: string; href?: string };
 
-export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
+export function Breadcrumbs({ crumbs, items }: { crumbs?: Crumb[]; items?: Crumb[]; lang?: string }) {  const list = crumbs ?? items ?? [];
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: crumbs.map((c, i) => ({
+    itemListElement: list.map((c, i) => ({
       "@type": "ListItem",
       position: i + 1,
       name: c.label,
@@ -22,10 +22,10 @@ export function Breadcrumbs({ crumbs }: { crumbs: Crumb[] }) {
       />
       <nav aria-label="Breadcrumb" className="text-sm text-gray-500 mb-6">
         <ol className="flex flex-wrap gap-1 items-center">
-          {crumbs.map((c, i) => (
+          {list.map((c, i) => (
             <li key={i} className="flex items-center gap-1">
               {i > 0 && <span className="text-gray-400">/</span>}
-              {c.href && i < crumbs.length - 1 ? (
+              {c.href && i < list.length - 1 ? (
                 <Link href={c.href} className="hover:text-primary-600 transition-colors">
                   {c.label}
                 </Link>
