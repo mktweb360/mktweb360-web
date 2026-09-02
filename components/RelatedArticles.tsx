@@ -7,11 +7,7 @@ import { getLatestPosts, getRelatedPosts, getPostsByCategory } from "@/lib/blog"
 import { esSlugFor, translatedSlugFor } from "@/lib/i18n/routes";
 import { getPostI18n, getCategoryI18n } from "@/lib/blog-i18n";
 
-type Props = {
-  currentSlug?: string;
-  category?: string;
-  title?: string;
-};
+type Props = {  currentSlug?: string;  category?: string;  title?: string;  lang?: string;};
 
 /**
  * Muestra artículos relacionados localizados.
