@@ -95,7 +95,7 @@ const SERVICE_DEMOS = [
   { nombre: "Metalúrgica Ferrán", sector: "Industria · Metalúrgica", url: "https://industria-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=75", desc: "Empresa de mecanizado industrial con servicios, presupuesto y catálogo." },
   { nombre: "Nortia Software", sector: "Tecnología · Software", url: "https://tecnologia-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=75", desc: "Consultora de software a medida con servicios y casos de éxito." },
   { nombre: "TransGarona Logística", sector: "Logística · Transporte", url: "https://logistica-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=75", desc: "Empresa de transporte y logística con seguimiento GPS en tiempo real." },
-]];
+];
 
 export default function PaginasCorporativasPage() {
   return (
