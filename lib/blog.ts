@@ -8,27 +8,7 @@ export type BlogPost = {
   relatedSlugs: string[];
 };
 
-export const allPosts: BlogPost[
-  {
-    slug: "redes-sociales-para-empresas-b2b-2026",
-    title: "Redes sociales para empresas B2B en 2026: qué funciona realmente",
-    excerpt: "Guía práctica de social media B2B para 2026: qué redes priorizar, qué contenido genera leads y cómo ...",
-    category: "Social Media",
-    date: "2026-08-21",
-    readTime: "8 min",
-    image: "/og-redes-sociales-para-empresas-b2b-2026.jpg",
-    lang: "es",
-  },
-  {
-    slug: "google-ads-sin-comision-agencia-marketing",
-    title: "Google Ads sin comisión sobre presupuesto: por qué cambia todo",
-    excerpt: "Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras ...",
-    category: "SEM",
-    date: "2026-08-20",
-    readTime: "8 min",
-    image: "/og-google-ads-sin-comision-agencia-marketing.jpg",
-    lang: "es",
-  },] = [
+export const allPosts: BlogPost[] = [
   { slug: 'cuando-elegir-seo-vs-google-ads', title: 'Cuándo elegir SEO y cuándo Google Ads: guía para tomar la decisión correcta según tu negocio', excerpt: 'SEO o Google Ads: aprende cuándo invertir en posicionamiento orgánico y cuándo en publicidad de pago según tu situación, sector y objetivos de negocio.', date: '2026-02-23', category: 'SEO', tags: ['seo', 'google ads', 'estrategia', 'sem'], relatedSlugs: ['seo-posicionamiento-web-organico', 'sem-publicidad-ppc', 'auditoria-seo-basica'] },
   { slug: 'geo-vs-seo-diferencias', title: 'GEO vs SEO: diferencias clave y cómo compaginar ambas estrategias en 2025', excerpt: 'GEO y SEO no son lo mismo. Descubre qué diferencia el posicionamiento en buscadores del posicionamiento en IA y cómo usar ambas estrategias juntas.', date: '2026-02-09', category: 'GEO', tags: ['geo', 'seo', 'ia', 'estrategia'], relatedSlugs: ['geo-posicionamiento-ia', 'que-es-geo-generative-engine-optimization', 'seo-posicionamiento-web-organico'] },
   { slug: 'configurar-envios-woocommerce', title: 'Cómo configurar los envíos en WooCommerce para España: guía completa paso a paso', excerpt: 'Configura los métodos de envío en WooCommerce correctamente: zonas de envío, transportistas, envío gratis y tarifas por peso para tu tienda online en España.', date: '2026-01-26', category: 'Ecommerce', tags: ['woocommerce', 'envíos', 'tienda online', 'ecommerce'], relatedSlugs: ['diseno-de-paginas-web/diseno-tiendas-online', 'metodos-pago-tienda-online-espana', 'importar-productos-woocommerce'] },
@@ -112,6 +92,8 @@ export const allPosts: BlogPost[
   { slug: "como-escribir-contenido-que-no-suene-a-ia", title: "Cómo escribir contenido que no suene a IA: técnicas para humanizar tu copy", excerpt: "El contenido que suena a IA no convierte y puede penalizar en Google. Técnicas concretas para crear textos que suenen humanos, auténticos y útiles — aunque uses herramientas de IA.", date: "2026-08-04", category: "Marketing de Contenidos", tags: ["contenido","ia","copywriting","seo","escritura"], relatedSlugs: ["marketing-de-contenidos","ia-aplicada-al-marketing","chatgpt-para-marketing-digital"] },
   { slug: "seo-social-instagram-tiktok-linkedin-como-buscadores", title: "SEO social: Instagram, TikTok y LinkedIn como motores de búsqueda en 2026", excerpt: "El 40% de la Generación Z busca en TikTok antes que en Google. El SEO social optimiza tu presencia en los buscadores internos de Instagram, TikTok y LinkedIn. Estrategias por plataforma para 2026.", date: "2026-08-04", category: "Social Media", tags: ["seo social","instagram","tiktok","linkedin","redes sociales","busqueda"], relatedSlugs: ["smm-social-media-marketing","marketing-de-contenidos","seo-posicionamiento-web-organico"] },
   { slug: "atribucion-de-marketing-como-medir-impacto-real", title: "Atribución de marketing: cómo medir el impacto real en un mundo multi-canal", excerpt: "El modelo de último clic distorsiona la realidad de cómo tus clientes te encuentran. Guía práctica de modelos de atribución para PYMEs: qué son, cuál usar y cómo aproximar la atribución sin herramientas enterprise.", date: "2026-08-04", category: "Marketing Digital", tags: ["atribucion","analítica","roi","marketing digital","medicion"], relatedSlugs: ["como-medir-roi-marketing-digital","analitica-web","sem-publicidad-ppc"] },
+  { slug: "redes-sociales-para-empresas-b2b-2026", title: "Redes sociales para empresas B2B en 2026: qué funciona realmente", excerpt: "Guía práctica de social media B2B para 2026: qué redes priorizar, qué contenido genera leads y cómo ...", date: "2026-08-21", category: "Social Media", tags: ["redes-sociales","b2b","linkedin","social-media"], relatedSlugs: ["linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads","redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos","seo-social-instagram-tiktok-linkedin-como-buscadores"] },
+  { slug: "google-ads-sin-comision-agencia-marketing", title: "Google Ads sin comisión sobre presupuesto: por qué cambia todo", excerpt: "Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras ...", date: "2026-08-20", category: "SEM", tags: ["google-ads","sem","comision","ppc"], relatedSlugs: ["seo-o-google-ads-que-conviene-mas","cuando-elegir-seo-vs-google-ads","cuanto-cuesta-agencia-marketing-digital-espana-2026"] },
 ];
 
 function interleaveByCategory(items: BlogPost[]): BlogPost[] {
