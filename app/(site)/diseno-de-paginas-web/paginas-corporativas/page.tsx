@@ -92,7 +92,10 @@ const SERVICE_DEMOS = [
   { nombre: "Academia Saber+", sector: "Educación · Formación", url: "https://academia-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=75", desc: "Academia con cursos, oposiciones y clase de prueba gratuita." },
   { nombre: "Psicología Bienestar", sector: "Salud · Psicología", url: "https://psicologo-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600&q=75", desc: "Centro de psicología con terapias presenciales y online." },
   { nombre: "Taller Auto Express", sector: "Automoción · Mecánica", url: "https://taller-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600&q=75", desc: "Taller mecánico con servicios, cita online y diagnóstico." },
-];
+  { nombre: "Metalúrgica Ferrán", sector: "Industria · Metalúrgica", url: "https://industria-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=75", desc: "Empresa de mecanizado industrial con servicios, presupuesto y catálogo." },
+  { nombre: "Nortia Software", sector: "Tecnología · Software", url: "https://tecnologia-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=75", desc: "Consultora de software a medida con servicios y casos de éxito." },
+  { nombre: "TransGarona Logística", sector: "Logística · Transporte", url: "https://logistica-demo.mktweb360.com", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=75", desc: "Empresa de transporte y logística con seguimiento GPS en tiempo real." },
+]];
 
 export default function PaginasCorporativasPage() {
   return (
