@@ -183,6 +183,21 @@ export default function TiendasOnlinePage() {
         </div>
       </section>
 
+      {/* Demos teaser - CTA temprano a las demos reales */}
+      <section className="py-5 px-4 bg-white border-b border-gray-100">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+          <p className="text-gray-600 text-sm">
+            <span className="font-semibold text-primary-600">¿Prefieres verlo antes de leer?</span> Tenemos 10 tiendas reales de ejemplo, por sector.
+          </p>
+          <a href="#oferta" className="inline-flex items-center gap-1.5 text-accent-500 font-bold text-sm hover:gap-2.5 transition-all whitespace-nowrap">
+            Ver las demos ahora
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
       {/* Comparativa */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
@@ -355,6 +370,11 @@ export default function TiendasOnlinePage() {
         </div>
       </section>
 
+      {/* Offer banner */}
+      <div id="oferta">
+        <OfferBannerTiendaOnline />
+      </div>
+
       {/* Proyectos destacados */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
@@ -435,11 +455,6 @@ export default function TiendasOnlinePage() {
           </div>
         </div>
       </section>
-
-      {/* Offer banner */}
-      <div id="oferta">
-        <OfferBannerTiendaOnline />
-      </div>
 
       {/* IA badge */}
       <section className="py-10 px-4 bg-white border-y border-gray-100">
