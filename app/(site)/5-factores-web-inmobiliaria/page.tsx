@@ -136,6 +136,24 @@ export default function FactoresWebInmobiliariaPage() {
             Un formulario genérico de "contacto" al final de la web capta muchos menos leads que un formulario específico en cada ficha de inmueble ("Solicitar visita a este piso", con el inmueble ya identificado). Ese contexto reduce la fricción, mejora la calidad del lead —el comercial sabe exactamente qué inmueble interesa antes de descolgar el teléfono— y permite medir qué inmuebles generan más interés real, información que también sirve para ajustar precio o estrategia de venta. La captación por inmueble, no genérica, es lo que convierte tráfico en visitas concertadas.
           </p>
 
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
+            <div className="md:col-span-2">
+              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque tú no puedas atender</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Mientras enseñas un piso, cierras una operación o la oficina ya está cerrada por la tarde, tu web sigue abierta. Alguien que busca piso en tu zona un sábado por la noche filtra por precio y habitaciones, ve las fotos de cada inmueble y pide visita para el que le interesa — sin que tú tengas que estar disponible para atenderlo en ese momento. Esa es la diferencia entre un catálogo que solo existe y uno que capta leads mientras tú trabajas en otra cosa.
+              </p>
+            </div>
+            <div className="md:col-span-1">
+              <Image
+                src="/imagen-web-trabaja-para-el-autonomo.webp"
+                alt="Diagrama de un ciclo de 24 horas mostrando cómo la web de una inmobiliaria sigue captando leads mientras el agente está ocupado o fuera de horario"
+                width={760}
+                height={1131}
+                className="w-full h-auto rounded-2xl"
+              />
+            </div>
+          </section>
+
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="text-accent-500 hover:underline">Diseño de tiendas online</Link> · <Link href="/senales-web-necesita-rediseno/" className="text-accent-500 hover:underline">Señales de que tu web necesita un rediseño</Link>
           </p>

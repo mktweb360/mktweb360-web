@@ -139,6 +139,24 @@ export default function FactoresWebClinicasPage() {
             La salud es, para Google, un sector YMYL (Your Money or Your Life): contenidos que pueden afectar al bienestar de una persona. El buscador exige más señales de experiencia, pericia, autoridad y fiabilidad que en un sector convencional, y el paciente exige exactamente lo mismo antes de reservar cita. En la práctica esto se traduce en biografías reales del equipo con titulación y número de colegiación visibles, reseñas de pacientes gestionadas de forma activa, y contenido de blog redactado con criterio médico —nunca copiado de otra web— que responda a dudas reales en lugar de generar volumen sin rigor. Una clínica que muestra quién trata al paciente, con qué formación y qué dicen otros pacientes, convierte más que una que solo enseña instalaciones bonitas.
           </p>
 
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
+            <div className="md:col-span-2">
+              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque tú no puedas atender</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Mientras atiendes a un paciente, revisas historiales o cierras la consulta al final del día, tu web sigue abierta. Alguien que busca fisioterapeuta a las 23:00 o un domingo por la mañana encuentra tu ficha, lee tus especialidades, ve las reseñas y pide cita — sin que tú tengas que estar disponible para recibirlo en ese momento. Esa es la diferencia entre una web que solo existe y una que capta pacientes mientras tú trabajas en otra cosa.
+              </p>
+            </div>
+            <div className="md:col-span-1">
+              <Image
+                src="/imagen-web-trabaja-para-el-autonomo.webp"
+                alt="Diagrama de un ciclo de 24 horas mostrando cómo la web de una clínica sigue captando pacientes mientras el profesional está ocupado o fuera de horario"
+                width={760}
+                height={1131}
+                className="w-full h-auto rounded-2xl"
+              />
+            </div>
+          </section>
+
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/seo-para-clinicas-centros-salud-captar-pacientes-google/" className="text-accent-500 hover:underline">SEO para clínicas y centros de salud</Link> · <Link href="/diseno-web-para-clinicas/" className="text-accent-500 hover:underline">Diseño web para clínicas</Link> · <Link href="/google-my-business-empresas-guia/" className="text-accent-500 hover:underline">Guía de Google Business Profile</Link>
           </p>

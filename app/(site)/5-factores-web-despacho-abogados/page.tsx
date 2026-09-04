@@ -139,6 +139,24 @@ export default function FactoresWebAbogadosPage() {
             Quien llega a la web de un despacho suele estar en una situación que necesita resolver pronto, no dentro de un mes. El diseño debe reflejar esa urgencia percibida: teléfono visible en todo momento (no solo en la página de contacto), un formulario corto de "primera consulta" claro y sin fricción, y un mensaje directo sobre qué esperar del primer contacto —si es gratuito, cuánto tarda la respuesta, qué información traer—. Cuanta más incertidumbre elimine la web sobre ese primer paso, más consultas se convierten en llamadas reales.
           </p>
 
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
+            <div className="md:col-span-2">
+              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque tú no puedas atender</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Mientras estás en un juicio, en una reunión con un cliente o has cerrado el despacho por el fin de semana, tu web sigue abierta. Alguien que necesita un abogado de despidos un domingo por la noche encuentra tu web, entiende en qué te especializas, ve tu identificación colegial y rellena el formulario de primera consulta — sin que tú tengas que estar disponible en ese momento. Esa es la diferencia entre una web que solo existe y una que capta casos mientras tú trabajas en otra cosa.
+              </p>
+            </div>
+            <div className="md:col-span-1">
+              <Image
+                src="/imagen-web-trabaja-para-el-autonomo.webp"
+                alt="Diagrama de un ciclo de 24 horas mostrando cómo la web de un despacho de abogados sigue captando consultas mientras el abogado está ocupado o fuera de horario"
+                width={760}
+                height={1131}
+                className="w-full h-auto rounded-2xl"
+              />
+            </div>
+          </section>
+
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/diseno-de-paginas-web/paginas-corporativas/" className="text-accent-500 hover:underline">Páginas web corporativas</Link> · <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local para empresas de servicios</Link>
           </p>
