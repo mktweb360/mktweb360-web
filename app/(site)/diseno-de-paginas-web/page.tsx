@@ -163,22 +163,27 @@ export default function WebDesignPage() {
       </section>
 
       {/* Demos en vivo */}
-      <section className="py-16 px-4 bg-white">
+      <section className="pt-16 pb-6 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent-500 mb-3">Demos navegables en vivo</span>
             <h2 className="text-3xl font-bold text-primary-600 mb-3">Así quedan las webs que construimos</h2>
             <p className="text-gray-600 max-w-xl mx-auto">Haz clic en cualquier demo para verla en tiempo real. Webs reales por sector — navegables, no capturas de pantalla.</p>
           </div>
+        </div>
+      </section>
 
-          {/* Service demos */}
+      {/* Carrusel corporativo — el 1/4 inferior del fondo ya es navy, se funde con la oferta de debajo */}
+      <section className="relative overflow-hidden px-4 pb-0">
+        <div className="absolute inset-x-0 bottom-0 h-1/4 bg-primary-900 -z-10" aria-hidden="true" />
+        <div className="max-w-6xl mx-auto">
           <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Webs corporativas y de servicios</p>
           <DemoCarousel items={SERVICE_DEMOS} />
         </div>
       </section>
 
-      {/* Oferta corporativa — banda ancho completo */}
-      <section className="relative overflow-hidden bg-primary-900 py-12 px-4" aria-label="Oferta web corporativa">
+      {/* Oferta corporativa — banda ancho completo, pegada al carrusel */}
+      <section className="relative overflow-hidden bg-primary-900 pt-2 pb-8 px-4" aria-label="Oferta web corporativa">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-accent-500" />
         </div>
@@ -196,16 +201,17 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* Tiendas demos */}
-      <section className="py-16 px-4 bg-white">
+      {/* Carrusel tiendas online */}
+      <section className="relative overflow-hidden px-4 pt-10 pb-0 bg-white">
+        <div className="absolute inset-x-0 bottom-0 h-1/4 bg-primary-900 -z-10" aria-hidden="true" />
         <div className="max-w-6xl mx-auto">
           <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Tiendas online</p>
           <DemoCarousel items={TIENDAS_DEMOS} />
         </div>
       </section>
 
-      {/* Oferta tienda online — banda ancho completo */}
-      <section className="relative overflow-hidden bg-primary-900 py-12 px-4" aria-label="Oferta tienda online">
+      {/* Oferta tienda online — banda ancho completo, pegada al carrusel */}
+      <section className="relative overflow-hidden bg-primary-900 pt-2 pb-8 px-4" aria-label="Oferta tienda online">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-accent-500" />
         </div>

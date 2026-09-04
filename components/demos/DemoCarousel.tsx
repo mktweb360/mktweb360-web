@@ -17,8 +17,10 @@ interface DemoCarouselProps {
 
 /**
  * Carrusel de demos: 1 fila, columna grande (2/5) + 3 columnas pequeñas (1/5 c/u).
+ * Las pequeñas son ~3/4 de la altura de la grande y se alinean al fondo de la fila
+ * (hueco visible arriba), a propósito, para diferenciar visualmente la tarjeta activa.
  * Rota automáticamente por todos los items; pausa al pasar el ratón por encima.
- * Cada tarjeta abre la demo en una pestaña nueva.
+ * Cada tarjeta es un enlace que abre la demo en pestaña nueva.
  */
 export function DemoCarousel({ items, intervalMs = 4500 }: DemoCarouselProps) {
   const [active, setActive] = useState(0);
@@ -63,49 +65,40 @@ export function DemoCarousel({ items, intervalMs = 4500 }: DemoCarouselProps) {
         {visible.map(({ item, offset }) => {
           const isBig = offset === 0;
           const hiddenClass =
-            offset === 1 ? "hidden sm:flex" : offset >= 2 ? "hidden lg:flex" : "flex";
+            offset === 1 ? "hidden sm:block" : offset >= 2 ? "hidden lg:block" : "block";
           return (
             <a
               key={`${item.nombre}-${offset}`}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative ${hiddenClass} flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-500`}
+              className={`group relative ${hiddenClass} ${
+                isBig ? "h-64 sm:h-72" : "h-44 sm:h-[216px] self-end"
+              } rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-500`}
             >
-              <div
-                className={`relative overflow-hidden shrink-0 ${
-                  isBig ? "h-64 sm:h-72" : "h-32 sm:h-72"
+              <img
+                src={item.image}
+                alt={item.nombre}
+                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                loading="eager"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-primary-700/0 group-hover:bg-primary-700/20 transition-colors duration-300" />
+              <span
+                className={`absolute left-3 bg-black/40 backdrop-blur-sm text-white font-semibold rounded-full ${
+                  isBig ? "bottom-3 text-xs px-2.5 py-1" : "bottom-2 text-[10px] px-2 py-0.5"
                 }`}
               >
-                <img
-                  src={item.image}
-                  alt={item.nombre}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
-                  loading="eager"
-                  decoding="async"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                <div className="absolute inset-0 bg-primary-700/0 group-hover:bg-primary-700/20 transition-colors duration-300" />
-                <span
-                  className={`absolute left-3 bg-black/40 backdrop-blur-sm text-white font-semibold rounded-full ${
-                    isBig ? "bottom-3 text-xs px-2.5 py-1" : "bottom-2 text-[10px] px-2 py-0.5"
-                  }`}
-                >
-                  {item.sector}
-                </span>
-                <span className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-accent-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
-                  →
-                </span>
-                {isBig && (
-                  <h3 className="absolute right-3 bottom-3 text-white font-bold text-base sm:text-lg drop-shadow-sm">
-                    {item.nombre}
-                  </h3>
-                )}
-              </div>
-              {!isBig && (
-                <div className="p-2 sm:hidden">
-                  <h3 className="font-bold text-primary-600 text-xs">{item.nombre}</h3>
-                </div>
+                {item.sector}
+              </span>
+              <span className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-accent-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                →
+              </span>
+              {isBig && (
+                <h3 className="absolute right-3 bottom-3 text-white font-bold text-base sm:text-lg drop-shadow-sm">
+                  {item.nombre}
+                </h3>
               )}
             </a>
           );
