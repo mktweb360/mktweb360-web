@@ -5,13 +5,13 @@ import { ContactForm } from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Web + SEO desde 999€ — Presencia Digital Completa para Autónomos y PYMEs",
   description:
-    "Web profesional + 6 meses de SEO por 999€ + IVA. Todo incluido: hosting, dominio, correo corporativo, páginas legales y soporte. Sin permanencia. Sin sorpresas.",
+    "Web profesional + 6 meses de SEO por 999€ + IVA. También disponible solo la web, sin SEO, desde 249€. Hosting, dominio, correo corporativo, páginas legales y soporte incluidos. Sin permanencia.",
   alternates: { canonical: "https://www.mktweb360.com/oferta-web-seo-organico/" },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Web + SEO desde 999€ — Presencia Digital Completa",
     description:
-      "Web profesional + 6 meses de SEO por 999€ + IVA. Todo incluido. Sin permanencia.",
+      "Web profesional + 6 meses de SEO por 999€ + IVA. Solo la web, desde 249€. Todo incluido. Sin permanencia.",
     url: "https://www.mktweb360.com/oferta-web-seo-organico/",
     images: [
       {
@@ -43,6 +43,21 @@ const pageSchema = {
       },
     },
     {
+      "@type": "Offer",
+      name: "Web Profesional Corporativa (sin SEO)",
+      description:
+        "Solo diseño y desarrollo de la web profesional, desde 249€ + IVA. Sin el paquete de SEO. Incluye hosting, dominio y correo corporativo.",
+      price: "249",
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      url: "https://www.mktweb360.com/oferta-web-seo-organico/",
+      seller: {
+        "@type": "Organization",
+        name: "Mkt Web 360 SLU",
+        url: "https://www.mktweb360.com",
+      },
+    },
+    {
       "@type": "FAQPage",
       mainEntity: [
         {
@@ -51,6 +66,14 @@ const pageSchema = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Al finalizar los 6 meses puedes contratar el SEO mensual a 300€/mes, o quedarte solo con tu web sin ningún compromiso adicional. La web es tuya desde el primer día.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Puedo contratar solo la web, sin el SEO?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sí. Ofrecemos la web profesional sola, sin el paquete de SEO, desde 249€ + IVA. Indícalo en el formulario y te preparamos un presupuesto ajustado a esa opción.",
           },
         },
         {
@@ -204,6 +227,7 @@ const STEPS = [
 
 const FAQS = [
   { q: "¿Qué pasa después de los 6 meses de SEO?", a: "Puedes contratar el SEO mensual a 300€/mes o quedarte solo con tu web sin ningún compromiso. La web es tuya desde el primer día." },
+  { q: "¿Puedo contratar solo la web, sin el SEO?", a: "Sí. Ofrecemos la web profesional sola, sin el paquete de SEO, desde 249€ + IVA. Indícalo en el formulario y te preparamos un presupuesto ajustado a esa opción." },
   { q: "¿Necesito tener el contenido listo?", a: "No es imprescindible. Si tienes textos e imágenes, mejor. Si no tienes nada, podemos ayudarte a redactarlos dentro de la oferta." },
   { q: "¿Para qué tipo de negocios es?", a: "Para autónomos, profesionales y PYMEs de cualquier sector que quieran una presencia digital profesional y empezar a captar clientes por Google." },
   { q: "¿Hay permanencia?", a: "Ninguna. La web es tuya desde el primer día. El SEO puede cancelarse en cualquier momento tras los 3 meses incluidos." },
@@ -255,7 +279,7 @@ export default function OfertaWebSeoOrganicoPage() {
           </p>
 
           {/* Price block */}
-          <div className="inline-flex items-center gap-4 bg-white/10 border border-white/20 rounded-2xl px-6 py-4 mb-8">
+          <div className="inline-flex items-center gap-4 bg-white/10 border border-white/20 rounded-2xl px-6 py-4 mb-3">
             <span className="text-xl text-white/50 line-through">2.600€</span>
             <span className="text-4xl font-bold text-white">999€</span>
             <span className="text-white/70">+ IVA</span>
@@ -263,6 +287,11 @@ export default function OfertaWebSeoOrganicoPage() {
               Ahorras 1.601€
             </span>
           </div>
+
+          <p className="text-white/60 text-sm mb-8">
+            ¿Solo quieres la web, sin SEO? También disponible desde{" "}
+            <span className="text-white font-semibold">249€ + IVA</span>.
+          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -285,9 +314,9 @@ export default function OfertaWebSeoOrganicoPage() {
       <section className="bg-primary-800 text-white py-4 px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
           {[
-            { v: "999€", l: "precio todo incluido" },
+            { v: "249€–999€", l: "según opción" },
             { v: "48-72h", l: "entrega tu web" },
-            { v: "6 meses", l: "SEO incluido" },
+            { v: "6 meses", l: "SEO incluido (opcional)" },
             { v: "0€", l: "de permanencia" },
           ].map((s) => (
             <div key={s.l}>
@@ -330,7 +359,10 @@ export default function OfertaWebSeoOrganicoPage() {
               </div>
             ))}
           </div>
-          <div className="text-center mt-10">
+          <p className="text-center text-gray-500 text-sm mt-6">
+            ¿Solo necesitas la web? Contrata únicamente el primer bloque desde 249€ + IVA, sin el paquete de SEO.
+          </p>
+          <div className="text-center mt-6">
             <a
               href="#solicitar"
               className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-10 py-4 rounded-full transition-colors inline-block"

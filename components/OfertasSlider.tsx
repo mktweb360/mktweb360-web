@@ -24,9 +24,9 @@ const SLIDES: Slide[] = [
     bg: "/hero-agosto-seo-geo-gbp.svg",
   },
   {
-    badge: "Oferta Web + SEO",
-    title: "Tu web profesional + 6 meses de SEO por 999€",
-    desc: "Web profesional + 6 meses de SEO por solo 999€ + IVA. Hosting, dominio, correo corporativo y soporte incluidos. Solo 5 plazas.",
+    badge: "Oferta Web Corporativa",
+    title: "Tu web profesional, desde 249€",
+    desc: "Solo la web: 249€. Con 6 meses de SEO incluido: 999€ + IVA. Hosting, dominio, correo corporativo y soporte incluidos. Solo 5 plazas.",
     cta: "Ver oferta completa",
     href: "/oferta-web-seo/",
     bg: "/hero-web-seo.svg",

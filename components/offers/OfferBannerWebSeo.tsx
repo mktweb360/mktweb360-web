@@ -1,8 +1,10 @@
 /**
- * OfferBannerWebSeo — Banner full-width para la oferta Web + SEO 999€
+ * OfferBannerWebSeo — Banner full-width para la oferta web corporativa
+ * (dos escalones: solo web 249€ · web + 6 meses de SEO 999€)
  *
  * CAMPAÑA: oferta-web-seo (EVERGREEN — activa)
  * Archivo de campaña en Drive: CAMPANA-web-seo-999-evergreen.md
+ * Actualizado sep 2026: se añade el escalón "solo web" (249€) junto al bundle 999€.
  *
  * INSERTAR EN: páginas de diseño web corporativo y empresas
  *   - app/(site)/diseno-de-paginas-web/paginas-corporativas/page.tsx
@@ -22,7 +24,7 @@ export function OfferBannerWebSeo() {
   return (
     <section
       className="relative overflow-hidden bg-primary-900 py-16 px-4"
-      aria-label="Oferta Web + SEO 999€"
+      aria-label="Oferta web corporativa — desde 249€"
     >
       {/* Fondo decorativo */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -39,22 +41,24 @@ export function OfferBannerWebSeo() {
               <span>Oferta especial — Solo 5 plazas</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
-              Tu web profesional + 6 meses de SEO
+              Tu web profesional, desde 249€
             </h2>
             <p className="text-white/70 text-sm md:text-base max-w-xl">
-              Todo incluido: hosting, dominio, correo corporativo, páginas legales y soporte.
-              Sin permanencia. Sin sorpresas.
+              Con 6 meses de SEO incluido, todo por 999€: hosting, dominio, correo corporativo, páginas legales y soporte. Sin permanencia. Sin sorpresas.
             </p>
           </div>
 
           {/* Right: price + CTA */}
-          <div className="flex flex-col items-center md:items-end gap-4 shrink-0">
+          <div className="flex flex-col items-center md:items-end gap-2 shrink-0">
+            <p className="text-white/60 text-xs md:text-sm">
+              Solo la web: <span className="text-white font-bold">249€</span> · Con SEO 6 meses:
+            </p>
             <div className="flex items-baseline gap-3">
               <span className="text-white/40 line-through text-xl">2.600€</span>
               <span className="text-5xl font-bold text-white">999€</span>
               <span className="text-white/60 text-sm">+ IVA</span>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 items-center">
+            <div className="flex flex-col sm:flex-row gap-3 items-center mt-2">
               <Link
                 href="/oferta-web-seo/"
                 className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3.5 rounded-full transition-colors shadow-lg text-sm whitespace-nowrap"
@@ -74,9 +78,9 @@ export function OfferBannerWebSeo() {
         {/* Features strip */}
         <div className="mt-10 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
           {[
-            { v: "999€", l: "precio único" },
+            { v: "249€–999€", l: "según opción" },
             { v: "48-72h", l: "entrega tu web" },
-            { v: "6 meses", l: "SEO incluido" },
+            { v: "6 meses", l: "SEO incluido (opcional)" },
             { v: "0€", l: "permanencia" },
           ].map((s) => (
             <div key={s.l}>

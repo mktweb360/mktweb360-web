@@ -192,8 +192,7 @@ export default function WebDesignPage() {
       </section>
 
       {/* Oferta corporativa — panel navy "elevado": esquinas superiores redondeadas + sombra ascendente suave
-          en vez del degradado plano anterior. Es el mismo recurso de profundidad que separaba antes con color,
-          pero mediante capas reales (layering), que resulta más sutil y menos "cargante". */}
+          en vez del degradado plano anterior. Dos niveles de precio: solo web (249€) y web+SEO 6 meses (999€). */}
       <section
         className="relative -mt-8 rounded-t-[2.5rem] bg-primary-900 pt-10 pb-8 px-4 shadow-[0_-22px_45px_-28px_rgba(15,28,46,0.45)]"
         aria-label="Oferta web corporativa"
@@ -203,8 +202,8 @@ export default function WebDesignPage() {
         </div>
         <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div>
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Tu web corporativa profesional, desde 999€</h3>
-            <p className="text-white/70 text-sm">Diseño, SEO técnico y 6 meses de posicionamiento incluidos. Sin permanencia.</p>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Tu web corporativa profesional, desde 249€</h3>
+            <p className="text-white/70 text-sm">Solo diseño y desarrollo. Con SEO técnico y 6 meses de posicionamiento: 999€. Sin permanencia.</p>
           </div>
           <Link
             href="/diseno-de-paginas-web/paginas-corporativas/"

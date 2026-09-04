@@ -27,6 +27,14 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      name: "¿Puedo contratar solo la web, sin el SEO?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Sí. También ofrecemos la web sola, sin el paquete de SEO, desde 249€ + IVA. Indícalo en el formulario o llámanos y te la preparamos así.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "¿Necesito tener el contenido listo?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -156,6 +164,10 @@ const FAQS = [
     a: "Al finalizar los 6 meses puedes contratar el SEO mensual a 300€/mes, o simplemente quedarte con tu web sin ningún compromiso adicional. La web es tuya desde el primer día.",
   },
   {
+    q: "¿Puedo contratar solo la web, sin el SEO?",
+    a: "Sí. También ofrecemos la web sola, sin el paquete de SEO, desde 249€ + IVA. Indícalo en el formulario o llámanos y te la preparamos así.",
+  },
+  {
     q: "¿Necesito tener el contenido listo?",
     a: "No es imprescindible. Si nos facilitas textos e imágenes, mejor. Si no tienes nada, podemos ayudarte a redactar los textos básicos dentro de la oferta.",
   },
@@ -220,7 +232,7 @@ export default function OfertaWebSeoPage() {
           </p>
 
           {/* Price block */}
-          <div className="inline-block bg-white/10 border border-white/20 rounded-2xl px-8 py-6 mb-10">
+          <div className="inline-block bg-white/10 border border-white/20 rounded-2xl px-8 py-6 mb-6">
             <div className="flex items-center justify-center gap-4 mb-2">
               <span className="text-2xl text-blue-300 line-through">2.600€</span>
               <span className="text-5xl font-bold text-white">999€</span>
@@ -230,6 +242,10 @@ export default function OfertaWebSeoPage() {
               Ahorras 1.601€
             </div>
           </div>
+
+          <p className="text-blue-300 text-sm mb-10">
+            ¿Solo quieres la web, sin SEO? También disponible desde <span className="text-white font-semibold">249€ + IVA</span> — indícalo en el formulario.
+          </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <a
