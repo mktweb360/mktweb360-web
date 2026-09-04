@@ -7,6 +7,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     { url: "/", priority: 1.0, changeFrequency: "weekly" as const },
     { url: "/seo-posicionamiento-web-organico/", priority: 0.9, changeFrequency: "monthly" as const },
+    { url: "/5-factores-web-clinicas-centros-salud/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/5-factores-web-despacho-abogados/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/5-factores-web-inmobiliaria/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/seo-local/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/marketing-shopware/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/geo-posicionamiento-ia-chatgpt-empresas-espana/", priority: 0.8, changeFrequency: "monthly" as const },
