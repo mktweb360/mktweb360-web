@@ -101,17 +101,17 @@ def make_card(filename, eyebrow, headline, number="5"):
     print("Saved", out_path)
 
 make_card(
-    "og-5-factores-web-clinicas-salud.jpg",
+    "og-5-factores-web-clinicas-centros-salud.jpg",
     "Diseño Web · Clínicas y Salud",
     "5 factores clave en la web de una clínica",
 )
 make_card(
-    "og-5-factores-web-despachos-abogados.jpg",
+    "og-5-factores-web-despacho-abogados.jpg",
     "Diseño Web · Despachos de Abogados",
     "5 factores clave en la web de un despacho de abogados",
 )
 make_card(
-    "og-5-factores-web-inmobiliarias.jpg",
+    "og-5-factores-web-inmobiliaria.jpg",
     "Diseño Web · Inmobiliarias",
     "5 factores clave en la web de una inmobiliaria",
 )

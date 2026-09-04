@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Certificado energético obligatorio, sindicación con portales, velocidad de carga y buscador de propiedades.",
     url: "https://www.mktweb360.com/5-factores-web-inmobiliaria/",
     type: "article",
-    images: [{ url: "/og-5-factores-web-inmobiliarias.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-5-factores-web-inmobiliaria.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -87,7 +87,7 @@ export default function FactoresWebInmobiliariaPage() {
             La web de una inmobiliaria vive de la fotografía y del volumen de inmuebles, y eso es exactamente lo que más suele fallar: peso de imagen sin optimizar, carga manual en cada portal y fichas sin la información obligatoria. Estos son los cinco factores que marcan la diferencia.
           </p>
           <Image
-            src="/og-5-factores-web-inmobiliarias.jpg"
+            src="/og-5-factores-web-inmobiliaria.jpg"
             alt="5 factores clave en la web de una inmobiliaria"
             width={1200}
             height={630}

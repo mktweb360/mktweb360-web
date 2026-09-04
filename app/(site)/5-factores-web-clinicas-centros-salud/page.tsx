@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Publicidad sanitaria regulada, RGPD, cita online y Google Business Profile: los 5 factores que determinan si tu web de clínica capta pacientes.",
     url: "https://www.mktweb360.com/5-factores-web-clinicas-centros-salud/",
     type: "article",
-    images: [{ url: "/og-5-factores-web-clinicas-salud.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-5-factores-web-clinicas-centros-salud.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -87,7 +87,7 @@ export default function FactoresWebClinicasPage() {
             La web de una clínica no es una web más: opera bajo publicidad sanitaria regulada y maneja datos de salud, una categoría especial protegida por el RGPD. Estos son los cinco factores que hay que resolver antes de diseñarla, no después.
           </p>
           <Image
-            src="/og-5-factores-web-clinicas-salud.jpg"
+            src="/og-5-factores-web-clinicas-centros-salud.jpg"
             alt="5 factores clave en la web de una clínica o centro de salud"
             width={1200}
             height={630}

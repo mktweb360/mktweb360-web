@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Colegiación visible, confidencialidad, arquitectura por área de práctica y prueba social sin infringir la deontología.",
     url: "https://www.mktweb360.com/5-factores-web-despacho-abogados/",
     type: "article",
-    images: [{ url: "/og-5-factores-web-despachos-abogados.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-5-factores-web-despacho-abogados.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -87,7 +87,7 @@ export default function FactoresWebAbogadosPage() {
             La web de un despacho compite con dos exigencias a la vez: el Código Deontológico de la Abogacía, que limita qué y cómo se puede comunicar, y un cliente que busca de forma muy específica y necesita confiar antes de llamar. Estos son los cinco factores que resuelven ambas cosas.
           </p>
           <Image
-            src="/og-5-factores-web-despachos-abogados.jpg"
+            src="/og-5-factores-web-despacho-abogados.jpg"
             alt="5 factores clave en la web de un despacho de abogados"
             width={1200}
             height={630}
