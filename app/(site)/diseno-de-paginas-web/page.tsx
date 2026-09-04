@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { HostingBanner } from "@/components/HostingModal";
+import { DemoCarousel } from "@/components/demos/DemoCarousel";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
@@ -169,49 +170,56 @@ export default function WebDesignPage() {
             <h2 className="text-3xl font-bold text-primary-600 mb-3">Así quedan las webs que construimos</h2>
             <p className="text-gray-600 max-w-xl mx-auto">Haz clic en cualquier demo para verla en tiempo real. Webs reales por sector — navegables, no capturas de pantalla.</p>
           </div>
+
           {/* Service demos */}
           <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Webs corporativas y de servicios</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-8">
-            {SERVICE_DEMOS.map((p) => (
-              <a key={p.nombre} href={p.url} target="_blank" rel="noopener noreferrer"
-                className="group bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                <div className="relative h-24 overflow-hidden shrink-0">
-                  <img src={p.image} alt={p.nombre} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                  <div className="absolute inset-0 bg-primary-700/0 group-hover:bg-primary-700/20 transition-colors duration-300" />
-                  <span className="absolute bottom-1.5 left-2 text-xs font-semibold text-white bg-black/40 backdrop-blur-sm px-1.5 py-0.5 rounded-full">{p.sector}</span>
-                  <span className="absolute top-1.5 right-1.5 opacity-0 group-hover:opacity-100 transition-opacity bg-accent-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">→</span>
-                </div>
-                <div className="p-2.5">
-                  <h3 className="font-bold text-primary-600 text-xs group-hover:text-accent-500 transition-colors">{p.nombre}</h3>
-                </div>
-              </a>
-            ))}
+          <DemoCarousel items={SERVICE_DEMOS} />
+        </div>
+      </section>
+
+      {/* Oferta corporativa — banda ancho completo */}
+      <section className="relative overflow-hidden bg-primary-900 py-12 px-4" aria-label="Oferta web corporativa">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-accent-500" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <div>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Tu web corporativa profesional, desde 999€</h3>
+            <p className="text-white/70 text-sm">Diseño, SEO técnico y 6 meses de posicionamiento incluidos. Sin permanencia.</p>
           </div>
-          {/* Tiendas demos */}
+          <Link
+            href="/diseno-de-paginas-web/paginas-corporativas/"
+            className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3.5 rounded-full transition-colors shadow-lg text-sm whitespace-nowrap shrink-0"
+          >
+            Ver páginas corporativas →
+          </Link>
+        </div>
+      </section>
+
+      {/* Tiendas demos */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
           <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Tiendas online</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-6">
-            {TIENDAS_DEMOS.map((p) => (
-              <a key={p.nombre} href={p.url} target="_blank" rel="noopener noreferrer"
-                className="group bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                <div className="relative h-24 overflow-hidden shrink-0">
-                  <img src={p.image} alt={p.nombre} className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110" loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                  <div className="absolute inset-0 bg-primary-700/0 group-hover:bg-primary-700/20 transition-colors duration-300" />
-                  <span className="absolute bottom-1.5 left-2 text-xs font-semibold text-white bg-black/40 backdrop-blur-sm px-1.5 py-0.5 rounded-full">{p.sector}</span>
-                  <span className="absolute top-1.5 right-1.5 opacity-0 group-hover:opacity-100 transition-opacity bg-accent-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">→</span>
-                </div>
-                <div className="p-2.5">
-                  <h3 className="font-bold text-primary-600 text-xs group-hover:text-accent-500 transition-colors">{p.nombre}</h3>
-                </div>
-              </a>
-            ))}
+          <DemoCarousel items={TIENDAS_DEMOS} />
+        </div>
+      </section>
+
+      {/* Oferta tienda online — banda ancho completo */}
+      <section className="relative overflow-hidden bg-primary-900 py-12 px-4" aria-label="Oferta tienda online">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-accent-500" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+          <div>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Tu tienda online, desde 490€</h3>
+            <p className="text-white/70 text-sm">Sin comisiones por venta, sin licencias mensuales. Gestión de stock y pasarela de pago incluidas.</p>
           </div>
-          <div className="text-center">
-            <Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="text-accent-500 text-sm font-semibold hover:underline">
-              Ver todas las demos de tiendas online →
-            </Link>
-          </div>
+          <Link
+            href="/diseno-de-paginas-web/diseno-tiendas-online/"
+            className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3.5 rounded-full transition-colors shadow-lg text-sm whitespace-nowrap shrink-0"
+          >
+            Ver tiendas online →
+          </Link>
         </div>
       </section>
 
