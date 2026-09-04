@@ -292,9 +292,9 @@ export default function WebDesignPage() {
       </section>
 
 
-      {/* Por qué una web profesional — texto (2/3) + imagen explicativa (1/3), misma anchura total (max-w-4xl) */}
+      {/* Por qué una web profesional — texto (2/3) + imagen explicativa (1/3). Mismo ancho que la fila superior (max-w-5xl) */}
       <section className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-center">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-center">
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold text-primary-600 mb-6">Por qué tu web es tu activo de marketing más importante</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -341,7 +341,8 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* FAQs — formato acordeón, con interrogación de fondo sutil que se revela al abrir cada pregunta */}
+      {/* FAQs — formato acordeón, con una única interrogación de fondo detrás de toda la capa,
+          que revela más o menos silueta según crece o decrece el alto total del acordeón */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre diseño web</h2>
