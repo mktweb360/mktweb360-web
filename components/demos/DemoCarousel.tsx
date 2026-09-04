@@ -79,7 +79,8 @@ export function DemoCarousel({ items, intervalMs = 4500 }: DemoCarouselProps) {
               <img
                 src={item.image}
                 alt={item.nombre}
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                className="absolute inset-0 object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                style={{ width: "100%", height: "100%", maxWidth: "none" }}
                 loading="eager"
                 decoding="async"
               />
