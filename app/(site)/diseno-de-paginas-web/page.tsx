@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { HostingBanner } from "@/components/HostingModal";
 import { DemoCarousel } from "@/components/demos/DemoCarousel";
+import { FaqAccordion } from "@/components/FaqAccordion";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
@@ -75,6 +76,17 @@ const PROCESS = [
   { step: "04", title: "Entrega", desc: "Formación, traspaso y soporte. Tu web funciona desde el primer momento." },
 ];
 
+const FAQS = [
+  { q: "¿Cuánto tarda en estar lista la web?",
+    a: "El plazo estándar para una web corporativa es de 2 a 3 semanas desde el briefing. Para webs más complejas con funcionalidades específicas o integraciones puede ser algo más. Siempre acordamos el plazo antes de empezar y lo cumplimos." },
+  { q: "¿Qué tecnología usáis para construir las webs?",
+    a: "Usamos Next.js con React para webs corporativas que requieren máxima velocidad y SEO técnico, y WordPress para proyectos donde el cliente necesita gestionar el contenido de forma autónoma. En ambos casos el resultado es una web rápida, segura y optimizada para Google." },
+  { q: "¿Puedo gestionar la web yo mismo después?",
+    a: "Sí. Si el proyecto lo requiere, usamos WordPress como backend de gestión de contenidos. Te formamos para actualizar textos, imágenes, blog y cualquier contenido de forma autónoma sin necesidad de conocimientos técnicos." },
+  { q: "¿El SEO está incluido o es un servicio aparte?",
+    a: "El SEO técnico básico está incluido en todos los proyectos: estructura de URLs, velocidad de carga, Core Web Vitals, meta tags, sitemap y configuración de Search Console. El posicionamiento orgánico continuado (creación de contenido, link building, seguimiento mensual) es un servicio complementario." },
+];
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -88,12 +100,7 @@ const serviceSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    { "@type": "Question", name: "¿Cuánto tarda en estar lista la web?", acceptedAnswer: { "@type": "Answer", text: "El plazo estándar para una web corporativa es de 2 a 3 semanas desde el briefing. Para webs más complejas con funcionalidades específicas o integraciones puede ser algo más. Siempre acordamos el plazo antes de empezar y lo cumplimos." } },
-    { "@type": "Question", name: "¿Qué tecnología usáis para construir las webs?", acceptedAnswer: { "@type": "Answer", text: "Usamos Next.js con React para webs corporativas que requieren máxima velocidad y SEO técnico, y WordPress para proyectos donde el cliente necesita gestionar el contenido de forma autónoma. En ambos casos el resultado es una web rápida, segura y optimizada para Google." } },
-    { "@type": "Question", name: "¿Puedo gestionar la web yo mismo después?", acceptedAnswer: { "@type": "Answer", text: "Sí. Si el proyecto lo requiere, usamos WordPress como backend de gestión de contenidos. Te formamos para actualizar textos, imágenes, blog y cualquier contenido de forma autónoma sin necesidad de conocimientos técnicos." } },
-    { "@type": "Question", name: "¿El SEO está incluido o es un servicio aparte?", acceptedAnswer: { "@type": "Answer", text: "El SEO técnico básico está incluido en todos los proyectos: estructura de URLs, velocidad de carga, Core Web Vitals, meta tags, sitemap y configuración de Search Console. El posicionamiento orgánico continuado (creación de contenido, link building, seguimiento mensual) es un servicio complementario." } },
-  ],
+  mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
 
 export default function WebDesignPage() {
@@ -285,19 +292,30 @@ export default function WebDesignPage() {
       </section>
 
 
-      {/* Por qué una web profesional */}
+      {/* Por qué una web profesional — texto (2/3) + imagen explicativa (1/3), misma anchura total (max-w-4xl) */}
       <section className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-primary-600 mb-6">Por qué tu web es tu activo de marketing más importante</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Tu web es el único canal digital que controlas completamente. Las redes sociales cambian sus algoritmos, Google Ads sube sus precios, los directorios cobran por destacar — pero tu web trabaja para ti las 24 horas sin depender de terceros. Es el centro de tu estrategia digital y el destino final de todo el tráfico que generas.
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            El problema es que la mayoría de webs de empresa no están diseñadas para convertir. Están diseñadas para existir. Una web que no genera contactos, llamadas o ventas no es un activo — es un coste. La diferencia entre una web que convierte y una que no está en la jerarquía visual, la velocidad de carga, la claridad del mensaje y la facilidad para contactar.
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            En Mkt Web 360 diseñamos webs con un objetivo claro: que el visitante que llega con intención de compra encuentre lo que busca, confíe en tu empresa y te contacte. Combinamos diseño profesional, SEO técnico desde el primer día y optimización de conversión en cada proyecto.
-          </p>
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-center">
+          <div className="md:col-span-2">
+            <h2 className="text-2xl font-bold text-primary-600 mb-6">Por qué tu web es tu activo de marketing más importante</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Tu web es el único canal digital que controlas completamente. Las redes sociales cambian sus algoritmos, Google Ads sube sus precios, los directorios cobran por destacar — pero tu web trabaja para ti las 24 horas sin depender de terceros. Es el centro de tu estrategia digital y el destino final de todo el tráfico que generas.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              El problema es que la mayoría de webs de empresa no están diseñadas para convertir. Están diseñadas para existir. Una web que no genera contactos, llamadas o ventas no es un activo — es un coste. La diferencia entre una web que convierte y una que no está en la jerarquía visual, la velocidad de carga, la claridad del mensaje y la facilidad para contactar.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              En Mkt Web 360 diseñamos webs con un objetivo claro: que el visitante que llega con intención de compra encuentre lo que busca, confíe en tu empresa y te contacte. Combinamos diseño profesional, SEO técnico desde el primer día y optimización de conversión en cada proyecto.
+            </p>
+          </div>
+          <div className="md:col-span-1">
+            <Image
+              src="/imagen-web-activo-marketing.webp"
+              alt="Tu web como plataforma central de captación de leads, contacto y catálogo comercial, frente al tráfico volátil de redes sociales, Google Ads y directorios"
+              width={760}
+              height={1131}
+              className="w-full h-auto rounded-2xl"
+            />
+          </div>
         </div>
       </section>
 
@@ -323,27 +341,11 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* FAQs */}
+      {/* FAQs — formato acordeón, con interrogación de fondo sutil que se revela al abrir cada pregunta */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre diseño web</h2>
-          <div className="space-y-4">
-            {[
-              { q: "¿Cuánto tarda en estar lista la web?",
-                a: "El plazo estándar para una web corporativa es de 2 a 3 semanas desde el briefing. Para webs más complejas con funcionalidades específicas o integraciones puede ser algo más. Siempre acordamos el plazo antes de empezar y lo cumplimos." },
-              { q: "¿Qué tecnología usáis para construir las webs?",
-                a: "Usamos Next.js con React para webs corporativas que requieren máxima velocidad y SEO técnico, y WordPress para proyectos donde el cliente necesita gestionar el contenido de forma autónoma. En ambos casos el resultado es una web rápida, segura y optimizada para Google." },
-              { q: "¿Puedo gestionar la web yo mismo después?",
-                a: "Sí. Si el proyecto lo requiere, usamos WordPress como backend de gestión de contenidos. Te formamos para actualizar textos, imágenes, blog y cualquier contenido de forma autónoma sin necesidad de conocimientos técnicos." },
-              { q: "¿El SEO está incluido o es un servicio aparte?",
-                a: "El SEO técnico básico está incluido en todos los proyectos: estructura de URLs, velocidad de carga, Core Web Vitals, meta tags, sitemap y configuración de Search Console. El posicionamiento orgánico continuado (creación de contenido, link building, seguimiento mensual) es un servicio complementario." },
-            ].map(faq => (
-              <div key={faq.q} className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
-                <h3 className="font-bold text-primary-700 mb-2">{faq.q}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={FAQS} />
         </div>
       </section>
 
