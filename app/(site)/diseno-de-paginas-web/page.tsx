@@ -173,9 +173,12 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* Carrusel corporativo — el 1/4 inferior del fondo ya es navy, se funde con la oferta de debajo */}
-      <section className="relative overflow-hidden px-4 pb-0">
-        <div className="absolute inset-x-0 bottom-0 h-1/4 bg-primary-900 -z-10" aria-hidden="true" />
+      {/* Carrusel corporativo — degradado navy de fondo (efecto de profundidad), se funde con la oferta de debajo.
+          `isolate` crea un stacking context propio en la sección: sin esto, el fondo de una sección con
+          bg-color explícito puede pintarse POR ENCIMA de su propio hijo -z-10 (bug real detectado y corregido
+          en el carrusel de tiendas online, que tenía bg-white y ocultaba su capa navy). */}
+      <section className="relative isolate overflow-hidden px-4 pb-0">
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-primary-900 -z-10" aria-hidden="true" />
         <div className="max-w-6xl mx-auto">
           <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Webs corporativas y de servicios</p>
           <DemoCarousel items={SERVICE_DEMOS} />
@@ -201,9 +204,9 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* Carrusel tiendas online */}
-      <section className="relative overflow-hidden px-4 pt-10 pb-0 bg-white">
-        <div className="absolute inset-x-0 bottom-0 h-1/4 bg-primary-900 -z-10" aria-hidden="true" />
+      {/* Carrusel tiendas online — misma lógica: `isolate` + degradado navy en vez de bloque sólido */}
+      <section className="relative isolate overflow-hidden px-4 pt-10 pb-0 bg-white">
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-primary-900 -z-10" aria-hidden="true" />
         <div className="max-w-6xl mx-auto">
           <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Tiendas online</p>
           <DemoCarousel items={TIENDAS_DEMOS} />
