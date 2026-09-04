@@ -74,7 +74,7 @@ export function DemoCarousel({ items, intervalMs = 4500 }: DemoCarouselProps) {
               rel="noopener noreferrer"
               className={`group relative ${hiddenClass} ${
                 isBig ? "h-64 sm:h-72" : "h-44 sm:h-[216px] self-end"
-              } rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-500`}
+              } rounded-2xl overflow-hidden shadow-[0_10px_28px_-10px_rgba(15,28,46,0.28)] hover:shadow-[0_24px_46px_-16px_rgba(15,28,46,0.42)] hover:-translate-y-1.5 transition-all duration-500`}
             >
               <img
                 src={item.image}

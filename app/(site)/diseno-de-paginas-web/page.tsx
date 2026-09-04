@@ -180,21 +180,25 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* Carrusel corporativo — degradado navy de fondo (efecto de profundidad), se funde con la oferta de debajo.
-          `isolate` crea un stacking context propio en la sección: sin esto, el fondo de una sección con
-          bg-color explícito puede pintarse POR ENCIMA de su propio hijo -z-10 (bug real detectado y corregido
-          en el carrusel de tiendas online, que tenía bg-white y ocultaba su capa navy). */}
-      <section className="relative isolate overflow-hidden px-4 pb-0">
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-primary-900 -z-10" aria-hidden="true" />
+      {/* Carrusel corporativo. La profundidad ya no viene de un degradado de color plano (quedaba artificial),
+          sino de la sombra propia de cada tarjeta (ver DemoCarousel) + el panel de oferta de abajo, que
+          "flota" sobre esta sección con esquinas redondeadas y una sombra ascendente suave. Más aire (pb-14)
+          para que la vista descanse antes de la transición. */}
+      <section className="px-4 pb-14 bg-white">
         <div className="max-w-6xl mx-auto">
           <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Webs corporativas y de servicios</p>
           <DemoCarousel items={SERVICE_DEMOS} />
         </div>
       </section>
 
-      {/* Oferta corporativa — banda ancho completo, pegada al carrusel */}
-      <section className="relative overflow-hidden bg-primary-900 pt-2 pb-8 px-4" aria-label="Oferta web corporativa">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
+      {/* Oferta corporativa — panel navy "elevado": esquinas superiores redondeadas + sombra ascendente suave
+          en vez del degradado plano anterior. Es el mismo recurso de profundidad que separaba antes con color,
+          pero mediante capas reales (layering), que resulta más sutil y menos "cargante". */}
+      <section
+        className="relative -mt-8 rounded-t-[2.5rem] bg-primary-900 pt-10 pb-8 px-4 shadow-[0_-22px_45px_-28px_rgba(15,28,46,0.45)]"
+        aria-label="Oferta web corporativa"
+      >
+        <div className="absolute inset-0 rounded-t-[2.5rem] overflow-hidden opacity-10 pointer-events-none">
           <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-accent-500" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
@@ -211,18 +215,20 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* Carrusel tiendas online — misma lógica: `isolate` + degradado navy en vez de bloque sólido */}
-      <section className="relative isolate overflow-hidden px-4 pt-10 pb-0 bg-white">
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-primary-900 -z-10" aria-hidden="true" />
+      {/* Carrusel tiendas online — misma lógica de profundidad por capas que el corporativo */}
+      <section className="px-4 pt-10 pb-14 bg-white">
         <div className="max-w-6xl mx-auto">
           <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Tiendas online</p>
           <DemoCarousel items={TIENDAS_DEMOS} />
         </div>
       </section>
 
-      {/* Oferta tienda online — banda ancho completo, pegada al carrusel */}
-      <section className="relative overflow-hidden bg-primary-900 pt-2 pb-8 px-4" aria-label="Oferta tienda online">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
+      {/* Oferta tienda online — mismo panel elevado */}
+      <section
+        className="relative -mt-8 rounded-t-[2.5rem] bg-primary-900 pt-10 pb-8 px-4 shadow-[0_-22px_45px_-28px_rgba(15,28,46,0.45)]"
+        aria-label="Oferta tienda online"
+      >
+        <div className="absolute inset-0 rounded-t-[2.5rem] overflow-hidden opacity-10 pointer-events-none">
           <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-accent-500" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
@@ -341,8 +347,7 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* FAQs — formato acordeón, con una única interrogación de fondo detrás de toda la capa,
-          que revela más o menos silueta según crece o decrece el alto total del acordeón */}
+      {/* FAQs — formato acordeón */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre diseño web</h2>
