@@ -34,7 +34,7 @@ const pageSchema = {
         "Web profesional completa + 6 meses de posicionamiento SEO por 999€ + IVA. Incluye hosting, dominio, correo corporativo, páginas legales y soporte.",
       price: "999",
       priceCurrency: "EUR",
-      availability: "https://schema.org/LimitedAvailability",
+      availability: "https://schema.org/InStock",
       url: "https://www.mktweb360.com/oferta-web-seo-organico/",
       seller: {
         "@type": "Organization",
@@ -186,7 +186,8 @@ const INCLUDED = [
       "Diseño web profesional completo",
       "Responsive — perfecta en móvil y tablet",
       "Velocidad optimizada (SiteGround)",
-      "SSL + formulario de contacto",
+      "SSL + formulario de contacto con Captcha anti-spam",
+      "Blog integrado, listo para publicar",
       "Google Analytics 4 + Search Console",
       "Páginas legales + banner de cookies RGPD",
     ],
@@ -232,6 +233,7 @@ const FAQS = [
   { q: "¿Para qué tipo de negocios es?", a: "Para autónomos, profesionales y PYMEs de cualquier sector que quieran una presencia digital profesional y empezar a captar clientes por Google." },
   { q: "¿Hay permanencia?", a: "Ninguna. La web es tuya desde el primer día. El SEO puede cancelarse en cualquier momento tras los 3 meses incluidos." },
   { q: "¿Qué dominio puedo elegir?", a: "Cualquier .com o .es disponible. Si ya tienes dominio, también lo gestionamos sin coste adicional." },
+  { q: "¿Incluye blog y protección anti-spam?", a: "Sí. Todas las webs incluyen una sección de blog lista para publicar y un Captcha en el formulario de contacto para filtrar spam." },
   { q: "¿Cuánto tarda en estar lista?", a: "La web se entrega en 48-72h tras recibir el material. El SEO empieza en paralelo desde el mismo día del lanzamiento." },
 ];
 
@@ -265,7 +267,7 @@ export default function OfertaWebSeoOrganicoPage() {
 
           <div className="inline-flex items-center gap-2 bg-accent-500/20 border border-accent-400/40 rounded-full px-4 py-1.5 text-sm font-medium text-accent-300 mb-6">
             <span>⚡</span>
-            <span>Oferta limitada · Solo 5 plazas disponibles</span>
+            <span>Oferta especial · Web + SEO todo incluido</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 max-w-3xl">
@@ -520,7 +522,7 @@ export default function OfertaWebSeoOrganicoPage() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm font-medium text-white mb-6">
               <span>⚡</span>
-              <span>Solo 5 plazas disponibles</span>
+              <span>Empieza hoy mismo</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               ¿Empezamos?
@@ -554,9 +556,9 @@ export default function OfertaWebSeoOrganicoPage() {
 
       {/* ── ENLACE A ADS LANDING ── */}
       <section className="bg-gray-100 px-4 py-6 text-center text-sm text-gray-500">
-        ¿Buscas la oferta especial limitada?{" "}
+        ¿Prefieres verla en una sola página, con demos y todos los detalles?{" "}
         <Link href="/oferta-web-seo/" className="text-accent-500 font-semibold hover:underline">
-          Ver oferta con plazas limitadas →
+          Ver oferta completa →
         </Link>
       </section>
     </>

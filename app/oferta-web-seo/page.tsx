@@ -6,7 +6,7 @@ import { OfertaWebSeoForm } from "@/components/OfertaWebSeoForm";
 export const metadata: Metadata = {
   title: "Oferta Web + SEO — Presencia Digital Completa desde 999€",
   description:
-    "Web profesional + 6 meses de SEO por solo 999€ + IVA. Hosting, dominio, correo corporativo, páginas legales y soporte incluidos. Solo 5 plazas. Oferta limitada.",
+    "Web profesional + 6 meses de SEO por solo 999€ + IVA. Hosting, dominio, correo corporativo, páginas legales, blog y soporte incluidos. Sin permanencia.",
   // Landing de Ads — nunca indexar esta URL directamente.
   // canonical apunta a la versión orgánica para consolidar señales si Google rastrea la página.
   alternates: { canonical: "https://www.mktweb360.com/oferta-web-seo-organico/" },
@@ -59,10 +59,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "¿Por qué solo 5 plazas?",
+      name: "¿La web incluye blog?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Para garantizar la calidad del servicio y los plazos de entrega. Cada web requiere atención personalizada y no queremos comprometer el resultado.",
+        text: "Sí. Todas las webs incluyen una sección de blog integrada y lista para publicar, para generar contenido y atraer tráfico orgánico desde el primer día.",
       },
     },
     {
@@ -85,7 +85,8 @@ const INCLUDED = [
       "Responsive — perfecta en móvil y tablet",
       "Velocidad optimizada (SiteGround)",
       "SSL incluido",
-      "Formulario de contacto funcionando",
+      "Formulario de contacto con Captcha anti-spam",
+      "Blog integrado, listo para publicar",
       "Google Analytics 4 + Search Console",
       "Páginas legales (aviso legal, privacidad, cookies)",
       "Banner de cookies RGPD",
@@ -180,8 +181,8 @@ const FAQS = [
     a: "Configuramos las cuentas que necesites (info@, contacto@, nombre@...), migramos tu correo actual si ya tienes uno y te dejamos todo funcionando.",
   },
   {
-    q: "¿Por qué solo 5 plazas?",
-    a: "Para garantizar la calidad del servicio y los plazos de entrega. Cada web requiere atención personalizada y no queremos comprometer el resultado.",
+    q: "¿La web incluye blog?",
+    a: "Sí. Todas las webs incluyen una sección de blog integrada y lista para publicar, para generar contenido y atraer tráfico orgánico desde el primer día.",
   },
   {
     q: "¿Hay permanencia o compromiso?",
@@ -218,7 +219,7 @@ export default function OfertaWebSeoPage() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm font-medium mb-8">
             <span>⚡</span>
-            <span>Oferta especial — Solo 5 plazas</span>
+            <span>Oferta especial — Web + SEO todo incluido</span>
           </div>
 
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
@@ -306,7 +307,7 @@ export default function OfertaWebSeoPage() {
               href="#solicitar"
               className="bg-[#f97316] hover:bg-orange-600 text-white font-bold px-10 py-4 rounded-full transition-colors inline-block"
             >
-              Reservar mi plaza ahora
+              Quiero mi web ahora
             </a>
           </div>
         </div>
@@ -431,7 +432,7 @@ export default function OfertaWebSeoPage() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm font-medium text-white mb-6">
               <span>⚡</span>
-              <span>Solo 5 plazas disponibles</span>
+              <span>Empieza hoy mismo</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               ¿Empezamos?

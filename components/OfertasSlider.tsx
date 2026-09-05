@@ -26,7 +26,7 @@ const SLIDES: Slide[] = [
   {
     badge: "Oferta Web Corporativa",
     title: "Tu web profesional, desde 249€",
-    desc: "Solo la web: 249€. Con 6 meses de SEO incluido: 999€ + IVA. Hosting, dominio, correo corporativo y soporte incluidos. Solo 5 plazas.",
+    desc: "Solo la web: 249€. Con 6 meses de SEO incluido: 999€ + IVA. Hosting, dominio, correo corporativo, blog y soporte incluidos.",
     cta: "Ver oferta completa",
     href: "/oferta-web-seo/",
     bg: "/hero-web-seo.svg",

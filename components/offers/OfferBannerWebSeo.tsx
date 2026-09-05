@@ -5,6 +5,7 @@
  * CAMPAÑA: oferta-web-seo (EVERGREEN — activa)
  * Archivo de campaña en Drive: CAMPANA-web-seo-999-evergreen.md
  * Actualizado sep 2026: se añade el escalón "solo web" (249€) junto al bundle 999€.
+ * Actualizado sep 2026 (v2): se añaden Blog + Captcha a los incluidos; se elimina el mensaje de plazas limitadas.
  *
  * INSERTAR EN: páginas de diseño web corporativo y empresas
  *   - app/(site)/diseno-de-paginas-web/paginas-corporativas/page.tsx
@@ -38,13 +39,13 @@ export function OfferBannerWebSeo() {
           <div className="text-center md:text-left">
             <div className="inline-flex items-center gap-2 bg-accent-500/20 border border-accent-400/40 rounded-full px-4 py-1.5 text-xs font-semibold text-accent-300 mb-4">
               <span>⚡</span>
-              <span>Oferta especial — Solo 5 plazas</span>
+              <span>Oferta especial — Web + SEO todo incluido</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
               Tu web profesional, desde 249€
             </h2>
             <p className="text-white/70 text-sm md:text-base max-w-xl">
-              Con 6 meses de SEO incluido, todo por 999€: hosting, dominio, correo corporativo, páginas legales y soporte. Sin permanencia. Sin sorpresas.
+              Con 6 meses de SEO incluido, todo por 999€: hosting, dominio, correo corporativo, blog, páginas legales y soporte, con Captcha anti-spam. Sin permanencia. Sin sorpresas.
             </p>
           </div>
 
