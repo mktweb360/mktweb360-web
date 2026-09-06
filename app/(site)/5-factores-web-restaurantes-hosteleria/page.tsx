@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "Hoja de reclamaciones, alérgenos (Reglamento UE 1169/2011), reserva online y ficha de Google: los 5 factores que determinan si tu web de hostelería llena mesas.",
     url: "https://www.mktweb360.com/5-factores-web-restaurantes-hosteleria/",
     type: "article",
-    images: [{ url: "/og-paginas-corporativas.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-5-factores-web-restaurantes-hosteleria.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -85,7 +85,7 @@ export default function FactoresWebRestaurantesPage() {
             La web de un restaurante o un negocio de hostelería no compite solo con otros restaurantes — compite con Google Maps, TripAdvisor y las apps de reserva. Si no resuelve lo básico en los primeros segundos, el cliente vuelve al buscador y elige otra opción.
           </p>
           <Image
-            src="/og-paginas-corporativas.jpg"
+            src="/og-5-factores-web-restaurantes-hosteleria.jpg"
             alt="5 factores clave en la web de un restaurante u hotel"
             width={1200}
             height={630}
