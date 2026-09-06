@@ -51,6 +51,9 @@ const SECTOR_LINKS: Record<string, string> = {
   "Clínicas dentales": "/5-factores-web-clinicas-dentales/",
   "Talleres mecánicos": "/5-factores-web-talleres-mecanicos/",
   "Peluquerías y estética": "/5-factores-web-peluquerias-estetica/",
+  "Servicios profesionales": "/5-factores-web-servicios-profesionales/",
+  "Asesorías y gestorías": "/5-factores-web-asesorias-gestorias/",
+  "Autónomos y freelance": "/5-factores-web-autonomos-freelance/",
 };
 
 const FEATURES = [
