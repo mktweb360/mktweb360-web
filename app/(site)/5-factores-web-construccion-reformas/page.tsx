@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "Presupuesto por escrito, LOE, portfolio antes/después y SEO local: los 5 factores que determinan si tu web de reformas genera confianza.",
     url: "https://www.mktweb360.com/5-factores-web-construccion-reformas/",
     type: "article",
-    images: [{ url: "/og-paginas-corporativas.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-5-factores-web-construccion-reformas.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -85,7 +85,7 @@ export default function FactoresWebConstruccionPage() {
             El sector de la reforma y la construcción arrastra un problema de confianza real — presupuestos verbales, plazos incumplidos, empresas que desaparecen a mitad de obra. La web tiene que resolver esa desconfianza antes de que el cliente descuelgue el teléfono.
           </p>
           <Image
-            src="/og-paginas-corporativas.jpg"
+            src="/og-5-factores-web-construccion-reformas.jpg"
             alt="5 factores clave en la web de una empresa de construcción o reformas"
             width={1200}
             height={630}
