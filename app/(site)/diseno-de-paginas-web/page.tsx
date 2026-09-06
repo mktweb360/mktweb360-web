@@ -173,67 +173,57 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* Carrusel corporativo. La profundidad ya no viene de un degradado de color plano (quedaba artificial),
-          sino de la sombra propia de cada tarjeta (ver DemoCarousel) + el panel de oferta de abajo, que
-          "flota" sobre esta sección con esquinas redondeadas y una sombra ascendente suave. Más aire (pb-14)
-          para que la vista descanse antes de la transición. */}
+      {/* Carrusel de demos: una sola fila, 50/50 — web corporativas a la izquierda, tiendas online
+          a la derecha. Cada mitad conserva su carrusel (imagen grande + 3 miniaturas debajo) y su
+          propia banda de oferta, ambas dentro del mismo panel navy "elevado" para mantener la
+          profundidad visual que ya teníamos. */}
       <section className="px-4 pb-14 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Webs corporativas y de servicios</p>
-          <DemoCarousel items={SERVICE_DEMOS} />
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-10">
+          <div>
+            <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Webs corporativas y de servicios</p>
+            <DemoCarousel items={SERVICE_DEMOS} />
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Tiendas online</p>
+            <DemoCarousel items={TIENDAS_DEMOS} />
+          </div>
         </div>
       </section>
 
-      {/* Oferta corporativa — panel navy "elevado": esquinas superiores redondeadas + sombra ascendente suave
-          en vez del degradado plano anterior. Dos niveles de precio: solo web (249€) y web+SEO 6 meses (999€). */}
+      {/* Ofertas corporativa + tienda online — mismo panel navy elevado que antes, ahora dividido
+          en dos mitades (una por columna de carrusel) separadas por un borde sutil en desktop. */}
       <section
         className="relative -mt-8 rounded-t-[2.5rem] bg-primary-900 pt-10 pb-8 px-4 shadow-[0_-22px_45px_-28px_rgba(15,28,46,0.45)]"
-        aria-label="Oferta web corporativa"
+        aria-label="Ofertas web corporativa y tienda online"
       >
         <div className="absolute inset-0 rounded-t-[2.5rem] overflow-hidden opacity-10 pointer-events-none">
           <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-accent-500" />
         </div>
-        <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div>
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Tu web corporativa profesional, desde 249€</h3>
-            <p className="text-white/70 text-sm">Solo diseño y desarrollo. Con SEO técnico y 6 meses de posicionamiento: 999€. Sin permanencia.</p>
+        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-x-10 divide-y divide-white/10 lg:divide-y-0 lg:divide-x">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left lg:pr-10">
+            <div>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Tu web corporativa profesional, desde 249€</h3>
+              <p className="text-white/70 text-sm">Solo diseño y desarrollo. Con SEO técnico y 6 meses de posicionamiento: 999€. Sin permanencia.</p>
+            </div>
+            <Link
+              href="/diseno-de-paginas-web/paginas-corporativas/"
+              className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3.5 rounded-full transition-colors shadow-lg text-sm whitespace-nowrap shrink-0"
+            >
+              Ver páginas corporativas →
+            </Link>
           </div>
-          <Link
-            href="/diseno-de-paginas-web/paginas-corporativas/"
-            className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3.5 rounded-full transition-colors shadow-lg text-sm whitespace-nowrap shrink-0"
-          >
-            Ver páginas corporativas →
-          </Link>
-        </div>
-      </section>
-
-      {/* Carrusel tiendas online — misma lógica de profundidad por capas que el corporativo */}
-      <section className="px-4 pt-10 pb-14 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-sm font-semibold text-primary-600 mb-4 uppercase tracking-wide">Tiendas online</p>
-          <DemoCarousel items={TIENDAS_DEMOS} />
-        </div>
-      </section>
-
-      {/* Oferta tienda online — mismo panel elevado */}
-      <section
-        className="relative -mt-8 rounded-t-[2.5rem] bg-primary-900 pt-10 pb-8 px-4 shadow-[0_-22px_45px_-28px_rgba(15,28,46,0.45)]"
-        aria-label="Oferta tienda online"
-      >
-        <div className="absolute inset-0 rounded-t-[2.5rem] overflow-hidden opacity-10 pointer-events-none">
-          <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-accent-500" />
-        </div>
-        <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div>
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Tu tienda online, desde 490€</h3>
-            <p className="text-white/70 text-sm">Sin comisiones por venta, sin licencias mensuales. Gestión de stock y pasarela de pago incluidas.</p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left pt-8 lg:pt-0 lg:pl-10">
+            <div>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Tu tienda online, desde 490€</h3>
+              <p className="text-white/70 text-sm">Sin comisiones por venta, sin licencias mensuales. Gestión de stock y pasarela de pago incluidas.</p>
+            </div>
+            <Link
+              href="/diseno-de-paginas-web/diseno-tiendas-online/"
+              className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3.5 rounded-full transition-colors shadow-lg text-sm whitespace-nowrap shrink-0"
+            >
+              Ver tiendas online →
+            </Link>
           </div>
-          <Link
-            href="/diseno-de-paginas-web/diseno-tiendas-online/"
-            className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3.5 rounded-full transition-colors shadow-lg text-sm whitespace-nowrap shrink-0"
-          >
-            Ver tiendas online →
-          </Link>
         </div>
       </section>
 
