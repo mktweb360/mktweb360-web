@@ -133,12 +133,21 @@ export function getLatestPosts(n: number): BlogPost[] {
   return getVisiblePosts().slice(0, n);
 }
 
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 export function getRelatedPosts(currentSlug: string, n: number): BlogPost[] {
   const current = allPosts.find(p => p.slug === currentSlug);
   if (!current) return getLatestPosts(n);
-  const byRelated = allPosts.filter(p => current.relatedSlugs.includes(p.slug));
+  const byRelated = shuffle(allPosts.filter(p => current.relatedSlugs.includes(p.slug)));
   if (byRelated.length >= n) return byRelated.slice(0, n);
-  const byTag = allPosts.filter(p => p.slug !== currentSlug && !current.relatedSlugs.includes(p.slug) && p.tags.some(t => current.tags.includes(t)));
+  const byTag = shuffle(allPosts.filter(p => p.slug !== currentSlug && !current.relatedSlugs.includes(p.slug) && p.tags.some(t => current.tags.includes(t))));
   return [...byRelated, ...byTag].slice(0, n);
 }
 
