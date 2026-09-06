@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "Publicidad de resultados, RGPD de menores, DPD obligatorio y disponibilidad de plazas: los 5 factores que determinan si tu web de academia capta alumnos.",
     url: "https://www.mktweb360.com/5-factores-web-academias-centros-formacion/",
     type: "article",
-    images: [{ url: "/og-paginas-corporativas.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-5-factores-web-academias-centros-formacion.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -85,7 +85,7 @@ export default function FactoresWebAcademiasPage() {
             La web de una academia o centro de formación vende una promesa a futuro — un idioma aprendido, un examen aprobado, un trabajo conseguido. Esa promesa está regulada, y además el negocio suele tratar datos de menores.
           </p>
           <Image
-            src="/og-paginas-corporativas.jpg"
+            src="/og-5-factores-web-academias-centros-formacion.jpg"
             alt="5 factores clave en la web de una academia o centro de formación"
             width={1200}
             height={630}
