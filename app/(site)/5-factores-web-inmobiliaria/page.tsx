@@ -5,6 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
+import { DEMO_BY_ID } from "@/lib/demos";
 
 export const metadata: Metadata = {
   title: "5 factores clave en la web de una inmobiliaria (2026)",
@@ -100,6 +102,8 @@ export default function FactoresWebInmobiliariaPage() {
           <p>
             Una inmobiliaria no vende una vivienda desde su web: la muestra, la compara y la filtra. El comprador o inquilino decide en gran medida antes de llamar, a partir de las fotos, el precio y los datos del inmueble que ve en pantalla. Eso convierte a la web en un catálogo vivo, no en una tarjeta de presentación, y le exige un nivel de rendimiento y de cumplimiento normativo que muchas webs del sector todavía no tienen resuelto.
           </p>
+
+          <DemoPreviewBanner demo={DEMO_BY_ID.inmobiliaria} />
 
           <h2 className="text-2xl font-bold text-primary-600">1. Certificado de eficiencia energética en cada ficha</h2>
           <p>
