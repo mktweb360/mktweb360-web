@@ -48,6 +48,9 @@ const SECTOR_LINKS: Record<string, string> = {
   "Clínicas y salud": "/5-factores-web-clinicas-centros-salud/",
   "Despachos de abogados": "/5-factores-web-despacho-abogados/",
   "Inmobiliarias": "/5-factores-web-inmobiliaria/",
+  "Clínicas dentales": "/5-factores-web-clinicas-dentales/",
+  "Talleres mecánicos": "/5-factores-web-talleres-mecanicos/",
+  "Peluquerías y estética": "/5-factores-web-peluquerias-estetica/",
 };
 
 const FEATURES = [
@@ -327,6 +330,7 @@ export default function WebDesignPage() {
               "Construcción y reformas", "Ecommerce y retail", "Inmobiliarias",
               "Educación y formación", "Tecnología y SaaS", "Industria y manufactura",
               "Asesorías y gestorías", "Despachos de abogados", "Autónomos y freelance",
+              "Clínicas dentales", "Talleres mecánicos", "Peluquerías y estética",
             ].map(s => {
               const href = SECTOR_LINKS[s];
               const label = <p className="text-gray-700 text-sm font-medium">{s}</p>;
