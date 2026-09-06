@@ -5,6 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
+import { DEMO_BY_ID } from "@/lib/demos";
 
 export const metadata: Metadata = {
   title: "5 factores clave en la web de una clínica o centro de salud (2026)",
@@ -103,6 +105,8 @@ export default function FactoresWebClinicasPage() {
           <p>
             A partir de ahí, hay tres factores más de negocio puro que determinan si esa web capta pacientes o se queda en una tarjeta de presentación bonita. Estos son los cinco que de verdad importan.
           </p>
+
+          <DemoPreviewBanner demo={DEMO_BY_ID.clinica} />
 
           <h2 className="text-2xl font-bold text-primary-600">1. Publicidad sanitaria: lo que puedes decir y lo que no</h2>
           <p>
