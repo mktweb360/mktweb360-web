@@ -5,6 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
+import { DEMO_BY_ID } from "@/lib/demos";
 
 export const metadata: Metadata = {
   title: "5 factores clave en la web de un despacho de abogados (2026)",
@@ -103,6 +105,8 @@ export default function FactoresWebAbogadosPage() {
           <p>
             A partir de ahí, hay factores de arquitectura y de captación que determinan si esa confianza se traduce en una llamada o en una pestaña cerrada. Estos son los cinco que más pesan.
           </p>
+
+          <DemoPreviewBanner demo={DEMO_BY_ID.abogados} />
 
           <h2 className="text-2xl font-bold text-primary-600">1. Identificación colegial obligatoria</h2>
           <p>
