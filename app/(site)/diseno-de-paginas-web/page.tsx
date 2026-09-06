@@ -42,6 +42,9 @@ const SUB_SERVICES = [
 ];
 
 const SECTOR_LINKS: Record<string, string> = {
+  "Hostelería y turismo": "/5-factores-web-restaurantes-hosteleria/",
+  "Construcción y reformas": "/5-factores-web-construccion-reformas/",
+  "Educación y formación": "/5-factores-web-academias-centros-formacion/",
   "Clínicas y salud": "/5-factores-web-clinicas-centros-salud/",
   "Despachos de abogados": "/5-factores-web-despacho-abogados/",
   "Inmobiliarias": "/5-factores-web-inmobiliaria/",
