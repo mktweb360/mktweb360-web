@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Google Shopping for Online Stores — Complete Guide 2025 | Mkt Web 360"
-      : "Google Shopping pour boutiques en ligne — Guide complet 2025 | Mkt Web 360",
+      ? "Google Shopping for Online Stores — Complete Guide 2025"
+      : "Google Shopping pour boutiques en ligne — Guide complet 2025",
     description: isEn
       ? "How to set up Google Shopping, optimise your product feed and appear in Google product results."
       : "Comment configurer Google Shopping, optimiser votre flux de produits et apparaître dans les résultats produits de Google.",

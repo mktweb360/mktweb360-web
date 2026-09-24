@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Legal Notice | Mkt Web 360",
+  title: "Legal Notice",
   description: "Legal notice and terms of use for the Mkt Web 360 SLU website, CIF B87679304.",
   alternates: alternatesFor("/en/legal-notice/") ?? { canonical: "https://www.mktweb360.com/en/legal-notice/" },
   openGraph: { url: "https://www.mktweb360.com/en/legal-notice/" },

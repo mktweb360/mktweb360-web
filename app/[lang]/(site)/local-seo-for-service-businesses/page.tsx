@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Local SEO for Service Businesses — How to Get Customers in Your Area | Mkt Web 360"
-      : "SEO local pour les entreprises de services — Comment attirer des clients dans votre zone | Mkt Web 360",
+      ? "Local SEO for Service Businesses — How to Get Customers in Your Area"
+      : "SEO local pour les entreprises de services — Comment attirer des clients dans votre zone",
     description: isEn
       ? "What a service business needs to improve its local presence and attract more customers from Google in its area."
       : "Ce dont une entreprise de services a besoin pour améliorer sa présence locale et attirer plus de clients depuis Google dans sa zone.",

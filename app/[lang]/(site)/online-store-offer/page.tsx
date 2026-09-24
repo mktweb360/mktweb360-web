@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Professional Online Store from €490 — No Commissions | Mkt Web 360"
-      : "Boutique en Ligne Professionnelle à partir de 490€ — Sans Commissions | Mkt Web 360",
+      ? "Professional Online Store from €490 — No Commissions"
+      : "Boutique en Ligne Professionnelle à partir de 490€ — Sans Commissions",
     description: isEn
       ? "Professional online store from €490. No commissions per sale, no monthly fees. Custom design, SEO included 12 months. Only 5 places available this month."
       : "Boutique en ligne professionnelle à partir de 490€. Sans commissions par vente, sans frais mensuels. Design personnalisé, SEO inclus 12 mois. Seulement 5 places ce mois-ci.",

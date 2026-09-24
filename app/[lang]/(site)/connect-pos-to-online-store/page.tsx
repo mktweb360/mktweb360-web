@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Connect Your Physical POS to Your Online Store | Mkt Web 360"
-      : "Comment connecter votre TPV physique à votre boutique en ligne | Mkt Web 360",
+      ? "How to Connect Your Physical POS to Your Online Store"
+      : "Comment connecter votre TPV physique à votre boutique en ligne",
     description: isEn
       ? "Synchronise stock, sales and customers between your physical POS and your online store. WooCommerce and other solutions."
       : "Synchronisez le stock, les ventes et les clients entre votre TPV physique et votre boutique en ligne. WooCommerce et autres solutions.",

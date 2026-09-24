@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | Mkt Web 360",
+  title: "Cookie Policy",
   description: "Information about the use of cookies on the Mkt Web 360 SLU website, in accordance with Art. 22 LSSI and the GDPR.",
   alternates: alternatesFor("/en/cookie-policy/") ?? { canonical: "https://www.mktweb360.com/en/cookie-policy/" },
   openGraph: { url: "https://www.mktweb360.com/en/cookie-policy/" },

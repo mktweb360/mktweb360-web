@@ -7,7 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   return {
-    title: lang === "en" ? "About Us — Mkt Web 360" : "À propos — Mkt Web 360",
+    title: lang === "en" ? "About Us" : "À propos",
     description:
       lang === "en"
         ? "Meet the Mkt Web 360 team. Senior experience, AI protocols and sector exclusivity. Digital marketing agency for SMEs. Nationwide service."

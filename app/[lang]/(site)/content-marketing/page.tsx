@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Content Marketing for Businesses | Mkt Web 360"
-      : "Marketing de Contenu pour Entreprises | Mkt Web 360",
+      ? "Content Marketing for Businesses"
+      : "Marketing de Contenu pour Entreprises",
     description: isEn
       ? "Content strategy and production for businesses. SEO articles, corporate blogs and social media content to attract organic customers. Nationwide service."
       : "Stratégie et production de contenu pour les entreprises. Articles SEO, blogs d'entreprise et contenu pour réseaux sociaux pour attirer des clients organiques.",

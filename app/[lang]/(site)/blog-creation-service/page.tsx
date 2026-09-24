@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Professional Blog Creation for Businesses — Mkt Web 360"
-      : "Création de Blog Professionnel pour Entreprises — Mkt Web 360",
+      ? "Professional Blog Creation for Businesses"
+      : "Création de Blog Professionnel pour Entreprises",
     description: isEn
       ? "Professional blog creation service for businesses. SEO strategy, design, specialist-written articles and ongoing optimisation to generate leads without cost per click."
       : "Service de création de blog professionnel pour entreprises. Stratégie SEO, design, articles rédigés par des spécialistes et optimisation continue pour générer des leads sans coût par clic.",
