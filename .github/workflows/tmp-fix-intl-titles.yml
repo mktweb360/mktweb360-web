@@ -1,0 +1,26 @@
+# TEMPORAL (24-sep-2026): ejecuta scripts/fix-intl-titles.mjs una vez en esta rama y hace commit.
+# Borrar este archivo antes de mergear el PR.
+name: TMP fix intl titles
+
+on:
+  push:
+    branches: [fix/titles-links-ci-24sep]
+    paths:
+      - '.github/workflows/tmp-fix-intl-titles.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/fix-intl-titles.mjs
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -q scripts/fix-intl-titles.mjs
+          git add app
+          git commit -m "fix(seo): quitar marca duplicada en 42 titles EN/FR (84 URLs); la plantilla del layout ya la añade"
+          git push
