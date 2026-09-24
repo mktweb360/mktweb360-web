@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import HomeClient from "@/components/HomeClient";
 
 export const metadata: Metadata = {
-  title: "Agencia Marketing Digital para Empresas — SEO, GEO y Ads | Mkt Web 360",
+  // absolute: evita que la plantilla del layout ("%s | Mkt Web 360") duplique la marca.
+  title: { absolute: "Agencia de Marketing Digital: SEO, GEO y Ads | Mkt Web 360" },
   description: "Agencia de marketing digital con IA propia para PYMEs. SEO, GEO (ChatGPT/Perplexity), Google Ads y diseño web. +10 años. Exclusividad por sector. Resultados verificables.",
   alternates: {
     canonical: "/",

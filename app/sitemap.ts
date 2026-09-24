@@ -148,6 +148,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/chatbot-captacion-cualificacion-leads-guia-practica/", priority: 0.7, changeFrequency: "weekly" as const },
     { url: "/chatbot-vs-live-chat-diferencias-cual-elegir-empresa/", priority: 0.7, changeFrequency: "weekly" as const },
     { url: "/como-elegir-chatbot-para-empresa-checklist-2026/", priority: 0.7, changeFrequency: "weekly" as const },
+    // Agosto 2026 — artículos ES publicados (EN/FR ya en routes.ts) que faltaban en el sitemap.
+    { url: "/brandformance-como-unir-marca-y-performance/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/marketing-digital-con-ia-y-respuestas-cero-clic/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/como-escribir-contenido-que-no-suene-a-ia/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/seo-social-instagram-tiktok-linkedin-como-buscadores/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/atribucion-de-marketing-como-medir-impacto-real/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/google-ads-sin-comision-agencia-marketing/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/redes-sociales-para-empresas-b2b-2026/", priority: 0.7, changeFrequency: "monthly" as const },
   ];
 
   const esSitemap: MetadataRoute.Sitemap = pages.map((p) => ({

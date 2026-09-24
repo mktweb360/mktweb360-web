@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
-import { aliasRedirects } from "./lib/i18n/routes";
+import { aliasRedirects, legacyLangRedirects } from "./lib/i18n/routes";
 
 const withMDX = createMDX({});
 
@@ -133,7 +133,20 @@ const nextConfig: NextConfig = {
       // Sources are slash-less because trailingSlash is off (Next strips '/x/' → '/x' before matching).
       { source: '/landing/seo-6x3/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       // /oferta-seo/ was used by retired Google Ads campaign — now redirects to active August offer landing.
-      { source: '/oferta-seo/:path*/', destination: '/landing/seo-geo-gbp-verano/', permanent: false },
+      { source: '/oferta-seo/:path*/', destination: '/oferta-seo-geo-gbp/', permanent: false },
+      // Oferta verano SEO+GEO+GBP (caducada 31-ago-2026) — landing de Ads retirada -> página orgánica evergreen.
+      { source: '/landing/seo-geo-gbp-verano/', destination: '/oferta-seo-geo-gbp/', permanent: true },
+      { source: '/landing/seo-geo-gbp-verano/:path*/', destination: '/oferta-seo-geo-gbp/', permanent: true },
+
+      // 404 detectados en GSC (24-sep-2026): slugs EN/FR servidos en la raíz y URLs antiguas sueltas.
+      { source: '/google-business-profile-management/', destination: '/google-business-profile/', permanent: true },
+      { source: '/digital-audit/', destination: '/auditoria-digital/', permanent: true },
+      { source: '/ai-applied-marketing/', destination: '/ia-aplicada-al-marketing/', permanent: true },
+      { source: '/seo-positionnement-web/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/analisis-web-seo-gratis/', destination: '/auditoria-digital/', permanent: true },
+      { source: '/author/:slug/', destination: '/nosotros/', permanent: true },
+      // Feeds de WordPress por artículo (/slug/feed/) -> el propio artículo.
+      { source: '/:slug/feed/', destination: '/:slug/', permanent: true },
 
       // --- Alias i18n (fase 2a) generados desde lib/i18n/routes.ts, fuente de verdad.
       // 146 reglas / 73 alias. Van al final: las literales de arriba tienen prioridad.
@@ -142,6 +155,8 @@ const nextConfig: NextConfig = {
       ...aliasRedirects()
         .filter((r) => !ALIAS_FASE_2B.has(r.source.split("/")[2]))
         .map((r) => ({ ...r, permanent: true })),
+      // --- 301 de URLs heredadas /en|fr/<slug-ES>/ (antiguo selector de idioma), ver routes.ts.
+      ...legacyLangRedirects().map((r) => ({ ...r, permanent: true })),
     ];
   },
 };
