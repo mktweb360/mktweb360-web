@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Payment Methods for Online Stores — Which to Install and Why | Mkt Web 360"
-      : "Méthodes de paiement pour boutiques en ligne — Lesquelles installer et pourquoi | Mkt Web 360",
+      ? "Payment Methods for Online Stores — Which to Install and Why"
+      : "Méthodes de paiement pour boutiques en ligne — Lesquelles installer et pourquoi",
     description: isEn
       ? "Which payment gateways to use for your online store, how to configure them and which buyers prefer."
       : "Quelles passerelles de paiement utiliser pour votre boutique en ligne, comment les configurer et lesquelles les acheteurs préfèrent.",

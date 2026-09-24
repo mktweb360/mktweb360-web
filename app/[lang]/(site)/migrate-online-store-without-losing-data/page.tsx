@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Migrate Your Online Store Without Losing Products, Customers or SEO | Mkt Web 360"
-      : "Comment migrer votre boutique en ligne sans perdre produits, clients ni SEO | Mkt Web 360",
+      ? "How to Migrate Your Online Store Without Losing Products, Customers or SEO"
+      : "Comment migrer votre boutique en ligne sans perdre produits, clients ni SEO",
     description: isEn
       ? "Complete checklist and step-by-step process for migrating your ecommerce store without losing products, customers, orders or SEO rankings."
       : "Checklist complète et processus étape par étape pour migrer votre boutique e-commerce sans perdre produits, clients, commandes ni classements SEO.",

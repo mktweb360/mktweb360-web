@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Politique de Confidentialité | Mkt Web 360",
+  title: "Politique de Confidentialité",
   description: "Politique de confidentialité et protection des données personnelles de Mkt Web 360 SLU, conformément au RGPD et à la LOPDGDD.",
   alternates: alternatesFor("/fr/politique-de-confidentialite/") ?? { canonical: "https://www.mktweb360.com/fr/politique-de-confidentialite/" },
   openGraph: { url: "https://www.mktweb360.com/fr/politique-de-confidentialite/" },

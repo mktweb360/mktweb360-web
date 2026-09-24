@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Digital Marketing Blog | Mkt Web 360"
-      : "Blog Marketing Digital | Mkt Web 360",
+      ? "Digital Marketing Blog"
+      : "Blog Marketing Digital",
     description: isEn
       ? "Articles, guides and tips on digital marketing, SEO, Google Ads, social media and web design for businesses."
       : "Articles, guides et conseils en marketing digital, SEO, Google Ads, réseaux sociaux et création de sites web pour entreprises.",

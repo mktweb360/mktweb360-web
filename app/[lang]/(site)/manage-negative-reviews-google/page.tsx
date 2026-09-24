@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Manage Negative Reviews on Google Professionally | Mkt Web 360"
-      : "Comment gérer les avis négatifs sur Google de manière professionnelle | Mkt Web 360",
+      ? "How to Manage Negative Reviews on Google Professionally"
+      : "Comment gérer les avis négatifs sur Google de manière professionnelle",
     description: isEn
       ? "How to respond to negative Google reviews professionally. Strategy, response templates and how to turn criticism into opportunities."
       : "Comment répondre aux avis négatifs sur Google de manière professionnelle. Stratégie, modèles de réponse et comment transformer les critiques en opportunités.",

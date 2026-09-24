@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Social Media Marketing for Businesses — Community Management | Mkt Web 360"
-      : "Marketing sur les Réseaux Sociaux pour Entreprises — Community Management | Mkt Web 360",
+      ? "Social Media Marketing for Businesses — Community Management"
+      : "Marketing sur les Réseaux Sociaux pour Entreprises — Community Management",
     description: isEn
       ? "Professional social media management for businesses. Community management, content creation and growth strategy for Instagram, LinkedIn, Facebook and TikTok."
       : "Gestion professionnelle des réseaux sociaux pour entreprises. Community management, création de contenu et stratégie de croissance pour Instagram, LinkedIn, Facebook et TikTok.",
