@@ -68,8 +68,8 @@ export const ROUTES: Route[] = [
   { es: "/metodos-pago-tienda-online-espana/", en: "payment-methods-online-store", fr: "methodes-paiement-boutique-en-ligne" },
   { es: "/migrar-shopify-woocommerce/", en: "migrate-shopify-to-woocommerce", fr: "migrer-shopify-vers-woocommerce" },
   { es: "/migrar-tienda-online-sin-perder-datos/", en: "migrate-online-store-without-losing-data", fr: "migrer-boutique-sans-perdre-donnees" },
-  { es: "/nosotros/", en: "about", fr: "about" },
-  { es: "/politica-de-cookies/", en: "cookie-policy", fr: "politique-de-cookies" },
+  { es: "/nosotros/", en: "about", fr: "about", aliases: [{ lang: "fr", slug: "a-propos" }] },
+  { es: "/politica-de-cookies/", en: "cookie-policy", fr: "politique-de-cookies", aliases: [{ lang: "fr", slug: "politique-des-cookies" }] },
   { es: "/politica-de-privacidad/", en: "privacy-policy", fr: "politique-de-confidentialite" },
   // Articulo de blog "que es GEO" — pagina informativa propia, NO el servicio GEO.
   { es: "/que-es-geo-generative-engine-optimization/", en: "what-is-geo-generative-engine-optimization", fr: "qu-est-ce-que-le-geo" },
@@ -135,7 +135,7 @@ export const ROUTES: Route[] = [
 
   // Cluster GEO/IA (4 artículos)
   { es: "/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/", en: "geo-for-smes-ai-responses", fr: "geo-for-smes-ai-responses" },
-  { es: "/geo-posicionamiento-ia-chatgpt-empresas-espana/", en: "geo-ai-positioning-chatgpt-businesses", fr: "geo-ai-positioning-chatgpt-businesses" },
+  { es: "/geo-posicionamiento-ia-chatgpt-empresas-espana/", en: "geo-ai-positioning-chatgpt-businesses", fr: "geo-ai-positioning-chatgpt-businesses", aliases: [{ lang: "fr", slug: "geo-ai-positioning" }] },
   { es: "/ia-aplicada-a-marketing-valor-real-o-humo/", en: "ai-marketing-real-value", fr: "ai-marketing-real-value" },
   { es: "/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/", en: "ai-agents-marketing", fr: "ai-agents-marketing" },
 
@@ -279,6 +279,35 @@ export function aliasRedirects(): { source: string; destination: string }[] {
         const dest = urlFor(r, prefix) || r.es; // si ese idioma no se mantiene -> a la ES
         out.push({ source: `/${prefix}/${a.slug}/`, destination: dest });
       }
+    }
+  }
+  return out;
+}
+
+// Redirects 301 de URLs heredadas del antiguo selector de idioma, que generaba
+// /en/<slug-ES>/ y /fr/<slug-ES>/ (404 en GSC). Cada una va a su equivalente
+// canónico en ese idioma (o a la ES si ese idioma no existe para la route).
+// Nunca genera un source que coincida con una URL canónica EN/FR ni con una ruta ES.
+export function legacyLangRedirects(): { source: string; destination: string }[] {
+  const canonical = new Set<string>();
+  for (const r of ROUTES) {
+    canonical.add(r.es);
+    for (const lang of ["en", "fr"] as Lang[]) {
+      const u = urlFor(r, lang);
+      if (u) canonical.add(u);
+    }
+  }
+  const out: { source: string; destination: string }[] = [];
+  const seen = new Set<string>();
+  for (const r of ROUTES) {
+    const esSlug = r.es.replace(/^\/|\/$/g, "");
+    if (!esSlug) continue;
+    for (const prefix of ["en", "fr"] as Lang[]) {
+      const source = `/${prefix}/${esSlug}/`;
+      const destination = urlFor(r, prefix) || r.es;
+      if (source === destination || canonical.has(source) || seen.has(source)) continue;
+      seen.add(source);
+      out.push({ source, destination });
     }
   }
   return out;
