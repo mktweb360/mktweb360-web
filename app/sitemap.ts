@@ -159,6 +159,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/accesibilidad-web-obligatoria-tiendas-online-espana/", priority: 0.7, changeFrequency: "weekly" as const },
     { url: "/ayudas-digitalizar-pyme-2026-tras-kit-digital/", priority: 0.7, changeFrequency: "weekly" as const },
     { url: "/auditoria-google-ads-pymes-que-revisar/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/resenas-google-como-conseguirlas-legalmente/", priority: 0.7, changeFrequency: "weekly" as const },
   ];
 
   const esSitemap: MetadataRoute.Sitemap = pages.map((p) => ({
