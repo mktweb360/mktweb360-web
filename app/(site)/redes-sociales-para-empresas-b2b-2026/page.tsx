@@ -37,7 +37,7 @@ export default function Page() {
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <Breadcrumbs lang="es" items={[{ label: "Blog", href: "/blog/" }, { label: "Social Media" }]} />
+          <Breadcrumbs crumbs={[{ label: "Blog", href: "/blog/" }, { label: "Social Media" }]} />
           <div className="mt-4 mb-3">
             <span className="bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Social Media</span>
           </div>
@@ -133,7 +133,7 @@ export default function Page() {
         </div>
       </section>
 
-      <RelatedArticles lang="es" currentSlug="redes-sociales-para-empresas-b2b-2026" />
+      <RelatedArticles currentSlug="redes-sociales-para-empresas-b2b-2026" />
     </>
   );
 }

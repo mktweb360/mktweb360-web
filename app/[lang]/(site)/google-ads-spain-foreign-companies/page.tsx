@@ -104,8 +104,7 @@ export default async function GoogleAdsSpainPage({
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs
-            lang={lang}
-            items={[
+            crumbs={[
               { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
               { label: isEn ? "Blog" : "Blog", href: `/${lang}/blog/` },
               { label: isEn ? "Google Ads in Spain" : "Google Ads en Espagne" },
@@ -153,7 +152,7 @@ export default async function GoogleAdsSpainPage({
         </div>
       </section>
 
-      <RelatedArticles lang={lang} currentSlug="google-ads-spain-foreign-companies" />
+      <RelatedArticles currentSlug="google-ads-spain-foreign-companies" />
     </>
   );
 }

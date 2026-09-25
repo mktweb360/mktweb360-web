@@ -157,8 +157,7 @@ export default async function HowToChooseAgencyPage({
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs
-            lang={lang}
-            items={[
+            crumbs={[
               { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
               { label: isEn ? "Blog" : "Blog", href: `/${lang}/blog/` },
               { label: isEn ? "Choose an Agency in Spain" : "Choisir une Agence en Espagne" },
@@ -258,7 +257,7 @@ export default async function HowToChooseAgencyPage({
         </div>
       </section>
 
-      <RelatedArticles lang={lang} currentSlug="how-to-choose-digital-marketing-agency-spain" />
+      <RelatedArticles currentSlug="how-to-choose-digital-marketing-agency-spain" />
     </>
   );
 }

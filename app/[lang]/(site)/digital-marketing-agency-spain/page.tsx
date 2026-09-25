@@ -93,8 +93,7 @@ export default async function DigitalMarketingAgencySpainPage({
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <Breadcrumbs
-            lang={lang}
-            items={[
+            crumbs={[
               { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
               { label: isEn ? "Digital Marketing Agency Spain" : "Agence Marketing Digital Espagne" },
             ]}

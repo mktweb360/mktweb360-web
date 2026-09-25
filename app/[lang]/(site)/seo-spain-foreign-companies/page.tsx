@@ -103,8 +103,7 @@ export default async function SeoSpainForeignCompaniesPage({
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs
-            lang={lang}
-            items={[
+            crumbs={[
               { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
               { label: isEn ? "Blog" : "Blog", href: `/${lang}/blog/` },
               { label: isEn ? "SEO in Spain" : "SEO en Espagne" },
@@ -157,7 +156,7 @@ export default async function SeoSpainForeignCompaniesPage({
         </div>
       </section>
 
-      <RelatedArticles lang={lang} currentSlug="seo-spain-foreign-companies" />
+      <RelatedArticles currentSlug="seo-spain-foreign-companies" />
     </>
   );
 }

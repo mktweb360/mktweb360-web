@@ -42,7 +42,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     <>
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <Breadcrumbs lang={lang} items={[{ label: "Blog", href: `/${lang}/blog/` }, { label: cat }]} />
+          <Breadcrumbs crumbs={[{ label: "Blog", href: `/${lang}/blog/` }, { label: cat }]} />
           <div className="mt-4 mb-3">
             <span className="bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">{cat}</span>
           </div>
@@ -100,7 +100,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
-      <RelatedArticles lang={lang} currentSlug={isFr ? "reseaux-sociaux-entreprises-b2b-2026" : "social-media-b2b-companies-2026"} />
+      <RelatedArticles currentSlug={isFr ? "reseaux-sociaux-entreprises-b2b-2026" : "social-media-b2b-companies-2026"} />
     </>
   );
 }
