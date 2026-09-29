@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Eliminar reseñas negativas de Google: guía",
-  description: "Aprende a responder y gestionar reseñas negativas en Google de forma profesional. Estrategia, plantillas de respuesta y cómo convertir críticas en oportunidades.",
+  description: "Cómo responder y gestionar reseñas negativas en Google, cuándo pedir su eliminación y plantillas de respuesta para convertir críticas en confianza.",
   alternates: alternatesFor("/gestion-resenas-negativas-google/") ?? { canonical: "https://www.mktweb360.com/gestion-resenas-negativas-google/" },
   openGraph: {
     title: "Cómo Gestionar las Reseñas Negativas en Google — Guía Práctica | Mkt Web 360",

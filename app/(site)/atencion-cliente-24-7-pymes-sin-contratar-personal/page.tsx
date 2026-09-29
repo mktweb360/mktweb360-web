@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "Atención al cliente 24/7 para pymes",
   description:
-    "Las grandes empresas llevan años ofreciendo atención al cliente 24/7. En 2026, las pymes españolas pueden conseguir lo mismo con chatbots de IA, sin contratar más personal. Aquí está cómo funciona y qué cuesta.",
+    "Cómo ofrecer atención al cliente 24/7 en una pyme con chatbots de IA sin contratar más personal: cómo funciona, qué cuesta y qué resultados esperar.",
   alternates: alternatesFor("/atencion-cliente-24-7-pymes-sin-contratar-personal/") ?? { canonical: "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/" },
   openGraph: {
     title: "Atención al cliente 24/7 para pymes: cómo conseguirlo sin contratar más personal | Mkt Web 360",

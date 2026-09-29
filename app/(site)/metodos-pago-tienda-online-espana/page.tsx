@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Métodos de Pago Tienda Online España",
-  description: "Comparativa de pasarelas de pago para ecommerce en España: Stripe, Bizum, PayPal, Redsys y alternativas. Comisiones, integración con WooCommerce y cuál funciona mejor.",
+  description: "Pasarelas de pago para tiendas online en España: Stripe, Bizum, PayPal y Redsys comparadas por comisiones, integración con WooCommerce y conversión.",
   alternates: alternatesFor("/metodos-pago-tienda-online-espana/") ?? { canonical: "https://www.mktweb360.com/metodos-pago-tienda-online-espana/" },
   openGraph: {
     title: "Métodos de Pago para Tiendas Online en España | Mkt Web 360",

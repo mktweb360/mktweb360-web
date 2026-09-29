@@ -11,7 +11,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 export const metadata: Metadata = {
   title: "Web para empresas de reformas: 5 claves",
   description:
-    "Presupuesto por escrito, LOE, portfolio antes/después y SEO local: los 5 factores que determinan si la web de tu empresa de reformas genera presupuestos o desconfianza.",
+    "Presupuesto por escrito, LOE, portfolio antes y después y SEO local: los 5 factores que deciden si la web de tu empresa de reformas genera presupuestos.",
   alternates: alternatesFor("/5-factores-web-construccion-reformas/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-construccion-reformas/" },
   openGraph: {
     title: "5 factores clave en la web de una empresa de construcción o reformas | Mkt Web 360",

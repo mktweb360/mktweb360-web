@@ -10,7 +10,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "SEO para ecommerce: errores que frenan ventas",
   description:
-    "Descubre los errores SEO más comunes en ecommerce y qué revisar para mejorar visibilidad, tráfico cualificado y ventas.",
+    "Los errores SEO más comunes en tiendas online y qué revisar para ganar visibilidad, atraer tráfico cualificado y vender más desde Google.",
   alternates: alternatesFor("/seo-para-ecommerce-errores-que-frenan-ventas/") ?? { canonical: "https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/" },
   openGraph: {
     title: "SEO para ecommerce: errores que frenan ventas en tu tienda online | Mkt Web 360",

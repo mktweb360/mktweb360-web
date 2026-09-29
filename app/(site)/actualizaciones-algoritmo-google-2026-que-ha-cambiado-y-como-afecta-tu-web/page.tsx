@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "Actualizaciones del algoritmo de Google 2026",
   description:
-    "Google ha lanzado varias actualizaciones de algoritmo en 2026 con foco en experiencia de usuario, contenido de IA y señales E-E-A-T. Analizamos qué ha cambiado y qué tienes que hacer.",
+    "Qué han cambiado las actualizaciones del algoritmo de Google en 2026 (experiencia, contenido con IA, E-E-A-T) y qué revisar en tu web para no perder posiciones.",
   alternates: alternatesFor("/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/") ?? { canonical: "https://www.mktweb360.com/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/" },
   openGraph: {
     title: "Actualizaciones del algoritmo de Google en 2026: qué ha cambiado y cómo afecta a tu web | Mkt Web 360",

@@ -7,7 +7,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "Páginas Web para Empresas a Medida",
-  description: "Diseño de páginas web para empresas con funcionalidades avanzadas. Soluciones a medida, portales, catálogos, reservas y plataformas web empresariales. SEO incluido.",
+  description: "Diseño de páginas web para empresas con funcionalidades a medida: portales, catálogos, reservas y plataformas web, con SEO técnico desde el primer día.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/diseno-paginas-web-empresa/" },
   openGraph: {
     title: "Diseño de Páginas Web para Empresas | Mkt Web 360",

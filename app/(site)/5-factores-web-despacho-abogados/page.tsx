@@ -11,7 +11,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 export const metadata: Metadata = {
   title: "Web para abogados: 5 factores clave en 2026",
   description:
-    "Colegiación visible, confidencialidad del cliente, arquitectura por área de práctica y prueba social sin infringir la deontología: los 5 factores que definen la web de un despacho de abogados que capta casos.",
+    "Colegiación visible, confidencialidad, áreas de práctica y prueba social sin romper la deontología: los 5 factores de la web de un despacho que capta casos.",
   alternates: alternatesFor("/5-factores-web-despacho-abogados/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-despacho-abogados/" },
   openGraph: {
     title: "5 factores clave en la web de un despacho de abogados | Mkt Web 360",

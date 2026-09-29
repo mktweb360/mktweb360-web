@@ -11,7 +11,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 export const metadata: Metadata = {
   title: "Web para clínicas dentales: 5 factores clave",
   description:
-    "Publicidad sanitaria según el RD 1907/1996, datos de salud protegidos por el RGPD, número de colegiado visible y transparencia de precios: los 5 factores que determinan si la web de tu clínica dental capta pacientes o pierde su confianza.",
+    "Publicidad sanitaria (RD 1907/1996), datos de salud, número de colegiado y precios claros: 5 claves para que la web de tu clínica dental capte pacientes.",
   alternates: alternatesFor("/5-factores-web-clinicas-dentales/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-clinicas-dentales/" },
   openGraph: {
     title: "5 factores clave en la web de una clínica dental | Mkt Web 360",

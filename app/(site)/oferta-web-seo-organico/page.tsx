@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Página web + 6 meses de SEO por 999 €",
   description:
-    "Web profesional + 6 meses de SEO por 999€ + IVA. También disponible solo la web, sin SEO, desde 249€. Hosting, dominio, correo corporativo, páginas legales y soporte incluidos. Sin permanencia.",
+    "Web profesional + 6 meses de SEO por 999 € + IVA, o solo la web desde 249 €. Hosting, dominio, correo corporativo, páginas legales y soporte incluidos.",
   alternates: { canonical: "https://www.mktweb360.com/oferta-web-seo-organico/" },
   robots: { index: true, follow: true },
   openGraph: {

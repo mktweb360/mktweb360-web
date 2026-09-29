@@ -12,7 +12,7 @@ const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 export const metadata: Metadata = {
   title: "SEO social: Instagram, TikTok y LinkedIn",
   description:
-    "El 40% de la Generación Z busca en TikTok antes que en Google. El SEO social optimiza tu presencia en los buscadores de Instagram, TikTok y LinkedIn. Estrategias por plataforma para 2026.",
+    "SEO social: cómo optimizar tu presencia en los buscadores internos de Instagram, TikTok y LinkedIn, con estrategias concretas para cada plataforma.",
   alternates: alternatesFor(`/${SLUG}/`) ?? { canonical: URL_CANONICAL },
   openGraph: {
     title: "SEO social: Instagram, TikTok y LinkedIn como buscadores | Mkt Web 360",

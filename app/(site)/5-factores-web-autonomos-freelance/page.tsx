@@ -11,7 +11,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 export const metadata: Metadata = {
   title: "Web para autónomos y freelance: 5 claves",
   description:
-    "Aviso legal LSSI-CE, factura electrónica obligatoria (Ley Crea y Crece) y captación de clientes sin depender de intermediarios: los 5 factores que determinan si la web de un autónomo o freelance genera confianza y encargos.",
+    "Aviso legal LSSI-CE, factura electrónica (Ley Crea y Crece) y captación sin intermediarios: los 5 factores que hacen que la web de un autónomo genere encargos.",
   alternates: alternatesFor("/5-factores-web-autonomos-freelance/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-autonomos-freelance/" },
   openGraph: {
     title: "5 factores clave en la web de un autónomo o freelance | Mkt Web 360",

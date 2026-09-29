@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "LinkedIn para pymes: cómo generar leads",
   description:
-    "LinkedIn ha cambiado más en 2026 que en los 5 años anteriores. Nuevo algoritmo, vídeo como formato dominante, Employee Generated Content y social selling. Cómo aprovecharlo si eres una pyme.",
+    "Cómo usar LinkedIn en 2026 si eres una pyme: algoritmo, vídeo, contenido de empleados y social selling para generar leads sin gastar en publicidad.",
   alternates: alternatesFor("/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/") ?? { canonical: "https://www.mktweb360.com/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/" },
   openGraph: {
     title: "LinkedIn para pymes españolas en 2026: guía práctica para generar leads | Mkt Web 360",

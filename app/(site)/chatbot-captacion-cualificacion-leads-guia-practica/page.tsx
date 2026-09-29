@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "Chatbot para captar y cualificar leads",
   description:
-    "Un chatbot bien configurado puede captar leads 24/7, cualificarlos con preguntas estratégicas y pasarlos al CRM con contexto completo. Guía práctica para implementar un sistema de captación con chatbot en 2026.",
+    "Cómo usar un chatbot para captar leads 24/7, cualificarlos con las preguntas correctas y pasarlos a tu CRM con contexto. Guía práctica paso a paso.",
   alternates: alternatesFor("/chatbot-captacion-cualificacion-leads-guia-practica/") ?? { canonical: "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/" },
   openGraph: {
     title: "Cómo usar un chatbot para captar y cualificar leads: guía práctica | Mkt Web 360",

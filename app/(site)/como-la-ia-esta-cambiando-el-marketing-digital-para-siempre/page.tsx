@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "Cómo la IA está cambiando el marketing digital",
   description:
-    "La IA ya no es una tendencia en marketing: es la infraestructura. Más del 70% de las interacciones de marketing digital estarán influenciadas por IA en 2026. Qué cambia, qué no cambia y qué tienes que hacer.",
+    "La IA ya es la infraestructura del marketing digital. Qué cambia, qué no cambia y qué debe hacer tu negocio para aprovecharla sin perder autenticidad.",
   alternates: alternatesFor("/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/") ?? { canonical: "https://www.mktweb360.com/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/" },
   openGraph: {
     title: "Cómo la IA está cambiando el marketing digital para siempre (y qué significa para tu negocio) | Mkt Web 360",
