@@ -32,16 +32,6 @@ const articleSchema = {
   mainEntityOfPage: "https://www.mktweb360.com/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/",
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
-    { "@type": "ListItem", position: 3, name: "GEO para pymes", item: "https://www.mktweb360.com/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/" },
-  ],
-};
-
 const FAQS = [
   {
     q: "¿Necesito contratar a alguien para hacer GEO o puedo hacerlo yo?",
@@ -75,7 +65,6 @@ export default function GeoParaPymesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <article className="max-w-3xl mx-auto px-4 py-12">

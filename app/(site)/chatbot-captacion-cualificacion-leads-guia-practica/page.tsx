@@ -34,16 +34,6 @@ const articleSchema = {
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/",
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
-    { "@type": "ListItem", position: 3, name: "Chatbot para captar y cualificar leads", item: "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/" },
-  ],
-};
-
 const FAQS = [
   {
     q: "¿El chatbot puede reemplazar al equipo de ventas?",
@@ -77,7 +67,6 @@ export default function ChatbotCaptacionLeadsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <article className="max-w-3xl mx-auto px-4 py-12">

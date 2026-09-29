@@ -41,16 +41,6 @@ const serviceSchema = {
   },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Diseño Web", item: "https://www.mktweb360.com/diseno-de-paginas-web/" },
-    { "@type": "ListItem", position: 3, name: "Páginas Corporativas", item: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/" },
-  ],
-};
-
 const FAQS = [
   {
     q: "¿Cuánto cuesta una página web corporativa profesional?",
@@ -100,7 +90,6 @@ export default function PaginasCorporativasPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* ── HERO ── */}

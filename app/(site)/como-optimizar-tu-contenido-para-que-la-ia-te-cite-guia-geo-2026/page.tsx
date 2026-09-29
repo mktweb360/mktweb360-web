@@ -32,16 +32,6 @@ const articleSchema = {
   mainEntityOfPage: "https://www.mktweb360.com/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/",
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
-    { "@type": "ListItem", position: 3, name: "Guía GEO 2026: cómo optimizar tu contenido", item: "https://www.mktweb360.com/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/" },
-  ],
-};
-
 const FAQS = [
   {
     q: "¿Qué es llms.txt y necesito tenerlo?",
@@ -75,7 +65,6 @@ export default function OptimizarContenidoGEOPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <article className="max-w-3xl mx-auto px-4 py-12">

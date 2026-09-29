@@ -32,16 +32,6 @@ const articleSchema = {
   mainEntityOfPage: "https://www.mktweb360.com/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/",
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
-    { "@type": "ListItem", position: 3, name: "SEO en la era de la IA", item: "https://www.mktweb360.com/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/" },
-  ],
-};
-
 const FAQS = [
   {
     q: "¿Debo cambiar mi estrategia de keywords con los AI Overviews?",
@@ -75,7 +65,6 @@ export default function SeoEraIaPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <article className="max-w-3xl mx-auto px-4 py-12">

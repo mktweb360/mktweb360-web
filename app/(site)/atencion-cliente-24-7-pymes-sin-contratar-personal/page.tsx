@@ -34,16 +34,6 @@ const articleSchema = {
   mainEntityOfPage: "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/",
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
-    { "@type": "ListItem", position: 3, name: "Atención al cliente 24/7 para pymes", item: "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/" },
-  ],
-};
-
 const FAQS = [
   {
     q: "¿Los clientes se frustran cuando hablan con un bot?",
@@ -77,7 +67,6 @@ export default function AtencionCliente247Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <article className="max-w-3xl mx-auto px-4 py-12">

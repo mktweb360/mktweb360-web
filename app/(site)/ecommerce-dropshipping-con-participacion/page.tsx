@@ -35,15 +35,6 @@ const serviceSchema = {
     url: "https://www.mktweb360.com/ecommerce-dropshipping-con-participacion/",
   },
 };
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Ecommerce y Dropshipping con Participación", item: "https://www.mktweb360.com/ecommerce-dropshipping-con-participacion/" },
-  ],
-};
-
 const FAQS = [
   { q: "¿Qué es el dropshipping y cómo funciona?",
     a: "El dropshipping es un modelo de ecommerce donde vendes productos sin tener stock físico. Cuando un cliente hace un pedido en tu tienda, el proveedor envía el producto directamente al cliente. Tú ganas la diferencia entre el precio de venta y el precio del proveedor. No necesitas almacén, ni inversión en stock, ni gestión logística propia. El reto está en elegir el nicho correcto, los proveedores adecuados y tener una estrategia de marketing que genere tráfico cualificado." },
@@ -69,7 +60,6 @@ export default function EcommerceDropshippingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">

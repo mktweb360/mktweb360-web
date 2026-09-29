@@ -34,16 +34,6 @@ const articleSchema = {
   mainEntityOfPage: "https://www.mktweb360.com/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/",
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
-    { "@type": "ListItem", position: 3, name: "Marketing digital para autónomos en 2026", item: "https://www.mktweb360.com/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/" },
-  ],
-};
-
 const FAQS = [
   {
     q: "¿Cuánto dinero necesita un autónomo para hacer marketing digital?",
@@ -77,7 +67,6 @@ export default function MarketingDigitalAutonomos2026Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <article className="max-w-3xl mx-auto px-4 py-12">

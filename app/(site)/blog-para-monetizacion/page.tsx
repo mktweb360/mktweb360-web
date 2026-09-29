@@ -35,15 +35,6 @@ const serviceSchema = {
     url: "https://www.mktweb360.com/blog-para-monetizacion/",
   },
 };
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Blog para Monetización", item: "https://www.mktweb360.com/blog-para-monetizacion/" },
-  ],
-};
-
 const FAQS = [
   { q: "¿Cuánto tiempo tarda un blog en generar ingresos?",
     a: "Los primeros ingresos con AdSense suelen aparecer entre los 4 y 8 meses, cuando el blog empieza a acumular tráfico orgánico. Para generar ingresos consistentes y significativos, el horizonte habitual es de 12 a 18 meses. Los blogs de nicho bien enfocados con marketing de afiliados pueden acortar este plazo si el nicho tiene alta intención de compra." },
@@ -69,7 +60,6 @@ export default function BlogMonetizacionPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">

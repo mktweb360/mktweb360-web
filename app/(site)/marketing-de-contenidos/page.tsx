@@ -35,15 +35,6 @@ const serviceSchema = {
     url: "https://www.mktweb360.com/marketing-de-contenidos/",
   },
 };
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Marketing de Contenidos", item: "https://www.mktweb360.com/marketing-de-contenidos/" },
-  ],
-};
-
 const FAQS = [
   { q: "¿Cuántos artículos al mes necesito para ver resultados en SEO?",
     a: "Para la mayoría de webs de empresa, entre 2 y 4 artículos mensuales bien optimizados son suficientes para construir autoridad temática y mejorar el posicionamiento orgánico. Lo más importante no es la cantidad sino la calidad, la relevancia para tu audiencia y la optimización SEO de cada pieza." },
@@ -70,7 +61,6 @@ export default function ContentMarketingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
