@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cuándo Elegir SEO y Cuándo Google Ads: Guía para Decidir Bien",
+  title: "SEO o Google Ads: cuándo elegir cada uno",
   description: "Cómo decidir entre SEO y Google Ads según tu negocio, presupuesto, urgencia y horizonte temporal. Con ejemplos reales y una matriz de decisión práctica.",
   alternates: alternatesFor("/cuando-elegir-seo-vs-google-ads/") ?? { canonical: "https://www.mktweb360.com/cuando-elegir-seo-vs-google-ads/" },
   openGraph: {

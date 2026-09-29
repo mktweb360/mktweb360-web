@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo Importar Productos en WooCommerce con CSV: Guía Paso a Paso",
+  title: "Importar productos en WooCommerce con CSV",
   description: "Aprende a importar productos en WooCommerce usando archivos CSV. Formato correcto, errores comunes y cómo subir miles de productos sin trabajo manual.",
   alternates: alternatesFor("/importar-productos-woocommerce/") ?? { canonical: "https://www.mktweb360.com/importar-productos-woocommerce/" },
   openGraph: {

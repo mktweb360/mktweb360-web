@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Marketing Digital para Empresas en Toledo — Guía Práctica",
+  title: "Marketing digital en Toledo para empresas",
   description: "Guía de marketing digital para empresas en Toledo. SEO, Google Ads, redes sociales y diseño web para negocios toledanos que quieren crecer online.",
   alternates: alternatesFor("/marketing-digital-toledo/") ?? { canonical: "https://www.mktweb360.com/marketing-digital-toledo/" },
   openGraph: {

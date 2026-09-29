@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "SEO para Servicios Urgentes 24h — Cómo Posicionar en Google",
+  title: "SEO para servicios urgentes 24 horas",
   description: "Cómo posicionar servicios urgentes 24 horas en Google. Estrategias SEO específicas para cerrajeros, fontaneros, electricistas y otros servicios de urgencia.",
   alternates: alternatesFor("/seo-para-servicios-urgentes-24h/") ?? { canonical: "https://www.mktweb360.com/seo-para-servicios-urgentes-24h/" },
   openGraph: {

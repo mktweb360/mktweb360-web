@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo optimizar tu contenido para que la IA te cite: guía GEO 2026",
+  title: "Cómo lograr que la IA cite tu contenido",
   description:
     "Guía técnica y práctica de GEO para pymes. Aprende a estructurar tu contenido, implementar schema markup avanzado, configurar llms.txt y construir autoridad semántica para aparecer en ChatGPT, Gemini y Perplexity.",
   alternates: alternatesFor("/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/") ?? { canonical: "https://www.mktweb360.com/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/" },

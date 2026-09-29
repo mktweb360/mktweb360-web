@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo Conectar el TPV de tu Tienda Física con tu Tienda Online",
+  title: "Conectar el TPV con tu tienda online",
   description: "Guía para integrar tu TPV físico con WooCommerce. Stock unificado, ventas sincronizadas y gestión centralizada para negocios con presencia online y física.",
   alternates: alternatesFor("/conectar-tpv-tienda-online/") ?? { canonical: "https://www.mktweb360.com/conectar-tpv-tienda-online/" },
   openGraph: {

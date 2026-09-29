@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Google Merchant Center para ecommerce: guía completa 2026",
+  title: "Google Merchant Center para ecommerce: guía",
   description:
     "Aprende a configurar Google Merchant Center, crear tu feed de productos y aparecer en Google Shopping para aumentar las ventas de tu tienda online.",
   alternates: alternatesFor("/google-merchant-center-ecommerce-guia/") ?? { canonical: "https://www.mktweb360.com/google-merchant-center-ecommerce-guia/" },

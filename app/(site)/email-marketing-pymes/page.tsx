@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Email Marketing para PYMEs — Primeros Pasos y Estrategia",
+  title: "Email marketing para pymes: primeros pasos",
   description: "Guía de email marketing para PYMEs. Cómo empezar, qué herramientas usar, cómo construir tu lista y diseñar campañas que convierten. Resultados reales.",
   alternates: alternatesFor("/email-marketing-pymes/") ?? { canonical: "https://www.mktweb360.com/email-marketing-pymes/" },
   openGraph: {

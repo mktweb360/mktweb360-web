@@ -5,7 +5,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Google Ads sin comisión sobre presupuesto: por qué cambia todo",
+  title: "Google Ads sin comisión sobre tu inversión",
   description: "Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras y cómo evaluar el modelo de gestión que más te conviene.",
   alternates: {
     canonical: "https://www.mktweb360.com/google-ads-sin-comision-agencia-marketing/",

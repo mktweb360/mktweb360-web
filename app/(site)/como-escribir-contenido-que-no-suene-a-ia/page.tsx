@@ -10,7 +10,7 @@ const SLUG = "como-escribir-contenido-que-no-suene-a-ia";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 
 export const metadata: Metadata = {
-  title: "Cómo escribir contenido que no suene a IA: técnicas para humanizar tu copy",
+  title: "Cómo escribir contenido que no suene a IA",
   description:
     "El contenido que suena a IA no convierte y puede penalizar en Google. Técnicas concretas para crear textos que suenen humanos, auténticos y útiles — aunque uses herramientas de IA.",
   alternates: alternatesFor(`/${SLUG}/`) ?? { canonical: URL_CANONICAL },

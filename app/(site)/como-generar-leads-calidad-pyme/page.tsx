@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo generar leads de calidad para una pyme sin gastar más en publicidad",
+  title: "Cómo generar leads de calidad para una pyme",
   description:
     "Aprende cómo generar leads de calidad para tu pyme mejorando mensaje, segmentación, canales, web y proceso comercial.",
   alternates: alternatesFor("/como-generar-leads-calidad-pyme/") ?? { canonical: "https://www.mktweb360.com/como-generar-leads-calidad-pyme/" },

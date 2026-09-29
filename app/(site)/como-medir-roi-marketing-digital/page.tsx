@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo Medir el ROI de tus Campañas de Marketing Digital",
+  title: "Cómo medir el ROI del marketing digital",
   description: "Aprende a calcular y medir el ROI de tus inversiones en marketing digital. Google Analytics 4, atribución, métricas clave y errores que debes evitar.",
   alternates: alternatesFor("/como-medir-roi-marketing-digital/") ?? { canonical: "https://www.mktweb360.com/como-medir-roi-marketing-digital/" },
   openGraph: {

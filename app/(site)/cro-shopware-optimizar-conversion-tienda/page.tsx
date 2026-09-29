@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "CRO para Shopware: cómo optimizar la conversión de tu tienda",
+  title: "CRO para Shopware: mejora la conversión",
   description:
     "Sube la conversión de tu tienda Shopware: eventos GA4 clave, las 5 causas reales de abandono de carrito y optimización de fichas de producto y checkout.",
   alternates: alternatesFor("/cro-shopware-optimizar-conversion-tienda/") ?? { canonical: "https://www.mktweb360.com/cro-shopware-optimizar-conversion-tienda/" },

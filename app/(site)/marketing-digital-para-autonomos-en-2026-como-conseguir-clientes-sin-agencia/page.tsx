@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Marketing digital para autónomos en 2026: cómo conseguir clientes sin contratar una agencia",
+  title: "Marketing digital para autónomos: guía 2026",
   description:
     "Los autónomos tienen más herramientas que nunca para conseguir clientes online por su cuenta. Guía práctica: SEO local, Google Business Profile, LinkedIn y contenido para autónomos en 2026.",
   alternates: alternatesFor("/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/") ?? { canonical: "https://www.mktweb360.com/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/" },

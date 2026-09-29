@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Agencias de Marketing Digital en Toledo — Qué Buscar y Qué Evitar",
+  title: "Agencias de marketing digital en Toledo",
   description: "Guía para elegir una agencia de marketing digital en Toledo. Qué preguntar, qué red flags detectar y cómo comparar propuestas antes de contratar.",
   alternates: alternatesFor("/agencias-marketing-digital-toledo/") ?? { canonical: "https://www.mktweb360.com/agencias-marketing-digital-toledo/" },
   openGraph: {

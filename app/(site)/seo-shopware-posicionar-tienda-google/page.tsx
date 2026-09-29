@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "SEO para Shopware: cómo posicionar tu tienda en Google",
+  title: "SEO para Shopware: posiciona tu tienda",
   description:
     "Guía de SEO técnico para Shopware 6: URLs, navegación facetada, schema de producto, Core Web Vitals y fichas optimizadas para posicionar tu tienda en Google.",
   alternates: alternatesFor("/seo-shopware-posicionar-tienda-google/") ?? { canonical: "https://www.mktweb360.com/seo-shopware-posicionar-tienda-google/" },

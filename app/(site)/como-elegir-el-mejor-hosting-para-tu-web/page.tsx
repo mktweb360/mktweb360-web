@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo Elegir el Mejor Hosting para tu Web — Guía Completa 2024",
+  title: "Cómo elegir el mejor hosting para tu web",
   description: "Guía completa para elegir el mejor hosting para tu página web. Tipos de hosting, qué factores importan, cómo afecta al SEO y recomendaciones por tipo de proyecto.",
   alternates: alternatesFor("/como-elegir-el-mejor-hosting-para-tu-web/") ?? { canonical: "https://www.mktweb360.com/como-elegir-el-mejor-hosting-para-tu-web/" },
   openGraph: {

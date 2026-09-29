@@ -9,7 +9,7 @@ import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
 import { DEMO_BY_ID } from "@/lib/demos";
 
 export const metadata: Metadata = {
-  title: "5 factores clave en la web de servicios profesionales (2026)",
+  title: "Web de servicios profesionales: 5 claves",
   description:
     "Aviso legal conforme a la LSSI-CE, política de privacidad y cookies, y consentimiento para comunicaciones comerciales: los 5 factores que determinan si la web de tu despacho de servicios profesionales genera confianza o riesgo legal.",
   alternates: alternatesFor("/5-factores-web-servicios-profesionales/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-servicios-profesionales/" },

@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "10 errores digitales al montar un negocio desde cero (y cómo evitarlos)",
+  title: "10 errores digitales al montar un negocio",
   description:
     "Arrancar un negocio con errores digitales cuesta dinero y tiempo. Descubre los más frecuentes y cómo evitarlos desde el principio.",
   alternates: alternatesFor("/errores-digitales-negocio-nuevo/") ?? { canonical: "https://www.mktweb360.com/errores-digitales-negocio-nuevo/" },

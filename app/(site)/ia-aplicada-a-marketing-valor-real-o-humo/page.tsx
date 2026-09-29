@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "IA aplicada a marketing: dónde aporta valor real en 2025",
+  title: "IA en marketing: dónde aporta valor real",
   description:
     "Descubre dónde la IA aplicada a marketing aporta valor real, qué usos conviene priorizar y dónde sigue habiendo demasiado ruido.",
   alternates: alternatesFor("/ia-aplicada-a-marketing-valor-real-o-humo/") ?? { canonical: "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/" },

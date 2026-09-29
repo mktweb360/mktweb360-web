@@ -10,7 +10,7 @@ const SLUG = "marketing-digital-con-ia-y-respuestas-cero-clic";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 
 export const metadata: Metadata = {
-  title: "Marketing digital con IA y respuestas de cero clic: qué hacer ahora",
+  title: "Marketing con IA y búsquedas de cero clic",
   description:
     "La IA responde directamente en Google, ChatGPT y Perplexity sin que el usuario haga clic. Cómo adaptar tu estrategia de marketing digital para seguir captando clientes en la era del cero clic.",
   alternates: alternatesFor(`/${SLUG}/`) ?? { canonical: URL_CANONICAL },

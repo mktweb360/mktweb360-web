@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Qué puede automatizar una pyme en marketing y ventas en 2025",
+  title: "Qué puede automatizar una pyme en marketing",
   description:
     "Descubre qué procesos puede automatizar una pyme en marketing y ventas para ahorrar tiempo, mejorar seguimiento y captar mejor.",
   alternates: alternatesFor("/que-puede-automatizar-una-pyme-en-marketing-y-ventas/") ?? { canonical: "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/" },

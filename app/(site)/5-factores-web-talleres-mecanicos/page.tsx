@@ -9,7 +9,7 @@ import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
 import { DEMO_BY_ID } from "@/lib/demos";
 
 export const metadata: Metadata = {
-  title: "5 factores clave en la web de un taller mecánico (2026)",
+  title: "Web para talleres mecánicos: 5 claves",
   description:
     "Hoja de reclamaciones, presupuesto previo por escrito (RD 1457/1986) y garantía de reparación: los 5 factores que determinan si la web de tu taller mecánico capta clientes o pierde su confianza.",
   alternates: alternatesFor("/5-factores-web-talleres-mecanicos/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-talleres-mecanicos/" },

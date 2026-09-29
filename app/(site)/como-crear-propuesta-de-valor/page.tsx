@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo crear una propuesta de valor que atraiga a los clientes que quieres",
+  title: "Cómo crear una propuesta de valor que venda",
   description:
     "Una propuesta de valor clara es la base de cualquier estrategia de marketing efectiva. Aprende a construirla con ejemplos prácticos para pymes.",
   alternates: alternatesFor("/como-crear-propuesta-de-valor/") ?? { canonical: "https://www.mktweb360.com/como-crear-propuesta-de-valor/" },

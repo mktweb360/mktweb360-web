@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "SEO en Toledo — Posicionamiento Web para Negocios Locales",
+  title: "SEO en Toledo para negocios locales",
   description: "Cómo mejorar el SEO de tu negocio en Toledo. Aparece en Google cuando tus clientes te buscan. Guía de posicionamiento web para empresas toledanas.",
   alternates: alternatesFor("/seo-toledo/") ?? { canonical: "https://www.mktweb360.com/seo-toledo/" },
   openGraph: {

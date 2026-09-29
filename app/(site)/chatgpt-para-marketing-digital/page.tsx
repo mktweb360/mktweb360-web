@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo Usar ChatGPT para Marketing Digital Sin Perder la Autenticidad",
+  title: "ChatGPT para marketing digital: guía práctica",
   description: "Guía práctica para usar ChatGPT en marketing digital. Qué tareas delegar, cómo mantener la voz de marca, prompts efectivos y qué no dejar en manos de la IA.",
   alternates: alternatesFor("/chatgpt-para-marketing-digital/") ?? { canonical: "https://www.mktweb360.com/chatgpt-para-marketing-digital/" },
   openGraph: {

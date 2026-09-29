@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "SEO en Madrid: Cómo Posicionar tu Negocio en la Capital",
+  title: "SEO en Madrid: posiciona tu negocio",
   description: "Guía de SEO para negocios en Madrid. Competencia, keywords locales, Google Business Profile y estrategia para destacar en el mercado más competitivo de España.",
   alternates: alternatesFor("/seo-madrid/") ?? { canonical: "https://www.mktweb360.com/seo-madrid/" },
   openGraph: {
