@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { getLatestPosts, getRelatedPosts, getPostsByCategory } from "@/lib/blog";
+import { relatedFor, topicOfPage, topicFromCategoryProp, slugFromPath, pillarFor } from "@/lib/internal-links";
 import { esSlugFor, translatedSlugFor } from "@/lib/i18n/routes";
 import { getPostI18n, getCategoryI18n } from "@/lib/blog-i18n";
 
@@ -36,16 +36,14 @@ export function RelatedArticles({ currentSlug, category, title }: Props) {
 
   // Si estamos en una página EN/FR, el currentSlug que llega es el slug traducido.
   // Hacemos lookup inverso para obtener el slug ES y poder buscar en allPosts.
-  const esSlug =
-    currentSlug && isTranslated
-      ? (esSlugFor(currentSlug) ?? currentSlug) // fallback: usar tal cual si no hay match
-      : currentSlug;
+  // Slug ES de la página actual: prop explícita o, si no llega, el pathname.
+  const rawSlug = currentSlug ?? slugFromPath(pathname);
+  const esSlug = isTranslated ? (esSlugFor(rawSlug) ?? rawSlug) : rawSlug;
 
-  const posts = esSlug
-    ? getRelatedPosts(esSlug, 3)
-    : category
-    ? getPostsByCategory(category, 3)
-    : getLatestPosts(3);
+  // Tema: el propio de la página (servicio o artículo) y, si no se conoce, el de la prop category.
+  const topic = topicOfPage(esSlug) ?? topicFromCategoryProp(category);
+  const posts = relatedFor(esSlug, topic, 3);
+  const pillar = isTranslated ? null : pillarFor(esSlug, topic);
 
   // Textos de UI localizados
   const defaultTitle =
@@ -118,6 +116,15 @@ export function RelatedArticles({ currentSlug, category, title }: Props) {
             );
           })}
         </div>
+        {pillar && (
+          <p className="mt-8 text-base text-gray-700">
+            {pillar.lead}{" "}
+            <Link href={pillar.href} className="font-semibold text-accent-700 underline underline-offset-2 hover:text-accent-800">
+              {pillar.anchor}
+            </Link>
+            .
+          </p>
+        )}
       </div>
     </section>
   );
