@@ -392,7 +392,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 <Link href={`/${lang}/seo-web-positioning/`} className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
                   {isEn ? "See national SEO →" : "Voir le SEO national →"}
                 </Link>
-                <Link href={`/${lang}/seo-vs-google-ads/`} className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
+                <Link href={`/${lang}/when-to-choose-seo-vs-google-ads/`} className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
                   {isEn ? "SEO or Google Ads? →" : "SEO ou Google Ads ? →"}
                 </Link>
               </div>

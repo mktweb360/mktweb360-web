@@ -133,6 +133,10 @@ const nextConfig: NextConfig = {
       // Expired SEO 6x3 offer — retired, redirect to the evergreen SEO service page.
       // Sources are slash-less because trailingSlash is off (Next strips '/x/' → '/x' before matching).
       { source: '/landing/seo-6x3/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      // Canibalización fusionada (29-sep-2026): mismo tema que /cuando-elegir-seo-vs-google-ads/.
+      { source: '/seo-o-google-ads-que-conviene-mas/', destination: '/cuando-elegir-seo-vs-google-ads/', permanent: true },
+      { source: '/en/seo-o-google-ads-que-conviene-mas/', destination: '/en/when-to-choose-seo-vs-google-ads/', permanent: true },
+      { source: '/fr/seo-o-google-ads-que-conviene-mas/', destination: '/fr/when-to-choose-seo-vs-google-ads/', permanent: true },
       // Ofertas caducadas (SEO 6x3 y verano SEO+GEO+GBP, retirada 29-sep-2026) -> servicio SEO evergreen.
       // Ver CAMPANA-seo-geo-gbp-verano-2026.md en Drive.
       { source: '/oferta-seo/:path*/', destination: '/seo-posicionamiento-web-organico/', permanent: true },

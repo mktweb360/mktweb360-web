@@ -235,7 +235,7 @@ export default function SeoLocalPage() {
                 <Link href="/seo-posicionamiento-web-organico/" className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
                   Ver SEO nacional →
                 </Link>
-                <Link href="/seo-o-google-ads-que-conviene-mas/" className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
+                <Link href="/cuando-elegir-seo-vs-google-ads/" className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
                   ¿SEO o Google Ads? →
                 </Link>
               </div>

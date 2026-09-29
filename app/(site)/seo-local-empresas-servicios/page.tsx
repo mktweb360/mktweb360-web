@@ -135,7 +135,7 @@ export default function SeoLocalPage() {
           <p>Una buena web local debe presentar con claridad el servicio, la zona de trabajo, las señales de credibilidad y la forma de contacto. La versión móvil tiene que estar muy bien resuelta porque gran parte de la demanda local llega desde el teléfono. El objetivo no es solo atraer clics, sino generar oportunidades útiles en el mercado local.</p>
 
           <p className="text-sm text-gray-500">
-            Ver también: <Link href="/seo-o-google-ads-que-conviene-mas/" className="text-accent-500 hover:underline">SEO o Google Ads: qué conviene más</Link> · <Link href="/como-puede-un-autonomo-conseguir-clientes-por-internet/" className="text-accent-500 hover:underline">Cómo puede un autónomo conseguir clientes por internet</Link>
+            Ver también: <Link href="/cuando-elegir-seo-vs-google-ads/" className="text-accent-500 hover:underline">SEO o Google Ads: cuándo elegir cada uno</Link> · <Link href="/como-puede-un-autonomo-conseguir-clientes-por-internet/" className="text-accent-500 hover:underline">Cómo puede un autónomo conseguir clientes por internet</Link>
           </p>
 
           <div className="bg-primary-600 text-white rounded-2xl p-8 my-2 text-center">
