@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -68,6 +69,18 @@ export default function ContactPage() {
           </div>
         </aside>
       </div>
+
+      <section className="mt-14">
+        <h2 className="text-2xl font-bold text-primary-600 mb-6">Qué pasa después de enviar tu consulta</h2>
+        <ol className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-700 leading-relaxed">
+          <li className="bg-primary-50 rounded-xl p-5"><strong className="block text-primary-700 mb-1">1. Revisamos tu caso</strong>Revisamos tu web y tu consulta antes de responder, para hablar de tu caso y no con generalidades.</li>
+          <li className="bg-primary-50 rounded-xl p-5"><strong className="block text-primary-700 mb-1">2. Te respondemos en 24 horas</strong>Por email o por teléfono, como prefieras, con un primer diagnóstico y las preguntas que necesitamos resolver.</li>
+          <li className="bg-primary-50 rounded-xl p-5"><strong className="block text-primary-700 mb-1">3. Propuesta a medida</strong>Si encaja, te enviamos una propuesta con objetivos, acciones, plazos y precio. Sin compromiso.</li>
+        </ol>
+        <p className="mt-8 text-gray-700 leading-relaxed">
+          Trabajamos con empresas, pymes y autónomos de toda España en <Link href="/seo-posicionamiento-web-organico/" className="text-accent-700 underline underline-offset-2">SEO</Link>, <Link href="/geo-posicionamiento-ia/" className="text-accent-700 underline underline-offset-2">posicionamiento en IA</Link>, <Link href="/sem-publicidad-ppc/" className="text-accent-700 underline underline-offset-2">Google Ads</Link> y <Link href="/diseno-de-paginas-web/" className="text-accent-700 underline underline-offset-2">diseño web</Link>. Si todavía no sabes por dónde empezar, pide una <Link href="/auditoria-digital/" className="text-accent-700 underline underline-offset-2">auditoría de marketing digital</Link>.
+        </p>
+      </section>
     </div>
     </>
   );
