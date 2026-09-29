@@ -6,11 +6,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Ecommerce y Dropshipping con Participación en Resultados",
-  description: "Montamos y gestionamos tu tienda online de dropshipping con un modelo híbrido: setup fijo + gestión mensual + participación en beneficios. Sin riesgo de stock. Con estrategia real.",
+  title: "Dropshipping con Participación en Resultados",
+  description: "Montamos y gestionamos tu tienda de dropshipping con modelo híbrido: setup fijo, gestión mensual y participación en beneficios. Sin stock y con estrategia real.",
   alternates: alternatesFor("/ecommerce-dropshipping-con-participacion/") ?? { canonical: "https://www.mktweb360.com/ecommerce-dropshipping-con-participacion/" },
   openGraph: {
-    title: "Ecommerce y Dropshipping con Participación en Resultados | Mkt Web 360",
+    title: "Dropshipping con Participación en Resultados | Mkt Web 360",
     description: "Montamos y gestionamos tu tienda online de dropshipping con un modelo híbrido: setup fijo + gestión mensual + participación en beneficios. Sin riesgo de stock. Con estrategia real.",
     url: "https://www.mktweb360.com/ecommerce-dropshipping-con-participacion/",
     images: [{ url: "https://www.mktweb360.com/og-diseno-web-tienda-online.jpg", width: 1200, height: 630 }],

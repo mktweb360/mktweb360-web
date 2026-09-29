@@ -6,7 +6,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Creación de Blog Profesional para Empresas",
-  description: "Creamos y gestionamos blogs corporativos, profesionales y temáticos que posicionan tu marca en Google y generan tráfico orgánico constante. Servicio nacional.",
+  description: "Creación y gestión de blogs corporativos para empresas: estrategia de contenidos, artículos SEO y enlazado que generan tráfico orgánico constante y contactos.",
   alternates: alternatesFor("/creacion-de-blog/") ?? { canonical: "https://www.mktweb360.com/creacion-de-blog/" },
   openGraph: {
     title: "Creación de Blog Profesional para Empresas | Mkt Web 360",
@@ -66,8 +66,8 @@ export default function CreacionBlogPage() {
           <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Creación de Blog" }]} />
           <div className="max-w-3xl mt-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Un blog que trabaja<br />
-              <span className="text-accent-400">para tu negocio 24/7</span>
+              Creación de blogs para empresas<br />
+              <span className="text-accent-400">que trabajan para tu negocio 24/7</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               Un blog bien construido es el activo digital más rentable que puede tener una empresa. Genera tráfico orgánico constante, posiciona tu marca como referente y convierte lectores en clientes.

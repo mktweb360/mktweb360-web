@@ -6,12 +6,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Gestión Redes Sociales — Community Manager España",
-  description:
-    "Servicio profesional de gestión de redes sociales y community management para empresas. Instagram, Facebook, LinkedIn y TikTok. Estrategia, contenido, publicaciones e informes mensuales. Servicio nacional.",
+  title: "Gestión de Redes Sociales para Empresas",
+  description: "Gestión de redes sociales para empresas: estrategia, contenido y community management en Instagram, Facebook, LinkedIn y TikTok, con informe mensual.",
   alternates: alternatesFor("/smm-social-media-marketing/") ?? { canonical: "https://www.mktweb360.com/smm-social-media-marketing/" },
   openGraph: {
-    title: "Gestión Redes Sociales — Community Manager | Mkt Web 360",
+    title: "Gestión de Redes Sociales para Empresas | Mkt Web 360",
     description: "Community management profesional para tu empresa. Instagram, Facebook, LinkedIn, TikTok.",
     url: "https://www.mktweb360.com/smm-social-media-marketing/",
     images: [{ url: "https://www.mktweb360.com/og-smm.jpg", width: 1200, height: 630 }],
@@ -87,7 +86,7 @@ export default function SmmPage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Redes Sociales" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              Gestión Redes Sociales — Community Manager España
+              Gestión de redes sociales para empresas
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               Gestionamos tus redes sociales de forma profesional para construir una comunidad fiel, aumentar tu visibilidad de marca y convertir seguidores en clientes.

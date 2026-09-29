@@ -7,11 +7,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Analítica Web para Empresas — Datos que Generan Decisiones",
-  description: "Servicio profesional de analítica web para empresas. Configuración de GA4, GTM, seguimiento de conversiones, dashboards de negocio e informes mensuales. Decisiones basadas en datos reales. Servicio nacional.",
+  title: "Analítica Web para Empresas: GA4 y GTM",
+  description: "Analítica web para empresas: configuración de GA4 y Google Tag Manager, medición de conversiones y cuadros de mando para decidir con datos dónde invertir.",
   alternates: alternatesFor("/analitica-web/") ?? { canonical: "https://www.mktweb360.com/analitica-web/" },
   openGraph: {
-    title: "Analítica Web para Empresas | Mkt Web 360",
+    title: "Analítica Web para Empresas: GA4 y GTM | Mkt Web 360",
     description: "Configuración de GA4, GTM, dashboards de negocio y seguimiento de conversiones. Decisiones basadas en datos reales.",
     url: "https://www.mktweb360.com/analitica-web/",
     images: [{ url: "/imagen-analitica-web.jpg", width: 1200, height: 900, alt: "Analítica web Mkt Web 360" }],
@@ -73,7 +73,7 @@ export default function AnaliticaWebPage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Analítica Web" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              Analítica Web — Datos que Generan Decisiones
+              Analítica web para empresas: datos que generan decisiones
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               Sin datos no hay estrategia. Configuramos y gestionamos tu analítica web para que sepas exactamente qué funciona, qué no funciona y dónde invertir para crecer. Cada decisión de marketing respaldada por datos reales.

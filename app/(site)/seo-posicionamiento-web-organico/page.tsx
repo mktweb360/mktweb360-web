@@ -9,11 +9,11 @@ import { OfertasSlider } from "@/components/OfertasSlider";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Agencia SEO España — Primera Página de Google para tu Empresa",
-  description: "Posiciona tu empresa en Google con resultados verificables. SEO técnico, contenido y autoridad. Auditoría gratuita + estrategia personalizada. Sin permanencia.",
+  title: "Agencia SEO: Servicio de Posicionamiento Web",
+  description: "Agencia SEO para empresas: posicionamiento web con auditoría técnica, estrategia de keywords, contenido y autoridad. Informes mensuales y sin permanencia.",
   alternates: alternatesFor("/seo-posicionamiento-web-organico/") ?? { canonical: "https://www.mktweb360.com/seo-posicionamiento-web-organico/" },
   openGraph: {
-    title: "Agencia SEO España — Primera Página de Google para tu Empresa | Mkt Web 360",
+    title: "Agencia SEO: Servicio de Posicionamiento Web | Mkt Web 360",
     description: "Posiciona tu web en Google con estrategias SEO probadas. Resultados duraderos. Servicio nacional.",
     url: "https://www.mktweb360.com/seo-posicionamiento-web-organico/",
     images: [{ url: "https://www.mktweb360.com/og-seo.jpg", width: 1200, height: 630 }],
@@ -88,8 +88,8 @@ export default function SeoPage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "SEO Posicionamiento Web" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              Primeras posiciones<br />
-              <span className="text-accent-400">clientes que te encuentran</span>
+              Agencia SEO y posicionamiento web<br />
+              <span className="text-accent-400">para que te encuentren los clientes</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               La gran mayoría de las experiencias online comienzan en un buscador. Si no apareces en la primera página, tu competencia se lleva esos clientes cada día. El SEO es la inversión con mayor retorno a largo plazo.
@@ -214,7 +214,7 @@ export default function SeoPage() {
             <p>El SEO local y el SEO nacional responden a intenciones de búsqueda diferentes y requieren estrategias distintas. No es mejor uno que otro — es una cuestión de qué tipo de cliente busca tu servicio y desde dónde.</p>
             <p>El SEO local es la estrategia correcta para negocios que atienden clientes en una zona geográfica específica: clínicas, despachos, tiendas físicas, talleres, restaurantes, academias, instaladores, reformistas. En este caso, las búsquedas que importan incluyen un modificador local — "fontanero Toledo", "gestoría Madrid centro", "clínica dental Salamanca" — o se hacen desde el dispositivo móvil con la ubicación activada. El canal más importante para SEO local es Google Business Profile: la ficha que aparece en el mapa cuando alguien busca tu servicio cerca.</p>
             <p>El SEO nacional se orienta a keywords sin modificador geográfico: "agencia de marketing digital", "software de gestión para pymes", "tienda online de moda sostenible". Compite en un universo más amplio y más competido, lo que requiere mayor autoridad de dominio, más contenido y más tiempo para ver resultados significativos.</p>
-            <p>En Mkt Web 360 trabajamos ambas modalidades. Para negocios con presencia física en Toledo y Castilla-La Mancha, el SEO local es generalmente la inversión con mayor retorno a corto plazo: menor competencia, búsquedas con alta intención de compra, y resultados visibles en 2-4 meses en lugar de 6-12.</p>
+            <p>En Mkt Web 360 trabajamos ambas modalidades. Para negocios con presencia física, el <Link href="/seo-local/" className="text-accent-700 underline underline-offset-2">SEO local</Link> es generalmente la inversión con mayor retorno a corto plazo: menor competencia, búsquedas con alta intención de compra, y resultados visibles en 2-4 meses en lugar de 6-12.</p>
           </div>
         </div>
       </section>
@@ -235,7 +235,7 @@ export default function SeoPage() {
                 El SEO te posiciona en Google. El GEO te posiciona en ChatGPT, Perplexity y Gemini. Cada vez más personas hacen sus búsquedas directamente a la IA — si tu marca no aparece en esas respuestas, estás perdiendo clientes que nunca llegarán a Google.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                En Mkt Web 360 somos pioneros en GEO en España. Nuestros servicios SEO ya incluyen la base técnica necesaria para visibilidad en IA: schemas estructurados, llms.txt, arquitectura de contenido optimizada para LLMs y estrategia de autoridad semántica.
+                En Mkt Web 360 trabajamos el GEO como servicio propio. Nuestros servicios SEO ya incluyen la base técnica necesaria para visibilidad en IA: schemas estructurados, llms.txt, arquitectura de contenido optimizada para LLMs y estrategia de autoridad semántica.
               </p>
               <a href="/geo-posicionamiento-ia/" className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
                 Conocer el servicio GEO →

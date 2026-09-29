@@ -8,11 +8,11 @@ import { HostingBanner } from "@/components/HostingModal";
 import { OfferBannerTiendaOnline } from "@/components/offers/OfferBannerTiendaOnline";
 
 export const metadata: Metadata = {
-  title: "Tiendas Online Profesionales Sin Comisiones",
-  description: "Diseño y desarrollo de tiendas online profesionales sin comisiones ni licencias mensuales. WooCommerce + React. Stripe, Apple Pay y Google Pay incluidos. Servicio nacional.",
+  title: "Diseño de Tiendas Online sin Comisiones",
+  description: "Diseño y desarrollo de tiendas online profesionales sin comisiones por venta ni licencias mensuales. Pasarelas de pago, SEO técnico y formación incluidos.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/diseno-tiendas-online/" },
   openGraph: {
-    title: "Tiendas Online Sin Comisiones | Mkt Web 360",
+    title: "Diseño de Tiendas Online sin Comisiones | Mkt Web 360",
     description: "Tu tienda online profesional sin pagar comisiones por venta ni licencias mensuales. Diseño 100% personalizado.",
     url: "https://www.mktweb360.com/diseno-de-paginas-web/diseno-tiendas-online/",
     images: [{ url: "/imagen-tiendas-online.jpg", width: 1200, height: 900, alt: "Tienda online profesional Mkt Web 360" }],
@@ -145,7 +145,7 @@ export default function TiendasOnlinePage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Diseño Web", href: "/diseno-de-paginas-web/" }, { label: "Tiendas Online" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              Tu tienda online<br />
+              Diseño de tiendas online<br />
               <span className="text-accent-400">sin comisiones ni licencias</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">

@@ -6,8 +6,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Marketing de Contenidos — Estrategia de Contenidos Digitales",
-  description: "Servicio de marketing de contenidos para empresas. Artículos de blog SEO, contenidos para redes sociales, guías, ebooks y estrategia editorial. Contenido que posiciona, atrae y convierte. Servicio nacional.",
+  title: "Marketing de Contenidos para Empresas",
+  description: "Marketing de contenidos para empresas: estrategia editorial, artículos SEO, guías y contenido para redes que posiciona tu marca en Google y en la IA.",
   alternates: alternatesFor("/marketing-de-contenidos/") ?? { canonical: "https://www.mktweb360.com/marketing-de-contenidos/" },
   openGraph: {
     title: "Marketing de Contenidos para Empresas | Mkt Web 360",

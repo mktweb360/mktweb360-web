@@ -5,11 +5,11 @@ import { HostingBanner } from "@/components/HostingModal";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Tienda Online Profesional desde 490€ — Sin Comisiones",
-  description: "Crea tu tienda online profesional desde 490€. Sin comisiones por venta, sin licencias. Diseño 100% personalizado. Web orientada al SEO desde el primer día. Solo 5 plazas.",
+  title: "Tienda Online desde 490 € sin Comisiones",
+  description: "Crea tu tienda online profesional desde 490 €: sin comisiones por venta ni licencias mensuales, diseño personalizado y SEO técnico desde el primer día.",
   alternates: alternatesFor("/tienda-online/") ?? { canonical: "https://www.mktweb360.com/tienda-online/" },
   openGraph: {
-    title: "Tienda Online desde 490€ Sin Comisiones | Mkt Web 360",
+    title: "Tienda Online desde 490 € sin Comisiones | Mkt Web 360",
     description: "Tu tienda online profesional desde 490€. Sin comisiones. Web orientada al SEO. Solo 5 plazas.",
     url: "https://www.mktweb360.com/tienda-online/",
     images: [{ url: "/imagen-tiendas-online.jpg", width: 1200, height: 900, alt: "Tienda online profesional desde 490€" }],

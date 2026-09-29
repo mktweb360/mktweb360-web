@@ -12,11 +12,11 @@ import { LightboxImage } from "@/components/LightboxImage";
 import { SERVICE_DEMOS, TIENDAS_DEMOS } from "@/lib/demos";
 
 export const metadata: Metadata = {
-  title: "Diseño Web Profesional para Empresas — Rápida, SEO y que Convierte",
-  description: "Páginas web que venden: rápidas, posicionadas en Google y optimizadas para convertir visitantes en clientes. Presupuesto sin compromiso en 24h.",
+  title: "Diseño Web: Páginas Web Profesionales",
+  description: "Diseño de páginas web profesionales para empresas: rápidas, listas para posicionar en Google y pensadas para convertir visitas en clientes. Presupuesto en 24 h.",
   alternates: alternatesFor("/diseno-de-paginas-web/") ?? { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/" },
   openGraph: {
-    title: "Diseño Web Profesional para Empresas — Rápida, SEO y que Convierte | Mkt Web 360",
+    title: "Diseño Web: Páginas Web Profesionales | Mkt Web 360",
     description: "Webs profesionales, rápidas y optimizadas para SEO y conversión. Servicio nacional.",
     url: "https://www.mktweb360.com/diseno-de-paginas-web/",
     images: [{ url: "https://www.mktweb360.com/og-paginas-corporativas.jpg", width: 1200, height: 630, alt: "Diseño de páginas web profesionales Mkt Web 360" }],
@@ -110,8 +110,8 @@ export default function WebDesignPage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Diseño Web" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              Tu web que trabaja<br />
-              <span className="text-accent-400">mientras tú trabajas</span>
+              Diseño de páginas web profesionales<br />
+              <span className="text-accent-400">que trabajan mientras tú trabajas</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               Diseñamos páginas web que no solo se ven bien — convierten visitantes en clientes. Rápidas, seguras y optimizadas para Google desde el primer día.
