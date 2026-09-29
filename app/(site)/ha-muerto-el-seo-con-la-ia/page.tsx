@@ -130,7 +130,7 @@ export default function HaMuertoElSeoPage() {
           <p>El SEO lleva décadas evolucionando. Cuando aparecieron los buscadores, evolucionó. Cuando llegó el móvil, evolucionó. Cuando Google empezó a penalizar el contenido de baja calidad, evolucionó. La IA es un cambio más en esa evolución — probablemente el más importante hasta ahora — pero no el fin del SEO. Es el inicio de una nueva fase en la que la diferencia entre hacerlo bien y hacerlo mal se ampliará, no se reducirá.</p>
 
           <p className="text-sm text-gray-500">
-            Ver también: <Link href="/ia-aplicada-a-marketing-valor-real-o-humo/" className="text-accent-500 hover:underline">IA aplicada a marketing: dónde aporta valor real</Link> · <Link href="/seo-o-google-ads-que-conviene-mas/" className="text-accent-500 hover:underline">SEO o Google Ads: qué conviene más</Link>
+            Ver también: <Link href="/ia-aplicada-a-marketing-valor-real-o-humo/" className="text-accent-500 hover:underline">IA aplicada a marketing: dónde aporta valor real</Link> · <Link href="/cuando-elegir-seo-vs-google-ads/" className="text-accent-500 hover:underline">SEO o Google Ads: cuándo elegir cada uno</Link>
           </p>
 
           <div className="bg-primary-600 text-white rounded-2xl p-8 my-2 text-center">

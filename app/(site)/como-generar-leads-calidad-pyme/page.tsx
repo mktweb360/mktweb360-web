@@ -135,7 +135,7 @@ export default function LeadsCalidadPage() {
           <p>El volumen de leads, la tasa de cualificación, el coste por oportunidad útil y la tasa de cierre son los indicadores que permiten entender si el sistema funciona bien o mal. Si solo se mide el número de contactos, se optimiza para cantidad, no para calidad. Y si se mide solo el coste por lead, se puede estar ante una cifra engañosamente buena mientras los cierres son escasos.</p>
 
           <p className="text-sm text-gray-500">
-            Ver también: <Link href="/seo-o-google-ads-que-conviene-mas/" className="text-accent-500 hover:underline">SEO o Google Ads: qué conviene más</Link> · <Link href="/que-puede-automatizar-una-pyme-en-marketing-y-ventas/" className="text-accent-500 hover:underline">Qué puede automatizar una pyme en marketing y ventas</Link>
+            Ver también: <Link href="/cuando-elegir-seo-vs-google-ads/" className="text-accent-500 hover:underline">SEO o Google Ads: cuándo elegir cada uno</Link> · <Link href="/que-puede-automatizar-una-pyme-en-marketing-y-ventas/" className="text-accent-500 hover:underline">Qué puede automatizar una pyme en marketing y ventas</Link>
           </p>
 
           <div className="bg-primary-600 text-white rounded-2xl p-8 my-2 text-center">

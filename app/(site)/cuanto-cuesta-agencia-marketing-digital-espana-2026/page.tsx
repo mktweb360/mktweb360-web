@@ -134,7 +134,7 @@ export default function CuantoCuestaAgenciaPage() {
           <p>Hay banderas rojas que conviene reconocer antes de firmar. Promesas de "primera posición garantizada en Google" (nadie puede garantizarlas). Precios sospechosamente bajos que esconden trabajo automatizado. Ausencia de informes o métricas claras. Y la más importante: que no puedas calcular el retorno. El dato es revelador —según Esconzeta (2026), el 68% de las pymes con agencia no son capaces de medir el ROI de su inversión—. Si no sabes qué te genera lo que pagas, ese es el verdadero problema, no la cifra del presupuesto.</p>
 
           <p className="text-sm text-gray-500">
-            Ver también: <Link href="/seo-o-google-ads-que-conviene-mas/" className="text-accent-500 hover:underline">SEO o Google Ads: qué conviene más</Link> · <Link href="/auditoria-seo-basica/" className="text-accent-500 hover:underline">Cómo hacer una auditoría SEO básica</Link>
+            Ver también: <Link href="/cuando-elegir-seo-vs-google-ads/" className="text-accent-500 hover:underline">SEO o Google Ads: cuándo elegir cada uno</Link> · <Link href="/auditoria-seo-basica/" className="text-accent-500 hover:underline">Cómo hacer una auditoría SEO básica</Link>
           </p>
 
           <div className="bg-primary-600 text-white rounded-2xl p-8 my-2 text-center">

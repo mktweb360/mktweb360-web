@@ -97,16 +97,6 @@ export const BLOG_I18N: Record<string, PostI18n> = {
       excerpt: "Comment générer des leads de qualité pour votre PME en améliorant votre message, segmentation, canaux, site web et processus commercial.",
     },
   },
-  "seo-o-google-ads-que-conviene-mas": {
-    en: {
-      title: "SEO vs Google Ads: Which Is Better for Your Business?",
-      excerpt: "Should you invest in SEO or Google Ads? Find out which channel suits your business, budget and urgency best.",
-    },
-    fr: {
-      title: "SEO vs Google Ads : lequel choisir pour votre entreprise ?",
-      excerpt: "SEO ou Google Ads ? Découvrez quel canal convient le mieux à votre entreprise selon votre budget et vos objectifs.",
-    },
-  },
   "que-revisar-antes-de-invertir-mas-en-marketing-digital": {
     en: {
       title: "What to Review Before Investing More in Digital Marketing",

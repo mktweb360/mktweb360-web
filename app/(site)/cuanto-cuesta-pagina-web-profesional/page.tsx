@@ -143,7 +143,7 @@ export default function CuantoCuestaWebPage() {
           <p>Antes de aceptar un presupuesto, conviene saber qué incluye exactamente: estrategia, arquitectura, diseño, copy, SEO base, analítica, integraciones, revisiones y soporte. También conviene aclarar si la web está pensada solo para verse o también para captar, y si será mantenible y escalable cuando el negocio evolucione.</p>
 
           <p className="text-sm text-gray-500">
-            Ver también: <Link href="/senales-web-necesita-rediseno/" className="text-accent-500 hover:underline">Señales de que tu web necesita un rediseño urgente</Link> · <Link href="/seo-o-google-ads-que-conviene-mas/" className="text-accent-500 hover:underline">SEO o Google Ads: qué conviene más</Link>
+            Ver también: <Link href="/senales-web-necesita-rediseno/" className="text-accent-500 hover:underline">Señales de que tu web necesita un rediseño urgente</Link> · <Link href="/cuando-elegir-seo-vs-google-ads/" className="text-accent-500 hover:underline">SEO o Google Ads: cuándo elegir cada uno</Link>
           </p>
 
           <div className="bg-primary-600 text-white rounded-2xl p-8 my-2 text-center">

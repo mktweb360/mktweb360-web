@@ -38,7 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/diseno-de-paginas-web/diseno-paginas-web-empresa/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/marketing-de-contenidos/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/cuanto-cuesta-pagina-web-profesional/", priority: 0.8, changeFrequency: "monthly" as const },
-    { url: "/seo-o-google-ads-que-conviene-mas/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/seo-local-empresas-servicios/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/que-revisar-antes-de-invertir-mas-en-marketing-digital/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/senales-web-necesita-rediseno/", priority: 0.8, changeFrequency: "monthly" as const },

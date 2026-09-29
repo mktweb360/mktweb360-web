@@ -180,7 +180,7 @@ export default function PlanificadorPalabrasClavePage() {
           </p>
 
           <p className="text-sm text-gray-500">
-            Ver también: <Link href="/cuando-elegir-seo-vs-google-ads/" className="text-accent-500 hover:underline">Cuándo elegir SEO o Google Ads</Link> · <Link href="/seo-o-google-ads-que-conviene-mas/" className="text-accent-500 hover:underline">SEO o Google Ads: qué conviene más a tu negocio</Link>
+            Ver también: <Link href="/cuando-elegir-seo-vs-google-ads/" className="text-accent-500 hover:underline">Cuándo elegir SEO o Google Ads</Link> · <Link href="/cuando-elegir-seo-vs-google-ads/" className="text-accent-500 hover:underline">SEO o Google Ads: qué conviene más a tu negocio</Link>
           </p>
 
           <div className="bg-primary-600 text-white rounded-2xl p-8 my-2 text-center">
