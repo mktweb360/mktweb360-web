@@ -301,7 +301,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               {isEn ? "Local SEO for service businesses" : "SEO local pour entreprises de services"}
             </Link>{" "}
             ·{" "}
-            <Link href={`/${lang}/google-business-profile-management/`} className="text-accent-500 hover:underline">
+            <Link href={`/${lang}/${lang === "en" ? "google-business-profile-service" : "gestion-google-business-profile"}/`} className="text-accent-500 hover:underline">
               {isEn ? "Google Business Profile management" : "Gestion Google Business Profile"}
             </Link>
           </p>

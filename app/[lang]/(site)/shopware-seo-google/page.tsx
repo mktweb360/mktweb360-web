@@ -170,7 +170,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Nous auditons le SEO technique de votre boutique — facettes, canonical, schéma et Core Web Vitals — et vous disons exactement quoi corriger pour gagner du trafic organique."}
           </p>
           <Link
-            href={`/${lang}/contact`}
+            href={`/${lang}/contact/`}
             className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors"
           >
             {isEn ? "Contact us" : "Nous contacter"}
@@ -188,13 +188,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={`/${lang}/contact`}
+              href={`/${lang}/contact/`}
               className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors"
             >
               {isEn ? "Get in touch" : "Nous contacter"}
             </Link>
             <Link
-              href={`/${lang}/${isEn ? "seo-web-positioning" : "positionnement-seo"}`}
+              href={`/${lang}/${isEn ? "seo-web-positioning" : "positionnement-seo"}/`}
               className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
               {isEn ? "SEO service" : "Service SEO"}

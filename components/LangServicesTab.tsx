@@ -16,8 +16,8 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       servicios: [
         { title: "Professional Web Design", desc: "Your website, your most important digital asset. Fast, optimised and designed to convert visitors into customers.", href: "/en/web-design/", icon: "🌐" },
         { title: "Online Store", desc: "Sell across Spain with no commissions per sale and no monthly fees. 100% custom design.", href: "/en/online-store/", icon: "🛒" },
-        { title: "Google Business Profile", desc: "Appear on Google Maps when your customers search for what you offer in your area.", href: "/en/google-business-profile-management/", icon: "📍" },
-        { title: "Online Reputation", desc: "Manage your reviews and build a digital image that generates trust before the first contact.", href: "/en/online-reputation-management/", icon: "⭐" },
+        { title: "Google Business Profile", desc: "Appear on Google Maps when your customers search for what you offer in your area.", href: "/en/google-business-profile-service/", icon: "📍" },
+        { title: "Online Reputation", desc: "Manage your reviews and build a digital image that generates trust before the first contact.", href: "/en/online-reputation/", icon: "⭐" },
       ],
     },
     {
@@ -41,7 +41,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       allHref: "/en/google-ads-management/",
       servicios: [
         { title: "Google Ads", desc: "Generate potential customers from day one. Campaigns optimised for your sector.", href: "/en/google-ads-management/", icon: "🎯" },
-        { title: "Email Marketing", desc: "The channel with the highest ROI in digital marketing. Automated sequences that convert.", href: "/en/email-marketing-service/", icon: "✉️" },
+        { title: "Email Marketing", desc: "The channel with the highest ROI in digital marketing. Automated sequences that convert.", href: "/en/email-marketing-campaigns/", icon: "✉️" },
         { title: "WhatsApp Marketing", desc: "98% open rate. Communicate with your customers where they already are.", href: "/en/whatsapp-marketing-service/", icon: "💬" },
       ],
     },
@@ -50,9 +50,9 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       tipo: "COMMUNITY",
       objetivo: "Build audience and brand",
       emoji: "👥",
-      allHref: "/en/social-media-management/",
+      allHref: "/en/social-media-marketing/",
       servicios: [
-        { title: "Social Media Management", desc: "Professional management of Instagram, LinkedIn, Facebook and TikTok.", href: "/en/social-media-management/", icon: "📱" },
+        { title: "Social Media Management", desc: "Professional management of Instagram, LinkedIn, Facebook and TikTok.", href: "/en/social-media-marketing/", icon: "📱" },
         { title: "Content Marketing", desc: "Content that positions your brand as a reference in your sector.", href: "/en/content-marketing/", icon: "✍️" },
         { title: "Blog Creation", desc: "Your blog as a permanent digital asset. Constant organic traffic without paying per visit.", href: "/en/blog-creation-service/", icon: "📝" },
       ],
@@ -92,7 +92,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
         { title: "Création de Site Web", desc: "Votre site, votre actif le plus important. Rapide, optimisé et conçu pour convertir.", href: "/fr/creation-site-web/", icon: "🌐" },
         { title: "Boutique en Ligne", desc: "Vendez dans toute l'Espagne sans commissions ni frais mensuels.", href: "/fr/boutique-en-ligne/", icon: "🛒" },
         { title: "Google Business Profile", desc: "Apparaissez sur Google Maps quand vos clients cherchent ce que vous offrez.", href: "/fr/gestion-google-business-profile/", icon: "📍" },
-        { title: "Réputation en Ligne", desc: "Gérez vos avis et construisez une image digitale qui génère la confiance.", href: "/fr/gestion-reputation-en-ligne/", icon: "⭐" },
+        { title: "Réputation en Ligne", desc: "Gérez vos avis et construisez une image digitale qui génère la confiance.", href: "/fr/reputation-en-ligne/", icon: "⭐" },
       ],
     },
     {
@@ -102,10 +102,10 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       emoji: "🔍",
       allHref: "/fr/positionnement-seo/",
       servicios: [
-        { title: "SEO Positionnement Web", desc: "Première page de Google. Trafic organique sans payer par clic.", href: "/fr/seo-positionnement-web/", icon: "📈" },
+        { title: "SEO Positionnement Web", desc: "Première page de Google. Trafic organique sans payer par clic.", href: "/fr/positionnement-seo/", icon: "📈" },
         { title: "GEO — Positionnement IA", desc: "Apparaissez dans ChatGPT, Perplexity et Gemini.", href: "/fr/geo-optimisation-moteurs-generatifs/", icon: "🤖" },
         { title: "Google Ads", desc: "Apparaissez en tête de Google dès le premier jour.", href: "/fr/gestion-google-ads/", icon: "⚡" },
-        { title: "SEO Local", desc: "Dominez les résultats de recherche dans votre ville.", href: "/fr/seo-positionnement-web/", icon: "📌" },
+        { title: "SEO Local", desc: "Dominez les résultats de recherche dans votre ville.", href: "/fr/positionnement-seo/", icon: "📌" },
       ],
     },
     {
@@ -116,7 +116,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       allHref: "/fr/gestion-google-ads/",
       servicios: [
         { title: "Google Ads", desc: "Générez des clients potentiels dès le premier jour.", href: "/fr/gestion-google-ads/", icon: "🎯" },
-        { title: "Email Marketing", desc: "Le canal avec le meilleur ROI du marketing digital.", href: "/fr/email-marketing-entreprises/", icon: "✉️" },
+        { title: "Email Marketing", desc: "Le canal avec le meilleur ROI du marketing digital.", href: "/fr/campagnes-email-marketing/", icon: "✉️" },
         { title: "WhatsApp Marketing", desc: "98% de taux d'ouverture. Communiquez où vos clients se trouvent.", href: "/fr/service-whatsapp-marketing/", icon: "💬" },
       ],
     },
@@ -127,7 +127,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       emoji: "👥",
       allHref: "/fr/marketing-reseaux-sociaux/",
       servicios: [
-        { title: "Réseaux Sociaux", desc: "Gestion professionnelle d'Instagram, LinkedIn, Facebook et TikTok.", href: "/fr/gestion-reseaux-sociaux/", icon: "📱" },
+        { title: "Réseaux Sociaux", desc: "Gestion professionnelle d'Instagram, LinkedIn, Facebook et TikTok.", href: "/fr/marketing-reseaux-sociaux/", icon: "📱" },
         { title: "Marketing de Contenu", desc: "Du contenu qui positionne votre marque comme référence.", href: "/fr/marketing-de-contenu/", icon: "✍️" },
         { title: "Création de Blog", desc: "Votre blog comme actif digital permanent.", href: "/fr/service-creation-blog/", icon: "📝" },
       ],
@@ -151,7 +151,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       allHref: "/fr/analytique-web/",
       servicios: [
         { title: "Analytique Web", desc: "GA4, GTM et tableaux de bord métier. Chaque décision basée sur des données réelles.", href: "/fr/analytique-web/", icon: "📊" },
-        { title: "IA Appliquée au Marketing", desc: "Nos propres protocoles IA intégrés dans chaque service.", href: "/fr/service-ia-marketing/", icon: "🧠" },
+        { title: "IA Appliquée au Marketing", desc: "Nos propres protocoles IA intégrés dans chaque service.", href: "/fr/marketing-intelligence-artificielle/", icon: "🧠" },
         { title: "Audit Digital", desc: "Diagnostic complet de votre présence digitale.", href: "/fr/audit-digital/", icon: "🔬" },
       ],
     },

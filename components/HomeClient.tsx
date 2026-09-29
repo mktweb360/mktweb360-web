@@ -362,7 +362,7 @@ function ServicesTab() {
   const tabHref: Record<string, string> = {
     presencia: "diseno-de-paginas-web",
     visibilidad: "seo-posicionamiento-web-organico",
-    captacion: "oferta-seo",
+    captacion: "sem-publicidad-ppc",
     comunidad: "smm-social-media-marketing",
     monetizacion: "blog-para-monetizacion",
     crecimiento: "analitica-web",

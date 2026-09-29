@@ -119,7 +119,7 @@ const NAV: Record<string, NavContent> = {
           { key: "seo",       label: "SEO Positioning",         href: "/en/seo-web-positioning/",                  desc: "First page of Google" },
           { key: "local",     label: "Local SEO",               href: "/en/seo-web-positioning/",                  desc: "Clients in your area on Google Maps" },
           { key: "ads",       label: "Google Ads",              href: "/en/google-ads-management/",                desc: "Results from day one" },
-          { key: "gbp",       label: "Google Business Profile", href: "/en/google-business-profile-management/",   desc: "Local visibility on Google Maps" },
+          { key: "gbp",       label: "Google Business Profile", href: "/en/google-business-profile-service/",   desc: "Local visibility on Google Maps" },
           { key: "geo",       label: "GEO — AI Search",         href: "/en/geo-generative-engine-optimization/",   desc: "Appear in ChatGPT and Perplexity" },
         ],
       },
@@ -135,7 +135,7 @@ const NAV: Record<string, NavContent> = {
       {
         group: "Community",
         services: [
-          { key: "social",    label: "Social Media",            href: "/en/social-media-management/",              desc: "Professional social media management" },
+          { key: "social",    label: "Social Media",            href: "/en/social-media-marketing/",              desc: "Professional social media management" },
           { key: "whatsapp",  label: "WhatsApp Marketing",      href: "/en/whatsapp-marketing-service/",           desc: "98% open rate" },
           { key: "content",   label: "Content Marketing",       href: "/en/content-marketing/",                    desc: "Content that positions and attracts" },
         ],
@@ -143,9 +143,9 @@ const NAV: Record<string, NavContent> = {
       {
         group: "Growth",
         services: [
-          { key: "email",     label: "Email Marketing",         href: "/en/email-marketing-service/",              desc: "Proven ROI in every send" },
+          { key: "email",     label: "Email Marketing",         href: "/en/email-marketing-campaigns/",              desc: "Proven ROI in every send" },
           { key: "analytics", label: "Web Analytics",           href: "/en/web-analytics/",                        desc: "Data that drives decisions" },
-          { key: "reputation",label: "Online Reputation",       href: "/en/online-reputation-management/",         desc: "Review and digital image management" },
+          { key: "reputation",label: "Online Reputation",       href: "/en/online-reputation/",         desc: "Review and digital image management" },
           { key: "audit",     label: "Digital Audit",           href: "/en/digital-audit/",                        desc: "Complete digital presence diagnosis" },
           { key: "ecommerce", label: "Ecommerce Partnership",   href: "/en/ecommerce-no-commissions/",             desc: "Dropshipping without stock risk" },
         ],
@@ -158,7 +158,7 @@ const NAV: Record<string, NavContent> = {
     home_href: "/fr/",
     servicesLabel: "Services",
     about: "À propos",
-    about_href: "/fr/a-propos/",
+    about_href: "/fr/about/",
     cases: null,
     cases_href: null,
     blog: "Blog",
@@ -188,7 +188,7 @@ const NAV: Record<string, NavContent> = {
       {
         group: "Communauté",
         services: [
-          { key: "social",    label: "Réseaux Sociaux",         href: "/fr/gestion-reseaux-sociaux/",              desc: "Gestion professionnelle de vos réseaux" },
+          { key: "social",    label: "Réseaux Sociaux",         href: "/fr/marketing-reseaux-sociaux/",              desc: "Gestion professionnelle de vos réseaux" },
           { key: "whatsapp",  label: "WhatsApp Marketing",      href: "/fr/service-whatsapp-marketing/",           desc: "98% de taux d'ouverture" },
           { key: "content",   label: "Marketing de Contenu",    href: "/fr/marketing-de-contenu/",                 desc: "Contenu qui positionne et attire" },
         ],
@@ -198,7 +198,7 @@ const NAV: Record<string, NavContent> = {
         services: [
           { key: "email",     label: "Email Marketing",         href: "/fr/campagnes-email-marketing/",            desc: "ROI prouvé à chaque envoi" },
           { key: "analytics", label: "Analytique Web",          href: "/fr/analytique-web/",                       desc: "Données qui guident les décisions" },
-          { key: "reputation",label: "Réputation en Ligne",     href: "/fr/gestion-reputation-en-ligne/",          desc: "Gestion d'avis et image digitale" },
+          { key: "reputation",label: "Réputation en Ligne",     href: "/fr/reputation-en-ligne/",          desc: "Gestion d'avis et image digitale" },
           { key: "audit",     label: "Audit Digital",           href: "/fr/audit-digital/",                        desc: "Diagnostic complet de votre présence" },
           { key: "ecommerce", label: "E-commerce Participatif", href: "/fr/boutique-en-ligne-sans-commissions/",   desc: "Dropshipping sans risque de stock" },
         ],

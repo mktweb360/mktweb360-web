@@ -214,7 +214,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               {isEn ? "Talk to a specialist" : "Parler à un spécialiste"}
             </Link>
             <Link
-              href={`/${lang}/geo-ai-positioning/`}
+              href={`/${lang}/geo-ai-positioning-chatgpt-businesses/`}
               className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
               {isEn ? "See GEO service" : "Voir le service GEO"}

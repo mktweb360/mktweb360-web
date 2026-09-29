@@ -334,7 +334,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Nous travaillons sur chaque élément de votre fiche : catégories principales et secondaires, description, services et produits, photographies, horaires, attributs et publications périodiques. Nous maintenons vos informations NAP (nom, adresse et téléphone) cohérentes sur tout le web et activons les messages et les questions fréquentes pour qu'aucun client ne reste sans réponse. Une fiche vivante, complète et avec des avis récents est celle que Google priorise dans le pack local."}
           </p>
           <div className="text-center flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={`/${lang}/google-business-profile-management/`} className="inline-flex items-center justify-center gap-2 text-accent-500 font-semibold hover:underline">
+            <Link href={`/${lang}/${lang === "en" ? "google-business-profile-service" : "gestion-google-business-profile"}/`} className="inline-flex items-center justify-center gap-2 text-accent-500 font-semibold hover:underline">
               {isEn ? "Google Business Profile service →" : "Service Google Business Profile →"}
             </Link>
           </div>

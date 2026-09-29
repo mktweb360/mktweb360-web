@@ -1,2 +1,2 @@
-import { redirect } from "next/navigation";
-export default function Page() { redirect("/en/google-ads-spain-foreign-companies/"); }
+import { permanentRedirect } from "next/navigation";
+export default function Page() { permanentRedirect("/en/google-ads-spain-foreign-companies/"); }

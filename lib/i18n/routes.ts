@@ -7,6 +7,7 @@ export interface Route {
   en?: string;                              // slug EN canónico (sin prefijo); "" = home. undefined = no existe en EN
   fr?: string;                              // slug FR canónico. undefined = no existe en FR
   aliases?: { lang: Lang; slug: string }[]; // slugs [lang] duplicados/retirados -> 301
+  esRedirectsToEn?: boolean;                // la ruta ES no es canónica (redirige 308 a EN): fuera de hreflang y selector
 }
 
 const BASE = "https://www.mktweb360.com";
@@ -36,10 +37,10 @@ export const ROUTES: Route[] = [
   { es: "/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/", en: "canvas-for-social-media", fr: "canvas-for-social-media" },
   { es: "/digitalizacion-empresas-castilla-la-mancha/", en: "digitalization-castilla-la-mancha", fr: "digitalization-castilla-la-mancha" },
   // Página estratégica EN/FR para captar empresas extranjeras en España
-  { es: "/agencia-marketing-digital-espana/", en: "digital-marketing-agency-spain", fr: "agence-marketing-digital-espagne" },
-  { es: "/como-elegir-agencia-marketing-digital-espana/", en: "how-to-choose-digital-marketing-agency-spain", fr: "choisir-agence-marketing-digital-espagne" },
-  { es: "/seo-espana-empresas-extranjeras/", en: "seo-spain-foreign-companies", fr: "seo-espagne-entreprises-etrangeres" },
-  { es: "/google-ads-espana-empresas-extranjeras/", en: "google-ads-spain-foreign-companies", fr: "google-ads-espagne-entreprises-etrangeres" },
+  { es: "/agencia-marketing-digital-espana/", en: "digital-marketing-agency-spain", fr: "agence-marketing-digital-espagne", esRedirectsToEn: true },
+  { es: "/como-elegir-agencia-marketing-digital-espana/", en: "how-to-choose-digital-marketing-agency-spain", fr: "choisir-agence-marketing-digital-espagne", esRedirectsToEn: true },
+  { es: "/seo-espana-empresas-extranjeras/", en: "seo-spain-foreign-companies", fr: "seo-espagne-entreprises-etrangeres", esRedirectsToEn: true },
+  { es: "/google-ads-espana-empresas-extranjeras/", en: "google-ads-spain-foreign-companies", fr: "google-ads-espagne-entreprises-etrangeres", esRedirectsToEn: true },
   { es: "/diseno-de-paginas-web/", en: "web-design", fr: "creation-site-web", aliases: [{ lang: "fr", slug: "creation-site-web-entreprises" }, { lang: "en", slug: "web-design-services" }] },
   { es: "/diseno-de-paginas-web/diseno-tiendas-online/", en: "online-store", fr: "boutique-en-ligne" },
   // Ecommerce sin comisiones — pagina propia (0€ comision como argumento comercial),
@@ -182,7 +183,7 @@ export const ROUTES: Route[] = [
 
 // URL pública de una route en un idioma dado (o null si no existe en ese idioma)
 export function urlFor(r: Route, lang: Lang): string | null {
-  if (lang === "es") return r.es;
+  if (lang === "es") return r.esRedirectsToEn ? null : r.es;
   const slug = lang === "en" ? r.en : r.fr;
   if (slug === undefined) return null;
   return slug === "" ? `/${lang}/` : `/${lang}/${slug}/`;
@@ -221,8 +222,8 @@ export function alternatesFor(path: string) {
   const es = urlFor(route, "es"); if (es) languages["es-ES"] = BASE + es;
   const en = urlFor(route, "en"); if (en) languages["en"] = BASE + en;
   const fr = urlFor(route, "fr"); if (fr) languages["fr"] = BASE + fr;
-  languages["x-default"] = BASE + (urlFor(route, "es") as string);
-  return { canonical: BASE + (urlFor(route, lang) as string), languages };
+  languages["x-default"] = BASE + ((es ?? en) as string);
+  return { canonical: BASE + ((urlFor(route, lang) ?? en) as string), languages };
 }
 
 // Selector de idioma: SOLO idiomas que EXISTEN para esa route (nunca 404)
