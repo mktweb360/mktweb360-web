@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { trackLead } from "@/lib/track";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -63,12 +64,7 @@ export function TiendaOnlineForm() {
     try {
       const res = await fetch("/api/leads/tienda-online", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...p1, ...p2, oferta: "tienda-online-490", ...utmRef.current }) });
       if (!res.ok) throw new Error();
-      if (typeof window !== "undefined") {
-        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
-          "event", "send_form_seo",
-          { form_type: "tienda-online-landing", page_location: window.location.pathname }
-        );
-      }
+      trackLead("tienda-online-landing");
       router.push("/tienda-online/gracias/");
     } catch { setStatus("error"); }
   }
