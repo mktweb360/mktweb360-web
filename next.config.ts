@@ -36,32 +36,32 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Blog articles
-      { source: '/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
-      { source: '/como-eliminar-resenas-negativas-en-google/', destination: '/smm-social-media-marketing/', permanent: true },
+      { source: '/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/', destination: '/cuando-elegir-seo-vs-google-ads/', permanent: true },
+      { source: '/como-eliminar-resenas-negativas-en-google/', destination: '/gestion-resenas-negativas-google/', permanent: true },
       { source: '/guia-posicionamiento-seo-wordpress/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/el-diseno-web-orientado-al-seo/', destination: '/diseno-de-paginas-web/', permanent: true },
-      { source: '/como-optimizar-campanas-de-google-ads/', destination: '/sem-publicidad-ppc/', permanent: true },
-      { source: '/que-es-como-hacer-una-estrategia-de-linkbuilding/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/como-optimizar-campanas-de-google-ads/', destination: '/auditoria-google-ads-pymes-que-revisar/', permanent: true },
+      { source: '/que-es-como-hacer-una-estrategia-de-linkbuilding/', destination: '/link-building-pymes/', permanent: true },
       { source: '/estrategia-de-contenido-mejora-los-contenidos-de-tu-web/', destination: '/marketing-de-contenidos/', permanent: true },
       { source: '/la-importancia-del-contenido-en-internet-para-las-empresas/', destination: '/marketing-de-contenidos/', permanent: true },
-      { source: '/marketing-para-centros-de-estetica/', destination: '/contacto/', permanent: true },
+      { source: '/marketing-para-centros-de-estetica/', destination: '/5-factores-web-peluquerias-estetica/', permanent: true },
       { source: '/por-que-la-campana-seo-no-me-funciona/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
-      { source: '/que-es-search-console-insights/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/que-es-search-console-insights/', destination: '/auditoria-seo-basica/', permanent: true },
       { source: '/pagos-y-facturas-en-google-ads/', destination: '/sem-publicidad-ppc/', permanent: true },
       { source: '/borrar-automaticamente-nuestros-datos-de-localizacion-y-actividad-en-google/', destination: '/blog/', permanent: true },
       { source: '/black-friday-marketing-digital/', destination: '/blog/', permanent: true },
       { source: '/medidas-para-la-prevencion-de-contagios-del-covid-19/', destination: '/blog/', permanent: true },
-      { source: '/crear-una-pagina-web-de-empresa-que-necesito/', destination: '/diseno-de-paginas-web/', permanent: true },
+      { source: '/crear-una-pagina-web-de-empresa-que-necesito/', destination: '/diseno-de-paginas-web/diseno-paginas-web-empresa/', permanent: true },
       // Old portfolio/offer pages
       { source: '/portfolio-mktweb360/', destination: '/casos/', permanent: true },
       { source: '/oferta-diseno-paginas-web', destination: '/diseno-de-paginas-web/', permanent: true },
       { source: '/oferta-diseno-paginas-web/', destination: '/diseno-de-paginas-web/', permanent: true },
-      { source: '/oferta-diseno-paginas-web/diseno-pagina-web-para-academia/', destination: '/diseno-de-paginas-web/', permanent: true },
-      { source: '/oferta-diseno-paginas-web/pagina-web-para-pintores/', destination: '/diseno-de-paginas-web/', permanent: true },
-      { source: '/oferta-diseno-paginas-web/diseno-paginas-web-dentistas-y-clinicas-dentales/', destination: '/diseno-de-paginas-web/', permanent: true },
-      { source: '/oferta-diseno-paginas-web/pagina-web-para-coach/', destination: '/diseno-de-paginas-web/', permanent: true },
-      { source: '/oferta-diseno-paginas-web/pagina-web-para-restaurantes/', destination: '/diseno-de-paginas-web/', permanent: true },
-      { source: '/oferta-diseno-paginas-web/diseno-paginas-web-para-empresas-de-limpieza/', destination: '/diseno-de-paginas-web/', permanent: true },
+      { source: '/oferta-diseno-paginas-web/diseno-pagina-web-para-academia/', destination: '/5-factores-web-academias-centros-formacion/', permanent: true },
+      { source: '/oferta-diseno-paginas-web/pagina-web-para-pintores/', destination: '/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/', permanent: true },
+      { source: '/oferta-diseno-paginas-web/diseno-paginas-web-dentistas-y-clinicas-dentales/', destination: '/diseno-web-para-dentistas/', permanent: true },
+      { source: '/oferta-diseno-paginas-web/pagina-web-para-coach/', destination: '/diseno-web-para-coaches/', permanent: true },
+      { source: '/oferta-diseno-paginas-web/pagina-web-para-restaurantes/', destination: '/5-factores-web-restaurantes-hosteleria/', permanent: true },
+      { source: '/oferta-diseno-paginas-web/diseno-paginas-web-para-empresas-de-limpieza/', destination: '/diseno-de-paginas-web/diseno-paginas-web-empresa/', permanent: true },
       // WordPress category/tag pages
       // Slash-less so it matches before the /category/:slug catch-all (trailingSlash:false strips '/x/' → '/x')
       { source: '/category/diseno-web/', destination: '/diseno-de-paginas-web/', permanent: true },
@@ -85,11 +85,11 @@ const nextConfig: NextConfig = {
       // source literal, así que TODO source de página debe llevar barra final.
       // URLs WordPress con fecha /YYYY/MM/DD/slug/
       { source: '/2019/05/03/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', destination: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', permanent: true },
-      { source: '/2019/05/04/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/2019/05/04/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/', destination: '/cuando-elegir-seo-vs-google-ads/', permanent: true },
       { source: '/2019/05/20/por-que-la-campana-seo-no-me-funciona/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/2020/11/25/la-importancia-del-contenido-en-internet-para-las-empresas/', destination: '/marketing-de-contenidos/', permanent: true },
       { source: '/2020/04/13/medidas-para-la-prevencion-de-contagios-del-covid-19/', destination: '/blog/', permanent: true },
-      { source: '/2021/08/11/como-eliminar-resenas-negativas-en-google/', destination: '/smm-social-media-marketing/', permanent: true },
+      { source: '/2021/08/11/como-eliminar-resenas-negativas-en-google/', destination: '/gestion-resenas-negativas-google/', permanent: true },
       { source: '/2021/08/12/estrategia-de-contenido-mejora-los-contenidos-de-tu-web/', destination: '/marketing-de-contenidos/', permanent: true },
       { source: '/2021/08/20/pagos-y-facturas-en-google-ads/', destination: '/sem-publicidad-ppc/', permanent: true },
       { source: '/2021/08/25/como-usar-planificador-de-palabras-clave-google-ads/', destination: '/como-usar-planificador-de-palabras-clave-google-ads/', permanent: true },
@@ -115,7 +115,7 @@ const nextConfig: NextConfig = {
       { source: '/sem-publicidad-ppc/page/:page', destination: '/sem-publicidad-ppc/', permanent: true },
       { source: '/smm-social-media-marketing/page/:page/', destination: '/smm-social-media-marketing/', permanent: true },
       { source: '/la-importancia-del-contenido-en-internet-para-las-empresas/page/:page/', destination: '/marketing-de-contenidos/', permanent: true },
-      { source: '/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/page/:page/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/page/:page/', destination: '/cuando-elegir-seo-vs-google-ads/', permanent: true },
       { source: '/por-que-la-campana-seo-no-me-funciona/page/:page/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
 
       // Slugs con mayúscula y variantes raras
@@ -127,8 +127,9 @@ const nextConfig: NextConfig = {
       { source: '/blog/page/:page/', destination: '/blog/', permanent: true },
       { source: '/blog/page/:page', destination: '/blog/', permanent: true },
       // Kit Digital — eliminado
-      { source: "/kit-digital/", destination: "/diseno-de-paginas-web/", permanent: true },
-      { source: "/kit-digital/:path*/", destination: "/diseno-de-paginas-web/", permanent: true },
+      { source: "/kit-digital/", destination: "/ayudas-digitalizar-pyme-2026-tras-kit-digital/", permanent: true },
+      { source: "/kit-digital/gestion-de-redes-sociales/", destination: "/smm-social-media-marketing/", permanent: true },
+      { source: "/kit-digital/:path*/", destination: "/ayudas-digitalizar-pyme-2026-tras-kit-digital/", permanent: true },
       // Expired SEO 6x3 offer — retired, redirect to the evergreen SEO service page.
       // Sources are slash-less because trailingSlash is off (Next strips '/x/' → '/x' before matching).
       { source: '/landing/seo-6x3/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
