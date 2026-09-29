@@ -174,7 +174,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Chez Mkt Web 360, nous réalisons l'analyse des mots-clés dans le cadre de notre stratégie SEO. Nous identifions les vraies opportunités pour votre secteur, pas seulement les termes les plus recherchés."}
           </p>
           <Link
-            href={`/${lang}/seo/`}
+            href={`/${lang}/${lang === "en" ? "seo-web-positioning" : "positionnement-seo"}/`}
             className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors"
           >
             {isEn ? "See SEO service" : "Voir le service SEO"}
@@ -330,13 +330,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={`/${lang}/seo/`}
+              href={`/${lang}/${lang === "en" ? "seo-web-positioning" : "positionnement-seo"}/`}
               className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors"
             >
               {isEn ? "See SEO service" : "Voir le service SEO"}
             </Link>
             <Link
-              href={`/${lang}/google-ads/`}
+              href={`/${lang}/${lang === "en" ? "google-ads-management" : "gestion-google-ads"}/`}
               className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
               {isEn ? "See Google Ads" : "Voir Google Ads"}

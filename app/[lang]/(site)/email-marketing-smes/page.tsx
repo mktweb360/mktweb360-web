@@ -248,7 +248,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 {isEn ? "Contact us" : "Nous contacter"}
               </a>
               <a
-                href={`/${lang}/email-marketing-service/`}
+                href={`/${lang}/${lang === "en" ? "email-marketing-campaigns" : "campagnes-email-marketing"}/`}
                 className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {isEn ? "See Email Marketing service" : "Voir le service Email Marketing"}

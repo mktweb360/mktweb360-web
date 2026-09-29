@@ -152,7 +152,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Nous examinons votre suivi, votre flux et votre structure de campagnes, et vous disons exactement où le budget est gaspillé et comment retrouver la rentabilité."}
           </p>
           <Link
-            href={`/${lang}/contact`}
+            href={`/${lang}/contact/`}
             className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors"
           >
             {isEn ? "Contact us" : "Nous contacter"}
@@ -179,13 +179,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={`/${lang}/contact`}
+              href={`/${lang}/contact/`}
               className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors"
             >
               {isEn ? "Get in touch" : "Nous contacter"}
             </Link>
             <Link
-              href={`/${lang}/${isEn ? "google-ads-management" : "gestion-google-ads"}`}
+              href={`/${lang}/${isEn ? "google-ads-management" : "gestion-google-ads"}/`}
               className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
               {isEn ? "Google Ads service" : "Service Google Ads"}

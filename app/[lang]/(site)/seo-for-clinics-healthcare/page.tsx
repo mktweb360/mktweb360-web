@@ -162,7 +162,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Nous analysons votre visibilité locale, votre fiche Google et votre site web, et vous indiquons ce qui manque pour attirer plus de patients."}
           </p>
           <Link
-            href={`/${lang}/local-seo/`}
+            href={`/${lang}/local-seo-services/`}
             className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors"
           >
             {isEn
@@ -233,7 +233,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 : "Demander un diagnostic pour votre clinique"}
             </Link>
             <Link
-              href={`/${lang}/google-business-profile/`}
+              href={`/${lang}/${lang === "en" ? "google-business-profile-service" : "gestion-google-business-profile"}/`}
               className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
               {isEn
@@ -272,14 +272,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-gray-500 pt-4">
           {isEn ? "Related services: " : "Services associés : "}
           <Link
-            href={`/${lang}/local-seo/`}
+            href={`/${lang}/local-seo-services/`}
             className="text-accent-500 hover:underline"
           >
             {isEn ? "Local SEO" : "SEO Local"}
           </Link>{" "}
           ·{" "}
           <Link
-            href={`/${lang}/google-business-profile/`}
+            href={`/${lang}/${lang === "en" ? "google-business-profile-service" : "gestion-google-business-profile"}/`}
             className="text-accent-500 hover:underline"
           >
             {isEn ? "Google Business Profile" : "Google Business Profile"}

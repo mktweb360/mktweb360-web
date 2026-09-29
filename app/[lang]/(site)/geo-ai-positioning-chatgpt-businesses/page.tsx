@@ -149,7 +149,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Nous réalisons un audit de visibilité IA et vous disons exactement où vous en êtes et ce qui manque pour que l'IA vous mentionne."}
           </p>
           <Link
-            href={`/${lang}/${isEn ? "geo-generative-engine-optimization" : "geo-optimisation-moteurs-generatifs"}`}
+            href={`/${lang}/${isEn ? "geo-generative-engine-optimization" : "geo-optimisation-moteurs-generatifs"}/`}
             className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors"
           >
             {isEn ? "GEO service" : "Service GEO"}
@@ -215,13 +215,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={`/${lang}/${isEn ? "geo-generative-engine-optimization" : "geo-optimisation-moteurs-generatifs"}`}
+              href={`/${lang}/${isEn ? "geo-generative-engine-optimization" : "geo-optimisation-moteurs-generatifs"}/`}
               className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors"
             >
               {isEn ? "GEO service" : "Service GEO"}
             </Link>
             <Link
-              href={`/${lang}/contact`}
+              href={`/${lang}/contact/`}
               className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
               {isEn ? "Request AI visibility audit" : "Demander un audit de visibilité IA"}

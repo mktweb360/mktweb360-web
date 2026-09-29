@@ -218,7 +218,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               {isEn ? "Talk to a specialist" : "Parler à un spécialiste"}
             </Link>
             <Link
-              href={`/${lang}/seo/`}
+              href={`/${lang}/${lang === "en" ? "seo-web-positioning" : "positionnement-seo"}/`}
               className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
               {isEn ? "See Local SEO service" : "Voir le service SEO Local"}
@@ -255,7 +255,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-gray-500 pt-4">
           {isEn ? "Related services: " : "Services associés : "}
           <Link
-            href={`/${lang}/seo/`}
+            href={`/${lang}/${lang === "en" ? "seo-web-positioning" : "positionnement-seo"}/`}
             className="text-accent-500 hover:underline"
           >
             {isEn ? "SEO Web Positioning" : "Référencement naturel SEO"}
