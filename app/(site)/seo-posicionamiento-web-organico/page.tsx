@@ -57,15 +57,6 @@ const faqSchema = {
   })),
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "SEO Posicionamiento Web", item: "https://www.mktweb360.com/seo-posicionamiento-web-organico/" },
-  ],
-};
-
 const METHODOLOGY = [
   { step: "01", title: "Auditoría técnica SEO", desc: "Análisis completo de tu web: velocidad, indexación, errores técnicos, arquitectura, backlinks y competencia." },
   { step: "02", title: "Investigación de keywords", desc: "Identificamos las palabras clave con mayor potencial de tráfico y conversión para tu sector y zona." },
@@ -79,7 +70,6 @@ export default function SeoPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}

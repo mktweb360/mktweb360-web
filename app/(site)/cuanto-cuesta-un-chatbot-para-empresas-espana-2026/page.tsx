@@ -34,16 +34,6 @@ const articleSchema = {
   mainEntityOfPage: "https://www.mktweb360.com/cuanto-cuesta-un-chatbot-para-empresas-espana-2026/",
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
-    { "@type": "ListItem", position: 3, name: "Cuánto cuesta un chatbot para empresas", item: "https://www.mktweb360.com/cuanto-cuesta-un-chatbot-para-empresas-espana-2026/" },
-  ],
-};
-
 const FAQS = [
   {
     q: "¿Hay opciones gratuitas que valga la pena?",
@@ -77,7 +67,6 @@ export default function CuantoCuestaChatbotPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <article className="max-w-3xl mx-auto px-4 py-12">

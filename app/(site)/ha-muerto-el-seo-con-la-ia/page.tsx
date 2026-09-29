@@ -32,16 +32,6 @@ const articleSchema = {
   mainEntityOfPage: "https://www.mktweb360.com/ha-muerto-el-seo-con-la-ia/",
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.mktweb360.com/blog/" },
-    { "@type": "ListItem", position: 3, name: "¿Ha muerto el SEO con la IA?", item: "https://www.mktweb360.com/ha-muerto-el-seo-con-la-ia/" },
-  ],
-};
-
 const FAQS = [
   {
     q: "¿La IA puede sustituir a un profesional del SEO?",
@@ -79,7 +69,6 @@ export default function HaMuertoElSeoPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <article className="max-w-3xl mx-auto px-4 py-12">

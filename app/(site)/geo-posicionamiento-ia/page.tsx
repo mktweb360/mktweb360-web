@@ -33,15 +33,6 @@ const serviceSchema = {
     url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
   },
 };
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "GEO Posicionamiento IA", item: "https://www.mktweb360.com/geo-posicionamiento-ia/" },
-  ],
-};
-
 const GEO_SERVICES = [
   {
     title: "Auditoría de visibilidad en IA",
@@ -84,7 +75,6 @@ export default function GEOPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">

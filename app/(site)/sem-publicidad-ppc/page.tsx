@@ -34,15 +34,6 @@ const serviceSchema = {
     url: "https://www.mktweb360.com/sem-publicidad-ppc/",
   },
 };
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.mktweb360.com/" },
-    { "@type": "ListItem", position: 2, name: "SEM Publicidad PPC", item: "https://www.mktweb360.com/sem-publicidad-ppc/" },
-  ],
-};
-
 const CAMPAIGNS = [
   { title: "Google Search", desc: "Anuncios en los resultados de búsqueda para captar usuarios con intención de compra." },
   { title: "Google Display", desc: "Anuncios gráficos en millones de webs para aumentar tu visibilidad de marca." },
@@ -67,7 +58,6 @@ export default function SemPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
