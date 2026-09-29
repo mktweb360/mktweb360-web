@@ -47,3 +47,6 @@ public/Descargas/
 
 # WSL metadata (Zone.Identifier)
 *Zone.Identifier
+
+# borradores de artículos (fuente local, no se publica en el repo)
+/content-drafts/

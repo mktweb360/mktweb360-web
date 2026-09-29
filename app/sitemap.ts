@@ -156,6 +156,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/atribucion-de-marketing-como-medir-impacto-real/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/google-ads-sin-comision-agencia-marketing/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/redes-sociales-para-empresas-b2b-2026/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/accesibilidad-web-obligatoria-tiendas-online-espana/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/ayudas-digitalizar-pyme-2026-tras-kit-digital/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/auditoria-google-ads-pymes-que-revisar/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/resenas-google-como-conseguirlas-legalmente/", priority: 0.7, changeFrequency: "weekly" as const },
+    { url: "/auditoria-geo-aparecer-chatgpt-gemini-google/", priority: 0.7, changeFrequency: "weekly" as const },
   ];
 
   const esSitemap: MetadataRoute.Sitemap = pages.map((p) => ({
