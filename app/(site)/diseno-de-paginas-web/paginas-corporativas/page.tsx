@@ -5,12 +5,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 
 export const metadata: Metadata = {
-  title: "Páginas Web Corporativas: Diseño Profesional para Empresas",
-  description:
-    "Diseño de páginas web corporativas para empresas. Web profesional que genera confianza, capta leads y posiciona en Google. SEO técnico incluido desde el primer día.",
+  title: "Diseño de Páginas Web Corporativas",
+  description: "Diseño de páginas web corporativas para empresas: una web profesional que genera confianza, capta contactos y está preparada para posicionar en Google.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/" },
   openGraph: {
-    title: "Páginas Web Corporativas Profesionales — Diseño para Empresas | Mkt Web 360",
+    title: "Diseño de Páginas Web Corporativas | Mkt Web 360",
     description:
       "Diseño de páginas web corporativas para empresas. Web profesional que genera confianza, capta leads y posiciona en Google. SEO técnico incluido desde el primer día.",
     url: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/",
@@ -125,8 +124,8 @@ export default function PaginasCorporativasPage() {
               Diseño Web Corporativo
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Tu empresa, visible<br />
-              <span className="text-accent-400">y profesional en Google</span>
+              Páginas web corporativas<br />
+              <span className="text-accent-400">para una empresa visible y profesional</span>
             </h1>
             <p className="text-xl text-primary-100 leading-relaxed mb-8">
               Una web corporativa que genera confianza, capta leads y trabaja por ti 24 horas al día. Diseño profesional, SEO técnico incluido y gestión autónoma desde el primer día.

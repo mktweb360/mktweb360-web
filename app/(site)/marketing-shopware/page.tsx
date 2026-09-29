@@ -7,11 +7,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Marketing digital para tiendas Shopware en España",
-  description: "Marketing Shopware: SEO, Google Ads, GEO y CRO para tiendas ya construidas en Shopware. Tienes la plataforma, nosotros hacemos que venda. Agencia en España.",
+  title: "Agencia Shopware: Marketing para Tiendas",
+  description: "Agencia de marketing para tiendas Shopware: SEO, Google Ads, GEO y optimización de la conversión para tiendas ya construidas que necesitan vender más.",
   alternates: alternatesFor("/marketing-shopware/") ?? { canonical: "https://www.mktweb360.com/marketing-shopware/" },
   openGraph: {
-    title: "Marketing digital para tiendas Shopware en España | Mkt Web 360",
+    title: "Agencia Shopware: Marketing para Tiendas | Mkt Web 360",
     description: "SEO, Google Ads, GEO y CRO para tu tienda Shopware. Tienes la plataforma, nosotros hacemos que venda más.",
     url: "https://www.mktweb360.com/marketing-shopware/",
     images: [{ url: "https://www.mktweb360.com/og-marketing-shopware.jpg", width: 1200, height: 630 }],
@@ -77,8 +77,8 @@ export default function MarketingShopwarePage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Marketing Shopware" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              Tienes la plataforma.<br />
-              <span className="text-accent-400">Nosotros hacemos que venda.</span>
+              Agencia de marketing para Shopware:<br />
+              <span className="text-accent-400">Tienes la plataforma. Nosotros hacemos que venda.</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               Shopware es una plataforma potente, pero por sí sola no genera ventas. Somos la agencia de marketing que convierte tu tienda Shopware en un canal que capta tráfico, convierte visitas y crece mes a mes con SEO, Google Ads, GEO y CRO.

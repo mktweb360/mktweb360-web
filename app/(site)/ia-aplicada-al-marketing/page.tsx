@@ -6,7 +6,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "IA Aplicada al Marketing Digital",
-  description: "Integramos inteligencia artificial en cada servicio de marketing digital. Protocolos propios de IA para resultados más rápidos, análisis más precisos y mejores decisiones. Servicio nacional.",
+  description: "IA aplicada al marketing digital: integramos inteligencia artificial en SEO, contenidos, campañas y análisis con protocolos propios y un equipo senior.",
   alternates: alternatesFor("/ia-aplicada-al-marketing/") ?? { canonical: "https://www.mktweb360.com/ia-aplicada-al-marketing/" },
   openGraph: {
     title: "IA Aplicada al Marketing Digital | Mkt Web 360",
@@ -75,8 +75,8 @@ export default function IAMarketingPage() {
           <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "IA Aplicada al Marketing" }]} />
           <div className="max-w-3xl mt-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              La experiencia de un equipo senior.<br />
-              <span className="text-accent-400">La precisión de la inteligencia artificial.</span>
+              IA aplicada al marketing digital:<br />
+              <span className="text-accent-400">La experiencia de un equipo senior. La precisión de la inteligencia artificial.</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed italic">
               Mientras tú trabajas, nosotros conseguimos que te llamen.

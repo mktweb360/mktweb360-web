@@ -250,8 +250,8 @@ function HeroSlider() {
   }[] = [
     {
       badge: null,
-      headline: "Agencia de Marketing Digital",
-      subheadline: "para PYMEs y Empresas",
+      headline: "Tu Agencia de Marketing Digital",
+      subheadline: "y Online: te ponemos donde te buscan",
       subtitle: "Aumenta tu visibilidad online, genera más clientes y haz crecer tu negocio con estrategias de marketing digital probadas. Servicio nacional.",
       cta: { text: "Diagnóstico gratuito", href: "/contacto/" },
       cta2: { text: "Ver servicios", href: "#servicios" },

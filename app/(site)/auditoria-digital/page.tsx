@@ -7,12 +7,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Auditoría Digital para Empresas | Diagnóstico SEO y Marketing",
-  description:
-    "Diagnóstico completo de tu presencia online: SEO técnico, velocidad, contenidos, competencia, redes sociales y analítica. Informe detallado + plan de acción.",
+  title: "Auditoría de Marketing Digital para Empresas",
+  description: "Auditoría de marketing digital: diagnóstico de SEO técnico, velocidad, contenidos, competencia, redes y analítica, con informe y plan de acción priorizado.",
   alternates: alternatesFor("/auditoria-digital/") ?? { canonical: "https://www.mktweb360.com/auditoria-digital/" },
   openGraph: {
-    title: "Auditoría Digital para Empresas | Diagnóstico SEO y Marketing | Mkt Web 360",
+    title: "Auditoría de Marketing Digital para Empresas | Mkt Web 360",
     description: "Auditoría digital completa para saber exactamente por qué tu empresa no consigue los resultados que merece online.",
     url: "https://www.mktweb360.com/auditoria-digital/",
     images: [{ url: "/og-auditoria-digital.jpg", width: 1200, height: 630 }],
@@ -62,7 +61,7 @@ export default function AuditoriaDigitalPage() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Auditoría Digital" }]} />
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4">
-          Auditoría Digital — Diagnóstico completo de tu presencia online
+          Auditoría de marketing digital: diagnóstico completo de tu presencia online
         </h1>
         <p className="text-xl text-gray-600 mb-8 leading-relaxed">
           Si no sabes por qué tu web no genera clientes, una auditoría digital te da la respuesta. Analizamos cada capa de tu presencia online y te entregamos un plan de acción claro y priorizado.

@@ -7,10 +7,10 @@ import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Blog de Marketing Digital",
-  description: "Artículos, guías y consejos de marketing digital, SEO, SEM, redes sociales y diseño web para empresas españolas.",
+  description: "Blog de marketing digital: guías prácticas de SEO, posicionamiento en IA, Google Ads, redes sociales, diseño web y ecommerce para empresas, pymes y autónomos.",
   alternates: alternatesFor("/blog/") ?? { canonical: "https://www.mktweb360.com/blog/" },
   openGraph: {
-    title: "Blog Marketing Digital | Mkt Web 360",
+    title: "Blog de Marketing Digital | Mkt Web 360",
     description: "Artículos y guías de marketing digital para empresas.",
     url: "https://www.mktweb360.com/blog/",
     images: [{ url: "/og-blog.jpg", width: 1200, height: 630 }],

@@ -7,11 +7,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "SEO Local para Empresas — Posicionamiento en tu Zona",
-  description: "SEO local para captar clientes de tu zona: Google Maps, Google Business Profile y reseñas. Posicionamiento local para empresas con o sin local físico.",
+  title: "SEO Local: Posicionamiento en tu Zona",
+  description: "Servicio de SEO local para captar clientes de tu zona: Google Maps, Google Business Profile, reseñas y páginas locales, para negocios con o sin local físico.",
   alternates: alternatesFor("/seo-local/") ?? { canonical: "https://www.mktweb360.com/seo-local/" },
   openGraph: {
-    title: "SEO Local — Posicionamiento en Google Maps | Mkt Web 360",
+    title: "SEO Local: Posicionamiento en tu Zona | Mkt Web 360",
     description: "Posiciona tu negocio en Google Maps y en las búsquedas de tu zona. Más clientes locales con SEO local profesional.",
     url: "https://www.mktweb360.com/seo-local/",
     images: [{ url: "/og-seo-local.jpg", width: 1200, height: 630, alt: "SEO local y Google Maps — Mkt Web 360" }],
@@ -77,8 +77,8 @@ export default function SeoLocalPage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "SEO Local" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              Aparece cuando buscan en tu zona<br />
-              <span className="text-accent-400">SEO local que llena tu agenda</span>
+              SEO local: aparece cuando buscan en tu zona<br />
+              <span className="text-accent-400">y llena tu agenda</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               Casi la mitad de las búsquedas en Google tienen intención local. Cuando alguien busca lo que ofreces cerca de él, o apareces en el mapa o tu competencia se lleva ese cliente. El SEO local pone tu negocio donde se decide la compra.

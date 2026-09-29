@@ -7,11 +7,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Gestión de Reputación Online para Empresas — España",
-  description: "Servicio profesional de gestión y mejora de reputación online para empresas. Monitorización, gestión de reseñas en Google, estrategia de imagen digital e informes mensuales. Servicio nacional.",
+  title: "Gestión de Reputación Online para Empresas",
+  description: "Gestión de la reputación online de tu empresa: monitorización, respuesta a reseñas en Google, gestión de opiniones negativas e informes mensuales.",
   alternates: alternatesFor("/reputacion-online/") ?? { canonical: "https://www.mktweb360.com/reputacion-online/" },
   openGraph: {
-    title: "Gestión Reputación Online para Empresas | Mkt Web 360",
+    title: "Gestión de Reputación Online para Empresas | Mkt Web 360",
     description: "Monitorización, gestión de reseñas y estrategia de imagen digital para empresas.",
     url: "https://www.mktweb360.com/reputacion-online/",
     images: [{ url: "/imagen-reputacion-online.jpg", width: 1200, height: 900, alt: "Reputación online Mkt Web 360" }],

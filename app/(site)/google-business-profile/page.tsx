@@ -7,11 +7,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Google Business Profile — Aparece en Google Maps y Gana Clientes Locales",
-  description: "Optimiza tu ficha de Google Maps y aparece cuando tus clientes te buscan cerca. Más reseñas, más llamadas, más visitas. Gestión mensual sin permanencia.",
+  title: "Gestión de Google Business Profile",
+  description: "Gestión de tu ficha de Google Business Profile para aparecer en Google Maps cuando te buscan cerca: optimización, publicaciones, reseñas y seguimiento mensual.",
   alternates: alternatesFor("/google-business-profile/") ?? { canonical: "https://www.mktweb360.com/google-business-profile/" },
   openGraph: {
-    title: "Google Business Profile para Empresas | Mkt Web 360",
+    title: "Gestión de Google Business Profile | Mkt Web 360",
     description: "Optimiza tu ficha de Google y aparece cuando tus clientes te buscan cerca.",
     url: "https://www.mktweb360.com/google-business-profile/",
     images: [{ url: "/imagen-google-business-profile.jpg", width: 1200, height: 900, alt: "Google Business Profile Mkt Web 360" }],
@@ -73,8 +73,8 @@ export default function GoogleBusinessProfilePage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Google Business Profile" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              Aparece cuando<br />
-              <span className="text-accent-400">te están buscando</span>
+              Gestión de Google Business Profile:<br />
+              <span className="text-accent-400">aparece cuando te están buscando</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               El 46% de las búsquedas en Google tienen intención local. Si tu ficha de Google Business Profile no está optimizada, estás regalando clientes a tu competencia cada día.

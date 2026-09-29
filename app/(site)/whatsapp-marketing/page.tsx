@@ -6,8 +6,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "WhatsApp Marketing para Empresas — Capta y Fideliza Clientes",
-  description: "Estrategia y gestión de WhatsApp Marketing para empresas. WhatsApp Business API, campañas de captación, automatizaciones y seguimiento de leads. Tasas de apertura del 98%. Servicio nacional.",
+  title: "WhatsApp Marketing para Empresas",
+  description: "WhatsApp marketing para empresas: WhatsApp Business y su API, campañas, automatizaciones y seguimiento de contactos para vender y fidelizar clientes.",
   alternates: alternatesFor("/whatsapp-marketing/") ?? { canonical: "https://www.mktweb360.com/whatsapp-marketing/" },
   openGraph: {
     title: "WhatsApp Marketing para Empresas | Mkt Web 360",
@@ -60,8 +60,8 @@ export default function WhatsAppMarketingPage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "WhatsApp Marketing" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              El canal con el<br />
-              <span className="text-accent-400">98% de tasa de apertura</span>
+              WhatsApp marketing para empresas:<br />
+              <span className="text-accent-400">el canal que tus clientes ya usan</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               El email tiene un 20% de apertura. WhatsApp tiene un 98%. Si no estás usando WhatsApp para comunicarte con tus clientes, estás dejando conversaciones y ventas sobre la mesa.

@@ -5,11 +5,11 @@ import { ContactForm } from "@/components/ContactForm";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Quiénes Somos — Agencia de Marketing Digital",
-  description: "Equipo senior con protocolos propios de IA. Conoce la metodología, los valores y la historia de Mkt Web 360. Agencia de marketing digital para PYMEs. Servicio nacional.",
+  title: "Quiénes Somos: Agencia de Marketing Digital",
+  description: "Conoce Mkt Web 360: agencia de marketing digital con equipo senior por áreas y protocolos propios de IA. Metodología, valores y forma de trabajar desde 2016.",
   alternates: alternatesFor("/nosotros/") ?? { canonical: "https://www.mktweb360.com/nosotros/" },
   openGraph: {
-    title: "Quiénes Somos | Mkt Web 360 — Agencia de Marketing Digital",
+    title: "Quiénes Somos: Agencia de Marketing Digital | Mkt Web 360",
     description: "La experiencia de un equipo senior. La precisión de la inteligencia artificial. Conoce cómo trabajamos.",
     url: "https://www.mktweb360.com/nosotros/",
     images: [{ url: "/og-nosotros.jpg", width: 1200, height: 630 }],
@@ -42,8 +42,8 @@ export default function NosotrosPage() {
           <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Quiénes Somos" }]} />
           <div className="max-w-3xl mt-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              La experiencia de un equipo senior.<br />
-              <span className="text-accent-400">La precisión de la inteligencia artificial.</span>
+              Quiénes somos:<br />
+              <span className="text-accent-400">La experiencia de un equipo senior. La precisión de la inteligencia artificial.</span>
             </h1>
             <p className="text-xl text-primary-200 mb-4 leading-relaxed">
               En Mkt Web 360 no somos una agencia más. Somos un equipo comprometido con resultados reales para empresas reales — con protocolos propios de IA que nos permiten trabajar más rápido, analizar más datos y tomar mejores decisiones que una agencia tradicional.

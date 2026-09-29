@@ -6,12 +6,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Casos de Éxito en Marketing Digital y Diseño Web",
-  description:
-    "Proyectos reales y resultados concretos. Casos de éxito de Mkt Web 360 en SEO, diseño web y marketing digital para empresas de distintos sectores.",
+  title: "Casos de Éxito en Marketing Digital",
+  description: "Casos de éxito de Mkt Web 360: proyectos reales de SEO, diseño web, tiendas online y marketing digital para empresas de distintos sectores y sus resultados.",
   alternates: alternatesFor("/casos/") ?? { canonical: "https://www.mktweb360.com/casos/" },
   openGraph: {
-    title: "Casos de Éxito y Proyectos | Mkt Web 360 — Agencia de Marketing Digital",
+    title: "Casos de Éxito en Marketing Digital | Mkt Web 360",
     description: "Descubre cómo hemos ayudado a empresas reales a mejorar su presencia digital y conseguir resultados medibles.",
     url: "https://www.mktweb360.com/casos/",
     images: [{ url: "/og-casos.jpg", width: 1200, height: 630 }],
@@ -68,7 +67,7 @@ export default function CasosPage() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Casos de Éxito" }]} />
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4">
-          Proyectos reales, resultados concretos
+          Casos de éxito: proyectos reales, resultados concretos
         </h1>
         <p className="text-xl text-gray-600 mb-8 leading-relaxed">
           Cada empresa tiene sus retos y sus objetivos. Aquí mostramos algunos de los proyectos en los que hemos trabajado y los resultados que hemos conseguido juntos.

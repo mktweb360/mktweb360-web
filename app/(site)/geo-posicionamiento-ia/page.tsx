@@ -5,11 +5,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "GEO — Aparece en ChatGPT y Perplexity cuando tus Clientes te Buscan",
-  description: "El 40% de las búsquedas ya pasan por IA. Si ChatGPT no te menciona, pierdes clientes. GEO: optimización para que la IA recomiende tu empresa. Primeros en España.",
+  title: "Agencia GEO: Posicionamiento en IA y ChatGPT",
+  description: "Agencia GEO para que ChatGPT, Gemini y la IA de Google recomienden tu empresa: auditoría de visibilidad en IA, contenido citable y datos estructurados.",
   alternates: alternatesFor("/geo-posicionamiento-ia/") ?? { canonical: "https://www.mktweb360.com/geo-posicionamiento-ia/" },
   openGraph: {
-    title: "GEO — Posicionamiento en IA | Mkt Web 360",
+    title: "Agencia GEO: Posicionamiento en IA y ChatGPT | Mkt Web 360",
     description: "Optimiza tu presencia para que los motores de IA te recomienden cuando tus clientes preguntan. ChatGPT, Perplexity, Gemini, Claude.",
     url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
     images: [{ url: "https://www.mktweb360.com/og-geo.jpg", width: 1200, height: 630 }],
@@ -95,8 +95,8 @@ export default function GEOPage() {
               Nuevo servicio
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Tus clientes ya no solo buscan en Google.<br />
-              <span className="text-accent-400">Ahora le preguntan a la IA.</span>
+              Agencia GEO: posicionamiento en IA<br />
+              <span className="text-accent-400">para que ChatGPT y Gemini te recomienden</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed italic">
               ¿Apareces cuando te buscan en ChatGPT, Perplexity o Gemini?
@@ -203,7 +203,7 @@ export default function GEOPage() {
             El GEO — Generative Engine Optimization — es la disciplina que optimiza tu presencia digital para que los modelos de lenguaje te recomienden cuando un usuario pregunta por servicios como los tuyos. No se trata de trucos técnicos ni de engañar a la IA. Se trata de que tu contenido sea suficientemente claro, estructurado y autoritativo para que los LLMs lo consideren una fuente relevante.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            En Mkt Web 360 fuimos de los primeros en España en desarrollar un servicio de GEO estructurado. Mantenemos llms.txt y llms-full.txt activos, optimizamos el contenido para intención de búsqueda conversacional y monitorizamos mensualmente la visibilidad de la marca en los principales motores de IA.
+            En Mkt Web 360 trabajamos el GEO como un servicio estructurado, con método propio. Mantenemos llms.txt y llms-full.txt activos, optimizamos el contenido para intención de búsqueda conversacional y monitorizamos mensualmente la visibilidad de la marca en los principales motores de IA.
           </p>
           <p className="text-gray-600 leading-relaxed mb-4">
             Los datos respaldan el cambio. ChatGPT supera los 800 millones de usuarios semanales en 2026. Google AI Overviews aparece ya en más del 58% de las búsquedas. Perplexity procesa cientos de millones de consultas al mes. El 94% de los grupos de compra B2B utilizan herramientas de IA generativa antes de hablar con ningún proveedor. Esto no es una tendencia futura — es el comportamiento actual de tus clientes potenciales.

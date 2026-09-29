@@ -7,12 +7,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Comunicación Audiovisual para Empresas | Vídeo Marketing",
-  description:
-    "Producción de vídeo corporativo, reels, spots, presentaciones animadas y fotografía para empresas. Piezas audiovisuales que comunican, conectan y convierten.",
+  title: "Vídeo Corporativo y Comunicación Audiovisual",
+  description: "Comunicación audiovisual para empresas: vídeo corporativo, reels, spots, animaciones y fotografía profesional para comunicar, generar confianza y convertir.",
   alternates: alternatesFor("/comunicacion-audiovisual/") ?? { canonical: "https://www.mktweb360.com/comunicacion-audiovisual/" },
   openGraph: {
-    title: "Comunicación Audiovisual para Empresas | Vídeo Marketing | Mkt Web 360",
+    title: "Vídeo Corporativo y Comunicación Audiovisual | Mkt Web 360",
     description: "Vídeo corporativo, reels, spots publicitarios y fotografía profesional para empresas que quieren destacar.",
     url: "https://www.mktweb360.com/comunicacion-audiovisual/",
     images: [{ url: "/og-comunicacion-audiovisual.jpg", width: 1200, height: 630 }],
@@ -67,7 +66,7 @@ export default function ComunicacionAudiovisualPage() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Comunicación Audiovisual" }]} />
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4">
-          Comunicación Audiovisual — Piezas visuales que trabajan para tu negocio
+          Comunicación audiovisual y vídeo corporativo para tu negocio
         </h1>
         <p className="text-xl text-gray-600 mb-8 leading-relaxed">
           El vídeo y la imagen son el lenguaje del marketing digital actual. Producimos piezas audiovisuales profesionales que comunican tu propuesta de valor, generan confianza y convierten visitas en clientes.

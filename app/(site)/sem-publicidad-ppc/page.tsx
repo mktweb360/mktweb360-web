@@ -6,11 +6,11 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Google Ads para Empresas — Clientes desde el Primer Día sin % sobre Inversión",
-  description: "Campañas de Google Ads gestionadas por expertos. Sin comisión sobre presupuesto publicitario. Solo pagas por la gestión. Resultados desde el primer mes.",
+  title: "Agencia Google Ads: Gestión de Campañas SEM",
+  description: "Agencia Google Ads sin comisión sobre tu inversión: creamos y gestionamos campañas SEM orientadas a conversiones, con medición configurada desde el primer día.",
   alternates: alternatesFor("/sem-publicidad-ppc/") ?? { canonical: "https://www.mktweb360.com/sem-publicidad-ppc/" },
   openGraph: {
-    title: "Google Ads y SEM — Gestión de Campañas PPC | Mkt Web 360",
+    title: "Agencia Google Ads: Gestión de Campañas SEM | Mkt Web 360",
     description: "Campañas de Google Ads que generan clientes desde el primer día. Servicio nacional.",
     url: "https://www.mktweb360.com/sem-publicidad-ppc/",
     images: [{ url: "https://www.mktweb360.com/og-sem.jpg", width: 1200, height: 630 }],
@@ -76,8 +76,8 @@ export default function SemPage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "SEM / Google Ads" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              Campañas Google Ads<br />
-              <span className="text-accent-400">que generan clientes reales</span>
+              Agencia Google Ads:<br />
+              <span className="text-accent-400">campañas SEM que generan clientes reales</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               Generamos clientes potenciales para tu negocio desde el primer día con campañas de Google Ads optimizadas y rentables. Pagamos solo cuando alguien hace clic.
