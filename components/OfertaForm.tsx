@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackLead } from "@/lib/track";
 import Link from "next/link";
 
 type Status = "idle" | "loading" | "ok" | "error";
@@ -28,12 +29,7 @@ export function OfertaForm() {
       });
       setStatus(res.ok ? "ok" : "error");
       if (res.ok) {
-        if (typeof window !== "undefined") {
-          (window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
-            "event", "send_form_seo",
-            { form_type: "oferta", page_location: window.location.pathname }
-          );
-        }
+        trackLead("oferta");
       }
     } catch {
       setStatus("error");

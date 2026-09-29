@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { trackLead } from "@/lib/track";
 import { usePathname } from "next/navigation";
 
 interface UtmData {
@@ -131,18 +132,12 @@ export function ContactForm({ formType = "contacto" }: ContactFormProps) {
     setStatus(res.ok ? "ok" : "error");
     if (res.ok) {
       form.reset();
-      if (typeof window !== "undefined") {
-        (window as unknown as { gtag: (...args: unknown[]) => void }).gtag(
-          "event", "send_form_seo",
-          {
-            form_type: formType,
-            page_location: utmRef.current.page_origin || window.location.pathname,
-            utm_source: utmRef.current.utm_source || "",
-            utm_medium: utmRef.current.utm_medium || "",
-            utm_campaign: utmRef.current.utm_campaign || "",
-          }
-        );
-      }
+      trackLead(formType, {
+        page_origin: utmRef.current.page_origin || window.location.pathname,
+        utm_source: utmRef.current.utm_source || "",
+        utm_medium: utmRef.current.utm_medium || "",
+        utm_campaign: utmRef.current.utm_campaign || "",
+      });
     }
   }
 
