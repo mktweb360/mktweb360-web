@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "Agentes de IA para marketing: qué son",
   description:
-    "Los agentes de IA ya no son ciencia ficción. En 2026, herramientas accesibles permiten que cualquier pyme automatice tareas de marketing con agentes que trabajan de forma autónoma. Guía práctica.",
+    "Qué son los agentes de IA para marketing, qué tareas pueden automatizar en una pyme y cómo empezar a usarlos con supervisión y sin perder el control.",
   alternates: alternatesFor("/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/") ?? { canonical: "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/" },
   openGraph: {
     title: "Agentes de IA para marketing: qué son y cómo puede usarlos una pyme | Mkt Web 360",

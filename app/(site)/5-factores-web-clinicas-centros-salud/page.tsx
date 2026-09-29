@@ -11,7 +11,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 export const metadata: Metadata = {
   title: "Web para clínicas: 5 factores clave en 2026",
   description:
-    "Publicidad sanitaria regulada, datos de salud protegidos por RGPD, cita online y Google Business Profile: los 5 factores que determinan si la web de tu clínica capta pacientes o los pierde.",
+    "Publicidad sanitaria, datos de salud protegidos por el RGPD, cita online y ficha de Google: los 5 factores que deciden si la web de tu clínica capta pacientes.",
   alternates: alternatesFor("/5-factores-web-clinicas-centros-salud/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-clinicas-centros-salud/" },
   openGraph: {
     title: "5 factores clave en la web de una clínica o centro de salud | Mkt Web 360",

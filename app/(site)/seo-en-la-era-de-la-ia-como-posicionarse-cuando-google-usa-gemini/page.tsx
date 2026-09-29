@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "SEO en la era de la IA: cómo posicionarse",
   description:
-    "Google ya no es solo un buscador. Es un motor de respuestas generativas con Gemini. Cómo adaptar tu estrategia SEO para que tu web siga captando tráfico cuando la IA responde antes que tú.",
+    "Google responde cada vez más con IA generativa. Cómo adaptar tu estrategia SEO para seguir captando tráfico cuando la respuesta aparece antes que tu web.",
   alternates: alternatesFor("/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/") ?? { canonical: "https://www.mktweb360.com/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/" },
   openGraph: {
     title: "SEO en la era de la IA: cómo posicionarse cuando Google usa Gemini para responder | Mkt Web 360",

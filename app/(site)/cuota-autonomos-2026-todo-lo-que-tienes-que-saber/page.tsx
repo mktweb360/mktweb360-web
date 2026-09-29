@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "Cuota de autónomos 2026: tramos y cambios",
   description:
-    "Las cuotas de autónomos 2026 se mantienen iguales a 2025 por prórroga del Gobierno, salvo el MEI que sube al 0,9%. Tabla completa de tramos, tarifa plana de 80€ y cómo cambiar tu base hasta 6 veces al año.",
+    "Cuota de autónomos 2026: tabla de tramos por rendimientos, MEI, tarifa plana de 80 € y cómo cambiar tu base de cotización durante el año.",
   alternates: alternatesFor("/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/") ?? { canonical: "https://www.mktweb360.com/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/" },
   openGraph: {
     title: "Cuota de autónomos 2026: tabla de tramos, MEI y lo que ha cambiado | Mkt Web 360",

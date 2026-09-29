@@ -12,7 +12,7 @@ const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 export const metadata: Metadata = {
   title: "Atribución de marketing: cómo medir el impacto",
   description:
-    "El modelo de último clic distorsiona la realidad de cómo tus clientes te encuentran. Guía práctica de modelos de atribución para PYMEs: qué son, cuál usar y cómo aproximar la atribución sin herramientas enterprise.",
+    "Modelos de atribución de marketing para pymes: qué son, cuál usar y cómo medir el impacto real de cada canal sin herramientas enterprise.",
   alternates: alternatesFor(`/${SLUG}/`) ?? { canonical: URL_CANONICAL },
   openGraph: {
     title: "Atribución de marketing: cómo medir el impacto real | Mkt Web 360",

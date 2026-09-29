@@ -9,7 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "Cómo aparecer en ChatGPT si tienes un negocio",
   description:
-    "El GEO posiciona tu negocio en ChatGPT y Perplexity. Si la IA no te menciona cuando alguien pregunta por tu sector, pierdes clientes. Guía práctica para negocios en España.",
+    "Qué es el GEO y cómo conseguir que ChatGPT, Gemini y Perplexity mencionen tu negocio cuando alguien pregunta por tu sector. Guía práctica para empresas.",
   alternates: alternatesFor("/geo-posicionamiento-ia-chatgpt-empresas-espana/") ?? { canonical: "https://www.mktweb360.com/geo-posicionamiento-ia-chatgpt-empresas-espana/" },
   openGraph: {
     title: "Qué es el GEO y cómo aparecer en ChatGPT si tienes un negocio en España | Mkt Web 360",

@@ -11,7 +11,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 export const metadata: Metadata = {
   title: "Web para asesorías y gestorías: 5 claves",
   description:
-    "RGPD y doble rol de responsable/encargado del tratamiento, colegiación de gestores administrativos y preparación ante la factura electrónica obligatoria: los 5 factores que determinan si la web de tu asesoría o gestoría capta clientes o pierde su confianza.",
+    "RGPD como responsable y encargado, colegiación de gestores y factura electrónica: los 5 factores que deciden si la web de tu asesoría o gestoría capta clientes.",
   alternates: alternatesFor("/5-factores-web-asesorias-gestorias/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-asesorias-gestorias/" },
   openGraph: {
     title: "5 factores clave en la web de una asesoría o gestoría | Mkt Web 360",

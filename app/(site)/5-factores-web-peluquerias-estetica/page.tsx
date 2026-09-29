@@ -11,7 +11,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 export const metadata: Metadata = {
   title: "Web para peluquerías y estética: 5 claves",
   description:
-    "Cualificación profesional visible, la reforma del RD 1277/2003 sobre tratamientos con finalidad sanitaria y registro sanitario: los 5 factores que determinan si la web de tu peluquería o centro de estética capta clientes o pierde su confianza.",
+    "Cualificación visible, tratamientos con finalidad sanitaria (RD 1277/2003) y registro sanitario: 5 claves en la web de una peluquería o centro de estética.",
   alternates: alternatesFor("/5-factores-web-peluquerias-estetica/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-peluquerias-estetica/" },
   openGraph: {
     title: "5 factores clave en la web de una peluquería o centro de estética | Mkt Web 360",

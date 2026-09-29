@@ -12,7 +12,7 @@ const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 export const metadata: Metadata = {
   title: "Brandformance: cómo unir marca y performance",
   description:
-    "El brandformance combina branding y performance marketing en una sola estrategia. Descubre por qué separarlos es un error y cómo unirlos multiplica tus resultados.",
+    "Qué es el brandformance y cómo combinar branding y performance marketing en una sola estrategia para reducir el coste por lead y crecer mejor.",
   alternates: alternatesFor(`/${SLUG}/`) ?? { canonical: URL_CANONICAL },
   openGraph: {
     title: "Brandformance: cómo unir marca y performance | Mkt Web 360",

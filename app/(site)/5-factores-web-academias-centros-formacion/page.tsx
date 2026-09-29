@@ -11,7 +11,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 export const metadata: Metadata = {
   title: "Web para academias: 5 factores clave en 2026",
   description:
-    "Publicidad de resultados sin exagerar, RGPD de menores, DPD obligatorio y disponibilidad de plazas en tiempo real: los 5 factores que determinan si la web de tu academia capta alumnos.",
+    "Publicidad de resultados sin exagerar, RGPD de menores, delegado de protección de datos y plazas en tiempo real: 5 factores clave en la web de una academia.",
   alternates: alternatesFor("/5-factores-web-academias-centros-formacion/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-academias-centros-formacion/" },
   openGraph: {
     title: "5 factores clave en la web de una academia o centro de formación | Mkt Web 360",

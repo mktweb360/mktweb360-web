@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "Chatbot con IA: RGPD y AI Act en España",
   description:
-    "En agosto de 2026 entran en vigor las principales obligaciones del AI Act para chatbots. Qué tienes que hacer para cumplir con el RGPD y el AI Act en España, y por qué el cumplimiento es una ventaja competitiva.",
+    "Qué exigen el RGPD y el AI Act a un chatbot con IA en España, las obligaciones de transparencia de 2026 y cómo convertir el cumplimiento en ventaja.",
   alternates: alternatesFor("/chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana/") ?? { canonical: "https://www.mktweb360.com/chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana/" },
   openGraph: {
     title: "Chatbot con IA y cumplimiento legal en España: RGPD, AI Act y lo que cambia en agosto de 2026 | Mkt Web 360",

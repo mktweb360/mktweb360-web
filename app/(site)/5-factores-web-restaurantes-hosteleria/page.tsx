@@ -11,7 +11,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 export const metadata: Metadata = {
   title: "Web para restaurantes y hoteles: 5 claves",
   description:
-    "Hoja de reclamaciones visible, alérgenos según el Reglamento UE 1169/2011, reserva online y ficha de Google: los 5 factores que determinan si la web de tu restaurante llena mesas o las pierde.",
+    "Hoja de reclamaciones, alérgenos según el Reglamento UE 1169/2011, reserva online y ficha de Google: los 5 factores de la web de un restaurante que llena mesas.",
   alternates: alternatesFor("/5-factores-web-restaurantes-hosteleria/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-restaurantes-hosteleria/" },
   openGraph: {
     title: "5 factores clave en la web de un restaurante u hotel | Mkt Web 360",

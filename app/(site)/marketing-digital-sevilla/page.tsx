@@ -7,7 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Marketing digital en Sevilla para empresas",
-  description: "Estrategia de marketing digital para negocios en Sevilla. SEO, Google Ads, redes sociales y cómo aprovechar el turismo y el crecimiento económico de la capital andaluza.",
+  description: "Marketing digital para negocios en Sevilla: SEO local, Google Ads y redes sociales, y cómo aprovechar el turismo y la estacionalidad de la ciudad.",
   alternates: alternatesFor("/marketing-digital-sevilla/") ?? { canonical: "https://www.mktweb360.com/marketing-digital-sevilla/" },
   openGraph: {
     title: "Marketing Digital para Empresas en Sevilla | Mkt Web 360",

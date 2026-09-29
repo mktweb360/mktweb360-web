@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "Chatbot para tienda online: guía completa",
   description:
-    "Un chatbot para tienda online puede atender consultas 24/7, recuperar carritos abandonados, responder preguntas de producto y gestionar el estado de pedidos. Guía completa con casos reales para 2026.",
+    "Chatbot para tienda online: atención 24/7, recuperación de carritos, dudas de producto y estado de pedidos. Guía completa para vender más y atender mejor.",
   alternates: alternatesFor("/chatbot-para-tienda-online-guia-completa-2026/") ?? { canonical: "https://www.mktweb360.com/chatbot-para-tienda-online-guia-completa-2026/" },
   openGraph: {
     title: "Chatbot para tienda online: guía completa para vender más y atender mejor en 2026 | Mkt Web 360",

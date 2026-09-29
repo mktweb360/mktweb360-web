@@ -9,7 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "SEO para clínicas: cómo captar pacientes",
   description:
-    "El 74% de los pacientes busca en Google antes de llamar. SEO específico para clínicas dentales, fisioterapia y centros de salud en España. Capta más pacientes desde el primer mes.",
+    "SEO para clínicas dentales, fisioterapia y centros de salud: ficha de Google, contenido sanitario fiable y SEO local para captar más pacientes desde Google.",
   alternates: alternatesFor("/seo-para-clinicas-centros-salud-captar-pacientes-google/") ?? { canonical: "https://www.mktweb360.com/seo-para-clinicas-centros-salud-captar-pacientes-google/" },
   openGraph: {
     title: "SEO para clínicas y centros de salud: cómo captar pacientes en Google | Mkt Web 360",

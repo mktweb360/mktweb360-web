@@ -8,7 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 export const metadata: Metadata = {
   title: "Cuánto cuesta un chatbot para empresas",
   description:
-    "Los precios de los chatbots para empresas varían desde 0€ hasta miles de euros al mes. Guía de precios reales en 2026: qué cobran los líderes del mercado, qué incluye cada nivel y cuándo sale rentable.",
+    "Cuánto cuesta un chatbot para empresas en España en 2026: rangos de precio reales, qué incluye cada nivel y cuándo sale rentable para una pyme.",
   alternates: alternatesFor("/cuanto-cuesta-un-chatbot-para-empresas-espana-2026/") ?? { canonical: "https://www.mktweb360.com/cuanto-cuesta-un-chatbot-para-empresas-espana-2026/" },
   openGraph: {
     title: "Cuánto cuesta un chatbot para empresas en España en 2026: guía de precios reales | Mkt Web 360",
