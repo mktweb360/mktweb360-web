@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { getVisiblePosts } from "@/lib/blog";
 import { OfertasSlider } from "@/components/OfertasSlider";
 import { ContactForm } from "@/components/ContactForm";
@@ -227,8 +228,11 @@ function TestimonialsCarousel({ testimonials }: { testimonials: typeof TESTIMONI
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`w-2 h-2 rounded-full transition-all ${i === current % total ? "bg-accent-500 w-4" : "bg-gray-300"}`}
-          />
+            aria-label={`Ver testimonio ${i + 1}`}
+            className="p-2 -m-1 flex items-center justify-center"
+          >
+            <span className={`block h-2 rounded-full transition-all ${i === current % total ? "bg-accent-500 w-4" : "bg-gray-300 w-2"}`} />
+          </button>
         ))}
       </div>
     </div>
@@ -268,13 +272,23 @@ function HeroSlider() {
     },
   ];
 
+  // El carrusel no rota hasta la primera interacción del usuario: cada cambio de
+  // diapositiva pinta un titular nuevo y retrasaba el LCP (22 s en móvil).
+  const [interacted, setInteracted] = useState(false);
   useEffect(() => {
-    if (paused) return;
+    const start = () => setInteracted(true);
+    const evs = ["scroll", "pointerdown", "keydown", "touchstart"] as const;
+    evs.forEach((e) => window.addEventListener(e, start, { once: true, passive: true }));
+    return () => evs.forEach((e) => window.removeEventListener(e, start));
+  }, []);
+
+  useEffect(() => {
+    if (paused || !interacted) return;
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [paused, slides.length]);
+  }, [paused, interacted, slides.length]);
 
   const slide = slides[current];
 
@@ -288,12 +302,21 @@ function HeroSlider() {
       {slides.map((s, i) => (
         <div
           key={s.bg}
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
-          style={{
-            backgroundImage: `url(${s.bg})`,
-            opacity: i === current ? 1 : 0,
-          }}
-        />
+          className="absolute inset-0 transition-opacity duration-1000"
+          style={{ opacity: i === current ? 1 : 0 }}
+          aria-hidden="true"
+        >
+          {/* next/image: WebP/AVIF responsivo; la primera diapositiva se precarga (LCP). */}
+          <Image
+            src={s.bg}
+            alt=""
+            fill
+            priority={i === 0}
+            loading={i === 0 ? "eager" : "lazy"}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
       ))}
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-primary-900/65" />
