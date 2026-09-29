@@ -15,15 +15,6 @@ type Slide = {
 
 const SLIDES: Slide[] = [
   {
-    badge: "Oferta agosto · Solo 5 plazas",
-    title: "Vete de vacaciones. Cuando vuelvas, tu empresa ya aparece en la IA.",
-    desc: "SEO + GEO + GBP al 50%. Llega al Q4 visible en Google, ChatGPT y el mapa.",
-    price: { old: "699€/mes", new: "349€/mes" },
-    cta: "Ver oferta",
-    href: "/landing/seo-geo-gbp-verano/",
-    bg: "/hero-agosto-seo-geo-gbp.svg",
-  },
-  {
     badge: "Oferta Web Corporativa",
     title: "Tu web profesional, desde 249€",
     desc: "Solo la web: 249€. Con 6 meses de SEO incluido: 999€ + IVA. Hosting, dominio, correo corporativo, blog y soporte incluidos.",

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
@@ -282,8 +281,6 @@ export default function GEOPage() {
         </div>
       </section>
 
-      {/* Oferta verano */}
-      <OfertaVeranoBanner />
 
       {/* FAQs GEO */}
       <section className="py-16 px-4 bg-gray-50">

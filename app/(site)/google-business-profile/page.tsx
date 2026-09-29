@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
@@ -240,8 +239,6 @@ export default function GoogleBusinessProfilePage() {
           </div>
         </section>
 
-        {/* Oferta verano */}
-        <OfertaVeranoBanner />
 
         {/* FAQs */}
         <section className="mb-16">

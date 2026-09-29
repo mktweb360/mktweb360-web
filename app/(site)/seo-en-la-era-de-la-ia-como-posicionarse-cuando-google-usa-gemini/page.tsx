@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
-import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
@@ -108,7 +107,6 @@ export default function SeoEraIaPage() {
           <p>No todas las búsquedas se ven afectadas por igual. Las consultas informacionales puras (definiciones, datos concretos, respuestas cerradas) son las más absorbidas por los AI Overviews, porque la IA puede resolverlas sin que el usuario necesite profundizar.</p>
           <p>En cambio, las búsquedas con intención comercial (comparar servicios, elegir proveedor, decidir una compra) siguen generando clics con fuerza, porque el usuario necesita contrastar, ver ejemplos y ganar confianza antes de decidir. El SEO local también resiste bien: el pack de mapas mantiene su prominencia para negocios con presencia física. Ahí es donde conviene concentrar el esfuerzo.</p>
 
-          <OfertaVeranoBanner />
           <BlogBanner variant="seo" />
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo optimizar para aparecer dentro de un AI Overview</h2>

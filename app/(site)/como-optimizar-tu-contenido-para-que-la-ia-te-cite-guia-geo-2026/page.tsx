@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
-import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
@@ -112,7 +111,6 @@ export default function OptimizarContenidoGEOPage() {
           <p>El llms.txt es una representación orientativa y legible del sitio para sistemas de IA. A diferencia del robots.txt, no controla el acceso de los crawlers ni garantiza indexación ni citación; tampoco es una señal oficial de Google. Su utilidad real es estructural: permite que los modelos de lenguaje encuentren y relacionen más fácilmente tus páginas más relevantes, siempre que el contenido detrás de esas URLs sea de calidad.</p>
           <p>Configurarlo bien pasa por revisar primero qué bots de IA quieres permitir y cuáles no, y por señalar de forma ordenada los recursos que quieres que la máquina priorice. Es un archivo pequeño, pero forma parte de esa capa técnica que separa a quien improvisa de quien trabaja el GEO con criterio.</p>
 
-          <OfertaVeranoBanner />
           <BlogBanner variant="geo" />
 
           <h2 className="text-2xl font-bold text-primary-600">4. Autoridad de entidad: que todo diga lo mismo sobre ti</h2>

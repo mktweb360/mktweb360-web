@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
-import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
@@ -129,7 +128,6 @@ export default function GoogleMyBusinessGuiaPage() {
             </Link>
           </div>
 
-          <OfertaVeranoBanner />
           <BlogBanner variant="seo" />
 
           <h2 className="text-2xl font-bold text-primary-600">Las reseñas: el factor más importante</h2>
