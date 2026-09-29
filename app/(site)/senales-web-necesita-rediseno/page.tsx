@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Señales de que tu web necesita un rediseño urgente en 2025",
+  title: "Señales de que tu web necesita un rediseño",
   description:
     "Descubre las señales más claras de que tu web está frenando ventas y cuándo conviene rediseñar en lugar de seguir optimizando.",
   alternates: alternatesFor("/senales-web-necesita-rediseno/") ?? { canonical: "https://www.mktweb360.com/senales-web-necesita-rediseno/" },

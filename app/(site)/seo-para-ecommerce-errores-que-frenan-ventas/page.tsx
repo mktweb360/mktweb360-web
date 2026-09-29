@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "SEO para ecommerce: errores que frenan ventas en tu tienda online",
+  title: "SEO para ecommerce: errores que frenan ventas",
   description:
     "Descubre los errores SEO más comunes en ecommerce y qué revisar para mejorar visibilidad, tráfico cualificado y ventas.",
   alternates: alternatesFor("/seo-para-ecommerce-errores-que-frenan-ventas/") ?? { canonical: "https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/" },

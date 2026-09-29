@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Marketing Digital para Empresas en Sevilla: Guía Práctica",
+  title: "Marketing digital en Sevilla para empresas",
   description: "Estrategia de marketing digital para negocios en Sevilla. SEO, Google Ads, redes sociales y cómo aprovechar el turismo y el crecimiento económico de la capital andaluza.",
   alternates: alternatesFor("/marketing-digital-sevilla/") ?? { canonical: "https://www.mktweb360.com/marketing-digital-sevilla/" },
   openGraph: {

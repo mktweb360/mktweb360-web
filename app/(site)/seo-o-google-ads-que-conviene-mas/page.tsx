@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "SEO o Google Ads: qué conviene más para tu negocio en 2025",
+  title: "SEO o Google Ads: qué conviene a tu negocio",
   description:
     "Descubre si te conviene más invertir en SEO, Google Ads o una combinación de ambos según tu negocio, presupuesto y urgencia.",
   alternates: alternatesFor("/seo-o-google-ads-que-conviene-mas/") ?? { canonical: "https://www.mktweb360.com/seo-o-google-ads-que-conviene-mas/" },

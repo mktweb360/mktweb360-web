@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cuánto cuesta una agencia de marketing digital en España en 2026",
+  title: "Cuánto cuesta una agencia de marketing digital",
   description:
     "Precios reales de agencias de marketing digital en España 2026: SEO, Google Ads y redes sociales. Lo que incluye cada rango y cómo no equivocarte al elegir.",
   alternates: alternatesFor("/cuanto-cuesta-agencia-marketing-digital-espana-2026/") ?? { canonical: "https://www.mktweb360.com/cuanto-cuesta-agencia-marketing-digital-espana-2026/" },

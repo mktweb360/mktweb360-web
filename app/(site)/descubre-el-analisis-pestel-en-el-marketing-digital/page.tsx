@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Análisis PESTEL en el Marketing Digital — Guía para PYMEs",
+  title: "Análisis PESTEL en marketing digital",
   description: "Descubre cómo aplicar el análisis PESTEL en tu estrategia de marketing digital. Factores Políticos, Económicos, Sociales, Tecnológicos, Ambientales y Legales.",
   alternates: alternatesFor("/descubre-el-analisis-pestel-en-el-marketing-digital/") ?? { canonical: "https://www.mktweb360.com/descubre-el-analisis-pestel-en-el-marketing-digital/" },
   openGraph: {

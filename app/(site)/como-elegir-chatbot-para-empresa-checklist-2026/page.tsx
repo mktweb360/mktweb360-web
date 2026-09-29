@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo elegir el chatbot correcto para tu empresa: checklist completa para 2026",
+  title: "Cómo elegir chatbot para tu empresa",
   description:
     "Antes de elegir un chatbot para tu empresa, hay 10 preguntas que debes responder. Esta checklist te ayuda a evitar los errores más frecuentes y a elegir la solución que realmente se adapta a lo que necesitas.",
   alternates: alternatesFor("/como-elegir-chatbot-para-empresa-checklist-2026/") ?? { canonical: "https://www.mktweb360.com/como-elegir-chatbot-para-empresa-checklist-2026/" },

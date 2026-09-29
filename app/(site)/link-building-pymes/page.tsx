@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Link Building para PYMEs: Cómo Conseguir Enlaces Sin Spam",
+  title: "Link building para pymes sin spam",
   description: "Estrategias de link building para pequeñas empresas sin presupuesto para comprar enlaces. Cómo conseguir backlinks de calidad de forma natural y sostenible.",
   alternates: alternatesFor("/link-building-pymes/") ?? { canonical: "https://www.mktweb360.com/link-building-pymes/" },
   openGraph: {

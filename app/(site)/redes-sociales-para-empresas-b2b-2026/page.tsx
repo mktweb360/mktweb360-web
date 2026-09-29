@@ -5,7 +5,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Redes sociales para empresas B2B en 2026: qué funciona realmente",
+  title: "Redes sociales para empresas B2B en 2026",
   description: "Guía práctica de social media B2B para 2026: qué redes priorizar, qué contenido genera leads y cómo medir el retorno real de tu inversión en redes sociales.",
   alternates: {
     canonical: "https://www.mktweb360.com/redes-sociales-para-empresas-b2b-2026/",

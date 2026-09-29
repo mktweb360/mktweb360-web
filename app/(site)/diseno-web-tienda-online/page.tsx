@@ -5,7 +5,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Diseño Web para Tienda Online — Sin Comisiones ni Licencias",
+  title: "Diseño web para tienda online sin comisiones",
   description:
     "Diseño y desarrollo de tienda online profesional sin comisiones por venta ni licencias mensuales. WooCommerce, SEO incluido, desde 490€. Gestión autónoma.",
   alternates: alternatesFor("/diseno-web-tienda-online/") ?? { canonical: "https://www.mktweb360.com/diseno-web-tienda-online/" },

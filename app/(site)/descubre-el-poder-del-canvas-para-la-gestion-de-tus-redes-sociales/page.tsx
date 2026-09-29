@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Canvas para la Gestión de Redes Sociales — Guía Práctica",
+  title: "Canvas para gestionar tus redes sociales",
   description: "Descubre cómo usar el modelo Canvas adaptado a las redes sociales para planificar tu estrategia de contenidos. Herramienta práctica para empresas.",
   alternates: alternatesFor("/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/") ?? { canonical: "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/" },
   openGraph: {

@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo darse de alta como autónomo en 2026: pasos, costes y errores a evitar",
+  title: "Cómo darse de alta como autónomo en 2026",
   description:
     "Guía completa para darse de alta como autónomo en 2026. Pasos en Hacienda y Seguridad Social, cuota, errores frecuentes y qué necesitas tener listo.",
   alternates: alternatesFor("/como-darse-de-alta-autonomo/") ?? { canonical: "https://www.mktweb360.com/como-darse-de-alta-autonomo/" },

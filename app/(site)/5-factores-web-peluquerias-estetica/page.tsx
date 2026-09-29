@@ -9,7 +9,7 @@ import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
 import { DEMO_BY_ID } from "@/lib/demos";
 
 export const metadata: Metadata = {
-  title: "5 factores clave en la web de una peluquería o centro de estética (2026)",
+  title: "Web para peluquerías y estética: 5 claves",
   description:
     "Cualificación profesional visible, la reforma del RD 1277/2003 sobre tratamientos con finalidad sanitaria y registro sanitario: los 5 factores que determinan si la web de tu peluquería o centro de estética capta clientes o pierde su confianza.",
   alternates: alternatesFor("/5-factores-web-peluquerias-estetica/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-peluquerias-estetica/" },

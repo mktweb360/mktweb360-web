@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Herramientas de IA para marketing digital en 2026: las que realmente funcionan",
+  title: "Herramientas de IA para marketing en 2026",
   description:
     "No todas las herramientas de IA para marketing merecen el tiempo que cuesta aprenderlas. Análisis honesto de las que aportan valor real a pymes y agencias en 2026.",
   alternates: alternatesFor("/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/") ?? { canonical: "https://www.mktweb360.com/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/" },

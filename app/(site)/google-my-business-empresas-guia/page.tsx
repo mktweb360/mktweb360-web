@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Google Business Profile para empresas: guía completa 2026",
+  title: "Google Business Profile: guía para empresas",
   description:
     "Aprende a optimizar tu ficha de Google Business Profile para aparecer en búsquedas locales, conseguir más reseñas y convertir visitas en clientes.",
   alternates: alternatesFor("/google-my-business-empresas-guia/") ?? { canonical: "https://www.mktweb360.com/google-my-business-empresas-guia/" },

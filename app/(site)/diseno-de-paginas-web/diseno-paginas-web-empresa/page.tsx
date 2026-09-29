@@ -6,7 +6,7 @@ import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { RelatedArticles } from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
-  title: "Diseño de Páginas Web para Empresas — Soluciones a Medida",
+  title: "Páginas Web para Empresas a Medida",
   description: "Diseño de páginas web para empresas con funcionalidades avanzadas. Soluciones a medida, portales, catálogos, reservas y plataformas web empresariales. SEO incluido.",
   alternates: { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/diseno-paginas-web-empresa/" },
   openGraph: {

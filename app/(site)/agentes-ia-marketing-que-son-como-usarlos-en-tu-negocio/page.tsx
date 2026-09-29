@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Agentes de IA para marketing: qué son y cómo puede usarlos una pyme",
+  title: "Agentes de IA para marketing: qué son",
   description:
     "Los agentes de IA ya no son ciencia ficción. En 2026, herramientas accesibles permiten que cualquier pyme automatice tareas de marketing con agentes que trabajan de forma autónoma. Guía práctica.",
   alternates: alternatesFor("/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/") ?? { canonical: "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/" },

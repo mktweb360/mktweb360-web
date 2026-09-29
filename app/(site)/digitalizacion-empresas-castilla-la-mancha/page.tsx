@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Digitalización de Empresas en Castilla-La Mancha — Guía 2025",
+  title: "Digitalizar empresas en Castilla-La Mancha",
   description: "Cómo digitalizar tu empresa en Castilla-La Mancha. Ayudas, herramientas y estrategia digital para PYMEs de la región. Guía actualizada 2025.",
   alternates: alternatesFor("/digitalizacion-empresas-castilla-la-mancha/") ?? { canonical: "https://www.mktweb360.com/digitalizacion-empresas-castilla-la-mancha/" },
   openGraph: {

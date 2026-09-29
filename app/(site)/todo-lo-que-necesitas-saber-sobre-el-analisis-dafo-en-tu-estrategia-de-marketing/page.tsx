@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Análisis DAFO en Marketing Digital — Guía Completa",
+  title: "Análisis DAFO en marketing: guía completa",
   description: "Todo lo que necesitas saber sobre el análisis DAFO en tu estrategia de marketing digital. Debilidades, Amenazas, Fortalezas y Oportunidades con ejemplos prácticos.",
   alternates: alternatesFor("/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/") ?? { canonical: "https://www.mktweb360.com/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/" },
   openGraph: {

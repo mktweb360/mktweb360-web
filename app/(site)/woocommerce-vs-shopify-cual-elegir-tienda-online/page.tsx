@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "WooCommerce vs Shopify: cuál elegir para tu tienda online en España en 2026",
+  title: "WooCommerce vs Shopify: cuál elegir en 2026",
   description:
     "WooCommerce es gratuito con control total. Shopify es más rápido de lanzar pero tiene comisiones. Comparativa honesta con recomendación por tipo de negocio y coste real a 3 años.",
   alternates: alternatesFor("/woocommerce-vs-shopify-cual-elegir-tienda-online/") ?? { canonical: "https://www.mktweb360.com/woocommerce-vs-shopify-cual-elegir-tienda-online/" },

@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Ejemplos y diferencias entre buscadores y navegadores web — Guía completa",
+  title: { absolute: "Buscadores y navegadores: ejemplos y diferencias" },
   description:
     "Descubre las principales diferencias entre buscadores y navegadores con ejemplos reales. Guía clara para entender cómo funcionan Google, Chrome, Firefox y más.",
   alternates: alternatesFor("/ejemplos-y-diferencias-entre-buscadores-y-navegadores/") ?? { canonical: "https://www.mktweb360.com/ejemplos-y-diferencias-entre-buscadores-y-navegadores/" },

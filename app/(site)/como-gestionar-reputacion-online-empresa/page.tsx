@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo gestionar la reputación online de tu empresa: guía práctica 2026",
+  title: "Cómo gestionar la reputación online",
   description:
     "La reputación online se construye o destruye en público. Descubre cómo gestionarla con criterio: reseñas, menciones, respuestas y prevención de crisis.",
   alternates: alternatesFor("/como-gestionar-reputacion-online-empresa/") ?? { canonical: "https://www.mktweb360.com/como-gestionar-reputacion-online-empresa/" },

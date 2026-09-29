@@ -8,7 +8,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo Crear una Página Web para Pintores y Conseguir Clientes en Google",
+  title: "Página web para pintores: cómo captar clientes",
   description: "Guía completa para pintores y empresas de pintura que quieren tener presencia online y conseguir clientes a través de Google. Secciones imprescindibles, SEO local y más.",
   alternates: alternatesFor("/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/") ?? { canonical: "https://www.mktweb360.com/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/" },
   openGraph: {

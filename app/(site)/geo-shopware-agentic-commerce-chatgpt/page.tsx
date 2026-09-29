@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "GEO para Shopware: vende desde ChatGPT con Agentic Commerce",
+  title: "GEO para Shopware y Agentic Commerce",
   description:
     "Shopware 6.7.9 trae Agentic Commerce nativo. Prepara tu tienda con GEO para que ChatGPT y Perplexity recomienden y vendan tus productos directamente.",
   alternates: alternatesFor("/geo-shopware-agentic-commerce-chatgpt/") ?? { canonical: "https://www.mktweb360.com/geo-shopware-agentic-commerce-chatgpt/" },

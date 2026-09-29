@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "GEO para pymes: cómo aparecer en ChatGPT sin ser una gran marca",
+  title: "GEO para pymes: cómo aparecer en ChatGPT",
   description:
     "Las pymes tienen una ventaja real en GEO: la especificidad de nicho. Guía práctica para que cualquier negocio pequeño aparezca en las respuestas de ChatGPT, Gemini y Perplexity.",
   alternates: alternatesFor("/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/") ?? { canonical: "https://www.mktweb360.com/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/" },

@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo usar un chatbot para captar y cualificar leads: guía práctica",
+  title: "Chatbot para captar y cualificar leads",
   description:
     "Un chatbot bien configurado puede captar leads 24/7, cualificarlos con preguntas estratégicas y pasarlos al CRM con contexto completo. Guía práctica para implementar un sistema de captación con chatbot en 2026.",
   alternates: alternatesFor("/chatbot-captacion-cualificacion-leads-guia-practica/") ?? { canonical: "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/" },

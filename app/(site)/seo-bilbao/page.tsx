@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "SEO en Bilbao: Cómo Posicionar tu Negocio en el País Vasco",
+  title: "SEO en Bilbao: posiciona tu negocio",
   description: "Guía de SEO local para negocios en Bilbao y el País Vasco. Estrategia de posicionamiento, Google Business Profile, keywords en euskera y castellano.",
   alternates: alternatesFor("/seo-bilbao/") ?? { canonical: "https://www.mktweb360.com/seo-bilbao/" },
   openGraph: {

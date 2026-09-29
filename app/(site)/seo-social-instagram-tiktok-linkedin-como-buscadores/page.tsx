@@ -10,7 +10,7 @@ const SLUG = "seo-social-instagram-tiktok-linkedin-como-buscadores";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 
 export const metadata: Metadata = {
-  title: "SEO social: Instagram, TikTok y LinkedIn como motores de búsqueda en 2026",
+  title: "SEO social: Instagram, TikTok y LinkedIn",
   description:
     "El 40% de la Generación Z busca en TikTok antes que en Google. El SEO social optimiza tu presencia en los buscadores de Instagram, TikTok y LinkedIn. Estrategias por plataforma para 2026.",
   alternates: alternatesFor(`/${SLUG}/`) ?? { canonical: URL_CANONICAL },

@@ -6,7 +6,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Chatbot para clínicas y centros de salud: citas, preguntas y cumplimiento sanitario",
+  title: "Chatbot para clínicas: citas automatizadas",
   description:
     "Las clínicas y centros de salud reciben cientos de consultas repetitivas cada día. Un chatbot bien implementado puede automatizar la gestión de citas, responder preguntas frecuentes y cualificar pacientes, cumpliendo con el RGPD.",
   alternates: alternatesFor("/chatbot-para-clinicas-centros-salud-automatizar-citas/") ?? { canonical: "https://www.mktweb360.com/chatbot-para-clinicas-centros-salud-automatizar-citas/" },

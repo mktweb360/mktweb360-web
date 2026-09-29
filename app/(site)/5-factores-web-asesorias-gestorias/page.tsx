@@ -9,7 +9,7 @@ import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
 import { DEMO_BY_ID } from "@/lib/demos";
 
 export const metadata: Metadata = {
-  title: "5 factores clave en la web de una asesoría o gestoría (2026)",
+  title: "Web para asesorías y gestorías: 5 claves",
   description:
     "RGPD y doble rol de responsable/encargado del tratamiento, colegiación de gestores administrativos y preparación ante la factura electrónica obligatoria: los 5 factores que determinan si la web de tu asesoría o gestoría capta clientes o pierde su confianza.",
   alternates: alternatesFor("/5-factores-web-asesorias-gestorias/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-asesorias-gestorias/" },

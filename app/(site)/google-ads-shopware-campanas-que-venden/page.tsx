@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Google Ads para Shopware: campañas que venden de verdad",
+  title: "Google Ads para Shopware: campañas que venden",
   description:
     "Cómo montar Google Ads para tu tienda Shopware: tracking de conversiones, conexión con Merchant Center, Performance Max, Shopping y optimización por ROAS.",
   alternates: alternatesFor("/google-ads-shopware-campanas-que-venden/") ?? { canonical: "https://www.mktweb360.com/google-ads-shopware-campanas-que-venden/" },

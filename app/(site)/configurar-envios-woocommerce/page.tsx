@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Cómo Configurar los Envíos en WooCommerce para España: Guía Completa",
+  title: "Configurar envíos en WooCommerce para España",
   description: "Guía para configurar métodos de envío en WooCommerce. Zonas de envío, tarifas planas, envío gratis a partir de importe, integración con Correos, MRW y Correos Express.",
   alternates: alternatesFor("/configurar-envios-woocommerce/") ?? { canonical: "https://www.mktweb360.com/configurar-envios-woocommerce/" },
   openGraph: {

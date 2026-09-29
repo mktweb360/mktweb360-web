@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Tiendas Online en Toledo — Cómo Vender Más Allá de tu Provincia",
+  title: "Tiendas online en Toledo: vende a toda España",
   description: "Crea tu tienda online en Toledo y vende a toda España. Sin comisiones ni licencias mensuales. Guía para negocios toledanos que quieren vender por internet.",
   alternates: alternatesFor("/tiendas-online-toledo/") ?? { canonical: "https://www.mktweb360.com/tiendas-online-toledo/" },
   openGraph: {

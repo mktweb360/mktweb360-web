@@ -9,7 +9,7 @@ import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
 import { DEMO_BY_ID } from "@/lib/demos";
 
 export const metadata: Metadata = {
-  title: "5 factores clave en la web de una clínica dental (2026)",
+  title: "Web para clínicas dentales: 5 factores clave",
   description:
     "Publicidad sanitaria según el RD 1907/1996, datos de salud protegidos por el RGPD, número de colegiado visible y transparencia de precios: los 5 factores que determinan si la web de tu clínica dental capta pacientes o pierde su confianza.",
   alternates: alternatesFor("/5-factores-web-clinicas-dentales/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-clinicas-dentales/" },

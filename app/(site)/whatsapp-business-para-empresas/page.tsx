@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "WhatsApp Business para Empresas — Guía Completa 2025",
+  title: "WhatsApp Business para empresas: guía 2026",
   description: "Cómo usar WhatsApp Business para captar y fidelizar clientes. Configuración, automatizaciones, catálogo y estrategia para empresas. Guía actualizada 2025.",
   alternates: alternatesFor("/whatsapp-business-para-empresas/") ?? { canonical: "https://www.mktweb360.com/whatsapp-business-para-empresas/" },
   openGraph: {

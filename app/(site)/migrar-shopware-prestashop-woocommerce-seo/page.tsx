@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Migrar a Shopware desde PrestaShop o WooCommerce sin perder SEO",
+  title: "Migrar a Shopware sin perder SEO",
   description:
     "Cómo migrar tu tienda a Shopware sin perder posicionamiento: auditoría de URLs, mapa de redirecciones 301, protocolo de lanzamiento y seguimiento post-migración.",
   alternates: alternatesFor("/migrar-shopware-prestashop-woocommerce-seo/") ?? { canonical: "https://www.mktweb360.com/migrar-shopware-prestashop-woocommerce-seo/" },

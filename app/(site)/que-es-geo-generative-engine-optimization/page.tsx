@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Qué es el GEO (Generative Engine Optimization) y por qué importa en 2025",
+  title: "Qué es el GEO (Generative Engine Optimization)",
   description: "GEO: qué es, cómo funciona y por qué optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini es la nueva frontera del SEO.",
   alternates: alternatesFor("/que-es-geo-generative-engine-optimization/") ?? { canonical: "https://www.mktweb360.com/que-es-geo-generative-engine-optimization/" },
   openGraph: {

@@ -9,7 +9,7 @@ import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
 import { DEMO_BY_ID } from "@/lib/demos";
 
 export const metadata: Metadata = {
-  title: "5 factores clave en la web de una inmobiliaria (2026)",
+  title: "Web para inmobiliarias: 5 factores clave",
   description:
     "Certificado energético obligatorio, sindicación con portales, velocidad de carga con fotografía pesada, buscador de propiedades y captación de leads por inmueble: los 5 factores clave en la web de una inmobiliaria.",
   alternates: alternatesFor("/5-factores-web-inmobiliaria/") ?? { canonical: "https://www.mktweb360.com/5-factores-web-inmobiliaria/" },

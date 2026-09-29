@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Qué poner en la biografía de Instagram para empresas — Guía 2025",
+  title: "Qué poner en la biografía de Instagram",
   description:
     "Descubre qué poner en la biografía de Instagram de tu empresa para captar más seguidores y clientes. Ejemplos reales y consejos prácticos.",
   alternates: alternatesFor("/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/") ?? { canonical: "https://www.mktweb360.com/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/" },
