@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Email Marketing Campaigns for Businesses — Proven ROI | Mkt Web 360"
-      : "Campagnes d'Email Marketing pour Entreprises — ROI Prouvé | Mkt Web 360",
+      ? "Email Marketing Campaigns for Businesses — Proven ROI"
+      : "Campagnes d'Email Marketing pour Entreprises — ROI Prouvé",
     description: isEn
       ? "Professional email marketing service for businesses. Newsletter design, automated sequences and acquisition campaigns. Average ROI: €36 per euro invested."
       : "Service d'email marketing professionnel pour entreprises. Design de newsletters, séquences automatisées et campagnes d'acquisition avec ROI prouvé.",

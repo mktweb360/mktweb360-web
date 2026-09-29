@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Google Business Profile Management — Local Visibility for Businesses | Mkt Web 360"
-      : "Gestion Google Business Profile — Visibilité Locale pour Entreprises | Mkt Web 360",
+      ? "Google Business Profile Management — Local Visibility for Businesses"
+      : "Gestion Google Business Profile — Visibilité Locale pour Entreprises",
     description: isEn
       ? "Professional Google Business Profile management. Optimise your profile, generate more reviews and appear first on Google Maps. Nationwide service from Spain."
       : "Gestion professionnelle du Google Business Profile. Optimisez votre fiche, générez plus d'avis et apparaissez en premier sur Google Maps.",

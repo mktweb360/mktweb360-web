@@ -10,7 +10,7 @@ export async function generateMetadata({
 }) {
   const { lang } = await params;
   return {
-    title: lang === "en" ? "Contact Us — Mkt Web 360" : "Contactez-nous — Mkt Web 360",
+    title: lang === "en" ? "Contact Us" : "Contactez-nous",
     description:
       lang === "en"
         ? "Contact Mkt Web 360. Tell us about your project and we will get back to you within 24 hours."

@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "AI Applied to Digital Marketing | Mkt Web 360"
-      : "IA Appliquée au Marketing Digital | Mkt Web 360",
+      ? "AI Applied to Digital Marketing"
+      : "IA Appliquée au Marketing Digital",
     description: isEn
       ? "We integrate artificial intelligence into every digital marketing service. Our own AI protocols for faster, more precise results. Nationwide service from Spain."
       : "Nous intégrons l'intelligence artificielle dans chaque service de marketing digital. Nos propres protocoles IA pour des résultats plus rapides et plus précis.",

@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Online Reputation Management for Businesses | Mkt Web 360"
-      : "Gestion de la Réputation en Ligne pour Entreprises | Mkt Web 360",
+      ? "Online Reputation Management for Businesses"
+      : "Gestion de la Réputation en Ligne pour Entreprises",
     description: isEn
       ? "Professional online reputation management. Review monitoring and management on Google and Trustpilot. Build trust and attract more customers."
       : "Gestion professionnelle de la réputation en ligne. Surveillance et gestion des avis sur Google et Trustpilot. Renforcez la confiance et attirez plus de clients.",

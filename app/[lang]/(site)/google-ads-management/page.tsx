@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Google Ads Management — Campaigns that Convert | Mkt Web 360"
-      : "Gestion Google Ads — Campagnes qui Convertissent | Mkt Web 360",
+      ? "Google Ads Management — Campaigns that Convert"
+      : "Gestion Google Ads — Campagnes qui Convertissent",
     description: isEn
       ? "Professional Google Ads campaign management for businesses. Generate leads from day one with optimised, profitable campaigns. Nationwide service."
       : "Gestion professionnelle de campagnes Google Ads pour les entreprises. Générez des leads dès le premier jour avec des campagnes optimisées et rentables.",

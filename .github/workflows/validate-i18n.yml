@@ -22,9 +22,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # pnpm 10: pnpm-workspace.yaml usa ajustes de pnpm 10 (allowBuilds); con pnpm 9 el setup fallaba
+      # ("packages field missing or empty") y el validador nunca llegaba a ejecutarse.
       - uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 10
 
       - uses: actions/setup-node@v4
         with:

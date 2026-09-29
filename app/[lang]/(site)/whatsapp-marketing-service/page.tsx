@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "WhatsApp Marketing for Businesses — 98% Open Rate | Mkt Web 360"
-      : "WhatsApp Marketing pour Entreprises — 98% de Taux d'Ouverture | Mkt Web 360",
+      ? "WhatsApp Marketing for Businesses — 98% Open Rate"
+      : "WhatsApp Marketing pour Entreprises — 98% de Taux d'Ouverture",
     description: isEn
       ? "WhatsApp Business API marketing service for businesses. 98% open rate, automated sequences and segmented campaigns to convert more customers."
       : "Service de marketing WhatsApp Business API pour entreprises. 98% de taux d'ouverture, séquences automatisées et campagnes segmentées pour convertir plus de clients.",

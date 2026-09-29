@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Import Products to WooCommerce Easily | Mkt Web 360"
-      : "Comment importer des produits dans WooCommerce facilement | Mkt Web 360",
+      ? "How to Import Products to WooCommerce Easily"
+      : "Comment importer des produits dans WooCommerce facilement",
     description: isEn
       ? "Import products to WooCommerce from CSV, Excel, Shopify or PrestaShop. Step-by-step guide to avoid errors."
       : "Importez des produits dans WooCommerce depuis CSV, Excel, Shopify ou PrestaShop. Guide étape par étape pour éviter les erreurs.",

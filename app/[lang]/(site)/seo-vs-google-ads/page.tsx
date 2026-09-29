@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "SEO vs Google Ads: Which Is Better for Your Business? | Mkt Web 360"
-      : "SEO vs Google Ads : lequel choisir pour votre entreprise ? | Mkt Web 360",
+      ? "SEO vs Google Ads: Which Is Better for Your Business?"
+      : "SEO vs Google Ads : lequel choisir pour votre entreprise ?",
     description: isEn
       ? "Should you invest in SEO or Google Ads? Find out which channel suits your business, budget and urgency best."
       : "SEO ou Google Ads ? Découvrez quel canal convient le mieux à votre entreprise selon votre budget et vos objectifs.",

@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Migrate from Shopify to WooCommerce Without Losing Anything | Mkt Web 360"
-      : "Comment migrer de Shopify vers WooCommerce sans rien perdre | Mkt Web 360",
+      ? "How to Migrate from Shopify to WooCommerce Without Losing Anything"
+      : "Comment migrer de Shopify vers WooCommerce sans rien perdre",
     description: isEn
       ? "Complete guide to migrate from Shopify to WooCommerce: products, customers, orders, SEO and step-by-step process."
       : "Guide complet pour migrer de Shopify vers WooCommerce : produits, clients, commandes, SEO et processus étape par étape.",

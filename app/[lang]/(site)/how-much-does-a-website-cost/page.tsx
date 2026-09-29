@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How Much Does a Professional Website Cost? | Mkt Web 360"
-      : "Combien coûte un site web professionnel ? | Mkt Web 360",
+      ? "How Much Does a Professional Website Cost?"
+      : "Combien coûte un site web professionnel ?",
     description: isEn
       ? "What really influences the price of a professional website, what it should include and how to compare quotes."
       : "Ce qui influence vraiment le prix d'un site web professionnel, ce qu'il doit inclure et comment comparer les devis.",

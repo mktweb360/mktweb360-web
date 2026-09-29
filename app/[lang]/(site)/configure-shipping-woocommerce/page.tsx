@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Configure Shipping in WooCommerce — Complete Guide | Mkt Web 360"
-      : "Comment configurer les expéditions dans WooCommerce — Guide complet | Mkt Web 360",
+      ? "How to Configure Shipping in WooCommerce — Complete Guide"
+      : "Comment configurer les expéditions dans WooCommerce — Guide complet",
     description: isEn
       ? "How to configure shipping zones, rates and carriers in WooCommerce. Free shipping, flat rate and carrier integration step by step."
       : "Comment configurer les zones d'expédition, tarifs et transporteurs dans WooCommerce. Livraison gratuite, tarif fixe et intégration transporteurs étape par étape.",

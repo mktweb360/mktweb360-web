@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Digital Marketing in the Age of AI Search and Zero-Click | Mkt Web 360"
-      : "Marketing digital à l'ère de l'IA et du zéro clic | Mkt Web 360",
+      ? "Digital Marketing in the Age of AI Search and Zero-Click"
+      : "Marketing digital à l'ère de l'IA et du zéro clic",
     description: isEn
       ? "AI answers directly without users clicking through. How to adapt your digital marketing strategy to keep winning customers in the zero-click era."
       : "L'IA répond directement sans que l'utilisateur ne clique. Comment adapter votre stratégie marketing pour continuer à capter des clients à l'ère du zéro clic.",

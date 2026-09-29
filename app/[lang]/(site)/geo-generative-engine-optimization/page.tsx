@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "GEO — Generative Engine Optimization | Mkt Web 360"
-      : "GEO — Optimisation pour Moteurs Génératifs | Mkt Web 360",
+      ? "GEO — Generative Engine Optimization"
+      : "GEO — Optimisation pour Moteurs Génératifs",
     description: isEn
       ? "Optimise your brand to appear in ChatGPT, Perplexity, Gemini and Claude responses. GEO: Generative Engine Optimization. The SEO of the AI era."
       : "Optimisez votre marque pour apparaître dans les réponses de ChatGPT, Perplexity, Gemini et Claude. GEO : Generative Engine Optimization. Le SEO de l'ère IA.",
