@@ -6,7 +6,6 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { MetodologiaSeo } from "@/components/MetodologiaSeo";
 import { OfertasSlider } from "@/components/OfertasSlider";
-import { OfertaVeranoBanner } from "@/components/OfertaVeranoBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
@@ -273,8 +272,6 @@ export default function SeoPage() {
         </div>
       </section>
 
-      {/* Oferta verano */}
-      <OfertaVeranoBanner />
 
       {/* FAQ */}
       <section className="py-16 px-4 bg-gray-50">

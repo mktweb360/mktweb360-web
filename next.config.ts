@@ -132,11 +132,13 @@ const nextConfig: NextConfig = {
       // Expired SEO 6x3 offer — retired, redirect to the evergreen SEO service page.
       // Sources are slash-less because trailingSlash is off (Next strips '/x/' → '/x' before matching).
       { source: '/landing/seo-6x3/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
-      // /oferta-seo/ was used by retired Google Ads campaign — now redirects to active August offer landing.
-      { source: '/oferta-seo/:path*/', destination: '/oferta-seo-geo-gbp/', permanent: false },
-      // Oferta verano SEO+GEO+GBP (caducada 31-ago-2026) — landing de Ads retirada -> página orgánica evergreen.
-      { source: '/landing/seo-geo-gbp-verano/', destination: '/oferta-seo-geo-gbp/', permanent: true },
-      { source: '/landing/seo-geo-gbp-verano/:path*/', destination: '/oferta-seo-geo-gbp/', permanent: true },
+      // Ofertas caducadas (SEO 6x3 y verano SEO+GEO+GBP, retirada 29-sep-2026) -> servicio SEO evergreen.
+      // Ver CAMPANA-seo-geo-gbp-verano-2026.md en Drive.
+      { source: '/oferta-seo/:path*/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/oferta-seo-geo-gbp/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/oferta-seo-geo-gbp/:path*/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/landing/seo-geo-gbp-verano/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/landing/seo-geo-gbp-verano/:path*/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
 
       // 404 detectados en GSC (24-sep-2026): slugs EN/FR servidos en la raíz y URLs antiguas sueltas.
       { source: '/google-business-profile-management/', destination: '/google-business-profile/', permanent: true },
