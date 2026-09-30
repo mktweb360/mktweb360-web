@@ -27,7 +27,8 @@ export type Topic =
   | "whatsapp"
   | "reputacion"
   | "analitica"
-  | "estrategia";
+  | "estrategia"
+  | "negocio";
 
 type Pillar = { href: string; anchor: string; lead: string };
 
@@ -48,6 +49,7 @@ export const PILLARS: Record<Topic, Pillar> = {
   reputacion: { href: "/reputacion-online/", anchor: "gestión de la reputación online", lead: "¿Necesitas ayuda con tus reseñas? Conoce nuestro servicio de" },
   analitica: { href: "/analitica-web/", anchor: "analítica web", lead: "¿Quieres medir lo que de verdad te trae clientes? Conoce nuestro servicio de" },
   estrategia: { href: "/auditoria-digital/", anchor: "auditoría de marketing digital", lead: "¿No sabes por dónde empezar? Solicita nuestra" },
+  negocio: { href: "/auditoria-digital/", anchor: "auditoría de marketing digital", lead: "¿Quieres saber qué mejorar primero en tu presencia online? Solicita nuestra" },
 };
 
 /** Categorías del blog → tema. */
@@ -68,9 +70,9 @@ const CATEGORY_TOPIC: Record<string, Topic> = {
   "Estrategia": "estrategia",
   "Estrategia Digital": "estrategia",
   "Captación": "estrategia",
-  "Pymes": "estrategia",
-  "Emprendedores": "estrategia",
-  "Autónomos": "estrategia",
+  "Pymes": "negocio",
+  "Emprendedores": "negocio",
+  "Autónomos": "negocio",
 };
 
 /** Etiquetas que, si aparecen, fijan un tema más preciso que la categoría. */
@@ -80,6 +82,7 @@ const TAG_TOPIC: [RegExp, Topic][] = [
   [/^(resenas|reseñas|reputacion-online|reputación online)$/i, "reputacion"],
   [/^(analítica|analitica|atribucion|medicion|roi)$/i, "analitica"],
   [/^(chatbot)$/i, "ia"],
+  [/^(cuota|cuotas|reta|mei|tarifa plana|seguridad social|factura electr[oó]nica|factura-electronica|verifactu|subvenciones|ayudas|kit-digital|alta autonomo|alta autónomo)$/i, "negocio"],
 ];
 
 /** Alias de los valores de `category` que usan las páginas (ES/EN/FR). */

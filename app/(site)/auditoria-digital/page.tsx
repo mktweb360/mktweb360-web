@@ -110,6 +110,30 @@ export default function AuditoriaDigitalPage() {
           </div>
         </section>
 
+        {/* Cuándo conviene */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-primary-600 mb-4">Cuándo conviene hacer una auditoría de marketing digital</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Hay momentos en los que una auditoría ahorra mucho dinero: antes de aumentar el presupuesto en publicidad, antes de rediseñar o migrar la web, cuando el tráfico cae sin una causa clara o cuando la web recibe visitas pero no genera contactos. También es el paso lógico al cambiar de agencia: te da una foto objetiva del punto de partida para poder medir después lo que se consigue.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            La auditoría no sustituye a la estrategia, pero la hace posible: con un diagnóstico priorizado sabes qué corregir primero, qué puede esperar y qué acciones no merece la pena hacer todavía.
+          </p>
+        </section>
+
+        {/* Problemas frecuentes */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-primary-600 mb-4">Los problemas que más encontramos en una auditoría</h2>
+          <ul className="space-y-3 text-gray-700 leading-relaxed">
+            <li><strong>Medición rota:</strong> formularios o clics de WhatsApp que no se registran como conversión, de modo que nadie sabe qué canal trae clientes.</li>
+            <li><strong>Páginas que compiten entre sí:</strong> dos o más URLs trabajando la misma búsqueda, lo que divide la relevancia y ninguna llega a posicionar.</li>
+            <li><strong>Redirecciones mal planteadas tras una migración:</strong> URLs antiguas con historial que apuntan a páginas genéricas y pierden lo que habían ganado.</li>
+            <li><strong>Imágenes y recursos pesados:</strong> portadas de varios megas que disparan el tiempo de carga en móvil, justo donde busca la mayoría de clientes.</li>
+            <li><strong>Titulares sin la búsqueda del cliente:</strong> eslóganes atractivos en el H1 y el title que no dicen a Google qué servicio ofrece la página.</li>
+            <li><strong>Ofertas caducadas todavía visibles:</strong> promociones antiguas en portadas o banners que restan credibilidad.</li>
+          </ul>
+        </section>
+
         {/* Qué recibes */}
         <section className="bg-gray-50 rounded-2xl p-8 mb-12">
           <h2 className="text-2xl font-bold text-primary-600 mb-4">Qué recibes</h2>
