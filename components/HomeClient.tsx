@@ -722,27 +722,6 @@ export default function HomeClient() {
       {/* Slider ofertas */}
       <OfertasSlider />
 
-      {/* Últimas publicaciones */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3">Blog</span>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-700">Últimas publicaciones</h2>
-            </div>
-            <Link href="/blog/" className="text-accent-500 font-semibold text-sm hover:underline hidden md:block">
-              Ver todos los artículos →
-            </Link>
-          </div>
-          <BlogCarousel posts={getVisiblePosts()} />
-          <div className="text-center mt-8 md:hidden">
-            <Link href="/blog/" className="text-accent-500 font-semibold text-sm hover:underline">
-              Ver todos los artículos →
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
@@ -774,6 +753,26 @@ export default function HomeClient() {
           </div>
           <div className="bg-white rounded-2xl p-8">
             <ContactForm />
+          </div>
+        </div>
+      </section>
+      {/* Últimas publicaciones */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3">Blog</span>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary-700">Últimas publicaciones</h2>
+            </div>
+            <Link href="/blog/" className="text-accent-500 font-semibold text-sm hover:underline hidden md:block">
+              Ver todos los artículos →
+            </Link>
+          </div>
+          <BlogCarousel posts={getVisiblePosts().slice(0, 12)} />
+          <div className="text-center mt-8 md:hidden">
+            <Link href="/blog/" className="text-accent-500 font-semibold text-sm hover:underline">
+              Ver todos los artículos →
+            </Link>
           </div>
         </div>
       </section>

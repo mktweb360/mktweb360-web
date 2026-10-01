@@ -124,7 +124,7 @@ export function Footer({ lang }: { lang?: string }) {
   const c = CONTENT[(lang ?? "es") as keyof typeof CONTENT] ?? CONTENT.es;
 
   return (
-    <footer className="bg-primary-600 text-white mt-16">
+    <footer className="bg-primary-600 text-white">
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         <div>
           <h3 className="font-bold text-lg mb-3">
