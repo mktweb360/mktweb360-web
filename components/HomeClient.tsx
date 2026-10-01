@@ -10,6 +10,8 @@ import { BlogCarousel } from "@/components/BlogCarousel";
 type ServiceItem = { title: string; desc: string; href: string; icon: string; badge?: string };
 type ServiceTab = { id: string; tipo: string; objetivo: string; emoji: string; servicios: ServiceItem[] };
 
+// Cada objetivo muestra 6 servicios (rejilla 3×2). Solo páginas de servicio existentes;
+// un servicio puede aparecer en varios objetivos si sirve a ambos.
 const SERVICE_TABS: ServiceTab[] = [
   {
     id: "presencia",
@@ -18,7 +20,9 @@ const SERVICE_TABS: ServiceTab[] = [
     emoji: "🏗️",
     servicios: [
       { title: "Diseño Web Profesional", desc: "Tu web, tu activo más importante. Rápida, optimizada y diseñada para convertir visitas en clientes.", href: "/diseno-de-paginas-web/", icon: "🌐" },
-      { title: "Tienda Online", desc: "Vende en toda España sin comisiones por venta ni licencias mensuales. Diseño 100% personalizado.", href: "/diseno-de-paginas-web/diseno-tiendas-online/", icon: "🛒" },
+      { title: "Webs Corporativas", desc: "Una web profesional que genera confianza, capta contactos y está preparada para posicionar en Google.", href: "/diseno-de-paginas-web/paginas-corporativas/", icon: "🏢" },
+      { title: "Webs a Medida", desc: "Portales, catálogos, reservas y plataformas web con funcionalidades a medida y SEO técnico desde el inicio.", href: "/diseno-de-paginas-web/diseno-paginas-web-empresa/", icon: "🧩" },
+      { title: "Diseño de Tiendas Online", desc: "Vende en toda España sin comisiones por venta ni licencias mensuales. Diseño 100% personalizado.", href: "/diseno-de-paginas-web/diseno-tiendas-online/", icon: "🛒" },
       { title: "Google Business Profile", desc: "Aparece en Google Maps cuando tus clientes buscan lo que ofreces en tu zona.", href: "/google-business-profile/", icon: "📍" },
       { title: "Reputación Online", desc: "Gestiona tus reseñas y construye una imagen digital que genera confianza antes del primer contacto.", href: "/reputacion-online/", icon: "⭐" },
     ],
@@ -31,8 +35,10 @@ const SERVICE_TABS: ServiceTab[] = [
     servicios: [
       { title: "SEO Posicionamiento Web", desc: "Primera página de Google. Tráfico orgánico sin pagar por cada clic. Resultados que se mantienen.", href: "/seo-posicionamiento-web-organico/", icon: "📈" },
       { title: "GEO — Posicionamiento en IA", desc: "Aparece en ChatGPT, Perplexity y Gemini. El SEO de la era de la inteligencia artificial.", href: "/geo-posicionamiento-ia/", icon: "🤖" },
-      { title: "Google Ads", desc: "Aparece en el top de Google desde el primer día. Solo pagas cuando alguien hace clic.", href: "/sem-publicidad-ppc/", icon: "⚡" },
-      { title: "SEO Local", desc: "Domina los resultados de búsqueda en tu ciudad y zona de influencia.", href: "/seo-posicionamiento-web-organico/", icon: "📌" },
+      { title: "SEO Local", desc: "Capta clientes de tu zona: Google Maps, reseñas y páginas locales, tengas o no local físico.", href: "/seo-local/", icon: "📌" },
+      { title: "Google Ads", desc: "Aparece en lo más alto de Google desde el primer día. Solo pagas cuando alguien hace clic.", href: "/sem-publicidad-ppc/", icon: "⚡" },
+      { title: "Google Business Profile", desc: "Aparece en Google Maps cuando tus clientes buscan lo que ofreces en tu zona.", href: "/google-business-profile/", icon: "📍" },
+      { title: "Marketing de Contenidos", desc: "Contenido que posiciona tu marca como referencia en tu sector y atrae clientes de forma orgánica.", href: "/marketing-de-contenidos/", icon: "✍️" },
     ],
   },
   {
@@ -42,8 +48,11 @@ const SERVICE_TABS: ServiceTab[] = [
     emoji: "🎯",
     servicios: [
       { title: "Google Ads", desc: "Genera clientes potenciales desde el primer día. Campañas optimizadas para tu sector y objetivo.", href: "/sem-publicidad-ppc/", icon: "🎯" },
+      { title: "SEO Local", desc: "Capta clientes de tu zona: Google Maps, reseñas y páginas locales, tengas o no local físico.", href: "/seo-local/", icon: "📌" },
       { title: "Email Marketing", desc: "El canal con mayor ROI del marketing digital. Secuencias automatizadas que convierten.", href: "/email-marketing/", icon: "✉️" },
       { title: "WhatsApp Marketing", desc: "98% de tasa de apertura. Comunica con tus clientes donde ya están.", href: "/whatsapp-marketing/", icon: "💬" },
+      { title: "Tienda Online desde 490 €", desc: "Tu tienda profesional sin comisiones por venta ni licencias mensuales, con SEO técnico desde el primer día.", href: "/tienda-online/", icon: "🛍️" },
+      { title: "Marketing para Shopware", desc: "SEO, Google Ads, GEO y optimización de la conversión para tiendas Shopware que necesitan vender más.", href: "/marketing-shopware/", icon: "🏬" },
     ],
   },
   {
@@ -55,6 +64,9 @@ const SERVICE_TABS: ServiceTab[] = [
       { title: "Redes Sociales", desc: "Gestión profesional de Instagram, LinkedIn, Facebook y TikTok. Comunidades reales, no seguidores vacíos.", href: "/smm-social-media-marketing/", icon: "📱" },
       { title: "Marketing de Contenidos", desc: "Contenido que posiciona tu marca como referencia en tu sector y atrae clientes de forma orgánica.", href: "/marketing-de-contenidos/", icon: "✍️" },
       { title: "Creación de Blog", desc: "Tu blog como activo digital permanente. Tráfico orgánico constante sin pagar por cada visita.", href: "/creacion-de-blog/", icon: "📝" },
+      { title: "Comunicación Audiovisual", desc: "Vídeo corporativo, reels, spots, animaciones y fotografía profesional para comunicar y generar confianza.", href: "/comunicacion-audiovisual/", icon: "🎬" },
+      { title: "Reputación Online", desc: "Gestiona tus reseñas y construye una imagen digital que genera confianza antes del primer contacto.", href: "/reputacion-online/", icon: "⭐" },
+      { title: "Email Marketing", desc: "El canal con mayor ROI del marketing digital. Secuencias automatizadas que convierten.", href: "/email-marketing/", icon: "✉️" },
     ],
   },
   {
@@ -65,6 +77,10 @@ const SERVICE_TABS: ServiceTab[] = [
     servicios: [
       { title: "Blog para Monetización", desc: "Crea un activo digital que genera ingresos pasivos con AdSense, Amazon Associates y afiliación.", href: "/blog-para-monetizacion/", icon: "💸" },
       { title: "Ecommerce con Participación", desc: "Modelo híbrido: montamos tu infraestructura y participamos en el éxito cuando superas objetivos.", href: "/ecommerce-participacion-resultados/", icon: "🤝" },
+      { title: "Dropshipping con Participación", desc: "Montamos y gestionamos tu tienda de dropshipping: setup fijo, gestión mensual y participación en beneficios.", href: "/ecommerce-dropshipping-con-participacion/", icon: "📦" },
+      { title: "Tienda Online desde 490 €", desc: "Tu tienda profesional sin comisiones por venta ni licencias mensuales, con SEO técnico desde el primer día.", href: "/tienda-online/", icon: "🛍️" },
+      { title: "Marketing para Shopware", desc: "SEO, Google Ads, GEO y optimización de la conversión para tiendas Shopware que necesitan vender más.", href: "/marketing-shopware/", icon: "🏬" },
+      { title: "Email Marketing", desc: "El canal con mayor ROI del marketing digital. Secuencias automatizadas que convierten.", href: "/email-marketing/", icon: "✉️" },
     ],
   },
   {
@@ -76,6 +92,9 @@ const SERVICE_TABS: ServiceTab[] = [
       { title: "Analítica Web", desc: "GA4, GTM y dashboards de negocio. Cada decisión respaldada por datos reales, no suposiciones.", href: "/analitica-web/", icon: "📊" },
       { title: "IA Aplicada al Marketing", desc: "Protocolos propios de IA integrados en cada servicio. Más rápido, más preciso, mejores decisiones.", href: "/ia-aplicada-al-marketing/", icon: "🧠" },
       { title: "Auditoría Digital", desc: "Diagnóstico completo de tu presencia digital. Sabe exactamente dónde estás antes de invertir más.", href: "/auditoria-digital/", icon: "🔬" },
+      { title: "SEO Posicionamiento Web", desc: "Primera página de Google. Tráfico orgánico sin pagar por cada clic. Resultados que se mantienen.", href: "/seo-posicionamiento-web-organico/", icon: "📈" },
+      { title: "GEO — Posicionamiento en IA", desc: "Aparece en ChatGPT, Perplexity y Gemini. El SEO de la era de la inteligencia artificial.", href: "/geo-posicionamiento-ia/", icon: "🤖" },
+      { title: "Marketing para Shopware", desc: "SEO, Google Ads, GEO y optimización de la conversión para tiendas Shopware que necesitan vender más.", href: "/marketing-shopware/", icon: "🏬" },
     ],
   },
 ];
@@ -263,7 +282,7 @@ function HeroSlider() {
       cta2: { text: "Ver servicios", href: "#servicios" },
       bg: "/hero-nave-oficina.jpg",
       // Velo oscuro solo detrás del texto (centro) y la imagen luminosa en los bordes.
-      overlay: "bg-[radial-gradient(ellipse_75%_65%_at_50%_50%,rgba(15,28,46,0.58)_0%,rgba(15,28,46,0.38)_50%,rgba(15,28,46,0.08)_100%)]",
+      overlay: "bg-[radial-gradient(ellipse_75%_65%_at_50%_50%,rgba(15,28,46,0.66)_0%,rgba(15,28,46,0.42)_50%,rgba(15,28,46,0.08)_100%)]",
       bgPosition: "50% 45%",
     },
     {
@@ -343,7 +362,7 @@ function HeroSlider() {
         {/* Headline */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem] [text-shadow:0_1px_6px_rgba(15,28,46,0.35)]">
           <span className="lg:whitespace-nowrap">{slide.headline}</span><br />
-          <span className="text-accent-400 lg:whitespace-nowrap">{slide.subheadline}</span>
+          <span className="text-accent-300 lg:whitespace-nowrap [text-shadow:0_1px_3px_rgba(15,28,46,0.55)]">{slide.subheadline}</span>
         </h1>
 
         {/* Subtitle */}
@@ -401,55 +420,70 @@ function ServicesTab() {
 
   return (
     <div>
-      {/* Desktop tabs */}
-      <div className="hidden md:block">
-        <div className="flex border-b border-gray-200 overflow-x-auto">
-          {SERVICE_TABS.map((tab, i) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(i)}
-              className={`flex-1 min-w-[140px] px-4 py-4 text-center transition-all border-b-2 ${
-                activeTab === i
-                  ? "border-accent-500 bg-white"
-                  : "border-transparent hover:border-gray-300 bg-gray-50 hover:bg-white"
-              }`}
-            >
-              <div className="text-xl mb-1">{tab.emoji}</div>
-              <div className={`text-xs font-bold uppercase tracking-widest ${activeTab === i ? "text-accent-500" : "text-gray-400"}`}>
-                {tab.tipo}
-              </div>
-              <div className={`text-xs mt-0.5 leading-tight ${activeTab === i ? "text-gray-600" : "text-gray-400"}`}>
-                {tab.objetivo}
-              </div>
-            </button>
-          ))}
+      {/* Desktop: objetivos en columna (izquierda) + servicios en rejilla 3×2 (derecha) */}
+      <div className="hidden md:grid md:grid-cols-[230px_1fr] lg:grid-cols-[270px_1fr] bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+        <div role="tablist" aria-orientation="vertical" aria-label="Objetivos" className="flex flex-col bg-gray-50 border-r border-gray-200 py-2">
+          {SERVICE_TABS.map((tab, i) => {
+            const on = activeTab === i;
+            return (
+              <button
+                key={tab.id}
+                id={`tab-${tab.id}`}
+                role="tab"
+                aria-selected={on}
+                aria-controls="panel-servicios"
+                tabIndex={on ? 0 : -1}
+                onClick={() => setActiveTab(i)}
+                onKeyDown={(e) => {
+                  if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+                  e.preventDefault();
+                  const n = (i + (e.key === "ArrowDown" ? 1 : -1) + SERVICE_TABS.length) % SERVICE_TABS.length;
+                  setActiveTab(n);
+                  document.getElementById(`tab-${SERVICE_TABS[n].id}`)?.focus();
+                }}
+                className={`group flex-1 flex items-center gap-3 text-left px-5 py-4 border-l-4 transition-colors ${
+                  on ? "border-accent-500 bg-white" : "border-transparent hover:bg-white"
+                }`}
+              >
+                <span className="text-2xl shrink-0" aria-hidden="true">{tab.emoji}</span>
+                <span className="min-w-0">
+                  <span className={`block text-xs font-bold uppercase tracking-widest ${on ? "text-accent-700" : "text-primary-600 group-hover:text-accent-700"}`}>
+                    {tab.tipo}
+                  </span>
+                  <span className={`block text-sm leading-snug mt-0.5 ${on ? "text-gray-700" : "text-gray-500"}`}>
+                    {tab.objetivo}
+                  </span>
+                </span>
+              </button>
+            );
+          })}
         </div>
 
-        <div className="bg-white p-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div id="panel-servicios" role="tabpanel" aria-labelledby={`tab-${active.id}`} className="p-6 lg:p-8 flex flex-col">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
             {active.servicios.map((s) => (
               <Link
                 key={s.href + s.title}
                 href={s.href}
-                className="group relative bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-accent-300 hover:shadow-md transition-all"
+                className="group relative bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-accent-300 hover:bg-white hover:shadow-md transition-all"
               >
                 {s.badge && (
                   <span className="absolute top-3 right-3 bg-accent-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
                     {s.badge}
                   </span>
                 )}
-                <div className="text-2xl mb-3">{s.icon}</div>
-                <h3 className="font-bold text-primary-600 text-sm mb-2 group-hover:text-accent-500 transition-colors leading-tight">
+                <div className="text-2xl mb-3" aria-hidden="true">{s.icon}</div>
+                <h3 className="font-bold text-primary-600 text-base mb-2 group-hover:text-accent-700 transition-colors leading-tight">
                   {s.title}
                 </h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{s.desc}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
               </Link>
             ))}
           </div>
-          <div className="mt-6 text-center">
+          <div className="mt-6 text-right">
             <Link
               href={`/${tabHref[active.id] ?? active.id}/`}
-              className="inline-flex items-center gap-2 text-accent-500 font-semibold text-sm hover:underline"
+              className="inline-flex items-center gap-2 text-accent-700 font-semibold text-sm hover:underline"
             >
               Ver todos los servicios de {active.tipo.toLowerCase()} →
             </Link>
