@@ -60,6 +60,7 @@ const METHODOLOGY = [
 const CITIES = [
   { name: "SEO Toledo", href: "/seo-toledo/" },
   { name: "SEO Madrid", href: "/seo-madrid/" },
+  { name: "Marketing digital Fuenlabrada", href: "/agencia-marketing-digital-fuenlabrada/" },
   { name: "SEO Valencia", href: "/seo-valencia/" },
   { name: "SEO Zaragoza", href: "/seo-zaragoza/" },
   { name: "SEO Bilbao", href: "/seo-bilbao/" },

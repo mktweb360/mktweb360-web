@@ -115,6 +115,7 @@ const PAGE_TOPIC: Record<string, Topic> = {
   "auditoria-seo-basica": "seo",
   "seo-local": "seo-local",
   "google-business-profile": "seo-local",
+  "agencia-marketing-digital-fuenlabrada": "seo-local",
   "geo-posicionamiento-ia": "geo",
   "geo-posicionamiento-ia-chatgpt-empresas-espana": "geo",
   "sem-publicidad-ppc": "sem",

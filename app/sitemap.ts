@@ -97,6 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/conectar-tpv-tienda-online/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/migrar-tienda-online-sin-perder-datos/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/seo-madrid/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/agencia-marketing-digital-fuenlabrada/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/migrar-shopify-woocommerce/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/marketing-digital-barcelona/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/metodos-pago-tienda-online-espana/", priority: 0.7, changeFrequency: "monthly" as const },
