@@ -82,6 +82,7 @@ export const ROUTES: Route[] = [
   { es: "/seo-bilbao/", en: "seo-bilbao-guide", fr: "seo-bilbao-guide" },
   { es: "/seo-local-empresas-servicios/", en: "local-seo-for-service-businesses", fr: "seo-local-entreprises-de-services" },
   { es: "/seo-madrid/", en: "seo-madrid-guide", fr: "seo-madrid-guide" },
+  { es: "/agencia-marketing-digital-fuenlabrada/" },
   { es: "/seo-para-ecommerce-errores-que-frenan-ventas/", en: "seo-for-ecommerce-errors", fr: "seo-for-ecommerce-errors" },
   { es: "/seo-para-servicios-urgentes-24h/", en: "seo-for-urgent-services", fr: "seo-for-urgent-services" },
   { es: "/seo-posicionamiento-web-organico/", en: "seo-web-positioning", fr: "positionnement-seo", aliases: [{ lang: "en", slug: "seo-positioning" }, { lang: "fr", slug: "seo-positionnement-web" }] },

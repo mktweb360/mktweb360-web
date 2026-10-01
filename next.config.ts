@@ -68,7 +68,10 @@ const nextConfig: NextConfig = {
       { source: '/oferta-diseno-paginas-web/diseno-paginas-web-para-empresas-de-limpieza/', destination: '/diseno-de-paginas-web/diseno-paginas-web-empresa/', permanent: true },
       // WordPress category/tag pages
       // Slash-less so it matches before the /category/:slug catch-all (trailingSlash:false strips '/x/' → '/x')
-      { source: '/category/diseno-web/', destination: '/diseno-de-paginas-web/', permanent: true },
+      // Fuenlabrada (antigua sede): el 77 % de las impresiones de esta categoría y el 89 % de /tag/contratar-hosting/
+      // eran búsquedas «… fuenlabrada» (GSC, 16 meses, 1-oct-2026) → landing local.
+      { source: '/category/diseno-web/', destination: '/agencia-marketing-digital-fuenlabrada/', permanent: true },
+      { source: '/tag/contratar-hosting/', destination: '/agencia-marketing-digital-fuenlabrada/', permanent: true },
       { source: '/category/:slug/', destination: '/blog/', permanent: true },
       { source: '/tag/:slug/', destination: '/blog/', permanent: true },
       // WordPress media/uploads
