@@ -97,7 +97,7 @@ export function CookieBanner() {
           <p className="text-sm text-gray-700 flex-1">
             Utilizamos cookies propias y de terceros para analizar el uso del sitio web y ofrecerte una mejor experiencia. Puedes aceptar todas las cookies, rechazarlas o personalizar tu elección.{" "}
             <Link href="/politica-de-cookies/" className="text-accent-500 underline hover:text-accent-600 whitespace-nowrap">
-              Más información
+              Más información sobre cookies
             </Link>
           </p>
           <div className="flex flex-wrap gap-2 shrink-0">

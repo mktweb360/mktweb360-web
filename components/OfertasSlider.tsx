@@ -87,11 +87,13 @@ export function OfertasSlider() {
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                i === active ? "bg-accent-500" : "bg-white/40 hover:bg-white/70"
-              }`}
+              className="group p-2 -m-1.5 flex items-center justify-center"
               aria-label={`Ir a diapositiva ${i + 1}`}
-            />
+            >
+              <span className={`block w-2.5 h-2.5 rounded-full transition-colors ${
+                i === active ? "bg-accent-500" : "bg-white/40 group-hover:bg-white/70"
+              }`} />
+            </button>
           ))}
         </div>
       </div>
