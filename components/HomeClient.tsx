@@ -273,6 +273,7 @@ function HeroSlider() {
       cta: { text: "Reservar mi plaza", href: "/tienda-online/" },
       cta2: { text: "Ver la oferta", href: "/diseno-de-paginas-web/diseno-tiendas-online/" },
       bg: "/hero-slide-3.jpg",
+      overlay: "bg-primary-900/35",
     },
   ];
 
@@ -338,13 +339,13 @@ function HeroSlider() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem] [text-shadow:0_2px_14px_rgba(15,28,46,0.55)]">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem] [text-shadow:0_1px_6px_rgba(15,28,46,0.35)]">
           <span className="lg:whitespace-nowrap">{slide.headline}</span><br />
           <span className="text-accent-400 lg:whitespace-nowrap">{slide.subheadline}</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed italic min-h-[4rem] [text-shadow:0_1px_8px_rgba(15,28,46,0.6)]">
+        <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed italic min-h-[4rem] [text-shadow:0_1px_4px_rgba(15,28,46,0.4)]">
           {slide.subtitle}
         </p>
 
@@ -358,7 +359,7 @@ function HeroSlider() {
           </Link>
           <Link
             href={slide.cta2.href}
-            className="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors"
+            className="border-2 border-white bg-white text-primary-900 px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-primary-50 transition-colors"
           >
             {slide.cta2.text}
           </Link>
