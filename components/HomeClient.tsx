@@ -244,7 +244,7 @@ function HeroSlider() {
       cta2: { text: "Ver servicios", href: "#servicios" },
       bg: "/hero-nave-oficina.jpg",
       // Velo oscuro solo detrás del texto (centro) y la imagen luminosa en los bordes.
-      overlay: "bg-[radial-gradient(ellipse_75%_65%_at_50%_50%,rgba(15,28,46,0.66)_0%,rgba(15,28,46,0.42)_50%,rgba(15,28,46,0.08)_100%)]",
+      overlay: "bg-primary-900/30",
       bgPosition: "50% 45%",
     },
     {
@@ -322,13 +322,13 @@ function HeroSlider() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem] [text-shadow:0_1px_6px_rgba(15,28,46,0.35)]">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem] [text-shadow:0_2px_10px_rgba(15,28,46,0.55),0_1px_2px_rgba(15,28,46,0.5)]">
           <span className="lg:whitespace-nowrap">{slide.headline}</span><br />
-          <span className="text-accent-300 lg:whitespace-nowrap [text-shadow:0_1px_3px_rgba(15,28,46,0.55)]">{slide.subheadline}</span>
+          <span className="text-[#ff7a00] lg:whitespace-nowrap [text-shadow:0_2px_10px_rgba(15,28,46,0.6),0_1px_2px_rgba(15,28,46,0.7)]">{slide.subheadline}</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed italic min-h-[4rem] [text-shadow:0_1px_4px_rgba(15,28,46,0.4)]">
+        <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed italic min-h-[4rem] [text-shadow:0_1px_6px_rgba(15,28,46,0.7),0_1px_2px_rgba(15,28,46,0.6)]">
           {slide.subtitle}
         </p>
 
