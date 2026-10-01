@@ -3,7 +3,7 @@ import HomeClient from "@/components/HomeClient";
 
 export const metadata: Metadata = {
   // absolute: evita que la plantilla del layout ("%s | Mkt Web 360") duplique la marca.
-  title: { absolute: "Tu Agencia de Marketing Digital y Online | Mkt Web 360" },
+  title: { absolute: "Tu Agencia Online de Marketing Digital | Mkt Web 360" },
   description: "Agencia de marketing digital y online: SEO, posicionamiento en IA, Google Ads, diseño web y redes sociales para empresas, pymes y autónomos de toda España.",
   alternates: {
     canonical: "/",

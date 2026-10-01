@@ -256,13 +256,14 @@ function HeroSlider() {
   }[] = [
     {
       badge: null,
-      headline: "Tu Agencia de Marketing Digital",
-      subheadline: "y Online: te ponemos donde te buscan",
-      subtitle: "Aumenta tu visibilidad online, genera más clientes y haz crecer tu negocio con estrategias de marketing digital probadas. Servicio nacional.",
+      headline: "Tu Agencia Online de Marketing Digital",
+      subheadline: "Sin clientes, no hay paraíso",
+      subtitle: "Te ponemos donde te buscan: más visibilidad online, más clientes y un negocio que crece con estrategias de marketing digital probadas. Servicio nacional.",
       cta: { text: "Diagnóstico gratuito", href: "/contacto/" },
       cta2: { text: "Ver servicios", href: "#servicios" },
       bg: "/hero-nave-oficina.jpg",
-      overlay: "bg-primary-900/15",
+      // Velo oscuro solo detrás del texto (centro) y la imagen luminosa en los bordes.
+      overlay: "bg-[radial-gradient(ellipse_75%_65%_at_50%_50%,rgba(15,28,46,0.58)_0%,rgba(15,28,46,0.38)_50%,rgba(15,28,46,0.08)_100%)]",
       bgPosition: "50% 45%",
     },
     {
