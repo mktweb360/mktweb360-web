@@ -251,6 +251,8 @@ function HeroSlider() {
     cta: { text: string; href: string };
     cta2: { text: string; href: string };
     bg: string;
+    overlay?: string; // clase Tailwind de la capa entre imagen y texto
+    bgPosition?: string;
   }[] = [
     {
       badge: null,
@@ -259,7 +261,9 @@ function HeroSlider() {
       subtitle: "Aumenta tu visibilidad online, genera más clientes y haz crecer tu negocio con estrategias de marketing digital probadas. Servicio nacional.",
       cta: { text: "Diagnóstico gratuito", href: "/contacto/" },
       cta2: { text: "Ver servicios", href: "#servicios" },
-      bg: "/hero-slide-1.jpg",
+      bg: "/hero-nave-oficina.jpg",
+      overlay: "bg-primary-900/15",
+      bgPosition: "50% 45%",
     },
     {
       badge: "Solo 5 incorporaciones al mes",
@@ -314,12 +318,13 @@ function HeroSlider() {
             priority={i === 0}
             loading={i === 0 ? "eager" : "lazy"}
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover"
+            style={{ objectPosition: s.bgPosition ?? "center" }}
           />
         </div>
       ))}
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-primary-900/65" />
+      <div className={`absolute inset-0 transition-colors duration-1000 ${slide.overlay ?? "bg-primary-900/65"}`} />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center text-white">
