@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import type { BlogPost } from "@/lib/blog";
 
 export function BlogCarousel({ posts }: { posts: BlogPost[] }) {
@@ -34,20 +35,32 @@ export function BlogCarousel({ posts }: { posts: BlogPost[] }) {
         <div className="flex transition-transform duration-500 ease-out" style={{ transform: `translateX(-${page * 100}%)` }}>
           {posts.map((post) => (
             <div key={post.slug} className="shrink-0 basis-full sm:basis-1/2 lg:basis-1/3 px-2">
-              <Link href={`/${post.slug}/`} className="h-full bg-white rounded-2xl border border-gray-100 p-6 hover:border-accent-400 hover:shadow-md transition-all group flex flex-col">
+              <Link href={`/${post.slug}/`} className="h-full bg-white rounded-2xl border border-gray-100 overflow-hidden hover:border-accent-400 hover:shadow-md transition-all group flex flex-col">
+                <div className="relative w-full overflow-hidden bg-gray-100" style={{ aspectRatio: "1200/630" }}>
+                  <Image
+                    src={`/og-${post.slug}.jpg`}
+                    alt=""
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 330px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6 flex flex-col flex-1">
                 <span className="text-xs font-semibold text-accent-500 uppercase tracking-wide mb-2">{post.category}</span>
                 <h3 className="font-bold text-primary-700 group-hover:text-accent-500 transition-colors line-clamp-3 text-sm leading-snug flex-1 mb-3">{post.title}</h3>
                 <p className="text-xs text-gray-500 line-clamp-2 mb-4">{post.excerpt}</p>
-                <span className="text-xs font-semibold text-accent-500">Leer artículo →</span>
+                <span className="text-xs font-semibold text-accent-700">Leer artículo →</span>
+                </div>
               </Link>
             </div>
           ))}
         </div>
       </div>
       <button type="button" onClick={() => go(page - 1)} aria-label="Anterior"
-        className="absolute left-0 top-1/3 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-primary-700 hover:bg-accent-500 hover:text-white transition-colors">‹</button>
+        className="absolute left-0 top-[30%] -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-primary-700 hover:bg-accent-500 hover:text-white transition-colors">‹</button>
       <button type="button" onClick={() => go(page + 1)} aria-label="Siguiente"
-        className="absolute right-0 top-1/3 -translate-y-1/2 translate-x-1/2 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-primary-700 hover:bg-accent-500 hover:text-white transition-colors">›</button>
+        className="absolute right-0 top-[30%] -translate-y-1/2 translate-x-1/2 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-primary-700 hover:bg-accent-500 hover:text-white transition-colors">›</button>
       <div className="flex justify-center gap-2 mt-6">
         {Array.from({ length: totalPages }).map((_, i) => (
           <button key={i} type="button" onClick={() => go(i)} aria-label={`Ir a la página ${i + 1}`}
