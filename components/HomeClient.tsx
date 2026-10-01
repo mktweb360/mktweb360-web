@@ -327,7 +327,7 @@ function HeroSlider() {
       <div className={`absolute inset-0 transition-colors duration-1000 ${slide.overlay ?? "bg-primary-900/65"}`} />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center text-white">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center text-white">
         {/* Badge */}
         <div className="h-8 mb-4 flex items-center justify-center">
           {slide.badge && (
@@ -338,13 +338,13 @@ function HeroSlider() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem]">
-          {slide.headline}<br />
-          <span className="text-accent-400">{slide.subheadline}</span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem] [text-shadow:0_2px_14px_rgba(15,28,46,0.55)]">
+          <span className="lg:whitespace-nowrap">{slide.headline}</span><br />
+          <span className="text-accent-400 lg:whitespace-nowrap">{slide.subheadline}</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed italic min-h-[4rem]">
+        <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed italic min-h-[4rem] [text-shadow:0_1px_8px_rgba(15,28,46,0.6)]">
           {slide.subtitle}
         </p>
 
