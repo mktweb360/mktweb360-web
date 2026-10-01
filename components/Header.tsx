@@ -234,12 +234,12 @@ export function Header({ lang }: { lang?: string }) {
         {/* Logo */}
         <Link href={nav.home_href}>
           <Image
-            src="/logo.png"
+            src="/logo-mw360.png"
             alt="Mkt Web 360 — Agencia de Marketing Digital"
-            width={180}
-            height={50}
+            width={162}
+            height={45}
             priority
-            sizes="180px"
+            sizes="162px"
           />
         </Link>
 

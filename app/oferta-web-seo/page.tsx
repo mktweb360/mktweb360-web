@@ -202,7 +202,7 @@ export default function OfertaWebSeoPage() {
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link href="/">
-            <Image src="/logo.png" alt="Mkt Web 360" width={150} height={42} priority />
+            <Image src="/logo-mw360.png" alt="Mkt Web 360" width={150} height={42} priority />
           </Link>
           <a
             href="tel:+34622748987"
