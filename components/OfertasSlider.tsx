@@ -2,6 +2,7 @@
 // chore: force cache invalidation for slider
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type Slide = {
   badge: string;
@@ -10,6 +11,9 @@ type Slide = {
   cta: string;
   href: string;
   bg: string;
+  /** Capa entre imagen y texto (clase Tailwind). Por defecto, velo oscuro al 70 %. */
+  overlay?: string;
+  bgPosition?: string;
   price?: { old: string; new: string };
 };
 
@@ -28,7 +32,9 @@ const SLIDES: Slide[] = [
     desc: "Sin comisiones por venta, sin licencias mensuales. Diseño 100% personalizado. SEO técnico incluido desde el primer día. Solo 5 plazas.",
     cta: "Ver oferta",
     href: "/landing/tienda-online-490/",
-    bg: "/hero-tienda-online.svg",
+    bg: "/oferta-tienda-online.jpg",
+    overlay: "bg-[radial-gradient(ellipse_75%_70%_at_50%_50%,rgba(15,28,46,0.68)_0%,rgba(15,28,46,0.45)_55%,rgba(15,28,46,0.15)_100%)]",
+    bgPosition: "50% 35%",
   },
 ];
 
@@ -45,19 +51,21 @@ export function OfertasSlider() {
   const slide = SLIDES[active];
 
   return (
-    <section
-      className="relative py-16 px-4 bg-primary-700 overflow-hidden transition-all duration-700"
-      style={{ backgroundImage: `url(${slide.bg})`, backgroundSize: "cover", backgroundPosition: "center" }}
-    >
-      <div className="absolute inset-0 bg-primary-900/70" />
+    <section className="relative py-16 px-4 bg-primary-700 overflow-hidden">
+      {SLIDES.map((sl, i) => (
+        <div key={sl.bg} aria-hidden="true" className="absolute inset-0 transition-opacity duration-700" style={{ opacity: i === active ? 1 : 0 }}>
+          <Image src={sl.bg} alt="" fill loading="lazy" sizes="100vw" quality={90} className="object-cover" style={{ objectPosition: sl.bgPosition ?? "center" }} />
+        </div>
+      ))}
+      <div className={`absolute inset-0 transition-colors duration-700 ${slide.overlay ?? "bg-primary-900/70"}`} />
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">
           {slide.badge}
         </span>
-        <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight min-h-[4rem]">
+        <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight min-h-[4rem] [text-shadow:0_1px_6px_rgba(15,28,46,0.45)]">
           {slide.title}
         </h2>
-        <p className="text-white/80 max-w-xl mx-auto mb-6 min-h-[3rem]">
+        <p className="text-white/90 max-w-xl mx-auto mb-6 min-h-[3rem] [text-shadow:0_1px_4px_rgba(15,28,46,0.5)]">
           {slide.desc}
         </p>
         {slide.price && (
