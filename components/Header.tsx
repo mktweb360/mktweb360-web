@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { switcherFor } from "@/lib/i18n/routes";
 
@@ -214,6 +214,18 @@ export function Header({ lang }: { lang?: string }) {
   const pathname = usePathname();
   const currentLang = lang ?? "es";
 
+  // Home (ES/EN/FR): cabecera transparente sobre la imagen del hero hasta que se hace scroll.
+  const isHome = pathname === "/" || /^\/(en|fr)\/?$/.test(pathname);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    if (!isHome) return;
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isHome]);
+  const transparent = isHome && !scrolled && !menuOpen && !servicesOpen;
+
   const nav = NAV[currentLang] ?? NAV.es;
   const allServices = nav.groups.flatMap((g) => g.services);
 
@@ -229,12 +241,18 @@ export function Header({ lang }: { lang?: string }) {
   const frUrl = getLangUrl("fr");
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <header
+      className={`${isHome ? "fixed inset-x-0" : "sticky"} top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 border-b ${
+        transparent
+          ? "bg-transparent border-transparent text-white [text-shadow:0_1px_3px_rgba(15,28,46,0.6)]"
+          : "bg-white border-gray-200 shadow-sm"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
         <Link href={nav.home_href}>
           <Image
-            src="/logo-mw360.png"
+            src={transparent ? "/logo-mw360-blanco.png" : "/logo-mw360.png"}
             alt="Mkt Web 360 — Agencia de Marketing Digital"
             width={162}
             height={45}
@@ -298,12 +316,12 @@ export function Header({ lang }: { lang?: string }) {
 
           {/* Language switcher */}
           <div className="relative group">
-            <button className="flex items-center gap-1.5 border border-gray-200 rounded-full px-3 py-1.5 text-sm font-semibold text-gray-600 hover:border-primary-400 hover:text-primary-600 transition-colors">
+            <button className={`flex items-center gap-1.5 border rounded-full px-3 py-1.5 text-sm font-semibold transition-colors ${transparent ? "border-white/60 text-white hover:border-white" : "border-gray-200 text-gray-600 hover:border-primary-400 hover:text-primary-600"}`}>
               {currentLang === "es" ? "🇪🇸" : currentLang === "en" ? "🇬🇧" : "🇫🇷"}
               <span className="uppercase">{currentLang}</span>
               <svg className="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg py-1 min-w-[130px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div className="absolute right-0 top-full mt-1 [text-shadow:none] bg-white border border-gray-200 rounded-xl shadow-lg py-1 min-w-[130px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               {esUrl ? (
                 <Link href={esUrl} className={`flex items-center gap-2 px-4 py-2 text-sm hover:bg-primary-50 transition-colors ${currentLang === "es" ? "text-primary-600 font-bold" : "text-gray-600"}`}>
                   <span>🇪🇸</span> <span>Español</span>
@@ -344,7 +362,7 @@ export function Header({ lang }: { lang?: string }) {
 
         {/* Mobile burger */}
         <button
-          className="md:hidden p-2 text-primary-600"
+          className={`md:hidden p-2 ${transparent ? "text-white" : "text-primary-600"}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Abrir menú"
         >

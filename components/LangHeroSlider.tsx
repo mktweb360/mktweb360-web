@@ -63,7 +63,7 @@ export function LangHeroSlider({ lang }: { lang: string }) {
 
   return (
     <div
-      className="relative w-full min-h-[560px] md:min-h-[600px] flex items-center justify-center overflow-hidden"
+      className="relative w-full min-h-[620px] md:min-h-[664px] flex items-center justify-center overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -82,7 +82,7 @@ export function LangHeroSlider({ lang }: { lang: string }) {
       <div className="absolute inset-0 bg-primary-900/65" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 py-20 text-center text-white">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 pt-28 pb-20 text-center text-white">
         <div className="h-8 mb-4 flex items-center justify-center">
           {slide.badge && (
             <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">

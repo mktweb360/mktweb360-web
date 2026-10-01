@@ -250,7 +250,7 @@ export function HeroSlider() {
 
   return (
     <div
-      className="relative w-full min-h-[560px] md:min-h-[600px] flex items-center justify-center overflow-hidden"
+      className="relative w-full min-h-[620px] md:min-h-[664px] flex items-center justify-center overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -280,7 +280,7 @@ export function HeroSlider() {
       <div className={`absolute inset-0 transition-colors duration-1000 ${slide.overlay ?? "bg-primary-900/65"}`} />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center text-white">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 pt-28 pb-20 text-center text-white">
         {/* Badge */}
         <div className="h-8 mb-4 flex items-center justify-center">
           {slide.badge && (
@@ -291,9 +291,9 @@ export function HeroSlider() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem] [text-shadow:0_2px_10px_rgba(15,28,46,0.55),0_1px_2px_rgba(15,28,46,0.5)]">
-          <span className="lg:whitespace-nowrap">{slide.headline}</span><br />
-          <span className="text-[#ff7a00] lg:whitespace-nowrap [text-shadow:0_2px_10px_rgba(15,28,46,0.6),0_1px_2px_rgba(15,28,46,0.7)]">{slide.subheadline}</span>
+        <h1 className="text-4xl md:text-5xl xl:text-[3.25rem] font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem] [text-shadow:0_2px_10px_rgba(15,28,46,0.55),0_1px_2px_rgba(15,28,46,0.5)]">
+          <span className="xl:whitespace-nowrap">{slide.headline}</span><br />
+          <span className="text-[#ff7a00] xl:whitespace-nowrap [text-shadow:0_2px_10px_rgba(15,28,46,0.6),0_1px_2px_rgba(15,28,46,0.7)]">{slide.subheadline}</span>
         </h1>
 
         {/* Subtitle */}
