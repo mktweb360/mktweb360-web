@@ -319,6 +319,7 @@ function HeroSlider() {
             priority={i === 0}
             loading={i === 0 ? "eager" : "lazy"}
             sizes="100vw"
+            quality={90}
             className="object-cover"
             style={{ objectPosition: s.bgPosition ?? "center" }}
           />
