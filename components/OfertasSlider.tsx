@@ -24,7 +24,9 @@ const SLIDES: Slide[] = [
     desc: "Solo la web: 249€. Con 6 meses de SEO incluido: 999€ + IVA. Hosting, dominio, correo corporativo, blog y soporte incluidos.",
     cta: "Ver oferta completa",
     href: "/oferta-web-seo/",
-    bg: "/hero-web-seo.svg",
+    bg: "/oferta-web-corporativa.jpg",
+    overlay: "bg-[radial-gradient(ellipse_75%_70%_at_50%_50%,rgba(15,28,46,0.70)_0%,rgba(15,28,46,0.48)_55%,rgba(15,28,46,0.18)_100%)]",
+    bgPosition: "50% 45%",
   },
   {
     badge: "Tienda Online",
