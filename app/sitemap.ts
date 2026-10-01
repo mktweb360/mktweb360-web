@@ -1,7 +1,23 @@
 import { MetadataRoute } from "next";
-import { allUrls } from "@/lib/i18n/routes";
+import { allUrls, ROUTES } from "@/lib/i18n/routes";
+import { allPosts } from "@/lib/blog";
 
 const BASE = "https://www.mktweb360.com";
+
+// lastmod solo cuando hay una fecha real de contenido (fecha del artículo). Antes se usaba
+// la fecha del build en todas las URLs: cada despliegue las marcaba todas como modificadas
+// y Google deja de fiarse del lastmod. Sin fecha fiable, mejor omitirlo.
+const POST_DATE = new Map(allPosts.map((p) => [`/${p.slug}/`, p.date]));
+function lastModFor(esPath: string): Date | undefined {
+  const d = POST_DATE.get(esPath);
+  return d ? new Date(d) : undefined;
+}
+function esPathOf(intlUrl: string): string | undefined {
+  const m = intlUrl.match(/^\/(en|fr)\/(.*?)\/?$/);
+  if (!m) return undefined;
+  const [, lang, slug] = m;
+  return ROUTES.find((r) => (lang === "en" ? r.en : r.fr) === slug)?.es;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
@@ -164,7 +180,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const esSitemap: MetadataRoute.Sitemap = pages.map((p) => ({
     url: `${BASE}${p.url}`,
-    lastModified: new Date(),
+    lastModified: lastModFor(p.url),
     changeFrequency: p.changeFrequency,
     priority: p.priority,
   }));
@@ -175,7 +191,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((u) => u.startsWith("/en/") || u.startsWith("/fr/"))
     .map((u) => ({
       url: `${BASE}${u}`,
-      lastModified: new Date(),
+      lastModified: (() => { const es = esPathOf(u); return es ? lastModFor(es) : undefined; })(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     }));

@@ -132,44 +132,6 @@ const TESTIMONIALS = [
   },
 ];
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Mkt Web 360 SLU",
-  image: "https://www.mktweb360.com/logo.png",
-  url: "https://www.mktweb360.com",
-  telephone: "+34622748987",
-  email: "info@mktweb360.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "El Viso de San Juan",
-    addressLocality: "El Viso de San Juan",
-    addressRegion: "Toledo",
-    postalCode: "45215",
-    addressCountry: "ES",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 39.8878,
-    longitude: -4.0647,
-  },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "09:00",
-    closes: "18:00",
-  },
-  sameAs: [
-    "https://www.facebook.com/mktweb360",
-    "https://x.com/MktWeb360",
-    "https://www.instagram.com/mktweb360",
-    "https://www.linkedin.com/company/mktweb360",
-  ],
-  description: "Agencia de marketing digital para PYMEs y empresas. Especialistas en SEO, SEM, gestión de redes sociales y diseño web. Servicio nacional desde Toledo, España.",
-  priceRange: "$$",
-  areaServed: "España",
-};
-
 const FAQS = [
   {
     q: "¿Cuánto tiempo tarda en verse resultados con el SEO?",
@@ -392,11 +354,13 @@ function HeroSlider() {
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                i === current ? "bg-accent-400 w-6" : "bg-white/40 w-2.5 hover:bg-white/70"
-              }`}
-              aria-label={`Slide ${i + 1}`}
-            />
+              className="group p-2 -m-1 flex items-center justify-center"
+              aria-label={`Ir a la diapositiva ${i + 1}`}
+            >
+              <span className={`block h-2.5 rounded-full transition-all duration-300 ${
+                i === current ? "bg-accent-400 w-6" : "bg-white/40 w-2.5 group-hover:bg-white/70"
+              }`} />
+            </button>
           ))}
         </div>
       </div>
@@ -546,7 +510,6 @@ function ServicesTab() {
 export default function HomeClient() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* Hero Slider */}
       <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden">

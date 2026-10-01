@@ -64,7 +64,9 @@ export function BlogCarousel({ posts }: { posts: BlogPost[] }) {
       <div className="flex justify-center gap-2 mt-6">
         {Array.from({ length: totalPages }).map((_, i) => (
           <button key={i} type="button" onClick={() => go(i)} aria-label={`Ir a la página ${i + 1}`}
-            className={`h-2 rounded-full transition-all ${i === page ? "w-6 bg-accent-500" : "w-2 bg-gray-300 hover:bg-gray-400"}`} />
+            className="group p-2 -m-1 flex items-center justify-center">
+            <span className={`block h-2 rounded-full transition-all ${i === page ? "w-6 bg-accent-500" : "w-2 bg-gray-300 group-hover:bg-gray-400"}`} />
+          </button>
         ))}
       </div>
     </div>
