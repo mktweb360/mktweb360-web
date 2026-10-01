@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
   // La normalización automática de barra la hacemos en middleware.ts (solo páginas),
   // para que /api/* NO reciba el 308 de trailingSlash. Ver middleware.
   skipTrailingSlashRedirect: true,
+  images: {
+    // 90 = imágenes de cabecera a pantalla completa (calidad máxima visible); 75 = resto.
+    qualities: [75, 90],
+  },
   async rewrites() {
     // fallback: solo se activa cuando no existe un archivo estático con ese nombre.
     // Sirve OG images dinámicas para artículos de blog que no tienen JPG estático.
