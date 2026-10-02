@@ -7,7 +7,6 @@ import { ContactForm } from "@/components/ContactForm";
 // Inventario de touchpoints: CAMPAÑA-oferta-seo-geo-gbp-2026-10-02.md (Drive, carpeta Sistema Operativo).
 const URL = "https://www.mktweb360.com/oferta-seo-geo-gbp/";
 const PRICE = "349";
-const PRICE_TARIFA = "699";
 const DESC =
   "SEO en Google, GEO para que cualquier asistente de IA pueda encontrarte y citarte, y tu ficha de Google Business Profile optimizada. 349 €/mes + IVA.";
 
@@ -35,9 +34,9 @@ const INCLUYE = [
     title: "SEO — Google",
     lead: "Que tu web aparezca cuando te buscan.",
     items: [
-      "Auditoría técnica de la web y corrección de los errores que frenan el posicionamiento",
-      "Investigación de palabras clave con intención de compra en tu sector",
-      "Optimización de páginas y contenido",
+      "Auditoría técnica inicial de la web",
+      "Corrección de contenidos, títulos, descripciones, enlaces internos y configuración que frenan el posicionamiento",
+      "Investigación de palabras clave con intención de compra al inicio y revisión cada trimestre",
       "Informe mensual de posiciones, tráfico y contactos",
     ],
     href: "/seo-posicionamiento-web-organico/",
@@ -46,10 +45,10 @@ const INCLUYE = [
     title: "GEO — Inteligencia artificial",
     lead: "Que cualquier asistente de IA pueda encontrarte y citarte.",
     items: [
-      "Auditoría de cómo te mencionan hoy los asistentes de IA",
+      "Auditoría inicial: 10 preguntas de tu sector en 4 asistentes de IA (por ejemplo, ChatGPT, Gemini, Copilot y el modo IA de Google)",
       "Contenido optimizado para que los modelos de lenguaje puedan citarlo",
       "Datos estructurados y archivos llms.txt",
-      "Seguimiento mensual de menciones en IA",
+      "Seguimiento mensual de esas 10 preguntas en los mismos 4 asistentes",
     ],
     href: "/geo-posicionamiento-ia/",
   },
@@ -57,19 +56,38 @@ const INCLUYE = [
     title: "GBP — Google Maps",
     lead: "Que los clientes de tu zona te encuentren en el mapa.",
     items: [
-      "Auditoría y optimización completa de tu ficha de Google Business Profile",
-      "Categorías, atributos, servicios, horarios y fotos",
-      "Estrategia de captación de reseñas y respuesta a las existentes",
-      "Publicaciones en la ficha y datos coherentes con tu web",
+      "Auditoría y optimización de 1 ficha de Google Business Profile",
+      "Categorías, atributos, servicios y horarios; subida y optimización de las fotos que nos facilites",
+      "2 publicaciones al mes en la ficha",
+      "Respuesta a hasta 15 reseñas al mes y método para pedir reseñas a tus clientes reales",
+      "Datos de empresa coherentes en tu web y en 5 directorios principales",
     ],
     href: "/google-business-profile/",
   },
 ];
 
+/** Condiciones del precio fijo (decididas por Manué el 2-oct-2026). */
+const CONDICIONES = [
+  { t: "5 contenidos al mes", d: "Páginas optimizadas o contenidos nuevos, entre SEO y GEO, según lo que más rinda cada mes." },
+  { t: "Webs de hasta 30 páginas", d: "En un idioma. Si tu web es más grande, tiene tienda con mucho catálogo o varios idiomas, te hacemos un presupuesto a medida." },
+  { t: "1 ficha de Google", d: "Si tienes varios locales, cada ficha adicional se presupuesta aparte." },
+  { t: "Sin permanencia", d: "Puedes darte de baja cuando quieras avisando con 30 días de antelación." },
+  { t: "Exclusividad en tu municipio", d: "No trabajamos con otra empresa de tu mismo sector en tu municipio." },
+  { t: "Un único responsable", d: "Una persona lleva tu cuenta y te envía el informe cada mes." },
+];
+
+const NO_INCLUYE = [
+  "Rediseño de la web o desarrollo de funciones nuevas",
+  "Conseguir enlaces externos (link building)",
+  "Sesiones de fotos o vídeo",
+  "Publicidad de pago (Google Ads, redes sociales)",
+  "Reseñas compradas, inventadas o a cambio de incentivos: no las hacemos nunca",
+];
+
 const FAQS = [
   {
     q: "¿Qué incluye el paquete SEO + GEO + GBP?",
-    a: "Tres frentes de visibilidad en un solo servicio mensual: SEO (posicionamiento orgánico en Google con auditoría técnica, palabras clave, contenido e informes mensuales), GEO (trabajo para que cualquier asistente de IA pueda encontrarte y citarte en sus respuestas) y GBP (optimización de tu ficha de Google Business Profile para aparecer en Google Maps).",
+    a: "Tres servicios en uno por 349 €/mes + IVA: SEO (auditoría técnica, palabras clave, correcciones e informe mensual), GEO (auditoría y seguimiento mensual de 10 preguntas en 4 asistentes de IA, contenido citable, datos estructurados y llms.txt) y GBP (1 ficha de Google Business Profile optimizada, 2 publicaciones al mes, respuesta a hasta 15 reseñas al mes y 5 directorios). Incluye 5 contenidos al mes y vale para webs de hasta 30 páginas en un idioma.",
   },
   {
     q: "¿Qué es el GEO?",
@@ -81,7 +99,19 @@ const FAQS = [
   },
   {
     q: "¿Trabajáis con mi competencia?",
-    a: "No. Trabajamos con exclusividad sectorial por zona: no llevamos a dos empresas del mismo sector en la misma área geográfica.",
+    a: "No. Trabajamos con exclusividad sectorial por municipio: no llevamos a dos empresas del mismo sector en el mismo municipio.",
+  },
+  {
+    q: "¿Hay permanencia?",
+    a: "No. Puedes darte de baja cuando quieras avisando con 30 días de antelación.",
+  },
+  {
+    q: "¿Y si mi web es más grande o tengo varios locales?",
+    a: "El precio fijo vale para webs de hasta 30 páginas en un idioma y 1 ficha de Google. Para webs más grandes, tiendas con mucho catálogo, varios idiomas o varias fichas, te preparamos un presupuesto a medida.",
+  },
+  {
+    q: "¿Conseguís reseñas para mi negocio?",
+    a: "Te damos un método para pedir reseñas a tus clientes reales (por ejemplo, un enlace o un código QR después del servicio) y respondemos a hasta 15 reseñas al mes. Nunca compramos, inventamos ni pagamos reseñas: además de estar prohibido, Google puede penalizar la ficha.",
   },
   {
     q: "¿Cómo empezamos?",
@@ -143,12 +173,12 @@ export default function OfertaSeoGeoGbpPage() {
               Posicionamiento SEO, GEO para que cualquier asistente de IA (ChatGPT, Gemini, Copilot, Perplexity, Claude o el modo IA de Google) pueda encontrarte y citarte, y tu ficha de Google Business Profile optimizada. Un solo servicio mensual.
             </p>
             <div className="bg-white/10 rounded-2xl px-6 py-4 mb-8 inline-block">
+              <p className="text-primary-100 text-sm font-semibold uppercase tracking-wide mb-1">Tres servicios en uno</p>
               <p className="flex items-baseline gap-3">
-                <span className="text-primary-200 line-through text-xl" aria-label={`Precio de tarifa: ${PRICE_TARIFA} euros al mes`}>{PRICE_TARIFA} €/mes</span>
                 <span className="text-accent-400 text-4xl font-bold">{PRICE} €/mes</span>
                 <span className="text-primary-100 text-sm">+ IVA</span>
               </p>
-              <p className="text-primary-200 text-xs mt-1">Precio de tarifa del paquete completo: {PRICE_TARIFA} €/mes + IVA</p>
+              <p className="text-primary-100 text-xs mt-1">Sin permanencia · Webs de hasta 30 páginas</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#empezar" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
@@ -191,6 +221,36 @@ export default function OfertaSeoGeoGbpPage() {
         </div>
       </section>
 
+      {/* Condiciones del precio */}
+      <section id="condiciones" className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-3">Qué incluye exactamente el precio</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">349 €/mes + IVA, con estas condiciones claras desde el principio.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+            {CONDICIONES.map((c) => (
+              <div key={c.t} className="rounded-2xl border border-gray-200 p-5">
+                <p className="font-bold text-primary-700 mb-1">{c.t}</p>
+                <p className="text-sm text-gray-700 leading-relaxed">{c.d}</p>
+              </div>
+            ))}
+          </div>
+          <div className="max-w-3xl mx-auto rounded-2xl bg-gray-50 border border-gray-200 p-6">
+            <h3 className="font-bold text-primary-700 mb-3">No incluido en el precio</h3>
+            <ul className="space-y-2 text-sm text-gray-700">
+              {NO_INCLUYE.map((n) => (
+                <li key={n} className="flex gap-2">
+                  <span aria-hidden="true" className="text-gray-500 font-bold">–</span>
+                  <span>{n}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-sm text-gray-600 mt-4">Lo que no entra en el paquete se puede contratar aparte con presupuesto.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Por qué los tres juntos */}
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
@@ -199,7 +259,7 @@ export default function OfertaSeoGeoGbpPage() {
             Un cliente que te busca en Google ve a la vez el mapa con las fichas de tu zona y los resultados orgánicos. Y hay quien, antes de decidir, pregunta a un asistente de IA. Si solo trabajas uno de esos sitios, la competencia ocupa los otros dos.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            Los tres se refuerzan: una web bien posicionada y con datos claros alimenta lo que la IA dice de ti, y una ficha de Google completa y con reseñas da confianza al que llega desde el buscador. Por eso lo llevamos como un solo servicio, con un único responsable y un informe mensual.
+            Los tres se refuerzan: una web bien posicionada y con datos claros alimenta lo que la IA dice de ti, y una ficha de Google completa y con reseñas da confianza al que llega desde el buscador. Por eso lo llevamos como un solo servicio —tres en uno—, con un único responsable y un informe mensual.
           </p>
         </div>
       </section>

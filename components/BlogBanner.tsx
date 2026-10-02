@@ -11,7 +11,7 @@ type BannerData = {
   desc: string;
   cta: string;
   href: string;
-  price?: { old: string; new: string };
+  price?: { old?: string; new: string; note?: string };
 };
 
 type BannerVariants = {
@@ -51,7 +51,7 @@ const BANNERS_ES: BannerVariants = {
     desc: "Posicionamiento SEO, GEO para que cualquier asistente de IA pueda encontrarte y citarte, y tu ficha de Google Business Profile optimizada. Un solo servicio mensual.",
     cta: "Ver qué incluye",
     href: "/oferta-seo-geo-gbp/",
-    price: { old: "699 €/mes", new: "349 €/mes + IVA" },
+    price: { new: "349 €/mes + IVA", note: "Tres servicios en uno · sin permanencia" },
   },
   default: {
     badge: "Sin compromiso",
@@ -136,8 +136,9 @@ export function BlogBanner({ variant = "default", lang }: BlogBannerProps) {
       <p className="text-primary-200 mb-6 leading-relaxed">{b.desc}</p>
       {b.price && (
         <p className="mb-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <span className="text-primary-200 line-through text-lg whitespace-nowrap">{b.price.old}</span>
+          {b.price.old && <span className="text-primary-200 line-through text-lg whitespace-nowrap">{b.price.old}</span>}
           <span className="text-accent-400 text-3xl font-bold whitespace-nowrap">{b.price.new}</span>
+          {b.price.note && <span className="basis-full text-sm text-primary-200">{b.price.note}</span>}
         </p>
       )}
       <Link

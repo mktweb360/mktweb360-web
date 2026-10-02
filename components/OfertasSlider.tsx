@@ -14,7 +14,7 @@ type Slide = {
   /** Capa entre imagen y texto (clase Tailwind). Por defecto, velo oscuro al 70 %. */
   overlay?: string;
   bgPosition?: string;
-  price?: { old: string; new: string };
+  price?: { old?: string; new: string; note?: string };
 };
 
 const SLIDES: Slide[] = [
@@ -27,7 +27,7 @@ const SLIDES: Slide[] = [
     bg: "/oferta-seo-geo-gbp.jpg",
     overlay: "bg-[radial-gradient(ellipse_75%_70%_at_50%_50%,rgba(15,28,46,0.72)_0%,rgba(15,28,46,0.5)_55%,rgba(15,28,46,0.2)_100%)]",
     bgPosition: "50% 40%",
-    price: { old: "699 €/mes", new: "349 €/mes + IVA" },
+    price: { new: "349 €/mes + IVA", note: "Tres servicios en uno · sin permanencia" },
   },
   {
     badge: "Oferta Web Corporativa",
@@ -83,8 +83,9 @@ export function OfertasSlider() {
         </p>
         {slide.price && (
           <p className="mb-8 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1">
-            <span className="text-white/70 line-through text-lg md:text-xl whitespace-nowrap">{slide.price.old}</span>
+            {slide.price.old && <span className="text-white/70 line-through text-lg md:text-xl whitespace-nowrap">{slide.price.old}</span>}
             <span className="text-accent-400 text-2xl md:text-3xl font-bold whitespace-nowrap">{slide.price.new}</span>
+            {slide.price.note && <span className="basis-full text-sm text-white/90">{slide.price.note}</span>}
           </p>
         )}
         <Link
