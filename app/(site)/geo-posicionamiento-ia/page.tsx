@@ -3,14 +3,16 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import Image from "next/image";
+import { AnswerIllustration, LayersIllustration } from "@/components/geo/GeoIllustrations";
 
 export const metadata: Metadata = {
   title: "Agencia GEO: Posicionamiento en IA y ChatGPT",
-  description: "Agencia GEO para que ChatGPT, Gemini y la IA de Google recomienden tu empresa: auditoría de visibilidad en IA, contenido citable y datos estructurados.",
+  description: "Agencia GEO para que ChatGPT, Gemini, Copilot, la IA de Google y cualquier asistente recomienden tu empresa: auditoría en IA, contenido citable y datos estructurados.",
   alternates: alternatesFor("/geo-posicionamiento-ia/") ?? { canonical: "https://www.mktweb360.com/geo-posicionamiento-ia/" },
   openGraph: {
     title: "Agencia GEO: Posicionamiento en IA y ChatGPT | Mkt Web 360",
-    description: "Optimiza tu presencia para que los motores de IA te recomienden cuando tus clientes preguntan. ChatGPT, Perplexity, Gemini, Claude.",
+    description: "Optimiza tu presencia para que cualquier asistente de IA te recomiende cuando tus clientes preguntan: ChatGPT, Gemini, Copilot, Perplexity, Claude o el modo IA de Google.",
     url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
     images: [{ url: "https://www.mktweb360.com/og-geo.jpg", width: 1200, height: 630 }],
   },
@@ -22,12 +24,12 @@ const serviceSchema = {
   name: "GEO — Generative Engine Optimization",
   serviceType: "Generative Engine Optimization",
   provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
-  description: "Posicionamiento en motores de búsqueda generativa: ChatGPT, Perplexity, Gemini y Claude. Optimización de contenidos para LLMs, implementación de llms.txt y estrategia de autoridad semántica.",
+  description: "Posicionamiento en motores de búsqueda generativa y asistentes de IA (ChatGPT, Gemini, Copilot, Perplexity, Claude, AI Overviews y modo IA de Google, entre otros). Optimización de contenidos para LLMs, implementación de llms.txt y estrategia de autoridad semántica.",
   areaServed: "España",
   url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
   offers: {
     "@type": "Offer",
-    description: "Posicionamiento en motores de IA (ChatGPT, Gemini, Perplexity) integrado con SEO. Presupuesto personalizado según proyecto.",
+    description: "Posicionamiento en asistentes y buscadores con IA integrado con SEO. Presupuesto personalizado según proyecto.",
     priceCurrency: "EUR",
     availability: "https://schema.org/InStock",
     url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
@@ -36,7 +38,7 @@ const serviceSchema = {
 const GEO_SERVICES = [
   {
     title: "Auditoría de visibilidad en IA",
-    desc: "Analizamos cómo te mencionan (o no te mencionan) ChatGPT, Perplexity, Gemini y Claude cuando alguien busca servicios como los tuyos. El punto de partida que define la estrategia.",
+    desc: "Analizamos cómo te mencionan (o no te mencionan) los asistentes de IA —ChatGPT, Gemini, Copilot, Perplexity, Claude, el modo IA de Google…— cuando alguien busca servicios como los tuyos. El punto de partida que define la estrategia.",
   },
   {
     title: "Optimización de contenidos para LLMs",
@@ -44,7 +46,7 @@ const GEO_SERVICES = [
   },
   {
     title: "Implementación de llms.txt",
-    desc: "Creamos y mantenemos los archivos llms.txt y llms-full.txt de tu sitio: el estándar emergente que indica a los LLMs qué información indexar y cómo entender tu negocio.",
+    desc: "Creamos y mantenemos los archivos llms.txt y llms-full.txt de tu sitio: una propuesta de estándar para resumir a los modelos de lenguaje qué es tu negocio. Es una capa complementaria, no sustituye al contenido ni a los datos estructurados.",
   },
   {
     title: "Estrategia de autoridad semántica",
@@ -77,43 +79,53 @@ export default function GEOPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
-        <div className="max-w-6xl mx-auto px-4 py-16">
-          <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "GEO — Posicionamiento IA" }]} />
-          <div className="max-w-3xl mt-4">
-            <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
-              Nuevo servicio
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Agencia GEO: posicionamiento en IA<br />
-              <span className="text-accent-400">para que ChatGPT y Gemini te recomienden</span>
-            </h1>
-            <p className="text-xl text-primary-200 mb-8 leading-relaxed italic">
-              ¿Apareces cuando te buscan en ChatGPT, Perplexity o Gemini?
-            </p>
-            <p className="text-lg text-primary-100 mb-8 leading-relaxed">
-              El GEO (Generative Engine Optimization) es la disciplina que optimiza tu presencia digital para que los motores de búsqueda por IA te recomienden cuando un usuario pregunta sobre servicios como los tuyos. Es el complemento natural al SEO tradicional en la nueva era de la búsqueda.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#contacto" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
-                Quiero aparecer en la IA
-              </a>
-            </div>
-          </div>
+      <div className="max-w-6xl mx-auto px-4 pt-6">
+        <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "GEO — Posicionamiento IA" }]} />
+      </div>
+
+      <section className="relative isolate overflow-hidden text-white">
+        <Image
+          src="/geo-hero.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          quality={90}
+          className="object-cover -z-20"
+          style={{ objectPosition: "70% 40%" }}
+        />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_75%_80%_at_50%_50%,rgba(15,28,46,0.84)_0%,rgba(15,28,46,0.74)_55%,rgba(15,28,46,0.55)_100%)]" />
+        <div className="max-w-4xl mx-auto px-4 py-20 md:py-28 text-center">
+          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-5 uppercase tracking-wide">
+            GEO · Posicionamiento en IA
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight [text-shadow:0_2px_10px_rgba(15,28,46,0.6)]">
+            <span className="lg:whitespace-nowrap">Agencia GEO: posicionamiento en IA</span>{" "}
+            <span className="block text-[#ff7a00] lg:whitespace-nowrap">para que la IA te recomiende</span>
+          </h1>
+          <p className="text-xl text-primary-100 mb-6 leading-relaxed italic">
+            ¿Apareces cuando tus clientes preguntan a una IA por lo que tú vendes?
+          </p>
+          <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto [text-shadow:0_1px_4px_rgba(15,28,46,0.6)]">
+            El GEO (Generative Engine Optimization) es la disciplina que optimiza tu presencia digital para que los motores de búsqueda por IA te recomienden cuando un usuario pregunta sobre servicios como los tuyos: ChatGPT, Gemini, Copilot, Perplexity, Claude, el modo IA de Google o el asistente que use tu cliente. Es el complemento natural al SEO tradicional en la nueva era de la búsqueda.
+          </p>
+          <a href="#contacto" className="inline-block bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors">
+            Quiero aparecer en la IA
+          </a>
         </div>
       </section>
 
       <section className="bg-primary-600 py-6 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {[
-            { value: "ChatGPT", label: "más de 180M usuarios activos" },
-            { value: "Perplexity", label: "el buscador IA de más crecimiento" },
-            { value: "Gemini", label: "IA integrada en Google Search" },
-            { value: "Claude", label: "asistente IA de Anthropic" },
+            { value: "Asistentes", label: "ChatGPT, Gemini, Claude, Copilot…" },
+            { value: "Buscadores", label: "AI Overviews y modo IA de Google" },
+            { value: "Motores de respuesta", label: "Perplexity y similares" },
+            { value: "Integrados", label: "en el móvil, el navegador y la oficina" },
           ].map((m) => (
-            <div key={m.label}>
-              <div className="text-xl font-bold text-accent-400">{m.value}</div>
-              <div className="text-xs text-primary-200 mt-1">{m.label}</div>
+            <div key={m.value}>
+              <div className="text-lg md:text-xl font-bold text-accent-400">{m.value}</div>
+              <div className="text-xs text-primary-100 mt-1">{m.label}</div>
             </div>
           ))}
         </div>
@@ -146,7 +158,7 @@ export default function GEOPage() {
               <h3 className="font-bold text-accent-400 text-lg mb-4">GEO — IA Search</h3>
               <ul className="space-y-3 text-sm text-primary-100">
                 {[
-                  "Visibilidad en respuestas de ChatGPT, Perplexity, Gemini",
+                  "Visibilidad en las respuestas de cualquier asistente de IA",
                   "El asistente IA te recomienda directamente",
                   "Optimización para modelos de lenguaje (LLMs)",
                   "Autoridad semántica, contenido citeable, llms.txt",
@@ -184,35 +196,49 @@ export default function GEOPage() {
 
       {/* POR QUÉ GEO */}
       <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8">Por qué el GEO es el próximo gran cambio en captación digital</h2>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-8 max-w-4xl">Por qué el GEO es el próximo gran cambio en captación digital</h2>
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_400px] gap-10 items-start">
+          <figure className="lg:order-2 lg:sticky lg:top-28 max-w-md mx-auto lg:max-w-none w-full">
+            <AnswerIllustration className="w-full h-auto" />
+            <figcaption className="text-sm text-gray-500 mt-3 text-center">Cuando alguien pregunta, la IA responde con las fuentes que entiende y en las que confía. El objetivo del GEO es que una de ellas sea tu empresa.</figcaption>
+          </figure>
+          <div className="lg:order-1">
           <p className="text-gray-700 leading-relaxed mb-4">
-            El SEO tradicional optimiza para aparecer en Google. Pero el comportamiento del usuario está cambiando: cada vez más personas hacen sus búsquedas directamente en ChatGPT, Perplexity, Claude o Gemini y toman decisiones basándose en lo que estos sistemas responden — sin llegar a visitar Google. Si tu empresa no aparece en esas respuestas, no existes para ese segmento de usuarios.
+            El SEO tradicional optimiza para aparecer en Google. Pero el comportamiento del usuario está cambiando: cada vez más personas hacen sus búsquedas directamente en ChatGPT, Gemini, Copilot, Perplexity, Claude o el modo IA de Google, y toman decisiones basándose en lo que estos sistemas responden — sin llegar a visitar Google. Si tu empresa no aparece en esas respuestas, no existes para ese segmento de usuarios.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
             El GEO — Generative Engine Optimization — es la disciplina que optimiza tu presencia digital para que los modelos de lenguaje te recomienden cuando un usuario pregunta por servicios como los tuyos. No se trata de trucos técnicos ni de engañar a la IA. Se trata de que tu contenido sea suficientemente claro, estructurado y autoritativo para que los LLMs lo consideren una fuente relevante.
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed mb-4">
             En Mkt Web 360 trabajamos el GEO como un servicio estructurado, con método propio. Mantenemos llms.txt y llms-full.txt activos, optimizamos el contenido para intención de búsqueda conversacional y monitorizamos mensualmente la visibilidad de la marca en los principales motores de IA.
           </p>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            Los datos respaldan el cambio. ChatGPT supera los 800 millones de usuarios semanales en 2026. Google AI Overviews aparece ya en más del 58% de las búsquedas. Perplexity procesa cientos de millones de consultas al mes. El 94% de los grupos de compra B2B utilizan herramientas de IA generativa antes de hablar con ningún proveedor. Esto no es una tendencia futura — es el comportamiento actual de tus clientes potenciales.
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Los datos respaldan el cambio. OpenAI anunció en octubre de 2025 que ChatGPT superaba los 800 millones de usuarios semanales (<a href="https://www.cnbc.com/2025/10/06/open-ai-devday-live-updates-altman-jony-ive.html" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">CNBC</a>). En julio de 2026, Alphabet informó de que la aplicación Gemini tiene 950 millones de usuarios mensuales (<a href="https://www.forbes.com/sites/tylerroush/2026/07/22/950-million-people-now-use-gemini-each-month-as-alphabet-posts-earnings-beat/" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">Forbes</a>) y de que los resúmenes con IA del buscador de Google (AI Overviews) llegan a 2.500 millones de usuarios al mes (<a href="https://www.fool.com/investing/2026/08/21/sundar-pichai-alphabets-ai-billion-users/" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">The Motley Fool</a>). Esto no es una tendencia futura — es el comportamiento actual de tus clientes potenciales.
           </p>
-          <p className="text-gray-600 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed">
             La ventana de oportunidad es estrecha. Las empresas que construyan autoridad en la IA ahora tendrán una ventaja acumulada similar a la del dominio authority en SEO: cuanto antes empieces, mayor ventaja. Las que esperen partirán desde cero en un entorno donde la competencia ya habrá construido presencia. En SEO, sabemos lo que cuesta recuperar posiciones perdidas. En GEO, el mecanismo es el mismo.
           </p>
+          </div>
+          </div>
         </div>
       </section>
 
       {/* CUÁNDO TIENE SENTIDO GEO */}
-      <section className="py-12 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">¿Cuándo tiene sentido contratar GEO?</h2>
-          <div className="space-y-4 text-gray-600">
+      <section className="py-12 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-6 max-w-4xl">¿Cuándo tiene sentido contratar GEO?</h2>
+          <div className="grid lg:grid-cols-[400px_minmax(0,1fr)] gap-10 items-start">
+          <figure className="lg:sticky lg:top-28 max-w-md mx-auto lg:max-w-none w-full">
+            <LayersIllustration className="w-full h-auto" />
+            <figcaption className="text-sm text-gray-500 mt-3 text-center">Primero una base de SEO técnico sólida, después contenido que se pueda citar y, encima, el GEO.</figcaption>
+          </figure>
+          <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>El GEO no es la solución correcta para todos los negocios en todos los momentos. Tiene sentido cuando tu sector tiene volumen de búsquedas conversacionales — cuando tus clientes potenciales preguntan a la IA cosas como "qué agencia de marketing me recomiendas" o "cuál es la mejor clínica dental de Toledo". Si esas preguntas existen, la IA las responde con o sin ti.</p>
             <p>Tiene especial impacto en servicios profesionales, tecnología, salud, formación y marketing digital — sectores donde el proceso de decisión es largo y el cliente investiga antes de comprar. En estos sectores, aparecer en la respuesta de ChatGPT antes de que el cliente visite Google puede ser la diferencia entre ser evaluado o no existir en el proceso de compra.</p>
             <p>Para negocios locales — clínicas, despachos, talleres, tiendas físicas — el GEO local tiene una oportunidad enorme y poco explotada. Cuando alguien le pregunta a ChatGPT "qué fontanero de confianza me recomiendas en Salamanca", el modelo intenta dar una respuesta específica. Un negocio local con contenido bien estructurado, NAP coherente en todos sus canales y autoridad local puede aparecer en esa respuesta antes que competidores más grandes.</p>
             <p>El GEO no tiene sentido como canal único sin base SEO. Un sitio técnicamente deficiente, sin contenido de calidad o sin autoridad de dominio tiene poco que ofrecer a los modelos de IA. La secuencia correcta es: SEO técnico sólido primero, GEO encima como capa adicional de visibilidad.</p>
+          </div>
           </div>
         </div>
       </section>
@@ -229,7 +255,7 @@ export default function GEOPage() {
               {
                 num: "01",
                 title: "Auditoría de visibilidad en IA",
-                desc: "Comprobamos cómo aparece tu marca y tus servicios en ChatGPT, Perplexity, Gemini y Claude. Identificamos si apareces, con qué frecuencia, en qué contexto y qué dicen los modelos sobre ti o sobre tu sector.",
+                desc: "Comprobamos cómo aparece tu marca y tus servicios en los asistentes de IA que usan tus clientes: ChatGPT, Gemini, Copilot, Perplexity, Claude, el modo IA de Google… Identificamos si apareces, con qué frecuencia, en qué contexto y qué dicen los modelos sobre ti o sobre tu sector.",
               },
               {
                 num: "02",
@@ -260,13 +286,19 @@ export default function GEOPage() {
       </section>
 
       {/* GEO LOCAL */}
-      <section className="py-12 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">GEO local: la oportunidad que la mayoría todavía no ha visto</h2>
-          <div className="space-y-4 text-gray-600">
+      <section className="py-12 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-6 max-w-4xl">GEO local: la oportunidad que la mayoría todavía no ha visto</h2>
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_400px] gap-10 items-start">
+          <figure className="lg:order-2 lg:sticky lg:top-28 max-w-md mx-auto lg:max-w-none w-full">
+            <Image src="/imagen-google-business-profile.jpg" alt="Mapa de una ciudad con varios negocios señalados y uno destacado en naranja" width={1200} height={900} sizes="(max-width: 1024px) 448px, 400px" className="w-full h-auto rounded-[28px]" />
+            <figcaption className="text-sm text-gray-500 mt-3 text-center">Para las búsquedas locales, la IA y el mapa se alimentan de los mismos datos: ficha de Google, reseñas y datos coherentes en todos los directorios.</figcaption>
+          </figure>
+          <div className="lg:order-1 space-y-4 text-gray-700 leading-relaxed">
             <p>La mayoría de las conversaciones sobre GEO se centran en marcas nacionales o internacionales. Pero la oportunidad más inmediata está en los negocios locales. Los modelos de IA reciben miles de consultas diarias con intención local: "mejor fisioterapeuta en Bilbao", "asesoría fiscal para autónomos en Zaragoza", "taller mecánico de confianza en Toledo". Y tienen que responder con algo.</p>
             <p>El negocio local que trabaje su GEO ahora — con contenido bien estructurado sobre su zona, con Google Business Profile optimizado, con NAP coherente en todos los directorios, con reseñas que refuercen su autoridad local — será el que aparezca en esas respuestas. La competencia local en GEO es casi inexistente todavía. Es la misma ventana que existió en SEO local hace diez años.</p>
             <p>En Mkt Web 360 trabajamos el GEO local integrado con la estrategia de SEO local de nuestros clientes. No son dos proyectos separados — son dos capas del mismo trabajo de visibilidad digital: una para que Google te encuentre, otra para que la IA te recomiende.</p>
+          </div>
           </div>
         </div>
       </section>
@@ -329,7 +361,7 @@ export default function GEOPage() {
       <section id="contacto" className="py-16 px-4 bg-primary-600 text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">¿Apareces cuando te buscan en ChatGPT?</h2>
+            <h2 className="text-3xl font-bold mb-4">¿Apareces cuando te buscan en la IA?</h2>
             <p className="text-primary-200">Cuéntanos tu negocio y hacemos una auditoría de visibilidad en IA sin compromiso. Descubre si te mencionan, cómo y qué se puede mejorar.</p>
           </div>
           <div className="bg-white rounded-2xl p-8">
