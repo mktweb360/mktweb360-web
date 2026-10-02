@@ -200,7 +200,7 @@ export default function BuscadoresNavegadoresPage() {
             </table>
           </div>
 
-          <BlogBanner variant="default" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">¿Cuál es la relación entre navegador y buscador?</h2>
           <p>

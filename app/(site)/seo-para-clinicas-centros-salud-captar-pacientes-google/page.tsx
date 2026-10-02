@@ -120,7 +120,7 @@ export default function SeoClinicasPage() {
           <h2 className="text-2xl font-bold text-primary-600">Las búsquedas que generan pacientes reales</h2>
           <p>No todas las visitas valen lo mismo. Las búsquedas con intención local y transaccional —"clínica dental [ciudad]", "urgencias fisioterapia [barrio]", "primera consulta psicología [zona]"— son las que llenan la agenda. El trabajo consiste en identificar esas consultas para cada especialidad y zona, y construir páginas que respondan a ellas con claridad: qué ofreces, para quién, con qué garantías y cómo pedir cita. Una clínica con varias especialidades necesita una página por servicio, no una sola página genérica.</p>
 
-          <BlogBanner variant="seo" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">Errores frecuentes en el blog de una clínica</h2>
           <p>El blog médico mal entendido resta en lugar de sumar. Los errores más comunes: copiar contenido genérico de otras webs (Google penaliza la falta de originalidad, más aún en salud), publicar sin criterio profesional, o redactar para el buscador y no para el paciente. Un buen contenido sanitario responde a una duda real con rigor, transmite confianza y enlaza de forma natural hacia el servicio correspondiente. Calidad y autoridad por encima de cantidad.</p>

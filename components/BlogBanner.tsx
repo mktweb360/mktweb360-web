@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 interface BlogBannerProps {
-  variant?: "seo" | "ecommerce" | "geo" | "default";
+  variant?: "seo" | "ecommerce" | "geo" | "seogeogbp" | "default";
   lang?: string;
 }
 
@@ -11,12 +11,15 @@ type BannerData = {
   desc: string;
   cta: string;
   href: string;
+  price?: { old: string; new: string };
 };
 
 type BannerVariants = {
   seo: BannerData;
   ecommerce: BannerData;
   geo: BannerData;
+  /** Oferta SEO + GEO + GBP (permanente desde 2-oct-2026). Ver CAMPAÑA-oferta-seo-geo-gbp-2026-10-02.md. */
+  seogeogbp: BannerData;
   default: BannerData;
 };
 
@@ -42,6 +45,14 @@ const BANNERS_ES: BannerVariants = {
     cta: "Solicitar auditoría gratuita",
     href: "/geo-posicionamiento-ia/",
   },
+  seogeogbp: {
+    badge: "SEO + GEO + Google Maps",
+    title: "Que te encuentren en Google, en la IA y en el mapa",
+    desc: "Posicionamiento SEO, GEO para que cualquier asistente de IA pueda encontrarte y citarte, y tu ficha de Google Business Profile optimizada. Un solo servicio mensual.",
+    cta: "Ver qué incluye",
+    href: "/oferta-seo-geo-gbp/",
+    price: { old: "699 €/mes", new: "349 €/mes + IVA" },
+  },
   default: {
     badge: "Sin compromiso",
     title: "Diagnóstico digital gratuito",
@@ -51,7 +62,7 @@ const BANNERS_ES: BannerVariants = {
   },
 };
 
-const BANNERS_EN: BannerVariants = {
+const BANNERS_EN: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = {
   seo: {
     badge: "SEO Positioning",
     title: "Appear on the first page of Google",
@@ -82,7 +93,7 @@ const BANNERS_EN: BannerVariants = {
   },
 };
 
-const BANNERS_FR: BannerVariants = {
+const BANNERS_FR: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = {
   seo: {
     badge: "Référencement SEO",
     title: "Apparaissez en première page de Google",
@@ -115,7 +126,7 @@ const BANNERS_FR: BannerVariants = {
 
 export function BlogBanner({ variant = "default", lang }: BlogBannerProps) {
   const banners = lang === "en" ? BANNERS_EN : lang === "fr" ? BANNERS_FR : BANNERS_ES;
-  const b = banners[variant];
+  const b = banners[variant] ?? banners.seo;
   return (
     <div className="my-10 bg-primary-700 rounded-2xl p-8 text-white">
       <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
@@ -123,6 +134,12 @@ export function BlogBanner({ variant = "default", lang }: BlogBannerProps) {
       </span>
       <h3 className="text-2xl font-bold mb-3">{b.title}</h3>
       <p className="text-primary-200 mb-6 leading-relaxed">{b.desc}</p>
+      {b.price && (
+        <p className="mb-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span className="text-primary-200 line-through text-lg whitespace-nowrap">{b.price.old}</span>
+          <span className="text-accent-400 text-3xl font-bold whitespace-nowrap">{b.price.new}</span>
+        </p>
+      )}
       <Link
         href={b.href}
         className="inline-block bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors"

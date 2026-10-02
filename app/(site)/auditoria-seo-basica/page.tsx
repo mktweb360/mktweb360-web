@@ -58,7 +58,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Al introducir la URL de tu web y ejecutar el rastreo, Screaming Frog te dará información sobre: páginas con errores 404 (contenido no encontrado), redirecciones (301, 302), páginas con títulos o meta descripciones duplicados o demasiado largos/cortos, páginas sin etiqueta H1 o con más de un H1, imágenes sin texto alternativo (alt text), y páginas con contenido escaso (thin content).</p>
         <p className="text-gray-700 leading-relaxed mb-4">Prioriza los errores 404 y los títulos duplicados. Los errores 404 deben corregirse o redirigirse a páginas equivalentes. Los títulos duplicados confunden a Google sobre cuál es la página más relevante para una consulta y deben diferenciarse con contenido único en cada página.</p>
 
-        <BlogBanner variant="seo" />
+        <BlogBanner variant="seogeogbp" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Paso 3: velocidad de carga con PageSpeed Insights</h2>
         <p className="text-gray-700 leading-relaxed mb-4">PageSpeed Insights (pagespeed.web.dev) analiza la velocidad de cualquier URL y da una puntuación del 0 al 100 separada para móvil y escritorio. También lista los problemas específicos que están reduciendo la puntuación y estima cuánto tiempo se ahorraría al resolverlos.</p>

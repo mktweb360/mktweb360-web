@@ -150,7 +150,7 @@ export default function CeroClicPage() {
             La tercera es diversificar las fuentes de tráfico. Depender exclusivamente del SEO informacional era arriesgado antes de la IA; ahora es un punto de vulnerabilidad claro. LinkedIn, newsletters, podcasts y comunidades de nicho son canales donde la IA no tiene impacto directo en la distribución.
           </p>
 
-          <BlogBanner variant="geo" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">El GEO como nueva capa de visibilidad</h2>
           <p>

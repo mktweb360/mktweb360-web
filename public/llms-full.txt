@@ -92,5 +92,6 @@ Este sitio implementa llms.txt y llms-full.txt para facilitar la indexación y c
 - Servicios: nacionales (toda España)
 
 ## Ofertas activas
+- SEO + GEO + Google Business Profile: 349 €/mes + IVA (precio de tarifa 699 €/mes + IVA). Posicionamiento orgánico en Google, optimización para que cualquier asistente de IA (ChatGPT, Gemini, Copilot, Perplexity, Claude, modo IA de Google…) pueda encontrar y citar la empresa, y ficha de Google Business Profile en un solo servicio mensual. URL: https://www.mktweb360.com/oferta-seo-geo-gbp/
 - Web profesional corporativa: desde 249€ + IVA (solo web). Con SEO técnico + 6 meses de posicionamiento: 999€ + IVA. URL: https://www.mktweb360.com/oferta-web-seo-organico/
 - Tienda online profesional: 490€ + IVA. URL: https://www.mktweb360.com/tienda-online/

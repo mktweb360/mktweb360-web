@@ -128,7 +128,7 @@ export default function GeoChatgptEmpresasEspanaPage() {
             ))}
           </ul>
 
-          <BlogBanner variant="default" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">El papel de tu ficha y los datos locales</h2>
           <p>Cuando la pregunta tiene componente local —"mejor asesoría para autónomos en Toledo"— los motores generativos combinan autoridad temática con señales de proximidad. Ahí, tu <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile</Link>, tus reseñas y la coherencia de tus datos (nombre, dirección, teléfono y especialidad) se convierten en materia prima para que la IA te recomiende. Un negocio local con la casa digital ordenada parte con ventaja en GEO.</p>

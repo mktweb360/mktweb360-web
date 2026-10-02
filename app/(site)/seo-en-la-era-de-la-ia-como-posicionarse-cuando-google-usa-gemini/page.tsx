@@ -96,7 +96,7 @@ export default function SeoEraIaPage() {
           <p>No todas las búsquedas se ven afectadas por igual. Las consultas informacionales puras (definiciones, datos concretos, respuestas cerradas) son las más absorbidas por los AI Overviews, porque la IA puede resolverlas sin que el usuario necesite profundizar.</p>
           <p>En cambio, las búsquedas con intención comercial (comparar servicios, elegir proveedor, decidir una compra) siguen generando clics con fuerza, porque el usuario necesita contrastar, ver ejemplos y ganar confianza antes de decidir. El SEO local también resiste bien: el pack de mapas mantiene su prominencia para negocios con presencia física. Ahí es donde conviene concentrar el esfuerzo.</p>
 
-          <BlogBanner variant="seo" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo optimizar para aparecer dentro de un AI Overview</h2>
           <p>Aparecer como fuente citada dentro de un AI Overview se ha convertido en un objetivo de SEO en sí mismo. Google elige esas fuentes en función de la autoridad de la página y de lo fácil que sea extraer una respuesta clara de ella. Un contenido bien estructurado, con encabezados que responden preguntas y párrafos directos, tiene ventaja.</p>

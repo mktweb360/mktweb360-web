@@ -19,6 +19,17 @@ type Slide = {
 
 const SLIDES: Slide[] = [
   {
+    badge: "SEO + GEO + Google Maps",
+    title: "Que te encuentren en Google, en la IA y en el mapa",
+    desc: "Posicionamiento SEO, GEO para que cualquier asistente de IA pueda encontrarte y citarte, y tu ficha de Google Business Profile optimizada. Un solo servicio mensual.",
+    cta: "Ver qué incluye",
+    href: "/oferta-seo-geo-gbp/",
+    bg: "/oferta-seo-geo-gbp.jpg",
+    overlay: "bg-[radial-gradient(ellipse_75%_70%_at_50%_50%,rgba(15,28,46,0.72)_0%,rgba(15,28,46,0.5)_55%,rgba(15,28,46,0.2)_100%)]",
+    bgPosition: "50% 40%",
+    price: { old: "699 €/mes", new: "349 €/mes + IVA" },
+  },
+  {
     badge: "Oferta Web Corporativa",
     title: "Tu web profesional, desde 249€",
     desc: "Solo la web: 249€. Con 6 meses de SEO incluido: 999€ + IVA. Hosting, dominio, correo corporativo, blog y soporte incluidos.",
@@ -71,9 +82,9 @@ export function OfertasSlider() {
           {slide.desc}
         </p>
         {slide.price && (
-          <p className="mb-8 flex items-center justify-center gap-3">
-            <span className="text-white/60 line-through text-xl">{slide.price.old}</span>
-            <span className="text-accent-400 text-3xl font-bold">{slide.price.new}</span>
+          <p className="mb-8 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1">
+            <span className="text-white/70 line-through text-lg md:text-xl whitespace-nowrap">{slide.price.old}</span>
+            <span className="text-accent-400 text-2xl md:text-3xl font-bold whitespace-nowrap">{slide.price.new}</span>
           </p>
         )}
         <Link
