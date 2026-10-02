@@ -187,7 +187,7 @@ export default function ResenasGoogleLegalmentePage() {
             En la práctica: tus opiniones deben ser auténticas y, si las publicas en tu propia web, debes explicar cómo las gestionas.
           </p>
 
-          <BlogBanner variant="seo" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo conseguir más reseñas de forma legal</h2>
           <ol className="space-y-4 list-decimal list-inside">

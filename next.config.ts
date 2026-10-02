@@ -147,10 +147,10 @@ const nextConfig: NextConfig = {
       // Ofertas caducadas (SEO 6x3 y verano SEO+GEO+GBP, retirada 29-sep-2026) -> servicio SEO evergreen.
       // Ver CAMPANA-seo-geo-gbp-verano-2026.md en Drive.
       { source: '/oferta-seo/:path*/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
-      { source: '/oferta-seo-geo-gbp/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
-      { source: '/oferta-seo-geo-gbp/:path*/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
-      { source: '/landing/seo-geo-gbp-verano/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
-      { source: '/landing/seo-geo-gbp-verano/:path*/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      // 2-oct-2026: la oferta SEO+GEO+GBP vuelve como permanente en /oferta-seo-geo-gbp/ (ya no redirige).
+      // La landing de Ads de verano apunta ahora a la oferta. Ver CAMPAÑA-oferta-seo-geo-gbp-2026-10-02.md.
+      { source: '/landing/seo-geo-gbp-verano/', destination: '/oferta-seo-geo-gbp/', permanent: true },
+      { source: '/landing/seo-geo-gbp-verano/:path*/', destination: '/oferta-seo-geo-gbp/', permanent: true },
 
       // 404 detectados en GSC (24-sep-2026): slugs EN/FR servidos en la raíz y URLs antiguas sueltas.
       { source: '/google-business-profile-management/', destination: '/google-business-profile/', permanent: true },

@@ -97,7 +97,7 @@ export default function GeoParaPymesPage() {
           <p>Tercero, añadir schema markup de tipo FAQPage a tus páginas clave, para que la máquina procese tus respuestas sin ambigüedad. Cuarto, cuidar la coherencia del NAP —nombre, dirección y teléfono— en todos los canales, algo que se solapa con un buen trabajo de <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local</Link>. Y quinto, producir contenido específico de tu nicho, ese que solo tú puedes escribir con conocimiento real.</p>
           <p>Ninguno de estos pasos exige un presupuesto de gran empresa. La mayoría se apoyan en una base de <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO orgánico</Link> que muchas pymes ya tienen a medio construir; el GEO simplemente la ordena con la lógica de que ahora también lee una máquina.</p>
 
-          <BlogBanner variant="geo" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">El error que cometen la mayoría de pymes al empezar con GEO</h2>
           <p>El fallo más común es querer aparecer en todo. Es la tentación de perseguir cada búsqueda posible de tu sector, dispersando el esfuerzo y sin dominar ninguna. El resultado es contenido superficial que compite en desventaja justo donde las grandes marcas son fuertes: en lo genérico.</p>

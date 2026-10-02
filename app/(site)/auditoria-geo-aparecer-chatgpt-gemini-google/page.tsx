@@ -228,7 +228,7 @@ export default function AuditoriaGeoPage() {
             Suma por plataforma y por tipo de consulta. Repite la auditoría <strong>cada mes o cada trimestre</strong> con las mismas preguntas y compara la evolución.
           </p>
 
-          <BlogBanner variant="geo" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">Paso 4: revisión técnica de tu web</h2>
           <p>Si la IA no te encuentra, primero descarta que no pueda leerte:</p>

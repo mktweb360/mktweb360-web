@@ -105,7 +105,7 @@ export default function AparecerEnChatGPTGeminiPage() {
           <p>Aquí está la buena noticia para los negocios pequeños. Los modelos de IA no reparten citas por tamaño de empresa ni por presupuesto de marketing, sino por autoridad semántica sobre un tema concreto. Cuando el asistente busca la mejor fuente para responder una pregunta específica, valora que el contenido sea claro, estructurado y demostrablemente competente en ese nicho.</p>
           <p>Eso rompe la jerarquía habitual. Una gran marca puede dominar cientos de términos genéricos y, sin embargo, no ser la referencia sobre una consulta muy específica de tu sector. Una pyme con contenido bien trabajado, schema markup correcto y foco en su especialidad puede convertirse justo en esa referencia, y la IA no tiene ningún incentivo para preferir al grande si el pequeño responde mejor a la pregunta.</p>
 
-          <BlogBanner variant="geo" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">Las tres señales que la IA busca en tu contenido</h2>
           <p>Simplificando mucho, los motores generativos evalúan tres cosas. La primera es la estructura: contenido organizado en preguntas y respuestas, con encabezados claros y párrafos que resuelven una idea cada uno, es mucho más fácil de extraer y citar. La segunda es la autoridad semántica: que tu marca aparezca vinculada de forma coherente a los temas en los que quieres ser referencia, con entidades y datos verificables.</p>

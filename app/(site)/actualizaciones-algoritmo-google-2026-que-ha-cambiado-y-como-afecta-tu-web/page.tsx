@@ -100,7 +100,7 @@ export default function AlgoritmoGoogle2026Page() {
           <p>Los AI Overviews resumen la respuesta encima de los resultados orgánicos y, en búsquedas informacionales puras, pueden reducir los clics hacia las webs. La reacción sensata no es lamentarse, sino adaptar el enfoque: en las búsquedas con intención comercial el impacto es mucho menor, porque el usuario necesita profundizar antes de decidir.</p>
           <p>Aparecer como fuente citada dentro de un AI Overview aporta visibilidad de marca y sigue enviando visitas cualificadas. Estructurar el contenido en formato pregunta-respuesta, con datos verificables y schema markup correcto, aumenta las probabilidades de ser la fuente elegida. Aquí el SEO se acerca al terreno del <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">posicionamiento en IA</Link>.</p>
 
-          <BlogBanner variant="seo" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">Contenido y IA: lo que Google premia y penaliza</h2>
           <p>La pregunta que más se repite es si Google penaliza el contenido creado con IA. La respuesta es no, al menos no por el hecho de usar IA. Lo que Google penaliza es el contenido masivo y genérico que no aporta valor, se cree con la herramienta que se cree. Un artículo generado con IA, revisado por una persona con criterio y enriquecido con experiencia real, puede posicionar perfectamente.</p>

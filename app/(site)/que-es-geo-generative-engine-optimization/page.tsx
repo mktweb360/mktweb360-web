@@ -58,7 +58,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Autoridad:</strong> En SEO, la autoridad se construye principalmente con enlaces (backlinks). En GEO, la autoridad se construye con menciones en múltiples fuentes relevantes: medios de comunicación, publicaciones del sector, podcasts, estudios que te citan, colaboraciones con otros expertos. Una marca que es mencionada frecuentemente en contextos de calidad tiene más probabilidades de aparecer en respuestas de IA.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Métricas:</strong> El SEO se mide con posiciones en Google, tráfico orgánico y conversiones. El GEO se mide con herramientas específicas de monitorización de visibilidad en LLMs: con qué frecuencia te menciona cada IA, en qué contexto, y cómo evoluciona esa visibilidad en el tiempo.</p>
 
-        <BlogBanner variant="geo" />
+        <BlogBanner variant="seogeogbp" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cómo optimizar tu web para aparecer en respuestas de IA</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Hay varias acciones concretas que puedes empezar a implementar para mejorar tu visibilidad en los motores generativos.</p>

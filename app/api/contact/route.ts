@@ -10,6 +10,7 @@ const FORM_MAP: Record<string, { oferta: string; canal: string }> = {
   "diseno-web":            { oferta: "diseno-web",        canal: "web-servicio-web" },
   "auditoria":             { oferta: "auditoria-digital", canal: "web-servicio-auditoria" },
   "google-business":       { oferta: "gbp",               canal: "web-servicio-gbp" },
+  "oferta-seo-geo-gbp":    { oferta: "seo-geo-gbp-349",   canal: "web-oferta-seo-geo-gbp" },
   "contacto":              { oferta: "general",           canal: "web-contacto" },
 };
 function getMktOSMeta(formType: string) {

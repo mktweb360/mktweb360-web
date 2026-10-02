@@ -1,6 +1,7 @@
 // Home: componente de servidor. Solo HeroSlider, ServicesTab, carruseles y formularios
 // se hidratan en el cliente (HomeInteractive.tsx y componentes propios).
 import Link from "next/link";
+import Image from "next/image";
 import { getVisiblePosts } from "@/lib/blog";
 import { OfertasSlider } from "@/components/OfertasSlider";
 import { ContactForm } from "@/components/ContactForm";
@@ -53,6 +54,45 @@ export default function HomeClient() {
             <p className="text-gray-500 max-w-2xl mx-auto">Elige tu objetivo y descubre los servicios que te ayudan a conseguirlo.</p>
           </div>
           <ServicesTab />
+        </div>
+      </section>
+
+      {/* Oferta SEO + GEO + GBP — bloque destacado (permanente desde 2-oct-2026).
+          Inventario: CAMPAÑA-oferta-seo-geo-gbp-2026-10-02.md (Drive). */}
+      <section aria-labelledby="oferta-seo-geo-gbp" className="relative isolate overflow-hidden text-white">
+        <Image
+          src="/oferta-seo-geo-gbp-home.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          quality={90}
+          className="object-cover -z-20"
+          style={{ objectPosition: "50% 40%" }}
+        />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_75%_at_50%_50%,rgba(15,28,46,0.78)_0%,rgba(15,28,46,0.6)_55%,rgba(15,28,46,0.35)_100%)]" />
+        <div className="max-w-3xl mx-auto px-4 py-20 md:py-28 text-center">
+          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">
+            SEO + GEO + Google Maps
+          </span>
+          <h2 id="oferta-seo-geo-gbp" className="text-3xl md:text-5xl font-bold leading-tight mb-5 [text-shadow:0_2px_10px_rgba(15,28,46,0.6)]">
+            Que te encuentren en Google, en la IA y en el mapa
+          </h2>
+          <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-8 [text-shadow:0_1px_4px_rgba(15,28,46,0.6)]">
+            Tus clientes te buscan en el buscador, en Google Maps y también preguntando a un asistente de IA. Trabajamos los tres frentes en un solo servicio mensual: posicionamiento SEO, GEO para que cualquier IA pueda encontrarte y citarte, y tu ficha de Google Business Profile.
+          </p>
+          <p className="mb-10 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1">
+            <span className="text-white/70 line-through text-xl whitespace-nowrap">699 €/mes</span>
+            <span className="text-[#ff7a00] text-4xl md:text-5xl font-bold whitespace-nowrap [text-shadow:0_2px_10px_rgba(15,28,46,0.6)]">349 €/mes</span>
+            <span className="text-white/90 text-base whitespace-nowrap">+ IVA</span>
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/oferta-seo-geo-gbp/" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors">
+              Quiero aparecer
+            </Link>
+            <Link href="/oferta-seo-geo-gbp/#incluye" className="border border-white/60 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors">
+              Ver qué incluye
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -100,7 +100,7 @@ export default function OptimizarContenidoGEOPage() {
           <p>El llms.txt es una representación orientativa y legible del sitio para sistemas de IA. A diferencia del robots.txt, no controla el acceso de los crawlers ni garantiza indexación ni citación; tampoco es una señal oficial de Google. Su utilidad real es estructural: permite que los modelos de lenguaje encuentren y relacionen más fácilmente tus páginas más relevantes, siempre que el contenido detrás de esas URLs sea de calidad.</p>
           <p>Configurarlo bien pasa por revisar primero qué bots de IA quieres permitir y cuáles no, y por señalar de forma ordenada los recursos que quieres que la máquina priorice. Es un archivo pequeño, pero forma parte de esa capa técnica que separa a quien improvisa de quien trabaja el GEO con criterio.</p>
 
-          <BlogBanner variant="geo" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">4. Autoridad de entidad: que todo diga lo mismo sobre ti</h2>
           <p>Los modelos de IA construyen una idea de quién eres a partir de todas las menciones que encuentran. Si tu nombre, tu actividad y tus datos aparecen de forma coherente en la web, en tu ficha de <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local</Link> y en cada canal donde estás presente, esa entidad se vuelve sólida y verificable. Si hay contradicciones, la máquina duda y prefiere citar a alguien más consistente.</p>
