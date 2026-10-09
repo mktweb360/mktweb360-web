@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -133,7 +133,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 : "Chez Mkt Web 360, nous configurons l'analytique et l'attribution adaptées aux PME — avec GA4, Google Ads et les outils dont vous avez vraiment besoin, sans sur-ingénierie."}
             </p>
             <Link
-              href={`/${lang}/web-analytics/`}
+              href={`/${lang}/${langSlug(lang, "web-analytics")}/`}
               className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors"
             >
               {isEn ? "View analytics service" : "Voir le service analytique"}
@@ -176,13 +176,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href={`/${lang}/web-analytics/`}
+                href={`/${lang}/${langSlug(lang, "web-analytics")}/`}
                 className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors"
               >
                 {isEn ? "View analytics service" : "Voir le service analytique"}
               </Link>
               <Link
-                href={`/${lang}/digital-audit/`}
+                href={`/${lang}/${langSlug(lang, "digital-audit")}/`}
                 className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {isEn ? "Request free diagnosis" : "Demander un diagnostic gratuit"}

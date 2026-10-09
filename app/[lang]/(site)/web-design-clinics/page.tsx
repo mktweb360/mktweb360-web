@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 const FAQS_EN = [
   {
@@ -268,7 +268,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 {isEn ? "Request a quote" : "Demander un devis"}
               </Link>
               <Link
-                href={`/${lang}/web-design/`}
+                href={`/${lang}/${langSlug(lang, "web-design")}/`}
                 className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {isEn ? "See web design service" : "Voir le service création web"}
@@ -297,7 +297,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               {isEn ? "Web design for dentists" : "Création web pour dentistes"}
             </Link>{" "}
             ·{" "}
-            <Link href={`/${lang}/local-seo-for-service-businesses/`} className="text-accent-500 hover:underline">
+            <Link href={`/${lang}/${langSlug(lang, "local-seo-for-service-businesses")}/`} className="text-accent-500 hover:underline">
               {isEn ? "Local SEO for service businesses" : "SEO local pour entreprises de services"}
             </Link>{" "}
             ·{" "}

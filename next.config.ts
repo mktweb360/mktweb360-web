@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
-import { aliasRedirects, legacyLangRedirects } from "./lib/i18n/routes";
+import { aliasRedirects, legacyLangRedirects, crossLangRedirects } from "./lib/i18n/routes";
 
 const withMDX = createMDX({});
 
@@ -171,6 +171,8 @@ const nextConfig: NextConfig = {
         .map((r) => ({ ...r, permanent: true })),
       // --- 301 de URLs heredadas /en|fr/<slug-ES>/ (antiguo selector de idioma), ver routes.ts.
       ...legacyLangRedirects().map((r) => ({ ...r, permanent: true })),
+      // --- 301 de slugs cruzados /fr/<slug-EN>/ y /en/<slug-FR>/ (T1 auditoría Semrush 2-oct-2026), ver routes.ts.
+      ...crossLangRedirects().map((r) => ({ ...r, permanent: true })),
     ];
   },
 };

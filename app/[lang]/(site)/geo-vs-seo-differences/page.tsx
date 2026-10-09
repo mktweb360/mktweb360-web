@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -110,7 +110,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? (
             <>
-              <Link href={`/${lang}/seo-web-positioning/`} className="text-accent-500 hover:underline">
+              <Link href={`/${lang}/${langSlug(lang, "seo-web-positioning")}/`} className="text-accent-500 hover:underline">
                 SEO optimises your presence in Google
               </Link>
               . GEO (Generative Engine Optimization) optimises your presence in ChatGPT, Perplexity and Gemini. They are
@@ -119,7 +119,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </>
           ) : (
             <>
-              <Link href={`/${lang}/seo-web-positioning/`} className="text-accent-500 hover:underline">
+              <Link href={`/${lang}/${langSlug(lang, "seo-web-positioning")}/`} className="text-accent-500 hover:underline">
                 Le SEO optimise votre présence sur Google
               </Link>
               . Le GEO (Generative Engine Optimization) optimise votre présence sur ChatGPT, Perplexity et Gemini. Ils
@@ -158,7 +158,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-gray-700 leading-relaxed mb-4">
           {isEn ? (
             <>
-              <Link href={`/${lang}/geo-generative-engine-optimization/`} className="text-accent-500 hover:underline">
+              <Link href={`/${lang}/${langSlug(lang, "geo-generative-engine-optimization")}/`} className="text-accent-500 hover:underline">
                 GEO (Generative Engine Optimisation)
               </Link>{" "}
               is the discipline of optimising the presence of a brand, company or expert in generative response engines:
@@ -169,7 +169,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ) : (
             <>
               Le{" "}
-              <Link href={`/${lang}/geo-generative-engine-optimization/`} className="text-accent-500 hover:underline">
+              <Link href={`/${lang}/${langSlug(lang, "geo-generative-engine-optimization")}/`} className="text-accent-500 hover:underline">
                 GEO (Generative Engine Optimization)
               </Link>{" "}
               est la discipline d&apos;optimisation de la présence d&apos;une marque, d&apos;une entreprise ou

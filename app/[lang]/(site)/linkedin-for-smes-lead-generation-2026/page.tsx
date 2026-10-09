@@ -1,6 +1,6 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -227,7 +227,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 {isEn ? "Talk to a specialist" : "Parler à un spécialiste"}
               </a>
               <a
-                href={`/${lang}/social-media-marketing/`}
+                href={`/${lang}/${langSlug(lang, "social-media-marketing")}/`}
                 className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {isEn ? "See Social Media service" : "Voir le service Social Media"}

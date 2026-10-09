@@ -1,6 +1,6 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -274,7 +274,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 {isEn ? "Request a quote" : "Demander un devis"}
               </a>
               <a
-                href={`/${lang}/seo-web-positioning/`}
+                href={`/${lang}/${langSlug(lang, "seo-web-positioning")}/`}
                 className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {isEn ? "See SEO service" : "Voir le service SEO"}
@@ -306,11 +306,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
           <p className="text-sm text-gray-500 pt-4">
             {isEn ? "Related services: " : "Services associés : "}
-            <a href={`/${lang}/seo-web-positioning/`} className="text-accent-500 hover:underline">
+            <a href={`/${lang}/${langSlug(lang, "seo-web-positioning")}/`} className="text-accent-500 hover:underline">
               {isEn ? "SEO Web Positioning" : "Positionnement SEO"}
             </a>
             {" · "}
-            <a href={`/${lang}/google-ads-management/`} className="text-accent-500 hover:underline">
+            <a href={`/${lang}/${langSlug(lang, "google-ads-management")}/`} className="text-accent-500 hover:underline">
               {isEn ? "Google Ads Management" : "Gestion Google Ads"}
             </a>
           </p>
