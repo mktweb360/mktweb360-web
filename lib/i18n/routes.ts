@@ -31,6 +31,7 @@ export const ROUTES: Route[] = [
   { es: "/conectar-tpv-tienda-online/", en: "connect-pos-to-online-store", fr: "connecter-tpv-boutique-ligne" },
   { es: "/configurar-envios-woocommerce/", en: "configure-shipping-woocommerce", fr: "configurer-expeditions-woocommerce" },
   { es: "/contacto/", en: "contact", fr: "contact" },
+  { es: "/consultor-seo/" },
   { es: "/creacion-de-blog/", en: "blog-creation-service", fr: "service-creation-blog" },
   { es: "/cuanto-cuesta-pagina-web-profesional/", en: "how-much-does-a-website-cost", fr: "combien-coute-site-web" },
   { es: "/descubre-el-analisis-pestel-en-el-marketing-digital/", en: "pestel-analysis-marketing", fr: "pestel-analysis-marketing" },
