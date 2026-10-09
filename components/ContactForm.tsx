@@ -17,9 +17,9 @@ interface ContactFormProps {
   lang?: string;
   /** La web pasa a ser obligatoria (p. ej. auditoría gratuita). */
   websiteRequired?: boolean;
-  /** Placeholder propio del mensaje (solo ES). */
+  /** Placeholder propio del mensaje (la página lo pasa ya traducido a su idioma). */
   messagePlaceholder?: string;
-  /** Texto del botón (solo ES). */
+  /** Texto del botón (la página lo pasa ya traducido a su idioma). */
   submitLabel?: string;
 }
 
@@ -31,6 +31,7 @@ const T = {
     phone: "Teléfono",
     phonePh: "+34 600 000 000",
     website: "Web (opcional)",
+    websiteAudit: "Web que quieres auditar",
     websitePh: "https://tuweb.com",
     message: "Mensaje",
     messagePh: "Cuéntanos tu proyecto...",
@@ -50,6 +51,7 @@ const T = {
     phone: "Phone",
     phonePh: "+44 7700 000 000",
     website: "Website (optional)",
+    websiteAudit: "Website you want audited",
     websitePh: "https://yourwebsite.com",
     message: "Message",
     messagePh: "Tell us about your project...",
@@ -69,6 +71,7 @@ const T = {
     phone: "Téléphone",
     phonePh: "+33 6 00 00 00 00",
     website: "Site web (optionnel)",
+    websiteAudit: "Site web à auditer",
     websitePh: "https://votresite.com",
     message: "Message",
     messagePh: "Parlez-nous de votre projet...",
@@ -174,13 +177,13 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
           <input name="phone" type="tel" className={INPUT} placeholder={t.phonePh} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">{websiteRequired && detectedLang === "es" ? "Web que quieres auditar" : t.website}</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">{websiteRequired ? t.websiteAudit : t.website}</label>
           <input name="website" type="url" required={websiteRequired} className={INPUT} placeholder={t.websitePh} />
         </div>
       </div>
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">{t.message} *</label>
-        <textarea name="message" required rows={5} className={INPUT} placeholder={detectedLang === "es" && messagePlaceholder ? messagePlaceholder : t.messagePh} />
+        <textarea name="message" required rows={5} className={INPUT} placeholder={messagePlaceholder || t.messagePh} />
       </div>
       <div className="flex items-start gap-3">
         <input type="checkbox" name="gdpr" id="gdpr" required className="mt-1 h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-400" />
@@ -197,7 +200,7 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
         disabled={status === "sending"}
         className="bg-accent-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors disabled:opacity-60"
       >
-        {status === "sending" ? t.sending : detectedLang === "es" && submitLabel ? submitLabel : t.send}
+        {status === "sending" ? t.sending : submitLabel || t.send}
       </button>
       {status === "ok" && (
         <p className="text-emerald-600 font-medium">{t.ok}</p>

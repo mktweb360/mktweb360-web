@@ -1,15 +1,17 @@
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "SEO in Toledo for Local Businesses" : "SEO à Tolède pour les entreprises locales",
-    description: isEn ? "How to appear on Google if you have a local business in Toledo. Local SEO guide with practical tips, local keywords and where to start." : "Comment apparaître sur Google si vous avez une entreprise locale à Tolède. Guide SEO local avec des conseils pratiques, des mots-clés locaux et par où commencer.",
+    // 09/10/2026: título informativo alineado con la ES («Cómo hacer SEO en Toledo: guía para negocios»)
+    title: isEn ? "How to Do SEO in Toledo: Business Guide" : "Faire du SEO à Tolède : guide pour entreprises",
+    description: isEn ? "How to appear on Google if you run a local business in Toledo: a local SEO guide with practical tips, local keywords and where to start first." : "Comment apparaître sur Google si vous avez une entreprise locale à Tolède. Guide SEO local : conseils pratiques, mots-clés locaux et par où commencer.",
     alternates: alternatesFor(`/${lang}/seo-toledo-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-toledo-guide/`,
     },
@@ -95,7 +97,15 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         </section>
 
-        <BlogBanner variant="seo" />
+        <p className="text-gray-600 mb-10 leading-relaxed">
+          {isEn ? "If you would rather we did it, we offer a " : "Si vous préférez que nous nous en chargions, nous proposons un "}
+          <Link href={`/${lang}/${langSlug(lang, "digital-audit")}/`} className="text-accent-500 hover:underline">{isEn ? "free SEO audit" : "audit SEO gratuit"}</Link>
+          {isEn ? "; and if you are looking for someone to handle all the work, see our " : " ; et si vous cherchez quelqu'un pour prendre en charge tout le travail, découvrez notre service d'"}
+          <Link href={`/${lang}/${langSlug(lang, "seo-agency-toledo")}/`} className="text-accent-500 hover:underline">{isEn ? "SEO agency in Toledo" : "agence SEO à Tolède"}</Link>
+          {isEn ? " service." : "."}
+        </p>
+
+        <BlogBanner variant="seo" lang={lang} />
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
             {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}

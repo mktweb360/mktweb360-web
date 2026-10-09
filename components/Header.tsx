@@ -118,7 +118,8 @@ const NAV: Record<string, NavContent> = {
         group: "Visibility",
         services: [
           { key: "seo",       label: "SEO Positioning",         href: "/en/seo-web-positioning/",                  desc: "First page of Google" },
-          { key: "local",     label: "Local SEO",               href: "/en/seo-web-positioning/",                  desc: "Clients in your area on Google Maps" },
+          { key: "local",     label: "Local SEO",               href: "/en/local-seo-services/",                   desc: "Clients in your area on Google Maps" },
+          { key: "audit",     label: "SEO Consultant",          href: "/en/seo-consultant/",                       desc: "Diagnosis, strategy and a prioritised plan" },
           { key: "ads",       label: "Google Ads",              href: "/en/google-ads-management/",                desc: "Results from day one" },
           { key: "gbp",       label: "Google Business Profile", href: "/en/google-business-profile-service/",   desc: "Local visibility on Google Maps" },
           { key: "geo",       label: "GEO — AI Search",         href: "/en/geo-generative-engine-optimization/",   desc: "Appear in ChatGPT and Perplexity" },
@@ -171,7 +172,8 @@ const NAV: Record<string, NavContent> = {
         group: "Visibilité",
         services: [
           { key: "seo",       label: "Référencement SEO",       href: "/fr/positionnement-seo/",                   desc: "Première page de Google" },
-          { key: "local",     label: "SEO Local",               href: "/fr/positionnement-seo/",                   desc: "Clients de votre zone sur Google Maps" },
+          { key: "local",     label: "SEO Local",               href: "/fr/local-seo-services/",                   desc: "Clients de votre zone sur Google Maps" },
+          { key: "audit",     label: "Consultant SEO",          href: "/fr/consultant-seo/",                       desc: "Diagnostic, stratégie et plan priorisé" },
           { key: "ads",       label: "Google Ads",              href: "/fr/gestion-google-ads/",                   desc: "Résultats dès le premier jour" },
           { key: "gbp",       label: "Google Business Profile", href: "/fr/gestion-google-business-profile/",      desc: "Visibilité locale sur Google Maps" },
           { key: "geo",       label: "GEO — IA Search",         href: "/fr/geo-optimisation-moteurs-generatifs/",  desc: "Apparaissez dans ChatGPT et Perplexity" },
