@@ -64,6 +64,7 @@ const NAV: Record<string, NavContent> = {
         services: [
           { key: "seo",       label: "SEO Posicionamiento",     href: "/seo-posicionamiento-web-organico/",        desc: "Primeras posiciones en Google" },
           { key: "local",     label: "SEO Local",               href: "/seo-local/",                               desc: "Clientes de tu zona en Google Maps" },
+          { key: "audit",     label: "Consultor SEO",           href: "/consultor-seo/",                           desc: "Diagnóstico, estrategia y plan priorizado" },
           { key: "ads",       label: "SEM / Google Ads",        href: "/sem-publicidad-ppc/",                      desc: "Resultados desde el primer día" },
           { key: "gbp",       label: "Google Business Profile", href: "/google-business-profile/",                 desc: "Visibilidad local en Google Maps" },
           { key: "geo",       label: "GEO — IA Search",         href: "/geo-posicionamiento-ia/",                  desc: "Aparece en ChatGPT y Perplexity" },
