@@ -84,6 +84,16 @@ export default function FactoresWebPeluqueriasEsteticaPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El sector de la estética se enfrenta a una reforma normativa que entra en vigor en 2026 y a una desconfianza creciente sobre el intrusismo profesional. La web de una peluquería o centro de estética puede ser la diferencia entre transmitir garantías o generar dudas.
           </p>
+          <div className="mt-6 bg-gray-50 border-l-4 border-accent-500 rounded-r-xl p-5">
+            <p className="font-semibold text-primary-700 mb-2">En resumen: los 5 factores clave</p>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-700">
+              <li>Cualificación profesional visible</li>
+              <li>La reforma del RD 1277/2003 sobre tratamientos con finalidad sanitaria</li>
+              <li>Reserva online de citas, sin llamar</li>
+              <li>Registro sanitario y licencia de actividad visibles</li>
+              <li>Ficha de Google Business Profile y reseñas con fotos reales</li>
+            </ol>
+          </div>
           <Image
             src="/og-5-factores-web-peluquerias-estetica.jpg"
             alt="5 factores clave en la web de una peluquería o centro de estética"

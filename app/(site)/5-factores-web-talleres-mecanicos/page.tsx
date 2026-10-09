@@ -84,6 +84,16 @@ export default function FactoresWebTalleresMecanicosPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El sector de los talleres arrastra una desconfianza histórica sobre presupuestos y facturas. La web de un taller mecánico tiene la oportunidad de revertir eso desde el primer segundo — o de reforzarla si no cumple lo básico.
           </p>
+          <div className="mt-6 bg-gray-50 border-l-4 border-accent-500 rounded-r-xl p-5">
+            <p className="font-semibold text-primary-700 mb-2">En resumen: los 5 factores clave</p>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-700">
+              <li>Hoja de reclamaciones: obligatoria y visible, también en la web</li>
+              <li>Presupuesto previo por escrito: obligación legal, no cortesía</li>
+              <li>Solicitud de cita o presupuesto online, sin llamar</li>
+              <li>Garantía de reparación clara y visible</li>
+              <li>Transparencia de precios de mano de obra y catálogo de servicios</li>
+            </ol>
+          </div>
           <Image
             src="/og-5-factores-web-talleres-mecanicos.jpg"
             alt="5 factores clave en la web de un taller mecánico"

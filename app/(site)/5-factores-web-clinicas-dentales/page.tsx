@@ -84,6 +84,16 @@ export default function FactoresWebClinicasDentalesPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             La web de una clínica dental no es solo una tarjeta de presentación — es publicidad sanitaria regulada, es la puerta de entrada de datos de salud protegidos y, muchas veces, es lo único que un paciente potencial revisa antes de pedir cita. Un error aquí no es solo estético: puede ser una infracción.
           </p>
+          <div className="mt-6 bg-gray-50 border-l-4 border-accent-500 rounded-r-xl p-5">
+            <p className="font-semibold text-primary-700 mb-2">En resumen: los 5 factores clave</p>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-700">
+              <li>Publicidad sanitaria conforme al RD 1907/1996</li>
+              <li>Datos de salud protegidos: RGPD reforzado</li>
+              <li>Reserva de cita online sin llamar</li>
+              <li>Identificación profesional: nombre y número de colegiado</li>
+              <li>Transparencia de precios y financiación de tratamientos</li>
+            </ol>
+          </div>
           <Image
             src="/og-5-factores-web-clinicas-dentales.jpg"
             alt="5 factores clave en la web de una clínica dental"

@@ -84,6 +84,16 @@ export default function FactoresWebRestaurantesPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             La web de un restaurante o un negocio de hostelería no compite solo con otros restaurantes — compite con Google Maps, TripAdvisor y las apps de reserva. Si no resuelve lo básico en los primeros segundos, el cliente vuelve al buscador y elige otra opción.
           </p>
+          <div className="mt-6 bg-gray-50 border-l-4 border-accent-500 rounded-r-xl p-5">
+            <p className="font-semibold text-primary-700 mb-2">En resumen: los 5 factores clave</p>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-700">
+              <li>Hoja de reclamaciones: obligatoria y visible, también en la web</li>
+              <li>Alérgenos: Reglamento (UE) 1169/2011, no es opcional</li>
+              <li>Reserva online sin llamar</li>
+              <li>Ficha de Google Business Profile y reseñas activas</li>
+              <li>Carta siempre actualizada, con precios reales</li>
+            </ol>
+          </div>
           <Image
             src="/og-5-factores-web-restaurantes-hosteleria.jpg"
             alt="5 factores clave en la web de un restaurante u hotel"

@@ -88,6 +88,16 @@ export default function FactoresWebClinicasPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             La web de una clínica no es una web más: opera bajo publicidad sanitaria regulada y maneja datos de salud, una categoría especial protegida por el RGPD. Estos son los cinco factores que hay que resolver antes de diseñarla, no después.
           </p>
+          <div className="mt-6 bg-gray-50 border-l-4 border-accent-500 rounded-r-xl p-5">
+            <p className="font-semibold text-primary-700 mb-2">En resumen: los 5 factores clave</p>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-700">
+              <li>Publicidad sanitaria: lo que puedes decir y lo que no</li>
+              <li>Datos de salud: una categoría especial del RGPD</li>
+              <li>Reserva de cita online sin fricción</li>
+              <li>Google Business Profile integrado con la estrategia web</li>
+              <li>Señales de confianza médica (E-E-A-T)</li>
+            </ol>
+          </div>
           <Image
             src="/og-5-factores-web-clinicas-centros-salud.jpg"
             alt="5 factores clave en la web de una clínica o centro de salud"
