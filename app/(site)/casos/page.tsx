@@ -46,15 +46,20 @@ const CASOS = [
 
 const itemListSchema = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
+  "@type": "CollectionPage",
   name: "Casos de Éxito — Mkt Web 360",
   description: "Proyectos reales de marketing digital realizados por Mkt Web 360 para empresas de distintos sectores.",
   url: "https://www.mktweb360.com/casos/",
-  itemListElement: CASOS.map((caso, i) => ({
-    "@type": "ListItem",
-    position: i + 1,
+  inLanguage: "es-ES",
+  publisher: { "@id": "https://www.mktweb360.com/#organization" },
+  // Sin ItemList: los casos no tienen página propia y un ItemList sin url/item se lee como
+  // Carousel inválido (Site Audit Semrush, 2-oct-2026, T3). hasPart describe cada caso.
+  hasPart: CASOS.map((caso) => ({
+    "@type": "CreativeWork",
     name: caso.cliente,
+    about: caso.sector,
     description: caso.resultado,
+    keywords: caso.servicios.join(", "),
   })),
 };
 
