@@ -84,6 +84,16 @@ export default function FactoresWebAutonomosFreelancePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Sin una web propia, un autónomo depende por completo del boca a boca o de plataformas de intermediación que se quedan con parte del encargo. Estos son los cinco factores que convierten una web en una fuente real de clientes directos.
           </p>
+          <div className="mt-6 bg-gray-50 border-l-4 border-accent-500 rounded-r-xl p-5">
+            <p className="font-semibold text-primary-700 mb-2">En resumen: los 5 factores clave</p>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-700">
+              <li>Aviso legal conforme a la LSSI-CE, también para autónomos</li>
+              <li>Preparación ante la factura electrónica obligatoria</li>
+              <li>Portfolio y prueba social, no solo un listado de servicios</li>
+              <li>Solicitud de presupuesto online, sin fricciones</li>
+              <li>Posicionamiento frente a plataformas de intermediación</li>
+            </ol>
+          </div>
           <Image
             src="/og-5-factores-web-autonomos-freelance.jpg"
             alt="5 factores clave en la web de un autónomo o freelance"

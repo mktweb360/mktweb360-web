@@ -84,6 +84,16 @@ export default function FactoresWebConstruccionPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El sector de la reforma y la construcción arrastra un problema de confianza real — presupuestos verbales, plazos incumplidos, empresas que desaparecen a mitad de obra. La web tiene que resolver esa desconfianza antes de que el cliente descuelgue el teléfono.
           </p>
+          <div className="mt-6 bg-gray-50 border-l-4 border-accent-500 rounded-r-xl p-5">
+            <p className="font-semibold text-primary-700 mb-2">En resumen: los 5 factores clave</p>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-700">
+              <li>Presupuesto por escrito, desglosado — no es solo buena práctica</li>
+              <li>LOE: identificar quién hace qué y con qué garantías</li>
+              <li>Antes/después visual — la prueba social que de verdad convence</li>
+              <li>SEO local y zona de servicio real</li>
+              <li>Formulario de presupuesto que cualifica, no solo capta</li>
+            </ol>
+          </div>
           <Image
             src="/og-5-factores-web-construccion-reformas.jpg"
             alt="5 factores clave en la web de una empresa de construcción o reformas"

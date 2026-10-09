@@ -88,6 +88,16 @@ export default function FactoresWebAbogadosPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             La web de un despacho compite con dos exigencias a la vez: el Código Deontológico de la Abogacía, que limita qué y cómo se puede comunicar, y un cliente que busca de forma muy específica y necesita confiar antes de llamar. Estos son los cinco factores que resuelven ambas cosas.
           </p>
+          <div className="mt-6 bg-gray-50 border-l-4 border-accent-500 rounded-r-xl p-5">
+            <p className="font-semibold text-primary-700 mb-2">En resumen: los 5 factores clave</p>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-700">
+              <li>Identificación colegial obligatoria</li>
+              <li>Confidencialidad desde el primer formulario</li>
+              <li>Arquitectura por área de práctica, no un listado genérico</li>
+              <li>Prueba social dentro de los límites deontológicos</li>
+              <li>Captación con intención inmediata</li>
+            </ol>
+          </div>
           <Image
             src="/og-5-factores-web-despacho-abogados.jpg"
             alt="5 factores clave en la web de un despacho de abogados"

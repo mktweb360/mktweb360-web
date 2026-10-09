@@ -84,6 +84,16 @@ export default function FactoresWebServiciosProfesionalesPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Consultoras, ingenierías, arquitectos, auditores — cualquier despacho de servicios profesionales vive de la confianza. Y esa confianza se juega, en gran parte, en si la web cumple lo básico: identidad clara, legalidad en regla y un canal de contacto que no dependa del teléfono.
           </p>
+          <div className="mt-6 bg-gray-50 border-l-4 border-accent-500 rounded-r-xl p-5">
+            <p className="font-semibold text-primary-700 mb-2">En resumen: los 5 factores clave</p>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-700">
+              <li>Aviso legal completo, conforme a la LSSI-CE</li>
+              <li>Política de privacidad y cookies en regla</li>
+              <li>Solicitud de consulta o cita online, sin llamar</li>
+              <li>Consentimiento expreso para comunicaciones comerciales</li>
+              <li>Transparencia de honorarios y forma de trabajo</li>
+            </ol>
+          </div>
           <Image
             src="/og-5-factores-web-servicios-profesionales.jpg"
             alt="5 factores clave en la web de servicios profesionales"

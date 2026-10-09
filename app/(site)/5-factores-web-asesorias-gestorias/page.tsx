@@ -84,6 +84,16 @@ export default function FactoresWebAsesoriasGestoriasPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Una asesoría o gestoría gestiona a diario los datos fiscales, laborales y contables de sus clientes — un nivel de responsabilidad que su web debería reflejar desde el primer segundo, no solo en el trato en la oficina.
           </p>
+          <div className="mt-6 bg-gray-50 border-l-4 border-accent-500 rounded-r-xl p-5">
+            <p className="font-semibold text-primary-700 mb-2">En resumen: los 5 factores clave</p>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-700">
+              <li>RGPD: el doble rol de responsable y encargada del tratamiento</li>
+              <li>Delegado de Protección de Datos, cuando el volumen lo justifica</li>
+              <li>Solicitud de cita online, sin llamar</li>
+              <li>Colegiación visible del gestor administrativo</li>
+              <li>Preparación ante la factura electrónica obligatoria</li>
+            </ol>
+          </div>
           <Image
             src="/og-5-factores-web-asesorias-gestorias.jpg"
             alt="5 factores clave en la web de una asesoría o gestoría"

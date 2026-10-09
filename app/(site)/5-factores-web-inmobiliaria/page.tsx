@@ -88,6 +88,16 @@ export default function FactoresWebInmobiliariaPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             La web de una inmobiliaria vive de la fotografía y del volumen de inmuebles, y eso es exactamente lo que más suele fallar: peso de imagen sin optimizar, carga manual en cada portal y fichas sin la información obligatoria. Estos son los cinco factores que marcan la diferencia.
           </p>
+          <div className="mt-6 bg-gray-50 border-l-4 border-accent-500 rounded-r-xl p-5">
+            <p className="font-semibold text-primary-700 mb-2">En resumen: los 5 factores clave</p>
+            <ol className="list-decimal pl-5 space-y-1 text-gray-700">
+              <li>Certificado de eficiencia energética en cada ficha</li>
+              <li>Sindicación automática con los portales</li>
+              <li>Velocidad de carga con fotografía pesada</li>
+              <li>Buscador avanzado de propiedades</li>
+              <li>Captación de leads cualificados por inmueble</li>
+            </ol>
+          </div>
           <Image
             src="/og-5-factores-web-inmobiliaria.jpg"
             alt="5 factores clave en la web de una inmobiliaria"
