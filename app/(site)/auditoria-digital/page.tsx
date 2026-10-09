@@ -2,181 +2,167 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
-
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
+// 09/10/2026 — la URL se reaprovecha como captador: auditoría SEO + GEO gratuita (decisión de Manué).
+// Entregable definido en 01-Proyectos/2026-10 Auditoria gratuita (OneDrive) y skill auditoria-seo-geo-gratuita.
+// Proceso inicial manual: la solicitud llega por correo/MktOS, Manué pasa el dominio, se genera el informe y
+// se envía desde nuestro correo. El plazo de 48 h laborables debe poder cumplirse con ese proceso.
+
+const URL = "https://www.mktweb360.com/auditoria-digital/";
+
 export const metadata: Metadata = {
-  title: "Auditoría de Marketing Digital para Empresas",
-  description: "Auditoría de marketing digital: diagnóstico de SEO técnico, velocidad, contenidos, competencia, redes y analítica, con informe y plan de acción priorizado.",
-  alternates: alternatesFor("/auditoria-digital/") ?? { canonical: "https://www.mktweb360.com/auditoria-digital/" },
+  title: "Auditoría SEO gratuita de tu web en 48 h",
+  description:
+    "Auditoría SEO y GEO gratuita: errores técnicos, palabras clave con oportunidad, visibilidad en asistentes de IA, competencia y plan de mejora con propuesta.",
+  alternates: alternatesFor("/auditoria-digital/") ?? { canonical: URL },
   openGraph: {
-    title: "Auditoría de Marketing Digital para Empresas | Mkt Web 360",
-    description: "Auditoría digital completa para saber exactamente por qué tu empresa no consigue los resultados que merece online.",
-    url: "https://www.mktweb360.com/auditoria-digital/",
+    title: "Auditoría SEO gratuita de tu web en 48 h | Mkt Web 360",
+    description: "Te enviamos por correo un diagnóstico SEO y de visibilidad en IA de tu web, con las 3 acciones que más impacto tendrían y una propuesta para aplicarlas.",
+    url: URL,
     images: [{ url: "/og-auditoria-digital.jpg", width: 1200, height: 630 }],
   },
 };
 
+const ENTREGABLE = [
+  { t: "Estado técnico", d: "Los errores que más frenan tu web en Google, ordenados por prioridad: indexación, rastreo, velocidad en móvil, datos estructurados y enlaces rotos." },
+  { t: "Visibilidad actual", d: "Por qué búsquedas apareces hoy y en qué posiciones. Los datos de herramientas externas se indican como estimación." },
+  { t: "10 oportunidades de palabras clave", d: "Búsquedas reales de tus clientes en las que puedes competir, con la página de tu web que debería trabajarlas." },
+  { t: "Visibilidad en asistentes de IA", d: "Si los asistentes de IA citan tu web o mencionan tu marca cuando alguien busca lo que ofreces." },
+  { t: "Tu competencia", d: "Tres competidores que aparecen por delante de ti y qué están haciendo mejor." },
+  { t: "Plan de mejora y propuesta", d: "Las 3 acciones con más impacto y una propuesta con plan y precio para aplicarlas, si quieres que lo hagamos nosotros." },
+];
+
+const PASOS = [
+  { n: "01", t: "Nos dejas tu web", d: "Rellenas el formulario con la web que quieres auditar y qué te gustaría conseguir." },
+  { n: "02", t: "Analizamos", d: "Revisamos tu web con herramientas profesionales y criterio experto. No es un informe automático: cada hallazgo se comprueba." },
+  { n: "03", t: "Te lo enviamos por correo", d: "En un máximo de 48 horas laborables recibes el informe con el plan de mejora y la propuesta." },
+  { n: "04", t: "Decides tú", d: "Puedes aplicar las mejoras por tu cuenta o pedirnos que lo hagamos. Sin compromiso." },
+];
+
+const FAQS = [
+  { q: "¿La auditoría SEO es realmente gratuita?", a: "Sí. No tiene coste ni compromiso. Al final del informe incluimos una propuesta para aplicar las mejoras, por si quieres que lo hagamos nosotros; aceptarla o no es decisión tuya." },
+  { q: "¿Cuánto tarda?", a: "La recibes por correo electrónico en un máximo de 48 horas laborables desde tu solicitud." },
+  { q: "¿Necesitáis acceso a mi web o a Google Search Console?", a: "No para la auditoría gratuita: trabajamos con lo que es público. Si nos das acceso de lectura a Search Console, el diagnóstico es más preciso porque se basa en tus datos reales de Google." },
+  { q: "¿Qué diferencia hay con una auditoría digital completa?", a: "La gratuita se centra en SEO y visibilidad en IA. Si necesitas además revisar analítica, redes sociales o publicidad, lo indicas en el formulario y te preparamos una propuesta de auditoría completa." },
+  { q: "¿Para qué webs es?", a: "Para webs de empresas, pymes y profesionales que venden o prestan servicios en España: webs corporativas, de servicios y tiendas online." },
+];
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Auditoría Digital para Empresas",
-  provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
-  description: "Diagnóstico completo de presencia online: SEO técnico, velocidad, contenidos, competencia, redes sociales y analítica. Informe detallado + plan de acción priorizado + sesión de presentación.",
-  areaServed: "España",
-  url: "https://www.mktweb360.com/auditoria-digital/",
+  name: "Auditoría SEO y GEO gratuita",
+  serviceType: "Auditoría SEO",
+  provider: { "@id": "https://www.mktweb360.com/#organization" },
+  areaServed: { "@type": "Country", name: "España" },
+  url: URL,
+  offers: { "@type": "Offer", price: 0, priceCurrency: "EUR", description: "Informe por correo en un máximo de 48 horas laborables" },
 };
 
-const ANALISIS = [
-  { icon: "🔍", title: "SEO técnico", desc: "Indexación, rastreo, arquitectura web, datos estructurados, canonicals, Core Web Vitals y errores de servidor." },
-  { icon: "✍️", title: "Contenidos", desc: "Calidad, relevancia y optimización de textos, páginas huérfanas, canibalización de keywords y oportunidades de contenido." },
-  { icon: "⚡", title: "Velocidad y rendimiento", desc: "PageSpeed, tiempo de carga, recursos bloqueantes, imágenes y hosting. Análisis en móvil y escritorio." },
-  { icon: "🏆", title: "Competencia", desc: "Quién te supera en Google y por qué. Estrategias que están funcionando en tu sector y cómo superarlas." },
-  { icon: "📱", title: "Redes sociales", desc: "Presencia, engagement, coherencia de marca y oportunidades de mejora en cada red relevante para tu negocio." },
-  { icon: "📊", title: "Analítica web", desc: "Configuración de Google Analytics / GA4, conversiones, embudos y fiabilidad de los datos que estás midiendo." },
-];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
 
-const FASES = [
-  { num: "01", title: "Recopilación de información", desc: "Acceso a tus herramientas (Search Console, Analytics, Ads) y estudio de tu sector, competencia y objetivos de negocio." },
-  { num: "02", title: "Análisis exhaustivo", desc: "Revisión técnica y estratégica de todos los componentes de tu presencia digital. Proceso que tarda entre 5 y 7 días laborables." },
-  { num: "03", title: "Elaboración del informe", desc: "Documento completo con hallazgos, problemas ordenados por prioridad e impacto, y recomendaciones accionables." },
-  { num: "04", title: "Sesión de presentación", desc: "Reunión online para explicar los resultados, responder tus dudas y definir juntos los primeros pasos a dar." },
-];
-
-const PARA_QUIEN = [
-  "Empresas que llevan tiempo online pero no consiguen resultados orgánicos",
-  "Negocios que acaban de lanzar una web y quieren empezar bien desde el principio",
-  "Empresas que están cambiando de estrategia digital y quieren saber dónde están",
-  "Equipos internos que quieren una segunda opinión externa y objetiva",
-  "Negocios que han tenido caídas de tráfico o posicionamiento sin causa clara",
-];
-
-export default function AuditoriaDigitalPage() {
+export default function AuditoriaSeoGratuitaPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Auditoría Digital" }]} />
+      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Auditoría SEO gratuita" }]} />
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
+              Auditoría SEO gratuita de tu web<br />
+              <span className="text-accent-400">en 48 horas, en tu correo</span>
+            </h1>
+            <p className="text-xl text-primary-200 mb-6 leading-relaxed">
+              Te decimos qué está frenando tu web en Google y en los asistentes de IA, qué búsquedas puedes ganar y qué harías primero. Con un plan de mejora y una propuesta para aplicarlo.
+            </p>
+            <ul className="space-y-2 text-primary-100">
+              <li>✓ Sin coste y sin compromiso</li>
+              <li>✓ Revisado por un especialista, no un informe automático</li>
+              <li>✓ SEO + visibilidad en IA (GEO) en el mismo informe</li>
+            </ul>
+          </div>
+          <div id="solicitar" className="bg-white rounded-2xl p-6 text-gray-900 shadow-xl">
+            <h2 className="text-xl font-bold text-primary-700 mb-1">Solicita tu auditoría</h2>
+            <p className="text-sm text-gray-500 mb-4">Te la enviamos a tu correo en un máximo de 48 horas laborables.</p>
+            <ContactForm
+              formType="auditoria"
+              websiteRequired
+              messagePlaceholder="¿Qué te gustaría conseguir con tu web? (más clientes de tu zona, vender online, aparecer en la IA…) ¿Inviertes ya en SEO o publicidad?"
+              submitLabel="Quiero mi auditoría gratuita"
+            />
+          </div>
+        </div>
+      </section>
 
-        <h1 className="text-4xl font-bold text-primary-600 mb-4">
-          Auditoría de marketing digital: diagnóstico completo de tu presencia online
-        </h1>
-        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-          Si no sabes por qué tu web no genera clientes, una auditoría digital te da la respuesta. Analizamos cada capa de tu presencia online y te entregamos un plan de acción claro y priorizado.
-        </p>
-
-        {/* Qué es */}
-        <section className="bg-primary-50 rounded-2xl p-8 mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">¿Qué es una auditoría digital y para qué sirve?</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Una auditoría digital es un análisis sistemático y completo de todos los elementos que determinan el rendimiento online de tu empresa. Es el punto de partida imprescindible antes de invertir en cualquier acción de marketing digital.
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            Sin un diagnóstico previo, cualquier inversión en SEO, publicidad o redes sociales es como conducir a ciegas. La auditoría te dice exactamente dónde estás, dónde están tus oportunidades y qué acciones tendrán mayor impacto con menor esfuerzo.
-          </p>
-        </section>
-
-        {/* Qué analizamos */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-6">Qué analizamos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {ANALISIS.map((item) => (
-              <div key={item.title} className="flex gap-4 p-4 border border-gray-200 rounded-xl">
-                <span className="text-3xl shrink-0">{item.icon}</span>
-                <div>
-                  <h3 className="font-semibold text-primary-700 mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                </div>
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Qué recibes en la auditoría</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Un informe claro, sin jerga innecesaria, que puedes usar aunque no trabajes con nosotros.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ENTREGABLE.map((e, i) => (
+              <div key={e.t} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                <span className="text-accent-500 font-bold text-2xl">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="font-bold text-primary-700 mt-2 mb-2">{e.t}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{e.d}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Proceso */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-6">Cómo es el proceso</h2>
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-10 text-center">Cómo funciona</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {PASOS.map((p) => (
+              <div key={p.n} className="text-center">
+                <span className="inline-flex w-12 h-12 rounded-full bg-primary-600 text-white font-bold items-center justify-center mb-3">{p.n}</span>
+                <h3 className="font-bold text-primary-700 mb-2">{p.t}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{p.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-primary-50 border-y border-primary-100">
+        <div className="max-w-4xl mx-auto space-y-4 text-gray-700 leading-relaxed">
+          <h2 className="text-2xl font-bold text-primary-600 mb-2">Por qué empezar por una auditoría</h2>
+          <p>Antes de invertir en SEO, publicidad o una web nueva, conviene saber dónde estás. La auditoría te dice qué corregir primero, qué puede esperar y qué no merece la pena hacer todavía.</p>
+          <p>Los problemas que más encontramos son siempre parecidos: páginas que compiten entre sí por la misma búsqueda, titulares que no dicen a Google qué servicio ofrece la página, medición que no registra los contactos, imágenes que disparan el tiempo de carga en móvil y redirecciones mal planteadas tras una migración.</p>
+          <p>Hoy hay además una capa nueva: los asistentes de IA. Una web puede aparecer como fuente en sus respuestas sin que la marca se llegue a nombrar. La auditoría también revisa eso.</p>
+          <p>Si después quieres que lo hagamos nosotros, tienes los <Link href="/precios-seo/" className="text-accent-700 underline underline-offset-2">planes y precios SEO</Link> publicados.</p>
+        </div>
+      </section>
+
+      <section className="py-16 px-4">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">Preguntas frecuentes</h2>
           <div className="space-y-4">
-            {FASES.map((fase) => (
-              <div key={fase.num} className="flex gap-4 p-4 border border-gray-200 rounded-xl">
-                <span className="text-accent-500 font-bold text-2xl shrink-0 w-10">{fase.num}</span>
-                <div>
-                  <h3 className="font-semibold text-primary-700 mb-1">{fase.title}</h3>
-                  <p className="text-gray-600 text-sm">{fase.desc}</p>
-                </div>
-              </div>
+            {FAQS.map((f) => (
+              <details key={f.q} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
+                <summary className="font-semibold text-primary-700 cursor-pointer">{f.q}</summary>
+                <p className="text-gray-600 mt-3 leading-relaxed">{f.a}</p>
+              </details>
             ))}
           </div>
-        </section>
-
-        {/* Cuándo conviene */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">Cuándo conviene hacer una auditoría de marketing digital</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Hay momentos en los que una auditoría ahorra mucho dinero: antes de aumentar el presupuesto en publicidad, antes de rediseñar o migrar la web, cuando el tráfico cae sin una causa clara o cuando la web recibe visitas pero no genera contactos. También es el paso lógico al cambiar de agencia: te da una foto objetiva del punto de partida para poder medir después lo que se consigue.
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            La auditoría no sustituye a la estrategia, pero la hace posible: con un diagnóstico priorizado sabes qué corregir primero, qué puede esperar y qué acciones no merece la pena hacer todavía.
-          </p>
-        </section>
-
-        {/* Problemas frecuentes */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">Los problemas que más encontramos en una auditoría</h2>
-          <ul className="space-y-3 text-gray-700 leading-relaxed">
-            <li><strong>Medición rota:</strong> formularios o clics de WhatsApp que no se registran como conversión, de modo que nadie sabe qué canal trae clientes.</li>
-            <li><strong>Páginas que compiten entre sí:</strong> dos o más URLs trabajando la misma búsqueda, lo que divide la relevancia y ninguna llega a posicionar.</li>
-            <li><strong>Redirecciones mal planteadas tras una migración:</strong> URLs antiguas con historial que apuntan a páginas genéricas y pierden lo que habían ganado.</li>
-            <li><strong>Imágenes y recursos pesados:</strong> portadas de varios megas que disparan el tiempo de carga en móvil, justo donde busca la mayoría de clientes.</li>
-            <li><strong>Titulares sin la búsqueda del cliente:</strong> eslóganes atractivos en el H1 y el title que no dicen a Google qué servicio ofrece la página.</li>
-            <li><strong>Ofertas caducadas todavía visibles:</strong> promociones antiguas en portadas o banners que restan credibilidad.</li>
-          </ul>
-        </section>
-
-        {/* Qué recibes */}
-        <section className="bg-gray-50 rounded-2xl p-8 mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">Qué recibes</h2>
-          <ul className="space-y-3">
-            {[
-              { icon: "📄", text: "Informe detallado con todos los hallazgos organizados por área y nivel de impacto" },
-              { icon: "🗂️", text: "Plan de acción priorizado con las mejoras ordenadas por facilidad e impacto esperado" },
-              { icon: "🎥", text: "Sesión de presentación online para explicar el informe y resolver todas tus dudas" },
-              { icon: "📋", text: "Listado de Quick Wins: acciones de bajo esfuerzo que puedes implementar de inmediato" },
-            ].map((item) => (
-              <li key={item.icon} className="flex items-start gap-3">
-                <span className="text-2xl shrink-0">{item.icon}</span>
-                <span className="text-gray-700 leading-relaxed">{item.text}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {/* Para quién */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">¿Para quién es esta auditoría?</h2>
-          <ul className="space-y-3">
-            {PARA_QUIEN.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="text-accent-500 font-bold shrink-0">✓</span>
-                <span className="text-gray-700">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {/* CTA */}
-        <section className="bg-primary-600 text-white rounded-2xl p-8">
-          <h2 className="text-2xl font-bold mb-4">Solicitar auditoría gratuita</h2>
-          <p className="text-primary-200 mb-6">
-            Cuéntanos tu proyecto y realizamos un diagnóstico inicial sin coste. Sin compromiso, sin letra pequeña.
-          </p>
-          <div className="bg-white rounded-xl p-6">
-            <ContactForm />
+          <div className="text-center mt-10">
+            <a href="#solicitar" className="inline-block bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors">Solicitar mi auditoría gratuita</a>
           </div>
-        </section>
-      </div>
-      <RelatedArticles category="Estrategia" title="Artículos sobre estrategia y auditoría" />
+        </div>
+      </section>
+
+      <RelatedArticles category="SEO" title="Más sobre SEO y posicionamiento" />
     </>
   );
 }

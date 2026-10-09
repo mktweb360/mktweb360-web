@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "SEO en Toledo para negocios locales",
+  title: "Cómo hacer SEO en Toledo: guía para negocios",
   description: "Cómo mejorar el SEO de tu negocio en Toledo. Aparece en Google cuando tus clientes te buscan. Guía de posicionamiento web para empresas toledanas.",
   alternates: alternatesFor("/seo-toledo/") ?? { canonical: "https://www.mktweb360.com/seo-toledo/" },
   openGraph: {
@@ -111,6 +111,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Si tu negocio todavía no tiene una estrategia de SEO local activa, el primer paso es hacer un diagnóstico de tu situación actual: ¿cómo apareces en Google Maps? ¿Tienes ficha de GBP verificada y completa? ¿Tu web tiene páginas específicas para los servicios y la localización que ofreces? ¿Cuántas reseñas tienes y cuándo fue la última?</p>
         <p className="text-gray-700 leading-relaxed mb-4">Con esa información puedes identificar las acciones de mayor impacto y priorizarlas. En la mayoría de casos, optimizar la ficha de GBP y conseguir nuevas reseñas es lo que genera resultados más rápidos. El SEO web (páginas de servicio locales, contenido optimizado) requiere más tiempo pero tiene mayor impacto a largo plazo.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Si prefieres que lo hagamos nosotros, ofrecemos una <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría digital gratuita</Link> donde analizamos tu situación actual y te explicamos exactamente qué deberías priorizar para tu negocio específico en Toledo.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">Y si buscas quién se encargue de todo el trabajo, conoce nuestro servicio de <Link href="/agencia-seo-toledo/" className="text-accent-500 hover:underline">agencia SEO en Toledo</Link>.</p>
 
         <section className="py-12 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">

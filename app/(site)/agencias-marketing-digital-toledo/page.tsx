@@ -7,7 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
-  title: "Agencias de marketing digital en Toledo",
+  title: "Cómo elegir agencia de marketing en Toledo",
   description: "Guía para elegir una agencia de marketing digital en Toledo. Qué preguntar, qué red flags detectar y cómo comparar propuestas antes de contratar.",
   alternates: alternatesFor("/agencias-marketing-digital-toledo/") ?? { canonical: "https://www.mktweb360.com/agencias-marketing-digital-toledo/" },
   openGraph: {
@@ -77,6 +77,7 @@ export default function Page() {
         <p className="text-sm text-accent-500 font-semibold mb-2">Estrategia Digital</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo elegir una agencia de marketing digital en Toledo sin cometer errores</h1>
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">Contratar una agencia de marketing digital es una decisión importante. Esta guía te ayuda a saber qué preguntar, qué señales de alerta detectar y cómo comparar propuestas antes de firmar nada.</p>
+        <p className="text-gray-700 leading-relaxed mb-8 bg-primary-50 border border-primary-100 rounded-xl p-4">¿Buscas agencia? Somos <Link href="/agencia-marketing-digital-toledo/" className="text-accent-600 font-semibold hover:underline">agencia de marketing digital en Toledo</Link>, con sede en El Viso de San Juan. Esta guía te sirve para valorar cualquier propuesta, también la nuestra.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Qué hace realmente una agencia de marketing digital</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Antes de comparar agencias, es importante entender qué servicio estás contratando y qué no. Una agencia de marketing digital puede ofrecer servicios muy distintos: desde gestión de redes sociales hasta campañas de Google Ads, desde diseño web hasta SEO o email marketing. El término "marketing digital" es tan amplio que dos agencias con el mismo nombre pueden estar haciendo cosas completamente diferentes.</p>

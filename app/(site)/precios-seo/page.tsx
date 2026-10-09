@@ -4,13 +4,15 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { CalculadoraSeo } from "@/components/CalculadoraSeo";
+import { PLANES_SEO, EXTRAS_SEO, CONDICIONES_COMUNES, precioTexto } from "@/lib/planes-seo";
 
 const URL = "https://www.mktweb360.com/precios-seo/";
 
 export const metadata: Metadata = {
   title: "Precios SEO: cuánto cuesta el posicionamiento",
   description:
-    "Precios SEO claros: SEO + GEO + Google Business Profile por 349 €/mes + IVA sin permanencia, web + 6 meses de SEO por 999 € + IVA y consultoría a medida.",
+    "Precios SEO por tamaño de web: desde 199 €/mes + IVA para profesionales, 349 €/mes para pymes y planes para ecommerce. Calcula tu plan y sin permanencia.",
   alternates: alternatesFor("/precios-seo/") ?? { canonical: URL },
   openGraph: {
     title: "Precios SEO: cuánto cuesta el posicionamiento | Mkt Web 360",
@@ -20,48 +22,20 @@ export const metadata: Metadata = {
   },
 };
 
-const PLANS = [
-  {
-    name: "SEO + GEO + Google Business Profile",
-    price: "349 €/mes + IVA",
-    note: "Sin permanencia",
-    href: "/oferta-seo-geo-gbp/",
-    cta: "Ver la oferta completa",
-    items: [
-      "SEO: auditoría técnica, palabras clave, correcciones e informe mensual",
-      "GEO: seguimiento mensual de 10 preguntas en 4 asistentes de IA, contenido citable, datos estructurados y llms.txt",
-      "Google Business Profile: 1 ficha optimizada, 2 publicaciones al mes y respuesta a hasta 15 reseñas al mes",
-      "5 contenidos al mes",
-      "Para webs de hasta 30 páginas en un idioma",
-    ],
-  },
+const OTRAS = [
   {
     name: "Web profesional + 6 meses de SEO",
     price: "999 € + IVA",
-    note: "Pago único",
+    note: "Pago único · solo la web desde 249 € + IVA",
     href: "/oferta-web-seo-organico/",
     cta: "Ver qué incluye",
-    items: [
-      "Diseño y desarrollo de la web profesional",
-      "6 meses de posicionamiento SEO",
-      "Hosting, dominio, correo corporativo y páginas legales",
-      "Soporte incluido",
-      "Solo la web, sin SEO: desde 249 € + IVA",
-    ],
   },
   {
     name: "Consultoría SEO",
     price: "Presupuesto a medida",
-    note: "Según alcance",
+    note: "Diagnóstico, estrategia y plan priorizado para equipos propios",
     href: "/consultor-seo/",
     cta: "Ver la consultoría",
-    items: [
-      "Auditoría técnica y de contenidos",
-      "Estrategia de keywords y arquitectura por servicio",
-      "Plan de acción priorizado por impacto y plazo",
-      "Acompañamiento durante la ejecución",
-      "Para webs grandes, tiendas, varios idiomas o equipos propios",
-    ],
   },
 ];
 
@@ -75,7 +49,7 @@ const FACTORS = [
 ];
 
 const FAQS = [
-  { q: "¿Cuánto cuesta el SEO al mes?", a: "Nuestro servicio mensual de SEO + GEO + Google Business Profile cuesta 349 €/mes + IVA, sin permanencia, para webs de hasta 30 páginas en un idioma y con 5 contenidos al mes. Para webs más grandes, tiendas con mucho catálogo, varios idiomas o varias fichas preparamos un presupuesto a medida." },
+  { q: "¿Cuánto cuesta el SEO al mes?", a: "Depende del tamaño de la web y de la carga de trabajo: desde 199 €/mes + IVA para un profesional con una web de hasta 10 páginas, 349 €/mes + IVA para una pyme con web de hasta 30 páginas, 590 €/mes + IVA para webs más grandes o con varias sedes, y desde 449 €/mes + IVA para tiendas online. La calculadora de esta página te indica el plan que encaja con tu caso." },
   { q: "¿Hay permanencia?", a: "No. El servicio mensual no tiene permanencia. Lo habitual es valorar los resultados con datos de Search Console a los pocos meses, porque el SEO necesita tiempo para reflejarse en las posiciones." },
   { q: "¿Por qué hay presupuestos SEO tan distintos en el mercado?", a: "Porque se comparan cosas distintas: un informe automático, una consultoría sin ejecución o un servicio con contenidos, cambios técnicos y seguimiento mensual. Antes de comparar precios, compara qué incluye cada propuesta, cuántos contenidos al mes, quién ejecuta y cómo se mide." },
   { q: "¿Garantizáis posiciones por ese precio?", a: "No. Nadie puede garantizar posiciones en Google. Lo que incluye el precio es el trabajo descrito, con informes mensuales y métricas que te permiten comprobar la evolución." },
@@ -90,10 +64,12 @@ const serviceSchema = {
   provider: { "@id": "https://www.mktweb360.com/#organization" },
   areaServed: { "@type": "Country", name: "España" },
   url: URL,
-  offers: [
-    { "@type": "Offer", name: "SEO + GEO + Google Business Profile", url: "https://www.mktweb360.com/oferta-seo-geo-gbp/", priceSpecification: { "@type": "UnitPriceSpecification", price: 349, priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false } },
-    { "@type": "Offer", name: "Web profesional + 6 meses de SEO", url: "https://www.mktweb360.com/oferta-web-seo-organico/", priceSpecification: { "@type": "PriceSpecification", price: 999, priceCurrency: "EUR", valueAddedTaxIncluded: false } },
-  ],
+  offers: PLANES_SEO.filter((p) => p.precio !== null).map((p) => ({
+    "@type": "Offer",
+    name: p.nombre,
+    url: URL,
+    priceSpecification: { "@type": "UnitPriceSpecification", price: p.precio, priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false },
+  })),
 };
 
 const faqSchema = {
@@ -121,25 +97,58 @@ export default function PreciosSeoPage() {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-gray-50">
+      <section id="calculadora" className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-10 text-center">Nuestras tarifas SEO</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {PLANS.map((p) => (
-              <div key={p.name} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 flex flex-col">
-                <h3 className="font-bold text-primary-700 text-lg mb-2">{p.name}</h3>
-                <p className="text-3xl font-bold text-accent-500">{p.price}</p>
-                <p className="text-sm text-gray-500 mb-5">{p.note}</p>
-                <ul className="space-y-2 text-sm text-gray-600 mb-6 flex-1">
-                  {p.items.map((i) => (
-                    <li key={i} className="flex gap-2"><span className="text-accent-500 font-bold shrink-0">✓</span>{i}</li>
-                  ))}
+          <h2 className="text-3xl font-bold text-primary-600 mb-3 text-center">Calcula tu plan SEO</h2>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">Cuatro preguntas sobre tu web y te decimos qué plan encaja y cuánto cuesta. El precio sigue a la carga real de trabajo: no es lo mismo la web de un profesional con cuatro servicios que una tienda con cien categorías.</p>
+          <CalculadoraSeo />
+        </div>
+      </section>
+
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-10 text-center">Planes SEO mensuales</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PLANES_SEO.map((p) => (
+              <div key={p.id} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 flex flex-col">
+                <h3 className="font-bold text-primary-700 text-lg mb-1">{p.nombre}</h3>
+                <p className="text-sm text-gray-500 mb-3">{p.paraQuien}</p>
+                <p className="text-2xl font-bold text-accent-500 mb-4">{precioTexto(p)}</p>
+                <ul className="space-y-1 text-sm text-gray-700 mb-4">
+                  {p.limites.map((l) => <li key={l} className="flex gap-2"><span className="text-primary-500 shrink-0">•</span>{l}</li>)}
                 </ul>
-                <Link href={p.href} className="text-center bg-primary-600 text-white rounded-full px-6 py-3 font-semibold hover:bg-primary-700 transition-colors">{p.cta}</Link>
+                <ul className="space-y-2 text-sm text-gray-600 mb-6 flex-1">
+                  {p.incluye.map((i) => <li key={i} className="flex gap-2"><span className="text-accent-500 font-bold shrink-0">✓</span>{i}</li>)}
+                </ul>
+                {p.href ? (
+                  <Link href={p.href} className="text-center bg-primary-600 text-white rounded-full px-6 py-3 font-semibold hover:bg-primary-700 transition-colors">Ver el detalle</Link>
+                ) : (
+                  <a href="#contacto" className="text-center bg-primary-600 text-white rounded-full px-6 py-3 font-semibold hover:bg-primary-700 transition-colors">Pedir este plan</a>
+                )}
               </div>
             ))}
           </div>
-          <p className="text-sm text-gray-500 mt-6 text-center">Precios sin IVA. El paquete mensual no incluye rediseño o desarrollo web, link building, fotografía o vídeo ni publicidad de pago.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+            <div className="bg-primary-50 border border-primary-100 rounded-2xl p-6">
+              <h3 className="font-bold text-primary-700 mb-3">Extras</h3>
+              <ul className="space-y-1 text-sm text-gray-600">{EXTRAS_SEO.map((e) => <li key={e}>• {e}</li>)}</ul>
+              <p className="text-xs text-gray-500 mt-3">Se presupuestan según el caso.</p>
+            </div>
+            <div className="bg-primary-50 border border-primary-100 rounded-2xl p-6">
+              <h3 className="font-bold text-primary-700 mb-3">Condiciones de todos los planes</h3>
+              <ul className="space-y-1 text-sm text-gray-600">{CONDICIONES_COMUNES.map((c) => <li key={c}>• {c}</li>)}</ul>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            {OTRAS.map((o) => (
+              <div key={o.name} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col">
+                <h3 className="font-bold text-primary-700 mb-1">{o.name}</h3>
+                <p className="text-xl font-bold text-accent-500">{o.price}</p>
+                <p className="text-sm text-gray-500 mb-4 flex-1">{o.note}</p>
+                <Link href={o.href} className="text-accent-600 font-semibold hover:underline">{o.cta} →</Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

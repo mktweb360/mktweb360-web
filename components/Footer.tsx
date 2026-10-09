@@ -46,6 +46,9 @@ const CONTENT: Record<string, FooterContent> = {
     ],
     zonesTitle: "Marketing digital por zonas",
     zones: [
+      { label: "Agencia SEO en Toledo", href: "/agencia-seo-toledo/" },
+      { label: "Diseño web en Toledo", href: "/diseno-web-toledo/" },
+      { label: "Agencia de marketing digital en Toledo", href: "/agencia-marketing-digital-toledo/" },
       { label: "Marketing digital en Toledo", href: "/marketing-digital-toledo/" },
       { label: "Agencias de marketing en Toledo", href: "/agencias-marketing-digital-toledo/" },
       { label: "Tiendas online en Toledo", href: "/tiendas-online-toledo/" },
