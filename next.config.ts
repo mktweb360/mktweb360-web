@@ -105,6 +105,8 @@ const nextConfig: NextConfig = {
       { source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug/', destination: '/blog/', permanent: true },
       { source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug', destination: '/blog/', permanent: true },
       // URLs anidadas WordPress
+      // URL antigua de WordPress enlazada desde larepublica.es (T8 auditoría Semrush 2-oct-2026): la raíz daba 404.
+      { source: '/posicionamiento-web-buscadores/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/posicionamiento-web-buscadores/seo-posicionamiento-web-organico/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/posicionamiento-web-buscadores/sem-publicidad-ppc/', destination: '/sem-publicidad-ppc/', permanent: true },
       { source: '/diseno-desarrollo-web/paginas-corporativas/', destination: '/diseno-de-paginas-web/', permanent: true },
