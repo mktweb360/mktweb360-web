@@ -35,7 +35,7 @@ const FAQS = [
   { q: "¿Necesito una ficha de Google Business Profile para hacer SEO local?", a: "Sí. La ficha de Google Business Profile es el activo central del SEO local: es lo que te permite aparecer en Google Maps y en el pack local de resultados. Si no la tienes, la creamos y verificamos; si ya la tienes, la auditamos y optimizamos (categorías, servicios, fotos, productos, horarios, atributos y publicaciones). Sin una ficha optimizada, el resto del trabajo local pierde gran parte de su efecto." },
   { q: "¿El SEO local funciona si tengo varias sedes o varias ciudades?", a: "Sí. Para negocios multisede creamos y optimizamos una ficha por ubicación y diseñamos una arquitectura de páginas locales coherente, evitando contenido duplicado entre ciudades. Cada sede compite por su propia zona con su ficha, su NAP (nombre, dirección y teléfono) consistente y sus reseñas, mientras la web mantiene una estructura que Google entiende sin penalizaciones." },
   { q: "¿Por qué importan las reseñas para el posicionamiento local y cómo conseguís más?", a: "Las reseñas son uno de los factores de ranking local más influyentes y, además, el principal motor de confianza antes del primer contacto. Implementamos procesos para solicitar reseñas en el momento adecuado, facilitamos el enlace directo a tus clientes y te ayudamos a responderlas todas —también las negativas— con criterio. El objetivo es un flujo constante de reseñas reales, no picos artificiales." },
-  { q: "¿Hacéis SEO local en toda España o solo en Toledo?", a: "Trabajamos SEO local en cualquier ciudad de España. Tenemos páginas y experiencia específica en Toledo, Madrid, Valencia, Zaragoza y Bilbao, pero el servicio es nacional: posicionamos negocios locales en su zona estén donde estén, adaptando la estrategia a la competencia y el mercado de cada localidad." },
+  { q: "¿Hacéis SEO local en cualquier ciudad?", a: "Sí. El SEO local es un servicio propio que trabajamos para negocios de cualquier ubicación de España: posicionamos cada negocio en su zona, esté donde esté, adaptando la estrategia a la competencia y al mercado de esa localidad." },
 ];
 
 const faqSchema = {
@@ -82,7 +82,7 @@ export default function SeoLocalPage() {
               <span className="text-accent-400">y llena tu agenda</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
-              Casi la mitad de las búsquedas en Google tienen intención local. Cuando alguien busca lo que ofreces cerca de él, o apareces en el mapa o tu competencia se lleva ese cliente. El SEO local pone tu negocio donde se decide la compra.
+              Cuando alguien busca lo que ofreces cerca de él, o apareces en el mapa y en los resultados de tu zona, o tu competencia se lleva ese cliente. El SEO local pone tu negocio donde se decide la compra, esté donde esté tu negocio.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#auditoria" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
@@ -103,9 +103,9 @@ export default function SeoLocalPage() {
       <section className="bg-primary-600 py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {[
-            { value: "46%", label: "búsquedas con intención local" },
-            { value: "Google Maps", label: "tu escaparate de proximidad" },
-            { value: "88%", label: "confía en reseñas como en recomendaciones" },
+            { value: "Google Maps", label: "y pack local de resultados" },
+            { value: "Ficha de Google", label: "optimizada y activa" },
+            { value: "Reseñas reales", label: "proceso para conseguirlas y responderlas" },
             { value: "Nacional", label: "SEO local en toda España" },
           ].map((m) => (
             <div key={m.value}>
@@ -207,8 +207,8 @@ export default function SeoLocalPage() {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">SEO local por ciudades</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Trabajamos en toda España. Estas son algunas de las ciudades donde tenemos páginas y experiencia específica de posicionamiento local.</p>
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">Guías de SEO local por ciudad</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">El servicio es el mismo para cualquier ubicación. Estas guías explican cómo es la búsqueda local en algunas ciudades.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {CITIES.map((c) => (
