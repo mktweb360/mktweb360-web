@@ -67,15 +67,17 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   const itemListSchema = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
+    "@type": "CollectionPage",
     name: isEn ? "Case Studies — Mkt Web 360" : "Études de Cas — Mkt Web 360",
     description: isEn
       ? "Real digital marketing projects carried out by Mkt Web 360 for businesses across different sectors."
       : "Projets réels de marketing digital réalisés par Mkt Web 360 pour des entreprises de différents secteurs.",
     url: `https://www.mktweb360.com/${lang}/case-studies/`,
-    itemListElement: CASES.map((c, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
+    inLanguage: isEn ? "en" : "fr",
+    publisher: { "@id": "https://www.mktweb360.com/#organization" },
+    // Sin ItemList (Carousel inválido en Site Audit, T3): hasPart describe cada caso.
+    hasPart: CASES.map((c) => ({
+      "@type": "CreativeWork",
       name: c.client,
       description: isEn ? c.resultEn : c.resultFr,
     })),
