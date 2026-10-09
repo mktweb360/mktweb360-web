@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -381,7 +381,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
           <p className="text-sm text-gray-500 pt-2">
             {isEn ? "See also:" : "Voir aussi :"}{" "}
-            <Link href={`/${lang}/how-much-does-a-website-cost/`} className="text-accent-500 hover:underline">
+            <Link href={`/${lang}/${langSlug(lang, "how-much-does-a-website-cost")}/`} className="text-accent-500 hover:underline">
               {isEn ? "How much does a professional website cost?" : "Combien coûte un site web professionnel ?"}
             </Link>
           </p>

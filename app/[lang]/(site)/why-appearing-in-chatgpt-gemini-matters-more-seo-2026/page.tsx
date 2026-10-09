@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -139,7 +139,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 Millions of people no longer type queries into Google — they ask ChatGPT, Perplexity or Gemini directly.
                 If your business doesn&apos;t appear in those responses, you&apos;re losing clients without even knowing
                 it.{" "}
-                <Link href={`/${lang}/geo-generative-engine-optimization/`} className="text-accent-500 hover:underline">
+                <Link href={`/${lang}/${langSlug(lang, "geo-generative-engine-optimization")}/`} className="text-accent-500 hover:underline">
                   GEO or AI positioning
                 </Link>{" "}
                 is the discipline that determines whether the machine mentions you or your competition.
@@ -149,7 +149,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 Des millions de personnes ne tapent plus de requêtes dans Google — elles demandent directement à
                 ChatGPT, Perplexity ou Gemini. Si votre entreprise n&apos;apparaît pas dans ces réponses, vous perdez
                 des clients sans même le savoir.{" "}
-                <Link href={`/${lang}/geo-optimisation-moteurs-generatifs/`} className="text-accent-500 hover:underline">
+                <Link href={`/${lang}/${langSlug(lang, "geo-optimisation-moteurs-generatifs")}/`} className="text-accent-500 hover:underline">
                   Le GEO ou positionnement IA
                 </Link>{" "}
                 est la discipline qui détermine si la machine vous mentionne ou mentionne votre concurrence.
@@ -196,7 +196,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               <>
                 GEO (Generative Engine Optimization) is the discipline that optimises your content so that AI models
                 cite you in their responses. It shares foundations with{" "}
-                <Link href={`/${lang}/seo-web-positioning/`} className="text-accent-500 hover:underline">
+                <Link href={`/${lang}/${langSlug(lang, "seo-web-positioning")}/`} className="text-accent-500 hover:underline">
                   organic SEO
                 </Link>
                 , but pursues a different objective: not fighting for a position in a list, but being the source that
@@ -206,7 +206,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               <>
                 Le GEO (Generative Engine Optimization) est la discipline qui optimise votre contenu pour que les
                 modèles d&apos;IA vous citent dans leurs réponses. Il partage des fondements avec le{" "}
-                <Link href={`/${lang}/positionnement-seo/`} className="text-accent-500 hover:underline">
+                <Link href={`/${lang}/${langSlug(lang, "positionnement-seo")}/`} className="text-accent-500 hover:underline">
                   SEO organique
                 </Link>
                 , mais poursuit un objectif différent : ne pas se battre pour une position dans une liste, mais être la

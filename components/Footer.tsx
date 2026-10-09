@@ -93,7 +93,7 @@ const CONTENT: Record<string, FooterContent> = {
     services: [
       { label: "Référencement SEO", href: "/fr/positionnement-seo/" },
       { label: "Google Ads", href: "/fr/gestion-google-ads/" },
-      { label: "Google Business Profile", href: "/fr/google-business-profile-service/" },
+      { label: "Google Business Profile", href: "/fr/gestion-google-business-profile/" },
       { label: "Création Web", href: "/fr/creation-site-web/" },
       { label: "Boutique en Ligne", href: "/fr/boutique-en-ligne/" },
       { label: "Création de Blog", href: "/fr/service-creation-blog/" },

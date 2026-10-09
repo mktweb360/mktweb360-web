@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -71,18 +71,18 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   const services = isEn
     ? [
-        { name: "SEO Positioning", href: `/${lang}/seo-web-positioning/` },
-        { name: "Google Ads / SEM", href: `/${lang}/google-ads-management/` },
-        { name: "GEO — AI Search", href: `/${lang}/geo-generative-engine-optimization/` },
-        { name: "Online Stores", href: `/${lang}/online-store/` },
-        { name: "Digital Audit", href: `/${lang}/digital-audit/` },
+        { name: "SEO Positioning", href: `/${lang}/${langSlug(lang, "seo-web-positioning")}/` },
+        { name: "Google Ads / SEM", href: `/${lang}/${langSlug(lang, "google-ads-management")}/` },
+        { name: "GEO — AI Search", href: `/${lang}/${langSlug(lang, "geo-generative-engine-optimization")}/` },
+        { name: "Online Stores", href: `/${lang}/${langSlug(lang, "online-store")}/` },
+        { name: "Digital Audit", href: `/${lang}/${langSlug(lang, "digital-audit")}/` },
       ]
     : [
-        { name: "Positionnement SEO", href: `/${lang}/positionnement-seo/` },
-        { name: "Google Ads / SEM", href: `/${lang}/gestion-google-ads/` },
-        { name: "GEO — Recherche IA", href: `/${lang}/geo-optimisation-moteurs-generatifs/` },
-        { name: "Boutique en ligne", href: `/${lang}/boutique-en-ligne/` },
-        { name: "Audit Digital", href: `/${lang}/audit-digital/` },
+        { name: "Positionnement SEO", href: `/${lang}/${langSlug(lang, "positionnement-seo")}/` },
+        { name: "Google Ads / SEM", href: `/${lang}/${langSlug(lang, "gestion-google-ads")}/` },
+        { name: "GEO — Recherche IA", href: `/${lang}/${langSlug(lang, "geo-optimisation-moteurs-generatifs")}/` },
+        { name: "Boutique en ligne", href: `/${lang}/${langSlug(lang, "boutique-en-ligne")}/` },
+        { name: "Audit Digital", href: `/${lang}/${langSlug(lang, "audit-digital")}/` },
       ];
 
   return (
@@ -293,7 +293,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                   : "Nous sommes pionniers en GEO en Espagne. Nous préparons le catalogue, les données structurées et l'autorité de votre boutique Shopware pour que l'IA la choisisse quand un client demande ce que vous vendez. Ceux qui se positionnent en premier sur ce canal capteront un avantage difficile à rattraper."}
               </p>
               <Link
-                href={`/${lang}/geo-generative-engine-optimization/`}
+                href={`/${lang}/${langSlug(lang, "geo-generative-engine-optimization")}/`}
                 className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline"
               >
                 {isEn ? "Learn about the GEO service →" : "En savoir plus sur le service GEO →"}

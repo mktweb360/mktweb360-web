@@ -1,4 +1,5 @@
 "use client";
+import { langSlug } from "@/lib/i18n/routes";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -34,8 +35,8 @@ export function LangHeroSlider({ lang }: { lang: string }) {
       subtitle: isEn
         ? "Sign up for any SEO service this month and get 6 months of positioning paying only 3. Limited places."
         : "Souscrivez à tout service SEO ce mois-ci et obtenez 6 mois de positionnement en payant seulement 3. Places limitées.",
-      cta: { text: isEn ? "I want this offer" : "Je veux cette offre", href: `/${lang}/seo-web-positioning/` },
-      cta2: { text: isEn ? "View SEO service" : "Voir le service SEO", href: `/${lang}/seo-web-positioning/` },
+      cta: { text: isEn ? "I want this offer" : "Je veux cette offre", href: `/${lang}/${langSlug(lang, "seo-web-positioning")}/` },
+      cta2: { text: isEn ? "View SEO service" : "Voir le service SEO", href: `/${lang}/${langSlug(lang, "seo-web-positioning")}/` },
       bg: "/hero-slide-2.jpg",
     },
     {
@@ -45,8 +46,8 @@ export function LangHeroSlider({ lang }: { lang: string }) {
       subtitle: isEn
         ? "No commissions per sale. No monthly fees. 100% custom design. SEO included for 12 months."
         : "Sans commissions par vente. Sans frais mensuels. Design 100% personnalisé. SEO inclus 12 mois.",
-      cta: { text: isEn ? "Reserve my place" : "Réserver ma place", href: `/${lang}/online-store-offer/` },
-      cta2: { text: isEn ? "View the offer" : "Voir l'offre", href: `/${lang}/online-store/` },
+      cta: { text: isEn ? "Reserve my place" : "Réserver ma place", href: `/${lang}/${langSlug(lang, "online-store-offer")}/` },
+      cta2: { text: isEn ? "View the offer" : "Voir l'offre", href: `/${lang}/${langSlug(lang, "online-store")}/` },
       bg: "/hero-slide-3.jpg",
     },
   ];

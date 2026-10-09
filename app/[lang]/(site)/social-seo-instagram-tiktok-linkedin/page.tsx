@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -138,7 +138,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 : "Chez Mkt Web 360, nous concevons des stratégies réseaux sociaux qui intègrent le SEO social — pour que votre contenu ne soit pas seulement vu, mais trouvé quand on vous cherche."}
             </p>
             <Link
-              href={`/${lang}/social-media-marketing/`}
+              href={`/${lang}/${langSlug(lang, "social-media-marketing")}/`}
               className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors"
             >
               {isEn ? "View social media service" : "Voir le service réseaux sociaux"}
@@ -185,13 +185,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href={`/${lang}/social-media-marketing/`}
+                href={`/${lang}/${langSlug(lang, "social-media-marketing")}/`}
                 className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors"
               >
                 {isEn ? "View social media service" : "Voir le service réseaux sociaux"}
               </Link>
               <Link
-                href={`/${lang}/content-marketing/`}
+                href={`/${lang}/${langSlug(lang, "content-marketing")}/`}
                 className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {isEn ? "Content strategy" : "Stratégie de contenu"}

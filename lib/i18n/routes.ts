@@ -313,3 +313,36 @@ export function legacyLangRedirects(): { source: string; destination: string }[]
   }
   return out;
 }
+
+// Redirects 301 de slugs cruzados entre idiomas (Site Audit Semrush, 2-oct-2026: T1).
+// Cada carpeta de app/[lang]/(site) se sirve bajo /en/ y /fr/, así que el slug EN
+// también respondía 200 bajo /fr/ (y el FR bajo /en/), con canonical propio e indexable.
+// Regla: /<prefijo>/<slug>/ cuyo slug NO es canónico en ese idioma para ninguna route
+// -> URL canónica de esa route en ese idioma (o la ES/EN si ese idioma no existe).
+export function crossLangRedirects(): { source: string; destination: string }[] {
+  const out: { source: string; destination: string }[] = [];
+  const seen = new Set<string>();
+  const canonicalIn = (lang: "en" | "fr", slug: string) =>
+    ROUTES.some((r) => (lang === "en" ? r.en : r.fr) === slug);
+  for (const r of ROUTES) {
+    for (const [from, prefix] of [["en", "fr"], ["fr", "en"]] as ["en" | "fr", "en" | "fr"][]) {
+      const slug = from === "en" ? r.en : r.fr;
+      if (!slug || canonicalIn(prefix, slug)) continue;
+      const source = `/${prefix}/${slug}/`;
+      const destination = urlFor(r, prefix) || urlFor(r, "es") || (urlFor(r, from) as string);
+      if (source === destination || seen.has(source)) continue;
+      seen.add(source);
+      out.push({ source, destination });
+    }
+  }
+  return out;
+}
+
+// Slug canónico de una route en el idioma pedido a partir de cualquiera de sus slugs EN/FR.
+// Evita enlazar /fr/<slug-EN>/ o /en/<slug-FR>/ desde páginas que comparten plantilla.
+export function langSlug(lang: string, slug: string): string {
+  const r = ROUTES.find((x) => x.en === slug || x.fr === slug);
+  if (!r) return slug;
+  const s = lang === "en" ? r.en : lang === "fr" ? r.fr : undefined;
+  return s === undefined || s === "" ? slug : s;
+}

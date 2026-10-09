@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -344,7 +344,7 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
                   ? "At Mkt Web 360 we are pioneers in GEO in Spain. Our SEO services already include the technical foundation needed for AI visibility: structured schemas, llms.txt, LLM-optimised content architecture and semantic authority strategy."
                   : "Chez Mkt Web 360, nous sommes pionniers en GEO en Espagne. Nos services SEO incluent déjà la base technique nécessaire pour la visibilité dans l'IA : schémas structurés, llms.txt, architecture de contenu optimisée pour les LLM et stratégie d'autorité sémantique."}
               </p>
-              <Link href={`/${lang}/geo-generative-engine-optimization/`} className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
+              <Link href={`/${lang}/${langSlug(lang, "geo-generative-engine-optimization")}/`} className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
                 {isEn ? "Discover the GEO service →" : "Découvrir le service GEO →"}
               </Link>
             </div>

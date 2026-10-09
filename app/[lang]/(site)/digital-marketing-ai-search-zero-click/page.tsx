@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -131,7 +131,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 : "Le GEO (Generative Engine Optimization) est la stratégie pour apparaître dans les réponses de ChatGPT, Gemini et Perplexity. Nous auditons votre présence IA actuelle et concevons le plan."}
             </p>
             <Link
-              href={`/${lang}/geo-generative-engine-optimization/`}
+              href={`/${lang}/${langSlug(lang, "geo-generative-engine-optimization")}/`}
               className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors"
             >
               {isEn ? "View GEO service" : "Voir le service GEO"}
@@ -183,13 +183,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href={`/${lang}/geo-generative-engine-optimization/`}
+                href={`/${lang}/${langSlug(lang, "geo-generative-engine-optimization")}/`}
                 className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors"
               >
                 {isEn ? "View GEO service" : "Voir le service GEO"}
               </Link>
               <Link
-                href={`/${lang}/digital-audit/`}
+                href={`/${lang}/${langSlug(lang, "digital-audit")}/`}
                 className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {isEn ? "Request free diagnosis" : "Demander un diagnostic gratuit"}

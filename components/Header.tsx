@@ -172,7 +172,7 @@ const NAV: Record<string, NavContent> = {
           { key: "seo",       label: "Référencement SEO",       href: "/fr/positionnement-seo/",                   desc: "Première page de Google" },
           { key: "local",     label: "SEO Local",               href: "/fr/positionnement-seo/",                   desc: "Clients de votre zone sur Google Maps" },
           { key: "ads",       label: "Google Ads",              href: "/fr/gestion-google-ads/",                   desc: "Résultats dès le premier jour" },
-          { key: "gbp",       label: "Google Business Profile", href: "/fr/google-business-profile-service/",      desc: "Visibilité locale sur Google Maps" },
+          { key: "gbp",       label: "Google Business Profile", href: "/fr/gestion-google-business-profile/",      desc: "Visibilité locale sur Google Maps" },
           { key: "geo",       label: "GEO — IA Search",         href: "/fr/geo-optimisation-moteurs-generatifs/",  desc: "Apparaissez dans ChatGPT et Perplexity" },
         ],
       },

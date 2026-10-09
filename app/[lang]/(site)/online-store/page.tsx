@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -526,7 +526,7 @@ export default async function OnlineStorePage({ params }: { params: Promise<{ la
             <Link href={`/${lang}/contact/`} className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors">
               {isEn ? "Request information" : "Demander des informations"}
             </Link>
-            <Link href={`/${lang}/seo-web-positioning/`} className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary-700 transition-colors">
+            <Link href={`/${lang}/${langSlug(lang, "seo-web-positioning")}/`} className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary-700 transition-colors">
               {isEn ? "View SEO service" : "Voir le service SEO"}
             </Link>
           </div>

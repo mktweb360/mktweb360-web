@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -149,7 +149,7 @@ export default async function SeoSpainForeignCompaniesPage({
               : "Équipe anglophone et francophone. Nous connaissons le marché espagnol. Audit initial gratuit."}
           </p>
           <a
-            href={`/${lang}/digital-marketing-agency-spain/`}
+            href={`/${lang}/${langSlug(lang, "digital-marketing-agency-spain")}/`}
             className="inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-4 rounded-xl transition-colors"
           >
             {isEn ? "Get a free audit →" : "Obtenir un audit gratuit →"}

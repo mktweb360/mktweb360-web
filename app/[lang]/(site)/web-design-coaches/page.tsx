@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 const FAQS_EN = [
   {
@@ -266,7 +266,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 {isEn ? "Request a quote" : "Demander un devis"}
               </Link>
               <Link
-                href={`/${lang}/web-design/`}
+                href={`/${lang}/${langSlug(lang, "web-design")}/`}
                 className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {isEn ? "See web design service" : "Voir le service création web"}
@@ -295,11 +295,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               {isEn ? "How to create your value proposition" : "Comment créer votre proposition de valeur"}
             </Link>{" "}
             ·{" "}
-            <Link href={`/${lang}/how-to-generate-quality-leads/`} className="text-accent-500 hover:underline">
+            <Link href={`/${lang}/${langSlug(lang, "how-to-generate-quality-leads")}/`} className="text-accent-500 hover:underline">
               {isEn ? "How to generate quality leads" : "Comment générer des leads de qualité"}
             </Link>{" "}
             ·{" "}
-            <Link href={`/${lang}/web-design/`} className="text-accent-500 hover:underline">
+            <Link href={`/${lang}/${langSlug(lang, "web-design")}/`} className="text-accent-500 hover:underline">
               {isEn ? "Professional web design" : "Création de sites web professionnels"}
             </Link>
           </p>

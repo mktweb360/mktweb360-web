@@ -1,7 +1,7 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import Link from "next/link";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -54,13 +54,13 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
     types: isEn
       ? [
           { title: "Corporate Websites", desc: "Professional digital presence that builds trust and converts visits into contacts.", href: `/${lang}/web-design/` },
-          { title: "Online Stores", desc: "E-commerce without commissions or licences. You manage, we build.", href: `/${lang}/online-store/` },
+          { title: "Online Stores", desc: "E-commerce without commissions or licences. You manage, we build.", href: `/${lang}/${langSlug(lang, "online-store")}/` },
           { title: "Business Websites", desc: "Custom solutions with specific functionalities for your sector and size.", href: `/${lang}/web-design/` },
         ]
       : [
-          { title: "Sites Corporatifs", desc: "Présence digitale professionnelle qui inspire confiance et convertit les visites en contacts.", href: `/${lang}/creation-site-web/` },
-          { title: "Boutiques en Ligne", desc: "E-commerce sans commissions ni licences. Vous gérez, nous construisons.", href: `/${lang}/boutique-en-ligne/` },
-          { title: "Sites pour Entreprises", desc: "Solutions sur mesure avec des fonctionnalités spécifiques à votre secteur et votre taille.", href: `/${lang}/creation-site-web/` },
+          { title: "Sites Corporatifs", desc: "Présence digitale professionnelle qui inspire confiance et convertit les visites en contacts.", href: `/${lang}/${langSlug(lang, "creation-site-web")}/` },
+          { title: "Boutiques en Ligne", desc: "E-commerce sans commissions ni licences. Vous gérez, nous construisons.", href: `/${lang}/${langSlug(lang, "boutique-en-ligne")}/` },
+          { title: "Sites pour Entreprises", desc: "Solutions sur mesure avec des fonctionnalités spécifiques à votre secteur et votre taille.", href: `/${lang}/${langSlug(lang, "creation-site-web")}/` },
         ],
     viewMore: isEn ? "View more →" : "Voir plus →",
     processTitle: isEn ? "How we work" : "Notre méthode de travail",

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -389,7 +389,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                   : "Dans de nombreuses entreprises, la stratégie gagnante combine les deux : positionnement local pour capter dans votre zone et SEO national pour construire autorité et portée. Nous vous aidons à décider où investir en premier selon votre marché et vos objectifs."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href={`/${lang}/seo-web-positioning/`} className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
+                <Link href={`/${lang}/${langSlug(lang, "seo-web-positioning")}/`} className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
                   {isEn ? "See national SEO →" : "Voir le SEO national →"}
                 </Link>
                 <Link href={`/${lang}/when-to-choose-seo-vs-google-ads/`} className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
