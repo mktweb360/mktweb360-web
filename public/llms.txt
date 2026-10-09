@@ -26,9 +26,10 @@
 - [IA Aplicada al Marketing](https://www.mktweb360.com/ia-aplicada-al-marketing/)
 - [Blog para Monetización](https://www.mktweb360.com/blog-para-monetizacion/): Blog profesional SEO para posicionamiento orgánico y monetización. 15 artículos de lanzamiento + 10 artículos/mes. Setup 990€ + 290€/mes.
 - Chatbot Empresarial IA: Asistente conversacional conectado a datos reales del negocio (web, PDF, catálogo, CRM, stock). Plataforma gestionada con 4 niveles: FAQs/web → recuperación de documentos → acciones (reservas/pedidos/CRM) → recomendación. Cumplimiento RGPD + AI Act. Setup 300–500€ + 149–299€/mes.
-- [Auditoría Digital](https://www.mktweb360.com/auditoria-digital/)
+- [Auditoría SEO gratuita](https://www.mktweb360.com/auditoria-digital/): diagnóstico SEO y de visibilidad en IA de una web, enviado por correo en un máximo de 48 horas laborables, con plan de mejora y propuesta.
 - [Consultor SEO](https://www.mktweb360.com/consultor-seo/): consultoría SEO con auditoría técnica, estrategia de keywords y arquitectura, plan priorizado y acompañamiento con datos de Search Console.
-- [Precios SEO](https://www.mktweb360.com/precios-seo/): tarifas SEO publicadas (349 €/mes + IVA SEO + GEO + GBP; web + 6 meses de SEO 999 € + IVA; consultoría a medida) y qué hace variar el precio.
+- [Precios SEO](https://www.mktweb360.com/precios-seo/): planes SEO por tamaño de web con calculadora — SEO Local Esencial 199 €/mes, SEO + GEO + GBP 349 €/mes, Crecimiento/Multisede 590 €/mes, Ecommerce S 449 €/mes, Ecommerce M 790 €/mes (precios + IVA, sin permanencia).
+- [Agencia SEO en Toledo](https://www.mktweb360.com/agencia-seo-toledo/) · [Diseño web en Toledo](https://www.mktweb360.com/diseno-web-toledo/) · [Agencia de marketing digital en Toledo](https://www.mktweb360.com/agencia-marketing-digital-toledo/): servicios para negocios de la provincia, donde está la sede.
 
 ## Ofertas activas
 - [SEO + GEO + Google Business Profile — 349 €/mes + IVA](https://www.mktweb360.com/oferta-seo-geo-gbp/) (posicionamiento en Google, visibilidad en asistentes de IA y ficha de Google Maps en un solo servicio mensual)

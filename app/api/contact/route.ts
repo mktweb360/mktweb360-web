@@ -8,11 +8,14 @@ const FORM_MAP: Record<string, { oferta: string; canal: string }> = {
   "social-media":          { oferta: "social-media",      canal: "web-servicio-smm" },
   "email-marketing":       { oferta: "email-marketing",   canal: "web-servicio-email" },
   "diseno-web":            { oferta: "diseno-web",        canal: "web-servicio-web" },
-  "auditoria":             { oferta: "auditoria-digital", canal: "web-servicio-auditoria" },
+  "auditoria":             { oferta: "auditoria-seo-geo-gratuita", canal: "web-auditoria-gratuita" },
   "google-business":       { oferta: "gbp",               canal: "web-servicio-gbp" },
   "oferta-seo-geo-gbp":    { oferta: "seo-geo-gbp-349",   canal: "web-oferta-seo-geo-gbp" },
   "consultor-seo":         { oferta: "consultoria-seo",   canal: "web-servicio-consultor-seo" },
   "precios-seo":           { oferta: "seo-presupuesto",   canal: "web-precios-seo" },
+  "seo-toledo":            { oferta: "seo-mensual",       canal: "web-toledo-seo" },
+  "diseno-web-toledo":     { oferta: "diseno-web",        canal: "web-toledo-diseno" },
+  "marketing-toledo":      { oferta: "general",           canal: "web-toledo-marketing" },
   "contacto":              { oferta: "general",           canal: "web-contacto" },
 };
 function getMktOSMeta(formType: string) {
