@@ -57,7 +57,7 @@ const C = {
     vs: "If you have someone to carry out the work, consultancy is the most efficient way to direct SEO. If you prefer us to take care of everything — content, technical changes, monitoring and the Google Business Profile listing — the ongoing service includes month-by-month execution.",
     linkSeo: "SEO service →",
     linkPack: "SEO + GEO + Google Business Profile for €349/month + VAT →",
-    linkAudit: "Digital audit →",
+    linkAudit: "Free SEO audit →",
     notTitle: "What we don't do",
     not: [
       "Promise specific positions on Google.",
@@ -127,7 +127,7 @@ const C = {
     vs: "Si vous avez quelqu'un pour exécuter, le conseil est la manière la plus efficace de piloter le SEO. Si vous préférez que nous nous occupions de tout — contenus, modifications techniques, suivi et fiche Google —, le service continu inclut la mise en œuvre mois après mois.",
     linkSeo: "Service de référencement SEO →",
     linkPack: "SEO + GEO + Google Business Profile pour 349 €/mois HT →",
-    linkAudit: "Audit digital →",
+    linkAudit: "Audit SEO gratuit →",
     notTitle: "Ce que nous ne faisons pas",
     not: [
       "Promettre des positions précises sur Google.",

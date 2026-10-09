@@ -89,7 +89,7 @@ const SERVICE_TABS: ServiceTab[] = [
     servicios: [
       { title: "Analítica Web", desc: "GA4, GTM y dashboards de negocio. Cada decisión respaldada por datos reales, no suposiciones.", href: "/analitica-web/", icon: "📊" },
       { title: "IA Aplicada al Marketing", desc: "Protocolos propios de IA integrados en cada servicio. Más rápido, más preciso, mejores decisiones.", href: "/ia-aplicada-al-marketing/", icon: "🧠" },
-      { title: "Auditoría Digital", desc: "Diagnóstico completo de tu presencia digital. Sabe exactamente dónde estás antes de invertir más.", href: "/auditoria-digital/", icon: "🔬" },
+      { title: "Auditoría SEO gratuita", desc: "Qué frena tu web en Google y en la IA, y qué harías primero. Gratis, en tu correo en 48 horas laborables.", href: "/auditoria-digital/", icon: "🔬" },
       { title: "SEO Posicionamiento Web", desc: "Primera página de Google. Tráfico orgánico sin pagar por cada clic. Resultados que se mantienen.", href: "/seo-posicionamiento-web-organico/", icon: "📈" },
       { title: "GEO — Posicionamiento en IA", desc: "Aparece en ChatGPT, Perplexity y Gemini. El SEO de la era de la inteligencia artificial.", href: "/geo-posicionamiento-ia/", icon: "🤖" },
       { title: "Marketing para Shopware", desc: "SEO, Google Ads, GEO y optimización de la conversión para tiendas Shopware que necesitan vender más.", href: "/marketing-shopware/", icon: "🏬" },

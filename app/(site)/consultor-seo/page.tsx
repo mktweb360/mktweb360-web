@@ -169,7 +169,7 @@ export default function ConsultorSeoPage() {
             <div className="flex flex-col gap-3">
               <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 font-semibold hover:underline">Servicio de posicionamiento SEO →</Link>
               <Link href="/oferta-seo-geo-gbp/" className="text-accent-500 font-semibold hover:underline">SEO + GEO + Google Business Profile por 349 €/mes + IVA →</Link>
-              <Link href="/auditoria-digital/" className="text-accent-500 font-semibold hover:underline">Auditoría digital →</Link>
+              <Link href="/auditoria-digital/" className="text-accent-500 font-semibold hover:underline">Auditoría SEO gratuita →</Link>
             </div>
           </div>
           <div>

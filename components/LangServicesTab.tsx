@@ -77,7 +77,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       servicios: [
         { title: "Web Analytics", desc: "GA4, GTM and business dashboards. Every decision backed by real data.", href: "/en/web-analytics/", icon: "📊" },
         { title: "AI Applied to Marketing", desc: "Our own AI protocols integrated into every service.", href: "/en/ai-applied-marketing/", icon: "🧠" },
-        { title: "Digital Audit", desc: "Complete diagnosis of your digital presence before investing more.", href: "/en/digital-audit/", icon: "🔬" },
+        { title: "Free SEO Audit", desc: "What is holding your site back in Google and AI, and what to fix first. Free, by email within 48 working hours.", href: "/en/digital-audit/", icon: "🔬" },
       ],
     },
   ],
@@ -152,7 +152,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       servicios: [
         { title: "Analytique Web", desc: "GA4, GTM et tableaux de bord métier. Chaque décision basée sur des données réelles.", href: "/fr/analytique-web/", icon: "📊" },
         { title: "IA Appliquée au Marketing", desc: "Nos propres protocoles IA intégrés dans chaque service.", href: "/fr/marketing-intelligence-artificielle/", icon: "🧠" },
-        { title: "Audit Digital", desc: "Diagnostic complet de votre présence digitale.", href: "/fr/audit-digital/", icon: "🔬" },
+        { title: "Audit SEO gratuit", desc: "Ce qui freine votre site sur Google et dans l'IA, et par où commencer. Gratuit, par e-mail sous 48 heures ouvrées.", href: "/fr/audit-digital/", icon: "🔬" },
       ],
     },
   ],
