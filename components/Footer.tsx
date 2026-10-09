@@ -10,6 +10,8 @@ type FooterContent = {
   services: { label: string; href: string }[];
   moreServices: { label: string; href: string }[];
   company: { label: string; href: string }[];
+  zonesTitle: string;
+  zones: { label: string; href: string }[];
 };
 
 const CONTENT: Record<string, FooterContent> = {
@@ -27,6 +29,8 @@ const CONTENT: Record<string, FooterContent> = {
       { label: "Diseño Web", href: "/diseno-de-paginas-web/" },
       { label: "Tiendas Online", href: "/diseno-de-paginas-web/diseno-tiendas-online/" },
       { label: "Creación de Blog", href: "/creacion-de-blog/" },
+      { label: "Diseño web para pymes", href: "/diseno-web-pymes/" },
+      { label: "Web + 6 meses de SEO", href: "/oferta-web-seo-organico/" },
     ],
     moreServices: [
       { label: "Redes Sociales", href: "/smm-social-media-marketing/" },
@@ -39,6 +43,17 @@ const CONTENT: Record<string, FooterContent> = {
       { label: "GEO — Posicionamiento IA", href: "/geo-posicionamiento-ia/" },
       { label: "Blog para Monetización", href: "/blog-para-monetizacion/" },
       { label: "Ecommerce con Participación", href: "/ecommerce-participacion-resultados/" },
+    ],
+    zonesTitle: "Marketing digital por zonas",
+    zones: [
+      { label: "Marketing digital en Toledo", href: "/marketing-digital-toledo/" },
+      { label: "Agencias de marketing en Toledo", href: "/agencias-marketing-digital-toledo/" },
+      { label: "Tiendas online en Toledo", href: "/tiendas-online-toledo/" },
+      { label: "Google Business Profile en Toledo", href: "/google-business-profile-toledo/" },
+      { label: "Agencias de marketing en Madrid", href: "/agencias-marketing-digital-madrid/" },
+      { label: "Marketing digital en Barcelona", href: "/marketing-digital-barcelona/" },
+      { label: "Diseño web en Barcelona", href: "/diseno-web-barcelona/" },
+      { label: "Marketing digital en Sevilla", href: "/marketing-digital-sevilla/" },
     ],
     company: [
       { label: "Blog", href: "/blog/" },
@@ -62,6 +77,7 @@ const CONTENT: Record<string, FooterContent> = {
       { label: "Web Design", href: "/en/web-design/" },
       { label: "Online Stores", href: "/en/online-store/" },
       { label: "Blog Creation", href: "/en/blog-creation-service/" },
+      { label: "Web Design for SMEs", href: "/en/web-design-smes/" },
     ],
     moreServices: [
       { label: "Social Media", href: "/en/social-media-marketing/" },
@@ -74,6 +90,21 @@ const CONTENT: Record<string, FooterContent> = {
       { label: "GEO — AI Positioning", href: "/en/geo-generative-engine-optimization/" },
       { label: "Monetisation Blog", href: "/en/blog-creation-service/" },
       { label: "Ecommerce Partnership", href: "/en/ecommerce-no-commissions/" },
+    ],
+    zonesTitle: "Where we work",
+    zones: [
+      { label: "Digital marketing agency in Spain", href: "/en/digital-marketing-agency-spain/" },
+      { label: "Choosing an agency in Spain", href: "/en/how-to-choose-digital-marketing-agency-spain/" },
+      { label: "SEO in Spain for foreign companies", href: "/en/seo-spain-foreign-companies/" },
+      { label: "Google Ads in Spain for foreign companies", href: "/en/google-ads-spain-foreign-companies/" },
+      { label: "Toledo", href: "/en/digital-marketing-toledo/" },
+      { label: "Agencies in Toledo", href: "/en/digital-marketing-agencies-toledo/" },
+      { label: "Online stores in Toledo", href: "/en/online-stores-toledo/" },
+      { label: "Google Business Profile in Toledo", href: "/en/google-business-profile-toledo/" },
+      { label: "Agencies in Madrid", href: "/en/digital-marketing-agencies-madrid/" },
+      { label: "Barcelona", href: "/en/digital-marketing-barcelona/" },
+      { label: "Web design in Barcelona", href: "/en/web-design-barcelona/" },
+      { label: "Seville", href: "/en/digital-marketing-seville/" },
     ],
     company: [
       { label: "Blog", href: "/en/blog/" },
@@ -97,6 +128,7 @@ const CONTENT: Record<string, FooterContent> = {
       { label: "Création Web", href: "/fr/creation-site-web/" },
       { label: "Boutique en Ligne", href: "/fr/boutique-en-ligne/" },
       { label: "Création de Blog", href: "/fr/service-creation-blog/" },
+      { label: "Création web pour PME", href: "/fr/web-design-smes/" },
     ],
     moreServices: [
       { label: "Réseaux Sociaux", href: "/fr/marketing-reseaux-sociaux/" },
@@ -109,6 +141,21 @@ const CONTENT: Record<string, FooterContent> = {
       { label: "GEO — Positionnement IA", href: "/fr/geo-optimisation-moteurs-generatifs/" },
       { label: "Blog de Monétisation", href: "/fr/service-creation-blog/" },
       { label: "E-commerce Participatif", href: "/fr/boutique-en-ligne-sans-commissions/" },
+    ],
+    zonesTitle: "Où nous travaillons",
+    zones: [
+      { label: "Agence de marketing digital en Espagne", href: "/fr/agence-marketing-digital-espagne/" },
+      { label: "Choisir une agence en Espagne", href: "/fr/choisir-agence-marketing-digital-espagne/" },
+      { label: "SEO en Espagne pour entreprises étrangères", href: "/fr/seo-espagne-entreprises-etrangeres/" },
+      { label: "Google Ads en Espagne pour entreprises étrangères", href: "/fr/google-ads-espagne-entreprises-etrangeres/" },
+      { label: "Tolède", href: "/fr/digital-marketing-toledo/" },
+      { label: "Agences à Tolède", href: "/fr/digital-marketing-agencies-toledo/" },
+      { label: "Boutiques en ligne à Tolède", href: "/fr/online-stores-toledo/" },
+      { label: "Google Business Profile à Tolède", href: "/fr/google-business-profile-toledo/" },
+      { label: "Agences à Madrid", href: "/fr/digital-marketing-agencies-madrid/" },
+      { label: "Barcelone", href: "/fr/digital-marketing-barcelona/" },
+      { label: "Création web à Barcelone", href: "/fr/web-design-barcelona/" },
+      { label: "Séville", href: "/fr/digital-marketing-seville/" },
     ],
     company: [
       { label: "Blog", href: "/fr/blog/" },
@@ -183,6 +230,16 @@ export function Footer({ lang }: { lang?: string }) {
             <p><a href="mailto:info@mktweb360.com" className="hover:text-white">info@mktweb360.com</a></p>
           </address>
         </div>
+      </div>
+      <div className="max-w-6xl mx-auto px-4 pb-8">
+        <nav aria-label={c.zonesTitle} className="border-t border-primary-700 pt-6">
+          <h4 className="font-semibold mb-3 text-primary-100 text-sm">{c.zonesTitle}</h4>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-primary-300">
+            {c.zones.map((z) => (
+              <li key={z.href}><Link href={z.href} className="hover:text-white transition-colors">{z.label}</Link></li>
+            ))}
+          </ul>
+        </nav>
       </div>
       <div className="border-t border-primary-700 py-4 text-center text-xs text-primary-400">
         © {new Date().getFullYear()} Mkt Web 360 SLU · {c.copyright}
