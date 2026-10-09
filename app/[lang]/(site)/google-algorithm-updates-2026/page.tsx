@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Google Algorithm Updates 2026: What Has Changed and How It Affects Your Website"
-      : "Mises à jour de l'algorithme Google en 2026 : ce qui a changé et comment ça affecte votre site",
+      ? "Google Algorithm Updates 2026: What Changed"
+      : "Mises à jour Google 2026 : ce qui a changé",
     description: isEn
       ? "Google has rolled out several algorithm updates in 2026 focused on user experience, AI content and E-E-A-T signals. We analyse what has changed and what you need to do."
       : "Google a lancé plusieurs mises à jour d'algorithme en 2026 axées sur l'expérience utilisateur, le contenu IA et les signaux E-E-A-T. Nous analysons ce qui a changé et ce que vous devez faire.",

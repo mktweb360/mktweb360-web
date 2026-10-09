@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Professional Online Store — No Commissions"
-      : "Boutique en Ligne Professionnelle — Sans Commissions",
+      : "Boutique en ligne professionnelle",
     description: isEn
       ? "Professional online store without commissions or monthly fees. React + WooCommerce. Stripe, Apple Pay and Google Pay included. SEO included."
       : "Boutique en ligne professionnelle sans commissions ni abonnement mensuel. React + WooCommerce. Stripe, Apple Pay et Google Pay inclus. SEO inclus.",

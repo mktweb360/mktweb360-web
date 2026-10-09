@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "GEO for Shopware: Sell via ChatGPT with Agentic Commerce"
-      : "GEO pour Shopware : vendre via ChatGPT avec l'Agentic Commerce",
+      ? "GEO for Shopware: Sell via ChatGPT"
+      : "GEO pour Shopware : vendre via ChatGPT",
     description: isEn
       ? "Shopware 6.7.9 brings native Agentic Commerce. Prepare your store with GEO so ChatGPT and Perplexity recommend and sell your products directly from the conversation."
       : "Shopware 6.7.9 intègre l'Agentic Commerce natif. Préparez votre boutique avec le GEO pour que ChatGPT et Perplexity recommandent et vendent vos produits directement depuis la conversation.",
@@ -94,8 +94,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "GEO for Shopware: Sell via ChatGPT with Agentic Commerce"
-            : "GEO pour Shopware : vendre via ChatGPT avec l'Agentic Commerce"}
+            ? "GEO for Shopware: Sell via ChatGPT"
+            : "GEO pour Shopware : vendre via ChatGPT"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

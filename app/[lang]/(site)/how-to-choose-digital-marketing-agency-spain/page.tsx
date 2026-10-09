@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Choose a Digital Marketing Agency in Spain — Checklist 2026"
-      : "Comment Choisir une Agence de Marketing Digital en Espagne — Guide 2026",
+      ? "Choosing a Digital Marketing Agency in Spain"
+      : "Choisir une agence de marketing en Espagne",
     description: isEn
       ? "7 criteria to choose the right digital marketing agency in Spain in 2026. Red flags to avoid, questions to ask, and what a serious proposal should include."
       : "7 critères pour choisir la bonne agence de marketing digital en Espagne en 2026. Signaux d'alarme à éviter, questions à poser et ce qu'une proposition sérieuse doit inclure.",

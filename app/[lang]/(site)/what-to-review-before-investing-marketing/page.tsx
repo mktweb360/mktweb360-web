@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "What to Review Before Investing More in Digital Marketing" : "Ce qu'il faut vérifier avant d'investir davantage en marketing digital",
+    title: isEn ? "What to Review Before Investing in Marketing" : "Que vérifier avant d'investir en marketing",
     description: isEn ? "Before investing more in digital marketing, review these 7 key areas to avoid amplifying mistakes and make better investment decisions." : "Avant d'investir davantage en marketing digital, vérifiez ces 7 domaines clés pour éviter d'amplifier les erreurs et prendre de meilleures décisions d'investissement.",
     alternates: alternatesFor(`/${lang}/what-to-review-before-investing-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/what-to-review-before-investing-marketing/`,
@@ -29,7 +29,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Strategy</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
-          {isEn ? "What to review before investing more in digital marketing" : "Ce qu'il faut vérifier avant d'investir davantage en marketing digital"}
+          {isEn ? "What to review before investing more in digital marketing" : "Que vérifier avant d'investir en marketing"}
         </h1>
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Investing more in marketing without reviewing what is already working is one of the most common mistakes SMEs make. This guide explains the 7 areas you must review first." : "Investir davantage en marketing sans vérifier ce qui fonctionne déjà est l'une des erreurs les plus courantes des PME. Ce guide explique les 7 domaines que vous devez vérifier en premier."}

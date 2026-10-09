@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Chatbot for Clinics and Healthcare Centres: Appointments, FAQs and Healthcare Compliance"
-      : "Chatbot pour cliniques et centres de santé : rendez-vous, questions fréquentes et conformité sanitaire",
+      ? "Chatbot for Clinics: Appointments and FAQs"
+      : "Chatbot pour cliniques : rendez-vous et FAQ",
     description: isEn
       ? "Clinics and healthcare centres receive hundreds of repetitive enquiries every day. A well-implemented chatbot can automate appointment management, answer FAQs and qualify patients, while complying with GDPR."
       : "Les cliniques et centres de santé reçoivent des centaines de demandes répétitives chaque jour. Un chatbot bien implémenté peut automatiser la gestion des rendez-vous, répondre aux questions fréquentes et qualifier les patients, en respectant le RGPD.",
@@ -86,8 +86,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "Chatbot for Clinics and Healthcare Centres: Appointments, FAQs and Healthcare Compliance"
-            : "Chatbot pour cliniques et centres de santé : rendez-vous, questions fréquentes et conformité sanitaire"}
+            ? "Chatbot for Clinics: Appointments and FAQs"
+            : "Chatbot pour cliniques : rendez-vous et FAQ"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

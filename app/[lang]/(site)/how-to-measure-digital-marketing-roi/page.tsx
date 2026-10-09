@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Measure the ROI of Your Digital Marketing Campaigns"
-      : "Comment mesurer le ROI de vos campagnes de marketing digital",
+      ? "How to Measure Digital Marketing ROI"
+      : "Comment mesurer le ROI du marketing digital",
     description: isEn
       ? "Learn how to calculate and measure the ROI of your digital marketing investments. Google Analytics 4, attribution, key metrics and mistakes to avoid."
       : "Apprenez à calculer et mesurer le ROI de vos investissements en marketing digital. Google Analytics 4, attribution, métriques clés et erreurs à éviter.",

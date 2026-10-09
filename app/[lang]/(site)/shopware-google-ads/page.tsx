@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Google Ads for Shopware: Campaigns That Actually Sell"
-      : "Google Ads pour Shopware : des campagnes qui vendent vraiment",
+      ? "Google Ads for Shopware: Campaigns That Sell"
+      : "Campagnes Google Ads pour Shopware",
     description: isEn
       ? "How to set up Google Ads for your Shopware store: conversion tracking, Merchant Center connection, Performance Max, Shopping and ROAS optimisation."
       : "Comment configurer Google Ads pour votre boutique Shopware : suivi des conversions, connexion au Merchant Center, Performance Max, Shopping et optimisation du ROAS.",
@@ -94,8 +94,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "Google Ads for Shopware: Campaigns That Actually Sell"
-            : "Google Ads pour Shopware : des campagnes qui vendent vraiment"}
+            ? "Google Ads for Shopware: Campaigns That Sell"
+            : "Campagnes Google Ads pour Shopware"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

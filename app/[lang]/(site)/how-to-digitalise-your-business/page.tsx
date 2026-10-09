@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "How to Digitalise Your Business — Practical Guide" : "Comment digitaliser votre entreprise — Guide pratique",
+    title: isEn ? "How to Digitalise Your Business: Guide" : "Comment digitaliser votre entreprise",
     description: isEn ? "Practical guide to digitalise your business step by step. Tools, strategy and priorities to take your business online without complications." : "Guide pratique pour digitaliser votre entreprise étape par étape. Outils, stratégie et priorités pour mettre votre entreprise en ligne sans complications.",
     alternates: alternatesFor(`/${lang}/how-to-digitalise-your-business/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-digitalise-your-business/`,

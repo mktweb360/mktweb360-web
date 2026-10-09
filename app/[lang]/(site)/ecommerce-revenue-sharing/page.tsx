@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Ecommerce with Revenue Sharing — Hybrid Model"
-      : "Ecommerce avec Participation aux Résultats — Modèle Hybride",
+      : "Ecommerce avec participation aux résultats",
     description: isEn
       ? "Hybrid ecommerce model: we build your entire digital infrastructure and share in the success when you surpass agreed targets. Fixed setup + monthly management + results bonus. No commission per sale."
       : "Modèle hybride d'ecommerce : nous construisons toute votre infrastructure digitale et participons au succès quand vous dépassez les objectifs définis. Setup fixe + gestion mensuelle + bonus résultats. Sans commission par vente.",

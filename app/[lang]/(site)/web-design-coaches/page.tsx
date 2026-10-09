@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Web Design for Coaches and Consultants"
-      : "Création de Site Web pour Coachs et Consultants",
+      : "Site web pour coachs et consultants",
     description: isEn
       ? "Professional web design for coaches, consultants and trainers. A website that builds authority, captures leads and converts visitors into clients. No commission fees."
       : "Création de site web pour coachs, consultants et formateurs. Un site qui renforce votre autorité, capte des leads et convertit les visiteurs en clients. Sans commission.",

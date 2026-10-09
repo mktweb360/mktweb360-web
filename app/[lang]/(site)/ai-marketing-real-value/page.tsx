@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "AI Applied to Marketing: Where It Delivers Real Value"
-      : "IA appliquée au marketing : où elle apporte une vraie valeur",
+      ? "AI Applied to Marketing: Where It Adds Value"
+      : "IA appliquée au marketing : sa vraie valeur",
     description: isEn
       ? "Discover where AI applied to marketing delivers real value, which uses to prioritise, and where there is still too much hype."
       : "Découvrez où l'IA appliquée au marketing apporte une vraie valeur, quels usages prioriser et où il y a encore trop de bruit.",

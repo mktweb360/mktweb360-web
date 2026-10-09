@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Digital Audit for Businesses — Complete Digital Diagnosis"
-      : "Audit Digital pour Entreprises — Diagnostic Numérique Complet",
+      ? "Digital Audit for Businesses: Full Diagnosis"
+      : "Audit digital : diagnostic numérique complet",
     description: isEn
       ? "Complete digital audit for businesses. SEO, speed, competition and tracking analysis with a detailed report and prioritised action plan."
       : "Audit digital complet pour entreprises. Analyse SEO, vitesse, concurrence et tracking avec rapport détaillé et plan d'action priorisé.",

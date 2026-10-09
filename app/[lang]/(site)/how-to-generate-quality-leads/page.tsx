@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "How to Generate Quality Leads for Your SME"
-      : "Comment générer des leads de qualité pour votre PME",
+      : "Générer des leads de qualité pour votre PME",
     description: isEn
       ? "How to generate quality leads for your SME by improving message, segmentation, channels, website and sales process."
       : "Comment générer des leads de qualité pour votre PME en améliorant votre message, segmentation, canaux, site web et processus commercial.",

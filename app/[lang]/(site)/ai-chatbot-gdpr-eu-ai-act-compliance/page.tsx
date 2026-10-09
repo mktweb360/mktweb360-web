@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "AI Chatbot and Legal Compliance: GDPR, EU AI Act and What Changes in August 2026"
-      : "Chatbot IA et conformité légale : RGPD, AI Act européen et ce qui change en août 2026",
+      ? "AI Chatbot Compliance: GDPR and EU AI Act"
+      : "Chatbot IA et conformité : RGPD et AI Act",
     description: isEn
       ? "In August 2026 the main AI Act obligations for chatbots come into force. What you need to do to comply with GDPR and the EU AI Act, and why compliance is a competitive advantage."
       : "En août 2026 entrent en vigueur les principales obligations de l'AI Act pour les chatbots. Ce que vous devez faire pour respecter le RGPD et l'AI Act européen, et pourquoi la conformité est un avantage concurrentiel.",
@@ -86,8 +86,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "AI Chatbot and Legal Compliance: GDPR, EU AI Act and What Changes in August 2026"
-            : "Chatbot IA et conformité légale : RGPD, AI Act européen et ce qui change en août 2026"}
+            ? "AI Chatbot Compliance: GDPR and EU AI Act"
+            : "Chatbot IA et conformité : RGPD et AI Act"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

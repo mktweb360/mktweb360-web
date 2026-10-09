@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Freelancer Social Security Contributions in Spain 2026: Full Guide to Brackets and Changes"
-      : "Cotisations Sociales des Indépendants en Espagne 2026 : Guide Complet des Tranches et Changements",
+      ? "Freelancer Social Security in Spain 2026"
+      : "Cotisations des indépendants en Espagne 2026",
     description: isEn
       ? "Spain's self-employed social security contributions for 2026 remain equal to 2025 by government extension, except the MEI which rises to 0.9%. Full bracket table, the €80 flat rate and how to change your contribution base up to 6 times per year."
       : "Les cotisations des indépendants en 2026 restent identiques à 2025 par prorogation du gouvernement, sauf le MEI qui monte à 0,9 %. Tableau complet des tranches, le forfait à 80 € et comment changer votre base jusqu'à 6 fois par an.",

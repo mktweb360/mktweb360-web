@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "What Is GEO (Generative Engine Optimization)?"
-      : "Qu'est-ce que le GEO (Generative Engine Optimization) ?",
+      : "Le GEO (Generative Engine Optimization)",
     description: isEn
       ? "GEO: what it is, how it works and why optimising your presence to appear in ChatGPT, Perplexity and Gemini is the new frontier of SEO."
       : "GEO : qu'est-ce que c'est, comment ça fonctionne et pourquoi optimiser votre présence pour apparaître dans ChatGPT, Perplexity et Gemini est la nouvelle frontière du SEO.",

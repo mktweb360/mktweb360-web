@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Digital Marketing Agency Spain — SEO, Google Ads & Web Design for Foreign Companies"
-      : "Agence Marketing Digital Espagne — SEO, Google Ads & Sites Web pour Entreprises Étrangères",
+      ? "Digital Marketing Agency Spain: SEO, Ads, Web"
+      : "Agence marketing digital Espagne : SEO et web",
     description: isEn
       ? "English-speaking digital marketing agency based in Spain. We help French and British companies operating in Spain grow online: SEO, Google Ads, GEO, web design. National coverage."
       : "Agence de marketing digital en Espagne parlant français. Nous aidons les entreprises françaises et britanniques opérant en Espagne à croître en ligne : SEO, Google Ads, GEO, création de sites. Couverture nationale.",

@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Web Design for Clinics and Health Centres"
-      : "Création de Site Web pour Cliniques et Centres de Santé",
+      : "Création de site web pour cliniques",
     description: isEn
       ? "Professional web design for clinics, medical and health centres. Optimised for local SEO and patient acquisition. Physiotherapy, psychology, aesthetics and more."
       : "Création de site web pour cliniques, centres médicaux et de santé. Optimisé pour le référencement local et l'acquisition de patients. Kinésithérapie, psychologie, esthétique et plus.",

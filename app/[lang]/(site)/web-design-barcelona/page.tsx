@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Web Design in Barcelona: A Guide to Hiring the Right Agency"
-      : "Création de Site Web à Barcelone : Guide pour Bien Choisir",
+      ? "Web Design in Barcelona: Hiring an Agency"
+      : "Création de site web à Barcelone : guide",
     description: isEn
       ? "Guide to hiring web design in Barcelona. Indicative pricing, what a professional website must include, how to compare agencies and mistakes that cost you clients."
       : "Guide pour faire appel à une agence web à Barcelone. Prix indicatifs, ce que doit inclure un site professionnel, comment comparer les agences et les erreurs à éviter.",

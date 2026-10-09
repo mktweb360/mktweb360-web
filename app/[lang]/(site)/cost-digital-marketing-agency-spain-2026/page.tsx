@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How Much Does a Digital Marketing Agency Cost in Spain in 2026?"
-      : "Combien Coûte une Agence de Marketing Digital en Espagne en 2026 ?",
+      ? "Digital Marketing Agency Cost in Spain 2026"
+      : "Coût d'une agence marketing en Espagne 2026",
     description: isEn
       ? "Real prices for digital marketing agencies in Spain 2026: SEO, Google Ads and social media management. What each price range includes and how to choose without making mistakes."
       : "Prix réels des agences de marketing digital en Espagne 2026 : SEO, Google Ads et gestion des réseaux sociaux. Ce qu'inclut chaque gamme de prix et comment ne pas se tromper dans le choix.",

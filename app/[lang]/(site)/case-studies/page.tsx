@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Case Studies in Digital Marketing and Web Design"
-      : "Études de Cas en Marketing Digital et Design Web",
+      ? "Case Studies: Digital Marketing & Web Design"
+      : "Études de cas en marketing digital et web",
     description: isEn
       ? "Real projects and concrete results. Mkt Web 360 case studies in SEO, web design and digital marketing for businesses across different sectors."
       : "Projets réels et résultats concrets. Études de cas de Mkt Web 360 en SEO, design web et marketing digital pour des entreprises de différents secteurs.",

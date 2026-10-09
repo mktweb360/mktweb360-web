@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Brandformance: How to Unite Brand and Performance Marketing"
-      : "Brandformance : comment unir marque et performance pour mieux croître",
+      ? "Brandformance: Uniting Brand and Performance"
+      : "Brandformance : unir marque et performance",
     description: isEn
       ? "Brandformance integrates branding and performance marketing into one coherent strategy. Why separating them is a costly mistake — and how combining them multiplies results."
       : "Le brandformance intègre la marque et la performance dans une seule stratégie. Pourquoi les séparer est une erreur coûteuse — et comment les combiner multiplie vos résultats.",
@@ -90,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn
               ? "Brandformance: how to unite brand and performance marketing to grow better"
-              : "Brandformance : comment unir marque et performance pour mieux croître"}
+              : "Brandformance : unir marque et performance"}
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             {isEn

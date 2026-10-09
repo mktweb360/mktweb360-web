@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "LinkedIn for SMEs: Practical Guide to Generating Leads in 2026"
-      : "LinkedIn pour les PME : Guide Pratique pour Générer des Leads en 2026",
+      ? "LinkedIn for SMEs: Generating Leads in 2026"
+      : "LinkedIn pour PME : générer des leads en 2026",
     description: isEn
       ? "LinkedIn has changed more in 2026 than in the previous five years. New algorithm, video as the dominant format, Employee Generated Content and social selling. How to use it if you run an SME."
       : "LinkedIn a plus changé en 2026 que lors des cinq années précédentes. Nouvel algorithme, vidéo comme format dominant, Employee Generated Content et social selling. Comment en tirer parti si vous êtes une PME.",

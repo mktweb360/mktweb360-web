@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Choose the Right Chatbot for Your Business: A Complete Checklist for 2026"
-      : "Comment choisir le bon chatbot pour votre entreprise : checklist complète pour 2026",
+      ? "How to Choose a Chatbot: 2026 Checklist"
+      : "Choisir le bon chatbot : checklist 2026",
     description: isEn
       ? "Before choosing a chatbot for your business, there are 10 questions you should answer. This checklist helps you avoid the most common mistakes and choose the solution that genuinely fits what you need."
       : "Avant de choisir un chatbot pour votre entreprise, il y a 10 questions auxquelles vous devez répondre. Cette checklist vous aide à éviter les erreurs les plus courantes et à choisir la solution qui correspond vraiment à vos besoins.",
@@ -86,8 +86,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "How to Choose the Right Chatbot for Your Business: A Complete Checklist for 2026"
-            : "Comment choisir le bon chatbot pour votre entreprise : checklist complète pour 2026"}
+            ? "How to Choose a Chatbot: 2026 Checklist"
+            : "Choisir le bon chatbot : checklist 2026"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

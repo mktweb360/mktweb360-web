@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How Much Does a Business Chatbot Cost in 2026: A Guide to Real Prices"
-      : "Combien coûte un chatbot pour entreprise en 2026 : guide des prix réels",
+      ? "How Much Does a Chatbot Cost in 2026"
+      : "Combien coûte un chatbot d'entreprise en 2026",
     description: isEn
       ? "Business chatbot prices range from free to thousands per month. A guide to real prices in 2026: what market leaders charge, what each tier includes and when the investment pays off."
       : "Les prix des chatbots pour entreprises vont de gratuit à des milliers par mois. Guide des prix réels en 2026 : ce que facturent les leaders du marché, ce qu'inclut chaque niveau et quand l'investissement est rentable.",
@@ -86,8 +86,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "How Much Does a Business Chatbot Cost in 2026: A Guide to Real Prices"
-            : "Combien coûte un chatbot pour entreprise en 2026 : guide des prix réels"}
+            ? "How Much Does a Chatbot Cost in 2026"
+            : "Combien coûte un chatbot d'entreprise en 2026"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

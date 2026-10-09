@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "GEO for SMEs: How to Appear in AI Responses Without Being a Big Brand"
-      : "GEO pour les PME : comment apparaître dans les réponses IA sans être une grande marque",
+      ? "GEO for SMEs: Appear in AI Responses"
+      : "GEO pour les PME : apparaître dans l'IA",
     description: isEn
       ? "SMEs have a real advantage in GEO: niche specificity. A practical guide for any small business to appear in ChatGPT, Gemini and Perplexity responses."
       : "Les PME ont un véritable avantage en GEO : la spécificité de niche. Guide pratique pour que n'importe quelle petite entreprise apparaisse dans les réponses de ChatGPT, Gemini et Perplexity.",
@@ -86,8 +86,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "GEO for SMEs: How to Appear in AI Responses Without Being a Big Brand"
-            : "GEO pour les PME : comment apparaître dans les réponses IA sans être une grande marque"}
+            ? "GEO for SMEs: Appear in AI Responses"
+            : "GEO pour les PME : apparaître dans l'IA"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

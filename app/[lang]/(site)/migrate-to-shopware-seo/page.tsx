@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Migrating to Shopware from PrestaShop or WooCommerce Without Losing SEO"
-      : "Migrer vers Shopware depuis PrestaShop ou WooCommerce sans perdre le SEO",
+      ? "Migrating to Shopware Without Losing SEO"
+      : "Migrer vers Shopware sans perdre le SEO",
     description: isEn
       ? "How to migrate your store to Shopware without losing rankings: URL audit, 301 redirect map, launch protocol and post-migration monitoring."
       : "Comment migrer votre boutique vers Shopware sans perdre le positionnement : audit des URLs, carte de redirections 301, protocole de lancement et suivi post-migration.",
@@ -94,8 +94,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "Migrating to Shopware from PrestaShop or WooCommerce Without Losing SEO"
-            : "Migrer vers Shopware depuis PrestaShop ou WooCommerce sans perdre le SEO"}
+            ? "Migrating to Shopware Without Losing SEO"
+            : "Migrer vers Shopware sans perdre le SEO"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

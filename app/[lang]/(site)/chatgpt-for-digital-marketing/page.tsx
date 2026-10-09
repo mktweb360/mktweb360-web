@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "How to Use ChatGPT for Digital Marketing"
-      : "Comment utiliser ChatGPT pour le marketing digital",
+      : "Comment utiliser ChatGPT en marketing digital",
     description: isEn
       ? "How to use ChatGPT for SEO content, Google Ads, social media and email marketing without losing quality."
       : "Comment utiliser ChatGPT pour le contenu SEO, Google Ads, réseaux sociaux et email marketing sans perdre en qualité.",

@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Write Content That Doesn't Sound Like AI"
-      : "Comment écrire du contenu qui ne ressemble pas à l'IA",
+      ? "Writing Content That Doesn't Sound Like AI"
+      : "Écrire du contenu qui ne ressemble pas à l'IA",
     description: isEn
       ? "AI-generated content without editing doesn't convert and can hurt your Google rankings. Practical techniques to create human, authentic and useful texts — even when using AI tools."
       : "Le contenu généré par IA sans édition ne convertit pas et peut nuire à votre classement Google. Techniques pratiques pour créer des textes humains, authentiques et utiles — même avec des outils IA.",
@@ -99,7 +99,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
           <Image
             src="/og-como-escribir-contenido-que-no-suene-a-ia.jpg"
-            alt={isEn ? "How to write content that doesn't sound like AI" : "Comment écrire du contenu qui ne ressemble pas à l'IA"}
+            alt={isEn ? "How to write content that doesn't sound like AI" : "Écrire du contenu qui ne ressemble pas à l'IA"}
             width={1200}
             height={630}
             className="w-full rounded-2xl mt-6"

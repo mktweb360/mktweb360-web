@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "How to Import Products to WooCommerce Easily"
-      : "Comment importer des produits dans WooCommerce facilement",
+      : "Importer des produits dans WooCommerce",
     description: isEn
       ? "Import products to WooCommerce from CSV, Excel, Shopify or PrestaShop. Step-by-step guide to avoid errors."
       : "Importez des produits dans WooCommerce depuis CSV, Excel, Shopify ou PrestaShop. Guide étape par étape pour éviter les erreurs.",

@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Web Design for Dentists and Dental Clinics"
-      : "Création de Site Web pour Dentistes et Cliniques Dentaires",
+      : "Création de site web pour dentistes",
     description: isEn
       ? "Professional web design for dentists and dental clinics. Optimised for local SEO, Google Maps and new patient acquisition. No commission fees."
       : "Création de site web professionnel pour dentistes et cliniques dentaires. Optimisé pour le référencement local, Google Maps et l'acquisition de nouveaux patients. Sans commission.",

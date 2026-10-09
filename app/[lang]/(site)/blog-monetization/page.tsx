@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Monetisation Blog — Passive Income with AdSense and Affiliates"
-      : "Blog de Monétisation — Revenus Passifs avec AdSense et Affiliés",
+      ? "Blog Monetisation: AdSense and Affiliates"
+      : "Monétisation de blog : AdSense et affiliation",
     description: isEn
       ? "We build your niche blog optimised to generate passive income with AdSense and affiliate marketing. Complete setup from €990 with 15 SEO articles, monetisation configuration and training."
       : "Nous créons votre blog de niche optimisé pour générer des revenus passifs avec AdSense et le marketing d'affiliation. Setup complet à partir de 990€ avec 15 articles SEO, configuration de la monétisation et formation.",

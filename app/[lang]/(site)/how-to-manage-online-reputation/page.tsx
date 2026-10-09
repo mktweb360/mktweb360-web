@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Manage Your Company's Online Reputation: Practical Guide 2026"
-      : "Comment gérer la réputation en ligne de votre entreprise : guide pratique 2026",
+      ? "How to Manage Your Online Reputation in 2026"
+      : "Gérer votre réputation en ligne : guide 2026",
     description: isEn
       ? "Online reputation is built or destroyed in public. Learn how to manage it strategically: reviews, mentions, responses and crisis prevention."
       : "La réputation en ligne se construit ou se détruit en public. Découvrez comment la gérer avec méthode : avis, mentions, réponses et prévention des crises.",
@@ -95,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to manage your company's online reputation: practical guide 2026"
-            : "Comment gérer la réputation en ligne de votre entreprise : guide pratique 2026"}
+            : "Gérer votre réputation en ligne : guide 2026"}
         </h1>
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn

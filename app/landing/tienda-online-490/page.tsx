@@ -3,7 +3,7 @@ import Image from "next/image";
 import { TiendaOnlineForm } from "@/components/TiendaOnlineForm";
 
 export const metadata: Metadata = {
-  title: "Tienda Online Profesional desde 490€ — Sin Comisiones",
+  title: "Tienda online desde 490 € sin comisiones",
   description: "Crea tu tienda online profesional desde 490€. Sin comisiones por venta, sin licencias mensuales. Diseño 100% personalizado. Solo 5 plazas.",
   alternates: { canonical: "https://www.mktweb360.com/landing/tienda-online-490/" },
   robots: { index: false, follow: false },

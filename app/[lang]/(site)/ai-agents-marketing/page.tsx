@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "AI Agents for Marketing: What They Are and How SMEs Can Use Them"
-      : "Agents IA pour le marketing : ce qu'ils sont et comment les PME peuvent les utiliser",
+      ? "AI Agents for Marketing: Uses for SMEs"
+      : "Agents IA pour le marketing : usages en PME",
     description: isEn
       ? "AI agents are no longer science fiction. In 2026, accessible tools let any SME automate marketing tasks with agents that work autonomously. Practical guide."
       : "Les agents IA ne sont plus de la science-fiction. En 2026, des outils accessibles permettent à n'importe quelle PME d'automatiser des tâches marketing avec des agents qui travaillent de façon autonome. Guide pratique.",

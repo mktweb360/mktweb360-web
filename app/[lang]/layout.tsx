@@ -19,7 +19,7 @@ export async function generateMetadata({
 
   const titles: Record<string, string> = {
     en: "Mkt Web 360 — Digital Marketing Agency | Spain",
-    fr: "Mkt Web 360 — Agence de Marketing Digital | Espagne",
+    fr: "Agence de marketing digital en Espagne",
   };
 
   const descriptions: Record<string, string> = {

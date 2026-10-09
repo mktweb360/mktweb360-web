@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Shopware CRO: How to Optimise Your Store's Conversion Rate"
-      : "CRO Shopware : comment optimiser le taux de conversion de votre boutique",
+      ? "Shopware CRO: Optimise Your Conversion Rate"
+      : "CRO Shopware : optimiser votre conversion",
     description: isEn
       ? "Boost your Shopware store's conversion rate: key GA4 events, the 5 real causes of cart abandonment, and product page and checkout optimisation."
       : "Augmentez le taux de conversion de votre boutique Shopware : événements GA4 essentiels, les 5 vraies causes d'abandon de panier et optimisation des fiches produit et du checkout.",
@@ -94,8 +94,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "Shopware CRO: How to Optimise Your Store's Conversion Rate"
-            : "CRO Shopware : comment optimiser le taux de conversion de votre boutique"}
+            ? "Shopware CRO: Optimise Your Conversion Rate"
+            : "CRO Shopware : optimiser votre conversion"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

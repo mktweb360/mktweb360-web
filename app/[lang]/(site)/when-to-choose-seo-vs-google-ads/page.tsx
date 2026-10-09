@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "When to Choose SEO vs Google Ads: A Practical Decision Guide"
-      : "Quand choisir le SEO plutôt que Google Ads : guide de décision pratique",
+      ? "When to Choose SEO vs Google Ads"
+      : "Quand choisir le SEO plutôt que Google Ads",
     description: isEn
       ? "How to decide between SEO and Google Ads based on your business, budget, urgency and time horizon. With real examples and a practical decision matrix."
       : "Comment décider entre SEO et Google Ads selon votre entreprise, budget, urgence et horizon temporel. Avec des exemples réels et une matrice de décision pratique.",

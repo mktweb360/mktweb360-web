@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Web Analytics for Businesses — Data-Driven Decisions"
-      : "Analytique Web pour Entreprises — Décisions Basées sur les Données",
+      ? "Web Analytics for Data-Driven Decisions"
+      : "Analytique web : décider avec les données",
     description: isEn
       ? "Professional web analytics service. GA4, GTM, business dashboards and conversion tracking. Make decisions based on real data."
       : "Service d'analytique web professionnel. GA4, GTM, tableaux de bord métier et suivi des conversions. Prenez des décisions basées sur des données réelles.",
