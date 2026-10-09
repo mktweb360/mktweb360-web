@@ -15,6 +15,12 @@ interface UtmData {
 interface ContactFormProps {
   formType?: string;
   lang?: string;
+  /** La web pasa a ser obligatoria (p. ej. auditoría gratuita). */
+  websiteRequired?: boolean;
+  /** Placeholder propio del mensaje (solo ES). */
+  messagePlaceholder?: string;
+  /** Texto del botón (solo ES). */
+  submitLabel?: string;
 }
 
 const T = {
@@ -77,7 +83,7 @@ const T = {
   },
 } as const;
 
-export function ContactForm({ formType = "contacto" }: ContactFormProps) {
+export function ContactForm({ formType = "contacto", websiteRequired = false, messagePlaceholder, submitLabel }: ContactFormProps) {
   const pathname = usePathname();
   const detectedLang = pathname?.startsWith("/en") ? "en" : pathname?.startsWith("/fr") ? "fr" : "es";
   const t = T[detectedLang];
@@ -168,13 +174,13 @@ export function ContactForm({ formType = "contacto" }: ContactFormProps) {
           <input name="phone" type="tel" className={INPUT} placeholder={t.phonePh} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">{t.website}</label>
-          <input name="website" type="url" className={INPUT} placeholder={t.websitePh} />
+          <label className="block text-sm font-medium text-gray-700 mb-1">{websiteRequired && detectedLang === "es" ? "Web que quieres auditar" : t.website}</label>
+          <input name="website" type="url" required={websiteRequired} className={INPUT} placeholder={t.websitePh} />
         </div>
       </div>
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">{t.message} *</label>
-        <textarea name="message" required rows={5} className={INPUT} placeholder={t.messagePh} />
+        <textarea name="message" required rows={5} className={INPUT} placeholder={detectedLang === "es" && messagePlaceholder ? messagePlaceholder : t.messagePh} />
       </div>
       <div className="flex items-start gap-3">
         <input type="checkbox" name="gdpr" id="gdpr" required className="mt-1 h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-400" />
@@ -191,7 +197,7 @@ export function ContactForm({ formType = "contacto" }: ContactFormProps) {
         disabled={status === "sending"}
         className="bg-accent-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors disabled:opacity-60"
       >
-        {status === "sending" ? t.sending : t.send}
+        {status === "sending" ? t.sending : detectedLang === "es" && submitLabel ? submitLabel : t.send}
       </button>
       {status === "ok" && (
         <p className="text-emerald-600 font-medium">{t.ok}</p>
