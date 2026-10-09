@@ -28,6 +28,7 @@
 - Chatbot Empresarial IA: Asistente conversacional conectado a datos reales del negocio (web, PDF, catálogo, CRM, stock). Plataforma gestionada con 4 niveles: FAQs/web → recuperación de documentos → acciones (reservas/pedidos/CRM) → recomendación. Cumplimiento RGPD + AI Act. Setup 300–500€ + 149–299€/mes.
 - [Auditoría Digital](https://www.mktweb360.com/auditoria-digital/)
 - [Consultor SEO](https://www.mktweb360.com/consultor-seo/): consultoría SEO con auditoría técnica, estrategia de keywords y arquitectura, plan priorizado y acompañamiento con datos de Search Console.
+- [Precios SEO](https://www.mktweb360.com/precios-seo/): tarifas SEO publicadas (349 €/mes + IVA SEO + GEO + GBP; web + 6 meses de SEO 999 € + IVA; consultoría a medida) y qué hace variar el precio.
 
 ## Ofertas activas
 - [SEO + GEO + Google Business Profile — 349 €/mes + IVA](https://www.mktweb360.com/oferta-seo-geo-gbp/) (posicionamiento en Google, visibilidad en asistentes de IA y ficha de Google Maps en un solo servicio mensual)

@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/5-factores-web-autonomos-freelance/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/seo-local/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/consultor-seo/", priority: 0.9, changeFrequency: "monthly" as const },
+    { url: "/precios-seo/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/marketing-shopware/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/geo-posicionamiento-ia-chatgpt-empresas-espana/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/cuanto-cuesta-agencia-marketing-digital-espana-2026/", priority: 0.8, changeFrequency: "monthly" as const },
