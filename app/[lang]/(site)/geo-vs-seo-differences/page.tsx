@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "GEO vs SEO: Key Differences and How to Combine Both Strategies"
-      : "GEO vs SEO : Différences Clés et Comment Combiner les Deux Stratégies",
+      ? "GEO vs SEO: Differences and How to Combine"
+      : "GEO vs SEO : différences et comment combiner",
     description: isEn
       ? "What sets GEO (Generative Engine Optimization) apart from traditional SEO, why both matter, and how to integrate both strategies for maximum visibility in search engines and AI."
       : "Ce qui différencie le GEO (Generative Engine Optimization) du SEO traditionnel, pourquoi les deux comptent et comment intégrer les deux stratégies pour une visibilité maximale.",
@@ -39,8 +39,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: isEn
-      ? "GEO vs SEO: Key Differences and How to Combine Both Strategies"
-      : "GEO vs SEO : Différences Clés et Comment Combiner les Deux Stratégies",
+      ? "GEO vs SEO: Differences and How to Combine"
+      : "GEO vs SEO : différences et comment combiner",
     description: isEn
       ? "What sets GEO apart from traditional SEO, why both matter, and how to integrate both strategies for maximum visibility."
       : "Ce qui différencie le GEO du SEO traditionnel, pourquoi les deux comptent et comment intégrer les deux stratégies.",

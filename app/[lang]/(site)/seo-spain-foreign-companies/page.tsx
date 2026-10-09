@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "SEO in Spain for Foreign Companies — Complete Guide 2026"
-      : "SEO en Espagne pour Entreprises Étrangères — Guide Complet 2026",
+      ? "SEO in Spain for Foreign Companies 2026"
+      : "SEO en Espagne pour entreprises étrangères",
     description: isEn
       ? "How SEO works in Spain for French and British companies. Spanish search behaviour, local vs national strategy, and how to rank on Google.es without a physical office."
       : "Comment fonctionne le SEO en Espagne pour les entreprises françaises et britanniques. Comportement de recherche espagnol, stratégie locale vs nationale et comment se positionner sur Google.es.",
@@ -112,8 +112,8 @@ export default async function SeoSpainForeignCompaniesPage({
           />
           <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-4">
             {isEn
-              ? "SEO in Spain for Foreign Companies — Complete Guide 2026"
-              : "SEO en Espagne pour Entreprises Étrangères — Guide Complet 2026"}
+              ? "SEO in Spain for Foreign Companies 2026"
+              : "SEO en Espagne pour entreprises étrangères"}
           </h1>
           <p className="text-xl text-primary-200">
             {isEn

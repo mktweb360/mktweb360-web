@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "What Is a Business Chatbot and Why You Need One in 2026"
-      : "Qu'est-ce qu'un chatbot pour entreprises et pourquoi en avez-vous besoin en 2026",
+      ? "What Is a Business Chatbot? Why You Need One"
+      : "Qu'est-ce qu'un chatbot pour entreprises",
     description: isEn
       ? "A business chatbot is no longer technology reserved for large corporations. In 2026, SMEs that automate their customer service with AI reduce costs, capture more leads and sell more. Complete guide."
       : "Un chatbot d'entreprise n'est plus réservé aux grandes structures. En 2026, les PME qui automatisent leur service client avec l'IA réduisent leurs coûts, captent plus de leads et vendent plus. Guide complet.",
@@ -94,8 +94,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "What Is a Business Chatbot and Why You Need One in 2026"
-            : "Qu'est-ce qu'un chatbot pour entreprises et pourquoi en avez-vous besoin en 2026"}
+            ? "What Is a Business Chatbot? Why You Need One"
+            : "Qu'est-ce qu'un chatbot pour entreprises"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

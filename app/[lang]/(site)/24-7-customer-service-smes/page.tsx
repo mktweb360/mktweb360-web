@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "24/7 Customer Service for SMEs: How to Achieve It Without Hiring More Staff"
-      : "Service client 24h/24 pour PME : comment y parvenir sans recruter",
+      ? "24/7 Customer Service for SMEs Without Hiring"
+      : "Service client 24h/24 pour PME sans recruter",
     description: isEn
       ? "Large companies have offered 24/7 customer service for years. In 2026, any SME can do the same with an AI chatbot, without expanding headcount. Here is how it works and what it costs."
       : "Les grandes entreprises offrent un service client 24h/24 depuis des années. En 2026, toute PME peut faire de même avec un chatbot IA, sans augmenter ses effectifs. Voici comment cela fonctionne et ce que cela coûte.",
@@ -86,8 +86,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "24/7 Customer Service for SMEs: How to Achieve It Without Hiring More Staff"
-            : "Service client 24h/24 pour PME : comment y parvenir sans recruter"}
+            ? "24/7 Customer Service for SMEs Without Hiring"
+            : "Service client 24h/24 pour PME sans recruter"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

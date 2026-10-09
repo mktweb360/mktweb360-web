@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "What Is GEO and How to Appear in ChatGPT for Your Business"
-      : "Qu'est-ce que le GEO et comment apparaître dans ChatGPT pour votre entreprise",
+      ? "What Is GEO: Appear in ChatGPT for Business"
+      : "GEO : comment apparaître dans ChatGPT",
     description: isEn
       ? "GEO positions your business in ChatGPT and Perplexity. If AI does not mention you when someone asks about your sector, you are losing customers. Practical guide for businesses."
       : "Le GEO positionne votre entreprise dans ChatGPT et Perplexity. Si l'IA ne vous mentionne pas quand quelqu'un pose une question sur votre secteur, vous perdez des clients. Guide pratique pour les entreprises.",
@@ -94,8 +94,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "What Is GEO and How to Appear in ChatGPT for Your Business"
-            : "Qu'est-ce que le GEO et comment apparaître dans ChatGPT pour votre entreprise"}
+            ? "What Is GEO: Appear in ChatGPT for Business"
+            : "GEO : comment apparaître dans ChatGPT"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

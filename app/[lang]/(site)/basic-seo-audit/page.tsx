@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Do a Basic SEO Audit of Your Website in 2025"
-      : "Comment Faire un Audit SEO de Base de Votre Site en 2025",
+      ? "Basic SEO Audit: How to Audit Your Website"
+      : "Comment faire un audit SEO de base",
     description: isEn
       ? "Step-by-step guide to carrying out a basic SEO audit. Which tools to use, what errors to look for and how to prioritise improvements to increase organic traffic."
       : "Guide étape par étape pour réaliser un audit SEO de base. Quels outils utiliser, quelles erreurs chercher et comment prioriser les améliorations pour augmenter le trafic organique.",

@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "WhatsApp Business for Companies: Complete Setup and Strategy Guide 2026"
-      : "WhatsApp Business pour les Entreprises : Guide Complet de Configuration et Stratégie 2026",
+      ? "WhatsApp Business for Companies: 2026 Guide"
+      : "WhatsApp Business pour entreprises en 2026",
     description: isEn
       ? "How to use WhatsApp Business to attract and retain clients. Setup, automations, catalogue and strategy for businesses. Updated guide 2026."
       : "Comment utiliser WhatsApp Business pour attirer et fidéliser des clients. Configuration, automatisations, catalogue et stratégie pour les entreprises. Guide mis à jour 2026.",

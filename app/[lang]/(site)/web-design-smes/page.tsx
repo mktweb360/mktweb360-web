@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Web Design for SMEs — What Your Website Needs to Sell"
-      : "Design Web pour PME — Ce que Votre Site Doit Avoir pour Vendre",
+      ? "Web Design for SMEs: What Your Site Needs"
+      : "Design web pour PME : l'essentiel pour vendre",
     description: isEn
       ? "Web design guide for SMEs. Which elements are essential, which mistakes to avoid and how to make your website generate clients consistently."
       : "Guide de design web pour les PME. Quels éléments sont indispensables, quelles erreurs éviter et comment faire en sorte que votre site génère des clients de façon constante.",

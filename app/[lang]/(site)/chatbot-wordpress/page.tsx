@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Chatbot for WordPress: How to Install It, What to Avoid and What to Expect"
-      : "Chatbot pour WordPress : comment l'installer, ce qu'il faut éviter et ce qu'il faut attendre",
+      ? "Chatbot for WordPress: Installation Guide"
+      : "Chatbot pour WordPress : guide d'installation",
     description: isEn
       ? "WordPress has dozens of chatbot plugins. Most are not worth the time it takes to test them. An honest guide on what genuinely works and how to implement a useful chatbot on a WordPress website in 2026."
       : "WordPress dispose de dizaines de plugins de chatbot. La plupart ne valent pas le temps qu'il faut pour les tester. Un guide honnête sur ce qui fonctionne vraiment et comment implémenter un chatbot utile sur un site WordPress en 2026.",
@@ -86,8 +86,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "Chatbot for WordPress: How to Install It, What to Avoid and What to Expect"
-            : "Chatbot pour WordPress : comment l'installer, ce qu'il faut éviter et ce qu'il faut attendre"}
+            ? "Chatbot for WordPress: Installation Guide"
+            : "Chatbot pour WordPress : guide d'installation"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

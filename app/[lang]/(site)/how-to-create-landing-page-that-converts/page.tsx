@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Create a Landing Page That Converts — Practical Guide"
-      : "Comment créer une landing page qui convertit — guide pratique",
+      ? "Landing Page That Converts: How to Create One"
+      : "Créer une landing page qui convertit",
     description: isEn
       ? "Learn how to create landing pages that turn visitors into leads and customers. Structure, copy, CTAs and mistakes to avoid. Guide with real examples."
       : "Apprenez à créer des landing pages qui transforment les visites en leads et clients. Structure, copywriting, CTA et erreurs à éviter. Guide avec exemples réels.",

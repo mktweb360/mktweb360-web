@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Google Keyword Planner: Complete Step-by-Step Guide 2026"
-      : "Planificateur de mots-clés Google Ads : guide complet 2026",
+      ? "Google Keyword Planner: Step-by-Step Guide"
+      : "Planificateur de mots-clés Google Ads : guide",
     description: isEn
       ? "Learn how to use Google Keyword Planner step by step. Find profitable keywords, analyse search volumes and build your strategy from scratch."
       : "Apprenez à utiliser le Planificateur de mots-clés Google étape par étape. Trouvez des mots-clés rentables, analysez les volumes et construisez votre stratégie depuis zéro.",

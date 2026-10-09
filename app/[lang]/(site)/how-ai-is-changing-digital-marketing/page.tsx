@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "How AI Is Changing Digital Marketing Forever"
-      : "Comment l'IA transforme le marketing digital pour toujours",
+      : "Comment l'IA transforme le marketing digital",
     description: isEn
       ? "AI is no longer a trend in marketing: it is the infrastructure. More than 70% of digital marketing interactions will be influenced by AI in 2026. What changes, what does not, and what you need to do."
       : "L'IA n'est plus une tendance en marketing : c'est l'infrastructure. Plus de 70 % des interactions de marketing digital seront influencées par l'IA en 2026. Ce qui change, ce qui ne change pas et ce que vous devez faire.",

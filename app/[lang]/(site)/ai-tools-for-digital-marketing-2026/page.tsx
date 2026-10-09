@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "AI Tools for Digital Marketing in 2026: The Ones That Actually Work"
-      : "Outils IA pour le Marketing Digital en 2026 : Ceux qui Fonctionnent Vraiment",
+      ? "AI Tools for Digital Marketing in 2026"
+      : "Outils IA pour le marketing digital en 2026",
     description: isEn
       ? "Not every AI marketing tool is worth the time it takes to learn. An honest analysis of the ones that deliver real value for SMEs and agencies in 2026."
       : "Tous les outils d'IA marketing ne méritent pas le temps qu'il faut pour les apprendre. Analyse honnête de ceux qui apportent une valeur réelle aux PME et agences en 2026.",

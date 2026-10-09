@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "SEO for Clinics and Healthcare Centres: How to Attract Patients on Google"
-      : "SEO pour les cliniques et centres de santé : comment attirer des patients sur Google",
+      ? "SEO for Clinics: Attract Patients on Google"
+      : "SEO pour cliniques : attirer des patients",
     description: isEn
       ? "74% of patients search Google before calling a clinic. Specific SEO for dental clinics, physiotherapy and healthcare centres. Attract more patients from the first month."
       : "74 % des patients cherchent sur Google avant d'appeler une clinique. SEO spécifique pour les cliniques dentaires, la kinésithérapie et les centres de santé. Attirez plus de patients dès le premier mois.",
@@ -95,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "SEO for clinics and healthcare centres: how to attract patients on Google"
-            : "SEO pour les cliniques et centres de santé : comment attirer des patients sur Google"}
+            : "SEO pour cliniques : attirer des patients"}
         </h1>
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn

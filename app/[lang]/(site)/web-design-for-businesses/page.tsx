@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Web Design for Businesses — Custom Solutions"
-      : "Création de Site Web pour Entreprises — Solutions Sur Mesure",
+      : "Création de site web sur mesure",
     description: isEn
       ? "Custom web design for medium and large businesses that need specific functionality: product catalogues, private areas, intranets, client portals and more."
       : "Création de sites web sur mesure pour les entreprises de taille moyenne et grande nécessitant des fonctionnalités spécifiques : catalogues de produits, espaces privés, intranets, portails clients et plus encore.",

@@ -9,13 +9,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isFr = lang === "fr";
   return {
-    title: isFr ? "Google Ads sans commission sur budget: pourquoi ça change tout" : "Google Ads with No Commission on Budget: Why It Changes Everything",
+    title: isFr ? "Google Ads sans commission sur le budget" : "Google Ads with No Commission on Budget",
     description: isFr ? "Ce que signifie qu'une agence ne facture pas de commission sur votre investissement Google Ads, combien vous économisez et comment évaluer le modèle qui vous convient." : "What it means when an agency charges no commission on your Google Ads spend, how much you save and how to evaluate the management model that suits you best.",
     alternates: alternatesFor(`/${lang}/${isFr ? "google-ads-sans-commission-agence-marketing" : "google-ads-no-commission-marketing-agency"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${isFr ? "google-ads-sans-commission-agence-marketing" : "google-ads-no-commission-marketing-agency"}/`,
     },
     openGraph: {
-      title: `${isFr ? "Google Ads sans commission sur budget: pourquoi ça change tout" : "Google Ads with No Commission on Budget: Why It Changes Everything"} | Mkt Web 360`,
+      title: `${isFr ? "Google Ads sans commission sur le budget" : "Google Ads with No Commission on Budget"} | Mkt Web 360`,
       description: isFr ? "Ce que signifie qu'une agence ne facture pas de commission sur votre investissement Google Ads, combien vous économisez et comment évaluer le modèle qui vous convient." : "What it means when an agency charges no commission on your Google Ads spend, how much you save and how to evaluate the management model that suits you best.",
       images: [{ url: "https://www.mktweb360.com/og-google-ads-sin-comision-agencia-marketing.jpg", width: 1200, height: 630 }],
       type: "article",
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isFr = lang === "fr";
-  const title = isFr ? "Google Ads sans commission sur budget: pourquoi ça change tout" : "Google Ads with No Commission on Budget: Why It Changes Everything";
+  const title = isFr ? "Google Ads sans commission sur le budget" : "Google Ads with No Commission on Budget";
   const desc = isFr ? "Ce que signifie qu'une agence ne facture pas de commission sur votre investissement Google Ads, combien vous économisez et comment évaluer le modèle qui vous convient." : "What it means when an agency charges no commission on your Google Ads spend, how much you save and how to evaluate the management model that suits you best.";
   const cat = "SEM";
   const faqs = [

@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Chatbot vs Live Chat: Real Differences and Which to Choose for Your Business"
-      : "Chatbot vs live chat : vraies différences et lequel choisir pour votre entreprise",
+      ? "Chatbot vs Live Chat: Which to Choose"
+      : "Chatbot vs live chat : lequel choisir",
     description: isEn
       ? "Chatbot or live chat? They are not mutually exclusive, but they are not the same thing either. A guide to the real differences, when each one is right, and why the correct combination beats choosing just one."
       : "Chatbot ou live chat ? Ils ne s'excluent pas mutuellement, mais ils ne sont pas non plus la même chose. Guide des vraies différences, quand chacun convient, et pourquoi la bonne combinaison est meilleure que d'en choisir un seul.",
@@ -86,8 +86,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "Chatbot vs Live Chat: Real Differences and Which to Choose for Your Business"
-            : "Chatbot vs live chat : vraies différences et lequel choisir pour votre entreprise"}
+            ? "Chatbot vs Live Chat: Which to Choose"
+            : "Chatbot vs live chat : lequel choisir"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

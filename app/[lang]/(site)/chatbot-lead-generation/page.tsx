@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "How to Use a Chatbot to Capture and Qualify Leads: A Practical Guide"
-      : "Comment utiliser un chatbot pour capter et qualifier des leads : guide pratique",
+      ? "Chatbot Lead Generation: Capture and Qualify"
+      : "Chatbot pour capter et qualifier des leads",
     description: isEn
       ? "A well-configured chatbot can capture leads 24/7, qualify them with strategic questions and pass them to the CRM with full context. Practical guide to implementing a chatbot lead capture system in 2026."
       : "Un chatbot bien configuré peut capter des leads 24h/24, les qualifier avec des questions stratégiques et les transmettre au CRM avec le contexte complet. Guide pratique pour mettre en place un système de captation de leads par chatbot en 2026.",
@@ -86,8 +86,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "How to Use a Chatbot to Capture and Qualify Leads: A Practical Guide"
-            : "Comment utiliser un chatbot pour capter et qualifier des leads : guide pratique"}
+            ? "Chatbot Lead Generation: Capture and Qualify"
+            : "Chatbot pour capter et qualifier des leads"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

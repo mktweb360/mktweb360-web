@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "WooCommerce vs Shopify: Which to Choose for Your Online Store in 2026"
-      : "WooCommerce vs Shopify : lequel choisir pour votre boutique en ligne en 2026",
+      ? "WooCommerce vs Shopify for Your Store in 2026"
+      : "WooCommerce vs Shopify : lequel choisir",
     description: isEn
       ? "WooCommerce is free with total control. Shopify is faster to launch but charges commissions. An honest comparison with real 3-year costs and a recommendation by business type."
       : "WooCommerce est gratuit avec un contrôle total. Shopify est plus rapide à lancer mais prélève des commissions. Comparaison honnête avec coûts réels sur 3 ans et recommandation par type d'activité.",
@@ -96,8 +96,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "WooCommerce vs Shopify: Which to Choose for Your Online Store in 2026"
-            : "WooCommerce vs Shopify : lequel choisir pour votre boutique en ligne en 2026"}
+            ? "WooCommerce vs Shopify for Your Store in 2026"
+            : "WooCommerce vs Shopify : lequel choisir"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

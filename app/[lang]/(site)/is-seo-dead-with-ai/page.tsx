@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Is SEO Dead With AI? The Honest Answer"
-      : "Le SEO est-il mort avec l'IA ? La réponse honnête",
+      : "Le SEO est-il mort avec l'IA ? Notre réponse",
     description: isEn
       ? "With ChatGPT and AI search engines on the rise, many wonder if SEO is still worth investing in. Here is the honest answer."
       : "Avec la montée de ChatGPT et des moteurs IA, beaucoup se demandent si le SEO vaut encore la peine. Voici la réponse honnête.",

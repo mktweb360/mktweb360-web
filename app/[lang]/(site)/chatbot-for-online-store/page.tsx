@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Chatbot for Online Stores: The Complete Guide to Selling More and Serving Better in 2026"
-      : "Chatbot pour boutique en ligne : le guide complet pour vendre plus et mieux servir en 2026",
+      ? "Chatbot for Online Stores: Sell More in 2026"
+      : "Chatbot pour boutique en ligne : vendre plus",
     description: isEn
       ? "A chatbot for your online store can handle enquiries 24/7, recover abandoned carts, answer product questions and manage order status. Complete guide with real cases for 2026."
       : "Un chatbot pour votre boutique en ligne peut traiter les demandes 24h/24, récupérer les paniers abandonnés, répondre aux questions produits et gérer le statut des commandes. Guide complet avec cas réels pour 2026.",
@@ -86,8 +86,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
-            ? "Chatbot for Online Stores: The Complete Guide to Selling More and Serving Better in 2026"
-            : "Chatbot pour boutique en ligne : le guide complet pour vendre plus et mieux servir en 2026"}
+            ? "Chatbot for Online Stores: Sell More in 2026"
+            : "Chatbot pour boutique en ligne : vendre plus"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

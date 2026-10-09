@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Professional Web Design for Businesses"
-      : "Création de Site Web Professionnel pour Entreprises",
+      : "Création de site web professionnel",
     description: isEn
       ? "Professional web design and development for businesses. Fast, optimised websites built to convert visitors into customers. React + Next.js. Nationwide service."
       : "Création et développement de sites web professionnels pour les entreprises. Sites rapides et optimisés, conçus pour convertir les visiteurs en clients.",

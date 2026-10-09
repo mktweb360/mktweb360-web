@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Digital Marketing for Freelancers in 2026: How to Get Clients Without Hiring an Agency"
-      : "Marketing Digital pour Indépendants en 2026 : Comment Obtenir des Clients Sans Agence",
+      ? "Digital Marketing for Freelancers in 2026"
+      : "Marketing digital pour indépendants en 2026",
     description: isEn
       ? "Freelancers have more tools than ever to get online clients on their own. Practical guide: local SEO, Google Business Profile, LinkedIn and content for freelancers in 2026."
       : "Les indépendants ont plus d'outils que jamais pour obtenir des clients en ligne par eux-mêmes. Guide pratique : SEO local, Google Business Profile, LinkedIn et contenu pour indépendants en 2026.",

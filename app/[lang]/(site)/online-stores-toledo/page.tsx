@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Online Stores in Toledo — How to Sell Beyond Your Province" : "Boutiques en Ligne à Tolède — Comment Vendre au-delà de votre Province",
+    title: isEn ? "Online Stores in Toledo: Sell Further Afield" : "Boutique en ligne à Tolède : vendre plus loin",
     description: isEn ? "Create your online store in Toledo and sell across all of Spain. Without commissions or monthly fees. Guide for Toledo businesses." : "Créez votre boutique en ligne à Tolède et vendez dans toute l'Espagne. Sans commissions ni frais mensuels. Guide pour les entreprises de Tolède.",
     alternates: alternatesFor(`/${lang}/online-stores-toledo/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/online-stores-toledo/`,

@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Local SEO Services — Get Found in Your Area"
-      : "Services de SEO Local — Soyez Trouvé dans Votre Zone",
+      : "Services de SEO local : soyez trouvé",
     description: isEn
       ? "Local SEO to attract clients from your area: Google Maps, Google Business Profile and reviews. Local positioning for businesses with or without a physical location."
       : "SEO local pour attirer des clients de votre zone : Google Maps, Google Business Profile et avis. Positionnement local pour les entreprises avec ou sans local physique.",

@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Digital Mistakes New Businesses Make and How to Avoid Them" : "Erreurs Digitales des Nouvelles Entreprises et Comment les Éviter",
+    title: isEn ? "Digital Mistakes New Businesses Make" : "Erreurs digitales des nouvelles entreprises",
     description: isEn ? "The most common digital mistakes new businesses make and how to avoid them from day one to save time and money." : "Les erreurs digitales les plus courantes des nouvelles entreprises et comment les éviter dès le premier jour pour économiser du temps et de l'argent.",
     alternates: alternatesFor(`/${lang}/digital-errors-new-business/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/digital-errors-new-business/`,

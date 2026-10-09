@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Email Marketing for SMEs: First Steps and Strategy Guide"
-      : "Email Marketing pour les PME : Guide des Premiers Pas et Stratégie",
+      ? "Email Marketing for SMEs: First Steps"
+      : "Email marketing pour les PME : premiers pas",
     description: isEn
       ? "Email marketing guide for SMEs. How to get started, which tools to use, how to build your list and design campaigns that convert. Real results."
       : "Guide d'email marketing pour les PME. Comment commencer, quels outils utiliser, comment construire votre liste et concevoir des campagnes qui convertissent. Résultats réels.",

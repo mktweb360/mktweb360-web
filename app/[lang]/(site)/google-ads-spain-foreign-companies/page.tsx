@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Google Ads in Spain for Foreign Companies — Setup, Costs & Strategy 2026"
-      : "Google Ads en Espagne pour Entreprises Étrangères — Configuration, Coûts & Stratégie 2026",
+      ? "Google Ads in Spain for Foreign Companies"
+      : "Google Ads Espagne : entreprises étrangères",
     description: isEn
       ? "How Google Ads works in Spain for French and British companies. Campaign setup, Spanish keyword bidding, costs, and how to avoid the most common mistakes foreign companies make."
       : "Comment fonctionne Google Ads en Espagne pour les entreprises françaises et britanniques. Configuration de campagne, enchères sur mots-clés espagnols, coûts et erreurs à éviter.",
@@ -113,8 +113,8 @@ export default async function GoogleAdsSpainPage({
           />
           <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-4">
             {isEn
-              ? "Google Ads in Spain for Foreign Companies — Setup, Costs & Strategy 2026"
-              : "Google Ads en Espagne pour Entreprises Étrangères — Configuration, Coûts & Stratégie 2026"}
+              ? "Google Ads in Spain for Foreign Companies"
+              : "Google Ads Espagne : entreprises étrangères"}
           </h1>
           <p className="text-xl text-primary-200">
             {isEn

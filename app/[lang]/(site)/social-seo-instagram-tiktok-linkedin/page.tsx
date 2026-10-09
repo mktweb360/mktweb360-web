@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Social SEO: Instagram, TikTok and LinkedIn as Search Engines in 2026"
-      : "SEO social : Instagram, TikTok et LinkedIn comme moteurs de recherche en 2026",
+      ? "Social SEO: Instagram, TikTok and LinkedIn"
+      : "SEO social : Instagram, TikTok et LinkedIn",
     description: isEn
       ? "40% of Gen Z searches on TikTok before Google. Social SEO optimises your presence on Instagram, TikTok and LinkedIn search engines. Platform-specific strategies for 2026."
       : "40% de la Gen Z cherche sur TikTok avant Google. Le SEO social optimise votre présence dans les moteurs de recherche d'Instagram, TikTok et LinkedIn. Stratégies par plateforme pour 2026.",
@@ -90,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn
               ? "Social SEO: Instagram, TikTok and LinkedIn as search engines in 2026"
-              : "SEO social : Instagram, TikTok et LinkedIn comme moteurs de recherche en 2026"}
+              : "SEO social : Instagram, TikTok et LinkedIn"}
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             {isEn

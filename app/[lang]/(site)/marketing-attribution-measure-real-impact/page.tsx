@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Marketing Attribution: How to Measure Real Impact in a Multi-Channel World"
-      : "Attribution marketing : comment mesurer l'impact réel dans un monde multicanal",
+      ? "Marketing Attribution: Measuring Real Impact"
+      : "Attribution marketing : mesurer l'impact réel",
     description: isEn
       ? "The last-click model distorts how your customers actually find you. A practical guide to attribution models for SMEs: what they are, which to use, and how to approximate attribution without enterprise tools."
       : "Le modèle dernier clic fausse la réalité de la façon dont vos clients vous trouvent. Guide pratique des modèles d'attribution pour PME : ce que c'est, lequel utiliser, et comment approximer l'attribution sans outils enterprise.",
@@ -90,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn
               ? "Marketing attribution: how to measure real impact in a multi-channel world"
-              : "Attribution marketing : comment mesurer l'impact réel dans un monde multicanal"}
+              : "Attribution marketing : mesurer l'impact réel"}
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
             {isEn

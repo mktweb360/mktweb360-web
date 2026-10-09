@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "SEO in the AI Era: How to Rank When Google Uses Gemini to Answer"
-      : "SEO à l'ère de l'IA : comment se positionner quand Google utilise Gemini pour répondre",
+      ? "SEO in the AI Era: Ranking with Google Gemini"
+      : "SEO à l'ère de l'IA et de Google Gemini",
     description: isEn
       ? "Google is no longer just a search engine. It is a generative response engine powered by Gemini. How to adapt your SEO strategy to keep capturing traffic when AI answers first."
       : "Google n'est plus seulement un moteur de recherche. C'est un moteur de réponses génératives propulsé par Gemini. Comment adapter votre stratégie SEO pour continuer à capter du trafic quand l'IA répond en premier.",

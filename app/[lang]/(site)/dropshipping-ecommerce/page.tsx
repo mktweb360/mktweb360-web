@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Dropshipping Ecommerce with Revenue Sharing"
-      : "Dropshipping et Ecommerce avec Participation aux Résultats",
+      : "Dropshipping avec participation aux résultats",
     description: isEn
       ? "We build and manage your dropshipping online store with a hybrid model: fixed setup + monthly management + profit sharing. No stock risk. Real strategy."
       : "Nous créons et gérons votre boutique en ligne dropshipping avec un modèle hybride : setup fixe + gestion mensuelle + participation aux bénéfices. Sans risque de stock. Avec une vraie stratégie.",

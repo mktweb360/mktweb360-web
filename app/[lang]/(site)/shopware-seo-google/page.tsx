@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn
       ? "Shopware SEO: How to Rank Your Store on Google"
-      : "SEO Shopware : comment positionner votre boutique sur Google",
+      : "SEO Shopware : positionner votre boutique",
     description: isEn
       ? "Technical SEO guide for Shopware 6: URLs, faceted navigation, product schema, Core Web Vitals and optimised product pages to rank your store on Google."
       : "Guide de SEO technique pour Shopware 6 : URLs, navigation à facettes, schéma produit, Core Web Vitals et fiches optimisées pour positionner votre boutique sur Google.",
@@ -95,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Shopware SEO: How to Rank Your Store on Google"
-            : "SEO Shopware : comment positionner votre boutique sur Google"}
+            : "SEO Shopware : positionner votre boutique"}
         </h1>
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">

@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Audiovisual Communication for Businesses — Corporate Video & Video Marketing"
-      : "Communication Audiovisuelle pour Entreprises — Vidéo Marketing",
+      ? "Audiovisual Communication: Corporate Video"
+      : "Communication audiovisuelle pour entreprises",
     description: isEn
       ? "Corporate video production, reels, ads, animated presentations and photography for businesses. Audiovisual content that communicates, connects and converts."
       : "Production de vidéo d'entreprise, reels, spots publicitaires, présentations animées et photographie pour les entreprises. Des pièces audiovisuelles qui communiquent, connectent et convertissent.",

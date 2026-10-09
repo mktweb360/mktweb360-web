@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isEn = lang === "en";
   return {
     title: isEn
-      ? "Why Appearing in ChatGPT, Perplexity and Gemini Matters More Than SEO in 2026"
-      : "Pourquoi Apparaître dans ChatGPT, Perplexity et Gemini Compte Plus que le SEO en 2026",
+      ? "Why ChatGPT Visibility Matters More Than SEO"
+      : "Pourquoi ChatGPT compte plus que le SEO",
     description: isEn
       ? "Millions of people no longer search on Google. They ask ChatGPT, Perplexity or Gemini. If your business doesn't appear in their responses, you're losing clients without knowing it. GEO guide 2026."
       : "Des millions de personnes ne cherchent plus sur Google. Ils demandent à ChatGPT, Perplexity ou Gemini. Si votre entreprise n'apparaît pas dans leurs réponses, vous perdez des clients sans le savoir. Guide GEO 2026.",
@@ -39,8 +39,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: isEn
-      ? "Why Appearing in ChatGPT, Perplexity and Gemini Matters More Than SEO in 2026"
-      : "Pourquoi Apparaître dans ChatGPT, Perplexity et Gemini Compte Plus que le SEO en 2026",
+      ? "Why ChatGPT Visibility Matters More Than SEO"
+      : "Pourquoi ChatGPT compte plus que le SEO",
     author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
     publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     datePublished: "2026-07-07",
