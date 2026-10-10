@@ -1,15 +1,17 @@
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "SEO in Toledo for Local Businesses" : "SEO à Tolède pour les entreprises locales",
-    description: isEn ? "How to appear on Google if you have a local business in Toledo. Local SEO guide with practical tips, local keywords and where to start." : "Comment apparaître sur Google si vous avez une entreprise locale à Tolède. Guide SEO local avec des conseils pratiques, des mots-clés locaux et par où commencer.",
+    // 09/10/2026: título informativo alineado con la ES («Cómo hacer SEO en Toledo: guía para negocios»)
+    title: isEn ? "How to Do SEO in Toledo: Business Guide" : "Faire du SEO à Tolède : guide pour entreprises",
+    description: isEn ? "How to appear on Google if you run a local business in Toledo: a local SEO guide with practical tips, local keywords and where to start first." : "Comment apparaître sur Google si vous avez une entreprise locale à Tolède. Guide SEO local : conseils pratiques, mots-clés locaux et par où commencer.",
     alternates: alternatesFor(`/${lang}/seo-toledo-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-toledo-guide/`,
     },
@@ -32,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "SEO in Toledo: how to appear on Google if you have a local business" : "SEO à Tolède : comment apparaître sur Google si vous avez une entreprise locale"}
         </h1>
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
-          {isEn ? "Toledo has one of Spain's most accessible local SEO environments. With the right strategy, a local business can appear at the top of Google results faster and at lower cost than in most Spanish cities." : "Tolède a l'un des environnements SEO locaux les plus accessibles d'Espagne. Avec la bonne stratégie, une entreprise locale peut apparaître en haut des résultats Google plus rapidement et à moindre coût que dans la plupart des villes espagnoles."}
+          {isEn ? "A practical guide for Toledo businesses: how local search works, what to do first and how to keep improving your visibility on Google and Google Maps." : "Un guide pratique pour les entreprises de Tolède : comment fonctionne la recherche locale, par quoi commencer et comment améliorer votre visibilité sur Google et Google Maps."}
         </p>
 
         <section className="mb-10">
@@ -43,7 +45,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "Local SEO is the set of techniques that improve your visibility in location-based searches — queries like 'dentist Toledo', 'electrician in Toledo' or 'restaurant near me' when the user is in Toledo. For most local businesses, these searches are the most valuable traffic because they come from people with immediate need and purchasing intent. Local SEO results appear in two places: the local pack (the map with 3 business listings) and organic results below it." : "Le SEO local est l'ensemble des techniques qui améliorent votre visibilité dans les recherches basées sur la localisation — des requêtes comme 'dentiste Tolède', 'électricien à Tolède' ou 'restaurant près de moi' quand l'utilisateur est à Tolède. Pour la plupart des entreprises locales, ces recherches sont le trafic le plus précieux car elles proviennent de personnes avec un besoin immédiat et une intention d'achat. Les résultats SEO locaux apparaissent dans deux endroits : le pack local (la carte avec 3 listes d'entreprises) et les résultats organiques en dessous."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Toledo's local SEO opportunity is particularly attractive because: it is a mid-sized city with real search demand but significantly lower competition than Madrid or Barcelona; many local businesses have not yet invested in SEO; the tourist dimension creates additional search volume beyond local residents; and the province's smaller towns have almost no SEO competition at all, creating easy ranking opportunities for businesses willing to create location-specific content." : "L'opportunité SEO locale de Tolède est particulièrement attractive car : c'est une ville de taille moyenne avec une vraie demande de recherche mais une concurrence significativement plus faible que Madrid ou Barcelone ; de nombreuses entreprises locales n'ont pas encore investi dans le SEO ; la dimension touristique crée un volume de recherche supplémentaire au-delà des résidents locaux ; et les villes plus petites de la province ont presque aucune concurrence SEO du tout, créant des opportunités de classement faciles pour les entreprises prêtes à créer du contenu spécifique à l'emplacement."}
+            {isEn ? "In Toledo, competition varies a lot by sector and town: check who appears today for your main searches before deciding how much effort each one needs. The tourist dimension adds searches from visitors as well as residents, and many towns in the province have few businesses working on their local visibility, which can make it easier to stand out with useful, location-specific content." : "À Tolède, la concurrence varie beaucoup selon le secteur et la commune : vérifiez qui apparaît aujourd'hui sur vos recherches principales avant de décider de l'effort nécessaire. La dimension touristique ajoute des recherches de visiteurs en plus de celles des habitants, et de nombreuses communes de la province comptent peu d'entreprises qui travaillent leur visibilité locale, ce qui peut faciliter la différenciation avec un contenu utile et propre à chaque lieu."}
           </p>
         </section>
 
@@ -91,11 +93,19 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "The practical starting sequence for local SEO in Toledo: 1) Claim and fully optimise your Google Business Profile — this alone can generate calls and visits within days. 2) Check that your website is mobile-friendly and loads in under 3 seconds. 3) Ensure your NAP data is consistent on your website, Google Business Profile and the main Spanish directories. 4) Start collecting Google reviews systematically from every satisfied customer. 5) Create or update a service page that targets your most important '[service] + Toledo' keyword." : "La séquence de démarrage pratique pour le SEO local à Tolède : 1) Revendiquez et optimisez complètement votre Google Business Profile — cela seul peut générer des appels et des visites dans les jours qui suivent. 2) Vérifiez que votre site web est adapté aux mobiles et se charge en moins de 3 secondes. 3) Assurez-vous que vos données NAP sont cohérentes sur votre site, Google Business Profile et les principaux annuaires espagnols. 4) Commencez à collecter des avis Google systématiquement de chaque client satisfait. 5) Créez ou mettez à jour une page de service qui cible votre mot-clé '[service] + Tolède' le plus important."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "These five actions, completed in order over a 2-4 week period, form the foundation of a local SEO strategy that will continue generating results for years. The businesses that do them consistently and systematically will dominate Toledo's local search results in their categories within 6-12 months, capturing leads that their competitors are leaving on the table." : "Ces cinq actions, réalisées dans l'ordre sur une période de 2 à 4 semaines, forment la base d'une stratégie SEO locale qui continuera à générer des résultats pendant des années. Les entreprises qui les font de manière cohérente et systématique domineront les résultats de recherche locaux de Tolède dans leurs catégories dans les 6 à 12 mois, capturant des leads que leurs concurrents laissent sur la table."}
+            {isEn ? "These five actions, completed in order, form the foundation of a local SEO strategy. Results depend on your sector, your starting point and your competitors, so measure them every month in Google Search Console and your Business Profile and keep improving from there." : "Ces cinq actions, réalisées dans l'ordre, forment la base d'une stratégie SEO locale. Les résultats dépendent de votre secteur, de votre point de départ et de vos concurrents : mesurez-les chaque mois dans Google Search Console et votre fiche d'établissement, puis continuez à améliorer."}
           </p>
         </section>
 
-        <BlogBanner variant="seo" />
+        <p className="text-gray-600 mb-10 leading-relaxed">
+          {isEn ? "If you would rather we did it, we offer a " : "Si vous préférez que nous nous en chargions, nous proposons un "}
+          <Link href={`/${lang}/${langSlug(lang, "digital-audit")}/`} className="text-accent-500 hover:underline">{isEn ? "free SEO audit" : "audit SEO gratuit"}</Link>
+          {isEn ? "; and if you are looking for someone to handle all the work, see our " : " ; et si vous cherchez quelqu'un pour prendre en charge tout le travail, découvrez notre service d'"}
+          <Link href={`/${lang}/${langSlug(lang, "seo-agency-toledo")}/`} className="text-accent-500 hover:underline">{isEn ? "SEO agency in Toledo" : "agence SEO à Tolède"}</Link>
+          {isEn ? " service." : "."}
+        </p>
+
+        <BlogBanner variant="seo" lang={lang} />
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
             {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}

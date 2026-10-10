@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { planPorId, precioTexto } from "@/lib/planes-seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Local SEO Services — Get Found in Your Area"
       : "Services de SEO local : soyez trouvé",
     description: isEn
-      ? "Local SEO to attract clients from your area: Google Maps, Google Business Profile and reviews. Local positioning for businesses with or without a physical location."
-      : "SEO local pour attirer des clients de votre zone : Google Maps, Google Business Profile et avis. Positionnement local pour les entreprises avec ou sans local physique.",
+      ? "Local SEO service to win clients in your area: Google Maps, Google Business Profile, reviews and local pages, for businesses with or without premises."
+      : "Service de SEO local pour attirer des clients de votre zone : Google Maps, Google Business Profile, avis et pages locales, avec ou sans local physique.",
     alternates: alternatesFor(`/${lang}/local-seo-services/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/local-seo-services/`,
     },
@@ -32,6 +33,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
+  // 09/10/2026 — alineado con /seo-local/: planes con precio (fuente única lib/planes-seo.ts),
+  // FAQ de precio, Offer en el schema y sin cifras sin fuente ni experiencia por ciudades.
+  const L = isEn ? "en" : "fr";
+  const PLANES_LOCAL = [planPorId("local", L), planPorId("pyme", L), planPorId("crecimiento", L)];
+  const [pLocal, pPyme, pCrec] = PLANES_LOCAL;
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -44,6 +50,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       ? "Local SEO service: positioning on Google Maps, Google Business Profile optimisation, review management and local searches for businesses and professionals."
       : "Service de SEO local : positionnement sur Google Maps, optimisation de Google Business Profile, gestion des avis et des recherches locales pour les entreprises et les professionnels.",
     url: `https://www.mktweb360.com/${lang}/local-seo-services/`,
+    offers: { "@type": "Offer", name: pLocal.nombre, priceSpecification: { "@type": "UnitPriceSpecification", price: pLocal.precio, priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false } },
   };
 
   const FAQS = isEn
@@ -69,8 +76,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           a: "Reviews are one of the most influential local ranking factors and, additionally, the main trust driver before first contact. We implement processes to request reviews at the right moment, provide direct links to your clients and help you respond to all of them — including negative ones — with judgement. The objective is a constant flow of genuine reviews, not artificial spikes.",
         },
         {
-          q: "Do you do local SEO across Spain or only in Toledo?",
-          a: "We work local SEO in any city in Spain. We have pages and specific experience in Toledo, Madrid, Valencia, Zaragoza and Bilbao, but the service is national: we position local businesses in their area wherever they are, adapting the strategy to the competition and market of each location.",
+          q: "How much does local SEO cost?",
+          a: `The ${pLocal.nombre} plan costs ${precioTexto(pLocal, L)}, with no minimum term, for websites of up to 10 pages with 1 Google Business Profile listing and 2 pieces of content per month. If you also want to work on visibility in AI assistants and your website is larger, the ${pPyme.nombre} plan costs ${precioTexto(pPyme, L)}. For several locations, the ${pCrec.nombre} plan costs ${precioTexto(pCrec, L)}.`,
+        },
+        {
+          q: "Do you do local SEO in any city?",
+          a: "Yes. Local SEO is a service in its own right that we provide for businesses in any location in Spain: we position each business in its area, wherever it is, adapting the strategy to the competition and the market in that location.",
         },
       ]
     : [
@@ -95,8 +106,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           a: "Les avis sont l'un des facteurs de classement local les plus influents et, de plus, le principal moteur de confiance avant le premier contact. Nous mettons en place des processus pour demander des avis au bon moment, fournissons le lien direct à vos clients et vous aidons à tous les répondre — y compris les négatifs — avec discernement. L'objectif est un flux constant d'avis réels, pas des pics artificiels.",
         },
         {
-          q: "Faites-vous du SEO local dans toute l'Espagne ou seulement à Tolède ?",
-          a: "Nous faisons du SEO local dans n'importe quelle ville d'Espagne. Nous avons des pages et une expérience spécifique à Tolède, Madrid, Valence, Saragosse et Bilbao, mais le service est national : nous positionnons les entreprises locales dans leur zone où qu'elles se trouvent, en adaptant la stratégie à la concurrence et au marché de chaque localité.",
+          q: "Combien coûte le SEO local ?",
+          a: `La formule ${pLocal.nombre} coûte ${precioTexto(pLocal, L)}, sans engagement, pour les sites de 10 pages maximum avec 1 fiche Google et 2 contenus par mois. Si vous souhaitez aussi travailler la visibilité dans les assistants d'IA et que votre site est plus étendu, la formule ${pPyme.nombre} coûte ${precioTexto(pPyme, L)}. Pour plusieurs établissements, la formule ${pCrec.nombre} coûte ${precioTexto(pCrec, L)}.`,
+        },
+        {
+          q: "Faites-vous du SEO local dans n'importe quelle ville ?",
+          a: "Oui. Le SEO local est un service à part entière que nous proposons aux entreprises situées partout en Espagne : nous positionnons chaque entreprise dans sa zone, où qu'elle se trouve, en adaptant la stratégie à la concurrence et au marché de cette localité.",
         },
       ];
 
@@ -153,13 +168,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
               {isEn
-                ? <>Appear when they search in your area<br /><span className="text-accent-400">Local SEO that fills your diary</span></>
-                : <>Apparaissez quand ils cherchent dans votre zone<br /><span className="text-accent-400">SEO local qui remplit votre agenda</span></>}
+                ? <>Local SEO: appear when people search in your area<br /><span className="text-accent-400">and fill your diary</span></>
+                : <>SEO local : apparaissez quand on cherche dans votre zone<br /><span className="text-accent-400">et remplissez votre agenda</span></>}
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               {isEn
-                ? "Almost half of all Google searches have local intent. When someone searches for what you offer near them, you either appear on the map or your competition takes that client. Local SEO puts your business where purchase decisions are made."
-                : "Près de la moitié des recherches sur Google ont une intention locale. Quand quelqu'un cherche ce que vous offrez près de chez lui, vous apparaissez sur la carte ou votre concurrence emporte ce client. Le SEO local place votre entreprise là où se prennent les décisions d'achat."}
+                ? "When someone searches for what you offer near them, either you appear on the map and in the results for your area, or your competitors win that customer. Local SEO puts your business where the purchase decision is made, wherever your business is."
+                : "Quand quelqu'un cherche ce que vous proposez près de chez lui, soit vous apparaissez sur la carte et dans les résultats de votre zone, soit vos concurrents remportent ce client. Le SEO local place votre entreprise là où se prend la décision d'achat, où que se trouve votre entreprise."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -193,15 +208,15 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {(isEn
             ? [
-                { value: "46%", label: "searches with local intent" },
-                { value: "Google Maps", label: "your proximity showcase" },
-                { value: "88%", label: "trust reviews as much as recommendations" },
+                { value: "Google Maps", label: "and the local results pack" },
+                { value: "Google Business Profile", label: "optimised and active" },
+                { value: "Genuine reviews", label: "a process to get them and reply to them" },
                 { value: "National", label: "local SEO across Spain" },
               ]
             : [
-                { value: "46%", label: "recherches à intention locale" },
-                { value: "Google Maps", label: "votre vitrine de proximité" },
-                { value: "88%", label: "font autant confiance aux avis qu'aux recommandations" },
+                { value: "Google Maps", label: "et pack local des résultats" },
+                { value: "Fiche Google", label: "optimisée et active" },
+                { value: "Avis authentiques", label: "un processus pour les obtenir et y répondre" },
                 { value: "National", label: "SEO local dans toute l'Espagne" },
               ]
           ).map((m) => (
@@ -210,6 +225,43 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               <div className="text-xs text-primary-200 mt-1">{m.label}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Plans */}
+      <section id="plans" className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">{isEn ? "Local SEO plans" : "Formules de SEO local"}</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {isEn
+                ? "A service in its own right, with a fixed price and no minimum term. Choose based on the size of your website and the number of locations."
+                : "Un service à part entière, à prix fixe et sans engagement. Choisissez selon la taille de votre site et le nombre d'établissements."}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PLANES_LOCAL.map((p, i) => (
+              <div key={p.id} className={`rounded-2xl p-7 flex flex-col border ${i === 0 ? "border-accent-500 shadow-md bg-white" : "border-gray-100 shadow-sm bg-white"}`}>
+                {i === 0 && <span className="self-start bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">{isEn ? "Local SEO" : "SEO local"}</span>}
+                <h3 className="font-bold text-primary-700 text-lg mb-1">{p.nombre}</h3>
+                <p className="text-sm text-gray-500 mb-3">{p.paraQuien}</p>
+                <p className="text-2xl font-bold text-accent-500 mb-4">{precioTexto(p, L)}</p>
+                <ul className="space-y-1 text-sm text-gray-700 mb-4">
+                  {p.limites.map((l) => <li key={l}>• {l}</li>)}
+                </ul>
+                <ul className="space-y-2 text-sm text-gray-600 mb-6 flex-1">
+                  {p.incluye.map((x) => <li key={x} className="flex gap-2"><span className="text-accent-500 font-bold shrink-0">✓</span>{x}</li>)}
+                </ul>
+                <a href="#audit" className="text-center bg-primary-600 text-white rounded-full px-6 py-3 font-semibold hover:bg-primary-700 transition-colors">
+                  {isEn ? "Start with this plan" : "Commencer avec cette formule"}
+                </a>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-gray-500 text-center mt-6">
+            {isEn ? "Prices exclude VAT. Do you have an online store or a larger website? " : "Prix hors taxes. Vous avez une boutique en ligne ou un site plus grand ? "}
+            <Link href={`/${lang}/${langSlug(lang, "seo-pricing")}/`} className="text-accent-600 underline">{isEn ? "Work out your plan" : "Calculez votre formule"}</Link>.
+          </p>
         </div>
       </section>
 
@@ -337,6 +389,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <Link href={`/${lang}/${lang === "en" ? "google-business-profile-service" : "gestion-google-business-profile"}/`} className="inline-flex items-center justify-center gap-2 text-accent-500 font-semibold hover:underline">
               {isEn ? "Google Business Profile service →" : "Service Google Business Profile →"}
             </Link>
+            <Link href={`/${lang}/${langSlug(lang, "google-my-business-guide")}/`} className="inline-flex items-center justify-center gap-2 text-accent-500 font-semibold hover:underline">
+              {isEn ? "Complete Google Business Profile guide →" : "Guide complet de Google Business Profile →"}
+            </Link>
           </div>
         </div>
       </section>
@@ -346,12 +401,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-primary-600 mb-4">
-              {isEn ? "Local SEO by city" : "SEO local par ville"}
+              {isEn ? "Local SEO guides by city" : "Guides de SEO local par ville"}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               {isEn
-                ? "We work across Spain. These are some of the cities where we have specific pages and local positioning experience."
-                : "Nous travaillons dans toute l'Espagne. Voici quelques-unes des villes où nous avons des pages et une expérience spécifique en positionnement local."}
+                ? "The service is the same for any location. These guides explain what local search looks like in some cities."
+                : "Le service est le même quel que soit le lieu. Ces guides expliquent à quoi ressemble la recherche locale dans quelques villes."}
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -456,7 +511,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </p>
           </div>
           <div className="bg-white rounded-2xl p-8">
-            <ContactForm lang={lang} />
+            <ContactForm lang={lang} formType="seo" />
           </div>
         </div>
       </section>

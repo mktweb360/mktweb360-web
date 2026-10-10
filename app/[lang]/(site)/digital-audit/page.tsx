@@ -1,275 +1,226 @@
-import { ContactForm } from "@/components/ContactForm";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { ContactForm } from "@/components/ContactForm";
+import { RelatedArticles } from "@/components/RelatedArticles";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+
+// 09/10/2026 — EN/FR de /auditoria-digital/: auditoría SEO + GEO GRATUITA (48 h laborables por correo,
+// 6 bloques + propuesta). Misma estructura, mismas promesas y mismo formulario que la versión ES.
+// Esta carpeta sirve /en/digital-audit/; /fr/audit-digital/ reexporta este módulo.
+
+const BASE = "https://www.mktweb360.com";
+
+const C = {
+  en: {
+    title: "Free SEO Audit of Your Website in 48 Hours",
+    description:
+      "Free SEO and GEO audit: technical errors, keyword opportunities, visibility in AI assistants, competitors and an improvement plan with a proposal.",
+    ogTitle: "Free SEO Audit of Your Website in 48 Hours | Mkt Web 360",
+    ogDescription:
+      "We email you an SEO and AI-visibility diagnosis of your website, with the 3 highest-impact actions and a proposal to carry them out.",
+    home: "Home",
+    crumb: "Free SEO audit",
+    h1: "Free SEO audit of your website",
+    h1Accent: "in 48 hours, straight to your inbox",
+    intro:
+      "We tell you what is holding your website back on Google and in AI assistants, which searches you can win and what you should do first. With an improvement plan and a proposal to put it into practice.",
+    bullets: [
+      "No cost and no obligation",
+      "Reviewed by a specialist, not an automated report",
+      "SEO + visibility in AI (GEO) in the same report",
+    ],
+    formTitle: "Request your audit",
+    formSub: "We will send it to your inbox within 48 business hours at most.",
+    placeholder:
+      "What would you like to achieve with your website? (more clients in your area, selling online, appearing in AI…) Are you already investing in SEO or advertising?",
+    submit: "I want my free audit",
+    receiveTitle: "What you receive in the audit",
+    receiveSub: "A clear report, without unnecessary jargon, that you can use even if you don't work with us.",
+    deliverables: [
+      { t: "Technical health", d: "The errors holding your website back most on Google, ranked by priority: indexing, crawling, mobile speed, structured data and broken links." },
+      { t: "Current visibility", d: "Which searches you appear for today and in what positions. Data from external tools is flagged as an estimate." },
+      { t: "10 keyword opportunities", d: "Real searches made by your customers where you can compete, each with the page on your website that should target it." },
+      { t: "Visibility in AI assistants", d: "Whether AI assistants cite your website or mention your brand when someone looks for what you offer." },
+      { t: "Your competitors", d: "Three competitors that appear ahead of you and what they are doing better." },
+      { t: "Improvement plan and proposal", d: "The 3 highest-impact actions and a proposal with a plan and a price to carry them out, if you want us to do it." },
+    ],
+    howTitle: "How it works",
+    steps: [
+      { n: "01", t: "Leave us your website", d: "Fill in the form with the website you want audited and what you would like to achieve." },
+      { n: "02", t: "We analyse it", d: "We review your website with professional tools and expert judgement. It is not an automated report: every finding is checked." },
+      { n: "03", t: "We email it to you", d: "Within 48 business hours at most, you receive the report with the improvement plan and the proposal." },
+      { n: "04", t: "You decide", d: "You can apply the improvements yourself or ask us to do it. No obligation." },
+    ],
+    whyTitle: "Why start with an audit",
+    why: [
+      "Before investing in SEO, advertising or a new website, it pays to know where you stand. The audit tells you what to fix first, what can wait and what is not worth doing yet.",
+      "The problems we find most often are always similar: pages competing with each other for the same search, headlines that don't tell Google which service the page offers, tracking that doesn't record enquiries, images that push up loading times on mobile and poorly planned redirects after a migration.",
+      "Today there is also a new layer: AI assistants. A website can appear as a source in their answers without the brand ever being named. The audit reviews that too.",
+    ],
+    pricingBefore: "If you then want us to take care of it, our ",
+    pricingLink: "SEO plans and pricing",
+    pricingAfter: " are published.",
+    faqTitle: "Frequently asked questions",
+    faqs: [
+      { q: "Is the SEO audit really free?", a: "Yes. There is no cost and no obligation. At the end of the report we include a proposal for applying the improvements, in case you want us to do it; whether you accept it is entirely up to you." },
+      { q: "How long does it take?", a: "You receive it by email within 48 business hours of your request at most." },
+      { q: "Do you need access to my website or to Google Search Console?", a: "Not for the free audit: we work with what is publicly available. If you give us read access to Search Console, the diagnosis is more precise because it is based on your real Google data." },
+      { q: "How is it different from a full digital audit?", a: "The free audit focuses on SEO and visibility in AI. If you also need a review of analytics, social media or advertising, mention it in the form and we will prepare a proposal for a full audit." },
+      { q: "Which websites is it for?", a: "For the websites of companies, SMEs and professionals that sell products or provide services in Spain: corporate websites, service websites and online stores." },
+    ],
+    cta: "Request my free audit",
+    related: "More about SEO and rankings",
+    schemaName: "Free SEO and GEO audit",
+    schemaType: "SEO audit",
+    country: "Spain",
+    offerDesc: "Report by email within 48 business hours at most",
+  },
+  fr: {
+    title: "Audit SEO gratuit de votre site en 48 h",
+    description:
+      "Audit SEO et GEO gratuit : erreurs techniques, mots-clés à potentiel, visibilité dans les assistants d'IA, concurrence et plan d'amélioration avec proposition.",
+    ogTitle: "Audit SEO gratuit de votre site en 48 h | Mkt Web 360",
+    ogDescription:
+      "Nous vous envoyons par e-mail un diagnostic SEO et de visibilité dans l'IA de votre site, avec les 3 actions les plus impactantes et une proposition pour les appliquer.",
+    home: "Accueil",
+    crumb: "Audit SEO gratuit",
+    h1: "Audit SEO gratuit de votre site",
+    h1Accent: "en 48 heures, dans votre boîte mail",
+    intro:
+      "Nous vous disons ce qui freine votre site sur Google et dans les assistants d'IA, quelles recherches vous pouvez gagner et par quoi commencer. Avec un plan d'amélioration et une proposition pour le mettre en œuvre.",
+    bullets: [
+      "Sans frais et sans engagement",
+      "Vérifié par un spécialiste, pas un rapport automatique",
+      "SEO + visibilité dans l'IA (GEO) dans le même rapport",
+    ],
+    formTitle: "Demandez votre audit",
+    formSub: "Nous vous l'envoyons par e-mail dans un délai maximal de 48 heures ouvrées.",
+    placeholder:
+      "Que souhaitez-vous obtenir avec votre site ? (plus de clients dans votre zone, vendre en ligne, apparaître dans l'IA…) Investissez-vous déjà dans le SEO ou la publicité ?",
+    submit: "Je veux mon audit gratuit",
+    receiveTitle: "Ce que vous recevez dans l'audit",
+    receiveSub: "Un rapport clair, sans jargon inutile, que vous pouvez utiliser même si vous ne travaillez pas avec nous.",
+    deliverables: [
+      { t: "État technique", d: "Les erreurs qui freinent le plus votre site sur Google, classées par priorité : indexation, exploration, vitesse sur mobile, données structurées et liens cassés." },
+      { t: "Visibilité actuelle", d: "Sur quelles recherches vous apparaissez aujourd'hui et à quelles positions. Les données issues d'outils externes sont signalées comme des estimations." },
+      { t: "10 opportunités de mots-clés", d: "De vraies recherches de vos clients sur lesquelles vous pouvez vous positionner, chacune avec la page de votre site qui devrait la travailler." },
+      { t: "Visibilité dans les assistants d'IA", d: "Si les assistants d'IA citent votre site ou mentionnent votre marque lorsque quelqu'un cherche ce que vous proposez." },
+      { t: "Votre concurrence", d: "Trois concurrents qui apparaissent devant vous et ce qu'ils font mieux." },
+      { t: "Plan d'amélioration et proposition", d: "Les 3 actions les plus impactantes et une proposition avec un plan et un prix pour les mettre en œuvre, si vous souhaitez que nous nous en chargions." },
+    ],
+    howTitle: "Comment ça marche",
+    steps: [
+      { n: "01", t: "Vous nous indiquez votre site", d: "Vous remplissez le formulaire avec le site à auditer et ce que vous aimeriez obtenir." },
+      { n: "02", t: "Nous l'analysons", d: "Nous examinons votre site avec des outils professionnels et un regard d'expert. Ce n'est pas un rapport automatique : chaque constat est vérifié." },
+      { n: "03", t: "Nous vous l'envoyons par e-mail", d: "Dans un délai maximal de 48 heures ouvrées, vous recevez le rapport avec le plan d'amélioration et la proposition." },
+      { n: "04", t: "Vous décidez", d: "Vous pouvez appliquer les améliorations vous-même ou nous demander de le faire. Sans engagement." },
+    ],
+    whyTitle: "Pourquoi commencer par un audit",
+    why: [
+      "Avant d'investir dans le SEO, la publicité ou un nouveau site, mieux vaut savoir où vous en êtes. L'audit vous indique quoi corriger en premier, ce qui peut attendre et ce qui ne vaut pas encore la peine d'être fait.",
+      "Les problèmes que nous rencontrons le plus souvent se ressemblent toujours : des pages qui se font concurrence sur la même recherche, des titres qui n'indiquent pas à Google quel service propose la page, une mesure qui n'enregistre pas les prises de contact, des images qui font exploser le temps de chargement sur mobile et des redirections mal pensées après une migration.",
+      "Il existe aujourd'hui une nouvelle dimension : les assistants d'IA. Un site peut apparaître comme source dans leurs réponses sans que la marque soit jamais citée. L'audit examine aussi cet aspect.",
+    ],
+    pricingBefore: "Si vous souhaitez ensuite que nous nous en chargions, nos ",
+    pricingLink: "formules et tarifs SEO",
+    pricingAfter: " sont publiés.",
+    faqTitle: "Questions fréquentes",
+    faqs: [
+      { q: "L'audit SEO est-il vraiment gratuit ?", a: "Oui. Il n'a ni coût ni engagement. À la fin du rapport, nous incluons une proposition pour appliquer les améliorations, au cas où vous souhaiteriez que nous nous en chargions ; libre à vous de l'accepter ou non." },
+      { q: "Combien de temps faut-il ?", a: "Vous le recevez par e-mail dans un délai maximal de 48 heures ouvrées après votre demande." },
+      { q: "Avez-vous besoin d'un accès à mon site ou à Google Search Console ?", a: "Pas pour l'audit gratuit : nous travaillons à partir de ce qui est public. Si vous nous donnez un accès en lecture à Search Console, le diagnostic est plus précis, car il repose sur vos données Google réelles." },
+      { q: "Quelle différence avec un audit digital complet ?", a: "L'audit gratuit porte sur le SEO et la visibilité dans l'IA. Si vous avez aussi besoin d'examiner l'analytique, les réseaux sociaux ou la publicité, indiquez-le dans le formulaire et nous vous préparerons une proposition d'audit complet." },
+      { q: "Pour quels sites est-il conçu ?", a: "Pour les sites d'entreprises, de PME et de professionnels qui vendent ou proposent des services en Espagne : sites institutionnels, sites de services et boutiques en ligne." },
+    ],
+    cta: "Demander mon audit gratuit",
+    related: "Plus sur le SEO et le positionnement",
+    schemaName: "Audit SEO et GEO gratuit",
+    schemaType: "Audit SEO",
+    country: "Espagne",
+    offerDesc: "Rapport par e-mail dans un délai maximal de 48 heures ouvrées",
+  },
+};
+
+function pathFor(lang: string) {
+  return `/${lang}/${langSlug(lang, "digital-audit")}/`;
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const isEn = lang === "en";
+  const t = lang === "fr" ? C.fr : C.en;
+  const url = BASE + pathFor(lang);
   return {
-    title: isEn
-      ? "Digital Audit for Businesses: Full Diagnosis"
-      : "Audit digital : diagnostic numérique complet",
-    description: isEn
-      ? "Complete digital audit for businesses. SEO, speed, competition and tracking analysis with a detailed report and prioritised action plan."
-      : "Audit digital complet pour entreprises. Analyse SEO, vitesse, concurrence et tracking avec rapport détaillé et plan d'action priorisé.",
-    alternates: alternatesFor(`/${lang}/digital-audit/`) ?? {
-      canonical: `https://www.mktweb360.com/${lang}/digital-audit/`,
+    title: t.title,
+    description: t.description,
+    alternates: alternatesFor(pathFor(lang)) ?? { canonical: url },
+    openGraph: {
+      title: t.ogTitle,
+      description: t.ogDescription,
+      url,
+      images: [{ url: "/og-auditoria-digital.jpg", width: 1200, height: 630 }],
     },
   };
 }
 
-
-const WHAT_IS = {
-  en: {
-    title: "What is a digital audit and what is it for?",
-    paragraphs: [
-      "A digital audit is a systematic and complete analysis of every element that determines your company's online performance. It is the essential starting point before investing in any digital marketing action.",
-      "Without a prior diagnosis, any investment in SEO, advertising or social media is like driving blind. The audit tells you exactly where you are, where your opportunities lie and which actions will have the greatest impact for the least effort.",
-    ],
-  },
-  fr: {
-    title: "Qu'est-ce qu'un audit digital et à quoi sert-il ?",
-    paragraphs: [
-      "Un audit digital est une analyse systématique et complète de tous les éléments qui déterminent la performance en ligne de votre entreprise. C'est le point de départ indispensable avant d'investir dans toute action de marketing digital.",
-      "Sans diagnostic préalable, tout investissement en SEO, en publicité ou sur les réseaux sociaux revient à conduire les yeux fermés. L'audit vous indique précisément où vous en êtes, où se trouvent vos opportunités et quelles actions auront le plus d'impact pour le moins d'effort.",
-    ],
-  },
-};
-
-const AREAS = {
-  en: {
-    title: "What we analyse",
-    items: [
-      { title: "Technical SEO", desc: "Indexing, crawling, site architecture, structured data, canonicals, Core Web Vitals and server errors." },
-      { title: "Content", desc: "Quality, relevance and optimisation of your copy, orphan pages, keyword cannibalisation and content opportunities." },
-      { title: "Speed and performance", desc: "PageSpeed, loading time, render-blocking resources, images and hosting. Analysis on both mobile and desktop." },
-      { title: "Competition", desc: "Who outperforms you on Google and why. The strategies that are working in your sector and how to beat them." },
-      { title: "Social media", desc: "Presence, engagement, brand consistency and opportunities for improvement on every network relevant to your business." },
-      { title: "Web analytics", desc: "Google Analytics / GA4 configuration, conversions, funnels and the reliability of the data you are measuring." },
-    ],
-  },
-  fr: {
-    title: "Ce que nous analysons",
-    items: [
-      { title: "SEO technique", desc: "Indexation, exploration, architecture du site, données structurées, balises canoniques, Core Web Vitals et erreurs serveur." },
-      { title: "Contenus", desc: "Qualité, pertinence et optimisation des textes, pages orphelines, cannibalisation de mots-clés et opportunités de contenu." },
-      { title: "Vitesse et performance", desc: "PageSpeed, temps de chargement, ressources bloquantes, images et hébergement. Analyse sur mobile et sur ordinateur." },
-      { title: "Concurrence", desc: "Qui vous devance sur Google et pourquoi. Les stratégies qui fonctionnent dans votre secteur et comment les dépasser." },
-      { title: "Réseaux sociaux", desc: "Présence, engagement, cohérence de marque et pistes d'amélioration sur chaque réseau pertinent pour votre activité." },
-      { title: "Analytique web", desc: "Configuration de Google Analytics / GA4, conversions, entonnoirs et fiabilité des données que vous mesurez." },
-    ],
-  },
-};
-
-const PHASES = {
-  en: {
-    title: "What the process looks like",
-    items: [
-      { num: "01", title: "Information gathering", desc: "Access to your tools (Search Console, Analytics, Ads) and a study of your sector, competitors and business objectives." },
-      { num: "02", title: "In-depth analysis", desc: "Technical and strategic review of every component of your digital presence. This process takes between 5 and 7 working days." },
-      { num: "03", title: "Preparing the report", desc: "A complete document with findings, problems ranked by priority and impact, and actionable recommendations." },
-      { num: "04", title: "Presentation session", desc: "An online meeting to explain the results, answer your questions and agree together on the first steps to take." },
-    ],
-  },
-  fr: {
-    title: "Comment se déroule le processus",
-    items: [
-      { num: "01", title: "Collecte d'informations", desc: "Accès à vos outils (Search Console, Analytics, Ads) et étude de votre secteur, de votre concurrence et de vos objectifs commerciaux." },
-      { num: "02", title: "Analyse approfondie", desc: "Revue technique et stratégique de toutes les composantes de votre présence digitale. Cette étape prend entre 5 et 7 jours ouvrés." },
-      { num: "03", title: "Rédaction du rapport", desc: "Un document complet avec les constats, les problèmes classés par priorité et par impact, et des recommandations directement applicables." },
-      { num: "04", title: "Séance de présentation", desc: "Une réunion en ligne pour expliquer les résultats, répondre à vos questions et définir ensemble les premières étapes." },
-    ],
-  },
-};
-
-const WHEN = {
-  en: {
-    title: "When a digital marketing audit makes sense",
-    paragraphs: [
-      "There are moments when an audit saves a great deal of money: before increasing your advertising budget, before redesigning or migrating your website, when traffic falls for no clear reason or when the website gets visits but does not generate enquiries. It is also the logical step when changing agency: it gives you an objective snapshot of your starting point so you can measure what is achieved afterwards.",
-      "The audit does not replace strategy, but it makes it possible: with a prioritised diagnosis you know what to fix first, what can wait and which actions are not worth doing yet.",
-    ],
-  },
-  fr: {
-    title: "Quand réaliser un audit de marketing digital",
-    paragraphs: [
-      "Il existe des moments où un audit fait économiser beaucoup d'argent : avant d'augmenter le budget publicitaire, avant de refondre ou de migrer le site, lorsque le trafic baisse sans cause apparente ou lorsque le site reçoit des visites mais ne génère pas de prises de contact. C'est aussi l'étape logique lorsque vous changez d'agence : il vous donne une photographie objective du point de départ pour pouvoir mesurer ensuite ce qui est obtenu.",
-      "L'audit ne remplace pas la stratégie, mais il la rend possible : grâce à un diagnostic priorisé, vous savez quoi corriger en premier, ce qui peut attendre et quelles actions ne valent pas encore la peine d'être menées.",
-    ],
-  },
-};
-
-const PROBLEMS = {
-  en: {
-    title: "The problems we find most often in an audit",
-    items: [
-      { label: "Broken measurement", text: "forms or WhatsApp clicks that are not recorded as conversions, so nobody knows which channel brings in customers." },
-      { label: "Pages competing with each other", text: "two or more URLs targeting the same search, which splits relevance so that none of them manages to rank." },
-      { label: "Poorly planned redirects after a migration", text: "old URLs with history pointing to generic pages and losing what they had earned." },
-      { label: "Heavy images and resources", text: "hero images weighing several megabytes that push up loading times on mobile, precisely where most customers search." },
-      { label: "Headlines that ignore what the customer searches for", text: "catchy slogans in the H1 and title that do not tell Google which service the page offers." },
-      { label: "Expired offers still on display", text: "old promotions on home pages or banners that undermine credibility." },
-    ],
-  },
-  fr: {
-    title: "Les problèmes que nous rencontrons le plus souvent lors d'un audit",
-    items: [
-      { label: "Mesure défaillante", text: "des formulaires ou des clics WhatsApp qui ne sont pas enregistrés comme conversions, si bien que personne ne sait quel canal apporte des clients." },
-      { label: "Des pages qui se font concurrence", text: "deux URL ou plus travaillent la même recherche, ce qui divise la pertinence et empêche chacune de se positionner." },
-      { label: "Des redirections mal pensées après une migration", text: "d'anciennes URL dotées d'un historique qui pointent vers des pages génériques et perdent ce qu'elles avaient acquis." },
-      { label: "Des images et des ressources trop lourdes", text: "des visuels d'accueil de plusieurs mégaoctets qui font exploser le temps de chargement sur mobile, là où cherchent la plupart des clients." },
-      { label: "Des titres sans la recherche du client", text: "des slogans accrocheurs dans le H1 et la balise title qui n'indiquent pas à Google quel service propose la page." },
-      { label: "Des offres expirées encore visibles", text: "d'anciennes promotions en page d'accueil ou dans des bannières qui nuisent à la crédibilité." },
-    ],
-  },
-};
-
-const DELIVERABLES = {
-  en: {
-    title: "What you receive",
-    items: [
-      "Detailed report with all findings organised by area and level of impact",
-      "Prioritised action plan with improvements ranked by ease and expected impact",
-      "Online presentation session to explain the report and resolve all your questions",
-      "List of quick wins: low-effort actions you can implement straight away",
-    ],
-  },
-  fr: {
-    title: "Ce que vous recevez",
-    items: [
-      "Un rapport détaillé avec tous les constats classés par domaine et par niveau d'impact",
-      "Un plan d'action priorisé, avec les améliorations ordonnées selon leur facilité et l'impact attendu",
-      "Une séance de présentation en ligne pour expliquer le rapport et répondre à toutes vos questions",
-      "Une liste de gains rapides : des actions peu coûteuses en effort que vous pouvez mettre en œuvre immédiatement",
-    ],
-  },
-};
-
-const FOR_WHOM = {
-  en: {
-    title: "Who is this audit for?",
-    items: [
-      "Companies that have been online for some time but are not getting organic results",
-      "Businesses that have just launched a website and want to get things right from the start",
-      "Companies that are changing their digital strategy and want to know where they stand",
-      "In-house teams that want an external, objective second opinion",
-      "Businesses that have suffered drops in traffic or positioning with no clear cause",
-    ],
-  },
-  fr: {
-    title: "À qui s'adresse cet audit ?",
-    items: [
-      "Aux entreprises présentes en ligne depuis un certain temps mais qui n'obtiennent pas de résultats organiques",
-      "Aux entreprises qui viennent de lancer un site et veulent partir sur de bonnes bases",
-      "Aux entreprises qui changent de stratégie digitale et veulent savoir où elles en sont",
-      "Aux équipes internes qui souhaitent un second avis externe et objectif",
-      "Aux entreprises qui ont subi des baisses de trafic ou de positionnement sans cause claire",
-    ],
-  },
-};
-
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const isEn = lang === "en";
+  const t = lang === "fr" ? C.fr : C.en;
+  const url = BASE + pathFor(lang);
 
-  const L = isEn ? "en" : "fr";
-  const whatIs = WHAT_IS[L];
-  const areas = AREAS[L];
-  const phases = PHASES[L];
-  const when = WHEN[L];
-  const problems = PROBLEMS[L];
-  const deliverables = DELIVERABLES[L];
-  const forWhom = FOR_WHOM[L];
-
-  const includes = isEn
-    ? [
-        "Complete technical SEO audit",
-        "Page speed and Core Web Vitals analysis",
-        "Content and keyword gap analysis",
-        "Competitor analysis",
-        "Social media and Google Business Profile audit",
-        "GA4 and tracking configuration review",
-        "Detailed report with findings and recommendations",
-        "Prioritised action plan: quick wins and strategic improvements",
-      ]
-    : [
-        "Audit technique SEO complet",
-        "Analyse de vitesse et Core Web Vitals",
-        "Analyse de contenu et lacunes de mots-clés",
-        "Analyse de la concurrence",
-        "Audit des réseaux sociaux et Google Business Profile",
-        "Révision de la configuration GA4 et du tracking",
-        "Rapport détaillé avec constats et recommandations",
-        "Plan d'action priorisé : gains rapides et améliorations stratégiques",
-      ];
-
-  const metrics = isEn
-    ? [
-        { value: "SEO", label: "technical audit" },
-        { value: "Speed", label: "Core Web Vitals" },
-        { value: "Competition", label: "analysis" },
-        { value: "Report", label: "with action plan" },
-      ]
-    : [
-        { value: "SEO", label: "audit technique" },
-        { value: "Vitesse", label: "Core Web Vitals" },
-        { value: "Concurrence", label: "analyse" },
-        { value: "Rapport", label: "avec plan d'action" },
-      ];
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: t.schemaName,
+    serviceType: t.schemaType,
+    provider: { "@id": "https://www.mktweb360.com/#organization" },
+    areaServed: { "@type": "Country", name: t.country },
+    url,
+    offers: { "@type": "Offer", price: 0, priceCurrency: "EUR", description: t.offerDesc },
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
-        <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
-            <Breadcrumbs
-              crumbs={[
-                { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
-                { label: isEn ? "Digital Audit" : "Audit Digital" },
-              ]}
-            />
+            <Breadcrumbs crumbs={[{ label: t.home, href: `/${lang}/` }, { label: t.crumb }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              {isEn ? "Complete digital audit" : "Audit digital complet"}<br />
-              <span className="text-accent-400">
-                {isEn ? "know exactly where you stand" : "sachez exactement où vous en êtes"}
-              </span>
+              {t.h1}<br />
+              <span className="text-accent-400">{t.h1Accent}</span>
             </h1>
-            <p className="text-xl text-primary-200 mb-8 leading-relaxed">
-              {isEn
-                ? "Before investing more in digital marketing, you need to know exactly what is working and what is not. Our digital audit gives you a complete diagnosis and a clear action plan."
-                : "Avant d'investir davantage dans le marketing digital, vous devez savoir exactement ce qui fonctionne et ce qui ne fonctionne pas. Notre audit digital vous donne un diagnostic complet et un plan d'action clair."}
-            </p>
-            <a
-              href={`/${lang}/contact/`}
-              className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors"
-            >
-              {isEn ? "Get a free quote" : "Demander un devis"}
-            </a>
+            <p className="text-xl text-primary-200 mb-6 leading-relaxed">{t.intro}</p>
+            <ul className="space-y-2 text-primary-100">
+              {t.bullets.map((b) => <li key={b}>✓ {b}</li>)}
+            </ul>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-primary-600 py-6 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
-          {metrics.map((m) => (
-            <div key={m.label}>
-              <div className="text-xl font-bold text-accent-400">{m.value}</div>
-              <div className="text-xs text-primary-200 mt-1">{m.label}</div>
-            </div>
-          ))}
+          <div id="request" className="bg-white rounded-2xl p-6 text-gray-900 shadow-xl">
+            <h2 className="text-xl font-bold text-primary-700 mb-1">{t.formTitle}</h2>
+            <p className="text-sm text-gray-500 mb-4">{t.formSub}</p>
+            <ContactForm formType="auditoria" websiteRequired messagePlaceholder={t.placeholder} submitLabel={t.submit} />
+          </div>
         </div>
       </section>
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">
-            {isEn ? "What's included in the audit" : "Ce qui est inclus dans l'audit"}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {includes.map((item) => (
-              <div key={item} className="flex items-center gap-3 bg-white rounded-xl px-5 py-4 shadow-sm border border-gray-100">
-                <span className="text-accent-500 font-bold shrink-0">✓</span>
-                <span className="text-gray-700 text-sm">{item}</span>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary-600 mb-4">{t.receiveTitle}</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">{t.receiveSub}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {t.deliverables.map((e, i) => (
+              <div key={e.t} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                <span className="text-accent-500 font-bold text-2xl">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="font-bold text-primary-700 mt-2 mb-2">{e.t}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{e.d}</p>
               </div>
             ))}
           </div>
@@ -278,93 +229,49 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">{whatIs.title}</h2>
-          {whatIs.paragraphs.map((p) => (
-            <p key={p} className="text-gray-700 leading-relaxed mb-4">{p}</p>
-          ))}
-          <h2 className="text-3xl font-bold text-primary-600 mt-12 mb-8">{areas.title}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {areas.items.map((a) => (
-              <div key={a.title} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
-                <h3 className="font-bold text-primary-600 mb-1">{a.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{a.desc}</p>
+          <h2 className="text-3xl font-bold text-primary-600 mb-10 text-center">{t.howTitle}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {t.steps.map((p) => (
+              <div key={p.n} className="text-center">
+                <span className="inline-flex w-12 h-12 rounded-full bg-primary-600 text-white font-bold items-center justify-center mb-3">{p.n}</span>
+                <h3 className="font-bold text-primary-700 mb-2">{p.t}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{p.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">{phases.title}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {phases.items.map((f) => (
-              <div key={f.num} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <span className="inline-block text-3xl font-bold text-accent-500 mb-3">{f.num}</span>
-                <h3 className="font-bold text-primary-600 text-lg mb-2">{f.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">{when.title}</h2>
-          {when.paragraphs.map((p) => (
-            <p key={p} className="text-gray-700 leading-relaxed mb-4">{p}</p>
-          ))}
-          <h2 className="text-3xl font-bold text-primary-600 mt-12 mb-6">{problems.title}</h2>
-          <ul className="space-y-3 text-gray-700 leading-relaxed">
-            {problems.items.map((pr) => (
-              <li key={pr.label} className="flex gap-3">
-                <span className="text-accent-500 font-bold shrink-0">✓</span>
-                <span><strong>{pr.label}{isEn ? ":" : " :"}</strong> {pr.text}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">{deliverables.title}</h2>
-            <ul className="space-y-3">
-              {deliverables.items.map((i) => (
-                <li key={i} className="flex gap-3 text-gray-700 text-sm leading-relaxed">
-                  <span className="text-accent-500 font-bold shrink-0">✓</span>{i}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">{forWhom.title}</h2>
-            <ul className="space-y-3">
-              {forWhom.items.map((i) => (
-                <li key={i} className="flex gap-3 text-gray-700 text-sm leading-relaxed">
-                  <span className="text-accent-500 font-bold shrink-0">✓</span>{i}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 bg-primary-600 text-white">
-        <div className="max-w-3xl mx-auto text-center mb-10">
-          <h2 className="text-3xl font-bold mb-4">
-            {isEn ? "Your best customer doesn't know you yet" : "Votre meilleur client ne vous connaît pas encore"}
-          </h2>
-          <p className="text-primary-200">
-            {isEn ? "Tell us about your project. We respond within 24 hours." : "Parlez-nous de votre projet. Nous répondons dans les 24 heures."}
+      <section className="py-16 px-4 bg-primary-50 border-y border-primary-100">
+        <div className="max-w-4xl mx-auto space-y-4 text-gray-700 leading-relaxed">
+          <h2 className="text-2xl font-bold text-primary-600 mb-2">{t.whyTitle}</h2>
+          {t.why.map((p) => <p key={p.slice(0, 40)}>{p}</p>)}
+          <p>
+            {t.pricingBefore}
+            <Link href={`/${lang}/${langSlug(lang, "seo-pricing")}/`} className="text-accent-700 underline underline-offset-2">{t.pricingLink}</Link>
+            {t.pricingAfter}
           </p>
         </div>
-        <div className="max-w-3xl mx-auto bg-white rounded-2xl p-8">
-          <ContactForm formType={`${lang}-digital-audit`} />
+      </section>
+
+      <section className="py-16 px-4">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">{t.faqTitle}</h2>
+          <div className="space-y-4">
+            {t.faqs.map((f) => (
+              <details key={f.q} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
+                <summary className="font-semibold text-primary-700 cursor-pointer">{f.q}</summary>
+                <p className="text-gray-600 mt-3 leading-relaxed">{f.a}</p>
+              </details>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <a href="#request" className="inline-block bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-colors">{t.cta}</a>
+          </div>
         </div>
       </section>
+
+      <RelatedArticles category="SEO" title={t.related} />
     </>
   );
 }

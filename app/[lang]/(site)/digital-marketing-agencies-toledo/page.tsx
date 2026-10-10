@@ -1,15 +1,17 @@
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
   return {
-    title: isEn ? "Digital Marketing Agencies in Toledo" : "Agences de marketing digital à Tolède",
-    description: isEn ? "Guide to choosing a digital marketing agency in Toledo. What to ask, what to avoid and how to compare proposals before signing." : "Guide pour choisir une agence de marketing digital à Tolède. Quoi demander, quoi éviter et comment comparer les propositions avant de signer.",
+    // 09/10/2026: título informativo alineado con la ES («Cómo elegir agencia de marketing en Toledo»)
+    title: isEn ? "How to Choose a Marketing Agency in Toledo" : "Comment choisir une agence marketing à Tolède",
+    description: isEn ? "Guide to choosing a digital marketing agency in Toledo: what to ask, which red flags to spot and how to compare proposals before you sign anything." : "Guide pour choisir une agence de marketing digital à Tolède. Quoi demander, quoi éviter et comment comparer les propositions avant de signer.",
     alternates: alternatesFor(`/${lang}/digital-marketing-agencies-toledo/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/digital-marketing-agencies-toledo/`,
     },
@@ -33,6 +35,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </h1>
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Whether you are looking for a local agency in Toledo or a national agency that understands your market, this guide explains what to look for and what to avoid." : "Que vous cherchiez une agence locale à Tolède ou une agence nationale qui comprend votre marché, ce guide explique ce qu'il faut chercher et ce qu'il faut éviter."}
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-8 bg-primary-50 border border-primary-100 rounded-xl p-4">
+          {isEn ? "Looking for an agency? We are a " : "Vous cherchez une agence ? Nous sommes une "}
+          <Link href={`/${lang}/${langSlug(lang, "digital-marketing-agency-toledo")}/`} className="text-accent-600 font-semibold hover:underline">{isEn ? "digital marketing agency in Toledo" : "agence de marketing digital à Tolède"}</Link>
+          {isEn ? ", based in El Viso de San Juan. This guide helps you assess any proposal, including ours." : ", basée à El Viso de San Juan. Ce guide vous aide à évaluer n'importe quelle proposition, y compris la nôtre."}
         </p>
 
         <section className="mb-10">
@@ -95,7 +102,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         </section>
 
-        <BlogBanner variant="default" />
+        <BlogBanner variant="default" lang={lang} />
         <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
             {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}
