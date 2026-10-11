@@ -21,6 +21,12 @@ interface ContactFormProps {
   messagePlaceholder?: string;
   /** Texto del botón (la página lo pasa ya traducido a su idioma). */
   submitLabel?: string;
+  /** Etiqueta propia del mensaje (la página la pasa ya traducida). */
+  messageLabel?: string;
+  /** El mensaje deja de ser obligatorio (p. ej. auditoría gratuita). */
+  messageOptional?: boolean;
+  /** Campo opcional para la ficha de Google Business Profile (auditoría gratuita). */
+  gbpField?: { label: string; placeholder: string };
 }
 
 const T = {
@@ -86,7 +92,7 @@ const T = {
   },
 } as const;
 
-export function ContactForm({ formType = "contacto", websiteRequired = false, messagePlaceholder, submitLabel }: ContactFormProps) {
+export function ContactForm({ formType = "contacto", websiteRequired = false, messagePlaceholder, submitLabel, messageLabel, messageOptional = false, gbpField }: ContactFormProps) {
   const pathname = usePathname();
   const detectedLang = pathname?.startsWith("/en") ? "en" : pathname?.startsWith("/fr") ? "fr" : "es";
   const t = T[detectedLang];
@@ -181,9 +187,15 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
           <input name="website" type="url" required={websiteRequired} className={INPUT} placeholder={t.websitePh} />
         </div>
       </div>
+      {gbpField && (
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">{gbpField.label}</label>
+          <input name="gbp" type="text" className={INPUT} placeholder={gbpField.placeholder} />
+        </div>
+      )}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">{t.message} *</label>
-        <textarea name="message" required rows={5} className={INPUT} placeholder={messagePlaceholder || t.messagePh} />
+        <label className="block text-sm font-medium text-gray-700 mb-1">{messageLabel || t.message}{messageOptional ? "" : " *"}</label>
+        <textarea name="message" required={!messageOptional} rows={messageOptional ? 3 : 5} className={INPUT} placeholder={messagePlaceholder || t.messagePh} />
       </div>
       <div className="flex items-start gap-3">
         <input type="checkbox" name="gdpr" id="gdpr" required className="mt-1 h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-400" />

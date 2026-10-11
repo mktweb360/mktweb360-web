@@ -47,12 +47,15 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Demasiadas solicitudes." }, { status: 429 });
 
   const body = await req.json();
-  const { name, email, phone, website, message, gdpr,
+  const { name, email, phone, website, gdpr, gbp,
           form_type, page_origin,
           utm_source, utm_medium, utm_campaign, utm_content, utm_term,
           _hp } = body;
+  // En la auditoría gratuita el mensaje es opcional (11/10/2026).
+  const message: string = typeof body.message === "string" ? body.message : "";
+  const messageOptional = form_type === "auditoria";
 
-  if (!name || !email || !message || !gdpr)
+  if (!name || !email || (!message && !messageOptional) || !gdpr)
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
 
   // Anti-spam capa 1: honeypot — campo oculto que solo rellenan los bots
@@ -103,10 +106,11 @@ export async function POST(req: NextRequest) {
             <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Email</td><td><a href="mailto:${email}" style="color:#f97316">${email}</a></td></tr>
             <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Tel\u00e9fono</td><td>${phone || "\u2014"}</td></tr>
             <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Web</td><td>${website || "\u2014"}</td></tr>
+            ${gbp ? `<tr><td style="padding:6px 16px 6px 0;color:#6b7280">Ficha de Google</td><td>${gbp}</td></tr>` : ""}
           </table>
           <div style="padding:16px;background:white;border-radius:8px;border:1px solid #e5e7eb">
             <p style="color:#6b7280;font-size:12px;text-transform:uppercase;margin:0 0 8px">Mensaje</p>
-            <p style="margin:0;font-size:15px;line-height:1.6">${message.replace(/\n/g,"<br>")}</p>
+            <p style="margin:0;font-size:15px;line-height:1.6">${message ? message.replace(/\n/g,"<br>") : "—"}</p>
           </div>
           ${trackingHtml}
           <p style="color:#9ca3af;font-size:11px;text-align:center;margin-top:20px">ID: ${id}</p>
@@ -122,7 +126,9 @@ export async function POST(req: NextRequest) {
       headers: { "Content-Type": "application/json", "x-webhook-secret": MKTOS_SECRET },
       body: JSON.stringify({
         nombre: name, email, telefono: phone || "", empresa: website || "",
-        sector: "", canal, oferta, opcionPago: "", mensaje: message,
+        sector: "", canal, oferta, opcionPago: "",
+        mensaje: gbp ? `${message}${message ? "\n\n" : ""}Ficha de Google: ${gbp}` : message,
+        fichaGoogle: gbp || "",
         leadSource: page_origin || "mktweb360.com",
         utm_source: utm_source || "", utm_medium: utm_medium || "", utm_campaign: utm_campaign || "",
       }),

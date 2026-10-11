@@ -9,17 +9,19 @@ import { alternatesFor } from "@/lib/i18n/routes";
 // Entregable definido en 01-Proyectos/2026-10 Auditoria gratuita (OneDrive) y skill auditoria-seo-geo-gratuita.
 // Proceso inicial manual: la solicitud llega por correo/MktOS, Manué pasa el dominio, se genera el informe y
 // se envía desde nuestro correo. El plazo de 48 h laborables debe poder cumplirse con ese proceso.
+// 11/10/2026 — plazo 24 h laborables, apartado de ficha de Google (GBP), 3 oportunidades de palabras clave
+// y mensaje opcional (textos aprobados por Manué: «TEXTOS — Landing /auditoria-digital/ v2», Drive).
 
 const URL = "https://www.mktweb360.com/auditoria-digital/";
 
 export const metadata: Metadata = {
-  title: "Auditoría SEO gratuita de tu web en 48 h",
+  title: "Auditoría SEO gratuita de tu web en 24 h",
   description:
-    "Auditoría SEO y GEO gratuita: errores técnicos, palabras clave con oportunidad, visibilidad en asistentes de IA, competencia y plan de mejora con propuesta.",
+    "Auditoría SEO gratuita con visibilidad en IA y ficha de Google: errores técnicos, oportunidades, competencia y plan de mejora en 24 h laborables.",
   alternates: alternatesFor("/auditoria-digital/") ?? { canonical: URL },
   openGraph: {
-    title: "Auditoría SEO gratuita de tu web en 48 h | Mkt Web 360",
-    description: "Te enviamos por correo un diagnóstico SEO y de visibilidad en IA de tu web, con las 3 acciones que más impacto tendrían y una propuesta para aplicarlas.",
+    title: "Auditoría SEO gratuita de tu web en 24 h | Mkt Web 360",
+    description: "Te enviamos por correo un diagnóstico SEO, de visibilidad en IA y de tu ficha de Google, con las 3 acciones que más impacto tendrían y una propuesta para aplicarlas.",
     url: URL,
     images: [{ url: "/og-auditoria-digital.jpg", width: 1200, height: 630 }],
   },
@@ -28,24 +30,26 @@ export const metadata: Metadata = {
 const ENTREGABLE = [
   { t: "Estado técnico", d: "Los errores que más frenan tu web en Google, ordenados por prioridad: indexación, rastreo, velocidad en móvil, datos estructurados y enlaces rotos." },
   { t: "Visibilidad actual", d: "Por qué búsquedas apareces hoy y en qué posiciones. Los datos de herramientas externas se indican como estimación." },
-  { t: "10 oportunidades de palabras clave", d: "Búsquedas reales de tus clientes en las que puedes competir, con la página de tu web que debería trabajarlas." },
-  { t: "Visibilidad en asistentes de IA", d: "Si los asistentes de IA citan tu web o mencionan tu marca cuando alguien busca lo que ofreces." },
+  { t: "Tus mejores oportunidades de palabras clave", d: "Las 3 búsquedas reales de tus clientes con más potencial para tu web, con la página que debería trabajarlas, y cuántas oportunidades más hemos detectado." },
+  { t: "Visibilidad en asistentes de IA", d: "Hacemos 5 preguntas de tu sector a varios asistentes de IA y te enseñamos si citan tu web o mencionan tu marca, y a quién recomiendan en tu lugar." },
   { t: "Tu competencia", d: "Tres competidores que aparecen por delante de ti y qué están haciendo mejor." },
+  { t: "Tu ficha de Google", d: "Si tienes negocio local, revisamos tu ficha de Google Business Profile: si está completa, si sus datos coinciden con los de tu web y cómo están tus reseñas frente a los negocios que salen contigo en el mapa." },
   { t: "Plan de mejora y propuesta", d: "Las 3 acciones con más impacto y una propuesta con plan y precio para aplicarlas, si quieres que lo hagamos nosotros." },
 ];
 
 const PASOS = [
-  { n: "01", t: "Nos dejas tu web", d: "Rellenas el formulario con la web que quieres auditar y qué te gustaría conseguir." },
-  { n: "02", t: "Analizamos", d: "Revisamos tu web con herramientas profesionales y criterio experto. No es un informe automático: cada hallazgo se comprueba." },
-  { n: "03", t: "Te lo enviamos por correo", d: "En un máximo de 48 horas laborables recibes el informe con el plan de mejora y la propuesta." },
+  { n: "01", t: "Nos dejas tu web", d: "Rellenas el formulario con la web que quieres auditar y, si tienes negocio local, tu ficha de Google." },
+  { n: "02", t: "Analizamos", d: "Analizamos tu web, tu visibilidad en IA y tu ficha con herramientas profesionales, y un especialista comprueba cada hallazgo antes de enviártelo." },
+  { n: "03", t: "Te lo enviamos por correo", d: "En un máximo de 24 horas laborables recibes el informe con el plan de mejora y la propuesta." },
   { n: "04", t: "Decides tú", d: "Puedes aplicar las mejoras por tu cuenta o pedirnos que lo hagamos. Sin compromiso." },
 ];
 
 const FAQS = [
   { q: "¿La auditoría SEO es realmente gratuita?", a: "Sí. No tiene coste ni compromiso. Al final del informe incluimos una propuesta para aplicar las mejoras, por si quieres que lo hagamos nosotros; aceptarla o no es decisión tuya." },
-  { q: "¿Cuánto tarda?", a: "La recibes por correo electrónico en un máximo de 48 horas laborables desde tu solicitud." },
-  { q: "¿Necesitáis acceso a mi web o a Google Search Console?", a: "No para la auditoría gratuita: trabajamos con lo que es público. Si nos das acceso de lectura a Search Console, el diagnóstico es más preciso porque se basa en tus datos reales de Google." },
-  { q: "¿Qué diferencia hay con una auditoría digital completa?", a: "La gratuita se centra en SEO y visibilidad en IA. Si necesitas además revisar analítica, redes sociales o publicidad, lo indicas en el formulario y te preparamos una propuesta de auditoría completa." },
+  { q: "¿Cuánto tarda?", a: "La recibes por correo electrónico en un máximo de 24 horas laborables desde tu solicitud. Si la pides en fin de semana, la recibirás como tarde el lunes." },
+  { q: "¿Necesitáis acceso a mi web o a Google Search Console?", a: "No para la auditoría gratuita: trabajamos con lo que es público, también en tu ficha de Google. Si nos das acceso de lectura a Search Console, el diagnóstico es más preciso porque se basa en tus datos reales de Google." },
+  { q: "¿Qué diferencia hay con una auditoría digital completa?", a: "La gratuita se centra en SEO, visibilidad en IA y tu ficha de Google. Si necesitas además revisar analítica, redes sociales o publicidad, lo indicas en el formulario y te preparamos una propuesta de auditoría completa." },
+  { q: "¿Y si no tengo negocio local ni ficha en Google?", a: "No pasa nada. Deja ese campo vacío y el informe se centra en tu web y en tu visibilidad en los asistentes de IA." },
   { q: "¿Para qué webs es?", a: "Para webs de empresas, pymes y profesionales que venden o prestan servicios en España: webs corporativas, de servicios y tiendas online." },
 ];
 
@@ -57,7 +61,7 @@ const serviceSchema = {
   provider: { "@id": "https://www.mktweb360.com/#organization" },
   areaServed: { "@type": "Country", name: "España" },
   url: URL,
-  offers: { "@type": "Offer", price: 0, priceCurrency: "EUR", description: "Informe por correo en un máximo de 48 horas laborables" },
+  offers: { "@type": "Offer", price: 0, priceCurrency: "EUR", description: "Informe por correo en un máximo de 24 horas laborables" },
 };
 
 const faqSchema = {
@@ -78,23 +82,26 @@ export default function AuditoriaSeoGratuitaPage() {
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Auditoría SEO gratuita" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
               Auditoría SEO gratuita de tu web<br />
-              <span className="text-accent-400">en 48 horas, en tu correo</span>
+              <span className="text-accent-400">en 24 horas, en tu correo</span>
             </h1>
             <p className="text-xl text-primary-200 mb-6 leading-relaxed">
-              Te decimos qué está frenando tu web en Google y en los asistentes de IA, qué búsquedas puedes ganar y qué harías primero. Con un plan de mejora y una propuesta para aplicarlo.
+              Te decimos qué está frenando tu web en Google, en los asistentes de IA y en Google Maps, qué búsquedas puedes ganar y qué harías primero. Con un plan de mejora y una propuesta para aplicarlo.
             </p>
             <ul className="space-y-2 text-primary-100">
               <li>✓ Sin coste y sin compromiso</li>
-              <li>✓ Revisado por un especialista, no un informe automático</li>
-              <li>✓ SEO + visibilidad en IA (GEO) en el mismo informe</li>
+              <li>✓ Revisado por un especialista antes de enviártelo</li>
+              <li>✓ SEO, visibilidad en IA (GEO) y ficha de Google en el mismo informe</li>
             </ul>
           </div>
           <div id="solicitar" className="bg-white rounded-2xl p-6 text-gray-900 shadow-xl">
             <h2 className="text-xl font-bold text-primary-700 mb-1">Solicita tu auditoría</h2>
-            <p className="text-sm text-gray-500 mb-4">Te la enviamos a tu correo en un máximo de 48 horas laborables.</p>
+            <p className="text-sm text-gray-500 mb-4">Te la enviamos a tu correo en un máximo de 24 horas laborables. Si la pides en fin de semana, la recibirás como tarde el lunes.</p>
             <ContactForm
               formType="auditoria"
               websiteRequired
+              gbpField={{ label: "Tu negocio en Google Maps (opcional)", placeholder: "Nombre del negocio y ciudad, o enlace a tu ficha" }}
+              messageLabel="¿Qué te gustaría conseguir? (opcional)"
+              messageOptional
               messagePlaceholder="¿Qué te gustaría conseguir con tu web? (más clientes de tu zona, vender online, aparecer en la IA…) ¿Inviertes ya en SEO o publicidad?"
               submitLabel="Quiero mi auditoría gratuita"
             />
@@ -140,7 +147,7 @@ export default function AuditoriaSeoGratuitaPage() {
           <h2 className="text-2xl font-bold text-primary-600 mb-2">Por qué empezar por una auditoría</h2>
           <p>Antes de invertir en SEO, publicidad o una web nueva, conviene saber dónde estás. La auditoría te dice qué corregir primero, qué puede esperar y qué no merece la pena hacer todavía.</p>
           <p>Los problemas que más encontramos son siempre parecidos: páginas que compiten entre sí por la misma búsqueda, titulares que no dicen a Google qué servicio ofrece la página, medición que no registra los contactos, imágenes que disparan el tiempo de carga en móvil y redirecciones mal planteadas tras una migración.</p>
-          <p>Hoy hay además una capa nueva: los asistentes de IA. Una web puede aparecer como fuente en sus respuestas sin que la marca se llegue a nombrar. La auditoría también revisa eso.</p>
+          <p>Hoy hay además una capa nueva: los asistentes de IA. Una web puede aparecer como fuente en sus respuestas sin que la marca se llegue a nombrar. La auditoría también revisa eso. Y si atiendes clientes en una zona, tu ficha de Google pesa tanto como la web: es lo primero que ve quien te busca en el mapa.</p>
           <p>Si después quieres que lo hagamos nosotros, tienes los <Link href="/precios-seo/" className="text-accent-700 underline underline-offset-2">planes y precios SEO</Link> publicados.</p>
         </div>
       </section>
