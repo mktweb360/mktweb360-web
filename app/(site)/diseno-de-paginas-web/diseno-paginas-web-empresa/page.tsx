@@ -117,7 +117,7 @@ export default function PaginasWebEmpresaPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent-500 mb-3">Demos en vivo por sector</span>
-            <h2 className="text-3xl font-bold text-primary-600 mb-3">Así quedan las webs que construimos</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3">Así quedan las webs que construimos</h2>
             <p className="text-gray-600 max-w-xl mx-auto">Haz clic en cualquier demo para navegarla en tiempo real. Cada una representa un proyecto para un sector específico.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -164,7 +164,7 @@ export default function PaginasWebEmpresaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent-500 mb-3">Tipos de proyecto</span>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">Proyectos empresariales que desarrollamos</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">Proyectos empresariales que desarrollamos</h2>
               <ul className="space-y-3">
                 {PROJECTS.map((item) => (
                   <li key={item} className="flex gap-3 items-start">
@@ -194,7 +194,7 @@ export default function PaginasWebEmpresaPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Nuestro proceso de trabajo</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Nuestro proceso de trabajo</h2>
             <p className="text-gray-600 max-w-xl mx-auto">Un proceso claro, sin sorpresas y contigo en el centro.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -205,7 +205,7 @@ export default function PaginasWebEmpresaPage() {
               { step: "4", title: "Testing y entrega", desc: "Probamos exhaustivamente en todos los dispositivos. Formación incluida para gestión autónoma." },
             ].map((item) => (
               <div key={item.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-accent-500 text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">{item.step}</div>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xl font-black flex items-center justify-center mx-auto mb-4">{item.step}</div>
                 <h3 className="font-bold text-primary-600 mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>

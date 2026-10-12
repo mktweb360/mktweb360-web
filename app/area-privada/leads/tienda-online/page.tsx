@@ -84,7 +84,7 @@ export default function TiendaOnlineLeadForm() {
         {/* DATOS DEL LEAD */}
         <section className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h2 className="font-bold text-primary-600 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">1</span>
+            <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs flex items-center justify-center font-bold">1</span>
             Datos del lead
           </h2>
           <div className="space-y-3">
@@ -106,7 +106,7 @@ export default function TiendaOnlineLeadForm() {
         {/* CANAL Y ESTADO */}
         <section className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h2 className="font-bold text-primary-600 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">2</span>
+            <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs flex items-center justify-center font-bold">2</span>
             Contacto y estado
           </h2>
           <div className="space-y-3">
@@ -141,7 +141,7 @@ export default function TiendaOnlineLeadForm() {
         {/* SITUACIÓN ACTUAL */}
         <section className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h2 className="font-bold text-primary-600 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">3</span>
+            <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs flex items-center justify-center font-bold">3</span>
             Situación actual
           </h2>
           <div className="space-y-3">
@@ -183,7 +183,7 @@ export default function TiendaOnlineLeadForm() {
         {/* CATÁLOGO Y FOTOS */}
         <section className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h2 className="font-bold text-primary-600 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">4</span>
+            <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs flex items-center justify-center font-bold">4</span>
             Catálogo y recursos
           </h2>
           <div className="space-y-4">
@@ -223,7 +223,7 @@ export default function TiendaOnlineLeadForm() {
         {/* OPCIÓN DE PAGO */}
         <section className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h2 className="font-bold text-primary-600 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">5</span>
+            <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs flex items-center justify-center font-bold">5</span>
             Opción de pago
           </h2>
           <div className="space-y-2">
@@ -242,7 +242,7 @@ export default function TiendaOnlineLeadForm() {
         {/* NOTAS */}
         <section className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h2 className="font-bold text-primary-600 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">6</span>
+            <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs flex items-center justify-center font-bold">6</span>
             Notas de la llamada
           </h2>
           <textarea value={form.notas} onChange={(e) => set("notas", e.target.value)} className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400" rows={4} placeholder="Observaciones, objeciones detectadas, contexto relevante..." />

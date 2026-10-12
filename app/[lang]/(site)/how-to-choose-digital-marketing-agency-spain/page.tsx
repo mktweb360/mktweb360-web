@@ -187,7 +187,7 @@ export default async function HowToChooseAgencyPage({
               : "Choisir la mauvaise agence marketing en Espagne est une erreur coûteuse. Pas seulement en argent — en temps, en opportunités manquées et en frustration d'avoir à recommencer. Ce guide vous donne le cadre exact pour évaluer les agences avant de vous engager."}
           </p>
 
-          <h2 className="text-3xl font-bold text-primary-600 mb-10">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10">
             {isEn ? "7 Criteria for Choosing the Right Agency" : "7 Critères pour Choisir la Bonne Agence"}
           </h2>
 
@@ -223,7 +223,7 @@ export default async function HowToChooseAgencyPage({
 
       <section className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8">
             {isEn ? "7 Questions to Ask Before Signing" : "7 Questions à Poser Avant de Signer"}
           </h2>
           <div className="space-y-4">

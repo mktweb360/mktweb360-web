@@ -13,7 +13,7 @@ export default function GraciasTiendaOnlinePage() {
         <div className="w-20 h-20 rounded-full bg-primary-50 border-2 border-primary-100 flex items-center justify-center mx-auto mb-6">
           <span className="text-4xl">&#128722;</span>
         </div>
-        <h1 className="text-3xl font-bold text-primary-600 mb-3">Solicitud recibida</h1>
+        <h1 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3">Solicitud recibida</h1>
         <p className="text-gray-500 text-lg mb-8 leading-relaxed">
           Hemos recibido tu solicitud para la tienda online desde 490&#8364;.<br />
           Te contactamos en <strong className="text-gray-700">menos de 24 horas</strong>.
@@ -27,7 +27,7 @@ export default function GraciasTiendaOnlinePage() {
               { n: "3", t: "Tu tienda en marcha", d: "Si encaja, arrancamos el diseno. Tienda lista en 2-3 semanas." },
             ].map(paso => (
               <li key={paso.n} className="flex gap-4">
-                <span className="w-7 h-7 rounded-full bg-accent-500 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">{paso.n}</span>
+                <span className="w-7 h-7 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">{paso.n}</span>
                 <div>
                   <p className="font-semibold text-gray-800 text-sm">{paso.t}</p>
                   <p className="text-gray-400 text-xs mt-0.5 leading-relaxed">{paso.d}</p>

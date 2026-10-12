@@ -226,7 +226,7 @@ export default async function AiAppliedMarketingPage({ params }: { params: Promi
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "AI integrated into every service" : "IA intégrée dans chaque service"}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -256,7 +256,7 @@ export default async function AiAppliedMarketingPage({ params }: { params: Promi
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
                 {isEn ? "Why this matters for your business" : "Pourquoi c'est important pour votre entreprise"}
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">

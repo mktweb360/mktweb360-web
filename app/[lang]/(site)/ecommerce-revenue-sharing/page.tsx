@@ -190,7 +190,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn
                 ? "Why we don't do pure commission per sale"
                 : "Pourquoi nous ne faisons pas de commission pure par vente"}
@@ -263,14 +263,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section id="model" className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "How the hybrid model works" : "Comment fonctionne le modèle hybride"}
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {modelSteps.map((s) => (
               <div key={s.num} className="bg-primary-50 rounded-2xl p-8 border border-primary-100">
-                <div className="w-10 h-10 rounded-full bg-accent-500 text-white font-bold flex items-center justify-center mb-4 text-sm">{s.num}</div>
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] font-black flex items-center justify-center mb-4 text-sm">{s.num}</div>
                 <h3 className="text-xl font-bold text-primary-600 mb-1">{s.title}</h3>
                 <p className="text-accent-500 font-bold mb-3">{s.price}</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{s.desc}</p>
@@ -346,7 +346,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8">
             {isEn
               ? "Why the hybrid model is the only one that makes sense for both parties"
               : "Pourquoi le modèle hybride est le seul qui ait du sens pour les deux parties"}
@@ -371,7 +371,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-4">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
             {isEn
               ? "What you need to have for this model to work"
               : "Ce que vous devez avoir pour que ce modèle fonctionne"}
@@ -395,7 +395,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Frequently asked questions" : "Questions fréquentes"}
             </h2>
           </div>

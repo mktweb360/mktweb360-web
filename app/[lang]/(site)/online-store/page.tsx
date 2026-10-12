@@ -233,7 +233,7 @@ export default async function OnlineStorePage({ params }: { params: Promise<{ la
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Why not Shopify or Wix?" : "Pourquoi pas Shopify ou Wix ?"}
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
@@ -330,7 +330,7 @@ export default async function OnlineStorePage({ params }: { params: Promise<{ la
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
                 {isEn ? "Everything included in your store" : "Tout inclus dans votre boutique"}
               </h2>
               <div className="space-y-3">
@@ -365,14 +365,14 @@ export default async function OnlineStorePage({ params }: { params: Promise<{ la
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "How we do it" : "Comment nous le faisons"}
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {PROCESS.map((p) => (
               <div key={p.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-accent-500 text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">{p.step}</div>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xl font-black flex items-center justify-center mx-auto mb-4">{p.step}</div>
                 <h3 className="font-bold text-primary-600 mb-2">{p.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
               </div>
@@ -385,7 +385,7 @@ export default async function OnlineStorePage({ params }: { params: Promise<{ la
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Already have a store and want to switch?" : "Vous avez déjà une boutique et souhaitez changer ?"}
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
@@ -421,7 +421,7 @@ export default async function OnlineStorePage({ params }: { params: Promise<{ la
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Advanced features available" : "Fonctionnalités avancées disponibles"}
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
@@ -444,7 +444,7 @@ export default async function OnlineStorePage({ params }: { params: Promise<{ la
       {/* For whom */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6 text-center">
             {isEn ? "Who is this service for?" : "Pour qui est ce service ?"}
           </h2>
           <div className="max-w-2xl mx-auto text-gray-600 space-y-4">
@@ -470,7 +470,7 @@ export default async function OnlineStorePage({ params }: { params: Promise<{ la
       {/* After delivery */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6 text-center">
             {isEn ? "What happens after delivery" : "Que se passe-t-il après la livraison"}
           </h2>
           <div className="max-w-2xl mx-auto text-gray-600 space-y-4">
@@ -492,7 +492,7 @@ export default async function OnlineStorePage({ params }: { params: Promise<{ la
       {/* FAQ */}
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-6">

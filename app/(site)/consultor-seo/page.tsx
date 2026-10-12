@@ -114,7 +114,7 @@ export default function ConsultorSeoPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="text-3xl font-bold text-primary-600 mb-6">Qué hace un consultor SEO</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">Qué hace un consultor SEO</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               Un consultor SEO analiza por qué una web gana o pierde visibilidad en Google y define qué cambios tienen más impacto en el negocio. No se limita a una lista de errores: separa lo que es urgente de lo que es cosmético y explica cada recomendación con su evidencia.
             </p>
@@ -142,7 +142,7 @@ export default function ConsultorSeoPage() {
       <section id="metodo" className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Cómo trabajamos una consultoría SEO</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Cómo trabajamos una consultoría SEO</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Seis fases, del diagnóstico a la revisión de resultados. Cada una deja un entregable que puedes usar aunque no sigamos trabajando juntos.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -186,7 +186,7 @@ export default function ConsultorSeoPage() {
 
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">Preguntas frecuentes sobre consultoría SEO</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">Preguntas frecuentes sobre consultoría SEO</h2>
           <div className="space-y-4">
             {FAQS.map((f) => (
               <details key={f.q} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">

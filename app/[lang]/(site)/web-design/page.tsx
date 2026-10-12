@@ -251,7 +251,7 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
       <section id="types" className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">{t.typesTitle}</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">{t.typesTitle}</h2>
             <p className="text-gray-600 max-w-xl mx-auto">{t.typesSubtitle}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -274,13 +274,13 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">{t.processTitle}</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">{t.processTitle}</h2>
             <p className="text-gray-600">{t.processSubtitle}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {t.process.map((p) => (
               <div key={p.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-accent-500 text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xl font-black flex items-center justify-center mx-auto mb-4">
                   {p.step}
                 </div>
                 <h3 className="font-bold text-primary-600 mb-2">{p.title}</h3>
@@ -296,7 +296,7 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">{t.includedTitle}</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">{t.includedTitle}</h2>
               <div className="space-y-4">
                 {t.includes.map((item) => (
                   <div key={item} className="flex items-center gap-4">

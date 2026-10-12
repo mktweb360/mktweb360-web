@@ -116,7 +116,7 @@ export default function Page() {
 
         <section className="py-12 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary-600 mb-8">Preguntas frecuentes sobre marketing digital en Toledo</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8">Preguntas frecuentes sobre marketing digital en Toledo</h2>
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué incluye un servicio de marketing digital para empresas en Toledo?</h3>

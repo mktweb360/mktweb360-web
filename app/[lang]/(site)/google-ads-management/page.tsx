@@ -220,7 +220,7 @@ export default async function GoogleAdsManagementPage({ params }: { params: Prom
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Types of campaigns we manage" : "Types de campagnes que nous gérons"}
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
@@ -245,7 +245,7 @@ export default async function GoogleAdsManagementPage({ params }: { params: Prom
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
                 {isEn ? "Why choose us for your Google Ads" : "Pourquoi nous choisir pour votre Google Ads"}
               </h2>
               <div className="space-y-4">

@@ -139,7 +139,7 @@ export default function DisenoWebCoachesPage() {
               { n: "4", t: "Formación y lanzamiento", d: "Te enseñamos a gestionar la web, publicar contenido y actualizar tus servicios de forma autónoma. La web es tuya, sin dependencias." },
             ].map((s) => (
               <li key={s.n} className="flex gap-4 items-start">
-                <span className="w-8 h-8 rounded-full bg-accent-500 text-white text-sm font-bold flex items-center justify-center shrink-0">{s.n}</span>
+                <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-sm font-bold flex items-center justify-center shrink-0">{s.n}</span>
                 <div>
                   <p className="font-semibold text-primary-700">{s.t}</p>
                   <p className="text-gray-600 text-sm">{s.d}</p>

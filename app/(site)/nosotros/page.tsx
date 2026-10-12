@@ -85,7 +85,7 @@ export default function NosotrosPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">Nuestra historia</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">Nuestra historia</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Mkt Web 360 nació con un objetivo claro: ofrecer a las PYMEs españolas el mismo nivel de marketing digital serio y profesional que hasta entonces solo estaba al alcance de las grandes empresas.
               </p>
@@ -122,7 +122,7 @@ export default function NosotrosPage() {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">IA integrada en nuestra metodología</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">IA integrada en nuestra metodología</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">No usamos la IA como todos. Hemos desarrollado protocolos propios integrados en cada servicio — para trabajar más rápido, analizar más datos y tomar mejores decisiones.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
@@ -148,7 +148,7 @@ export default function NosotrosPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Cómo trabajamos</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Cómo trabajamos</h2>
             <p className="text-gray-600">Un proceso transparente, medible y orientado a resultados desde el primer día.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -167,7 +167,7 @@ export default function NosotrosPage() {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Nuestros valores</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Nuestros valores</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {VALORES.map((v) => (
@@ -184,7 +184,7 @@ export default function NosotrosPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Diferenciador estratégico</span>
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Pioneros en GEO en España</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Pioneros en GEO en España</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Somos una de las primeras agencias en España en implementar GEO — Generative Engine Optimization — la disciplina de optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini. Implementamos <code className="font-mono text-sm bg-gray-100 px-1 rounded">llms.txt</code> y <code className="font-mono text-sm bg-gray-100 px-1 rounded">llms-full.txt</code> desde principios de 2026 — uno de los primeros sitios de agencia en España en adoptar el estándar emergente que indica a los modelos de IA cómo indexar y entender un negocio.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

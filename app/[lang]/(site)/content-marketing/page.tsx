@@ -163,7 +163,7 @@ export default async function ContentMarketingPage({ params }: { params: Promise
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">
             {isEn ? "What's included" : "Ce qui est inclus"}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

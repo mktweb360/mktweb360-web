@@ -194,7 +194,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Everything included in your store" : "Tout inclus dans votre boutique"}
             </h2>
             <p className="text-gray-600">

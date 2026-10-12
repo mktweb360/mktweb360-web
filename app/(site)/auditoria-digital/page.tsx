@@ -112,7 +112,7 @@ export default function AuditoriaSeoGratuitaPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Qué recibes en la auditoría</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Qué recibes en la auditoría</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Un informe claro, sin jerga innecesaria, que puedes usar aunque no trabajes con nosotros.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -129,7 +129,7 @@ export default function AuditoriaSeoGratuitaPage() {
 
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-10 text-center">Cómo funciona</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">Cómo funciona</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {PASOS.map((p) => (
               <div key={p.n} className="text-center">
@@ -154,7 +154,7 @@ export default function AuditoriaSeoGratuitaPage() {
 
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">Preguntas frecuentes</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">Preguntas frecuentes</h2>
           <div className="space-y-4">
             {FAQS.map((f) => (
               <details key={f.q} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">

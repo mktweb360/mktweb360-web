@@ -125,7 +125,7 @@ export default function SeoLocalPage() {
       <section id="planes" className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Planes de SEO local</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Planes de SEO local</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Un servicio propio, con precio cerrado y sin permanencia. Elige según el tamaño de tu web y el número de sedes.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -154,7 +154,7 @@ export default function SeoLocalPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">Qué es el SEO local y por qué tu negocio lo necesita</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">Qué es el SEO local y por qué tu negocio lo necesita</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 El SEO local es la disciplina que posiciona tu negocio en las búsquedas con intención geográfica: las que incluyen una ciudad o barrio y las que Google interpreta como cercanas ("cerca de mí", "abierto ahora"). En esas búsquedas, Google muestra el <strong>pack local</strong> —el bloque de tres fichas con mapa— por encima de los resultados orgánicos tradicionales.
               </p>
@@ -198,7 +198,7 @@ export default function SeoLocalPage() {
       <section id="metodologia" className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Cómo posicionamos tu negocio en el mapa de Google</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Cómo posicionamos tu negocio en el mapa de Google</h2>
             <p className="text-gray-600">Un proceso probado para ganar visibilidad local de forma sostenible.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -219,7 +219,7 @@ export default function SeoLocalPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Google Business Profile: tu activo local más importante</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Google Business Profile: tu activo local más importante</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">La ficha de Google es lo primero que ve un cliente que busca en tu zona. Optimizarla bien marca la diferencia entre aparecer o no en el mapa.</p>
           </div>
           <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto mb-6">
@@ -240,7 +240,7 @@ export default function SeoLocalPage() {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Guías de SEO local por ciudad</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Guías de SEO local por ciudad</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">El servicio es el mismo para cualquier ubicación. Estas guías explican cómo es la búsqueda local en algunas ciudades.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -294,7 +294,7 @@ export default function SeoLocalPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Preguntas frecuentes sobre SEO local</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Preguntas frecuentes sobre SEO local</h2>
           </div>
           <div className="space-y-4">
             {FAQS.map((faq) => (

@@ -150,7 +150,7 @@ export default function WebDesignPage() {
       <section id="tipos" className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">¿Qué tipo de web necesitas?</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">¿Qué tipo de web necesitas?</h2>
             <p className="text-gray-600 max-w-xl mx-auto">Cada proyecto es diferente. Elige el que mejor encaja con tus objetivos.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -170,7 +170,7 @@ export default function WebDesignPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent-500 mb-3">Demos navegables en vivo</span>
-            <h2 className="text-3xl font-bold text-primary-600 mb-3">Así quedan las webs que construimos</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3">Así quedan las webs que construimos</h2>
             <p className="text-gray-600 max-w-xl mx-auto">Haz clic en cualquier demo para verla en tiempo real. Webs reales por sector — navegables, no capturas de pantalla.</p>
           </div>
         </div>
@@ -233,13 +233,13 @@ export default function WebDesignPage() {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Cómo trabajamos</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Cómo trabajamos</h2>
             <p className="text-gray-600">Un proceso claro, sin sorpresas y contigo en el centro.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {PROCESS.map((p) => (
               <div key={p.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-accent-500 text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">{p.step}</div>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xl font-black flex items-center justify-center mx-auto mb-4">{p.step}</div>
                 <h3 className="font-bold text-primary-600 mb-2">{p.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
               </div>
@@ -252,7 +252,7 @@ export default function WebDesignPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">Todo incluido en cada proyecto</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">Todo incluido en cada proyecto</h2>
               <div className="space-y-4">
                 {FEATURES.map((f) => (
                   <div key={f} className="flex items-center gap-4">

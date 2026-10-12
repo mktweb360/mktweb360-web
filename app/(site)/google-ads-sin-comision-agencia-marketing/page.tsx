@@ -99,7 +99,7 @@ export default function Page() {
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-10 text-center">Preguntas frecuentes</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">Preguntas frecuentes</h2>
       <div className="border-b border-gray-100 pb-6 mb-6">
         <h3 className="font-bold text-primary-700 mb-2">¿Qué es la comisión sobre presupuesto en Google Ads?</h3>
         <p className="text-gray-600 text-sm leading-relaxed">Es un porcentaje (normalmente 10-20%) que la agencia cobra sobre lo que inviertes en Google. Si inviertes 2.000€/mes, pagas 200-400€ adicionales a la agencia solo por gestionar ese dinero.</p>

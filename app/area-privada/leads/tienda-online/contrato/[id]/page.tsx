@@ -129,7 +129,7 @@ export default function ContratoTiendaPage() {
       <div className="max-w-3xl mx-auto px-4 py-6 space-y-6">
         <section className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h2 className="font-bold text-primary-600 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">1</span>
+            <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs flex items-center justify-center font-bold">1</span>
             Datos del cliente para el contrato
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -153,7 +153,7 @@ export default function ContratoTiendaPage() {
         </section>
         <section className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
           <h2 className="font-bold text-primary-600 mb-6 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">2</span>
+            <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs flex items-center justify-center font-bold">2</span>
             Vista previa del contrato
           </h2>
           <div className="prose prose-sm max-w-none text-gray-700 space-y-4 text-sm leading-relaxed border border-gray-100 rounded-xl p-6 bg-gray-50">

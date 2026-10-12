@@ -153,7 +153,7 @@ export default function PaginasCorporativasPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent-500 mb-3">Webs reales que hemos construido</span>
-            <h2 className="text-3xl font-bold text-primary-600 mb-3">Demos en vivo — así queda tu web</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3">Demos en vivo — así queda tu web</h2>
             <p className="text-gray-600 max-w-xl mx-auto">Haz clic en cualquier demo para ver cómo quedaría la web de tu sector. Cada una es navegable y representa un proyecto real.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -237,7 +237,7 @@ export default function PaginasCorporativasPage() {
               { n: "4", t: "Formación y entrega", d: "Te enseñamos a gestionar la web de forma autónoma. La web es tuya, sin ataduras. Puedes actualizarla, añadir páginas y publicar contenido sin depender de nosotros." },
             ].map((s) => (
               <li key={s.n} className="flex gap-4 items-start">
-                <span className="w-8 h-8 rounded-full bg-accent-500 text-white text-sm font-bold flex items-center justify-center shrink-0">{s.n}</span>
+                <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-sm font-bold flex items-center justify-center shrink-0">{s.n}</span>
                 <div>
                   <p className="font-semibold text-primary-700">{s.t}</p>
                   <p className="text-gray-600 text-sm">{s.d}</p>

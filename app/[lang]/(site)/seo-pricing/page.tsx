@@ -207,7 +207,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section id="calculator" className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-3 text-center">{t.calcTitle}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3 text-center">{t.calcTitle}</h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">{t.calcSub}</p>
           <CalculadoraSeo lang={lang} />
         </div>
@@ -215,7 +215,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-10 text-center">{t.plansTitle}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">{t.plansTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {planes.map((p) => (
               <div key={p.id} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 flex flex-col">
@@ -264,7 +264,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-4 text-center">{t.factorsTitle}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4 text-center">{t.factorsTitle}</h2>
           <p className="text-gray-600 text-center max-w-3xl mx-auto mb-10">{t.factorsSub}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {t.factors.map((f) => (
@@ -295,7 +295,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">{t.faqTitle}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">{t.faqTitle}</h2>
           <div className="space-y-4">
             {t.faqs.map((f) => (
               <details key={f.q} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">

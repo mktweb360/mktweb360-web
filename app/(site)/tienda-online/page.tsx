@@ -75,7 +75,7 @@ export default function TiendaOnlineLandingPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Todo lo que incluye tu tienda</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Todo lo que incluye tu tienda</h2>
             <p className="text-gray-600">Sin sorpresas. Sin letra pequeña.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

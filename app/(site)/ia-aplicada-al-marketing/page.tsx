@@ -112,7 +112,7 @@ export default function IAMarketingPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">IA integrada en cada servicio</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">IA integrada en cada servicio</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">No es una herramienta añadida. Es parte del proceso desde el primer día.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -133,7 +133,7 @@ export default function IAMarketingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">Por qué esto importa para tu negocio</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">Por qué esto importa para tu negocio</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Una agencia tradicional analiza datos manualmente, tarda días en detectar oportunidades y semanas en implementar cambios. Nosotros procesamos la misma información en una fracción del tiempo.
               </p>

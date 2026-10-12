@@ -163,7 +163,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
                 {isEn ? "Our story" : "Notre histoire"}
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
@@ -197,7 +197,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Our values" : "Nos valeurs"}
             </h2>
           </div>
@@ -216,7 +216,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "AI integrated into our methodology" : "IA intégrée dans notre méthodologie"}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -252,7 +252,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "How we work" : "Comment nous travaillons"}
             </h2>
             <p className="text-gray-600">
@@ -280,7 +280,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
               {isEn ? "Strategic differentiator" : "Différenciateur stratégique"}
             </span>
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Pioneers in GEO in Spain" : "Pionniers en GEO en Espagne"}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">

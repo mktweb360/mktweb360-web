@@ -14,7 +14,7 @@ export default function CookiePolicyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
       <Breadcrumbs crumbs={[{ label: "Home", href: "/en/" }, { label: "Cookie Policy" }]} />
-      <h1 className="text-3xl font-bold text-primary-600 mb-2">Cookie Policy</h1>
+      <h1 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-2">Cookie Policy</h1>
       <p className="text-sm text-gray-500 mb-8">Last updated: June 2025</p>
 
       <div className="text-gray-700 space-y-8 text-sm leading-relaxed">

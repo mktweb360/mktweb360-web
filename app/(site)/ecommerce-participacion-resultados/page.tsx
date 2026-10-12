@@ -75,7 +75,7 @@ export default function EcommerceParticipacionPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Por qué no hacemos comisión pura por venta</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Por qué no hacemos comisión pura por venta</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">La comisión directa por venta suena bien sobre el papel, pero tiene problemas operativos serios que perjudican a ambas partes.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -118,7 +118,7 @@ export default function EcommerceParticipacionPage() {
       <section id="modelo" className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Cómo funciona el modelo híbrido</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Cómo funciona el modelo híbrido</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {[
@@ -145,7 +145,7 @@ export default function EcommerceParticipacionPage() {
               },
             ].map((s) => (
               <div key={s.num} className="bg-primary-50 rounded-2xl p-8 border border-primary-100">
-                <div className="w-10 h-10 rounded-full bg-accent-500 text-white font-bold flex items-center justify-center mb-4 text-sm">{s.num}</div>
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] font-black flex items-center justify-center mb-4 text-sm">{s.num}</div>
                 <h3 className="text-xl font-bold text-primary-600 mb-1">{s.title}</h3>
                 <p className="text-accent-500 font-bold mb-3">{s.price}</p>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{s.desc}</p>
@@ -198,7 +198,7 @@ export default function EcommerceParticipacionPage() {
       {/* POR QUÉ MODELO HÍBRIDO */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8">Por qué el modelo híbrido es el único que tiene sentido para ambas partes</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8">Por qué el modelo híbrido es el único que tiene sentido para ambas partes</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             El modelo de comisión pura sobre ventas parece atractivo para el cliente a primera vista — si no vendo, no pago. Pero en la práctica crea un incentivo perverso: la agencia solo gana si el ecommerce escala rápido, lo que lleva a priorizar volumen sobre rentabilidad, tráfico barato sobre tráfico cualificado, y resultados a corto plazo sobre construcción sostenible del negocio.
           </p>
@@ -214,7 +214,7 @@ export default function EcommerceParticipacionPage() {
       {/* QUÉ NECESITAS */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-4">Qué necesitas tener para que este modelo funcione</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Qué necesitas tener para que este modelo funcione</h2>
           <p className="text-gray-600 mb-8">Este servicio no es para todos los proyectos. Para que el modelo híbrido tenga sentido necesitas:</p>
           <div className="space-y-4">
             {[
@@ -237,7 +237,7 @@ export default function EcommerceParticipacionPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Preguntas frecuentes</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Preguntas frecuentes</h2>
           </div>
           <div className="space-y-4">
             {[

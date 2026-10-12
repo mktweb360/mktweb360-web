@@ -176,7 +176,7 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
                 {isEn ? "SEO vs Paid advertising" : "SEO vs Publicité payante"}
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
@@ -247,7 +247,7 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
       {/* When does SEO make sense */}
       <section className="py-12 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
             {isEn ? "When does it make sense to invest in SEO?" : "Quand est-il judicieux d'investir dans le SEO ?"}
           </h2>
           <div className="space-y-4 text-gray-600">
@@ -272,7 +272,7 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
       <section id="methodology" className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Our SEO methodology" : "Notre méthodologie SEO"}
             </h2>
             <p className="text-gray-600">
@@ -298,7 +298,7 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
       {/* Local vs national SEO */}
       <section className="py-12 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
             {isEn ? "Local SEO and national SEO: two distinct strategies" : "SEO local et SEO national : deux stratégies distinctes"}
           </h2>
           <div className="space-y-4 text-gray-600">
@@ -370,7 +370,7 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
       {/* What SEO does not include */}
       <section className="py-12 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
             {isEn
               ? "What SEO does not include (and why it matters)"
               : "Ce que le SEO n'inclut pas (et pourquoi c'est important de le savoir)"}
@@ -397,7 +397,7 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Frequently asked questions about SEO" : "Questions fréquentes sur le SEO"}
             </h2>
           </div>

@@ -121,7 +121,7 @@ export default function SeoPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">SEO vs Publicidad de pago</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">SEO vs Publicidad de pago</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Google Ads genera tráfico inmediato pero cuando dejas de pagar, desaparece. El SEO construye una base sólida que genera tráfico constante mes tras mes, sin coste adicional por visita.
               </p>
@@ -166,7 +166,7 @@ export default function SeoPage() {
       {/* When SEO makes sense */}
       <section className="py-12 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">¿Cuándo tiene sentido invertir en SEO?</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">¿Cuándo tiene sentido invertir en SEO?</h2>
           <div className="space-y-4 text-gray-600">
             <p>El SEO no es la respuesta correcta para todos los negocios en todos los momentos. Tiene sentido cuando el negocio tiene un horizonte temporal de al menos 6-12 meses, cuando existe volumen de búsqueda real para los productos o servicios que ofrece, y cuando el objetivo es construir un canal de captación sostenible que no dependa de presupuesto publicitario continuo.</p>
             <p>No tiene sentido como canal único cuando se necesitan resultados en semanas, cuando el producto es completamente nuevo sin demanda de búsqueda existente, o cuando el presupuesto no permite mantener el trabajo durante el tiempo necesario para ver resultados. En esos casos, Google Ads es la herramienta correcta para el corto plazo mientras el SEO construye a largo plazo.</p>
@@ -179,7 +179,7 @@ export default function SeoPage() {
       <section id="metodologia" className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Nuestra metodología SEO</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Nuestra metodología SEO</h2>
             <p className="text-gray-600">Un proceso probado, transparente y orientado a resultados reales.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -199,7 +199,7 @@ export default function SeoPage() {
       {/* Local vs national SEO */}
       <section className="py-12 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">SEO local y SEO nacional: dos estrategias distintas</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">SEO local y SEO nacional: dos estrategias distintas</h2>
           <div className="space-y-4 text-gray-600">
             <p>El SEO local y el SEO nacional responden a intenciones de búsqueda diferentes y requieren estrategias distintas. No es mejor uno que otro — es una cuestión de qué tipo de cliente busca tu servicio y desde dónde.</p>
             <p>El SEO local es la estrategia correcta para negocios que atienden clientes en una zona geográfica específica: clínicas, despachos, tiendas físicas, talleres, restaurantes, academias, instaladores, reformistas. En este caso, las búsquedas que importan incluyen un modificador local — "fontanero Toledo", "gestoría Madrid centro", "clínica dental Salamanca" — o se hacen desde el dispositivo móvil con la ubicación activada. El canal más importante para SEO local es Google Business Profile: la ficha que aparece en el mapa cuando alguien busca tu servicio cerca.</p>
@@ -255,7 +255,7 @@ export default function SeoPage() {
       {/* What SEO does not include */}
       <section className="py-12 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">Qué no incluye el SEO (y por qué es importante saberlo)</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">Qué no incluye el SEO (y por qué es importante saberlo)</h2>
           <div className="space-y-4 text-gray-600">
             <p>El SEO orgánico posiciona tu web en los resultados de búsqueda de Google. No incluye la creación de contenido de redes sociales, la gestión de publicidad de pago, el diseño gráfico para campañas, ni la gestión de tu reputación online más allá de las acciones directamente vinculadas al posicionamiento.</p>
             <p>Tampoco garantiza posiciones específicas ni fechas exactas de resultados. Cualquier agencia que garantice "primera posición en Google en X semanas" está vendiendo algo que no puede cumplir — el algoritmo de Google no lo controla nadie.</p>
@@ -269,7 +269,7 @@ export default function SeoPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Preguntas frecuentes sobre SEO</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Preguntas frecuentes sobre SEO</h2>
           </div>
           <div className="space-y-4">
             {FAQS.map((faq) => (

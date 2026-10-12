@@ -94,7 +94,7 @@ export function LocalServicePage({ c }: { c: LocalServiceContent }) {
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-10 text-center">{u.porQue}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">{u.porQue}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {c.porQue.map((p) => (
               <div key={p.t} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
@@ -108,7 +108,7 @@ export function LocalServicePage({ c }: { c: LocalServiceContent }) {
 
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-10 text-center">{c.queHacemosTitulo}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">{c.queHacemosTitulo}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {c.queHacemos.map((q) => (
               <div key={q.t} className="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm">
@@ -123,7 +123,7 @@ export function LocalServicePage({ c }: { c: LocalServiceContent }) {
 
       <section className="py-16 px-4 bg-primary-50 border-y border-primary-100">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-3 text-center">{u.precios}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3 text-center">{u.precios}</h2>
           <p className="text-gray-600 text-center mb-10">{u.preciosSub}</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {c.precios.map((p) => (
@@ -150,7 +150,7 @@ export function LocalServicePage({ c }: { c: LocalServiceContent }) {
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">{u.faq}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">{u.faq}</h2>
           <div className="space-y-4">
             {c.faqs.map((f) => (
               <details key={f.q} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">

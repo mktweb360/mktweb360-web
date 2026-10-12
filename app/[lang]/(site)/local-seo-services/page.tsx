@@ -232,7 +232,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section id="plans" className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">{isEn ? "Local SEO plans" : "Formules de SEO local"}</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">{isEn ? "Local SEO plans" : "Formules de SEO local"}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               {isEn
                 ? "A service in its own right, with a fixed price and no minimum term. Choose based on the size of your website and the number of locations."
@@ -270,7 +270,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
                 {isEn
                   ? "What local SEO is and why your business needs it"
                   : "Qu'est-ce que le SEO local et pourquoi votre entreprise en a besoin"}
@@ -340,7 +340,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section id="methodology" className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn
                 ? "How we position your business on the Google map"
                 : "Comment nous positionnons votre entreprise sur la carte Google"}
@@ -369,7 +369,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn
                 ? "Google Business Profile: your most important local asset"
                 : "Google Business Profile : votre actif local le plus important"}
@@ -400,7 +400,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Local SEO guides by city" : "Guides de SEO local par ville"}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -479,7 +479,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Frequently asked questions about local SEO" : "Questions fréquentes sur le SEO local"}
             </h2>
           </div>

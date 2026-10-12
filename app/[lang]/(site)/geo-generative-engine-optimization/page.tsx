@@ -279,7 +279,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "What is GEO and why does it matter now?" : "Qu'est-ce que le GEO et pourquoi est-il important maintenant ?"}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -349,7 +349,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "What the GEO service includes" : "Ce qu'inclut le service GEO"}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -375,7 +375,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       {/* Why GEO */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8">
             {isEn
               ? "Why GEO is the next major shift in digital acquisition"
               : "Pourquoi le GEO est le prochain grand changement dans l'acquisition digitale"}
@@ -405,7 +405,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       {/* When does GEO make sense */}
       <section className="py-12 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
             {isEn ? "When does it make sense to invest in GEO?" : "Quand est-il judicieux d'investir dans le GEO ?"}
           </h2>
           <div className="space-y-4 text-gray-600">
@@ -432,7 +432,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "How we work on GEO" : "Comment nous travaillons le GEO"}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -458,7 +458,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       {/* Local GEO */}
       <section className="py-12 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
             {isEn
               ? "Local GEO: the opportunity most businesses haven't spotted yet"
               : "GEO local : l'opportunité que la plupart n'a pas encore vue"}
@@ -485,7 +485,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Frequently asked questions about GEO" : "Questions fréquentes sur le GEO"}
             </h2>
           </div>

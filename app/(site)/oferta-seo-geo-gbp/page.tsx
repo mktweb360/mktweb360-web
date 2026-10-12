@@ -196,7 +196,7 @@ export default function OfertaSeoGeoGbpPage() {
       <section id="incluye" className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-3">Qué incluye el paquete</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3">Qué incluye el paquete</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Hoy tus clientes te buscan en tres sitios: el buscador, el mapa y los asistentes de IA. Trabajamos los tres a la vez para que no dependas de uno solo.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -225,7 +225,7 @@ export default function OfertaSeoGeoGbpPage() {
       <section id="condiciones" className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-3">Qué incluye exactamente el precio</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3">Qué incluye exactamente el precio</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">349 €/mes + IVA, con estas condiciones claras desde el principio.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
@@ -267,7 +267,7 @@ export default function OfertaSeoGeoGbpPage() {
       {/* Preguntas frecuentes */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">Preguntas frecuentes</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">Preguntas frecuentes</h2>
           <div className="space-y-4">
             {FAQS.map((f) => (
               <details key={f.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

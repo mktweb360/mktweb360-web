@@ -185,7 +185,7 @@ export default function ContratoPage() {
         {/* Datos del cliente — campos a completar */}
         <section className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h2 className="font-bold text-primary-600 mb-4 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">1</span>
+            <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs flex items-center justify-center font-bold">1</span>
             Datos del cliente para el contrato
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -216,7 +216,7 @@ export default function ContratoPage() {
         {/* Vista previa del contrato */}
         <section className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
           <h2 className="font-bold text-primary-600 mb-6 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">2</span>
+            <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs flex items-center justify-center font-bold">2</span>
             Vista previa del contrato
           </h2>
 
@@ -282,7 +282,7 @@ export default function ContratoPage() {
         {/* PRECIO ACORDADO */}
         <section className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
           <h2 className="font-bold text-primary-600 mb-3 flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-accent-500 text-white text-xs flex items-center justify-center font-bold">€</span>
+            <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xs flex items-center justify-center font-bold">€</span>
             Precio acordado
           </h2>
           <div className="flex items-center gap-3">

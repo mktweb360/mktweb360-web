@@ -134,7 +134,7 @@ export default function GEOPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">¿Qué es el GEO y por qué importa ahora?</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">¿Qué es el GEO y por qué importa ahora?</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">El comportamiento de búsqueda está cambiando. Millones de personas ya consultan a asistentes de IA antes de visitar una web.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -177,7 +177,7 @@ export default function GEOPage() {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Qué incluye el servicio GEO</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Qué incluye el servicio GEO</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Un enfoque completo para que los motores de IA te conozcan, te entiendan y te recomienden.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -197,7 +197,7 @@ export default function GEOPage() {
       {/* POR QUÉ GEO */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 max-w-4xl">Por qué el GEO es el próximo gran cambio en captación digital</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 max-w-4xl">Por qué el GEO es el próximo gran cambio en captación digital</h2>
           <div className="grid lg:grid-cols-[minmax(0,1fr)_400px] gap-10 items-start">
           <figure className="lg:order-2 lg:sticky lg:top-28 max-w-md mx-auto lg:max-w-none w-full">
             <AnswerIllustration className="w-full h-auto" />
@@ -227,7 +227,7 @@ export default function GEOPage() {
       {/* CUÁNDO TIENE SENTIDO GEO */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6 max-w-4xl">¿Cuándo tiene sentido contratar GEO?</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6 max-w-4xl">¿Cuándo tiene sentido contratar GEO?</h2>
           <div className="grid lg:grid-cols-[400px_minmax(0,1fr)] gap-10 items-start">
           <figure className="lg:sticky lg:top-28 max-w-md mx-auto lg:max-w-none w-full">
             <LayersIllustration className="w-full h-auto" />
@@ -247,7 +247,7 @@ export default function GEOPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Cómo trabajamos el GEO</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Cómo trabajamos el GEO</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Un proceso estructurado en cuatro fases para construir y mantener tu visibilidad en los motores de IA.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -288,7 +288,7 @@ export default function GEOPage() {
       {/* GEO LOCAL */}
       <section className="py-12 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6 max-w-4xl">GEO local: la oportunidad que la mayoría todavía no ha visto</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6 max-w-4xl">GEO local: la oportunidad que la mayoría todavía no ha visto</h2>
           <div className="grid lg:grid-cols-[minmax(0,1fr)_400px] gap-10 items-start">
           <figure className="lg:order-2 lg:sticky lg:top-28 max-w-md mx-auto lg:max-w-none w-full">
             <Image src="/imagen-google-business-profile.jpg" alt="Mapa de una ciudad con varios negocios señalados y uno destacado en naranja" width={1200} height={900} sizes="(max-width: 1024px) 448px, 400px" className="w-full h-auto rounded-[28px]" />
@@ -308,7 +308,7 @@ export default function GEOPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Preguntas frecuentes sobre GEO</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Preguntas frecuentes sobre GEO</h2>
           </div>
           <div className="space-y-4">
             {[

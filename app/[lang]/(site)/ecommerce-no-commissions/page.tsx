@@ -255,7 +255,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">
             {isEn ? "Everything included in your store" : "Tout inclus dans votre boutique"}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -274,7 +274,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {intro.paragraphs.map((p) => (
             <p key={p} className="text-gray-700 leading-relaxed mb-4">{p}</p>
           ))}
-          <h2 className="text-3xl font-bold text-primary-600 mt-10 mb-6">{comparison.title}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mt-10 mb-6">{comparison.title}</h2>
           {comparison.paragraphs.map((p) => (
             <p key={p} className="text-gray-700 leading-relaxed mb-4">{p}</p>
           ))}
@@ -283,7 +283,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">{features.title}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">{features.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {features.items.map((f) => (
               <div key={f.label} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
@@ -297,7 +297,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">{steps.title}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">{steps.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {steps.steps.map((step) => (
               <div key={step.num} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
@@ -322,7 +322,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-4">

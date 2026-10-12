@@ -105,7 +105,7 @@ export default function SemPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Tipos de campañas que gestionamos</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Tipos de campañas que gestionamos</h2>
             <p className="text-gray-600 max-w-xl mx-auto">Cada negocio necesita una estrategia diferente. Seleccionamos el mix de campañas que mejor se adapta a tus objetivos.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -124,7 +124,7 @@ export default function SemPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">Por qué elegirnos para tu Google Ads</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">Por qué elegirnos para tu Google Ads</h2>
               <div className="space-y-4">
                 {[
                   "Gestión por especialistas certificados en Google Ads",

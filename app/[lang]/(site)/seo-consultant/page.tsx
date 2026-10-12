@@ -224,7 +224,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="text-3xl font-bold text-primary-600 mb-6">{t.whatTitle}</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">{t.whatTitle}</h2>
             {t.what.map((p, i) => (
               <p key={p.slice(0, 40)} className={`text-gray-600 leading-relaxed${i < t.what.length - 1 ? " mb-4" : ""}`}>{p}</p>
             ))}
@@ -246,7 +246,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section id="method" className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">{t.methodTitle}</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">{t.methodTitle}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">{t.methodSub}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -285,7 +285,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">{t.faqTitle}</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">{t.faqTitle}</h2>
           <div className="space-y-4">
             {t.faqs.map((f) => (
               <details key={f.q} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">

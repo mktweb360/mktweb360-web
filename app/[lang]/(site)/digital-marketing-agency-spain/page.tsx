@@ -120,7 +120,7 @@ export default async function DigitalMarketingAgencySpainPage({
       {/* Services */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4 text-center">
             {isEn ? "Our Services for Foreign Companies in Spain" : "Nos Services pour Entreprises Étrangères en Espagne"}
           </h2>
           <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
@@ -143,7 +143,7 @@ export default async function DigitalMarketingAgencySpainPage({
       {/* Why us */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-12 text-center">
             {isEn ? "Why Choose Mkt Web 360?" : "Pourquoi Choisir Mkt Web 360 ?"}
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -188,7 +188,7 @@ export default async function DigitalMarketingAgencySpainPage({
       {/* FAQs */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-10 text-center">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">
             {isEn ? "Frequently Asked Questions" : "Questions Fréquentes"}
           </h2>
           <div className="space-y-6">

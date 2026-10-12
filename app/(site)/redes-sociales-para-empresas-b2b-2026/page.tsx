@@ -99,7 +99,7 @@ export default function Page() {
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-10 text-center">Preguntas frecuentes</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">Preguntas frecuentes</h2>
       <div className="border-b border-gray-100 pb-6 mb-6">
         <h3 className="font-bold text-primary-700 mb-2">¿Vale la pena LinkedIn para una PYME?</h3>
         <p className="text-gray-600 text-sm leading-relaxed">Depende del sector. Para empresas que venden a otras empresas (B2B), LinkedIn es imprescindible. Para B2C con bajo ticket, otras redes tienen mejor ROI.</p>

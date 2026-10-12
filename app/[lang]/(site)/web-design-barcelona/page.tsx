@@ -234,7 +234,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </p>
 
         <section className="py-12 px-4 bg-gray-50 rounded-2xl mt-10">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8">
             {isEn
               ? "Frequently asked questions about web design in Barcelona"
               : "Questions fréquentes sur la création web à Barcelone"}

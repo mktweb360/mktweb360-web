@@ -120,7 +120,7 @@ export default function MarketingShopwarePage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">Qué hacemos con tu tienda Shopware</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">Qué hacemos con tu tienda Shopware</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Shopware es una de las plataformas de ecommerce más potentes de Europa, especialmente para negocios B2B y catálogos exigentes. Pero una plataforma potente sin estrategia de marketing es solo una tienda bonita que nadie encuentra. Ahí entramos nosotros.
               </p>
@@ -164,7 +164,7 @@ export default function MarketingShopwarePage() {
       <section id="metodologia" className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Cómo hacemos crecer tu tienda Shopware</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Cómo hacemos crecer tu tienda Shopware</h2>
             <p className="text-gray-600">Un proceso probado para convertir tu plataforma en un canal de ventas rentable.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -185,7 +185,7 @@ export default function MarketingShopwarePage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Todo lo que tu tienda Shopware necesita</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Todo lo que tu tienda Shopware necesita</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Combinamos los servicios que más venden en ecommerce, integrados en una sola estrategia para tu tienda Shopware.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -235,7 +235,7 @@ export default function MarketingShopwarePage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Preguntas frecuentes sobre marketing para Shopware</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Preguntas frecuentes sobre marketing para Shopware</h2>
           </div>
           <div className="space-y-4">
             {FAQS.map((faq) => (

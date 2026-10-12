@@ -34,7 +34,7 @@ export function MetodologiaSeo() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-block bg-primary-100 text-primary-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Cómo trabajamos</span>
-          <h2 className="text-3xl font-bold text-primary-600 mb-4">Un método. No una plantilla.</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Un método. No una plantilla.</h2>
           <p className="text-gray-500 max-w-2xl mx-auto">Cada proyecto comienza con un diagnóstico real y termina con resultados verificables. Lo que ocurre en medio es trabajo consistente, bien ejecutado y bien medido.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">

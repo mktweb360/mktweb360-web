@@ -157,7 +157,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
                 {isEn ? "What we do with your Shopware store" : "Ce que nous faisons avec votre boutique Shopware"}
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
@@ -219,7 +219,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section id="methodology" className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "How we grow your Shopware store" : "Comment nous faisons croître votre boutique Shopware"}
             </h2>
             <p className="text-gray-600">
@@ -246,7 +246,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn ? "Everything your Shopware store needs" : "Tout ce dont votre boutique Shopware a besoin"}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -326,7 +326,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
               {isEn
                 ? "Frequently asked questions about Shopware marketing"
                 : "Questions fréquentes sur le marketing Shopware"}

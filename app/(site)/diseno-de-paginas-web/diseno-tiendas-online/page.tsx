@@ -202,7 +202,7 @@ export default function TiendasOnlinePage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">¿Por qué no Shopify o Wix?</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">¿Por qué no Shopify o Wix?</h2>
             <p className="text-gray-600 max-w-xl mx-auto">El coste real a 3 años cambia mucho la decisión.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -254,7 +254,7 @@ export default function TiendasOnlinePage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-600 mb-6">Todo incluido en tu tienda</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">Todo incluido en tu tienda</h2>
               <div className="space-y-3">
                 {INCLUDES.map((f) => (
                   <div key={f} className="flex items-center gap-3">
@@ -281,12 +281,12 @@ export default function TiendasOnlinePage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Cómo lo hacemos</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Cómo lo hacemos</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {PROCESS.map((p) => (
               <div key={p.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-accent-500 text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">{p.step}</div>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white shadow-[0_6px_16px_-6px_rgba(124,58,237,0.6)] text-xl font-black flex items-center justify-center mx-auto mb-4">{p.step}</div>
                 <h3 className="font-bold text-primary-600 mb-2">{p.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
               </div>
@@ -299,7 +299,7 @@ export default function TiendasOnlinePage() {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">¿Tienes tienda y quieres cambiarte?</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">¿Tienes tienda y quieres cambiarte?</h2>
             <p className="text-gray-600 max-w-xl mx-auto">Migramos tu tienda desde Shopify, Prestashop, Wix o cualquier plataforma sin perder productos, pedidos ni historial de SEO.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -325,7 +325,7 @@ export default function TiendasOnlinePage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Funcionalidades avanzadas disponibles</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Funcionalidades avanzadas disponibles</h2>
             <p className="text-gray-600 max-w-xl mx-auto">Más allá de la tienda base, ofrecemos integraciones adicionales para escalar tu negocio sin cambiar de plataforma.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -349,7 +349,7 @@ export default function TiendasOnlinePage() {
       {/* ¿Para quién es este servicio? */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6 text-center">¿Para quién es este servicio?</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6 text-center">¿Para quién es este servicio?</h2>
           <div className="max-w-2xl mx-auto text-gray-600 space-y-4">
             <p>Este servicio encaja con cualquier negocio que quiera vender online sin depender de plataformas que cobran por cada transacción. Funciona bien para negocios con catálogo propio — físico o digital — que necesitan una tienda con identidad propia, no una plantilla genérica.</p>
             <p>También es la solución natural para negocios que ya venden en Shopify, Prestashop o Wix y han llegado al techo de lo que esa plataforma permite, o que simplemente no quieren seguir pagando comisiones cuando su volumen de ventas crece.</p>
@@ -362,7 +362,7 @@ export default function TiendasOnlinePage() {
       {/* Qué pasa después de la entrega */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-6 text-center">Qué pasa después de la entrega</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6 text-center">Qué pasa después de la entrega</h2>
           <div className="max-w-2xl mx-auto text-gray-600 space-y-4">
             <p>La entrega incluye una hora de formación online en la que repasamos las operaciones más habituales del panel: subir y editar productos, gestionar pedidos, actualizar precios y controlar el stock. La formación se adapta al equipo que vaya a gestionar la tienda.</p>
             <p>Si prefieres que nos encarguemos del mantenimiento técnico, la actualización de productos o la gestión de contenido de forma continuada, es un servicio que presupuestamos aparte según las necesidades de cada tienda. Sin paquetes cerrados — definimos juntos qué tiene sentido externalizar.</p>
@@ -380,7 +380,7 @@ export default function TiendasOnlinePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-accent-500 mb-3">Proyectos reales</span>
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">Tiendas online que hemos construido</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Tiendas online que hemos construido</h2>
             <p className="text-gray-600 max-w-xl mx-auto">
               Cada tienda es un proyecto diferente. Sector diferente, catálogo diferente, objetivos distintos. El resultado siempre: tecnología propia, 0€ de comisión y gestión autónoma desde el primer día.
             </p>
@@ -434,7 +434,7 @@ export default function TiendasOnlinePage() {
       {/* Preguntas frecuentes */}
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">Preguntas frecuentes</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">Preguntas frecuentes</h2>
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">¿Cuánto tarda en estar lista la tienda?</h3>
