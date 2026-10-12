@@ -337,6 +337,20 @@ export function HeroSlider() {
   );
 }
 
+// Color de cada objetivo: recorre el degradado de la marca (violeta → rosa → naranja).
+const TAB_COLOR: Record<string, { from: string; to: string }> = {
+  presencia:    { from: "#5b21b6", to: "#7c3aed" },
+  visibilidad:  { from: "#7c3aed", to: "#a21caf" },
+  captacion:    { from: "#a21caf", to: "#db2777" },
+  comunidad:    { from: "#db2777", to: "#e11d48" },
+  monetizacion: { from: "#e11d48", to: "#ea580c" },
+  crecimiento:  { from: "#ea580c", to: "#f97316" },
+};
+const grad = (id: string) => {
+  const c = TAB_COLOR[id] ?? { from: "#7c3aed", to: "#f97316" };
+  return `linear-gradient(135deg, ${c.from}, ${c.to})`;
+};
+
 export function ServicesTab() {
   const [activeTab, setActiveTab] = useState(0);
   const [openTab, setOpenTab] = useState<string | null>(null);
@@ -353,9 +367,9 @@ export function ServicesTab() {
 
   return (
     <div>
-      {/* Desktop: objetivos en columna (izquierda) + servicios en rejilla 3×2 (derecha) */}
-      <div className="hidden md:grid md:grid-cols-[230px_1fr] lg:grid-cols-[270px_1fr] bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-        <div role="tablist" aria-orientation="vertical" aria-label="Objetivos" className="flex flex-col bg-gray-50 border-r border-gray-200 py-2">
+      {/* Desktop: objetivos en columna (izquierda) + servicios (derecha) */}
+      <div className="hidden md:grid md:grid-cols-[250px_1fr] lg:grid-cols-[290px_1fr] gap-6">
+        <div role="tablist" aria-orientation="vertical" aria-label="Objetivos" className="flex flex-col gap-2">
           {SERVICE_TABS.map((tab, i) => {
             const on = activeTab === i;
             return (
@@ -374,98 +388,138 @@ export function ServicesTab() {
                   setActiveTab(n);
                   document.getElementById(`tab-${SERVICE_TABS[n].id}`)?.focus();
                 }}
-                className={`group flex-1 flex items-center gap-3 text-left px-5 py-4 border-l-4 transition-colors ${
-                  on ? "border-accent-500 bg-white" : "border-transparent hover:bg-white"
+                style={on ? { backgroundImage: grad(tab.id) } : undefined}
+                className={`group flex items-center gap-4 text-left rounded-2xl px-4 py-3.5 transition-all duration-300 ${
+                  on
+                    ? "text-white shadow-[0_14px_30px_-12px_rgba(124,58,237,0.55)] translate-x-1"
+                    : "bg-white text-primary-700 ring-1 ring-gray-200 hover:ring-accent-300 hover:-translate-y-0.5 hover:shadow-md"
                 }`}
               >
-                <span className="text-2xl shrink-0" aria-hidden="true">{tab.emoji}</span>
-                <span className="min-w-0">
-                  <span className={`block text-xs font-bold uppercase tracking-widest ${on ? "text-accent-700" : "text-primary-600 group-hover:text-accent-700"}`}>
-                    {tab.tipo}
+                <span
+                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl transition-colors ${on ? "bg-white/20" : "bg-gray-50"}`}
+                  aria-hidden="true"
+                >
+                  {tab.emoji}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className={`block text-xs font-bold uppercase tracking-widest ${on ? "text-white/85" : "text-gray-400"}`}>
+                    {String(i + 1).padStart(2, "0")} · {tab.tipo}
                   </span>
-                  <span className={`block text-sm leading-snug mt-0.5 ${on ? "text-gray-700" : "text-gray-500"}`}>
+                  <span className={`block text-[0.95rem] font-semibold leading-snug mt-0.5 ${on ? "text-white" : "text-primary-700"}`}>
                     {tab.objetivo}
                   </span>
                 </span>
+                <span className={`text-lg transition-transform ${on ? "translate-x-0 opacity-100" : "-translate-x-1 opacity-0 group-hover:opacity-60"}`} aria-hidden="true">→</span>
               </button>
             );
           })}
         </div>
 
-        <div id="panel-servicios" role="tabpanel" aria-labelledby={`tab-${active.id}`} className="p-6 lg:p-8 flex flex-col">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 flex-1">
-            {active.servicios.map((s) => (
-              <Link
-                key={s.href + s.title}
-                href={s.href}
-                className="group relative bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-accent-300 hover:bg-white hover:shadow-md transition-all"
-              >
-                {s.badge && (
-                  <span className="absolute top-3 right-3 bg-accent-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
-                    {s.badge}
+        <div
+          id="panel-servicios"
+          role="tabpanel"
+          aria-labelledby={`tab-${active.id}`}
+          className="relative overflow-hidden rounded-3xl bg-white p-6 lg:p-8 ring-1 ring-gray-200 shadow-[0_20px_50px_-30px_rgba(15,28,46,0.35)] flex flex-col"
+        >
+          {/* Franja y halo con el color del objetivo */}
+          <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1.5 transition-all duration-500" style={{ backgroundImage: grad(active.id) }} />
+          <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-[0.12] blur-3xl transition-all duration-500" style={{ backgroundImage: grad(active.id) }} />
+
+          <div key={active.id} className="mw-fade-up relative flex flex-1 flex-col">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest bg-clip-text text-transparent" style={{ backgroundImage: grad(active.id) }}>
+                  {active.tipo}
+                </p>
+                <p className="mt-1 text-2xl font-black tracking-tight text-primary-700">{active.objetivo}</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {active.servicios.map((s) => (
+                <Link
+                  key={s.href + s.title}
+                  href={s.href}
+                  className="group relative flex flex-col rounded-2xl bg-gray-50 p-5 ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_40px_-20px_rgba(15,28,46,0.45)] hover:ring-transparent"
+                >
+                  {!s.badge && (
+                    <span className="absolute top-5 right-5 text-lg text-accent-500 opacity-0 -translate-x-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true">→</span>
+                  )}
+                  {s.badge && (
+                    <span className="absolute top-3 right-3 bg-accent-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                      {s.badge}
+                    </span>
+                  )}
+                  <span
+                    className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl text-xl shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3"
+                    style={{ backgroundImage: grad(active.id) }}
+                    aria-hidden="true"
+                  >
+                    <span className="drop-shadow">{s.icon}</span>
                   </span>
-                )}
-                <div className="text-2xl mb-3" aria-hidden="true">{s.icon}</div>
-                <h3 className="font-bold text-primary-600 text-base mb-2 group-hover:text-accent-700 transition-colors leading-tight">
-                  {s.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+                  <h3 className="font-bold text-primary-700 text-base mb-2 leading-tight">
+                    {s.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed flex-1">{s.desc}</p>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-auto pt-6 text-right">
+              <Link
+                href={`/${tabHref[active.id] ?? active.id}/`}
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white shadow-md transition-transform hover:scale-[1.03]"
+                style={{ backgroundImage: grad(active.id) }}
+              >
+                Ver todos los servicios de {active.tipo.toLowerCase()} <span aria-hidden="true">→</span>
               </Link>
-            ))}
-          </div>
-          <div className="mt-6 text-right">
-            <Link
-              href={`/${tabHref[active.id] ?? active.id}/`}
-              className="inline-flex items-center gap-2 text-accent-700 font-semibold text-sm hover:underline"
-            >
-              Ver todos los servicios de {active.tipo.toLowerCase()} →
-            </Link>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile — accordion */}
-      <div className="md:hidden border border-gray-200 rounded-xl overflow-hidden divide-y divide-gray-100">
-        {SERVICE_TABS.map((tab) => {
+      {/* Mobile — acordeón */}
+      <div className="md:hidden space-y-3">
+        {SERVICE_TABS.map((tab, i) => {
           const isOpen = openTab === tab.id;
           return (
-            <div key={tab.id}>
+            <div key={tab.id} className={`overflow-hidden rounded-2xl bg-white ring-1 transition-shadow ${isOpen ? "ring-transparent shadow-lg" : "ring-gray-200"}`}>
               <button
                 onClick={() => setOpenTab(isOpen ? null : tab.id)}
-                className="w-full flex items-center justify-between px-4 py-4 bg-white hover:bg-gray-50 transition-colors"
+                aria-expanded={isOpen}
+                className="w-full flex items-center justify-between gap-3 px-4 py-4 text-left"
+                style={isOpen ? { backgroundImage: grad(tab.id) } : undefined}
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-xl">{tab.emoji}</span>
-                  <div className="text-left">
-                    <p className="text-xs font-bold uppercase tracking-widest text-accent-500">{tab.tipo}</p>
-                    <p className="text-xs text-gray-400">{tab.objetivo}</p>
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xl ${isOpen ? "bg-white/20" : "bg-gray-50"}`} aria-hidden="true">{tab.emoji}</span>
+                  <div>
+                    <p className={`text-xs font-bold uppercase tracking-widest ${isOpen ? "text-white/85" : "text-gray-400"}`}>{String(i + 1).padStart(2, "0")} · {tab.tipo}</p>
+                    <p className={`text-sm font-semibold ${isOpen ? "text-white" : "text-primary-700"}`}>{tab.objetivo}</p>
                   </div>
                 </div>
-                <span className="text-gray-400 text-xl font-light">{isOpen ? "−" : "+"}</span>
+                <span className={`text-2xl font-light transition-transform ${isOpen ? "rotate-45 text-white" : "text-gray-400"}`} aria-hidden="true">+</span>
               </button>
-              <div className={`overflow-hidden transition-[max-height] duration-300 ${isOpen ? "max-h-[1000px]" : "max-h-0"}`}>
-                <div className="px-4 pb-4 grid grid-cols-1 gap-3 bg-white">
+              <div className={`overflow-hidden transition-[max-height] duration-300 ${isOpen ? "max-h-[1200px]" : "max-h-0"}`}>
+                <div className="p-3 grid grid-cols-1 gap-2">
                   {tab.servicios.map((s) => (
                     <Link
                       key={s.href + s.title}
                       href={s.href}
-                      className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-100 hover:border-accent-300 transition-colors"
+                      className="flex items-center gap-3 rounded-xl bg-gray-50 px-3 py-3 transition-colors active:bg-white"
                     >
-                      <span className="text-xl shrink-0">{s.icon}</span>
-                      <div>
-                        <p className="font-semibold text-primary-600 text-sm">{s.title}</p>
-                        <p className="text-gray-400 text-xs leading-tight mt-0.5">{s.desc}</p>
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-lg" style={{ backgroundImage: grad(tab.id) }} aria-hidden="true">{s.icon}</span>
+                      <div className="min-w-0">
+                        <p className="font-semibold text-primary-700 text-sm">{s.title}</p>
+                        <p className="text-gray-500 text-xs leading-snug mt-0.5">{s.desc}</p>
                       </div>
                     </Link>
                   ))}
-                  <div className="text-center mt-2">
-                    <Link
-                      href={`/${tabHref[tab.id] ?? tab.id}/`}
-                      className="inline-flex items-center gap-1 text-accent-500 font-semibold text-sm hover:underline"
-                    >
-                      Ver todos los servicios de {tab.tipo.toLowerCase()} →
-                    </Link>
-                  </div>
+                  <Link
+                    href={`/${tabHref[tab.id] ?? tab.id}/`}
+                    className="mt-1 rounded-xl px-4 py-3 text-center text-sm font-bold text-white"
+                    style={{ backgroundImage: grad(tab.id) }}
+                  >
+                    Ver todos los servicios de {tab.tipo.toLowerCase()} →
+                  </Link>
                 </div>
               </div>
             </div>

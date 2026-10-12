@@ -84,3 +84,14 @@
 @media (prefers-reduced-motion: reduce) {
   .mw-ping { animation: none; opacity: 0; }
 }
+
+/* Entrada suave del panel de servicios al cambiar de objetivo y del cuerpo de las FAQ */
+@keyframes mw-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.mw-fade-up { animation: mw-fade-up 0.45s ease-out both; }
+.mw-faq[open] .mw-faq-body { animation: mw-fade-up 0.35s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .mw-fade-up, .mw-faq[open] .mw-faq-body { animation: none; }
+}
