@@ -146,7 +146,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       <section className="mw-skin-band py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {[
-            { value: "+10", label: isEn ? "years experience" : "ans d'expérience" },
+            { value: "2016", label: isEn ? "up and running since" : "en activité depuis" },
             { value: "National", label: isEn ? "service across Spain" : "service en Espagne" },
             { value: "AI", label: isEn ? "own protocols" : "protocoles propres" },
             { value: "1:1", label: isEn ? "sector exclusivity" : "exclusivité sectorielle" },

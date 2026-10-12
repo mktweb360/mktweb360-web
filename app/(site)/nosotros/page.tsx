@@ -67,7 +67,7 @@ export default function NosotrosPage() {
       <section className="mw-skin-band py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {[
-            { value: "+10 años", label: "de experiencia" },
+            { value: "2016", label: "en marcha desde" },
             { value: "Nacional", label: "servicio en toda España" },
             { value: "IA propia", label: "protocolos desarrollados" },
             { value: "Exclusivo", label: "un cliente por sector y zona" },
