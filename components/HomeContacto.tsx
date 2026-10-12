@@ -1,4 +1,5 @@
-// Bloque final de contacto de la home: qué pasa después de escribir + formulario.
+// Bloque final de contacto de la home: qué pasa después de escribir + formulario general.
+// (La auditoría gratuita tiene su propio formulario en el bloque de la oferta SEO + GEO + GBP.)
 // Componente de servidor; solo ContactForm se hidrata en el cliente.
 import { ContactForm } from "@/components/ContactForm";
 
@@ -36,7 +37,7 @@ export function HomeContacto() {
         <div className="lg:sticky lg:top-28">
           <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
             <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden="true" />
-            Auditoría gratuita
+            Contacto
           </p>
           <h2 id="home-contacto" className="mt-6 text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl">
             Cuéntanos qué
@@ -77,12 +78,10 @@ export function HomeContacto() {
 
         {/* Formulario */}
         <div className="rounded-3xl bg-white p-6 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10 sm:p-9">
-          <p className="mb-6 text-lg font-bold text-primary-700">Pide tu auditoría gratuita</p>
+          <p className="mb-6 text-lg font-bold text-primary-700">Escríbenos</p>
           <ContactForm
-            formType="auditoria"
-            submitLabel="Quiero mi auditoría gratuita"
-            messageOptional
-            messageLabel="¿Qué te gustaría mejorar? (opcional)"
+            formType="contacto"
+            messageLabel="¿En qué podemos ayudarte?"
             messagePlaceholder="Por ejemplo: quiero que me encuentren en Google, conseguir más contactos, renovar la web…"
           />
         </div>

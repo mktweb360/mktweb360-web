@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useId } from "react";
 import { trackLead } from "@/lib/track";
 import { usePathname } from "next/navigation";
 
@@ -128,6 +128,8 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
   const t = T[detectedLang];
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
   const utmRef = useRef<UtmData>({});
+  // Ids únicos por instancia: puede haber varios formularios en la misma página (p. ej. la home).
+  const uid = useId();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -201,20 +203,20 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="cf-name" className="block text-sm font-medium text-gray-700 mb-1">{t.name} *</label>
-          <input id="cf-name" name="name" autoComplete="name" type="text" required className={INPUT} placeholder={t.namePh} />
+          <label htmlFor={`${uid}-name`} className="block text-sm font-medium text-gray-700 mb-1">{t.name} *</label>
+          <input id={`${uid}-name`} name="name" autoComplete="name" type="text" required className={INPUT} placeholder={t.namePh} />
         </div>
         <div>
-          <label htmlFor="cf-email" className="block text-sm font-medium text-gray-700 mb-1">{t.email} *</label>
-          <input id="cf-email" name="email" autoComplete="email" type="email" required className={INPUT} placeholder="tu@email.com" />
+          <label htmlFor={`${uid}-email`} className="block text-sm font-medium text-gray-700 mb-1">{t.email} *</label>
+          <input id={`${uid}-email`} name="email" autoComplete="email" type="email" required className={INPUT} placeholder="tu@email.com" />
         </div>
         <div>
-          <label htmlFor="cf-phone" className="block text-sm font-medium text-gray-700 mb-1">{t.phone}</label>
-          <input id="cf-phone" name="phone" autoComplete="tel" type="tel" className={INPUT} placeholder={t.phonePh} />
+          <label htmlFor={`${uid}-phone`} className="block text-sm font-medium text-gray-700 mb-1">{t.phone}</label>
+          <input id={`${uid}-phone`} name="phone" autoComplete="tel" type="tel" className={INPUT} placeholder={t.phonePh} />
         </div>
         <div>
-          <label htmlFor="cf-website" className="block text-sm font-medium text-gray-700 mb-1">{websiteRequired ? t.websiteAudit : t.website}</label>
-          <input id="cf-website" name="website" autoComplete="url" type="url" required={websiteRequired} className={INPUT} placeholder={t.websitePh} />
+          <label htmlFor={`${uid}-website`} className="block text-sm font-medium text-gray-700 mb-1">{websiteRequired ? t.websiteAudit : t.website}</label>
+          <input id={`${uid}-website`} name="website" autoComplete="url" type="url" required={websiteRequired} className={INPUT} placeholder={t.websitePh} />
         </div>
       </div>
       {gbpField && (
@@ -224,13 +226,13 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
         </div>
       )}
       <div>
-        <label htmlFor="cf-message" className="block text-sm font-medium text-gray-700 mb-1">{messageLabel || t.message}{messageOptional ? "" : " *"}</label>
-        <textarea id="cf-message" name="message" required={!messageOptional} rows={messageOptional ? 3 : 5} className={INPUT} placeholder={messagePlaceholder || t.messagePh} />
+        <label htmlFor={`${uid}-message`} className="block text-sm font-medium text-gray-700 mb-1">{messageLabel || t.message}{messageOptional ? "" : " *"}</label>
+        <textarea id={`${uid}-message`} name="message" required={!messageOptional} rows={messageOptional ? 3 : 5} className={INPUT} placeholder={messagePlaceholder || t.messagePh} />
       </div>
       <div className="space-y-3">
         <div className="flex items-start gap-3">
-          <input type="checkbox" name="gdpr" id="gdpr" required className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-400" />
-          <label htmlFor="gdpr" className="text-sm text-gray-600">
+          <input type="checkbox" name="gdpr" id={`${uid}-gdpr`} required className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-400" />
+          <label htmlFor={`${uid}-gdpr`} className="text-sm text-gray-600">
             {t.gdpr}{" "}
             <a href={t.gdprLinkHref} className="text-primary-600 underline-offset-2 hover:underline">
               {t.gdprLink}
@@ -239,8 +241,8 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
           </label>
         </div>
         <div className="flex items-start gap-3">
-          <input type="checkbox" name="marketing" id="marketing" value="si" className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-400" />
-          <label htmlFor="marketing" className="text-sm text-gray-600">{t.marketing}</label>
+          <input type="checkbox" name="marketing" id={`${uid}-marketing`} value="si" className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-400" />
+          <label htmlFor={`${uid}-marketing`} className="text-sm text-gray-600">{t.marketing}</label>
         </div>
       </div>
       {/* Primera capa de información (art. 13 RGPD y art. 11 LOPDGDD, modelo por capas de la AEPD) */}
