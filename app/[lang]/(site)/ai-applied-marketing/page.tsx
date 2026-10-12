@@ -155,14 +155,14 @@ export default async function AiAppliedMarketingPage({ params }: { params: Promi
 
   const aiDoesntReplace = isEn
     ? [
-        "Strategic judgment from the senior team",
+        "Senior strategic judgement",
         "Sector knowledge and client understanding",
         "Direct relationship and ongoing communication",
         "Accountability for results",
         "Adaptation to each specific business",
       ]
     : [
-        "Jugement stratégique de l'équipe senior",
+        "Jugement stratégique senior",
         "Connaissance du secteur et du client",
         "Relation directe et communication continue",
         "Responsabilité sur les résultats",
@@ -185,7 +185,7 @@ export default async function AiAppliedMarketingPage({ params }: { params: Promi
           />
           <div className="max-w-3xl mt-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              {isEn ? "The experience of a senior team." : "L'expérience d'une équipe senior."}<br />
+              {isEn ? "Senior expertise." : "Une expertise senior."}<br />
               <span className="text-accent-400">
                 {isEn ? "The precision of artificial intelligence." : "La précision de l'intelligence artificielle."}
               </span>

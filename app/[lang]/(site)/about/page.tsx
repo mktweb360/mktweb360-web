@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title: lang === "en" ? "About Us" : "À propos",
     description:
       lang === "en"
-        ? "Meet the Mkt Web 360 team. Senior experience, AI protocols and sector exclusivity. Digital marketing agency for SMEs. Nationwide service."
-        : "Découvrez l'équipe Mkt Web 360. Expérience senior, protocoles IA et exclusivité sectorielle. Agence de marketing digital pour PME.",
+        ? "Meet Mkt Web 360. Senior experience, AI protocols and sector exclusivity. Digital marketing agency for SMEs. Nationwide service."
+        : "Découvrez Mkt Web 360. Expérience senior, protocoles IA et exclusivité sectorielle. Agence de marketing digital pour PME.",
     alternates: alternatesFor(`/${lang}/about/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/about/`,
     },
@@ -41,7 +41,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
       ];
 
   const enDiffs = [
-    "Senior team — no trainees or junior profiles",
+    "Senior expertise — no trainees or junior profiles",
     "Our own AI protocols in every service",
     "Sector and geographic exclusivity per client",
     "Real reporting — good and bad data",
@@ -50,7 +50,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   ];
 
   const frDiffs = [
-    "Équipe senior — pas de stagiaires ni de profils juniors",
+    "Expertise senior — pas de stagiaires ni de profils juniors",
     "Protocoles IA propres dans chaque service",
     "Exclusivité sectorielle et géographique par client",
     "Reporting réel — bonnes et mauvaises données",
@@ -122,7 +122,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           />
           <div className="max-w-3xl mt-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              {isEn ? "The experience of a senior team." : "L'expérience d'une équipe senior."}
+              {isEn ? "Senior expertise." : "Une expertise senior."}
               <br />
               <span className="text-accent-400">
                 {isEn ? "The precision of artificial intelligence." : "La précision de l'intelligence artificielle."}
@@ -130,8 +130,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
             </h1>
             <p className="text-xl text-primary-200 mb-4 leading-relaxed">
               {isEn
-                ? "At Mkt Web 360 we are not just another agency. We are a team committed to real results for real businesses — with our own AI protocols that allow us to work faster, analyse more data and make better decisions than a traditional agency."
-                : "Chez Mkt Web 360, nous ne sommes pas une agence ordinaire. Nous sommes une équipe engagée dans des résultats réels pour des entreprises réelles — avec nos propres protocoles IA qui nous permettent de travailler plus vite, d'analyser plus de données et de prendre de meilleures décisions qu'une agence traditionnelle."}
+                ? "At Mkt Web 360 we are not just another agency. We are a specialised agency committed to real results for real businesses — with our own AI protocols that allow us to work faster, analyse more data and make better decisions than a traditional agency."
+                : "Chez Mkt Web 360, nous ne sommes pas une agence ordinaire. Nous sommes une agence spécialisée engagée dans des résultats réels pour des entreprises réelles — avec nos propres protocoles IA qui nous permettent de travailler plus vite, d'analyser plus de données et de prendre de meilleures décisions qu'une agence traditionnelle."}
             </p>
             <a
               href={`/${lang}/contact/`}
@@ -236,8 +236,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <div className="bg-primary-700 rounded-2xl p-8 text-white text-center">
             <p className="text-xl font-semibold mb-2">
               {isEn
-                ? '"A qualified team with our own AI protocols.'
-                : '"Une équipe qualifiée avec nos propres protocoles IA.'}
+                ? '"Qualified expertise with our own AI protocols.'
+                : '"Une expertise qualifiée avec nos propres protocoles IA.'}
             </p>
             <p className="text-primary-200">
               {isEn

@@ -6,11 +6,11 @@ import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Quiénes Somos: Agencia de Marketing Digital",
-  description: "Conoce Mkt Web 360: agencia de marketing digital con equipo senior por áreas y protocolos propios de IA. Metodología, valores y forma de trabajar desde 2016.",
+  description: "Conoce Mkt Web 360: agencia de marketing digital con experiencia senior y protocolos propios de IA. Metodología, valores y forma de trabajar desde 2016.",
   alternates: alternatesFor("/nosotros/") ?? { canonical: "https://www.mktweb360.com/nosotros/" },
   openGraph: {
     title: "Quiénes Somos: Agencia de Marketing Digital | Mkt Web 360",
-    description: "La experiencia de un equipo senior. La precisión de la inteligencia artificial. Conoce cómo trabajamos.",
+    description: "Criterio senior. La precisión de la inteligencia artificial. Conoce cómo trabajamos.",
     url: "https://www.mktweb360.com/nosotros/",
     images: [{ url: "/og-nosotros.jpg", width: 1200, height: 630 }],
   },
@@ -43,10 +43,10 @@ export default function NosotrosPage() {
           <div className="max-w-3xl mt-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Quiénes somos:<br />
-              <span className="text-accent-400">La experiencia de un equipo senior. La precisión de la inteligencia artificial.</span>
+              <span className="text-accent-400">Criterio senior. La precisión de la inteligencia artificial.</span>
             </h1>
             <p className="text-xl text-primary-200 mb-4 leading-relaxed">
-              En Mkt Web 360 no somos una agencia más. Somos un equipo comprometido con resultados reales para empresas reales — con protocolos propios de IA que nos permiten trabajar más rápido, analizar más datos y tomar mejores decisiones que una agencia tradicional.
+              En Mkt Web 360 no somos una agencia más. Somos una agencia especializada y comprometida con resultados reales para empresas reales — con protocolos propios de IA que nos permiten trabajar más rápido, analizar más datos y tomar mejores decisiones que una agencia tradicional.
             </p>
             <p className="text-lg text-primary-100 italic mb-8">
               "Céntrate en tu negocio. Nosotros ponemos el foco en que te encuentren."
@@ -100,7 +100,7 @@ export default function NosotrosPage() {
               <h3 className="text-2xl font-bold mb-6">Por qué somos diferentes</h3>
               <ul className="space-y-4">
                 {[
-                  "Equipo senior — no practicantes ni perfiles júnior",
+                  "Experiencia senior — sin becarios ni perfiles júnior",
                   "Protocolos propios de IA en cada servicio",
                   "Exclusividad sectorial y geográfica por cliente",
                   "Reporting real — datos buenos y datos malos",
@@ -138,7 +138,7 @@ export default function NosotrosPage() {
             ))}
           </div>
           <div className="bg-primary-700 rounded-2xl p-8 text-white text-center">
-            <p className="text-xl font-semibold mb-2">"Un equipo cualificado con protocolos propios de IA.</p>
+            <p className="text-xl font-semibold mb-2">"Experiencia cualificada con protocolos propios de IA.</p>
             <p className="text-primary-200">Trabajamos más rápido, analizamos más datos y tomamos mejores decisiones que una agencia tradicional. Y todo eso revierte en tus resultados."</p>
           </div>
         </div>

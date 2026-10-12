@@ -190,7 +190,7 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
         ],
     aiStrip: isEn
       ? "Senior team experience. The precision of artificial intelligence."
-      : "L'expérience d'une équipe senior. La précision de l'intelligence artificielle.",
+      : "Une expertise senior. La précision de l'intelligence artificielle.",
     aiStripSub: isEn
       ? "Our own AI protocols applied to every project for faster, more precise results."
       : "Nos propres protocoles IA appliqués à chaque projet pour des résultats plus rapides et précis.",

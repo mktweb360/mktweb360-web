@@ -6,11 +6,11 @@ import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "IA Aplicada al Marketing Digital",
-  description: "IA aplicada al marketing digital: integramos inteligencia artificial en SEO, contenidos, campañas y análisis con protocolos propios y un equipo senior.",
+  description: "IA aplicada al marketing digital: integramos inteligencia artificial en SEO, contenidos, campañas y análisis con protocolos propios y criterio senior.",
   alternates: alternatesFor("/ia-aplicada-al-marketing/") ?? { canonical: "https://www.mktweb360.com/ia-aplicada-al-marketing/" },
   openGraph: {
     title: "IA Aplicada al Marketing Digital | Mkt Web 360",
-    description: "La experiencia de un equipo senior. La precisión de la inteligencia artificial. Protocolos propios de IA en cada servicio.",
+    description: "Criterio senior. La precisión de la inteligencia artificial. Protocolos propios de IA en cada servicio.",
     url: "https://www.mktweb360.com/ia-aplicada-al-marketing/",
     images: [{ url: "/og-ia-aplicada-al-marketing.jpg", width: 1200, height: 630 }],
   },
@@ -76,7 +76,7 @@ export default function IAMarketingPage() {
           <div className="max-w-3xl mt-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               IA aplicada al marketing digital:<br />
-              <span className="text-accent-400">La experiencia de un equipo senior. La precisión de la inteligencia artificial.</span>
+              <span className="text-accent-400">Criterio senior. La precisión de la inteligencia artificial.</span>
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed italic">
               Mientras tú trabajas, nosotros conseguimos que te llamen.
@@ -149,7 +149,7 @@ export default function IAMarketingPage() {
               <p className="text-primary-200 mb-6 text-sm leading-relaxed">La IA amplifica el criterio humano — no lo sustituye. Cada estrategia, cada decisión y cada recomendación pasa por el juicio de nuestro equipo.</p>
               <ul className="space-y-3">
                 {[
-                  "Criterio estratégico del equipo senior",
+                  "Criterio estratégico senior",
                   "Conocimiento del sector y el cliente",
                   "Relación directa y comunicación continua",
                   "Responsabilidad sobre los resultados",

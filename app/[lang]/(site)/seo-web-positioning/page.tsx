@@ -425,7 +425,7 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
             <p className="text-lg font-semibold text-primary-700">
               {isEn
                 ? "Senior team experience. AI precision."
-                : "L'expérience d'une équipe senior. La précision de l'intelligence artificielle."}
+                : "Une expertise senior. La précision de l'intelligence artificielle."}
             </p>
             <p className="text-gray-500 text-sm mt-1">
               {isEn
