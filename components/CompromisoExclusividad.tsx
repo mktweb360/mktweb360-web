@@ -12,16 +12,29 @@ const MAP_H = 401;
 
 // Puntos resaltados (coordenadas de la rejilla del SVG). Retardos escalonados para que no
 // pulsen a la vez.
+// 22 puntos repartidos por todo el mapa (muestreo de máxima distancia sobre la rejilla), para que
+// se lea "toda España" y no unas ciudades concretas.
 const ZONAS: { x: number; y: number; d: number }[] = [
-  { x: 351, y: 92, d: 0.4 },   // Barcelona
-  { x: 281, y: 176, d: 1.6 },  // Valencia
-  { x: 99, y: 274, d: 2.4 },   // Sevilla
-  { x: 197, y: 29, d: 3.1 },   // Bilbao
-  { x: 36, y: 22, d: 0.9 },    // A Coruña
-  { x: 148, y: 302, d: 2.0 },  // Málaga
-  { x: 379, y: 162, d: 2.8 },  // Palma
-  { x: 113, y: 386, d: 1.2 },  // Las Palmas
-  { x: 260, y: 239, d: 3.6 },  // Murcia
+  { x: 36, y: 22, d: 1.3 },
+  { x: 428, y: 141, d: 2.6 },
+  { x: 204, y: 351, d: 0.3 },
+  { x: 302, y: 50, d: 2.1 },
+  { x: 64, y: 232, d: 1.5 },
+  { x: 302, y: 204, d: 0.2 },
+  { x: 169, y: 22, d: 2.0 },
+  { x: 169, y: 253, d: 0.1 },
+  { x: 78, y: 120, d: 1.7 },
+  { x: 113, y: 393, d: 0.3 },
+  { x: 260, y: 127, d: 0.4 },
+  { x: 99, y: 309, d: 1.7 },
+  { x: 379, y: 64, d: 3.3 },
+  { x: 246, y: 267, d: 0.5 },
+  { x: 232, y: 57, d: 0.9 },
+  { x: 232, y: 197, d: 2.5 },
+  { x: 120, y: 190, d: 3.8 },
+  { x: 99, y: 50, d: 2.3 },
+  { x: 155, y: 85, d: 1.6 },
+  { x: 323, y: 106, d: 0.2 },
 ];
 const TU_ZONA = { x: 176, y: 148 }; // centro peninsular
 
@@ -70,21 +83,22 @@ export function CompromisoExclusividad() {
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
               <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden="true" />
-              Exclusividad por sector y zona
+              Toda España · Exclusividad en tu zona
             </p>
             <h2
               id="compromiso-exclusividad"
-              className="mt-6 text-4xl sm:text-5xl lg:text-[3.35rem] font-black leading-[1.04] tracking-tight"
+              className="mt-6 text-4xl sm:text-5xl lg:text-[3.05rem] font-black leading-[1.04] tracking-tight"
             >
-              Tu competencia
+              En toda España.
               <br />
               <span className="bg-gradient-to-r from-[#ec4899] via-[#f472b6] to-accent-500 bg-clip-text text-transparent">
-                no podrá contratarnos.
+                En tu zona, solo contigo.
               </span>
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-100">
-              Trabajamos con una sola empresa de cada sector en cada zona de España. Si esa empresa
-              eres tú, todo lo que construimos juntos —la estrategia, los contenidos, las posiciones
+              Trabajamos con negocios de cualquier punto de España. Lo único que no hacemos es
+              trabajar a la vez para dos empresas que compiten por los mismos clientes en la misma
+              zona. Así, todo lo que construimos contigo —la estrategia, los contenidos, las posiciones
               que vas ganando— trabaja solo para ti. Nunca para el negocio de enfrente.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-4">
@@ -149,7 +163,7 @@ export function CompromisoExclusividad() {
             </div>
             <figcaption className="mt-4 text-center text-xs text-white/50">
               <span className="mr-1.5 inline-block h-2 w-2 rounded-full bg-accent-400 align-middle" aria-hidden="true" />
-              Una empresa por sector en cada zona, en toda España
+              Trabajamos en toda España · una empresa por sector en cada zona
             </figcaption>
           </figure>
         </div>
