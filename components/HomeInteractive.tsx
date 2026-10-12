@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { HeroTechBackdrop } from "@/components/HeroTechBackdrop";
 
 type ServiceItem = { title: string; desc: string; href: string; icon: string; badge?: string };
 type ServiceTab = { id: string; tipo: string; objetivo: string; emoji: string; servicios: ServiceItem[] };
@@ -161,14 +162,33 @@ export function TestimonialsCarousel({ testimonials = TESTIMONIALS }: { testimon
             key={`${current}-${i}`}
             className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 transition-all duration-500"
           >
-            <p className="text-gray-700 italic leading-relaxed mb-4 text-sm">&ldquo;{t.text}&rdquo;</p>
+            {/* Todos los textos apilados (solo el actual visible): la tarjeta mide siempre lo que el
+                testimonio más largo y el bloque no salta al rotar. */}
+            <div className="grid mb-4">
+              {testimonials.map((x) => (
+                <p
+                  key={x.name}
+                  className="[grid-area:1/1] text-gray-700 italic leading-relaxed text-sm"
+                  style={{ visibility: x === t ? "visible" : "hidden" }}
+                  aria-hidden={x !== t}
+                >
+                  &ldquo;{x.text}&rdquo;
+                </p>
+              ))}
+            </div>
             <footer className="text-sm">
               <div className="flex items-center gap-1 mb-1">
                 <span className="text-yellow-400 text-xs">★★★★★</span>
                 <span className="text-xs text-gray-400">Google</span>
               </div>
-              <span className="font-semibold text-primary-600">{t.name}</span>
-              <span className="text-gray-500 ml-2">— {t.company}</span>
+              <div className="grid">
+                {testimonials.map((x) => (
+                  <span key={x.name} className="[grid-area:1/1]" style={{ visibility: x === t ? "visible" : "hidden" }} aria-hidden={x !== t}>
+                    <span className="font-semibold text-primary-600">{x.name}</span>
+                    <span className="text-gray-500 ml-2">— {x.company}</span>
+                  </span>
+                ))}
+              </div>
             </footer>
           </blockquote>
         ))}
@@ -201,6 +221,8 @@ export function HeroSlider() {
     cta: { text: string; href: string };
     cta2: { text: string; href: string };
     bg: string;
+    /** "tech": fondo animado en CSS/SVG en lugar de foto. */
+    visual?: "tech";
     overlay?: string; // clase Tailwind de la capa entre imagen y texto
     bgPosition?: string;
   }[] = [
@@ -211,10 +233,9 @@ export function HeroSlider() {
       subtitle: "Te ponemos donde te buscan: más visibilidad online, más clientes y un negocio que crece con estrategias de marketing digital probadas. Servicio nacional.",
       cta: { text: "Diagnóstico gratuito", href: "/contacto/" },
       cta2: { text: "Ver servicios", href: "#servicios" },
-      bg: "/hero-nave-oficina.jpg",
-      // Velo oscuro solo detrás del texto (centro) y la imagen luminosa en los bordes.
-      overlay: "bg-primary-900/30",
-      bgPosition: "50% 45%",
+      bg: "tech",
+      visual: "tech",
+      overlay: "bg-transparent",
     },
     {
       badge: "Solo 5 incorporaciones al mes",
@@ -263,7 +284,7 @@ export function HeroSlider() {
           aria-hidden="true"
         >
           {/* next/image: WebP/AVIF responsivo; la primera diapositiva se precarga (LCP). */}
-          <Image
+          {s.visual === "tech" ? <HeroTechBackdrop /> : <Image
             src={s.bg}
             alt=""
             fill
@@ -273,49 +294,66 @@ export function HeroSlider() {
             quality={90}
             className="object-cover"
             style={{ objectPosition: s.bgPosition ?? "center" }}
-          />
+          />}
         </div>
       ))}
       {/* Dark overlay */}
       <div className={`absolute inset-0 transition-colors duration-1000 ${slide.overlay ?? "bg-primary-900/65"}`} />
 
-      {/* Content */}
+      {/* Content: todas las diapositivas apiladas en la misma celda de la rejilla, así el hero
+          mide siempre lo que la más alta y la página no salta al cambiar. */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 pt-28 pb-20 text-center text-white">
-        {/* Badge */}
-        <div className="h-8 mb-4 flex items-center justify-center">
-          {slide.badge && (
-            <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-              {slide.badge}
-            </span>
-          )}
+        <div className="grid">
+          {slides.map((sl, i) => {
+            const on = i === current;
+            const H = i === 0 ? "h1" : "p";
+            return (
+              <div
+                key={sl.headline}
+                className={`[grid-area:1/1] flex flex-col items-center justify-center transition-opacity duration-700 ${on ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+                aria-hidden={!on}
+                inert={!on}
+              >
+                {/* Badge */}
+                <div className="h-8 mb-4 flex items-center justify-center">
+                  {sl.badge && (
+                    <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                      {sl.badge}
+                    </span>
+                  )}
+                </div>
+
+                {/* Headline (el h1 es siempre el de la primera diapositiva) */}
+                <H className="text-4xl md:text-5xl xl:text-[3.25rem] font-bold mb-4 leading-tight [text-shadow:0_2px_10px_rgba(15,28,46,0.55),0_1px_2px_rgba(15,28,46,0.5)]">
+                  <span className="xl:whitespace-nowrap">{sl.headline}</span><br />
+                  <span className="text-[#ff7a00] xl:whitespace-nowrap [text-shadow:0_2px_10px_rgba(15,28,46,0.6),0_1px_2px_rgba(15,28,46,0.7)]">{sl.subheadline}</span>
+                </H>
+
+                {/* Subtitle */}
+                <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed italic [text-shadow:0_1px_6px_rgba(15,28,46,0.7),0_1px_2px_rgba(15,28,46,0.6)]">
+                  {sl.subtitle}
+                </p>
+
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href={sl.cta.href}
+                    className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors"
+                  >
+                    {sl.cta.text}
+                  </Link>
+                  <Link
+                    href={sl.cta2.href}
+                    className="border-2 border-white bg-white text-primary-900 px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-primary-50 transition-colors"
+                  >
+                    {sl.cta2.text}
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
         </div>
-
-        {/* Headline */}
-        <h1 className="text-4xl md:text-5xl xl:text-[3.25rem] font-bold mb-4 leading-tight min-h-[4rem] md:min-h-[6rem] [text-shadow:0_2px_10px_rgba(15,28,46,0.55),0_1px_2px_rgba(15,28,46,0.5)]">
-          <span className="xl:whitespace-nowrap">{slide.headline}</span><br />
-          <span className="text-[#ff7a00] xl:whitespace-nowrap [text-shadow:0_2px_10px_rgba(15,28,46,0.6),0_1px_2px_rgba(15,28,46,0.7)]">{slide.subheadline}</span>
-        </h1>
-
-        {/* Subtitle */}
-        <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed italic min-h-[4rem] [text-shadow:0_1px_6px_rgba(15,28,46,0.7),0_1px_2px_rgba(15,28,46,0.6)]">
-          {slide.subtitle}
-        </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-          <Link
-            href={slide.cta.href}
-            className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors"
-          >
-            {slide.cta.text}
-          </Link>
-          <Link
-            href={slide.cta2.href}
-            className="border-2 border-white bg-white text-primary-900 px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-primary-50 transition-colors"
-          >
-            {slide.cta2.text}
-          </Link>
-        </div>
+        <div className="h-10" aria-hidden="true" />
 
         {/* Dots */}
         <div className="flex items-center justify-center gap-2">

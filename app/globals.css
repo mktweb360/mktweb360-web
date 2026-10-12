@@ -95,3 +95,25 @@
 @media (prefers-reduced-motion: reduce) {
   .mw-fade-up, .mw-faq[open] .mw-faq-body { animation: none; }
 }
+
+/* Hero tecnológico: auroras, suelo de rejilla en movimiento y chips flotantes */
+@keyframes mw-aurora {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(6%, 8%, 0) scale(1.12); }
+}
+.mw-aurora { animation: mw-aurora 14s ease-in-out infinite; }
+.mw-aurora-2 { animation-duration: 17s; animation-direction: reverse; }
+.mw-aurora-3 { animation-duration: 20s; animation-delay: -6s; }
+@keyframes mw-grid-move {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 0 64px, 0 0; }
+}
+.mw-grid-floor { animation: mw-grid-move 2.4s linear infinite; }
+@keyframes mw-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.mw-float { animation: mw-float 10s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .mw-aurora, .mw-grid-floor, .mw-float { animation: none; }
+}

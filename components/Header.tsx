@@ -248,20 +248,33 @@ export function Header({ lang }: { lang?: string }) {
       className={`${isHome ? "fixed inset-x-0" : "sticky"} top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 border-b ${
         transparent
           ? "bg-transparent border-transparent text-white [text-shadow:0_1px_3px_rgba(15,28,46,0.6)]"
-          : "bg-white border-gray-200 shadow-sm"
+          : "bg-[#0f1c2e]/95 backdrop-blur-md border-white/10 text-white shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
         <Link href={nav.home_href}>
-          <Image
-            src={transparent ? "/logo-mw360-blanco.png" : "/logo-mw360.png"}
-            alt="Mkt Web 360 — Agencia de Marketing Digital"
-            width={162}
-            height={45}
-            priority
-            sizes="162px"
-          />
+          {transparent ? (
+            <Image
+              src="/logo-mw360-blanco.png"
+              alt="Mkt Web 360 — Agencia de Marketing Digital"
+              width={162}
+              height={45}
+              priority
+              sizes="162px"
+            />
+          ) : (
+            // Con la barra en azul oscuro se muestra el icono de marca (el mismo que el favicon).
+            <Image
+              src="/icono-mw360.png"
+              alt="Mkt Web 360 — Agencia de Marketing Digital"
+              width={42}
+              height={42}
+              priority
+              sizes="42px"
+              className="rounded-full ring-1 ring-white/15"
+            />
+          )}
         </Link>
 
         {/* Desktop nav */}
@@ -280,7 +293,7 @@ export function Header({ lang }: { lang?: string }) {
             </button>
             {servicesOpen && (
               <div
-                className="absolute left-1/2 -translate-x-1/2 w-[860px] bg-white border border-gray-200 rounded-2xl shadow-xl py-6 px-6 z-50"
+                className="absolute left-1/2 -translate-x-1/2 w-[860px] bg-white text-primary-700 [text-shadow:none] border border-gray-200 rounded-2xl shadow-xl py-6 px-6 z-50"
                 style={{ top: "calc(100% - 2px)" }}
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
@@ -319,7 +332,7 @@ export function Header({ lang }: { lang?: string }) {
 
           {/* Language switcher */}
           <div className="relative group">
-            <button className={`flex items-center gap-1.5 border rounded-full px-3 py-1.5 text-sm font-semibold transition-colors ${transparent ? "border-white/60 text-white hover:border-white" : "border-gray-200 text-gray-600 hover:border-primary-400 hover:text-primary-600"}`}>
+            <button className={`flex items-center gap-1.5 border rounded-full px-3 py-1.5 text-sm font-semibold transition-colors border-white/40 text-white hover:border-white`}>
               {currentLang === "es" ? "🇪🇸" : currentLang === "en" ? "🇬🇧" : "🇫🇷"}
               <span className="uppercase">{currentLang}</span>
               <svg className="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
@@ -365,7 +378,7 @@ export function Header({ lang }: { lang?: string }) {
 
         {/* Mobile burger */}
         <button
-          className={`md:hidden p-2 ${transparent ? "text-white" : "text-primary-600"}`}
+          className="md:hidden p-2 text-white"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Abrir menú"
         >
@@ -377,7 +390,7 @@ export function Header({ lang }: { lang?: string }) {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-4 py-4">
+        <div className="md:hidden bg-white text-primary-700 [text-shadow:none] border-t border-gray-200 px-4 py-4">
           <nav className="flex flex-col gap-3 text-sm font-medium">
             <Link href={nav.home_href} onClick={() => setMenuOpen(false)} className="hover:text-accent-500">{nav.home}</Link>
             <div>
