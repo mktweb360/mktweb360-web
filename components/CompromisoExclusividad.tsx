@@ -38,30 +38,68 @@ const ZONAS: { x: number; y: number; d: number }[] = [
 ];
 const TU_ZONA = { x: 176, y: 148 }; // centro peninsular
 
-const PRINCIPIOS = [
-  {
-    n: "01",
-    title: "Toda España, sin distancia",
-    desc: "Da igual dónde esté tu negocio. Trabajamos en remoto con cualquier provincia: videollamada cuando hace falta, teléfono y email siempre.",
+const TXT = {
+  es: {
+    kicker: "Toda España · Exclusividad en tu zona",
+    h1: "En toda España.",
+    h2: "En tu zona, solo contigo.",
+    p: "Trabajamos con negocios de cualquier punto de España. Lo único que no hacemos es trabajar a la vez para dos empresas que compiten por los mismos clientes en la misma zona. Así, todo lo que construimos contigo —la estrategia, los contenidos, las posiciones que vas ganando— trabaja solo para ti. Nunca para el negocio de enfrente.",
+    cta: "¿Está libre tu sector?",
+    ctaHref: "/contacto/",
+    cta2: "o empieza por la auditoría gratuita",
+    cta2Href: "/auditoria-digital/",
+    chipT: "Tu sector, tu zona",
+    chipS: "Reservado solo para ti",
+    caption: "Trabajamos en toda España · una empresa por sector en cada zona",
+    principios: [
+      { n: "01", title: "Toda España, sin distancia", desc: "Da igual dónde esté tu negocio. Trabajamos en remoto con cualquier provincia: videollamada cuando hace falta, teléfono y email siempre." },
+      { n: "02", title: "Hablas con quien hace el trabajo", desc: "Sin comerciales ni cuentas que cambian de manos. La persona que diseña tu estrategia es la misma que te coge el teléfono." },
+      { n: "03", title: "IA con criterio humano", desc: "Usamos inteligencia artificial en cada servicio para analizar más y llegar antes. Las decisiones sobre tu negocio las toma siempre una persona." },
+      { n: "04", title: "Cuentas claras cada mes", desc: "Un informe con lo que de verdad importa —contactos, ventas, posiciones—, explicado para que lo entiendas sin ser experto." },
+    ],
   },
-  {
-    n: "02",
-    title: "Hablas con quien hace el trabajo",
-    desc: "Sin comerciales ni cuentas que cambian de manos. La persona que diseña tu estrategia es la misma que te coge el teléfono.",
+  en: {
+    kicker: "All of Spain · Exclusive in your area",
+    h1: "All across Spain.",
+    h2: "In your area, only you.",
+    p: "We work with businesses anywhere in Spain. The only thing we won't do is work at the same time for two companies competing for the same customers in the same area. So everything we build with you —the strategy, the content, the rankings you win— works only for you. Never for the business across the street.",
+    cta: "Is your sector still available?",
+    ctaHref: "/en/contact/",
+    cta2: "or start with the free audit",
+    cta2Href: "/en/digital-audit/",
+    chipT: "Your sector, your area",
+    chipS: "Reserved just for you",
+    caption: "We work across Spain · one company per sector in each area",
+    principios: [
+      { n: "01", title: "All of Spain, no distance", desc: "Wherever your business is, we work remotely with every province: video calls when needed, phone and email always." },
+      { n: "02", title: "You talk to who does the work", desc: "No salespeople, no accounts changing hands. The person who designs your strategy is the same one who answers your call." },
+      { n: "03", title: "AI with human judgement", desc: "We use artificial intelligence in every service to analyse more and move faster. Decisions about your business are always made by a person." },
+      { n: "04", title: "Clear numbers every month", desc: "A report with what really matters —leads, sales, rankings— explained so you understand it without being an expert." },
+    ],
   },
-  {
-    n: "03",
-    title: "IA con criterio humano",
-    desc: "Usamos inteligencia artificial en cada servicio para analizar más y llegar antes. Las decisiones sobre tu negocio las toma siempre una persona.",
+  fr: {
+    kicker: "Toute l'Espagne · Exclusivité dans votre zone",
+    h1: "Dans toute l'Espagne.",
+    h2: "Dans votre zone, seulement vous.",
+    p: "Nous travaillons avec des entreprises de toute l'Espagne. La seule chose que nous ne faisons pas : travailler en même temps pour deux entreprises qui se disputent les mêmes clients dans la même zone. Ainsi, tout ce que nous construisons avec vous —la stratégie, les contenus, les positions gagnées— travaille uniquement pour vous. Jamais pour le commerce d'en face.",
+    cta: "Votre secteur est-il encore libre ?",
+    ctaHref: "/fr/contact/",
+    cta2: "ou commencez par l'audit gratuit",
+    cta2Href: "/fr/audit-digital/",
+    chipT: "Votre secteur, votre zone",
+    chipS: "Réservé rien que pour vous",
+    caption: "Nous travaillons dans toute l'Espagne · une entreprise par secteur dans chaque zone",
+    principios: [
+      { n: "01", title: "Toute l'Espagne, sans distance", desc: "Où que soit votre entreprise, nous travaillons à distance avec toutes les provinces : visioconférence si besoin, téléphone et email toujours." },
+      { n: "02", title: "Vous parlez à celui qui fait le travail", desc: "Pas de commerciaux, pas de comptes qui changent de mains. La personne qui conçoit votre stratégie est celle qui vous répond au téléphone." },
+      { n: "03", title: "L'IA avec un jugement humain", desc: "Nous utilisons l'intelligence artificielle dans chaque service pour analyser plus et aller plus vite. Les décisions sur votre entreprise sont toujours prises par une personne." },
+      { n: "04", title: "Des chiffres clairs chaque mois", desc: "Un rapport avec ce qui compte vraiment —contacts, ventes, positions—, expliqué pour que vous le compreniez sans être expert." },
+    ],
   },
-  {
-    n: "04",
-    title: "Cuentas claras cada mes",
-    desc: "Un informe con lo que de verdad importa —contactos, ventas, posiciones—, explicado para que lo entiendas sin ser experto.",
-  },
-];
+} as const;
 
-export function CompromisoExclusividad() {
+export function CompromisoExclusividad({ lang = "es" }: { lang?: "es" | "en" | "fr" } = {}) {
+  const t = TXT[lang] ?? TXT.es;
   return (
     <section
       aria-labelledby="compromiso-exclusividad"
@@ -83,37 +121,34 @@ export function CompromisoExclusividad() {
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
               <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden="true" />
-              Toda España · Exclusividad en tu zona
+              {t.kicker}
             </p>
             <h2
               id="compromiso-exclusividad"
               className="mt-6 text-4xl sm:text-5xl lg:text-[3.05rem] font-black leading-[1.04] tracking-tight"
             >
-              En toda España.
+              {t.h1}
               <br />
               <span className="bg-gradient-to-r from-[#ec4899] via-[#f472b6] to-accent-500 bg-clip-text text-transparent">
-                En tu zona, solo contigo.
+                {t.h2}
               </span>
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-100">
-              Trabajamos con negocios de cualquier punto de España. Lo único que no hacemos es
-              trabajar a la vez para dos empresas que compiten por los mismos clientes en la misma
-              zona. Así, todo lo que construimos contigo —la estrategia, los contenidos, las posiciones
-              que vas ganando— trabaja solo para ti. Nunca para el negocio de enfrente.
+              {t.p}
             </p>
             <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-4">
               <Link
-                href="/contacto/"
+                href={t.ctaHref}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-7 py-4 font-bold text-white shadow-[0_10px_30px_-10px_rgba(249,115,22,0.7)] transition-colors hover:bg-accent-600"
               >
-                ¿Está libre tu sector?
+                {t.cta}
                 <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fillRule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638l-3.96-3.72a.75.75 0 1 1 1.03-1.09l5.25 4.93a.75.75 0 0 1 0 1.09l-5.25 4.93a.75.75 0 1 1-1.03-1.09l3.96-3.72H3.75A.75.75 0 0 1 3 10Z" clipRule="evenodd" /></svg>
               </Link>
               <Link
-                href="/auditoria-digital/"
+                href={t.cta2Href}
                 className="text-sm font-semibold text-white/75 underline decoration-white/30 underline-offset-4 transition-colors hover:text-white hover:decoration-accent-500"
               >
-                o empieza por la auditoría gratuita
+                {t.cta2}
               </Link>
             </div>
           </div>
@@ -155,22 +190,22 @@ export function CompromisoExclusividad() {
                 <div className="flex items-center gap-2 whitespace-nowrap rounded-xl border border-white/15 bg-[#0f1c2e]/80 px-3 py-2 shadow-xl backdrop-blur-md">
                   <svg className="h-4 w-4 text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>
                   <span className="text-xs leading-tight">
-                    <span className="block font-bold">Tu sector, tu zona</span>
-                    <span className="block text-white/65">Reservado solo para ti</span>
+                    <span className="block font-bold">{t.chipT}</span>
+                    <span className="block text-white/65">{t.chipS}</span>
                   </span>
                 </div>
               </div>
             </div>
             <figcaption className="mt-4 text-center text-xs text-white/50">
               <span className="mr-1.5 inline-block h-2 w-2 rounded-full bg-accent-400 align-middle" aria-hidden="true" />
-              Trabajamos en toda España · una empresa por sector en cada zona
+              {t.caption}
             </figcaption>
           </figure>
         </div>
 
         {/* Principios */}
         <div className="mt-20 grid gap-x-10 gap-y-10 border-t border-white/10 pt-12 sm:grid-cols-2 lg:grid-cols-4">
-          {PRINCIPIOS.map((p) => (
+          {t.principios.map((p) => (
             <div key={p.n}>
               <span className="font-mono text-sm font-bold text-accent-400">{p.n}</span>
               <h3 className="mt-3 text-lg font-bold text-white">{p.title}</h3>

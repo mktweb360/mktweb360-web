@@ -1,6 +1,10 @@
 import type { Lang } from "@/lib/i18n";
 import Link from "next/link";
-import { ContactForm } from "@/components/ContactForm";
+import { CompromisoExclusividad } from "@/components/CompromisoExclusividad";
+import { HomeAuditoria } from "@/components/HomeAuditoria";
+import { HomeContacto } from "@/components/HomeContacto";
+import { HomeFaq } from "@/components/HomeFaq";
+import { TestimonialsCarousel } from "@/components/HomeInteractive";
 import { LangHeroSlider } from "@/components/LangHeroSlider";
 import { LangServicesTab } from "@/components/LangServicesTab";
 import { getLatestPosts } from "@/lib/blog";
@@ -36,78 +40,8 @@ export default async function LangHomePage({
         "We help Spanish and international businesses grow online with proven digital marketing strategies. SEO, Google Ads, Social Media and Web Design.",
       cta: "Get a free quote",
       cta2: "View our services",
-      whyTitle: "Why Mkt Web 360",
-      reasons: [
-        {
-          icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z",
-          title: "+10 years of experience",
-          desc: "A decade helping businesses grow online with proven digital marketing strategies.",
-        },
-        {
-          icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
-          title: "Personal, dedicated service",
-          desc: "We are not a large impersonal agency. Each client has a dedicated account manager and direct attention.",
-        },
-        {
-          icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
-          title: "Sector exclusivity",
-          desc: "We do not work with your competitors in your area. Your sector is exclusively yours in your geographic zone.",
-        },
-        {
-          icon: "M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z",
-          title: "AI applied to your project",
-          desc: "Senior team experience. The precision of artificial intelligence. Our own AI protocols in every service.",
-        },
-      ],
-      metrics: [
-        { value: "+1,000", label: "projects delivered" },
-        { value: "+10 yrs", label: "of digital experience" },
-        { value: "National", label: "service across Spain" },
-        { value: "Exclusive", label: "one client per sector & area" },
-      ],
       socialProofBadge: "What our clients say",
-      socialProofTitle: "The sector changes.",
-      socialProofAccent: "The method doesn't.",
-      socialProofSubtitle:
-        "We work with businesses across many sectors. What they have in common: they want more clients and measurable results.",
-      testimonials: [
-        {
-          text: "We went from not appearing on Google to receiving 3–4 calls a week from new customers. In less than 4 months.",
-          sector: "Services company",
-          city: "Toledo",
-          service: "SEO",
-        },
-        {
-          text: "Our online store now generates orders every day. Before we only sold in our physical shop and relied on word of mouth.",
-          sector: "Local business",
-          city: "Castilla-La Mancha",
-          service: "Online Store",
-        },
-        {
-          text: "We'd had a website for years that converted nothing. Within two months we had the new site and started receiving enquiries.",
-          sector: "Health clinic",
-          city: "Madrid",
-          service: "Web Design",
-        },
-        {
-          text: "My competitors had been ahead of me on Google for years. Now I appear first. I couldn't believe it until people started calling saying they'd found me.",
-          sector: "Renovation service",
-          city: "Spain",
-          service: "SEO",
-        },
-        {
-          text: "We were managing social media without any strategy. Since they took over we have double the followers and, more importantly, clients coming through Instagram.",
-          sector: "Hospitality business",
-          city: "Seville",
-          service: "Social Media",
-        },
-        {
-          text: "I needed to sell online but didn't want to pay Shopify commissions. The store they built is first-rate and completely mine.",
-          sector: "Artisan products company",
-          city: "Valencia",
-          service: "Online Store",
-        },
-      ],
+      reviewsNote: "Google reviews from our clients, translated from Spanish.",
       reviews: [
         {
           name: "Nathalie B.",
@@ -154,6 +88,10 @@ export default async function LangHomePage({
           a: "Yes, sector exclusivity by geographic area is one of our core values. We do not work with two companies in the same sector in the same area to avoid conflicts of interest.",
         },
         {
+          q: "Do you work with businesses all over Spain?",
+          a: "Yes. We work remotely with businesses in every province: video calls when needed, and phone and email always. Where your business is located is not a limit.",
+        },
+        {
           q: "What is the process to start working together?",
           a: "The process is simple: contact us, we carry out a free audit of your digital situation, we present a personalised proposal and, if it fits, we start working.",
         },
@@ -174,78 +112,8 @@ export default async function LangHomePage({
         "Nous aidons les entreprises espagnoles et internationales à croître en ligne avec des stratégies de marketing digital éprouvées.",
       cta: "Obtenir un devis gratuit",
       cta2: "Voir nos services",
-      whyTitle: "Pourquoi Mkt Web 360",
-      reasons: [
-        {
-          icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z",
-          title: "+10 ans d'expérience",
-          desc: "Une décennie à aider des entreprises à croître en ligne avec des stratégies de marketing digital éprouvées.",
-        },
-        {
-          icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
-          title: "Service personnel et dédié",
-          desc: "Nous ne sommes pas une grande agence impersonnelle. Chaque client a un responsable dédié et une attention directe.",
-        },
-        {
-          icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",
-          title: "Exclusivité sectorielle",
-          desc: "Nous ne travaillons pas avec vos concurrents dans votre zone. Votre secteur est exclusivement le vôtre dans votre zone géographique.",
-        },
-        {
-          icon: "M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z",
-          title: "IA appliquée à votre projet",
-          desc: "L'expérience d'une équipe senior. La précision de l'intelligence artificielle. Nos propres protocoles IA dans chaque service.",
-        },
-      ],
-      metrics: [
-        { value: "+1 000", label: "projets livrés" },
-        { value: "+10 ans", label: "d'expérience digitale" },
-        { value: "National", label: "service en Espagne" },
-        { value: "Exclusif", label: "un client par secteur et zone" },
-      ],
       socialProofBadge: "Ce que disent nos clients",
-      socialProofTitle: "Le secteur change.",
-      socialProofAccent: "La méthode, non.",
-      socialProofSubtitle:
-        "Nous travaillons avec des entreprises de secteurs très différents. Ce qu'ils ont en commun : ils veulent plus de clients et des résultats mesurables.",
-      testimonials: [
-        {
-          text: "Nous sommes passés de l'invisibilité sur Google à recevoir 3 à 4 appels par semaine de nouveaux clients. En moins de 4 mois.",
-          sector: "Entreprise de services",
-          city: "Toledo",
-          service: "SEO",
-        },
-        {
-          text: "Notre boutique en ligne génère des commandes chaque jour. Avant, nous vendions uniquement en magasin physique.",
-          sector: "Commerce local",
-          city: "Castilla-La Mancha",
-          service: "Boutique en ligne",
-        },
-        {
-          text: "Nous avions un site web depuis des années qui ne convertissait rien. En deux mois, nous avions le nouveau site et avons commencé à recevoir des demandes.",
-          sector: "Clinique de santé",
-          city: "Madrid",
-          service: "Création web",
-        },
-        {
-          text: "Mes concurrents étaient devant moi sur Google depuis des années. Maintenant j'apparais en premier. Je ne le croyais pas jusqu'à ce que les gens commencent à appeler.",
-          sector: "Service de rénovation",
-          city: "Espagne",
-          service: "SEO",
-        },
-        {
-          text: "Nous gérions les réseaux sociaux sans stratégie. Depuis qu'ils s'en occupent, nous avons deux fois plus d'abonnés et, surtout, des clients qui viennent d'Instagram.",
-          sector: "Entreprise de restauration",
-          city: "Séville",
-          service: "Réseaux sociaux",
-        },
-        {
-          text: "J'avais besoin de vendre en ligne sans payer de commissions à Shopify. La boutique qu'ils ont créée est de premier ordre et m'appartient entièrement.",
-          sector: "Produits artisanaux",
-          city: "Valence",
-          service: "Boutique en ligne",
-        },
-      ],
+      reviewsNote: "Avis Google de nos clients, traduits de l'espagnol.",
       reviews: [
         {
           name: "Nathalie B.",
@@ -292,6 +160,10 @@ export default async function LangHomePage({
           a: "Oui, l'exclusivité sectorielle par zone géographique est l'une de nos valeurs fondamentales. Nous ne travaillons pas avec deux entreprises du même secteur dans la même zone afin d'éviter les conflits d'intérêts.",
         },
         {
+          q: "Travaillez-vous avec des entreprises de toute l'Espagne ?",
+          a: "Oui. Nous travaillons à distance avec des entreprises de toutes les provinces : visioconférence si besoin, téléphone et email toujours. L'emplacement de votre entreprise n'est pas une limite.",
+        },
+        {
           q: "Quel est le processus pour commencer à travailler ensemble ?",
           a: "Le processus est simple : contactez-nous, nous réalisons un audit gratuit de votre situation digitale, nous vous présentons une proposition personnalisée et, si elle convient, nous commençons à travailler.",
         },
@@ -317,128 +189,62 @@ export default async function LangHomePage({
       </section>
 
       {/* Services tabs */}
-      <section id="services" className="py-16 px-4 bg-gray-50">
+      <section id="services" className="relative isolate overflow-hidden py-20 px-4 bg-gray-50">
+        <div aria-hidden="true" className="absolute -left-40 top-10 -z-10 h-96 w-96 rounded-full bg-[#7c3aed]/10 blur-3xl" />
+        <div aria-hidden="true" className="absolute -right-40 bottom-0 -z-10 h-96 w-96 rounded-full bg-accent-500/10 blur-3xl" />
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-3">
-              {isEn ? "What do you want to achieve?" : "Qu'est-ce que vous voulez accomplir ?"}
+          <div className="text-center mb-12">
+            <p className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary-600 ring-1 ring-gray-200">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden="true" />
+              {isEn ? "Services" : "Services"}
+            </p>
+            <h2 className="mt-5 text-4xl md:text-5xl font-black tracking-tight text-primary-700">
+              {isEn ? "What do you want to " : "Qu'est-ce que vous voulez "}
+              <span className="bg-gradient-to-r from-[#7c3aed] via-[#db2777] to-accent-500 bg-clip-text text-transparent">{isEn ? "achieve?" : "obtenir ?"}</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
               {isEn
-                ? "Choose your objective and discover the services that help you achieve it."
-                : "Choisissez votre objectif et découvrez les services qui vous aident à l'atteindre."}
+                ? "Choose your goal and we'll show you the services that get you there."
+                : "Choisissez votre objectif et nous vous montrons les services qui vous y mènent."}
             </p>
           </div>
           <LangServicesTab lang={lang} />
         </div>
       </section>
 
-      {/* Metrics bar */}
-      <section className="py-10 px-4 bg-primary-600 text-white">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {c.metrics.map((m) => (
-            <div key={m.label}>
-              <div className="text-3xl font-bold text-accent-400">{m.value}</div>
-              <div className="text-sm text-primary-200 mt-1">{m.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Exclusividad por sector y zona */}
+      <CompromisoExclusividad lang={langI18n} />
 
-      {/* Why us */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">{c.whyTitle}</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {c.reasons.map((item) => (
-              <div key={item.title} className="text-center p-6">
-                <div className="mb-4">
-                  <svg className="w-12 h-12 text-accent-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-primary-600 mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Auditoría gratuita SEO + GEO + Google Maps */}
+      <HomeAuditoria lang={langI18n} />
 
-      {/* Social proof — anonymous testimonials */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="inline-block bg-primary-100 text-primary-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
-              {c.socialProofBadge}
-            </span>
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">
-              {c.socialProofTitle}<br />
-              <span className="text-accent-500">{c.socialProofAccent}</span>
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">{c.socialProofSubtitle}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {c.testimonials.map((t, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col justify-between">
-                <div>
-                  <div className="flex gap-0.5 mb-4">
-                    {[...Array(5)].map((_, s) => (
-                      <svg key={s} className="w-4 h-4 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed italic mb-4">&ldquo;{t.text}&rdquo;</p>
-                </div>
-                <div className="flex items-center justify-between mt-2">
-                  <div>
-                    <p className="text-xs font-bold text-primary-600">{t.sector}</p>
-                    <p className="text-xs text-gray-400">{t.city}</p>
-                  </div>
-                  <span className="text-xs bg-primary-100 text-primary-600 font-semibold px-2 py-0.5 rounded-full">{t.service}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Google reviews carousel */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Reseñas reales de Google (traducidas) */}
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">{c.socialProofBadge}</h2>
+            <p className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary-600 ring-1 ring-gray-200">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden="true" />
+              {c.socialProofBadge}
+            </p>
+            <h2 className="mt-5 text-4xl md:text-5xl font-black tracking-tight text-primary-700">
+              {isEn ? "The sector changes. " : "Le secteur change. "}
+              <span className="bg-gradient-to-r from-[#7c3aed] via-[#db2777] to-accent-500 bg-clip-text text-transparent">{isEn ? "The method doesn't." : "La méthode, non."}</span>
+            </h2>
+            <p className="mt-4 text-sm text-gray-400">{c.reviewsNote}</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {c.reviews.map((r) => (
-              <blockquote key={r.name} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <p className="text-gray-700 italic leading-relaxed mb-4 text-sm">&ldquo;{r.text}&rdquo;</p>
-                <footer className="text-sm">
-                  <div className="flex items-center gap-1 mb-1">
-                    <span className="text-yellow-400 text-xs">★★★★★</span>
-                    <span className="text-xs text-gray-400">Google</span>
-                  </div>
-                  <span className="font-semibold text-primary-600">{r.name}</span>
-                  <span className="text-gray-500 ml-2">— {r.company}</span>
-                </footer>
-              </blockquote>
-            ))}
-          </div>
+          <TestimonialsCarousel testimonials={c.reviews} />
         </div>
       </section>
 
       {/* Blog section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3">Blog</span>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-700">{c.blogTitle}</h2>
+              <span className="inline-block rounded-full bg-gradient-to-r from-[#7c3aed] to-accent-500 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white mb-3">Blog</span>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700">{c.blogTitle}</h2>
             </div>
-            <Link href={`/${lang}/blog/`} className="text-accent-500 font-semibold text-sm hover:underline hidden md:block">
+            <Link href={`/${lang}/blog/`} className="text-accent-600 font-semibold text-sm hover:underline hidden md:block">
               {c.blogAll}
             </Link>
           </div>
@@ -447,19 +253,18 @@ export default async function LangHomePage({
               <Link
                 key={post.slug}
                 href={post.href}
-                className="bg-gray-50 rounded-2xl border border-gray-100 p-6 hover:border-accent-400 hover:shadow-md transition-all group flex flex-col"
+                className="group relative flex flex-col overflow-hidden rounded-2xl bg-gray-50 p-6 ring-1 ring-gray-100 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_40px_-20px_rgba(15,28,46,0.45)] hover:ring-transparent"
               >
-                <span className="text-xs font-semibold text-accent-500 uppercase tracking-wide mb-2">{post.category}</span>
-                <h3 className="font-bold text-primary-700 group-hover:text-accent-500 transition-colors line-clamp-3 text-sm leading-snug flex-1 mb-3">
-                  {post.title}
-                </h3>
-                <p className="text-xs text-gray-500 line-clamp-2 mb-4">{post.excerpt}</p>
-                <span className="text-xs font-semibold text-accent-500">{c.blogCta}</span>
+                <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#7c3aed] via-[#db2777] to-accent-500 opacity-0 transition-opacity group-hover:opacity-100" />
+                <span className="text-xs font-bold text-accent-600 uppercase tracking-widest mb-2">{post.category}</span>
+                <h3 className="font-bold text-primary-700 line-clamp-3 leading-snug flex-1 mb-3">{post.title}</h3>
+                <p className="text-sm text-gray-500 line-clamp-2 mb-4">{post.excerpt}</p>
+                <span className="text-sm font-semibold text-accent-600">{c.blogCta}</span>
               </Link>
             ))}
           </div>
           <div className="text-center mt-8 md:hidden">
-            <Link href={`/${lang}/blog/`} className="text-accent-500 font-semibold text-sm hover:underline">
+            <Link href={`/${lang}/blog/`} className="text-accent-600 font-semibold text-sm hover:underline">
               {c.blogAll}
             </Link>
           </div>
@@ -467,39 +272,10 @@ export default async function LangHomePage({
       </section>
 
       {/* FAQ */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">{c.faqTitle}</h2>
-          </div>
-          <div className="space-y-4">
-            {c.faqs.map((faq) => (
-              <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-bold text-primary-700 [&::-webkit-details-marker]:hidden">
-                  {faq.q}
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xl leading-none text-accent-500 ring-1 ring-gray-200 transition-all duration-300 group-open:rotate-45 group-open:bg-gradient-to-br group-open:from-[#7c3aed] group-open:to-accent-500 group-open:text-white group-open:ring-0" aria-hidden="true">+</span>
-                </summary>
-                <div className="mw-faq-body px-6 pb-6 text-gray-600 leading-relaxed">
-                  {faq.a}
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeFaq lang={langI18n} items={c.faqs} />
 
-      {/* Contact CTA */}
-      <section className="py-16 px-4 mw-skin-band text-white">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">{c.ctaSection.title}</h2>
-            <p className="text-primary-200">{c.ctaSection.subtitle}</p>
-          </div>
-          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
-            <ContactForm formType={`home-${lang}`} />
-          </div>
-        </div>
-      </section>
+      {/* Contacto */}
+      <HomeContacto lang={langI18n} />
     </>
   );
 }

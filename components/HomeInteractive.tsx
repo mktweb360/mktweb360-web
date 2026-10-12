@@ -7,7 +7,7 @@ import Image from "next/image";
 import { HeroTechBackdrop } from "@/components/HeroTechBackdrop";
 
 type ServiceItem = { title: string; desc: string; href: string; icon: string; badge?: string };
-type ServiceTab = { id: string; tipo: string; objetivo: string; emoji: string; servicios: ServiceItem[] };
+export type ServiceTab = { id: string; tipo: string; objetivo: string; emoji: string; servicios: ServiceItem[] };
 
 // Cada objetivo muestra 6 servicios (rejilla 3×2). Solo páginas de servicio existentes;
 // un servicio puede aparecer en varios objetivos si sirve a ambos.
@@ -209,23 +209,25 @@ export function TestimonialsCarousel({ testimonials = TESTIMONIALS }: { testimon
   );
 }
 
-export function HeroSlider() {
+export type HeroSlide = {
+  badge: string | null;
+  headline: string;
+  subheadline: string;
+  subtitle: string;
+  cta: { text: string; href: string };
+  cta2: { text: string; href: string };
+  bg: string;
+  /** "tech": fondo animado en CSS/SVG en lugar de foto. */
+  visual?: "tech";
+  overlay?: string; // clase Tailwind de la capa entre imagen y texto
+  bgPosition?: string;
+};
+
+export function HeroSlider({ slides: slidesProp, dotLabel = "Ir a la diapositiva" }: { slides?: HeroSlide[]; dotLabel?: string } = {}) {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const slides: {
-    badge: string | null;
-    headline: string;
-    subheadline: string;
-    subtitle: string;
-    cta: { text: string; href: string };
-    cta2: { text: string; href: string };
-    bg: string;
-    /** "tech": fondo animado en CSS/SVG en lugar de foto. */
-    visual?: "tech";
-    overlay?: string; // clase Tailwind de la capa entre imagen y texto
-    bgPosition?: string;
-  }[] = [
+  const defaultSlides: HeroSlide[] = [
     {
       badge: null,
       headline: "Tu Agencia Online de Marketing Digital",
@@ -248,6 +250,7 @@ export function HeroSlider() {
       overlay: "bg-primary-900/35",
     },
   ];
+  const slides = slidesProp ?? defaultSlides;
 
   // El carrusel no rota hasta la primera interacción del usuario: cada cambio de
   // diapositiva pinta un titular nuevo y retrasaba el LCP (22 s en móvil).
@@ -362,7 +365,7 @@ export function HeroSlider() {
               key={i}
               onClick={() => setCurrent(i)}
               className="group p-2 -m-1 flex items-center justify-center"
-              aria-label={`Ir a la diapositiva ${i + 1}`}
+              aria-label={`${dotLabel} ${i + 1}`}
             >
               <span className={`block h-2.5 rounded-full transition-all duration-300 ${
                 i === current ? "bg-accent-400 w-6" : "bg-white/40 w-2.5 group-hover:bg-white/70"
@@ -384,15 +387,33 @@ const TAB_COLOR: Record<string, { from: string; to: string }> = {
   monetizacion: { from: "#e11d48", to: "#ea580c" },
   crecimiento:  { from: "#ea580c", to: "#f97316" },
 };
+// Mismos colores para los identificadores de las versiones en inglés y francés.
+Object.assign(TAB_COLOR, {
+  presence: TAB_COLOR.presencia, visibility: TAB_COLOR.visibilidad, visibilite: TAB_COLOR.visibilidad,
+  acquisition: TAB_COLOR.captacion, community: TAB_COLOR.comunidad, communaute: TAB_COLOR.comunidad,
+  monetization: TAB_COLOR.monetizacion, monetisation: TAB_COLOR.monetizacion,
+  growth: TAB_COLOR.crecimiento, croissance: TAB_COLOR.crecimiento,
+});
 const grad = (id: string) => {
   const c = TAB_COLOR[id] ?? { from: "#7c3aed", to: "#f97316" };
   return `linear-gradient(135deg, ${c.from}, ${c.to})`;
 };
 
-export function ServicesTab() {
+export function ServicesTab({
+  tabs = SERVICE_TABS,
+  allLabel = (tipo: string) => `Ver todos los servicios de ${tipo.toLowerCase()}`,
+  hrefOf,
+  objetivosLabel = "Objetivos",
+}: {
+  tabs?: ServiceTab[];
+  allLabel?: (tipo: string) => string;
+  hrefOf?: (tab: ServiceTab) => string;
+  objetivosLabel?: string;
+} = {}) {
+  const SERVICE_TABS_ = tabs;
   const [activeTab, setActiveTab] = useState(0);
   const [openTab, setOpenTab] = useState<string | null>(null);
-  const active = SERVICE_TABS[activeTab];
+  const active = SERVICE_TABS_[activeTab];
 
   const tabHref: Record<string, string> = {
     presencia: "diseno-de-paginas-web",
@@ -407,8 +428,8 @@ export function ServicesTab() {
     <div>
       {/* Desktop: objetivos en columna (izquierda) + servicios (derecha) */}
       <div className="hidden md:grid md:grid-cols-[250px_1fr] lg:grid-cols-[290px_1fr] gap-6">
-        <div role="tablist" aria-orientation="vertical" aria-label="Objetivos" className="flex flex-col gap-2">
-          {SERVICE_TABS.map((tab, i) => {
+        <div role="tablist" aria-orientation="vertical" aria-label={objetivosLabel} className="flex flex-col gap-2">
+          {SERVICE_TABS_.map((tab, i) => {
             const on = activeTab === i;
             return (
               <button
@@ -422,9 +443,9 @@ export function ServicesTab() {
                 onKeyDown={(e) => {
                   if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
                   e.preventDefault();
-                  const n = (i + (e.key === "ArrowDown" ? 1 : -1) + SERVICE_TABS.length) % SERVICE_TABS.length;
+                  const n = (i + (e.key === "ArrowDown" ? 1 : -1) + SERVICE_TABS_.length) % SERVICE_TABS_.length;
                   setActiveTab(n);
-                  document.getElementById(`tab-${SERVICE_TABS[n].id}`)?.focus();
+                  document.getElementById(`tab-${SERVICE_TABS_[n].id}`)?.focus();
                 }}
                 style={on ? { backgroundImage: grad(tab.id) } : undefined}
                 className={`group flex items-center gap-4 text-left rounded-2xl px-4 py-3.5 transition-all duration-300 ${
@@ -504,11 +525,11 @@ export function ServicesTab() {
             </div>
             <div className="mt-auto pt-6 text-right">
               <Link
-                href={`/${tabHref[active.id] ?? active.id}/`}
+                href={hrefOf ? hrefOf(active) : `/${tabHref[active.id] ?? active.id}/`}
                 className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white shadow-md transition-transform hover:scale-[1.03]"
                 style={{ backgroundImage: grad(active.id) }}
               >
-                Ver todos los servicios de {active.tipo.toLowerCase()} <span aria-hidden="true">→</span>
+                {allLabel(active.tipo)} <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
@@ -517,7 +538,7 @@ export function ServicesTab() {
 
       {/* Mobile — acordeón */}
       <div className="md:hidden space-y-3">
-        {SERVICE_TABS.map((tab, i) => {
+        {SERVICE_TABS_.map((tab, i) => {
           const isOpen = openTab === tab.id;
           return (
             <div key={tab.id} className={`overflow-hidden rounded-2xl bg-white ring-1 transition-shadow ${isOpen ? "ring-transparent shadow-lg" : "ring-gray-200"}`}>
@@ -552,11 +573,11 @@ export function ServicesTab() {
                     </Link>
                   ))}
                   <Link
-                    href={`/${tabHref[tab.id] ?? tab.id}/`}
+                    href={hrefOf ? hrefOf(tab) : `/${tabHref[tab.id] ?? tab.id}/`}
                     className="mt-1 rounded-xl px-4 py-3 text-center text-sm font-bold text-white"
                     style={{ backgroundImage: grad(tab.id) }}
                   >
-                    Ver todos los servicios de {tab.tipo.toLowerCase()} →
+                    {allLabel(tab.tipo)} →
                   </Link>
                 </div>
               </div>

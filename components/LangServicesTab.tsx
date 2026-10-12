@@ -1,9 +1,9 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
+import { ServicesTab } from "@/components/HomeInteractive";
 
-type LangServiceItem = { title: string; desc: string; href: string; icon: string };
-type LangServiceTab = { id: string; tipo: string; objetivo: string; emoji: string; servicios: LangServiceItem[]; allHref?: string };
+import type { ServiceTab } from "@/components/HomeInteractive";
+
+type LangServiceTab = ServiceTab & { allHref?: string };
 
 const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
   en: [
@@ -158,100 +158,16 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
   ],
 };
 
-const ALL_LABEL: Record<string, string> = {
-  en: "View all",
-  fr: "Voir tout",
-};
 
 export function LangServicesTab({ lang }: { lang: string }) {
-  const [activeTab, setActiveTab] = useState(0);
   const tabs = SERVICE_TABS_LANG[lang] ?? SERVICE_TABS_LANG.en;
-  const active = tabs[activeTab];
-  const allLabel = ALL_LABEL[lang] ?? "View all";
-
+  const isFr = lang === "fr";
   return (
-    <div>
-      {/* Desktop tabs */}
-      <div className="hidden md:block">
-        <div className="flex border-b border-gray-200">
-          {tabs.map((tab, i) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(i)}
-              className={`flex-1 px-3 py-4 text-center transition-all border-b-2 ${
-                activeTab === i
-                  ? "border-accent-500 bg-white"
-                  : "border-transparent hover:border-gray-300 bg-gray-50 hover:bg-white"
-              }`}
-            >
-              <div className="text-xl mb-1">{tab.emoji}</div>
-              <div className={`text-xs font-bold uppercase tracking-widest ${activeTab === i ? "text-accent-500" : "text-gray-400"}`}>
-                {tab.tipo}
-              </div>
-              <div className={`text-xs mt-0.5 leading-tight ${activeTab === i ? "text-gray-600" : "text-gray-400"}`}>
-                {tab.objetivo}
-              </div>
-            </button>
-          ))}
-        </div>
-        <div className="bg-white p-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {active.servicios.map((s) => (
-              <Link
-                key={s.href + s.title}
-                href={s.href}
-                className="group bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-accent-300 hover:shadow-md transition-all"
-              >
-                <div className="text-2xl mb-3">{s.icon}</div>
-                <h3 className="font-bold text-primary-600 text-sm mb-2 group-hover:text-accent-500 transition-colors leading-tight">
-                  {s.title}
-                </h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{s.desc}</p>
-              </Link>
-            ))}
-          </div>
-          {active.allHref && (
-            <div className="mt-6 text-center">
-              <Link
-                href={active.allHref}
-                className="inline-flex items-center gap-2 text-accent-500 font-semibold text-sm hover:underline"
-              >
-                {allLabel} {active.tipo.toLowerCase()} →
-              </Link>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Mobile */}
-      <div className="md:hidden space-y-6">
-        {tabs.map((tab) => (
-          <div key={tab.id}>
-            <div className="flex items-center gap-2 mb-3 px-1">
-              <span className="text-lg">{tab.emoji}</span>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-accent-500">{tab.tipo}</p>
-                <p className="text-xs text-gray-400">{tab.objetivo}</p>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 gap-3">
-              {tab.servicios.map((s) => (
-                <Link
-                  key={s.href + s.title}
-                  href={s.href}
-                  className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-100 hover:border-accent-300 transition-colors"
-                >
-                  <span className="text-xl shrink-0">{s.icon}</span>
-                  <div>
-                    <p className="font-semibold text-primary-600 text-sm">{s.title}</p>
-                    <p className="text-gray-400 text-xs leading-tight mt-0.5">{s.desc}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    <ServicesTab
+      tabs={tabs}
+      allLabel={(tipo) => (isFr ? `Voir tous les services ${tipo.toLowerCase()}` : `View all ${tipo.toLowerCase()} services`)}
+      hrefOf={(t) => (t as LangServiceTab).allHref ?? `/${lang}/`}
+      objetivosLabel={isFr ? "Objectifs" : "Goals"}
+    />
   );
 }
