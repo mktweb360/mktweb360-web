@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { alternatesFor, ROUTES } from "@/lib/i18n/routes";
 import { allPosts } from "@/lib/blog";
+import { getPostI18n, getCategoryI18n } from "@/lib/blog-i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -50,17 +51,17 @@ export default async function LangBlogPage({ params }: { params: Promise<{ lang:
   return (
     <>
       <section className="mw-skin-hero text-white">
-        <div className="max-w-5xl mx-auto px-4 py-16">
+        <div className="max-w-6xl mx-auto px-4 pt-12 pb-16 md:pb-20">
           <Breadcrumbs
             crumbs={[
               { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
               { label: "Blog" },
             ]}
           />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 mt-4">
-            {isEn ? "Digital Marketing Blog" : "Blog Marketing Digital"}
+          <h1 className="mt-6 max-w-3xl text-4xl md:text-6xl font-black leading-[1.05] tracking-tight">
+            {isEn ? <>Digital <span className="text-accent-400">marketing</span> blog</> : <>Blog <span className="text-accent-400">marketing digital</span></>}
           </h1>
-          <p className="text-xl text-primary-200">
+          <p className="mt-5 max-w-2xl text-lg md:text-xl leading-relaxed text-primary-100">
             {isEn
               ? "Articles, guides and practical tips to grow your business online."
               : "Articles, guides et conseils pratiques pour développer votre entreprise en ligne."}
@@ -69,31 +70,33 @@ export default async function LangBlogPage({ params }: { params: Promise<{ lang:
       </section>
 
       <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {translatedPosts.length > 0 && (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 {translatedPosts.map((post) => {
                   const translatedSlug = slugMap.get(post.slug)!;
                   const href = `/${lang}/${translatedSlug}/`;
+                  const tr = getPostI18n(post.slug, lang as "en" | "fr", { title: post.title, excerpt: post.excerpt });
                   return (
                     <article
                       key={post.slug}
-                      className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow"
+                      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_45px_-22px_rgba(15,28,46,0.45)] hover:ring-transparent"
                     >
+                      <span aria-hidden="true" className="absolute inset-x-0 top-0 z-10 h-1 bg-gradient-to-r from-[#7c3aed] via-[#db2777] to-accent-500 opacity-0 transition-opacity group-hover:opacity-100" />
                       <Link href={href} className="block relative w-full overflow-hidden" style={{ aspectRatio: "1200/630" }}>
                         <Image
                           src={`/og-${post.slug}.jpg`}
-                          alt={post.title}
+                          alt={tr.title}
                           fill
-                          className="object-cover hover:scale-105 transition-transform duration-300"
-                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         />
                       </Link>
                       <div className="p-6">
                         <div className="flex items-center gap-3 mb-3">
-                          <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                            {post.category}
+                          <span className="rounded-full bg-gradient-to-r from-[#7c3aed]/10 to-accent-500/10 px-2.5 py-0.5 text-xs font-bold text-primary-700">
+                            {getCategoryI18n(post.category, lang as "en" | "fr")}
                           </span>
                           <time className="text-xs text-gray-400" dateTime={post.date}>
                             {new Date(post.date + "T00:00:00").toLocaleDateString(
@@ -103,12 +106,12 @@ export default async function LangBlogPage({ params }: { params: Promise<{ lang:
                           </time>
                         </div>
                         <h2 className="text-lg font-bold text-primary-700 mb-2 line-clamp-2">
-                          <Link href={href} className="hover:text-accent-500 transition-colors">
-                            {post.title}
+                          <Link href={href} className="transition-colors group-hover:text-accent-600">
+                            {tr.title}
                           </Link>
                         </h2>
                         <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-                          {post.excerpt}
+                          {tr.excerpt}
                         </p>
                         <Link
                           href={href}

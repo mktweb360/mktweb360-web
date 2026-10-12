@@ -17,6 +17,76 @@ export type PostI18n = {
 };
 
 export const BLOG_I18N: Record<string, PostI18n> = {
+  "google-ads-sin-comision-agencia-marketing": {
+    en: {
+      title: "Google Ads with No Commission on Budget",
+      excerpt: "What it means when an agency charges no commission on your Google Ads spend, how much you save and how to evaluate the management model that suits you best.",
+    },
+    fr: {
+      title: "Google Ads sans commission sur le budget",
+      excerpt: "Ce que signifie qu'une agence ne facture pas de commission sur votre investissement Google Ads, combien vous économisez et comment évaluer le modèle qui vous convient.",
+    },
+  },
+  "redes-sociales-para-empresas-b2b-2026": {
+    en: {
+      title: "Social Media for B2B Companies in 2026",
+      excerpt: "Practical B2B social media guide for 2026: which networks to prioritise, what content generates leads and how to measure the real return on your social media investment.",
+    },
+    fr: {
+      title: "Réseaux sociaux pour entreprises B2B en 2026",
+      excerpt: "Guide pratique des réseaux sociaux B2B pour 2026 : quels réseaux prioriser, quel contenu génère des leads et comment mesurer le vrai retour sur investissement.",
+    },
+  },
+  "brandformance-como-unir-marca-y-performance": {
+    en: {
+      title: "Brandformance: Uniting Brand and Performance",
+      excerpt: "Brandformance integrates branding and performance marketing into one coherent strategy. Why separating them is a costly mistake — and how combining them multiplies results.",
+    },
+    fr: {
+      title: "Brandformance : unir marque et performance",
+      excerpt: "Le brandformance intègre la marque et la performance dans une seule stratégie. Pourquoi les séparer est une erreur coûteuse — et comment les combiner multiplie vos résultats.",
+    },
+  },
+  "marketing-digital-con-ia-y-respuestas-cero-clic": {
+    en: {
+      title: "Digital Marketing in the Age of AI Search",
+      excerpt: "AI answers directly without users clicking through. How to adapt your digital marketing strategy to keep winning customers in the zero-click era.",
+    },
+    fr: {
+      title: "Marketing digital, IA et zéro clic",
+      excerpt: "L'IA répond directement sans que l'utilisateur ne clique. Comment adapter votre stratégie marketing pour continuer à capter des clients à l'ère du zéro clic.",
+    },
+  },
+  "como-escribir-contenido-que-no-suene-a-ia": {
+    en: {
+      title: "Writing Content That Doesn't Sound Like AI",
+      excerpt: "AI-generated content without editing doesn't convert and can hurt your Google rankings. Practical techniques to create human, authentic and useful texts — even when using AI tools.",
+    },
+    fr: {
+      title: "Écrire du contenu qui ne ressemble pas à l'IA",
+      excerpt: "Le contenu généré par IA sans édition ne convertit pas et peut nuire à votre classement Google. Techniques pratiques pour créer des textes humains, authentiques et utiles — même avec des outils IA.",
+    },
+  },
+  "seo-social-instagram-tiktok-linkedin-como-buscadores": {
+    en: {
+      title: "Social SEO: Instagram, TikTok and LinkedIn",
+      excerpt: "40% of Gen Z searches on TikTok before Google. Social SEO optimises your presence on Instagram, TikTok and LinkedIn search engines. Platform-specific strategies for 2026.",
+    },
+    fr: {
+      title: "SEO social : Instagram, TikTok et LinkedIn",
+      excerpt: "40% de la Gen Z cherche sur TikTok avant Google. Le SEO social optimise votre présence dans les moteurs de recherche d'Instagram, TikTok et LinkedIn. Stratégies par plateforme pour 2026.",
+    },
+  },
+  "atribucion-de-marketing-como-medir-impacto-real": {
+    en: {
+      title: "Marketing Attribution: Measuring Real Impact",
+      excerpt: "The last-click model distorts how your customers actually find you. A practical guide to attribution models for SMEs: what they are, which to use, and how to approximate attribution without enterprise tools.",
+    },
+    fr: {
+      title: "Attribution marketing : mesurer l'impact réel",
+      excerpt: "Le modèle dernier clic fausse la réalité de la façon dont vos clients vous trouvent. Guide pratique des modèles d'attribution pour PME : ce que c'est, lequel utiliser, et comment approximer l'attribution sans outils enterprise.",
+    },
+  },
   "ha-muerto-el-seo-con-la-ia": {
     en: {
       title: "Is SEO Dead With AI? The Honest Answer",
@@ -798,6 +868,8 @@ export const CATEGORY_I18N: Record<string, { en: string; fr: string }> = {
   "Shopware": { en: "Shopware", fr: "Shopware" },
   "SEO Local": { en: "Local SEO", fr: "SEO Local" },
   "Pymes": { en: "SMEs", fr: "PME" },
+  "Marketing de Contenidos": { en: "Content Marketing", fr: "Marketing de Contenu" },
+  "SEM": { en: "SEM", fr: "SEA" },
 };
 
 /**
