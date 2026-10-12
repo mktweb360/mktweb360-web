@@ -30,7 +30,14 @@ const localBusinessSchema = {
   priceRange: "€€",
   description: "Agencia de marketing digital especializada en SEO, Google Ads, diseño web y GEO para PYMEs y empresas en España.",
   areaServed: "España",
-  sameAs: ["https://www.linkedin.com/company/mkt-web-360"],
+  sameAs: [
+    "https://www.facebook.com/mktweb360/",
+    "https://x.com/MktWeb360",
+    "https://www.instagram.com/mktweb360/",
+    "https://www.linkedin.com/company/mkt-web-360-s-l/",
+    "https://www.youtube.com/@mktweb360",
+    "https://www.pinterest.es/mktweb3812/",
+  ],
 };
 
 export default function ContactPage() {

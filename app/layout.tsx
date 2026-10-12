@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Script from "next/script";
 import { CookieBanner } from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
@@ -83,6 +82,8 @@ const organizationSchema = {
     "https://x.com/MktWeb360",
     "https://www.instagram.com/mktweb360/",
     "https://www.linkedin.com/company/mkt-web-360-s-l/",
+    "https://www.youtube.com/@mktweb360",
+    "https://www.pinterest.es/mktweb3812/",
   ],
 };
 
@@ -130,6 +131,14 @@ export default function RootLayout({
             Sin esto Google nunca recibe señales de consentimiento de usuarios EEE que no interactúan
             con el banner, bloqueando la modelización de conversiones (Consent Mode v2). */}
         <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KVB3R3H" />
+        {/* Metricool — analítica web sin cookies (no almacena datos en el dispositivo ni asigna
+            identificadores; según Metricool está exenta de consentimiento, art. 22.2 LSSI-CE).
+            Va en <head> como <script> literal (código oficial de Metricool, sin modificar) para que
+            aparezca tal cual en el HTML servido y Metricool pueda verificar la web. El loader
+            inyecta be.js de forma asíncrona, así que no bloquea el renderizado. */}
+        <script id="metricool-tracker" dangerouslySetInnerHTML={{ __html:
+          'function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"d8693f986b59286e15ea5a473d2e1fdd"})});'
+        }} />
       </head>
       <body>
         {/* GTM noscript — fallback para navegadores sin JavaScript */}
@@ -144,12 +153,6 @@ export default function RootLayout({
         />
         {children}
         <CookieBanner />
-        {/* Metricool — analítica web sin cookies (no almacena datos en el dispositivo ni asigna
-            identificadores; según Metricool está exenta de consentimiento, art. 22.2 LSSI-CE).
-            lazyOnload: se carga cuando el navegador queda libre, sin afectar al rendimiento. */}
-        <Script id="metricool-tracker" strategy="lazyOnload">
-          {`function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"d8693f986b59286e15ea5a473d2e1fdd"})});`}
-        </Script>
       </body>
     </html>
   );
