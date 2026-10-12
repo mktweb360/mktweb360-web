@@ -72,29 +72,46 @@ export function OfertasSlider() {
       ))}
       <div className={`absolute inset-0 transition-colors duration-700 ${slide.overlay ?? "bg-primary-900/70"}`} />
       <div className="relative z-10 max-w-3xl mx-auto text-center">
-        <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">
-          {slide.badge}
-        </span>
-        <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight min-h-[4rem] [text-shadow:0_1px_6px_rgba(15,28,46,0.45)]">
-          {slide.title}
-        </h2>
-        <p className="text-white/90 max-w-xl mx-auto mb-6 min-h-[3rem] [text-shadow:0_1px_4px_rgba(15,28,46,0.5)]">
-          {slide.desc}
-        </p>
-        {slide.price && (
-          <p className="mb-8 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1">
-            {slide.price.old && <span className="text-white/70 line-through text-lg md:text-xl whitespace-nowrap">{slide.price.old}</span>}
-            <span className="text-accent-400 text-2xl md:text-3xl font-bold whitespace-nowrap">{slide.price.new}</span>
-            {slide.price.note && <span className="basis-full text-sm text-white/90">{slide.price.note}</span>}
-          </p>
-        )}
-        <Link
-          href={slide.href}
-          className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block mb-10"
-        >
-          {slide.cta}
-        </Link>
-        <div className="flex justify-center gap-3">
+        {/* Todas las diapositivas se apilan en la misma celda de la rejilla: la sección toma la altura
+            de la más alta (la primera, que lleva precio) y no da saltos al cambiar. Solo la activa es
+            visible e interactiva (inert en las demás). */}
+        <div className="grid">
+          {SLIDES.map((sl, i) => {
+            const isActive = i === active;
+            return (
+              <div
+                key={sl.href}
+                className={`[grid-area:1/1] flex flex-col items-center justify-center transition-opacity duration-700 ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+                aria-hidden={!isActive}
+                inert={!isActive}
+              >
+                <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">
+                  {sl.badge}
+                </span>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight [text-shadow:0_1px_6px_rgba(15,28,46,0.45)]">
+                  {sl.title}
+                </h2>
+                <p className="text-white/90 max-w-xl mx-auto mb-6 [text-shadow:0_1px_4px_rgba(15,28,46,0.5)]">
+                  {sl.desc}
+                </p>
+                {sl.price && (
+                  <p className="mb-8 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1">
+                    {sl.price.old && <span className="text-white/70 line-through text-lg md:text-xl whitespace-nowrap">{sl.price.old}</span>}
+                    <span className="text-accent-400 text-2xl md:text-3xl font-bold whitespace-nowrap">{sl.price.new}</span>
+                    {sl.price.note && <span className="basis-full text-sm text-white/90">{sl.price.note}</span>}
+                  </p>
+                )}
+                <Link
+                  href={sl.href}
+                  className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block"
+                >
+                  {sl.cta}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+        <div className="mt-10 flex justify-center gap-3">
           {SLIDES.map((_, i) => (
             <button
               key={i}

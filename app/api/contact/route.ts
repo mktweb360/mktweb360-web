@@ -47,10 +47,22 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Demasiadas solicitudes." }, { status: 429 });
 
   const body = await req.json();
-  const { name, email, phone, website, gdpr, gbp,
+  const { gdpr, marketing,
           form_type, page_origin,
           utm_source, utm_medium, utm_campaign, utm_content, utm_term,
           _hp } = body;
+  // Escapa los datos del visitante antes de meterlos en el HTML del email (evita inyección de marcado).
+  const esc = (v: unknown) =>
+    typeof v === "string"
+      ? v.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;")
+      : "";
+  const name: string = typeof body.name === "string" ? body.name : "";
+  const email: string = typeof body.email === "string" ? body.email.trim() : "";
+  const phone: string = typeof body.phone === "string" ? body.phone : "";
+  const website: string = typeof body.website === "string" ? body.website : "";
+  const gbp: string = typeof body.gbp === "string" ? body.gbp : "";
+  // Consentimiento opcional para comunicaciones comerciales (casilla separada, desmarcada por defecto).
+  const consentComercial = marketing === "si" || marketing === true;
   // En la auditoría gratuita el mensaje es opcional (11/10/2026).
   const message: string = typeof body.message === "string" ? body.message : "";
   const messageOptional = form_type === "auditoria";
@@ -82,19 +94,19 @@ export async function POST(req: NextRequest) {
     const trackingHtml = hasTracking ? `
       <hr style="margin:24px 0;border:none;border-top:1px solid #e5e7eb"/>
       <table style="font-size:13px;border-collapse:collapse">
-        <tr><td style="padding:3px 12px 3px 0;color:#6b7280">Formulario</td><td>${form_type || "\u2014"}</td></tr>
-        <tr><td style="padding:3px 12px 3px 0;color:#6b7280">P\u00e1gina</td><td>${page_origin || "\u2014"}</td></tr>
-        <tr><td style="padding:3px 12px 3px 0;color:#6b7280">Fuente</td><td>${utm_source || "org\u00e1nico"}</td></tr>
-        <tr><td style="padding:3px 12px 3px 0;color:#6b7280">Medio</td><td>${utm_medium || "\u2014"}</td></tr>
-        <tr><td style="padding:3px 12px 3px 0;color:#6b7280">Campa\u00f1a</td><td>${utm_campaign || "\u2014"}</td></tr>
-        ${utm_content ? `<tr><td style="padding:3px 12px 3px 0;color:#6b7280">Contenido</td><td>${utm_content}</td></tr>` : ""}
-        ${utm_term ? `<tr><td style="padding:3px 12px 3px 0;color:#6b7280">T\u00e9rmino</td><td>${utm_term}</td></tr>` : ""}
+        <tr><td style="padding:3px 12px 3px 0;color:#6b7280">Formulario</td><td>${esc(form_type) || "\u2014"}</td></tr>
+        <tr><td style="padding:3px 12px 3px 0;color:#6b7280">P\u00e1gina</td><td>${esc(page_origin) || "\u2014"}</td></tr>
+        <tr><td style="padding:3px 12px 3px 0;color:#6b7280">Fuente</td><td>${esc(utm_source) || "org\u00e1nico"}</td></tr>
+        <tr><td style="padding:3px 12px 3px 0;color:#6b7280">Medio</td><td>${esc(utm_medium) || "\u2014"}</td></tr>
+        <tr><td style="padding:3px 12px 3px 0;color:#6b7280">Campa\u00f1a</td><td>${esc(utm_campaign) || "\u2014"}</td></tr>
+        ${utm_content ? `<tr><td style="padding:3px 12px 3px 0;color:#6b7280">Contenido</td><td>${esc(utm_content)}</td></tr>` : ""}
+        ${utm_term ? `<tr><td style="padding:3px 12px 3px 0;color:#6b7280">T\u00e9rmino</td><td>${esc(utm_term)}</td></tr>` : ""}
       </table>` : "";
 
     const { Resend } = await import("resend");
     await new Resend(apiKey).emails.send({
       from: "web@mktweb360.com", to: "info@mktweb360.com", replyTo: email,
-      subject: `Nuevo lead [${oferta}]${utm_source ? ` \u00b7 ${utm_source}` : ""}: ${name}`,
+      subject: `Nuevo lead [${oferta}]${utm_source ? ` \u00b7 ${utm_source}` : ""}: ${name.replace(/[\r\n]+/g, " ")}`,
       html: `<div style="font-family:-apple-system,sans-serif;max-width:600px;margin:0 auto;padding:32px 24px">
         <div style="background:#1e3a5f;padding:20px 24px;border-radius:12px 12px 0 0">
           <h2 style="color:white;margin:0">Nuevo contacto \u2014 ${oferta}</h2>
@@ -102,15 +114,16 @@ export async function POST(req: NextRequest) {
         </div>
         <div style="background:#f9fafb;padding:24px;border-radius:0 0 12px 12px;border:1px solid #e5e7eb;border-top:none">
           <table style="font-size:15px;border-collapse:collapse;width:100%;margin-bottom:16px">
-            <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Nombre</td><td><strong>${name}</strong></td></tr>
-            <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Email</td><td><a href="mailto:${email}" style="color:#f97316">${email}</a></td></tr>
-            <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Tel\u00e9fono</td><td>${phone || "\u2014"}</td></tr>
-            <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Web</td><td>${website || "\u2014"}</td></tr>
-            ${gbp ? `<tr><td style="padding:6px 16px 6px 0;color:#6b7280">Ficha de Google</td><td>${gbp}</td></tr>` : ""}
+            <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Nombre</td><td><strong>${esc(name)}</strong></td></tr>
+            <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Email</td><td><a href="mailto:${esc(email)}" style="color:#f97316">${esc(email)}</a></td></tr>
+            <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Tel\u00e9fono</td><td>${esc(phone) || "\u2014"}</td></tr>
+            <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Web</td><td>${esc(website) || "\u2014"}</td></tr>
+            <tr><td style="padding:6px 16px 6px 0;color:#6b7280">Comunicaciones comerciales</td><td>${consentComercial ? "S\u00ed, consiente" : "No"}</td></tr>
+            ${gbp ? `<tr><td style="padding:6px 16px 6px 0;color:#6b7280">Ficha de Google</td><td>${esc(gbp)}</td></tr>` : ""}
           </table>
           <div style="padding:16px;background:white;border-radius:8px;border:1px solid #e5e7eb">
             <p style="color:#6b7280;font-size:12px;text-transform:uppercase;margin:0 0 8px">Mensaje</p>
-            <p style="margin:0;font-size:15px;line-height:1.6">${message ? message.replace(/\n/g,"<br>") : "—"}</p>
+            <p style="margin:0;font-size:15px;line-height:1.6">${message ? esc(message).replace(/\n/g,"<br>") : "—"}</p>
           </div>
           ${trackingHtml}
           <p style="color:#9ca3af;font-size:11px;text-align:center;margin-top:20px">ID: ${id}</p>
@@ -129,6 +142,7 @@ export async function POST(req: NextRequest) {
         sector: "", canal, oferta, opcionPago: "",
         mensaje: gbp ? `${message}${message ? "\n\n" : ""}Ficha de Google: ${gbp}` : message,
         fichaGoogle: gbp || "",
+        consentimientoComercial: consentComercial,
         leadSource: page_origin || "mktweb360.com",
         utm_source: utm_source || "", utm_medium: utm_medium || "", utm_campaign: utm_campaign || "",
       }),

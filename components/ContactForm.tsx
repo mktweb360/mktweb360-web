@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useId } from "react";
 import { trackLead } from "@/lib/track";
 import { usePathname } from "next/navigation";
 
@@ -31,6 +31,16 @@ interface ContactFormProps {
 
 const T = {
   es: {
+    marketing: "Quiero recibir de vez en cuando novedades y consejos de Mkt Web 360 por email (opcional).",
+    infoTitle: "Información básica sobre protección de datos",
+    infoRows: [
+      ["Responsable", "Mkt Web 360 SLU (B87679304)."],
+      ["Finalidad", "Responder a tu consulta y, si lo pides, preparar tu auditoría o propuesta. Si marcas la casilla opcional, enviarte comunicaciones comerciales."],
+      ["Legitimación", "Tu solicitud (medidas precontractuales) y tu consentimiento, que puedes retirar cuando quieras."],
+      ["Destinatarios", "No cedemos tus datos a terceros salvo obligación legal. Usamos proveedores tecnológicos que actúan como encargados del tratamiento; algunos están fuera del EEE, con garantías adecuadas."],
+      ["Derechos", "Acceso, rectificación, supresión, oposición, limitación y portabilidad, escribiendo a info@mktweb360.com. También puedes reclamar ante la AEPD."],
+    ],
+    infoMore: "Información adicional en nuestra",
     name: "Nombre",
     namePh: "Tu nombre",
     email: "Email",
@@ -51,6 +61,16 @@ const T = {
     error: "Error al enviar. Por favor, llámanos al +34 622 748 987.",
   },
   en: {
+    marketing: "I'd like to receive occasional news and tips from Mkt Web 360 by email (optional).",
+    infoTitle: "Basic data protection information",
+    infoRows: [
+      ["Controller", "Mkt Web 360 SLU (B87679304)."],
+      ["Purpose", "To answer your enquiry and, if requested, prepare your audit or proposal. If you tick the optional box, to send you commercial communications."],
+      ["Legal basis", "Your request (pre-contractual measures) and your consent, which you can withdraw at any time."],
+      ["Recipients", "We do not share your data with third parties unless legally required. We use technology providers acting as processors; some are outside the EEA, with appropriate safeguards."],
+      ["Rights", "Access, rectification, erasure, objection, restriction and portability by writing to info@mktweb360.com. You may also complain to the Spanish DPA (AEPD)."],
+    ],
+    infoMore: "More information in our",
     name: "Name",
     namePh: "Your name",
     email: "Email",
@@ -71,6 +91,16 @@ const T = {
     error: "Error sending. Please call us at +34 622 748 987.",
   },
   fr: {
+    marketing: "Je souhaite recevoir de temps en temps des nouveautés et conseils de Mkt Web 360 par email (facultatif).",
+    infoTitle: "Informations de base sur la protection des données",
+    infoRows: [
+      ["Responsable", "Mkt Web 360 SLU (B87679304)."],
+      ["Finalité", "Répondre à votre demande et, si vous le souhaitez, préparer votre audit ou proposition. Si vous cochez la case facultative, vous envoyer des communications commerciales."],
+      ["Base juridique", "Votre demande (mesures précontractuelles) et votre consentement, que vous pouvez retirer à tout moment."],
+      ["Destinataires", "Nous ne cédons pas vos données à des tiers sauf obligation légale. Nous utilisons des prestataires techniques agissant comme sous-traitants ; certains sont hors de l'EEE, avec des garanties appropriées."],
+      ["Droits", "Accès, rectification, effacement, opposition, limitation et portabilité en écrivant à info@mktweb360.com. Vous pouvez aussi saisir l'AEPD."],
+    ],
+    infoMore: "Plus d'informations dans notre",
     name: "Nom",
     namePh: "Votre nom",
     email: "Email",
@@ -98,6 +128,8 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
   const t = T[detectedLang];
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
   const utmRef = useRef<UtmData>({});
+  // Ids únicos por instancia: puede haber varios formularios en la misma página (p. ej. la home).
+  const uid = useId();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -171,20 +203,20 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">{t.name} *</label>
-          <input name="name" type="text" required className={INPUT} placeholder={t.namePh} />
+          <label htmlFor={`${uid}-name`} className="block text-sm font-medium text-gray-700 mb-1">{t.name} *</label>
+          <input id={`${uid}-name`} name="name" autoComplete="name" type="text" required className={INPUT} placeholder={t.namePh} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">{t.email} *</label>
-          <input name="email" type="email" required className={INPUT} placeholder="tu@email.com" />
+          <label htmlFor={`${uid}-email`} className="block text-sm font-medium text-gray-700 mb-1">{t.email} *</label>
+          <input id={`${uid}-email`} name="email" autoComplete="email" type="email" required className={INPUT} placeholder="tu@email.com" />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">{t.phone}</label>
-          <input name="phone" type="tel" className={INPUT} placeholder={t.phonePh} />
+          <label htmlFor={`${uid}-phone`} className="block text-sm font-medium text-gray-700 mb-1">{t.phone}</label>
+          <input id={`${uid}-phone`} name="phone" autoComplete="tel" type="tel" className={INPUT} placeholder={t.phonePh} />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">{websiteRequired ? t.websiteAudit : t.website}</label>
-          <input name="website" type="url" required={websiteRequired} className={INPUT} placeholder={t.websitePh} />
+          <label htmlFor={`${uid}-website`} className="block text-sm font-medium text-gray-700 mb-1">{websiteRequired ? t.websiteAudit : t.website}</label>
+          <input id={`${uid}-website`} name="website" autoComplete="url" type="url" required={websiteRequired} className={INPUT} placeholder={t.websitePh} />
         </div>
       </div>
       {gbpField && (
@@ -194,19 +226,45 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
         </div>
       )}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">{messageLabel || t.message}{messageOptional ? "" : " *"}</label>
-        <textarea name="message" required={!messageOptional} rows={messageOptional ? 3 : 5} className={INPUT} placeholder={messagePlaceholder || t.messagePh} />
+        <label htmlFor={`${uid}-message`} className="block text-sm font-medium text-gray-700 mb-1">{messageLabel || t.message}{messageOptional ? "" : " *"}</label>
+        <textarea id={`${uid}-message`} name="message" required={!messageOptional} rows={messageOptional ? 3 : 5} className={INPUT} placeholder={messagePlaceholder || t.messagePh} />
       </div>
-      <div className="flex items-start gap-3">
-        <input type="checkbox" name="gdpr" id="gdpr" required className="mt-1 h-4 w-4 rounded border-gray-300 text-primary-600 focus:ring-primary-400" />
-        <label htmlFor="gdpr" className="text-sm text-gray-600">
-          {t.gdpr}{" "}
-          <a href={t.gdprLinkHref} className="text-primary-600 hover:underline">
-            {t.gdprLink}
-          </a>{" "}
-          {t.gdprSuffix} *
-        </label>
+      <div className="space-y-3">
+        <div className="flex items-start gap-3">
+          <input type="checkbox" name="gdpr" id={`${uid}-gdpr`} required className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-400" />
+          <label htmlFor={`${uid}-gdpr`} className="text-sm text-gray-600">
+            {t.gdpr}{" "}
+            <a href={t.gdprLinkHref} className="text-primary-600 underline-offset-2 hover:underline">
+              {t.gdprLink}
+            </a>{" "}
+            {t.gdprSuffix} *
+          </label>
+        </div>
+        <div className="flex items-start gap-3">
+          <input type="checkbox" name="marketing" id={`${uid}-marketing`} value="si" className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-400" />
+          <label htmlFor={`${uid}-marketing`} className="text-sm text-gray-600">{t.marketing}</label>
+        </div>
       </div>
+      {/* Primera capa de información (art. 13 RGPD y art. 11 LOPDGDD, modelo por capas de la AEPD) */}
+      <details className="group rounded-lg border border-gray-200 bg-gray-50 text-xs text-gray-600 open:bg-white">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-3 py-2 font-semibold text-gray-700">
+          {t.infoTitle}
+          <span className="text-accent-500 transition-transform group-open:rotate-180" aria-hidden="true">▾</span>
+        </summary>
+        <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 border-t border-gray-200 px-3 py-3">
+          {t.infoRows.map(([k, v]) => (
+            <div key={k} className="contents">
+              <dt className="font-semibold text-gray-700">{k}</dt>
+              <dd>{v}</dd>
+            </div>
+          ))}
+          <dt className="sr-only">+</dt>
+          <dd className="col-span-2 pt-1">
+            {t.infoMore}{" "}
+            <a href={t.gdprLinkHref} className="text-primary-600 underline underline-offset-2">{t.gdprLink}</a>.
+          </dd>
+        </dl>
+      </details>
       <button
         type="submit"
         disabled={status === "sending"}

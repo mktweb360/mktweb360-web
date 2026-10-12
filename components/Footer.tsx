@@ -246,16 +246,9 @@ export function Footer({ lang }: { lang?: string }) {
           </address>
         </div>
       </div>
-      <div className="max-w-6xl mx-auto px-4 pb-8">
-        <nav aria-label={c.zonesTitle} className="border-t border-primary-700 pt-6">
-          <h4 className="font-semibold mb-3 text-primary-100 text-sm">{c.zonesTitle}</h4>
-          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-primary-300">
-            {c.zones.map((z) => (
-              <li key={z.href}><Link href={z.href} className="hover:text-white transition-colors">{z.label}</Link></li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+      {/* La banda "Marketing digital por zonas" se retiró del pie (oct-2026): daba peso a unas pocas
+          localidades frente al posicionamiento nacional. Las landings locales siguen enlazadas desde
+          sus páginas relacionadas y el sitemap. Los datos c.zones se conservan por si se reutilizan. */}
       <div className="border-t border-primary-700 py-4 text-center text-xs text-primary-400">
         © {new Date().getFullYear()} Mkt Web 360 SLU · {c.copyright}
       </div>
