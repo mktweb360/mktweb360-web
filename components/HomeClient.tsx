@@ -7,6 +7,7 @@ import { OfertasSlider } from "@/components/OfertasSlider";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogCarousel } from "@/components/BlogCarousel";
 import { HeroSlider, ServicesTab, TestimonialsCarousel } from "@/components/HomeInteractive";
+import { CompromisoExclusividad } from "@/components/CompromisoExclusividad";
 
 const FAQS = [
   {
@@ -96,69 +97,8 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* Metrics bar */}
-      <section className="py-10 px-4 bg-primary-600 text-white">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {[
-            { value: "+1.000", label: "proyectos entregados" },
-            { value: "+10 años", label: "de experiencia digital" },
-            { value: "Nacional", label: "servicio en toda España" },
-            { value: "Exclusivo", label: "un cliente por sector y zona" },
-          ].map((m) => (
-            <div key={m.label}>
-              <div className="text-3xl font-bold text-accent-400">{m.value}</div>
-              <div className="text-sm text-primary-200 mt-1">{m.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Why us */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary-600 mb-4">¿Por qué elegir Mkt Web 360?</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: (
-                  <svg className="w-12 h-12 text-accent-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-                ),
-                title: "+10 años de experiencia",
-                desc: "Una década ayudando a empresas españolas a crecer online con estrategias de marketing digital.",
-              },
-              {
-                icon: (
-                  <svg className="w-12 h-12 text-accent-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                ),
-                title: "Trato cercano y dedicado",
-                desc: "No somos una gran agencia impersonal. Cada cliente tiene un responsable dedicado y atención directa.",
-              },
-              {
-                icon: (
-                  <svg className="w-12 h-12 text-accent-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                ),
-                title: "Exclusividad sectorial",
-                desc: "No trabajamos con tu competencia en tu zona. Tu sector es exclusivamente tuyo en tu área geográfica.",
-              },
-              {
-                icon: (
-                  <svg className="w-12 h-12 text-accent-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"/></svg>
-                ),
-                title: "IA aplicada a tu proyecto",
-                desc: "La experiencia de un equipo senior. La precisión de la inteligencia artificial. Protocolos propios de IA en cada servicio.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="text-center p-6">
-                <div className="mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-primary-600 mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Compromiso: exclusividad por sector y zona + principios (sustituye a cifras y "¿Por qué elegir?") */}
+      <CompromisoExclusividad />
 
       {/* Prueba social: reseñas reales de Google (nombre y origen verificables) */}
       <section className="py-16 px-4 bg-gray-50">
