@@ -133,16 +133,19 @@ export default function HomeClient() {
       <CompromisoExclusividad />
 
       {/* Prueba social: reseñas reales de Google (nombre y origen verificables) */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <span className="inline-block bg-primary-100 text-primary-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Lo que dicen nuestros clientes</span>
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
-              El sector cambia.<br />
-              <span className="text-accent-500">El método no.</span>
+            <p className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary-600 ring-1 ring-gray-200">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden="true" />
+              Lo que dicen nuestros clientes
+            </p>
+            <h2 className="mt-5 text-4xl md:text-5xl font-black tracking-tight text-primary-700">
+              El sector cambia.{" "}
+              <span className="bg-gradient-to-r from-[#7c3aed] via-[#db2777] to-accent-500 bg-clip-text text-transparent">El método no.</span>
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              Trabajamos con negocios de sectores muy distintos. Lo que tienen en común: quieren más clientes y resultados medibles.
+            <p className="mt-4 text-gray-500 max-w-2xl mx-auto leading-relaxed">
+              Reseñas reales de Google de negocios de sectores muy distintos. Lo que tienen en común: querían más clientes y resultados medibles.
             </p>
           </div>
           <TestimonialsCarousel />
@@ -159,12 +162,12 @@ export default function HomeClient() {
       <HomeContacto />
 
       {/* Últimas publicaciones */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3">Blog</span>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-700">Últimas publicaciones</h2>
+              <span className="inline-block rounded-full bg-gradient-to-r from-[#7c3aed] to-accent-500 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white mb-3">Blog</span>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700">Últimas publicaciones</h2>
             </div>
             <Link href="/blog/" className="text-accent-500 font-semibold text-sm hover:underline hidden md:block">
               Ver todos los artículos →

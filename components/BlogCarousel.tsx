@@ -58,9 +58,9 @@ export function BlogCarousel({ posts }: { posts: BlogPost[] }) {
         </div>
       </div>
       <button type="button" onClick={() => go(page - 1)} aria-label="Anterior"
-        className="absolute left-0 top-[30%] -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-primary-700 hover:bg-accent-500 hover:text-white transition-colors">‹</button>
+        className="absolute left-1 md:left-0 top-[30%] -translate-y-1/2 md:-translate-x-1/2 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-primary-700 hover:bg-accent-500 hover:text-white transition-colors">‹</button>
       <button type="button" onClick={() => go(page + 1)} aria-label="Siguiente"
-        className="absolute right-0 top-[30%] -translate-y-1/2 translate-x-1/2 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-primary-700 hover:bg-accent-500 hover:text-white transition-colors">›</button>
+        className="absolute right-1 md:right-0 top-[30%] -translate-y-1/2 md:translate-x-1/2 w-9 h-9 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center text-primary-700 hover:bg-accent-500 hover:text-white transition-colors">›</button>
       <div className="flex justify-center gap-2 mt-6">
         {Array.from({ length: totalPages }).map((_, i) => (
           <button key={i} type="button" onClick={() => go(i)} aria-label={`Ir a la página ${i + 1}`}
