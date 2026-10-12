@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 import { CookieBanner } from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
@@ -143,6 +144,12 @@ export default function RootLayout({
         />
         {children}
         <CookieBanner />
+        {/* Metricool — analítica web sin cookies (no almacena datos en el dispositivo ni asigna
+            identificadores; según Metricool está exenta de consentimiento, art. 22.2 LSSI-CE).
+            lazyOnload: se carga cuando el navegador queda libre, sin afectar al rendimiento. */}
+        <Script id="metricool-tracker" strategy="lazyOnload">
+          {`function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"d8693f986b59286e15ea5a473d2e1fdd"})});`}
+        </Script>
       </body>
     </html>
   );
