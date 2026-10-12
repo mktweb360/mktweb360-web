@@ -23,6 +23,11 @@ Esta versión AÑADE §0 a la v3 (HISTORIAL-mktweb360-web-v3.md), que sigue vige
   - Railway: José borró los proyectos con copias de esta web (12/10). La web sirve solo desde Vercel (proyecto mktweb360-web); comprobado 200.
   - El proceso de la auditoría (MktOS 360) está documentado en OneDrive › 2026 › Proyectos › Mktos › 00-Gestion (REGISTRO-DE-SESION-2026-10-12-portatil.md).
 
+- **Commits del PC el 12/10 (otra sesión, integrados aquí por rebase):**
+  - `ef14b77` (#49): tracker de Metricool sin cookies en el layout raíz.
+  - `753b3d6`: vídeos de la serie «Tutoriales WooCommerce» (01-09, 16:9 y 9:16) en `public/videos/tutoriales-woocommerce/`, servidos en `https://www.mktweb360.com/videos/tutoriales-woocommerce/…` (comprobado 200). Son los tutoriales para Lorena.
+  - Ojo: son ~110 MB de vídeo dentro del repo. Si la serie crece, valorar alojarlos fuera (Vercel Blob, YouTube oculto o similar).
+
 ### Pendiente
 
 - Comprobar que el módulo RT103 de MktOS lee `fichaGoogle` del webhook; si no, sacarla de `mensaje`.
