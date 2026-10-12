@@ -90,7 +90,7 @@ export default function ConsultorSeoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-5xl mx-auto px-4 py-16">
           <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "SEO", href: "/seo-posicionamiento-web-organico/" }, { label: "Consultor SEO" }]} />
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
@@ -198,7 +198,7 @@ export default function ConsultorSeoPage() {
         </div>
       </section>
 
-      <section id="contacto" className="py-16 px-4 bg-primary-600 text-white">
+      <section id="contacto" className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold mb-4 text-center">Cuéntanos tu caso</h2>
           <p className="text-primary-200 mb-8 text-center">Indica tu web y qué quieres conseguir. Te respondemos con una propuesta de alcance y plazos.</p>

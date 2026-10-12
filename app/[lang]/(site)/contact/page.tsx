@@ -31,7 +31,7 @@ export default async function ContactPage({
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-4xl mx-auto px-4 py-16">
           <Breadcrumbs
             crumbs={[

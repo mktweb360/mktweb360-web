@@ -12,7 +12,7 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
       {items.map((faq, i) => {
         const isOpen = openIndex === i;
         return (
-          <div key={faq.q} className="rounded-2xl border border-gray-100 bg-gray-50">
+          <div key={faq.q} className={`rounded-2xl ring-1 transition-all duration-300 ${isOpen ? "bg-white ring-transparent shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]" : "bg-gray-50 ring-gray-200"}`}>
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : i)}
@@ -21,7 +21,7 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
             >
               <h3 className="font-bold text-primary-700">{faq.q}</h3>
               <span
-                className={`shrink-0 w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center text-primary-600 font-bold transition-transform duration-300 ${
+                className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xl leading-none transition-all duration-300 ${isOpen ? "bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white" : "bg-white ring-1 ring-gray-200 text-accent-500"} ${
                   isOpen ? "rotate-45" : ""
                 }`}
               >

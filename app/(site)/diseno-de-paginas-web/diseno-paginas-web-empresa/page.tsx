@@ -235,13 +235,13 @@ export default function PaginasWebEmpresaPage() {
       <OfferBannerWebSeo />
 
       {/* ── CTA ── */}
-      <section className="py-16 px-4 bg-primary-600 text-white">
+      <section className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">¿Listo para empezar?</h2>
             <p className="text-primary-200">Cuéntanos tu proyecto y te respondemos con una propuesta en menos de 24 horas.</p>
           </div>
-          <div className="bg-white rounded-2xl p-8">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType="diseno-web-empresa" />
           </div>
           <div className="text-center mt-6">

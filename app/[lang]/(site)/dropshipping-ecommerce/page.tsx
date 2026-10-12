@@ -72,7 +72,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <Breadcrumbs
@@ -209,7 +209,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </section>
 
-        <section id="contact" className="bg-primary-600 text-white rounded-2xl p-8">
+        <section id="contact" className="mw-skin-cta text-white rounded-3xl p-8">
           <h2 className="text-2xl font-bold mb-4">
             {isEn
               ? "Want to build your online store with no stock risk?"
@@ -220,7 +220,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               ? "Do you have a niche in mind or do you want us to help identify the best opportunity? Tell us and within 48 hours we will respond with a viability analysis."
               : "Vous avez un créneau en tête ou voulez-vous que nous vous aidions à identifier la meilleure opportunité ? Parlez-nous et dans les 48 heures nous vous répondrons avec une analyse de viabilité."}
           </p>
-          <div className="bg-white rounded-xl p-6">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm />
           </div>
         </section>

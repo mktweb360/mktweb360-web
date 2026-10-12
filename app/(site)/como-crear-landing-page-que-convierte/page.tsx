@@ -81,10 +81,10 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Para optimizar una landing page necesitas datos. <Link href="/como-medir-roi-marketing-digital/" className="text-accent-500 hover:underline">Google Analytics 4</Link> con eventos configurados te dice cuántos usuarios llegan, cuántos completan el formulario y en qué punto de la página abandonan. Herramientas de mapas de calor como Hotjar o Microsoft Clarity muestran exactamente dónde hace clic la gente y hasta dónde scrollan, lo que revela dónde se pierde el interés.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Los tests A/B son la forma más rigurosa de optimizar. Prueba una variable a la vez (titular, color del CTA, longitud del formulario, imagen del hero) con suficiente tráfico para obtener resultados estadísticamente significativos. Una mejora del 20-30% en la tasa de conversión equivale a un 20-30% más de leads con el mismo presupuesto de publicidad.</p>
 
-        <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
-          <div className="bg-white rounded-xl p-6">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType="blog" />
           </div>
         </section>

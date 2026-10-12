@@ -168,7 +168,7 @@ export default function FactoresWebConstruccionPage() {
             Ver también: <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">Diseño de páginas web</Link> · <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO Local</Link>
           </p>
 
-          <div className="bg-primary-600 text-white rounded-2xl p-8 my-2 text-center">
+          <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">¿Tu empresa de reformas necesita una web que genere confianza?</h2>
             <p className="text-primary-200 mb-6">
               Diseñamos webs de construcción y reformas con presupuesto por escrito, portfolio antes/después y formulario que cualifica cada proyecto.
@@ -186,12 +186,12 @@ export default function FactoresWebConstruccionPage() {
           <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de una empresa de reformas</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
-              <details key={faq.q} className="border border-gray-200 rounded-xl overflow-hidden group">
-                <summary className="px-6 py-4 cursor-pointer font-semibold text-primary-700 hover:bg-primary-50 list-none flex justify-between items-center">
+              <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-bold text-primary-700 [&::-webkit-details-marker]:hidden">
                   {faq.q}
                   <span className="text-accent-500 group-open:rotate-180 transition-transform">﹀</span>
                 </summary>
-                <div className="px-6 py-4 text-gray-600 border-t border-gray-100">{faq.a}</div>
+                <div className="mw-faq-body px-6 pb-6 text-gray-600 leading-relaxed">{faq.a}</div>
               </details>
             ))}
           </div>

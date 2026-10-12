@@ -55,7 +55,7 @@ export default function WhatsAppMarketingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "WhatsApp Marketing" }]} />
@@ -78,7 +78,7 @@ export default function WhatsAppMarketingPage() {
         </div>
       </section>
 
-      <section className="bg-primary-600 py-6 px-4">
+      <section className="mw-skin-band py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {[
             { value: "98%", label: "tasa de apertura" },
@@ -203,10 +203,10 @@ export default function WhatsAppMarketingPage() {
         </section>
 
         {/* Contacto */}
-        <section id="contacto" className="bg-primary-600 text-white rounded-2xl p-8">
+        <section id="contacto" className="mw-skin-cta text-white rounded-3xl p-8">
           <h2 className="text-2xl font-bold mb-4">Tu próximo cliente está en WhatsApp</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu negocio y diseñamos una estrategia de WhatsApp Marketing adaptada a tus objetivos.</p>
-          <div className="bg-white rounded-xl p-6">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm />
           </div>
         </section>

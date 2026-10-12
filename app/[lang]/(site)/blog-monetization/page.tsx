@@ -124,7 +124,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <Breadcrumbs
@@ -263,7 +263,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* Contact */}
-        <section id="contact" className="bg-primary-600 text-white rounded-2xl p-8">
+        <section id="contact" className="mw-skin-cta text-white rounded-3xl p-8">
           <h2 className="text-2xl font-bold mb-4">
             {isEn
               ? "Do you want to create your monetisation blog?"
@@ -274,7 +274,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               ? "Do you already have a niche in mind or do you want us to help you identify the best opportunity? Tell us and within 24 hours we will tell you if it has potential and where to start."
               : "Avez-vous déjà un créneau en tête ou voulez-vous que nous vous aidions à identifier la meilleure opportunité ? Dites-le nous et dans les 24 heures nous vous dirons si ça a du potentiel et par où commencer."}
           </p>
-          <div className="bg-white rounded-xl p-6">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm lang={lang} />
           </div>
         </section>

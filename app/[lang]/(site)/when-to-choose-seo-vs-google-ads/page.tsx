@@ -277,7 +277,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         </section>
 
-        <div className="bg-primary-600 text-white rounded-2xl p-8 mb-10">
+        <div className="mw-skin-cta text-white rounded-3xl p-8 mb-10">
           <h2 className="text-2xl font-bold mb-4">
             {isEn
               ? "Need help with your digital marketing?"

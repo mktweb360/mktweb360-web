@@ -76,10 +76,10 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Migrar en temporada alta:</strong> Evita planificar la migración en Navidad, Black Friday, rebajas o cualquier periodo de alta demanda de tu sector. Una incidencia técnica en esas fechas multiplica el impacto económico.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>No hacer backup completo antes del lanzamiento:</strong> Siempre, sin excepción, realiza un backup completo de la tienda actual justo antes del lanzamiento. Si algo va mal en las primeras horas, poder revertir al estado anterior es invaluable.</p>
 
-        <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
-          <div className="bg-white rounded-xl p-6"><ContactForm formType="blog" /></div>
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10"><ContactForm formType="blog" /></div>
         </section>
       </div>
       <RelatedArticles category="Ecommerce" />

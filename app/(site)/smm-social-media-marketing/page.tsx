@@ -71,7 +71,7 @@ export default function SmmPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Redes Sociales" }]} />
@@ -257,10 +257,10 @@ export default function SmmPage() {
         </section>
 
         {/* Contacto */}
-        <section id="contacto" className="bg-primary-600 text-white rounded-2xl p-8">
+        <section id="contacto" className="mw-skin-cta text-white rounded-3xl p-8">
           <h2 className="text-2xl font-bold mb-4">¿Hablamos de tus redes sociales?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu situación actual y te proponemos una estrategia personalizada para tu sector.</p>
-          <div className="bg-white rounded-xl p-6">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm />
           </div>
         </section>

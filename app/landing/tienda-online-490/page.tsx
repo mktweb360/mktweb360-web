@@ -51,7 +51,7 @@ export default function LandingTiendaOnline490Page() {
       </div>
 
       {/* HERO + FORMULARIO */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-12 md:py-20 px-4">
+      <section className="mw-skin-hero text-white py-12 md:py-20 px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
 
           {/* COPY IZQUIERDA */}

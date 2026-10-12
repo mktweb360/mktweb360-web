@@ -282,7 +282,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* CTA */}
-        <section className="bg-primary-600 text-white rounded-2xl p-8">
+        <section className="mw-skin-cta text-white rounded-3xl p-8">
           <h2 className="text-2xl font-bold mb-4">
             {isEn ? "Request a quote" : "Demander un devis"}
           </h2>
@@ -291,7 +291,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               ? "Tell us what you need and we will prepare a no-obligation proposal. Every piece is unique and the budget adapts to your project."
               : "Dites-nous ce dont vous avez besoin et nous préparerons une proposition sans engagement. Chaque pièce est unique et le budget s'adapte à votre projet."}
           </p>
-          <div className="bg-white rounded-xl p-6">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm lang={lang} />
           </div>
         </section>

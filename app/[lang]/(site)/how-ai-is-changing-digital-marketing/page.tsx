@@ -213,7 +213,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         </section>
 
-        <div className="bg-primary-600 text-white rounded-2xl p-8 mb-10 text-center">
+        <div className="mw-skin-cta text-white rounded-3xl p-8 mb-10 text-center">
           <h2 className="text-2xl font-bold mb-3">
             {isEn
               ? "Prepare your business for marketing with AI"
@@ -248,15 +248,15 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {faqs.map((faq, i) => (
               <details
                 key={i}
-                className="border border-gray-200 rounded-xl overflow-hidden group"
+                className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]"
               >
-                <summary className="px-6 py-4 cursor-pointer font-semibold text-primary-700 hover:bg-primary-50 list-none flex justify-between items-center">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-bold text-primary-700 [&::-webkit-details-marker]:hidden">
                   {faq.q}
                   <span className="text-accent-500 group-open:rotate-180 transition-transform">
                     ▾
                   </span>
                 </summary>
-                <div className="px-6 py-4 text-gray-600 border-t border-gray-100">
+                <div className="mw-faq-body px-6 pb-6 text-gray-600 leading-relaxed">
                   {faq.a}
                 </div>
               </details>

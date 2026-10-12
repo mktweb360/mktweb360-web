@@ -73,7 +73,7 @@ export default function SeoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "SEO Posicionamiento Web" }]} />
@@ -100,7 +100,7 @@ export default function SeoPage() {
       </section>
 
       {/* Trust bar */}
-      <section className="bg-primary-600 py-6 px-4">
+      <section className="mw-skin-band py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {[
             { value: "#1 canal", label: "buscadores, inicio del viaje digital" },
@@ -273,10 +273,10 @@ export default function SeoPage() {
           </div>
           <div className="space-y-4">
             {FAQS.map((faq) => (
-              <details key={faq.q} className="border border-gray-200 rounded-xl overflow-hidden group bg-white">
-                <summary className="px-6 py-4 cursor-pointer font-semibold text-primary-700 hover:bg-primary-50 list-none flex justify-between items-center">
+              <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-bold text-primary-700 [&::-webkit-details-marker]:hidden">
                   {faq.q}
-                  <span className="text-accent-500 group-open:rotate-180 transition-transform">▾</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xl leading-none text-accent-500 ring-1 ring-gray-200 transition-all duration-300 group-open:rotate-45 group-open:bg-gradient-to-br group-open:from-[#7c3aed] group-open:to-accent-500 group-open:text-white group-open:ring-0" aria-hidden="true">+</span>
                 </summary>
                 <div className="px-6 py-4 text-gray-600 border-t border-gray-100 text-sm leading-relaxed">{faq.a}</div>
               </details>
@@ -299,13 +299,13 @@ export default function SeoPage() {
       </section>
 
       {/* CTA Form */}
-      <section id="auditoria" className="py-16 px-4 bg-primary-600 text-white">
+      <section id="auditoria" className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Auditoría SEO gratuita</h2>
             <p className="text-primary-200">Analizamos tu web sin compromiso y te decimos exactamente qué está frenando tu posicionamiento.</p>
           </div>
-          <div className="bg-white rounded-2xl p-8">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType="seo" />
           </div>
         </div>

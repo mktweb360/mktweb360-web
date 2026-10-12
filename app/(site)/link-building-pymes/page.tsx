@@ -74,10 +74,10 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Anchor text sobreoptimizado:</strong> Si todos tus backlinks usan exactamente la misma keyword como texto ancla (por ejemplo, todos dicen "fontanero Madrid"), Google lo interpreta como manipulación artificial. Un perfil de enlaces natural tiene anclas variadas: nombre de la marca, URL, "haz clic aquí", variaciones de la keyword y texto contextual.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Directorios de baja calidad masivos:</strong> Registrar tu web en 500 directorios de escasa relevancia puede generar más daño que beneficio. Google identifica estos perfiles de enlaces artificiales y los ignora o penaliza. Mejor 10 directorios de alta calidad que 500 de dudosa reputación.</p>
 
-        <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
-          <div className="bg-white rounded-xl p-6"><ContactForm formType="blog" /></div>
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10"><ContactForm formType="blog" /></div>
         </section>
       </div>
       <RelatedArticles category="SEO" />

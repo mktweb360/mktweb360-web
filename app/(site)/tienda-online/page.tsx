@@ -32,7 +32,7 @@ export default function TiendaOnlineLandingPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-5xl mx-auto px-4 py-20 text-center">
           <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">Oferta especial — Solo 5 plazas</span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -105,7 +105,7 @@ export default function TiendaOnlineLandingPage() {
       </section>
 
       {/* Urgencia */}
-      <section className="py-12 px-4 bg-primary-700 text-white text-center">
+      <section className="py-12 px-4 mw-skin-band text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-3">Solo 5 plazas disponibles</h2>
           <p className="text-primary-200 mb-6">Nuestra capacidad de producción es limitada para garantizar la calidad. Cuando se cubran las 5 plazas, cerramos la oferta.</p>
@@ -246,7 +246,7 @@ export default function TiendaOnlineLandingPage() {
       </section>
 
       {/* CTA Form */}
-      <section id="contacto" className="py-16 px-4 bg-primary-600 text-white">
+      <section id="contacto" className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Reserva tu plaza ahora</h2>

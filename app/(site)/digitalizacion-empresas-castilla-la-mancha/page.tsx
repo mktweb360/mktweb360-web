@@ -76,10 +76,10 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Elegir con quién digitalizarte es tan importante como decidir digitalizarte. Hay tres tipos de proveedores que debes distinguir: los generalistas tecnológicos (implementan software pero no saben de marketing), los freelances con poca trayectoria (pueden ser buenos pero con riesgo de discontinuidad) y las agencias especializadas con experiencia demostrada en empresas similares a la tuya.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Antes de contratar a cualquier proveedor, pide referencias de clientes en sectores similares, solicita que te expliquen su metodología y asegúrate de que el contrato incluye métricas de seguimiento claras. Una agencia seria te dirá honestamente qué puede y qué no puede hacer por ti, y cuándo esperar resultados. Desconfía de quien promete resultados garantizados en SEO o posiciones concretas en Google.</p>
 
-        <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
-          <div className="bg-white rounded-xl p-6">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType="blog" />
           </div>
         </section>

@@ -203,7 +203,7 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <Breadcrumbs
             crumbs={[
@@ -236,7 +236,7 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
       </section>
 
       {/* Metrics bar */}
-      <section className="bg-primary-600 py-6 px-4">
+      <section className="mw-skin-band py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {t.metrics.map((m) => (
             <div key={m.label}>
@@ -378,13 +378,13 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 px-4 bg-primary-600 text-white">
+      <section className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">{t.ctaFinalTitle}</h2>
             <p className="text-primary-200">{t.ctaFinalSub}</p>
           </div>
-          <div className="bg-white rounded-2xl p-8">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`${lang}-web-design`} />
           </div>
         </div>

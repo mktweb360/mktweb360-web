@@ -49,7 +49,7 @@ export default async function LangBlogPage({ params }: { params: Promise<{ lang:
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-5xl mx-auto px-4 py-16">
           <Breadcrumbs
             crumbs={[

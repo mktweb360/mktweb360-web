@@ -72,10 +72,10 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Testimonios y casos de éxito:</strong> Las historias reales de clientes son uno de los contenidos más valiosos en marketing. Deben ser auténticas, con datos reales y con la voz del cliente. Generarlos con IA es un error que los usuarios detectan y que puede dañar la confianza.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Contenido de opinión experta:</strong> Si tu propuesta de valor incluye la experiencia y el conocimiento de tu equipo, ese conocimiento debe estar presente en tu contenido. Un artículo firmado por el experto de tu empresa tiene un <Link href="/marketing-de-contenidos/" className="text-accent-500 hover:underline">valor de credibilidad</Link> que el contenido de IA no puede replicar, y cada vez más los algoritmos de Google valoran esta autenticidad.</p>
 
-        <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
-          <div className="bg-white rounded-xl p-6"><ContactForm formType="blog" /></div>
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10"><ContactForm formType="blog" /></div>
         </section>
       </div>
       <RelatedArticles category="IA · Estrategia" />

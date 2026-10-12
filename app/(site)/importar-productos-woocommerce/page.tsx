@@ -77,10 +77,10 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Si tu proveedor te envía un XML en lugar de CSV, o si necesitas mapear campos de un ERP a campos personalizados de WooCommerce, un plugin de importación avanzada te dará la flexibilidad necesaria. También son útiles si necesitas programar importaciones automáticas — por ejemplo, actualizar precios y stock cada noche desde el catálogo de tu proveedor.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para catálogos que provienen de plataformas como Shopify o Prestashop, existen plugins específicos de <Link href="/migrar-tienda-online-sin-perder-datos/" className="text-accent-500 hover:underline">migración completa de tu tienda</Link> que entienden el formato de origen y lo traducen correctamente a WooCommerce, incluyendo pedidos, clientes e historial de compras — no solo productos.</p>
 
-        <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
-          <div className="bg-white rounded-xl p-6"><ContactForm formType="blog" /></div>
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10"><ContactForm formType="blog" /></div>
         </section>
       </div>
       <RelatedArticles category="Ecommerce" />

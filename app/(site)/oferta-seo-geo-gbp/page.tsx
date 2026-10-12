@@ -162,7 +162,7 @@ export default function OfertaSeoGeoGbpPage() {
       </div>
 
       {/* Cabecera */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-5xl mx-auto px-4 pt-12 pb-16 md:pb-20">
           <div className="max-w-3xl">
             <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">SEO + GEO + Google Maps</span>
@@ -270,8 +270,8 @@ export default function OfertaSeoGeoGbpPage() {
           <h2 className="text-3xl font-bold text-primary-600 mb-8 text-center">Preguntas frecuentes</h2>
           <div className="space-y-4">
             {FAQS.map((f) => (
-              <details key={f.q} className="border border-gray-200 bg-white rounded-xl overflow-hidden group">
-                <summary className="px-6 py-4 cursor-pointer font-semibold text-primary-700 hover:bg-primary-50 transition-colors flex justify-between items-center list-none">
+              <details key={f.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-bold text-primary-700 [&::-webkit-details-marker]:hidden">
                   {f.q}
                   <span className="text-accent-500 group-open:rotate-180 transition-transform text-lg" aria-hidden="true">▾</span>
                 </summary>
@@ -283,13 +283,13 @@ export default function OfertaSeoGeoGbpPage() {
       </section>
 
       {/* Formulario */}
-      <section id="empezar" className="py-16 px-4 bg-primary-600 text-white">
+      <section id="empezar" className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Empieza con una auditoría gratuita</h2>
             <p className="text-primary-100">Cuéntanos a qué te dedicas y dónde trabajas. Revisamos tu web, tu ficha de Google y lo que dicen de ti las IA, y te respondemos con un primer diagnóstico.</p>
           </div>
-          <div className="bg-white rounded-2xl p-8">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType="oferta-seo-geo-gbp" />
           </div>
         </div>

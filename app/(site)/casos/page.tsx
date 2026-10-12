@@ -154,7 +154,7 @@ export default function CasosPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-primary-600 text-white rounded-2xl p-8 text-center">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">¿Quieres resultados como estos?</h2>
           <p className="text-primary-200 mb-6 max-w-xl mx-auto">
             Cuéntanos tu proyecto. Analizamos tu situación actual y te decimos qué podemos conseguir juntos, con plazos y objetivos claros.

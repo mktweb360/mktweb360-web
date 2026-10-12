@@ -181,7 +181,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <Breadcrumbs
@@ -212,7 +212,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       </section>
 
       {/* Metrics */}
-      <section className="bg-primary-600 py-6 px-4">
+      <section className="mw-skin-band py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {metrics.map((m) => (
             <div key={m.label}>
@@ -361,7 +361,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-4 bg-primary-600 text-white">
+      <section className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-3xl mx-auto text-center mb-10">
           <h2 className="text-3xl font-bold mb-4">
             {isEn ? "Shall we talk about your email strategy?" : "Parlons de votre stratégie email ?"}
@@ -372,7 +372,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Parlez-nous de votre situation et nous vous proposerons un plan d'email marketing adapté à votre entreprise et à vos objectifs."}
           </p>
         </div>
-        <div className="max-w-3xl mx-auto bg-white rounded-2xl p-8">
+        <div className="max-w-3xl mx-auto rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
           <ContactForm formType={`${lang}-email-marketing`} />
         </div>
       </section>

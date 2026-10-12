@@ -111,7 +111,7 @@ export default function AparecerEnChatGPTGeminiPage() {
           <p>Simplificando mucho, los motores generativos evalúan tres cosas. La primera es la estructura: contenido organizado en preguntas y respuestas, con encabezados claros y párrafos que resuelven una idea cada uno, es mucho más fácil de extraer y citar. La segunda es la autoridad semántica: que tu marca aparezca vinculada de forma coherente a los temas en los que quieres ser referencia, con entidades y datos verificables.</p>
           <p>La tercera es la solidez técnica: web en HTTPS, buen rendimiento, schema markup correcto y señales limpias para los crawlers de IA. Ninguna de estas tres señales es exótica; todas se construyen sobre el trabajo que ya hace un buen profesional de SEO, ordenado ahora con la lógica de que quien lee no es solo una persona, sino también una máquina que va a resumir.</p>
 
-          <div className="bg-primary-600 text-white rounded-2xl p-8 my-2 text-center">
+          <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">¿Aparece tu negocio cuando la gente le pregunta a la IA?</h2>
             <p className="text-primary-200 mb-6">
               En Mkt Web 360 ayudamos a pymes y autónomos a posicionarse en ChatGPT, Gemini y Perplexity con una estrategia de GEO construida sobre bases SEO sólidas.
@@ -133,12 +133,12 @@ export default function AparecerEnChatGPTGeminiPage() {
           <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre GEO y posicionamiento en IA</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
-              <details key={faq.q} className="border border-gray-200 rounded-xl overflow-hidden group">
-                <summary className="px-6 py-4 cursor-pointer font-semibold text-primary-700 hover:bg-primary-50 list-none flex justify-between items-center">
+              <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-bold text-primary-700 [&::-webkit-details-marker]:hidden">
                   {faq.q}
-                  <span className="text-accent-500 group-open:rotate-180 transition-transform">▾</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xl leading-none text-accent-500 ring-1 ring-gray-200 transition-all duration-300 group-open:rotate-45 group-open:bg-gradient-to-br group-open:from-[#7c3aed] group-open:to-accent-500 group-open:text-white group-open:ring-0" aria-hidden="true">+</span>
                 </summary>
-                <div className="px-6 py-4 text-gray-600 border-t border-gray-100">{faq.a}</div>
+                <div className="mw-faq-body px-6 pb-6 text-gray-600 leading-relaxed">{faq.a}</div>
               </details>
             ))}
           </div>

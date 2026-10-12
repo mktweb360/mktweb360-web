@@ -40,7 +40,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-20 px-4">
+      <section className="mw-skin-hero text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs lang={lang} items={[{ label: "Blog", href: `/${lang}/blog/` }, { label: cat }]} />
           <div className="mt-4 mb-3">

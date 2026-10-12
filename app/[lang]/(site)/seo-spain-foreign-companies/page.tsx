@@ -100,7 +100,7 @@ export default async function SeoSpainForeignCompaniesPage({
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-20 px-4">
+      <section className="mw-skin-hero text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs
             lang={lang}
@@ -136,7 +136,7 @@ export default async function SeoSpainForeignCompaniesPage({
         </div>
       </section>
 
-      <section className="py-12 px-4 bg-primary-600 text-white text-center">
+      <section className="py-12 px-4 mw-skin-band text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">
             {isEn

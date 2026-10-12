@@ -117,3 +117,83 @@
 @media (prefers-reduced-motion: reduce) {
   .mw-aurora, .mw-grid-floor, .mw-float { animation: none; }
 }
+
+/* ─── Piel de marca para toda la web (oct-2026) ─────────────────────────────────────────────
+   Heroes de página (.mw-skin-hero), cajas de llamada a la acción (.mw-skin-cta) y bandas
+   oscuras (.mw-skin-band, también el pie): azul marino con auroras de color de la marca en
+   movimiento lento y una rejilla sutil. Las capas van en ::before/::after con z-index -1 dentro
+   de un contexto aislado, así que el contenido queda siempre por encima. */
+.mw-skin-hero, .mw-skin-cta, .mw-skin-band {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #0f1c2e;
+}
+.mw-skin-hero::before, .mw-skin-cta::before, .mw-skin-band::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  z-index: -1;
+  background:
+    radial-gradient(38% 45% at 18% 30%, rgba(124, 58, 237, 0.45), transparent 70%),
+    radial-gradient(34% 40% at 85% 25%, rgba(249, 115, 22, 0.32), transparent 70%),
+    radial-gradient(40% 40% at 55% 95%, rgba(236, 72, 153, 0.28), transparent 70%);
+  filter: blur(30px);
+  animation: mw-skin-drift 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.mw-skin-hero::after, .mw-skin-cta::after, .mw-skin-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
+  pointer-events: none;
+}
+.mw-skin-footer::before { opacity: 0.55; }
+@keyframes mw-skin-drift {
+  0% { transform: translate3d(-4%, -3%, 0) rotate(0deg) scale(1); }
+  100% { transform: translate3d(4%, 3%, 0) rotate(8deg) scale(1.08); }
+}
+/* El texto destacado de los titulares de página pasa a degradado rosa → naranja */
+.mw-skin-hero h1 .text-accent-400, .mw-skin-hero h1 .text-accent-500 {
+  background: linear-gradient(90deg, #f472b6, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* Botones naranjas: elevación y brillo al pasar el ratón */
+a.bg-accent-500, button.bg-accent-500 {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+a.bg-accent-500:hover, button.bg-accent-500:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -12px rgba(249, 115, 22, 0.75);
+}
+/* Aparición suave al hacer scroll (solo navegadores con scroll-driven animations) */
+@supports (animation-timeline: view()) {
+  .mw-faq, section .grid > a, section .grid > blockquote, .mw-skin-cta {
+    animation: mw-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 22%;
+  }
+}
+@keyframes mw-reveal {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mw-skin-hero::before, .mw-skin-cta::before, .mw-skin-band::before { animation: none; }
+  .mw-faq, section .grid > a, section .grid > blockquote, .mw-skin-cta { animation: none !important; }
+  a.bg-accent-500:hover, button.bg-accent-500:hover { transform: none; }
+}
+
+/* Migas de pan sobre los heroes oscuros */
+.mw-skin-hero nav[aria-label="Breadcrumb"] { color: rgba(255, 255, 255, 0.65); }
+.mw-skin-hero nav[aria-label="Breadcrumb"] span { color: rgba(255, 255, 255, 0.5); }
+.mw-skin-hero nav[aria-label="Breadcrumb"] li > span:last-child { color: #fff; }
+.mw-skin-hero nav[aria-label="Breadcrumb"] a:hover { color: #fb923c; }

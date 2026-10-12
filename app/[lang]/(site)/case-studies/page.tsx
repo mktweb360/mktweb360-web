@@ -206,7 +206,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* CTA */}
-        <section className="bg-primary-600 text-white rounded-2xl p-8 text-center mb-12">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 text-center mb-12">
           <h2 className="text-2xl font-bold mb-4">
             {isEn ? "Want results like these?" : "Vous voulez des résultats comme ceux-ci ?"}
           </h2>

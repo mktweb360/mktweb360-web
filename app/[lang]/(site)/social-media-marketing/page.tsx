@@ -209,7 +209,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <Breadcrumbs
@@ -242,7 +242,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       </section>
 
       {/* Trust bar */}
-      <section className="bg-primary-600 py-6 px-4">
+      <section className="mw-skin-band py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {(isEn
             ? [
@@ -432,7 +432,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         {/* CTA Form */}
-        <section id="contact" className="bg-primary-600 text-white rounded-2xl p-8">
+        <section id="contact" className="mw-skin-cta text-white rounded-3xl p-8">
           <h2 className="text-2xl font-bold mb-4">
             {isEn ? "Shall we talk about your social networks?" : "Parlons de vos réseaux sociaux ?"}
           </h2>
@@ -441,7 +441,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               ? "Tell us about your current situation and we will propose a personalised strategy for your sector."
               : "Parlez-nous de votre situation actuelle et nous vous proposerons une stratégie personnalisée pour votre secteur."}
           </p>
-          <div className="bg-white rounded-xl p-6">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`${lang}-social-media`} />
           </div>
         </section>

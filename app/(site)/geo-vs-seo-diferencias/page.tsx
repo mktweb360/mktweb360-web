@@ -72,10 +72,10 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Para empresas de servicios profesionales y B2B:</strong> El GEO empieza a ser muy relevante porque los tomadores de decisión B2B usan ChatGPT o Perplexity para hacer preguntas de investigación como "¿cuáles son las mejores agencias de marketing digital para startups en España?". Aparecer en estas respuestas puede generar leads de alta calidad.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Para marcas con ambición de posicionamiento como referentes de sector:</strong> El GEO debe estar en el centro de la estrategia de contenido. Ser citado por ChatGPT como referencia en un tema es el equivalente digital de ser la marca que "todo el mundo conoce" en el sector.</p>
 
-        <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
-          <div className="bg-white rounded-xl p-6"><ContactForm formType="blog" /></div>
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10"><ContactForm formType="blog" /></div>
         </section>
       </div>
       <RelatedArticles category="IA · Estrategia" />

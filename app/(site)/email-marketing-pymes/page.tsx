@@ -80,10 +80,10 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">La <strong>tasa de apertura</strong> mide el interés en el asunto y el reconocimiento de tu marca. Si cae consistentemente, revisa la calidad de tu lista y la relevancia de tus asuntos. La <strong>tasa de clics</strong> mide el interés en el contenido del email. Si las aperturas son buenas pero los clics son bajos, el problema está en el cuerpo del email o en el CTA.</p>
         <p className="text-gray-700 leading-relaxed mb-4">La <strong>tasa de baja</strong> es un indicador de salud de tu lista: si supera el 0,5% consistentemente, estás enviando demasiado, enviando contenido irrelevante o a personas que no recuerdan haberse suscrito. Limpiar la lista regularmente (eliminar suscriptores inactivos) mejora las métricas globales y evita problemas de entregabilidad. Si aún no tienes una estrategia para <Link href="/como-generar-leads-calidad-pyme/" className="text-accent-500 hover:underline">conseguir leads cualificados</Link>, el email marketing solo puede nutrirse correctamente si hay captación de calidad detrás.</p>
 
-        <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
-          <div className="bg-white rounded-xl p-6">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType="blog" />
           </div>
         </section>

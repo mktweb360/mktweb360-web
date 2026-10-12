@@ -185,12 +185,12 @@ export default function ComunicacionAudiovisualPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-primary-600 text-white rounded-2xl p-8">
+        <section className="mw-skin-cta text-white rounded-3xl p-8">
           <h2 className="text-2xl font-bold mb-4">Solicitar presupuesto</h2>
           <p className="text-primary-200 mb-6">
             Cuéntanos qué necesitas y te preparamos una propuesta sin compromiso. Cada pieza es única y el presupuesto se adapta a tu proyecto.
           </p>
-          <div className="bg-white rounded-xl p-6">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm />
           </div>
         </section>

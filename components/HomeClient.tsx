@@ -48,7 +48,7 @@ export default function HomeClient() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* Hero Slider */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden">
+      <section className="relative mw-skin-hero text-white overflow-hidden">
         <HeroSlider />
       </section>
 

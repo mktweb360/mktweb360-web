@@ -76,7 +76,7 @@ export default function AuditoriaSeoGratuitaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Auditoría SEO gratuita" }]} />

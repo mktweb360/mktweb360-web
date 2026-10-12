@@ -43,7 +43,7 @@ export default function EcommerceParticipacionPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Ecommerce con Participación" }]} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-4">
@@ -267,13 +267,13 @@ export default function EcommerceParticipacionPage() {
         </div>
       </section>
 
-      <section id="contacto" className="py-16 px-4 bg-primary-600 text-white">
+      <section id="contacto" className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">¿Tu proyecto encaja con este modelo?</h2>
             <p className="text-primary-200">Cuéntanos tu producto, tus márgenes y tus objetivos. Te decimos honestamente si tiene sentido trabajar juntos.</p>
           </div>
-          <div className="bg-white rounded-2xl p-8">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType="ecommerce-participacion" />
           </div>
         </div>

@@ -71,7 +71,7 @@ export function LocalServicePage({ c }: { c: LocalServiceContent }) {
   const u = UI[c.lang ?? "es"];
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <Breadcrumbs crumbs={[{ label: u.home, href: u.homeHref }, { label: c.breadcrumb }]} />

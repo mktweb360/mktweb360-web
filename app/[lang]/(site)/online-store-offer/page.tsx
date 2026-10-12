@@ -129,7 +129,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-5xl mx-auto px-4 py-20 text-center">
           <Breadcrumbs
             crumbs={[
@@ -164,7 +164,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       </section>
 
       {/* Metrics */}
-      <section className="bg-primary-600 py-6 px-4">
+      <section className="mw-skin-band py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {metrics.map((m) => (
             <div key={m.label}>
@@ -213,7 +213,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       </section>
 
       {/* Urgency */}
-      <section className="py-12 px-4 bg-primary-700 text-white text-center">
+      <section className="py-12 px-4 mw-skin-band text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-3">
             {isEn ? "Only 5 places available" : "Seulement 5 places disponibles"}
@@ -294,7 +294,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       </section>
 
       {/* CTA Form */}
-      <section className="py-16 px-4 bg-primary-600 text-white">
+      <section className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">
@@ -306,7 +306,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 : "Parlez-nous de votre projet et nous vous contacterons dans les 24 heures pour confirmer la disponibilité."}
             </p>
           </div>
-          <div className="bg-white rounded-2xl p-8">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`${lang}-online-store-offer`} />
           </div>
         </div>

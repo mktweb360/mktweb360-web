@@ -71,10 +71,10 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">La estrategia de envío gratuito a partir de un importe mínimo funciona muy bien porque incentiva a los clientes a añadir más productos para alcanzar el umbral. El importe óptimo es ligeramente superior al ticket medio de tu tienda: si tu ticket medio es 35€, ponlo en 49€. Así el cliente que iba a comprar por 35€ añade algo más para evitar pagar el envío.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Si el envío gratuito en todos los pedidos no es viable económicamente, considera incluir el coste del envío en el precio del producto y comunicarlo como "envío incluido". Psicológicamente, el cliente percibe mejor un producto a 29,95€ con "envío incluido" que el mismo producto a 24,95€ + 4,99€ de envío, aunque el precio final sea prácticamente el mismo. Complementa esto con una buena elección de <Link href="/metodos-pago-tienda-online-espana/" className="text-accent-500 hover:underline">métodos de pago</Link> para maximizar la conversión en el checkout.</p>
 
-        <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
-          <div className="bg-white rounded-xl p-6"><ContactForm formType="blog" /></div>
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10"><ContactForm formType="blog" /></div>
         </section>
       </div>
       <RelatedArticles category="Ecommerce" />

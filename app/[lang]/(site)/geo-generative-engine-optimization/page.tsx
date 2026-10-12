@@ -212,7 +212,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
           <Breadcrumbs crumbs={[
             { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
@@ -251,7 +251,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       </section>
 
       {/* Trust bar */}
-      <section className="bg-primary-600 py-6 px-4">
+      <section className="mw-skin-band py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {(isEn
             ? [
@@ -532,7 +532,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       </section>
 
       {/* CTA Form */}
-      <section id="contact" className="py-16 px-4 bg-primary-600 text-white">
+      <section id="contact" className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">
@@ -544,7 +544,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
                 : "Parlez-nous de votre entreprise et nous réalisons un audit de visibilité IA sans engagement. Découvrez si vous êtes mentionné, comment et ce qui peut être amélioré."}
             </p>
           </div>
-          <div className="bg-white rounded-2xl p-8">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`${lang}-geo`} />
           </div>
         </div>

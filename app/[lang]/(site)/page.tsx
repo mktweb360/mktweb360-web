@@ -312,7 +312,7 @@ export default async function LangHomePage({
   return (
     <>
       {/* Hero Slider */}
-      <section className="relative bg-gradient-to-br from-primary-700 to-primary-900 text-white overflow-hidden">
+      <section className="relative mw-skin-hero text-white overflow-hidden">
         <LangHeroSlider lang={lang} />
       </section>
 
@@ -474,12 +474,12 @@ export default async function LangHomePage({
           </div>
           <div className="space-y-4">
             {c.faqs.map((faq) => (
-              <details key={faq.q} className="border border-gray-200 rounded-xl overflow-hidden group">
-                <summary className="px-6 py-4 cursor-pointer font-semibold text-primary-700 hover:bg-primary-50 transition-colors flex justify-between items-center list-none">
+              <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-bold text-primary-700 [&::-webkit-details-marker]:hidden">
                   {faq.q}
-                  <span className="text-accent-500 group-open:rotate-180 transition-transform text-lg">▾</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xl leading-none text-accent-500 ring-1 ring-gray-200 transition-all duration-300 group-open:rotate-45 group-open:bg-gradient-to-br group-open:from-[#7c3aed] group-open:to-accent-500 group-open:text-white group-open:ring-0" aria-hidden="true">+</span>
                 </summary>
-                <div className="px-6 py-4 text-gray-600 leading-relaxed border-t border-gray-100">
+                <div className="mw-faq-body px-6 pb-6 text-gray-600 leading-relaxed">
                   {faq.a}
                 </div>
               </details>
@@ -489,13 +489,13 @@ export default async function LangHomePage({
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 px-4 bg-primary-600 text-white">
+      <section className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">{c.ctaSection.title}</h2>
             <p className="text-primary-200">{c.ctaSection.subtitle}</p>
           </div>
-          <div className="bg-white rounded-2xl p-8">
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`home-${lang}`} />
           </div>
         </div>

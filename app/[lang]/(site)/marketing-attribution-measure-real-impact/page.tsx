@@ -165,7 +165,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
           <BlogBanner variant="geo" />
 
-          <div className="bg-primary-600 text-white rounded-2xl p-8 my-2 text-center">
+          <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">
               {isEn ? "Analytics that informs, not confuses" : "Des analytiques qui informent, pas qui confondent"}
             </h2>
@@ -195,12 +195,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
-              <details key={faq.q} className="border border-gray-200 rounded-xl overflow-hidden group">
-                <summary className="px-6 py-4 cursor-pointer font-semibold text-primary-700 hover:bg-primary-50 list-none flex justify-between items-center">
+              <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-bold text-primary-700 [&::-webkit-details-marker]:hidden">
                   {faq.q}
-                  <span className="text-accent-500 group-open:rotate-180 transition-transform">▾</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-xl leading-none text-accent-500 ring-1 ring-gray-200 transition-all duration-300 group-open:rotate-45 group-open:bg-gradient-to-br group-open:from-[#7c3aed] group-open:to-accent-500 group-open:text-white group-open:ring-0" aria-hidden="true">+</span>
                 </summary>
-                <div className="px-6 py-4 text-gray-600 border-t border-gray-100">{faq.a}</div>
+                <div className="mw-faq-body px-6 pb-6 text-gray-600 leading-relaxed">{faq.a}</div>
               </details>
             ))}
           </div>

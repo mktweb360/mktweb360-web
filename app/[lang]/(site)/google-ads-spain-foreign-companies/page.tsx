@@ -101,7 +101,7 @@ export default async function GoogleAdsSpainPage({
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-700 to-primary-900 text-white py-20 px-4">
+      <section className="mw-skin-hero text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs
             lang={lang}

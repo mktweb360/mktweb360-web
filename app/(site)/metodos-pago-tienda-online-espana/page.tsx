@@ -74,10 +74,10 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Klarna está disponible para WooCommerce en España a través del plugin oficial. Las comisiones son más altas que las pasarelas de pago estándar (2,99% + 0,35€), pero el <Link href="/seo-para-ecommerce-errores-que-frenan-ventas/" className="text-accent-500 hover:underline">aumento de conversión</Link> y del ticket medio puede compensar este sobrecoste. Aplazame (integrado con muchos bancos españoles) y Cofidis son alternativas con mayor penetración en ciertos sectores del retail español.</p>
         <p className="text-gray-700 leading-relaxed mb-4">La decisión de incluir BNPL depende principalmente del ticket medio de tu tienda. Para productos de menos de 50€, no suele justificarse el coste adicional de integración y gestión. Para productos de 100€ o más, la opción de fraccionar puede ser el factor que cierre la venta para clientes que de otro modo abandonarían el carrito por el precio total.</p>
 
-        <section className="bg-primary-600 text-white rounded-2xl p-8 mt-12">
+        <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
-          <div className="bg-white rounded-xl p-6"><ContactForm formType="blog" /></div>
+          <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10"><ContactForm formType="blog" /></div>
         </section>
       </div>
       <RelatedArticles category="Ecommerce" />
