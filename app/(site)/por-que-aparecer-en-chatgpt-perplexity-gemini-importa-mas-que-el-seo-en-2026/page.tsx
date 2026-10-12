@@ -71,7 +71,7 @@ export default function AparecerEnChatGPTGeminiPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="max-w-3xl mx-auto px-4 py-12">
+      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Por qué aparecer en ChatGPT, Perplexity y Gemini importa más que el SEO en 2026" }]} />
 
         <header className="mb-8">

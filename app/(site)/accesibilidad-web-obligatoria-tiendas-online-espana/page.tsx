@@ -112,7 +112,7 @@ export default function AccesibilidadWebTiendasOnlinePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="max-w-3xl mx-auto px-4 py-12">
+      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Accesibilidad web obligatoria en España" }]} />
 
         <header className="mb-8">

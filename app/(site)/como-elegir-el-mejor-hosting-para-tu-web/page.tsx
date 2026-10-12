@@ -36,7 +36,7 @@ export default function MejorHostingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <article className="max-w-3xl mx-auto px-4 py-12">
+      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Cómo Elegir el Mejor Hosting" }]} />
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-4">

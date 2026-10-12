@@ -196,7 +196,7 @@ export default function PaginasCorporativasPage() {
 
       <OfferBannerWebSeo />
 
-      <article className="max-w-3xl mx-auto px-4 py-12">
+      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Cuando un potencial cliente quiere saber si puede confiar en tu empresa, lo primero que hace es buscar tu web. Ese momento — los primeros 5 segundos en tu página — decide si sigue leyendo o vuelve a Google a buscar a tu competencia. Una web corporativa profesional convierte ese momento de duda en una primera impresión que genera confianza.

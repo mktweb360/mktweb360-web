@@ -112,7 +112,7 @@ export default function AuditoriaGeoPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="max-w-3xl mx-auto px-4 py-12">
+      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Auditoría GEO: ChatGPT, Perplexity y la IA de Google" }]} />
 
         <header className="mb-8">

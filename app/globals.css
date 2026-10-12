@@ -197,3 +197,50 @@ a.bg-accent-500:hover, button.bg-accent-500:hover {
 .mw-skin-hero nav[aria-label="Breadcrumb"] span { color: rgba(255, 255, 255, 0.5); }
 .mw-skin-hero nav[aria-label="Breadcrumb"] li > span:last-child { color: #fff; }
 .mw-skin-hero nav[aria-label="Breadcrumb"] a:hover { color: #fb923c; }
+
+/* ─── Artículos del blog (.mw-article) ─────────────────────────────────────────────────────
+   Barra de progreso de lectura (CSS puro, scroll-driven), titular con más carácter, h2 con
+   acento de marca, listas con viñeta de color y citas destacadas. */
+.mw-article { position: relative; }
+.mw-article > header h1 { font-weight: 900; letter-spacing: -0.02em; color: #172d4a; }
+.mw-article > header img { box-shadow: 0 30px 60px -30px rgba(15, 28, 46, 0.45); }
+.mw-article h2 {
+  position: relative;
+  padding-left: 1rem;
+  letter-spacing: -0.01em;
+}
+.mw-article h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #7c3aed, #db2777 55%, #f97316);
+}
+.mw-skin-cta h2::before, .mw-faq h2::before { display: none; }
+.mw-skin-cta h2 { padding-left: 0; }
+.mw-article li::marker { color: #f97316; }
+.mw-article blockquote {
+  border-left: 4px solid #f97316;
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.07), transparent);
+  border-radius: 0 1rem 1rem 0;
+  padding: 1rem 1.25rem;
+}
+@supports (animation-timeline: scroll()) {
+  .mw-article::before {
+    content: "";
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 40;
+    transform-origin: 0 50%;
+    background: linear-gradient(90deg, #7c3aed, #db2777, #f97316);
+    animation: mw-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+@keyframes mw-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }

@@ -128,7 +128,7 @@ export function BlogBanner({ variant = "default", lang }: BlogBannerProps) {
   const banners = lang === "en" ? BANNERS_EN : lang === "fr" ? BANNERS_FR : BANNERS_ES;
   const b = banners[variant] ?? banners.seo;
   return (
-    <div className="my-10 bg-primary-700 rounded-2xl p-8 text-white">
+    <div className="mw-skin-cta my-10 rounded-3xl p-8 text-white">
       <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">
         {b.badge}
       </span>
