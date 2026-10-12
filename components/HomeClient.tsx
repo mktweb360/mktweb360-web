@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { getVisiblePosts } from "@/lib/blog";
 import { OfertasSlider } from "@/components/OfertasSlider";
-import { ContactForm } from "@/components/ContactForm";
 import { BlogCarousel } from "@/components/BlogCarousel";
 import { HeroSlider, ServicesTab, TestimonialsCarousel } from "@/components/HomeInteractive";
 import { CompromisoExclusividad } from "@/components/CompromisoExclusividad";
+import { HomeContacto } from "@/components/HomeContacto";
 
 const FAQS = [
   {
@@ -142,18 +142,9 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-16 px-4 bg-primary-600 text-white">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">¿Listo para hacer crecer tu negocio?</h2>
-            <p className="text-primary-200">Solicita una auditoría gratuita de tu presencia digital. Sin compromiso.</p>
-          </div>
-          <div className="bg-white rounded-2xl p-8">
-            <ContactForm />
-          </div>
-        </div>
-      </section>
+      {/* Contacto: pasos + formulario de auditoría gratuita */}
+      <HomeContacto />
+
       {/* Últimas publicaciones */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
