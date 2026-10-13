@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Mkt Web 360",
   },
   description:
-    "Agencia de marketing digital especializada en SEO, SEM, Redes Sociales y Diseño Web para PYMEs y empresas. Servicio nacional desde Toledo, España.",
+    "Agencia de marketing digital 360 para pymes y empresas de toda España: SEO y GEO, redes sociales, diseño web y tiendas online, Google Ads e IA aplicada.",
   robots: { index: true, follow: true },
   verification: { google: "uer2-Is3fH5njl0xCuDxnRURHePJwYREPyNfyoaKK8U" },
   alternates: {
@@ -57,6 +57,9 @@ const organizationSchema = {
   areaServed: { "@type": "Country", name: "España" },
   knowsAbout: [
     "SEO",
+    "GEO (posicionamiento en asistentes de IA)",
+    "Inteligencia Artificial aplicada al marketing",
+    "Email Marketing",
     "Marketing Digital",
     "Google Ads",
     "Diseño Web",
