@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, useId } from "react";
 import { trackLead } from "@/lib/track";
+import { CONSENT_COMERCIAL } from "@/lib/consent-texts";
 import { usePathname } from "next/navigation";
 
 interface UtmData {
@@ -31,7 +32,7 @@ interface ContactFormProps {
 
 const T = {
   es: {
-    marketing: "Quiero recibir de vez en cuando novedades y consejos de Mkt Web 360 por email (opcional).",
+    marketing: CONSENT_COMERCIAL.es,
     infoTitle: "Información básica sobre protección de datos",
     infoRows: [
       ["Responsable", "Mkt Web 360 SLU (B87679304)."],
@@ -61,7 +62,7 @@ const T = {
     error: "Error al enviar. Por favor, llámanos al +34 622 748 987.",
   },
   en: {
-    marketing: "I'd like to receive occasional news and tips from Mkt Web 360 by email (optional).",
+    marketing: CONSENT_COMERCIAL.en,
     infoTitle: "Basic data protection information",
     infoRows: [
       ["Controller", "Mkt Web 360 SLU (B87679304)."],
@@ -91,7 +92,7 @@ const T = {
     error: "Error sending. Please call us at +34 622 748 987.",
   },
   fr: {
-    marketing: "Je souhaite recevoir de temps en temps des nouveautés et conseils de Mkt Web 360 par email (facultatif).",
+    marketing: CONSENT_COMERCIAL.fr,
     infoTitle: "Informations de base sur la protection des données",
     infoRows: [
       ["Responsable", "Mkt Web 360 SLU (B87679304)."],
@@ -169,6 +170,7 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
     const payload = {
       ...data,
       form_type: formType,
+      lang: detectedLang,
       ...utmRef.current,
     };
     const res = await fetch("/api/contact", {

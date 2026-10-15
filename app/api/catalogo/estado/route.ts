@@ -11,7 +11,8 @@ const PAGINAS = ["/precios-seo/", "/seo-local/", "/en/seo-pricing/", "/en/local-
 
 export async function GET() {
   const { planes, conectado, leido } = await preciosPlanesSeo();
-  const servicios = [...new Set(Object.values(PLAN_EN_CATALOGO).map((r) => r.servicio))];
+  // mw360-seo-local: la página /seo-local/ muestra los planes de «Planes SEO».
+  const servicios = [...new Set([...Object.values(PLAN_EN_CATALOGO).map((r) => r.servicio), "mw360-seo-local"])];
   return NextResponse.json(
     { ok: true, conectado, leido, servicios_conectados: servicios, paginas: PAGINAS, planes },
     { headers: { "Cache-Control": "no-store" } },

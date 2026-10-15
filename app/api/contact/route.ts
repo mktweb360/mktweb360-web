@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
+import { CONSENT_COMERCIAL, consentLang } from "@/lib/consent-texts";
 
 const FORM_MAP: Record<string, { oferta: string; canal: string }> = {
   "seo":                   { oferta: "seo-mensual",       canal: "web-servicio-seo" },
@@ -143,6 +144,16 @@ export async function POST(req: NextRequest) {
         mensaje: gbp ? `${message}${message ? "\n\n" : ""}Ficha de Google: ${gbp}` : message,
         fichaGoogle: gbp || "",
         consentimientoComercial: consentComercial,
+        // Prueba del consentimiento: texto exacto que vio, idioma, página, IP y navegador (MktOS › crm.consent_events).
+        ...(consentComercial
+          ? {
+              consentimientoComercialTexto: CONSENT_COMERCIAL[consentLang(body.lang)],
+              idioma: consentLang(body.lang),
+              pagina: typeof page_origin === "string" ? page_origin : "",
+              clientIp: ip,
+              userAgent: req.headers.get("user-agent") ?? "",
+            }
+          : {}),
         leadSource: page_origin || "mktweb360.com",
         utm_source: utm_source || "", utm_medium: utm_medium || "", utm_campaign: utm_campaign || "",
       }),
