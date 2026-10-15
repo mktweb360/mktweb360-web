@@ -8,15 +8,15 @@ function CallbackInner() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const token = searchParams.get("token");
-    if (!token) {
+    const code = searchParams.get("code");
+    if (!code) {
       router.replace("/portal/login/");
       return;
     }
-    // Delegamos en la ruta de servidor: verifica la firma del JWT y fija la cookie
+    // Delegamos en la ruta de servidor: canjea el código de un solo uso y fija la cookie
     // HttpOnly + Secure. Navegación completa para que el Set-Cookie del servidor surta efecto.
     window.location.replace(
-      `/api/portal/auth/callback?token=${encodeURIComponent(token)}`
+      `/api/portal/auth/callback?code=${encodeURIComponent(code)}`
     );
   }, [router, searchParams]);
 
