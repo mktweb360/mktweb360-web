@@ -5,14 +5,18 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { CalculadoraSeo } from "@/components/CalculadoraSeo";
-import { PLANES_SEO, EXTRAS_SEO, CONDICIONES_COMUNES, precioTexto } from "@/lib/planes-seo";
+import { planesSeo, EXTRAS_SEO, CONDICIONES_COMUNES, precioTexto, type PlanSeo } from "@/lib/planes-seo";
+import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 const URL = "https://www.mktweb360.com/precios-seo/";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const { precios } = await preciosPlanesSeo();
+  const [local, pyme] = planesSeo("es", precios);
+  return {
   title: "Precios SEO: cuánto cuesta el posicionamiento",
   description:
-    "Precios SEO por tamaño de web: desde 199 €/mes + IVA para profesionales, 349 €/mes para pymes y planes para ecommerce. Calcula tu plan y sin permanencia.",
+    `Precios SEO por tamaño de web: desde ${precioTexto(local)} para profesionales, ${(pyme.precio ?? 0) > 0 ? `${pyme.precio} €/mes` : "presupuesto"} para pymes y planes para ecommerce. Calcula tu plan y sin permanencia.`,
   alternates: alternatesFor("/precios-seo/") ?? { canonical: URL },
   openGraph: {
     title: "Precios SEO: cuánto cuesta el posicionamiento | Mkt Web 360",
@@ -21,6 +25,7 @@ export const metadata: Metadata = {
     images: [{ url: "/og-seo.jpg", width: 1200, height: 630, alt: "Precios SEO — Mkt Web 360" }],
   },
 };
+}
 
 const OTRAS = [
   {
@@ -48,16 +53,19 @@ const FACTORS = [
   { t: "Canales adicionales", d: "La visibilidad en asistentes de IA (GEO) y la ficha de Google Business Profile se pueden sumar al SEO; en nuestro paquete mensual ya van incluidas." },
 ];
 
-const FAQS = [
-  { q: "¿Cuánto cuesta el SEO al mes?", a: "Depende del tamaño de la web y de la carga de trabajo: desde 199 €/mes + IVA para un profesional con una web de hasta 10 páginas, 349 €/mes + IVA para una pyme con web de hasta 30 páginas, 590 €/mes + IVA para webs más grandes o con varias sedes, y desde 449 €/mes + IVA para tiendas online. La calculadora de esta página te indica el plan que encaja con tu caso." },
+const faqs = (pl: PlanSeo[]) => {
+  const [local, pyme, crec, ecoS] = pl;
+  return [
+  { q: "¿Cuánto cuesta el SEO al mes?", a: `Depende del tamaño de la web y de la carga de trabajo: desde ${precioTexto(local)} para un profesional con una web de hasta 10 páginas, ${precioTexto(pyme)} para una pyme con web de hasta 30 páginas, ${precioTexto(crec)} para webs más grandes o con varias sedes, y desde ${precioTexto(ecoS)} para tiendas online. La calculadora de esta página te indica el plan que encaja con tu caso.` },
   { q: "¿Hay permanencia?", a: "No. El servicio mensual no tiene permanencia. Lo habitual es valorar los resultados con datos de Search Console a los pocos meses, porque el SEO necesita tiempo para reflejarse en las posiciones." },
   { q: "¿Por qué hay presupuestos SEO tan distintos en el mercado?", a: "Porque se comparan cosas distintas: un informe automático, una consultoría sin ejecución o un servicio con contenidos, cambios técnicos y seguimiento mensual. Antes de comparar precios, compara qué incluye cada propuesta, cuántos contenidos al mes, quién ejecuta y cómo se mide." },
   { q: "¿Garantizáis posiciones por ese precio?", a: "No. Nadie puede garantizar posiciones en Google. Lo que incluye el precio es el trabajo descrito, con informes mensuales y métricas que te permiten comprobar la evolución." },
   { q: "¿El precio incluye link building?", a: "No. El paquete mensual no incluye compra de enlaces. Si tu proyecto lo necesita, lo planteamos aparte, con presupuesto y criterios de calidad explícitos." },
   { q: "¿Los precios incluyen IVA?", a: "No. Todos los precios de esta página se indican sin IVA." },
-];
+  ];
+};
 
-const serviceSchema = {
+const serviceSchema = (PLANES_SEO: PlanSeo[]) => ({
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Posicionamiento SEO",
@@ -70,19 +78,23 @@ const serviceSchema = {
     url: URL,
     priceSpecification: { "@type": "UnitPriceSpecification", price: p.precio, priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false },
   })),
-};
+});
 
-const faqSchema = {
+const faqSchema = (FAQS: { q: string; a: string }[]) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-};
+});
 
-export default function PreciosSeoPage() {
+export default async function PreciosSeoPage() {
+  // Precios vigentes desde MktOS (con los de lib/planes-seo.ts de respaldo).
+  const { precios } = await preciosPlanesSeo();
+  const PLANES_SEO = planesSeo("es", precios);
+  const FAQS = faqs(PLANES_SEO);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(PLANES_SEO)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(FAQS)) }} />
 
       <section className="mw-skin-hero text-white">
         <div className="max-w-5xl mx-auto px-4 py-16">
@@ -101,7 +113,7 @@ export default function PreciosSeoPage() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3 text-center">Calcula tu plan SEO</h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">Cuatro preguntas sobre tu web y te decimos qué plan encaja y cuánto cuesta. El precio sigue a la carga real de trabajo: no es lo mismo la web de un profesional con cuatro servicios que una tienda con cien categorías.</p>
-          <CalculadoraSeo />
+          <CalculadoraSeo precios={precios} />
         </div>
       </section>
 

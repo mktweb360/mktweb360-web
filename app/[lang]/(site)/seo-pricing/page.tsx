@@ -4,7 +4,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { CalculadoraSeo } from "@/components/CalculadoraSeo";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
-import { planesSeo, extrasSeo, condicionesComunes, precioTexto } from "@/lib/planes-seo";
+import { planesSeo, extrasSeo, condicionesComunes, precioTexto, reemplazarPrecios } from "@/lib/planes-seo";
+import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 // 09/10/2026 — EN/FR de /precios-seo/. Precios, límites y lógica de la calculadora salen de
 // lib/planes-seo.ts (fuente única); aquí solo van los textos de la página.
@@ -148,9 +149,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const t = lang === "fr" ? C.fr : C.en;
   const url = BASE + pathFor(lang);
+  const { precios } = await preciosPlanesSeo();
   return {
     title: t.title,
-    description: t.description,
+    description: reemplazarPrecios(t.description, precios),
     alternates: alternatesFor(pathFor(lang)) ?? { canonical: url },
     openGraph: {
       title: t.ogTitle,
@@ -166,7 +168,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const lang = rawLang === "fr" ? "fr" : "en";
   const t = C[lang];
   const url = BASE + pathFor(lang);
-  const planes = planesSeo(lang);
+  const { precios } = await preciosPlanesSeo();
+  const planes = planesSeo(lang, precios);
+  const faqs = t.faqs.map((f) => ({ ...f, a: reemplazarPrecios(f.a, precios) }));
   const href = (slug: string) => `/${lang}/${langSlug(lang, slug)}/`;
 
   const serviceSchema = {
@@ -186,7 +190,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: t.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
   };
 
   return (
@@ -209,7 +213,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3 text-center">{t.calcTitle}</h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">{t.calcSub}</p>
-          <CalculadoraSeo lang={lang} />
+          <CalculadoraSeo lang={lang} precios={precios} />
         </div>
       </section>
 
@@ -297,7 +301,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">{t.faqTitle}</h2>
           <div className="space-y-4">
-            {t.faqs.map((f) => (
+            {faqs.map((f) => (
               <details key={f.q} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
                 <summary className="font-semibold text-primary-700 cursor-pointer">{f.q}</summary>
                 <p className="text-gray-600 mt-3 leading-relaxed">{f.a}</p>

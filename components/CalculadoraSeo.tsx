@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { recomendarPlan, precioTexto, type RespuestasCalculadora, type PlanLang } from "@/lib/planes-seo";
+import { recomendarPlan, precioTexto, type RespuestasCalculadora, type PlanLang, type PreciosPlanes } from "@/lib/planes-seo";
 
 type Opcion<T extends string> = { v: T; t: string };
 
@@ -129,11 +129,11 @@ function Grupo<T extends string>({ label, name, value, opciones, onChange }: {
   );
 }
 
-export function CalculadoraSeo({ lang = "es" }: { lang?: PlanLang }) {
+export function CalculadoraSeo({ lang = "es", precios }: { lang?: PlanLang; precios?: PreciosPlanes | null }) {
   const t = T[lang];
   const [r, setR] = useState<RespuestasCalculadora>({ tipo: "servicios", paginas: "10", categorias: "20", productos: "500", fichas: "1", idiomas: "1" });
   const set = <K extends keyof RespuestasCalculadora>(k: K) => (v: RespuestasCalculadora[K]) => setR((p) => ({ ...p, [k]: v }));
-  const { plan, notas } = recomendarPlan(r, lang);
+  const { plan, notas } = recomendarPlan(r, lang, precios);
 
   function solicitar() {
     const resumen = [

@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { planPorId, precioTexto } from "@/lib/planes-seo";
+import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -36,7 +37,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   // 09/10/2026 — alineado con /seo-local/: planes con precio (fuente única lib/planes-seo.ts),
   // FAQ de precio, Offer en el schema y sin cifras sin fuente ni experiencia por ciudades.
   const L = isEn ? "en" : "fr";
-  const PLANES_LOCAL = [planPorId("local", L), planPorId("pyme", L), planPorId("crecimiento", L)];
+  const { precios } = await preciosPlanesSeo();
+  const PLANES_LOCAL = [planPorId("local", L, precios), planPorId("pyme", L, precios), planPorId("crecimiento", L, precios)];
   const [pLocal, pPyme, pCrec] = PLANES_LOCAL;
 
   const serviceSchema = {

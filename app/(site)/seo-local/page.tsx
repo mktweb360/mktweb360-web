@@ -5,7 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
-import { planPorId, precioTexto } from "@/lib/planes-seo";
+import { planPorId, precioTexto, type PlanSeo } from "@/lib/planes-seo";
+import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 export const metadata: Metadata = {
   title: "SEO Local: Posicionamiento en tu Zona",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-const serviceSchema = {
+const serviceSchema = (pLocal: PlanSeo) => ({
   "@context": "https://schema.org",
   "@type": "Service",
   name: "SEO Local",
@@ -28,22 +29,21 @@ const serviceSchema = {
   areaServed: { "@type": "Country", name: "España" },
   description: "Servicio de SEO local: posicionamiento en Google Maps, optimización de Google Business Profile, gestión de reseñas y búsquedas locales para empresas y profesionales.",
   url: "https://www.mktweb360.com/seo-local/",
-  offers: { "@type": "Offer", name: "SEO Local Esencial", priceSpecification: { "@type": "UnitPriceSpecification", price: 199, priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false } },
-};
+  offers: { "@type": "Offer", name: pLocal.nombre, priceSpecification: { "@type": "UnitPriceSpecification", price: pLocal.precio, priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false } },
+});
 
-const PLANES_LOCAL = [planPorId("local"), planPorId("pyme"), planPorId("crecimiento")];
 
-const FAQS = [
+const faqs = ([pLocal, pPyme, pCrec]: PlanSeo[]) => [
   { q: "¿Qué es el SEO local y en qué se diferencia del SEO tradicional?", a: "El SEO local optimiza tu presencia para las búsquedas con intención geográfica: 'fontanero en Toledo', 'clínica dental cerca de mí' o las que Google asocia a tu ubicación. A diferencia del SEO nacional —centrado en keywords de alcance amplio—, el SEO local trabaja sobre el mapa de Google (el pack local), tu ficha de Google Business Profile, las reseñas y las señales de proximidad. Es la disciplina ideal para negocios con una zona de influencia concreta." },
   { q: "¿Cuánto tarda en posicionarse mi negocio en Google Maps?", a: "Con una ficha bien optimizada, los primeros movimientos en el pack local suelen verse entre 1 y 3 meses, más rápido que el SEO orgánico tradicional porque la competencia local es menor. Consolidar posiciones para keywords competitivas en ciudades grandes lleva entre 4 y 8 meses, en función de la densidad de competencia y del estado inicial de tu ficha y tu web." },
   { q: "¿Necesito una ficha de Google Business Profile para hacer SEO local?", a: "Sí. La ficha de Google Business Profile es el activo central del SEO local: es lo que te permite aparecer en Google Maps y en el pack local de resultados. Si no la tienes, la creamos y verificamos; si ya la tienes, la auditamos y optimizamos (categorías, servicios, fotos, productos, horarios, atributos y publicaciones). Sin una ficha optimizada, el resto del trabajo local pierde gran parte de su efecto." },
   { q: "¿El SEO local funciona si tengo varias sedes o varias ciudades?", a: "Sí. Para negocios multisede creamos y optimizamos una ficha por ubicación y diseñamos una arquitectura de páginas locales coherente, evitando contenido duplicado entre ciudades. Cada sede compite por su propia zona con su ficha, su NAP (nombre, dirección y teléfono) consistente y sus reseñas, mientras la web mantiene una estructura que Google entiende sin penalizaciones." },
   { q: "¿Por qué importan las reseñas para el posicionamiento local y cómo conseguís más?", a: "Las reseñas son uno de los factores de ranking local más influyentes y, además, el principal motor de confianza antes del primer contacto. Implementamos procesos para solicitar reseñas en el momento adecuado, facilitamos el enlace directo a tus clientes y te ayudamos a responderlas todas —también las negativas— con criterio. El objetivo es un flujo constante de reseñas reales, no picos artificiales." },
-  { q: "¿Cuánto cuesta el SEO local?", a: "El plan SEO Local Esencial cuesta 199 €/mes + IVA, sin permanencia, para webs de hasta 10 páginas con 1 ficha de Google y 2 contenidos al mes. Si además quieres trabajar la visibilidad en asistentes de IA y tu web es más amplia, el plan SEO + GEO + Google Business Profile cuesta 349 €/mes + IVA. Para varias sedes, el plan Crecimiento / Multisede cuesta 590 €/mes + IVA." },
+  { q: "¿Cuánto cuesta el SEO local?", a: `El plan ${pLocal.nombre} cuesta ${precioTexto(pLocal)}, sin permanencia, para webs de hasta 10 páginas con 1 ficha de Google y 2 contenidos al mes. Si además quieres trabajar la visibilidad en asistentes de IA y tu web es más amplia, el plan ${pPyme.nombre} cuesta ${precioTexto(pPyme)}. Para varias sedes, el plan ${pCrec.nombre} cuesta ${precioTexto(pCrec)}.` },
   { q: "¿Hacéis SEO local en cualquier ciudad?", a: "Sí. El SEO local es un servicio propio que trabajamos para negocios de cualquier ubicación de España: posicionamos cada negocio en su zona, esté donde esté, adaptando la estrategia a la competencia y al mercado de esa localidad." },
 ];
 
-const faqSchema = {
+const faqSchema = (FAQS: { q: string; a: string }[]) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: FAQS.map((f) => ({
@@ -51,7 +51,7 @@ const faqSchema = {
     name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.a },
   })),
-};
+});
 
 const METHODOLOGY = [
   { step: "01", title: "Auditoría local", desc: "Analizamos tu ficha de Google Business Profile, tu posición en el mapa, la competencia de tu zona y el estado SEO de tu web para detectar oportunidades inmediatas." },
@@ -71,11 +71,15 @@ const CITIES = [
   { name: "SEO Bilbao", href: "/seo-bilbao/" },
 ];
 
-export default function SeoLocalPage() {
+export default async function SeoLocalPage() {
+  // Precios vigentes desde MktOS (con los de lib/planes-seo.ts de respaldo).
+  const { precios } = await preciosPlanesSeo();
+  const PLANES_LOCAL = [planPorId("local", "es", precios), planPorId("pyme", "es", precios), planPorId("crecimiento", "es", precios)];
+  const FAQS = faqs(PLANES_LOCAL);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(PLANES_LOCAL[0])) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(FAQS)) }} />
 
       {/* Hero */}
       <section className="mw-skin-hero text-white">

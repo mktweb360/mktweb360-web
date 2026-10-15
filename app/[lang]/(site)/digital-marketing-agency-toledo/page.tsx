@@ -1,6 +1,7 @@
 import { LocalServicePage, localServiceSchemas, type LocalServiceContent } from "@/components/LocalServicePage";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
-import { planPorId, precioTexto } from "@/lib/planes-seo";
+import { planPorId, precioTexto, type PreciosPlanes } from "@/lib/planes-seo";
+import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 // 09/10/2026 — EN/FR de /agencia-marketing-digital-toledo/. Esta carpeta sirve
 // /en/digital-marketing-agency-toledo/; /fr/agence-marketing-digital-tolede/ reexporta este módulo.
@@ -27,9 +28,9 @@ const META = {
   },
 };
 
-function content(lang: L): LocalServiceContent {
-  const pyme = planPorId("pyme", lang);
-  const local = planPorId("local", lang);
+function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
+  const pyme = planPorId("pyme", lang, precios);
+  const local = planPorId("local", lang, precios);
   if (lang === "fr") {
     return {
       lang,
@@ -150,7 +151,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang: raw } = await params;
   const lang: L = raw === "fr" ? "fr" : "en";
-  const c = content(lang);
+  const { precios } = await preciosPlanesSeo();
+  const c = content(lang, precios);
   return (
     <>
       {localServiceSchemas(c, lang === "fr" ? "Marketing digital à Tolède" : "Digital marketing in Toledo").map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}

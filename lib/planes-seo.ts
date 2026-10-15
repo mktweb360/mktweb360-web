@@ -1,7 +1,10 @@
 // Planes SEO por tramos — fuente única de precios y límites.
 // Lanzados el 09/10/2026 con precios propuestos y aprobados por Manué para empezar a vender.
 // PENDIENTE URGENTE: validar cada precio con coste por hora y tiempo medio por contenido
-// (ver registro de sesión del 09/10/2026). Cambiar aquí actualiza /precios-seo/, /seo-local/
+// (ver registro de sesión del 09/10/2026).
+// 16/10/2026: el precio vigente se gestiona en MktOS (Servicios y contratos › Planes SEO) y la web lo lee
+// cada 5 minutos (lib/precios-planes.ts). Los precios de BASE son el respaldo si MktOS no responde.
+// Cambiar aquí actualiza /precios-seo/, /seo-local/
 // (y sus versiones EN/FR) y el schema de ofertas.
 // Precios sin IVA. No usar nunca precio tachado sin precio de referencia real (Ley 3/1991, art. 5).
 //
@@ -306,6 +309,42 @@ function hrefFor(esHref: string | undefined, lang: PlanLang): string | undefined
   return (r && urlFor(r, lang)) || undefined;
 }
 
+// Precios que llegan del catálogo de MktOS (ver lib/precios-planes.ts). Sin ellos, se usan los de BASE.
+export type PreciosPlanes = Partial<Record<PlanId, number | null>>;
+
+// Correspondencia de cada plan con su modalidad en el catálogo de MktOS (servicio «Planes SEO»).
+export const PLAN_EN_CATALOGO: Record<PlanId, { servicio: string; modalidad: string }> = {
+  local: { servicio: "mw360-seo-planes", modalidad: "seo-local-esencial" },
+  pyme: { servicio: "mw360-seo-planes", modalidad: "seo-geo-google-business-profile-pyme" },
+  crecimiento: { servicio: "mw360-seo-planes", modalidad: "crecimiento-multisede" },
+  "ecommerce-s": { servicio: "mw360-seo-planes", modalidad: "ecommerce-s" },
+  "ecommerce-m": { servicio: "mw360-seo-planes", modalidad: "ecommerce-m" },
+  "ecommerce-l": { servicio: "mw360-seo-planes", modalidad: "ecommerce-l-a-medida" },
+};
+
+export function precioLocal(id: PlanId): number | null {
+  return BASE.find((b) => b.id === id)!.precio;
+}
+
+// Para textos traducidos que citan precios («from €199/month», «dès 199 €/mois»): cambia el precio de la web
+// por el vigente de MktOS. Solo toca cifras pegadas al símbolo € y solo de los planes cuyo precio ha cambiado.
+export function reemplazarPrecios(texto: string, precios?: PreciosPlanes | null): string {
+  if (!precios) return texto;
+  const cambios = BASE.filter((b) => b.precio != null && precios[b.id] != null && precios[b.id] !== b.precio);
+  let out = texto;
+  // Dos pasadas con marcas para que un precio nuevo no se confunda con el precio antiguo de otro plan.
+  for (const b of cambios) {
+    out = out.replace(new RegExp(`€${b.precio}(?![\\d.,])`, "g"), `€\u0000${b.id}\u0000`).replace(new RegExp(`(?<![\\d.,])${b.precio}(\\s?€)`, "g"), `\u0000${b.id}\u0000$1`);
+  }
+  for (const b of cambios) out = out.split(`\u0000${b.id}\u0000`).join(String(precios[b.id]));
+  return out;
+}
+
+function conPrecios(planes: PlanSeo[], precios?: PreciosPlanes | null): PlanSeo[] {
+  if (!precios) return planes;
+  return planes.map((p) => (p.id in precios ? { ...p, precio: precios[p.id] as number | null } : p));
+}
+
 function buildPlanes(lang: PlanLang): PlanSeo[] {
   return BASE.map((b) => {
     const t = PLAN_TEXT[lang][b.id];
@@ -320,8 +359,8 @@ export const PLANES_SEO: PlanSeo[] = PLANES_BY_LANG.es;
 export const EXTRAS_SEO = EXTRAS.es;
 export const CONDICIONES_COMUNES = CONDICIONES.es;
 
-export function planesSeo(lang: PlanLang = "es"): PlanSeo[] {
-  return PLANES_BY_LANG[lang];
+export function planesSeo(lang: PlanLang = "es", precios?: PreciosPlanes | null): PlanSeo[] {
+  return conPrecios(PLANES_BY_LANG[lang], precios);
 }
 export function extrasSeo(lang: PlanLang = "es"): string[] {
   return EXTRAS[lang];
@@ -330,8 +369,8 @@ export function condicionesComunes(lang: PlanLang = "es"): string[] {
   return CONDICIONES[lang];
 }
 
-export function planPorId(id: PlanId, lang: PlanLang = "es"): PlanSeo {
-  return PLANES_BY_LANG[lang].find((p) => p.id === id)!;
+export function planPorId(id: PlanId, lang: PlanLang = "es", precios?: PreciosPlanes | null): PlanSeo {
+  return planesSeo(lang, precios).find((p) => p.id === id)!;
 }
 
 export function precioTexto(p: PlanSeo, lang: PlanLang = "es"): string {
@@ -350,9 +389,9 @@ export interface RespuestasCalculadora {
   idiomas: "1" | "mas";
 }
 
-export function recomendarPlan(r: RespuestasCalculadora, lang: PlanLang = "es"): { plan: PlanSeo; notas: string[] } {
+export function recomendarPlan(r: RespuestasCalculadora, lang: PlanLang = "es", precios?: PreciosPlanes | null): { plan: PlanSeo; notas: string[] } {
   const N = NOTAS[lang];
-  const plan = (id: PlanId) => planPorId(id, lang);
+  const plan = (id: PlanId) => planPorId(id, lang, precios);
   const notas: string[] = [];
   if (r.idiomas === "mas") notas.push(N.idiomas);
   if (r.tipo === "tienda") {
