@@ -1,163 +1,100 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
-type Task = {
-  id: string;
-  title: string;
-  service: string;
-  due_date: string;
-  completed: boolean;
-  notes?: string;
+// Plan de trabajo del cliente, tal como lo lleva la agencia en MktOS.
+type Item = { code: string | null; phase: string | null; channel: string | null; action: string; description: string | null; owner: string; from: string; deliverable: string | null; client_input: string | null; status: string; done_at: string | null };
+type Plan = { id: string; name: string; status: string; start_date: string; items: Item[] };
+
+const STATUS: Record<string, { label: string; cls: string; icon: string }> = {
+  hecho: { label: "Hecho", cls: "bg-green-100 text-green-700", icon: "✓" },
+  en_curso: { label: "En curso", cls: "bg-blue-100 text-blue-700", icon: "◐" },
+  pendiente: { label: "Pendiente", cls: "bg-gray-100 text-gray-600", icon: "○" },
+  bloqueado: { label: "En espera", cls: "bg-amber-100 text-amber-700", icon: "!" },
 };
-
-const SERVICIO_COLORS: Record<string, string> = {
-  seo: "bg-blue-100 text-blue-700",
-  "google ads": "bg-yellow-100 text-yellow-700",
-  "redes sociales": "bg-pink-100 text-pink-700",
-};
-
-function servicioColor(service: string): string {
-  return SERVICIO_COLORS[service.toLowerCase()] ?? "bg-gray-100 text-gray-600";
-}
-
-function formatFecha(value: string): string {
-  const date = new Date(value);
-  if (isNaN(date.getTime())) return value;
-  return date.toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
-}
+const fmt = (d: string | null) => (d ? new Date(d.length === 10 ? `${d}T12:00:00` : d).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" }) : "");
+const FILTERS = [["todas", "Todas"], ["pendientes", "Pendientes"], ["hechas", "Hechas"], ["tuyas", "Te toca a ti"]] as const;
 
 export default function PortalTareasPage() {
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [next, setNext] = useState<Task | null>(null);
+  const [plans, setPlans] = useState<Plan[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [filter, setFilter] = useState<(typeof FILTERS)[number][0]>("pendientes");
+  const [channel, setChannel] = useState("");
 
   useEffect(() => {
-    let activo = true;
+    let alive = true;
     fetch("/api/portal/tareas")
       .then(async (res) => {
         const json = await res.json().catch(() => ({}));
-        if (!activo) return;
-        if (json.ok) {
-          setTasks(json.tasks ?? []);
-          setNext(json.next ?? null);
-        } else {
-          setError(json.error || "No se pudieron cargar tus tareas.");
-        }
+        if (!alive) return;
+        if (res.status === 401) { window.location.href = "/portal/login/?error=expired"; return; }
+        if (json.ok) setPlans(json.plans ?? []);
+        else setError(json.error || "No se pudieron cargar las tareas.");
       })
-      .catch(() => activo && setError("Error de conexión."))
-      .finally(() => activo && setLoading(false));
-    return () => {
-      activo = false;
-    };
+      .catch(() => alive && setError("Error de conexión."))
+      .finally(() => alive && setLoading(false));
+    return () => { alive = false; };
   }, []);
 
-  if (loading) {
-    return (
-      <div className="space-y-4 max-w-3xl animate-pulse">
-        <div className="h-8 w-40 bg-gray-200 rounded" />
-        {[0, 1, 2].map((i) => <div key={i} className="h-20 bg-gray-100 rounded-2xl" />)}
-      </div>
-    );
-  }
+  const channels = useMemo(() => [...new Set(plans.flatMap((p) => p.items.map((i) => i.channel ?? "General")))].sort(), [plans]);
 
-  if (error) {
-    return (
-      <div className="max-w-3xl">
-        <div className="bg-red-50 border border-red-100 text-red-600 rounded-2xl px-5 py-4 text-sm">
-          {error}
-        </div>
-      </div>
-    );
-  }
-
-  const completadas = tasks.filter((t) => t.completed);
-  const proximas = tasks.filter((t) => !t.completed && t.id !== next?.id);
+  if (loading) return <div className="max-w-5xl space-y-3 animate-pulse">{[0, 1, 2, 3].map((i) => <div key={i} className="h-16 bg-gray-100 rounded-2xl" />)}</div>;
+  if (error) return <div className="max-w-5xl bg-red-50 border border-red-100 text-red-600 rounded-2xl px-5 py-4 text-sm">{error}</div>;
 
   return (
-    <div className="space-y-6 max-w-3xl">
+    <div className="space-y-6 max-w-5xl">
       <div>
-        <h1 className="text-2xl font-bold text-primary-600 mb-1">Tareas</h1>
-        <p className="text-sm text-gray-500">
-          {completadas.length} completadas · {proximas.length + (next ? 1 : 0)} próximas
-        </p>
+        <h1 className="text-2xl font-bold text-primary-600 mb-1">Plan de trabajo</h1>
+        <p className="text-sm text-gray-500">Todas las acciones de tu plan, con su fecha prevista y su estado. Se actualiza en cuanto el equipo marca algo como hecho.</p>
       </div>
-
-      {/* Próxima tarea destacada */}
-      {next && (
-        <div className="bg-primary-600 text-white rounded-2xl p-5 shadow-sm">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary-200">Próxima tarea</span>
-          <div className="flex items-start justify-between gap-2 flex-wrap mt-2">
-            <p className="font-semibold text-base">{next.title}</p>
-            <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full shrink-0 ${servicioColor(next.service)}`}>
-              {next.service}
-            </span>
+      {plans.length === 0 ? <p className="text-sm text-gray-500">Todavía no hay un plan activo.</p> : (
+        <>
+          <div className="flex flex-wrap gap-2">
+            {FILTERS.map(([k, l]) => <button key={k} onClick={() => setFilter(k)} className={`text-xs px-3 py-1.5 rounded-full border ${filter === k ? "bg-primary-600 text-white border-primary-600" : "border-gray-200 text-gray-600 hover:border-gray-300"}`}>{l}</button>)}
+            <select value={channel} onChange={(e) => setChannel(e.target.value)} className="text-xs px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 bg-white" aria-label="Filtrar por canal">
+              <option value="">Todos los canales</option>
+              {channels.map((c) => <option key={c} value={c}>{c}</option>)}
+            </select>
           </div>
-          <p className="text-xs text-primary-200 mt-1">Prevista: {formatFecha(next.due_date)}</p>
-          {next.notes && <p className="text-xs text-primary-100 mt-2 bg-primary-700 rounded-lg px-3 py-2">{next.notes}</p>}
-        </div>
+          {plans.map((p) => {
+            const items = p.items.filter((i) =>
+              (filter === "todas" || (filter === "hechas" ? i.status === "hecho" : filter === "pendientes" ? i.status !== "hecho" : i.owner !== "agencia" && i.status !== "hecho")) &&
+              (!channel || (i.channel ?? "General") === channel));
+            const done = p.items.filter((i) => i.status === "hecho").length;
+            return (
+              <section key={p.id} className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+                <div className="flex items-center justify-between gap-2 flex-wrap mb-3">
+                  <h2 className="font-bold text-primary-600">{p.name}</h2>
+                  <span className="text-xs text-gray-500">{done} de {p.items.length} hechas · desde el {fmt(p.start_date)}</span>
+                </div>
+                {items.length === 0 ? <p className="text-sm text-gray-400">Nada con este filtro.</p> : (
+                  <ul className="divide-y divide-gray-100">
+                    {items.map((i, idx) => {
+                      const st = STATUS[i.status] ?? STATUS.pendiente;
+                      return (
+                        <li key={`${i.code ?? idx}`} className="py-3 flex gap-3">
+                          <span className={`mt-0.5 w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 ${st.cls}`} aria-hidden>{st.icon}</span>
+                          <div className="min-w-0 flex-1">
+                            <p className={`text-sm ${i.status === "hecho" ? "text-gray-500" : "text-gray-800 font-medium"}`}>{i.action}</p>
+                            {i.description && <p className="text-xs text-gray-500 mt-0.5">{i.description}</p>}
+                            <p className="text-xs text-gray-400 mt-0.5">
+                              {[i.channel, i.status === "hecho" && i.done_at ? `hecho el ${fmt(i.done_at)}` : `semana del ${fmt(i.from)}`, i.deliverable ? `entregable: ${i.deliverable}` : null].filter(Boolean).join(" · ")}
+                            </p>
+                            {i.owner !== "agencia" && i.status !== "hecho" && (
+                              <p className="text-xs text-accent-600 mt-1 font-semibold">{i.owner === "cliente" ? "Te toca a ti" : "Lo hacemos juntos"}{i.client_input ? `: ${i.client_input}` : ""}</p>
+                            )}
+                          </div>
+                          <span className={`text-[11px] px-2 py-0.5 rounded-full font-semibold h-fit shrink-0 ${st.cls}`}>{st.label}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </section>
+            );
+          })}
+        </>
       )}
-
-      {/* Timeline */}
-      <div className="relative">
-        {/* Línea vertical */}
-        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200" />
-
-        <div className="space-y-4">
-          {/* Próximas primero */}
-          {proximas.length > 0 && (
-            <div className="pl-12 mb-2">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Próximas</span>
-            </div>
-          )}
-          {proximas.map((t) => (
-            <div key={t.id} className="relative flex items-start gap-4 pl-12">
-              <div className="absolute left-0 w-9 h-9 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center z-10">
-                <span className="text-gray-400 text-sm">○</span>
-              </div>
-              <div className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm flex-1">
-                <div className="flex items-start justify-between gap-2 flex-wrap">
-                  <p className="font-semibold text-gray-800 text-sm">{t.title}</p>
-                  <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full shrink-0 ${servicioColor(t.service)}`}>
-                    {t.service}
-                  </span>
-                </div>
-                <p className="text-xs text-gray-400 mt-1">Prevista: {formatFecha(t.due_date)}</p>
-              </div>
-            </div>
-          ))}
-
-          {/* Divisor */}
-          {completadas.length > 0 && (proximas.length > 0 || next) && (
-            <div className="pl-12 pt-2 pb-1">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Completadas</span>
-            </div>
-          )}
-
-          {/* Completadas */}
-          {completadas.map((t) => (
-            <div key={t.id} className="relative flex items-start gap-4 pl-12">
-              <div className="absolute left-0 w-9 h-9 rounded-full bg-green-100 border-2 border-green-300 flex items-center justify-center z-10">
-                <span className="text-green-600 text-sm font-bold">✓</span>
-              </div>
-              <div className="bg-white rounded-2xl border border-gray-100 p-4 shadow-sm flex-1 opacity-80">
-                <div className="flex items-start justify-between gap-2 flex-wrap">
-                  <p className="font-semibold text-gray-600 text-sm line-through">{t.title}</p>
-                  <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full shrink-0 ${servicioColor(t.service)}`}>
-                    {t.service}
-                  </span>
-                </div>
-                <p className="text-xs text-gray-400 mt-1">Completada: {formatFecha(t.due_date)}</p>
-                {t.notes && <p className="text-xs text-gray-500 mt-2 bg-gray-50 rounded-lg px-3 py-2">{t.notes}</p>}
-              </div>
-            </div>
-          ))}
-
-          {tasks.length === 0 && !next && (
-            <p className="text-sm text-gray-400 pl-12">No hay tareas registradas todavía.</p>
-          )}
-        </div>
-      </div>
     </div>
   );
 }
