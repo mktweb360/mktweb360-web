@@ -56,6 +56,10 @@ export async function middleware(request: NextRequest) {
       if (payload.token_type === "refresh") {
         throw new Error("refresh token not allowed in web portal");
       }
+      // Con la contraseña inicial, solo se puede ir a cambiarla.
+      if (payload.must_change === true && !pathname.startsWith("/portal/cambiar-clave")) {
+        return NextResponse.redirect(new URL("/portal/cambiar-clave/", request.url));
+      }
     } catch {
       const res = NextResponse.redirect(loginUrl);
       res.cookies.delete("client_session");

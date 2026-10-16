@@ -9,6 +9,7 @@ const NAV = [
   { href: "/portal/informes", label: "Informes", icon: "📈" },
   { href: "/portal/tareas", label: "Tareas", icon: "✅" },
   { href: "/portal/tickets", label: "Tickets", icon: "🎫" },
+  { href: "/portal/mis-datos", label: "Mis datos", icon: "🏢" },
 ];
 
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
@@ -21,7 +22,8 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
     pathname === "/portal/login" ||
     pathname === "/portal/login/" ||
     pathname === "/portal/auth/callback" ||
-    pathname === "/portal/auth/callback/";
+    pathname === "/portal/auth/callback/" ||
+    pathname.startsWith("/portal/cambiar-clave");
 
   const handleLogout = () => {
     // La cookie es HttpOnly: la borra la ruta de servidor, que además redirige al login.
