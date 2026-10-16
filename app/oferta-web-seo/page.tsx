@@ -144,20 +144,8 @@ const STEPS = [
   },
 ];
 
-const TESTIMONIALS = [
-  {
-    text: "Llevábamos años con una web que no nos ayudaba. En una semana teníamos todo funcionando y empezamos a recibir consultas por Google.",
-    author: "CC Láser Depilación",
-  },
-  {
-    text: "El proceso fue muy sencillo. Nos explicaron todo, migraron nuestro correo sin problemas y el resultado fue mucho mejor de lo esperado.",
-    author: "Interbya Representaciones",
-  },
-  {
-    text: "Por fin tenemos una web que representa bien a nuestra empresa. Y el SEO está funcionando: cada mes recibimos más visitas.",
-    author: "Urbanpool",
-  },
-];
+// 16/10/2026: testimonios retirados (no coincidían con las reseñas reales de esos clientes).
+// Se volverán a poner cuando haya reseñas públicas verificables (ficha de Google de Mkt Web 360).
 
 const FAQS = [
   {
@@ -377,26 +365,6 @@ export default function OfertaWebSeoPage() {
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 5: Testimonials ── */}
-      <section className="bg-gray-50 px-4 py-16">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1e3a5f] text-center mb-12">
-            Lo que dicen nuestros clientes
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t) => (
-              <div key={t.author} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-                <div className="text-[#f97316] text-2xl mb-3">★★★★★</div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-4 italic">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-                <p className="font-semibold text-[#1e3a5f] text-sm">— {t.author}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
