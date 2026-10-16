@@ -3,6 +3,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { reemplazarPrecios } from "@/lib/planes-seo";
+import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 // 09/10/2026 — EN/FR de /consultor-seo/. Esta carpeta sirve /en/seo-consultant/;
 // /fr/consultant-seo/ reexporta este módulo.
@@ -177,7 +179,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const t = lang === "fr" ? C.fr : C.en;
+  const { precios } = await preciosPlanesSeo();
+  const base = lang === "fr" ? C.fr : C.en;
+  const t = { ...base, linkPack: reemplazarPrecios(base.linkPack, precios) };
   const url = BASE + pathFor(lang);
   const href = (slug: string) => `/${lang}/${langSlug(lang, slug)}/`;
 

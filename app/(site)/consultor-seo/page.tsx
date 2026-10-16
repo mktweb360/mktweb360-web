@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { reemplazarPrecios } from "@/lib/planes-seo";
+import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 const URL = "https://www.mktweb360.com/consultor-seo/";
 
@@ -84,7 +86,8 @@ const STEPS = [
   { step: "06", title: "Acompañamiento y revisión", desc: "Resolvemos dudas durante la ejecución y comparamos los resultados con la línea base en las fechas acordadas para decidir los siguientes pasos." },
 ];
 
-export default function ConsultorSeoPage() {
+export default async function ConsultorSeoPage() {
+  const { precios } = await preciosPlanesSeo();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
@@ -168,7 +171,7 @@ export default function ConsultorSeoPage() {
             </p>
             <div className="flex flex-col gap-3">
               <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 font-semibold hover:underline">Servicio de posicionamiento SEO →</Link>
-              <Link href="/oferta-seo-geo-gbp/" className="text-accent-500 font-semibold hover:underline">SEO + GEO + Google Business Profile por 349 €/mes + IVA →</Link>
+              <Link href="/oferta-seo-geo-gbp/" className="text-accent-500 font-semibold hover:underline">{reemplazarPrecios("SEO + GEO + Google Business Profile por 349 €/mes + IVA →", precios)}</Link>
               <Link href="/auditoria-digital/" className="text-accent-500 font-semibold hover:underline">Auditoría SEO gratuita →</Link>
             </div>
           </div>

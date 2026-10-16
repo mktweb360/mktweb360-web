@@ -2,15 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
+import { precioLocal, reemplazarPrecios } from "@/lib/planes-seo";
+import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 // Oferta permanente (sin fecha de fin ni plazas), relanzada el 2-oct-2026.
 // Inventario de touchpoints: CAMPAÑA-oferta-seo-geo-gbp-2026-10-02.md (Drive, carpeta Sistema Operativo).
 const URL = "https://www.mktweb360.com/oferta-seo-geo-gbp/";
-const PRICE = "349";
+// Precio vigente: el del plan «pyme» en el catálogo de MktOS (lib/precios-planes.ts); 349 es el respaldo.
+const PRICE = String(precioLocal("pyme"));
+async function vigente() {
+  const { precios } = await preciosPlanesSeo();
+  const P = String(precios.pyme ?? PRICE);
+  return { P, R: (t: string) => reemplazarPrecios(t, precios) };
+}
 const DESC =
   "SEO en Google, GEO para que cualquier asistente de IA pueda encontrarte y citarte, y tu ficha de Google Business Profile optimizada. 349 €/mes + IVA.";
 
-export const metadata: Metadata = {
+const METADATA: Metadata = {
   title: "SEO, GEO y ficha de Google por 349 €/mes",
   description: DESC,
   alternates: { canonical: URL },
@@ -28,6 +36,13 @@ export const metadata: Metadata = {
     ],
   },
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { P, R } = await vigente();
+  // La imagen OG lleva el precio codificado en la URL: se cambia aparte.
+  const json = R(JSON.stringify(METADATA)).split(encodeURIComponent(`${PRICE} €`)).join(encodeURIComponent(`${P} €`));
+  return JSON.parse(json);
+}
 
 const INCLUYE = [
   {
@@ -152,10 +167,13 @@ const schema = {
   ],
 };
 
-export default function OfertaSeoGeoGbpPage() {
+export default async function OfertaSeoGeoGbpPage() {
+  const { P, R } = await vigente();
+  const faqs = FAQS.map((f) => ({ q: R(f.q), a: R(f.a) }));
+  const ld = R(JSON.stringify(schema)).split(`"price":"${PRICE}"`).join(`"price":"${P}"`);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />
 
       <div className="max-w-5xl mx-auto px-4 pt-6">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Oferta SEO + GEO + GBP" }]} />
@@ -175,7 +193,7 @@ export default function OfertaSeoGeoGbpPage() {
             <div className="bg-white/10 rounded-2xl px-6 py-4 mb-8 inline-block">
               <p className="text-primary-100 text-sm font-semibold uppercase tracking-wide mb-1">Tres servicios en uno</p>
               <p className="flex items-baseline gap-3">
-                <span className="text-accent-400 text-4xl font-bold">{PRICE} €/mes</span>
+                <span className="text-accent-400 text-4xl font-bold">{P} €/mes</span>
                 <span className="text-primary-100 text-sm">+ IVA</span>
               </p>
               <p className="text-primary-100 text-xs mt-1">Sin permanencia · Webs de hasta 30 páginas</p>
@@ -226,7 +244,7 @@ export default function OfertaSeoGeoGbpPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3">Qué incluye exactamente el precio</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">349 €/mes + IVA, con estas condiciones claras desde el principio.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">{P} €/mes + IVA, con estas condiciones claras desde el principio.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {CONDICIONES.map((c) => (
@@ -269,7 +287,7 @@ export default function OfertaSeoGeoGbpPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">Preguntas frecuentes</h2>
           <div className="space-y-4">
-            {FAQS.map((f) => (
+            {faqs.map((f) => (
               <details key={f.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-bold text-primary-700 [&::-webkit-details-marker]:hidden">
                   {f.q}

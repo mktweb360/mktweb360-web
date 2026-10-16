@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { LocalServicePage, localServiceSchemas, type LocalServiceContent } from "@/components/LocalServicePage";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { reemplazarPrecios } from "@/lib/planes-seo";
+import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 const URL = "https://www.mktweb360.com/agencia-marketing-digital-toledo/";
 
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: { title: "Agencia de marketing digital en Toledo | Mkt Web 360", description: "Marketing digital para pymes y profesionales de Toledo, con sede en la provincia.", url: URL, images: [{ url: "/og-marketing-digital-toledo.jpg", width: 1200, height: 630 }] },
 };
 
-const c: LocalServiceContent = {
+const contenido: LocalServiceContent = {
   url: URL,
   breadcrumb: "Agencia de marketing digital en Toledo",
   h1: "Agencia de marketing digital en Toledo",
@@ -61,7 +63,10 @@ const c: LocalServiceContent = {
   formType: "marketing-toledo",
 };
 
-export default function AgenciaMarketingDigitalToledoPage() {
+export default async function AgenciaMarketingDigitalToledoPage() {
+  // Precios de los planes SEO: los vigentes en el catálogo de MktOS (los del texto son el respaldo).
+  const { precios } = await preciosPlanesSeo();
+  const c = JSON.parse(reemplazarPrecios(JSON.stringify(contenido), precios)) as LocalServiceContent;
   return (
     <>
       {localServiceSchemas(c, "Marketing digital en Toledo").map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}

@@ -7,7 +7,7 @@ import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 export const dynamic = "force-dynamic";
 
-const PAGINAS = ["/precios-seo/", "/seo-local/", "/en/seo-pricing/", "/en/local-seo-services/", "/en/seo-agency-toledo/", "/en/digital-marketing-agency-toledo/"];
+const PAGINAS = ["/precios-seo/", "/seo-local/", "/en/seo-pricing/", "/en/local-seo-services/", "/en/seo-agency-toledo/", "/en/digital-marketing-agency-toledo/", "/oferta-seo-geo-gbp/", "/agencia-seo-toledo/", "/agencia-marketing-digital-toledo/", "/consultor-seo/", "/en/seo-consultant/", "/fr/consultant-seo/"];
 
 export async function GET() {
   const { planes, conectado, leido } = await preciosPlanesSeo();
