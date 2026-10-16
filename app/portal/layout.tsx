@@ -9,6 +9,7 @@ const NAV = [
   { href: "/portal/informes", label: "Informes", icon: "📈" },
   { href: "/portal/tareas", label: "Tareas", icon: "✅" },
   { href: "/portal/tickets", label: "Tickets", icon: "🎫" },
+  { href: "/portal/facturas", label: "Facturas", icon: "🧾" },
   { href: "/portal/mis-datos", label: "Mis datos", icon: "🏢" },
 ];
 
