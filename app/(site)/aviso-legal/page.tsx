@@ -22,12 +22,10 @@ export default function AvisoLegalPage() {
           <h2 className="text-xl font-bold text-primary-700 mb-3">1. Datos identificativos</h2>
           <p className="mb-3">En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se ponen a disposición del usuario los siguientes datos identificativos del titular del sitio web:</p>
           <div className="bg-gray-50 rounded-xl p-5 space-y-2">
-            <p><strong>Denominación social:</strong> Mkt Web 360 SLU</p>
+            <p><strong>Denominación social:</strong> MKT WEB 360, S.L.U.</p>
+            <p><strong>Nombre comercial:</strong> Mkt Web 360</p>
             <p><strong>CIF:</strong> B87679304</p>
-            <p><strong>Responsable:</strong> José Marcos Galindo Sánchez</p>
-            <p><strong>Denominación social:</strong> MKTWEB360, S.L.U.</p>
-            <p><strong>Nombre comercial:</strong> MKTWEB</p>
-            <p><strong>CIF:</strong> B87679304</p>
+            <p><strong>Administrador único:</strong> José Marcos Galindo Sánchez</p>
             <p><strong>Domicilio social:</strong> Calle Chopo 98, El Viso de San Juan, 45215 Toledo</p>
             <p><strong>Registro Mercantil:</strong> Tomo 35360, Folio 45, Sección 8, Hoja M-635651</p>
             <p><strong>Teléfono:</strong> <a href="tel:+34622748987" className="text-accent-500 hover:underline">+34 622 74 89 87</a></p>
