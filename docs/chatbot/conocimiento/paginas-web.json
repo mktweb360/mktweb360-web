@@ -1,0 +1,1279 @@
+{
+ "generado": "2026-10-17T19:09:54.935Z",
+ "fuente": "app/(site)/*/page.tsx (metadata)",
+ "total": 159,
+ "paginas": [
+  {
+   "ruta": "/5-factores-web-academias-centros-formacion/",
+   "url": "https://www.mktweb360.com/5-factores-web-academias-centros-formacion/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Web para academias: 5 factores clave en 2026",
+   "description": "Publicidad de resultados sin exagerar, RGPD de menores, delegado de protección de datos y plazas en tiempo real: 5 factores clave en la web de una academia."
+  },
+  {
+   "ruta": "/5-factores-web-asesorias-gestorias/",
+   "url": "https://www.mktweb360.com/5-factores-web-asesorias-gestorias/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Web para asesorías y gestorías: 5 claves",
+   "description": "RGPD como responsable y encargado, colegiación de gestores y factura electrónica: los 5 factores que deciden si la web de tu asesoría o gestoría capta clientes."
+  },
+  {
+   "ruta": "/5-factores-web-autonomos-freelance/",
+   "url": "https://www.mktweb360.com/5-factores-web-autonomos-freelance/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Web para autónomos y freelance: 5 claves",
+   "description": "Aviso legal LSSI-CE, factura electrónica (Ley Crea y Crece) y captación sin intermediarios: los 5 factores que hacen que la web de un autónomo genere encargos."
+  },
+  {
+   "ruta": "/5-factores-web-clinicas-centros-salud/",
+   "url": "https://www.mktweb360.com/5-factores-web-clinicas-centros-salud/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Web para clínicas: 5 factores clave en 2026",
+   "description": "Publicidad sanitaria, datos de salud protegidos por el RGPD, cita online y ficha de Google: los 5 factores que deciden si la web de tu clínica capta pacientes."
+  },
+  {
+   "ruta": "/5-factores-web-clinicas-dentales/",
+   "url": "https://www.mktweb360.com/5-factores-web-clinicas-dentales/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Web para clínicas dentales: 5 factores clave",
+   "description": "Publicidad sanitaria (RD 1907/1996), datos de salud, número de colegiado y precios claros: 5 claves para que la web de tu clínica dental capte pacientes."
+  },
+  {
+   "ruta": "/5-factores-web-construccion-reformas/",
+   "url": "https://www.mktweb360.com/5-factores-web-construccion-reformas/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Web para empresas de reformas: 5 claves",
+   "description": "Presupuesto por escrito, LOE, portfolio antes y después y SEO local: los 5 factores que deciden si la web de tu empresa de reformas genera presupuestos."
+  },
+  {
+   "ruta": "/5-factores-web-despacho-abogados/",
+   "url": "https://www.mktweb360.com/5-factores-web-despacho-abogados/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Web para abogados: 5 factores clave en 2026",
+   "description": "Colegiación visible, confidencialidad, áreas de práctica y prueba social sin romper la deontología: los 5 factores de la web de un despacho que capta casos."
+  },
+  {
+   "ruta": "/5-factores-web-inmobiliaria/",
+   "url": "https://www.mktweb360.com/5-factores-web-inmobiliaria/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Web para inmobiliarias: 5 factores clave",
+   "description": "Certificado energético, portales, velocidad con fotos pesadas, buscador de inmuebles y captación de leads: los 5 factores clave en la web de una inmobiliaria."
+  },
+  {
+   "ruta": "/5-factores-web-peluquerias-estetica/",
+   "url": "https://www.mktweb360.com/5-factores-web-peluquerias-estetica/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Web para peluquerías y estética: 5 claves",
+   "description": "Cualificación visible, tratamientos con finalidad sanitaria (RD 1277/2003) y registro sanitario: 5 claves en la web de una peluquería o centro de estética."
+  },
+  {
+   "ruta": "/5-factores-web-restaurantes-hosteleria/",
+   "url": "https://www.mktweb360.com/5-factores-web-restaurantes-hosteleria/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Web para restaurantes y hoteles: 5 claves",
+   "description": "Hoja de reclamaciones, alérgenos según el Reglamento UE 1169/2011, reserva online y ficha de Google: los 5 factores de la web de un restaurante que llena mesas."
+  },
+  {
+   "ruta": "/5-factores-web-servicios-profesionales/",
+   "url": "https://www.mktweb360.com/5-factores-web-servicios-profesionales/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Web de servicios profesionales: 5 claves",
+   "description": "Aviso legal LSSI-CE, privacidad y cookies y consentimiento comercial: los 5 factores que deciden si la web de servicios profesionales genera confianza o riesgo."
+  },
+  {
+   "ruta": "/5-factores-web-talleres-mecanicos/",
+   "url": "https://www.mktweb360.com/5-factores-web-talleres-mecanicos/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Web para talleres mecánicos: 5 claves",
+   "description": "Hoja de reclamaciones, presupuesto previo por escrito (RD 1457/1986) y garantía de reparación: los 5 factores de la web de un taller que capta clientes."
+  },
+  {
+   "ruta": "/accesibilidad-web-obligatoria-tiendas-online-espana/",
+   "url": "https://www.mktweb360.com/accesibilidad-web-obligatoria-tiendas-online-espana/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Accesibilidad web obligatoria para tiendas online en España | Mkt Web 360",
+   "description": "Desde el 28 de junio de 2025 las tiendas online deben ser accesibles. Quién está obligado por la Ley 11/2023, excepciones y checklist práctico para cumplir."
+  },
+  {
+   "ruta": "/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/",
+   "url": "https://www.mktweb360.com/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Actualizaciones del algoritmo de Google 2026",
+   "description": "Qué han cambiado las actualizaciones del algoritmo de Google en 2026 (experiencia, contenido con IA, E-E-A-T) y qué revisar en tu web para no perder posiciones."
+  },
+  {
+   "ruta": "/agencia-marketing-digital-espana/",
+   "url": "https://www.mktweb360.com/agencia-marketing-digital-espana/",
+   "tipo": "servicio",
+   "servicio": "ia-chatbots",
+   "title": null,
+   "description": null
+  },
+  {
+   "ruta": "/agencia-marketing-digital-fuenlabrada/",
+   "url": "https://www.mktweb360.com/agencia-marketing-digital-fuenlabrada/",
+   "tipo": "servicio",
+   "servicio": "ia-chatbots",
+   "title": "Agencia de Marketing Digital en Fuenlabrada",
+   "description": null
+  },
+  {
+   "ruta": "/agencia-marketing-digital-toledo/",
+   "url": "https://www.mktweb360.com/agencia-marketing-digital-toledo/",
+   "tipo": "servicio",
+   "servicio": "ia-chatbots",
+   "title": "Agencia de marketing digital en Toledo",
+   "description": "Agencia de marketing digital con sede en Toledo: SEO, Google Maps, IA, Google Ads, diseño web y redes para pymes y profesionales. Precios publicados."
+  },
+  {
+   "ruta": "/agencia-seo-toledo/",
+   "url": "https://www.mktweb360.com/agencia-seo-toledo/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "Agencia SEO en Toledo: posicionamiento web",
+   "description": "Agencia SEO con sede en Toledo: posicionamiento web, Google Maps y visibilidad en IA para negocios de la provincia. Precios publicados y auditoría gratuita."
+  },
+  {
+   "ruta": "/agencias-marketing-digital-madrid/",
+   "url": "https://www.mktweb360.com/agencias-marketing-digital-madrid/",
+   "tipo": "servicio",
+   "servicio": "ia-chatbots",
+   "title": "Agencias Marketing Digital Madrid",
+   "description": "Guía para elegir una agencia de marketing digital en Madrid. Qué preguntar, qué red flags detectar, cómo comparar presupuestos y qué resultados son realistas."
+  },
+  {
+   "ruta": "/agencias-marketing-digital-toledo/",
+   "url": "https://www.mktweb360.com/agencias-marketing-digital-toledo/",
+   "tipo": "servicio",
+   "servicio": "ia-chatbots",
+   "title": "Cómo elegir agencia de marketing en Toledo",
+   "description": "Guía para elegir una agencia de marketing digital en Toledo. Qué preguntar, qué red flags detectar y cómo comparar propuestas antes de contratar."
+  },
+  {
+   "ruta": "/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/",
+   "url": "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Agentes de IA para marketing: qué son",
+   "description": "Qué son los agentes de IA para marketing, qué tareas pueden automatizar en una pyme y cómo empezar a usarlos con supervisión y sin perder el control."
+  },
+  {
+   "ruta": "/analitica-web/",
+   "url": "https://www.mktweb360.com/analitica-web/",
+   "tipo": "servicio",
+   "servicio": "analitica",
+   "title": "Analítica Web para Empresas: GA4 y GTM",
+   "description": "Analítica web para empresas: configuración de GA4 y Google Tag Manager, medición de conversiones y cuadros de mando para decidir con datos dónde invertir."
+  },
+  {
+   "ruta": "/atencion-cliente-24-7-pymes-sin-contratar-personal/",
+   "url": "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Atención al cliente 24/7 para pymes",
+   "description": "Cómo ofrecer atención al cliente 24/7 en una pyme con chatbots de IA sin contratar más personal: cómo funciona, qué cuesta y qué resultados esperar."
+  },
+  {
+   "ruta": "/atribucion-de-marketing-como-medir-impacto-real/",
+   "url": "https://www.mktweb360.com/atribucion-de-marketing-como-medir-impacto-real/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Atribución de marketing: cómo medir el impacto",
+   "description": "Modelos de atribución de marketing para pymes: qué son, cuál usar y cómo medir el impacto real de cada canal sin herramientas enterprise."
+  },
+  {
+   "ruta": "/auditoria-digital/",
+   "url": "https://www.mktweb360.com/auditoria-digital/",
+   "tipo": "servicio",
+   "servicio": "ia-chatbots",
+   "title": "Auditoría SEO gratuita de tu web en 24 h",
+   "description": "Auditoría SEO gratuita con visibilidad en IA y ficha de Google: errores técnicos, oportunidades, competencia y plan de mejora en 24 h laborables."
+  },
+  {
+   "ruta": "/auditoria-geo-aparecer-chatgpt-gemini-google/",
+   "url": "https://www.mktweb360.com/auditoria-geo-aparecer-chatgpt-gemini-google/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "Auditoría GEO: cómo saber si apareces en ChatGPT y Gemini | Mkt Web 360",
+   "description": "Auditoría GEO paso a paso: cómo comprobar si tu empresa aparece en ChatGPT, Perplexity, Gemini y la IA de Google, qué medir y qué hacer si no te mencionan."
+  },
+  {
+   "ruta": "/auditoria-google-ads-pymes-que-revisar/",
+   "url": "https://www.mktweb360.com/auditoria-google-ads-pymes-que-revisar/",
+   "tipo": "servicio",
+   "servicio": "google-ads",
+   "title": "Auditoría de Google Ads para pymes: qué revisar paso a paso | Mkt Web 360",
+   "description": "Cómo saber si estás tirando dinero en Google Ads: conversiones, términos de búsqueda, concordancias, ubicación, presupuesto y landing, paso a paso para pymes."
+  },
+  {
+   "ruta": "/auditoria-seo-basica/",
+   "url": "https://www.mktweb360.com/auditoria-seo-basica/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "Auditoría SEO básica: guía paso a paso",
+   "description": "Guía paso a paso para hacer una auditoría SEO básica. Qué herramientas usar, qué errores buscar y cómo priorizar las mejoras para aumentar el tráfico orgánico."
+  },
+  {
+   "ruta": "/aviso-legal/",
+   "url": "https://www.mktweb360.com/aviso-legal/",
+   "tipo": "institucional",
+   "servicio": null,
+   "title": "Aviso Legal",
+   "description": "Aviso legal y condiciones de uso del sitio web de Mkt Web 360 SLU, CIF B87679304."
+  },
+  {
+   "ruta": "/ayudas-digitalizar-pyme-2026-tras-kit-digital/",
+   "url": "https://www.mktweb360.com/ayudas-digitalizar-pyme-2026-tras-kit-digital/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Ayudas para digitalizar tu pyme en 2026 tras el Kit Digital | Mkt Web 360",
+   "description": "El Kit Digital cerró solicitudes en octubre de 2025. Qué ayudas quedan en 2026 para digitalizar tu pyme, qué hace la Orden TDF/39/2026 y cómo prepararte."
+  },
+  {
+   "ruta": "/blog-para-monetizacion/",
+   "url": "https://www.mktweb360.com/blog-para-monetizacion/",
+   "tipo": "institucional",
+   "servicio": "blog-monetizacion",
+   "title": "Creación de Blogs para Monetizar con AdSense",
+   "description": "Creamos tu blog de nicho para generar ingresos con AdSense y afiliación: setup de 990 € con dominio, hosting, 15 artículos SEO, monetización y formación."
+  },
+  {
+   "ruta": "/blog/",
+   "url": "https://www.mktweb360.com/blog/",
+   "tipo": "institucional",
+   "servicio": "blog-monetizacion",
+   "title": "Blog de Marketing Digital",
+   "description": "Blog de marketing digital: guías prácticas de SEO, posicionamiento en IA, Google Ads, redes sociales, diseño web y ecommerce para empresas, pymes y autónomos."
+  },
+  {
+   "ruta": "/brandformance-como-unir-marca-y-performance/",
+   "url": "https://www.mktweb360.com/brandformance-como-unir-marca-y-performance/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Brandformance: cómo unir marca y performance",
+   "description": "Qué es el brandformance y cómo combinar branding y performance marketing en una sola estrategia para reducir el coste por lead y crecer mejor."
+  },
+  {
+   "ruta": "/casos/",
+   "url": "https://www.mktweb360.com/casos/",
+   "tipo": "institucional",
+   "servicio": null,
+   "title": "Portfolio de Marketing Digital: Casos de Éxito",
+   "description": "Casos de éxito de Mkt Web 360: proyectos reales de SEO, diseño web, tiendas online y marketing digital para empresas de distintos sectores y sus resultados."
+  },
+  {
+   "ruta": "/chatbot-captacion-cualificacion-leads-guia-practica/",
+   "url": "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/",
+   "tipo": "articulo",
+   "servicio": "google-ads",
+   "title": "Chatbot para captar y cualificar leads",
+   "description": "Cómo usar un chatbot para captar leads 24/7, cualificarlos con las preguntas correctas y pasarlos a tu CRM con contexto. Guía práctica paso a paso."
+  },
+  {
+   "ruta": "/chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana/",
+   "url": "https://www.mktweb360.com/chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Chatbot con IA: RGPD y AI Act en España",
+   "description": "Qué exigen el RGPD y el AI Act a un chatbot con IA en España, las obligaciones de transparencia de 2026 y cómo convertir el cumplimiento en ventaja."
+  },
+  {
+   "ruta": "/chatbot-para-clinicas-centros-salud-automatizar-citas/",
+   "url": "https://www.mktweb360.com/chatbot-para-clinicas-centros-salud-automatizar-citas/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Chatbot para clínicas: citas automatizadas",
+   "description": "Chatbot para clínicas y centros de salud: automatiza citas, responde preguntas frecuentes y cualifica pacientes cumpliendo con el RGPD y la normativa sanitaria."
+  },
+  {
+   "ruta": "/chatbot-para-tienda-online-guia-completa-2026/",
+   "url": "https://www.mktweb360.com/chatbot-para-tienda-online-guia-completa-2026/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Chatbot para tienda online: guía completa",
+   "description": "Chatbot para tienda online: atención 24/7, recuperación de carritos, dudas de producto y estado de pedidos. Guía completa para vender más y atender mejor."
+  },
+  {
+   "ruta": "/chatbot-vs-live-chat-diferencias-cual-elegir-empresa/",
+   "url": "https://www.mktweb360.com/chatbot-vs-live-chat-diferencias-cual-elegir-empresa/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Chatbot vs live chat: cuál elegir",
+   "description": "Chatbot o live chat: diferencias reales, cuándo conviene cada uno y por qué la combinación adecuada suele funcionar mejor que elegir solo uno."
+  },
+  {
+   "ruta": "/chatbot-wordpress-como-instalarlo-que-evitar/",
+   "url": "https://www.mktweb360.com/chatbot-wordpress-como-instalarlo-que-evitar/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Chatbot para WordPress: cómo instalarlo",
+   "description": "Cómo instalar un chatbot en WordPress: qué plugins funcionan de verdad, qué errores evitar y qué resultados esperar de un chatbot útil en tu web."
+  },
+  {
+   "ruta": "/chatgpt-para-marketing-digital/",
+   "url": "https://www.mktweb360.com/chatgpt-para-marketing-digital/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "ChatGPT para marketing digital: guía práctica",
+   "description": "Guía práctica para usar ChatGPT en marketing digital. Qué tareas delegar, cómo mantener la voz de marca, prompts efectivos y qué no dejar en manos de la IA."
+  },
+  {
+   "ruta": "/como-crear-landing-page-que-convierte/",
+   "url": "https://www.mktweb360.com/como-crear-landing-page-que-convierte/",
+   "tipo": "articulo",
+   "servicio": "diseno-web",
+   "title": "Cómo crear una landing page que convierte",
+   "description": "Aprende a crear landing pages que convierten visitas en leads y clientes. Estructura, copy, CTA y errores que debes evitar. Guía con ejemplos reales."
+  },
+  {
+   "ruta": "/como-crear-propuesta-de-valor/",
+   "url": "https://www.mktweb360.com/como-crear-propuesta-de-valor/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Cómo crear una propuesta de valor que venda",
+   "description": "Una propuesta de valor clara es la base de cualquier estrategia de marketing efectiva. Aprende a construirla con ejemplos prácticos para pymes."
+  },
+  {
+   "ruta": "/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/",
+   "url": "https://www.mktweb360.com/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/",
+   "tipo": "articulo",
+   "servicio": "diseno-web",
+   "title": "Página web para pintores: cómo captar clientes",
+   "description": "Guía para pintores y empresas de pintura: secciones imprescindibles de la web, SEO local y ficha de Google para conseguir clientes desde Google."
+  },
+  {
+   "ruta": "/como-darse-de-alta-autonomo/",
+   "url": "https://www.mktweb360.com/como-darse-de-alta-autonomo/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Cómo darse de alta como autónomo en 2026",
+   "description": "Guía completa para darse de alta como autónomo en 2026. Pasos en Hacienda y Seguridad Social, cuota, errores frecuentes y qué necesitas tener listo."
+  },
+  {
+   "ruta": "/como-digitalizar-tu-negocio/",
+   "url": "https://www.mktweb360.com/como-digitalizar-tu-negocio/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Cómo digitalizar tu negocio: guía para pymes",
+   "description": "Digitalizar un negocio no significa comprar software caro. Descubre qué pasos dar primero, qué herramientas tienen sentido y cómo hacerlo con orden."
+  },
+  {
+   "ruta": "/como-elegir-agencia-marketing-digital-espana/",
+   "url": "https://www.mktweb360.com/como-elegir-agencia-marketing-digital-espana/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": null,
+   "description": null
+  },
+  {
+   "ruta": "/como-elegir-chatbot-para-empresa-checklist-2026/",
+   "url": "https://www.mktweb360.com/como-elegir-chatbot-para-empresa-checklist-2026/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Cómo elegir chatbot para tu empresa",
+   "description": "Checklist de 10 preguntas para elegir el chatbot adecuado para tu empresa, evitar los errores más frecuentes y elegir una solución que encaje de verdad."
+  },
+  {
+   "ruta": "/como-elegir-el-mejor-hosting-para-tu-web/",
+   "url": "https://www.mktweb360.com/como-elegir-el-mejor-hosting-para-tu-web/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Cómo elegir el mejor hosting para tu web",
+   "description": "Cómo elegir el mejor hosting para tu web: tipos de alojamiento, factores que importan, cómo afecta al SEO y recomendaciones según el tipo de proyecto."
+  },
+  {
+   "ruta": "/como-escribir-contenido-que-no-suene-a-ia/",
+   "url": "https://www.mktweb360.com/como-escribir-contenido-que-no-suene-a-ia/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Cómo escribir contenido que no suene a IA",
+   "description": "Técnicas concretas para escribir contenido que suene humano, auténtico y útil aunque uses herramientas de IA, y por qué el texto genérico no convierte."
+  },
+  {
+   "ruta": "/como-generar-leads-calidad-pyme/",
+   "url": "https://www.mktweb360.com/como-generar-leads-calidad-pyme/",
+   "tipo": "articulo",
+   "servicio": "google-ads",
+   "title": "Cómo generar leads de calidad para una pyme",
+   "description": "Cómo generar leads de calidad para tu pyme sin gastar más en publicidad: mensaje, segmentación, canales, web y un proceso comercial que convierte."
+  },
+  {
+   "ruta": "/como-gestionar-reputacion-online-empresa/",
+   "url": "https://www.mktweb360.com/como-gestionar-reputacion-online-empresa/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Cómo gestionar la reputación online",
+   "description": "La reputación online se construye o destruye en público. Descubre cómo gestionarla con criterio: reseñas, menciones, respuestas y prevención de crisis."
+  },
+  {
+   "ruta": "/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/",
+   "url": "https://www.mktweb360.com/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Cómo la IA está cambiando el marketing digital",
+   "description": "La IA ya es la infraestructura del marketing digital. Qué cambia, qué no cambia y qué debe hacer tu negocio para aprovecharla sin perder autenticidad."
+  },
+  {
+   "ruta": "/como-medir-roi-marketing-digital/",
+   "url": "https://www.mktweb360.com/como-medir-roi-marketing-digital/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Cómo medir el ROI del marketing digital",
+   "description": "Aprende a calcular y medir el ROI de tus inversiones en marketing digital. Google Analytics 4, atribución, métricas clave y errores que debes evitar."
+  },
+  {
+   "ruta": "/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/",
+   "url": "https://www.mktweb360.com/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/",
+   "tipo": "articulo",
+   "servicio": "seo",
+   "title": "Cómo lograr que la IA cite tu contenido",
+   "description": "Guía de GEO para pymes: cómo estructurar tu contenido, usar datos estructurados y llms.txt y ganar autoridad para que ChatGPT y Gemini te citen."
+  },
+  {
+   "ruta": "/como-puede-un-autonomo-conseguir-clientes-por-internet/",
+   "url": "https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Cómo conseguir clientes online siendo autónomo",
+   "description": "Descubre cómo puede un autónomo conseguir clientes por Internet con una base digital clara, rentable y sin depender solo del boca a boca."
+  },
+  {
+   "ruta": "/como-usar-planificador-de-palabras-clave-google-ads/",
+   "url": "https://www.mktweb360.com/como-usar-planificador-de-palabras-clave-google-ads/",
+   "tipo": "articulo",
+   "servicio": "google-ads",
+   "title": "Planificador de palabras clave de Google Ads",
+   "description": "Aprende a usar el Planificador de Palabras Clave de Google paso a paso. Encuentra keywords rentables, analiza volúmenes y construye tu estrategia desde cero."
+  },
+  {
+   "ruta": "/comunicacion-audiovisual/",
+   "url": "https://www.mktweb360.com/comunicacion-audiovisual/",
+   "tipo": "servicio",
+   "servicio": "audiovisual",
+   "title": "Vídeo Corporativo y Comunicación Audiovisual",
+   "description": "Comunicación audiovisual para empresas: vídeo corporativo, reels, spots, animaciones y fotografía profesional para comunicar, generar confianza y convertir."
+  },
+  {
+   "ruta": "/conectar-tpv-tienda-online/",
+   "url": "https://www.mktweb360.com/conectar-tpv-tienda-online/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Conectar el TPV con tu tienda online",
+   "description": "Guía para integrar tu TPV físico con WooCommerce. Stock unificado, ventas sincronizadas y gestión centralizada para negocios con presencia online y física."
+  },
+  {
+   "ruta": "/configurar-envios-woocommerce/",
+   "url": "https://www.mktweb360.com/configurar-envios-woocommerce/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Configurar envíos en WooCommerce para España",
+   "description": "Cómo configurar los envíos en WooCommerce: zonas, tarifas planas, envío gratis desde un importe e integración con Correos y otros transportistas."
+  },
+  {
+   "ruta": "/consultor-seo/",
+   "url": "https://www.mktweb360.com/consultor-seo/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "Consultor SEO: estrategia y auditoría SEO",
+   "description": "Consultoría SEO para empresas: auditoría técnica, estrategia de keywords y arquitectura, plan priorizado y acompañamiento con datos de Search Console."
+  },
+  {
+   "ruta": "/contacto/",
+   "url": "https://www.mktweb360.com/contacto/",
+   "tipo": "institucional",
+   "servicio": null,
+   "title": "Contacto: presupuesto de marketing digital",
+   "description": "Contacta con Mkt Web 360. Solicita tu presupuesto gratuito de marketing digital, SEO, Google Ads, redes sociales o diseño web. Tel: +34 622 748 987."
+  },
+  {
+   "ruta": "/creacion-de-blog/",
+   "url": "https://www.mktweb360.com/creacion-de-blog/",
+   "tipo": "servicio",
+   "servicio": "blog-monetizacion",
+   "title": "Creación de Blog Profesional para Empresas",
+   "description": "Creación y gestión de blogs corporativos para empresas: estrategia de contenidos, artículos SEO y enlazado que generan tráfico orgánico constante y contactos."
+  },
+  {
+   "ruta": "/cro-shopware-optimizar-conversion-tienda/",
+   "url": "https://www.mktweb360.com/cro-shopware-optimizar-conversion-tienda/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "CRO para Shopware: mejora la conversión",
+   "description": "Sube la conversión de tu tienda Shopware: eventos GA4 clave, las 5 causas reales de abandono de carrito y optimización de fichas de producto y checkout."
+  },
+  {
+   "ruta": "/cuando-elegir-seo-vs-google-ads/",
+   "url": "https://www.mktweb360.com/cuando-elegir-seo-vs-google-ads/",
+   "tipo": "articulo",
+   "servicio": "seo",
+   "title": "SEO o Google Ads: cuándo elegir cada uno",
+   "description": "Cómo decidir entre SEO y Google Ads según tu negocio, presupuesto, urgencia y horizonte temporal. Con ejemplos reales y una matriz de decisión práctica."
+  },
+  {
+   "ruta": "/cuanto-cuesta-agencia-marketing-digital-espana-2026/",
+   "url": "https://www.mktweb360.com/cuanto-cuesta-agencia-marketing-digital-espana-2026/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Cuánto cuesta una agencia de marketing digital",
+   "description": "Precios reales de agencias de marketing digital en España 2026: SEO, Google Ads y redes sociales. Lo que incluye cada rango y cómo no equivocarte al elegir."
+  },
+  {
+   "ruta": "/cuanto-cuesta-pagina-web-profesional/",
+   "url": "https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/",
+   "tipo": "articulo",
+   "servicio": "diseno-web",
+   "title": "Precio de una página web profesional en 2026",
+   "description": "Cuánto cuesta una página web profesional en 2026, qué influye de verdad en el precio y qué debe incluir para que te ayude a captar clientes."
+  },
+  {
+   "ruta": "/cuanto-cuesta-un-chatbot-para-empresas-espana-2026/",
+   "url": "https://www.mktweb360.com/cuanto-cuesta-un-chatbot-para-empresas-espana-2026/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Cuánto cuesta un chatbot para empresas",
+   "description": "Cuánto cuesta un chatbot para empresas en España en 2026: rangos de precio reales, qué incluye cada nivel y cuándo sale rentable para una pyme."
+  },
+  {
+   "ruta": "/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/",
+   "url": "https://www.mktweb360.com/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Cuota de autónomos 2026: tramos y cambios",
+   "description": "Cuota de autónomos 2026: tabla de tramos por rendimientos, MEI, tarifa plana de 80 € y cómo cambiar tu base de cotización durante el año."
+  },
+  {
+   "ruta": "/descubre-el-analisis-pestel-en-el-marketing-digital/",
+   "url": "https://www.mktweb360.com/descubre-el-analisis-pestel-en-el-marketing-digital/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Análisis PESTEL en marketing digital",
+   "description": "Descubre cómo aplicar el análisis PESTEL en tu estrategia de marketing digital. Factores Políticos, Económicos, Sociales, Tecnológicos, Ambientales y Legales."
+  },
+  {
+   "ruta": "/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/",
+   "url": "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/",
+   "tipo": "articulo",
+   "servicio": "redes-sociales",
+   "title": "Canvas para gestionar tus redes sociales",
+   "description": "Descubre cómo usar el modelo Canvas adaptado a las redes sociales para planificar tu estrategia de contenidos. Herramienta práctica para empresas."
+  },
+  {
+   "ruta": "/digitalizacion-empresas-castilla-la-mancha/",
+   "url": "https://www.mktweb360.com/digitalizacion-empresas-castilla-la-mancha/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Digitalizar empresas en Castilla-La Mancha",
+   "description": "Cómo digitalizar tu empresa en Castilla-La Mancha. Ayudas, herramientas y estrategia digital para PYMEs de la región. Guía actualizada 2025."
+  },
+  {
+   "ruta": "/diseno-de-paginas-web/",
+   "url": "https://www.mktweb360.com/diseno-de-paginas-web/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Diseño Web: Páginas Web Profesionales",
+   "description": "Diseño de páginas web profesionales para empresas: rápidas, listas para posicionar en Google y pensadas para convertir visitas en clientes. Presupuesto en 24 h."
+  },
+  {
+   "ruta": "/diseno-web-barcelona/",
+   "url": "https://www.mktweb360.com/diseno-web-barcelona/",
+   "tipo": "servicio",
+   "servicio": "diseno-web",
+   "title": "Diseño Web en Barcelona",
+   "description": "Guía para contratar diseño web en Barcelona. Precios orientativos, qué debe incluir una web profesional, cómo comparar agencias y errores que cuestan clientes."
+  },
+  {
+   "ruta": "/diseno-web-para-clinicas/",
+   "url": "https://www.mktweb360.com/diseno-web-para-clinicas/",
+   "tipo": "servicio",
+   "servicio": "diseno-web",
+   "title": "Diseño Web para Clínicas y Centros de Salud",
+   "description": "Diseño web para clínicas y centros de salud: webs optimizadas para SEO local y captación de pacientes en fisioterapia, psicología, estética y más."
+  },
+  {
+   "ruta": "/diseno-web-para-coaches/",
+   "url": "https://www.mktweb360.com/diseno-web-para-coaches/",
+   "tipo": "servicio",
+   "servicio": "diseno-web",
+   "title": "Diseño Web para Coaches",
+   "description": "Diseño web profesional para coaches, consultores y formadores. Web que transmite autoridad, capta leads y convierte visitas en clientes. Sin comisiones."
+  },
+  {
+   "ruta": "/diseno-web-para-dentistas/",
+   "url": "https://www.mktweb360.com/diseno-web-para-dentistas/",
+   "tipo": "servicio",
+   "servicio": "diseno-web",
+   "title": "Diseño Web para Dentistas y Clínicas",
+   "description": "Diseño web profesional para dentistas y clínicas dentales. Web optimizada para SEO local, Google Maps y captación de nuevos pacientes. Sin comisiones."
+  },
+  {
+   "ruta": "/diseno-web-pymes/",
+   "url": "https://www.mktweb360.com/diseno-web-pymes/",
+   "tipo": "servicio",
+   "servicio": "diseno-web",
+   "title": "Diseño web para pymes: qué debe tener tu web",
+   "description": "Guía de diseño web para PYMEs. Qué elementos no pueden faltar, qué errores evitar y cómo hacer que tu web genere clientes de forma constante."
+  },
+  {
+   "ruta": "/diseno-web-tienda-online/",
+   "url": "https://www.mktweb360.com/diseno-web-tienda-online/",
+   "tipo": "servicio",
+   "servicio": "diseno-web",
+   "title": "Diseño web para tienda online sin comisiones",
+   "description": "Diseño y desarrollo de tienda online profesional sin comisiones por venta ni licencias mensuales. WooCommerce, SEO incluido, desde 490€. Gestión autónoma."
+  },
+  {
+   "ruta": "/diseno-web-toledo/",
+   "url": "https://www.mktweb360.com/diseno-web-toledo/",
+   "tipo": "servicio",
+   "servicio": "diseno-web",
+   "title": "Diseño web en Toledo: webs profesionales",
+   "description": "Diseño de páginas web y tiendas online para negocios de Toledo, con SEO técnico desde el primer día. Sede en la provincia y precios desde 249 € + IVA."
+  },
+  {
+   "ruta": "/ecommerce-dropshipping-con-participacion/",
+   "url": "https://www.mktweb360.com/ecommerce-dropshipping-con-participacion/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Dropshipping con Participación en Resultados",
+   "description": "Montamos y gestionamos tu tienda de dropshipping con modelo híbrido: setup fijo, gestión mensual y participación en beneficios. Sin stock y con estrategia real."
+  },
+  {
+   "ruta": "/ecommerce-participacion-resultados/",
+   "url": "https://www.mktweb360.com/ecommerce-participacion-resultados/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Ecommerce con Participación en Resultados",
+   "description": "Modelo híbrido de ecommerce: montamos toda la infraestructura digital y participamos en el éxito. Setup fijo, gestión mensual y bonus por resultados."
+  },
+  {
+   "ruta": "/ejemplos-y-diferencias-entre-buscadores-y-navegadores/",
+   "url": "https://www.mktweb360.com/ejemplos-y-diferencias-entre-buscadores-y-navegadores/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Ejemplos y diferencias entre buscadores y navegadores web — Guía completa | Mkt Web 360",
+   "description": "Descubre las principales diferencias entre buscadores y navegadores con ejemplos reales. Guía clara para entender cómo funcionan Google, Chrome, Firefox y más."
+  },
+  {
+   "ruta": "/email-marketing-pymes/",
+   "url": "https://www.mktweb360.com/email-marketing-pymes/",
+   "tipo": "servicio",
+   "servicio": "email-marketing",
+   "title": "Email marketing para pymes: primeros pasos",
+   "description": "Guía de email marketing para PYMEs. Cómo empezar, qué herramientas usar, cómo construir tu lista y diseñar campañas que convierten. Resultados reales."
+  },
+  {
+   "ruta": "/email-marketing/",
+   "url": "https://www.mktweb360.com/email-marketing/",
+   "tipo": "servicio",
+   "servicio": "email-marketing",
+   "title": "Servicio de Email Marketing para Empresas",
+   "description": "Email marketing para empresas y pymes: newsletters, secuencias automatizadas, segmentación y campañas de captación medidas en ventas, no en aperturas."
+  },
+  {
+   "ruta": "/errores-digitales-negocio-nuevo/",
+   "url": "https://www.mktweb360.com/errores-digitales-negocio-nuevo/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "10 errores digitales al montar un negocio",
+   "description": "Arrancar un negocio con errores digitales cuesta dinero y tiempo. Descubre los más frecuentes y cómo evitarlos desde el principio."
+  },
+  {
+   "ruta": "/factura-electronica-obligatoria-autonomos-pymes/",
+   "url": "https://www.mktweb360.com/factura-electronica-obligatoria-autonomos-pymes/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Factura electrónica obligatoria en 2026",
+   "description": "La factura electrónica será obligatoria para autónomos y pymes. Descubre qué implica, cuándo entra en vigor, qué necesitas y cómo prepararte."
+  },
+  {
+   "ruta": "/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/",
+   "url": "https://www.mktweb360.com/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "GEO para pymes: cómo aparecer en ChatGPT",
+   "description": "Las pymes tienen una ventaja en GEO: la especialización. Guía práctica para que un negocio pequeño aparezca en las respuestas de ChatGPT, Gemini y Perplexity."
+  },
+  {
+   "ruta": "/geo-posicionamiento-ia-chatgpt-empresas-espana/",
+   "url": "https://www.mktweb360.com/geo-posicionamiento-ia-chatgpt-empresas-espana/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "Cómo aparecer en ChatGPT si tienes un negocio",
+   "description": "Qué es el GEO y cómo conseguir que ChatGPT, Gemini y Perplexity mencionen tu negocio cuando alguien pregunta por tu sector. Guía práctica para empresas."
+  },
+  {
+   "ruta": "/geo-posicionamiento-ia/",
+   "url": "https://www.mktweb360.com/geo-posicionamiento-ia/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "Agencia GEO: Posicionamiento en IA y ChatGPT",
+   "description": "Agencia GEO para que ChatGPT, Gemini, Copilot, la IA de Google y cualquier asistente recomienden tu empresa: auditoría en IA, contenido citable y datos estructurados."
+  },
+  {
+   "ruta": "/geo-shopware-agentic-commerce-chatgpt/",
+   "url": "https://www.mktweb360.com/geo-shopware-agentic-commerce-chatgpt/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "GEO para Shopware y Agentic Commerce",
+   "description": "Shopware 6.7.9 trae Agentic Commerce nativo. Prepara tu tienda con GEO para que ChatGPT y Perplexity recomienden y vendan tus productos directamente."
+  },
+  {
+   "ruta": "/geo-vs-seo-diferencias/",
+   "url": "https://www.mktweb360.com/geo-vs-seo-diferencias/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "GEO vs SEO: diferencias y cómo combinarlos",
+   "description": "Qué diferencia el GEO (Generative Engine Optimization) del SEO tradicional, por qué importan los dos y cómo integrar ambas estrategias para máxima visibilidad."
+  },
+  {
+   "ruta": "/gestion-resenas-negativas-google/",
+   "url": "https://www.mktweb360.com/gestion-resenas-negativas-google/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Eliminar reseñas negativas de Google: guía",
+   "description": "Cómo responder y gestionar reseñas negativas en Google, cuándo pedir su eliminación y plantillas de respuesta para convertir críticas en confianza."
+  },
+  {
+   "ruta": "/google-ads-espana-empresas-extranjeras/",
+   "url": "https://www.mktweb360.com/google-ads-espana-empresas-extranjeras/",
+   "tipo": "servicio",
+   "servicio": "google-ads",
+   "title": null,
+   "description": null
+  },
+  {
+   "ruta": "/google-ads-shopware-campanas-que-venden/",
+   "url": "https://www.mktweb360.com/google-ads-shopware-campanas-que-venden/",
+   "tipo": "servicio",
+   "servicio": "google-ads",
+   "title": "Google Ads para Shopware: campañas que venden",
+   "description": "Cómo montar Google Ads para tu tienda Shopware: tracking de conversiones, conexión con Merchant Center, Performance Max, Shopping y optimización por ROAS."
+  },
+  {
+   "ruta": "/google-ads-sin-comision-agencia-marketing/",
+   "url": "https://www.mktweb360.com/google-ads-sin-comision-agencia-marketing/",
+   "tipo": "servicio",
+   "servicio": "google-ads",
+   "title": "Google Ads sin comisión sobre tu inversión",
+   "description": "Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras y cómo evaluar el modelo de gestión que más te conviene."
+  },
+  {
+   "ruta": "/google-business-profile-toledo/",
+   "url": "https://www.mktweb360.com/google-business-profile-toledo/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Google Business Profile Toledo",
+   "description": "Cómo optimizar tu Google Business Profile si tienes un negocio en Toledo. Aparece en Google Maps y consigue más clientes locales. Guía paso a paso."
+  },
+  {
+   "ruta": "/google-business-profile/",
+   "url": "https://www.mktweb360.com/google-business-profile/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Gestión de Google Business Profile",
+   "description": "Gestión de tu ficha de Google Business Profile para aparecer en Google Maps cuando te buscan cerca: optimización, publicaciones, reseñas y seguimiento mensual."
+  },
+  {
+   "ruta": "/google-merchant-center-ecommerce-guia/",
+   "url": "https://www.mktweb360.com/google-merchant-center-ecommerce-guia/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Google Merchant Center para ecommerce: guía",
+   "description": "Aprende a configurar Google Merchant Center, crear tu feed de productos y aparecer en Google Shopping para aumentar las ventas de tu tienda online."
+  },
+  {
+   "ruta": "/google-my-business-empresas-guia/",
+   "url": "https://www.mktweb360.com/google-my-business-empresas-guia/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Google Business Profile: guía para empresas",
+   "description": "Aprende a optimizar tu ficha de Google Business Profile para aparecer en búsquedas locales, conseguir más reseñas y convertir visitas en clientes."
+  },
+  {
+   "ruta": "/google-shopping-tiendas-online/",
+   "url": "https://www.mktweb360.com/google-shopping-tiendas-online/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Google Shopping para Tiendas Online",
+   "description": "Guía completa de Google Shopping para ecommerce. Cómo configurar Merchant Center, optimizar el feed de productos y aumentar las ventas con Shopping Ads."
+  },
+  {
+   "ruta": "/ha-muerto-el-seo-con-la-ia/",
+   "url": "https://www.mktweb360.com/ha-muerto-el-seo-con-la-ia/",
+   "tipo": "articulo",
+   "servicio": "seo",
+   "title": "¿Ha muerto el SEO con la IA?",
+   "description": "Muchos creen que la IA ha matado el SEO. Analizamos por qué eso no es cierto y por qué IA + técnico cualificado es la fórmula ganadora."
+  },
+  {
+   "ruta": "/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/",
+   "url": "https://www.mktweb360.com/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Herramientas de IA para marketing en 2026",
+   "description": "Análisis honesto de las herramientas de IA para marketing digital que aportan valor real a pymes en 2026 y de las que no compensan el tiempo de aprendizaje."
+  },
+  {
+   "ruta": "/ia-aplicada-a-marketing-valor-real-o-humo/",
+   "url": "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "IA en marketing: dónde aporta valor real",
+   "description": "Descubre dónde la IA aplicada a marketing aporta valor real, qué usos conviene priorizar y dónde sigue habiendo demasiado ruido."
+  },
+  {
+   "ruta": "/ia-aplicada-al-marketing/",
+   "url": "https://www.mktweb360.com/ia-aplicada-al-marketing/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "IA Aplicada al Marketing Digital",
+   "description": "IA aplicada al marketing digital: integramos inteligencia artificial en SEO, contenidos, campañas y análisis con protocolos propios y criterio senior."
+  },
+  {
+   "ruta": "/importar-productos-woocommerce/",
+   "url": "https://www.mktweb360.com/importar-productos-woocommerce/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Importar productos en WooCommerce con CSV",
+   "description": "Aprende a importar productos en WooCommerce usando archivos CSV. Formato correcto, errores comunes y cómo subir miles de productos sin trabajo manual."
+  },
+  {
+   "ruta": "/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/",
+   "url": "https://www.mktweb360.com/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/",
+   "tipo": "articulo",
+   "servicio": "redes-sociales",
+   "title": "Qué poner en la biografía de Instagram",
+   "description": "Descubre qué poner en la biografía de Instagram de tu empresa para captar más seguidores y clientes. Ejemplos reales y consejos prácticos."
+  },
+  {
+   "ruta": "/link-building-pymes/",
+   "url": "https://www.mktweb360.com/link-building-pymes/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Link building para pymes sin spam",
+   "description": "Estrategias de link building para pequeñas empresas sin presupuesto para comprar enlaces. Cómo conseguir backlinks de calidad de forma natural y sostenible."
+  },
+  {
+   "ruta": "/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/",
+   "url": "https://www.mktweb360.com/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/",
+   "tipo": "articulo",
+   "servicio": "google-ads",
+   "title": "LinkedIn para pymes: cómo generar leads",
+   "description": "Cómo usar LinkedIn en 2026 si eres una pyme: algoritmo, vídeo, contenido de empleados y social selling para generar leads sin gastar en publicidad."
+  },
+  {
+   "ruta": "/marketing-de-contenidos/",
+   "url": "https://www.mktweb360.com/marketing-de-contenidos/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Marketing de Contenidos para Empresas",
+   "description": "Marketing de contenidos para empresas: estrategia editorial, artículos SEO, guías y contenido para redes que posiciona tu marca en Google y en la IA."
+  },
+  {
+   "ruta": "/marketing-digital-barcelona/",
+   "url": "https://www.mktweb360.com/marketing-digital-barcelona/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Marketing digital en Barcelona para empresas",
+   "description": "Qué canales de marketing digital funcionan mejor para negocios en Barcelona. SEO, Google Ads, redes sociales y estrategia omnicanal adaptada al mercado catalán."
+  },
+  {
+   "ruta": "/marketing-digital-con-ia-y-respuestas-cero-clic/",
+   "url": "https://www.mktweb360.com/marketing-digital-con-ia-y-respuestas-cero-clic/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Marketing con IA y búsquedas de cero clic",
+   "description": "Google, ChatGPT y Perplexity responden sin que el usuario haga clic. Cómo adaptar tu marketing digital para seguir captando clientes en la era del cero clic."
+  },
+  {
+   "ruta": "/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/",
+   "url": "https://www.mktweb360.com/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Marketing digital para autónomos: guía 2026",
+   "description": "Guía práctica de marketing digital para autónomos: SEO local, Google Business Profile, LinkedIn y contenido para conseguir clientes online por tu cuenta."
+  },
+  {
+   "ruta": "/marketing-digital-sevilla/",
+   "url": "https://www.mktweb360.com/marketing-digital-sevilla/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Marketing digital en Sevilla para empresas",
+   "description": "Marketing digital para negocios en Sevilla: SEO local, Google Ads y redes sociales, y cómo aprovechar el turismo y la estacionalidad de la ciudad."
+  },
+  {
+   "ruta": "/marketing-digital-toledo/",
+   "url": "https://www.mktweb360.com/marketing-digital-toledo/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Marketing digital en Toledo para empresas",
+   "description": "Guía de marketing digital para empresas en Toledo. SEO, Google Ads, redes sociales y diseño web para negocios toledanos que quieren crecer online."
+  },
+  {
+   "ruta": "/marketing-shopware/",
+   "url": "https://www.mktweb360.com/marketing-shopware/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Agencia Shopware: Marketing para Tiendas",
+   "description": "Agencia de marketing para tiendas Shopware: SEO, Google Ads, GEO y optimización de la conversión para tiendas ya construidas que necesitan vender más."
+  },
+  {
+   "ruta": "/metodos-pago-tienda-online-espana/",
+   "url": "https://www.mktweb360.com/metodos-pago-tienda-online-espana/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Métodos de Pago Tienda Online España",
+   "description": "Pasarelas de pago para tiendas online en España: Stripe, Bizum, PayPal y Redsys comparadas por comisiones, integración con WooCommerce y conversión."
+  },
+  {
+   "ruta": "/migrar-shopify-woocommerce/",
+   "url": "https://www.mktweb360.com/migrar-shopify-woocommerce/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Migrar de Shopify a WooCommerce sin perder SEO",
+   "description": "Guía completa para migrar de Shopify a WooCommerce. Qué datos migrar, cómo preservar el SEO, redireccionamientos y comparativa de costes a largo plazo."
+  },
+  {
+   "ruta": "/migrar-shopware-prestashop-woocommerce-seo/",
+   "url": "https://www.mktweb360.com/migrar-shopware-prestashop-woocommerce-seo/",
+   "tipo": "articulo",
+   "servicio": "seo",
+   "title": "Migrar a Shopware sin perder SEO",
+   "description": "Cómo migrar tu tienda a Shopware sin perder posicionamiento: auditoría de URLs, mapa de redirecciones 301, lanzamiento y seguimiento tras la migración."
+  },
+  {
+   "ruta": "/migrar-tienda-online-sin-perder-datos/",
+   "url": "https://www.mktweb360.com/migrar-tienda-online-sin-perder-datos/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Migrar una tienda online sin perder SEO",
+   "description": "Guía completa para migrar una tienda online a WooCommerce sin perder productos, clientes, pedidos ni posicionamiento en Google. Proceso y errores a evitar."
+  },
+  {
+   "ruta": "/nosotros/",
+   "url": "https://www.mktweb360.com/nosotros/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Quiénes Somos: Agencia de Marketing Digital",
+   "description": "Conoce Mkt Web 360: agencia de marketing digital con experiencia senior y protocolos propios de IA. Metodología, valores y forma de trabajar desde 2016."
+  },
+  {
+   "ruta": "/oferta-seo-geo-gbp/",
+   "url": "https://www.mktweb360.com/oferta-seo-geo-gbp/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO, GEO y ficha de Google por 349 €/mes",
+   "description": null
+  },
+  {
+   "ruta": "/oferta-web-seo-organico/",
+   "url": "https://www.mktweb360.com/oferta-web-seo-organico/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "Página web + 6 meses de SEO por 999 €",
+   "description": "Web profesional + 6 meses de SEO por 999 € + IVA, o solo la web desde 249 €. Hosting, dominio, correo corporativo, páginas legales y soporte incluidos."
+  },
+  {
+   "ruta": "/politica-de-cookies/",
+   "url": "https://www.mktweb360.com/politica-de-cookies/",
+   "tipo": "institucional",
+   "servicio": null,
+   "title": "Política de Cookies",
+   "description": "Información sobre el uso de cookies en el sitio web de Mkt Web 360 SLU conforme al art. 22 LSSI y el RGPD."
+  },
+  {
+   "ruta": "/politica-de-privacidad/",
+   "url": "https://www.mktweb360.com/politica-de-privacidad/",
+   "tipo": "institucional",
+   "servicio": null,
+   "title": "Política de Privacidad",
+   "description": "Política de privacidad y protección de datos personales de Mkt Web 360 SLU conforme al RGPD y la LOPDGDD."
+  },
+  {
+   "ruta": "/por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026/",
+   "url": "https://www.mktweb360.com/por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026/",
+   "tipo": "articulo",
+   "servicio": "seo",
+   "title": "Por qué aparecer en ChatGPT y Gemini importa",
+   "description": "Cada vez más gente pregunta a ChatGPT, Perplexity o Gemini antes que a Google. Por qué tu negocio debe aparecer en sus respuestas y cómo empezar con el GEO."
+  },
+  {
+   "ruta": "/precios-seo/",
+   "url": "https://www.mktweb360.com/precios-seo/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "Precios SEO: cuánto cuesta el posicionamiento",
+   "description": "Tarifas SEO publicadas, qué incluye cada una y qué hace variar el precio de un proyecto de posicionamiento."
+  },
+  {
+   "ruta": "/que-es-geo-generative-engine-optimization/",
+   "url": "https://www.mktweb360.com/que-es-geo-generative-engine-optimization/",
+   "tipo": "articulo",
+   "servicio": "seo",
+   "title": "Qué es el GEO (Generative Engine Optimization)",
+   "description": "GEO: qué es, cómo funciona y por qué optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini es la nueva frontera del SEO."
+  },
+  {
+   "ruta": "/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/",
+   "url": "https://www.mktweb360.com/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Qué es un chatbot para empresas",
+   "description": "Qué es un chatbot para empresas, qué puede hacer por una pyme (atención, captación de leads, ventas) y cuándo compensa implantarlo. Guía completa."
+  },
+  {
+   "ruta": "/que-puede-automatizar-una-pyme-en-marketing-y-ventas/",
+   "url": "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Qué puede automatizar una pyme en marketing",
+   "description": "Descubre qué procesos puede automatizar una pyme en marketing y ventas para ahorrar tiempo, mejorar seguimiento y captar mejor."
+  },
+  {
+   "ruta": "/que-revisar-antes-de-invertir-mas-en-marketing-digital/",
+   "url": "https://www.mktweb360.com/que-revisar-antes-de-invertir-mas-en-marketing-digital/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Qué revisar antes de invertir en marketing",
+   "description": "Antes de invertir más en marketing digital, revisa estas áreas clave para no amplificar errores y tomar mejores decisiones."
+  },
+  {
+   "ruta": "/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/",
+   "url": "https://www.mktweb360.com/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/",
+   "tipo": "servicio",
+   "servicio": "redes-sociales",
+   "title": "Redes sociales para empresas: qué funciona",
+   "description": "Qué funciona en redes sociales para empresas en 2026 según el estudio de Cyberclick y Metricool: TikTok, Instagram y LinkedIn y qué implica para tu estrategia."
+  },
+  {
+   "ruta": "/redes-sociales-para-empresas-b2b-2026/",
+   "url": "https://www.mktweb360.com/redes-sociales-para-empresas-b2b-2026/",
+   "tipo": "servicio",
+   "servicio": "redes-sociales",
+   "title": "Redes sociales para empresas B2B en 2026",
+   "description": "Guía práctica de social media B2B para 2026: qué redes priorizar, qué contenido genera leads y cómo medir el retorno real de tu inversión en redes sociales."
+  },
+  {
+   "ruta": "/reputacion-online/",
+   "url": "https://www.mktweb360.com/reputacion-online/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Gestión de Reputación Online para Empresas",
+   "description": "Gestión de la reputación online de tu empresa: monitorización, respuesta a reseñas en Google, gestión de opiniones negativas e informes mensuales."
+  },
+  {
+   "ruta": "/resenas-google-como-conseguirlas-legalmente/",
+   "url": "https://www.mktweb360.com/resenas-google-como-conseguirlas-legalmente/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Reseñas en Google: cómo conseguirlas legalmente en 2026 | Mkt Web 360",
+   "description": "Cómo conseguir más reseñas en Google sin infringir las políticas ni la ley española: qué está prohibido, cómo pedirlas bien y cómo responder a las negativas."
+  },
+  {
+   "ruta": "/sem-publicidad-ppc/",
+   "url": "https://www.mktweb360.com/sem-publicidad-ppc/",
+   "tipo": "articulo",
+   "servicio": "google-ads",
+   "title": "Agencia Google Ads: Gestión de Campañas SEM",
+   "description": "Agencia Google Ads sin comisión sobre tu inversión: creamos y gestionamos campañas SEM orientadas a conversiones, con medición configurada desde el primer día."
+  },
+  {
+   "ruta": "/senales-web-necesita-rediseno/",
+   "url": "https://www.mktweb360.com/senales-web-necesita-rediseno/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "Señales de que tu web necesita un rediseño",
+   "description": "Descubre las señales más claras de que tu web está frenando ventas y cuándo conviene rediseñar en lugar de seguir optimizando."
+  },
+  {
+   "ruta": "/seo-bilbao/",
+   "url": "https://www.mktweb360.com/seo-bilbao/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO en Bilbao: posiciona tu negocio",
+   "description": "Guía de SEO local para negocios en Bilbao y el País Vasco. Estrategia de posicionamiento, Google Business Profile, keywords en euskera y castellano."
+  },
+  {
+   "ruta": "/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/",
+   "url": "https://www.mktweb360.com/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO en la era de la IA: cómo posicionarse",
+   "description": "Google responde cada vez más con IA generativa. Cómo adaptar tu estrategia SEO para seguir captando tráfico cuando la respuesta aparece antes que tu web."
+  },
+  {
+   "ruta": "/seo-espana-empresas-extranjeras/",
+   "url": "https://www.mktweb360.com/seo-espana-empresas-extranjeras/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": null,
+   "description": null
+  },
+  {
+   "ruta": "/seo-local-empresas-servicios/",
+   "url": "https://www.mktweb360.com/seo-local-empresas-servicios/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO local para empresas de servicios",
+   "description": "Aprende qué necesita una empresa de servicios para mejorar su presencia local y captar más clientes desde Google en su zona."
+  },
+  {
+   "ruta": "/seo-local/",
+   "url": "https://www.mktweb360.com/seo-local/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO Local: Posicionamiento en tu Zona",
+   "description": "Servicio de SEO local para captar clientes de tu zona: Google Maps, Google Business Profile, reseñas y páginas locales, para negocios con o sin local físico."
+  },
+  {
+   "ruta": "/seo-madrid/",
+   "url": "https://www.mktweb360.com/seo-madrid/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO en Madrid: posiciona tu negocio",
+   "description": "Guía de SEO para negocios en Madrid. Competencia, keywords locales, Google Business Profile y estrategia para destacar en el mercado más competitivo de España."
+  },
+  {
+   "ruta": "/seo-para-clinicas-centros-salud-captar-pacientes-google/",
+   "url": "https://www.mktweb360.com/seo-para-clinicas-centros-salud-captar-pacientes-google/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO para clínicas: cómo captar pacientes",
+   "description": "SEO para clínicas dentales, fisioterapia y centros de salud: ficha de Google, contenido sanitario fiable y SEO local para captar más pacientes desde Google."
+  },
+  {
+   "ruta": "/seo-para-ecommerce-errores-que-frenan-ventas/",
+   "url": "https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO para ecommerce: errores que frenan ventas",
+   "description": "Los errores SEO más comunes en tiendas online y qué revisar para ganar visibilidad, atraer tráfico cualificado y vender más desde Google."
+  },
+  {
+   "ruta": "/seo-para-servicios-urgentes-24h/",
+   "url": "https://www.mktweb360.com/seo-para-servicios-urgentes-24h/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO para servicios urgentes 24 horas",
+   "description": "Cómo posicionar servicios urgentes 24 horas en Google. Estrategias SEO específicas para cerrajeros, fontaneros, electricistas y otros servicios de urgencia."
+  },
+  {
+   "ruta": "/seo-posicionamiento-web-organico/",
+   "url": "https://www.mktweb360.com/seo-posicionamiento-web-organico/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "Agencia SEO: Servicio de Posicionamiento Web",
+   "description": "Agencia SEO para empresas: posicionamiento web con auditoría técnica, estrategia de keywords, contenido y autoridad. Informes mensuales y sin permanencia."
+  },
+  {
+   "ruta": "/seo-shopware-posicionar-tienda-google/",
+   "url": "https://www.mktweb360.com/seo-shopware-posicionar-tienda-google/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO para Shopware: posiciona tu tienda",
+   "description": "Guía de SEO técnico para Shopware 6: URLs, navegación facetada, schema de producto, Core Web Vitals y fichas optimizadas para posicionar tu tienda en Google."
+  },
+  {
+   "ruta": "/seo-social-instagram-tiktok-linkedin-como-buscadores/",
+   "url": "https://www.mktweb360.com/seo-social-instagram-tiktok-linkedin-como-buscadores/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO social: Instagram, TikTok y LinkedIn",
+   "description": "SEO social: cómo optimizar tu presencia en los buscadores internos de Instagram, TikTok y LinkedIn, con estrategias concretas para cada plataforma."
+  },
+  {
+   "ruta": "/seo-toledo/",
+   "url": "https://www.mktweb360.com/seo-toledo/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "Cómo hacer SEO en Toledo: guía para negocios",
+   "description": "Cómo mejorar el SEO de tu negocio en Toledo. Aparece en Google cuando tus clientes te buscan. Guía de posicionamiento web para empresas toledanas."
+  },
+  {
+   "ruta": "/seo-valencia/",
+   "url": "https://www.mktweb360.com/seo-valencia/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO en Valencia — Posicionamiento Local",
+   "description": "Guía de SEO local para negocios en Valencia. Posicionamiento, Google Business Profile, keywords en valenciano y castellano, y estrategia para cada sector."
+  },
+  {
+   "ruta": "/seo-zaragoza/",
+   "url": "https://www.mktweb360.com/seo-zaragoza/",
+   "tipo": "servicio",
+   "servicio": "seo",
+   "title": "SEO en Zaragoza — Posicionamiento Local",
+   "description": "SEO local para negocios en Zaragoza: posicionamiento en Google, ficha de Google Business Profile, contenido local y sectores con más oportunidad."
+  },
+  {
+   "ruta": "/smm-social-media-marketing/",
+   "url": "https://www.mktweb360.com/smm-social-media-marketing/",
+   "tipo": "articulo",
+   "servicio": "redes-sociales",
+   "title": "Gestión de Redes Sociales para Empresas",
+   "description": "Gestión de redes sociales para empresas: estrategia, contenido y community management en Instagram, Facebook, LinkedIn y TikTok, con informe mensual."
+  },
+  {
+   "ruta": "/tienda-online/",
+   "url": "https://www.mktweb360.com/tienda-online/",
+   "tipo": "servicio",
+   "servicio": "tienda-online",
+   "title": "Tienda Online desde 490 € sin Comisiones",
+   "description": "Crea tu tienda online profesional desde 490 €: sin comisiones por venta ni licencias mensuales, diseño personalizado y SEO técnico desde el primer día."
+  },
+  {
+   "ruta": "/tiendas-online-toledo/",
+   "url": "https://www.mktweb360.com/tiendas-online-toledo/",
+   "tipo": "servicio",
+   "servicio": "tienda-online",
+   "title": "Tiendas online en Toledo: vende a toda España",
+   "description": "Crea tu tienda online en Toledo y vende a toda España. Sin comisiones ni licencias mensuales. Guía para negocios toledanos que quieren vender por internet."
+  },
+  {
+   "ruta": "/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/",
+   "url": "https://www.mktweb360.com/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/",
+   "tipo": "articulo",
+   "servicio": "ia-chatbots",
+   "title": "Análisis DAFO en marketing: guía completa",
+   "description": "Qué es el análisis DAFO y cómo aplicarlo a tu estrategia de marketing digital: debilidades, amenazas, fortalezas y oportunidades con ejemplos prácticos."
+  },
+  {
+   "ruta": "/whatsapp-business-para-empresas/",
+   "url": "https://www.mktweb360.com/whatsapp-business-para-empresas/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "WhatsApp Business para empresas: guía 2026",
+   "description": "Cómo usar WhatsApp Business para captar y fidelizar clientes. Configuración, automatizaciones, catálogo y estrategia para empresas. Guía actualizada 2025."
+  },
+  {
+   "ruta": "/whatsapp-marketing/",
+   "url": "https://www.mktweb360.com/whatsapp-marketing/",
+   "tipo": "articulo",
+   "servicio": null,
+   "title": "WhatsApp Marketing para Empresas",
+   "description": "WhatsApp marketing para empresas: WhatsApp Business y su API, campañas, automatizaciones y seguimiento de contactos para vender y fidelizar clientes."
+  },
+  {
+   "ruta": "/woocommerce-vs-shopify-cual-elegir-tienda-online/",
+   "url": "https://www.mktweb360.com/woocommerce-vs-shopify-cual-elegir-tienda-online/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "WooCommerce vs Shopify: cuál elegir en 2026",
+   "description": "WooCommerce o Shopify: comparativa honesta de control, comisiones, facilidad y coste real a 3 años, con una recomendación según el tipo de negocio."
+  }
+ ]
+}
