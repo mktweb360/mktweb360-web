@@ -4,7 +4,7 @@
 // No se guardan conversaciones en el servidor: solo se envían a MktOS si el visitante deja sus datos.
 import { NextRequest, NextResponse } from "next/server";
 
-import { reply, readState, signState } from "@/lib/chatbot/engine";
+import { reply, readState, signReply, signState } from "@/lib/chatbot/engine";
 import { LIMITS, type Lang } from "@/lib/chatbot/core";
 
 export const runtime = "nodejs";
@@ -21,12 +21,13 @@ function allow(ip: string): boolean {
   if (e.t.length >= 30 || e.dayN >= 120) { hits.set(ip, e); return false; }
   e.t.push(now);
   e.dayN++;
-  hits.set(ip, e);
-  if (hits.size > 5000) hits.clear();
+  hits.delete(ip);
+  hits.set(ip, e); // el Map conserva el orden de inserción: las IP menos recientes quedan al principio
+  if (hits.size > 5000) for (const k of [...hits.keys()].slice(0, 1000)) hits.delete(k);
   return true;
 }
 
-const ORIGINS = /^https:\/\/(www\.)?mktweb360\.com$|^https:\/\/mktweb360-web[a-z0-9-]*\.vercel\.app$|^http:\/\/localhost(:\d+)?$/;
+const ORIGINS = /^https:\/\/(www\.)?mktweb360\.com$|^https:\/\/mktweb360-web-[a-z0-9-]+-mktweb360-9918s-projects\.vercel\.app$|^http:\/\/localhost(:\d+)?$/;
 
 export async function POST(req: NextRequest) {
   const origin = req.headers.get("origin");
@@ -37,6 +38,7 @@ export async function POST(req: NextRequest) {
 
   let body: Record<string, unknown>;
   try { body = await req.json(); } catch { return NextResponse.json({ error: "Petición no válida" }, { status: 400 }); }
+  if (!body || typeof body !== "object" || Array.isArray(body)) return NextResponse.json({ error: "Petición no válida" }, { status: 400 });
 
   const message = typeof body.message === "string" ? body.message.slice(0, LIMITS.maxChars + 200) : "";
   if (!message.trim()) return NextResponse.json({ error: "Mensaje vacío" }, { status: 400 });
@@ -46,16 +48,36 @@ export async function POST(req: NextRequest) {
   const path = typeof p.path === "string" && p.path.startsWith("/") ? p.path.slice(0, 300) : "/";
   const title = typeof p.title === "string" ? p.title.slice(0, 200) : undefined;
 
-  const history = (Array.isArray(body.history) ? body.history : [])
-    .filter((m): m is { role: "user" | "assistant"; content: string } =>
-      !!m && typeof m === "object" && (m.role === "user" || m.role === "assistant") && typeof m.content === "string")
-    .slice(-10)
-    .map((m) => ({ role: m.role, content: m.content.slice(0, 1500) }));
-  // La API exige que la conversación empiece por el visitante.
-  while (history.length && history[0].role !== "user") history.shift();
+  try {
+    const st = await readState(body.token);
+    // Historial: los mensajes del asistente solo se aceptan si llevan la firma que emitió este servidor
+    // (así no se pueden inyectar respuestas falsas); los del visitante se recortan. Máximo ~3.000 caracteres.
+    const raw = (Array.isArray(body.history) ? body.history : []).slice(-10) as { role?: unknown; content?: unknown; sig?: unknown }[];
+    const history: { role: "user" | "assistant"; content: string }[] = [];
+    let total = 0;
+    for (const m of raw.reverse()) {
+      if (!m || typeof m !== "object" || typeof m.content !== "string") continue;
+      const content = m.content.slice(0, m.role === "user" ? LIMITS.maxChars : 1200);
+      if (m.role === "assistant") {
+        if (typeof m.sig !== "string" || m.sig !== (await signReply(st.sid, m.content))) continue;
+      } else if (m.role !== "user") continue;
+      if (total + content.length > 3000) break;
+      total += content.length;
+      history.unshift({ role: m.role as "user" | "assistant", content });
+    }
+    // La API exige alternar turnos y empezar por el visitante.
+    const clean: typeof history = [];
+    for (const m of history) if (!clean.length ? m.role === "user" : clean[clean.length - 1].role !== m.role) clean.push(m);
+    if (clean.length && clean[clean.length - 1].role === "user") clean.pop();
 
-  const st = await readState(body.token);
-  const { reply: r, state, costUsd } = await reply(message, st, { path, lang, title }, history);
-  if (r.modo === "ia") console.info(`[chatbot] ia sid=${state.sid.slice(0, 8)} n=${state.n} coste=$${costUsd.toFixed(5)}`);
-  return NextResponse.json({ reply: r, token: await signState(state) }, { headers: { "Cache-Control": "no-store" } });
+    const { reply: r, state, costUsd } = await reply(message, st, { path, lang, title }, clean);
+    if (r.modo === "ia") console.info(`[chatbot] ia sid=${state.sid.slice(0, 8)} n=${state.n} coste=$${costUsd.toFixed(5)}`);
+    return NextResponse.json(
+      { reply: r, sig: await signReply(state.sid, r.text), token: await signState(state) },
+      { headers: { "Cache-Control": "no-store" } },
+    );
+  } catch (e) {
+    console.error("[chatbot] error:", e instanceof Error ? e.message : e);
+    return NextResponse.json({ error: "El asistente no está disponible ahora mismo. Escríbenos por WhatsApp al 622 74 89 87 o desde el formulario de contacto." }, { status: 503 });
+  }
 }

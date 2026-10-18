@@ -80,6 +80,11 @@ export const TXT = {
     en: ["Great, that helps. The best start is usually a diagnosis of your visibility on Google and AI, and then a tailored proposal. Shall we prepare one, no obligation?"],
     fr: ["Parfait. Le mieux est de commencer par un diagnostic de votre visibilité sur Google et l'IA, puis une proposition sur mesure. On vous la prépare, sans engagement ?"],
   } as T,
+  iva: {
+    es: ["Los precios que publicamos son sin IVA, salvo que se indique lo contrario; a los servicios se les suma el 21 %. Si quieres una cifra cerrada para tu caso, te preparamos un presupuesto: ¿te lo pido?"],
+    en: ["Our published prices exclude VAT unless stated otherwise; 21% Spanish VAT is added to services. For a firm figure for your case, we can prepare a quote: shall I request one?"],
+    fr: ["Nos prix publiés sont hors TVA, sauf mention contraire ; la TVA espagnole de 21 % s'ajoute aux services. Pour un chiffre précis, nous préparons un devis : je le demande ?"],
+  } as T,
   masInfo: {
     es: ["Más información:"],
     en: ["More information:"],

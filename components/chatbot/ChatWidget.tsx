@@ -16,6 +16,7 @@ interface Msg {
   link?: { href: string; label: string };
   actions?: Action[];
   chips?: string[];
+  sig?: string;
 }
 
 const UI: Record<Lang, Record<string, string>> = {
@@ -51,7 +52,7 @@ const UI: Record<Lang, Record<string, string>> = {
   },
 };
 
-const HIDDEN = /^\/(area-privada|admin|api)(\/|$)/;
+const HIDDEN = /^\/(area-privada|portal|admin|api)(\/|$)/;
 const KEY = "mw360_chat_v1";
 
 function langOf(path: string): Lang {
@@ -78,6 +79,7 @@ export function ChatWidget() {
   const [busy, setBusy] = useState(false);
   const [form, setForm] = useState<null | "presupuesto" | "contacto">(null);
   const listRef = useRef<HTMLDivElement>(null);
+  const launcherRef = useRef<HTMLButtonElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Recupera la conversación de esta pestaña al navegar entre páginas.
@@ -104,6 +106,14 @@ export function ChatWidget() {
     return () => clearInterval(iv);
   }, [pathname, lang]);
 
+  // Escape cierra el asistente y el foco vuelve al botón.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setOpen(false); setTimeout(() => launcherRef.current?.focus(), 0); } };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   useEffect(() => { listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: "smooth" }); }, [msgs, form, open]);
 
   const openChat = useCallback(() => {
@@ -121,7 +131,7 @@ export function ChatWidget() {
     if (!msg || busy || closed) return;
     if (msg === t.quote) { setMsgs((m) => [...m, { role: "user", content: msg }, { role: "assistant", content: pick(TXT.presupuesto, lang, 0) }]); setForm("presupuesto"); return; }
     if (msg === t.human) { setMsgs((m) => [...m, { role: "user", content: msg }, { role: "assistant", content: pick(TXT.persona, lang, 0), actions: ["contacto"] }]); return; }
-    const history = msgs.filter((m) => m.content).map((m) => ({ role: m.role, content: m.content })).slice(-10);
+    const history = msgs.filter((m) => m.content).map((m) => ({ role: m.role, content: m.content, sig: m.sig })).slice(-10);
     setMsgs((m) => [...m, { role: "user", content: msg }]);
     setInput("");
     setBusy(true);
@@ -135,19 +145,13 @@ export function ChatWidget() {
       if (!r.ok) throw new Error(j.error || "error");
       setToken(j.token);
       const rep = j.reply as { text: string; link?: Msg["link"]; actions: Action[]; chips: string[]; closed: boolean };
-      setMsgs((m) => [...m, { role: "assistant", content: rep.text, link: rep.link, actions: rep.actions, chips: rep.chips }]);
+      setMsgs((m) => [...m, { role: "assistant", content: rep.text, link: rep.link, actions: rep.actions, chips: rep.chips, sig: j.sig }]);
       if (rep.closed) setClosed(true);
     } catch (e) {
       setMsgs((m) => [...m, { role: "assistant", content: e instanceof Error && e.message !== "error" ? e.message : t.error, actions: ["contacto"] }]);
     } finally {
       setBusy(false);
     }
-  }
-
-  function restart() {
-    setMsgs([]); setToken(null); setClosed(false); setForm(null);
-    try { sessionStorage.removeItem(KEY); } catch { /* nada */ }
-    setTimeout(openChat, 0);
   }
 
   if (HIDDEN.test(pathname)) return null;
@@ -165,7 +169,7 @@ export function ChatWidget() {
               <span aria-hidden className="absolute -right-[7px] top-[18px] h-0 w-0 border-y-[6px] border-l-[8px] border-y-transparent border-l-white" />
             </div>
           )}
-          <button onClick={openChat} aria-label={t.open}
+          <button ref={launcherRef} onClick={openChat} aria-label={t.open}
             className="relative grid h-14 w-14 place-items-center rounded-full bg-[#0f1c2e] text-white shadow-lg ring-2 ring-white transition hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f97316]">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.2 3.6c-.5.4-1.3.1-1.3-.6V16A2.5 2.5 0 0 1 4 13.5v-8Z" fill="currentColor"/><circle cx="8.5" cy="9.5" r="1.2" fill="#0f1c2e"/><circle cx="12" cy="9.5" r="1.2" fill="#0f1c2e"/><circle cx="15.5" cy="9.5" r="1.2" fill="#0f1c2e"/></svg>
             <span className="absolute right-0.5 top-0.5 h-3.5 w-3.5 rounded-full border-2 border-white bg-[#f97316]" aria-hidden />
@@ -174,7 +178,7 @@ export function ChatWidget() {
       )}
 
       {open && (
-        <section role="dialog" aria-label={t.title}
+        <section role="dialog" aria-modal="false" aria-label={t.title}
           className="fixed z-[56] flex flex-col overflow-hidden bg-white text-[#0f1c2e] shadow-2xl inset-0 sm:inset-auto sm:right-4 sm:top-[76px] sm:h-[min(620px,calc(100vh-96px))] sm:w-[390px] sm:rounded-2xl sm:border sm:border-gray-200">
           <header className="flex items-center gap-3 bg-[#0f1c2e] px-4 py-3 text-white" style={{ paddingTop: "max(12px, env(safe-area-inset-top, 0px))" }}>
             <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden><rect x="1" y="14" width="8" height="17" rx="1" fill="rgba(255,255,255,.65)"/><rect x="12" y="8" width="8" height="23" rx="1" fill="rgba(255,255,255,.65)"/><rect x="23" y="2" width="8" height="29" rx="1" fill="#f97316"/></svg>
@@ -182,7 +186,7 @@ export function ChatWidget() {
               <p className="text-[15px] font-bold leading-tight">{t.title}</p>
               <p className="text-[12px] text-white/70">{t.sub}</p>
             </div>
-            <button onClick={() => setOpen(false)} aria-label={t.close} className="grid h-9 w-9 place-items-center rounded-full hover:bg-white/10">
+            <button onClick={() => { setOpen(false); setTimeout(() => launcherRef.current?.focus(), 0); }} aria-label={t.close} className="grid h-9 w-9 place-items-center rounded-full hover:bg-white/10">
               <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/></svg>
             </button>
           </header>
@@ -209,14 +213,13 @@ export function ChatWidget() {
             {form && <LeadForm kind={form} t={t} lang={lang} token={token} transcript={msgs} page={pathname}
               onDone={(ok) => { setForm(null); if (ok) { setMsgs((m) => [...m, { role: "assistant", content: pick(TXT.leadOk, lang, 0) }]); trackLead("chatbot", { chatbot_kind: form }); } }}
               onCancel={() => setForm(null)} />}
-            {closed && <button onClick={restart} className="mx-auto block text-[12.5px] text-gray-500 underline">{t.restart}</button>}
           </div>
 
           <form onSubmit={(e) => { e.preventDefault(); send(input); }} className="flex items-center gap-2 border-t border-gray-200 bg-white px-3 py-2.5" style={{ paddingBottom: "max(10px, env(safe-area-inset-bottom, 0px))" }}>
             <label htmlFor="mw360-chat-input" className="sr-only">{t.placeholder}</label>
             <input id="mw360-chat-input" ref={inputRef} value={input} onChange={(e) => setInput(e.target.value)} maxLength={600} disabled={closed}
               placeholder={t.placeholder} autoComplete="off"
-              className="min-w-0 flex-1 rounded-full border border-gray-300 px-4 py-2.5 text-[14px] outline-none focus:border-[#f97316] disabled:bg-gray-100" />
+              className="min-w-0 flex-1 rounded-full border border-gray-300 px-4 py-2.5 text-base sm:text-[14px] outline-none focus:border-[#f97316] disabled:bg-gray-100" />
             <button type="submit" disabled={busy || closed || !input.trim()} aria-label={t.send}
               className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#f97316] text-white disabled:opacity-40">
               <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden><path d="M4 12l16-8-6 16-2.5-6.5L4 12Z" fill="currentColor"/></svg>
@@ -251,7 +254,7 @@ function LeadForm({ kind, t, lang, token, transcript, page, onDone, onCancel }: 
   const [st, setSt] = useState<"idle" | "sending" | "error">("idle");
   const [err, setErr] = useState("");
   const set = (k: string, val: string | boolean) => setV((x) => ({ ...x, [k]: val }));
-  const field = "w-full rounded-lg border border-gray-300 px-3 py-2 text-[14px] outline-none focus:border-[#f97316]";
+  const field = "w-full rounded-lg border border-gray-300 px-3 py-2 text-base sm:text-[14px] outline-none focus:border-[#f97316]";
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -271,12 +274,12 @@ function LeadForm({ kind, t, lang, token, transcript, page, onDone, onCancel }: 
 
   return (
     <form onSubmit={submit} className="space-y-2.5 rounded-2xl border border-gray-200 bg-white p-3.5 text-[13.5px]">
-      <input id="mw360-l-name" required placeholder={t.name} value={v.name} onChange={(e) => set("name", e.target.value)} className={field} autoComplete="name" />
-      <input id="mw360-l-email" required type="email" placeholder={t.email} value={v.email} onChange={(e) => set("email", e.target.value)} className={field} autoComplete="email" />
-      <input id="mw360-l-phone" type="tel" placeholder={t.phone} value={v.phone} onChange={(e) => set("phone", e.target.value)} className={field} autoComplete="tel"
+      <input id="mw360-l-name" aria-label={t.name} required placeholder={t.name} value={v.name} onChange={(e) => set("name", e.target.value)} className={field} autoComplete="name" />
+      <input id="mw360-l-email" aria-label={t.email} required type="email" placeholder={t.email} value={v.email} onChange={(e) => set("email", e.target.value)} className={field} autoComplete="email" />
+      <input id="mw360-l-phone" aria-label={t.phone} type="tel" placeholder={t.phone} value={v.phone} onChange={(e) => set("phone", e.target.value)} className={field} autoComplete="tel"
         required={v.preference !== "email"} />
-      <input id="mw360-l-business" placeholder={t.business} value={v.business} onChange={(e) => set("business", e.target.value)} className={field} />
-      {kind === "presupuesto" && <textarea id="mw360-l-need" placeholder={t.need} value={v.need} onChange={(e) => set("need", e.target.value)} className={field} rows={2} />}
+      <input id="mw360-l-business" aria-label={t.business} placeholder={t.business} value={v.business} onChange={(e) => set("business", e.target.value)} className={field} />
+      {kind === "presupuesto" && <textarea id="mw360-l-need" aria-label={t.need} placeholder={t.need} value={v.need} onChange={(e) => set("need", e.target.value)} className={field} rows={2} />}
       <fieldset className="space-y-1">
         <legend className="text-[12.5px] text-gray-600">{t.pref}</legend>
         <div className="flex flex-wrap gap-3">
@@ -285,7 +288,7 @@ function LeadForm({ kind, t, lang, token, transcript, page, onDone, onCancel }: 
           ))}
         </div>
       </fieldset>
-      {v.preference === "llamada" && <input id="mw360-l-slot" placeholder={t.slot} value={v.slot} onChange={(e) => set("slot", e.target.value)} className={field} />}
+      {v.preference === "llamada" && <input id="mw360-l-slot" aria-label={t.slot} placeholder={t.slot} value={v.slot} onChange={(e) => set("slot", e.target.value)} className={field} />}
       <input tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" value={v._hp} onChange={(e) => set("_hp", e.target.value)} name="website_url" />
       <p className="text-[11.5px] leading-snug text-gray-500">{t.privacy} <a href={lang === "es" ? "/politica-de-privacidad/" : "/politica-de-privacidad/"} target="_blank" className="underline">{t.privacyLink}</a></p>
       <label className="flex items-start gap-2 text-[12.5px]"><input type="checkbox" required checked={v.gdpr} onChange={(e) => set("gdpr", e.target.checked)} className="mt-0.5" />{t.gdpr}</label>

@@ -37,7 +37,8 @@ export const LIMITS = {
   maxTurns: 20,
   maxIaPerSession: 12,
   infoQuota: 2, // respuestas informativas sin señal de negocio
-  offTopicClose: 2, // al segundo intento fuera de ámbito se cierra
+  offTopicClose: 3, // al tercer mensaje fuera de ámbito se cierra
+  injectionClose: 2, // al segundo intento de manipulación se cierra
 };
 
 export function newState(sid: string): ChatState {
@@ -60,23 +61,25 @@ const RX_INJECTION =
   /\b(ignora|olvida|ignore|forget|disregard)\b.{0,40}\b(instruccion|instrucciones|reglas|instructions|rules|consignes)\b|\b(system prompt|prompt del sistema|tus instrucciones|your instructions|act[uú]a como|actua como|haz de|you are now|ahora eres|pretend to be|jailbreak|modo desarrollador|developer mode|dan mode)\b/i;
 
 const RX_THIRD_PARTY =
-  /\b(paso a paso|step by step|tutorial|para (mi|un|una) (trabajo|tfg|tfm|master|clase|examen|universidad|asignatura|practica|tesis)|homework|hazme|haz me|redactame|redacta(r)? (un|una|el|la)|escribeme|escribe(me)? (un|una)|generame|genera (un|una)|traduce|traducir|translate|resumeme|resume este|codigo|programame|script|python|javascript|excel|formula|lista de herramientas|list of tools|ensename a|explicame como (hago|hacer|se hace)|como lo hago yo|hacerlo yo mismo|do it myself)\b/;
+  /\b(paso a paso|step by step|tutorial|para (mi|un|una) (trabajo|tfg|tfm|master|clase|examen|universidad|asignatura|practica|tesis)|homework|hazme|haz me|redactame|redacta(r)? (un|una|el|la)|escribeme|escribe(me)? (un|una)|generame|genera (un|una)|traduce|traducir|translate|resumeme|resume este|codigo (html|css|fuente|python|javascript|php)|programame|programar|script|python|javascript|macro de excel|lista de herramientas|list of tools|ensename a|explicame como (hago|hacer|se hace)|como lo hago yo|hacerlo yo mismo|do it myself)\b/;
 
 const RX_LEGAL =
-  /\b(iva|irpf|hacienda|autonomos?|seguridad social|cuota de autonomo|multa|sancion|demanda|abogado|denuncia|impuesto|impuestos|factura electronica|lopd|despido|nomina|contrato laboral|tax|vat|lawsuit|impot|tva)\b/;
+  /\b(iva|irpf|hacienda|seguridad social|cuota de autonomos?|pago de autonomos?|alta (de|como) autonomo|autonomos? (al|cada) mes|multa|sancion|demanda|abogado|denuncia|impuesto|impuestos|factura electronica|lopd|despido|nomina|contrato laboral|tax|vat|lawsuit|impot|tva)\b/;
 
-const RX_OUR_SERVICE = /\b(web|pagina|seo|geo|plan|servicio|servicios|precio|tarifa|presupuesto|campana|ads|tienda|chatbot|ficha|redes|mkt web)\b/;
+const RX_OUR_SERVICE = /\b(web|pagina|seo|geo|plan|planes|servicio|servicios|precio|precios|coste|costes|tarifa|tarifas|presupuesto|campana|ads|tienda|chatbot|ficha|redes|mkt web)\b/;
 
 const RX_PRICE_CONTEXT = /\b(precio|precios|cuesta|coste|costo|cuanto|tarifa|presupuesto|price|cost|how much|prix|combien|tarif)\b/;
 
-const RX_BUSINESS =
-  /\b(mi (negocio|empresa|clinica|tienda|web|pagina|restaurante|despacho|taller|academia|centro|marca|ecommerce|consulta|hotel|bar|inmobiliaria|gimnasio|ficha)|tengo (un|una)|me dedico|nos dedicamos|somos (un|una)|soy (dentista|fisio|abogad|coach|psicolog|dueno|autonomo|propietari|gerente|fotograf|arquitect|medic)|queremos|quiero (una|un|mas|aparecer|posicionar|contratar|presupuesto|vender|captar)|necesito (una|un|mas|clientes|vender)|presupuesto|contratar|cuanto cuesta|precio|tarifa|my (business|company|shop|clinic|website)|i want (a|to)|we are|mon (entreprise|site|commerce))\b/;
+const SECTOR = "negocio|empresa|clinica|tienda|web|pagina|restaurante|despacho|taller|academia|centro|marca|ecommerce|consulta|hotel|bar|cafeteria|inmobiliaria|gimnasio|peluqueria|estetica|asesoria|gestoria|agencia|farmacia|fisioterapia|dental|reformas|constructora|bodega|hostal|casa rural|escuela|autoescuela|guarderia|veterinaria|startup|pyme|comercio|franquicia|marca personal";
+const RX_BUSINESS = new RegExp(
+  `\\b((mi|nuestra|nuestro) (${SECTOR})|tengo (un|una) (${SECTOR})|llevo (un|una) (${SECTOR})|me dedico|nos dedicamos|somos (un|una) (${SECTOR})|soy (dentista|fisio\\w*|abogad\\w*|coach|psicolog\\w*|dueno|duena|autonom\\w*|propietari\\w*|gerente|fotograf\\w*|arquitect\\w*|medic\\w*|nutricionista|entrenador\\w*|consultor\\w*|formador\\w*|peluquer\\w*|esteticien\\w*|veterinari\\w*|odontolog\\w*|osteopata|podolog\\w*|reformista|instalador\\w*)|quiero (contratar|aparecer|posicionar|captar|vender mas|mas clientes)|necesito (mas clientes|vender mas|una web|una tienda)|my (business|company|shop|clinic|store)|we run|mon (entreprise|commerce))\\b`,
+);
 
 const RX_GREETING = /^(hola|buenas|buenos dias|buenas tardes|buenas noches|hey|hi|hello|bonjour|salut|que tal)\b[\s!.?]*$/;
 
 const RX_HUMAN = /\b(persona|humano|hablar con (alguien|jose|una persona)|llamar|llamada|telefono|whatsapp|contacto|contactar|human|someone|call me|appeler|quelqu un)\b/;
 
-const RX_QUOTE = /\b(quiero|queria|necesito|pedir|pideme|solicitar|me (haceis|haces|hace|das|pasas|envias|mandas)|dame|hazme|preparame|mandame)\b.{0,25}\b(presupuesto|propuesta)\b|^(un )?presupuesto\b|\bquiero contratar|\b(quote|proposal|devis)\b/;
+const RX_QUOTE = /\b(quiero|queria|necesito|pedir|pideme|solicitar|me (haceis|haces|hace|das|pasas|envias|mandas)|dame|hazme|preparame|mandame|generame|redactame|escribeme|enviame)\b.{0,25}\b(presupuesto|propuesta)\b|^(un )?presupuesto\b|\bquiero contratar|\b(quote|proposal|devis)\b/;
 
 export type Intent = "too_long" | "injection" | "third_party" | "legal" | "greeting" | "human" | "quote" | "normal";
 
@@ -86,9 +89,10 @@ export function classify(text: string): { intent: Intent; business: boolean } {
   const t = normalize(raw);
   const business = RX_BUSINESS.test(t);
   if (RX_INJECTION.test(raw) || RX_INJECTION.test(t)) return { intent: "injection", business: false };
-  if (RX_THIRD_PARTY.test(t) && !RX_QUOTE.test(t)) return { intent: "third_party", business };
-  // «¿El precio lleva IVA?» es una pregunta comercial, no fiscal.
-  if (RX_LEGAL.test(t) && !(RX_PRICE_CONTEXT.test(t) && RX_OUR_SERVICE.test(t))) return { intent: "legal", business };
+  const quoteWord = /\b(presupuesto|propuesta|devis|quote)\b/.test(t);
+  if (RX_THIRD_PARTY.test(t) && !quoteWord) return { intent: "third_party", business };
+  // «¿Los precios llevan IVA?» o «soy autónomo y quiero una web» son mensajes comerciales, no consultas fiscales.
+  if (RX_LEGAL.test(t) && !business && !RX_OUR_SERVICE.test(t)) return { intent: "legal", business };
   if (RX_GREETING.test(t)) return { intent: "greeting", business: false };
   if (RX_QUOTE.test(t)) return { intent: "quote", business: true };
   if (RX_HUMAN.test(t)) return { intent: "human", business };
@@ -106,7 +110,11 @@ const STOP = new Set(
     "de la el los las un una unos unas y o u a al del en por para con sin que se su sus es son lo le les mi mis tu tus " +
     "como cual cuales cuando donde quien muy mas menos ya si no me te nos os este esta estos estas ese esa eso hay ser " +
     "puedo puede pueden tengo tiene tienen hace hacer hago vuestro vuestra vosotros the a an and or of to in for on with " +
-    "is are do does can my your you we it le les des du et ou pour avec sur est sont vous nous"
+    "is are do does can my your you we it le les des du et ou pour avec sur est sont vous nous " +
+    // Palabras de precio: no sirven para decidir de qué servicio habla la pregunta.
+    "cuanto cuanta cuesta cuestan costar coste costo precio precios vale valen tarifa mes cost price much prix combien " +
+    // Verbos de «¿hacéis…?, ¿tenéis…?»: no dicen de qué servicio se habla.
+    "haceis teneis trabajais ofreceis podeis llevais cobrais trabajar ofrecer"
   ).split(" "),
 );
 
@@ -157,7 +165,11 @@ export function search(ix: Index, query: string, opts: { lang: Lang; path?: stri
     if (!hits) return;
     s = s / Math.sqrt(q.length);
     if (opts.path && samePath(f.r, opts.path)) s *= 1.35;
-    res.push({ faq: f, score: s, cov: ix.qs[i].size ? inQ / ix.qs[i].size : 0 });
+    // Cobertura en los dos sentidos: el mensaje cubre la pregunta de la FAQ y la FAQ cubre el mensaje.
+    const covFaq = ix.qs[i].size ? inQ / ix.qs[i].size : 0;
+    const covMsg = hits / q.length;
+    const cov = Math.min(covFaq, covMsg);
+    res.push({ faq: f, score: s, cov });
   });
   return res.sort((a, b) => b.score - a.score).slice(0, opts.limit ?? 5);
 }
@@ -207,14 +219,15 @@ export function validateAiReply(reply: string, allowedAmounts: Set<number>): { o
   const t = reply.toLowerCase();
   if (/reglas del asistente|system prompt|prompt del sistema|cache_control|<\/?(reglas|conocimiento|contexto)>/i.test(reply))
     return { ok: false, reason: "filtra instrucciones" };
-  if (/\b(garantiza(mos|do)?|te aseguro|primera posici[oó]n|primer puesto|resultados garantizados|guaranteed)\b/i.test(t))
+  if (/\b(garantiz\w*|te aseguro|aseguramos|primera posici[oó]n|primer puesto|primeros puestos|resultados garantizados|guarantee\w*|garanti\w*)\b/i.test(t))
     return { ok: false, reason: "promesa de resultados" };
+  if (/\$\s?\d|\d\s?(\$|usd|dolares)/i.test(reply)) return { ok: false, reason: "importe en dólares" };
   for (const a of amounts(reply)) if (!allowedAmounts.has(a)) return { ok: false, reason: `importe no autorizado (${a})` };
   return { ok: true };
 }
 
 /** ¿El mensaje habla de algo de nuestro ámbito? Si no, y no hay coincidencia en la base, se trata como fuera de ámbito. */
-const RX_MKT = /\b(web|pagina|seo|geo|google|maps|ficha|resena|anuncio|ads|campana|redes|instagram|facebook|tiktok|linkedin|youtube|marketing|cliente|clientes|venta|ventas|vender|tienda|ecommerce|shop|chatbot|ia|inteligencia|automatiza|email|newsletter|contenido|blog|posicion|visibilidad|lead|leads|captar|captacion|marca|logo|diseno|dominio|hosting|precio|presupuesto|servicio|plan|auditoria|mkt|agencia|negocio|empresa|website|site|clients|customers|marketing)\w*/;
+const RX_MKT = /\b(permanencia|compromiso|preaviso|contrato|cancelar|baja|plazo|factura|pago|pagar|garantia|web|pagina|landing|wordpress|woocommerce|shopify|shopware|sem|ppc|kit digital|subvencion|ayuda|seo|geo|google|maps|ficha|resena|anuncio|ads|campana|redes|instagram|facebook|tiktok|linkedin|youtube|marketing|cliente|clientes|venta|ventas|vender|tienda|ecommerce|shop|chatbot|ia|inteligencia|automatiza|email|newsletter|contenido|blog|posicion|visibilidad|lead|leads|captar|captacion|marca|logo|diseno|dominio|hosting|precio|presupuesto|servicio|plan|auditoria|mkt|agencia|negocio|empresa|website|site|clients|customers|marketing)\w*/;
 export function inScope(text: string): boolean {
   return RX_MKT.test(normalize(text));
 }
@@ -249,5 +262,7 @@ export function bestServicePage(paginas: KbPagina[], text: string): KbPagina | n
 /** Preguntas sobre nosotros («¿hacéis…?», «¿tenéis…?») son interés comercial: no consumen el cupo informativo. */
 const RX_ABOUT_US = /\b(haceis|ofreceis|teneis|trabajais|podeis|vuestr\w*|os encargais|cobrais|mkt web|do you|can you|your|vous faites|proposez|vos)\b/;
 export function aboutUs(text: string): boolean {
-  return RX_ABOUT_US.test(normalize(text));
+  const t = normalize(text);
+  if (/\b(explica|explicame|que es|que son|como funciona|como se|por que|diferencia|ensena|cuentame como|what is|how does|explain|c est quoi)\b/.test(t)) return false;
+  return RX_ABOUT_US.test(t) && t.split(" ").length <= 10;
 }

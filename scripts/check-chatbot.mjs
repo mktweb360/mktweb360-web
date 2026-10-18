@@ -49,6 +49,18 @@ const r4 = q("qué es el geo");
 t("geo no responde con auditoría", !core.isDirect(r4));
 const r5 = q("cuánto tarda en estar lista la web");
 t("plazo web", core.isDirect(r5));
+// Pruebas de la revisión independiente (18/10)
+t("tienda no responde con chatbot", !core.isDirect(q("¿cuánto cuesta una tienda online?")) || !/chatbot/i.test(q("¿cuánto cuesta una tienda online?").faq.a));
+t("logo no responde con chatbot", !core.isDirect(q("¿cuánto cuesta un logo?")));
+t("autónomo con negocio no es legal", c("Soy autónomo y quiero una web para mi taller") !== "legal" && core.classify("Soy autónomo y quiero una web para mi taller").business);
+t("precios con IVA no es legal", c("¿Los precios llevan IVA?") !== "legal");
+t("genérame presupuesto es petición", c("genérame un presupuesto para mi web") === "quote");
+t("tengo una pregunta no es negocio", !core.classify("tengo una pregunta").business);
+t("explicadme no es pregunta comercial", !core.aboutUs("¿podéis explicarme qué es el SEO?"));
+t("hacéis tiendas sí es comercial", core.aboutUs("¿hacéis tiendas online?"));
+t("landing en ámbito", core.inScope("¿qué es una landing?"));
+t("valida garantizo", !core.validateAiReply("Te garantizo resultados", new Set()).ok);
+t("valida dólares", !core.validateAiReply("Cuesta $300", new Set()).ok);
 console.log(`check-chatbot: ${ok} correctas, ${ko} fallidas · KB ${kb.faqs.length} FAQs`);
 if (r1) console.log("  web sola:", r1.score.toFixed(2), "| corporativa:", r2?.score.toFixed(2), "| paella:", r3?.score?.toFixed(2) ?? "-");
 process.exit(ko ? 1 : 0);

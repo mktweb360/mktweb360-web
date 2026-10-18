@@ -38,6 +38,12 @@ const secretKey = () => {
 export async function signState(st: ChatState): Promise<string> {
   return new SignJWT({ st }).setProtectedHeader({ alg: "HS256" }).setIssuedAt().setExpirationTime("3h").sign(secretKey());
 }
+/** Firma de cada respuesta del asistente: el historial que reenvía el navegador solo admite respuestas emitidas aquí. */
+export async function signReply(sid: string, text: string): Promise<string> {
+  const key = await crypto.subtle.importKey("raw", secretKey(), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const mac = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(sid + "\u0000" + text));
+  return Buffer.from(mac).toString("base64url").slice(0, 32);
+}
 export async function readState(token: unknown): Promise<ChatState> {
   if (typeof token === "string" && token.length < 4000) {
     try {
@@ -178,6 +184,7 @@ export async function reply(
   const { intent, business } = classify(text);
   if (business) s.biz = true;
 
+  if (/\b(iva|vat|tva)\b/i.test(text) && isPriceQuestion(text)) return done({ text: pick(TXT.iva, lang, n), actions: ["presupuesto"] }, s);
   if (RX_SERVICES.test(text.toLowerCase())) return done({ text: SERVICES[lang], chips: CHIPS[lang], actions: ["presupuesto"] }, s);
 
   switch (intent) {
@@ -185,7 +192,7 @@ export async function reply(
       return done({ text: pick(TXT.largo, lang, n) }, s);
     case "injection":
       s.off++;
-      if (s.off >= LIMITS.offTopicClose) return done({ text: pick(TXT.cierre, lang, n), actions: ["presupuesto"] }, { ...s, closed: true });
+      if (s.off >= LIMITS.injectionClose) return done({ text: pick(TXT.cierre, lang, n), actions: ["presupuesto"] }, { ...s, closed: true });
       return done({ text: pick(TXT.injection, lang, n), chips: CHIPS[lang] }, s);
     case "third_party":
       s.off++;
@@ -216,7 +223,7 @@ export async function reply(
   const after = (x: ChatState) => (counts ? { ...x, inf: x.inf + 1 } : x);
 
   // Fuera de ámbito (sin palabras de nuestro sector ni coincidencia): respuesta fija, sin gastar IA.
-  if (!inScope(text) && !s.biz && !isDirect(top)) {
+  if (!inScope(text) && !business && !isDirect(top)) {
     s.off++;
     if (s.off >= LIMITS.offTopicClose) return done({ text: pick(TXT.cierre, lang, n), actions: ["presupuesto"] }, { ...s, closed: true });
     return done({ text: pick(TXT.injection, lang, n), chips: CHIPS[lang] }, s);
@@ -227,7 +234,8 @@ export async function reply(
     try {
       const cat = await leerCatalogo();
       const conocimiento = (hits.length ? hits : []).map((h) => `P: ${h.faq.q}\nR: ${h.faq.a}\nFuente: ${SITE}${h.faq.r}${h.faq.tipo === "informativa" ? " (artículo informativo)" : ""}`).join("\n\n");
-      const allowed = new Set<number>([...catalogAmounts(cat), ...KB.faqs.flatMap((f) => amounts(f.a))]);
+      // Importes permitidos: catálogo y FAQs de servicio. Las cifras de mercado de los artículos no se pueden presentar como propias.
+      const allowed = new Set<number>([...catalogAmounts(cat), ...KB.faqs.filter((f) => f.tipo === "servicio").flatMap((f) => amounts(f.a))]);
       const stable = `${SYSTEM_RULES}\n\n<catalogo>\n${catalogLines(cat).join("\n") || "(no disponible ahora: no des precios, ofrece presupuesto)"}\n</catalogo>`;
       const dyn = `<contexto>\nPágina actual: ${SITE}${page.path}${pagina ? ` — ${pagina.title}: ${pagina.description}` : page.title ? ` — ${page.title}` : ""}\nEl visitante ${s.biz ? "ya ha hablado de su negocio" : "aún no ha dicho nada de su negocio: tras responder, pregunta por él"}.\n</contexto>\n<conocimiento>\n${conocimiento || "(sin coincidencias en la base aprobada)"}\n</conocimiento>`;
       const msgs = [...history.slice(-10), { role: "user" as const, content: text }];
