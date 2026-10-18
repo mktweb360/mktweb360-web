@@ -289,3 +289,19 @@ Con eso el asistente:
 
 **Texto de cierre amable (borrador):**
 > «Este canal está pensado para quien quiere contar con Mkt Web 360 en su proyecto. Si en algún momento te encaja, pide aquí la auditoría gratuita y lo vemos con tu caso.»
+
+### 13.1 Ajuste (José, 18/10, 13:23): las FAQs informativas entran en el cupo
+Las FAQs informativas de los artículos **no se excluyen: se usan dentro del cupo de 2 respuestas informativas por conversación.**
+- **Cómo responde:** con el texto tal cual está publicado en la web (coincidencia con la base de conocimiento), **sin generar con IA**. Coste prácticamente nulo. Añade el enlace al artículo y una pregunta de reconducción («¿Te interesa para tu negocio? ¿A qué te dedicas?»).
+- **Dentro del cupo:** cada una suma 1. A la tercera sin señal de negocio, el asistente pregunta directamente por su negocio. Si no hay respuesta de negocio, cierra con amabilidad (§13).
+- **Sigue fuera:** lo legal o fiscal (60 FAQs), por riesgo de asesoramiento.
+- **Recomendación revisada** (738 FAQs):
+
+| Recomendación | Total | En español |
+|---|---|---|
+| Aprobar | 237 | 120 |
+| Informativa de cupo | 386 | 238 |
+| Revisar | 55 | 44 |
+| Excluir | 60 | 56 |
+
+- **En la página de revisión**, el botón de aprobación en bloque aprueba las de servicio y las informativas de cupo. Las de revisar, José las ve una a una.
