@@ -202,7 +202,7 @@ export function ChatWidget() {
                   <div className="flex flex-wrap gap-2">
                     {m.actions?.includes("presupuesto") && <button onClick={() => setForm("presupuesto")} className="rounded-full bg-[#f97316] px-3.5 py-1.5 text-[13px] font-semibold text-white hover:bg-[#ea6a00]">{t.quote}</button>}
                     {m.actions?.includes("contacto") && <ContactLinks t={t} onForm={() => setForm("contacto")} />}
-                    {m.chips?.filter((c) => !(m.actions?.includes("presupuesto") && c === t.quote)).map((c) => (
+                    {m.chips?.filter((c) => !(m.actions?.includes("presupuesto") && /presupuesto|quote|devis/i.test(c))).map((c) => (
                       <button key={c} onClick={() => send(c)} className="rounded-full border border-[#0f1c2e]/20 bg-white px-3 py-1.5 text-[13px] hover:border-[#f97316]">{c}</button>
                     ))}
                   </div>
