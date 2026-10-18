@@ -30,7 +30,7 @@ const serviceSchema = {
 
 const FAQS = [
   { q: "¿Cuánto tarda en verse el resultado de optimizar la ficha?",
-    a: "Los primeros cambios son inmediatos: la ficha actualizada aparece en Google en 24-48 horas. La mejora en el posicionamiento dentro del Local Pack (los 3 primeros resultados del mapa) suele verse entre 4 y 8 semanas, dependiendo de la competencia en tu zona y sector." },
+    a: "Los primeros cambios son inmediatos: la ficha actualizada aparece en Google en 24-48 horas. La mejora en el posicionamiento dentro del Local Pack (los 3 primeros resultados del mapa) suele verse entre 1 y 2 meses, dependiendo de la competencia en tu zona y sector." },
   { q: "¿Necesito tener una dirección física para tener Google Business Profile?",
     a: "No necesariamente. Si prestas servicios a domicilio o en casa del cliente (fontaneros, electricistas, asesores, etc.) puedes crear una ficha de área de servicio sin mostrar tu dirección. Configuramos la ficha según tu modelo de negocio." },
   { q: "¿Cómo conseguís más reseñas para mi negocio?",
@@ -51,7 +51,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: [
-    { "@type": "Question", name: "¿Cuánto tarda en verse el resultado de optimizar la ficha?", acceptedAnswer: { "@type": "Answer", text: "Los primeros cambios son inmediatos: la ficha actualizada aparece en Google en 24-48 horas. La mejora en el posicionamiento dentro del Local Pack (los 3 primeros resultados del mapa) suele verse entre 4 y 8 semanas, dependiendo de la competencia en tu zona y sector." } },
+    { "@type": "Question", name: "¿Cuánto tarda en verse el resultado de optimizar la ficha?", acceptedAnswer: { "@type": "Answer", text: "Los primeros cambios son inmediatos: la ficha actualizada aparece en Google en 24-48 horas. La mejora en el posicionamiento dentro del Local Pack (los 3 primeros resultados del mapa) suele verse entre 1 y 2 meses, dependiendo de la competencia en tu zona y sector." } },
     { "@type": "Question", name: "¿Necesito tener una dirección física para tener Google Business Profile?", acceptedAnswer: { "@type": "Answer", text: "No necesariamente. Si prestas servicios a domicilio o en casa del cliente (fontaneros, electricistas, asesores, etc.) puedes crear una ficha de área de servicio sin mostrar tu dirección. Configuramos la ficha según tu modelo de negocio." } },
     { "@type": "Question", name: "¿Cómo conseguís más reseñas para mi negocio?", acceptedAnswer: { "@type": "Answer", text: "Diseñamos una estrategia de captación de reseñas adaptada a tu sector: email automatizado post-servicio, QR en el punto de venta, formación al equipo para solicitar reseñas de forma natural. También gestionamos las respuestas a todas las reseñas, positivas y negativas." } },
     { "@type": "Question", name: "¿Qué pasa si tengo reseñas negativas?", acceptedAnswer: { "@type": "Answer", text: "Las reseñas negativas bien gestionadas generan más confianza que no tenerlas. Respondemos de forma profesional y constructiva a cada reseña negativa. Si son falsas o incumplen las políticas de Google, tramitamos su eliminación ante Google." } },

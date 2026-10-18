@@ -52,7 +52,7 @@ const faqSchema = {
       name: "¿Cuánto tarda en dar resultados el marketing digital en Sevilla?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Depende del canal. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 4-8 semanas y se consolida en 3-6 meses. Las redes sociales construyen comunidad de forma progresiva. Sevilla tiene competencia digital media, lo que hace que un trabajo bien ejecutado tenga impacto visible en plazos razonables."
+        text: "Depende del canal. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 1-2 meses y se consolida en 3-6 meses. Las redes sociales construyen comunidad de forma progresiva. Sevilla tiene competencia digital media, lo que hace que un trabajo bien ejecutado tenga impacto visible en plazos razonables."
       }
     },
     {
@@ -118,7 +118,7 @@ export default function Page() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados el marketing digital en Sevilla?</h3>
-                <p className="text-gray-600">Depende del canal. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 4-8 semanas y se consolida en 3-6 meses. Las redes sociales construyen comunidad de forma progresiva. Sevilla tiene competencia digital media, lo que hace que un trabajo bien ejecutado tenga impacto visible en plazos razonables.</p>
+                <p className="text-gray-600">Depende del canal. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 1-2 meses y se consolida en 3-6 meses. Las redes sociales construyen comunidad de forma progresiva. Sevilla tiene competencia digital media, lo que hace que un trabajo bien ejecutado tenga impacto visible en plazos razonables.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Necesita una empresa de Sevilla una agencia de marketing digital o puede gestionarlo internamente?</h3>

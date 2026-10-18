@@ -3046,7 +3046,7 @@
   {
    "idioma": "es",
    "pregunta": "¿Cuánto tarda en notarse el trabajo hecho en la web de una clínica?",
-   "respuesta": "La parte local (Google Business Profile bien optimizado) suele dar resultados visibles en 4-8 semanas. El posicionamiento orgánico de la web para búsquedas competitivas es más lento: los primeros resultados llegan entre 3 y 6 meses, pero más estable en el tiempo.",
+   "respuesta": "La parte local (Google Business Profile bien optimizado) suele dar resultados visibles en 1-2 meses. El posicionamiento orgánico de la web para búsquedas competitivas es más lento: los primeros resultados llegan entre 3 y 6 meses, pero más estable en el tiempo.",
    "aviso_revision": [
     "\\b\\d+\\s*(días|semanas|meses|horas)\\b"
    ],
@@ -5865,7 +5865,7 @@
   {
    "idioma": "es",
    "pregunta": "¿Cuánto tarda en verse el resultado de optimizar la ficha?",
-   "respuesta": "Los primeros cambios son inmediatos: la ficha actualizada aparece en Google en 24-48 horas. La mejora en el posicionamiento dentro del Local Pack (los 3 primeros resultados del mapa) suele verse entre 4 y 8 semanas, dependiendo de la competencia en tu zona y sector.",
+   "respuesta": "Los primeros cambios son inmediatos: la ficha actualizada aparece en Google en 24-48 horas. La mejora en el posicionamiento dentro del Local Pack (los 3 primeros resultados del mapa) suele verse entre 1 y 2 meses, dependiendo de la competencia en tu zona y sector.",
    "aviso_revision": [
     "\\b\\d+\\s*(días|semanas|meses|horas)\\b",
     "\\bprimer[ao]s? (posici|puesto|resultado)"
@@ -6406,7 +6406,7 @@
   {
    "idioma": "es",
    "pregunta": "¿Cuánto tiempo tarda en llegar el primer cliente por Google?",
-   "respuesta": "Con Google Business Profile bien optimizado en ciudades medianas, los primeros contactos pueden llegar en 2-4 semanas. Con SEO orgánico: 3-4 meses. Con Google Ads: el primer día si la campaña está bien configurada.",
+   "respuesta": "Con Google Business Profile bien optimizado en ciudades medianas, los primeros contactos pueden llegar en 1-2 meses. Con SEO orgánico: 3-4 meses. Con Google Ads: el primer día si la campaña está bien configurada.",
    "aviso_revision": [
     "\\b\\d+\\s*(días|semanas|meses|horas)\\b"
    ],
@@ -7286,7 +7286,7 @@
   {
    "idioma": "es",
    "pregunta": "¿Cuánto tiempo tarda el SEO local?",
-   "respuesta": "El SEO local suele dar resultados más rápidos que el SEO nacional. Con una ficha optimizada y trabajo consistente, es posible ver mejoras en Google Maps en 4–8 semanas. El posicionamiento orgánico local en webs tarda entre 3 y 6 meses.",
+   "respuesta": "El SEO local suele dar resultados más rápidos que el SEO nacional. Con una ficha optimizada y trabajo consistente, es posible ver mejoras en Google Maps en 1–2 meses. El posicionamiento orgánico local en webs tarda entre 3 y 6 meses.",
    "aviso_revision": [
     "\\b\\d+\\s*(días|semanas|meses|horas)\\b"
    ],
@@ -7328,7 +7328,7 @@
   {
    "idioma": "es",
    "pregunta": "¿Cuánto tarda una clínica en notar resultados con SEO?",
-   "respuesta": "Con una ficha de Google Business Profile bien optimizada, el impacto local suele verse en 4 a 8 semanas. El posicionamiento orgánico de la web para búsquedas competitivas requiere más tiempo, normalmente entre 3 y 6 meses para los primeros resultados, según la competencia de la zona y el estado inicial.",
+   "respuesta": "Con una ficha de Google Business Profile bien optimizada, el impacto local suele verse en 1 a 2 meses. El posicionamiento orgánico de la web para búsquedas competitivas requiere más tiempo, normalmente entre 3 y 6 meses para los primeros resultados, según la competencia de la zona y el estado inicial.",
    "aviso_revision": [
     "\\b\\d+\\s*(días|semanas|meses|horas)\\b"
    ],

@@ -52,7 +52,7 @@ const faqSchema = {
       name: "¿Cuánto tarda en dar resultados el marketing digital en Barcelona?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Depende del canal y la competencia del sector. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 4-8 semanas pero puede requerir 6-12 meses para consolidarse en sectores competitivos de Barcelona. La constancia y la calidad del trabajo determinan los resultados."
+        text: "Depende del canal y la competencia del sector. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 1-2 meses pero puede requerir 6-12 meses para consolidarse en sectores competitivos de Barcelona. La constancia y la calidad del trabajo determinan los resultados."
       }
     },
     {
@@ -123,7 +123,7 @@ export default function Page() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados el marketing digital en Barcelona?</h3>
-                <p className="text-gray-600">Depende del canal y la competencia del sector. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 4-8 semanas pero puede requerir 6-12 meses para consolidarse en sectores competitivos de Barcelona. La constancia y la calidad del trabajo determinan los resultados.</p>
+                <p className="text-gray-600">Depende del canal y la competencia del sector. Google Ads genera tráfico desde el primer día. El SEO local muestra primeros resultados en 1-2 meses pero puede requerir 6-12 meses para consolidarse en sectores competitivos de Barcelona. La constancia y la calidad del trabajo determinan los resultados.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Necesita una empresa de Barcelona una agencia de marketing digital o puede gestionarlo internamente?</h3>

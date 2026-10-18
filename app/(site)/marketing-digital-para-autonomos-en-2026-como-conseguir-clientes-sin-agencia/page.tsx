@@ -49,7 +49,7 @@ const FAQS = [
   },
   {
     q: "¿Cuánto tiempo tarda en llegar el primer cliente por Google?",
-    a: "Con Google Business Profile bien optimizado en ciudades medianas, los primeros contactos pueden llegar en 2-4 semanas. Con SEO orgánico: 3-4 meses. Con Google Ads: el primer día si la campaña está bien configurada.",
+    a: "Con Google Business Profile bien optimizado en ciudades medianas, los primeros contactos pueden llegar en 1-2 meses. Con SEO orgánico: 3-4 meses. Con Google Ads: el primer día si la campaña está bien configurada.",
   },
 ];
 
@@ -95,7 +95,7 @@ export default function MarketingDigitalAutonomos2026Page() {
           <p>El error más común es querer estar en todas partes a la vez. Con tiempo y presupuesto limitados, la estrategia ganadora es concentrarse en uno o dos canales bien elegidos y dominarlos, en lugar de repartir esfuerzo sin masa crítica en ninguno.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">El orden correcto: primero Google Business Profile, luego el resto</h2>
-          <p>Si tu negocio tiene un componente local, el primer paso siempre es Google Business Profile. Es gratuito, aparece en el momento exacto en que alguien busca lo que ofreces cerca de él, y con una buena optimización los primeros contactos pueden llegar en 2-4 semanas.</p>
+          <p>Si tu negocio tiene un componente local, el primer paso siempre es Google Business Profile. Es gratuito, aparece en el momento exacto en que alguien busca lo que ofreces cerca de él, y con una buena optimización los primeros contactos pueden llegar en 1-2 meses.</p>
           <p>Optimizar tu ficha de <Link href="/google-business-profile/" className="text-accent-500 hover:underline">Google Business Profile</Link> con categorías correctas, fotos, horarios actualizados y reseñas es la acción con mejor relación esfuerzo-resultado que puede hacer un autónomo local. Solo después de tener esto en marcha tiene sentido pensar en el resto de canales.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">SEO local: la inversión con mayor ROI para autónomos de servicios</h2>

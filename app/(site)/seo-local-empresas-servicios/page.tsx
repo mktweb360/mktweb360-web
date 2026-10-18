@@ -44,7 +44,7 @@ const FAQS = [
   },
   {
     q: "¿Cuánto tiempo tarda el SEO local?",
-    a: "El SEO local suele dar resultados más rápidos que el SEO nacional. Con una ficha optimizada y trabajo consistente, es posible ver mejoras en Google Maps en 4–8 semanas. El posicionamiento orgánico local en webs tarda entre 3 y 6 meses.",
+    a: "El SEO local suele dar resultados más rápidos que el SEO nacional. Con una ficha optimizada y trabajo consistente, es posible ver mejoras en Google Maps en 1–2 meses. El posicionamiento orgánico local en webs tarda entre 3 y 6 meses.",
   },
   {
     q: "¿Necesito web para hacer SEO local?",

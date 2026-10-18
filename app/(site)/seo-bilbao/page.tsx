@@ -36,7 +36,7 @@ const faqSchema = {
       name: "¿Cuánto tarda en dar resultados el SEO local en Bilbao?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los primeros resultados visibles en Google Maps suelen aparecer entre 4 y 8 semanas tras optimizar la ficha de Google Business Profile y conseguir nuevas reseñas. El posicionamiento web orgánico para búsquedas locales en Bilbao requiere entre 3 y 6 meses. Bilbao tiene menos competencia digital que Madrid o Barcelona, lo que puede acelerar los plazos."
+        text: "Los primeros resultados visibles en Google Maps suelen aparecer entre 1 y 2 meses tras optimizar la ficha de Google Business Profile y conseguir nuevas reseñas. El posicionamiento web orgánico para búsquedas locales en Bilbao requiere entre 3 y 6 meses. Bilbao tiene menos competencia digital que Madrid o Barcelona, lo que puede acelerar los plazos."
       }
     },
     {
@@ -110,7 +110,7 @@ export default function Page() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados el SEO local en Bilbao?</h3>
-                <p className="text-gray-600">Los primeros resultados visibles en Google Maps suelen aparecer entre 4 y 8 semanas tras optimizar la ficha de Google Business Profile y conseguir nuevas reseñas. El posicionamiento web orgánico para búsquedas locales en Bilbao requiere entre 3 y 6 meses. Bilbao tiene menos competencia digital que Madrid o Barcelona, lo que puede acelerar los plazos.</p>
+                <p className="text-gray-600">Los primeros resultados visibles en Google Maps suelen aparecer entre 1 y 2 meses tras optimizar la ficha de Google Business Profile y conseguir nuevas reseñas. El posicionamiento web orgánico para búsquedas locales en Bilbao requiere entre 3 y 6 meses. Bilbao tiene menos competencia digital que Madrid o Barcelona, lo que puede acelerar los plazos.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué diferencia hay entre SEO local y SEO nacional para un negocio en Bilbao?</h3>

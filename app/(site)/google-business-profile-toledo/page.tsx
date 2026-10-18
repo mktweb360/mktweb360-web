@@ -45,7 +45,7 @@ const faqSchema = {
       name: "¿Cuánto tarda en dar resultados la optimización de Google Business Profile?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los primeros resultados son visibles en 2-4 semanas tras la optimización inicial. La visibilidad en Google Maps mejora progresivamente con el tiempo a medida que se acumulan reseñas recientes, publicaciones periódicas y señales de actividad. Es uno de los canales con ROI más rápido para negocios con presencia física en Toledo."
+        text: "Los primeros resultados son visibles en 1-2 meses tras la optimización inicial. La visibilidad en Google Maps mejora progresivamente con el tiempo a medida que se acumulan reseñas recientes, publicaciones periódicas y señales de actividad. Es uno de los canales con ROI más rápido para negocios con presencia física en Toledo."
       }
     },
     {
@@ -123,7 +123,7 @@ export default function Page() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados la optimización de Google Business Profile?</h3>
-                <p className="text-gray-600">Los primeros resultados son visibles en 2-4 semanas tras la optimización inicial. La visibilidad en Google Maps mejora progresivamente con el tiempo a medida que se acumulan reseñas recientes, publicaciones periódicas y señales de actividad. Es uno de los canales con ROI más rápido para negocios con presencia física en Toledo.</p>
+                <p className="text-gray-600">Los primeros resultados son visibles en 1-2 meses tras la optimización inicial. La visibilidad en Google Maps mejora progresivamente con el tiempo a medida que se acumulan reseñas recientes, publicaciones periódicas y señales de actividad. Es uno de los canales con ROI más rápido para negocios con presencia física en Toledo.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuántas reseñas necesito para posicionar bien en Google Maps en Toledo?</h3>
