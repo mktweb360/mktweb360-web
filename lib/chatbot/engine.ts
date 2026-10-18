@@ -136,6 +136,8 @@ async function callClaude(system: { text: string; cache?: boolean }[], history: 
       model: process.env.CHATBOT_MODEL || "claude-haiku-5-5",
       max_tokens: 1200,
       output_config: { effort: "low" },
+      // Sin razonamiento extendido: respuestas cortas de chat, menos coste y latencia (válido con effort ≤ high).
+      thinking: { type: "disabled" },
       system: system.map((b) => ({ type: "text", text: b.text, ...(b.cache ? { cache_control: { type: "ephemeral" } } : {}) })),
       messages: history,
     }),
