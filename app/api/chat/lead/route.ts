@@ -44,6 +44,8 @@ export async function POST(req: NextRequest) {
   const necesidad = str(b.need, 800);
   const preferencia = ["llamada", "email", "whatsapp"].includes(String(b.preference)) ? String(b.preference) : "email";
   const franja = str(b.slot, 120);
+  // Hueco del calendario elegido en el chat (ISO). Si no hay, la franja es texto libre.
+  const huecoIso = typeof b.slotIso === "string" && !Number.isNaN(Date.parse(b.slotIso)) ? new Date(b.slotIso).toISOString() : "";
   const tipo = b.kind === "contacto" || b.kind === "llamada" ? "contacto" : b.kind === "auditoria" ? "auditoria" : "presupuesto";
   const pagina = str(b.page, 300);
   const lang = consentLang(b.lang);
@@ -126,6 +128,22 @@ export async function POST(req: NextRequest) {
   // Si no ha llegado por ningún canal, el visitante debe saberlo (no se le dice «hecho» en falso).
   if (!mktosOk && !emailOk)
     return NextResponse.json({ error: "No hemos podido registrar tu solicitud. Escríbenos por WhatsApp al 622 74 89 87, por favor." }, { status: 502 });
+  // Llamada con hueco elegido: se reserva en el calendario de MktOS y José recibe el aviso en el móvil.
+  let reserva: string | null = null;
+  if (preferencia === "llamada" && huecoIso && telefono && secret) {
+    try {
+      const base = (process.env.MKTOS_APP_URL || "https://mktos360.app").replace(/\/$/, "");
+      const r = await fetch(`${base}/api/webhooks/assistant-booking`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-webhook-secret": secret },
+        body: JSON.stringify({ slot: huecoIso, nombre, telefono, opportunity_id: opportunityId ?? "", nota: mensaje.slice(0, 1500) }),
+        signal: AbortSignal.timeout(8000),
+      });
+      const j = (await r.json().catch(() => ({}))) as { ok?: boolean; cuando?: string };
+      if (j.ok && j.cuando) reserva = j.cuando;
+    } catch (e) { console.warn("[chat/lead] reserva:", e); }
+  }
+
   after(() => sendEvent({ type: "lead", sid: sidHash(st.sid), kind: tipo, opportunity_id: opportunityId ?? "" }));
-  return NextResponse.json({ ok: true, id, ...(opportunityId ? { opportunity_id: opportunityId } : {}) });
+  return NextResponse.json({ ok: true, id, ...(opportunityId ? { opportunity_id: opportunityId } : {}), ...(reserva ? { reserva } : {}) });
 }
