@@ -237,3 +237,22 @@ Con eso el asistente:
 - [Gobierno del coste de los LLM en producción](https://matheuspalma.com/blog/llm-cost-governance-token-budgets-model-routing-spend-guardrails)
 - [Grepture, defensa frente a la inyección de prompts](https://grepture.com/en/blog/prompt-injection-prevention-guide)
 - [Wonderchat, agente de ventas web](https://wonderchat.io/uses/ai-sales-agent-website)
+
+---
+
+## 12. Decisiones de José (18/10, 12:57). Cierran el §11
+| # | Decisión | Cómo se aplica |
+|---|---|---|
+| 1 | Tope de **1 € al día y 15 € al mes** | `ai.usage_ledger` con tope diario y mensual. Aviso al 80 %; al 100 %, modo guiado sin IA. Límite de gasto también en la consola de Anthropic |
+| 2 | **Tú** | Guía de voz: tutea siempre. Si el visitante trata de usted, el asistente mantiene la cercanía sin corregirle |
+| 3 | Botón **arriba a la derecha** con **bocadillo tipo cómic** que avisa de que está ahí | Desktop: botón bajo la cabecera, a la derecha. Sale un bocadillo con el texto de apertura según la URL (§4.2), una vez por sesión, y se cierra con un clic. **Móvil [I]:** mismo diseño, comprobando que no tape el menú; si lo tapa, se baja la posición solo en móvil |
+| 4 | Las conversaciones **sin contacto** se guardan **temporalmente** como fuente de conocimiento e ideas, y **se borran cuando ya se han aprovechado** | Se anonimizan al guardarlas (sin IP ni datos personales). Cada mes se extraen preguntas sin respuesta e ideas de contenido. **Borrado automático a los 90 días [I, propuesta de plazo]**. Lo extraído queda en `crm.assistant_kb` o en tareas, sin la conversación |
+| 5 | Atención **24/7** | El asistente atiende 24/7 y la petición de contacto humano también se recoge 24/7, con aviso push inmediato. **Ojo:** José es una sola persona, así que el asistente **no promete respuesta humana inmediata**. Dice «José te responde en cuanto lo vea, normalmente en menos de X horas» (X a fijar por José) |
+| 6 | **Todo se agenda en MktOS** y MktOS avisa a José con notificación al móvil | `book_call` escribe en la agenda de MktOS (`src/server/agenda`), con los huecos libres reales, y envía `sendPushToWorkspace` con el resumen del lead |
+| 7 | Documento para aprobar o no cada FAQ | Página «Revisión FAQs del asistente» (artifact de claude.ai): 738 FAQs con la recomendación de Claude. Las decisiones se guardan en su base de datos y Claude las lee para cargar `crm.assistant_kb` |
+
+**Recomendación de Claude por FAQ:**
+- 101 de **aprobar**: páginas de servicio sin cifras.
+- 138 de **revisar**: tienen cifras, plazos o absolutos.
+- 47 de **excluir**: temas legales o fiscales de artículos, porque el asistente no asesora en eso.
+- 452 **opcionales**: preguntas informativas de artículos.
