@@ -11,6 +11,7 @@ import {
   validateAiReply, type ChatState, type KbFaq, type KbPagina, type Lang,
 } from "./core";
 import { TXT, pick } from "./texts";
+import { CTX_ROUTE, ctxOf, funnelChips, openingChips, type Chip, type ChipId, type Ctx } from "./funnel";
 import { leerCatalogo, type Catalogo } from "@/lib/catalogo";
 
 const KB = kbData as unknown as { faqs: KbFaq[]; paginas: KbPagina[] };
@@ -19,12 +20,12 @@ const linkTo = (ruta: string, label: string) => ({ href: ruta, label: `${label} 
 const INDEX = buildIndex(KB.faqs);
 const SITE = "https://www.mktweb360.com";
 
-export type Action = "presupuesto" | "contacto";
+export type Action = "presupuesto" | "contacto" | "auditoria" | "llamada";
 export interface Reply {
   text: string;
   link?: { href: string; label: string };
   actions: Action[];
-  chips: string[];
+  chips: Chip[];
   closed: boolean;
   modo: "reglas" | "kb" | "ia" | "catalogo";
 }
@@ -142,10 +143,12 @@ async function callClaude(system: { text: string; cache?: boolean }[], history: 
   });
   if (!r.ok) throw new Error(`anthropic ${r.status}: ${(await r.text()).slice(0, 300)}`);
   const j = (await r.json()) as { content?: { type: string; text?: string }[]; usage?: Parameters<typeof addUsage>[0]; stop_reason?: string };
-  const usd = addUsage(j.usage ?? {});
+  const u = j.usage ?? {};
+  const usd = addUsage(u);
+  const usage = { input: u.input_tokens ?? 0, output: u.output_tokens ?? 0, cacheWrite: u.cache_creation_input_tokens ?? 0, cacheRead: u.cache_read_input_tokens ?? 0 };
   const text = (j.content ?? []).filter((c) => c.type === "text").map((c) => c.text ?? "").join("").trim();
   if (!text || j.stop_reason === "refusal") throw new Error(`sin texto (${j.stop_reason})`);
-  return { text, usd };
+  return { text, usd, usage };
 }
 
 // ── Resumen de servicios (fijo, sin IA) ────────────────────────────────
@@ -158,10 +161,31 @@ const SERVICES: Record<Lang, string> = {
 
 // ── Respuesta ─────────────────────────────────────────────────────────
 export interface Page { path: string; lang: Lang; title?: string }
-const CHIPS: Record<Lang, string[]> = {
-  es: ["Quiero un presupuesto", "¿Qué servicios tenéis?", "Hablar con José"],
-  en: ["I'd like a quote", "What services do you offer?", "Talk to José"],
-  fr: ["Je veux un devis", "Quels services proposez-vous ?", "Parler à José"],
+export interface Meta {
+  intent: string;
+  faqId?: string;
+  chip?: ChipId;
+  usage?: { input: number; output: number; cacheWrite: number; cacheRead: number };
+}
+
+const TXT_NEGOCIO_PIDE: Record<Lang, string> = {
+  es: "Cuéntame: ¿a qué se dedica tu negocio, dónde trabajas y qué te gustaría conseguir (más clientes, aparecer en Google, vender online…)?",
+  en: "Tell me: what does your business do, where do you work and what would you like to achieve?",
+  fr: "Dites-moi : quelle est votre activité, où travaillez-vous et que souhaitez-vous obtenir ?",
+};
+const TXT_AUDITORIA: Record<Lang, string> = {
+  es: "Perfecto. Déjame tus datos y la web que quieres revisar, y José te prepara la auditoría gratuita de tu visibilidad en Google y en la IA.",
+  en: "Great. Leave your details and the website to review, and José will prepare your free audit of your visibility on Google and AI.",
+  fr: "Parfait. Laissez vos coordonnées et le site à analyser, et José vous prépare l'audit gratuit.",
+};
+const TXT_LLAMADA: Record<Lang, string> = {
+  es: "Claro. Déjame tu nombre, tu teléfono y cuándo te viene mejor, y José te llama.",
+  en: "Sure. Leave your name, phone number and the best time, and José will call you.",
+  fr: "Bien sûr. Laissez votre nom, votre téléphone et le meilleur moment, et José vous rappelle.",
+};
+const CTX_RX: Record<Ctx, RegExp> = {
+  seo: /seo|posicion/i, geo: /geo|ia\b|chatgpt/i, gbp: /google business|gbp|ficha/i, web: /web|p[aá]gina/i, tienda: /tienda|ecommerce/i,
+  ads: /ads|sem|ppc/i, redes: /redes|social/i, ia: /chatbot|ia\b|inteligencia/i, email: /email|newsletter/i, general: /./,
 };
 
 export async function reply(
@@ -169,23 +193,70 @@ export async function reply(
   st: ChatState,
   page: Page,
   history: { role: "user" | "assistant"; content: string }[],
-): Promise<{ reply: Reply; state: ChatState; costUsd: number }> {
+  chipId: ChipId | null = null,
+): Promise<{ reply: Reply; state: ChatState; costUsd: number; meta: Meta }> {
   const lang = page.lang;
   const n = st.n;
-  const done = (r: Partial<Reply> & { text: string }, s: ChatState, costUsd = 0) => ({
-    reply: { actions: [], chips: [], closed: s.closed, modo: "reglas" as const, ...r },
+  const ctx = ctxOf(page.path);
+  let meta: Meta = { intent: "normal", chip: chipId ?? undefined };
+  const done = (r: Partial<Reply> & { text: string; sinSugerencias?: boolean }, s: ChatState, costUsd = 0) => ({
+    reply: {
+      actions: r.actions ?? [],
+      closed: s.closed,
+      modo: r.modo ?? ("reglas" as const),
+      text: r.text,
+      link: r.link,
+      // Siempre hay un siguiente paso sugerido (embudo), salvo si la conversación está cerrada o se espera que escriba.
+      chips: s.closed || r.sinSugerencias ? [] : r.chips?.length ? r.chips : funnelChips(ctx, s.biz, lang, chipId),
+    },
     state: s,
     costUsd,
+    meta,
   });
   const s: ChatState = { ...st, n: st.n + 1 };
 
-  if (st.closed || s.n > LIMITS.maxTurns) return done({ text: pick(TXT.cierre, lang, n), actions: ["presupuesto"] }, { ...s, closed: true });
+  if (st.closed || s.n > LIMITS.maxTurns) { meta.intent = "cerrada"; return done({ text: pick(TXT.cierre, lang, n), actions: ["presupuesto"] }, { ...s, closed: true }); }
+
+  // Sugerencias pulsadas: respuesta directa, sin ambigüedad.
+  if (chipId) {
+    meta.intent = `chip:${chipId}`;
+    switch (chipId) {
+      case "negocio": return done({ text: TXT_NEGOCIO_PIDE[lang], sinSugerencias: true }, s);
+      case "auditoria": return done({ text: TXT_AUDITORIA[lang], actions: ["auditoria"] }, { ...s, biz: true });
+      case "presupuesto": return done({ text: pick(TXT.presupuesto, lang, n), actions: ["presupuesto"] }, { ...s, biz: true });
+      case "llamada": return done({ text: TXT_LLAMADA[lang], actions: ["llamada"] }, { ...s, biz: true });
+      case "persona": return done({ text: pick(TXT.persona, lang, n), actions: ["contacto"] }, s);
+      case "servicios": return done({ text: SERVICES[lang] }, s);
+      case "incluye": {
+        const ruta = CTX_ROUTE[ctx];
+        const sp = ruta ? KB.paginas.find((x) => samePath(x.ruta, ruta)) : null;
+        if (!sp?.description) return done({ text: SERVICES[lang] }, s);
+        return done({ text: [sp.description, s.biz ? "" : pick(TXT.reconducir, lang, n)].filter(Boolean).join("\n\n"), link: linkTo(sp.ruta, pick(TXT.masInfo, lang, n)), modo: "kb" }, s);
+      }
+      case "precio": {
+        const hit = search(INDEX, text, { lang, path: page.path, limit: 1 })[0];
+        if (isDirect(hit) && hit.faq.tipo === "servicio") {
+          meta = { ...meta, faqId: hit.faq.id };
+          return done({ text: `${hit.faq.a}\n\n${pick(TXT.precioPropio, lang, n)}`, actions: ["presupuesto"], modo: "kb" }, s);
+        }
+        const lines = catalogLines(await leerCatalogo(), 40).filter((l) => ctx === "general" || CTX_RX[ctx].test(l)).slice(0, 6);
+        if (lines.length) return done({ text: `${lines.join("\n")}\n\n${pick(TXT.precioPropio, lang, n)}`, actions: ["presupuesto"], modo: "catalogo" }, s);
+        // Si la página del servicio publica un precio «desde», se da con su enlace.
+        const ruta = CTX_ROUTE[ctx];
+        const sp = ruta ? KB.paginas.find((x) => samePath(x.ruta, ruta)) : null;
+        if (sp?.description && /\d\s?€/.test(sp.description))
+          return done({ text: `${sp.description}\n\n${pick(TXT.precioPropio, lang, n)}`, link: linkTo(sp.ruta, pick(TXT.masInfo, lang, n)), actions: ["presupuesto"], modo: "kb" }, s);
+        return done({ text: pick(TXT.precioPropio, lang, n), actions: ["presupuesto"] }, s);
+      }
+    }
+  }
 
   const { intent, business } = classify(text);
+  meta.intent = intent;
   if (business) s.biz = true;
 
-  if (/\b(iva|vat|tva)\b/i.test(text) && isPriceQuestion(text)) return done({ text: pick(TXT.iva, lang, n), actions: ["presupuesto"] }, s);
-  if (RX_SERVICES.test(text.toLowerCase())) return done({ text: SERVICES[lang], chips: CHIPS[lang], actions: ["presupuesto"] }, s);
+  if (/\b(iva|vat|tva)\b/i.test(text) && isPriceQuestion(text)) { meta.intent = "iva"; return done({ text: pick(TXT.iva, lang, n), actions: ["presupuesto"] }, s); }
+  if (RX_SERVICES.test(text.toLowerCase())) { meta.intent = "servicios"; return done({ text: SERVICES[lang], actions: ["presupuesto"] }, s); }
 
   switch (intent) {
     case "too_long":
@@ -193,17 +264,17 @@ export async function reply(
     case "injection":
       s.off++;
       if (s.off >= LIMITS.injectionClose) return done({ text: pick(TXT.cierre, lang, n), actions: ["presupuesto"] }, { ...s, closed: true });
-      return done({ text: pick(TXT.injection, lang, n), chips: CHIPS[lang] }, s);
+      return done({ text: pick(TXT.injection, lang, n) }, s);
     case "third_party":
       s.off++;
       if (!s.biz) s.inf++;
       if (s.off >= LIMITS.offTopicClose && !s.biz) return done({ text: pick(TXT.cierre, lang, n), actions: ["presupuesto"] }, { ...s, closed: true });
-      return done({ text: pick(TXT.tercero, lang, n), chips: CHIPS[lang] }, s);
+      return done({ text: pick(TXT.tercero, lang, n) }, s);
     case "legal":
       if (!s.biz) s.inf++;
-      return done({ text: pick(TXT.legal, lang, n), chips: CHIPS[lang] }, s);
+      return done({ text: pick(TXT.legal, lang, n) }, s);
     case "greeting":
-      return done({ text: pick(TXT.saludo, lang, n), chips: CHIPS[lang] }, s);
+      return done({ text: pick(TXT.saludo, lang, n), chips: openingChips(ctx, lang) }, s);
     case "human":
       return done({ text: pick(TXT.persona, lang, n), actions: ["contacto"] }, s);
     case "quote":
@@ -212,8 +283,8 @@ export async function reply(
 
   // Cupo informativo: sin señal de negocio, como mucho 2 respuestas informativas.
   const q0 = quotaState(s);
-  if (q0 === "close") return done({ text: pick(TXT.cierre, lang, n), actions: ["presupuesto"] }, { ...s, closed: true });
-  if (q0 === "ask_business") { s.inf++; return done({ text: pick(TXT.cupoPregunta, lang, n), chips: CHIPS[lang] }, s); }
+  if (q0 === "close") { meta.intent = "cupo_cierre"; return done({ text: pick(TXT.cierre, lang, n), actions: ["presupuesto"] }, { ...s, closed: true }); }
+  if (q0 === "ask_business") { meta.intent = "cupo_pregunta"; s.inf++; return done({ text: pick(TXT.cupoPregunta, lang, n) }, s); }
 
   const hits = search(INDEX, text, { lang, path: page.path, limit: 5 });
   const top = hits[0];
@@ -224,9 +295,10 @@ export async function reply(
 
   // Fuera de ámbito (sin palabras de nuestro sector ni coincidencia): respuesta fija, sin gastar IA.
   if (!inScope(text) && !business && !isDirect(top)) {
+    meta.intent = "fuera_de_ambito";
     s.off++;
     if (s.off >= LIMITS.offTopicClose) return done({ text: pick(TXT.cierre, lang, n), actions: ["presupuesto"] }, { ...s, closed: true });
-    return done({ text: pick(TXT.injection, lang, n), chips: CHIPS[lang] }, s);
+    return done({ text: pick(TXT.injection, lang, n) }, s);
   }
 
   // IA (si está activada y queda presupuesto)
@@ -239,7 +311,9 @@ export async function reply(
       const stable = `${SYSTEM_RULES}\n\n<catalogo>\n${catalogLines(cat).join("\n") || "(no disponible ahora: no des precios, ofrece presupuesto)"}\n</catalogo>`;
       const dyn = `<contexto>\nPágina actual: ${SITE}${page.path}${pagina ? ` — ${pagina.title}: ${pagina.description}` : page.title ? ` — ${page.title}` : ""}\nEl visitante ${s.biz ? "ya ha hablado de su negocio" : "aún no ha dicho nada de su negocio: tras responder, pregunta por él"}.\n</contexto>\n<conocimiento>\n${conocimiento || "(sin coincidencias en la base aprobada)"}\n</conocimiento>`;
       const msgs = [...history.slice(-10), { role: "user" as const, content: text }];
-      const { text: out, usd } = await callClaude([{ text: stable, cache: true }, { text: dyn }], msgs);
+      const { text: out, usd, usage } = await callClaude([{ text: stable, cache: true }, { text: dyn }], msgs);
+      meta.usage = usage;
+      if (isDirect(top)) meta.faqId = top.faq.id;
       const actions: Action[] = [];
       let clean = out;
       if (/\[\[PRESUPUESTO\]\]/.test(clean)) actions.push("presupuesto");
@@ -251,6 +325,7 @@ export async function reply(
         return done({ text: clean, actions, link, modo: "ia" }, after({ ...s, ia: s.ia + 1 }), usd);
       }
       console.warn("[chatbot] respuesta IA descartada:", v.reason);
+      meta.intent = `ia_descartada:${v.reason}`;
       s.ia++;
     } catch (e) {
       console.error("[chatbot] IA no disponible:", e instanceof Error ? e.message : e);
@@ -260,6 +335,7 @@ export async function reply(
   // Modo guiado (sin IA)
   if (top && isDirect(top)) {
     const f = top.faq;
+    meta.faqId = f.id;
     // Las FAQs de una oferta concreta se responden diciendo de qué oferta hablan (la permanencia cambia entre ofertas).
     const deOferta = /oferta|landing/.test(f.r) && !samePath(f.r, page.path) ? (KB.paginas.find((p) => samePath(p.ruta, f.r))?.title ?? f.r.replace(/\//g, " ").replace(/-/g, " ").trim()) : undefined;
     const extra = f.cifras ? pick(f.tipo === "informativa" ? TXT.mercado : TXT.precioPropio, lang, n) : s.biz ? "" : pick(TXT.reconducir, lang, n);
@@ -268,22 +344,21 @@ export async function reply(
         text: [deOferta ? `${lang === "es" ? "En la oferta" : lang === "en" ? "In the offer" : "Dans l'offre"} «${deOferta}»: ${f.a}` : f.a, extra].filter(Boolean).join("\n\n"),
         link: f.tipo === "informativa" && f.r ? linkTo(f.r, pick(TXT.leidoArticulo, lang, n)) : deOferta ? linkTo(f.r, pick(TXT.masInfo, lang, n)) : undefined,
         actions: f.cifras || s.biz ? ["presupuesto"] : [],
-        chips: s.biz ? [] : CHIPS[lang],
         modo: "kb",
       },
       f.tipo === "informativa" ? after(s) : s,
     );
   }
   if (isPriceQuestion(text)) {
-    const cat = await leerCatalogo();
-    const lines = catalogLines(cat, 8);
-    if (lines.length) return done({ text: `${lines.join("\n")}\n\n${pick(TXT.precioPropio, lang, n)}`, actions: ["presupuesto"], modo: "catalogo" }, s);
+    const lines = catalogLines(await leerCatalogo(), 40).filter((l) => ctx === "general" || CTX_RX[ctx].test(l)).slice(0, 6);
+    if (lines.length) { meta.intent = "precio_catalogo"; return done({ text: `${lines.join("\n")}\n\n${pick(TXT.precioPropio, lang, n)}`, actions: ["presupuesto"], modo: "catalogo" }, s); }
   }
   // Ha hablado de su negocio: siguiente paso, la propuesta.
-  if (business) return done({ text: pick(TXT.negocio, lang, n), actions: ["presupuesto"] }, s);
+  if (business) { meta.intent = "negocio"; return done({ text: pick(TXT.negocio, lang, n), actions: ["presupuesto"] }, s); }
   // Pregunta sobre un servicio: descripción publicada de la página del servicio y enlace.
   const sp = bestServicePage(KB.paginas, text);
-  if (sp) return done({ text: [sp.description, s.biz ? "" : pick(TXT.reconducir, lang, n)].filter(Boolean).join("\n\n"), link: linkTo(sp.ruta, pick(TXT.masInfo, lang, n)), chips: CHIPS[lang], modo: "kb" }, s);
-  // Sin respuesta en la base: no consume cupo (no se ha dado información).
-  return done({ text: pick(TXT.sinRespuesta, lang, n), actions: ["contacto"], chips: CHIPS[lang] }, s);
+  if (sp) { meta.intent = "servicio_pagina"; return done({ text: [sp.description, s.biz ? "" : pick(TXT.reconducir, lang, n)].filter(Boolean).join("\n\n"), link: linkTo(sp.ruta, pick(TXT.masInfo, lang, n)), modo: "kb" }, s); }
+  // Sin respuesta en la base: no consume cupo (no se ha dado información). Queda registrado para ampliar la base.
+  meta.intent = "sin_respuesta";
+  return done({ text: pick(TXT.sinRespuesta, lang, n), actions: ["contacto"] }, s);
 }

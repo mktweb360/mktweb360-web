@@ -14,7 +14,7 @@ export default function PrivacidadPage() {
     <div className="max-w-3xl mx-auto px-4 py-12">
       <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Política de Privacidad" }]} />
       <h1 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-2">Política de Privacidad</h1>
-      <p className="text-sm text-gray-500 mb-8">Última actualización: junio de 2025</p>
+      <p className="text-sm text-gray-500 mb-8">Última actualización: octubre de 2026</p>
 
       <div className="text-gray-700 space-y-8 text-sm leading-relaxed">
 
@@ -55,6 +55,17 @@ export default function PrivacidadPage() {
               <p className="mb-1">Con su consentimiento previo, utilizamos Google Analytics 4 y Google Tag Manager para recopilar información estadística y anónima sobre el uso del sitio web, con el fin de mejorar su funcionalidad y contenidos.</p>
               <p><strong>Base jurídica:</strong> Consentimiento del interesado (art. 6.1.a RGPD y art. 22 LSSI).</p>
             </div>
+
+            <div className="border border-gray-200 rounded-xl p-4">
+              <h3 className="font-semibold text-primary-800 mb-2">2.4 Asistente virtual de la web</h3>
+              <p className="mb-1">El sitio web incluye un asistente virtual que funciona con inteligencia artificial y responde a preguntas sobre los servicios de Mkt Web 360. Se le informa de ello al abrirlo.</p>
+              <ul className="list-disc pl-6 mb-1 space-y-1">
+                <li><strong>Mensajes del chat:</strong> se usan para responderle. Sin cuenta ni cookies de seguimiento: la conversación se guarda solo en su navegador (almacenamiento de sesión) mientras la pestaña está abierta.</li>
+                <li><strong>Registro para mejorar el servicio:</strong> guardamos de forma seudonimizada las preguntas y respuestas, la página, la fecha y el resultado de la conversación, eliminando antes los emails y teléfonos que se escriban. No se guarda la dirección IP. Se usa para medir el funcionamiento del asistente y ampliar sus respuestas.</li>
+                <li><strong>Si deja sus datos</strong> (nombre, email, teléfono, negocio y lo que necesita) para pedir presupuesto o que le contactemos, los usamos para responder a su solicitud y preparar su propuesta, junto con la conversación del chat.</li>
+              </ul>
+              <p><strong>Base jurídica:</strong> interés legítimo en atender las consultas que se hacen en el chat y mejorar el servicio (art. 6.1.f RGPD); aplicación de medidas precontractuales a petición del interesado cuando deja sus datos (art. 6.1.b RGPD); y consentimiento para las comunicaciones comerciales, casilla aparte y opcional (art. 6.1.a RGPD).</p>
+            </div>
           </div>
         </section>
 
@@ -92,6 +103,18 @@ export default function PrivacidadPage() {
                   <td className="border border-gray-200 px-3 py-2">Cláusulas Contractuales Tipo (art. 46.2.c RGPD)</td>
                 </tr>
                 <tr className="bg-gray-50">
+                  <td className="border border-gray-200 px-3 py-2 font-medium">Anthropic PBC</td>
+                  <td className="border border-gray-200 px-3 py-2">Generación de las respuestas del asistente virtual (inteligencia artificial), cuando está activada</td>
+                  <td className="border border-gray-200 px-3 py-2">EE. UU.</td>
+                  <td className="border border-gray-200 px-3 py-2">Cláusulas Contractuales Tipo (art. 46.2.c RGPD)</td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-200 px-3 py-2 font-medium">Supabase Inc.</td>
+                  <td className="border border-gray-200 px-3 py-2">Base de datos de MktOS, nuestra herramienta de gestión de clientes (solicitudes, CRM y registro del asistente)</td>
+                  <td className="border border-gray-200 px-3 py-2">Según la región del proyecto</td>
+                  <td className="border border-gray-200 px-3 py-2">Cláusulas Contractuales Tipo (art. 46.2.c RGPD) cuando el tratamiento sale del EEE</td>
+                </tr>
+                <tr className="bg-gray-50">
                   <td className="border border-gray-200 px-3 py-2 font-medium">SiteGround</td>
                   <td className="border border-gray-200 px-3 py-2">Alojamiento del correo electrónico</td>
                   <td className="border border-gray-200 px-3 py-2">UE</td>
@@ -107,6 +130,7 @@ export default function PrivacidadPage() {
         <section>
           <h2 className="text-xl font-bold text-primary-700 mb-3">4. Conservación de los datos</h2>
           <p className="mb-3">Los datos facilitados a través del formulario de contacto se conservarán durante <strong>3 años desde el último contacto</strong>, salvo que exista obligación legal de conservarlos por un período superior o que el interesado solicite su supresión antes de dicho plazo.</p>
+          <p className="mb-3">El registro seudonimizado de las conversaciones del asistente virtual se conserva <strong>90 días</strong> y después se elimina. Las conversaciones que acompañan a una solicitud de presupuesto o contacto se conservan con esa solicitud, durante el plazo indicado en el párrafo anterior.</p>
           <p>Los datos tratados con fines analíticos a través de Google Analytics 4 se conservan durante el período configurado en dicha herramienta (por defecto, 14 meses), en formato anonimizado.</p>
         </section>
 
@@ -131,7 +155,7 @@ export default function PrivacidadPage() {
 
         <section>
           <h2 className="text-xl font-bold text-primary-700 mb-3">7. Decisiones automatizadas y elaboración de perfiles</h2>
-          <p>Mkt Web 360 SLU no realiza decisiones automatizadas ni elaboración de perfiles con los datos de los usuarios del sitio web en los términos del artículo 22 del RGPD.</p>
+          <p>Mkt Web 360 SLU no realiza decisiones automatizadas ni elaboración de perfiles con los datos de los usuarios del sitio web en los términos del artículo 22 del RGPD. El asistente virtual solo orienta sobre nuestros servicios: cualquier propuesta, presupuesto o contrato lo revisa y lo decide una persona.</p>
         </section>
 
         <section>

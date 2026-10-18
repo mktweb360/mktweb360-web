@@ -5,17 +5,19 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { TXT, bubbleFor, pick } from "@/lib/chatbot/texts";
+import { ctxOf, openingChips, type Chip, type ChipId } from "@/lib/chatbot/funnel";
 import type { Lang } from "@/lib/chatbot/core";
 import { CONSENT_COMERCIAL } from "@/lib/consent-texts";
 import { trackLead } from "@/lib/track";
 
-type Action = "presupuesto" | "contacto";
+type Action = "presupuesto" | "contacto" | "auditoria" | "llamada";
+type FormKind = "presupuesto" | "contacto" | "auditoria" | "llamada";
 interface Msg {
   role: "user" | "assistant";
   content: string;
   link?: { href: string; label: string };
   actions?: Action[];
-  chips?: string[];
+  chips?: Chip[];
   sig?: string;
 }
 
@@ -28,6 +30,7 @@ const UI: Record<Lang, Record<string, string>> = {
     gdpr: "He leído la información sobre privacidad y acepto que Mkt Web 360 trate mis datos para responder a mi solicitud.",
     privacy: "Responsable: Mkt Web 360 SLU. Finalidad: responder a tu solicitud y preparar tu propuesta (medidas precontractuales a tu petición). Se envía la conversación de este chat junto con tus datos. Puedes ejercer tus derechos en info@mktweb360.com.",
     privacyLink: "Política de privacidad", submit: "Enviar mis datos", sending: "Enviando…", error: "No se ha podido enviar. Prueba otra vez o escríbenos por WhatsApp al 622 74 89 87.",
+    audit: "Pedir la auditoría gratuita", callme: "Que me llaméis", site: "Tu web (dirección) y tu sector",
     whats: "WhatsApp 622 74 89 87", call: "Llamar", mail: "info@mktweb360.com", restart: "Empezar de nuevo",
   },
   en: {
@@ -38,6 +41,7 @@ const UI: Record<Lang, Record<string, string>> = {
     gdpr: "I have read the privacy information and agree to Mkt Web 360 processing my data to answer my request.",
     privacy: "Controller: Mkt Web 360 SLU. Purpose: answering your request and preparing your proposal (pre-contractual steps at your request). This chat conversation is sent with your details. Exercise your rights at info@mktweb360.com.",
     privacyLink: "Privacy policy", submit: "Send my details", sending: "Sending…", error: "Couldn't send. Try again or message us on WhatsApp at +34 622 74 89 87.",
+    audit: "Request the free audit", callme: "Call me", site: "Your website (address) and sector",
     whats: "WhatsApp +34 622 74 89 87", call: "Call", mail: "info@mktweb360.com", restart: "Start again",
   },
   fr: {
@@ -48,6 +52,7 @@ const UI: Record<Lang, Record<string, string>> = {
     gdpr: "J'ai lu les informations sur la confidentialité et j'accepte que Mkt Web 360 traite mes données pour répondre à ma demande.",
     privacy: "Responsable : Mkt Web 360 SLU. Finalité : répondre à votre demande et préparer votre proposition. La conversation de ce chat est envoyée avec vos coordonnées. Vos droits : info@mktweb360.com.",
     privacyLink: "Politique de confidentialité", submit: "Envoyer mes coordonnées", sending: "Envoi…", error: "Échec de l'envoi. Réessayez ou écrivez-nous sur WhatsApp au +34 622 74 89 87.",
+    audit: "Demander l'audit gratuit", callme: "Rappelez-moi", site: "Votre site (adresse) et votre secteur",
     whats: "WhatsApp +34 622 74 89 87", call: "Appeler", mail: "info@mktweb360.com", restart: "Recommencer",
   },
 };
@@ -55,6 +60,14 @@ const UI: Record<Lang, Record<string, string>> = {
 const HIDDEN = /^\/(area-privada|portal|admin|api)(\/|$)/;
 const KEY = "mw360_chat_v1";
 
+function utmOf() {
+  try {
+    const q = new URLSearchParams(window.location.search);
+    const u = { source: q.get("utm_source") ?? "", medium: q.get("utm_medium") ?? "", campaign: q.get("utm_campaign") ?? "" };
+    if (u.source) sessionStorage.setItem("mw360_utm", JSON.stringify(u));
+    return u.source ? u : (JSON.parse(sessionStorage.getItem("mw360_utm") || "null") ?? {});
+  } catch { return {}; }
+}
 function langOf(path: string): Lang {
   return path.startsWith("/en/") || path === "/en" ? "en" : path.startsWith("/fr/") || path === "/fr" ? "fr" : "es";
 }
@@ -77,7 +90,7 @@ export function ChatWidget() {
   const [closed, setClosed] = useState(false);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
-  const [form, setForm] = useState<null | "presupuesto" | "contacto">(null);
+  const [form, setForm] = useState<null | FormKind>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const launcherRef = useRef<HTMLButtonElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -121,16 +134,14 @@ export function ChatWidget() {
     setBubble(null);
     setMsgs((m) => (m.length ? m : [
       { role: "assistant", content: pick(TXT.aviso, lang, 0) },
-      { role: "assistant", content: pick(TXT.saludo, lang, Math.floor(Math.random() * 3)), chips: [t.quote, lang === "es" ? "¿Qué servicios tenéis?" : lang === "en" ? "What services do you offer?" : "Quels services proposez-vous ?", t.human] },
+      { role: "assistant", content: pick(TXT.saludo, lang, Math.floor(Math.random() * 3)), chips: openingChips(ctxOf(pathname), lang) },
     ]));
     setTimeout(() => inputRef.current?.focus(), 150);
-  }, [lang, t]);
+  }, [lang, pathname]);
 
-  async function send(text: string) {
+  async function send(text: string, chip: ChipId | null = null) {
     const msg = text.trim();
     if (!msg || busy || closed) return;
-    if (msg === t.quote) { setMsgs((m) => [...m, { role: "user", content: msg }, { role: "assistant", content: pick(TXT.presupuesto, lang, 0) }]); setForm("presupuesto"); return; }
-    if (msg === t.human) { setMsgs((m) => [...m, { role: "user", content: msg }, { role: "assistant", content: pick(TXT.persona, lang, 0), actions: ["contacto"] }]); return; }
     const history = msgs.filter((m) => m.content).map((m) => ({ role: m.role, content: m.content, sig: m.sig })).slice(-10);
     setMsgs((m) => [...m, { role: "user", content: msg }]);
     setInput("");
@@ -139,13 +150,16 @@ export function ChatWidget() {
       const r = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: msg, token, history, page: { path: pathname, lang, title: document.title } }),
+        body: JSON.stringify({ message: msg, chip, token, history, page: { path: pathname, lang, title: document.title, utm: utmOf() } }),
       });
       const j = await r.json();
       if (!r.ok) throw new Error(j.error || "error");
       setToken(j.token);
-      const rep = j.reply as { text: string; link?: Msg["link"]; actions: Action[]; chips: string[]; closed: boolean };
+      const rep = j.reply as { text: string; link?: Msg["link"]; actions: Action[]; chips: Chip[]; closed: boolean };
       setMsgs((m) => [...m, { role: "assistant", content: rep.text, link: rep.link, actions: rep.actions, chips: rep.chips, sig: j.sig }]);
+      // Abre el formulario directamente cuando la sugerencia pulsada lo pide.
+      const direct = rep.actions.find((a) => a === "auditoria" || a === "llamada");
+      if (direct && chip) setForm(direct);
       if (rep.closed) setClosed(true);
     } catch (e) {
       setMsgs((m) => [...m, { role: "assistant", content: e instanceof Error && e.message !== "error" ? e.message : t.error, actions: ["contacto"] }]);
@@ -201,9 +215,11 @@ export function ChatWidget() {
                 {m.role === "assistant" && i === msgs.length - 1 && !closed && (
                   <div className="flex flex-wrap gap-2">
                     {m.actions?.includes("presupuesto") && <button onClick={() => setForm("presupuesto")} className="rounded-full bg-[#f97316] px-3.5 py-1.5 text-[13px] font-semibold text-white hover:bg-[#ea6a00]">{t.quote}</button>}
+                    {m.actions?.includes("auditoria") && <button onClick={() => setForm("auditoria")} className="rounded-full bg-[#f97316] px-3.5 py-1.5 text-[13px] font-semibold text-white hover:bg-[#ea6a00]">{t.audit}</button>}
+                    {m.actions?.includes("llamada") && <button onClick={() => setForm("llamada")} className="rounded-full bg-[#f97316] px-3.5 py-1.5 text-[13px] font-semibold text-white hover:bg-[#ea6a00]">{t.callme}</button>}
                     {m.actions?.includes("contacto") && <ContactLinks t={t} onForm={() => setForm("contacto")} />}
-                    {m.chips?.filter((c) => !(m.actions?.includes("presupuesto") && /presupuesto|quote|devis/i.test(c))).map((c) => (
-                      <button key={c} onClick={() => send(c)} className="rounded-full border border-[#0f1c2e]/20 bg-white px-3 py-1.5 text-[13px] hover:border-[#f97316]">{c}</button>
+                    {m.chips?.filter((c) => !(m.actions?.includes(c.id as Action))).map((c) => (
+                      <button key={c.id} onClick={() => send(c.label, c.id)} className="rounded-full border border-[#0f1c2e]/20 bg-white px-3 py-1.5 text-[13px] hover:border-[#f97316]">{c.label}</button>
                     ))}
                   </div>
                 )}
@@ -247,10 +263,10 @@ function ContactLinks({ t, onForm }: { t: Record<string, string>; onForm: () => 
 }
 
 function LeadForm({ kind, t, lang, token, transcript, page, onDone, onCancel }: {
-  kind: "presupuesto" | "contacto"; t: Record<string, string>; lang: Lang; token: string | null; transcript: Msg[]; page: string;
+  kind: FormKind; t: Record<string, string>; lang: Lang; token: string | null; transcript: Msg[]; page: string;
   onDone: (ok: boolean) => void; onCancel: () => void;
 }) {
-  const [v, setV] = useState({ name: "", email: "", phone: "", business: "", need: "", preference: "email", slot: "", gdpr: false, marketing: false, _hp: "" });
+  const [v, setV] = useState({ name: "", email: "", phone: "", business: "", need: "", preference: kind === "llamada" ? "llamada" : "email", slot: "", gdpr: false, marketing: false, _hp: "" });
   const [st, setSt] = useState<"idle" | "sending" | "error">("idle");
   const [err, setErr] = useState("");
   const set = (k: string, val: string | boolean) => setV((x) => ({ ...x, [k]: val }));
@@ -278,8 +294,8 @@ function LeadForm({ kind, t, lang, token, transcript, page, onDone, onCancel }: 
       <input id="mw360-l-email" aria-label={t.email} required type="email" placeholder={t.email} value={v.email} onChange={(e) => set("email", e.target.value)} className={field} autoComplete="email" />
       <input id="mw360-l-phone" aria-label={t.phone} type="tel" placeholder={t.phone} value={v.phone} onChange={(e) => set("phone", e.target.value)} className={field} autoComplete="tel"
         required={v.preference !== "email"} />
-      <input id="mw360-l-business" aria-label={t.business} placeholder={t.business} value={v.business} onChange={(e) => set("business", e.target.value)} className={field} />
-      {kind === "presupuesto" && <textarea id="mw360-l-need" aria-label={t.need} placeholder={t.need} value={v.need} onChange={(e) => set("need", e.target.value)} className={field} rows={2} />}
+      <input id="mw360-l-business" aria-label={kind === "auditoria" ? t.site : t.business} placeholder={kind === "auditoria" ? t.site : t.business} value={v.business} onChange={(e) => set("business", e.target.value)} className={field} />
+      {(kind === "presupuesto" || kind === "auditoria") && <textarea id="mw360-l-need" aria-label={t.need} placeholder={t.need} value={v.need} onChange={(e) => set("need", e.target.value)} className={field} rows={2} />}
       <fieldset className="space-y-1">
         <legend className="text-[12.5px] text-gray-600">{t.pref}</legend>
         <div className="flex flex-wrap gap-3">

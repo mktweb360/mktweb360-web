@@ -2,10 +2,11 @@
 // Entrada: { message, token?, page: { path, lang, title }, history?: [{ role, content }] }
 // Salida: { reply, token }. El estado (cupo, intentos, sesión) viaja firmado en `token`.
 // No se guardan conversaciones en el servidor: solo se envían a MktOS si el visitante deja sus datos.
-import { NextRequest, NextResponse } from "next/server";
+import { after, NextRequest, NextResponse } from "next/server";
 
 import { reply, readState, signReply, signState } from "@/lib/chatbot/engine";
 import { LIMITS, type Lang } from "@/lib/chatbot/core";
+import { scrub, sendEvent, sidHash } from "@/lib/chatbot/telemetry";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -47,6 +48,8 @@ export async function POST(req: NextRequest) {
   const lang: Lang = p.lang === "en" || p.lang === "fr" ? p.lang : "es";
   const path = typeof p.path === "string" && p.path.startsWith("/") ? p.path.slice(0, 300) : "/";
   const title = typeof p.title === "string" ? p.title.slice(0, 200) : undefined;
+  const utm = (p.utm ?? {}) as Record<string, unknown>;
+  const t0 = Date.now();
 
   try {
     const st = await readState(body.token);
@@ -70,8 +73,19 @@ export async function POST(req: NextRequest) {
     for (const m of history) if (!clean.length ? m.role === "user" : clean[clean.length - 1].role !== m.role) clean.push(m);
     if (clean.length && clean[clean.length - 1].role === "user") clean.pop();
 
-    const { reply: r, state, costUsd } = await reply(message, st, { path, lang, title }, clean);
+    const CHIP_IDS = ["incluye", "precio", "negocio", "auditoria", "presupuesto", "llamada", "persona", "servicios"] as const;
+    const chip = CHIP_IDS.find((c) => c === body.chip) ?? null;
+    const { reply: r, state, costUsd, meta } = await reply(message, st, { path, lang, title }, clean, chip);
     if (r.modo === "ia") console.info(`[chatbot] ia sid=${state.sid.slice(0, 8)} n=${state.n} coste=$${costUsd.toFixed(5)}`);
+    // Registro para el informe de MktOS, después de responder.
+    after(() => sendEvent({
+      type: "turn", sid: sidHash(state.sid), n: state.n, path, lang, chip: meta.chip ?? "", intent: meta.intent, modo: r.modo,
+      faq_id: meta.faqId ?? "", user_text: scrub(message, 1000), reply_text: scrub(r.text, 2000), actions: r.actions,
+      link: r.link?.href ?? "", usage: meta.usage ?? {}, cost_usd: costUsd, latency_ms: Date.now() - t0,
+      business: state.biz, closed: state.closed,
+      utm_source: typeof utm.source === "string" ? utm.source.slice(0, 80) : "", utm_medium: typeof utm.medium === "string" ? utm.medium.slice(0, 80) : "",
+      utm_campaign: typeof utm.campaign === "string" ? utm.campaign.slice(0, 120) : "",
+    }));
     return NextResponse.json(
       { reply: r, sig: await signReply(state.sid, r.text), token: await signState(state) },
       { headers: { "Cache-Control": "no-store" } },

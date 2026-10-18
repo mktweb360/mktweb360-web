@@ -1,10 +1,11 @@
 // Asistente · POST /api/chat/lead — el visitante deja sus datos desde el chat.
 // Crea el lead en MktOS por el mismo webhook que el formulario de contacto (CRM, oportunidad, aviso push y email a José)
 // con canal «web-chatbot», y avisa por email a info@. La conversación solo viaja aquí, con el consentimiento del visitante.
-import { NextRequest, NextResponse } from "next/server";
+import { after, NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 
 import { readState } from "@/lib/chatbot/engine";
+import { sendEvent, sidHash } from "@/lib/chatbot/telemetry";
 import { CONSENT_COMERCIAL, consentLang } from "@/lib/consent-texts";
 
 export const runtime = "nodejs";
@@ -43,7 +44,7 @@ export async function POST(req: NextRequest) {
   const necesidad = str(b.need, 800);
   const preferencia = ["llamada", "email", "whatsapp"].includes(String(b.preference)) ? String(b.preference) : "email";
   const franja = str(b.slot, 120);
-  const tipo = b.kind === "contacto" ? "contacto" : "presupuesto";
+  const tipo = b.kind === "contacto" || b.kind === "llamada" ? "contacto" : b.kind === "auditoria" ? "auditoria" : "presupuesto";
   const pagina = str(b.page, 300);
   const lang = consentLang(b.lang);
   const marketing = b.marketing === true;
@@ -65,7 +66,7 @@ export async function POST(req: NextRequest) {
     .slice(0, 4000);
 
   const mensaje = [
-    `Solicitud desde el asistente de la web (${tipo === "presupuesto" ? "pide presupuesto" : "quiere hablar con José"}).`,
+    `Solicitud desde el asistente de la web (${tipo === "presupuesto" ? "pide presupuesto" : tipo === "auditoria" ? "pide la auditoría gratuita" : "quiere hablar con José"}).`,
     negocio && `Negocio: ${negocio}`,
     necesidad && `Necesidad: ${necesidad}`,
     `Prefiere: ${preferencia}${franja ? ` · ${franja}` : ""}`,
@@ -85,8 +86,10 @@ export async function POST(req: NextRequest) {
         headers: { "Content-Type": "application/json", "x-webhook-secret": secret },
         body: JSON.stringify({
           nombre, email, telefono, empresa: negocio, sector: "",
-          canal: "web-chatbot", oferta: tipo === "presupuesto" ? "presupuesto-chatbot" : "general",
+          canal: "web-chatbot", oferta: tipo === "presupuesto" ? "presupuesto-chatbot" : tipo === "auditoria" ? "auditoria-seo-geo-gratuita" : "general",
           opcionPago: "", mensaje, fichaGoogle: "",
+          // Auditoría gratuita: MktOS abre el expediente con la web indicada.
+          ...(tipo === "auditoria" ? { web: (negocio.match(/(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,}(\/\S*)?/i)?.[0] ?? "") } : {}),
           consentimientoComercial: marketing,
           ...(marketing
             ? { consentimientoComercialTexto: CONSENT_COMERCIAL[lang], idioma: lang, pagina, clientIp: ip, userAgent: req.headers.get("user-agent") ?? "" }
@@ -123,5 +126,6 @@ export async function POST(req: NextRequest) {
   // Si no ha llegado por ningún canal, el visitante debe saberlo (no se le dice «hecho» en falso).
   if (!mktosOk && !emailOk)
     return NextResponse.json({ error: "No hemos podido registrar tu solicitud. Escríbenos por WhatsApp al 622 74 89 87, por favor." }, { status: 502 });
+  after(() => sendEvent({ type: "lead", sid: sidHash(st.sid), kind: tipo, opportunity_id: opportunityId ?? "" }));
   return NextResponse.json({ ok: true, id, ...(opportunityId ? { opportunity_id: opportunityId } : {}) });
 }
