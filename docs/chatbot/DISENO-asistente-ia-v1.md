@@ -305,3 +305,64 @@ Las FAQs informativas de los artículos **no se excluyen: se usan dentro del cup
 | Excluir | 60 | 56 |
 
 - **En la página de revisión**, el botón de aprobación en bloque aprueba las de servicio y las informativas de cupo. Las de revisar, José las ve una a una.
+
+---
+
+## 14. Datos vivos y aprendizaje (José, 18/10, 13:32)
+
+### 14.1 Problema detectado con un caso real
+- José editó la FAQ «¿Cuánto cuesta una página web corporativa profesional?» (desde 790 €) con la nota: *«hay una oferta de web corporativa con las demos que estamos creando que está, creo recordar, en unos 300 euros»*.
+- **Lo que hay publicado hoy [C, repositorio de la web]:**
+  - 790 € en `/diseno-de-paginas-web/paginas-corporativas/`, `/diseno-web-para-clinicas/`, `/diseno-web-para-dentistas/` y sus versiones en inglés y francés;
+  - **«web sola desde 249 € + IVA»** en `/oferta-web-seo/` y `/oferta-web-seo-organico/`;
+  - tienda online desde 490 € en `/landing/tienda-online-490/`.
+- **No aparece ninguna oferta «demos ~300 €»** en la web. Puede estar en el catálogo de MktOS (no consultado en producción) o no estar publicada todavía. **José tiene que confirmar el nombre, el precio y la vigencia.**
+- **Conclusión:** si un precio está escrito a mano en una respuesta, se queda viejo. **Ni la web ni el chatbot deben tener precios fijos en el texto.**
+
+### 14.2 Datos vivos: hechos separados de la redacción
+1. **Fuente única:** el catálogo de MktOS, con servicios, ofertas, precio, IVA, permanencia y **fechas de inicio y fin de cada oferta**. Mismo ciclo de vida que las campañas temporales de la web (skill `gestion-campanas-temporales`).
+2. **Variables en las respuestas:** «… partimos desde {{precio:web-corporativa}} + IVA». Se rellenan al responder con el valor vigente del catálogo, sin IA y sin coste. Si la oferta ha caducado, la variable devuelve el precio estándar o «a presupuesto», nunca un precio viejo.
+3. **Sincronización automática** (tarea diaria de MktOS y en cada despliegue de la web):
+   - Se vuelven a extraer las FAQs de la web (`scripts/extraer-faqs-chatbot.mjs`) y se comparan con las aprobadas:
+     - texto cambiado → «**cambiada, revisar**»;
+     - nueva → «pendiente»;
+     - desaparecida → «retirada».
+   - Se buscan cifras, precios y plazos en las respuestas aprobadas y se cruzan con el catálogo. **Si no coinciden, la respuesta se suspende sola** (el asistente responde con el dato del catálogo) y José recibe un aviso «respuesta desactualizada» para reaprobarla.
+   - Cuando caduca una oferta, se desactivan las respuestas que la nombran.
+4. **Caducidad de revisión:** cada respuesta lleva «revisar antes de»: 30 días si tiene precio, 90 días en el resto.
+5. **El mismo detector revisa la web.** Las incoherencias de precios entre páginas (790 € frente a 249 € frente a la oferta de demos) se convierten en **tareas para corregir la web**. Esto también mejora la confianza y el SEO.
+
+### 14.3 Aprendizaje supervisado: mejora continua sin reentrenar el modelo
+**Señales que se recogen** de cada conversación, anonimizada y conservada 90 días:
+- resultado enlazado al CRM: lead, llamada agendada, propuesta, firma o abandono;
+- 👍/👎 del visitante;
+- en qué mensaje se va el visitante;
+- cierres por cupo informativo;
+- preguntas sin respuesta;
+- objeciones («es caro», «ya tengo agencia», «lo hago yo»).
+
+**Ciclo semanal automático:** Batch API de Anthropic, con un 50 % de descuento **[C]**. Coste estimado: céntimos a la semana **[E]**. Claude analiza las conversaciones de la semana y **propone**:
+1. **Respuestas nuevas** para la base de conocimiento, sacadas de preguntas que se repiten.
+2. **Mejores frases de reconducción y de cierre**, según las que llevaron a lead.
+3. **Ejemplos de conversación ganadora** para el prompt: 3–4 conversaciones reales anonimizadas que acabaron en lead.
+4. **Biblioteca de objeciones** con la respuesta que mejor ha funcionado.
+5. **Mensajes de apertura** por tipo de página. Se prueban variantes y el tráfico se reparte solo hacia la que convierte mejor.
+
+**Quién decide:**
+- Las propuestas 1–4 llegan a José en una cola «**Propuestas de aprendizaje**», en la misma página de revisión. **Nada cambia lo que dice el asistente sin que José lo apruebe.**
+- La única excepción es el reparto del tráfico entre aperturas **ya aprobadas** (5), que es automático porque no añade contenido nuevo.
+
+**Límites:**
+- El aprendizaje nunca crea datos: precios, plazos y servicios salen solo del catálogo.
+- Los ejemplos van anonimizados.
+- No se guarda nada personal sin lead y consentimiento.
+
+**KPI del aprendizaje:** % de conversaciones con lead (tendencia semanal), % de 👎, % de preguntas sin respuesta y tiempo medio hasta la primera señal de negocio.
+
+### 14.4 Avisos sobre FAQs ya aprobadas (revisión de Claude, 18/10)
+José ha revisado 41: 35 aprobadas, 5 rechazadas y 1 editada. Varias de las aprobadas dan **precios de mercado de terceros**:
+- «un chatbot gestionado cuesta típicamente entre 149 y 299 €/mes»;
+- «una agencia cuesta entre 300 y 1.500 €/mes»;
+- «entre 50 y 200 €/mes en herramientas de IA».
+
+En un chatbot de Mkt Web 360, el visitante puede leerlas como **nuestro precio**. **Propuesta:** el asistente las presenta siempre como referencia de mercado y da a continuación el precio propio del catálogo, o se editan para decirlo de forma explícita.
