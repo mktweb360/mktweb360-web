@@ -6,7 +6,7 @@ Responde y comenta siempre en español, en lenguaje claro.
 
 ## Antes de empezar
 
-- Lee `HISTORIAL-mktweb360-web-v4.md` (estado del sitio; la v3 sigue vigente para arquitectura y reglas permanentes) y el `git log` reciente.
+- Lee el `HISTORIAL-mktweb360-web-v*.md` de número más alto (hoy v5; la v3 sigue vigente para arquitectura y reglas permanentes) y el `git log` reciente.
 - Si la tarea es una oferta, promoción, banner o landing con fecha de caducidad, usa la skill `gestion-campanas-temporales`: inventaría todo lo que hay que crear y luego retirar.
 
 ## Comandos
@@ -24,7 +24,7 @@ pnpm validate-i18n        # coherencia de las versiones EN/FR
 
 - **Nada inventado.** Ni cifras de clientes, ni testimonios, ni capacidades. Los testimonios solo si son reales y autorizados; las reseñas, las de Google. Un dato falso en la web es un problema legal y de confianza.
 - **Precios: el catálogo de MktOS manda** (`lib/catalogo.ts`, `lib/precios-planes.ts`). Precio exacto, sin IVA y sin «desde» si el precio es fijo. Si el catálogo no responde, la web usa sus datos de respaldo.
-- **Plazos y resultados:** nunca prometer posiciones ni resultados garantizados. Los plazos orientativos deben ser coherentes entre páginas (hoy no lo son: pendiente de unificar con José).
+- **Plazos y resultados:** nunca prometer posiciones ni resultados garantizados. Los plazos orientativos deben ser coherentes entre páginas (unificados el 18/10: SEO 3-6 meses primeros resultados y 6-12 consolidación; Maps 1-2 meses).
 - **Equipo:** hoy hay un solo técnico. Nada de «equipo de expertos»; sí «criterio / experiencia senior».
 - **Captación nacional:** los materiales de captación no mencionan ciudad ni provincia. Las páginas de SEO local por ciudad son la excepción, porque su objetivo es posicionar esa ciudad.
 - **Legal:** cualquier formulario lleva primera capa RGPD y casilla separada de comunicaciones comerciales. Si se añade un proveedor que trata datos, se añade a la política de privacidad (encargado, ubicación y garantía).
