@@ -27,7 +27,7 @@ function allow(ip: string): boolean {
   return true;
 }
 
-const ORIGINS = /^https:\/\/(www\.)?mktweb360\.com$|^https:\/\/mktweb360-web-[a-z0-9-]+-mktweb360-9918s-projects\.vercel\.app$|^http:\/\/localhost(:\d+)?$/;
+const ORIGINS = /^https:\/\/(www\.)?mktweb360\.com$|^https:\/\/mktweb360-[a-z0-9-]+-mktweb360-9918s-projects\.vercel\.app$|^http:\/\/localhost(:\d+)?$/;
 
 export async function POST(req: NextRequest) {
   const origin = req.headers.get("origin");

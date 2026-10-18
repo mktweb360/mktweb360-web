@@ -11,7 +11,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const MKTOS_URL = "https://mktos360.app/api/webhooks/web-lead";
-const ORIGINS = /^https:\/\/(www\.)?mktweb360\.com$|^https:\/\/mktweb360-web-[a-z0-9-]+-mktweb360-9918s-projects\.vercel\.app$|^http:\/\/localhost(:\d+)?$/;
+const ORIGINS = /^https:\/\/(www\.)?mktweb360\.com$|^https:\/\/mktweb360-[a-z0-9-]+-mktweb360-9918s-projects\.vercel\.app$|^http:\/\/localhost(:\d+)?$/;
 
 const rate = new Map<string, { n: number; reset: number }>();
 function allow(ip: string) {
