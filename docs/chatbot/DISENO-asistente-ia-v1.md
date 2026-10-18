@@ -256,3 +256,36 @@ Con eso el asistente:
 - 138 de **revisar**: tienen cifras, plazos o absolutos.
 - 47 de **excluir**: temas legales o fiscales de artículos, porque el asistente no asesora en eso.
 - 452 **opcionales**: preguntas informativas de artículos.
+
+---
+
+## 13. Regla de intención comercial (José, 18/10, 13:08)
+**Principio:** es un chatbot profesional para **dar a conocer nuestros servicios y conseguir leads**. No es una herramienta para que estudiantes, empresas o terceros resuelvan sus problemas o investiguen para su propio beneficio.
+
+**Cómo se aplica:**
+
+| Tipo de mensaje | Ejemplo | Qué hace el asistente | Coste de IA |
+|---|---|---|---|
+| **Interés en un servicio** | «¿Cuánto cuesta el SEO local?», «¿Me hacéis la web?» | Responde bien, cualifica y propone el siguiente paso | Normal |
+| **Duda informativa ligada a un servicio** | «¿Qué es el GEO?» | Una o dos frases como mucho, sin tutorial. Conecta enseguida con su negocio: «¿Te interesa para tu negocio? ¿A qué te dedicas?» | Bajo |
+| **Consulta de terceros o investigación** | «¿Cómo hago el SEO de mi web paso a paso?», «Explícame el algoritmo», «Es para un trabajo de clase o un TFG», «Dame una lista de herramientas», «Redáctame…» | **No la resuelve.** Dice con amabilidad que este canal es para quien quiere contar con Mkt Web 360, enlaza el artículo si existe y ofrece hablar de su proyecto | Mínimo (respuesta fija, sin IA si la detectan las reglas) |
+| **Fuera de ámbito** | Cualquier otro tema | Respuesta fija y amable. Ofrece los servicios | 0 |
+
+**Controles en código:**
+1. **Cupo informativo por sesión:** como mucho **2 respuestas informativas** sin que aparezca una señal de negocio (sector, web, necesidad, interés en contratar).
+   - A la tercera, el asistente pregunta directamente por su negocio.
+   - Si no hay respuesta de negocio, **cierra con amabilidad** y deja la llamada a la acción (auditoría gratuita o contacto).
+2. **Detección previa sin IA:** detecta patrones de uso propio («paso a paso», «tutorial», «para mi trabajo, clase, TFG o máster», «explícame», «hazme, redáctame o escríbeme», «lista de herramientas», «compara X e Y») y responde con una plantilla fija.
+3. **Solo FAQs aprobadas:** en la revisión de FAQs, las **informativas de artículos se excluyen** por defecto:
+   - 446 excluidas de las 738;
+   - 237 para aprobar (de servicio, o de un artículo pero sobre nuestro servicio);
+   - 55 para revisar.
+
+   Así el asistente no tiene el material para hacer de consultor gratuito.
+4. **Medición:** % de sesiones cerradas por el cupo informativo y % de leads por sesión. Si una consulta informativa se repite mucho, pasa a la revisión mensual como posible contenido nuevo (blog o lead magnet), no como respuesta del chatbot.
+
+**Texto base de reconducción (borrador, tuteo):**
+> «Esto lo explicamos con detalle en [artículo]. Por aquí te ayudo sobre todo si estás pensando en mejorar la captación de tu negocio: ¿a qué te dedicas y qué te gustaría conseguir?»
+
+**Texto de cierre amable (borrador):**
+> «Este canal está pensado para quien quiere contar con Mkt Web 360 en su proyecto. Si en algún momento te encaja, pide aquí la auditoría gratuita y lo vemos con tu caso.»
