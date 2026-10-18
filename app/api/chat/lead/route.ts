@@ -50,6 +50,8 @@ export async function POST(req: NextRequest) {
   const pagina = str(b.page, 300);
   const lang = consentLang(b.lang);
   const marketing = b.marketing === true;
+  // «Lo antes posible»: llamada urgente, José recibe un aviso destacado.
+  const urgente = b.urgent === true && preferencia === "llamada";
 
   if (!nombre || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || b.gdpr !== true)
     return NextResponse.json({ error: "Faltan el nombre, un email válido o la aceptación de la privacidad." }, { status: 400 });
@@ -68,7 +70,7 @@ export async function POST(req: NextRequest) {
     .slice(0, 4000);
 
   const mensaje = [
-    `Solicitud desde el asistente de la web (${tipo === "presupuesto" ? "pide presupuesto" : tipo === "auditoria" ? "pide la auditoría gratuita" : "quiere hablar con José"}).`,
+    `${urgente ? "URGENTE: quiere que le llames lo antes posible.\n" : ""}Solicitud desde el asistente de la web (${tipo === "presupuesto" ? "pide presupuesto" : tipo === "auditoria" ? "pide la auditoría gratuita" : "quiere hablar con José"}).`,
     negocio && `Negocio: ${negocio}`,
     necesidad && `Necesidad: ${necesidad}`,
     `Prefiere: ${preferencia}${franja ? ` · ${franja}` : ""}`,
@@ -88,7 +90,7 @@ export async function POST(req: NextRequest) {
         headers: { "Content-Type": "application/json", "x-webhook-secret": secret },
         body: JSON.stringify({
           nombre, email, telefono, empresa: negocio, sector: "",
-          canal: "web-chatbot", oferta: tipo === "presupuesto" ? "presupuesto-chatbot" : tipo === "auditoria" ? "auditoria-seo-geo-gratuita" : "general",
+          canal: "web-chatbot", oferta: urgente ? "llamada-urgente" : tipo === "presupuesto" ? "presupuesto-chatbot" : tipo === "auditoria" ? "auditoria-seo-geo-gratuita" : "general",
           opcionPago: "", mensaje, fichaGoogle: "",
           // Auditoría gratuita: MktOS abre el expediente con la web indicada.
           ...(tipo === "auditoria" ? { web: (negocio.match(/(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,}(\/\S*)?/i)?.[0] ?? "") } : {}),
@@ -114,7 +116,7 @@ export async function POST(req: NextRequest) {
     const { Resend } = await import("resend");
     const sent = await new Resend(apiKey).emails.send({
       from: "web@mktweb360.com", to: "info@mktweb360.com", replyTo: email,
-      subject: `Lead del asistente [${tipo}] · ${nombre.replace(/[\r\n]+/g, " ")}`,
+      subject: `${urgente ? "URGENTE · Llamar ya · " : ""}Lead del asistente [${tipo}] · ${nombre.replace(/[\r\n]+/g, " ")}${urgente && telefono ? ` · ${telefono.replace(/[\r\n]+/g, " ")}` : ""}`,
       html: `<div style="font-family:-apple-system,sans-serif;max-width:640px;margin:0 auto;padding:24px">
         <h2 style="color:#0f1c2e;margin:0 0 12px">Lead del asistente · ${tipo === "presupuesto" ? "pide presupuesto" : "quiere hablar contigo"}</h2>
         <p><strong>${esc(nombre)}</strong> · <a href="mailto:${esc(email)}">${esc(email)}</a>${telefono ? ` · ${esc(telefono)}` : ""}</p>

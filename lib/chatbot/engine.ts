@@ -227,7 +227,7 @@ export async function reply(
       case "auditoria": return done({ text: TXT_AUDITORIA[lang], actions: ["auditoria"] }, { ...s, biz: true });
       case "presupuesto": return done({ text: pick(TXT.presupuesto, lang, n), actions: ["presupuesto"] }, { ...s, biz: true });
       case "llamada": return done({ text: TXT_LLAMADA[lang], actions: ["llamada"] }, { ...s, biz: true });
-      case "persona": return done({ text: pick(TXT.persona, lang, n), actions: ["contacto"] }, s);
+      case "persona": return done({ text: pick(TXT.persona, lang, n), actions: ["llamada", "contacto"] }, s);
       case "servicios": return done({ text: SERVICES[lang] }, s);
       case "incluye": {
         const ruta = CTX_ROUTE[ctx];
@@ -278,7 +278,7 @@ export async function reply(
     case "greeting":
       return done({ text: pick(TXT.saludo, lang, n), chips: openingChips(ctx, lang) }, s);
     case "human":
-      return done({ text: pick(TXT.persona, lang, n), actions: ["contacto"] }, s);
+      return done({ text: pick(TXT.persona, lang, n), actions: ["llamada", "contacto"] }, s);
     case "quote":
       return done({ text: pick(TXT.presupuesto, lang, n), actions: ["presupuesto"] }, s);
   }

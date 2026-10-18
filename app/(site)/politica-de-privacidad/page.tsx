@@ -111,8 +111,8 @@ export default function PrivacidadPage() {
                 <tr>
                   <td className="border border-gray-200 px-3 py-2 font-medium">Supabase Inc.</td>
                   <td className="border border-gray-200 px-3 py-2">Base de datos de MktOS, nuestra herramienta de gestión de clientes (solicitudes, CRM y registro del asistente)</td>
-                  <td className="border border-gray-200 px-3 py-2">Según la región del proyecto</td>
-                  <td className="border border-gray-200 px-3 py-2">Cláusulas Contractuales Tipo (art. 46.2.c RGPD) cuando el tratamiento sale del EEE</td>
+                  <td className="border border-gray-200 px-3 py-2">Suiza (Zúrich); soporte y operaciones puntuales desde EE. UU. y Singapur</td>
+                  <td className="border border-gray-200 px-3 py-2">Decisión de adecuación de la Comisión Europea para Suiza (art. 45 RGPD); Cláusulas Contractuales Tipo (art. 46.2.c RGPD) para EE. UU. y Singapur</td>
                 </tr>
                 <tr className="bg-gray-50">
                   <td className="border border-gray-200 px-3 py-2 font-medium">SiteGround</td>

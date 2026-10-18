@@ -30,7 +30,7 @@ const UI: Record<Lang, Record<string, string>> = {
     gdpr: "He leído la información sobre privacidad y acepto que Mkt Web 360 trate mis datos para responder a mi solicitud.",
     privacy: "Responsable: Mkt Web 360 SLU. Finalidad: responder a tu solicitud y preparar tu propuesta (medidas precontractuales a tu petición). Se envía la conversación de este chat junto con tus datos. Puedes ejercer tus derechos en info@mktweb360.com.",
     privacyLink: "Política de privacidad", submit: "Enviar mis datos", sending: "Enviando…", error: "No se ha podido enviar. Prueba otra vez o escríbenos por WhatsApp al 622 74 89 87.",
-    audit: "Pedir la auditoría gratuita", callme: "Que me llaméis", pickSlot: "Elige un hueco para la llamada (hora de España)", booked: "¡Hecho! Llamada reservada para el", bookedTail: "José te llamará al teléfono que nos has dejado.", site: "Tu web (dirección) y tu sector",
+    audit: "Pedir la auditoría gratuita", callme: "Que me llaméis", pickSlot: "Elige un hueco para la llamada (hora de España)", asap: "Lo antes posible", asapDone: "¡Hecho! José ya tiene el aviso en el móvil y te llamará lo antes posible.", booked: "¡Hecho! Llamada reservada para el", bookedTail: "José te llamará al teléfono que nos has dejado.", site: "Tu web (dirección) y tu sector",
     whats: "WhatsApp 622 74 89 87", call: "Llamar", mail: "info@mktweb360.com", restart: "Empezar de nuevo",
   },
   en: {
@@ -41,7 +41,7 @@ const UI: Record<Lang, Record<string, string>> = {
     gdpr: "I have read the privacy information and agree to Mkt Web 360 processing my data to answer my request.",
     privacy: "Controller: Mkt Web 360 SLU. Purpose: answering your request and preparing your proposal (pre-contractual steps at your request). This chat conversation is sent with your details. Exercise your rights at info@mktweb360.com.",
     privacyLink: "Privacy policy", submit: "Send my details", sending: "Sending…", error: "Couldn't send. Try again or message us on WhatsApp at +34 622 74 89 87.",
-    audit: "Request the free audit", callme: "Call me", pickSlot: "Pick a time for the call (Spain time)", booked: "Done! Call booked for", bookedTail: "José will call you on the number you left.", site: "Your website (address) and sector",
+    audit: "Request the free audit", callme: "Call me", pickSlot: "Pick a time for the call (Spain time)", asap: "As soon as possible", asapDone: "Done! José has the alert on his phone and will call you as soon as possible.", booked: "Done! Call booked for", bookedTail: "José will call you on the number you left.", site: "Your website (address) and sector",
     whats: "WhatsApp +34 622 74 89 87", call: "Call", mail: "info@mktweb360.com", restart: "Start again",
   },
   fr: {
@@ -52,7 +52,7 @@ const UI: Record<Lang, Record<string, string>> = {
     gdpr: "J'ai lu les informations sur la confidentialité et j'accepte que Mkt Web 360 traite mes données pour répondre à ma demande.",
     privacy: "Responsable : Mkt Web 360 SLU. Finalité : répondre à votre demande et préparer votre proposition. La conversation de ce chat est envoyée avec vos coordonnées. Vos droits : info@mktweb360.com.",
     privacyLink: "Politique de confidentialité", submit: "Envoyer mes coordonnées", sending: "Envoi…", error: "Échec de l'envoi. Réessayez ou écrivez-nous sur WhatsApp au +34 622 74 89 87.",
-    audit: "Demander l'audit gratuit", callme: "Rappelez-moi", pickSlot: "Choisissez un créneau (heure d'Espagne)", booked: "C'est fait ! Appel réservé pour le", bookedTail: "José vous appellera au numéro indiqué.", site: "Votre site (adresse) et votre secteur",
+    audit: "Demander l'audit gratuit", callme: "Rappelez-moi", pickSlot: "Choisissez un créneau (heure d'Espagne)", asap: "Dès que possible", asapDone: "C'est fait ! José a reçu l'alerte et vous appellera dès que possible.", booked: "C'est fait ! Appel réservé pour le", bookedTail: "José vous appellera au numéro indiqué.", site: "Votre site (adresse) et votre secteur",
     whats: "WhatsApp +34 622 74 89 87", call: "Appeler", mail: "info@mktweb360.com", restart: "Recommencer",
   },
 };
@@ -195,7 +195,8 @@ export function ChatWidget() {
         <section role="dialog" aria-modal="false" aria-label={t.title}
           className="fixed z-[56] flex flex-col overflow-hidden bg-white text-[#0f1c2e] shadow-2xl inset-0 sm:inset-auto sm:right-4 sm:top-[76px] sm:h-[min(620px,calc(100vh-96px))] sm:w-[390px] sm:rounded-2xl sm:border sm:border-gray-200">
           <header className="flex items-center gap-3 bg-[#0f1c2e] px-4 py-3 text-white" style={{ paddingTop: "max(12px, env(safe-area-inset-top, 0px))" }}>
-            <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden><rect x="1" y="14" width="8" height="17" rx="1" fill="rgba(255,255,255,.65)"/><rect x="12" y="8" width="8" height="23" rx="1" fill="rgba(255,255,255,.65)"/><rect x="23" y="2" width="8" height="29" rx="1" fill="#f97316"/></svg>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/icono-mw360.png" alt="" width={32} height={32} className="h-8 w-8 shrink-0 rounded-full" />
             <div className="min-w-0 flex-1">
               <p className="text-[15px] font-bold leading-tight">{t.title}</p>
               <p className="text-[12px] text-white/70">{t.sub}</p>
@@ -227,7 +228,7 @@ export function ChatWidget() {
             ))}
             {busy && <div className="flex gap-1 px-2" aria-label="…"><Dot /><Dot d=".15s" /><Dot d=".3s" /></div>}
             {form && <LeadForm kind={form} t={t} lang={lang} token={token} transcript={msgs} page={pathname}
-              onDone={(ok, reserva) => { setForm(null); if (ok) { setMsgs((m) => [...m, { role: "assistant", content: reserva ? `${t.booked} ${reserva}. ${t.bookedTail}` : pick(TXT.leadOk, lang, 0) }]); trackLead("chatbot", { chatbot_kind: form ?? "" }); } }}
+              onDone={(ok, reserva) => { setForm(null); if (ok) { setMsgs((m) => [...m, { role: "assistant", content: reserva === "__asap__" ? t.asapDone : reserva ? `${t.booked} ${reserva}. ${t.bookedTail}` : pick(TXT.leadOk, lang, 0) }]); trackLead("chatbot", { chatbot_kind: form ?? "" }); } }}
               onCancel={() => setForm(null)} />}
           </div>
 
@@ -270,6 +271,7 @@ function LeadForm({ kind, t, lang, token, transcript, page, onDone, onCancel }: 
   const [st, setSt] = useState<"idle" | "sending" | "error">("idle");
   const [slots, setSlots] = useState<string[] | null>(null);
   const [slotIso, setSlotIso] = useState("");
+  const [asap, setAsap] = useState(false);
   // Huecos reales del calendario de MktOS cuando prefiere que le llamemos.
   useEffect(() => {
     if (v.preference !== "llamada" || slots !== null) return;
@@ -287,12 +289,12 @@ function LeadForm({ kind, t, lang, token, transcript, page, onDone, onCancel }: 
       const utm = new URLSearchParams(window.location.search);
       const r = await fetch("/api/chat/lead", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...v, slotIso, slot: slotIso ? fmtSlot(slotIso) : v.slot, kind, token, lang, page, transcript: transcript.map((m) => ({ role: m.role, content: m.content })),
+        body: JSON.stringify({ ...v, slotIso: asap ? "" : slotIso, slot: asap ? t.asap : slotIso ? fmtSlot(slotIso) : v.slot, urgent: asap && v.preference === "llamada", kind, token, lang, page, transcript: transcript.map((m) => ({ role: m.role, content: m.content })),
           utm_source: utm.get("utm_source") ?? "", utm_medium: utm.get("utm_medium") ?? "", utm_campaign: utm.get("utm_campaign") ?? "" }),
       });
       const j = await r.json();
       if (!r.ok) { setErr(j.error || t.error); setSt("error"); return; }
-      onDone(true, typeof j.reserva === "string" ? j.reserva : undefined);
+      onDone(true, typeof j.reserva === "string" ? j.reserva : asap && v.preference === "llamada" ? "__asap__" : undefined);
     } catch { setErr(t.error); setSt("error"); }
   }
 
@@ -312,18 +314,20 @@ function LeadForm({ kind, t, lang, token, transcript, page, onDone, onCancel }: 
           ))}
         </div>
       </fieldset>
-      {v.preference === "llamada" && slots && slots.length > 0 && (
+      {v.preference === "llamada" && (
         <fieldset className="space-y-1">
           <legend className="text-[12.5px] text-gray-600">{t.pickSlot}</legend>
           <div className="flex flex-wrap gap-1.5">
-            {slots.map((iso) => (
-              <button type="button" key={iso} onClick={() => setSlotIso(slotIso === iso ? "" : iso)} aria-pressed={slotIso === iso}
+            <button type="button" onClick={() => { setAsap(!asap); setSlotIso(""); }} aria-pressed={asap}
+              className={`rounded-full border px-2.5 py-1 text-[12.5px] font-semibold ${asap ? "border-[#f97316] bg-[#f97316] text-white" : "border-[#f97316] bg-white text-[#c2410c]"}`}>{t.asap}</button>
+            {(slots ?? []).map((iso) => (
+              <button type="button" key={iso} onClick={() => { setSlotIso(slotIso === iso ? "" : iso); setAsap(false); }} aria-pressed={slotIso === iso}
                 className={`rounded-full border px-2.5 py-1 text-[12.5px] ${slotIso === iso ? "border-[#f97316] bg-[#f97316] text-white" : "border-gray-300 bg-white"}`}>{fmtSlot(iso)}</button>
             ))}
           </div>
         </fieldset>
       )}
-      {v.preference === "llamada" && !slotIso && <input id="mw360-l-slot" aria-label={t.slot} placeholder={t.slot} value={v.slot} onChange={(e) => set("slot", e.target.value)} className={field} />}
+      {v.preference === "llamada" && !slotIso && !asap && <input id="mw360-l-slot" aria-label={t.slot} placeholder={t.slot} value={v.slot} onChange={(e) => set("slot", e.target.value)} className={field} />}
       <input tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" value={v._hp} onChange={(e) => set("_hp", e.target.value)} name="website_url" />
       <p className="text-[11.5px] leading-snug text-gray-500">{t.privacy} <a href={lang === "es" ? "/politica-de-privacidad/" : "/politica-de-privacidad/"} target="_blank" className="underline">{t.privacyLink}</a></p>
       <label className="flex items-start gap-2 text-[12.5px]"><input type="checkbox" required checked={v.gdpr} onChange={(e) => set("gdpr", e.target.checked)} className="mt-0.5" />{t.gdpr}</label>
