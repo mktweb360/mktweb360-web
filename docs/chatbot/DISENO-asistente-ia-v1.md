@@ -376,3 +376,48 @@ Plantilla:
 > «Como referencia, en el mercado suele moverse entre X e Y. En Mkt Web 360 {{precio:servicio}} + IVA. Lo mejor es que te preparemos un presupuesto con tu caso: ¿te lo pido?»
 
 En la sincronización (§14.2), las respuestas con cifras de mercado se marcan como `referencia_mercado` para que se les aplique siempre esta plantilla.
+
+---
+
+## 15. Lanzamiento v1 (18/10/2026): en producción en mktweb360.com
+Commit `6359ad1` en `main`. Vercel lo ha desplegado en producción y se ha comprobado en la web real.
+
+**Qué hay en marcha:**
+- **Widget:** botón arriba a la derecha (debajo de la cabecera) con bocadillo de cómic según la página. Sale una vez por sesión y espera al banner de cookies. En móvil ocupa la pantalla completa. Funciona en es, en y fr. Oculto en `/area-privada`, `/portal` y `/admin`.
+- **Aviso de IA** al empezar (art. 50 del Reglamento de IA). Opción de **hablar con José** por WhatsApp, por teléfono o con un formulario.
+- **Reglas sin IA:**
+  - inyección de instrucciones;
+  - consultas de terceros (tutoriales, trabajos, textos, código);
+  - temas legales o fiscales;
+  - fuera de ámbito: cierre al tercer mensaje;
+  - **cupo de 2 respuestas informativas** sin señal de negocio.
+
+  El estado va en un token firmado (HS256). Las respuestas del asistente llevan firma, así que no se pueden inyectar respuestas falsas en el historial.
+- **Conocimiento:**
+  - **36 FAQs aprobadas por José** (`lib/chatbot/kb.json`, generado con `pnpm chatbot:kb` a partir de la exportación de decisiones);
+  - descripciones publicadas de las páginas de servicio;
+  - catálogo de MktOS para precios, sin ofertas caducadas.
+
+  Las FAQs de una oferta se responden diciendo de qué oferta se trata. Las cifras de mercado llevan la nota «referencia de mercado» y la propuesta de presupuesto.
+- **Leads:** `/api/chat/lead` usa el mismo webhook de MktOS que el formulario de contacto, con canal `web-chatbot`. Crea CRM, oportunidad, **notificación push** y email a José, y adjunta la conversación (con el consentimiento del visitante). Si no llega por ningún canal, el visitante ve un error con el WhatsApp, nunca un «hecho» falso.
+- **Pruebas:** `pnpm chatbot:check` (44 pruebas). La revisión independiente encontró 2 fallos graves y 9 medios, y están corregidos (precios de un servicio mostrados para otro, autónomos tratados como consulta legal, historial falsificable, leads perdidos sin aviso, accesibilidad).
+
+**Lo que falta, por orden:**
+1. **Activar la IA (José, 5 minutos).** Hoy funciona solo en modo guiado, sin IA y sin coste.
+   - En Vercel, en el proyecto `mktweb360-web` (Settings → Environment Variables → Production), añadir:
+     - `ANTHROPIC_API_KEY`;
+     - `CHATBOT_SECRET` (cadena aleatoria de 32 caracteres o más);
+     - opcionales `CHATBOT_DAILY_EUR=1` y `CHATBOT_MONTHLY_EUR=15`.
+   - Volver a desplegar.
+   - En la consola de Anthropic, poner un **límite de gasto mensual de 15 €** al workspace. Es el tope duro, porque el contador de la web es por instancia.
+2. **Terminar la revisión de FAQs** (44 por revisar en español). Después Claude exporta las decisiones, regenera `kb.json` y publica.
+3. **MktOS (rama nueva, con aprobación para producción):**
+   - `book_call` con huecos reales de la agenda;
+   - registro de uso y gasto (`ai.usage_ledger`);
+   - panel del asistente;
+   - conversaciones anonimizadas con borrado a los 90 días;
+   - ciclo semanal de aprendizaje (§14.3);
+   - modo cliente en el área privada.
+4. **Política de privacidad:** añadir el asistente (finalidad, conversación adjunta al lead, encargado del tratamiento Anthropic si se activa la IA, sin conservación sin lead).
+5. Confirmar la **oferta de webs con demos** (precio y vigencia) y darla de alta en el catálogo de MktOS.
+6. El clasificador `tipo` de `paginas-web.json` marca varias páginas de servicio como artículo. Corregirlo en el próximo paso de regeneración.
