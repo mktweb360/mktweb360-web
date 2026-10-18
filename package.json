@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "validate-i18n": "npx tsx scripts/validate-i18n.ts"
+    "validate-i18n": "npx tsx scripts/validate-i18n.ts",
+    "chatbot:kb": "node scripts/chatbot-kb.mjs",
+    "chatbot:check": "node --experimental-strip-types scripts/check-chatbot.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

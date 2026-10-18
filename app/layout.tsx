@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { CookieBanner } from "@/components/CookieBanner";
+import { ChatWidget } from "@/components/chatbot/ChatWidget";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mktweb360.com"),
@@ -156,6 +157,7 @@ export default function RootLayout({
         />
         {children}
         <CookieBanner />
+        <ChatWidget />
       </body>
     </html>
   );
