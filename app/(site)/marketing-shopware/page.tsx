@@ -35,7 +35,7 @@ const FAQS = [
   { q: "¿Funciona el SEO en Shopware?", a: "Sí, y muy bien. Shopware ofrece un control técnico avanzado —URLs limpias, datos estructurados de producto, rendimiento y arquitectura de catálogo— que, bien trabajado, posiciona tus categorías y fichas en Google. La clave está en la ejecución SEO, no en la plataforma." },
   { q: "¿Qué es el Agentic Commerce de Shopware y por qué importa?", a: "Es la capacidad, disponible desde Shopware 6.7.9, de que los asistentes de IA como ChatGPT descubran y recomienden tus productos e incluso faciliten la compra. El GEO prepara tu tienda para aparecer en ese nuevo canal de venta antes que tu competencia, cuando todavía hay ventaja por captar." },
   { q: "¿Hacéis Google Shopping y campañas de Ads para Shopware?", a: "Sí. Configuramos el feed de productos, Google Merchant Center y campañas de Shopping y Performance Max, separando siempre el fee de gestión de la inversión publicitaria para que sepas con exactitud qué pagas y qué retorno obtienes." },
-  { q: "¿En cuánto tiempo se ven resultados?", a: "Las campañas de Ads y las mejoras de CRO pueden notarse en semanas; el SEO orgánico consolida posiciones entre 4 y 8 meses según competencia y catálogo. Trabajamos ambos en paralelo: tracción a corto plazo con publicidad y conversión, y una base sostenible a medio plazo con SEO y GEO." },
+  { q: "¿En cuánto tiempo se ven resultados?", a: "Las campañas de Ads y las mejoras de CRO pueden notarse en semanas; el SEO orgánico da sus primeros resultados entre 3 y 6 meses según competencia y catálogo. Trabajamos ambos en paralelo: tracción a corto plazo con publicidad y conversión, y una base sostenible a medio plazo con SEO y GEO." },
 ];
 
 const faqSchema = {

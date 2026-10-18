@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
   const origin = req.headers.get("origin");
   if (origin && !ORIGINS.test(origin)) return NextResponse.json({ error: "origen no permitido" }, { status: 403 });
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.headers.get("x-real-ip") || "unknown";
-  if (!allow(ip)) return NextResponse.json({ error: "Demasiadas solicitudes. Inténtalo más tarde o escríbenos por WhatsApp." }, { status: 429 });
+  if (!allow(ip)) return NextResponse.json({ error: "Demasiadas solicitudes. Inténtalo más tarde o llámanos al 622 74 89 87." }, { status: 429 });
 
   let b: Record<string, unknown>;
   try { b = await req.json(); } catch { return NextResponse.json({ error: "Petición no válida" }, { status: 400 }); }
@@ -129,7 +129,7 @@ export async function POST(req: NextRequest) {
 
   // Si no ha llegado por ningún canal, el visitante debe saberlo (no se le dice «hecho» en falso).
   if (!mktosOk && !emailOk)
-    return NextResponse.json({ error: "No hemos podido registrar tu solicitud. Escríbenos por WhatsApp al 622 74 89 87, por favor." }, { status: 502 });
+    return NextResponse.json({ error: "No hemos podido registrar tu solicitud. Llámanos al 622 74 89 87 o escribe a info@mktweb360.com, por favor." }, { status: 502 });
   // Llamada con hueco elegido: se reserva en el calendario de MktOS y José recibe el aviso en el móvil.
   let reserva: string | null = null;
   if (preferencia === "llamada" && huecoIso && telefono && secret) {

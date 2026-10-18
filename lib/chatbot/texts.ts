@@ -56,9 +56,9 @@ export const TXT = {
     fr: ["Je n'ai pas cette réponse exacte et je préfère ne pas l'inventer. Laissez vos coordonnées et José vous répondra personnellement."],
   } as T,
   persona: {
-    es: ["Claro. Pulsa «Que me llaméis», deja tu teléfono y elige «Lo antes posible»: a José le llega el aviso al móvil en ese momento. Si lo prefieres, llama tú al 622 74 89 87 o escríbele por WhatsApp."],
-    en: ["Of course. Tap «Call me», leave your number and choose «As soon as possible»: José gets the alert on his phone right away. You can also call +34 622 74 89 87 or message him on WhatsApp."],
-    fr: ["Bien sûr. Touchez « Rappelez-moi », laissez votre numéro et choisissez « Dès que possible » : José reçoit l'alerte sur son téléphone aussitôt. Vous pouvez aussi appeler le +34 622 74 89 87 ou lui écrire sur WhatsApp."],
+    es: ["Claro. Pulsa «Que me llaméis», deja tu teléfono y elige «Lo antes posible»: a José le llega el aviso al móvil en ese momento. Si lo prefieres, llama tú al 622 74 89 87."],
+    en: ["Of course. Tap «Call me», leave your number and choose «As soon as possible»: José gets the alert on his phone right away. You can also call +34 622 74 89 87."],
+    fr: ["Bien sûr. Touchez « Rappelez-moi », laissez votre numéro et choisissez « Dès que possible » : José reçoit l'alerte sur son téléphone aussitôt. Vous pouvez aussi appeler le +34 622 74 89 87."],
   } as T,
   presupuesto: {
     es: ["Perfecto. Déjame tus datos y José te prepara una propuesta con tu caso, sin compromiso."],

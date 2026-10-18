@@ -10,6 +10,9 @@ import type { Lang } from "@/lib/chatbot/core";
 import { CONSENT_COMERCIAL } from "@/lib/consent-texts";
 import { trackLead } from "@/lib/track";
 
+// WhatsApp del 622 74 89 87 pendiente de la verificación de Meta: mientras no funcione, el chat no lo ofrece.
+const WHATSAPP_ACTIVO = false;
+
 type Action = "presupuesto" | "contacto" | "auditoria" | "llamada";
 type FormKind = "presupuesto" | "contacto" | "auditoria" | "llamada";
 interface Msg {
@@ -256,7 +259,7 @@ function Dot({ d = "0s" }: { d?: string }) {
 function ContactLinks({ t, onForm }: { t: Record<string, string>; onForm: () => void }) {
   return (
     <>
-      <a href="https://wa.me/34622748987" target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#25d366] px-3.5 py-1.5 text-[13px] font-semibold text-white">{t.whats}</a>
+      {WHATSAPP_ACTIVO && <a href="https://wa.me/34622748987" target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#25d366] px-3.5 py-1.5 text-[13px] font-semibold text-white">{t.whats}</a>}
       <a href="tel:+34622748987" className="rounded-full border border-[#0f1c2e]/20 bg-white px-3 py-1.5 text-[13px]">{t.call}</a>
       <button onClick={onForm} className="rounded-full border border-[#0f1c2e]/20 bg-white px-3 py-1.5 text-[13px]">{t.submit}</button>
     </>
@@ -309,7 +312,7 @@ function LeadForm({ kind, t, lang, token, transcript, page, onDone, onCancel }: 
       <fieldset className="space-y-1">
         <legend className="text-[12.5px] text-gray-600">{t.pref}</legend>
         <div className="flex flex-wrap gap-3">
-          {(["email", "llamada", "whatsapp"] as const).map((p) => (
+          {(WHATSAPP_ACTIVO ? (["email", "llamada", "whatsapp"] as const) : (["email", "llamada"] as const)).map((p) => (
             <label key={p} className="flex items-center gap-1.5"><input type="radio" name="mw360-pref" checked={v.preference === p} onChange={() => set("preference", p)} />{p === "email" ? t.email : t[p]}</label>
           ))}
         </div>

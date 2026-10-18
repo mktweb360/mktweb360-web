@@ -100,7 +100,7 @@ export default function MarketingDigitalAutonomos2026Page() {
 
           <h2 className="text-2xl font-bold text-primary-600">SEO local: la inversión con mayor ROI para autónomos de servicios</h2>
           <p>Para un autónomo que presta servicios en su zona, el SEO local es el canal con mayor retorno a medio plazo. Aparecer en las búsquedas de tu ciudad para tu servicio significa captar clientes con intención real de contratar, justo cuando te necesitan.</p>
-          <p>El SEO orgánico tarda más que Google Ads (3-4 meses para resultados sólidos), pero construye un activo duradero: una vez posicionado, sigue trayendo clientes sin coste por clic. Para muchos autónomos de servicios, es la base de toda la estrategia digital. Y ese tráfico necesita aterrizar en una <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">página web bien diseñada</Link> que convierta visitas en consultas.</p>
+          <p>El SEO orgánico tarda más que Google Ads (3-6 meses para los primeros resultados sólidos), pero construye un activo duradero: una vez posicionado, sigue trayendo clientes sin coste por clic. Para muchos autónomos de servicios, es la base de toda la estrategia digital. Y ese tráfico necesita aterrizar en una <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">página web bien diseñada</Link> que convierta visitas en consultas.</p>
 
           <BlogBanner variant="default" />
 

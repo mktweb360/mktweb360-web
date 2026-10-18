@@ -92,6 +92,6 @@ export async function POST(req: NextRequest) {
     );
   } catch (e) {
     console.error("[chatbot] error:", e instanceof Error ? e.message : e);
-    return NextResponse.json({ error: "El asistente no está disponible ahora mismo. Escríbenos por WhatsApp al 622 74 89 87 o desde el formulario de contacto." }, { status: 503 });
+    return NextResponse.json({ error: "El asistente no está disponible ahora mismo. Llámanos al 622 74 89 87 o escríbenos desde el formulario de contacto." }, { status: 503 });
   }
 }
