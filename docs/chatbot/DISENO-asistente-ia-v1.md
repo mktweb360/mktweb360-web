@@ -366,3 +366,13 @@ José ha revisado 41: 35 aprobadas, 5 rechazadas y 1 editada. Varias de las apro
 - «entre 50 y 200 €/mes en herramientas de IA».
 
 En un chatbot de Mkt Web 360, el visitante puede leerlas como **nuestro precio**. **Propuesta:** el asistente las presenta siempre como referencia de mercado y da a continuación el precio propio del catálogo, o se editan para decirlo de forma explícita.
+
+**Decisión de José (18/10, 13:36):** aprobada la propuesta, con un añadido. Regla para **cualquier respuesta que dé precios de mercado** (no solo estas tres):
+1. Lo presenta como **referencia de mercado**, nunca como precio propio.
+2. Da a continuación **el precio de Mkt Web 360** desde el catálogo, si existe para ese servicio.
+3. **Propone siempre pedir un presupuesto**, con el botón o la acción `request_proposal` o `book_call`.
+
+Plantilla:
+> «Como referencia, en el mercado suele moverse entre X e Y. En Mkt Web 360 {{precio:servicio}} + IVA. Lo mejor es que te preparemos un presupuesto con tu caso: ¿te lo pido?»
+
+En la sincronización (§14.2), las respuestas con cifras de mercado se marcan como `referencia_mercado` para que se les aplique siempre esta plantilla.
