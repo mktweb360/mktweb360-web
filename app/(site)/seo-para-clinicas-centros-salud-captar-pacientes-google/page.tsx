@@ -39,7 +39,7 @@ const FAQS = [
   },
   {
     q: "¿Cuánto tarda una clínica en notar resultados con SEO?",
-    a: "Con una ficha de Google Business Profile bien optimizada, el impacto local suele verse en 4 a 8 semanas. El posicionamiento orgánico de la web para búsquedas competitivas requiere más tiempo, normalmente entre 4 y 8 meses, según la competencia de la zona y el estado inicial.",
+    a: "Con una ficha de Google Business Profile bien optimizada, el impacto local suele verse en 4 a 8 semanas. El posicionamiento orgánico de la web para búsquedas competitivas requiere más tiempo, normalmente entre 3 y 6 meses para los primeros resultados, según la competencia de la zona y el estado inicial.",
   },
   {
     q: "¿Es imprescindible Google Business Profile para una clínica?",
@@ -126,7 +126,7 @@ export default function SeoClinicasPage() {
           <p>El blog médico mal entendido resta en lugar de sumar. Los errores más comunes: copiar contenido genérico de otras webs (Google penaliza la falta de originalidad, más aún en salud), publicar sin criterio profesional, o redactar para el buscador y no para el paciente. Un buen contenido sanitario responde a una duda real con rigor, transmite confianza y enlaza de forma natural hacia el servicio correspondiente. Calidad y autoridad por encima de cantidad.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Cuánto tarda en notarse</h2>
-          <p>La buena noticia para las clínicas es que la parte local da resultados rápido. Una ficha de Google Business Profile bien optimizada suele tener impacto visible en 4 a 8 semanas. El posicionamiento orgánico de la web para términos competitivos es más lento —de 4 a 8 meses— pero más estable y defendible en el tiempo. Combinando ambos, una clínica puede empezar a captar pacientes desde el primer mes mientras construye una base sólida a medio plazo.</p>
+          <p>La buena noticia para las clínicas es que la parte local da resultados rápido. Una ficha de Google Business Profile bien optimizada suele tener impacto visible en 4 a 8 semanas. El posicionamiento orgánico de la web para términos competitivos es más lento —primeros resultados entre 3 y 6 meses— pero más estable y defendible en el tiempo. Combinando ambos, una clínica puede empezar a captar pacientes desde el primer mes mientras construye una base sólida a medio plazo.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local para empresas de servicios</Link> · <Link href="/google-my-business-empresas-guia/" className="text-accent-500 hover:underline">Guía de Google Business Profile</Link>

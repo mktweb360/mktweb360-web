@@ -54,7 +54,7 @@ const FAQS = [
   },
   {
     q: "¿Cuánto tarda en notarse el trabajo hecho en la web de una clínica?",
-    a: "La parte local (Google Business Profile bien optimizado) suele dar resultados visibles en 4-8 semanas. El posicionamiento orgánico de la web para búsquedas competitivas es más lento, entre 4 y 8 meses, pero más estable en el tiempo.",
+    a: "La parte local (Google Business Profile bien optimizado) suele dar resultados visibles en 4-8 semanas. El posicionamiento orgánico de la web para búsquedas competitivas es más lento: los primeros resultados llegan entre 3 y 6 meses, pero más estable en el tiempo.",
   },
 ];
 

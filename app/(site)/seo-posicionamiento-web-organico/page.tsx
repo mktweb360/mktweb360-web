@@ -40,7 +40,7 @@ const serviceSchema = {
 
 const FAQS = [
   { q: "¿Qué incluye vuestro servicio SEO?", a: "Auditoría técnica inicial, investigación de palabras clave, optimización on-page, creación de contenido optimizado, link building ético, seguimiento mensual de posiciones e informe de resultados." },
-  { q: "¿En cuánto tiempo se ven resultados SEO?", a: "Los primeros movimientos de posiciones suelen verse entre 2 y 4 meses. Para resultados consolidados, esperamos entre 6 y 12 meses, aunque esto depende de la competencia y el estado inicial de la web." },
+  { q: "¿En cuánto tiempo se ven resultados SEO?", a: "Los primeros movimientos de posiciones suelen verse entre 3 y 6 meses. Para resultados consolidados, esperamos entre 6 y 12 meses, aunque esto depende de la competencia y el estado inicial de la web." },
   { q: "¿Trabajáis con las actualizaciones del algoritmo de Google?", a: "Sí, seguimos de cerca todas las actualizaciones del algoritmo de Google y adaptamos las estrategias para estar siempre dentro de las buenas prácticas (white hat SEO)." },
   { q: "¿Hacéis SEO local y SEO nacional?", a: "Hacemos ambos. El SEO local es ideal para negocios con presencia física que quieren atraer clientes de su zona. El SEO nacional se orienta a keywords de mayor alcance geográfico." },
   { q: "¿Cómo medís los resultados?", a: "Monitorizamos posiciones en Google, tráfico orgánico, conversiones atribuidas a SEO y visibilidad de marca. Recibes un informe mensual detallado con evolución y próximos pasos." },
