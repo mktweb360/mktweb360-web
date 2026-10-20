@@ -37,7 +37,7 @@ const BANNERS_ES: BannerVariants = {
     badge: "Oferta especial",
     title: "Tienda online profesional desde 490€",
     desc: "Sin comisiones por venta ni licencias mensuales. Diseño personalizado y SEO técnico desde el primer día. Hosting y dominio aparte.",
-    cta: "Reservar mi plaza",
+    cta: "Quiero mi tienda online",
     href: "/tienda-online/",
   },
   geo: {

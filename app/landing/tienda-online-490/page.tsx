@@ -4,7 +4,7 @@ import { TiendaOnlineForm } from "@/components/TiendaOnlineForm";
 
 export const metadata: Metadata = {
   title: "Tienda online desde 490 € sin comisiones",
-  description: "Crea tu tienda online profesional desde 490€. Sin comisiones por venta, sin licencias mensuales. Diseño 100% personalizado. Solo 5 plazas.",
+  description: "Crea tu tienda online profesional desde 490€. Sin comisiones por venta, sin licencias mensuales. Diseño 100% personalizado..",
   alternates: { canonical: "https://www.mktweb360.com/landing/tienda-online-490/" },
   robots: { index: false, follow: false },
 };
@@ -46,7 +46,7 @@ export default function LandingTiendaOnline490Page() {
       {/* BANNER URGENCIA */}
       <div className="bg-accent-500 py-2.5 px-4 text-center">
         <p className="text-white text-sm font-semibold">
-          ⏳ Quedan <strong>5 plazas disponibles</strong> · <strong>Oferta por tiempo limitado</strong>
+          <strong>Tienda online desde 490 €</strong> · <strong>Diseño 100% personalizado</strong>
         </p>
       </div>
 
@@ -67,7 +67,7 @@ export default function LandingTiendaOnline490Page() {
               Shopify te cobra licencia mensual y hasta un 2% por cada venta. Nosotros construimos tu tienda — pagas una vez y vendes para siempre sin coste adicional.
             </p>
             <p className="text-primary-300 text-sm italic mb-8">
-              Solo 5 plazas disponibles. Cuando se cubran, la oferta cierra.
+              Cuéntanos tu proyecto y te respondemos con una propuesta clara.
             </p>
 
             {/* TRUST PILLS */}
@@ -75,7 +75,7 @@ export default function LandingTiendaOnline490Page() {
               {[
                 { value: "0€", label: "comisión por venta" },
                 { value: "0€", label: "licencia mensual" },
-                { value: "Solo 5", label: "plazas disponibles" },
+                { value: "490 €", label: "precio desde" },
                 { value: "100%", label: "diseño personalizado" },
               ].map((m) => (
                 <div key={m.label} className="bg-white/10 rounded-xl px-4 py-3">
@@ -155,13 +155,13 @@ export default function LandingTiendaOnline490Page() {
       <section className="py-14 px-4 bg-primary-600 text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-3">¿Lo tienes claro?</h2>
-          <p className="text-primary-200 mb-6 text-sm">Quedan 5 plazas. Cuando se cubran, la oferta cierra.</p>
+          <p className="text-primary-200 mb-6 text-sm">Cuéntanos tu proyecto y te respondemos con una propuesta clara.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#top"
               className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-4 rounded-full transition-colors shadow-lg"
             >
-              Reservar mi plaza →
+              Quiero mi tienda →
             </a>
             <a
               href={WA}

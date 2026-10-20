@@ -240,11 +240,11 @@ export function HeroSlider({ slides: slidesProp, dotLabel = "Ir a la diapositiva
       overlay: "bg-transparent",
     },
     {
-      badge: "Solo 5 incorporaciones al mes",
+      badge: "Oferta tienda online",
       headline: "Tu tienda online",
       subheadline: "profesional desde 490€",
       subtitle: "Sin comisiones por venta. Sin licencias mensuales. Diseño 100% personalizado. Web técnicamente optimizada para SEO desde el primer día.",
-      cta: { text: "Reservar mi plaza", href: "/tienda-online/" },
+      cta: { text: "Quiero mi tienda online", href: "/tienda-online/" },
       cta2: { text: "Ver la oferta", href: "/diseno-de-paginas-web/diseno-tiendas-online/" },
       bg: "/hero-slide-3.jpg",
       overlay: "bg-primary-900/35",

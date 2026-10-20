@@ -114,7 +114,7 @@ export default function DisenoWebTiendaOnlinePage() {
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">Tienda online desde 490€, sin comisiones por venta</p>
-            <p className="text-gray-600 text-sm mb-4">Solo 5 plazas disponibles cada mes. Diseño profesional, SEO incluido y gestión autónoma desde el primer día. La tienda es tuya.</p>
+            <p className="text-gray-600 text-sm mb-4">Diseño profesional, SEO incluido y gestión autónoma desde el primer día. La tienda es tuya.</p>
             <Link href="/tienda-online/" className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
               Ver oferta tienda online
             </Link>
@@ -141,7 +141,7 @@ export default function DisenoWebTiendaOnlinePage() {
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">Tu tienda online, sin comisiones, desde 490€</h2>
             <p className="text-primary-200 mb-6">
-              Diseño profesional, SEO incluido, gestión autónoma y sin licencias mensuales. Solo 5 plazas al mes.
+              Diseño profesional, SEO incluido, gestión autónoma y sin licencias mensuales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/tienda-online/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
