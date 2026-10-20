@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { BlogBanner } from "@/components/BlogBanner";
 import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
@@ -135,6 +136,7 @@ export default function FactoresWebConstruccionPage() {
           </p>
 
           <OfferBannerWebSeo />
+      <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">4. SEO local y zona de servicio real</h2>
           <p>
