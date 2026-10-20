@@ -92,7 +92,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Para maximizar la presencia en el Local Pack madrileño, el perfil de Google Business Profile debe estar completamente rellenado: categoría principal precisa (no "empresa" sino "fontanero"), categorías secundarias relevantes, horario actualizado, fotos de calidad del local y del equipo, descripción que incluya las keywords principales y zona de servicio bien definida.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Las reseñas son el factor diferenciador más importante en mercados competitivos como Madrid. Con decenas de competidores en cada sector, la diferencia entre aparecer en el top 3 del Local Pack y en la posición 10 puede ser simplemente el número y la calidad de las reseñas. Implementar un sistema activo para solicitar reseñas a clientes satisfechos es tan importante como la optimización técnica del perfil.</p>
 
-        <BlogBanner variant="seo" />
+        <BlogBanner variant="seogeogbp" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Estrategia de contenido SEO para Madrid: atacar desde la periferia</h2>
         <p className="text-gray-700 leading-relaxed mb-4">En mercados muy competitivos como Madrid, intentar posicionar directamente para los términos más genéricos ("abogado Madrid", "fontanero Madrid") es una estrategia de alto coste y retorno lento para la mayoría de PYMEs. Una estrategia más eficiente es atacar desde los flancos: keywords de long tail (más específicas y menos competidas) que tienen intención comercial clara.</p>

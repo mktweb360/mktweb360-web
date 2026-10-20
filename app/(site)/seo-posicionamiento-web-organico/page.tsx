@@ -8,6 +8,7 @@ import { MetodologiaSeo } from "@/components/MetodologiaSeo";
 import { OfertasSlider } from "@/components/OfertasSlider";
 import { alternatesFor } from "@/lib/i18n/routes";
 
+import { BlogBanner } from "@/components/BlogBanner";
 export const metadata: Metadata = {
   title: "Agencia SEO: Servicio de Posicionamiento Web",
   description: "Agencia SEO para empresas: posicionamiento web con auditoría técnica, estrategia de keywords, contenido y autoridad. Informes mensuales y sin permanencia.",
@@ -312,6 +313,9 @@ export default function SeoPage() {
       </section>
 
       <RelatedArticles category="SEO" title="Más sobre SEO y posicionamiento" />
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="seogeogbp" />
+      </div>
     </>
   );
 }

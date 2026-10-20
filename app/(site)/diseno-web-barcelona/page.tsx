@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
-import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
+import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 export const metadata: Metadata = {
   title: "Diseño Web en Barcelona",
   description: "Guía para contratar diseño web en Barcelona. Precios orientativos, qué debe incluir una web profesional, cómo comparar agencias y errores que cuestan clientes.",
@@ -95,7 +95,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Una agencia tiene sentido cuando:</strong> el proyecto es complejo y requiere múltiples especialistas (diseñador, desarrollador, experto SEO, redactor), necesitas garantías de continuidad (si un freelance enferma o deja el negocio, el proyecto puede quedarse sin soporte), o cuando el proyecto incluye también la gestión del marketing digital después del lanzamiento.</p>
         <p className="text-gray-700 leading-relaxed mb-4">En Barcelona hay también estudios de diseño de tamaño intermedio (3-8 personas) que combinan lo mejor de ambos mundos: especialización del equipo de la agencia con el trato cercano del freelance. Para proyectos de 3.000-10.000€, este tipo de estudio suele ser la mejor relación calidad-precio.</p>
 
-        <BlogBanner variant="default" />
+        <OfferBannerWebSeo />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Precios orientativos para diseño web en Barcelona</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Los precios en Barcelona son generalmente un 15-25% superiores a la media nacional por el mayor coste de vida y los alquileres de oficina más elevados. Sin embargo, el nivel de calidad medio también es superior, especialmente en diseño visual y UX.</p>

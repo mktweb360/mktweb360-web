@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { planPorId, precioTexto, type PlanSeo } from "@/lib/planes-seo";
 import { preciosPlanesSeo } from "@/lib/precios-planes";
 
+import { BlogBanner } from "@/components/BlogBanner";
 export const metadata: Metadata = {
   title: "SEO Local: Posicionamiento en tu Zona",
   description: "Servicio de SEO local para captar clientes de tu zona: Google Maps, Google Business Profile, reseñas y páginas locales, para negocios con o sin local físico.",
@@ -328,6 +329,9 @@ export default async function SeoLocalPage() {
       </section>
 
       <RelatedArticles category="SEO" title="Más sobre SEO y posicionamiento local" />
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="seogeogbp" />
+      </div>
     </>
   );
 }

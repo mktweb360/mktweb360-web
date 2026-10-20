@@ -92,7 +92,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Un fontanero con sede en Getxo puede posicionarse bien tanto para "fontanero Getxo" como para "fontanero Bilbao" si su perfil de GBP incluye la zona de servicio correctamente configurada y tiene suficiente actividad de reseñas. La zona de servicio en Google Business Profile debe incluir todos los municipios del área metropolitana que atiendes.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Las reseñas son especialmente importantes en Bilbao porque la comunidad local es relativamente pequeña y las recomendaciones circulan con facilidad. Un negocio bilbaíno con buena reputación online tiene un efecto boca a boca amplificado que se traduce en mayor volumen de búsquedas de marca (búsquedas directas por el nombre del negocio).</p>
 
-        <BlogBanner variant="seo" />
+        <BlogBanner variant="seogeogbp" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Sectores con mayor competencia SEO en Bilbao</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Los sectores con mayor saturación digital en Bilbao son similares a otras ciudades grandes: servicios jurídicos (especialmente laboral y mercantil por el perfil industrial de la zona), clínicas dentales y de salud, reformas del hogar, hostelería y alojamiento, y servicios financieros. En estos sectores, el SEO requiere una inversión mayor y plazos más largos para ver resultados sólidos.</p>

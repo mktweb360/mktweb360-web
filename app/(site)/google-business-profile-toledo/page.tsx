@@ -96,7 +96,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Horarios:</strong> Mantén el horario actualizado siempre, incluyendo festivos y días especiales. Un horario incorrecto genera visitas frustradas y reseñas negativas evitables.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Fotos:</strong> Las fichas con fotos reciben el doble de solicitudes de ruta y el 35% más de clics que las fichas sin fotos. Añade al menos: foto de portada, logo, foto del exterior, del interior y del equipo. Las fotos de clientes que etiquetan tu negocio también contribuyen positivamente.</p>
 
-        <BlogBanner variant="seo" />
+        <BlogBanner variant="seogeogbp" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Estrategia de reseñas para negocios toledanos</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Las reseñas son el factor de posicionamiento local más poderoso y el que más influye en la decisión de compra de los usuarios. Un negocio con 50 reseñas con una media de 4,7 estrellas va a aparecer antes que un competidor con 10 reseñas y una media de 4,2, en igualdad del resto de factores.</p>

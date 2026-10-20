@@ -92,7 +92,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Para maximizar la presencia en el Local Pack valenciano, el perfil de Google Business Profile necesita: categoría principal precisa y actualizada, descripción con las keywords principales del negocio y la zona geográfica, fotos profesionales del local y el equipo (mínimo 10-15 fotos actualizadas), publicaciones periódicas con novedades y ofertas, y un sistema activo de captación de reseñas.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Las reseñas son especialmente determinantes en Valencia por la cultura local muy orientada a las recomendaciones personales. Un negocio valenciano con 80-100 reseñas de media 4,5 estrellas tiene una ventaja competitiva clara sobre competidores con 20-30 reseñas, aunque estos últimos tengan mejor SEO técnico en su web.</p>
 
-        <BlogBanner variant="seo" />
+        <BlogBanner variant="seogeogbp" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">SEO local por barrios de Valencia: la estrategia de granularidad</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Valencia tiene una estructura de barrios muy definida: Ruzafa, El Carmen, Benimaclet, Patraix, Campanar, La Malvarrosa, Jesús, Paterna, Mislata, etc. Los usuarios valencianos frecuentemente incluyen el barrio en sus búsquedas, especialmente para servicios de proximidad.</p>

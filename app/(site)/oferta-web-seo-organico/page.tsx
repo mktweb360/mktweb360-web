@@ -207,6 +207,19 @@ export default function OfertaWebCorporativaPage() {
         </div>
       </section>
 
+      {/* Auditoría gratuita como alternativa */}
+      <section className="py-12 px-4">
+        <div className="max-w-3xl mx-auto rounded-2xl border border-gray-200 bg-white p-6 text-center">
+          <h2 className="text-2xl font-bold text-primary-700 mb-2">¿Ya tienes web y no sabes qué falla?</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Te hacemos una auditoría gratuita de SEO, visibilidad en IA y ficha de Google. Te llega por correo en un máximo de 24 horas laborables, sin coste ni compromiso.
+          </p>
+          <Link href="/auditoria-digital/" className="inline-block bg-accent-500 text-white px-7 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
+            Pedir mi auditoría gratuita
+          </Link>
+        </div>
+      </section>
+
       {/* Preguntas frecuentes */}
       <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">

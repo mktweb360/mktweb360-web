@@ -93,7 +93,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">La competencia en el Local Pack de Zaragoza es menor que en Madrid o Barcelona en la mayoría de sectores. Esto significa que un negocio zaragozano que trabaje bien su perfil de GBP — con información completa, fotos actualizadas, publicaciones periódicas y gestión activa de reseñas — tiene posibilidades reales de entrar en el top 3 en un plazo de 3-6 meses para su categoría.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Los barrios de Zaragoza más activos en términos de búsquedas locales son el Casco Histórico, Delicias (el más poblado), Actur, Las Fuentes, San José y el Ensanche. Para negocios en estos barrios, incluir el nombre del barrio en el perfil de GBP y en las páginas de la web mejora la relevancia geográfica percibida por Google.</p>
 
-        <BlogBanner variant="seo" />
+        <BlogBanner variant="seogeogbp" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Estrategia de contenido SEO para negocios zaragozanos</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Una estrategia de contenido eficiente para negocios en Zaragoza debe combinar páginas de servicio optimizadas para las keywords principales con artículos de blog que respondan preguntas específicas que hacen los zaragozanos antes de contratar un servicio o comprar un producto.</p>

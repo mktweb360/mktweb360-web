@@ -57,6 +57,9 @@ export function OfferBannerWebSeo() {
                 📞 622 74 89 87
               </a>
             </div>
+            <Link href="/auditoria-digital/" className="text-white/70 hover:text-white text-xs underline underline-offset-2 mt-1">
+              ¿Prefieres empezar con una auditoría gratuita de tu web?
+            </Link>
           </div>
         </div>
 

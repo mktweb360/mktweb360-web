@@ -128,7 +128,7 @@ export default function CuantoCuestaAgenciaPage() {
           <h2 className="text-2xl font-bold text-primary-600">Cuándo tiene sentido contratar una agencia</h2>
           <p>Una agencia aporta cuando ya tienes una base sobre la que construir: una web que convierte, una propuesta de valor clara y un proceso comercial capaz de atender los contactos que genere el marketing. Sin esa base, contratar captación es amplificar problemas: más visitas a una web que no convence solo significan más dinero desperdiciado. Por eso una buena agencia empieza por una <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">estrategia y un diagnóstico</Link>, no por venderte un paquete.</p>
 
-          <BlogBanner variant="seo" />
+          <BlogBanner variant="seogeogbp" />
 
           <h2 className="text-2xl font-bold text-primary-600">Señales de alarma en un presupuesto</h2>
           <p>Hay banderas rojas que conviene reconocer antes de firmar. Promesas de "primera posición garantizada en Google" (nadie puede garantizarlas). Precios sospechosamente bajos que esconden trabajo automatizado. Ausencia de informes o métricas claras. Y la más importante: que no puedas calcular el retorno. El dato es revelador —según Esconzeta (2026), el 68% de las pymes con agencia no son capaces de medir el ROI de su inversión—. Si no sabes qué te genera lo que pagas, ese es el verdadero problema, no la cifra del presupuesto.</p>

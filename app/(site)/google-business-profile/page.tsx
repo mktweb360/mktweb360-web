@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
+import { BlogBanner } from "@/components/BlogBanner";
 export const metadata: Metadata = {
   title: "Gestión de Google Business Profile",
   description: "Gestión de tu ficha de Google Business Profile para aparecer en Google Maps cuando te buscan cerca: optimización, publicaciones, reseñas y seguimiento mensual.",
@@ -264,6 +265,9 @@ export default function GoogleBusinessProfilePage() {
       </div>
 
       <RelatedArticles category="SEO" title="Más sobre posicionamiento local" />
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="seogeogbp" />
+      </div>
     </>
   );
 }

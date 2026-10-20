@@ -94,7 +94,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Distancia</strong> es la proximidad geográfica entre el negocio y el usuario. No puedes controlarla directamente, pero sí puedes asegurarte de que tu dirección está correctamente especificada y de que cubres el área de servicio adecuada en tu ficha.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Prominencia</strong> es la más trabajable y la que más diferencia a un negocio de otro. Incluye el número y calidad de las reseñas, la autoridad de tu web, las menciones en medios y directorios locales, y las señales de actividad en tu ficha de GBP.</p>
 
-        <BlogBanner variant="seo" />
+        <BlogBanner variant="seogeogbp" />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Keywords locales para negocios toledanos</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Una estrategia de SEO local en Toledo debe identificar las búsquedas que hacen tus clientes potenciales y crear contenido optimizado para aparecer en ellas. Hay tres tipos de keywords locales que debes trabajar.</p>

@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
+import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 export const metadata: Metadata = {
   title: "Diseño Web para Clínicas y Centros de Salud",
   description:
@@ -186,6 +187,7 @@ export default function DisenoWebClinicasPage() {
         </nav>
       </article>
       <RelatedArticles currentSlug="diseno-web-para-clinicas" category="Diseño Web" />
+      <OfferBannerWebSeo />
     </>
   );
 }

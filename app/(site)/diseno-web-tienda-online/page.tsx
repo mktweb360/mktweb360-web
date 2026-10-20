@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
+import { BlogBanner } from "@/components/BlogBanner";
 export const metadata: Metadata = {
   title: "Diseño web para tienda online sin comisiones",
   description:
@@ -175,6 +176,9 @@ export default function DisenoWebTiendaOnlinePage() {
         </nav>
       </article>
       <RelatedArticles currentSlug="diseno-web-tienda-online" category="Diseño Web" />
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="ecommerce" />
+      </div>
     </>
   );
 }

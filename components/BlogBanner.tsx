@@ -12,6 +12,8 @@ type BannerData = {
   cta: string;
   href: string;
   price?: { old?: string; new: string; note?: string };
+  /** Enlace secundario (texto + ruta), por ejemplo a la auditoría gratuita. */
+  secondary?: { text: string; href: string };
 };
 
 type BannerVariants = {
@@ -34,7 +36,7 @@ const BANNERS_ES: BannerVariants = {
   ecommerce: {
     badge: "Oferta especial",
     title: "Tienda online profesional desde 490€",
-    desc: "Sin comisiones por venta, sin licencias mensuales. SEO incluido 12 meses. Solo 5 plazas disponibles.",
+    desc: "Sin comisiones por venta ni licencias mensuales. Diseño personalizado y SEO técnico desde el primer día. Hosting y dominio aparte.",
     cta: "Reservar mi plaza",
     href: "/tienda-online/",
   },
@@ -52,13 +54,14 @@ const BANNERS_ES: BannerVariants = {
     cta: "Ver qué incluye",
     href: "/oferta-seo-geo-gbp/",
     price: { new: "Desde 149 €/mes + IVA", note: "Con 6 meses de permanencia · o 349 €/mes sin permanencia" },
+    secondary: { text: "¿Prefieres empezar con una auditoría gratuita?", href: "/auditoria-digital/" },
   },
   default: {
-    badge: "Sin compromiso",
-    title: "Diagnóstico digital gratuito",
-    desc: "Analizamos tu presencia online y te decimos exactamente qué está frenando tu crecimiento. Sin coste, sin compromiso.",
-    cta: "Solicitar diagnóstico gratuito",
-    href: "/contacto/",
+    badge: "Gratis y sin compromiso",
+    title: "Auditoría SEO gratuita de tu web en 24 h",
+    desc: "SEO, visibilidad en IA y tu ficha de Google en el mismo informe, con las acciones que más impacto tendrían. Sin coste ni compromiso.",
+    cta: "Pedir mi auditoría gratuita",
+    href: "/auditoria-digital/",
   },
 };
 
@@ -147,6 +150,13 @@ export function BlogBanner({ variant = "default", lang }: BlogBannerProps) {
       >
         {b.cta}
       </Link>
+      {b.secondary && (
+        <p className="mt-4 text-sm">
+          <Link href={b.secondary.href} className="text-primary-200 underline underline-offset-2 hover:text-white">
+            {b.secondary.text}
+          </Link>
+        </p>
+      )}
     </div>
   );
 }

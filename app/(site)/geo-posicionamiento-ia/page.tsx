@@ -6,6 +6,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import Image from "next/image";
 import { AnswerIllustration, LayersIllustration } from "@/components/geo/GeoIllustrations";
 
+import { BlogBanner } from "@/components/BlogBanner";
 export const metadata: Metadata = {
   title: "Agencia GEO: Posicionamiento en IA y ChatGPT",
   description: "Agencia GEO para que ChatGPT, Gemini, Copilot, la IA de Google y cualquier asistente recomienden tu empresa: auditoría en IA, contenido citable y datos estructurados.",
@@ -371,6 +372,9 @@ export default function GEOPage() {
       </section>
 
       <RelatedArticles category="Marketing Digital" title="Más sobre búsqueda IA y GEO" />
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="seogeogbp" />
+      </div>
     </>
   );
 }
