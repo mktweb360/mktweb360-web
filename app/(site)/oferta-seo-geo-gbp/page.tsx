@@ -4,9 +4,10 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { precioLocal, reemplazarPrecios } from "@/lib/planes-seo";
 import { preciosPlanesSeo } from "@/lib/precios-planes";
+import { PRECIO_PYME_PERMANENCIA_6M } from "@/lib/planes-seo";
 
 // Oferta permanente (sin fecha de fin ni plazas), relanzada el 2-oct-2026.
-// Inventario de touchpoints: CAMPAÑA-oferta-seo-geo-gbp-2026-10-02.md (Drive, carpeta Sistema Operativo).
+// Inventario: CAMPAÑA-oferta-seo-geo-gbp-2026-10-02-v2.md y CAMPAÑA-ofertas-web-y-seo-2026-10-20.md (Drive, Sistema Operativo).
 const URL = "https://www.mktweb360.com/oferta-seo-geo-gbp/";
 // Precio vigente: el del plan «pyme» en el catálogo de MktOS (lib/precios-planes.ts); 349 es el respaldo.
 const PRICE = String(precioLocal("pyme"));
@@ -16,20 +17,20 @@ async function vigente() {
   return { P, R: (t: string) => reemplazarPrecios(t, precios) };
 }
 const DESC =
-  "SEO en Google, GEO para que cualquier asistente de IA pueda encontrarte y citarte, y tu ficha de Google Business Profile optimizada. 349 €/mes + IVA.";
+  "SEO en Google, GEO para que cualquier asistente de IA pueda encontrarte y citarte, y tu ficha de Google Business Profile optimizada. Desde 149 €/mes + IVA con 6 meses de permanencia, o 349 €/mes sin permanencia.";
 
 const METADATA: Metadata = {
-  title: "SEO, GEO y ficha de Google por 349 €/mes",
+  title: "SEO, GEO y ficha de Google desde 149 €/mes",
   description: DESC,
   alternates: { canonical: URL },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "SEO + GEO + Google Business Profile por 349 €/mes | Mkt Web 360",
+    title: "SEO + GEO + Google Business Profile desde 149 €/mes | Mkt Web 360",
     description: DESC,
     url: URL,
     images: [
       {
-        url: "/api/og?title=" + encodeURIComponent("SEO + GEO + Google Business Profile por 349 €/mes") + "&cat=" + encodeURIComponent("Oferta"),
+        url: "/api/og?title=" + encodeURIComponent("SEO + GEO + Google Business Profile desde 149 €/mes") + "&cat=" + encodeURIComponent("Oferta"),
         width: 1200,
         height: 630,
       },
@@ -86,7 +87,7 @@ const CONDICIONES = [
   { t: "5 contenidos al mes", d: "Páginas optimizadas o contenidos nuevos, entre SEO y GEO, según lo que más rinda cada mes." },
   { t: "Webs de hasta 30 páginas", d: "En un idioma. Si tu web es más grande, tiene tienda con mucho catálogo o varios idiomas, te hacemos un presupuesto a medida." },
   { t: "1 ficha de Google", d: "Si tienes varios locales, cada ficha adicional se presupuesta aparte." },
-  { t: "Sin permanencia", d: "Puedes darte de baja cuando quieras avisando con 30 días de antelación." },
+  { t: "Dos modalidades", d: "Sin permanencia (baja con 30 días de aviso) o con 6 meses de permanencia a un precio mensual menor. Las condiciones de cada una están más arriba." },
   { t: "Exclusividad en tu municipio", d: "No trabajamos con otra empresa de tu mismo sector en tu municipio." },
   { t: "Un único responsable", d: "Una persona lleva tu cuenta y te envía el informe cada mes." },
 ];
@@ -118,7 +119,15 @@ const FAQS = [
   },
   {
     q: "¿Hay permanencia?",
-    a: "No. Puedes darte de baja cuando quieras avisando con 30 días de antelación.",
+    a: "Depende de la modalidad. Sin permanencia, puedes darte de baja cuando quieras avisando con 30 días de antelación. Con la opción de 6 meses a 149 €/mes + IVA te comprometes durante esos 6 meses; si te das de baja antes, abonas el 50 % de las mensualidades que queden.",
+  },
+  {
+    q: "¿Qué pasa cuando terminan los 6 meses?",
+    a: "A partir del séptimo mes se aplica la tarifa vigente sin permanencia (hoy, 349 €/mes + IVA). Si la tarifa cambia, te avisamos antes de aplicarla.",
+  },
+  {
+    q: "¿Por qué una opción de 6 meses?",
+    a: "Porque el SEO tarda en dar resultados: los primeros suelen verse entre 3 y 6 meses. La opción de 6 meses te da un precio menor a cambio de darle al trabajo el tiempo mínimo para empezar a rendir. No garantizamos posiciones concretas.",
   },
   {
     q: "¿Y si mi web es más grande o tengo varios locales?",
@@ -161,6 +170,22 @@ const schema = {
       },
     },
     {
+      "@type": "Offer",
+      name: "SEO + GEO + Google Business Profile con 6 meses de permanencia",
+      price: String(PRECIO_PYME_PERMANENCIA_6M),
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      url: URL,
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: String(PRECIO_PYME_PERMANENCIA_6M),
+        priceCurrency: "EUR",
+        unitCode: "MON",
+        billingDuration: 6,
+        valueAddedTaxIncluded: false,
+      },
+    },
+    {
       "@type": "FAQPage",
       mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
     },
@@ -169,6 +194,8 @@ const schema = {
 
 export default async function OfertaSeoGeoGbpPage() {
   const { P, R } = await vigente();
+  const PERM = String(PRECIO_PYME_PERMANENCIA_6M);
+  const EJEMPLO = PRECIO_PYME_PERMANENCIA_6M * 3 * 0.5; // si quedan 3 meses: 50 % de 3 × 149 €
   const faqs = FAQS.map((f) => ({ q: R(f.q), a: R(f.a) }));
   const ld = R(JSON.stringify(schema)).split(`"price":"${PRICE}"`).join(`"price":"${P}"`);
   return (
@@ -190,13 +217,23 @@ export default async function OfertaSeoGeoGbpPage() {
             <p className="text-xl text-primary-100 mb-8 leading-relaxed">
               Posicionamiento SEO, GEO para que cualquier asistente de IA (ChatGPT, Gemini, Copilot, Perplexity, Claude o el modo IA de Google) pueda encontrarte y citarte, y tu ficha de Google Business Profile optimizada. Un solo servicio mensual.
             </p>
-            <div className="bg-white/10 rounded-2xl px-6 py-4 mb-8 inline-block">
-              <p className="text-primary-100 text-sm font-semibold uppercase tracking-wide mb-1">Tres servicios en uno</p>
-              <p className="flex items-baseline gap-3">
-                <span className="text-accent-400 text-4xl font-bold">{P} €/mes</span>
-                <span className="text-primary-100 text-sm">+ IVA</span>
-              </p>
-              <p className="text-primary-100 text-xs mt-1">Sin permanencia · Webs de hasta 30 páginas</p>
+            <div className="grid sm:grid-cols-2 gap-4 mb-8 max-w-2xl">
+              <div className="bg-white/10 rounded-2xl px-6 py-4">
+                <p className="text-primary-100 text-sm font-semibold uppercase tracking-wide mb-1">Con 6 meses de permanencia</p>
+                <p className="flex items-baseline gap-3">
+                  <span className="text-accent-400 text-4xl font-bold">{PERM} €/mes</span>
+                  <span className="text-primary-100 text-sm">+ IVA</span>
+                </p>
+                <p className="text-primary-100 text-xs mt-1">Los 6 primeros meses · después, la tarifa vigente sin permanencia</p>
+              </div>
+              <div className="bg-white/10 rounded-2xl px-6 py-4">
+                <p className="text-primary-100 text-sm font-semibold uppercase tracking-wide mb-1">Sin permanencia</p>
+                <p className="flex items-baseline gap-3">
+                  <span className="text-accent-400 text-4xl font-bold">{P} €/mes</span>
+                  <span className="text-primary-100 text-sm">+ IVA</span>
+                </p>
+                <p className="text-primary-100 text-xs mt-1">Baja con 30 días de aviso · Webs de hasta 30 páginas</p>
+              </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#empezar" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
@@ -236,6 +273,47 @@ export default async function OfertaSeoGeoGbpPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Dos modalidades */}
+      <section id="modalidades" className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3">Dos formas de contratarlo</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">El mismo servicio, con las mismas condiciones de trabajo. Cambia el compromiso y el precio.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded-2xl border-2 border-accent-500 bg-white p-6">
+              <p className="text-accent-700 font-bold text-sm uppercase tracking-wide mb-1">Con permanencia de 6 meses</p>
+              <p className="flex items-baseline gap-2 mb-4">
+                <span className="text-4xl font-black text-primary-700">{PERM} €/mes</span>
+                <span className="text-gray-600 text-sm">+ IVA</span>
+              </p>
+              <ul className="space-y-2 text-sm text-gray-700 leading-relaxed">
+                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>{PERM} €/mes + IVA durante los 6 primeros meses.</span></li>
+                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>A partir del séptimo mes, la tarifa vigente sin permanencia (hoy, {P} €/mes + IVA). Si cambia, te avisamos antes.</span></li>
+                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>Si te das de baja antes de cumplir los 6 meses, abonas el 50 % de las mensualidades que queden. Por ejemplo, con 3 meses por delante: 50 % de 3 × {PERM} € = {EJEMPLO.toFixed(2).replace(".", ",")} € + IVA.</span></li>
+              </ul>
+              <p className="text-sm text-gray-600 mt-4">
+                Seis meses es el plazo en el que el SEO suele empezar a dar resultados que se traducen en contactos. No garantizamos posiciones concretas: depende del sector, de la competencia y del estado de tu web.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-gray-200 bg-white p-6">
+              <p className="text-primary-700 font-bold text-sm uppercase tracking-wide mb-1">Sin permanencia</p>
+              <p className="flex items-baseline gap-2 mb-4">
+                <span className="text-4xl font-black text-primary-700">{P} €/mes</span>
+                <span className="text-gray-600 text-sm">+ IVA</span>
+              </p>
+              <ul className="space-y-2 text-sm text-gray-700 leading-relaxed">
+                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>Puedes darte de baja cuando quieras avisando con 30 días de antelación.</span></li>
+                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>Mismo servicio y mismas condiciones que la otra modalidad.</span></li>
+              </ul>
+            </div>
+          </div>
+          <p className="max-w-3xl mx-auto text-xs text-gray-600 leading-relaxed text-center mt-6">
+            Este resumen es orientativo y está escrito para que se entienda a la primera. Las condiciones exactas de la modalidad con permanencia se recogen por escrito en el presupuesto que aceptes. Te recomendamos que tu gestor o asesor lo revise antes de firmar. No es asesoramiento jurídico.
+          </p>
         </div>
       </section>
 

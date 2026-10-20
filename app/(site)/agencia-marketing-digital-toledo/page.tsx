@@ -36,7 +36,7 @@ const contenido: LocalServiceContent = {
   ],
   precios: [
     { nombre: "SEO + GEO + Google Business Profile", precio: "349 €/mes + IVA", detalle: "El paquete más completo para pymes con web de hasta 30 páginas.", href: "/oferta-seo-geo-gbp/" },
-    { nombre: "Web + 6 meses de SEO", precio: "999 € + IVA", detalle: "Web profesional lista para posicionar, con hosting, dominio y correo.", href: "/oferta-web-seo-organico/" },
+    { nombre: "Web profesional", precio: "Desde 249 € + IVA", detalle: "Diseño a medida integrado en WordPress. Hosting, dominio y correo no incluidos.", href: "/oferta-web-seo-organico/" },
     { nombre: "Calcula tu plan SEO", precio: "Desde 199 €/mes + IVA", detalle: "Planes según el tamaño de tu web, tus sedes y tus idiomas.", href: "/precios-seo/" },
   ],
   contexto: {

@@ -12,6 +12,7 @@ const FORM_MAP: Record<string, { oferta: string; canal: string }> = {
   "auditoria":             { oferta: "auditoria-seo-geo-gratuita", canal: "web-auditoria-gratuita" },
   "google-business":       { oferta: "gbp",               canal: "web-servicio-gbp" },
   "oferta-seo-geo-gbp":    { oferta: "seo-geo-gbp-349",   canal: "web-oferta-seo-geo-gbp" },
+  "oferta-web-corporativa": { oferta: "web-corporativa-249", canal: "web-oferta-web" },
   "consultor-seo":         { oferta: "consultoria-seo",   canal: "web-servicio-consultor-seo" },
   "precios-seo":           { oferta: "seo-presupuesto",   canal: "web-precios-seo" },
   "seo-toledo":            { oferta: "seo-mensual",       canal: "web-toledo-seo" },

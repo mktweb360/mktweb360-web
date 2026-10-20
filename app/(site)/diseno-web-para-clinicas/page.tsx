@@ -37,7 +37,7 @@ const articleSchema = {
 const FAQS = [
   {
     q: "¿Cuánto cuesta una web para una clínica o centro de salud?",
-    a: "El precio varía según la especialidad y las funcionalidades necesarias. Una web profesional para una clínica parte desde 790€ e incluye diseño, desarrollo, SEO técnico y formación. Clínicas con múltiples especialidades o sistemas de reserva complejos tienen un coste mayor.",
+    a: "El precio varía según la especialidad y las funcionalidades necesarias. Una web profesional para una clínica parte desde 249€ + IVA e incluye diseño a medida integrado en WordPress y SEO técnico de base (hosting, dominio y correo no incluidos). Clínicas con múltiples especialidades o sistemas de reserva complejos tienen un coste mayor.",
   },
   {
     q: "¿Puedo gestionar yo mismo los contenidos de la web?",

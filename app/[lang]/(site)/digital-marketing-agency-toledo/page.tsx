@@ -56,7 +56,7 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
       ],
       precios: [
         { nombre: pyme.nombre, precio: precioTexto(pyme, lang), detalle: "La formule la plus complète pour les PME dont le site compte jusqu'à 30 pages.", href: pyme.href },
-        { nombre: "Site + 6 mois de SEO", precio: "999 € HT", detalle: "Site professionnel prêt à être positionné, avec hébergement, nom de domaine et messagerie." },
+        { nombre: "Site professionnel", precio: "À partir de 249 € HT", detalle: "Design sur mesure intégré à WordPress. Hébergement, nom de domaine et messagerie non inclus." },
         { nombre: "Calculez votre formule SEO", precio: `À partir de ${precioTexto(local, lang)}`, detalle: "Des formules selon la taille de votre site, vos établissements et vos langues.", href: href(lang, "seo-pricing") },
       ],
       contexto: {
@@ -107,7 +107,7 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
     ],
     precios: [
       { nombre: pyme.nombre, precio: precioTexto(pyme, lang), detalle: "The most complete package for SMEs with a website of up to 30 pages.", href: pyme.href },
-      { nombre: "Website + 6 months of SEO", precio: "€999 + VAT", detalle: "A professional website ready to rank, with hosting, domain and email." },
+      { nombre: "Professional website", precio: "From €249 + VAT", detalle: "Custom design integrated with WordPress. Hosting, domain and email not included." },
       { nombre: "Work out your SEO plan", precio: `From ${precioTexto(local, lang)}`, detalle: "Plans based on the size of your website, your locations and your languages.", href: href(lang, "seo-pricing") },
     ],
     contexto: {

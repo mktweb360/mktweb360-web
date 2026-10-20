@@ -51,7 +51,7 @@ const BANNERS_ES: BannerVariants = {
     desc: "Posicionamiento SEO, GEO para que cualquier asistente de IA pueda encontrarte y citarte, y tu ficha de Google Business Profile optimizada. Un solo servicio mensual.",
     cta: "Ver qué incluye",
     href: "/oferta-seo-geo-gbp/",
-    price: { new: "349 €/mes + IVA", note: "Tres servicios en uno · sin permanencia" },
+    price: { new: "Desde 149 €/mes + IVA", note: "Con 6 meses de permanencia · o 349 €/mes sin permanencia" },
   },
   default: {
     badge: "Sin compromiso",

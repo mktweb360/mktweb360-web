@@ -30,7 +30,7 @@ const CONTENT: Record<string, FooterContent> = {
       { label: "Tiendas Online", href: "/diseno-de-paginas-web/diseno-tiendas-online/" },
       { label: "Creación de Blog", href: "/creacion-de-blog/" },
       { label: "Diseño web para pymes", href: "/diseno-web-pymes/" },
-      { label: "Web + 6 meses de SEO", href: "/oferta-web-seo-organico/" },
+      { label: "Web profesional desde 249 €", href: "/oferta-web-seo-organico/" },
     ],
     moreServices: [
       { label: "Redes Sociales", href: "/smm-social-media-marketing/" },

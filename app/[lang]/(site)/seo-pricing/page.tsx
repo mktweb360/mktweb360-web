@@ -10,7 +10,7 @@ import { preciosPlanesSeo } from "@/lib/precios-planes";
 // 09/10/2026 — EN/FR de /precios-seo/. Precios, límites y lógica de la calculadora salen de
 // lib/planes-seo.ts (fuente única); aquí solo van los textos de la página.
 // Esta carpeta sirve /en/seo-pricing/; /fr/tarifs-seo/ reexporta este módulo.
-// La landing «Web + 6 meses de SEO» solo existe en ES: en EN/FR se muestra el precio sin enlace.
+// La landing «Web profesional desde 249 €» solo existe en ES: en EN/FR se muestra el precio sin enlace.
 
 const BASE = "https://www.mktweb360.com";
 
@@ -38,7 +38,7 @@ const C = {
     extrasNote: "Quoted on a case-by-case basis.",
     conditionsTitle: "Conditions for all plans",
     others: [
-      { name: "Professional website + 6 months of SEO", price: "€999 + VAT", note: "One-off payment · website only from €249 + VAT" },
+      { name: "Professional website", price: "From €249 + VAT", note: "One-off payment · hosting, domain and email not included" },
       { name: "SEO consultancy", price: "Custom quote", note: "Diagnosis, strategy and a prioritised plan for in-house teams", slug: "seo-consultant", cta: "See the consultancy" },
     ],
     factorsTitle: "What makes the price of SEO vary",
@@ -100,7 +100,7 @@ const C = {
     extrasNote: "Chiffrées au cas par cas.",
     conditionsTitle: "Conditions communes à toutes les formules",
     others: [
-      { name: "Site professionnel + 6 mois de SEO", price: "999 € HT", note: "Paiement unique · site seul à partir de 249 € HT" },
+      { name: "Site professionnel", price: "À partir de 249 € HT", note: "Paiement unique · hébergement, nom de domaine et messagerie non inclus" },
       { name: "Conseil SEO", price: "Sur devis", note: "Diagnostic, stratégie et plan priorisé pour les équipes internes", slug: "seo-consultant", cta: "Voir le conseil SEO" },
     ],
     factorsTitle: "Ce qui fait varier le prix du SEO",

@@ -6,7 +6,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 const FAQS_EN = [
   {
     q: "How much does a website for a dental clinic cost?",
-    a: "A professional website for a dentist starts from £790/€790 depending on the number of pages, features (online booking, blog, case gallery) and level of customisation. The price includes design, development, basic technical SEO and training for autonomous management.",
+    a: "A professional website for a dentist starts from €249 + VAT depending on the number of pages, features (online booking, blog, case gallery) and level of customisation. The price includes custom design integrated with WordPress and basic technical SEO, so you manage the content yourself (hosting, domain and email not included).",
   },
   {
     q: "Can I add an online appointment booking system?",
@@ -25,7 +25,7 @@ const FAQS_EN = [
 const FAQS_FR = [
   {
     q: "Combien coûte un site web pour une clinique dentaire ?",
-    a: "Un site web professionnel pour dentiste commence à partir de 790 € selon le nombre de pages, les fonctionnalités (prise de rendez-vous en ligne, blog, galerie de cas) et le niveau de personnalisation. Le prix inclut la conception, le développement, le référencement technique de base et la formation à la gestion autonome.",
+    a: "Un site web professionnel pour dentiste commence à partir de 249 € HT selon le nombre de pages, les fonctionnalités (prise de rendez-vous en ligne, blog, galerie de cas) et le niveau de personnalisation. Le prix inclut un design sur mesure intégré à WordPress et le référencement technique de base, pour que vous gériez vous-même les contenus (hébergement, nom de domaine et messagerie non inclus).",
   },
   {
     q: "Puis-je ajouter un système de prise de rendez-vous en ligne ?",

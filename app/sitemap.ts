@@ -72,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/comunicacion-audiovisual/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/casos/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/blog/", priority: 0.8, changeFrequency: "weekly" as const },
-    // /oferta-web-seo/ excluida del sitemap — landing de Ads, noindex
+    // /oferta-web-seo/ (antigua landing de Ads) retirada el 20-oct-2026: redirige a /oferta-web-seo-organico/
     { url: "/oferta-web-seo-organico/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/oferta-seo-geo-gbp/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/blog-para-monetizacion/", priority: 0.8, changeFrequency: "monthly" as const },

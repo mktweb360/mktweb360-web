@@ -206,7 +206,7 @@ export default function WebDesignPage() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left lg:pr-10">
             <div>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Tu web corporativa profesional, desde 249€</h3>
-              <p className="text-white/70 text-sm">Solo diseño y desarrollo. Con SEO técnico y 6 meses de posicionamiento: 999€. Sin permanencia.</p>
+              <p className="text-white/70 text-sm">Diseño a medida integrado en WordPress. Hosting, dominio y correo no incluidos. Sin permanencia.</p>
             </div>
             <Link
               href="/diseno-de-paginas-web/paginas-corporativas/"

@@ -46,7 +46,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     url: `https://www.mktweb360.com/${lang}/corporate-website-design/`,
     offers: {
       "@type": "Offer",
-      price: "790",
+      price: "249",
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       url: `https://www.mktweb360.com/${lang}/corporate-website-design/`,
@@ -57,7 +57,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     ? [
         {
           q: "How much does a professional corporate website cost?",
-          a: "The price of a corporate website depends on the number of pages, functionalities and level of customisation. At Mkt Web 360 we start from €790 for corporate websites with professional design, technical SEO included and training for autonomous management. Companies with multiple locations, languages or complex integrations receive a customised quote.",
+          a: "The price of a corporate website depends on the number of pages, functionalities and level of customisation. At Mkt Web 360 we start from €249 + VAT for corporate websites with custom design integrated with WordPress and basic technical SEO, so you manage the content yourself (hosting, domain and email not included). Companies with multiple locations, languages or complex integrations receive a customised quote.",
         },
         {
           q: "How long does the corporate website take to be ready?",
@@ -75,7 +75,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     : [
         {
           q: "Combien coûte un site web corporatif professionnel ?",
-          a: "Le prix d'un site web corporatif dépend du nombre de pages, des fonctionnalités et du niveau de personnalisation. Chez Mkt Web 360, nous partons de 790 € pour des sites web corporatifs avec un design professionnel, le SEO technique inclus et une formation pour la gestion autonome. Les entreprises avec plusieurs sites, langues ou intégrations complexes reçoivent un devis personnalisé.",
+          a: "Le prix d'un site web corporatif dépend du nombre de pages, des fonctionnalités et du niveau de personnalisation. Chez Mkt Web 360, nous partons de 249 € HT pour des sites web corporatifs avec un design sur mesure intégré à WordPress et le SEO technique de base, pour que vous gériez vous-même les contenus (hébergement, nom de domaine et messagerie non inclus). Les entreprises avec plusieurs sites, langues ou intégrations complexes reçoivent un devis personnalisé.",
         },
         {
           q: "Combien de temps faut-il pour que le site web corporatif soit prêt ?",

@@ -153,6 +153,9 @@ const nextConfig: NextConfig = {
       // La landing de Ads de verano apunta ahora a la oferta. Ver CAMPAÑA-oferta-seo-geo-gbp-2026-10-02.md.
       { source: '/landing/seo-geo-gbp-verano/', destination: '/oferta-seo-geo-gbp/', permanent: true },
       { source: '/landing/seo-geo-gbp-verano/:path*/', destination: '/oferta-seo-geo-gbp/', permanent: true },
+      // 20-oct-2026: se retira el paquete «Web + 6 meses de SEO 999 €» y su landing de Ads (y su página de gracias).
+      { source: '/oferta-web-seo/', destination: '/oferta-web-seo-organico/', permanent: true },
+      { source: '/oferta-web-seo/:path*/', destination: '/oferta-web-seo-organico/', permanent: true },
 
       // 404 detectados en GSC (24-sep-2026): slugs EN/FR servidos en la raíz y URLs antiguas sueltas.
       { source: '/google-business-profile-management/', destination: '/google-business-profile/', permanent: true },

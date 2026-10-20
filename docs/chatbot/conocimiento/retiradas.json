@@ -1,0 +1,11 @@
+{
+  "descripcion": "FAQs aprobadas que dejan de entrar en la base de conocimiento porque su respuesta cita una oferta o un precio retirados. No se tocan las decisiones de José: se excluyen al construir kb.json. Para volver a usarlas, quitar el id de esta lista.",
+  "retiradas": [
+    { "id": "668ad1984b6a", "ruta": "/diseno-de-paginas-web/paginas-corporativas/", "motivo": "Citaba «desde 790 €»; ahora desde 249 €. Pendiente de re-revisión con el texto nuevo.", "fecha": "2026-10-20" },
+    { "id": "4475c1793f95", "ruta": "/oferta-web-seo-organico/", "motivo": "Paquete «web + 6 meses de SEO por 999 €» retirado (SEO a 300 €/mes ya no vigente).", "fecha": "2026-10-20" },
+    { "id": "d1582dd3a0fa", "ruta": "/oferta-web-seo-organico/", "motivo": "Hablaba de «la web sola, sin el paquete de SEO»; el paquete se retira.", "fecha": "2026-10-20" },
+    { "id": "2dc1ebed8bd0", "ruta": "/oferta-web-seo-organico/", "motivo": "Citaba «3 meses incluidos» de SEO; retirado.", "fecha": "2026-10-20" },
+    { "id": "d795824a7b60", "ruta": "/oferta-web-seo/", "motivo": "Landing de Ads retirada; paquete de 999 € retirado.", "fecha": "2026-10-20" },
+    { "id": "f7a586cb539a", "ruta": "/oferta-web-seo/", "motivo": "Landing de Ads retirada; citaba «3 meses incluidos» de SEO.", "fecha": "2026-10-20" }
+  ]
+}

@@ -322,6 +322,11 @@ export const PLAN_EN_CATALOGO: Record<PlanId, { servicio: string; modalidad: str
   "ecommerce-l": { servicio: "mw360-seo-planes", modalidad: "ecommerce-l-a-medida" },
 };
 
+// Opción con permanencia de 6 meses del plan «pyme» (SEO + GEO + GBP): 149 €/mes + IVA los 6 primeros meses,
+// después la tarifa vigente sin permanencia. Penalización por baja anticipada: 50 % de las mensualidades restantes.
+// Decidido por Manué el 20-oct-2026. No está (aún) en el catálogo de MktOS: se mantiene aquí. Ver CAMPAÑA-ofertas-web-y-seo-2026-10-20.md.
+export const PRECIO_PYME_PERMANENCIA_6M = 149;
+
 export function precioLocal(id: PlanId): number | null {
   return BASE.find((b) => b.id === id)!.precio;
 }

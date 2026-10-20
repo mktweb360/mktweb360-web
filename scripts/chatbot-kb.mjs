@@ -7,6 +7,8 @@ const dir = "docs/chatbot/conocimiento";
 const faqs = JSON.parse(readFileSync(`${dir}/faqs-clasificadas.json`, "utf8"));
 const { decisiones, exportado } = JSON.parse(readFileSync(`${dir}/decisiones-faqs.json`, "utf8"));
 const { paginas } = JSON.parse(readFileSync(`${dir}/paginas-web.json`, "utf8"));
+// FAQs aprobadas cuya respuesta cita una oferta/precio retirado (ver retiradas.json): no entran en la base.
+const retiradas = new Set(JSON.parse(readFileSync(`${dir}/retiradas.json`, "utf8")).retiradas.map((r) => r.id));
 
 // Páginas de servicio u oferta (el resto son artículos: sus FAQs son informativas y cuentan en el cupo).
 const SERVICIO = /^\/(en\/|fr\/)?(oferta|landing|precios|diseno-web-para|diseno-de-paginas-web|diseno-web-tienda-online|tienda-online|seo-local\/|seo-posicionamiento|email-marketing\/|analitica-web|comunicacion-audiovisual|auditoria-digital|geo-posicionamiento-ia\/|consultor-seo|creacion-de-blog|google-business-profile\/|sem-publicidad|smm-social|marketing-de-contenidos|ia-aplicada-al-marketing\/|agencia-|web-design-|seo-web-positioning|google-ads-management|google-business-profile-service|social-media-marketing|geo-generative|ai-applied|contacto|nosotros|blog-para-monetizacion)/;
@@ -15,6 +17,7 @@ const out = [];
 for (const f of faqs) {
   const d = decisiones[f.id];
   if (!d || (d.estado !== "aprobada" && d.estado !== "editada")) continue;
+  if (retiradas.has(f.id)) continue;
   const a = d.estado === "editada" && d.respuesta ? d.respuesta : f.a;
   out.push({
     id: f.id,

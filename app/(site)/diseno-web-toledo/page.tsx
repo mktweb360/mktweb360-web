@@ -28,11 +28,11 @@ const c: LocalServiceContent = {
     { t: "Web corporativa o de servicios", d: "Para profesionales y pymes que necesitan explicar sus servicios y recibir contactos.", href: "/diseno-de-paginas-web/", linkText: "Servicio de diseño web" },
     { t: "Tienda online", d: "Tiendas sin comisiones por venta ni licencias mensuales, con catálogo, pasarela de pago y SEO técnico.", href: "/tienda-online/", linkText: "Tienda online desde 490 €" },
     { t: "Rediseño de una web existente", d: "Si tu web ya posiciona, la rediseñamos sin perder lo ganado: mismas URLs o redirecciones bien planteadas." },
-    { t: "Web + SEO desde el inicio", d: "Lanzamos la web y la posicionamos durante los primeros meses con el mismo equipo.", href: "/oferta-web-seo-organico/", linkText: "Web + 6 meses de SEO" },
+    { t: "Web + SEO desde el inicio", d: "Lanzamos la web y la posicionamos de forma continua con el mismo equipo.", href: "/oferta-seo-geo-gbp/", linkText: "SEO + GEO + Google Maps" },
   ],
   precios: [
-    { nombre: "Web profesional", precio: "Desde 249 € + IVA", detalle: "Diseño y desarrollo de la web, sin el paquete de SEO.", href: "/oferta-web-seo-organico/" },
-    { nombre: "Web + 6 meses de SEO", precio: "999 € + IVA", detalle: "Web profesional con hosting, dominio, correo y 6 meses de posicionamiento.", href: "/oferta-web-seo-organico/" },
+    { nombre: "Web profesional", precio: "Desde 249 € + IVA", detalle: "Diseño a medida integrado en WordPress. Hosting, dominio y correo no incluidos.", href: "/oferta-web-seo-organico/" },
+    { nombre: "SEO + GEO + Google Maps", precio: "Desde 149 €/mes + IVA", detalle: "Con 6 meses de permanencia a 149 €/mes, o 349 €/mes sin permanencia.", href: "/oferta-seo-geo-gbp/" },
     { nombre: "Tienda online", precio: "Desde 490 €", detalle: "Tienda sin comisiones por venta ni licencias mensuales.", href: "/tienda-online/" },
   ],
   contexto: {
@@ -49,8 +49,8 @@ const c: LocalServiceContent = {
     { href: "/marketing-digital-toledo/", text: "Guía de marketing digital en Toledo" },
   ],
   faqs: [
-    { q: "¿Cuánto cuesta una página web en Toledo?", a: "Nuestros precios son los mismos en toda España: web profesional desde 249 € + IVA, web con 6 meses de SEO por 999 € + IVA y tienda online desde 490 €. Te enviamos un presupuesto cerrado según lo que necesites." },
-    { q: "¿La web incluye hosting y dominio?", a: "El paquete de web + 6 meses de SEO incluye hosting, dominio, correo corporativo y páginas legales. En el resto de opciones te lo indicamos en el presupuesto." },
+    { q: "¿Cuánto cuesta una página web en Toledo?", a: "Nuestros precios son los mismos en toda España: web profesional desde 249 € + IVA, SEO + GEO + Google Maps desde 149 €/mes + IVA (con 6 meses de permanencia) o 349 €/mes sin permanencia, y tienda online desde 490 €. Te enviamos un presupuesto cerrado según lo que necesites." },
+    { q: "¿La web incluye hosting y dominio?", a: "El hosting, el dominio y el correo corporativo no van incluidos en el precio de la web: los contratas con el proveedor que prefieras y te orientamos en la elección." },
     { q: "¿Podéis rediseñar mi web sin perder posicionamiento?", a: "Sí. Revisamos qué páginas reciben visitas y desde qué búsquedas, y mantenemos las URLs o creamos redirecciones a la página equivalente para conservar lo ganado." },
     { q: "¿Cuánto se tarda en tener la web publicada?", a: "Depende del tamaño y de que tengamos a tiempo los textos, las fotos y los datos legales del negocio. Al aceptar el presupuesto te damos un calendario con las fechas de revisión y de publicación." },
     { q: "¿Quién escribe los textos de la web?", a: "Podemos partir de los tuyos o redactarlos con la información que nos des sobre tus servicios. En ambos casos los adaptamos para que respondan a lo que busca tu cliente y a las búsquedas que te interesan en Google." },

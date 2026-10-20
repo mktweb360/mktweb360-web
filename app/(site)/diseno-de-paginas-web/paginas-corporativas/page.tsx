@@ -28,13 +28,13 @@ const serviceSchema = {
   url: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/",
   offers: {
     "@type": "Offer",
-    price: "790",
+    price: "249",
     priceCurrency: "EUR",
     priceSpecification: {
       "@type": "UnitPriceSpecification",
-      price: "790",
+      price: "249",
       priceCurrency: "EUR",
-      description: "Precio desde 790€ para web corporativa profesional con SEO técnico incluido",
+      description: "Precio desde 249€ + IVA para web corporativa profesional con diseño a medida y SEO técnico de base",
     },
     availability: "https://schema.org/InStock",
     url: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/",
@@ -44,7 +44,7 @@ const serviceSchema = {
 const FAQS = [
   {
     q: "¿Cuánto cuesta una página web corporativa profesional?",
-    a: "El precio de una web corporativa depende del número de páginas, funcionalidades y nivel de personalización. En Mkt Web 360 partimos desde 790€ para webs corporativas con diseño profesional, SEO técnico incluido y formación para gestión autónoma. Las empresas con múltiples sedes, idiomas o integraciones complejas tienen presupuesto personalizado.",
+    a: "El precio de una web corporativa depende del número de páginas, funcionalidades y nivel de personalización. En Mkt Web 360 partimos desde 249€ + IVA para webs corporativas con diseño a medida integrado en WordPress y SEO técnico de base, para que gestiones tú los contenidos (hosting, dominio y correo no incluidos). Las empresas con múltiples sedes, idiomas o integraciones complejas tienen presupuesto personalizado.",
   },
   {
     q: "¿Cuánto tarda en estar lista la web corporativa?",
@@ -135,7 +135,7 @@ export default function PaginasCorporativasPage() {
       <section className="bg-primary-700 py-5 px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {[
-            { value: "desde 790€", label: "Precio todo incluido" },
+            { value: "desde 249€", label: "Precio + IVA" },
             { value: "3–5 sem.", label: "Plazo de entrega" },
             { value: "SEO", label: "Técnico incluido" },
             { value: "100%", label: "Gestión autónoma" },

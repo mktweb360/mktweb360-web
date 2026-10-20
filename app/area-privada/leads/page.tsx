@@ -27,7 +27,8 @@ type Lead = {
 const OFERTA_LABELS: Record<string, string> = {
   "seo-6x3": "SEO 6x3",
   "tienda-online-490": "Tienda 490€",
-  "web-seo-999": "Web + SEO 999€",
+  "web-seo-999": "Web + SEO 999€ (retirada 20-oct-2026)",
+  "web-corporativa-249": "Web profesional 249€",
 };
 
 const STATUS_LABELS: Record<string, { label: string; color: string }> = {

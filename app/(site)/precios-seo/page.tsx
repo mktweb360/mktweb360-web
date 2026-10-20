@@ -29,9 +29,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const OTRAS = [
   {
-    name: "Web profesional + 6 meses de SEO",
-    price: "999 € + IVA",
-    note: "Pago único · solo la web desde 249 € + IVA",
+    name: "Web profesional",
+    price: "Desde 249 € + IVA",
+    note: "Pago único · hosting, dominio y correo no incluidos",
     href: "/oferta-web-seo-organico/",
     cta: "Ver qué incluye",
   },
