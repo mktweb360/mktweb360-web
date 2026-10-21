@@ -81,11 +81,11 @@ export default function AuditoriaSeoGratuitaPage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Auditoría SEO gratuita" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              Auditoría SEO gratuita de tu web<br />
+              Diagnóstico gratuito de tu presencia en Google y en la IA<br />
               <span className="text-accent-400">en 24 horas, en tu correo</span>
             </h1>
             <p className="text-xl text-primary-200 mb-6 leading-relaxed">
-              Te decimos qué está frenando tu web en Google, en los asistentes de IA y en Google Maps, qué búsquedas puedes ganar y qué harías primero. Con un plan de mejora y una propuesta para aplicarlo.
+              Auditoría SEO, GEO y Google Business: te decimos qué está frenando tu web, qué búsquedas puedes ganar y qué haríamos primero. Plan de mejora incluido.
             </p>
             <ul className="space-y-2 text-primary-100">
               <li>✓ Sin coste y sin compromiso</li>
@@ -94,8 +94,8 @@ export default function AuditoriaSeoGratuitaPage() {
             </ul>
           </div>
           <div id="solicitar" className="bg-white rounded-2xl p-6 text-gray-900 shadow-xl">
-            <h2 className="text-xl font-bold text-primary-700 mb-1">Solicita tu auditoría</h2>
-            <p className="text-sm text-gray-500 mb-4">Te la enviamos a tu correo en un máximo de 24 horas laborables. Si la pides en fin de semana, la recibirás como tarde el lunes.</p>
+            <h2 className="text-xl font-bold text-primary-700 mb-1">Solicita tu diagnóstico</h2>
+            <p className="text-sm text-gray-500 mb-4">Te lo enviamos a tu correo en un máximo de 24 horas laborables. Si lo pides en fin de semana, lo recibirás como tarde el lunes.</p>
             <ContactForm
               formType="auditoria"
               websiteRequired
@@ -103,7 +103,7 @@ export default function AuditoriaSeoGratuitaPage() {
               messageLabel="¿Qué te gustaría conseguir? (opcional)"
               messageOptional
               messagePlaceholder="¿Qué te gustaría conseguir con tu web? (más clientes de tu zona, vender online, aparecer en la IA…) ¿Inviertes ya en SEO o publicidad?"
-              submitLabel="Quiero mi auditoría gratuita"
+              submitLabel="Quiero mi diagnóstico gratuito"
             />
           </div>
         </div>
