@@ -81,11 +81,11 @@ export default function AuditoriaSeoGratuitaPage() {
           <div>
             <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Auditoría SEO gratuita" }]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              Auditoría SEO gratuita de tu web<br />
+              Diagnóstico gratuito de tu presencia en Google y en la IA<br />
               <span className="text-accent-400">en 24 horas, en tu correo</span>
             </h1>
             <p className="text-xl text-primary-200 mb-6 leading-relaxed">
-              Te decimos qué está frenando tu web en Google, en los asistentes de IA y en Google Maps, qué búsquedas puedes ganar y qué harías primero. Con un plan de mejora y una propuesta para aplicarlo.
+              Auditoría SEO, GEO y Google Business: te decimos qué está frenando tu web, qué búsquedas puedes ganar y qué haríamos primero. Plan de mejora incluido.
             </p>
             <ul className="space-y-2 text-primary-100">
               <li>✓ Sin coste y sin compromiso</li>
