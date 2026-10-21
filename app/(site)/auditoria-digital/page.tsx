@@ -94,8 +94,8 @@ export default function AuditoriaSeoGratuitaPage() {
             </ul>
           </div>
           <div id="solicitar" className="bg-white rounded-2xl p-6 text-gray-900 shadow-xl">
-            <h2 className="text-xl font-bold text-primary-700 mb-1">Solicita tu auditoría</h2>
-            <p className="text-sm text-gray-500 mb-4">Te la enviamos a tu correo en un máximo de 24 horas laborables. Si la pides en fin de semana, la recibirás como tarde el lunes.</p>
+            <h2 className="text-xl font-bold text-primary-700 mb-1">Solicita tu diagnóstico</h2>
+            <p className="text-sm text-gray-500 mb-4">Te lo enviamos a tu correo en un máximo de 24 horas laborables. Si lo pides en fin de semana, lo recibirás como tarde el lunes.</p>
             <ContactForm
               formType="auditoria"
               websiteRequired
@@ -103,7 +103,7 @@ export default function AuditoriaSeoGratuitaPage() {
               messageLabel="¿Qué te gustaría conseguir? (opcional)"
               messageOptional
               messagePlaceholder="¿Qué te gustaría conseguir con tu web? (más clientes de tu zona, vender online, aparecer en la IA…) ¿Inviertes ya en SEO o publicidad?"
-              submitLabel="Quiero mi auditoría gratuita"
+              submitLabel="Quiero mi diagnóstico gratuito"
             />
           </div>
         </div>
