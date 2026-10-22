@@ -1,7 +1,7 @@
 {
  "generado": "2026-10-17T19:09:54.935Z",
  "fuente": "app/(site)/*/page.tsx (metadata)",
- "total": 159,
+ "total": 162,
  "paginas": [
   {
    "ruta": "/5-factores-web-academias-centros-formacion/",
@@ -242,6 +242,14 @@
    "servicio": null,
    "title": "Ayudas para digitalizar tu pyme en 2026 tras el Kit Digital | Mkt Web 360",
    "description": "El Kit Digital cerró solicitudes en octubre de 2025. Qué ayudas quedan en 2026 para digitalizar tu pyme, qué hace la Orden TDF/39/2026 y cómo prepararte."
+  },
+  {
+   "ruta": "/black-friday-tienda-online-que-preparar/",
+   "url": "https://www.mktweb360.com/black-friday-tienda-online-que-preparar/",
+   "tipo": "articulo",
+   "servicio": "tienda-online",
+   "title": "Black Friday 2026 en tu tienda online: qué preparar ya",
+   "description": "Black Friday 2026 es el 27 de noviembre. Qué preparar en tu tienda online: web, Google Merchant Center, precio anterior legal y ficha de Google."
   },
   {
    "ruta": "/blog-para-monetizacion/",
@@ -932,6 +940,14 @@
    "description": "Agencia de marketing para tiendas Shopware: SEO, Google Ads, GEO y optimización de la conversión para tiendas ya construidas que necesitan vender más."
   },
   {
+   "ruta": "/medir-trafico-ia-google-analytics-search-console/",
+   "url": "https://www.mktweb360.com/medir-trafico-ia-google-analytics-search-console/",
+   "tipo": "articulo",
+   "servicio": "analitica",
+   "title": "Medir el tráfico de la IA en Analytics y Search Console",
+   "description": "Cómo medir las visitas que llegan desde ChatGPT, Gemini, Perplexity y el Modo IA de Google con Google Analytics 4 y Search Console, paso a paso."
+  },
+  {
    "ruta": "/metodos-pago-tienda-online-espana/",
    "url": "https://www.mktweb360.com/metodos-pago-tienda-online-espana/",
    "tipo": "articulo",
@@ -962,6 +978,14 @@
    "servicio": "tienda-online",
    "title": "Migrar una tienda online sin perder SEO",
    "description": "Guía completa para migrar una tienda online a WooCommerce sin perder productos, clientes, pedidos ni posicionamiento en Google. Proceso y errores a evitar."
+  },
+  {
+   "ruta": "/modo-ia-google-que-es-como-aparecer/",
+   "url": "https://www.mktweb360.com/modo-ia-google-que-es-como-aparecer/",
+   "tipo": "articulo",
+   "servicio": "seo",
+   "title": "Modo IA de Google: qué es y cómo aparecer con tu negocio",
+   "description": "Qué es el Modo IA de Google, qué cambió en octubre de 2026 y qué puede hacer tu empresa para aparecer en sus respuestas y medir si te trae clientes."
   },
   {
    "ruta": "/nosotros/",
