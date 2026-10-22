@@ -235,9 +235,9 @@ export default function BuscadoresNavegadoresPage() {
 
         <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Quieres mejorar la visibilidad de tu web en los buscadores?</p>
-            <p className="text-gray-600 text-sm mb-4">En Mkt Web 360 somos especialistas en SEO y posicionamiento web. Ayudamos a empresas a aparecer en Google cuando sus clientes potenciales buscan sus servicios.</p>
-            <Link href="/seo-posicionamiento-web-organico/" className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
-              Ver servicio SEO
+            <p className="text-gray-600 text-sm mb-4">Pide el diagnóstico gratuito de tu web: revisamos tu SEO, tu ficha de Google y tu visibilidad en IA, y te enviamos un plan de mejora en tu correo en un máximo de 24 horas laborables, sin compromiso.</p>
+            <Link href="/auditoria-digital/" className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
+              Quiero mi diagnóstico gratuito
             </Link>
           </div>
 
