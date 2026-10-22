@@ -183,6 +183,10 @@ export const ROUTES: Route[] = [
   { es: "/atribucion-de-marketing-como-medir-impacto-real/", en: "marketing-attribution-measure-real-impact", fr: "attribution-marketing-mesurer-impact-reel" },
   { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
   { es: "/redes-sociales-para-empresas-b2b-2026/", en: "social-media-b2b-companies-2026", fr: "reseaux-sociaux-entreprises-b2b-2026" },
+  // Artículos de tendencia (23-oct-2026), contenido en lib/articulos-tendencia/
+  { es: "/modo-ia-google-que-es-como-aparecer/", en: "google-ai-mode-what-it-is-how-to-appear", fr: "mode-ia-google-comment-apparaitre" },
+  { es: "/black-friday-tienda-online-que-preparar/", en: "black-friday-online-store-checklist", fr: "black-friday-boutique-en-ligne-preparer" },
+  { es: "/medir-trafico-ia-google-analytics-search-console/", en: "measure-ai-traffic-google-analytics-search-console", fr: "mesurer-trafic-ia-google-analytics-search-console" },
 ];
 
 // ---------- helpers derivados ----------
