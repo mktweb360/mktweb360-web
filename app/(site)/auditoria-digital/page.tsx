@@ -15,12 +15,12 @@ import { alternatesFor } from "@/lib/i18n/routes";
 const URL = "https://www.mktweb360.com/auditoria-digital/";
 
 export const metadata: Metadata = {
-  title: "Auditoría SEO gratuita de tu web en 24 h",
+  title: "Auditoría web y SEO gratuita en 24 h",
   description:
-    "Auditoría SEO gratuita con visibilidad en IA y ficha de Google: errores técnicos, oportunidades, competencia y plan de mejora en 24 h laborables.",
+    "Auditoría web y SEO gratuita: errores técnicos, visibilidad en IA y ficha de Google, competencia y plan de mejora. Informe en 24 h laborables.",
   alternates: alternatesFor("/auditoria-digital/") ?? { canonical: URL },
   openGraph: {
-    title: "Auditoría SEO gratuita de tu web en 24 h | Mkt Web 360",
+    title: "Auditoría web y SEO gratuita en 24 h | Mkt Web 360",
     description: "Te enviamos por correo un diagnóstico SEO, de visibilidad en IA y de tu ficha de Google, con las 3 acciones que más impacto tendrían y una propuesta para aplicarlas.",
     url: URL,
     images: [{ url: "/og-auditoria-digital.jpg", width: 1200, height: 630 }],
@@ -94,7 +94,7 @@ export default function AuditoriaSeoGratuitaPage() {
             </ul>
           </div>
           <div id="solicitar" className="bg-white rounded-2xl p-6 text-gray-900 shadow-xl">
-            <h2 className="text-xl font-bold text-primary-700 mb-1">Solicita tu diagnóstico</h2>
+            <h2 className="text-xl font-bold text-primary-700 mb-1">Solicita tu auditoría web gratuita</h2>
             <p className="text-sm text-gray-500 mb-4">Te lo enviamos a tu correo en un máximo de 24 horas laborables. Si lo pides en fin de semana, lo recibirás como tarde el lunes.</p>
             <ContactForm
               formType="auditoria"
@@ -112,7 +112,7 @@ export default function AuditoriaSeoGratuitaPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Qué recibes en la auditoría</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Qué incluye tu auditoría web y SEO gratuita</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Un informe claro, sin jerga innecesaria, que puedes usar aunque no trabajes con nosotros.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
