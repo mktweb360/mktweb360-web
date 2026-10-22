@@ -175,6 +175,10 @@ export const ROUTES: Route[] = [
   // Página de autor de los artículos del blog (28/10/2026). Slugs EN/FR planos (el validador exige carpetas de un nivel).
   { es: "/autor/jose-marcos/", en: "author-jose-marcos", fr: "auteur-jose-marcos" },
   { es: "/digitalizacion-pymes-espana-datos-ine-2026/", en: "sme-digitalisation-spain-ine-data-2026", fr: "digitalisation-pme-espagne-donnees-ine-2026" },
+  // Artículos de tendencia (23-oct-2026), contenido en lib/articulos-tendencia/
+  { es: "/modo-ia-google-que-es-como-aparecer/", en: "google-ai-mode-what-it-is-how-to-appear", fr: "mode-ia-google-comment-apparaitre" },
+  { es: "/black-friday-tienda-online-que-preparar/", en: "black-friday-online-store-checklist", fr: "black-friday-boutique-en-ligne-preparer" },
+  { es: "/medir-trafico-ia-google-analytics-search-console/", en: "measure-ai-traffic-google-analytics-search-console", fr: "mesurer-trafic-ia-google-analytics-search-console" },
 ];
 
 // ---------- helpers derivados ----------

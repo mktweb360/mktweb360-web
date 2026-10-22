@@ -168,6 +168,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/seo-para-pymes-guia/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/digitalizacion-pymes-espana-datos-ine-2026/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/auditoria-geo-aparecer-chatgpt-gemini-google/", priority: 0.7, changeFrequency: "weekly" as const },
+    // Artículos de tendencia (23-oct-2026); EN/FR entran solos desde routes.ts
+    { url: "/modo-ia-google-que-es-como-aparecer/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/black-friday-tienda-online-que-preparar/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/medir-trafico-ia-google-analytics-search-console/", priority: 0.7, changeFrequency: "monthly" as const },
   ];
 
   // Páginas legales con noindex: fuera del sitemap en los tres idiomas (28/10/2026).
