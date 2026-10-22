@@ -163,7 +163,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "TikTok est le cas le plus intéressant car il indexe l'audio. Son système de transcription automatique convertit ce que vous dites dans la vidéo en texte indexable. Cela signifie que mentionner les mots-clés de votre sujet dans la vidéo — pas seulement dans la légende — a un impact direct sur la visibilité dans les recherches."}
           </p>
 
-          <BlogBanner variant="geo" />
+          <BlogBanner variant="geo" lang={lang} />
 
           <h2 className="text-2xl font-bold text-primary-600">
             {isEn ? "Social SEO on LinkedIn" : "SEO social sur LinkedIn"}

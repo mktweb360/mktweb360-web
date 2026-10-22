@@ -95,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         </section>
 
-        <BlogBanner variant="seo" />
+        <BlogBanner variant="seogeogbp" lang={lang} />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
             {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}

@@ -199,7 +199,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         ))}
 
-        <BlogBanner variant="geo" />
+        <BlogBanner variant="geo" lang={lang} />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
           {isEn

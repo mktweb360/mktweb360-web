@@ -1,3 +1,4 @@
+import { BlogBanner } from "@/components/BlogBanner";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -314,6 +315,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </nav>
       </article>
       <RelatedArticles currentSlug="web-design-clinics" category="Web Design" />
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="seogeogbp" lang={lang} />
+      </div>
     </>
   );
 }

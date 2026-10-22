@@ -1,3 +1,4 @@
+import { BlogBanner } from "@/components/BlogBanner";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -551,6 +552,9 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       </section>
 
       <RelatedArticles category="Marketing Digital" title={isEn ? "More about AI search and GEO" : "Plus sur la recherche IA et le GEO"} />
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="seogeogbp" lang={lang} />
+      </div>
     </>
   );
 }

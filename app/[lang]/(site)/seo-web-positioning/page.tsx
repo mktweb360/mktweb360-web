@@ -1,3 +1,4 @@
+import { BlogBanner } from "@/components/BlogBanner";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 const FAQS_EN = [
   { q: "What does your SEO service include?", a: "Full initial technical audit, keyword research, on-page optimisation, creation of optimised content, ethical link building, monthly position tracking and results reports." },
-  { q: "How long does it take to see SEO results?", a: "First position movements usually appear within 2 to 4 months. For consolidated results, expect 6 to 12 months, although this depends on competition and the initial state of the website." },
+  { q: "How long does it take to see SEO results?", a: "First position movements usually appear within 3 to 6 months. For consolidated results, expect 6 to 12 months, although this depends on competition and the initial state of the website." },
   { q: "Do you work with Google algorithm updates?", a: "Yes, we closely follow all Google algorithm updates and adapt strategies to always stay within best practices (white hat SEO)." },
   { q: "Do you do local and national SEO?", a: "We do both. Local SEO is ideal for businesses with a physical presence that want to attract customers from their area. National SEO targets keywords with broader geographical reach." },
   { q: "How do you measure results?", a: "We monitor Google positions, organic traffic, conversions attributed to SEO and brand visibility. You receive a detailed monthly report with progress and next steps." },
@@ -42,7 +43,7 @@ const FAQS_EN = [
 
 const FAQS_FR = [
   { q: "Qu'est-ce que votre service SEO comprend ?", a: "Audit technique initial complet, recherche de mots-clés, optimisation on-page, création de contenu optimisé, link building éthique, suivi mensuel des positions et rapports de résultats." },
-  { q: "Combien de temps faut-il pour voir des résultats SEO ?", a: "Les premiers mouvements de positions apparaissent généralement entre 2 et 4 mois. Pour des résultats consolidés, comptez entre 6 et 12 mois, selon la concurrence et l'état initial du site." },
+  { q: "Combien de temps faut-il pour voir des résultats SEO ?", a: "Les premiers mouvements de positions apparaissent généralement entre 3 et 6 mois. Pour des résultats consolidés, comptez entre 6 et 12 mois, selon la concurrence et l'état initial du site." },
   { q: "Travaillez-vous avec les mises à jour de l'algorithme Google ?", a: "Oui, nous suivons de près toutes les mises à jour de l'algorithme Google et adaptons les stratégies pour toujours rester dans les bonnes pratiques (SEO white hat)." },
   { q: "Faites-vous du SEO local et national ?", a: "Nous faisons les deux. Le SEO local est idéal pour les entreprises avec une présence physique qui souhaitent attirer des clients de leur zone. Le SEO national cible des mots-clés à portée géographique plus large." },
   { q: "Comment mesurez-vous les résultats ?", a: "Nous surveillons les positions Google, le trafic organique, les conversions attribuées au SEO et la visibilité de la marque. Vous recevez un rapport mensuel détaillé avec l'évolution et les prochaines étapes." },
@@ -456,6 +457,9 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
       </section>
 
       <RelatedArticles category="SEO" title={isEn ? "More about SEO and positioning" : "Plus sur le SEO et le positionnement"} />
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="seogeogbp" lang={lang} />
+      </div>
     </>
   );
 }

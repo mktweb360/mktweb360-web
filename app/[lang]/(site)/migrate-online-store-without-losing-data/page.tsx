@@ -91,7 +91,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Une migration DIY mal réalisée peut perdre définitivement des années d'autorité SEO, générer des clients frustrés qui ne peuvent pas se connecter, et créer des échecs de paiement non détectés qui coûtent du chiffre d'affaires. Le coût d'une migration professionnelle (généralement 500 à 2 000€ selon la taille de la boutique) est presque toujours récupéré par la réduction des risques et l'exécution plus rapide."}
         </p>
 
-        <BlogBanner variant="ecommerce" />
+        <BlogBanner variant="ecommerce" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

@@ -163,7 +163,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Les données de performance constituent le feedback le plus précis qu'une stratégie de marque puisse recevoir. Si un message dans vos annonces convertit trois fois mieux qu'un autre, ce n'est pas seulement un signal paid media — c'est une information sur la partie de votre proposition de valeur qui résonne le plus avec votre audience réelle."}
           </p>
 
-          <BlogBanner variant="geo" />
+          <BlogBanner variant="geo" lang={lang} />
 
           <h2 className="text-2xl font-bold text-primary-600">
             {isEn ? "The mistake of separating budgets" : "L'erreur de séparer les budgets"}

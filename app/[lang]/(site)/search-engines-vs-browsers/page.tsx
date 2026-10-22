@@ -2,7 +2,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
-import { alternatesFor } from "@/lib/i18n/routes";
+import Link from "next/link";
+import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -95,7 +96,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         </section>
 
-        <BlogBanner variant="default" />
+        <div className="bg-primary-50 rounded-xl p-6 border border-primary-100 mb-8">
+          <p className="font-semibold text-primary-700 mb-2">
+            {isEn ? "Want to improve your website's visibility in search engines?" : "Vous voulez améliorer la visibilité de votre site dans les moteurs de recherche ?"}
+          </p>
+          <p className="text-gray-600 text-sm mb-4">
+            {isEn
+              ? "Request the free diagnosis of your website: we review your SEO, your Google Business Profile and your visibility in AI, and email you an improvement plan within 24 business hours at most, with no obligation."
+              : "Demandez le diagnostic gratuit de votre site : nous analysons votre SEO, votre fiche Google et votre visibilité dans l'IA, et nous vous envoyons un plan d'amélioration par e-mail dans un délai maximal de 24 heures ouvrées, sans engagement."}
+          </p>
+          <Link href={`/${lang}/${langSlug(lang, "digital-audit")}/`} className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
+            {isEn ? "I want my free diagnosis" : "Je veux mon diagnostic gratuit"}
+          </Link>
+        </div>
+
+        <BlogBanner variant="default" lang={lang} />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
             {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}

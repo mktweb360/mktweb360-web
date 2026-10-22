@@ -173,7 +173,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "La troisième technique consiste à introduire une structure non standard. Au lieu du classique 'introduction - 5 points - conclusion', commencez par un problème concret, développez le contraste entre ce que les gens croient et ce qui se passe réellement, et terminez par une recommandation actionnable."}
           </p>
 
-          <BlogBanner variant="geo" />
+          <BlogBanner variant="geo" lang={lang} />
 
           <h2 className="text-2xl font-bold text-primary-600">
             {isEn ? "The role of the human editor in the AI process" : "Le rôle de l'éditeur humain dans le processus IA"}
