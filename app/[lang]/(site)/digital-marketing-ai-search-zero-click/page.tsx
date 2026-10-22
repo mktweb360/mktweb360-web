@@ -161,7 +161,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "La deuxième dimension consiste à renforcer les canaux que l'IA ne peut pas remplacer : acquisition directe (email marketing, WhatsApp), recherche de marque (les utilisateurs qui vous connaissent déjà continuent de cliquer), et contenu de haute valeur nécessitant du contexte — études de cas, guides détaillés, outils interactifs — que l'IA résume mais ne remplace pas complètement."}
           </p>
 
-          <BlogBanner variant="geo" />
+          <BlogBanner variant="geo" lang={lang} />
 
           <h2 className="text-2xl font-bold text-primary-600">
             {isEn ? "GEO as a new visibility layer" : "Le GEO comme nouvelle couche de visibilité"}

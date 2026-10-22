@@ -111,7 +111,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Pensez à l'IA comme à un assistant junior qui rédige rapidement mais a besoin de supervision. La valeur réside dans l'expertise appliquée par-dessus — pas dans le résultat brut. Les entreprises qui traitent le résultat de l'IA comme du travail fini sous-performent systématiquement celles qui l'utilisent comme point de départ."}
         </p>
 
-        <BlogBanner variant="geo" />
+        <BlogBanner variant="geo" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

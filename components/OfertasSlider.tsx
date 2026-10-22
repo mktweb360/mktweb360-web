@@ -42,7 +42,7 @@ const SLIDES: Slide[] = [
   {
     badge: "Tienda Online",
     title: "Tienda online profesional desde 490€",
-    desc: "Sin comisiones por venta, sin licencias mensuales. Diseño 100% personalizado. SEO técnico incluido desde el primer día..",
+    desc: "Sin comisiones por venta, sin licencias mensuales. Diseño 100% personalizado. SEO técnico incluido desde el primer día.",
     cta: "Ver oferta",
     href: "/landing/tienda-online-490/",
     bg: "/oferta-tienda-online.jpg",

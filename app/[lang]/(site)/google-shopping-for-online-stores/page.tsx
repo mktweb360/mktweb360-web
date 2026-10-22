@@ -116,7 +116,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La bonne approche : activez les annonces gratuites immédiatement pour du trafic sans coût, puis superposez des campagnes Shopping payantes pour vos produits les plus performants. Examinez le ROAS par catégorie de produits mensuellement et mettez en pause les produits qui perdent systématiquement de l'argent."}
         </p>
 
-        <BlogBanner variant="ecommerce" />
+        <BlogBanner variant="ecommerce" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Professional Online Store from €490"
       : "Boutique en ligne pro à partir de 490 €",
     description: isEn
-      ? "Professional online store from €490. No commissions per sale, no monthly fees. Custom design, SEO included 12 months. Only 5 places available this month."
-      : "Boutique en ligne professionnelle à partir de 490€. Sans commissions par vente, sans frais mensuels. Design personnalisé, SEO inclus 12 mois. Seulement 5 places ce mois-ci.",
+      ? "Professional online store from €490. No commissions per sale, no monthly fees. Custom design and technical SEO from day one."
+      : "Boutique en ligne professionnelle à partir de 490€. Sans commissions par vente, sans frais mensuels. Design personnalisé et SEO technique dès le premier jour.",
     alternates: alternatesFor(`/${lang}/online-store-offer/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/online-store-offer/`,
     },
@@ -48,7 +48,6 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         "Full catalogue management",
         "Carrier integration",
         "Technical SEO from day one",
-        "12 months SEO included in the offer",
         "No commission per sale",
         "No monthly platform fee",
         "Full migration from your current store",
@@ -62,7 +61,6 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         "Gestion complète du catalogue",
         "Intégration transporteurs",
         "SEO technique dès le premier jour",
-        "12 mois de SEO inclus dans l'offre",
         "Aucune commission par vente",
         "Aucun abonnement mensuel",
         "Migration complète depuis votre boutique actuelle",
@@ -74,14 +72,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     ? [
         { value: "€490", label: "special offer price" },
         { value: "0€", label: "commission per sale" },
-        { value: "12m", label: "SEO included" },
-        { value: "5", label: "places available" },
+        { value: "SEO", label: "technical, from day one" },
+        { value: "100%", label: "custom design" },
       ]
     : [
         { value: "490€", label: "prix offre spéciale" },
         { value: "0€", label: "commission par vente" },
-        { value: "12m", label: "SEO inclus" },
-        { value: "5", label: "places disponibles" },
+        { value: "SEO", label: "technique dès le 1er jour" },
+        { value: "100%", label: "design personnalisé" },
       ];
 
   const comparison = isEn
@@ -138,7 +136,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ]}
           />
           <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6 mt-4">
-            {isEn ? "Special offer — Only 5 places" : "Offre spéciale — Seulement 5 places"}
+            {isEn ? "Special offer — Online store from €490" : "Offre spéciale — Boutique en ligne dès 490 €"}
           </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             {isEn ? "Your professional online store" : "Votre boutique en ligne professionnelle"}<br />
@@ -155,10 +153,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             href={`/${lang}/contact/`}
             className="inline-block bg-accent-500 text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-accent-600 transition-colors"
           >
-            {isEn ? "Reserve my place now" : "Réserver ma place maintenant"}
+            {isEn ? "I want my online store" : "Je veux ma boutique en ligne"}
           </a>
           <p className="text-primary-300 text-sm mt-6">
-            {isEn ? "Only 5 places available" : "Seulement 5 places disponibles"}
+            {isEn ? "We reply with a clear proposal" : "Nous vous répondons avec une proposition claire"}
           </p>
         </div>
       </section>
@@ -216,18 +214,18 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section className="py-12 px-4 mw-skin-band text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-3">
-            {isEn ? "Only 5 places available" : "Seulement 5 places disponibles"}
+            {isEn ? "Tell us about your project" : "Parlez-nous de votre projet"}
           </h2>
           <p className="text-primary-200 mb-6">
             {isEn
-              ? "Our production capacity is limited to guarantee quality. When the 5 places are filled, we close the offer."
-              : "Notre capacité de production est limitée pour garantir la qualité. Lorsque les 5 places seront remplies, nous fermerons l'offre."}
+              ? "Tell us what you want to sell and we will reply with a clear proposal."
+              : "Dites-nous ce que vous voulez vendre et nous vous répondrons avec une proposition claire."}
           </p>
           <a
             href={`/${lang}/contact/`}
             className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block"
           >
-            {isEn ? "I want my place — €490" : "Je veux ma place — 490€"}
+            {isEn ? "I want my store — €490" : "Je veux ma boutique — 490 €"}
           </a>
         </div>
       </section>
@@ -298,12 +296,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">
-              {isEn ? "Reserve your place now" : "Réservez votre place maintenant"}
+              {isEn ? "Tell us about your project" : "Parlez-nous de votre projet"}
             </h2>
             <p className="text-primary-200">
               {isEn
-                ? "Tell us about your project and we'll contact you within 24 hours to confirm availability."
-                : "Parlez-nous de votre projet et nous vous contacterons dans les 24 heures pour confirmer la disponibilité."}
+                ? "Tell us about your project and we'll contact you within 24 hours with a clear proposal."
+                : "Parlez-nous de votre projet et nous vous contacterons dans les 24 heures avec une proposition claire."}
             </p>
           </div>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">

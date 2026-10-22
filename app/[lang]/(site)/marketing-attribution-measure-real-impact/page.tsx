@@ -163,7 +163,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Les outils enterprise d'attribution multi-touch (Northbeam, Triple Whale, Rockerbox) coûtent des milliers par mois et sont conçus pour l'e-commerce à volume élevé. Pour une PME, l'approche pragmatique combine : GA4 avec un modèle d'attribution basé sur les données, Google Ads avec Enhanced Conversions, la question 'comment nous avez-vous trouvés ?' dans le formulaire de contact, et une analyse périodique des canaux qui génèrent du trafic de marque."}
           </p>
 
-          <BlogBanner variant="geo" />
+          <BlogBanner variant="geo" lang={lang} />
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">

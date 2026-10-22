@@ -91,7 +91,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Une intégration correcte synchronise : les niveaux de stock (dans les deux sens, en temps réel), les prix et descriptions des produits, les données clients (pour qu'un client puisse acheter en ligne et retourner en boutique sans friction), l'historique des commandes (tous les canaux visibles en un seul endroit), et le reporting (rapports de ventes unifiés sur tous les canaux). Sans cela, vous gérez deux entreprises séparées qui partagent simplement les mêmes produits."}
         </p>
 
-        <BlogBanner variant="ecommerce" />
+        <BlogBanner variant="ecommerce" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
