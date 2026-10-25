@@ -42,9 +42,9 @@ export const OFERTAS_VIGENTES: OfertaVigente[] = [
     id: "tienda-online",
     ruta: "/tienda-online/",
     texto: {
-      es: `Tienda online: desde ${PRECIO_TIENDA_ONLINE_DESDE} €, sin comisiones por venta ni licencias mensuales.`,
-      en: `Online store: from €${PRECIO_TIENDA_ONLINE_DESDE}, with no commission per sale and no monthly licences.`,
-      fr: `Boutique en ligne : à partir de ${PRECIO_TIENDA_ONLINE_DESDE} €, sans commission par vente ni licence mensuelle.`,
+      es: `Tienda online: desde ${PRECIO_TIENDA_ONLINE_DESDE} € + IVA, sin comisiones por venta ni licencias mensuales.`,
+      en: `Online store: from €${PRECIO_TIENDA_ONLINE_DESDE} + VAT, with no commission per sale and no monthly licences.`,
+      fr: `Boutique en ligne : à partir de ${PRECIO_TIENDA_ONLINE_DESDE} € HT, sans commission par vente ni licence mensuelle.`,
     },
   },
 ];

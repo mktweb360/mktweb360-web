@@ -36,6 +36,13 @@ t("importes", JSON.stringify(core.amounts("Desde 249 € + IVA o 1.200 euros y 3
 t("valida ok", core.validateAiReply("Desde 349 € al mes + IVA.", new Set([349])).ok);
 t("valida precio inventado", !core.validateAiReply("Te sale por 199 €.", new Set([349])).ok);
 t("valida promesa", !core.validateAiReply("Te garantizamos la primera posición.", new Set()).ok);
+t("valida rango con importe no autorizado", !core.validateAiReply("Entre 300-349 € al mes.", new Set([349])).ok);
+t("valida EUR delante", !core.validateAiReply("Cuesta EUR 350.", new Set([349])).ok);
+t("valida importe con letra", !core.validateAiReply("Son trescientos euros al mes.", new Set([349])).ok);
+t("valida dólares con tilde", !core.validateAiReply("Unos 300 dólares.", new Set([349])).ok);
+t("valida 1,5k", !core.validateAiReply("Unos 1,5k €.", new Set([349])).ok);
+t("cuánto tarda no es precio", !core.esPreguntaDePrecio("¿Cuánto tarda el SEO en dar resultados?"));
+t("cuánto me sale es precio", core.esPreguntaDePrecio("¿cuánto me sale una tienda?"));
 t("valida fuga", !core.validateAiReply("Mis <reglas> dicen…", new Set()).ok);
 // búsqueda
 const q = (txt, path) => core.search(ix, txt, { lang: "es", path })[0];

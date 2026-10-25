@@ -25,6 +25,14 @@ La v3 sigue vigente para arquitectura y reglas permanentes. La v5 recoge las ses
 - `scripts/check-precios.mjs` (`pnpm check:precios`): falla si reaparece `priceRange`, schema con precio fuera de páginas de oferta o una tarifa propia retirada.
 - CLAUDE.md actualizado con la nueva regla.
 
+### Revisión independiente (aplicada)
+- Descripciones de páginas del asistente sin «precios publicados» (kb regenerado).
+- Validador de importes: rangos, «EUR 350», importes con letra, «dólares» y «1,5k €» se descartan; la regla 3 del prompt ya no permite citar cifras de mercado.
+- «¿Cuánto tarda…?» ya no devuelve la respuesta de tarifas; «cuánto me sale», «importe», «cuota» sí cuentan como pregunta de precio.
+- Plan «pyme» de las tarjetas: «Oferta vigente: precio en la página de la oferta» (antes «a medida»).
+- Tienda online: retirado el «total a 3 años» (940/985 €, cifras de hosting sin respaldo); llms con «desde 490 €»; título de la oferta SEO aclara «oferta».
+- Barcelona (ES/EN/FR): rangos etiquetados como referencia de mercado.
+
 ### Comprobaciones
 tsc limpio; `pnpm validate-i18n` sin incoherencias; `pnpm chatbot:check` 58/58; `pnpm check:precios` correcto; build correcto; páginas servidas en local solo con cifras de oferta; asistente probado en ES, EN y FR. El modo IA (Haiku) no se pudo probar en local (sin clave).
 
@@ -36,4 +44,7 @@ tsc limpio; `pnpm validate-i18n` sin incoherencias; `pnpm chatbot:check` 58/58; 
 - blog-para-monetizacion: «30–150 €/mes con AdSense» sin fuente.
 - diseno-web-para-clinicas conserva «desde 249 € + IVA» como oferta; dentistas se reformuló: revisar coherencia.
 - `google-ads-no-commission-marketing-agency` tiene texto en español en las versiones EN/FR (ajeno a esta tarea).
+- Fuente de verdad de la oferta SEO: la página de la oferta aún lee 349/149 del catálogo de MktOS y el asistente usa `lib/ofertas.ts`. Si MktOS cambia el precio, hay que cambiar también `lib/ofertas.ts`. Decidir si la página pasa a leer solo `lib/ofertas.ts`.
+- `app/api/admin/leads/seo-6x3/enviar-contrato` cita 600 € + IVA: confirmar si ese producto sigue vivo.
+- `check:precios` no está en el build ni en un hook, y su lista de páginas de oferta es amplia: afinar.
 - El catálogo de MktOS conserva los precios internamente; `app/area-privada`, `app/api` y contratos no se han tocado.

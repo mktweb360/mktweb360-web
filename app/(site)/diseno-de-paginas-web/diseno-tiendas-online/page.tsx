@@ -231,9 +231,7 @@ export default function TiendasOnlinePage() {
                   { label: "Desarrollo tienda", value: "desde 490€" },
                   { label: "Comisión por venta", value: "0€" },
                   { label: "Licencia plataforma", value: "0€" },
-                  { label: "Hosting anual", value: "~150€/año = 450€" },
-                  { label: "Dominio", value: "~15€/año = 45€" },
-                  { label: "Total estimado 3 años", value: "desde 985€", highlight: true },
+                  { label: "Hosting y dominio", value: "aparte, según proveedor", highlight: true },
                 ].map((r) => (
                   <div key={r.label} className={`flex justify-between text-sm ${r.highlight ? "font-bold text-accent-500 border-t pt-4" : "text-gray-600"}`}>
                     <span>{r.label}</span>

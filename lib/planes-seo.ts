@@ -383,7 +383,13 @@ export function planPorId(id: PlanId, lang: PlanLang = "es", precios?: PreciosPl
 }
 
 // Texto visible en lugar del precio. NO devuelve cifras: los precios solo se muestran en las ofertas vigentes.
-export function precioTexto(_p: PlanSeo, lang: PlanLang = "es"): string {
+export function precioTexto(p: PlanSeo, lang: PlanLang = "es"): string {
+  // El plan «pyme» es la oferta SEO + GEO + Maps: su precio está en la página de la oferta.
+  if (p.id === "pyme") {
+    if (lang === "en") return "Current offer: price on the offer page";
+    if (lang === "fr") return "Offre en cours : prix sur la page de l'offre";
+    return "Oferta vigente: precio en la página de la oferta";
+  }
   if (lang === "en") return "Custom quote after a free diagnosis";
   if (lang === "fr") return "Devis sur mesure après un diagnostic gratuit";
   return "Presupuesto a medida tras diagnóstico gratuito";

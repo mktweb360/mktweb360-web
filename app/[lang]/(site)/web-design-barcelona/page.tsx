@@ -183,6 +183,16 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Prix de référence du marché pour la création web à Barcelone"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
+          <strong>
+            {isEn
+              ? "General Barcelona market reference: these are not Mkt Web 360 rates."
+              : "Référence générale du marché à Barcelone : ce ne sont pas les tarifs de Mkt Web 360."}
+          </strong>{" "}
+          {isEn
+            ? "Our quote is custom, after a free diagnosis; current offers with a price are on the home page."
+            : "Notre devis est sur mesure, après un diagnostic gratuit ; les offres en cours avec prix figurent sur la page d'accueil."}
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-4">
           {isEn
             ? "Prices in Barcelona are generally 15–25% higher than the national average due to the higher cost of living and office rents. However, the average quality level is also higher, especially in visual design and UX."
             : "Les prix à Barcelone sont généralement 15 à 25 % supérieurs à la moyenne nationale en raison du coût de la vie plus élevé et des loyers de bureaux plus importants. Cependant, le niveau de qualité moyen est également supérieur, notamment en design visuel et en UX."}

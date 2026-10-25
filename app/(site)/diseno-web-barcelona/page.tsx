@@ -98,6 +98,7 @@ export default function Page() {
         <OfferBannerWebSeo />
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Precios orientativos para diseño web en Barcelona</h2>
+        <p className="text-gray-700 leading-relaxed mb-4"><strong>Referencia general del mercado de Barcelona: no son tarifas de Mkt Web 360.</strong> Nuestro presupuesto es a medida tras un diagnóstico gratuito, y las ofertas vigentes con precio están en la página de inicio.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Los precios en Barcelona son generalmente un 15-25% superiores a la media nacional por el mayor coste de vida y los alquileres de oficina más elevados. Sin embargo, el nivel de calidad medio también es superior, especialmente en diseño visual y UX.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Web corporativa básica (4-6 páginas, WordPress, plantilla personalizada):</strong> 1.500-3.500€. Incluye diseño visual adaptado a la marca, contenido básico, SEO técnico elemental y formación para gestión.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Web corporativa profesional (8-15 páginas, diseño personalizado, SEO completo):</strong> 4.000-10.000€. Incluye diseño único no basado en plantilla, arquitectura de información optimizada, SEO técnico avanzado, redacción de contenidos, integración con CRM o herramientas de marketing y analítica configurada.</p>

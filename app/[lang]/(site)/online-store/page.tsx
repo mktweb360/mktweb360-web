@@ -283,17 +283,13 @@ export default async function OnlineStorePage({ params }: { params: Promise<{ la
                       { label: "Store development", value: "from €490" },
                       { label: "Commission per sale", value: "€0" },
                       { label: "Platform licence", value: "€0" },
-                      { label: "Annual hosting", value: "~€150/yr = €450" },
-                      { label: "Domain", value: "~€15/yr = €45" },
-                      { label: "Estimated total 3 years", value: "from €985", highlight: true },
+                      { label: "Hosting and domain", value: "separate, depends on provider", highlight: true },
                     ]
                   : [
                       { label: "Développement boutique", value: "à partir de 490€" },
                       { label: "Commission par vente", value: "0€" },
                       { label: "Licence plateforme", value: "0€" },
-                      { label: "Hébergement annuel", value: "~150€/an = 450€" },
-                      { label: "Domaine", value: "~15€/an = 45€" },
-                      { label: "Total estimé 3 ans", value: "à partir de 985€", highlight: true },
+                      { label: "Hébergement et domaine", value: "à part, selon le fournisseur", highlight: true },
                     ]
                 ).map((r) => (
                   <div key={r.label} className={`flex justify-between text-sm ${r.highlight ? "font-bold text-accent-500 border-t pt-4" : "text-gray-600"}`}>

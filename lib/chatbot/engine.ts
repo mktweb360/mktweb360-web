@@ -11,7 +11,7 @@ import {
   validateAiReply, type ChatState, type KbFaq, type KbPagina, type Lang,
 } from "./core";
 import { TXT, pick } from "./texts";
-import { CTX_ROUTE, ctxOf, funnelChips, openingChips, type Chip, type ChipId, type Ctx } from "./funnel";
+import { CTX_ROUTE, ctxOf, funnelChips, openingChips, type Chip, type ChipId } from "./funnel";
 import { IMPORTES_OFERTAS, lineasOfertas } from "@/lib/ofertas";
 
 const KB = kbData as unknown as { faqs: KbFaq[]; paginas: KbPagina[] };
@@ -103,7 +103,7 @@ Tu objetivo: que quien visita la web entienda qué servicio de Mkt Web 360 le en
 Reglas (obligatorias):
 1. Solo hablas de los servicios de Mkt Web 360. No resuelves dudas de terceros, no haces tutoriales, textos, código, traducciones, trabajos de clase ni investigación. Si te lo piden, dilo con amabilidad en una frase y pregunta por su negocio.
 2. Usa SOLO la información de <conocimiento> y <ofertas>. Si no está ahí, di que prefieres que se lo confirme José y ofrece dejar sus datos. Nunca inventes precios, plazos, casos, clientes ni cifras.
-3. Precios: NO publicamos precios de servicios. Los únicos precios que puedes dar son los de las ofertas de <ofertas>, tal cual y diciendo que son una oferta (sin IVA). Si preguntan el precio de cualquier otro servicio, di que se calcula a medida tras un diagnóstico gratuito, menciona las ofertas vigentes con su precio y ofrece dejar sus datos para un presupuesto. Si una cifra de <conocimiento> es una referencia del mercado, dilo así y aclara que no es nuestra tarifa. Nunca calcules, estimes ni sugieras rangos de precio propios.
+3. Precios: NO publicamos precios de servicios. Los únicos precios que puedes dar son los de las ofertas de <ofertas>, tal cual y diciendo que son una oferta (sin IVA). Si preguntan el precio de cualquier otro servicio, di que se calcula a medida tras un diagnóstico gratuito, menciona las ofertas vigentes con su precio y ofrece dejar sus datos para un presupuesto. No cites cifras de precio de <conocimiento>, ni siquiera como referencia de mercado. Nunca calcules, estimes ni sugieras rangos de precio propios.
 4. Nunca prometas posiciones en Google, resultados garantizados ni plazos concretos de resultados.
 5. No das asesoramiento legal, fiscal, laboral ni financiero.
 6. Tutea. Frases cortas, tono cercano y profesional, como un consultor que escucha. Máximo 3 frases y UNA sola pregunta por mensaje. Sin listas salvo que te las pidan. Sin emojis.
@@ -219,7 +219,7 @@ export async function reply(
       case "precio": {
         const hit = search(INDEX, text, { lang, path: page.path, limit: 1 })[0];
         // Solo se responde con la FAQ si habla de una oferta (sus importes son los autorizados).
-        if (isDirect(hit) && hit.faq.tipo === "servicio" && !citaPrecioNoAutorizado(hit.faq.a)) {
+        if (isDirect(hit) && hit.faq.tipo === "servicio" && amounts(hit.faq.a).length > 0 && !citaPrecioNoAutorizado(hit.faq.a)) {
           meta = { ...meta, faqId: hit.faq.id };
           return done({ text: `${hit.faq.a}\n\n${pick(TXT.precioPropio, lang, n)}`, actions: ["presupuesto"], modo: "kb" }, s);
         }
@@ -332,7 +332,7 @@ export async function reply(
       f.tipo === "informativa" ? after(s) : s,
     );
   }
-  if (isPriceQuestion(text)) {
+  if (esPreguntaDePrecio(text)) {
     meta.intent = "precio_sin_tarifas";
     return done({ text: respuestaSinTarifas(lang, n), actions: ["presupuesto"] }, s);
   }
