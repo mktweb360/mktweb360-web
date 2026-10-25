@@ -44,7 +44,7 @@ const faqSchema = {
       name: "¿Cuánto cobra una agencia de marketing digital en Madrid?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los precios varían enormemente. Un servicio de SEO local parte desde 300€/mes en agencias pequeñas especializadas. Agencias medianas en Madrid cobran entre 800 y 2.500€/mes por servicios integrales. Las grandes agencias o las especializadas en sectores premium pueden superar los 5.000€/mes. El precio debe estar justificado por resultados medibles."
+        text: "Los precios varían enormemente. Como referencia orientativa del mercado (no son tarifas de Mkt Web 360, cuyo presupuesto es a medida tras un diagnóstico gratuito): un servicio de SEO local suele costar menos en agencias pequeñas especializadas, las agencias medianas en Madrid cobran entre 800 y 2.500€/mes por servicios integrales y las grandes agencias o las especializadas en sectores premium pueden superar los 5.000€/mes. El precio debe estar justificado por resultados medibles."
       }
     },
     {
@@ -117,7 +117,7 @@ export default function Page() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cobra una agencia de marketing digital en Madrid?</h3>
-                <p className="text-gray-600">Los precios varían enormemente. Un servicio de SEO local parte desde 300€/mes en agencias pequeñas especializadas. Agencias medianas en Madrid cobran entre 800 y 2.500€/mes por servicios integrales. Las grandes agencias o las especializadas en sectores premium pueden superar los 5.000€/mes. El precio debe estar justificado por resultados medibles.</p>
+                <p className="text-gray-600">Los precios varían enormemente. Como referencia orientativa del mercado (no son tarifas de Mkt Web 360, cuyo presupuesto es a medida tras un diagnóstico gratuito): un servicio de SEO local suele costar menos en agencias pequeñas especializadas, las agencias medianas en Madrid cobran entre 800 y 2.500€/mes por servicios integrales y las grandes agencias o las especializadas en sectores premium pueden superar los 5.000€/mes. El precio debe estar justificado por resultados medibles.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Es mejor contratar una agencia de Madrid o una agencia que trabaje en remoto?</h3>

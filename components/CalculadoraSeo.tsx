@@ -5,7 +5,7 @@ import { recomendarPlan, precioTexto, type RespuestasCalculadora, type PlanLang,
 
 type Opcion<T extends string> = { v: T; t: string };
 
-// Textos de la calculadora por idioma. La lógica (recomendarPlan) y los precios son únicos.
+// Textos de la calculadora por idioma. La lógica (recomendarPlan) es única. Sin precios (decisión 25/10/2026): solo tamaños de proyecto.
 const T = {
   es: {
     tipo: "¿Qué tipo de web tienes?",
@@ -23,7 +23,7 @@ const T = {
     idiomas: "¿En cuántos idiomas?",
     dosOMas: "2 o más",
     recomendado: "Plan recomendado",
-    quiero: "Quiero este plan",
+    quiero: "Pedir mi presupuesto",
     detalle: "Ver el detalle del plan",
     pie: "Sin permanencia. Si tu caso no encaja en un plan, te preparamos un presupuesto a medida.",
     rPlan: "Plan recomendado por la calculadora",
@@ -57,7 +57,7 @@ const T = {
     idiomas: "In how many languages?",
     dosOMas: "2 or more",
     recomendado: "Recommended plan",
-    quiero: "I want this plan",
+    quiero: "Request my quote",
     detalle: "See the plan in detail",
     pie: "No minimum term. If your case does not fit a plan, we will prepare a custom quote.",
     rPlan: "Plan recommended by the calculator",
@@ -91,7 +91,7 @@ const T = {
     idiomas: "En combien de langues ?",
     dosOMas: "2 ou plus",
     recomendado: "Formule recommandée",
-    quiero: "Je veux cette formule",
+    quiero: "Demander mon devis",
     detalle: "Voir le détail de la formule",
     pie: "Sans engagement. Si votre cas ne correspond à aucune formule, nous vous préparons un devis sur mesure.",
     rPlan: "Formule recommandée par le calculateur",
@@ -165,7 +165,7 @@ export function CalculadoraSeo({ lang = "es", precios }: { lang?: PlanLang; prec
       <div className="lg:col-span-2 bg-primary-600 text-white rounded-2xl p-6 lg:sticky lg:top-24" aria-live="polite">
         <p className="text-primary-200 text-sm mb-1">{t.recomendado}</p>
         <p className="text-2xl font-bold mb-1">{plan.nombre}</p>
-        <p className="text-3xl font-bold text-accent-400 mb-4">{precioTexto(plan, lang)}</p>
+        <p className="text-lg font-bold text-accent-400 mb-4">{precioTexto(plan, lang)}</p>
         <ul className="space-y-1.5 text-sm text-primary-100 mb-4">
           {plan.limites.map((l) => <li key={l}>• {l}</li>)}
         </ul>

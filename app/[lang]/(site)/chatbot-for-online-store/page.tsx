@@ -202,8 +202,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn
-              ? "The cost depends on the level. At the basic end, a managed FAQ chatbot starts at around €149/month. At the advanced end, with catalogue and order integration and actionable capability, the monthly fee sits at around €249–299/month, to which a setup cost is usually added."
-              : "Le coût dépend du niveau. À l'extrémité basique, un chatbot FAQ géré commence à environ 149 €/mois. À l'extrémité avancée, avec l'intégration catalogue et commandes et la capacité d'action, l'abonnement mensuel se situe autour de 249 à 299 €/mois, auquel s'ajoute généralement un coût de mise en place."}
+              ? "The cost depends on the level: a basic managed FAQ chatbot is not the same as an advanced one with catalogue and order integration and actionable capability, which usually adds a setup cost to the monthly fee. We prepare a custom quote after a free diagnosis."
+              : "Le coût dépend du niveau : un chatbot FAQ géré de base n'est pas équivalent à un chatbot avancé avec intégration catalogue et commandes et capacité d'action, qui ajoute généralement un coût de mise en place à l'abonnement mensuel. Nous préparons un devis sur mesure après un diagnostic gratuit."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn

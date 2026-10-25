@@ -7,12 +7,12 @@ import { randomUUID } from "crypto";
 
 import kbData from "./kb.json";
 import {
-  LIMITS, aboutUs, bestServicePage, inScope, isDirect, samePath, amounts, buildIndex, classify, isPriceQuestion, newState, pageFor, quotaState, search,
+  LIMITS, aboutUs, bestServicePage, inScope, isDirect, samePath, amounts, buildIndex, classify, isPriceQuestion, esPreguntaDePrecio, newState, pageFor, quotaState, search,
   validateAiReply, type ChatState, type KbFaq, type KbPagina, type Lang,
 } from "./core";
 import { TXT, pick } from "./texts";
 import { CTX_ROUTE, ctxOf, funnelChips, openingChips, type Chip, type ChipId, type Ctx } from "./funnel";
-import { leerCatalogo, type Catalogo } from "@/lib/catalogo";
+import { IMPORTES_OFERTAS, lineasOfertas } from "@/lib/ofertas";
 
 const KB = kbData as unknown as { faqs: KbFaq[]; paginas: KbPagina[] };
 const titleOf = (ruta: string) => KB.paginas.find((p) => samePath(p.ruta, ruta))?.title || ruta.replace(/\//g, " ").replace(/-/g, " ").trim();
@@ -85,28 +85,14 @@ function addUsage(u: { input_tokens?: number; output_tokens?: number; cache_crea
 }
 export const aiEnabled = () => !!process.env.ANTHROPIC_API_KEY && process.env.CHATBOT_IA !== "off";
 
-// ── Catálogo ──────────────────────────────────────────────────────────
-const PERIODO: Record<string, string> = { mes: "/mes", unico: "pago único", anio: "/año", primer_anio: "el primer año", presupuesto: "a presupuesto" };
-function catalogLines(cat: Catalogo | null, limit = 40): string[] {
-  if (!cat) return [];
-  const out: string[] = [];
-  const hoy = new Date().toISOString().slice(0, 10);
-  for (const s of cat.servicios) {
-    for (const m of s.modalidades) {
-      if (m.valida_hasta && m.valida_hasta.slice(0, 10) < hoy) continue; // oferta caducada
-      const precio = m.precio === null || m.periodo === "presupuesto" ? "a presupuesto" : `${m.desde ? "desde " : ""}${fmt(m.precio)} € ${PERIODO[m.periodo] ?? ""} ${m.iva_incluido ? "(IVA incluido)" : "+ IVA"}`.trim();
-      const perm = m.permanencia_meses ? `, permanencia ${m.permanencia_meses} meses` : ", sin permanencia";
-      out.push(`- ${s.nombre}${m.nombre && m.nombre !== s.nombre ? ` · ${m.nombre}` : ""}: ${precio}${m.precio !== null ? perm : ""}${s.url ? ` · ${s.url}` : ""}`);
-      if (out.length >= limit) return out;
-    }
-  }
-  return out;
-}
-const fmt = (n: number) => n.toLocaleString("es-ES", { maximumFractionDigits: 2 });
-function catalogAmounts(cat: Catalogo | null): number[] {
-  const v: number[] = [];
-  for (const s of cat?.servicios ?? []) for (const m of s.modalidades) { if (m.precio !== null) v.push(m.precio); if (m.alta) v.push(m.alta); }
-  return v;
+// ── Precios (decisión de José, 25/10/2026) ──────────────────────────────
+// El asistente NO da precios de servicios: solo los de las OFERTAS vigentes (lib/ofertas.ts). Para cualquier otro servicio:
+// «a medida tras un diagnóstico gratuito» + ofertas vigentes con su precio + dejar datos. Ya no lee el catálogo de MktOS.
+const importeAutorizado = (n: number) => IMPORTES_OFERTAS.includes(n);
+/** ¿El texto cita algún importe que no sea el de una oferta vigente? */
+const citaPrecioNoAutorizado = (text: string) => amounts(text).some((n) => !importeAutorizado(n));
+function respuestaSinTarifas(lang: Lang, n: number): string {
+  return [pick(TXT.sinTarifas, lang, n), pick(TXT.ofertasIntro, lang, n), lineasOfertas(lang).join("\n"), pick(TXT.sinTarifasCierre, lang, n)].join("\n\n");
 }
 
 // ── IA ────────────────────────────────────────────────────────────────
@@ -116,8 +102,8 @@ Tu objetivo: que quien visita la web entienda qué servicio de Mkt Web 360 le en
 
 Reglas (obligatorias):
 1. Solo hablas de los servicios de Mkt Web 360. No resuelves dudas de terceros, no haces tutoriales, textos, código, traducciones, trabajos de clase ni investigación. Si te lo piden, dilo con amabilidad en una frase y pregunta por su negocio.
-2. Usa SOLO la información de <conocimiento> y <catalogo>. Si no está ahí, di que prefieres que se lo confirme José y ofrece dejar sus datos. Nunca inventes precios, plazos, casos, clientes ni cifras.
-3. Precios: solo los de <catalogo> o los que aparezcan literalmente en <conocimiento>. Di siempre si son sin IVA. Si una cifra es una referencia del mercado, dilo así y aclara que no es nuestra tarifa. Tras hablar de precios, propón siempre pedir presupuesto.
+2. Usa SOLO la información de <conocimiento> y <ofertas>. Si no está ahí, di que prefieres que se lo confirme José y ofrece dejar sus datos. Nunca inventes precios, plazos, casos, clientes ni cifras.
+3. Precios: NO publicamos precios de servicios. Los únicos precios que puedes dar son los de las ofertas de <ofertas>, tal cual y diciendo que son una oferta (sin IVA). Si preguntan el precio de cualquier otro servicio, di que se calcula a medida tras un diagnóstico gratuito, menciona las ofertas vigentes con su precio y ofrece dejar sus datos para un presupuesto. Si una cifra de <conocimiento> es una referencia del mercado, dilo así y aclara que no es nuestra tarifa. Nunca calcules, estimes ni sugieras rangos de precio propios.
 4. Nunca prometas posiciones en Google, resultados garantizados ni plazos concretos de resultados.
 5. No das asesoramiento legal, fiscal, laboral ni financiero.
 6. Tutea. Frases cortas, tono cercano y profesional, como un consultor que escucha. Máximo 3 frases y UNA sola pregunta por mensaje. Sin listas salvo que te las pidan. Sin emojis.
@@ -185,11 +171,6 @@ const TXT_LLAMADA: Record<Lang, string> = {
   en: "Sure. Leave your name, phone number and the best time, and José will call you.",
   fr: "Bien sûr. Laissez votre nom, votre téléphone et le meilleur moment, et José vous rappelle.",
 };
-const CTX_RX: Record<Ctx, RegExp> = {
-  seo: /seo|posicion/i, geo: /geo|ia\b|chatgpt/i, gbp: /google business|gbp|ficha/i, web: /web|p[aá]gina/i, tienda: /tienda|ecommerce/i,
-  ads: /ads|sem|ppc/i, redes: /redes|social/i, ia: /chatbot|ia\b|inteligencia/i, email: /email|newsletter/i, general: /./,
-};
-
 export async function reply(
   text: string,
   st: ChatState,
@@ -237,18 +218,12 @@ export async function reply(
       }
       case "precio": {
         const hit = search(INDEX, text, { lang, path: page.path, limit: 1 })[0];
-        if (isDirect(hit) && hit.faq.tipo === "servicio") {
+        // Solo se responde con la FAQ si habla de una oferta (sus importes son los autorizados).
+        if (isDirect(hit) && hit.faq.tipo === "servicio" && !citaPrecioNoAutorizado(hit.faq.a)) {
           meta = { ...meta, faqId: hit.faq.id };
           return done({ text: `${hit.faq.a}\n\n${pick(TXT.precioPropio, lang, n)}`, actions: ["presupuesto"], modo: "kb" }, s);
         }
-        const lines = catalogLines(await leerCatalogo(), 40).filter((l) => ctx === "general" || CTX_RX[ctx].test(l)).slice(0, 6);
-        if (lines.length) return done({ text: `${lines.join("\n")}\n\n${pick(TXT.precioPropio, lang, n)}`, actions: ["presupuesto"], modo: "catalogo" }, s);
-        // Si la página del servicio publica un precio «desde», se da con su enlace.
-        const ruta = CTX_ROUTE[ctx];
-        const sp = ruta ? KB.paginas.find((x) => samePath(x.ruta, ruta)) : null;
-        if (sp?.description && /\d\s?€/.test(sp.description))
-          return done({ text: `${sp.description}\n\n${pick(TXT.precioPropio, lang, n)}`, link: linkTo(sp.ruta, pick(TXT.masInfo, lang, n)), actions: ["presupuesto"], modo: "kb" }, s);
-        return done({ text: pick(TXT.precioPropio, lang, n), actions: ["presupuesto"] }, s);
+        return done({ text: respuestaSinTarifas(lang, n), actions: ["presupuesto"] }, s);
       }
     }
   }
@@ -306,11 +281,10 @@ export async function reply(
   // IA (si está activada y queda presupuesto)
   if (aiEnabled() && budgetLeft() && s.ia < LIMITS.maxIaPerSession) {
     try {
-      const cat = await leerCatalogo();
       const conocimiento = (hits.length ? hits : []).map((h) => `P: ${h.faq.q}\nR: ${h.faq.a}\nFuente: ${SITE}${h.faq.r}${h.faq.tipo === "informativa" ? " (artículo informativo)" : ""}`).join("\n\n");
-      // Importes permitidos: catálogo y FAQs de servicio. Las cifras de mercado de los artículos no se pueden presentar como propias.
-      const allowed = new Set<number>([...catalogAmounts(cat), ...KB.faqs.filter((f) => f.tipo === "servicio").flatMap((f) => amounts(f.a))]);
-      const stable = `${SYSTEM_RULES}\n\n<catalogo>\n${catalogLines(cat).join("\n") || "(no disponible ahora: no des precios, ofrece presupuesto)"}\n</catalogo>`;
+      // Importes permitidos: solo los de las ofertas vigentes. Las cifras de mercado de los artículos no se pueden presentar como propias.
+      const allowed = new Set<number>(IMPORTES_OFERTAS);
+      const stable = `${SYSTEM_RULES}\n\n<ofertas>\n${lineasOfertas(lang).join("\n")}\n</ofertas>`;
       const dyn = `<contexto>\nPágina actual: ${SITE}${page.path}${pagina ? ` — ${pagina.title}: ${pagina.description}` : page.title ? ` — ${page.title}` : ""}\nEl visitante ${s.biz ? "ya ha hablado de su negocio" : "aún no ha dicho nada de su negocio: tras responder, pregunta por él"}.\n</contexto>\n<conocimiento>\n${conocimiento || "(sin coincidencias en la base aprobada)"}\n</conocimiento>`;
       const msgs = [...history.slice(-10), { role: "user" as const, content: text }];
       const { text: out, usd, usage } = await callClaude([{ text: stable, cache: true }, { text: dyn }], msgs);
@@ -338,6 +312,13 @@ export async function reply(
   if (top && isDirect(top)) {
     const f = top.faq;
     meta.faqId = f.id;
+    // Red de seguridad: una FAQ de servicio nunca puede dar un precio que no sea el de una oferta vigente.
+    // Y si preguntan el precio y la FAQ encontrada no habla de precios (p. ej. «¿cuánto cuesta el SEO local?» casa con «¿cuánto tarda?»),
+    // no se responde con otra cosa: se explica la política de precios.
+    if ((f.tipo === "servicio" && citaPrecioNoAutorizado(f.a)) || (esPreguntaDePrecio(text) && amounts(f.a).length === 0)) {
+      meta.intent = "precio_sin_tarifas";
+      return done({ text: respuestaSinTarifas(lang, n), actions: ["presupuesto"] }, s);
+    }
     // Las FAQs de una oferta concreta se responden diciendo de qué oferta hablan (la permanencia cambia entre ofertas).
     const deOferta = /oferta|landing/.test(f.r) && !samePath(f.r, page.path) ? (KB.paginas.find((p) => samePath(p.ruta, f.r))?.title ?? f.r.replace(/\//g, " ").replace(/-/g, " ").trim()) : undefined;
     const extra = f.cifras ? pick(f.tipo === "informativa" ? TXT.mercado : TXT.precioPropio, lang, n) : s.biz ? "" : pick(TXT.reconducir, lang, n);
@@ -352,8 +333,8 @@ export async function reply(
     );
   }
   if (isPriceQuestion(text)) {
-    const lines = catalogLines(await leerCatalogo(), 40).filter((l) => ctx === "general" || CTX_RX[ctx].test(l)).slice(0, 6);
-    if (lines.length) { meta.intent = "precio_catalogo"; return done({ text: `${lines.join("\n")}\n\n${pick(TXT.precioPropio, lang, n)}`, actions: ["presupuesto"], modo: "catalogo" }, s); }
+    meta.intent = "precio_sin_tarifas";
+    return done({ text: respuestaSinTarifas(lang, n), actions: ["presupuesto"] }, s);
   }
   // Ha hablado de su negocio: siguiente paso, la propuesta.
   if (business) { meta.intent = "negocio"; return done({ text: pick(TXT.negocio, lang, n), actions: ["presupuesto"] }, s); }

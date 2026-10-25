@@ -50,7 +50,7 @@ export function OfferBannerTiendaOnline() {
           {/* Right: price + CTA */}
           <div className="flex flex-col items-center md:items-end gap-4 shrink-0">
             <div className="flex items-baseline gap-3">
-              <span className="text-white/40 line-through text-xl">desde 1.200€</span>
+              <span className="text-white/60 text-sm">desde</span>
               <span className="text-5xl font-bold text-white">490€</span>
               <span className="text-white/60 text-sm">+ IVA</span>
             </div>

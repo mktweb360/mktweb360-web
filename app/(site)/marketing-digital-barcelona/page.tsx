@@ -44,7 +44,7 @@ const faqSchema = {
       name: "¿Cuánto cuesta el marketing digital para una pyme en Barcelona?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Depende de los servicios contratados y la competencia del sector. Un servicio básico de SEO local + Google Business Profile parte desde 300€/mes. Una estrategia más completa con SEO, redes sociales y campañas de pago puede estar entre 600 y 2.000€/mes en Barcelona, donde la competencia digital es mayor que en otras ciudades."
+        text: "Depende de los servicios contratados y la competencia del sector. En Mkt Web 360 el presupuesto es a medida tras un diagnóstico gratuito: puede ir desde un servicio básico de SEO local + Google Business Profile hasta una estrategia más completa con SEO, redes sociales y campañas de pago. En Barcelona la competencia digital es mayor que en otras ciudades, y eso se tiene en cuenta."
       }
     },
     {
@@ -105,7 +105,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Para negocios que quieran captar turistas antes de su llegada a Barcelona, el SEO en inglés y otros idiomas europeos es una oportunidad diferencial. Un restaurante que posiciona bien para "best restaurants Barcelona" o "restaurants in Gràcia" en Google.co.uk o Google.de puede atraer clientes internacionales que de otra forma irían a los recomendados en TripAdvisor.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cuánto presupuesto de marketing necesita una empresa barcelonesa</h2>
-        <p className="text-gray-700 leading-relaxed mb-4">El presupuesto mínimo para tener una presencia digital relevante en Barcelona es superior al de ciudades más pequeñas, simplemente por la mayor competencia. Para SEO, un trabajo profesional básico parte de 500-800€ mensuales; para Google Ads con impacto real, la inversión en el canal debe ser de al menos 600-1.000€/mes en sectores competitivos.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">El presupuesto mínimo para tener una presencia digital relevante en Barcelona es superior al de ciudades más pequeñas, simplemente por la mayor competencia. Como referencia general del mercado (no una tarifa nuestra), un SEO profesional básico suele partir de 500-800€ mensuales; para Google Ads con impacto real, la inversión en el canal debe ser de al menos 600-1.000€/mes en sectores competitivos.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Un enfoque pragmático para PYMEs barcelonesas con presupuesto limitado es invertir primero en lo más rentable según el tipo de negocio: Google Business Profile y reseñas (bajo coste, alto impacto para negocios físicos), SEO de long tail en el barrio específico (coste medio, retorno sostenible), y Google Ads para términos de alta intención cuando el presupuesto lo permita.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Lo que no tiene sentido en Barcelona es intentar competir en todos los canales con presupuesto insuficiente para ninguno. Mejor ser excelente en dos o tres canales que mediocre en seis. La concentración de recursos en los canales con mayor potencial para tu tipo de negocio específico siempre supera a la dispersión.</p>
 
@@ -119,7 +119,7 @@ export default function Page() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta el marketing digital para una pyme en Barcelona?</h3>
-                <p className="text-gray-600">Depende de los servicios contratados y la competencia del sector. Un servicio básico de SEO local + Google Business Profile parte desde 300€/mes. Una estrategia más completa con SEO, redes sociales y campañas de pago puede estar entre 600 y 2.000€/mes en Barcelona, donde la competencia digital es mayor que en otras ciudades.</p>
+                <p className="text-gray-600">Depende de los servicios contratados y la competencia del sector. En Mkt Web 360 el presupuesto es a medida tras un diagnóstico gratuito: puede ir desde un servicio básico de SEO local + Google Business Profile hasta una estrategia más completa con SEO, redes sociales y campañas de pago. En Barcelona la competencia digital es mayor que en otras ciudades, y eso se tiene en cuenta.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados el marketing digital en Barcelona?</h3>

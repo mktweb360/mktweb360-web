@@ -102,12 +102,12 @@ const STEPS = {
 
 const OFFER = {
   en: {
-    title: "Your online store, with no commissions, from €490",
+    title: "Offer: your online store, with no commissions, from €490",
     text: "Professional design, SEO included, self-management and no monthly licences. The store is yours.",
     cta: "See the online store offer",
   },
   fr: {
-    title: "Votre boutique en ligne, sans commissions, à partir de 490 €",
+    title: "Offre : votre boutique en ligne, sans commissions, à partir de 490 €",
     text: "Design professionnel, SEO inclus, gestion autonome et aucune licence mensuelle. La boutique vous appartient.",
     cta: "Voir l'offre boutique en ligne",
   },

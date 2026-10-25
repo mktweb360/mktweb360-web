@@ -28,13 +28,6 @@ const serviceSchema = {
   description: "Posicionamiento en motores de búsqueda generativa y asistentes de IA (ChatGPT, Gemini, Copilot, Perplexity, Claude, AI Overviews y modo IA de Google, entre otros). Optimización de contenidos para LLMs, implementación de llms.txt y estrategia de autoridad semántica.",
   areaServed: "España",
   url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
-  offers: {
-    "@type": "Offer",
-    description: "Posicionamiento en asistentes y buscadores con IA integrado con SEO. Presupuesto personalizado según proyecto.",
-    priceCurrency: "EUR",
-    availability: "https://schema.org/InStock",
-    url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
-  },
 };
 const GEO_SERVICES = [
   {

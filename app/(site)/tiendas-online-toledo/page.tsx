@@ -37,7 +37,7 @@ const faqSchema = {
       name: "¿Cuánto cuesta crear una tienda online en Toledo?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Una tienda online profesional sin comisiones por venta parte desde 490€ con diseño personalizado y SEO técnico incluido. El precio final depende del número de productos, funcionalidades (pasarelas de pago, métodos de envío, integraciones) y nivel de personalización. El hosting y el dominio se contratan aparte o incluidos según el proveedor."
+        text: "Nuestra oferta de tienda online profesional sin comisiones por venta es desde 490€, con diseño personalizado y SEO técnico incluido. El precio final depende del número de productos, funcionalidades (pasarelas de pago, métodos de envío, integraciones) y nivel de personalización. El hosting y el dominio se contratan aparte o incluidos según el proveedor."
       }
     },
     {
@@ -107,7 +107,7 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-4">Para productos perecederos o de alto valor como vinos o aceites gourmet, hay soluciones especializadas que incluyen embalaje apropiado y seguimiento en tiempo real. El coste del envío es uno de los principales motivos de abandono del carrito, así que optimizar la logística tiene impacto directo en la tasa de conversión.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cuánto cuesta crear y mantener una tienda online en Toledo</h2>
-        <p className="text-gray-700 leading-relaxed mb-4">El coste de una tienda online varía enormemente según la complejidad, el número de productos y las integraciones necesarias. Como referencia orientativa para un ecommerce básico para una PYME toledana: el desarrollo inicial puede estar entre 2.000 y 6.000€ para una solución propia bien construida. A esto hay que añadir el hosting (60-120€ al año), el dominio (10-15€ al año) y el mantenimiento técnico.</p>
+        <p className="text-gray-700 leading-relaxed mb-4">El coste de una tienda online varía enormemente según la complejidad, el número de productos y las integraciones necesarias. Como referencia orientativa de mercado (no es una tarifa de Mkt Web 360) para un ecommerce básico para una PYME toledana: el desarrollo inicial puede estar entre 2.000 y 6.000€ para una solución propia bien construida. A esto hay que añadir el hosting (60-120€ al año), el dominio (10-15€ al año) y el mantenimiento técnico.</p>
         <p className="text-gray-700 leading-relaxed mb-4">El mayor error que cometen los negocios es calcular solo el coste de creación y olvidar el coste de captación de tráfico. Una tienda online sin inversión en SEO, publicidad o marketplace no va a vender. El presupuesto de lanzamiento debería incluir desde el principio al menos 6 meses de trabajo SEO o una partida inicial para publicidad de pago que genere las primeras ventas y valide el modelo.</p>
 
         <section className="py-12 px-4 bg-gray-50">
@@ -116,7 +116,7 @@ export default function Page() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta crear una tienda online en Toledo?</h3>
-                <p className="text-gray-600">Una tienda online profesional sin comisiones por venta parte desde 490€ con diseño personalizado y SEO técnico incluido. El precio final depende del número de productos, funcionalidades (pasarelas de pago, métodos de envío, integraciones) y nivel de personalización. El hosting y el dominio se contratan aparte o incluidos según el proveedor.</p>
+                <p className="text-gray-600">Nuestra oferta de tienda online profesional sin comisiones por venta es desde 490€, con diseño personalizado y SEO técnico incluido. El precio final depende del número de productos, funcionalidades (pasarelas de pago, métodos de envío, integraciones) y nivel de personalización. El hosting y el dominio se contratan aparte o incluidos según el proveedor.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en estar lista una tienda online?</h3>

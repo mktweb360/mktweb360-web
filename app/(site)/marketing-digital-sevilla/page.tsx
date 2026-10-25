@@ -44,7 +44,7 @@ const faqSchema = {
       name: "¿Cuánto cuesta el marketing digital para una pyme en Sevilla?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Depende de los servicios contratados. Un servicio básico de SEO local + Google Business Profile parte desde 300€/mes. Una estrategia más completa con SEO, redes sociales y campañas de pago puede estar entre 500 y 1.500€/mes. Sevilla tiene un mercado digital activo con oportunidades claras para negocios que empiecen a trabajar su presencia online de forma profesional."
+        text: "Depende de los servicios contratados. En Mkt Web 360 el presupuesto es a medida tras un diagnóstico gratuito: puede ir desde un servicio básico de SEO local + Google Business Profile hasta una estrategia más completa con SEO, redes sociales y campañas de pago. Sevilla tiene un mercado digital activo con oportunidades claras para negocios que empiecen a trabajar su presencia online de forma profesional."
       }
     },
     {
@@ -114,7 +114,7 @@ export default function Page() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta el marketing digital para una pyme en Sevilla?</h3>
-                <p className="text-gray-600">Depende de los servicios contratados. Un servicio básico de SEO local + Google Business Profile parte desde 300€/mes. Una estrategia más completa con SEO, redes sociales y campañas de pago puede estar entre 500 y 1.500€/mes. Sevilla tiene un mercado digital activo con oportunidades claras para negocios que empiecen a trabajar su presencia online de forma profesional.</p>
+                <p className="text-gray-600">Depende de los servicios contratados. En Mkt Web 360 el presupuesto es a medida tras un diagnóstico gratuito: puede ir desde un servicio básico de SEO local + Google Business Profile hasta una estrategia más completa con SEO, redes sociales y campañas de pago. Sevilla tiene un mercado digital activo con oportunidades claras para negocios que empiecen a trabajar su presencia online de forma profesional.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en dar resultados el marketing digital en Sevilla?</h3>

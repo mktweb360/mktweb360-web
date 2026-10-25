@@ -123,19 +123,19 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     ? [
         {
           plan: "Basic Plan",
-          price: "From €300/month",
+          price: "Custom quote",
           items: ["2 monthly sends", "Brand template design", "Basic segmentation", "Subject line A/B tests", "Results report"],
           highlight: false,
         },
         {
           plan: "Advanced Plan",
-          price: "From €500/month",
+          price: "Custom quote",
           items: ["4 monthly sends", "Advanced segmentation", "2 active automations", "Full A/B tests", "Detailed KPI report", "Ongoing optimisation"],
           highlight: true,
         },
         {
           plan: "Complete Plan",
-          price: "From €800/month",
+          price: "Custom quote",
           items: ["Unlimited sends", "Advanced automations", "CRM or ecommerce integration", "Acquisition strategy", "Weekly report", "Monthly consultancy"],
           highlight: false,
         },
@@ -143,19 +143,19 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     : [
         {
           plan: "Plan Basique",
-          price: "À partir de 300€/mois",
+          price: "Devis sur mesure",
           items: ["2 envois mensuels", "Design de modèle de marque", "Segmentation basique", "Tests A/B des lignes d'objet", "Rapport de résultats"],
           highlight: false,
         },
         {
           plan: "Plan Avancé",
-          price: "À partir de 500€/mois",
+          price: "Devis sur mesure",
           items: ["4 envois mensuels", "Segmentation avancée", "2 automatisations actives", "Tests A/B complets", "Rapport détaillé avec KPIs", "Optimisation continue"],
           highlight: true,
         },
         {
           plan: "Plan Complet",
-          price: "À partir de 800€/mois",
+          price: "Devis sur mesure",
           items: ["Envois illimités", "Automatisations avancées", "Intégration CRM ou ecommerce", "Stratégie d'acquisition", "Rapport hebdomadaire", "Consultation mensuelle"],
           highlight: false,
         },
@@ -316,8 +316,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-gray-600 mb-8 text-center">
             {isEn
-              ? "Indicative prices. The final budget depends on send volume, automation level and platform used."
-              : "Prix indicatifs. Le budget final dépend du volume d'envois, du niveau d'automatisation et de la plateforme utilisée."}
+              ? "Custom quote after a free diagnosis. The final budget depends on send volume, automation level and platform used."
+              : "Devis sur mesure après un diagnostic gratuit. Le budget final dépend du volume d'envois, du niveau d'automatisation et de la plateforme utilisée."}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {plans.map((p) => (

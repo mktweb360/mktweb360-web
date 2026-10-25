@@ -60,7 +60,7 @@ const faqSchema = {
       name: "¿Cuánto cuesta el SEO local para un negocio en Bilbao?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Depende del punto de partida y los objetivos. La optimización inicial de Google Business Profile y la auditoría SEO local pueden resolverse desde 300-500€. Un servicio de SEO local continuado — con trabajo mensual de contenido, reseñas y autoridad — parte desde 300€/mes. El ROI suele ser positivo desde el primer trimestre para negocios en sectores con demanda local activa."
+        text: "Depende del punto de partida y los objetivos. En Mkt Web 360 el presupuesto es a medida tras un diagnóstico gratuito, tanto para la optimización inicial de Google Business Profile y la auditoría SEO local como para un servicio de SEO local continuado, con trabajo mensual de contenido, reseñas y autoridad. El ROI suele ser positivo desde el primer trimestre para negocios en sectores con demanda local activa."
       }
     }
   ]
@@ -122,7 +122,7 @@ export default function Page() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta el SEO local para un negocio en Bilbao?</h3>
-                <p className="text-gray-600">Depende del punto de partida y los objetivos. La optimización inicial de Google Business Profile y la auditoría SEO local pueden resolverse desde 300-500€. Un servicio de SEO local continuado — con trabajo mensual de contenido, reseñas y autoridad — parte desde 300€/mes. El ROI suele ser positivo desde el primer trimestre para negocios en sectores con demanda local activa.</p>
+                <p className="text-gray-600">Depende del punto de partida y los objetivos. En Mkt Web 360 el presupuesto es a medida tras un diagnóstico gratuito, tanto para la optimización inicial de Google Business Profile y la auditoría SEO local como para un servicio de SEO local continuado, con trabajo mensual de contenido, reseñas y autoridad. El ROI suele ser positivo desde el primer trimestre para negocios en sectores con demanda local activa.</p>
               </div>
             </div>
           </div>

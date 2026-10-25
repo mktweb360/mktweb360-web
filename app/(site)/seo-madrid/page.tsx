@@ -60,7 +60,7 @@ const faqSchema = {
       name: "¿Cuánto cuesta el SEO local para un negocio en Madrid?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Depende del sector y la competencia. Un servicio de SEO local continuado para un negocio en Madrid parte desde 300€/mes. La optimización inicial de Google Business Profile y auditoría SEO local pueden resolverse desde 300-500€. El ROI suele ser positivo desde el primer trimestre en sectores con demanda local activa."
+        text: "Depende del sector y la competencia. En Mkt Web 360 el presupuesto es a medida tras un diagnóstico gratuito, tanto para un servicio de SEO local continuado en Madrid como para la optimización inicial de Google Business Profile y la auditoría SEO local. El ROI suele ser positivo desde el primer trimestre en sectores con demanda local activa."
       }
     }
   ]
@@ -122,7 +122,7 @@ export default function Page() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta el SEO local para un negocio en Madrid?</h3>
-                <p className="text-gray-600">Depende del sector y la competencia. Un servicio de SEO local continuado para un negocio en Madrid parte desde 300€/mes. La optimización inicial de Google Business Profile y auditoría SEO local pueden resolverse desde 300-500€. El ROI suele ser positivo desde el primer trimestre en sectores con demanda local activa.</p>
+                <p className="text-gray-600">Depende del sector y la competencia. En Mkt Web 360 el presupuesto es a medida tras un diagnóstico gratuito, tanto para un servicio de SEO local continuado en Madrid como para la optimización inicial de Google Business Profile y la auditoría SEO local. El ROI suele ser positivo desde el primer trimestre en sectores con demanda local activa.</p>
               </div>
             </div>
           </div>

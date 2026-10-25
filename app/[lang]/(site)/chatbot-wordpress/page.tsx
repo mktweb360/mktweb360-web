@@ -47,7 +47,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         },
         {
           q: "How much does it cost to maintain per month?",
-          a: "A managed chatbot service for WordPress typically costs between €149 and €299/month, depending on the level of functionality and the volume of conversations.",
+          a: "The cost of a managed chatbot service for WordPress depends on the level of functionality and the volume of conversations. We prepare a custom quote after a free diagnosis.",
         },
       ]
     : [
@@ -65,7 +65,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         },
         {
           q: "Combien coûte la maintenance par mois ?",
-          a: "Un service de chatbot géré pour WordPress coûte généralement entre 149 et 299 €/mois, selon le niveau de fonctionnalité et le volume de conversations.",
+          a: "Le coût d'un service de chatbot géré pour WordPress dépend du niveau de fonctionnalité et du volume de conversations. Nous préparons un devis sur mesure après un diagnostic gratuit.",
         },
       ];
 

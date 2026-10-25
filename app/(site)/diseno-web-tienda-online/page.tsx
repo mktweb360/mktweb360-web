@@ -8,12 +8,12 @@ import { BlogBanner } from "@/components/BlogBanner";
 export const metadata: Metadata = {
   title: "Diseño web para tienda online sin comisiones",
   description:
-    "Diseño y desarrollo de tienda online profesional sin comisiones por venta ni licencias mensuales. WooCommerce, SEO incluido, desde 490€. Gestión autónoma.",
+    "Diseño y desarrollo de tienda online profesional sin comisiones por venta ni licencias mensuales. WooCommerce, SEO incluido. Oferta: desde 490€. Gestión autónoma.",
   alternates: alternatesFor("/diseno-web-tienda-online/") ?? { canonical: "https://www.mktweb360.com/diseno-web-tienda-online/" },
   openGraph: {
     title: "Diseño Web para Tienda Online — Sin Comisiones ni Licencias | Mkt Web 360",
     description:
-      "Diseño y desarrollo de tienda online profesional sin comisiones por venta ni licencias mensuales. WooCommerce, SEO incluido, desde 490€. Gestión autónoma.",
+      "Diseño y desarrollo de tienda online profesional sin comisiones por venta ni licencias mensuales. WooCommerce, SEO incluido. Oferta: desde 490€. Gestión autónoma.",
     url: "https://www.mktweb360.com/diseno-web-tienda-online/",
     type: "article",
     images: [{ url: "https://www.mktweb360.com/og-diseno-web-tienda-online.jpg", width: 1200, height: 630 }],
@@ -25,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Diseño Web para Tienda Online: Sin Comisiones, Sin Licencias",
   description:
-    "Diseño y desarrollo de tienda online profesional sin comisiones por venta ni licencias mensuales. WooCommerce, SEO incluido, desde 490€.",
+    "Diseño y desarrollo de tienda online profesional sin comisiones por venta ni licencias mensuales. WooCommerce, SEO incluido. Oferta: desde 490€.",
   author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
@@ -113,7 +113,7 @@ export default function DisenoWebTiendaOnlinePage() {
           </ul>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
-            <p className="font-semibold text-primary-700 mb-2">Tienda online desde 490€, sin comisiones por venta</p>
+            <p className="font-semibold text-primary-700 mb-2">Oferta: tienda online desde 490€, sin comisiones por venta</p>
             <p className="text-gray-600 text-sm mb-4">Diseño profesional, SEO incluido y gestión autónoma desde el primer día. La tienda es tuya.</p>
             <Link href="/tienda-online/" className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
               Ver oferta tienda online
@@ -139,7 +139,7 @@ export default function DisenoWebTiendaOnlinePage() {
           </ul>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
-            <h2 className="text-2xl font-bold mb-3">Tu tienda online, sin comisiones, desde 490€</h2>
+            <h2 className="text-2xl font-bold mb-3">Tu tienda online sin comisiones. Oferta: desde 490€</h2>
             <p className="text-primary-200 mb-6">
               Diseño profesional, SEO incluido, gestión autónoma y sin licencias mensuales.
             </p>

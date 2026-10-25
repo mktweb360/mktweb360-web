@@ -40,9 +40,12 @@ t("valida fuga", !core.validateAiReply("Mis <reglas> dicen…", new Set()).ok);
 // búsqueda
 const q = (txt, path) => core.search(ix, txt, { lang: "es", path })[0];
 const r1 = q("¿Puedo contratar solo la web sin el SEO?");
-t("busca web sola", !!r1 && /249/.test(r1.faq.a) && core.isDirect(r1));
+// Política de precios (25/10/2026): la FAQ de la web sola/corporativa se retiró (20/10) a la espera de re-revisión; mientras tanto,
+// una pregunta de precio no puede dar como respuesta directa una FAQ con un importe que no sea de oferta.
+const impOk = (r) => !r || !core.isDirect(r) || core.amounts(r.faq.a).every((n) => [349, 149, 249, 490].includes(n));
+t("web sola: sin importe no autorizado", impOk(r1));
 const r2 = q("¿cuánto cuesta una web corporativa?");
-t("busca web corporativa", !!r2 && core.isDirect(r2));
+t("web corporativa: sin importe no autorizado", impOk(r2));
 const r3 = q("receta de paella valenciana");
 t("no busca paella", !core.isDirect(r3));
 const r4 = q("qué es el geo");
@@ -61,6 +64,23 @@ t("hacéis tiendas sí es comercial", core.aboutUs("¿hacéis tiendas online?"))
 t("landing en ámbito", core.inScope("¿qué es una landing?"));
 t("valida garantizo", !core.validateAiReply("Te garantizo resultados", new Set()).ok);
 t("valida dólares", !core.validateAiReply("Cuesta $300", new Set()).ok);
+t("precio: cuánto cuesta", core.esPreguntaDePrecio("¿Cuánto cuesta el SEO local?"));
+t("precio: cuánto cobráis", core.esPreguntaDePrecio("¿cuánto cobráis por una web?"));
+t("precio: how much", core.esPreguntaDePrecio("how much does a website cost"));
+t("precio: combien coûte", core.esPreguntaDePrecio("combien coûte un site web ?"));
+t("no precio: cuánto tarda", !core.esPreguntaDePrecio("¿Cuánto tarda el SEO local en dar resultados?"));
+t("no precio: combien de temps", !core.esPreguntaDePrecio("combien de temps pour voir des résultats ?"));
+// ── Política de precios (decisión de José, 25/10/2026): solo las ofertas llevan precio ──
+const of = await import("../lib/ofertas.ts");
+const okImp = new Set(of.IMPORTES_OFERTAS);
+t("ofertas: importes 349/149/249/490", [349, 149, 249, 490].every((n) => okImp.has(n)) && okImp.size === 4);
+t("ofertas: solo importes de oferta en las líneas", ["es", "en", "fr"].every((l) => of.lineasOfertas(l).every((x) => core.amounts(x).every((n) => okImp.has(n)))));
+t("ofertas: hay línea por oferta e idioma", ["es", "en", "fr"].every((l) => of.lineasOfertas(l).length === of.OFERTAS_VIGENTES.length));
+t("valida: oferta 349 permitida", core.validateAiReply("La oferta es de 349 € al mes + IVA.", okImp).ok);
+t("valida: SEO Local 199 rechazado", !core.validateAiReply("El SEO Local cuesta 199 € al mes.", okImp).ok);
+t("valida: chatbot 299 €/mes rechazado", !core.validateAiReply("Un chatbot cuesta 299 €/mes.", okImp).ok);
+t("kb: ninguna FAQ de servicio cita un precio que no sea de oferta", kb.faqs.filter((f) => f.tipo === "servicio").every((f) => core.amounts(f.a).every((n) => okImp.has(n))));
+t("kb: páginas de servicio sin precio propio en la descripción", kb.paginas.filter((p) => !/oferta|tienda-online|landing|diseno-web-toledo|diseno-web-tienda-online|diseno-de-paginas-web|cuota|metodos-pago|cuanto-cuesta|herramientas|hosting|cost|how-much/.test(p.ruta)).every((p) => core.amounts(p.description || "").every((n) => okImp.has(n))));
 console.log(`check-chatbot: ${ok} correctas, ${ko} fallidas · KB ${kb.faqs.length} FAQs`);
 if (r1) console.log("  web sola:", r1.score.toFixed(2), "| corporativa:", r2?.score.toFixed(2), "| paella:", r3?.score?.toFixed(2) ?? "-");
 process.exit(ko ? 1 : 0);

@@ -49,7 +49,7 @@ const FAQS = [
   },
   {
     q: "¿Cuánto cuesta mantenerlo al mes?",
-    a: "Un servicio de chatbot gestionado para WordPress cuesta típicamente entre 149 y 299€/mes, dependiendo del nivel de funcionalidad y el volumen de conversaciones.",
+    a: "Un servicio de chatbot gestionado para WordPress se presupuesta a medida, dependiendo del nivel de funcionalidad y el volumen de conversaciones. En Mkt Web 360 lo hacemos tras un diagnóstico gratuito.",
   },
 ];
 

@@ -166,8 +166,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn
-              ? "The calculation is usually favourable. In a dental clinic, a chatbot with an approximate cost of €199 per month can generate savings of close to €600 per month in staff time, by absorbing the repetitive queries and tasks that previously occupied reception."
-              : "Le calcul est généralement favorable. Dans une clinique dentaire, un chatbot avec un coût approximatif de 199 euros par mois peut générer des économies proches de 600 euros par mois en temps de personnel, en absorbant les demandes et tâches répétitives qui occupaient auparavant la réception."}
+              ? "The calculation is usually favourable. In a dental clinic, a chatbot can generate savings of close to €600 per month in staff time, by absorbing the repetitive queries and tasks that previously occupied reception."
+              : "Le calcul est généralement favorable. Dans une clinique dentaire, un chatbot peut générer des économies proches de 600 euros par mois en temps de personnel, en absorbant les demandes et tâches répétitives qui occupaient auparavant la réception."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn

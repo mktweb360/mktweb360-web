@@ -36,14 +36,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         {
           num: "01",
           title: "Fixed setup",
-          price: "£1,500 – £2,500 / €1,500 – €2,500",
+          price: "Custom quote",
           desc: "Design and development of the online store, campaign configuration, analytics and all the initial infrastructure.",
           items: ["Professional online store", "Google Ads configured", "Initial technical SEO", "Analytics and tracking"],
         },
         {
           num: "02",
           title: "Monthly management",
-          price: "£300 – £500/month / €300 – €500/month",
+          price: "Custom quote",
           desc: "Ongoing management of campaigns, SEO and optimisation. Guarantees service sustainability without depending solely on success.",
           items: ["Google Ads management", "Monthly SEO", "Results reports", "Continuous optimisation"],
         },
@@ -59,14 +59,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         {
           num: "01",
           title: "Setup fixe",
-          price: "1 500 € – 2 500 €",
+          price: "Devis sur mesure",
           desc: "Conception et développement de la boutique en ligne, configuration des campagnes, analytique et toute l'infrastructure initiale.",
           items: ["Boutique en ligne professionnelle", "Google Ads configuré", "SEO technique initial", "Analytique et tracking"],
         },
         {
           num: "02",
           title: "Gestion mensuelle",
-          price: "300 € – 500 €/mois",
+          price: "Devis sur mesure",
           desc: "Gestion continue des campagnes, SEO et optimisation. Garantit la durabilité du service sans dépendre uniquement du succès.",
           items: ["Gestion Google Ads", "SEO mensuel", "Rapports de résultats", "Optimisation continue"],
         },
@@ -83,7 +83,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     ? [
         {
           q: "How is the results bonus defined?",
-          a: "We agree on it before starting, based on your real business data: average order value, gross margin and monthly sales target. The bonus is triggered when sales exceed a jointly defined threshold — for example, 10% of sales above £15,000/month. The exact terms are written into the contract before we start.",
+          a: "We agree on it before starting, based on your real business data: average order value, gross margin and monthly sales target. The bonus is triggered when sales exceed a jointly defined threshold — for example, a percentage of the sales above the agreed threshold. The exact terms are written into the contract before we start.",
         },
         {
           q: "What happens if the results don't come?",
@@ -101,7 +101,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     : [
         {
           q: "Comment est défini le bonus de résultats ?",
-          a: "Nous l'accordons avant de commencer en nous basant sur les données réelles de votre entreprise : ticket moyen, marge brute et objectif de ventes mensuel. Le bonus se déclenche quand les ventes dépassent un seuil défini conjointement — par exemple, 10 % des ventes au-dessus de 15 000 €/mois. Les termes exacts sont consignés dans le contrat avant de commencer.",
+          a: "Nous l'accordons avant de commencer en nous basant sur les données réelles de votre entreprise : ticket moyen, marge brute et objectif de ventes mensuel. Le bonus se déclenche quand les ventes dépassent un seuil défini conjointement — par exemple, un pourcentage des ventes au-dessus du seuil convenu. Les termes exacts sont consignés dans le contrat avant de commencer.",
         },
         {
           q: "Que se passe-t-il si les résultats ne viennent pas ?",

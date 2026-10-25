@@ -37,7 +37,7 @@ const articleSchema = {
 const FAQS = [
   {
     q: "¿Cuánto cuesta un chatbot para empresas?",
-    a: "Depende del nivel de sofisticación. Un chatbot de FAQs básico puede costar desde 149€/mes con una plataforma gestionada. Un asistente accionable conectado a CRM y catálogo puede requerir un setup de 300-500€ más una mensualidad de 199-299€.",
+    a: "Depende del nivel de sofisticación. Un chatbot de FAQs básico es mucho más sencillo de poner en marcha que un asistente accionable conectado a CRM y catálogo, que requiere configuración inicial y mantenimiento. El presupuesto es a medida tras un diagnóstico gratuito.",
   },
   {
     q: "¿Cuánto tiempo tarda en estar operativo?",

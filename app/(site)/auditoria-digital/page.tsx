@@ -148,7 +148,7 @@ export default function AuditoriaSeoGratuitaPage() {
           <p>Antes de invertir en SEO, publicidad o una web nueva, conviene saber dónde estás. La auditoría te dice qué corregir primero, qué puede esperar y qué no merece la pena hacer todavía.</p>
           <p>Los problemas que más encontramos son siempre parecidos: páginas que compiten entre sí por la misma búsqueda, titulares que no dicen a Google qué servicio ofrece la página, medición que no registra los contactos, imágenes que disparan el tiempo de carga en móvil y redirecciones mal planteadas tras una migración.</p>
           <p>Hoy hay además una capa nueva: los asistentes de IA. Una web puede aparecer como fuente en sus respuestas sin que la marca se llegue a nombrar. La auditoría también revisa eso. Y si atiendes clientes en una zona, tu ficha de Google pesa tanto como la web: es lo primero que ve quien te busca en el mapa.</p>
-          <p>Si después quieres que lo hagamos nosotros, tienes los <Link href="/precios-seo/" className="text-accent-700 underline underline-offset-2">planes y precios SEO</Link> publicados.</p>
+          <p>Si después quieres que lo hagamos nosotros, te explicamos <Link href="/precios-seo/" className="text-accent-700 underline underline-offset-2">qué hace variar el precio de un proyecto SEO</Link> y te damos un presupuesto por escrito, sin compromiso.</p>
         </div>
       </section>
 

@@ -122,7 +122,7 @@ export default function CuantoCuestaChatbotPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Modelo de precios para una solución gestionada en España</h2>
           <p>
-            Frente al SaaS de autoservicio, una solución gestionada por una agencia en España incluye setup, entrenamiento, integración y mantenimiento dentro de una cuota mensual. Como referencia, un plan básico se mueve entre 149 y 199€/mes, un plan medio entre 199 y 249€/mes, y un plan avanzado entre 249 y 299€/mes.
+            Frente al SaaS de autoservicio, una solución gestionada por una agencia en España incluye setup, entrenamiento, integración y mantenimiento dentro de una cuota mensual. En Mkt Web 360 el presupuesto es a medida tras un diagnóstico gratuito, según el nivel de funcionalidad y el volumen de conversaciones.
           </p>
           <p>
             La diferencia entre niveles no suele estar en el número de conversaciones, sino en la profundidad de las integraciones, el grado de personalización y el nivel de acompañamiento. En este modelo pagas por un servicio completo, no solo por acceder a una herramienta que luego tienes que configurar tú.
@@ -130,7 +130,7 @@ export default function CuantoCuestaChatbotPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Cuándo sale rentable un chatbot</h2>
           <p>
-            La rentabilidad se ve comparando el coste mensual con el tiempo y las oportunidades que el chatbot libera. Un ejemplo ilustrativo: un bot de 199€/mes que automatiza consultas repetitivas y capta leads fuera de horario puede suponer un ahorro neto de unos 700€/mes, contando el tiempo del equipo que deja de dedicarse a tareas manuales.
+            La rentabilidad se ve comparando el coste mensual con el tiempo y las oportunidades que el chatbot libera. Un ejemplo ilustrativo: un bot gestionado que automatiza consultas repetitivas y capta leads fuera de horario puede suponer un ahorro de unos 700€/mes, contando el tiempo del equipo que deja de dedicarse a tareas manuales.
           </p>
           <p>
             En ese escenario, la inversión se paga sola en pocas semanas. La clave está en que el chatbot atienda un volumen suficiente de conversaciones con valor real: si el negocio recibe muchas consultas repetitivas, el retorno es evidente; si el volumen es marginal, quizá baste un plan gratuito para empezar.
@@ -139,7 +139,7 @@ export default function CuantoCuestaChatbotPage() {
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">¿Quieres saber cuánto costaría tu chatbot?</h2>
             <p className="text-primary-200 mb-6">
-              En Mkt Web 360 diseñamos chatbots a medida para autónomos y pymes en España, con precios claros y sin sorpresas en la factura.
+              En Mkt Web 360 diseñamos chatbots a medida para autónomos y pymes en España, con un presupuesto claro por escrito, tras un diagnóstico gratuito y sin sorpresas en la factura.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contacto/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">

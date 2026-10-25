@@ -45,7 +45,7 @@ const faqSchema = {
       name: "¿Cuánto cobra una agencia de marketing digital en Toledo?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los precios en Toledo son más competitivos que en grandes ciudades. Un servicio de SEO local parte desde 300€/mes. Servicios integrales de marketing digital están entre 500 y 1.500€/mes dependiendo de los canales incluidos. La clave es que el precio esté justificado por resultados medibles y adaptados a los objetivos de tu negocio."
+        text: "Los precios en Toledo son más competitivos que en grandes ciudades. El precio depende del servicio, de los canales incluidos y del alcance, así que lo razonable es pedir un presupuesto a medida y comparar qué incluye cada propuesta. La clave es que el precio esté justificado por resultados medibles y adaptados a los objetivos de tu negocio."
       }
     },
     {
@@ -126,7 +126,7 @@ export default function Page() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cobra una agencia de marketing digital en Toledo?</h3>
-                <p className="text-gray-600">Los precios en Toledo son más competitivos que en grandes ciudades. Un servicio de SEO local parte desde 300€/mes. Servicios integrales de marketing digital están entre 500 y 1.500€/mes dependiendo de los canales incluidos. La clave es que el precio esté justificado por resultados medibles y adaptados a los objetivos de tu negocio.</p>
+                <p className="text-gray-600">Los precios en Toledo son más competitivos que en grandes ciudades. El precio depende del servicio, de los canales incluidos y del alcance, así que lo razonable es pedir un presupuesto a medida y comparar qué incluye cada propuesta. La clave es que el precio esté justificado por resultados medibles y adaptados a los objetivos de tu negocio.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Qué ventajas tiene contratar una agencia de marketing digital local en Toledo?</h3>

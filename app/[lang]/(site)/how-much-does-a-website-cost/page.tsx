@@ -65,8 +65,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
           {isEn
-            ? "Landing page (1 page): 500–1,500€. Simple corporate website (5–8 pages): 1,500–4,000€. Professional corporate website with custom design: 3,000–8,000€. Basic online store (up to 100 products): 2,500–6,000€. Advanced online store with integrations: 5,000–15,000€+."
-            : "Page d'atterrissage (1 page) : 500 à 1 500€. Site corporate simple (5 à 8 pages) : 1 500 à 4 000€. Site corporate professionnel avec design personnalisé : 3 000 à 8 000€. Boutique en ligne basique (jusqu'à 100 produits) : 2 500 à 6 000€. Boutique en ligne avancée avec intégrations : 5 000 à 15 000€+."}
+            ? "Typical market ranges (reference, not Mkt Web 360 rates). Landing page (1 page): 500–1,500€. Simple corporate website (5–8 pages): 1,500–4,000€. Professional corporate website with custom design: 3,000–8,000€. Basic online store (up to 100 products): 2,500–6,000€. Advanced online store with integrations: 5,000–15,000€+."
+            : "Fourchettes habituelles du marché (référence, pas les tarifs de Mkt Web 360). Page d'atterrissage (1 page) : 500 à 1 500€. Site corporate simple (5 à 8 pages) : 1 500 à 4 000€. Site corporate professionnel avec design personnalisé : 3 000 à 8 000€. Boutique en ligne basique (jusqu'à 100 produits) : 2 500 à 6 000€. Boutique en ligne avancée avec intégrations : 5 000 à 15 000€+."}
         </p>
         <p className="text-gray-600 leading-relaxed mb-4">
           {isEn

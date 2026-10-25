@@ -54,7 +54,6 @@ const organizationSchema = {
   },
   geo: { "@type": "GeoCoordinates", latitude: 39.8878, longitude: -4.0647 },
   openingHours: "Mo-Fr 09:00-18:00",
-  priceRange: "€€",
   areaServed: { "@type": "Country", name: "España" },
   knowsAbout: [
     "SEO",

@@ -26,20 +26,12 @@ const serviceSchema = {
   description: "Creación y gestión de tiendas online de dropshipping con modelo híbrido: setup fijo, gestión mensual y participación en beneficios cuando el negocio es rentable.",
   areaServed: "España",
   url: "https://www.mktweb360.com/ecommerce-dropshipping-con-participacion/",
-  offers: {
-    "@type": "Offer",
-    price: "1500",
-    priceCurrency: "EUR",
-    description: "Setup completo tienda dropshipping desde 1.500€ + gestión mensual desde 400€/mes + 10% sobre beneficio neto mensual cuando supere 2.000€.",
-    availability: "https://schema.org/InStock",
-    url: "https://www.mktweb360.com/ecommerce-dropshipping-con-participacion/",
-  },
 };
 const FAQS = [
   { q: "¿Qué es el dropshipping y cómo funciona?",
     a: "El dropshipping es un modelo de ecommerce donde vendes productos sin tener stock físico. Cuando un cliente hace un pedido en tu tienda, el proveedor envía el producto directamente al cliente. Tú ganas la diferencia entre el precio de venta y el precio del proveedor. No necesitas almacén, ni inversión en stock, ni gestión logística propia. El reto está en elegir el nicho correcto, los proveedores adecuados y tener una estrategia de marketing que genere tráfico cualificado." },
   { q: "¿Por qué un modelo híbrido en lugar de solo comisión por ventas?",
-    a: "El modelo de pura comisión por ventas tiene un problema de atribución: es muy difícil determinar qué parte de las ventas se debe al trabajo de la agencia y qué parte a otros factores. El modelo híbrido — setup fijo + gestión mensual + bonus sobre beneficio neto — es más justo para ambas partes: el cliente paga por el trabajo real que se hace cada mes, y la agencia tiene incentivo adicional cuando el negocio supera el umbral de rentabilidad. El bonus solo aplica cuando el negocio ya genera más de 2.000€/mes de beneficio neto, lo que garantiza que el cliente esté ganando dinero antes de pagar más." },
+    a: "El modelo de pura comisión por ventas tiene un problema de atribución: es muy difícil determinar qué parte de las ventas se debe al trabajo de la agencia y qué parte a otros factores. El modelo híbrido — setup fijo + gestión mensual + bonus sobre beneficio neto — es más justo para ambas partes: el cliente paga por el trabajo real que se hace cada mes, y la agencia tiene incentivo adicional cuando el negocio supera el umbral de rentabilidad. El bonus solo aplica cuando el negocio supera el umbral de beneficio neto acordado en el contrato, lo que garantiza que el cliente esté ganando dinero antes de pagar más." },
   { q: "¿Cuánto tiempo tarda en ser rentable una tienda de dropshipping?",
     a: "Depende del nicho, el presupuesto de marketing y la competencia. Con una estrategia bien ejecutada, las primeras ventas pueden llegar en las primeras semanas. La rentabilidad consistente — cubrir los costes de gestión y empezar a generar beneficio neto — suele lograrse entre los 3 y 6 meses. Los nichos con menor competencia y márgenes más altos (productos especializados, categorías de precio medio-alto) alcanzan la rentabilidad antes." },
   { q: "¿Qué proveedores de dropshipping usáis?",
@@ -101,18 +93,18 @@ export default function EcommerceDropshippingPage() {
         <section className="mb-16 bg-gray-50 rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-primary-600 mb-6">El modelo de participación: cómo funciona y qué significa para ti</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            El modelo de participación en resultados funciona así: pagas un setup inicial para montar la tienda, una gestión mensual para que la mantengamos y hagamos crecer, y un bonus adicional cuando el negocio supera el umbral de rentabilidad. El setup cubre la creación completa de la tienda. La gestión mensual de 400€/mes cubre el trabajo real que hacemos cada mes: SEO, optimización de fichas de producto, gestión de proveedores, análisis de rendimiento y ajustes de estrategia.
+            El modelo de participación en resultados funciona así: pagas un setup inicial para montar la tienda, una gestión mensual para que la mantengamos y hagamos crecer, y un bonus adicional cuando el negocio supera el umbral de rentabilidad. El setup cubre la creación completa de la tienda. La gestión mensual (con presupuesto a medida tras un diagnóstico gratuito) cubre el trabajo real que hacemos cada mes: SEO, optimización de fichas de producto, gestión de proveedores, análisis de rendimiento y ajustes de estrategia.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            El bonus de un 10% sobre el beneficio neto mensual — calculado sobre los ingresos menos el coste del producto y los gastos directos — solo aplica cuando el negocio supera los 2.000€/mes de beneficio neto. Esto garantiza que antes de pagar más, tú ya estás ganando dinero. Si el negocio no supera ese umbral, pagas solo la gestión mensual.
+            El bonus, un porcentaje sobre el beneficio neto mensual acordado en el contrato — calculado sobre los ingresos menos el coste del producto y los gastos directos —, solo aplica cuando el negocio supera el umbral de beneficio neto convenido. Esto garantiza que antes de pagar más, tú ya estás ganando dinero. Si el negocio no supera ese umbral, pagas solo la gestión mensual.
           </p>
         </section>
 
         {/* Setup 1500 */}
         <section className="mb-16 bg-primary-50 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-primary-600 mb-6">Qué incluye el setup de 1.500€</h2>
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Qué incluye el setup</h2>
           <p className="text-gray-700 leading-relaxed">
-            El setup de 1.500€ incluye: análisis del nicho y validación del potencial de margen con proveedores reales, selección e integración de 2-3 proveedores europeos con acuerdo de precios, creación de la tienda en WooCommerce (preferido para SEO en España) o Shopify, configuración de la pasarela de pago (Stripe, Bizum), importación del catálogo inicial de 50-100 productos con fichas optimizadas, configuración del SEO técnico (estructura de URLs, schema markup, velocidad de carga), y puesta en marcha de Google Analytics 4 con seguimiento de conversiones.
+            El setup, con presupuesto a medida tras un diagnóstico gratuito, incluye: análisis del nicho y validación del potencial de margen con proveedores reales, selección e integración de 2-3 proveedores europeos con acuerdo de precios, creación de la tienda en WooCommerce (preferido para SEO en España) o Shopify, configuración de la pasarela de pago (Stripe, Bizum), importación del catálogo inicial de 50-100 productos con fichas optimizadas, configuración del SEO técnico (estructura de URLs, schema markup, velocidad de carga), y puesta en marcha de Google Analytics 4 con seguimiento de conversiones.
           </p>
         </section>
 
@@ -120,10 +112,10 @@ export default function EcommerceDropshippingPage() {
         <section className="mb-16">
           <h2 className="text-2xl font-bold text-primary-600 mb-6">Gestión mensual y bonus por resultados</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            La gestión mensual de 400€/mes incluye: actualización del catálogo con nuevos productos y optimización de los existentes, mejora continua del SEO de fichas de producto y categorías, gestión de la relación con proveedores (precios, disponibilidad, incidencias), análisis mensual de márgenes por producto y ajuste de precios, e informe mensual de ventas, márgenes y próximas acciones.
+            La gestión mensual incluye: actualización del catálogo con nuevos productos y optimización de los existentes, mejora continua del SEO de fichas de producto y categorías, gestión de la relación con proveedores (precios, disponibilidad, incidencias), análisis mensual de márgenes por producto y ajuste de precios, e informe mensual de ventas, márgenes y próximas acciones.
           </p>
           <p className="text-gray-700 leading-relaxed">
-            El bonus del 10% sobre beneficio neto aplica a partir de los 2.000€/mes de beneficio neto. El beneficio neto se calcula como: ingresos totales menos coste del producto (precio proveedor + envío) menos cuota mensual de gestión. Los gastos de publicidad pagada, si los hay, también se descuentan. El cálculo se hace mensualmente con datos verificables de la plataforma.
+            El bonus sobre beneficio neto aplica a partir del umbral de beneficio neto convenido en el contrato. El beneficio neto se calcula como: ingresos totales menos coste del producto (precio proveedor + envío) menos cuota mensual de gestión. Los gastos de publicidad pagada, si los hay, también se descuentan. El cálculo se hace mensualmente con datos verificables de la plataforma.
           </p>
         </section>
 

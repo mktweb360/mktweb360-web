@@ -36,7 +36,7 @@ const faqSchema = {
       name: "¿Cuánto cuesta un diseño web profesional en Barcelona?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los precios varían según la complejidad. Una web corporativa profesional con SEO técnico incluido parte desde 790€ en agencias especializadas. Webs con funcionalidades avanzadas, ecommerce o integraciones específicas tienen presupuesto personalizado. En Barcelona, los precios de agencias medianas y grandes son más altos, pero hay opciones de calidad a precios competitivos trabajando con agencias especializadas fuera de la ciudad."
+        text: "Los precios varían según la complejidad. El presupuesto de una web corporativa profesional con SEO técnico incluido depende del alcance y de la agencia. Webs con funcionalidades avanzadas, ecommerce o integraciones específicas tienen presupuesto personalizado. En Barcelona, los precios de agencias medianas y grandes son más altos, pero hay opciones de calidad a precios competitivos trabajando con agencias especializadas fuera de la ciudad."
       }
     },
     {
@@ -115,7 +115,7 @@ export default function Page() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto cuesta un diseño web profesional en Barcelona?</h3>
-                <p className="text-gray-600">Los precios varían según la complejidad. Una web corporativa profesional con SEO técnico incluido parte desde 790€ en agencias especializadas. Webs con funcionalidades avanzadas, ecommerce o integraciones específicas tienen presupuesto personalizado. En Barcelona, los precios de agencias medianas y grandes son más altos, pero hay opciones de calidad a precios competitivos trabajando con agencias especializadas fuera de la ciudad.</p>
+                <p className="text-gray-600">Los precios varían según la complejidad. El presupuesto de una web corporativa profesional con SEO técnico incluido depende del alcance y de la agencia. Webs con funcionalidades avanzadas, ecommerce o integraciones específicas tienen presupuesto personalizado. En Barcelona, los precios de agencias medianas y grandes son más altos, pero hay opciones de calidad a precios competitivos trabajando con agencias especializadas fuera de la ciudad.</p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary-700 mb-2">¿Cuánto tarda en estar lista una web profesional?</h3>

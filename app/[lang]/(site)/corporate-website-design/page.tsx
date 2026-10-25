@@ -57,7 +57,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     ? [
         {
           q: "How much does a professional corporate website cost?",
-          a: "The price of a corporate website depends on the number of pages, functionalities and level of customisation. At Mkt Web 360 we start from €249 + VAT for corporate websites with custom design integrated with WordPress and basic technical SEO, so you manage the content yourself (hosting, domain and email not included). Companies with multiple locations, languages or complex integrations receive a customised quote.",
+          a: "The price of a corporate website depends on the number of pages, functionalities and level of customisation. In our current offer, corporate websites start from €249 + VAT with custom design integrated with WordPress and basic technical SEO, so you manage the content yourself (hosting, domain and email not included). Companies with multiple locations, languages or complex integrations receive a customised quote.",
         },
         {
           q: "How long does the corporate website take to be ready?",
@@ -75,7 +75,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     : [
         {
           q: "Combien coûte un site web corporatif professionnel ?",
-          a: "Le prix d'un site web corporatif dépend du nombre de pages, des fonctionnalités et du niveau de personnalisation. Chez Mkt Web 360, nous partons de 249 € HT pour des sites web corporatifs avec un design sur mesure intégré à WordPress et le SEO technique de base, pour que vous gériez vous-même les contenus (hébergement, nom de domaine et messagerie non inclus). Les entreprises avec plusieurs sites, langues ou intégrations complexes reçoivent un devis personnalisé.",
+          a: "Le prix d'un site web corporatif dépend du nombre de pages, des fonctionnalités et du niveau de personnalisation. Dans notre offre actuelle, les sites web corporatifs démarrent à partir de 249 € HT avec un design sur mesure intégré à WordPress et le SEO technique de base, pour que vous gériez vous-même les contenus (hébergement, nom de domaine et messagerie non inclus). Les entreprises avec plusieurs sites, langues ou intégrations complexes reçoivent un devis personnalisé.",
         },
         {
           q: "Combien de temps faut-il pour que le site web corporatif soit prêt ?",

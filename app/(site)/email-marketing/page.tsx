@@ -174,23 +174,23 @@ export default function EmailMarketingPage() {
         {/* Planes */}
         <section className="mb-16 bg-primary-50 rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-primary-600 mb-4">Planes de email marketing</h2>
-          <p className="text-gray-600 mb-8">Precios orientativos. El presupuesto final depende del volumen de envíos, el nivel de automatización y la plataforma utilizada.</p>
+          <p className="text-gray-600 mb-8">Presupuesto a medida tras un diagnóstico gratuito. Depende del volumen de envíos, el nivel de automatización y la plataforma utilizada.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 plan: "Plan Básico",
-                precio: "Desde 300 €/mes",
+                precio: "Presupuesto a medida",
                 items: ["2 envíos mensuales", "Diseño de plantilla de marca", "Segmentación básica", "Tests A/B de asuntos", "Informe de resultados"],
               },
               {
                 plan: "Plan Avanzado",
-                precio: "Desde 500 €/mes",
+                precio: "Presupuesto a medida",
                 items: ["4 envíos mensuales", "Segmentación avanzada", "2 automatizaciones activas", "Tests A/B completos", "Informe detallado con KPIs", "Optimización continua"],
                 destacado: true,
               },
               {
                 plan: "Plan Completo",
-                precio: "Desde 800 €/mes",
+                precio: "Presupuesto a medida",
                 items: ["Envíos ilimitados", "Automatizaciones avanzadas", "Integración con CRM o ecommerce", "Estrategia de captación", "Informe semanal", "Consultoría mensual"],
               },
             ].map(p => (

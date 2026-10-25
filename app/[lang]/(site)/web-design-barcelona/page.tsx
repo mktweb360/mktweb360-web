@@ -35,7 +35,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     ? [
         {
           q: "How much does a professional web design cost in Barcelona?",
-          a: "Prices vary by complexity. A professional corporate website with technical SEO included starts from £790/€790 at specialist agencies. Sites with advanced features, ecommerce or specific integrations are quoted individually. In Barcelona, mid-size and large agencies charge more, but quality options at competitive prices exist by working with specialist agencies outside the city.",
+          a: "Prices vary by complexity. The budget for a professional corporate website with technical SEO included depends on its scope; we prepare a custom quote after a free diagnosis. Sites with advanced features, ecommerce or specific integrations are quoted individually. In Barcelona, mid-size and large agencies charge more, but quality options at competitive prices exist by working with specialist agencies outside the city.",
         },
         {
           q: "How long does it take to have a professional website ready?",
@@ -53,7 +53,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     : [
         {
           q: "Combien coûte un design web professionnel à Barcelone ?",
-          a: "Les prix varient selon la complexité. Un site corporatif professionnel avec référencement technique inclus commence à partir de 790 € dans les agences spécialisées. Les sites avec des fonctionnalités avancées, de l'ecommerce ou des intégrations spécifiques ont un devis personnalisé. À Barcelone, les agences de taille moyenne et grande sont plus chères, mais des options de qualité à prix compétitifs existent en travaillant avec des agences spécialisées hors de la ville.",
+          a: "Les prix varient selon la complexité. Le budget d'un site corporatif professionnel avec référencement technique inclus dépend de sa portée ; nous préparons un devis sur mesure après un diagnostic gratuit. Les sites avec des fonctionnalités avancées, de l'ecommerce ou des intégrations spécifiques ont un devis personnalisé. À Barcelone, les agences de taille moyenne et grande sont plus chères, mais des options de qualité à prix compétitifs existent en travaillant avec des agences spécialisées hors de la ville.",
         },
         {
           q: "Combien de temps faut-il pour avoir un site web professionnel prêt ?",
@@ -179,8 +179,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
           {isEn
-            ? "Indicative pricing for web design in Barcelona"
-            : "Prix indicatifs pour la création web à Barcelone"}
+            ? "Market reference prices for web design in Barcelona"
+            : "Prix de référence du marché pour la création web à Barcelone"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
           {isEn

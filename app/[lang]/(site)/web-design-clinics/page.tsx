@@ -6,7 +6,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 const FAQS_EN = [
   {
     q: "How much does a website for a clinic or health centre cost?",
-    a: "The price varies depending on the specialty and the features required. A professional website for a clinic starts from €249 + VAT and includes custom design integrated with WordPress and basic technical SEO (hosting, domain and email not included). Clinics with multiple specialties or complex booking systems have a higher cost.",
+    a: "The price varies depending on the specialty and the features required. In our current offer, a professional website for a clinic starts from €249 + VAT and includes custom design integrated with WordPress and basic technical SEO (hosting, domain and email not included). Clinics with multiple specialties or complex booking systems have a higher cost.",
   },
   {
     q: "Can I manage the website content myself?",
@@ -25,7 +25,7 @@ const FAQS_EN = [
 const FAQS_FR = [
   {
     q: "Combien coûte un site web pour une clinique ou un centre de santé ?",
-    a: "Le prix varie selon la spécialité et les fonctionnalités requises. Un site web professionnel pour une clinique commence à partir de 249 € HT et inclut un design sur mesure intégré à WordPress et le référencement technique de base (hébergement, nom de domaine et messagerie non inclus). Les cliniques avec plusieurs spécialités ou des systèmes de réservation complexes ont un coût plus élevé.",
+    a: "Le prix varie selon la spécialité et les fonctionnalités requises. Dans notre offre actuelle, un site web professionnel pour une clinique commence à partir de 249 € HT et inclut un design sur mesure intégré à WordPress et le référencement technique de base (hébergement, nom de domaine et messagerie non inclus). Les cliniques avec plusieurs spécialités ou des systèmes de réservation complexes ont un coût plus élevé.",
   },
   {
     q: "Puis-je gérer moi-même les contenus du site ?",

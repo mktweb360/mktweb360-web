@@ -102,21 +102,21 @@ const SECTORS_FR = [
 const PLANS_EN = [
   {
     plan: "Basic Plan",
-    price: "From €500/month",
+    price: "Custom quote",
     networks: "2 social networks",
     items: ["12 monthly posts", "Graphic design included", "Optimised copy", "Comment management", "Monthly report"],
     featured: false,
   },
   {
     plan: "Advanced Plan",
-    price: "From €750/month",
+    price: "Custom quote",
     networks: "3 social networks",
     items: ["20 monthly posts", "Reels and stories", "Premium graphic design", "Active community management", "Advanced report with KPIs", "Monthly follow-up meeting"],
     featured: true,
   },
   {
     plan: "Complete Plan",
-    price: "From €1,200/month",
+    price: "Custom quote",
     networks: "All networks",
     items: ["Unlimited posts", "Social Ads included", "Basic video production", "Influencer strategy", "Weekly report", "Dedicated account manager"],
     featured: false,
@@ -126,21 +126,21 @@ const PLANS_EN = [
 const PLANS_FR = [
   {
     plan: "Plan Basique",
-    price: "À partir de 500€/mois",
+    price: "Devis sur mesure",
     networks: "2 réseaux sociaux",
     items: ["12 publications mensuelles", "Design graphique inclus", "Rédaction optimisée", "Gestion des commentaires", "Rapport mensuel"],
     featured: false,
   },
   {
     plan: "Plan Avancé",
-    price: "À partir de 750€/mois",
+    price: "Devis sur mesure",
     networks: "3 réseaux sociaux",
     items: ["20 publications mensuelles", "Reels et stories", "Design graphique premium", "Gestion active de la communauté", "Rapport avancé avec KPIs", "Réunion mensuelle de suivi"],
     featured: true,
   },
   {
     plan: "Plan Complet",
-    price: "À partir de 1 200€/mois",
+    price: "Devis sur mesure",
     networks: "Tous les réseaux",
     items: ["Publications illimitées", "Social Ads inclus", "Production vidéo basique", "Stratégie d'influenceurs", "Rapport hebdomadaire", "Account manager dédié"],
     featured: false,
@@ -376,8 +376,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-gray-600 mb-8">
             {isEn
-              ? "Indicative prices. The final quote depends on the number of networks, content volume and whether advertising is included."
-              : "Prix indicatifs. Le devis final dépend du nombre de réseaux, du volume de contenu et de l'inclusion ou non de la publicité."}
+              ? "Custom quote after a free diagnosis. The final quote depends on the number of networks, content volume and whether advertising is included."
+              : "Devis sur mesure après un diagnostic gratuit. Le devis final dépend du nombre de réseaux, du volume de contenu et de l'inclusion ou non de la publicité."}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {PLANS.map((p) => (

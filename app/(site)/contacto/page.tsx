@@ -25,7 +25,6 @@ const localBusinessSchema = {
   },
   geo: { "@type": "GeoCoordinates", latitude: 39.8878, longitude: -4.0647 },
   openingHours: "Mo-Fr 09:00-18:00",
-  priceRange: "€€",
   description: "Agencia de marketing digital especializada en SEO, Google Ads, diseño web y GEO para PYMEs y empresas en España.",
   areaServed: "España",
   sameAs: [

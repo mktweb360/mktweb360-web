@@ -36,7 +36,7 @@ function content(lang: L): LocalServiceContent {
       h1: "Création de sites web à Tolède",
       h1Accent: "des sites rapides qui attirent des clients",
       intro: "Nous créons des sites web et des boutiques en ligne pour les entreprises de Tolède depuis notre siège d'El Viso de San Juan. Des sites pensés pour que le client comprenne ce que vous faites, vous fasse confiance et vous contacte, et prêts à apparaître sur Google dès le premier jour.",
-      bullets: ["Prix fixe et publié", "SEO technique et mesure inclus", "Agence basée dans la province de Tolède"],
+      bullets: ["Offres à prix publié", "SEO technique et mesure inclus", "Agence basée dans la province de Tolède"],
       porQue: [
         { t: "Un site est un outil de vente", d: "Nous ne le jugeons pas à sa beauté, mais à sa capacité à générer des contacts : messages clairs, appels à l'action visibles et formulaires qui fonctionnent et sont mesurés." },
         { t: "Rapide sur mobile", d: "La plupart de vos clients vous chercheront depuis leur mobile. Nous optimisons les images, les polices et le code pour que le site se charge vite là où cela compte le plus." },
@@ -85,7 +85,7 @@ function content(lang: L): LocalServiceContent {
     h1: "Web design in Toledo",
     h1Accent: "websites that load fast and bring in customers",
     intro: "We design websites and online stores for businesses in Toledo from our base in El Viso de San Juan. Websites designed so that customers understand what you do, trust you and get in touch, and ready to appear on Google from day one.",
-    bullets: ["Fixed, published price", "Technical SEO and tracking included", "Agency based in the province of Toledo"],
+    bullets: ["Offers with a published price", "Technical SEO and tracking included", "Agency based in the province of Toledo"],
     porQue: [
       { t: "A website is a sales tool", d: "We do not judge it by how good it looks, but by whether it generates enquiries: clear messages, visible calls to action and forms that work and are tracked." },
       { t: "Fast on mobile", d: "Most of your customers will look for you on their phone. We optimise images, fonts and code so that the website loads quickly where it matters most." },

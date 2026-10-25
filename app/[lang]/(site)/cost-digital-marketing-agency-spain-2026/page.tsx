@@ -133,8 +133,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {isEn
-                ? "These are the typical ranges for an SME, per service and per month. They serve as a reference point to situate any budget you receive:"
-                : "Voici les fourchettes habituelles pour une PME, par service et par mois. Elles servent de référence pour situer tout budget que vous recevez :"}
+                ? "These are typical market ranges for an SME, per service and per month (market reference, not Mkt Web 360 rates). They serve as a reference point to situate any budget you receive:"
+                : "Voici les fourchettes habituelles du marché pour une PME, par service et par mois (référence de marché, pas les tarifs de Mkt Web 360). Elles servent de référence pour situer tout budget que vous recevez :"}
             </p>
             <ul className="space-y-2 text-gray-600">
               {[

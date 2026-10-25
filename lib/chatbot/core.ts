@@ -103,6 +103,11 @@ export function isPriceQuestion(text: string): boolean {
   return RX_PRICE_CONTEXT.test(normalize(text));
 }
 
+/** Pregunta de precio inequívoca (más estricta que isPriceQuestion: «¿cuánto tarda?» o «combien de temps» no cuentan). */
+const RX_PRECIO_FUERTE = /\b(precios?|cuestan?|cuesta|coste|costo|tarifas?|presupuesto|price|prices|cost|how much|prix|combien (co[uû]te|ça co[uû]te)|tarifs?)\b|cu[aá]nto (cuesta|cobr[\wáéíóú]+|vale|sale|me cuesta)/i;
+const RX_NO_PRECIO = /cu[aá]nto tiempo|cu[aá]nto tarda|how long|how much time|combien de temps/i;
+export const esPreguntaDePrecio = (text: string) => RX_PRECIO_FUERTE.test(text) && !RX_NO_PRECIO.test(text);
+
 // ── Búsqueda en la base de conocimiento ──────────────────────────────────
 
 const STOP = new Set(

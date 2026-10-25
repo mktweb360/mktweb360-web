@@ -30,13 +30,6 @@ const serviceSchema = {
   description: "Servicio de posicionamiento web orgánico SEO para empresas. Auditorías técnicas, estrategia de keywords, optimización on-page y link building.",
   areaServed: "España",
   url: "https://www.mktweb360.com/seo-posicionamiento-web-organico/",
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "EUR",
-    description: "Presupuesto personalizado según proyecto",
-    availability: "https://schema.org/InStock",
-    url: "https://www.mktweb360.com/seo-posicionamiento-web-organico/",
-  },
 };
 
 const FAQS = [
@@ -207,7 +200,7 @@ export default function SeoPage() {
             <p>El SEO nacional se orienta a keywords sin modificador geográfico: "agencia de marketing digital", "software de gestión para pymes", "tienda online de moda sostenible". Compite en un universo más amplio y más competido, lo que requiere mayor autoridad de dominio, más contenido y más tiempo para ver resultados significativos.</p>
             <p>En Mkt Web 360 trabajamos ambas modalidades. Para negocios con presencia física, el <Link href="/seo-local/" className="text-accent-700 underline underline-offset-2">SEO local</Link> es generalmente la inversión con mayor retorno a corto plazo: menor competencia, búsquedas con alta intención de compra, y resultados visibles en 2-4 meses en lugar de 6-12.</p>
             <p>Si ya tienes equipo o desarrollador que ejecute y lo que necesitas es diagnóstico, estrategia y un plan priorizado, la <Link href="/consultor-seo/" className="text-accent-700 underline underline-offset-2">consultoría SEO</Link> es la opción más eficiente.</p>
-            <p>Puedes consultar nuestras tarifas y lo que incluye cada una en <Link href="/precios-seo/" className="text-accent-700 underline underline-offset-2">precios SEO</Link>.</p>
+            <p>Puedes ver qué incluye nuestro servicio en la <Link href="/oferta-seo-geo-gbp/" className="text-accent-700 underline underline-offset-2">oferta de SEO + GEO + Maps</Link>, o pedir un diagnóstico gratuito para un presupuesto a medida.</p>
           </div>
         </div>
       </section>

@@ -166,8 +166,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn
-              ? "As opposed to a self-service SaaS solution, a managed solution through an agency includes setup, training, integration and maintenance within a monthly fee. As a reference, a basic plan sits between €149 and €199/month, a mid-range plan between €199 and €249/month, and an advanced plan between €249 and €299/month."
-              : "Contrairement à une solution SaaS en libre-service, une solution gérée par une agence inclut la mise en place, l'entraînement, l'intégration et la maintenance dans un abonnement mensuel. À titre de référence, un plan basique se situe entre 149 et 199 €/mois, un plan intermédiaire entre 199 et 249 €/mois, et un plan avancé entre 249 et 299 €/mois."}
+              ? "As opposed to a self-service SaaS solution, a managed solution through an agency includes setup, training, integration and maintenance within a monthly fee. The monthly fee depends on the level of the plan (basic, mid-range or advanced) and on the volume of conversations; we prepare a custom quote after a free diagnosis."
+              : "Contrairement à une solution SaaS en libre-service, une solution gérée par une agence inclut la mise en place, l'entraînement, l'intégration et la maintenance dans un abonnement mensuel. L'abonnement mensuel dépend du niveau du plan (basique, intermédiaire ou avancé) et du volume de conversations ; nous préparons un devis sur mesure après un diagnostic gratuit."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn
@@ -184,8 +184,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn
-              ? "Profitability comes from comparing the monthly cost with the time and opportunities the chatbot frees up. An illustrative example: a bot at €199/month that automates repetitive enquiries and captures leads outside office hours can represent a net saving of around €700/month, counting the team time that stops being spent on manual tasks."
-              : "La rentabilité s'apprécie en comparant le coût mensuel avec le temps et les opportunités que le chatbot libère. Un exemple illustratif : un bot à 199 €/mois qui automatise les demandes répétitives et capte des leads en dehors des heures de bureau peut représenter une économie nette d'environ 700 €/mois, en comptant le temps d'équipe qui n'est plus consacré aux tâches manuelles."}
+              ? "Profitability comes from comparing the monthly cost with the time and opportunities the chatbot frees up. An illustrative example: a managed bot that automates repetitive enquiries and captures leads outside office hours can represent a net saving of around €700/month, counting the team time that stops being spent on manual tasks."
+              : "La rentabilité s'apprécie en comparant le coût mensuel avec le temps et les opportunités que le chatbot libère. Un exemple illustratif : un bot géré qui automatise les demandes répétitives et capte des leads en dehors des heures de bureau peut représenter une économie nette d'environ 700 €/mois, en comptant le temps d'équipe qui n'est plus consacré aux tâches manuelles."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn
