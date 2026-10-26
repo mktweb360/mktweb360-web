@@ -45,6 +45,6 @@ tsc limpio; `pnpm validate-i18n` sin incoherencias; `pnpm chatbot:check` 58/58; 
 - diseno-web-para-clinicas conserva «desde 249 € + IVA» como oferta; dentistas se reformuló: revisar coherencia.
 - `google-ads-no-commission-marketing-agency` tiene texto en español en las versiones EN/FR (ajeno a esta tarea).
 - Fuente de verdad de la oferta SEO: la página de la oferta aún lee 349/149 del catálogo de MktOS y el asistente usa `lib/ofertas.ts`. Si MktOS cambia el precio, hay que cambiar también `lib/ofertas.ts`. Decidir si la página pasa a leer solo `lib/ofertas.ts`.
-- `app/api/admin/leads/seo-6x3/enviar-contrato` cita 600 € + IVA: confirmar si ese producto sigue vivo.
+- Contrato SEO 6x3 (600 € + IVA): José confirma el 26/10 que ese contrato ya no existe. Queda código huérfano por retirar en una PR aparte: `app/api/admin/leads/seo-6x3/*`, `app/api/leads/seo-6x3`, `app/area-privada/leads/seo-6x3/*`, el enlace en `app/area-privada/leads/page.tsx` y las referencias de `next.config.ts`.
 - `check:precios` no está en el build ni en un hook, y su lista de páginas de oferta es amplia: afinar.
 - El catálogo de MktOS conserva los precios internamente; `app/area-privada`, `app/api` y contratos no se han tocado.
