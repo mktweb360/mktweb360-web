@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "SWOT analysis in digital marketing: how to use it to improve your strategy" : "Analyse SWOT en marketing digital : comment l'utiliser pour améliorer votre stratégie"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "SWOT analysis is one of the most practical tools in strategic marketing. This guide explains how to apply it specifically to your digital marketing to identify what is working and what needs to change." : "L'analyse SWOT est l'un des outils les plus pratiques en marketing stratégique. Ce guide explique comment l'appliquer spécifiquement à votre marketing digital pour identifier ce qui fonctionne et ce qui doit changer."}
         </p>

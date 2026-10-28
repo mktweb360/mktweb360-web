@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -89,6 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "How AI is changing digital marketing forever"
             : "Comment l'IA est en train de transformer le marketing digital pour toujours"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "AI is no longer a trend in marketing: it is the infrastructure. More than 70% of digital marketing interactions will be influenced by AI in 2026. We analyse what changes, what does not change and what you need to do."

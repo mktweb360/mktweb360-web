@@ -6,6 +6,8 @@ import Link from "next/link";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Página web para pintores: cómo captar clientes",
@@ -25,9 +27,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo Crear una Página Web para Pintores y Conseguir Clientes en Google",
   description: "Guía para pintores que quieren presencia online y clientes desde Google.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2024-02-20",
+  dateModified: "2024-02-20",
   url: "https://www.mktweb360.com/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/",
   mainEntityOfPage: "https://www.mktweb360.com/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/",
 };
@@ -42,6 +45,7 @@ export default function PaginaWebPintoresPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Diseño Web</span>
             <time className="text-sm text-gray-400" dateTime="2024-02-20">20 de febrero de 2024</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cómo Crear una Página Web para Pintores y Conseguir Clientes en Google

@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to register as a self-employed freelancer in Spain: complete guide" : "Comment s'inscrire comme travailleur indépendant en Espagne : guide complet"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Registering as self-employed in Spain (autónomo) involves several steps across different government bodies. This guide explains everything you need to do, the costs involved and the obligations you will have." : "S'inscrire comme travailleur indépendant en Espagne (autónomo) implique plusieurs étapes auprès de différents organismes gouvernementaux. Ce guide explique tout ce que vous devez faire, les coûts impliqués et les obligations que vous aurez."}
         </p>

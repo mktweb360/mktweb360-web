@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: { absolute: "Ayudas para digitalizar tu pyme en 2026 tras el Kit Digital" },
@@ -26,7 +28,7 @@ const articleSchema = {
   headline: "Ayudas para digitalizar una pyme en 2026: qué queda tras el Kit Digital",
   description:
     "El Kit Digital cerró solicitudes en octubre de 2025. Qué ayudas quedan en 2026 para digitalizar tu pyme, qué hace la Orden TDF/39/2026 y cómo prepararte.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
@@ -119,6 +121,7 @@ export default function AyudasDigitalizarPymePage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Pymes</span>
             <time className="text-sm text-gray-400" dateTime="2026-09-25">25 de septiembre de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Ayudas para digitalizar una pyme en 2026: qué queda tras el Kit Digital

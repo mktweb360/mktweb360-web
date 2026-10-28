@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Planificador de palabras clave de Google Ads",
@@ -26,7 +28,7 @@ const articleSchema = {
   headline: "Planificador de Palabras Clave de Google Ads: Guía 2026",
   description:
     "Aprende a usar el Planificador de Palabras Clave de Google paso a paso. Encuentra keywords rentables, analiza volúmenes y construye tu estrategia desde cero.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
@@ -77,6 +79,7 @@ export default function PlanificadorPalabrasClavePage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">SEO · Google Ads</span>
             <time className="text-sm text-gray-400" dateTime="2026-06-25">25 de junio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cómo Usar el Planificador de Palabras Clave de Google Ads

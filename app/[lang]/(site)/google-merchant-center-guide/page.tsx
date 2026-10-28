@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Google Merchant Center for ecommerce: complete setup guide" : "Google Merchant Center pour e-commerce : guide de configuration complet"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Google Merchant Center is the gateway to appearing in Google Shopping results. This guide explains how to set it up correctly, fix errors and maximise your product visibility." : "Google Merchant Center est la porte d'entrée pour apparaître dans les résultats Google Shopping. Ce guide explique comment le configurer correctement, corriger les erreurs et maximiser la visibilité de vos produits."}
         </p>

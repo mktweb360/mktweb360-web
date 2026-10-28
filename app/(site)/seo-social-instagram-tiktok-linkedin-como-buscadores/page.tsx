@@ -5,6 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 const SLUG = "seo-social-instagram-tiktok-linkedin-como-buscadores";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
@@ -29,9 +31,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "SEO social: Instagram, TikTok y LinkedIn como motores de búsqueda en 2026",
   description: "Estrategias de SEO para posicionarse en los buscadores internos de Instagram, TikTok y LinkedIn.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-08-04",
+  dateModified: "2026-08-04",
   url: URL_CANONICAL,
   mainEntityOfPage: URL_CANONICAL,
 };
@@ -88,6 +91,7 @@ export default function SeoSocialPage() {
             <time className="text-sm text-gray-400" dateTime="2026-08-04">
               4 de agosto de 2026
             </time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             SEO social: Instagram, TikTok y LinkedIn como motores de búsqueda en 2026

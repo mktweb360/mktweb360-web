@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "ChatGPT para marketing digital: guía práctica",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo Usar ChatGPT para Marketing Digital Sin Perder la Autenticidad | Mkt Web 360",
   description: "Guía práctica para usar ChatGPT en marketing digital. Qué tareas delegar, cómo mantener la voz de marca, prompts efectivos y qué no dejar en manos de la IA.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "ChatGPT para marketing digital" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">IA · Estrategia</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo usar ChatGPT para marketing digital sin perder la autenticidad de tu marca</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">ChatGPT puede multiplicar tu productividad en marketing, pero usado sin criterio produce contenido genérico que daña más que ayuda. Esta guía explica qué delegar, cómo mantener tu voz y qué tareas deben seguir siendo humanas. Si te interesa cómo los motores de IA como ChatGPT afectan a tu visibilidad online, revisa también el <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">posicionamiento en IA (GEO)</Link>.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">El problema del contenido de IA sin supervisión</h2>

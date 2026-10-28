@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Migrar de Shopify a WooCommerce sin perder SEO",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo Migrar de Shopify a WooCommerce Sin Perder tu Tienda ni tu SEO | Mkt Web 360",
   description: "Guía completa para migrar de Shopify a WooCommerce. Qué datos migrar, cómo preservar el SEO, redireccionamientos y comparativa de costes a largo plazo.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Migrar Shopify a WooCommerce" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo migrar de Shopify a WooCommerce sin perder tu tienda ni tu posicionamiento</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">Muchos propietarios de tiendas Shopify llegan a un punto en que los costes mensuales y las comisiones dejan de tener sentido. Migrar a WooCommerce es la solución, pero hacerlo mal puede destruir años de SEO. Antes de migrar, puede ser útil revisar una <Link href="/woocommerce-vs-shopify-cual-elegir-tienda-online/" className="text-accent-500 hover:underline">comparativa completa entre WooCommerce y Shopify</Link> para confirmar que es el movimiento correcto. Esta guía explica cómo hacerlo bien.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Por qué muchas tiendas Shopify migran a WooCommerce</h2>

@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "SEO for urgent services: how to appear when someone needs you right now" : "SEO pour services urgents : comment apparaître quand quelqu'un a besoin de vous maintenant"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "When someone needs an emergency plumber, locksmith or electrician, they search Google and call the first result. This guide explains how to be that first result." : "Quand quelqu'un a besoin d'un plombier, serrurier ou électricien d'urgence, il cherche sur Google et appelle le premier résultat. Ce guide explique comment être ce premier résultat."}
         </p>

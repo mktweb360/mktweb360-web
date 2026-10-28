@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Precio de una página web profesional en 2026",
@@ -26,9 +28,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cuánto cuesta una página web profesional y qué debe incluir para generar clientes",
   description: "Descubre qué influye de verdad en el precio de una web profesional y qué debe incluir para ayudarte a captar clientes.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-03-10",
+  dateModified: "2025-03-10",
   url: "https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/",
   mainEntityOfPage: "https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/",
 };
@@ -79,6 +82,7 @@ export default function CuantoCuestaWebPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Diseño Web</span>
             <time className="text-sm text-gray-400" dateTime="2025-03-10">10 de marzo de 2025</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cuánto cuesta una página web profesional y qué debe incluir para generar clientes

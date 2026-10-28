@@ -3,6 +3,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -91,6 +92,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "AI Agents for Marketing in 2026: What They Are, What They Can Do and How to Start"
             : "Agents IA pour le marketing en 2026 : ce qu'ils sont, ce qu'ils peuvent faire et comment commencer"}
         </h1>
+        <AuthorByline lang={lang} block />
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn

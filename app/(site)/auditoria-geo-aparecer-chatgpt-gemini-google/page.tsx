@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: { absolute: "Auditoría GEO: cómo saber si apareces en ChatGPT y Gemini" },
@@ -26,7 +28,7 @@ const articleSchema = {
   headline: "Cómo saber si tu empresa aparece en ChatGPT, Perplexity y la IA de Google",
   description:
     "Auditoría GEO paso a paso: cómo comprobar si tu empresa aparece en ChatGPT, Perplexity, Gemini y la IA de Google, qué medir y qué hacer si no te mencionan.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
@@ -119,6 +121,7 @@ export default function AuditoriaGeoPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">GEO</span>
             <time className="text-sm text-gray-400" dateTime="2026-09-25">25 de septiembre de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cómo saber si tu empresa aparece en ChatGPT, Perplexity y la IA de Google

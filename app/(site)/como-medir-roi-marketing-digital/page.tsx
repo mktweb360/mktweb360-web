@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Cómo medir el ROI del marketing digital",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo Medir el ROI de tus Campañas de Marketing Digital | Mkt Web 360",
   description: "Aprende a calcular y medir el ROI de tus inversiones en marketing digital. Google Analytics 4, atribución, métricas clave y errores que debes evitar.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Medir ROI marketing digital" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Analítica</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo medir el ROI de tus campañas de marketing digital paso a paso</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">Invertir en marketing digital sin medir el retorno es como conducir con los ojos cerrados. Esta guía explica cómo calcular el ROI, qué herramientas usar y qué métricas importan de verdad.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Qué es el ROI en marketing digital y cómo se calcula</h2>

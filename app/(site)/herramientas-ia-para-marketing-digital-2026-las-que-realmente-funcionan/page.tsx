@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Herramientas de IA para marketing en 2026",
@@ -24,9 +26,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Herramientas de IA para marketing digital en 2026: las que realmente funcionan",
   description: "No todas las herramientas de IA para marketing merecen el tiempo que cuesta aprenderlas. Análisis honesto de las que aportan valor real a pymes y agencias en 2026.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/",
   mainEntityOfPage: "https://www.mktweb360.com/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/",
@@ -74,6 +77,7 @@ export default function HerramientasIaMarketingPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">IA · Herramientas</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Herramientas de IA para marketing digital en 2026: análisis honesto de las que valen la pena

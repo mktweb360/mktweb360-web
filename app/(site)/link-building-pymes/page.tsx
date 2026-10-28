@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Link building para pymes sin spam",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Link Building para PYMEs: Cómo Conseguir Enlaces Sin Spam | Mkt Web 360",
   description: "Estrategias de link building para pequeñas empresas sin presupuesto para comprar enlaces. Cómo conseguir backlinks de calidad de forma natural y sostenible.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Link building para PYMEs" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Link building para PYMEs: cómo conseguir backlinks de calidad sin presupuesto para spam</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">Los backlinks siguen siendo uno de los factores SEO más importantes, pero la mayoría de estrategias de link building están diseñadas para grandes empresas o implican prácticas que pueden penalizar tu web. Esta guía se centra en lo que funciona para PYMEs con recursos limitados.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Por qué los backlinks siguen siendo importantes en 2025</h2>

@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -87,6 +88,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "Social media for businesses in 2026: what real data says about what actually works"
             : "Réseaux sociaux pour entreprises en 2026 : ce que disent les données réelles sur ce qui fonctionne vraiment"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "The Social Media 2026 Study by Cyberclick and Metricool analyses millions of posts to answer a question almost nobody resolves with data: what actually works? TikTok leads on impressions, Instagram wins on stability and LinkedIn is the fastest-growing channel in B2B. We help you translate that data into a social media strategy built on evidence."

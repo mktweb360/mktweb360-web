@@ -4,6 +4,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -44,7 +46,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     description: isEn
       ? "What sets GEO apart from traditional SEO, why both matter, and how to integrate both strategies for maximum visibility."
       : "Ce qui différencie le GEO du SEO traditionnel, pourquoi les deux comptent et comment intégrer les deux stratégies.",
-    author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+    author: autorSchema(lang),
     publisher: {
       "@type": "Organization",
       name: "Mkt Web 360 SLU",
@@ -107,6 +109,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "GEO vs SEO: key differences and how to combine both strategies"
             : "GEO vs SEO : différences clés et comment combiner les deux stratégies"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? (
             <>

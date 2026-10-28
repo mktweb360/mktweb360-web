@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Cuota de autónomos 2026: tramos y cambios",
@@ -26,9 +28,10 @@ const articleSchema = {
   headline: "Cuota de autónomos 2026: tabla de tramos, MEI y lo que ha cambiado",
   description:
     "Las cuotas de autónomos 2026 se mantienen iguales a 2025 por prórroga del Gobierno, salvo el MEI que sube al 0,9%. Tabla completa de tramos, tarifa plana de 80€ y cómo cambiar tu base hasta 6 veces al año.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-homepage.jpg",
   url: "https://www.mktweb360.com/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/",
   mainEntityOfPage: "https://www.mktweb360.com/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/",
@@ -80,6 +83,7 @@ export default function CuotaAutonomos2026Page() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Autónomos · Fiscal</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cuota de autónomos en 2026: todo lo que tienes que saber sobre tramos, MEI y tarifa plana

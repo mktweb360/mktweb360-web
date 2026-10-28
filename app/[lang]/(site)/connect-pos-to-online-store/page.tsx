@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -40,6 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "How to connect your physical POS to your online store"
             : "Comment connecter votre TPV physique à votre boutique en ligne"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "If you have a physical shop and an online store, managing stock in two separate places is a problem. This guide shows you how to synchronise them and avoid overselling, stockouts and double data entry."

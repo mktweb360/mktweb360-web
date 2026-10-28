@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -40,6 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "What is GEO and why it matters more than SEO in 2025"
             : "Qu'est-ce que le GEO et pourquoi il est plus important que le SEO en 2025"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "GEO (Generative Engine Optimization) is the discipline of optimising your digital presence to appear in the responses of AI models like ChatGPT, Perplexity, Gemini and Claude. This guide explains what it is, how it works and how to get started."

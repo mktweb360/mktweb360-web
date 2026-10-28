@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "GEO vs SEO: diferencias y cómo combinarlos",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "GEO vs SEO: Diferencias Clave y Cómo Compaginarlos en 2025 | Mkt Web 360",
   description: "Qué diferencia el GEO (Generative Engine Optimization) del SEO tradicional, por qué importan los dos y cómo integrar ambas estrategias para máxima visibilidad.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "GEO vs SEO diferencias" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">IA · Estrategia</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">GEO vs SEO: diferencias clave y cómo compaginar ambas estrategias en 2025</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">El SEO <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">optimiza tu presencia en Google</Link>. El GEO (Generative Engine Optimization) optimiza tu presencia en ChatGPT, Perplexity y Gemini. No son excluyentes — se complementan. Pero requieren enfoques diferentes que vale la pena entender.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Qué es el SEO tradicional y qué sigue funcionando</h2>

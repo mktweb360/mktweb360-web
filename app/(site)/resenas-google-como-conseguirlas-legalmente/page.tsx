@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: { absolute: "Reseñas en Google: cómo conseguirlas legalmente en 2026" },
@@ -26,7 +28,7 @@ const articleSchema = {
   headline: "Reseñas en Google para empresas: cómo conseguir más sin infringir la ley",
   description:
     "Cómo conseguir más reseñas en Google sin infringir las políticas ni la ley española: qué está prohibido, cómo pedirlas bien y cómo responder a las negativas.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
@@ -109,6 +111,7 @@ export default function ResenasGoogleLegalmentePage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">SEO Local</span>
             <time className="text-sm text-gray-400" dateTime="2026-09-25">25 de septiembre de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Reseñas en Google para empresas: cómo conseguir más sin infringir la ley

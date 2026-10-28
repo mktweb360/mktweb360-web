@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Actualizaciones del algoritmo de Google 2026",
@@ -24,9 +26,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Actualizaciones del algoritmo de Google en 2026: qué ha cambiado y cómo afecta a tu web",
   description: "Google ha lanzado varias actualizaciones de algoritmo en 2026 con foco en experiencia de usuario, contenido de IA y señales E-E-A-T. Analizamos qué ha cambiado y qué tienes que hacer.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-seo.jpg",
   url: "https://www.mktweb360.com/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/",
   mainEntityOfPage: "https://www.mktweb360.com/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/",
@@ -74,6 +77,7 @@ export default function AlgoritmoGoogle2026Page() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">SEO · Algoritmo Google</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Actualizaciones del algoritmo de Google en 2026: qué ha cambiado y qué tienes que hacer

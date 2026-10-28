@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -89,6 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "How to optimise your content so that ChatGPT and Gemini cite you in their responses"
             : "Comment optimiser votre contenu pour que ChatGPT et Gemini vous citent dans leurs réponses"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "Appearing in AI responses is not a matter of luck, but of method. This technical GEO (Generative Engine Optimization) guide walks you step by step through structuring your content, applying advanced schema markup and building the semantic authority that makes ChatGPT, Gemini and Perplexity cite you."

@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -40,6 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "How much does a professional website cost in 2025?"
             : "Combien coûte un site web professionnel en 2025 ?"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "The price of a professional website can range from 500€ to 50,000€. This guide explains what really influences the price and how to get value for money."

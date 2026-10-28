@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -54,6 +55,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "How to create a landing page that converts visitors into customers"
             : "Comment créer une landing page qui convertit les visiteurs en clients"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "A well-designed landing page can multiply your conversions by 3 without investing more in advertising. This guide explains the structure, the copy and the elements that make the difference."

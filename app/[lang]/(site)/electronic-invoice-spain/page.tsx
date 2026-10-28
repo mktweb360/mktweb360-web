@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Electronic invoice: obligations for freelancers and SMEs in Spain" : "Facture électronique : obligations pour indépendants et PME en Espagne"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Electronic invoicing is becoming mandatory in Spain. This guide explains who it affects, from when, the approved formats and how to prepare your business." : "La facturation électronique devient obligatoire en Espagne. Ce guide explique qui cela concerne, à partir de quand, les formats approuvés et comment préparer votre entreprise."}
         </p>

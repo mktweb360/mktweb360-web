@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Instagram for businesses: what to put in your bio to attract customers" : "Instagram pour les entreprises : quoi mettre dans votre bio pour attirer des clients"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Your Instagram bio is the first thing a potential customer sees. You have 150 characters to convince them to follow you or contact you. This guide explains how to make every character count." : "Votre bio Instagram est la première chose qu'un client potentiel voit. Vous avez 150 caractères pour le convaincre de vous suivre ou de vous contacter. Ce guide explique comment faire compter chaque caractère."}
         </p>

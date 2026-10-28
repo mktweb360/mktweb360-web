@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Qué puede automatizar una pyme en marketing",
@@ -26,9 +28,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Qué puede automatizar una pyme en marketing y ventas para ahorrar tiempo y captar mejor",
   description: "Descubre qué procesos puede automatizar una pyme en marketing y ventas para ahorrar tiempo, mejorar seguimiento y captar mejor.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-04-28",
+  dateModified: "2025-04-28",
   url: "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/",
   mainEntityOfPage: "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/",
 };
@@ -79,6 +82,7 @@ export default function AutomatizarPymePage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Automatización</span>
             <time className="text-sm text-gray-400" dateTime="2025-04-28">28 de abril de 2025</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Qué puede automatizar una pyme en marketing y ventas para ahorrar tiempo y captar mejor

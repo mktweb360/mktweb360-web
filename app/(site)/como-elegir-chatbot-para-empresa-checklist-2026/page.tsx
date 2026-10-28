@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Cómo elegir chatbot para tu empresa",
@@ -26,9 +28,10 @@ const articleSchema = {
   headline: "Cómo elegir el chatbot correcto para tu empresa: checklist completa para 2026",
   description:
     "Antes de elegir un chatbot para tu empresa, hay 10 preguntas que debes responder. Esta checklist te ayuda a evitar los errores más frecuentes y a elegir la solución que realmente se adapta a lo que necesitas.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/como-elegir-chatbot-para-empresa-checklist-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/como-elegir-chatbot-para-empresa-checklist-2026/",
@@ -76,6 +79,7 @@ export default function ComoElegirChatbotChecklistPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Marketing Digital · Julio 2026</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cómo elegir el chatbot correcto para tu empresa: checklist completa para 2026

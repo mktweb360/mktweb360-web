@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "GEO para pymes: cómo aparecer en ChatGPT",
@@ -24,9 +26,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "GEO para pymes: cómo aparecer en ChatGPT sin ser una gran marca",
   description: "Las pymes tienen una ventaja real en GEO: la especificidad de nicho. Guía práctica para que cualquier negocio pequeño aparezca en las respuestas de ChatGPT, Gemini y Perplexity.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-geo.jpg",
   url: "https://www.mktweb360.com/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/",
   mainEntityOfPage: "https://www.mktweb360.com/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/",
@@ -74,6 +77,7 @@ export default function GeoParaPymesPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">GEO · Estrategia para pymes</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             GEO para pymes: cómo aparecer en las respuestas de la IA sin ser una gran marca

@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to create a website for painters that generates customers on Google" : "Comment créer un site web pour peintres qui génère des clients sur Google"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "A professional website is the most powerful tool a painter can have to attract customers. This guide explains what it needs to include, how to appear on Google and how to convert visits into calls." : "Un site web professionnel est l'outil le plus puissant qu'un peintre peut avoir pour attirer des clients. Ce guide explique ce qu'il doit inclure, comment apparaître sur Google et comment convertir les visites en appels."}
         </p>

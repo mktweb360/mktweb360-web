@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "WhatsApp Business para empresas: guía 2026",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "WhatsApp Business para Empresas — Guía Completa 2025 | Mkt Web 360",
   description: "Cómo usar WhatsApp Business para captar y fidelizar clientes. Configuración, automatizaciones, catálogo y estrategia para empresas. Guía actualizada 2025.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "WhatsApp Business" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Marketing Digital</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">WhatsApp Business para empresas: guía completa de configuración y estrategia</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">WhatsApp Business es el canal de comunicación con mayor tasa de apertura — un 98%. Esta guía explica cómo configurarlo correctamente, qué funciones aprovechar y cómo usarlo para captar y fidelizar clientes.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">WhatsApp Business vs WhatsApp normal: diferencias clave</h2>

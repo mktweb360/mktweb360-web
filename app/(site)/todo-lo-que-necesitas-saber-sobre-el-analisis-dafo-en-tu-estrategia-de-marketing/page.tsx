@@ -6,6 +6,8 @@ import Link from "next/link";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Análisis DAFO en marketing: guía completa",
@@ -25,9 +27,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Todo lo que Necesitas Saber sobre el Análisis DAFO en tu Estrategia de Marketing",
   description: "Guía completa sobre el análisis DAFO aplicado al marketing digital.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2024-01-10",
+  dateModified: "2024-01-10",
   url: "https://www.mktweb360.com/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/",
   mainEntityOfPage: "https://www.mktweb360.com/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/",
 };
@@ -42,6 +45,7 @@ export default function AnalisisDAFOPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Estrategia</span>
             <time className="text-sm text-gray-400" dateTime="2024-01-10">10 de enero de 2024</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Todo lo que Necesitas Saber sobre el Análisis DAFO en tu Estrategia de Marketing

@@ -7,6 +7,8 @@ import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
 import { DEMO_BY_ID } from "@/lib/demos";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Web para autónomos y freelance: 5 claves",
@@ -28,9 +30,10 @@ const articleSchema = {
   headline: "5 factores clave en la web de un autónomo o freelance",
   description:
     "Los 5 factores que determinan si la web de un autónomo o freelance genera confianza y encargos: aviso legal LSSI-CE, preparación ante la factura electrónica obligatoria (Ley Crea y Crece), portfolio y prueba social, solicitud de presupuesto online y posicionamiento frente a plataformas de intermediación.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-06",
+  dateModified: "2026-09-06",
   url: "https://www.mktweb360.com/5-factores-web-autonomos-freelance/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-autonomos-freelance/",
 };
@@ -77,6 +80,7 @@ export default function FactoresWebAutonomosFreelancePage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Diseño Web · Autónomos y Freelance</span>
             <time className="text-sm text-gray-400" dateTime="2026-09-06">6 de septiembre de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             5 factores clave a tener en cuenta en la web de un autónomo o freelance

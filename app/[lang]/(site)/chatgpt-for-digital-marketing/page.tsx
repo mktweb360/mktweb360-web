@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -40,6 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "How to use ChatGPT for digital marketing without losing quality"
             : "Comment utiliser ChatGPT pour le marketing digital sans perdre en qualité"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "ChatGPT can speed up many digital marketing tasks. But using it badly produces generic content that does not rank and does not convert. This guide shows you the right way."

@@ -5,6 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Google Ads para Shopware: campañas que venden",
@@ -25,9 +27,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Google Ads para Shopware: campañas que venden de verdad",
   description: "Cómo montar Google Ads para tu tienda Shopware: tracking de conversiones, conexión con Merchant Center, Performance Max, Shopping y optimización por ROAS.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-26",
+  dateModified: "2026-06-26",
   url: "https://www.mktweb360.com/google-ads-shopware-campanas-que-venden/",
   mainEntityOfPage: "https://www.mktweb360.com/google-ads-shopware-campanas-que-venden/",
 };
@@ -63,6 +66,7 @@ export default function GoogleAdsShopwarePage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Shopware · Ads</span>
             <time className="text-sm text-gray-400" dateTime="2026-06-26">26 de junio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Google Ads para Shopware: campañas que venden de verdad

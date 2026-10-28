@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Cómo la IA está cambiando el marketing digital",
@@ -24,9 +26,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo la IA está cambiando el marketing digital para siempre (y qué significa para tu negocio)",
   description: "La IA ya no es una tendencia en marketing: es la infraestructura. Más del 70% de las interacciones de marketing digital estarán influenciadas por IA en 2026. Qué cambia, qué no cambia y qué tienes que hacer.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/",
   mainEntityOfPage: "https://www.mktweb360.com/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/",
@@ -74,6 +77,7 @@ export default function ComoLaIaCambiaMarketingPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">IA · Estrategia</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cómo la IA está cambiando el marketing digital para siempre

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: { absolute: "Auditoría de Google Ads para pymes: qué revisar paso a paso" },
@@ -26,7 +28,7 @@ const articleSchema = {
   headline: "Auditoría de Google Ads para pymes: cómo saber si estás tirando dinero",
   description:
     "Cómo saber si estás tirando dinero en Google Ads: conversiones, términos de búsqueda, concordancias, ubicación, presupuesto y landing, paso a paso para pymes.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
@@ -104,6 +106,7 @@ export default function AuditoriaGoogleAdsPymesPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">SEM</span>
             <time className="text-sm text-gray-400" dateTime="2026-09-25">25 de septiembre de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Auditoría de Google Ads para pymes: cómo saber si estás tirando dinero

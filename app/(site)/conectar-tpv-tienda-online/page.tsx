@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Conectar el TPV con tu tienda online",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo Conectar el TPV de tu Tienda Física con tu Tienda Online | Mkt Web 360",
   description: "Guía para integrar tu TPV físico con WooCommerce. Stock unificado, ventas sincronizadas y gestión centralizada para negocios con presencia online y física.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Conectar TPV tienda online" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo conectar el TPV de tu tienda física con tu tienda online: guía completa</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">Gestionar el stock por separado en la tienda física y en la web es una fuente constante de errores y trabajo duplicado. La integración TPV-ecommerce elimina ese problema y da una visión unificada del negocio.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">El problema del stock desincronizado entre canal físico y online</h2>

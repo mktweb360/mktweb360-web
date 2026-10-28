@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Email marketing para pymes: primeros pasos",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Email Marketing para PYMEs — Primeros Pasos y Estrategia | Mkt Web 360",
   description: "Guía de email marketing para PYMEs. Cómo empezar, qué herramientas usar, cómo construir tu lista y diseñar campañas que convierten. Resultados reales.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Email marketing para PYMEs" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Marketing Digital</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Email marketing para PYMEs: guía de primeros pasos para empezar a vender por email</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">El email marketing sigue siendo el canal con mayor ROI en marketing digital. Esta guía explica cómo empezar desde cero, qué herramientas usar y cómo diseñar campañas que generen resultados reales.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Por qué el email marketing sigue funcionando en 2025</h2>

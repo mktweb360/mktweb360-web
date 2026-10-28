@@ -5,6 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 const SLUG = "como-escribir-contenido-que-no-suene-a-ia";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
@@ -29,9 +31,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo escribir contenido que no suene a IA: técnicas para humanizar tu copy",
   description: "Técnicas concretas para crear textos que suenen humanos y auténticos aunque uses herramientas de IA.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-08-04",
+  dateModified: "2026-08-04",
   url: URL_CANONICAL,
   mainEntityOfPage: URL_CANONICAL,
 };
@@ -88,6 +91,7 @@ export default function ContenidoHumanoPage() {
             <time className="text-sm text-gray-400" dateTime="2026-08-04">
               4 de agosto de 2026
             </time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cómo escribir contenido que no suene a IA: técnicas para humanizar tu copy

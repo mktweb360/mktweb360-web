@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "IA en marketing: dónde aporta valor real",
@@ -26,9 +28,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "IA aplicada a marketing: dónde aporta valor real y dónde sigue siendo humo",
   description: "Descubre dónde la IA aplicada a marketing aporta valor real, qué usos conviene priorizar y dónde sigue habiendo demasiado ruido.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-03-01",
+  dateModified: "2025-03-01",
   url: "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/",
   mainEntityOfPage: "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/",
 };
@@ -79,6 +82,7 @@ export default function IaMarketingPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">IA · Estrategia</span>
             <time className="text-sm text-gray-400" dateTime="2025-03-01">1 de marzo de 2025</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             IA aplicada a marketing: dónde aporta valor real y dónde sigue siendo humo

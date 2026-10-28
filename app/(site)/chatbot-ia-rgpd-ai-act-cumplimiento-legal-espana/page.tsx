@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Chatbot con IA: RGPD y AI Act en España",
@@ -26,9 +28,10 @@ const articleSchema = {
   headline: "Chatbot con IA y cumplimiento legal en España: RGPD, AI Act y lo que cambia en agosto de 2026",
   description:
     "En agosto de 2026 entran en vigor las principales obligaciones del AI Act para chatbots. Qué tienes que hacer para cumplir con el RGPD y el AI Act en España, y por qué el cumplimiento es una ventaja competitiva.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana/",
@@ -76,6 +79,7 @@ export default function ChatbotRgpdAiActPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">IA y Automatización · Julio 2026</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Chatbot con IA y cumplimiento legal en España: RGPD, AI Act y lo que cambia en agosto de 2026

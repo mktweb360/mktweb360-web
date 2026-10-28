@@ -68,6 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/ia-aplicada-a-marketing-valor-real-o-humo/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/como-puede-un-autonomo-conseguir-clientes-por-internet/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/nosotros/", priority: 0.8, changeFrequency: "monthly" as const },
+    { url: "/autor/jose-marcos/", priority: 0.6, changeFrequency: "monthly" as const },
     { url: "/auditoria-digital/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/comunicacion-audiovisual/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/casos/", priority: 0.8, changeFrequency: "monthly" as const },

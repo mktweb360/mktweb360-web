@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Atención al cliente 24/7 para pymes",
@@ -26,9 +28,10 @@ const articleSchema = {
   headline: "Atención al cliente 24/7 para pymes: cómo conseguirlo sin contratar más personal",
   description:
     "Las grandes empresas llevan años ofreciendo atención al cliente 24/7. En 2026, las pymes españolas pueden conseguir lo mismo con chatbots de IA, sin contratar más personal. Aquí está cómo funciona y qué cuesta.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/",
   mainEntityOfPage: "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/",
@@ -76,6 +79,7 @@ export default function AtencionCliente247Page() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">IA y Automatización · Julio 2026</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Atención al cliente 24/7 para pymes: cómo conseguirlo sin contratar más personal

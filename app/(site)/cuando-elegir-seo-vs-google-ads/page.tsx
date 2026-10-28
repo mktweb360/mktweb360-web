@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "SEO o Google Ads: cuándo elegir cada uno",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cuándo Elegir SEO y Cuándo Google Ads: Guía para Decidir Bien | Mkt Web 360",
   description: "Cómo decidir entre SEO y Google Ads según tu negocio, presupuesto, urgencia y horizonte temporal. Con ejemplos reales y una matriz de decisión práctica.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "SEO vs Google Ads: cuándo elegir cada uno" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Estrategia</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cuándo elegir SEO y cuándo Google Ads: guía para tomar la decisión correcta según tu negocio</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">No existe una respuesta universal a "¿SEO o Google Ads?". La respuesta correcta depende de tu negocio, tu urgencia, tu presupuesto y tus objetivos. Esta guía te da un marco claro para decidir sin que nadie te venda lo que le interesa vender.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Las diferencias fundamentales entre SEO y Google Ads</h2>

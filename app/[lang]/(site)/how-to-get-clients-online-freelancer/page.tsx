@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How a freelancer can get clients online without depending on platforms" : "Comment un indépendant peut obtenir des clients en ligne sans dépendre des plateformes"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Getting clients is the biggest challenge for any freelancer. This guide explains the most effective strategies to attract quality clients online without depending on platforms that charge commissions." : "Obtenir des clients est le plus grand défi pour tout indépendant. Ce guide explique les stratégies les plus efficaces pour attirer des clients de qualité en ligne sans dépendre de plateformes qui prennent des commissions."}
         </p>

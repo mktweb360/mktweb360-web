@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Cómo lograr que la IA cite tu contenido",
@@ -24,9 +26,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo optimizar tu contenido para que la IA te cite: guía GEO 2026",
   description: "Guía técnica y práctica de GEO para pymes. Aprende a estructurar tu contenido, implementar schema markup avanzado, configurar llms.txt y construir autoridad semántica para aparecer en ChatGPT, Gemini y Perplexity.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-geo.jpg",
   url: "https://www.mktweb360.com/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/",
@@ -74,6 +77,7 @@ export default function OptimizarContenidoGEOPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">GEO · Optimización para IA</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cómo optimizar tu contenido para que ChatGPT y Gemini te citen en sus respuestas

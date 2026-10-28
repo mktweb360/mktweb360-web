@@ -1,4 +1,5 @@
 import type { Lang } from "@/lib/i18n";
+import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -175,6 +176,12 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 {isEn
                   ? "Since then we have worked with companies from very different sectors — from care services to metal industry — always maintaining the same level of involvement, rigour and closeness that differentiates us."
                   : "Depuis lors, nous avons travaillé avec des entreprises de secteurs très différents — des services de soin à l'industrie métallurgique — en maintenant toujours le même niveau d'implication, de rigueur et de proximité qui nous différencie."}
+              </p>
+              <p className="text-gray-600 leading-relaxed mt-4">
+                {isEn ? "The blog articles are written by José Marcos, who is responsible for Mkt Web 360." : "Les articles du blog sont signés par José Marcos, responsable de Mkt Web 360."}{" "}
+                <Link href={isEn ? "/en/author-jose-marcos/" : "/fr/auteur-jose-marcos/"} className="text-accent-500 hover:underline">
+                  {isEn ? "See his author page" : "Voir sa page d’auteur"}
+                </Link>.
               </p>
             </div>
             <div className="bg-primary-600 rounded-2xl p-8 text-white">

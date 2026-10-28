@@ -3,6 +3,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -89,6 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "Google Algorithm Updates 2026: What Has Changed and What You Need to Do"
             : "Mises à jour de l'algorithme Google en 2026 : ce qui a changé et ce que vous devez faire"}
         </h1>
+        <AuthorByline lang={lang} block />
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn

@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "SEO en la era de la IA: cómo posicionarse",
@@ -24,9 +26,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "SEO en la era de la IA: cómo posicionarse cuando Google usa Gemini para responder",
   description: "Google ya no es solo un buscador. Es un motor de respuestas generativas con Gemini. Cómo adaptar tu estrategia SEO para que tu web siga captando tráfico cuando la IA responde antes que tú.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-seo.jpg",
   url: "https://www.mktweb360.com/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/",
   mainEntityOfPage: "https://www.mktweb360.com/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/",
@@ -74,6 +77,7 @@ export default function SeoEraIaPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">SEO · Estrategia</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             SEO en la era de la IA: cómo posicionarse cuando Google usa Gemini para dar las respuestas

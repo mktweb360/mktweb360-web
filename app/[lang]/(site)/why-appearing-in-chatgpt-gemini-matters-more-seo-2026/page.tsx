@@ -3,6 +3,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -41,9 +43,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     headline: isEn
       ? "Why ChatGPT Visibility Matters More Than SEO"
       : "Pourquoi ChatGPT compte plus que le SEO",
-    author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+    author: autorSchema(lang),
     publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     datePublished: "2026-07-07",
+    dateModified: "2026-07-07",
     image: "https://www.mktweb360.com/og-que-es-geo-generative-engine-optimization.jpg",
     url: `https://www.mktweb360.com/${lang}/why-appearing-in-chatgpt-gemini-matters-more-seo-2026/`,
     mainEntityOfPage: `https://www.mktweb360.com/${lang}/why-appearing-in-chatgpt-gemini-matters-more-seo-2026/`,
@@ -127,6 +130,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <time className="text-sm text-gray-400" dateTime="2026-07-07">
               {isEn ? "7 July 2026" : "7 juillet 2026"}
             </time>
+            <AuthorByline lang={lang} />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn

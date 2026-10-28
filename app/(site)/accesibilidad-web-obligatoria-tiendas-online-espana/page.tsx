@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: { absolute: "Accesibilidad web obligatoria para tiendas online en España" },
@@ -26,7 +28,7 @@ const articleSchema = {
   headline: "Accesibilidad web obligatoria en España: qué deben hacer las tiendas online",
   description:
     "Desde el 28 de junio de 2025 las tiendas online deben ser accesibles. Quién está obligado por la Ley 11/2023, excepciones y checklist práctico para cumplir.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
@@ -119,6 +121,7 @@ export default function AccesibilidadWebTiendasOnlinePage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Ecommerce</span>
             <time className="text-sm text-gray-400" dateTime="2026-09-25">25 de septiembre de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Accesibilidad web obligatoria en España: qué deben hacer las tiendas online

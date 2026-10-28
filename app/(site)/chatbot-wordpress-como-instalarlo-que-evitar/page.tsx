@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Chatbot para WordPress: cómo instalarlo",
@@ -26,9 +28,10 @@ const articleSchema = {
   headline: "Chatbot para WordPress: cómo instalarlo, qué evitar y qué esperar",
   description:
     "WordPress tiene decenas de plugins de chatbot. La mayoría no merece el tiempo que cuesta probarlos. Guía honesta sobre qué funciona de verdad y cómo implementar un chatbot útil en una web WordPress en 2026.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/chatbot-wordpress-como-instalarlo-que-evitar/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-wordpress-como-instalarlo-que-evitar/",
@@ -76,6 +79,7 @@ export default function ChatbotWordPressPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Diseño Web · Julio 2026</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Chatbot para WordPress: cómo instalarlo, qué evitar y qué esperar

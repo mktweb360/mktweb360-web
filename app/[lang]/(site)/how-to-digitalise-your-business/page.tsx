@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to digitalise your business without getting lost in the process" : "Comment digitaliser votre entreprise sans se perdre dans le processus"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Digitalising your business is no longer optional — it is a matter of survival. But it doesn't have to be complicated. This guide explains the steps, the priorities and the tools you need." : "Digitaliser votre entreprise n'est plus optionnel — c'est une question de survie. Mais ça ne doit pas être compliqué. Ce guide explique les étapes, les priorités et les outils dont vous avez besoin."}
         </p>

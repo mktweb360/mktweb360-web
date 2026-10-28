@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -91,6 +92,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "Digital marketing for freelancers in 2026: the practical guide to getting clients"
             : "Marketing digital pour les indépendants en 2026 : le guide pratique pour obtenir des clients"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "In 2026, freelancers have more tools than ever to get online clients on their own — without depending on an agency. This practical guide covers the essentials in order: local SEO, Google Business Profile, LinkedIn and content. If you sell services in your area, start with local SEO for service businesses, the channel with the highest return."

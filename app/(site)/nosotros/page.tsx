@@ -95,6 +95,10 @@ export default function NosotrosPage() {
               <p className="text-gray-600 leading-relaxed">
                 Desde entonces hemos trabajado con empresas de sectores muy distintos — desde servicios asistenciales hasta industria metalúrgica — manteniendo siempre el mismo nivel de implicación, rigor y cercanía que nos diferencia.
               </p>
+              <p className="text-gray-600 leading-relaxed mt-4">
+                Los artículos del blog los firma José Marcos, responsable de Mkt Web 360.{" "}
+                <Link href="/autor/jose-marcos/" className="text-accent-500 hover:underline">Ver su página de autor</Link>.
+              </p>
             </div>
             <div className="bg-primary-600 rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">Por qué somos diferentes</h3>

@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Eliminar reseñas negativas de Google: guía",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo Gestionar las Reseñas Negativas en Google — Guía Práctica | Mkt Web 360",
   description: "Aprende a responder y gestionar reseñas negativas en Google de forma profesional. Estrategia, plantillas de respuesta y cómo convertir críticas en oportunidades.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Reseñas negativas Google" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Reputación Online</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo gestionar las reseñas negativas en Google sin perder clientes</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">Una reseña negativa mal gestionada puede costar más clientes que la propia crítica. Esta guía explica cómo responder, qué decir y cómo convertir una crítica en una oportunidad de mostrar profesionalidad.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Por qué las reseñas negativas importan más de lo que crees</h2>

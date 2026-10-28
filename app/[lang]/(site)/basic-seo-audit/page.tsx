@@ -5,6 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, ROUTES, urlFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 // 28/10/2026 — EN/FR reescritas con el contenido de /auditoria-seo-basica/ (checklist de 30 puntos).
 // Misma carpeta y slug para los dos idiomas (basic-seo-audit), como antes.
@@ -118,7 +120,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     headline: t.h1,
     description: t.description,
     inLanguage: lang,
-    author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+    author: autorSchema(lang),
     publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     datePublished: "2026-06-13",
     dateModified: DATE_MODIFIED,
@@ -355,6 +357,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">SEO</span>
             <time className="text-sm text-gray-400" dateTime={DATE_MODIFIED}>{t.date}</time>
+            <AuthorByline lang={lang} />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">{t.h1}</h1>
           <p className="text-xl text-gray-600 leading-relaxed">{t.lead}</p>

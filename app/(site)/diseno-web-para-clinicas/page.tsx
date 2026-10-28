@@ -6,6 +6,8 @@ import { alternatesFor } from "@/lib/i18n/routes";
 
 import { BlogBanner } from "@/components/BlogBanner";
 import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 export const metadata: Metadata = {
   title: "Diseño Web para Clínicas y Centros de Salud",
   description:
@@ -27,7 +29,7 @@ const articleSchema = {
   headline: "Diseño Web para Clínicas: Web Profesional que Genera Pacientes",
   description:
     "Diseño web profesional para clínicas, centros médicos y de salud. Web optimizada para SEO local y captación de pacientes. Fisioterapia, psicología, estética y más.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
@@ -78,6 +80,7 @@ export default function DisenoWebClinicasPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Diseño Web · Salud</span>
             <time className="text-sm text-gray-400" dateTime="2026-06-25">25 de junio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Diseño Web para Clínicas: Web Profesional que Genera Pacientes

@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Signs your website needs an urgent redesign if you want to sell more" : "Signes que votre site web a besoin d'une refonte urgente si vous voulez vendre plus"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "A website that looks dated, loads slowly or doesn't convert is costing you customers every day. This guide explains the clearest signs that it is time to redesign." : "Un site web qui semble dépassé, se charge lentement ou ne convertit pas vous coûte des clients chaque jour. Ce guide explique les signes les plus clairs qu'il est temps de le refondre."}
         </p>
