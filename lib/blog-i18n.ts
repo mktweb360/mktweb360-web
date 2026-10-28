@@ -17,6 +17,26 @@ export type PostI18n = {
 };
 
 export const BLOG_I18N: Record<string, PostI18n> = {
+  "cuanto-tarda-el-seo-en-dar-resultados": {
+    en: {
+      title: "How long does SEO take to work: what happens month by month and what it depends on",
+      excerpt: "SEO usually takes 3 to 6 months to show first results and 6 to 12 months to consolidate, as a guide. What happens each month and how to see it in Search Console.",
+    },
+    fr: {
+      title: "Combien de temps faut-il pour que le SEO donne des résultats : mois par mois et de quoi cela dépend",
+      excerpt: "Le SEO donne généralement ses premiers résultats en 3 à 6 mois et se consolide en 6 à 12 mois, à titre indicatif. Ce qui se passe chaque mois et comment le voir dans Search Console.",
+    },
+  },
+  "seo-para-pymes-guia": {
+    en: {
+      title: "SEO for SMEs in 2026: a practical guide to getting started without wasting money",
+      excerpt: "A practical SEO guide for SMEs in Spain (2026): what you can do yourself this week, what is worth delegating, what an SEO plan costs and how long it takes to show.",
+    },
+    fr: {
+      title: "SEO pour PME en 2026 : guide pratique pour démarrer sans gaspiller d'argent",
+      excerpt: "Guide pratique du SEO pour les PME en Espagne (2026) : ce que vous pouvez faire vous-même cette semaine, ce qu'il vaut mieux déléguer, le coût d'un plan SEO et le délai pour voir des résultats.",
+    },
+  },
   "google-ads-sin-comision-agencia-marketing": {
     en: {
       title: "Google Ads with No Commission on Budget",
@@ -99,14 +119,15 @@ export const BLOG_I18N: Record<string, PostI18n> = {
   },
   "auditoria-seo-basica": {
     en: {
-      title: "Basic SEO Audit: How to Audit Your Website",
-      excerpt: "Step-by-step guide to carrying out a basic SEO audit. Which tools to use, what errors to look for and how to prioritise improvements to increase organic traffic.",
+      title: "How to audit a website step by step: a 30-point checklist for SMEs",
+      excerpt: "How to audit a website with free tools: 30 checks covering indexing, speed, content, Google Business Profile and AI visibility, and how to read the results.",
     },
     fr: {
-      title: "Comment faire un audit SEO de base",
-      excerpt: "Guide étape par étape pour réaliser un audit SEO de base. Quels outils utiliser, quelles erreurs chercher et comment prioriser les améliorations pour augmenter le trafic organique.",
+      title: "Comment faire un audit de site web pas à pas : checklist en 30 points pour les PME",
+      excerpt: "Comment auditer un site avec des outils gratuits : 30 points sur l'indexation, la vitesse, le contenu, la fiche Google et la visibilité dans l'IA, et comment lire les résultats.",
     },
   },
+
   "ia-aplicada-a-marketing-valor-real-o-humo": {
     en: {
       title: "AI Applied to Marketing: Where It Adds Value",

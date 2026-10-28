@@ -183,6 +183,8 @@ export const ROUTES: Route[] = [
   { es: "/atribucion-de-marketing-como-medir-impacto-real/", en: "marketing-attribution-measure-real-impact", fr: "attribution-marketing-mesurer-impact-reel" },
   { es: "/google-ads-sin-comision-agencia-marketing/", en: "google-ads-no-commission-marketing-agency", fr: "google-ads-sans-commission-agence-marketing" },
   { es: "/redes-sociales-para-empresas-b2b-2026/", en: "social-media-b2b-companies-2026", fr: "reseaux-sociaux-entreprises-b2b-2026" },
+  { es: "/cuanto-tarda-el-seo-en-dar-resultados/", en: "how-long-does-seo-take", fr: "seo-combien-de-temps-resultats" },
+  { es: "/seo-para-pymes-guia/", en: "seo-for-smes-guide", fr: "seo-pour-pme-guide" },
 ];
 
 // ---------- helpers derivados ----------
