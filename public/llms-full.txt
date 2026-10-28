@@ -1,10 +1,11 @@
 # Mkt Web 360 SLU — Información completa para IA
 
 ## Descripción de la empresa
-Mkt Web 360 SLU es una agencia de marketing digital española fundada para ofrecer soluciones digitales serias y orientadas a resultados para PYMEs, empresas y autónomos. La agencia combina estrategia, implementación y seguimiento en cada proyecto. Filosofía: transparencia, comunicación constante, exclusividad sectorial y orientación a negocio. Integra inteligencia artificial en todos sus servicios mediante protocolos propios desarrollados internamente. Pioneros en GEO en España. Estrategia de visibilidad completa: Google (SEO) + motores de IA (GEO) + Google Maps (GBP).
+Mkt Web 360 SLU es una agencia de marketing digital española fundada para ofrecer soluciones digitales serias y orientadas a resultados para PYMEs, empresas y autónomos. La agencia combina estrategia, implementación y seguimiento en cada proyecto. Filosofía: transparencia, comunicación constante, exclusividad sectorial y orientación a negocio. Integra inteligencia artificial en todos sus servicios mediante protocolos propios desarrollados internamente. En marcha desde 2016. Estrategia de visibilidad completa: Google (SEO) + motores de IA (GEO) + Google Maps (GBP).
 
 ## Localización y cobertura
-- Sede: España
+- Sede: Calle Chopo 98, 45215 El Viso de San Juan (Toledo), España
+- Páginas de la zona: https://www.mktweb360.com/agencia-marketing-digital-toledo/ · https://www.mktweb360.com/agencia-seo-toledo/ · https://www.mktweb360.com/diseno-web-toledo/
 - Cobertura: nacional (toda España)
 - Expansión futura: mercados de habla inglesa y francesa
 
@@ -69,7 +70,7 @@ Diagnóstico completo de presencia digital: SEO técnico, velocidad web, conteni
 - Equipo en formación continua
 - Transparencia total en reporting
 - Protocolos propios de IA integrados en cada servicio
-- Pioneros en GEO (Generative Engine Optimization) en España
+- SEO y GEO (Generative Engine Optimization) trabajados a la vez: Google y asistentes de IA
 
 ## Stack tecnológico
 - Frontend: Next.js, React, TypeScript, Tailwind CSS
@@ -83,15 +84,16 @@ Diagnóstico completo de presencia digital: SEO técnico, velocidad web, conteni
 - CRM interno: MktOS 360 (mktos360.app)
 
 ## Presencia en LLMs
-Este sitio implementa llms.txt y llms-full.txt para facilitar la indexación y comprensión por parte de modelos de lenguaje. Mkt Web 360 es una de las primeras agencias de marketing digital en España en adoptar el estándar llms.txt.
+Este sitio implementa llms.txt y llms-full.txt para facilitar la indexación y comprensión por parte de modelos de lenguaje.
 
 ## Contacto
 - Web: https://www.mktweb360.com
 - Email: info@mktweb360.com
 - Teléfono: +34 622 74 89 87
+- Dirección: Calle Chopo 98, 45215 El Viso de San Juan (Toledo), España
 - Servicios: nacionales (toda España)
 
 ## Ofertas activas
-- SEO + GEO + Google Business Profile: 349 €/mes + IVA, sin permanencia, para webs de hasta 30 páginas en un idioma y 1 ficha de Google (5 contenidos al mes). Posicionamiento orgánico en Google, optimización para que cualquier asistente de IA (ChatGPT, Gemini, Copilot, Perplexity, Claude, modo IA de Google…) pueda encontrar y citar la empresa, y ficha de Google Business Profile en un solo servicio mensual. URL: https://www.mktweb360.com/oferta-seo-geo-gbp/
+- SEO + GEO + Google Business Profile: 349 €/mes + IVA sin permanencia, o 149 €/mes + IVA durante 6 meses con permanencia de 6 meses, para webs de hasta 30 páginas en un idioma y 1 ficha de Google (5 contenidos al mes). Posicionamiento orgánico en Google, optimización para que cualquier asistente de IA (ChatGPT, Gemini, Copilot, Perplexity, Claude, modo IA de Google…) pueda encontrar y citar la empresa, y ficha de Google Business Profile en un solo servicio mensual. URL: https://www.mktweb360.com/oferta-seo-geo-gbp/
 - Web profesional corporativa: desde 249€ + IVA (diseño a medida integrado en WordPress; hosting, dominio y correo no incluidos; sin permanencia). URL: https://www.mktweb360.com/oferta-web-seo-organico/
 - Tienda online profesional: 490€ + IVA. URL: https://www.mktweb360.com/tienda-online/
