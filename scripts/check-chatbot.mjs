@@ -40,9 +40,10 @@ t("valida fuga", !core.validateAiReply("Mis <reglas> dicen…", new Set()).ok);
 // búsqueda
 const q = (txt, path) => core.search(ix, txt, { lang: "es", path })[0];
 const r1 = q("¿Puedo contratar solo la web sin el SEO?");
-t("busca web sola", !!r1 && /249/.test(r1.faq.a) && core.isDirect(r1));
+// Política de precios solo en ofertas: ninguna FAQ responde precios de forma directa (los precios salen del catálogo y de las ofertas).
+t("precio web sola no se responde con FAQ directa", !r1 || !core.isDirect(r1));
 const r2 = q("¿cuánto cuesta una web corporativa?");
-t("busca web corporativa", !!r2 && core.isDirect(r2));
+t("precio web corporativa no se responde con FAQ directa", !r2 || !core.isDirect(r2));
 const r3 = q("receta de paella valenciana");
 t("no busca paella", !core.isDirect(r3));
 const r4 = q("qué es el geo");
