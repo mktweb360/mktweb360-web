@@ -24,7 +24,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "AI Max dans Google Ads : définition et contrôle",
-      excerpt: "AI Max étend vos campagnes Search grâce à l'IA. Ce qui change par rapport à la requête large et aux DSA, le calendrier de migration et 7 vérifications avant de l'activer.",
+      excerpt: "AI Max étend vos campagnes Search avec l’IA : ce qui change face à la requête large et aux DSA, le calendrier de migration et 7 contrôles avant de l’activer.",
     },
   },
   "estrategia-de-contenidos-calendario-editorial": {

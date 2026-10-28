@@ -145,7 +145,7 @@ const TEXT = {
   fr: {
     title: "AI Max dans Google Ads : définition et contrôle",
     description:
-      "AI Max étend vos campagnes Search grâce à l'IA. Ce qui change par rapport à la requête large et aux DSA, le calendrier de migration et 7 vérifications avant de l'activer.",
+      "AI Max étend vos campagnes Search avec l’IA : ce qui change face à la requête large et aux DSA, le calendrier de migration et 7 contrôles avant de l’activer.",
     h1: "AI Max dans Google Ads : ce qui change dans vos campagnes Search et comment garder le contrôle",
     crumb: "AI Max dans Google Ads",
     category: "SEA",
