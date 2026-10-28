@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { ogImageFor } from "@/lib/blog-og-i18n";
 import { usePathname } from "next/navigation";
 import { relatedFor, topicOfPage, topicFromCategoryProp, slugFromPath, pillarFor } from "@/lib/internal-links";
 import { esSlugFor, translatedSlugFor } from "@/lib/i18n/routes";
@@ -93,7 +94,7 @@ export function RelatedArticles({ currentSlug, category, title }: Props) {
               >
                 <div className="relative w-full overflow-hidden" style={{ aspectRatio: "1200/630" }}>
                   <Image
-                    src={`/og-${post.slug}.jpg`}
+                    src={ogImageFor(post.slug, lang)}
                     alt={t.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"

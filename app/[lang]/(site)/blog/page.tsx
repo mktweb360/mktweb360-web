@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { alternatesFor, ROUTES } from "@/lib/i18n/routes";
 import { allPosts } from "@/lib/blog";
+import { ogImageFor } from "@/lib/blog-og-i18n";
 import { getPostI18n, getCategoryI18n } from "@/lib/blog-i18n";
 import { JsonLd } from "@/components/JsonLd";
 import { webPageSchema, SITE } from "@/lib/schema";
@@ -109,7 +110,7 @@ export default async function LangBlogPage({ params }: { params: Promise<{ lang:
                       <span aria-hidden="true" className="absolute inset-x-0 top-0 z-10 h-1 bg-gradient-to-r from-[#7c3aed] via-[#db2777] to-accent-500 opacity-0 transition-opacity group-hover:opacity-100" />
                       <Link href={href} className="block relative w-full overflow-hidden" style={{ aspectRatio: "1200/630" }}>
                         <Image
-                          src={`/og-${post.slug}.jpg`}
+                          src={ogImageFor(post.slug, lang)}
                           alt={tr.title}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
