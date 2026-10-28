@@ -174,8 +174,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-primary-200 mb-6">
             {isEn
-              ? "We are pioneers in GEO. We prepare your Shopware store for Agentic Commerce and for AI to recommend it when your customers ask."
-              : "Nous sommes pionniers en GEO. Nous préparons votre boutique Shopware pour l'Agentic Commerce et pour que l'IA la recommande quand vos clients posent des questions."}
+              ? "We work on GEO alongside SEO. We prepare your Shopware store for Agentic Commerce and for AI to recommend it when your customers ask."
+              : "Nous travaillons le GEO avec le SEO. Nous préparons votre boutique Shopware pour l'Agentic Commerce et pour que l'IA la recommande quand vos clients posent des questions."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

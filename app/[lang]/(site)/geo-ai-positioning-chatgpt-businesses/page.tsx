@@ -210,8 +210,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-primary-200 mb-6">
             {isEn
-              ? "We are pioneers in GEO. We help you appear in ChatGPT, Perplexity and Gemini when your customers ask about your sector."
-              : "Nous sommes pionniers en GEO. Nous vous aidons à apparaître dans ChatGPT, Perplexity et Gemini quand vos clients posent des questions sur votre secteur."}
+              ? "We work on GEO alongside SEO. We help you appear in ChatGPT, Perplexity and Gemini when your customers ask about your sector."
+              : "Nous travaillons le GEO avec le SEO. Nous vous aidons à apparaître dans ChatGPT, Perplexity et Gemini quand vos clients posent des questions sur votre secteur."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

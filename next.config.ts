@@ -15,6 +15,14 @@ const ALIAS_FASE_2B = new Set<string>([]);
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
   trailingSlash: true,
+  // Content-Language por idioma (28/10/2026). El <html lang> lo pone el layout raíz como «es» y solo se
+  // corrige en el navegador (LangSetter); esta cabecera da el idioma real en la respuesta del servidor.
+  async headers() {
+    return [
+      { source: "/en/:path*", headers: [{ key: "Content-Language", value: "en" }] },
+      { source: "/fr/:path*", headers: [{ key: "Content-Language", value: "fr" }] },
+    ];
+  },
   // La normalización automática de barra la hacemos en middleware.ts (solo páginas),
   // para que /api/* NO reciba el 308 de trailingSlash. Ver middleware.
   skipTrailingSlashRedirect: true,

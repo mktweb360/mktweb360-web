@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n/routes";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Aviso Legal",
   description: "Aviso legal y condiciones de uso del sitio web de Mkt Web 360 SLU, CIF B87679304.",
-  alternates: { canonical: "https://www.mktweb360.com/aviso-legal/" },
+  alternates: alternatesFor("/aviso-legal/") ?? { canonical: "https://www.mktweb360.com/aviso-legal/" },
   openGraph: { url: "https://www.mktweb360.com/aviso-legal/" },
   robots: { index: false, follow: false },
 };

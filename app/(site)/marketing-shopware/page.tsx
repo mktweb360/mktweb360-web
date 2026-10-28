@@ -209,7 +209,7 @@ export default function MarketingShopwarePage() {
                 El comercio está cambiando de canal. Cada vez más personas no buscan productos en Google: se los piden a una IA. Con el Agentic Commerce de Shopware 6.7.9, tu tienda puede ser descubierta, recomendada y comprada directamente desde una conversación con ChatGPT u otros asistentes.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Somos pioneros en GEO en España. Preparamos el catálogo, los datos estructurados y la autoridad de tu tienda Shopware para que la IA la elija cuando un cliente pregunta por lo que vendes. Quien se posicione antes en este canal captará una ventaja difícil de recuperar.
+                Trabajamos el GEO junto al SEO. Preparamos el catálogo, los datos estructurados y la autoridad de tu tienda Shopware para que la IA la elija cuando un cliente pregunta por lo que vendes. Quien se posicione antes en este canal captará una ventaja difícil de recuperar.
               </p>
               <Link href="/geo-posicionamiento-ia/" className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
                 Conocer el servicio de GEO →

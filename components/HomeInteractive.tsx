@@ -32,7 +32,7 @@ const SERVICE_TABS: ServiceTab[] = [
     objetivo: "Aparece cuando te buscan",
     emoji: "🔍",
     servicios: [
-      { title: "SEO Posicionamiento Web", desc: "Primera página de Google. Tráfico orgánico sin pagar por cada clic. Resultados que se mantienen.", href: "/seo-posicionamiento-web-organico/", icon: "📈" },
+      { title: "SEO Posicionamiento Web", desc: "Más visibilidad en Google. Tráfico orgánico sin pagar por cada clic. Resultados que se mantienen.", href: "/seo-posicionamiento-web-organico/", icon: "📈" },
       { title: "GEO — Posicionamiento en IA", desc: "Aparece en ChatGPT, Perplexity y Gemini. El SEO de la era de la inteligencia artificial.", href: "/geo-posicionamiento-ia/", icon: "🤖" },
       { title: "SEO Local", desc: "Capta clientes de tu zona: Google Maps, reseñas y páginas locales, tengas o no local físico.", href: "/seo-local/", icon: "📌" },
       { title: "Google Ads", desc: "Aparece en lo más alto de Google desde el primer día. Solo pagas cuando alguien hace clic.", href: "/sem-publicidad-ppc/", icon: "⚡" },
@@ -91,7 +91,7 @@ const SERVICE_TABS: ServiceTab[] = [
       { title: "Analítica Web", desc: "GA4, GTM y dashboards de negocio. Cada decisión respaldada por datos reales, no suposiciones.", href: "/analitica-web/", icon: "📊" },
       { title: "IA Aplicada al Marketing", desc: "Protocolos propios de IA integrados en cada servicio. Más rápido, más preciso, mejores decisiones.", href: "/ia-aplicada-al-marketing/", icon: "🧠" },
       { title: "Auditoría SEO gratuita", desc: "Qué frena tu web en Google, en la IA y en el mapa, y qué harías primero. Gratis, en tu correo en 24 horas laborables.", href: "/auditoria-digital/", icon: "🔬" },
-      { title: "SEO Posicionamiento Web", desc: "Primera página de Google. Tráfico orgánico sin pagar por cada clic. Resultados que se mantienen.", href: "/seo-posicionamiento-web-organico/", icon: "📈" },
+      { title: "SEO Posicionamiento Web", desc: "Más visibilidad en Google. Tráfico orgánico sin pagar por cada clic. Resultados que se mantienen.", href: "/seo-posicionamiento-web-organico/", icon: "📈" },
       { title: "GEO — Posicionamiento en IA", desc: "Aparece en ChatGPT, Perplexity y Gemini. El SEO de la era de la inteligencia artificial.", href: "/geo-posicionamiento-ia/", icon: "🤖" },
       { title: "Marketing para Shopware", desc: "SEO, Google Ads, GEO y optimización de la conversión para tiendas Shopware que necesitan vender más.", href: "/marketing-shopware/", icon: "🏬" },
     ],

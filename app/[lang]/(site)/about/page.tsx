@@ -281,12 +281,12 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               {isEn ? "Strategic differentiator" : "Différenciateur stratégique"}
             </span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
-              {isEn ? "Pioneers in GEO in Spain" : "Pionniers en GEO en Espagne"}
+              {isEn ? "SEO and GEO: Google and AI assistants" : "SEO et GEO : Google et les assistants IA"}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               {isEn
-                ? "We are one of the first agencies in Spain to implement GEO — Generative Engine Optimization — the discipline of optimising your presence to appear in ChatGPT, Perplexity and Gemini. We implement llms.txt and llms-full.txt since early 2026, one of the first agency sites in Spain to adopt the emerging standard that tells AI models how to index and understand a business."
-                : "Nous sommes l'une des premières agences en Espagne à implémenter le GEO — Generative Engine Optimization — la discipline d'optimisation de votre présence pour apparaître dans ChatGPT, Perplexity et Gemini. Nous implémentons llms.txt et llms-full.txt depuis début 2026, l'un des premiers sites d'agence en Espagne à adopter le standard émergent qui indique aux modèles IA comment indexer et comprendre une entreprise."}
+                ? "We work on GEO (Generative Engine Optimization) alongside SEO: making your business easy for ChatGPT, Perplexity and Gemini to understand and cite, with consistent data across the website, schema and profiles, and content that answers specific questions. We also publish llms.txt and llms-full.txt, a proposed format that has not yet been shown to improve visibility and that we treat as an extra."
+                : "Nous travaillons le GEO (Generative Engine Optimization) avec le SEO : rendre votre entreprise facile à comprendre et à citer pour ChatGPT, Perplexity et Gemini, avec des données cohérentes sur le site, le schema et les profils, et des contenus qui répondent à des questions précises. Nous publions aussi llms.txt et llms-full.txt, un format proposé qui n'a pas encore démontré d'effet sur la visibilité et que nous traitons comme un complément."}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

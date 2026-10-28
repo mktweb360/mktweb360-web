@@ -28,7 +28,7 @@ type BannerVariants = {
 const BANNERS_ES: BannerVariants = {
   seo: {
     badge: "Posicionamiento SEO",
-    title: "Aparece en la primera página de Google",
+    title: "Más visibilidad en Google, sin pagar por clic",
     desc: "Auditoría técnica, estrategia de keywords, optimización on-page y link building para captar clientes de forma orgánica y sostenible.",
     cta: "Ver servicio SEO",
     href: "/seo-posicionamiento-web-organico/",
@@ -68,7 +68,7 @@ const BANNERS_ES: BannerVariants = {
 const BANNERS_EN: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = {
   seo: {
     badge: "SEO Positioning",
-    title: "Appear on the first page of Google",
+    title: "More visibility on Google, without paying per click",
     desc: "Technical audit, keyword strategy, on-page optimisation and link building to attract customers organically and sustainably.",
     cta: "View SEO service",
     href: "/en/seo-web-positioning/",
@@ -99,7 +99,7 @@ const BANNERS_EN: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = 
 const BANNERS_FR: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = {
   seo: {
     badge: "Référencement SEO",
-    title: "Apparaissez en première page de Google",
+    title: "Plus de visibilité sur Google, sans payer au clic",
     desc: "Audit technique, stratégie de mots-clés, optimisation on-page et link building pour attirer des clients de façon organique et durable.",
     cta: "Voir le service SEO",
     href: "/fr/positionnement-seo/",

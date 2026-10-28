@@ -289,8 +289,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
                 {isEn
-                  ? "We are pioneers in GEO in Spain. We prepare the catalogue, structured data and authority of your Shopware store so that AI chooses it when a customer asks about what you sell. Those who position themselves first in this channel will gain an advantage that is hard to recover."
-                  : "Nous sommes pionniers en GEO en Espagne. Nous préparons le catalogue, les données structurées et l'autorité de votre boutique Shopware pour que l'IA la choisisse quand un client demande ce que vous vendez. Ceux qui se positionnent en premier sur ce canal capteront un avantage difficile à rattraper."}
+                  ? "We work on GEO alongside SEO. We prepare the catalogue, structured data and authority of your Shopware store so that AI chooses it when a customer asks about what you sell. Those who position themselves first in this channel will gain an advantage that is hard to recover."
+                  : "Nous travaillons le GEO avec le SEO. Nous préparons le catalogue, les données structurées et l'autorité de votre boutique Shopware pour que l'IA la choisisse quand un client demande ce que vous vendez. Ceux qui se positionnent en premier sur ce canal capteront un avantage difficile à rattraper."}
               </p>
               <Link
                 href={`/${lang}/${langSlug(lang, "geo-generative-engine-optimization")}/`}
