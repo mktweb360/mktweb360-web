@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Brandformance: Uniting Brand and Performance"
       : "Brandformance : unir marque et performance",
     description: isEn
-      ? "Brandformance integrates branding and performance marketing into one coherent strategy. Why separating them is a costly mistake — and how combining them multiplies results."
-      : "Le brandformance intègre la marque et la performance dans une seule stratégie. Pourquoi les séparer est une erreur coûteuse — et comment les combiner multiplie vos résultats.",
+      ? "Brandformance unites brand and performance marketing in one strategy. Why splitting the budgets costs SMEs money and how to combine both in practice."
+      : "Le brandformance réunit marque et performance dans une même stratégie. Pourquoi séparer les budgets coûte cher aux PME et comment unir les deux en pratique.",
     openGraph: openGraphIntl(lang, "brandformance-brand-performance-strategy"),
     alternates:
       alternatesFor(

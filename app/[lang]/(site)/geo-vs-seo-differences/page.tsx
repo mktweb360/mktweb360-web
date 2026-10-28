@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "GEO vs SEO: Differences and How to Combine"
       : "GEO vs SEO : différences et comment combiner",
     description: isEn
-      ? "What sets GEO (Generative Engine Optimization) apart from traditional SEO, why both matter, and how to integrate both strategies for maximum visibility in search engines and AI."
-      : "Ce qui différencie le GEO (Generative Engine Optimization) du SEO traditionnel, pourquoi les deux comptent et comment intégrer les deux stratégies pour une visibilité maximale.",
+      ? "GEO vs SEO: the key differences between ranking in Google and being cited by ChatGPT, Perplexity and Gemini, and how to prioritise both by business type."
+      : "GEO vs SEO : ce qui distingue le référencement sur Google de la citation par ChatGPT, Perplexity et Gemini, et comment prioriser les deux selon votre secteur.",
     alternates: alternatesFor(`/${lang}/geo-vs-seo-differences/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/geo-vs-seo-differences/`,
     },
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "GEO vs SEO: Differences and How to Use Them Together | Mkt Web 360"
         : "GEO vs SEO : Différences et Comment les Utiliser Ensemble | Mkt Web 360",
       description: isEn
-        ? "What sets GEO apart from traditional SEO, why both matter, and how to integrate both strategies for maximum visibility."
-        : "Ce qui différencie le GEO du SEO traditionnel, pourquoi les deux comptent et comment intégrer les deux stratégies.",
+        ? "GEO vs SEO: the key differences between ranking in Google and being cited by ChatGPT, Perplexity and Gemini, and how to prioritise both by business type."
+        : "GEO vs SEO : ce qui distingue le référencement sur Google de la citation par ChatGPT, Perplexity et Gemini, et comment prioriser les deux selon votre secteur.",
       url: `https://www.mktweb360.com/${lang}/geo-vs-seo-differences/`,
       images: [{ url: "https://www.mktweb360.com/og-geo-vs-seo-diferencias.jpg", width: 1200, height: 630 }],
     },
@@ -44,8 +44,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       ? "GEO vs SEO: Differences and How to Combine"
       : "GEO vs SEO : différences et comment combiner",
     description: isEn
-      ? "What sets GEO apart from traditional SEO, why both matter, and how to integrate both strategies for maximum visibility."
-      : "Ce qui différencie le GEO du SEO traditionnel, pourquoi les deux comptent et comment intégrer les deux stratégies.",
+      ? "GEO vs SEO: the key differences between ranking in Google and being cited by ChatGPT, Perplexity and Gemini, and how to prioritise both by business type."
+      : "GEO vs SEO : ce qui distingue le référencement sur Google de la citation par ChatGPT, Perplexity et Gemini, et comment prioriser les deux selon votre secteur.",
     author: autorSchema(lang),
     publisher: {
       "@type": "Organization",

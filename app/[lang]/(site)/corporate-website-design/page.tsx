@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Site web corporatif : design professionnel",
     description: isEn
       ? "Corporate website design for businesses. A professional website that builds trust, captures leads and ranks in Google. Technical SEO included from day one."
-      : "Conception de sites web corporatifs pour entreprises. Un site professionnel qui génère la confiance, capte des leads et se positionne sur Google. SEO technique inclus dès le premier jour.",
+      : "Site web corporatif pour entreprises : un design professionnel qui inspire confiance, capte des demandes et intègre le SEO technique dès le premier jour.",
     alternates: alternatesFor(`/${lang}/corporate-website-design/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/corporate-website-design/`,
     },

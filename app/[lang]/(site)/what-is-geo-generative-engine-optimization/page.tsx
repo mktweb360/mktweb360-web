@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Le GEO (Generative Engine Optimization)",
     description: isEn
       ? "GEO: what it is, how it works and why optimising your presence to appear in ChatGPT, Perplexity and Gemini is the new frontier of SEO."
-      : "GEO : qu'est-ce que c'est, comment ça fonctionne et pourquoi optimiser votre présence pour apparaître dans ChatGPT, Perplexity et Gemini est la nouvelle frontière du SEO.",
+      : "Qu'est-ce que le GEO : le fonctionnement des moteurs génératifs, ce qui le distingue du SEO et comment préparer votre site aux réponses de ChatGPT et Gemini.",
     openGraph: openGraphIntl(lang, "what-is-geo-generative-engine-optimization"),
     alternates: alternatesFor(`/${lang}/${lang === "en" ? "what-is-geo-generative-engine-optimization" : "qu-est-ce-que-le-geo"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "what-is-geo-generative-engine-optimization" : "qu-est-ce-que-le-geo"}/`,

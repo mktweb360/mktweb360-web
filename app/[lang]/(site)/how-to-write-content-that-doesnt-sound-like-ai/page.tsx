@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Writing Content That Doesn't Sound Like AI"
       : "Écrire du contenu qui ne ressemble pas à l'IA",
     description: isEn
-      ? "AI-generated content without editing doesn't convert and can hurt your Google rankings. Practical techniques to create human, authentic and useful texts — even when using AI tools."
-      : "Le contenu généré par IA sans édition ne convertit pas et peut nuire à votre classement Google. Techniques pratiques pour créer des textes humains, authentiques et utiles — même avec des outils IA.",
+      ? "How to write content that doesn't sound like AI: the patterns that give it away, practical editing techniques and the role of the human editor in the process."
+      : "Écrire du contenu qui ne ressemble pas à l'IA : les tics qui le trahissent, des techniques d'édition concrètes et le rôle de l'éditeur humain dans le travail.",
     openGraph: openGraphIntl(lang, "how-to-write-content-that-doesnt-sound-like-ai"),
     alternates:
       alternatesFor(

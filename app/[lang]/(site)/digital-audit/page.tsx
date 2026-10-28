@@ -15,7 +15,7 @@ const C = {
   en: {
     title: "Free SEO Audit of Your Website in 24 Hours",
     description:
-      "Free SEO audit with AI visibility and Google Business Profile review: technical errors, opportunities, competitors and an improvement plan within 24 business hours.",
+      "Free SEO audit with AI visibility and Google Business Profile review: technical errors, competitors and an improvement plan within 24 working hours.",
     ogTitle: "Free SEO Audit of Your Website in 24 Hours | Mkt Web 360",
     ogDescription:
       "We email you an SEO, AI-visibility and Google Business Profile diagnosis of your website, with the 3 highest-impact actions and a proposal to carry them out.",

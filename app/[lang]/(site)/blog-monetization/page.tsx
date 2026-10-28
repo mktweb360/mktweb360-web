@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Blog Monetisation: AdSense and Affiliates"
       : "Monétisation de blog : AdSense et affiliation",
     description: isEn
-      ? "We build your niche blog optimised to generate passive income with AdSense and affiliate marketing. Complete setup from €990 with 15 SEO articles, monetisation configuration and training."
-      : "Nous créons votre blog de niche optimisé pour générer des revenus passifs avec AdSense et le marketing d'affiliation. Setup complet à partir de 990€ avec 15 articles SEO, configuration de la monétisation et formation.",
+      ? "Blog monetisation with AdSense and affiliates: we build your niche blog with 15 SEO articles, monetisation set-up and training, all from €990."
+      : "Monétisation de blog avec AdSense et l'affiliation : nous créons votre blog de niche avec 15 articles SEO, la configuration et une formation, dès 990 €.",
     alternates: alternatesFor(`/${lang}/blog-monetization/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/blog-monetization/`,
     },
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Monetisation Blog — Passive Income with AdSense and Affiliates | Mkt Web 360"
         : "Blog de Monétisation — Revenus Passifs avec AdSense et Affiliés | Mkt Web 360",
       description: isEn
-        ? "We build your niche blog optimised to generate passive income with AdSense and affiliate marketing. Complete setup from €990 with 15 SEO articles, monetisation configuration and training."
-        : "Nous créons votre blog de niche optimisé pour générer des revenus passifs avec AdSense et le marketing d'affiliation. Setup complet à partir de 990€ avec 15 articles SEO, configuration de la monétisation et formation.",
+        ? "Blog monetisation with AdSense and affiliates: we build your niche blog with 15 SEO articles, monetisation set-up and training, all from €990."
+        : "Monétisation de blog avec AdSense et l'affiliation : nous créons votre blog de niche avec 15 articles SEO, la configuration et une formation, dès 990 €.",
     },
   };
 }

@@ -52,8 +52,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Web Design for Clinics and Health Centres"
       : "Création de site web pour cliniques",
     description: isEn
-      ? "Professional web design for clinics, medical and health centres. Optimised for local SEO and patient acquisition. Physiotherapy, psychology, aesthetics and more."
-      : "Création de site web pour cliniques, centres médicaux et de santé. Optimisé pour le référencement local et l'acquisition de patients. Kinésithérapie, psychologie, esthétique et plus.",
+      ? "Web design for clinics and health centres: a professional website built for local SEO so patients in your area find you. Physiotherapy, psychology and more."
+      : "Création de site web pour cliniques et centres de santé : un site qui inspire confiance et un référencement local pour être trouvé par les patients proches.",
     alternates: alternatesFor(`/${lang}/web-design-clinics/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/web-design-clinics/`,
     },

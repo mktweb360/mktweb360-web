@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "How Much Does a Chatbot Cost in 2026"
       : "Combien coûte un chatbot d'entreprise en 2026",
     description: isEn
-      ? "Business chatbot prices range from free to thousands per month. A guide to real prices in 2026: what market leaders charge, what each tier includes and when the investment pays off."
-      : "Les prix des chatbots pour entreprises vont de gratuit à des milliers par mois. Guide des prix réels en 2026 : ce que facturent les leaders du marché, ce qu'inclut chaque niveau et quand l'investissement est rentable.",
+      ? "How much a chatbot costs in 2026: the pricing models on the market, what the main providers charge, what drives the final price and when it pays off."
+      : "Combien coûte un chatbot d'entreprise en 2026 : modèles de tarification, prix des principaux acteurs, ce qui fait varier le coût et quand il devient rentable.",
     alternates: alternatesFor(`/${lang}/how-much-does-a-chatbot-cost/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-much-does-a-chatbot-cost/`,
     },
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "How Much Does a Business Chatbot Cost in 2026: A Guide to Real Prices | Mkt Web 360"
         : "Combien coûte un chatbot pour entreprise en 2026 : guide des prix réels | Mkt Web 360",
       description: isEn
-        ? "Business chatbot prices range from free to thousands per month. A guide to real prices in 2026: what market leaders charge, what each tier includes and when the investment pays off."
-        : "Les prix des chatbots pour entreprises vont de gratuit à des milliers par mois. Guide des prix réels en 2026 : ce que facturent les leaders du marché, ce qu'inclut chaque niveau et quand l'investissement est rentable.",
+        ? "How much a chatbot costs in 2026: the pricing models on the market, what the main providers charge, what drives the final price and when it pays off."
+        : "Combien coûte un chatbot d'entreprise en 2026 : modèles de tarification, prix des principaux acteurs, ce qui fait varier le coût et quand il devient rentable.",
     },
   };
 }

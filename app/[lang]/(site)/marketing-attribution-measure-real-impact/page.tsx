@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Marketing Attribution: Measuring Real Impact"
       : "Attribution marketing : mesurer l'impact réel",
     description: isEn
-      ? "The last-click model distorts how your customers actually find you. A practical guide to attribution models for SMEs: what they are, which to use, and how to approximate attribution without enterprise tools."
-      : "Le modèle dernier clic fausse la réalité de la façon dont vos clients vous trouvent. Guide pratique des modèles d'attribution pour PME : ce que c'est, lequel utiliser, et comment approximer l'attribution sans outils enterprise.",
+      ? "Marketing attribution for SMEs: why last-click distorts your data, the main attribution models and how to approximate real impact without enterprise tools."
+      : "Attribution marketing pour PME : pourquoi le dernier clic fausse vos décisions, les principaux modèles et comment mesurer l'impact réel sans outils coûteux.",
     openGraph: openGraphIntl(lang, "marketing-attribution-measure-real-impact"),
     alternates:
       alternatesFor(

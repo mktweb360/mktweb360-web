@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Digital Marketing Agency Cost in Spain 2026"
       : "Coût d'une agence marketing en Espagne 2026",
     description: isEn
-      ? "Real prices for digital marketing agencies in Spain 2026: SEO, Google Ads and social media management. What each price range includes and how to choose without making mistakes."
-      : "Prix réels des agences de marketing digital en Espagne 2026 : SEO, Google Ads et gestion des réseaux sociaux. Ce qu'inclut chaque gamme de prix et comment ne pas se tromper dans le choix.",
+      ? "Digital marketing agency costs in Spain in 2026: real prices for SEO, Google Ads and social media, what each range includes and red flags in a quote."
+      : "Coût d'une agence de marketing digital en Espagne en 2026 : prix réels du SEO, de Google Ads et des réseaux sociaux, ce que couvre chaque tarif et les pièges.",
     alternates: alternatesFor(`/${lang}/cost-digital-marketing-agency-spain-2026/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/cost-digital-marketing-agency-spain-2026/`,
     },

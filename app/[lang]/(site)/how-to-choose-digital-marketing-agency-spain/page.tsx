@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Choisir une agence de marketing en Espagne",
     description: isEn
       ? "7 criteria to choose the right digital marketing agency in Spain in 2026. Red flags to avoid, questions to ask, and what a serious proposal should include."
-      : "7 critères pour choisir la bonne agence de marketing digital en Espagne en 2026. Signaux d'alarme à éviter, questions à poser et ce qu'une proposition sérieuse doit inclure.",
+      : "Choisir une agence de marketing digital en Espagne : 7 critères, 7 signaux d'alarme et 7 questions à poser avant de signer, pour les entreprises étrangères.",
     alternates: alternatesFor(`/${lang}/how-to-choose-digital-marketing-agency-spain/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-choose-digital-marketing-agency-spain/`,
     },

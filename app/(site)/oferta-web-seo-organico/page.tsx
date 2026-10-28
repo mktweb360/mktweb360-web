@@ -10,7 +10,7 @@ import { ContactForm } from "@/components/ContactForm";
 const URL = "https://www.mktweb360.com/oferta-web-seo-organico/";
 const PRICE = "249";
 const DESC =
-  "Tu web profesional desde 249 € + IVA: diseño a medida integrado en WordPress para que gestiones tú los contenidos. Hosting, dominio y correo no incluidos. Sin permanencia.";
+  "Página web profesional desde 249 € + IVA: diseño a medida en WordPress para que gestiones tú los contenidos. Sin permanencia; hosting y dominio aparte.";
 
 export const metadata: Metadata = {
   title: "Página web profesional desde 249 €",

@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "How to Choose a Chatbot: 2026 Checklist"
       : "Choisir le bon chatbot : checklist 2026",
     description: isEn
-      ? "Before choosing a chatbot for your business, there are 10 questions you should answer. This checklist helps you avoid the most common mistakes and choose the solution that genuinely fits what you need."
-      : "Avant de choisir un chatbot pour votre entreprise, il y a 10 questions auxquelles vous devez répondre. Cette checklist vous aide à éviter les erreurs les plus courantes et à choisir la solution qui correspond vraiment à vos besoins.",
+      ? "How to choose a chatbot: a 10-question checklist on integrations, volume, maintenance, legal compliance and ROI to avoid the most common mistakes."
+      : "Choisir le bon chatbot : une checklist de 10 questions sur les intégrations, le volume, la maintenance, la conformité et le ROI pour éviter les erreurs.",
     alternates: alternatesFor(`/${lang}/how-to-choose-chatbot/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-choose-chatbot/`,
     },
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "How to Choose the Right Chatbot for Your Business: A Complete Checklist for 2026 | Mkt Web 360"
         : "Comment choisir le bon chatbot pour votre entreprise : checklist complète pour 2026 | Mkt Web 360",
       description: isEn
-        ? "Before choosing a chatbot for your business, there are 10 questions you should answer. This checklist helps you avoid the most common mistakes and choose the solution that genuinely fits what you need."
-        : "Avant de choisir un chatbot pour votre entreprise, il y a 10 questions auxquelles vous devez répondre. Cette checklist vous aide à éviter les erreurs les plus courantes et à choisir la solution qui correspond vraiment à vos besoins.",
+        ? "How to choose a chatbot: a 10-question checklist on integrations, volume, maintenance, legal compliance and ROI to avoid the most common mistakes."
+        : "Choisir le bon chatbot : une checklist de 10 questions sur les intégrations, le volume, la maintenance, la conformité et le ROI pour éviter les erreurs.",
     },
   };
 }

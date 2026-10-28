@@ -52,8 +52,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Web Design for Coaches and Consultants"
       : "Site web pour coachs et consultants",
     description: isEn
-      ? "Professional web design for coaches, consultants and trainers. A website that builds authority, captures leads and converts visitors into clients. No commission fees."
-      : "Création de site web pour coachs, consultants et formateurs. Un site qui renforce votre autorité, capte des leads et convertit les visiteurs en clients. Sans commission.",
+      ? "Web design for coaches and consultants: a site that builds authority, captures leads and turns visitors into clients, with SEO so the right people find you."
+      : "Site web pour coachs et consultants : affirmer votre autorité, capter des demandes et convertir les visiteurs en clients, avec un SEO pensé pour votre cible.",
     alternates: alternatesFor(`/${lang}/web-design-coaches/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/web-design-coaches/`,
     },

@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "WooCommerce vs Shopify for Your Store in 2026"
       : "WooCommerce vs Shopify : lequel choisir",
     description: isEn
-      ? "WooCommerce is free with total control. Shopify is faster to launch but charges commissions. An honest comparison with real 3-year costs and a recommendation by business type."
-      : "WooCommerce est gratuit avec un contrôle total. Shopify est plus rapide à lancer mais prélève des commissions. Comparaison honnête avec coûts réels sur 3 ans et recommandation par type d'activité.",
+      ? "WooCommerce vs Shopify in 2026: an honest comparison of 3-year costs, control and commissions, with a recommendation by business type and a word on Shopware."
+      : "WooCommerce vs Shopify : comparaison honnête des coûts sur 3 ans, du contrôle et des commissions, avec une recommandation selon votre type d'activité.",
     alternates: alternatesFor(`/${lang}/woocommerce-vs-shopify/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/woocommerce-vs-shopify/`,
     },

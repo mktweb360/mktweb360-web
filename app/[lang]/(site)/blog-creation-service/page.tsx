@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Professional Blog Creation for Businesses"
       : "Création de blog professionnel",
     description: isEn
-      ? "Professional blog creation service for businesses. SEO strategy, design, specialist-written articles and ongoing optimisation to generate leads without cost per click."
-      : "Service de création de blog professionnel pour entreprises. Stratégie SEO, design, articles rédigés par des spécialistes et optimisation continue pour générer des leads sans coût par clic.",
+      ? "Professional blog creation for businesses: SEO strategy, design, specialist-written articles and ongoing optimisation to attract leads without pay-per-click."
+      : "Création de blog pour entreprises : stratégie SEO, design, articles de spécialistes et optimisation continue pour attirer des leads sans payer au clic.",
     openGraph: openGraphIntl(lang, "blog-creation-service"),
     alternates: alternatesFor(`/${lang}/blog-creation-service/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/blog-creation-service/`,

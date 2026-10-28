@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Freelancer Social Security in Spain 2026"
       : "Cotisations des indépendants en Espagne 2026",
     description: isEn
-      ? "Spain's self-employed social security contributions for 2026 remain equal to 2025 by government extension, except the MEI which rises to 0.9%. Full bracket table, the €80 flat rate and how to change your contribution base up to 6 times per year."
-      : "Les cotisations des indépendants en 2026 restent identiques à 2025 par prorogation du gouvernement, sauf le MEI qui monte à 0,9 %. Tableau complet des tranches, le forfait à 80 € et comment changer votre base jusqu'à 6 fois par an.",
+      ? "Freelancer social security in Spain 2026: the full bracket table, the MEI rising to 0.9%, the €80 flat rate and how to change your base up to 6 times a year."
+      : "Cotisations des indépendants en Espagne 2026 : tableau des tranches, MEI porté à 0,9 %, forfait à 80 € et changement de base jusqu'à 6 fois par an.",
     alternates: alternatesFor(`/${lang}/freelancer-social-security-spain-2026/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/freelancer-social-security-spain-2026/`,
     },

@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "What Is GEO: Appear in ChatGPT for Business"
       : "GEO : comment apparaître dans ChatGPT",
     description: isEn
-      ? "GEO positions your business in ChatGPT and Perplexity. If AI does not mention you when someone asks about your sector, you are losing customers. Practical guide for businesses."
-      : "Le GEO positionne votre entreprise dans ChatGPT et Perplexity. Si l'IA ne vous mentionne pas quand quelqu'un pose une question sur votre secteur, vous perdez des clients. Guide pratique pour les entreprises.",
+      ? "What GEO is and how to get your business mentioned by ChatGPT and Perplexity: concrete steps, how it differs from SEO and the role of your business listing."
+      : "GEO : comment faire citer votre entreprise par ChatGPT et Perplexity. Étapes concrètes, différences avec le SEO et rôle de votre fiche et des données locales.",
     alternates: alternatesFor(`/${lang}/geo-ai-positioning-chatgpt-businesses/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/geo-ai-positioning-chatgpt-businesses/`,
     },

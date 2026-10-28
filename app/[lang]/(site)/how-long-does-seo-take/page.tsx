@@ -26,7 +26,7 @@ const TXT = {
   en: {
     title: "How Long Does SEO Take to Work? Timelines by Phase",
     description:
-      "SEO usually takes 3 to 6 months to show first results and 6 to 12 months to consolidate, as a guide. What happens each month and how to see it in Search Console.",
+      "How long SEO takes to work: usually 3 to 6 months for first results and 6 to 12 to consolidate. What happens in each phase and how to check Search Console.",
     h1: "How long does SEO take to work: what happens month by month and what it depends on",
     lead: "The timeline depends on where your website stands today and who you compete with. Here is what happens in each phase, which Search Console figures move first, and when a delay points to a problem.",
     alt: "Indicative 12-month chart: impressions rise first, then position improves, and clicks and enquiries come last",
@@ -37,7 +37,7 @@ const TXT = {
   fr: {
     title: "Combien de temps pour que le SEO fonctionne ? Délais par phase",
     description:
-      "Le SEO donne généralement ses premiers résultats en 3 à 6 mois et se consolide en 6 à 12 mois, à titre indicatif. Ce qui se passe chaque mois et comment le voir dans Search Console.",
+      "Combien de temps faut-il au SEO : souvent 3 à 6 mois pour les premiers résultats et 6 à 12 pour se consolider. Les étapes et leur suivi dans Search Console.",
     h1: "Combien de temps faut-il pour que le SEO donne des résultats : mois par mois et de quoi cela dépend",
     lead: "Le délai dépend de l'état actuel de votre site et de vos concurrents. Voici ce qui se passe à chaque phase, quels chiffres de Search Console bougent en premier et quand un retard signale un problème.",
     alt: "Graphique indicatif sur 12 mois : les impressions montent d'abord, puis la position s'améliore, et les clics et contacts arrivent en dernier",

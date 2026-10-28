@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Why ChatGPT Visibility Matters More Than SEO"
       : "Pourquoi ChatGPT compte plus que le SEO",
     description: isEn
-      ? "Millions of people no longer search on Google. They ask ChatGPT, Perplexity or Gemini. If your business doesn't appear in their responses, you're losing clients without knowing it. GEO guide 2026."
-      : "Des millions de personnes ne cherchent plus sur Google. Ils demandent à ChatGPT, Perplexity ou Gemini. Si votre entreprise n'apparaît pas dans leurs réponses, vous perdez des clients sans le savoir. Guide GEO 2026.",
+      ? "Why appearing in ChatGPT, Perplexity and Gemini matters for SMEs in 2026: how search has changed, what GEO is and the three signals AI looks for in content."
+      : "Pourquoi apparaître dans ChatGPT, Perplexity et Gemini compte en 2026 : comment la recherche a changé, ce qu'est le GEO et les trois signaux que l'IA repère.",
     alternates: alternatesFor(`/${lang}/why-appearing-in-chatgpt-gemini-matters-more-seo-2026/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/why-appearing-in-chatgpt-gemini-matters-more-seo-2026/`,
     },

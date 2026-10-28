@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Optimise Content for AI Citations: GEO 2026"
       : "Optimiser votre contenu pour l'IA : GEO 2026",
     description: isEn
-      ? "Technical and practical GEO guide for SMEs. Learn how to structure your content, implement advanced schema markup, configure llms.txt and build semantic authority to appear in ChatGPT, Gemini and Perplexity."
-      : "Guide technique et pratique de GEO pour les PME. Apprenez à structurer votre contenu, implémenter un schema markup avancé, configurer llms.txt et construire l'autorité sémantique pour apparaître dans ChatGPT, Gemini et Perplexity.",
+      ? "Optimise content for AI citations: structure your pages, use advanced schema, set up llms.txt and build entity authority so ChatGPT and Gemini can cite you."
+      : "Optimiser votre contenu pour être cité par ChatGPT et Gemini : structure des pages, schema avancé, fichier llms.txt et autorité d'entité, pas à pas.",
     alternates: alternatesFor(`/${lang}/how-to-optimize-content-for-ai-citations/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-optimize-content-for-ai-citations/`,
     },

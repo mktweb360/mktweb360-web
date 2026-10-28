@@ -9,7 +9,7 @@ import { AnswerIllustration, LayersIllustration } from "@/components/geo/GeoIllu
 import { BlogBanner } from "@/components/BlogBanner";
 export const metadata: Metadata = {
   title: "Agencia GEO: Posicionamiento en IA y ChatGPT",
-  description: "Agencia GEO para que ChatGPT, Gemini, Copilot, la IA de Google y cualquier asistente recomienden tu empresa: auditoría en IA, contenido citable y datos estructurados.",
+  description: "Agencia GEO: posicionamiento en IA para que ChatGPT, Gemini, Copilot y el modo IA de Google puedan citar tu empresa. Auditoría, contenido citable y schema.",
   alternates: alternatesFor("/geo-posicionamiento-ia/") ?? { canonical: "https://www.mktweb360.com/geo-posicionamiento-ia/" },
   openGraph: {
     title: "Agencia GEO: Posicionamiento en IA y ChatGPT | Mkt Web 360",

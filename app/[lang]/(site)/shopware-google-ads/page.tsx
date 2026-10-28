@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Campagnes Google Ads pour Shopware",
     description: isEn
       ? "How to set up Google Ads for your Shopware store: conversion tracking, Merchant Center connection, Performance Max, Shopping and ROAS optimisation."
-      : "Comment configurer Google Ads pour votre boutique Shopware : suivi des conversions, connexion au Merchant Center, Performance Max, Shopping et optimisation du ROAS.",
+      : "Google Ads pour Shopware : suivi des conversions, lien avec Merchant Center, Performance Max et Shopping, titres du flux et pilotage au ROAS plutôt qu'au CPC.",
     alternates: alternatesFor(`/${lang}/shopware-google-ads/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/shopware-google-ads/`,
     },

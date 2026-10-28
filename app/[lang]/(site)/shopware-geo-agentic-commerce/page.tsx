@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "GEO for Shopware: Sell via ChatGPT"
       : "GEO pour Shopware : vendre via ChatGPT",
     description: isEn
-      ? "Shopware 6.7.9 brings native Agentic Commerce. Prepare your store with GEO so ChatGPT and Perplexity recommend and sell your products directly from the conversation."
-      : "Shopware 6.7.9 intègre l'Agentic Commerce natif. Préparez votre boutique avec le GEO pour que ChatGPT et Perplexity recommandent et vendent vos produits directement depuis la conversation.",
+      ? "GEO for Shopware: get your store ready for the native Agentic Commerce in version 6.7.9 so ChatGPT and Perplexity can recommend your products."
+      : "GEO pour Shopware : préparez votre boutique à l'Agentic Commerce natif de la version 6.7.9 pour que ChatGPT et Perplexity puissent recommander vos produits.",
     alternates: alternatesFor(`/${lang}/shopware-geo-agentic-commerce/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/shopware-geo-agentic-commerce/`,
     },

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Création de site web sur mesure",
     description: isEn
       ? "Custom web design for medium and large businesses that need specific functionality: product catalogues, private areas, intranets, client portals and more."
-      : "Création de sites web sur mesure pour les entreprises de taille moyenne et grande nécessitant des fonctionnalités spécifiques : catalogues de produits, espaces privés, intranets, portails clients et plus encore.",
+      : "Création de site web sur mesure pour entreprises : catalogues produits, espaces privés, intranets, portails clients et réservations, au-delà du site vitrine.",
     alternates: alternatesFor(`/${lang}/web-design-for-businesses/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/web-design-for-businesses/`,
     },
