@@ -439,7 +439,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     description: m.description,
     inLanguage: l,
     author: autorSchema(lang),
-    publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+    publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     datePublished: DATE,
     dateModified: DATE,
     image: `https://www.mktweb360.com${OGS[l]}`,
