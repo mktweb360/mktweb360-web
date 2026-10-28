@@ -11,7 +11,8 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 const ES_SLUG = "digitalizacion-pymes-espana-datos-ine-2026";
 const SLUGS = { en: "sme-digitalisation-spain-ine-data-2026", fr: "digitalisation-pme-espagne-donnees-ine-2026" } as const;
-const OG = "/og-digitalizacion-pymes-espana-datos-ine-2026.jpg";
+// Infografía traducida por idioma (la ES está en /og-digitalizacion-pymes-espana-datos-ine-2026.jpg).
+const OG = { en: "/og-sme-digitalisation-spain-ine-data-2026.jpg", fr: "/og-digitalisation-pme-espagne-donnees-ine-2026.jpg" } as const;
 const DATE = "2026-10-29";
 const INE_URL = "https://www.ine.es/dyngs/Prensa/ETICCE20251T2026.htm";
 const INE_PREV_URL = "https://www.ine.es/dyngs/Prensa/ETICCE20241T2025.htm";
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       description: m.description,
       url: pageUrl(l),
       type: "article",
-      images: [{ url: OG, width: 1200, height: 630 }],
+      images: [{ url: OG[l], width: 1200, height: 630 }],
     },
   };
 }
@@ -307,7 +308,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     datePublished: DATE,
     dateModified: DATE,
-    image: `https://www.mktweb360.com${OG}`,
+    image: `https://www.mktweb360.com${OG[l]}`,
     url,
     mainEntityOfPage: url,
   };
@@ -349,7 +350,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">{m.h1}</h1>
           <p className="text-xl text-gray-600 leading-relaxed">{t.intro}</p>
-          <Image src={OG} alt={t.alt} width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
+          <Image src={OG[l]} alt={t.alt} width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
