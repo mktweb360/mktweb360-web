@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Chatbot para clínicas: citas automatizadas",
@@ -26,9 +28,10 @@ const articleSchema = {
   headline: "Chatbot para clínicas y centros de salud: citas, preguntas y cumplimiento sanitario",
   description:
     "Las clínicas y centros de salud reciben cientos de consultas repetitivas cada día. Un chatbot bien implementado puede automatizar la gestión de citas, responder preguntas frecuentes y cualificar pacientes, cumpliendo con el RGPD.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-diseno-web-para-clinicas.jpg",
   url: "https://www.mktweb360.com/chatbot-para-clinicas-centros-salud-automatizar-citas/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-para-clinicas-centros-salud-automatizar-citas/",
@@ -76,6 +79,7 @@ export default function ChatbotClinicasPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Marketing Digital · Julio 2026</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Chatbot para clínicas y centros de salud: citas, preguntas y cumplimiento sanitario

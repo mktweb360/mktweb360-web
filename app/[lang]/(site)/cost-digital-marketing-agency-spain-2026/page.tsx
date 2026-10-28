@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -99,6 +100,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "How much does a digital marketing agency cost in Spain in 2026?"
             : "Combien coûte une agence de marketing digital en Espagne en 2026 ?"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "It is the question every SME asks before hiring, and the one that receives the most vague answers. Here are real prices from the Spanish market in 2026, what each price range includes and how to spot a budget that does not suit you."

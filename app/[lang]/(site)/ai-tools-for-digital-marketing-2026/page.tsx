@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -87,6 +88,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "AI tools for digital marketing in 2026: an honest analysis of the ones worth your time"
             : "Outils d'IA pour le marketing digital en 2026 : analyse honnête de ceux qui valent vraiment la peine"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "Not every AI marketing tool deserves the time it takes to learn it. This is an honest analysis of those that deliver real value to SMEs and agencies in 2026, within a sensible AI-applied-to-marketing strategy."

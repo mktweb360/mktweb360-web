@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -97,6 +98,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "How to manage your company's online reputation: practical guide 2026"
             : "Gérer votre réputation en ligne : guide 2026"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "Before making a purchase, most people search for opinions about a business. What they find — reviews, mentions, responses — shapes the first impression that determines whether they call you or go to a competitor. Managing that is not optional."

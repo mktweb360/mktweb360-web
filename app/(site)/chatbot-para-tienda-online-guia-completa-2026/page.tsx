@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Chatbot para tienda online: guía completa",
@@ -26,9 +28,10 @@ const articleSchema = {
   headline: "Chatbot para tienda online: guía completa para vender más y atender mejor en 2026",
   description:
     "Un chatbot para tienda online puede atender consultas 24/7, recuperar carritos abandonados, responder preguntas de producto y gestionar el estado de pedidos. Guía completa con casos reales para 2026.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-diseno-web-tienda-online.jpg",
   url: "https://www.mktweb360.com/chatbot-para-tienda-online-guia-completa-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-para-tienda-online-guia-completa-2026/",
@@ -76,6 +79,7 @@ export default function ChatbotTiendaOnlinePage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Ecommerce · Julio 2026</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Chatbot para tienda online: guía completa para vender más y atender mejor en 2026

@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Qué es el GEO (Generative Engine Optimization)",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Qué es el GEO (Generative Engine Optimization) y por qué importa en 2025 | Mkt Web 360",
   description: "GEO: qué es, cómo funciona y por qué optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini es la nueva frontera del SEO.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Qué es GEO" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">IA · Estrategia</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Qué es el GEO y por qué es más importante que el SEO tradicional en 2025</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">GEO (Generative Engine Optimization) es la disciplina de optimizar tu presencia digital para aparecer en las respuestas de ChatGPT, Perplexity, Gemini y Claude. Esta guía explica qué es, cómo funciona y cómo empezar.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Del SEO al GEO: cómo ha cambiado la búsqueda online</h2>

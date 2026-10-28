@@ -6,6 +6,8 @@ import Link from "next/link";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "SEO para servicios urgentes 24 horas",
@@ -25,9 +27,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "SEO para Servicios Urgentes 24h: Cómo Posicionar en Google",
   description: "Estrategias SEO para servicios de urgencia 24 horas.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2024-03-15",
+  dateModified: "2024-03-15",
   url: "https://www.mktweb360.com/seo-para-servicios-urgentes-24h/",
   mainEntityOfPage: "https://www.mktweb360.com/seo-para-servicios-urgentes-24h/",
 };
@@ -42,6 +45,7 @@ export default function SeoServiciosUrgentesPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">SEO</span>
             <time className="text-sm text-gray-400" dateTime="2024-03-15">15 de marzo de 2024</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             SEO para Servicios Urgentes 24h: Cómo Posicionar en Google

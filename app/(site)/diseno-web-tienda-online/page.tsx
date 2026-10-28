@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 import { BlogBanner } from "@/components/BlogBanner";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 export const metadata: Metadata = {
   title: "Diseño web para tienda online sin comisiones",
   description:
@@ -26,7 +28,7 @@ const articleSchema = {
   headline: "Diseño Web para Tienda Online: Sin Comisiones, Sin Licencias",
   description:
     "Diseño y desarrollo de tienda online profesional sin comisiones por venta ni licencias mensuales. WooCommerce, SEO incluido, desde 490€.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
@@ -77,6 +79,7 @@ export default function DisenoWebTiendaOnlinePage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Diseño Web · Ecommerce</span>
             <time className="text-sm text-gray-400" dateTime="2026-06-25">25 de junio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Diseño Web para Tienda Online: Sin Comisiones, Sin Licencias

@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to digitalise your business in Castilla-La Mancha in 2025" : "Comment digitaliser votre entreprise en Castille-La Manche en 2025"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Businesses in Castilla-La Mancha face a digital opportunity: lower competition online than in major cities, with the same customers searching Google every day. This guide explains how to capitalise on it." : "Les entreprises de Castille-La Manche font face à une opportunité digitale : moins de concurrence en ligne que dans les grandes villes, avec les mêmes clients cherchant sur Google chaque jour. Ce guide explique comment en profiter."}
         </p>

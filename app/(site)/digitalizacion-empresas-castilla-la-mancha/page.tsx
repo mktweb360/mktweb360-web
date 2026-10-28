@@ -4,6 +4,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Digitalizar empresas en Castilla-La Mancha",
@@ -22,7 +24,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Digitalización de Empresas en Castilla-La Mancha — Guía 2025 | Mkt Web 360",
   description: "Cómo digitalizar tu empresa en Castilla-La Mancha. Ayudas, herramientas y estrategia digital para PYMEs de la región. Guía actualizada 2025.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -39,6 +41,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Digitalización en CLM" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Estrategia Digital</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo digitalizar tu empresa en Castilla-La Mancha en 2025</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">La digitalización ya no es opcional para las empresas de Castilla-La Mancha. Esta guía explica los pasos, las herramientas disponibles y las ayudas públicas para hacerlo sin complicaciones.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Estado de la digitalización en Castilla-La Mancha</h2>

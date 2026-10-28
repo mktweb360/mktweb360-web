@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 // 28/10/2026 — reescrita como checklist de auditoría web de 30 puntos (tema 1 de la propuesta de blog del 27/10,
 // opción A aprobada por José: se reescribe esta URL en lugar de crear otra, para no canibalizarla).
@@ -36,7 +38,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: H1,
   description: DESCRIPTION,
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: DATE_MODIFIED,
@@ -233,6 +235,7 @@ export default function Page() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">SEO</span>
             <time className="text-sm text-gray-400" dateTime={DATE_MODIFIED}>Actualizado el 28 de octubre de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">{H1}</h1>
           <p className="text-xl text-gray-600 leading-relaxed">

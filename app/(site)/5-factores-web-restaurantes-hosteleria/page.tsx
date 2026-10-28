@@ -7,6 +7,8 @@ import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
 import { DEMO_BY_ID } from "@/lib/demos";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Web para restaurantes y hoteles: 5 claves",
@@ -28,9 +30,10 @@ const articleSchema = {
   headline: "5 factores clave en la web de un restaurante u hotel",
   description:
     "Los 5 factores que determinan si la web de un negocio de hostelería llena mesas: hoja de reclamaciones, alérgenos según el Reglamento UE 1169/2011, reserva online, ficha de Google Business Profile y carta siempre actualizada.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-06",
+  dateModified: "2026-09-06",
   url: "https://www.mktweb360.com/5-factores-web-restaurantes-hosteleria/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-restaurantes-hosteleria/",
 };
@@ -77,6 +80,7 @@ export default function FactoresWebRestaurantesPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Diseño Web · Hostelería y Turismo</span>
             <time className="text-sm text-gray-400" dateTime="2026-09-06">6 de septiembre de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             5 factores clave a tener en cuenta en la web de un restaurante u hotel

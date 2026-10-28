@@ -7,6 +7,8 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, ROUTES, urlFor } from "@/lib/i18n/routes";
 import { planesSeo, type PlanSeo } from "@/lib/planes-seo";
 import { preciosPlanesSeo } from "@/lib/precios-planes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 // 28/10/2026 — versiones EN/FR de /seo-para-pymes-guia/ (tema 2 del plan de blog).
 // La carpeta FR (seo-pour-pme-guide) reexporta esta página. Precios: catálogo de MktOS, nunca a mano.
@@ -140,7 +142,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     headline: t.h1,
     description: t.description,
     inLanguage: lang,
-    author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+    author: autorSchema(lang),
     publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     datePublished: DATE,
     dateModified: DATE,
@@ -271,6 +273,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">SEO</span>
             <time className="text-sm text-gray-400" dateTime={DATE}>{t.date}</time>
+            <AuthorByline lang={lang} />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">{t.h1}</h1>
           <p className="text-xl text-gray-600 leading-relaxed">{t.lead}</p>

@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -99,6 +100,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "Self-employed social security contributions in Spain 2026: everything you need to know about brackets, MEI and the flat rate"
             : "Cotisations sociales des indépendants en Espagne 2026 : tout ce qu'il faut savoir sur les tranches, le MEI et le forfait"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "Spain's self-employed contributions for 2026 remain equal to 2025 by government extension, with one single variation: the MEI rises to 0.9%. In this guide you will find the bracket table, the €80 flat rate and how to change your base up to 6 times per year."

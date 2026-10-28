@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Agentes de IA para marketing: qué son",
@@ -24,9 +26,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Agentes de IA para marketing: qué son y cómo puede usarlos una pyme",
   description: "Los agentes de IA ya no son ciencia ficción. En 2026, herramientas accesibles permiten que cualquier pyme automatice tareas de marketing con agentes que trabajan de forma autónoma. Guía práctica.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/",
   mainEntityOfPage: "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/",
@@ -74,6 +77,7 @@ export default function AgentesIaMarketingPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">IA · Marketing Digital</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Agentes de IA para marketing en 2026: qué son, qué pueden hacer y cómo empezar

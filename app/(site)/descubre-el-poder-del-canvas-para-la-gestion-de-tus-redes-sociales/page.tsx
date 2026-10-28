@@ -6,6 +6,8 @@ import Link from "next/link";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Canvas para gestionar tus redes sociales",
@@ -25,9 +27,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Descubre el Poder del Canvas para la Gestión de tus Redes Sociales",
   description: "Cómo usar el modelo Canvas para planificar la estrategia de contenidos en redes sociales.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2023-12-05",
+  dateModified: "2023-12-05",
   url: "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/",
   mainEntityOfPage: "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/",
 };
@@ -42,6 +45,7 @@ export default function CanvasRedesSocialesPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Redes Sociales</span>
             <time className="text-sm text-gray-400" dateTime="2023-12-05">5 de diciembre de 2023</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Descubre el Poder del Canvas para la Gestión de tus Redes Sociales

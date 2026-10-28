@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -54,6 +55,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "When to choose SEO and when to choose Google Ads: a guide to making the right decision for your business"
             : "Quand choisir le SEO et quand choisir Google Ads : guide pour prendre la bonne décision selon votre entreprise"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "There is no universal answer to 'SEO or Google Ads?'. The right answer depends on your business, your urgency, your budget and your objectives. This guide gives you a clear framework for deciding — without anyone selling you what they want to sell."

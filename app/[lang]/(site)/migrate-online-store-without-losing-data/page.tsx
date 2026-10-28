@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -40,6 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "How to migrate your online store without losing products, customers or SEO rankings"
             : "Comment migrer votre boutique en ligne sans perdre produits, clients ni positionnement SEO"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "Changing ecommerce platform is scary — and rightly so. A poorly done migration can cost you years of SEO rankings and months of customer data. This guide shows you exactly how to avoid the most common and costly mistakes."

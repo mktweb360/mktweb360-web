@@ -7,6 +7,8 @@ import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
 import { DEMO_BY_ID } from "@/lib/demos";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Web para talleres mecánicos: 5 claves",
@@ -28,9 +30,10 @@ const articleSchema = {
   headline: "5 factores clave en la web de un taller mecánico",
   description:
     "Los 5 factores que determinan si la web de un taller mecánico capta clientes: hoja de reclamaciones, presupuesto previo por escrito según el RD 1457/1986, solicitud de cita online, garantía de reparación clara y transparencia de precios.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-06",
+  dateModified: "2026-09-06",
   url: "https://www.mktweb360.com/5-factores-web-talleres-mecanicos/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-talleres-mecanicos/",
 };
@@ -77,6 +80,7 @@ export default function FactoresWebTalleresMecanicosPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Diseño Web · Talleres Mecánicos</span>
             <time className="text-sm text-gray-400" dateTime="2026-09-06">6 de septiembre de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             5 factores clave a tener en cuenta en la web de un taller mecánico

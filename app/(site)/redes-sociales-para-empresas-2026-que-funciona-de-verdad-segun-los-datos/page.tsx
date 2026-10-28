@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Redes sociales para empresas: qué funciona",
@@ -26,9 +28,10 @@ const articleSchema = {
   headline: "Redes sociales para empresas en 2026: qué funciona de verdad según los datos",
   description:
     "El estudio Social Media 2026 de Cyberclick y Metricool analiza millones de publicaciones. TikTok lidera en impresiones, Instagram en estabilidad, LinkedIn en B2B. Qué significa para tu estrategia.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-smm.jpg",
   url: "https://www.mktweb360.com/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/",
   mainEntityOfPage: "https://www.mktweb360.com/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/",
@@ -76,6 +79,7 @@ export default function RedesSocialesEmpresas2026Page() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Social Media · Estrategia</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Redes sociales para empresas en 2026: lo que dicen los datos reales sobre qué funciona

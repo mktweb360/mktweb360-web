@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "PESTEL analysis in digital marketing: how to apply it to your strategy" : "Analyse PESTEL en marketing digital : comment l'appliquer à votre stratégie"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "PESTEL analysis helps you understand the external factors that affect your business and your digital marketing strategy. This guide explains how to use it practically." : "L'analyse PESTEL vous aide à comprendre les facteurs externes qui affectent votre entreprise et votre stratégie de marketing digital. Ce guide explique comment l'utiliser de manière pratique."}
         </p>

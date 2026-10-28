@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to use the Canvas framework to manage your social media strategy" : "Comment utiliser le Canvas pour gérer votre stratégie de réseaux sociaux"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "The Business Model Canvas can be adapted to plan and manage your social media strategy. This guide explains how to use it to create a clearer, more structured content strategy." : "Le Business Model Canvas peut être adapté pour planifier et gérer votre stratégie de réseaux sociaux. Ce guide explique comment l'utiliser pour créer une stratégie de contenu plus claire et structurée."}
         </p>

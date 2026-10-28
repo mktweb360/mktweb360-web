@@ -3,6 +3,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Google Ads sin comisión sobre tu inversión",
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
   },
 };
 
-const schemaArticle = {"@context":"https://schema.org","@type":"BlogPosting","headline":"Google Ads sin comisión sobre presupuesto: por qué cambia todo","description":"Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras y cómo evaluar el modelo de gestión que más te conviene.","datePublished":"2026-08-20T08:00:00Z","dateModified":"2026-08-20T08:00:00Z","author":{"@type":"Organization","name":"Mkt Web 360","url":"https://www.mktweb360.com"},"publisher":{"@type":"Organization","name":"Mkt Web 360","logo":{"@type":"ImageObject","url":"https://www.mktweb360.com/logo.png"}},"image":"https://www.mktweb360.com/og-google-ads-sin-comision-agencia-marketing.jpg","url":"https://www.mktweb360.com/google-ads-sin-comision-agencia-marketing/","inLanguage":"es-ES"};
+const schemaArticle = {"@context":"https://schema.org","@type":"BlogPosting","headline":"Google Ads sin comisión sobre presupuesto: por qué cambia todo","description":"Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras y cómo evaluar el modelo de gestión que más te conviene.","datePublished":"2026-08-20T08:00:00Z","dateModified":"2026-08-20T08:00:00Z","author":autorSchema(),"publisher":{"@type":"Organization","name":"Mkt Web 360","logo":{"@type":"ImageObject","url":"https://www.mktweb360.com/logo.png"}},"image":"https://www.mktweb360.com/og-google-ads-sin-comision-agencia-marketing.jpg","url":"https://www.mktweb360.com/google-ads-sin-comision-agencia-marketing/","inLanguage":"es-ES"};
 const schemaFAQ = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "¿Qué es la comisión sobre presupuesto en Google Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Es un porcentaje (normalmente 10-20%) que la agencia cobra sobre lo que inviertes en Google. Si inviertes 2.000€/mes, pagas 200-400€ adicionales a la agencia solo por gestionar ese dinero."}}, {"@type": "Question", "name": "¿Por qué algunas agencias cobran comisión y otras no?", "acceptedAnswer": {"@type": "Answer", "text": "Es un modelo heredado del marketing offline. Las agencias que cobran comisión tienen incentivo económico para que gastes más, no para que conviertas mejor. Las de tarifa plana se alinean más con tu objetivo."}}, {"@type": "Question", "name": "¿Una agencia sin comisión es más cara en total?", "acceptedAnswer": {"@type": "Answer", "text": "Generalmente no. Con comisión pagas más cuanto más inviertes. Con tarifa plana, el coste de gestión es fijo. A partir de cierto presupuesto, la tarifa plana siempre sale más barata."}}, {"@type": "Question", "name": "¿Cómo saber si mi agencia está inflando el presupuesto?", "acceptedAnswer": {"@type": "Answer", "text": "Pide acceso de lectura a tu cuenta de Google Ads. Revisa el historial de cambios y si el presupuesto ha subido sin justificación de resultados. Una agencia seria te da acceso siempre."}}, {"@type": "Question", "name": "¿Cuánto debería invertir en Google Ads para empezar?", "acceptedAnswer": {"@type": "Answer", "text": "Para tener datos significativos en menos de 3 meses, recomendamos mínimo 500-800€/mes de inversión publicitaria. Por debajo de eso, el aprendizaje del algoritmo es muy lento."}}]};
 
 export default function Page() {
@@ -42,7 +44,7 @@ export default function Page() {
           <h1 className="text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">Google Ads sin comisión sobre presupuesto: por qué cambia todo</h1>
           <p className="text-xl text-primary-200">Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras y cómo evaluar el modelo de gestión que más te conviene.</p>
           <div className="mt-6 flex flex-wrap gap-4 text-sm text-primary-300">
-            <span>📅 2026-08-20</span><span>✍️ Mkt Web 360</span><span>⏱️ 8 min lectura</span>
+            <span>📅 2026-08-20</span><span>✍️ <AuthorByline className="" linkClassName="underline hover:no-underline" /></span><span>⏱️ 8 min lectura</span>
           </div>
         </div>
       </section>

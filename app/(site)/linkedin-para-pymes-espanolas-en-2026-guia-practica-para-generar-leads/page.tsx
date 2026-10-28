@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "LinkedIn para pymes: cómo generar leads",
@@ -24,9 +26,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "LinkedIn para pymes españolas en 2026: guía práctica para generar leads",
   description: "LinkedIn ha cambiado más en 2026 que en los 5 años anteriores. Nuevo algoritmo, vídeo como formato dominante, Employee Generated Content y social selling. Cómo aprovecharlo si eres una pyme.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-smm.jpg",
   url: "https://www.mktweb360.com/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/",
   mainEntityOfPage: "https://www.mktweb360.com/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/",
@@ -74,6 +77,7 @@ export default function LinkedInPymesPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Social Media · LinkedIn</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             LinkedIn para pymes en 2026: cómo generar leads sin gastar en publicidad

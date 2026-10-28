@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -89,6 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "Chatbot for Online Stores: Sell More in 2026"
             : "Chatbot pour boutique en ligne : vendre plus"}
         </h1>
+        <AuthorByline lang={lang} block />
 
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn

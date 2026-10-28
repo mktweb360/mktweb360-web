@@ -5,6 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Cuánto cuesta una agencia de marketing digital",
@@ -25,9 +27,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cuánto cuesta una agencia de marketing digital en España en 2026",
   description: "Precios reales por servicio, qué incluye cada rango y cómo no equivocarte al elegir agencia de marketing digital en España en 2026.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-26",
+  dateModified: "2026-06-26",
   url: "https://www.mktweb360.com/cuanto-cuesta-agencia-marketing-digital-espana-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/cuanto-cuesta-agencia-marketing-digital-espana-2026/",
 };
@@ -78,6 +81,7 @@ export default function CuantoCuestaAgenciaPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Estrategia Digital</span>
             <time className="text-sm text-gray-400" dateTime="2026-06-26">26 de junio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cuánto cuesta una agencia de marketing digital en España en 2026

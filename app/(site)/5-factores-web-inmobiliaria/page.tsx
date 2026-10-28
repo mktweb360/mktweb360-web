@@ -7,6 +7,8 @@ import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { DemoPreviewBanner } from "@/components/DemoPreviewBanner";
 import { DEMO_BY_ID } from "@/lib/demos";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Web para inmobiliarias: 5 factores clave",
@@ -28,9 +30,10 @@ const articleSchema = {
   headline: "5 factores clave en la web de una inmobiliaria",
   description:
     "Los 5 factores que definen si la web de una inmobiliaria vende: certificado energético obligatorio en cada ficha, sindicación con portales, velocidad con fotografía pesada, buscador avanzado de propiedades y captación de leads cualificados por inmueble.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-04",
+  dateModified: "2026-09-04",
   url: "https://www.mktweb360.com/5-factores-web-inmobiliaria/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-inmobiliaria/",
 };
@@ -81,6 +84,7 @@ export default function FactoresWebInmobiliariaPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Diseño Web · Inmobiliarias</span>
             <time className="text-sm text-gray-400" dateTime="2026-09-04">4 de septiembre de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             5 factores clave a tener en cuenta en la web de una inmobiliaria

@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "What can an SME automate in marketing and sales to save time and capture better" : "Ce qu'une PME peut automatiser en marketing et ventes pour gagner du temps et mieux capturer"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Most SMEs spend too much time on repetitive tasks that could be automated. This guide explains which marketing and sales processes are worth automating and how to start." : "La plupart des PME passent trop de temps sur des tâches répétitives qui pourraient être automatisées. Ce guide explique quels processus de marketing et de vente valent la peine d'être automatisés et comment commencer."}
         </p>

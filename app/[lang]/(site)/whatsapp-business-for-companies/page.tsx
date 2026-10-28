@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -48,6 +49,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "WhatsApp Business for companies: complete guide to setup and strategy"
             : "WhatsApp Business pour les entreprises : guide complet de configuration et stratégie"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "WhatsApp Business is the communication channel with the highest open rate — 98%. This guide explains how to configure it correctly, which features to leverage and how to use it to attract and retain clients."

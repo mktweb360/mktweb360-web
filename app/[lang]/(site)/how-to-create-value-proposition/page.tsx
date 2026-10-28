@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to create a value proposition that makes customers choose you" : "Comment créer une proposition de valeur qui fait que les clients vous choisissent"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Most businesses struggle to explain what makes them different. A strong value proposition solves this — it tells your ideal customer exactly why they should choose you over anyone else." : "La plupart des entreprises ont du mal à expliquer ce qui les rend différentes. Une proposition de valeur solide résout ce problème — elle dit à votre client idéal exactement pourquoi il devrait vous choisir plutôt que quelqu'un d'autre."}
         </p>

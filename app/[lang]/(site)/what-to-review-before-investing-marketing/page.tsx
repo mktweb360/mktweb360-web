@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "What to review before investing more in digital marketing" : "Que vérifier avant d'investir en marketing"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Investing more in marketing without reviewing what is already working is one of the most common mistakes SMEs make. This guide explains the 7 areas you must review first." : "Investir davantage en marketing sans vérifier ce qui fonctionne déjà est l'une des erreurs les plus courantes des PME. Ce guide explique les 7 domaines que vous devez vérifier en premier."}
         </p>

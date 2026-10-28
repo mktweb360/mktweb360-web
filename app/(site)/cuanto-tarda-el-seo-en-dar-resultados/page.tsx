@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 // 28/10/2026 — tema 3 de la propuesta de blog del 27/10, aprobado por José.
 // Borrador y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 BORRADOR — Tema 3 Cuánto tarda el SEO en dar resultados».
@@ -38,7 +40,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: H1,
   description: DESCRIPTION,
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: DATE,
   dateModified: DATE,
@@ -198,6 +200,7 @@ export default function CuantoTardaSeoPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">SEO</span>
             <time className="text-sm text-gray-400" dateTime={DATE}>28 de octubre de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">{H1}</h1>
           <p className="text-xl text-gray-600 leading-relaxed">

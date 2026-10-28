@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Google My Business for businesses: complete guide to attract local customers" : "Google My Business pour les entreprises : guide complet pour attirer des clients locaux"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Google My Business (now called Google Business Profile) is the most important free tool for local businesses. This complete guide explains how to set it up and optimise it to appear when local customers search." : "Google My Business (maintenant appelé Google Business Profile) est l'outil gratuit le plus important pour les entreprises locales. Ce guide complet explique comment le configurer et l'optimiser pour apparaître quand les clients locaux cherchent."}
         </p>

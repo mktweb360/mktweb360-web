@@ -5,6 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "10 errores digitales al montar un negocio",
@@ -25,9 +27,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "10 errores digitales al montar un negocio desde cero (y cómo evitarlos)",
   description: "Arrancar un negocio con errores digitales cuesta dinero y tiempo. Descubre los más frecuentes y cómo evitarlos desde el principio.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-12",
+  dateModified: "2026-06-12",
   url: "https://www.mktweb360.com/errores-digitales-negocio-nuevo/",
   mainEntityOfPage: "https://www.mktweb360.com/errores-digitales-negocio-nuevo/",
 };
@@ -78,6 +81,7 @@ export default function ErroresDigitalesNegocioNuevoPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Emprendedores</span>
             <time className="text-sm text-gray-400" dateTime="2026-06-12">12 de junio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             10 errores digitales al montar un negocio desde cero (y cómo evitarlos)

@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -87,6 +88,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "LinkedIn for SMEs in 2026: how to generate leads without spending on advertising"
             : "LinkedIn pour les PME en 2026 : comment générer des leads sans dépenser en publicité"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "LinkedIn has changed more in 2026 than in the previous five years: new algorithm, dominant video, employee content and social selling. Used well, it is today one of the most cost-effective channels for generating quality leads without relying on advertising."

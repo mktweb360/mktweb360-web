@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Métodos de Pago Tienda Online España",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Métodos de Pago Tienda Online España | Mkt Web 360",
   description: "Comparativa de pasarelas de pago para ecommerce en España: Stripe, Bizum, PayPal, Redsys y alternativas. Comisiones, integración con WooCommerce y cuál funciona mejor.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Métodos de pago tienda online España" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Métodos de pago para tiendas online en España: cuál elegir y cuánto cobran en 2025</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">La pasarela de pago que elijas afecta directamente a cuántos clientes terminan la compra. Una mala experiencia en el checkout es la principal causa de abandono de carrito. Si tu <Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="text-accent-500 hover:underline">tienda online</Link> no está bien estructurada, ni la mejor pasarela de pago compensará los problemas de UX. Esta guía compara las opciones disponibles en España para que elijas con datos.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Qué métodos de pago prefieren los compradores españoles</h2>

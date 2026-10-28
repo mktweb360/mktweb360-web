@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "SEO local para empresas de servicios",
@@ -26,9 +28,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "SEO local para empresas de servicios: cómo conseguir clientes en tu zona",
   description: "Aprende qué necesita una empresa de servicios para mejorar su presencia local y captar más clientes desde Google en su zona.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-03-24",
+  dateModified: "2025-03-24",
   url: "https://www.mktweb360.com/seo-local-empresas-servicios/",
   mainEntityOfPage: "https://www.mktweb360.com/seo-local-empresas-servicios/",
 };
@@ -79,6 +82,7 @@ export default function SeoLocalPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">SEO Local</span>
             <time className="text-sm text-gray-400" dateTime="2025-03-24">24 de marzo de 2025</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             SEO local para empresas de servicios: cómo conseguir clientes en tu zona

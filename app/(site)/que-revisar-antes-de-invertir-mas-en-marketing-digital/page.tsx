@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Qué revisar antes de invertir en marketing",
@@ -26,9 +28,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Qué revisar en tu empresa antes de invertir más en marketing digital",
   description: "Antes de invertir más en marketing digital, revisa estas áreas clave para no amplificar errores y tomar mejores decisiones.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-04-01",
+  dateModified: "2025-04-01",
   url: "https://www.mktweb360.com/que-revisar-antes-de-invertir-mas-en-marketing-digital/",
   mainEntityOfPage: "https://www.mktweb360.com/que-revisar-antes-de-invertir-mas-en-marketing-digital/",
 };
@@ -89,6 +92,7 @@ export default function QueRevisarPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Estrategia</span>
             <time className="text-sm text-gray-400" dateTime="2025-04-01">1 de abril de 2025</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Qué revisar en tu empresa antes de invertir más en marketing digital

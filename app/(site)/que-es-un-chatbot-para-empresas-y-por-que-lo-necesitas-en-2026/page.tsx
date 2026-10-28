@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Qué es un chatbot para empresas",
@@ -26,9 +28,10 @@ const articleSchema = {
   headline: "Qué es un chatbot para empresas y por qué lo necesitas en 2026",
   description:
     "Un chatbot para empresas ya no es tecnología de grandes corporaciones. En 2026, las pymes españolas que automatizan su atención al cliente con IA reducen costes, captan más leads y venden más. Guía completa.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/",
@@ -80,6 +83,7 @@ export default function ChatbotEmpresasPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">IA y Automatización · Julio 2026</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Qué es un chatbot para empresas y por qué lo necesitas en 2026

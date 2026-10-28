@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -31,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Digital mistakes new businesses make and how to avoid them from day one" : "Erreurs digitales des nouvelles entreprises et comment les éviter dès le premier jour"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn ? "Most new businesses make the same digital mistakes. This guide identifies the 5 most costly and explains how to avoid them from the very start." : "La plupart des nouvelles entreprises font les mêmes erreurs digitales. Ce guide identifie les 5 plus coûteuses et explique comment les éviter dès le début."}
         </p>

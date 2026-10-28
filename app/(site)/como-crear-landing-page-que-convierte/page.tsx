@@ -5,6 +5,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Cómo crear una landing page que convierte",
@@ -23,7 +25,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo Crear una Landing Page que Convierte — Guía Práctica | Mkt Web 360",
   description: "Aprende a crear landing pages que convierten visitas en leads y clientes. Estructura, copy, CTA y errores que debes evitar. Guía con ejemplos reales.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
@@ -40,6 +42,7 @@ export default function Page() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Landing pages que convierten" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Diseño Web</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo crear una landing page que convierte visitas en clientes</h1>
+        <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">Una landing page bien diseñada puede multiplicar por 3 tus conversiones sin invertir más en publicidad. Esta guía explica la estructura, el copy y los elementos que marcan la diferencia.</p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Qué es una landing page y para qué sirve</h2>

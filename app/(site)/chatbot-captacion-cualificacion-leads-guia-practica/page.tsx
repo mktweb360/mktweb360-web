@@ -4,6 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Chatbot para captar y cualificar leads",
@@ -26,9 +28,10 @@ const articleSchema = {
   headline: "Cómo usar un chatbot para captar y cualificar leads: guía práctica",
   description:
     "Un chatbot bien configurado puede captar leads 24/7, cualificarlos con preguntas estratégicas y pasarlos al CRM con contexto completo. Guía práctica para implementar un sistema de captación con chatbot en 2026.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
+  dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-como-generar-leads-calidad-pyme.jpg",
   url: "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/",
@@ -76,6 +79,7 @@ export default function ChatbotCaptacionLeadsPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Marketing Digital · Julio 2026</span>
             <time className="text-sm text-gray-400" dateTime="2026-07-07">7 de julio de 2026</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cómo usar un chatbot para captar y cualificar leads: guía práctica

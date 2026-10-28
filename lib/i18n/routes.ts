@@ -171,6 +171,9 @@ export const ROUTES: Route[] = [
   { es: "/redes-sociales-para-empresas-b2b-2026/", en: "social-media-b2b-companies-2026", fr: "reseaux-sociaux-entreprises-b2b-2026" },
   { es: "/cuanto-tarda-el-seo-en-dar-resultados/", en: "how-long-does-seo-take", fr: "seo-combien-de-temps-resultats" },
   { es: "/seo-para-pymes-guia/", en: "seo-for-smes-guide", fr: "seo-pour-pme-guide" },
+
+  // Página de autor de los artículos del blog (28/10/2026). Slugs EN/FR planos (el validador exige carpetas de un nivel).
+  { es: "/autor/jose-marcos/", en: "author-jose-marcos", fr: "auteur-jose-marcos" },
 ];
 
 // ---------- helpers derivados ----------

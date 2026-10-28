@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Cómo conseguir clientes online siendo autónomo",
@@ -26,9 +28,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo puede un autónomo conseguir clientes por Internet sin depender solo del boca a boca",
   description: "Descubre cómo puede un autónomo conseguir clientes por Internet con una base digital clara, rentable y sin depender solo del boca a boca.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-05-05",
+  dateModified: "2025-05-05",
   url: "https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/",
   mainEntityOfPage: "https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/",
 };
@@ -79,6 +82,7 @@ export default function AutonomoClientesInternetPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Autónomos · Captación</span>
             <time className="text-sm text-gray-400" dateTime="2025-05-05">5 de mayo de 2025</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cómo puede un autónomo conseguir clientes por Internet sin depender solo del boca a boca

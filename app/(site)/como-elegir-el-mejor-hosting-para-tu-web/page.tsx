@@ -6,6 +6,8 @@ import Link from "next/link";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 export const metadata: Metadata = {
   title: "Cómo elegir el mejor hosting para tu web",
@@ -25,9 +27,10 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: "Cómo Elegir el Mejor Hosting para tu Web",
   description: "Guía completa para elegir el hosting correcto para tu página web.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2023-10-25",
+  dateModified: "2023-10-25",
   url: "https://www.mktweb360.com/como-elegir-el-mejor-hosting-para-tu-web/",
   mainEntityOfPage: "https://www.mktweb360.com/como-elegir-el-mejor-hosting-para-tu-web/",
 };
@@ -42,6 +45,7 @@ export default function MejorHostingPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Diseño Web</span>
             <time className="text-sm text-gray-400" dateTime="2023-10-25">25 de octubre de 2023</time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Cómo Elegir el Mejor Hosting para tu Web

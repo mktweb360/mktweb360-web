@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -49,7 +50,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <h1 className="text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">{title}</h1>
           <p className="text-xl text-primary-200">{desc}</p>
           <div className="mt-6 flex flex-wrap gap-4 text-sm text-primary-300">
-            <span>📅 2026-08-21</span><span>✍️ Mkt Web 360</span>
+            <span>📅 2026-08-21</span><span>✍️ <AuthorByline lang={lang} className="" linkClassName="underline hover:no-underline" /></span>
             <span>⏱️ {isFr ? "8 min lecture" : "8 min read"}</span>
           </div>
         </div>

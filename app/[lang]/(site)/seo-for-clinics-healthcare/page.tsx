@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -97,6 +98,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ? "SEO for clinics and healthcare centres: how to attract patients on Google"
             : "SEO pour cliniques : attirer des patients"}
         </h1>
+        <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
             ? "74% of patients search Google before calling a clinic. If your centre does not appear when someone searches for your speciality in your area, that patient ends up at the practice next door. Healthcare SEO has its own rules, and it is worth knowing them."

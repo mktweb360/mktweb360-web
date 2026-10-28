@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -84,6 +85,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <time className="text-sm text-gray-400" dateTime="2026-08-04">
               {isEn ? "August 4, 2026" : "4 août 2026"}
             </time>
+            <AuthorByline lang={lang} />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn

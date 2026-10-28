@@ -5,6 +5,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 
 const SLUG = "brandformance-como-unir-marca-y-performance";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
@@ -30,9 +32,10 @@ const articleSchema = {
   headline: "Brandformance: cómo unir marca y performance para crecer mejor",
   description:
     "El brandformance combina branding y performance marketing en una sola estrategia coherente que reduce el CPL y aumenta el LTV.",
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-08-04",
+  dateModified: "2026-08-04",
   url: URL_CANONICAL,
   mainEntityOfPage: URL_CANONICAL,
 };
@@ -89,6 +92,7 @@ export default function BrandformancePage() {
             <time className="text-sm text-gray-400" dateTime="2026-08-04">
               4 de agosto de 2026
             </time>
+            <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             Brandformance: cómo unir marca y performance para crecer mejor
