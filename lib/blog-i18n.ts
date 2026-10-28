@@ -20,11 +20,11 @@ export const BLOG_I18N: Record<string, PostI18n> = {
   "estrategia-de-contenidos-calendario-editorial": {
     en: {
       title: "Content Strategy and Editorial Calendar (Free Template)",
-      excerpt: "A 5-step content strategy and an editorial calendar template you can copy: one topic, five pieces (blog, carousel, short video, newsletter and post) and what to measure.",
+      excerpt: "A 5-step content strategy and an editorial calendar template to copy: one topic, five pieces (blog, carousel, video, newsletter, post) and what to measure.",
     },
     fr: {
       title: "Stratégie de contenu et calendrier éditorial (modèle)",
-      excerpt: "Une stratégie de contenu en 5 étapes et un modèle de calendrier éditorial à copier : un sujet, cinq contenus (blog, carrousel, vidéo courte, newsletter et post) et quoi mesurer.",
+      excerpt: "Stratégie de contenu en 5 étapes et modèle de calendrier éditorial : un sujet, cinq contenus (blog, carrousel, vidéo, newsletter, post) et quoi mesurer.",
     },
   },
   "como-usar-planificador-de-palabras-clave-google-ads": {

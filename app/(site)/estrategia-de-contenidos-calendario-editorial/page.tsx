@@ -16,9 +16,9 @@ import { alternatesFor } from "@/lib/i18n/routes";
 const SLUG = "estrategia-de-contenidos-calendario-editorial";
 const URL = `https://www.mktweb360.com/${SLUG}/`;
 const OG = `/og-${SLUG}.jpg`;
-const TITLE = "Estrategia de contenidos para empresas (con plantilla de calendario)";
+const TITLE = "Estrategia de contenidos para empresas, con plantilla";
 const DESCRIPTION =
-  "Estrategia de contenidos en 5 pasos y plantilla de calendario editorial: un tema, cinco piezas (blog, carrusel, vídeo, newsletter y post) y qué medir en cada canal.";
+  "Estrategia de contenidos en 5 pasos y plantilla de calendario editorial: un tema, cinco piezas (blog, carrusel, vídeo, newsletter y post) y qué medir.";
 const H1 = "Cómo crear una estrategia de contenidos para tu empresa (con plantilla de calendario editorial)";
 const DATE = "2026-11-01";
 

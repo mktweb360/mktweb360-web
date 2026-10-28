@@ -25,13 +25,13 @@ const META = {
   en: {
     title: "Content Strategy and Editorial Calendar (Free Template)",
     description:
-      "A 5-step content strategy and an editorial calendar template you can copy: one topic, five pieces (blog, carousel, short video, newsletter and post) and what to measure.",
+      "A 5-step content strategy and an editorial calendar template to copy: one topic, five pieces (blog, carousel, video, newsletter, post) and what to measure.",
     h1: "How to build a content strategy for your business (with an editorial calendar template)",
   },
   fr: {
     title: "Stratégie de contenu et calendrier éditorial (modèle)",
     description:
-      "Une stratégie de contenu en 5 étapes et un modèle de calendrier éditorial à copier : un sujet, cinq contenus (blog, carrousel, vidéo courte, newsletter et post) et quoi mesurer.",
+      "Stratégie de contenu en 5 étapes et modèle de calendrier éditorial : un sujet, cinq contenus (blog, carrousel, vidéo, newsletter, post) et quoi mesurer.",
     h1: "Comment créer une stratégie de contenu pour votre entreprise (avec un modèle de calendrier éditorial)",
   },
 };
