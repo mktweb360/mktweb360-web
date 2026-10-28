@@ -10,8 +10,8 @@ import type { Lang } from "@/lib/chatbot/core";
 import { CONSENT_COMERCIAL } from "@/lib/consent-texts";
 import { trackLead } from "@/lib/track";
 
-// WhatsApp del 622 74 89 87 pendiente de la verificación de Meta: mientras no funcione, el chat no lo ofrece.
-const WHATSAPP_ACTIVO = false;
+// WhatsApp del 622 74 89 87: desde el 28/10/2026 está en la app WhatsApp Business del móvil, así que el chat lo ofrece.
+const WHATSAPP_ACTIVO = true;
 
 type Action = "presupuesto" | "contacto" | "auditoria" | "llamada";
 type FormKind = "presupuesto" | "contacto" | "auditoria" | "llamada";
