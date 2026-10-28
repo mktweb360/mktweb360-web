@@ -1,3 +1,7 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 // Fondo animado de la primera diapositiva del hero (sustituye a la foto de la nave).
 // Todo es CSS/SVG: sin imagen pesada que cargar, y el titular sigue siendo el LCP.
 // Las animaciones se paran con prefers-reduced-motion (globals.css).
@@ -8,6 +12,11 @@ const PULSOS: { x: number; y: number; d: number }[] = [
 ];
 
 // Etiquetas flotantes: los frentes en los que trabajamos (no son datos ni resultados).
+// Traducción por idioma de la URL (se usa en la portada ES, EN y FR).
+const T: Record<string, Record<string, string>> = {
+  en: { "Diseño web": "Web design", "Analítica": "Analytics" },
+  fr: { "Diseño web": "Création web", "Analítica": "Analytique" },
+};
 const CHIPS: { t: string; cls: string; d: string; dur: string }[] = [
   { t: "SEO", cls: "left-[5%] top-[34%]", d: "0s", dur: "9s" },
   { t: "GEO · IA", cls: "right-[5%] top-[30%]", d: "1.2s", dur: "11s" },
@@ -18,6 +27,9 @@ const CHIPS: { t: string; cls: string; d: string; dur: string }[] = [
 ];
 
 export function HeroTechBackdrop() {
+  const path = usePathname() ?? "/";
+  const lang = path.startsWith("/en") ? "en" : path.startsWith("/fr") ? "fr" : "es";
+  const label = (t: string) => T[lang]?.[t] ?? t;
   return (
     <div className="absolute inset-0 overflow-hidden bg-[#0a1322]" aria-hidden="true">
       {/* Auroras de color que se desplazan */}
@@ -54,7 +66,7 @@ export function HeroTechBackdrop() {
             style={{ animationDelay: c.d, animationDuration: c.dur }}
           >
             <span className="h-2 w-2 rounded-full bg-gradient-to-br from-[#a78bfa] to-accent-500" />
-            {c.t}
+            {label(c.t)}
           </span>
         ))}
       </div>

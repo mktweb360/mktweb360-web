@@ -68,7 +68,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/ia-aplicada-a-marketing-valor-real-o-humo/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/como-puede-un-autonomo-conseguir-clientes-por-internet/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/nosotros/", priority: 0.8, changeFrequency: "monthly" as const },
-    { url: "/autor/jose-marcos/", priority: 0.6, changeFrequency: "monthly" as const },
     { url: "/auditoria-digital/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/comunicacion-audiovisual/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/casos/", priority: 0.8, changeFrequency: "monthly" as const },
@@ -171,7 +170,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Páginas legales con noindex: fuera del sitemap en los tres idiomas (28/10/2026).
-  const LEGAL_NOINDEX = new Set(["/aviso-legal/", "/politica-de-privacidad/", "/politica-de-cookies/"]);
+  const LEGAL_NOINDEX = new Set(["/aviso-legal/", "/politica-de-privacidad/", "/politica-de-cookies/", "/autor/jose-marcos/"]);
 
   const esSitemap: MetadataRoute.Sitemap = pages.map((p) => ({
     url: `${BASE}${p.url}`,
