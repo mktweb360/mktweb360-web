@@ -1,40 +1,11 @@
-import type { Metadata } from "next";
-import "./globals.css";
+// Documento raíz común (28/10/2026): <html lang> correcto por idioma desde el servidor.
+// Lo usan los tres layouts raíz: app/(site) (ES), app/(app) (área privada, portal, landings) y app/[lang] (EN/FR),
+// además de app/global-not-found.tsx. Antes había un único app/layout.tsx con lang="es" y un parche en el navegador.
+import "@/app/globals.css";
 import { CookieBanner } from "@/components/CookieBanner";
 import { ChatWidget } from "@/components/chatbot/ChatWidget";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.mktweb360.com"),
-  title: {
-    default: "Mkt Web 360 — Agencia de Marketing Digital | España",
-    template: "%s | Mkt Web 360",
-  },
-  description:
-    "Agencia de marketing digital 360 para pymes y empresas de toda España: SEO y GEO, redes sociales, diseño web y tiendas online, Google Ads e IA aplicada.",
-  robots: { index: true, follow: true },
-  verification: { google: "uer2-Is3fH5njl0xCuDxnRURHePJwYREPyNfyoaKK8U" },
-  alternates: {
-    types: {
-      "application/rss+xml": "https://www.mktweb360.com/feed.xml",
-    },
-  },
-  openGraph: {
-    type: "website",
-    locale: "es_ES",
-    url: "https://www.mktweb360.com",
-    siteName: "Mkt Web 360",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@MktWeb360",
-    creator: "@MktWeb360",
-  },
-  other: {
-    copyright: "Mkt Web 360 SLU — Todos los derechos reservados",
-  },
-};
-
-const organizationSchema = {
+export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["Organization", "LocalBusiness"],
   "@id": "https://www.mktweb360.com/#organization",
@@ -95,7 +66,7 @@ const organizationSchema = {
   ],
 };
 
-const websiteSchema = {
+export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Mkt Web 360",
@@ -107,15 +78,9 @@ const websiteSchema = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function RootDocument({ lang, children }: { lang: string; children: React.ReactNode }) {
   return (
-    // suppressHydrationWarning: LangSetter updates lang attr client-side for EN/FR pages.
-    // The attribute starts as "es" (SSR) and is corrected immediately after hydration.
-    <html lang="es" suppressHydrationWarning>
+    <html lang={lang}>
       <head>
         {/* Preconnect para GTM y GA4: reduce latencia cuando el usuario da consentimiento.
             También elimina la advertencia de DevTools "connection not preconnected". */}

@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import type { Lang } from "@/lib/i18n";
 import { supportedLangs, langLocales } from "@/lib/i18n";
-import { LangSetter } from "@/components/LangSetter";
+import { RootDocument } from "@/components/RootDocument";
 import { notFound } from "next/navigation";
+
+// Solo en y fr: cualquier otro primer segmento no es un idioma.
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return supportedLangs
@@ -34,6 +37,7 @@ export async function generateMetadata({
       template: `%s | Mkt Web 360`,
     },
     description: descriptions[lang] ?? descriptions.en,
+    robots: { index: true, follow: true },
     openGraph: {
       type: "website",
       locale: langLocales[lang as Lang] ?? "en_GB",
@@ -54,13 +58,6 @@ export default async function LangLayout({
   if (!supportedLangs.includes(lang as Lang)) {
     notFound();
   }
-  return (
-    <>
-      {/* Fix html lang attribute for EN/FR pages. Root layout hardcodes lang="es"
-          (only root layout can render <html> in Next.js App Router).
-          LangSetter corrects it client-side immediately after hydration. */}
-      <LangSetter lang={lang} />
-      {children}
-    </>
-  );
+  // Layout raíz de EN/FR: <html lang="en|fr"> servido desde el servidor (antes se corregía en el navegador).
+  return <RootDocument lang={lang}>{children}</RootDocument>;
 }
