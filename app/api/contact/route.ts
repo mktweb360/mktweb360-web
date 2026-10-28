@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 import { CONSENT_COMERCIAL, consentLang } from "@/lib/consent-texts";
+import { checkSpam } from "@/lib/antispam";
 
 const FORM_MAP: Record<string, { oferta: string; canal: string }> = {
   "seo":                   { oferta: "seo-mensual",       canal: "web-servicio-seo" },
@@ -72,20 +73,14 @@ export async function POST(req: NextRequest) {
   if (!name || !email || (!message && !messageOptional) || !gdpr)
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
 
-  // Anti-spam capa 1: honeypot — campo oculto que solo rellenan los bots
-  if (_hp) {
+  // Antispam (lib/antispam.ts): campo trampa → descarte; envío sospechoso → solo email marcado, sin oportunidad en MktOS.
+  const spam = checkSpam({ honeypot: _hp, startedAt: body._ts, texts: [name, message], domains: [website, email.split("@")[1] ?? ""] });
+  if (spam.level === "bot") {
     console.warn("[contact] Honeypot triggered:", { ip, email });
     return NextResponse.json({ ok: true, id: randomUUID() });
   }
-
-  // Anti-spam capa 2: detección de patrón de cadena aleatoria bot
-  // (sin espacios, solo alfanumérico, 12+ chars → típico de bots de form spam)
-  const isRandomBotString = (s: string) =>
-    typeof s === "string" && /^[a-zA-Z0-9]{12,}$/.test(s.trim());
-  if (isRandomBotString(name) || isRandomBotString(message)) {
-    console.warn("[contact] Bot string pattern detected:", { ip, email, name });
-    return NextResponse.json({ ok: true, id: randomUUID() });
-  }
+  const suspicious = spam.level === "sospechoso";
+  if (suspicious) console.warn("[contact] Posible spam:", { ip, email, reasons: spam.reasons });
 
   const id = randomUUID();
   const { oferta, canal } = getMktOSMeta(form_type);
@@ -108,7 +103,7 @@ export async function POST(req: NextRequest) {
     const { Resend } = await import("resend");
     await new Resend(apiKey).emails.send({
       from: "web@mktweb360.com", to: "info@mktweb360.com", replyTo: email,
-      subject: `Nuevo lead [${oferta}]${utm_source ? ` \u00b7 ${utm_source}` : ""}: ${name.replace(/[\r\n]+/g, " ")}`,
+      subject: `${suspicious ? "[Posible spam] " : ""}Nuevo lead [${oferta}]${utm_source ? ` \u00b7 ${utm_source}` : ""}: ${name.replace(/[\r\n]+/g, " ")}`,
       html: `<div style="font-family:-apple-system,sans-serif;max-width:600px;margin:0 auto;padding:32px 24px">
         <div style="background:#1e3a5f;padding:20px 24px;border-radius:12px 12px 0 0">
           <h2 style="color:white;margin:0">Nuevo contacto \u2014 ${oferta}</h2>
@@ -128,6 +123,7 @@ export async function POST(req: NextRequest) {
             <p style="margin:0;font-size:15px;line-height:1.6">${message ? esc(message).replace(/\n/g,"<br>") : "—"}</p>
           </div>
           ${trackingHtml}
+          ${suspicious ? `<p style="color:#b91c1c;font-size:13px;margin-top:16px">Marcado como posible spam (${esc(spam.reasons.join("; "))}). No se ha creado la oportunidad en MktOS: si es un lead real, dalo de alta a mano.</p>` : ""}
           <p style="color:#9ca3af;font-size:11px;text-align:center;margin-top:20px">ID: ${id}</p>
         </div>
       </div>`,
@@ -135,7 +131,7 @@ export async function POST(req: NextRequest) {
   }
 
   let opportunityId: string | null = null;
-  try {
+  if (!suspicious) try {
     const r = await fetch(MKTOS_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-webhook-secret": MKTOS_SECRET },

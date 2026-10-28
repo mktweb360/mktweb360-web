@@ -91,7 +91,7 @@ const nextConfig: NextConfig = {
       // Con skipTrailingSlashRedirect NO hay auto-normalización: las reglas casan su
       // source literal, así que TODO source de página debe llevar barra final.
       // URLs WordPress con fecha /YYYY/MM/DD/slug/
-      { source: '/2019/05/03/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', destination: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', permanent: true },
+      { source: '/2019/05/03/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/2019/05/04/tipos-de-resultados-en-buscadores-organicos-seo-y-de-pago-sem/', destination: '/cuando-elegir-seo-vs-google-ads/', permanent: true },
       { source: '/2019/05/20/por-que-la-campana-seo-no-me-funciona/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/2020/11/25/la-importancia-del-contenido-en-internet-para-las-empresas/', destination: '/marketing-de-contenidos/', permanent: true },
@@ -105,6 +105,10 @@ const nextConfig: NextConfig = {
       { source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug/', destination: '/blog/', permanent: true },
       { source: '/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug', destination: '/blog/', permanent: true },
       // URLs anidadas WordPress
+      // 28/10/2026: retirado el artículo «buscadores y navegadores» (tráfico informativo de Latinoamérica sin relación con los servicios). 301 a SEO orgánico en los 3 idiomas.
+      { source: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
+      { source: '/en/search-engines-vs-browsers/', destination: '/en/seo-web-positioning/', permanent: true },
+      { source: '/fr/search-engines-vs-browsers/', destination: '/fr/positionnement-seo/', permanent: true },
       // URL antigua de WordPress enlazada desde larepublica.es (T8 auditoría Semrush 2-oct-2026): la raíz daba 404.
       { source: '/posicionamiento-web-buscadores/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/posicionamiento-web-buscadores/seo-posicionamiento-web-organico/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
@@ -128,7 +132,7 @@ const nextConfig: NextConfig = {
       { source: '/por-que-la-campana-seo-no-me-funciona/page/:page/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
 
       // Slugs con mayúscula y variantes raras
-      { source: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/Ejemplos/', destination: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', permanent: true },
+      { source: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/Ejemplos/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       // Nota: los redirects individuales de /tag/* se eliminaron — cubiertos por el catch-all /tag/:slug
       // Paginaciones adicionales con ?et_blog — redirect base
       { source: '/seo-posicionamiento-web-organico/page/:page/', destination: '/seo-posicionamiento-web-organico/', permanent: true },

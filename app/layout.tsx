@@ -39,6 +39,10 @@ const organizationSchema = {
   "@type": ["Organization", "LocalBusiness"],
   "@id": "https://www.mktweb360.com/#organization",
   name: "Mkt Web 360 SLU",
+  // Marca tal como sale en los títulos y las búsquedas («mkt web 360», «marketing digital 360»), para que Google una la entidad.
+  alternateName: ["Mkt Web 360", "MktWeb360"],
+  legalName: "Mkt Web 360 SLU",
+  description: "Agencia de marketing digital 360 para pymes y empresas de toda España: SEO y GEO, redes sociales, diseño web y tiendas online, Google Ads e IA aplicada.",
   url: "https://www.mktweb360.com",
   logo: "https://www.mktweb360.com/logo.png",
   image: "https://www.mktweb360.com/og-image.jpg",

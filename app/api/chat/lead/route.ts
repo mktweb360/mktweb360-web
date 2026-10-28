@@ -7,6 +7,7 @@ import { randomUUID } from "crypto";
 import { readState } from "@/lib/chatbot/engine";
 import { sendEvent, sidHash } from "@/lib/chatbot/telemetry";
 import { CONSENT_COMERCIAL, consentLang } from "@/lib/consent-texts";
+import { checkSpam } from "@/lib/antispam";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -59,7 +60,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Para llamarte o escribirte por WhatsApp necesito tu teléfono." }, { status: 400 });
 
   const id = randomUUID();
-  if (b._hp) return NextResponse.json({ ok: true, id }); // honeypot: bots
+  // Antispam (lib/antispam.ts): campo trampa → descarte; sospechoso → solo email marcado, sin oportunidad en MktOS.
+  const spam = checkSpam({ honeypot: b._hp, startedAt: b._ts, texts: [nombre, negocio, necesidad], domains: [email.split("@")[1] ?? ""] });
+  if (spam.level === "bot") return NextResponse.json({ ok: true, id });
+  const suspicious = spam.level === "sospechoso";
+  if (suspicious) console.warn("[chat/lead] Posible spam:", { reasons: spam.reasons });
 
   const st = await readState(b.token);
   const resumen = (Array.isArray(b.transcript) ? b.transcript : [])
@@ -83,7 +88,7 @@ export async function POST(req: NextRequest) {
   let mktosOk = false;
   let emailOk = false;
   const secret = process.env.MKTOS_WEBHOOK_SECRET;
-  if (secret) {
+  if (secret && !suspicious) {
     try {
       const r = await fetch(MKTOS_URL, {
         method: "POST",
@@ -116,12 +121,13 @@ export async function POST(req: NextRequest) {
     const { Resend } = await import("resend");
     const sent = await new Resend(apiKey).emails.send({
       from: "web@mktweb360.com", to: "info@mktweb360.com", replyTo: email,
-      subject: `${urgente ? "URGENTE · Llamar ya · " : ""}Lead del asistente [${tipo}] · ${nombre.replace(/[\r\n]+/g, " ")}${urgente && telefono ? ` · ${telefono.replace(/[\r\n]+/g, " ")}` : ""}`,
+      subject: `${suspicious ? "[Posible spam] " : ""}${urgente ? "URGENTE · Llamar ya · " : ""}Lead del asistente [${tipo}] · ${nombre.replace(/[\r\n]+/g, " ")}${urgente && telefono ? ` · ${telefono.replace(/[\r\n]+/g, " ")}` : ""}`,
       html: `<div style="font-family:-apple-system,sans-serif;max-width:640px;margin:0 auto;padding:24px">
         <h2 style="color:#0f1c2e;margin:0 0 12px">Lead del asistente · ${tipo === "presupuesto" ? "pide presupuesto" : "quiere hablar contigo"}</h2>
         <p><strong>${esc(nombre)}</strong> · <a href="mailto:${esc(email)}">${esc(email)}</a>${telefono ? ` · ${esc(telefono)}` : ""}</p>
         <p>Prefiere: <strong>${esc(preferencia)}</strong>${franja ? ` · ${esc(franja)}` : ""} · Comunicaciones comerciales: ${marketing ? "sí" : "no"}</p>
         <pre style="white-space:pre-wrap;background:#f6f7fb;padding:12px;border-radius:8px;font-size:13px">${esc(mensaje)}</pre>
+        ${suspicious ? `<p style="color:#b91c1c">Posible spam (${esc(spam.reasons.join("; "))}): no se ha creado la oportunidad en MktOS.</p>` : ""}
         <p style="color:#888;font-size:11px">ID ${id}${opportunityId ? ` · oportunidad ${opportunityId}` : " · sin respuesta de MktOS"}</p></div>`,
     }).catch((e: unknown) => { console.error("[chat/lead] Resend:", e); return null; });
     emailOk = !!sent && !("error" in sent && sent.error);
@@ -132,7 +138,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "No hemos podido registrar tu solicitud. Llámanos al 622 74 89 87 o escribe a info@mktweb360.com, por favor." }, { status: 502 });
   // Llamada con hueco elegido: se reserva en el calendario de MktOS y José recibe el aviso en el móvil.
   let reserva: string | null = null;
-  if (preferencia === "llamada" && huecoIso && telefono && secret) {
+  if (preferencia === "llamada" && huecoIso && telefono && secret && !suspicious) {
     try {
       const base = (process.env.MKTOS_APP_URL || "https://mktos360.app").replace(/\/$/, "");
       const r = await fetch(`${base}/api/webhooks/assistant-booking`, {
