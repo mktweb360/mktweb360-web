@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Migrer vers Shopware sans perdre le SEO",
     description: isEn
       ? "How to migrate your store to Shopware without losing rankings: URL audit, 301 redirect map, launch protocol and post-migration monitoring."
-      : "Comment migrer votre boutique vers Shopware sans perdre le positionnement : audit des URLs, carte de redirections 301, protocole de lancement et suivi post-migration.",
+      : "Migrer vers Shopware sans perdre votre SEO : audit des URL de valeur, plan de redirections 301, protocole du jour de lancement et suivi après la migration.",
     alternates: alternatesFor(`/${lang}/migrate-to-shopware-seo/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/migrate-to-shopware-seo/`,
     },

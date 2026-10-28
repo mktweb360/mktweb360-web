@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "CRO Shopware : optimiser votre conversion",
     description: isEn
       ? "Boost your Shopware store's conversion rate: key GA4 events, the 5 real causes of cart abandonment, and product page and checkout optimisation."
-      : "Augmentez le taux de conversion de votre boutique Shopware : événements GA4 essentiels, les 5 vraies causes d'abandon de panier et optimisation des fiches produit et du checkout.",
+      : "CRO Shopware : les 4 événements GA4 indispensables, les 5 vraies causes d'abandon de panier et comment optimiser fiches produit et checkout pour convertir.",
     alternates: alternatesFor(`/${lang}/shopware-cro-conversion-optimization/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/shopware-cro-conversion-optimization/`,
     },

@@ -28,7 +28,7 @@ const TXT = {
   en: {
     title: "SEO for SMEs: What to Do, What It Costs and Where to Start",
     description:
-      "A practical SEO guide for SMEs in Spain (2026): what you can do yourself this week, what is worth delegating, what an SEO plan costs and how long it takes to show.",
+      "SEO for SMEs in Spain (2026): what you can do yourself this week, what is worth delegating, what an SEO plan costs and how long it takes to show results.",
     h1: "SEO for SMEs in 2026: a practical guide to getting started without wasting money",
     lead: "What SEO means for a small business, what you can do yourself this very week, what is worth delegating, what it costs and how long it takes. No ranking promises.",
     alt: "Comic strip: a shop owner wonders why nobody finds them on Google, then points to their SEO to-do list for the week",
@@ -39,7 +39,7 @@ const TXT = {
   fr: {
     title: "SEO pour PME : que faire, combien ça coûte et par où commencer",
     description:
-      "Guide pratique du SEO pour les PME en Espagne (2026) : ce que vous pouvez faire vous-même cette semaine, ce qu'il vaut mieux déléguer, le coût d'un plan SEO et le délai pour voir des résultats.",
+      "SEO pour PME en Espagne (2026) : ce que vous pouvez faire vous-même cette semaine, ce qu'il vaut mieux déléguer, combien coûte un plan SEO et en quel délai.",
     h1: "SEO pour PME en 2026 : guide pratique pour démarrer sans gaspiller d'argent",
     lead: "Ce que le SEO représente pour une petite entreprise, ce que vous pouvez faire vous-même dès cette semaine, ce qu'il vaut mieux déléguer, combien ça coûte et combien de temps il faut. Sans promesse de positions.",
     alt: "Bande dessinée : une commerçante se demande pourquoi personne ne la trouve sur Google, puis montre sa liste de tâches SEO de la semaine",

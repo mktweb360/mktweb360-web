@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "LinkedIn for SMEs: Generating Leads in 2026"
       : "LinkedIn pour PME : générer des leads en 2026",
     description: isEn
-      ? "LinkedIn has changed more in 2026 than in the previous five years. New algorithm, video as the dominant format, Employee Generated Content and social selling. How to use it if you run an SME."
-      : "LinkedIn a plus changé en 2026 que lors des cinq années précédentes. Nouvel algorithme, vidéo comme format dominant, Employee Generated Content et social selling. Comment en tirer parti si vous êtes une PME.",
+      ? "LinkedIn for SMEs in 2026: the new algorithm, formats that work, employee content and social selling to generate leads without spending on advertising."
+      : "LinkedIn pour PME en 2026 : nouvel algorithme, formats qui marchent, contenu des employés et social selling pour générer des leads sans payer de publicité.",
     alternates: alternatesFor(`/${lang}/linkedin-for-smes-lead-generation-2026/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/linkedin-for-smes-lead-generation-2026/`,
     },

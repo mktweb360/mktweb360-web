@@ -7,7 +7,7 @@ import { webPageSchema, fromMeta, ORG_ID } from "@/lib/schema";
 export const metadata: Metadata = {
   // absolute: evita que la plantilla del layout ("%s | Mkt Web 360") duplique la marca.
   title: { absolute: "Agencia de Marketing Digital 360 para Pymes | Mkt Web 360" },
-  description: "Agencia de marketing digital 360: SEO y GEO, redes sociales, diseño web y tiendas online, Google Ads e IA aplicada para empresas, pymes y autónomos de toda España.",
+  description: "Agencia de marketing digital 360 para pymes y autónomos de toda España: SEO y GEO, Google Ads, redes sociales, diseño web, tiendas online e IA aplicada.",
   // hreflang a /en/ y /fr/ (antes solo canonical: la portada no declaraba sus traducciones).
   alternates: alternatesFor("/") ?? { canonical: "/" },
   openGraph: {

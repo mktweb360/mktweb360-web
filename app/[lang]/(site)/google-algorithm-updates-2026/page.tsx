@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Google Algorithm Updates 2026: What Changed"
       : "Mises à jour Google 2026 : ce qui a changé",
     description: isEn
-      ? "Google has rolled out several algorithm updates in 2026 focused on user experience, AI content and E-E-A-T signals. We analyse what has changed and what you need to do."
-      : "Google a lancé plusieurs mises à jour d'algorithme en 2026 axées sur l'expérience utilisateur, le contenu IA et les signaux E-E-A-T. Nous analysons ce qui a changé et ce que vous devez faire.",
+      ? "Google algorithm updates in 2026: what changed for E-E-A-T, AI Overviews and AI content, which technical signals matter and what to do if traffic has fallen."
+      : "Mises à jour Google 2026 : ce qui change pour l'E-E-A-T, les AI Overviews et le contenu IA, les signaux techniques clés et que faire si votre trafic baisse.",
     alternates: alternatesFor(`/${lang}/google-algorithm-updates-2026/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/google-algorithm-updates-2026/`,
     },

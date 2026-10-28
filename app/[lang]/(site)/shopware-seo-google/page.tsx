@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "SEO Shopware : positionner votre boutique",
     description: isEn
       ? "Technical SEO guide for Shopware 6: URLs, faceted navigation, product schema, Core Web Vitals and optimised product pages to rank your store on Google."
-      : "Guide de SEO technique pour Shopware 6 : URLs, navigation à facettes, schéma produit, Core Web Vitals et fiches optimisées pour positionner votre boutique sur Google.",
+      : "SEO Shopware : URL et canonical, navigation à facettes, schéma produit, Core Web Vitals et fiches uniques pour bien positionner une boutique Shopware 6.",
     alternates: alternatesFor(`/${lang}/shopware-seo-google/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/shopware-seo-google/`,
     },

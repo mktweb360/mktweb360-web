@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Social SEO: Instagram, TikTok and LinkedIn"
       : "SEO social : Instagram, TikTok et LinkedIn",
     description: isEn
-      ? "40% of Gen Z searches on TikTok before Google. Social SEO optimises your presence on Instagram, TikTok and LinkedIn search engines. Platform-specific strategies for 2026."
-      : "40% de la Gen Z cherche sur TikTok avant Google. Le SEO social optimise votre présence dans les moteurs de recherche d'Instagram, TikTok et LinkedIn. Stratégies par plateforme pour 2026.",
+      ? "Social SEO: how to optimise your profiles and content for search on Instagram, TikTok and LinkedIn, with platform-by-platform strategies for 2026."
+      : "SEO social : comment optimiser vos profils et contenus pour la recherche sur Instagram, TikTok et LinkedIn, avec une stratégie par plateforme pour 2026.",
     openGraph: openGraphIntl(lang, "social-seo-instagram-tiktok-linkedin"),
     alternates:
       alternatesFor(

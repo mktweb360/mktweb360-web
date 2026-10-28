@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "24/7 Customer Service for SMEs Without Hiring"
       : "Service client 24h/24 pour PME sans recruter",
     description: isEn
-      ? "Large companies have offered 24/7 customer service for years. In 2026, any SME can do the same with an AI chatbot, without expanding headcount. Here is how it works and what it costs."
-      : "Les grandes entreprises offrent un service client 24h/24 depuis des années. En 2026, toute PME peut faire de même avec un chatbot IA, sans augmenter ses effectifs. Voici comment cela fonctionne et ce que cela coûte.",
+      ? "24/7 customer service for SMEs without hiring night staff: what an AI chatbot can handle alone, when to hand over to a person and what it costs."
+      : "Service client 24h/24 pour PME sans recruter : ce qu'un chatbot IA règle seul, quand passer la main à un humain, son coût et ce qu'attendre à 90 jours.",
     alternates: alternatesFor(`/${lang}/24-7-customer-service-smes/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/24-7-customer-service-smes/`,
     },
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "24/7 Customer Service for SMEs: How to Achieve It Without Hiring More Staff | Mkt Web 360"
         : "Service client 24h/24 pour PME : comment y parvenir sans recruter | Mkt Web 360",
       description: isEn
-        ? "Large companies have offered 24/7 customer service for years. In 2026, any SME can do the same with an AI chatbot, without expanding headcount. Here is how it works and what it costs."
-        : "Les grandes entreprises offrent un service client 24h/24 depuis des années. En 2026, toute PME peut faire de même avec un chatbot IA, sans augmenter ses effectifs. Voici comment cela fonctionne et ce que cela coûte.",
+        ? "24/7 customer service for SMEs without hiring night staff: what an AI chatbot can handle alone, when to hand over to a person and what it costs."
+        : "Service client 24h/24 pour PME sans recruter : ce qu'un chatbot IA règle seul, quand passer la main à un humain, son coût et ce qu'attendre à 90 jours.",
     },
   };
 }

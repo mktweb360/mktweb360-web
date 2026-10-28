@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Planificateur de mots-clés Google Ads : guide",
     description: isEn
       ? "Learn how to use Google Keyword Planner step by step. Find profitable keywords, analyse search volumes and build your strategy from scratch."
-      : "Apprenez à utiliser le Planificateur de mots-clés Google étape par étape. Trouvez des mots-clés rentables, analysez les volumes et construisez votre stratégie depuis zéro.",
+      : "Planificateur de mots-clés Google Ads : y accéder, trouver des mots-clés, lire volumes et prévisions et s'en servir pour le SEO, avec les erreurs à éviter.",
     alternates: alternatesFor(`/${lang}/how-to-use-google-keyword-planner/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-use-google-keyword-planner/`,
     },
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "Planificateur de mots-clés Google Ads : guide complet 2026 | Mkt Web 360",
       description: isEn
         ? "Learn how to use Google Keyword Planner step by step. Find profitable keywords, analyse search volumes and build your strategy from scratch."
-        : "Apprenez à utiliser le Planificateur de mots-clés Google étape par étape. Trouvez des mots-clés rentables, analysez les volumes et construisez votre stratégie depuis zéro.",
+        : "Planificateur de mots-clés Google Ads : y accéder, trouver des mots-clés, lire volumes et prévisions et s'en servir pour le SEO, avec les erreurs à éviter.",
     },
   };
 }

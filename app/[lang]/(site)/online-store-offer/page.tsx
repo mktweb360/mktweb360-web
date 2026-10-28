@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Boutique en ligne pro à partir de 490 €",
     description: isEn
       ? "Professional online store from €490. No commissions per sale, no monthly fees. Custom design and technical SEO from day one. Hosting and domain not included."
-      : "Boutique en ligne professionnelle à partir de 490€. Sans commissions par vente, sans frais mensuels. Design personnalisé et SEO technique dès le premier jour. Hébergement et domaine en sus.",
+      : "Boutique en ligne professionnelle dès 490 € : sans commission sur les ventes ni abonnement, design sur mesure et SEO technique. Hébergement et domaine en sus.",
     openGraph: openGraphIntl(lang, "online-store-offer"),
     alternates: alternatesFor(`/${lang}/online-store-offer/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/online-store-offer/`,

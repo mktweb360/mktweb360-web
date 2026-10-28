@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Dropshipping avec participation aux résultats",
     description: isEn
       ? "We build and manage your dropshipping online store with a hybrid model: fixed setup + monthly management + profit sharing. No stock risk. Real strategy."
-      : "Nous créons et gérons votre boutique en ligne dropshipping avec un modèle hybride : setup fixe + gestion mensuelle + participation aux bénéfices. Sans risque de stock. Avec une vraie stratégie.",
+      : "Dropshipping avec participation aux résultats : nous créons et gérons votre boutique sans stock, avec setup fixe, gestion mensuelle et bonus sur résultats.",
     alternates: alternatesFor(`/${lang}/dropshipping-ecommerce/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/dropshipping-ecommerce/`,
     },

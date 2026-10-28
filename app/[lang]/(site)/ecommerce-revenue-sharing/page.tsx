@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Ecommerce with Revenue Sharing — Hybrid Model"
       : "Ecommerce avec participation aux résultats",
     description: isEn
-      ? "Hybrid ecommerce model: we build your entire digital infrastructure and share in the success when you surpass agreed targets. Fixed setup + monthly management + results bonus. No commission per sale."
-      : "Modèle hybride d'ecommerce : nous construisons toute votre infrastructure digitale et participons au succès quand vous dépassez les objectifs définis. Setup fixe + gestion mensuelle + bonus résultats. Sans commission par vente.",
+      ? "Ecommerce with revenue sharing: we build your store, campaigns and SEO, with a bonus only when you beat agreed targets. Fixed set-up, no commission per sale."
+      : "Ecommerce avec participation aux résultats : boutique, campagnes et SEO, avec un bonus seulement si vous dépassez les objectifs. Sans commission par vente.",
     alternates: alternatesFor(`/${lang}/ecommerce-revenue-sharing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/ecommerce-revenue-sharing/`,
     },

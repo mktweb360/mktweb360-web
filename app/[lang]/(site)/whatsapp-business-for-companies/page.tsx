@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "WhatsApp Business pour entreprises en 2026",
     description: isEn
       ? "How to use WhatsApp Business to attract and retain clients. Setup, automations, catalogue and strategy for businesses. Updated guide 2026."
-      : "Comment utiliser WhatsApp Business pour attirer et fidéliser des clients. Configuration, automatisations, catalogue et stratégie pour les entreprises. Guide mis à jour 2026.",
+      : "WhatsApp Business pour entreprises : configurer profil, catalogue et réponses automatiques, attirer des clients et savoir quand passer à l'API.",
     alternates: alternatesFor(`/${lang}/whatsapp-business-for-companies/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/whatsapp-business-for-companies/`,
     },

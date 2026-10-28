@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Chatbot for Online Stores: Sell More in 2026"
       : "Chatbot pour boutique en ligne : vendre plus",
     description: isEn
-      ? "A chatbot for your online store can handle enquiries 24/7, recover abandoned carts, answer product questions and manage order status. Complete guide with real cases for 2026."
-      : "Un chatbot pour votre boutique en ligne peut traiter les demandes 24h/24, récupérer les paniers abandonnés, répondre aux questions produits et gérer le statut des commandes. Guide complet avec cas réels pour 2026.",
+      ? "Chatbot for online stores: answer product questions, recover abandoned carts and report order status 24/7. Integrations, GDPR and costs for 2026."
+      : "Chatbot pour boutique en ligne : répondre aux questions produits, relancer les paniers abandonnés et suivre les commandes 24h/24. Intégrations, RGPD et coûts.",
     alternates: alternatesFor(`/${lang}/chatbot-for-online-store/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/chatbot-for-online-store/`,
     },
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Chatbot for Online Stores: The Complete Guide to Selling More and Serving Better in 2026 | Mkt Web 360"
         : "Chatbot pour boutique en ligne : le guide complet pour vendre plus et mieux servir en 2026 | Mkt Web 360",
       description: isEn
-        ? "A chatbot for your online store can handle enquiries 24/7, recover abandoned carts, answer product questions and manage order status. Complete guide with real cases for 2026."
-        : "Un chatbot pour votre boutique en ligne peut traiter les demandes 24h/24, récupérer les paniers abandonnés, répondre aux questions produits et gérer le statut des commandes. Guide complet avec cas réels pour 2026.",
+        ? "Chatbot for online stores: answer product questions, recover abandoned carts and report order status 24/7. Integrations, GDPR and costs for 2026."
+        : "Chatbot pour boutique en ligne : répondre aux questions produits, relancer les paniers abandonnés et suivre les commandes 24h/24. Intégrations, RGPD et coûts.",
     },
   };
 }

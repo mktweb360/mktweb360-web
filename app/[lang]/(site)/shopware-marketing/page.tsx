@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Marketing Digital pour Boutiques Shopware",
     description: isEn
       ? "Shopware marketing: SEO, Google Ads, GEO and CRO for existing Shopware stores. You have the platform — we make it sell. Agency based in Spain."
-      : "Marketing Shopware : SEO, Google Ads, GEO et CRO pour les boutiques déjà construites sur Shopware. Vous avez la plateforme, nous la faisons vendre. Agence basée en Espagne.",
+      : "Marketing pour boutiques Shopware : SEO, Google Ads, GEO et CRO pour attirer du trafic qualifié et mieux convertir. Commencez par un audit gratuit.",
     alternates: alternatesFor(`/${lang}/shopware-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/shopware-marketing/`,
     },

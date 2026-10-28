@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Digital Marketing Agency Spain: SEO, Ads, Web"
       : "Agence marketing digital Espagne : SEO et web",
     description: isEn
-      ? "English-speaking digital marketing agency based in Spain. We help French and British companies operating in Spain grow online: SEO, Google Ads, GEO, web design. National coverage."
-      : "Agence de marketing digital en Espagne parlant français. Nous aidons les entreprises françaises et britanniques opérant en Espagne à croître en ligne : SEO, Google Ads, GEO, création de sites. Couverture nationale.",
+      ? "Digital marketing agency in Spain for foreign companies: SEO, Google Ads, GEO and web design with an English and French-speaking team. No ad spend commission."
+      : "Agence de marketing digital en Espagne pour entreprises étrangères : SEO, Google Ads, GEO et sites web, en français et sans commission sur vos annonces.",
     alternates: alternatesFor(`/${lang}/digital-marketing-agency-spain/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/digital-marketing-agency-spain/`,
     },

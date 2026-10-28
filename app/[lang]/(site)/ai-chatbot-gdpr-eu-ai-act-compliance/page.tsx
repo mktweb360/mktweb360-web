@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "AI Chatbot Compliance: GDPR and EU AI Act"
       : "Chatbot IA et conformité : RGPD et AI Act",
     description: isEn
-      ? "In August 2026 the main AI Act obligations for chatbots come into force. What you need to do to comply with GDPR and the EU AI Act, and why compliance is a competitive advantage."
-      : "En août 2026 entrent en vigueur les principales obligations de l'AI Act pour les chatbots. Ce que vous devez faire pour respecter le RGPD et l'AI Act européen, et pourquoi la conformité est un avantage concurrentiel.",
+      ? "AI chatbot compliance with GDPR and the EU AI Act: what applies from 2 August 2026, the four elements every business chatbot needs and a checklist."
+      : "Chatbot IA et conformité : ce qu'imposent le RGPD et l'AI Act dès le 2 août 2026, les quatre éléments obligatoires et une checklist pour être en règle.",
     alternates: alternatesFor(`/${lang}/ai-chatbot-gdpr-eu-ai-act-compliance/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/ai-chatbot-gdpr-eu-ai-act-compliance/`,
     },
@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "AI Chatbot and Legal Compliance: GDPR, EU AI Act and What Changes in August 2026 | Mkt Web 360"
         : "Chatbot IA et conformité légale : RGPD, AI Act européen et ce qui change en août 2026 | Mkt Web 360",
       description: isEn
-        ? "In August 2026 the main AI Act obligations for chatbots come into force. What you need to do to comply with GDPR and the EU AI Act, and why compliance is a competitive advantage."
-        : "En août 2026 entrent en vigueur les principales obligations de l'AI Act pour les chatbots. Ce que vous devez faire pour respecter le RGPD et l'AI Act européen, et pourquoi la conformité est un avantage concurrentiel.",
+        ? "AI chatbot compliance with GDPR and the EU AI Act: what applies from 2 August 2026, the four elements every business chatbot needs and a checklist."
+        : "Chatbot IA et conformité : ce qu'imposent le RGPD et l'AI Act dès le 2 août 2026, les quatre éléments obligatoires et une checklist pour être en règle.",
     },
   };
 }
