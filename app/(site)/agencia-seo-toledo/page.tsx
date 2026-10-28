@@ -47,7 +47,7 @@ const contenido: LocalServiceContent = {
   },
   enlaces: [
     { href: "/seo-posicionamiento-web-organico/", text: "Nuestro servicio de posicionamiento SEO" },
-    { href: "/seo-toledo/", text: "Guía: cómo hacer SEO en Toledo" },
+    { href: "/seo-local/", text: "Servicio de SEO local" },
     { href: "/auditoria-digital/", text: "Auditoría SEO gratuita" },
   ],
   faqs: [
@@ -55,6 +55,10 @@ const contenido: LocalServiceContent = {
     { q: "¿Cuánto cuesta el SEO para un negocio de Toledo?", a: "Lo mismo que en cualquier otro lugar: desde 199 €/mes + IVA para un profesional con una web pequeña y 349 €/mes + IVA para una pyme. La calculadora de precios SEO te indica el plan según el tamaño de tu web." },
     { q: "¿En cuánto tiempo se ven resultados?", a: "Los cambios técnicos se reflejan en semanas; el posicionamiento en búsquedas con competencia suele llevar meses. Lo medimos contra una línea base y te enviamos un informe cada mes." },
     { q: "¿Trabajáis también el mapa de Google?", a: "Sí. La ficha de Google Business Profile forma parte de los planes de SEO local y del paquete SEO + GEO + Google Business Profile." },
+    { q: "¿Qué diferencia hay entre SEO local y SEO nacional?", a: "El SEO local trabaja las búsquedas con intención de cercanía («dentista en Toledo», «fontanero en Illescas») y la ficha de Google; el nacional, las búsquedas sin ubicación. Si tus clientes vienen de la provincia, empezamos por el local." },
+    { q: "¿Necesito web para aparecer en Google Maps?", a: "No es imprescindible: la ficha de Google puede traer llamadas por sí sola. Pero con una web que tenga una página por servicio puedes aparecer en muchas más búsquedas y recibir solicitudes fuera de tu horario." },
+    { q: "¿Cuántas reseñas necesito para aparecer en el mapa?", a: "No hay una cifra mínima. Pesan más las reseñas recientes y constantes que el total acumulado. Las pedimos a todos los clientes, sin incentivos ni filtros, como exigen las normas de Google." },
+    { q: "¿Puedo gestionar la ficha de Google yo mismo?", a: "Sí: mantenerla al día, publicar novedades y responder reseñas lleva un par de horas al mes. Lo que conviene delegar es la elección de categorías y servicios, el análisis de la competencia y la relación de la ficha con la web." },
   ],
   formType: "seo-toledo",
 };

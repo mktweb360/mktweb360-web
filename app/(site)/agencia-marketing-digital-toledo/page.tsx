@@ -48,8 +48,8 @@ const contenido: LocalServiceContent = {
     ],
   },
   enlaces: [
-    { href: "/agencias-marketing-digital-toledo/", text: "Guía: cómo elegir agencia en Toledo" },
-    { href: "/marketing-digital-toledo/", text: "Guía de marketing digital en Toledo" },
+    { href: "/agencia-seo-toledo/", text: "Agencia SEO en Toledo" },
+    { href: "/diseno-web-toledo/", text: "Diseño web en Toledo" },
     { href: "/precios-seo/", text: "Precios SEO" },
   ],
   faqs: [
@@ -59,6 +59,9 @@ const contenido: LocalServiceContent = {
     { q: "¿Por dónde empezar si no sé qué necesito?", a: "Por la auditoría gratuita: te enviamos por correo un diagnóstico de tu web en Google y en los asistentes de IA, con las 3 acciones que más impacto tendrían. A partir de ahí decides si lo haces por tu cuenta o con nosotros." },
     { q: "¿Qué datos necesitáis para empezar?", a: "La dirección de tu web y, si los tienes, acceso de lectura a Google Search Console y Google Analytics. Las cuentas siempre quedan a nombre de tu empresa." },
     { q: "¿Hay permanencia?", a: "Los servicios mensuales de SEO no tienen permanencia: puedes darte de baja avisando con 30 días de antelación." },
+    { q: "¿Cómo elegir una agencia de marketing digital en Toledo?", a: "Pide que te explique qué hará el primer mes y por qué, cómo lo medirá y qué informes recibirás. Desconfía de quien garantiza posiciones, de los contratos con permanencia larga y de quien no te da acceso a tus propias cuentas de Google." },
+    { q: "¿Qué canales funcionan mejor para un negocio local?", a: "Para la mayoría de negocios de la provincia, primero la ficha de Google y el SEO local; después Google Ads si necesitas contactos desde el primer mes; las redes sociales, cuando ya tienes una base que convierta. Lo decidimos con tus datos, no por defecto." },
+    { q: "¿Qué debe incluir el contrato con una agencia?", a: "Qué trabajos se hacen cada mes, quién es el titular de la web, las cuentas y los datos (tú), el plazo de preaviso para darte de baja y cómo se entregan los accesos si terminas la relación." },
   ],
   formType: "marketing-toledo",
 };

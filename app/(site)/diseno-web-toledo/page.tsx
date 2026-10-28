@@ -46,7 +46,7 @@ const c: LocalServiceContent = {
   enlaces: [
     { href: "/diseno-de-paginas-web/", text: "Nuestro servicio de diseño web" },
     { href: "/cuanto-cuesta-pagina-web-profesional/", text: "Cuánto cuesta una página web profesional" },
-    { href: "/marketing-digital-toledo/", text: "Guía de marketing digital en Toledo" },
+    { href: "/agencia-marketing-digital-toledo/", text: "Agencia de marketing digital en Toledo" },
   ],
   faqs: [
     { q: "¿Cuánto cuesta una página web en Toledo?", a: "Nuestros precios son los mismos en toda España: web profesional desde 249 € + IVA, SEO + GEO + Google Maps desde 149 €/mes + IVA (con 6 meses de permanencia) o 349 €/mes sin permanencia, y tienda online desde 490 €. Te enviamos un presupuesto cerrado según lo que necesites." },
@@ -55,6 +55,8 @@ const c: LocalServiceContent = {
     { q: "¿Cuánto se tarda en tener la web publicada?", a: "Depende del tamaño y de que tengamos a tiempo los textos, las fotos y los datos legales del negocio. Al aceptar el presupuesto te damos un calendario con las fechas de revisión y de publicación." },
     { q: "¿Quién escribe los textos de la web?", a: "Podemos partir de los tuyos o redactarlos con la información que nos des sobre tus servicios. En ambos casos los adaptamos para que respondan a lo que busca tu cliente y a las búsquedas que te interesan en Google." },
     { q: "¿Dónde estáis?", a: "En Calle Chopo 98, 45215 El Viso de San Juan (Toledo). Trabajamos con negocios de toda la provincia y del resto de España." },
+    { q: "¿Hacéis tiendas online para negocios de Toledo?", a: "Sí. Tienda online profesional desde 490 € (el mismo precio que publicamos para toda España), con WooCommerce: sin comisiones por venta ni licencias mensuales, y con el SEO técnico hecho desde el principio." },
+    { q: "¿Podré gestionar la web o la tienda yo mismo?", a: "Sí. Te enseñamos a cambiar textos, productos, precios y pedidos. La web es tuya desde el primer día y no hay un mantenimiento obligatorio." },
   ],
   formType: "diseno-web-toledo",
 };

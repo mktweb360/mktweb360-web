@@ -65,7 +65,7 @@ function content(lang: L): LocalServiceContent {
       enlaces: [
         { href: href(lang, "web-design"), text: "Notre service de création de sites web" },
         { href: href(lang, "how-much-does-a-website-cost"), text: "Combien coûte un site web professionnel" },
-        { href: href(lang, "digital-marketing-toledo"), text: "Guide du marketing digital à Tolède" },
+        { href: href(lang, "digital-marketing-agency-toledo"), text: "Agence de marketing digital à Tolède" },
       ],
       faqs: [
         { q: "Combien coûte un site web à Tolède ?", a: "Nos prix sont les mêmes dans toute l'Espagne : site professionnel à partir de 249 € HT, SEO + GEO + Google Maps à partir de 149 €/mois HT (avec 6 mois d'engagement) ou 349 €/mois sans engagement, et boutique en ligne à partir de 490 €. Nous vous envoyons un devis ferme selon vos besoins." },
@@ -114,7 +114,7 @@ function content(lang: L): LocalServiceContent {
     enlaces: [
       { href: href(lang, "web-design"), text: "Our web design service" },
       { href: href(lang, "how-much-does-a-website-cost"), text: "How much a professional website costs" },
-      { href: href(lang, "digital-marketing-toledo"), text: "Guide to digital marketing in Toledo" },
+      { href: href(lang, "digital-marketing-agency-toledo"), text: "Digital marketing agency in Toledo" },
     ],
     faqs: [
       { q: "How much does a website cost in Toledo?", a: "Our prices are the same throughout Spain: a professional website from €249 + VAT, SEO + GEO + Google Maps from €149/month + VAT (with a 6-month commitment) or €349/month with no commitment, and an online store from €490. We send you a fixed quote based on what you need." },

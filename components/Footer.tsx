@@ -44,19 +44,11 @@ const CONTENT: Record<string, FooterContent> = {
       { label: "Blog para Monetización", href: "/blog-para-monetizacion/" },
       { label: "Ecommerce con Participación", href: "/ecommerce-participacion-resultados/" },
     ],
-    zonesTitle: "Marketing digital por zonas",
+    zonesTitle: "Nuestra zona",
     zones: [
       { label: "Agencia SEO en Toledo", href: "/agencia-seo-toledo/" },
       { label: "Diseño web en Toledo", href: "/diseno-web-toledo/" },
       { label: "Agencia de marketing digital en Toledo", href: "/agencia-marketing-digital-toledo/" },
-      { label: "Marketing digital en Toledo", href: "/marketing-digital-toledo/" },
-      { label: "Agencias de marketing en Toledo", href: "/agencias-marketing-digital-toledo/" },
-      { label: "Tiendas online en Toledo", href: "/tiendas-online-toledo/" },
-      { label: "Google Business Profile en Toledo", href: "/google-business-profile-toledo/" },
-      { label: "Agencias de marketing en Madrid", href: "/agencias-marketing-digital-madrid/" },
-      { label: "Marketing digital en Barcelona", href: "/marketing-digital-barcelona/" },
-      { label: "Diseño web en Barcelona", href: "/diseno-web-barcelona/" },
-      { label: "Marketing digital en Sevilla", href: "/marketing-digital-sevilla/" },
     ],
     company: [
       { label: "Blog", href: "/blog/" },
@@ -103,14 +95,6 @@ const CONTENT: Record<string, FooterContent> = {
       { label: "SEO agency in Toledo", href: "/en/seo-agency-toledo/" },
       { label: "Web design in Toledo", href: "/en/web-design-toledo/" },
       { label: "Digital marketing agency in Toledo", href: "/en/digital-marketing-agency-toledo/" },
-      { label: "Toledo", href: "/en/digital-marketing-toledo/" },
-      { label: "Agencies in Toledo", href: "/en/digital-marketing-agencies-toledo/" },
-      { label: "Online stores in Toledo", href: "/en/online-stores-toledo/" },
-      { label: "Google Business Profile in Toledo", href: "/en/google-business-profile-toledo/" },
-      { label: "Agencies in Madrid", href: "/en/digital-marketing-agencies-madrid/" },
-      { label: "Barcelona", href: "/en/digital-marketing-barcelona/" },
-      { label: "Web design in Barcelona", href: "/en/web-design-barcelona/" },
-      { label: "Seville", href: "/en/digital-marketing-seville/" },
     ],
     company: [
       { label: "Blog", href: "/en/blog/" },
@@ -157,14 +141,6 @@ const CONTENT: Record<string, FooterContent> = {
       { label: "Agence SEO à Tolède", href: "/fr/agence-seo-tolede/" },
       { label: "Création de sites web à Tolède", href: "/fr/creation-site-web-tolede/" },
       { label: "Agence de marketing digital à Tolède", href: "/fr/agence-marketing-digital-tolede/" },
-      { label: "Tolède", href: "/fr/digital-marketing-toledo/" },
-      { label: "Agences à Tolède", href: "/fr/digital-marketing-agencies-toledo/" },
-      { label: "Boutiques en ligne à Tolède", href: "/fr/online-stores-toledo/" },
-      { label: "Google Business Profile à Tolède", href: "/fr/google-business-profile-toledo/" },
-      { label: "Agences à Madrid", href: "/fr/digital-marketing-agencies-madrid/" },
-      { label: "Barcelone", href: "/fr/digital-marketing-barcelona/" },
-      { label: "Création web à Barcelone", href: "/fr/web-design-barcelona/" },
-      { label: "Séville", href: "/fr/digital-marketing-seville/" },
     ],
     company: [
       { label: "Blog", href: "/fr/blog/" },
@@ -244,11 +220,16 @@ export function Footer({ lang }: { lang?: string }) {
             <p><a href="tel:+34622748987" className="hover:text-white">+34 622 74 89 87</a></p>
             <p><a href="mailto:info@mktweb360.com" className="hover:text-white">info@mktweb360.com</a></p>
           </address>
+          {/* Zonas (28/10/2026): solo las páginas con presencia real (Toledo) y, en EN/FR, las de empresas
+              extranjeras. Sin ellas no había ningún camino de enlaces desde la portada hasta esas páginas. */}
+          <h4 className="font-semibold mt-6 mb-3 text-primary-100">{c.zonesTitle}</h4>
+          <ul className="space-y-2 text-sm text-primary-300">
+            {c.zones.map((z) => (
+              <li key={z.href}><Link href={z.href} className="hover:text-white">{z.label}</Link></li>
+            ))}
+          </ul>
         </div>
       </div>
-      {/* La banda "Marketing digital por zonas" se retiró del pie (oct-2026): daba peso a unas pocas
-          localidades frente al posicionamiento nacional. Las landings locales siguen enlazadas desde
-          sus páginas relacionadas y el sitemap. Los datos c.zones se conservan por si se reutilizan. */}
       <div className="border-t border-primary-700 py-4 text-center text-xs text-primary-400">
         © {new Date().getFullYear()} Mkt Web 360 SLU · {c.copyright}
       </div>

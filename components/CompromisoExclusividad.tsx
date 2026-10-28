@@ -48,6 +48,12 @@ const TXT = {
     ctaHref: "/contacto/",
     cta2: "o empieza por la auditoría gratuita",
     cta2Href: "/auditoria-digital/",
+    sede: "Nuestra sede está en El Viso de San Juan (Toledo):",
+    sedeLinks: [
+      { label: "agencia de marketing digital en Toledo", href: "/agencia-marketing-digital-toledo/" },
+      { label: "SEO en Toledo", href: "/agencia-seo-toledo/" },
+      { label: "diseño web en Toledo", href: "/diseno-web-toledo/" },
+    ],
     chipT: "Tu sector, tu zona",
     chipS: "Reservado solo para ti",
     caption: "Trabajamos en toda España · una empresa por sector en cada zona",
@@ -67,6 +73,12 @@ const TXT = {
     ctaHref: "/en/contact/",
     cta2: "or start with the free audit",
     cta2Href: "/en/digital-audit/",
+    sede: "Our office is in El Viso de San Juan (Toledo):",
+    sedeLinks: [
+      { label: "digital marketing agency in Toledo", href: "/en/digital-marketing-agency-toledo/" },
+      { label: "SEO in Toledo", href: "/en/seo-agency-toledo/" },
+      { label: "web design in Toledo", href: "/en/web-design-toledo/" },
+    ],
     chipT: "Your sector, your area",
     chipS: "Reserved just for you",
     caption: "We work across Spain · one company per sector in each area",
@@ -86,6 +98,12 @@ const TXT = {
     ctaHref: "/fr/contact/",
     cta2: "ou commencez par l'audit gratuit",
     cta2Href: "/fr/audit-digital/",
+    sede: "Notre siège est à El Viso de San Juan (Tolède) :",
+    sedeLinks: [
+      { label: "agence de marketing digital à Tolède", href: "/fr/agence-marketing-digital-tolede/" },
+      { label: "SEO à Tolède", href: "/fr/agence-seo-tolede/" },
+      { label: "création de sites web à Tolède", href: "/fr/creation-site-web-tolede/" },
+    ],
     chipT: "Votre secteur, votre zone",
     chipS: "Réservé rien que pour vous",
     caption: "Nous travaillons dans toute l'Espagne · une entreprise par secteur dans chaque zone",
@@ -135,6 +153,16 @@ export function CompromisoExclusividad({ lang = "es" }: { lang?: "es" | "en" | "
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-100">
               {t.p}
+            </p>
+            {/* Enlace a las páginas de Toledo (28/10/2026): la portada no tenía ningún camino hasta ellas. */}
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-primary-200">
+              {t.sede}{" "}
+              {t.sedeLinks.map((l, i) => (
+                <span key={l.href}>
+                  <Link href={l.href} className="underline underline-offset-2 hover:text-white">{l.label}</Link>
+                  {i < t.sedeLinks.length - 1 ? ", " : "."}
+                </span>
+              ))}
             </p>
             <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-4">
               <Link
