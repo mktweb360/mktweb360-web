@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -34,7 +35,7 @@ const FAQS_EN = [
   },
   {
     q: "How much does a self-employed worker on the minimum contribution pay in 2026?",
-    a: "Self-employed workers in the first bracket (income up to €670/month) pay €200/month. Second bracket (€670–€900): €220. Third bracket (€900–€1,166.70): €260. From the fourth bracket upwards, amounts increase progressively up to €1,542 for the highest earners.",
+    a: "Self-employed workers in the first bracket (income up to €670/month) pay €200/month. Second bracket (€670–€900): €220. Third bracket (€900–€1,166.70): €260. From the fourth bracket upwards, the minimum contribution rises with your income to around €590/month in the top bracket (over €6,000 a month); if you choose a base above the minimum, you pay more. For your specific case, check the official table on the Spanish Social Security website: these figures are a guide.",
   },
   {
     q: "What is the self-employed flat rate in 2026?",
@@ -57,7 +58,7 @@ const FAQS_FR = [
   },
   {
     q: "Combien paie un indépendant avec la cotisation minimale en 2026 ?",
-    a: "Les indépendants de la première tranche (revenus jusqu'à 670 €/mois) paient 200 €/mois. Deuxième tranche (670 €–900 €) : 220 €. Troisième tranche (900 €–1 166,70 €) : 260 €. À partir de la quatrième tranche, les montants augmentent progressivement jusqu'à 1 542 € pour les revenus les plus élevés.",
+    a: "Les indépendants de la première tranche (revenus jusqu'à 670 €/mois) paient 200 €/mois. Deuxième tranche (670 €–900 €) : 220 €. Troisième tranche (900 €–1 166,70 €) : 260 €. À partir de la quatrième tranche, la cotisation minimale augmente avec les revenus jusqu'à environ 590 €/mois dans la tranche la plus haute (plus de 6 000 € par mois) ; si vous choisissez une base supérieure au minimum, vous payez davantage. Pour votre cas précis, consultez le tableau officiel de la Sécurité sociale espagnole : ces chiffres sont indicatifs.",
   },
   {
     q: "Qu'est-ce que le forfait d'indépendant en 2026 ?",
@@ -95,6 +96,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "Freelancers & Autónomos" : "Freelances & Indépendants"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="freelancer-social-security-spain-2026" headline={isEn ? "Self-employed social security contributions in Spain 2026: everything you need to know about brackets, MEI and the flat rate" : "Cotisations sociales des indépendants en Espagne 2026 : tout ce qu'il faut savoir sur les tranches, le MEI et le forfait"} image="/og-homepage.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Self-employed social security contributions in Spain 2026: everything you need to know about brackets, MEI and the flat rate"

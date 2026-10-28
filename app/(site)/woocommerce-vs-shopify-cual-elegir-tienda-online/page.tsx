@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "WooCommerce vs Shopify: cuál elegir para tu tienda online en España en 2026",
   description: "Comparativa honesta entre WooCommerce y Shopify con coste real a 3 años, ventajas de cada plataforma y recomendación por tipo de negocio.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-26",
   dateModified: "2026-06-26",
   url: "https://www.mktweb360.com/woocommerce-vs-shopify-cual-elegir-tienda-online/",
   mainEntityOfPage: "https://www.mktweb360.com/woocommerce-vs-shopify-cual-elegir-tienda-online/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-woocommerce-vs-shopify-cual-elegir-2026.jpg",
 };
 
 const FAQS = [

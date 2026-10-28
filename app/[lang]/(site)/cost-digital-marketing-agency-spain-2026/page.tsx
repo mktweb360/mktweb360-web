@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -95,6 +96,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "Digital Marketing" : "Marketing Digital"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="cost-digital-marketing-agency-spain-2026" headline={isEn ? "How much does a digital marketing agency cost in Spain in 2026?" : "Combien coûte une agence de marketing digital en Espagne en 2026 ?"} image="/og-cuanto-cuesta-agencia-marketing-digital-espana-2026.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How much does a digital marketing agency cost in Spain in 2026?"

@@ -29,18 +29,19 @@ const articleSchema = {
   description:
     "Los autónomos tienen más herramientas que nunca para conseguir clientes online por su cuenta. Guía práctica: SEO local, Google Business Profile, LinkedIn y contenido para autónomos en 2026.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-homepage.jpg",
   url: "https://www.mktweb360.com/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/",
   mainEntityOfPage: "https://www.mktweb360.com/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [
   {
     q: "¿Cuánto dinero necesita un autónomo para hacer marketing digital?",
-    a: "Con 0€ se pueden hacer muchas cosas: optimizar Google Business Profile, publicar en LinkedIn, mejorar el SEO básico de la web. Con 100-200€/mes ya se puede hacer Google Ads para búsquedas locales con resultados medibles.",
+    a: "Con 0€ se pueden hacer muchas cosas: optimizar Google Business Profile, publicar en LinkedIn, mejorar el SEO básico de la web. Con un presupuesto modesto se pueden probar campañas de Google Ads de búsqueda local y medir qué llega; cuánto hace falta depende del coste por clic de tu sector y tu zona.",
   },
   {
     q: "¿Necesita un autónomo una web para conseguir clientes online?",
@@ -52,7 +53,7 @@ const FAQS = [
   },
   {
     q: "¿Cuánto tiempo tarda en llegar el primer cliente por Google?",
-    a: "Con Google Business Profile bien optimizado en ciudades medianas, los primeros contactos pueden llegar en 1-2 meses. Con SEO orgánico: 3-4 meses. Con Google Ads: el primer día si la campaña está bien configurada.",
+    a: "Con Google Business Profile bien optimizado, los primeros contactos pueden llegar en 1-2 meses. Con SEO orgánico, de forma orientativa, 3-6 meses para los primeros resultados y 6-12 para consolidarlos. Con Google Ads: el primer día si la campaña está bien configurada.",
   },
 ];
 

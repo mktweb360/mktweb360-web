@@ -3,6 +3,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -85,6 +86,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Chatbots" : "Chatbots"}
         </p>
 
+        <IntlArticleJsonLd lang={lang} slug="how-to-choose-chatbot" headline={isEn ? "How to Choose a Chatbot: 2026 Checklist" : "Choisir le bon chatbot : checklist 2026"} image="/og-chatgpt-para-marketing-digital.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to Choose a Chatbot: 2026 Checklist"

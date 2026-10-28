@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "Cuándo Elegir SEO y Cuándo Google Ads: Guía para Decidir Bien | Mkt Web 360",
   description: "Cómo decidir entre SEO y Google Ads según tu negocio, presupuesto, urgencia y horizonte temporal. Con ejemplos reales y una matriz de decisión práctica.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-cuando-elegir-seo-vs-google-ads.jpg",
   url: "https://www.mktweb360.com/cuando-elegir-seo-vs-google-ads/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/cuando-elegir-seo-vs-google-ads/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {

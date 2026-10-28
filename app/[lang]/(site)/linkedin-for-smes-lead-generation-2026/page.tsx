@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -83,6 +84,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "Social Media" : "Réseaux Sociaux"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="linkedin-for-smes-lead-generation-2026" headline={isEn ? "LinkedIn for SMEs in 2026: how to generate leads without spending on advertising" : "LinkedIn pour les PME en 2026 : comment générer des leads sans dépenser en publicité"} image="/og-smm.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "LinkedIn for SMEs in 2026: how to generate leads without spending on advertising"

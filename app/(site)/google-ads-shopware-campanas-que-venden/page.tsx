@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Google Ads para Shopware: campañas que venden de verdad",
   description: "Cómo montar Google Ads para tu tienda Shopware: tracking de conversiones, conexión con Merchant Center, Performance Max, Shopping y optimización por ROAS.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-26",
   dateModified: "2026-06-26",
   url: "https://www.mktweb360.com/google-ads-shopware-campanas-que-venden/",
   mainEntityOfPage: "https://www.mktweb360.com/google-ads-shopware-campanas-que-venden/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-google-ads-shopware-campanas-que-venden.jpg",
 };
 
 const FAQS = [

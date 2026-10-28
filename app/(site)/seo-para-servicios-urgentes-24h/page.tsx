@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "SEO para Servicios Urgentes 24h: Cómo Posicionar en Google",
   description: "Estrategias SEO para servicios de urgencia 24 horas.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2024-03-15",
   dateModified: "2024-03-15",
   url: "https://www.mktweb360.com/seo-para-servicios-urgentes-24h/",
   mainEntityOfPage: "https://www.mktweb360.com/seo-para-servicios-urgentes-24h/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-seo-para-servicios-urgentes-24h.jpg",
 };
 
 export default function SeoServiciosUrgentesPage() {

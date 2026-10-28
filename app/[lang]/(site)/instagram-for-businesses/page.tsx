@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Instagram bio" : "Bio Instagram" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Social Media</p>
+        <IntlArticleJsonLd lang={lang} slug="instagram-for-businesses" headline={isEn ? "Instagram for businesses: what to put in your bio to attract customers" : "Instagram pour les entreprises : quoi mettre dans votre bio pour attirer des clients"} image="/og-instagram-para-empresas-biografia.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Instagram for businesses: what to put in your bio to attract customers" : "Instagram pour les entreprises : quoi mettre dans votre bio pour attirer des clients"}
         </h1>

@@ -29,11 +29,13 @@ const articleSchema = {
   headline: "Qué revisar en tu empresa antes de invertir más en marketing digital",
   description: "Antes de invertir más en marketing digital, revisa estas áreas clave para no amplificar errores y tomar mejores decisiones.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-04-01",
   dateModified: "2025-04-01",
   url: "https://www.mktweb360.com/que-revisar-antes-de-invertir-mas-en-marketing-digital/",
   mainEntityOfPage: "https://www.mktweb360.com/que-revisar-antes-de-invertir-mas-en-marketing-digital/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-que-revisar-antes-de-invertir-en-marketing.jpg",
 };
 
 const FAQS = [

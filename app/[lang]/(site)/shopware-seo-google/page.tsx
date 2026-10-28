@@ -4,6 +4,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -93,6 +94,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <p className="text-sm text-accent-500 font-semibold mb-2">Shopware · SEO</p>
 
+        <IntlArticleJsonLd lang={lang} slug="shopware-seo-google" headline={isEn ? "Shopware SEO: How to Rank Your Store on Google" : "SEO Shopware : positionner votre boutique"} image="/og-seo-shopware-posicionar-tienda-google.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Shopware SEO: How to Rank Your Store on Google"

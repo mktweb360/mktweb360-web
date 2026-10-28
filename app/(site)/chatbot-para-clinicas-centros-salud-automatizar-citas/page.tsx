@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Las clínicas y centros de salud reciben cientos de consultas repetitivas cada día. Un chatbot bien implementado puede automatizar la gestión de citas, responder preguntas frecuentes y cualificar pacientes, cumpliendo con el RGPD.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-diseno-web-para-clinicas.jpg",
   url: "https://www.mktweb360.com/chatbot-para-clinicas-centros-salud-automatizar-citas/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-para-clinicas-centros-salud-automatizar-citas/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

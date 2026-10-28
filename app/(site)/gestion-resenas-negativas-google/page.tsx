@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "Cómo Gestionar las Reseñas Negativas en Google — Guía Práctica | Mkt Web 360",
   description: "Aprende a responder y gestionar reseñas negativas en Google de forma profesional. Estrategia, plantillas de respuesta y cómo convertir críticas en oportunidades.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-gestion-resenas-negativas-google.jpg",
   url: "https://www.mktweb360.com/gestion-resenas-negativas-google/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/gestion-resenas-negativas-google/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {

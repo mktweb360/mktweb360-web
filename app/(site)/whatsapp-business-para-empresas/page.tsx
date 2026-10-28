@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "WhatsApp Business para Empresas — Guía Completa 2025 | Mkt Web 360",
   description: "Cómo usar WhatsApp Business para captar y fidelizar clientes. Configuración, automatizaciones, catálogo y estrategia para empresas. Guía actualizada 2025.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-whatsapp-business-para-empresas.jpg",
   url: "https://www.mktweb360.com/whatsapp-business-para-empresas/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/whatsapp-business-para-empresas/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {

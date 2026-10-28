@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "GEO vs SEO: Diferencias Clave y Cómo Compaginarlos en 2025 | Mkt Web 360",
   description: "Qué diferencia el GEO (Generative Engine Optimization) del SEO tradicional, por qué importan los dos y cómo integrar ambas estrategias para máxima visibilidad.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-geo-vs-seo-diferencias.jpg",
   url: "https://www.mktweb360.com/geo-vs-seo-diferencias/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/geo-vs-seo-diferencias/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {

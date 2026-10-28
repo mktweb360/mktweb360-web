@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Before investing" : "Avant d'investir" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Strategy</p>
+        <IntlArticleJsonLd lang={lang} slug="what-to-review-before-investing-marketing" headline={isEn ? "What to review before investing more in digital marketing" : "Que vérifier avant d'investir en marketing"} image="/og-que-revisar-antes-de-invertir-en-marketing.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "What to review before investing more in digital marketing" : "Que vérifier avant d'investir en marketing"}
         </h1>

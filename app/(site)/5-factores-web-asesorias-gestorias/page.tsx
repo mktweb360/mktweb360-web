@@ -31,11 +31,13 @@ const articleSchema = {
   description:
     "Los 5 factores que determinan si la web de una asesoría o gestoría capta clientes: RGPD y doble rol de responsable/encargado del tratamiento, Delegado de Protección de Datos, colegiación de gestores administrativos, reserva de cita online y preparación ante la factura electrónica obligatoria.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-06",
   dateModified: "2026-09-06",
   url: "https://www.mktweb360.com/5-factores-web-asesorias-gestorias/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-asesorias-gestorias/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-5-factores-web-asesorias-gestorias.jpg",
 };
 
 const FAQS = [

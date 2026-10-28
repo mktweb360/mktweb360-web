@@ -31,11 +31,13 @@ const articleSchema = {
   description:
     "Los 5 factores que determinan si la web de un despacho de servicios profesionales genera confianza: aviso legal conforme a la LSSI-CE, política de privacidad y cookies, consentimiento para comunicaciones comerciales, reserva de cita online y transparencia de honorarios.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-06",
   dateModified: "2026-09-06",
   url: "https://www.mktweb360.com/5-factores-web-servicios-profesionales/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-servicios-profesionales/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-5-factores-web-servicios-profesionales.jpg",
 };
 
 const FAQS = [

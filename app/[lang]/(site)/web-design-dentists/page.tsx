@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { JsonLd } from "@/components/JsonLd";
+import { serviceSchema, intlPath, fromMeta } from "@/lib/schema";
 
 const FAQS_EN = [
   {
@@ -87,6 +89,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   return (
     <>
       <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+        <JsonLd data={serviceSchema({ lang, path: intlPath(lang, "web-design-dentists"), ...fromMeta(await generateMetadata({ params })) })} />
         <Breadcrumbs
           crumbs={[
             { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },

@@ -3,6 +3,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -85,6 +86,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "E-commerce" : "E-commerce"}
         </p>
 
+        <IntlArticleJsonLd lang={lang} slug="chatbot-for-online-store" headline={isEn ? "Chatbot for Online Stores: Sell More in 2026" : "Chatbot pour boutique en ligne : vendre plus"} image="/og-diseno-web-tienda-online.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Chatbot for Online Stores: Sell More in 2026"

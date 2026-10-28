@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Descubre el Poder del Canvas para la Gestión de tus Redes Sociales",
   description: "Cómo usar el modelo Canvas para planificar la estrategia de contenidos en redes sociales.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2023-12-05",
   dateModified: "2023-12-05",
   url: "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/",
   mainEntityOfPage: "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-descubre-el-poder-del-canvas.jpg",
 };
 
 export default function CanvasRedesSocialesPage() {

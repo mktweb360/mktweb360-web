@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Register freelancer Spain" : "Inscription indépendant Espagne" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Business</p>
+        <IntlArticleJsonLd lang={lang} slug="how-to-register-as-freelancer" headline={isEn ? "How to register as a self-employed freelancer in Spain: complete guide" : "Comment s'inscrire comme travailleur indépendant en Espagne : guide complet"} image="/og-como-darse-de-alta-autonomo.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to register as a self-employed freelancer in Spain: complete guide" : "Comment s'inscrire comme travailleur indépendant en Espagne : guide complet"}
         </h1>

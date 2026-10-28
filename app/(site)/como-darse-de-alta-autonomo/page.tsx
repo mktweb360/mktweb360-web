@@ -28,17 +28,19 @@ const articleSchema = {
   headline: "Cómo darse de alta como autónomo en 2026: pasos, costes y errores a evitar",
   description: "Guía completa para darse de alta como autónomo en 2026. Pasos en Hacienda y Seguridad Social, cuota, errores frecuentes y qué necesitas tener listo.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-12",
   dateModified: "2026-06-12",
   url: "https://www.mktweb360.com/como-darse-de-alta-autonomo/",
   mainEntityOfPage: "https://www.mktweb360.com/como-darse-de-alta-autonomo/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-como-darse-de-alta-autonomo.jpg",
 };
 
 const FAQS = [
   {
     q: "¿Qué es antes, el alta en Hacienda o en la Seguridad Social?",
-    a: "Primero el alta en Hacienda (Modelo 036 o 037) y después el alta en el RETA. Tienes 30 días desde el alta en Hacienda para inscribirte en la Seguridad Social.",
+    a: "Primero el alta en Hacienda (Modelo 036 o 037) y después el alta en el RETA. El alta en la Seguridad Social (RETA) tiene que estar hecha antes de empezar la actividad: puedes solicitarla con hasta 60 días naturales de antelación a la fecha de inicio.",
   },
   {
     q: "¿Cuánto se paga de autónomo al mes en 2026?",

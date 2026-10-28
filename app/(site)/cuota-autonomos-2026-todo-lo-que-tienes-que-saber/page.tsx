@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Las cuotas de autónomos 2026 se mantienen iguales a 2025 por prórroga del Gobierno, salvo el MEI que sube al 0,9%. Tabla completa de tramos, tarifa plana de 80€ y cómo cambiar tu base hasta 6 veces al año.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-homepage.jpg",
   url: "https://www.mktweb360.com/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/",
   mainEntityOfPage: "https://www.mktweb360.com/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [
@@ -44,7 +45,7 @@ const FAQS = [
   },
   {
     q: "¿Cuánto paga un autónomo de cuota mínima en 2026?",
-    a: "Los autónomos del primer tramo (ingresos hasta 670€/mes) pagan 200€/mes. Segundo tramo (670€-900€): 220€. Tercer tramo (900€-1.166,70€): 260€. A partir del cuarto tramo los importes suben progresivamente hasta los 1.542€ para los ingresos más altos.",
+    a: "Los autónomos del primer tramo (ingresos hasta 670€/mes) pagan 200€/mes. Segundo tramo (670€-900€): 220€. Tercer tramo (900€-1.166,70€): 260€. A partir del cuarto tramo, la cuota mínima sube con los rendimientos hasta rondar los 590 €/mes en el tramo más alto (más de 6.000 € al mes); si eliges una base superior a la mínima, pagas más. Para tu caso concreto, consulta la tabla oficial de la Seguridad Social: estas cifras son orientativas.",
   },
   {
     q: "¿Qué es la tarifa plana de autónomos en 2026?",

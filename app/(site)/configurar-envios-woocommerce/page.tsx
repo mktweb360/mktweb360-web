@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "Cómo Configurar los Envíos en WooCommerce para España: Guía Completa | Mkt Web 360",
   description: "Guía para configurar métodos de envío en WooCommerce. Zonas de envío, tarifas planas, envío gratis a partir de importe, integración con Correos, MRW y Correos Express.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-configurar-envios-woocommerce.jpg",
   url: "https://www.mktweb360.com/configurar-envios-woocommerce/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/configurar-envios-woocommerce/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {

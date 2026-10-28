@@ -31,11 +31,13 @@ const articleSchema = {
   description:
     "Los 5 factores que determinan si la web de un negocio de hostelería llena mesas: hoja de reclamaciones, alérgenos según el Reglamento UE 1169/2011, reserva online, ficha de Google Business Profile y carta siempre actualizada.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-06",
   dateModified: "2026-09-06",
   url: "https://www.mktweb360.com/5-factores-web-restaurantes-hosteleria/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-restaurantes-hosteleria/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-5-factores-web-restaurantes-hosteleria.jpg",
 };
 
 const FAQS = [

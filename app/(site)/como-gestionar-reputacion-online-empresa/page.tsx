@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Cómo gestionar la reputación online de tu empresa: guía práctica 2026",
   description: "La reputación online se construye o destruye en público. Descubre cómo gestionarla con criterio: reseñas, menciones, respuestas y prevención de crisis.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-12",
   dateModified: "2026-06-12",
   url: "https://www.mktweb360.com/como-gestionar-reputacion-online-empresa/",
   mainEntityOfPage: "https://www.mktweb360.com/como-gestionar-reputacion-online-empresa/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-como-gestionar-reputacion-online-empresa.jpg",
 };
 
 const FAQS = [

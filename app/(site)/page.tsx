@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import HomeClient from "@/components/HomeClient";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { JsonLd } from "@/components/JsonLd";
+import { webPageSchema, fromMeta, ORG_ID } from "@/lib/schema";
 
 export const metadata: Metadata = {
   // absolute: evita que la plantilla del layout ("%s | Mkt Web 360") duplique la marca.
@@ -18,5 +20,10 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <HomeClient />;
+  return (
+    <>
+      <JsonLd data={webPageSchema("WebPage", { lang: "es", path: "/", ...fromMeta(metadata) }, { mainEntity: { "@id": ORG_ID } })} />
+      <HomeClient />
+    </>
+  );
 }

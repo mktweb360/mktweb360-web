@@ -31,11 +31,13 @@ const articleSchema = {
   description:
     "Los 5 factores que determinan si la web de una clínica capta pacientes: publicidad sanitaria regulada, protección de datos de salud, cita online, Google Business Profile y señales de confianza médica.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-04",
   dateModified: "2026-09-04",
   url: "https://www.mktweb360.com/5-factores-web-clinicas-centros-salud/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-clinicas-centros-salud/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-5-factores-web-clinicas-centros-salud.jpg",
 };
 
 const FAQS = [

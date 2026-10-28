@@ -29,11 +29,13 @@ const articleSchema = {
   headline: "Cómo generar leads de calidad para una pyme sin llenar el embudo de contactos inútiles",
   description: "Aprende cómo generar leads de calidad para tu pyme mejorando mensaje, segmentación, canales, web y proceso comercial.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-04-14",
   dateModified: "2025-04-14",
   url: "https://www.mktweb360.com/como-generar-leads-calidad-pyme/",
   mainEntityOfPage: "https://www.mktweb360.com/como-generar-leads-calidad-pyme/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-como-generar-leads-calidad-pyme.jpg",
 };
 
 const FAQS = [

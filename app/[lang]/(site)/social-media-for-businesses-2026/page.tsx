@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -83,6 +84,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "Social Media" : "Réseaux Sociaux"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="social-media-for-businesses-2026" headline={isEn ? "Social media for businesses in 2026: what real data says about what actually works" : "Réseaux sociaux pour entreprises en 2026 : ce que disent les données réelles sur ce qui fonctionne vraiment"} image="/og-smm.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Social media for businesses in 2026: what real data says about what actually works"

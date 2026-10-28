@@ -29,11 +29,13 @@ const articleSchema = {
   headline: "Señales de que tu web necesita un rediseño urgente si quieres vender más",
   description: "Descubre las señales más claras de que tu web está frenando ventas y cuándo conviene rediseñar en lugar de seguir optimizando.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-04-07",
   dateModified: "2025-04-07",
   url: "https://www.mktweb360.com/senales-web-necesita-rediseno/",
   mainEntityOfPage: "https://www.mktweb360.com/senales-web-necesita-rediseno/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-senales-web-necesita-rediseno.jpg",
 };
 
 const FAQS = [

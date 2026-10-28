@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "Cómo Usar ChatGPT para Marketing Digital Sin Perder la Autenticidad | Mkt Web 360",
   description: "Guía práctica para usar ChatGPT en marketing digital. Qué tareas delegar, cómo mantener la voz de marca, prompts efectivos y qué no dejar en manos de la IA.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/chatgpt-para-marketing-digital/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/chatgpt-para-marketing-digital/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {

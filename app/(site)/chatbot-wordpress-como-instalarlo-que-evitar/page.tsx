@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "WordPress tiene decenas de plugins de chatbot. La mayoría no merece el tiempo que cuesta probarlos. Guía honesta sobre qué funciona de verdad y cómo implementar un chatbot útil en una web WordPress en 2026.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/chatbot-wordpress-como-instalarlo-que-evitar/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-wordpress-como-instalarlo-que-evitar/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

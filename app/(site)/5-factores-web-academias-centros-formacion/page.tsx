@@ -31,11 +31,13 @@ const articleSchema = {
   description:
     "Los 5 factores que determinan si la web de una academia capta alumnos: publicidad de resultados sin exagerar, RGPD de menores, Delegado de Protección de Datos, disponibilidad de plazas y prueba social real.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-06",
   dateModified: "2026-09-06",
   url: "https://www.mktweb360.com/5-factores-web-academias-centros-formacion/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-academias-centros-formacion/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-5-factores-web-academias-centros-formacion.jpg",
 };
 
 const FAQS = [

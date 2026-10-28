@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Digitalisation CLM" : "Digitalisation CLM" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Strategy</p>
+        <IntlArticleJsonLd lang={lang} slug="digitalization-castilla-la-mancha" headline={isEn ? "How to digitalise your business in Castilla-La Mancha in 2025" : "Comment digitaliser votre entreprise en Castille-La Manche en 2025"} image="/og-digitalizacion-empresas-castilla-la-mancha.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to digitalise your business in Castilla-La Mancha in 2025" : "Comment digitaliser votre entreprise en Castille-La Manche en 2025"}
         </h1>

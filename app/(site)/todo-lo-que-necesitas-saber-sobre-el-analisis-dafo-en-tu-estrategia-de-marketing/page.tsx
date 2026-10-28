@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Todo lo que Necesitas Saber sobre el Análisis DAFO en tu Estrategia de Marketing",
   description: "Guía completa sobre el análisis DAFO aplicado al marketing digital.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2024-01-10",
   dateModified: "2024-01-10",
   url: "https://www.mktweb360.com/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/",
   mainEntityOfPage: "https://www.mktweb360.com/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-todo-lo-que-necesitas-saber-sobre-el-analisis-dafo.jpg",
 };
 
 export default function AnalisisDAFOPage() {

@@ -5,6 +5,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -89,6 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </time>
             <AuthorByline lang={lang} />
           </div>
+          <IntlArticleJsonLd lang={lang} slug="marketing-attribution-measure-real-impact" headline={isEn ? "Marketing attribution: how to measure real impact in a multi-channel world" : "Attribution marketing : mesurer l'impact réel"} image="/og-atribucion-de-marketing-como-medir-impacto-real.jpg" />
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn
               ? "Marketing attribution: how to measure real impact in a multi-channel world"

@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "SWOT analysis" : "Analyse SWOT" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Strategy</p>
+        <IntlArticleJsonLd lang={lang} slug="swot-analysis-marketing" headline={isEn ? "SWOT analysis in digital marketing: how to use it to improve your strategy" : "Analyse SWOT en marketing digital : comment l'utiliser pour améliorer votre stratégie"} image="/og-todo-lo-que-necesitas-saber-sobre-el-analisis-dafo.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "SWOT analysis in digital marketing: how to use it to improve your strategy" : "Analyse SWOT en marketing digital : comment l'utiliser pour améliorer votre stratégie"}
         </h1>

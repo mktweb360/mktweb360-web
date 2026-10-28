@@ -32,11 +32,13 @@ const articleSchema = {
   headline: "Marketing digital con IA y respuestas de cero clic: qué hacer ahora",
   description: "Cómo adaptar la estrategia de marketing digital cuando los buscadores con IA responden sin que el usuario haga clic.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-08-04",
   dateModified: "2026-08-04",
   url: URL_CANONICAL,
   mainEntityOfPage: URL_CANONICAL,
+  inLanguage: "es-ES",
+  image: `https://www.mktweb360.com/og-${SLUG}.jpg`,
 };
 
 const FAQS = [

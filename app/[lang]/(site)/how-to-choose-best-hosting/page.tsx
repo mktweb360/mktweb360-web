@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Best hosting" : "Meilleur hébergement" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Web Design</p>
+        <IntlArticleJsonLd lang={lang} slug="how-to-choose-best-hosting" headline={isEn ? "How to choose the best hosting for your website without overpaying" : "Comment choisir le meilleur hébergement pour votre site web sans trop payer"} image="/og-como-elegir-el-mejor-hosting-para-tu-web.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to choose the best hosting for your website without overpaying" : "Comment choisir le meilleur hébergement pour votre site web sans trop payer"}
         </h1>

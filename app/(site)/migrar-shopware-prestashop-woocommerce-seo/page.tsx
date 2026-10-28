@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Migrar a Shopware desde PrestaShop o WooCommerce sin perder SEO",
   description: "Cómo migrar tu tienda a Shopware sin perder posicionamiento: auditoría de URLs, mapa de redirecciones 301, protocolo de lanzamiento y seguimiento post-migración.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-26",
   dateModified: "2026-06-26",
   url: "https://www.mktweb360.com/migrar-shopware-prestashop-woocommerce-seo/",
   mainEntityOfPage: "https://www.mktweb360.com/migrar-shopware-prestashop-woocommerce-seo/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-migrar-shopware-seo.jpg",
 };
 
 const FAQS = [

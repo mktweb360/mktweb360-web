@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -36,6 +37,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
+        <IntlArticleJsonLd lang={lang} slug="google-shopping-for-online-stores" headline={isEn ? "Google Shopping for online stores: how to appear in Google product results" : "Google Shopping pour boutiques en ligne : comment apparaître dans les résultats produits Google"} image="/og-google-shopping-tiendas-online.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Google Shopping for online stores: how to appear in Google product results"

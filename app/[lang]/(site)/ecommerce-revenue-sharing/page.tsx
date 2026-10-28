@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { JsonLd } from "@/components/JsonLd";
+import { serviceSchema, intlPath, fromMeta } from "@/lib/schema";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -137,6 +139,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     <>
       <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
+          <JsonLd data={serviceSchema({ lang, path: intlPath(lang, "ecommerce-revenue-sharing"), ...fromMeta(await generateMetadata({ params })) })} />
           <Breadcrumbs
             crumbs={[
               { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },

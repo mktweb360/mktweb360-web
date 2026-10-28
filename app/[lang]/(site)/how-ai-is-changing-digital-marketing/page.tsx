@@ -3,6 +3,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -85,6 +86,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "AI & Marketing" : "IA & Marketing"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="how-ai-is-changing-digital-marketing" headline={isEn ? "How AI is changing digital marketing forever" : "Comment l'IA est en train de transformer le marketing digital pour toujours"} image="/og-chatgpt-para-marketing-digital.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How AI is changing digital marketing forever"

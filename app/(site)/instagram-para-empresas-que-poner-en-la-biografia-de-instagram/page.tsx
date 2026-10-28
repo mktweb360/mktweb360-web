@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Qué poner en la biografía de Instagram para empresas: guía completa con ejemplos",
   description: "Descubre qué poner en la biografía de Instagram de tu empresa para captar más seguidores y clientes. Ejemplos reales y consejos prácticos.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-06-12",
   dateModified: "2025-06-12",
   url: "https://www.mktweb360.com/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/",
   mainEntityOfPage: "https://www.mktweb360.com/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-instagram-para-empresas-biografia.jpg",
 };
 
 const FAQS = [
@@ -42,7 +44,7 @@ const FAQS = [
   },
   {
     q: "¿Puedo poner varios enlaces en la bio de Instagram?",
-    a: "Instagram solo permite un enlace en la biografía. Para incluir varios, puedes usar herramientas como Linktree o crear una página propia con tus enlaces principales.",
+    a: "Sí: Instagram permite añadir varios enlaces en la bio, aunque a simple vista solo se ve el primero. Que ese apunte a tu página más útil para el cliente: tu web, la página de reservas o tu ficha de Google con las reseñas.",
   },
   {
     q: "¿Debo usar hashtags en la bio de Instagram?",

@@ -29,11 +29,13 @@ const articleSchema = {
   headline: "SEO local para empresas de servicios: cómo conseguir clientes en tu zona",
   description: "Aprende qué necesita una empresa de servicios para mejorar su presencia local y captar más clientes desde Google en su zona.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-03-24",
   dateModified: "2025-03-24",
   url: "https://www.mktweb360.com/seo-local-empresas-servicios/",
   mainEntityOfPage: "https://www.mktweb360.com/seo-local-empresas-servicios/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-seo-local-empresas-servicios.jpg",
 };
 
 const FAQS = [

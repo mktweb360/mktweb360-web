@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Cómo digitalizar tu negocio sin complicarte la vida: guía práctica para pymes 2026",
   description: "Digitalizar un negocio no significa comprar software caro. Descubre qué pasos dar primero, qué herramientas tienen sentido y cómo hacerlo con orden.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-12",
   dateModified: "2026-06-12",
   url: "https://www.mktweb360.com/como-digitalizar-tu-negocio/",
   mainEntityOfPage: "https://www.mktweb360.com/como-digitalizar-tu-negocio/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-como-digitalizar-tu-negocio.jpg",
 };
 
 const FAQS = [
@@ -45,8 +47,8 @@ const FAQS = [
     a: "Básicamente trasladar a herramientas digitales los procesos que ahora son manuales, en papel o dispersos. Puede ser desde facturar con software hasta gestionar pedidos online o tener una presencia web que funcione.",
   },
   {
-    q: "¿El Kit Digital puede ayudarme a digitalizar mi negocio?",
-    a: "Sí. El programa Kit Digital ofrece subvenciones para que pymes y autónomos contraten soluciones digitales homologadas. Es una buena forma de digitalizar algunos aspectos sin coste o con coste reducido.",
+    q: "¿Sigue existiendo el Kit Digital para digitalizar mi negocio?",
+    a: "No para solicitudes nuevas: el Kit Digital cerró sus últimas convocatorias el 31 de octubre de 2025. Siguen saliendo ayudas de Cámaras de Comercio y comunidades autónomas, con bases y plazos distintos en cada caso; consulta siempre la convocatoria vigente antes de decidir.",
   },
   {
     q: "¿Cuánto tiempo lleva digitalizar una pyme?",

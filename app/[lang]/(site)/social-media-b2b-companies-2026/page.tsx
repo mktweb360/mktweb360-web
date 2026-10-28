@@ -5,6 +5,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -47,6 +48,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <div className="mt-4 mb-3">
             <span className="bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">{cat}</span>
           </div>
+          <IntlArticleJsonLd lang={lang} slug="social-media-b2b-companies-2026" headline={title} image="/og-redes-sociales-para-empresas-b2b-2026.jpg" />
           <h1 className="text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">{title}</h1>
           <p className="text-xl text-primary-200">{desc}</p>
           <div className="mt-6 flex flex-wrap gap-4 text-sm text-primary-300">

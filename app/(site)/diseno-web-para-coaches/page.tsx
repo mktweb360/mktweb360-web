@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Diseño web profesional para coaches, consultores y formadores. Web que transmite autoridad, capta leads y convierte visitas en clientes.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
   image: "https://www.mktweb360.com/og-diseno-web-para-coaches.jpg",
   url: "https://www.mktweb360.com/diseno-web-para-coaches/",
   mainEntityOfPage: "https://www.mktweb360.com/diseno-web-para-coaches/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Qué es el GEO y cómo aparecer en ChatGPT si tienes un negocio en España",
   description: "El GEO posiciona tu negocio en ChatGPT y Perplexity. Guía práctica para negocios en España que quieren visibilidad en la búsqueda con IA.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-26",
   dateModified: "2026-06-26",
   url: "https://www.mktweb360.com/geo-posicionamiento-ia-chatgpt-empresas-espana/",
   mainEntityOfPage: "https://www.mktweb360.com/geo-posicionamiento-ia-chatgpt-empresas-espana/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-geo-chatgpt-negocios-espana.jpg",
 };
 
 const FAQS = [

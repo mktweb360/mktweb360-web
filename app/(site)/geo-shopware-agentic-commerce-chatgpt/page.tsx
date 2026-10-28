@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "GEO para Shopware: vende desde ChatGPT con Agentic Commerce",
   description: "Shopware 6.7.9 trae Agentic Commerce nativo. Prepara tu tienda con GEO para que ChatGPT y Perplexity recomienden y vendan tus productos directamente.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-26",
   dateModified: "2026-06-26",
   url: "https://www.mktweb360.com/geo-shopware-agentic-commerce-chatgpt/",
   mainEntityOfPage: "https://www.mktweb360.com/geo-shopware-agentic-commerce-chatgpt/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-geo-shopware-agentic-commerce.jpg",
 };
 
 const FAQS = [

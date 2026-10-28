@@ -27,12 +27,13 @@ const articleSchema = {
   headline: "Por qué aparecer en ChatGPT y Gemini importa más que el SEO en 2026",
   description: "Millones de personas ya no buscan en Google. Preguntan a ChatGPT, Perplexity o Gemini. Si tu negocio no aparece en sus respuestas, estás perdiendo clientes sin saberlo. Guía GEO 2026.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-que-es-geo-generative-engine-optimization.jpg",
   url: "https://www.mktweb360.com/por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

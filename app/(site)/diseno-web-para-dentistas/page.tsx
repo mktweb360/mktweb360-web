@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Diseño web profesional para dentistas y clínicas dentales. Web optimizada para SEO local, Google Maps y captación de nuevos pacientes.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
   image: "https://www.mktweb360.com/og-diseno-web-para-dentistas.jpg",
   url: "https://www.mktweb360.com/diseno-web-para-dentistas/",
   mainEntityOfPage: "https://www.mktweb360.com/diseno-web-para-dentistas/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

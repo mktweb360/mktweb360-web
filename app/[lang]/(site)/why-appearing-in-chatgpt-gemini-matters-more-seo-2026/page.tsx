@@ -44,7 +44,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       ? "Why ChatGPT Visibility Matters More Than SEO"
       : "Pourquoi ChatGPT compte plus que le SEO",
     author: autorSchema(lang),
-    publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+    publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     datePublished: "2026-07-07",
     dateModified: "2026-07-07",
     image: "https://www.mktweb360.com/og-que-es-geo-generative-engine-optimization.jpg",

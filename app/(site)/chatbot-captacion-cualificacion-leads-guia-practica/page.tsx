@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Un chatbot bien configurado puede captar leads 24/7, cualificarlos con preguntas estratégicas y pasarlos al CRM con contexto completo. Guía práctica para implementar un sistema de captación con chatbot en 2026.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-como-generar-leads-calidad-pyme.jpg",
   url: "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

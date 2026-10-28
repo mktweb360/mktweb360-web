@@ -27,12 +27,13 @@ const articleSchema = {
   headline: "Actualizaciones del algoritmo de Google en 2026: qué ha cambiado y cómo afecta a tu web",
   description: "Google ha lanzado varias actualizaciones de algoritmo en 2026 con foco en experiencia de usuario, contenido de IA y señales E-E-A-T. Analizamos qué ha cambiado y qué tienes que hacer.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-seo.jpg",
   url: "https://www.mktweb360.com/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/",
   mainEntityOfPage: "https://www.mktweb360.com/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

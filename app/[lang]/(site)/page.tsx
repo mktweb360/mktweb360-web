@@ -11,6 +11,8 @@ import { getLatestPosts } from "@/lib/blog";
 import { getPostI18n, getCategoryI18n } from "@/lib/blog-i18n";
 import type { Metadata } from "next";
 import { alternatesFor, translatedSlugFor } from "@/lib/i18n/routes";
+import { JsonLd } from "@/components/JsonLd";
+import { webPageSchema, ORG_ID } from "@/lib/schema";
 
 // Canonical y hreflang de /en/ y /fr/ (no tenían ninguno de los dos).
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -189,8 +191,19 @@ export default async function LangHomePage({
 
   const c = content[lang as keyof typeof content] ?? content.en;
 
+  // WebPage de la portada EN/FR: nombre y descripción = titular y texto de la primera diapositiva del hero.
+  const homeSchema = webPageSchema("WebPage", {
+    lang,
+    path: `/${lang}/`,
+    name: isEn ? "Mkt Web 360 — Your Digital Marketing Agency" : "Mkt Web 360 — Votre agence de marketing digital",
+    description: isEn
+      ? "We put you where people search for you: more online visibility, more customers and a business that grows with proven digital marketing strategies. Nationwide service across Spain."
+      : "Nous vous plaçons là où l'on vous cherche : plus de visibilité en ligne, plus de clients et une entreprise qui grandit grâce à des stratégies de marketing digital éprouvées. Service dans toute l'Espagne.",
+  }, { mainEntity: { "@id": ORG_ID } });
+
   return (
     <>
+      <JsonLd data={homeSchema} />
       {/* Hero Slider */}
       <section className="relative mw-skin-hero text-white overflow-hidden">
         <LangHeroSlider lang={lang} />

@@ -27,12 +27,13 @@ const articleSchema = {
   headline: "Cómo la IA está cambiando el marketing digital para siempre (y qué significa para tu negocio)",
   description: "La IA ya no es una tendencia en marketing: es la infraestructura. Más del 70% de las interacciones de marketing digital estarán influenciadas por IA en 2026. Qué cambia, qué no cambia y qué tienes que hacer.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/",
   mainEntityOfPage: "https://www.mktweb360.com/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

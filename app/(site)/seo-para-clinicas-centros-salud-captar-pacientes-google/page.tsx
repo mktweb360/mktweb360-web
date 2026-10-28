@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "SEO para clínicas y centros de salud: cómo captar pacientes en Google",
   description: "Guía de SEO específico para clínicas dentales, fisioterapia y centros de salud en España: E-E-A-T médico, Google Business Profile y captación de pacientes.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-26",
   dateModified: "2026-06-26",
   url: "https://www.mktweb360.com/seo-para-clinicas-centros-salud-captar-pacientes-google/",
   mainEntityOfPage: "https://www.mktweb360.com/seo-para-clinicas-centros-salud-captar-pacientes-google/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-seo-clinicas-centros-salud-captar-pacientes.jpg",
 };
 
 const FAQS = [

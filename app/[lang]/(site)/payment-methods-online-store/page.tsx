@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -36,6 +37,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
+        <IntlArticleJsonLd lang={lang} slug="payment-methods-online-store" headline={isEn ? "Payment methods for online stores: which ones to install and how to configure them" : "Méthodes de paiement pour boutiques en ligne : lesquelles installer et comment les configurer"} image="/og-metodos-pago-tienda-online-espana.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Payment methods for online stores: which ones to install and how to configure them"

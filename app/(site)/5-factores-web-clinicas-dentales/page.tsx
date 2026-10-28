@@ -31,11 +31,13 @@ const articleSchema = {
   description:
     "Los 5 factores que determinan si la web de una clínica dental capta pacientes: publicidad sanitaria conforme al RD 1907/1996, protección de datos de salud (RGPD), identificación profesional con número de colegiado, transparencia de precios y ficha de Google Business Profile.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-06",
   dateModified: "2026-09-06",
   url: "https://www.mktweb360.com/5-factores-web-clinicas-dentales/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-clinicas-dentales/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-5-factores-web-clinicas-dentales.jpg",
 };
 
 const FAQS = [

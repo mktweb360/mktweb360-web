@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "El estudio Social Media 2026 de Cyberclick y Metricool analiza millones de publicaciones. TikTok lidera en impresiones, Instagram en estabilidad, LinkedIn en B2B. Qué significa para tu estrategia.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-smm.jpg",
   url: "https://www.mktweb360.com/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/",
   mainEntityOfPage: "https://www.mktweb360.com/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

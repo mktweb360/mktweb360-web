@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "CRO para Shopware: cómo optimizar la conversión de tu tienda",
   description: "Sube la conversión de tu tienda Shopware: eventos GA4 clave, las 5 causas reales de abandono de carrito y optimización de fichas de producto y checkout.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-26",
   dateModified: "2026-06-26",
   url: "https://www.mktweb360.com/cro-shopware-optimizar-conversion-tienda/",
   mainEntityOfPage: "https://www.mktweb360.com/cro-shopware-optimizar-conversion-tienda/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-cro-shopware-optimizar-conversion.jpg",
 };
 
 const FAQS = [

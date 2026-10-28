@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Website redesign" : "Refonte site web" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Web Design</p>
+        <IntlArticleJsonLd lang={lang} slug="signs-your-website-needs-redesign" headline={isEn ? "Signs your website needs an urgent redesign if you want to sell more" : "Signes que votre site web a besoin d'une refonte urgente si vous voulez vendre plus"} image="/og-senales-web-necesita-rediseno.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Signs your website needs an urgent redesign if you want to sell more" : "Signes que votre site web a besoin d'une refonte urgente si vous voulez vendre plus"}
         </h1>

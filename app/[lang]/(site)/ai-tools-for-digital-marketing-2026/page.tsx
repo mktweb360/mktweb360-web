@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -83,6 +84,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "AI & Marketing" : "IA & Marketing"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="ai-tools-for-digital-marketing-2026" headline={isEn ? "AI tools for digital marketing in 2026: an honest analysis of the ones worth your time" : "Outils d'IA pour le marketing digital en 2026 : analyse honnête de ceux qui valent vraiment la peine"} image="/og-chatgpt-para-marketing-digital.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "AI tools for digital marketing in 2026: an honest analysis of the ones worth your time"

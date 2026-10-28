@@ -4,6 +4,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -93,6 +94,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <p className="text-sm text-accent-500 font-semibold mb-2">Shopware · Ads</p>
 
+        <IntlArticleJsonLd lang={lang} slug="shopware-google-ads" headline={isEn ? "Google Ads for Shopware: Campaigns That Sell" : "Campagnes Google Ads pour Shopware"} image="/og-google-ads-shopware-campanas-que-venden.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Google Ads for Shopware: Campaigns That Sell"

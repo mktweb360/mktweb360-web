@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "SEO para Shopware: cómo posicionar tu tienda en Google",
   description: "Guía de SEO técnico para Shopware 6: URLs, navegación facetada, schema de producto, Core Web Vitals y fichas optimizadas para posicionar tu tienda en Google.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-26",
   dateModified: "2026-06-26",
   url: "https://www.mktweb360.com/seo-shopware-posicionar-tienda-google/",
   mainEntityOfPage: "https://www.mktweb360.com/seo-shopware-posicionar-tienda-google/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-seo-shopware-posicionar-tienda-google.jpg",
 };
 
 const FAQS = [

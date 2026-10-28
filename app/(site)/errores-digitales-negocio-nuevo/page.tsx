@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "10 errores digitales al montar un negocio desde cero (y cómo evitarlos)",
   description: "Arrancar un negocio con errores digitales cuesta dinero y tiempo. Descubre los más frecuentes y cómo evitarlos desde el principio.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-12",
   dateModified: "2026-06-12",
   url: "https://www.mktweb360.com/errores-digitales-negocio-nuevo/",
   mainEntityOfPage: "https://www.mktweb360.com/errores-digitales-negocio-nuevo/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-errores-digitales-negocio-nuevo.jpg",
 };
 
 const FAQS = [

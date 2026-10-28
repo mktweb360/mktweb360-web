@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Link building SMEs" : "Link building PME" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO</p>
+        <IntlArticleJsonLd lang={lang} slug="link-building-for-smes" headline={isEn ? "Link building for SMEs: how to get quality links without risking your domain" : "Link building pour PME : comment obtenir des liens de qualité sans risquer votre domaine"} image="/og-link-building-pymes.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Link building for SMEs: how to get quality links without risking your domain" : "Link building pour PME : comment obtenir des liens de qualité sans risquer votre domaine"}
         </h1>

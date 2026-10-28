@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -36,6 +37,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">AI · Strategy</p>
+        <IntlArticleJsonLd lang={lang} slug="is-seo-dead-with-ai" headline={isEn ? "Is SEO dead with AI? No — but it is changing fast" : "Le SEO est-il mort avec l'IA ? Non — mais il change vite"} image="/og-ha-muerto-el-seo-con-la-ia.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Is SEO dead with AI? No — but it is changing fast"

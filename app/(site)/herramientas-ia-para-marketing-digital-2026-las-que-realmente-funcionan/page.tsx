@@ -27,12 +27,13 @@ const articleSchema = {
   headline: "Herramientas de IA para marketing digital en 2026: las que realmente funcionan",
   description: "No todas las herramientas de IA para marketing merecen el tiempo que cuesta aprenderlas. Análisis honesto de las que aportan valor real a pymes y agencias en 2026.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/",
   mainEntityOfPage: "https://www.mktweb360.com/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

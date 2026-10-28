@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Cómo Elegir el Mejor Hosting para tu Web",
   description: "Guía completa para elegir el hosting correcto para tu página web.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2023-10-25",
   dateModified: "2023-10-25",
   url: "https://www.mktweb360.com/como-elegir-el-mejor-hosting-para-tu-web/",
   mainEntityOfPage: "https://www.mktweb360.com/como-elegir-el-mejor-hosting-para-tu-web/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-como-elegir-el-mejor-hosting-para-tu-web.jpg",
 };
 
 export default function MejorHostingPage() {

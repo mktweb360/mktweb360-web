@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -36,6 +37,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Web Design</p>
+        <IntlArticleJsonLd lang={lang} slug="how-much-does-a-website-cost" headline={isEn ? "How much does a professional website cost in 2025?" : "Combien coûte un site web professionnel en 2025 ?"} image="/og-cuanto-cuesta-pagina-web-profesional.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How much does a professional website cost in 2025?"

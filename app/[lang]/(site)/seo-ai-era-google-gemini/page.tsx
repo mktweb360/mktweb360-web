@@ -4,6 +4,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -85,6 +86,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO · {isEn ? "Strategy" : "Stratégie"}</p>
 
+        <IntlArticleJsonLd lang={lang} slug="seo-ai-era-google-gemini" headline={isEn ? "SEO in the AI Era: How to Rank When Google Uses Gemini to Give the Answers" : "SEO à l'ère de l'IA : comment se positionner quand Google utilise Gemini pour donner les réponses"} image="/og-seo.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "SEO in the AI Era: How to Rank When Google Uses Gemini to Give the Answers"

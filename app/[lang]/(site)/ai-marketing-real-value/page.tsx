@@ -4,6 +4,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -95,6 +96,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "AI & Marketing" : "IA & Marketing"}
         </p>
 
+        <IntlArticleJsonLd lang={lang} slug="ai-marketing-real-value" headline={isEn ? "AI Applied to Marketing: Where It Delivers Real Value and Where It Is Still Hype" : "IA appliquée au marketing : où elle apporte une vraie valeur et où c'est encore du bruit"} image="/og-ia-aplicada-a-marketing-valor-real-o-humo.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "AI Applied to Marketing: Where It Delivers Real Value and Where It Is Still Hype"

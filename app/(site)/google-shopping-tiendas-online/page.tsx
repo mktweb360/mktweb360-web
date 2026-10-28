@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "Google Shopping para Tiendas Online | Mkt Web 360",
   description: "Guía completa de Google Shopping para ecommerce. Cómo configurar Merchant Center, optimizar el feed de productos y aumentar las ventas con Shopping Ads.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-google-shopping-tiendas-online.jpg",
   url: "https://www.mktweb360.com/google-shopping-tiendas-online/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/google-shopping-tiendas-online/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {
