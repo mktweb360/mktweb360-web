@@ -12,7 +12,8 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 const ES_SLUG = "estrategia-de-contenidos-calendario-editorial";
 const SLUGS = { en: "content-strategy-editorial-calendar", fr: "strategie-de-contenu-calendrier-editorial" } as const;
-const OG = `/og-${ES_SLUG}.jpg`;
+// Imagen con los rótulos en el idioma de la página (fuente: imagenes-blog/calendario-editorial-un-tema-cinco-piezas-en|fr.html).
+const ogFor = (lang: "en" | "fr") => `/og-${SLUGS[lang]}.jpg`;
 const DATE = "2026-11-01";
 
 type L = "en" | "fr";
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       description: m.description,
       url,
       type: "article",
-      images: [{ url: OG, width: 1200, height: 630 }],
+      images: [{ url: ogFor(lang), width: 1200, height: 630 }],
     },
   };
 }
@@ -400,7 +401,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     datePublished: DATE,
     dateModified: DATE,
-    image: `https://www.mktweb360.com${OG}`,
+    image: `https://www.mktweb360.com${ogFor(lang)}`,
     url,
     mainEntityOfPage: url,
   };
@@ -425,7 +426,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">{m.h1}</h1>
           <p className="text-xl text-gray-600 leading-relaxed">{t.intro}</p>
-          <Image src={OG} alt={t.alt} width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
+          <Image src={ogFor(lang)} alt={t.alt} width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
