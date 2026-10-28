@@ -10,6 +10,7 @@ export const OG_I18N: Record<string, { en: string; fr: string }> = {
   "digitalizacion-pymes-espana-datos-ine-2026": { en: "/og-sme-digitalisation-spain-ine-data-2026.jpg", fr: "/og-digitalisation-pme-espagne-donnees-ine-2026.jpg" },
   "como-usar-planificador-de-palabras-clave-google-ads": { en: "/og-how-to-use-google-keyword-planner-en.jpg", fr: "/og-how-to-use-google-keyword-planner-fr.jpg" },
   "factura-electronica-obligatoria-autonomos-pymes": { en: "/og-electronic-invoice-spain-en.jpg", fr: "/og-electronic-invoice-spain-fr.jpg" },
+  "estrategia-de-contenidos-calendario-editorial": { en: "/og-content-strategy-editorial-calendar.jpg", fr: "/og-strategie-de-contenu-calendrier-editorial.jpg" },
 };
 
 export function ogImageFor(esSlug: string, lang: string): string {
