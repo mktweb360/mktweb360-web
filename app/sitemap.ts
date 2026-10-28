@@ -182,6 +182,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/auditoria-google-ads-pymes-que-revisar/", priority: 0.7, changeFrequency: "weekly" as const },
     { url: "/resenas-google-como-conseguirlas-legalmente/", priority: 0.7, changeFrequency: "weekly" as const },
     { url: "/cuanto-tarda-el-seo-en-dar-resultados/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/seo-para-pymes-guia/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/auditoria-geo-aparecer-chatgpt-gemini-google/", priority: 0.7, changeFrequency: "weekly" as const },
   ];
 

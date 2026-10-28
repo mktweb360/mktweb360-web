@@ -294,7 +294,7 @@ export default function Page() {
 
           <h2 className="text-2xl font-bold text-primary-600">Cada cuánto repetir la auditoría</h2>
           <p>
-            Haz una auditoría completa una vez al año, y también antes y después de un rediseño, una migración o un cambio de dominio. Los bloques 1 y 5 conviene repasarlos cada mes en Search Console: es lo que cambia sin que toques nada. Si estás empezando a trabajar el SEO, aquí explicamos <Link href="/cuanto-tarda-el-seo-en-dar-resultados/" className="text-accent-500 hover:underline">cuánto tarda en dar resultados y qué se mueve primero</Link>.
+            Haz una auditoría completa una vez al año, y también antes y después de un rediseño, una migración o un cambio de dominio. Los bloques 1 y 5 conviene repasarlos cada mes en Search Console: es lo que cambia sin que toques nada. Si estás empezando a trabajar el SEO, aquí explicamos <Link href="/cuanto-tarda-el-seo-en-dar-resultados/" className="text-accent-500 hover:underline">cuánto tarda en dar resultados y qué se mueve primero</Link>. Y si quieres una visión general de por dónde empezar, tienes nuestra <Link href="/seo-para-pymes-guia/" className="text-accent-500 hover:underline">guía de SEO para pymes</Link>.
           </p>
 
           <h2 className="text-2xl font-bold text-primary-600">Cuándo conviene una auditoría profesional</h2>
