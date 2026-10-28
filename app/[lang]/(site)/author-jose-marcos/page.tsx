@@ -92,6 +92,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title: { absolute: t.title },
     description: t.description,
     alternates: alternatesFor(AUTOR_PATH[lang]) ?? { canonical: url },
+    // noindex hasta completar la página con la trayectoria de José (decisión del 28/10/2026).
+    robots: { index: false, follow: true },
     openGraph: { title: `${t.title}`, description: t.lead, url, type: "profile" },
   };
 }

@@ -15,6 +15,8 @@ const ALIAS_FASE_2B = new Set<string>([]);
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
   trailingSlash: true,
+  // 404 común con varios layouts raíz (app/(site), app/(app) y app/[lang]).
+  experimental: { globalNotFound: true },
   // Content-Language por idioma (28/10/2026). El <html lang> lo pone el layout raíz como «es» y solo se
   // corrige en el navegador (LangSetter); esta cabecera da el idioma real en la respuesta del servidor.
   async headers() {

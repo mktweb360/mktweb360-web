@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description:
     "José Marcos es el responsable de Mkt Web 360 SLU, agencia de marketing digital en marcha desde 2016, y firma los artículos de su blog sobre SEO, GEO, Google Ads, diseño web e IA.",
   alternates: alternatesFor("/autor/jose-marcos/") ?? { canonical: URL },
+  // noindex hasta completar la página con la trayectoria de José (decisión del 28/10/2026).
+  robots: { index: false, follow: true },
   openGraph: {
     title: "José Marcos, autor del blog | Mkt Web 360",
     description: "Responsable de Mkt Web 360 SLU y autor de los artículos del blog de la agencia.",
