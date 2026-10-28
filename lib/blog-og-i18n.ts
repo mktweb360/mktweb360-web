@@ -7,6 +7,7 @@ export const OG_I18N: Record<string, { en: string; fr: string }> = {
   "auditoria-seo-basica": { en: "/og-basic-seo-audit-en.jpg", fr: "/og-basic-seo-audit-fr.jpg" },
   "cuanto-tarda-el-seo-en-dar-resultados": { en: "/og-how-long-does-seo-take.jpg", fr: "/og-seo-combien-de-temps-resultats.jpg" },
   "seo-para-pymes-guia": { en: "/og-seo-for-smes-guide.jpg", fr: "/og-seo-pour-pme-guide.jpg" },
+  "digitalizacion-pymes-espana-datos-ine-2026": { en: "/og-sme-digitalisation-spain-ine-data-2026.jpg", fr: "/og-digitalisation-pme-espagne-donnees-ine-2026.jpg" },
 };
 
 export function ogImageFor(esSlug: string, lang: string): string {

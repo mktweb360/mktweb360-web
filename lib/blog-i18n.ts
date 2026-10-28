@@ -17,6 +17,16 @@ export type PostI18n = {
 };
 
 export const BLOG_I18N: Record<string, PostI18n> = {
+  "digitalizacion-pymes-espana-datos-ine-2026": {
+    en: {
+      title: "Spain's digital SMEs in 2026: websites, social media, AI and e-commerce according to INE",
+      excerpt: "Official INE data published on 22/10/2026: 36.2% of firms with fewer than 10 employees and internet access have a website, against 82.9% of those with 10 or more. Social media, AI, online sales and what it means for your business.",
+    },
+    fr: {
+      title: "La PME numérique en Espagne en 2026 : site web, réseaux, IA et e-commerce selon l'INE",
+      excerpt: "Données officielles de l'INE publiées le 22/10/2026 : 36,2 % des entreprises de moins de 10 salariés connectées ont un site web, contre 82,9 % de celles de 10 salariés ou plus. Réseaux, IA, vente en ligne et ce que cela signifie pour vous.",
+    },
+  },
   "cuanto-tarda-el-seo-en-dar-resultados": {
     en: {
       title: "How long does SEO take to work: what happens month by month and what it depends on",
