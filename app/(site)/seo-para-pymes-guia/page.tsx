@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 import { planesSeo, type PlanSeo } from "@/lib/planes-seo";
 import { preciosPlanesSeo } from "@/lib/precios-planes";
 
@@ -24,7 +25,7 @@ const DATE = "2026-10-28";
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  alternates: { canonical: URL },
+  alternates: alternatesFor("/seo-para-pymes-guia/") ?? { canonical: URL },
   openGraph: {
     title: `${TITLE} | Mkt Web 360`,
     description: DESCRIPTION,

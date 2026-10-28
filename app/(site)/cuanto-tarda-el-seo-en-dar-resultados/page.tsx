@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
+import { alternatesFor } from "@/lib/i18n/routes";
 
 // 28/10/2026 — tema 3 de la propuesta de blog del 27/10, aprobado por José.
 // Borrador y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 BORRADOR — Tema 3 Cuánto tarda el SEO en dar resultados».
@@ -22,7 +23,7 @@ const DATE = "2026-10-28";
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  alternates: { canonical: URL },
+  alternates: alternatesFor("/cuanto-tarda-el-seo-en-dar-resultados/") ?? { canonical: URL },
   openGraph: {
     title: `${TITLE} | Mkt Web 360`,
     description: DESCRIPTION,
