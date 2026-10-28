@@ -17,6 +17,16 @@ export type PostI18n = {
 };
 
 export const BLOG_I18N: Record<string, PostI18n> = {
+  "como-usar-planificador-de-palabras-clave-google-ads": {
+    en: {
+      title: "Google Keyword Planner: How to Use It (2026 Guide)",
+      excerpt: "How to use Google Keyword Planner without an active campaign, why search volume shows up in ranges and what “competition” really means. With a Search Console comparison.",
+    },
+    fr: {
+      title: "Outil de planification des mots clés Google Ads : guide 2026",
+      excerpt: "Utiliser l’outil de planification des mots clés sans campagne active, comprendre pourquoi le volume s’affiche en tranches et ce que signifie « concurrence ».",
+    },
+  },
   "digitalizacion-pymes-espana-datos-ine-2026": {
     en: {
       title: "Spain's digital SMEs in 2026: websites, social media, AI and e-commerce according to INE",
