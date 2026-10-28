@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Professional Online Store from €490"
       : "Boutique en ligne pro à partir de 490 €",
     description: isEn
-      ? "Professional online store from €490. No commissions per sale, no monthly fees. Custom design, SEO included 12 months. Only 5 places available this month."
-      : "Boutique en ligne professionnelle à partir de 490€. Sans commissions par vente, sans frais mensuels. Design personnalisé, SEO inclus 12 mois. Seulement 5 places ce mois-ci.",
+      ? "Professional online store from €490. No commissions per sale, no monthly fees. Custom design and technical SEO from day one. Hosting and domain not included."
+      : "Boutique en ligne professionnelle à partir de 490€. Sans commissions par vente, sans frais mensuels. Design personnalisé et SEO technique dès le premier jour. Hébergement et domaine en sus.",
     alternates: alternatesFor(`/${lang}/online-store-offer/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/online-store-offer/`,
     },
@@ -138,7 +138,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ]}
           />
           <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6 mt-4">
-            {isEn ? "Special offer — Only 5 places" : "Offre spéciale — Seulement 5 places"}
+            {isEn ? "Online store offer" : "Offre boutique en ligne"}
           </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             {isEn ? "Your professional online store" : "Votre boutique en ligne professionnelle"}<br />
@@ -155,10 +155,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             href={`/${lang}/contact/`}
             className="inline-block bg-accent-500 text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-accent-600 transition-colors"
           >
-            {isEn ? "Reserve my place now" : "Réserver ma place maintenant"}
+            {isEn ? "I want my online store" : "Je veux ma boutique en ligne"}
           </a>
           <p className="text-primary-300 text-sm mt-6">
-            {isEn ? "Only 5 places available" : "Seulement 5 places disponibles"}
+            {isEn ? "Hosting and domain not included" : "Hébergement et domaine en sus"}
           </p>
         </div>
       </section>
@@ -216,18 +216,18 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <section className="py-12 px-4 mw-skin-band text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-3">
-            {isEn ? "Only 5 places available" : "Seulement 5 places disponibles"}
+            {isEn ? "Your store, without commissions or monthly licences" : "Votre boutique, sans commissions ni licences mensuelles"}
           </h2>
           <p className="text-primary-200 mb-6">
             {isEn
-              ? "Our production capacity is limited to guarantee quality. When the 5 places are filled, we close the offer."
-              : "Notre capacité de production est limitée pour garantir la qualité. Lorsque les 5 places seront remplies, nous fermerons l'offre."}
+              ? "Tell us about your business and catalogue and we will send you a proposal with what is included and the delivery time."
+              : "Parlez-nous de votre entreprise et de votre catalogue : nous vous enverrons une proposition avec ce qui est inclus et le délai de livraison."}
           </p>
           <a
             href={`/${lang}/contact/`}
             className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block"
           >
-            {isEn ? "I want my place — €490" : "Je veux ma place — 490€"}
+            {isEn ? "Request my proposal — from €490" : "Demander ma proposition — dès 490 €"}
           </a>
         </div>
       </section>

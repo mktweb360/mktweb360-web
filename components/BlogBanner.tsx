@@ -87,7 +87,7 @@ const BANNERS_EN: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = 
   ecommerce: {
     badge: "Special offer",
     title: "Professional online store from €490",
-    desc: "No sales commissions, no monthly licences. SEO included for 12 months. Only 5 spots available.",
+    desc: "No sales commissions, no monthly licences. Custom design and technical SEO from day one. Hosting and domain not included.",
     cta: "Reserve my spot",
     href: "/en/online-store-offer/",
   },
@@ -118,8 +118,8 @@ const BANNERS_FR: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = 
   ecommerce: {
     badge: "Offre spéciale",
     title: "Boutique en ligne professionnelle dès 490€",
-    desc: "Sans commissions sur les ventes, sans licences mensuelles. SEO inclus 12 mois. Seulement 5 places disponibles.",
-    cta: "Réserver ma place",
+    desc: "Sans commissions sur les ventes ni licences mensuelles. Design personnalisé et SEO technique dès le premier jour. Hébergement et domaine en sus.",
+    cta: "Je veux ma boutique en ligne",
     href: "/fr/offre-boutique-en-ligne/",
   },
   geo: {
