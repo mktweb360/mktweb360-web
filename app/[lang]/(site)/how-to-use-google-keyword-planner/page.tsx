@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 import type { ReactNode } from "react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -424,7 +426,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     headline: c.h1,
     description: c.description,
     inLanguage: lang,
-    author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+    author: autorSchema(lang),
     publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -463,6 +465,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <time className="text-sm text-gray-400" dateTime={DATE_MODIFIED}>{c.updated}</time>
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">{c.h1}</h1>
+          <AuthorByline lang={lang} block />
           <p className="text-xl text-gray-600 leading-relaxed">{c.intro}</p>
           <Image src={OG} alt={c.alt} width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
