@@ -680,12 +680,12 @@ export const BLOG_I18N: Record<string, PostI18n> = {
   },
   "como-crear-landing-page-que-convierte": {
     en: {
-      title: "Landing Page That Converts: How to Create One",
-      excerpt: "Learn how to create landing pages that turn visitors into leads and customers. Structure, copy, CTAs and mistakes to avoid.",
+      title: "Landing Page: What It Is, Examples That Convert, Mistakes",
+      excerpt: "What a landing page is, annotated examples by type of small business, a 10-question check for a landing page that doesn't convert, and what Google Ads asks for.",
     },
     fr: {
-      title: "Créer une landing page qui convertit",
-      excerpt: "Apprenez à créer des landing pages qui transforment les visites en leads et clients. Structure, copywriting, CTA et erreurs à éviter.",
+      title: "Landing page : définition, exemples qui convertissent, erreurs",
+      excerpt: "Ce qu'est une landing page, des exemples annotés par type de PME, un diagnostic en 10 questions si votre landing ne convertit pas et ce que demande Google Ads.",
     },
   },
   "linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads": {
