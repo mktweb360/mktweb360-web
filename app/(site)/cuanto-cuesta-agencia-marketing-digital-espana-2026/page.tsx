@@ -113,6 +113,7 @@ export default function CuantoCuestaAgenciaPage() {
               </li>
             ))}
           </ul>
+          <p>Nuestras tarifas de SEO, con lo que incluye cada plan y sus límites, están publicadas en <Link href="/precios-seo/" className="text-accent-500 hover:underline">precios SEO</Link>, con una calculadora para tu caso.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Fee de gestión e inversión publicitaria: no son lo mismo</h2>
           <p>Es el malentendido más caro. En <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">Google Ads</Link>, el fee de gestión es lo que cobra la agencia por planificar, montar y optimizar tus campañas; la inversión publicitaria es lo que pagas directamente a Google por cada clic. Son partidas independientes y deben aparecer separadas en cualquier presupuesto serio. Si una agencia mezcla ambos conceptos o se lleva un porcentaje opaco de tu inversión, tienes derecho a exigir claridad.</p>
@@ -126,7 +127,7 @@ export default function CuantoCuestaAgenciaPage() {
           </div>
 
           <h2 className="text-2xl font-bold text-primary-600">Cuándo tiene sentido contratar una agencia</h2>
-          <p>Una agencia aporta cuando ya tienes una base sobre la que construir: una web que convierte, una propuesta de valor clara y un proceso comercial capaz de atender los contactos que genere el marketing. Sin esa base, contratar captación es amplificar problemas: más visitas a una web que no convence solo significan más dinero desperdiciado. Por eso una buena agencia empieza por una <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">estrategia y un diagnóstico</Link>, no por venderte un paquete.</p>
+          <p>Una agencia aporta cuando ya tienes una base sobre la que construir: una web que convierte, una propuesta de valor clara y un proceso comercial capaz de atender los contactos que genere el marketing. Sin esa base, contratar captación es amplificar problemas: más visitas a una web que no convence solo significan más dinero desperdiciado. Por eso una buena agencia empieza por una <Link href="/consultor-seo/" className="text-accent-500 hover:underline">estrategia y un diagnóstico</Link>, no por venderte un paquete.</p>
 
           <BlogBanner variant="seogeogbp" />
 
@@ -166,7 +167,7 @@ export default function CuantoCuestaAgenciaPage() {
           </div>
 
           <p className="text-sm text-gray-500 pt-4">
-            Servicios relacionados: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento</Link> · <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">SEM / Google Ads</Link>
+            Servicios relacionados: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Precios SEO</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">SEM / Google Ads</Link>
           </p>
         </div>
 

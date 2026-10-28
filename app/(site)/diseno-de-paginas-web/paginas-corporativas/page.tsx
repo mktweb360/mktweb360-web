@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,7 +8,7 @@ import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 export const metadata: Metadata = {
   title: "Diseño de Páginas Web Corporativas",
   description: "Diseño de páginas web corporativas para empresas: una web profesional que genera confianza, capta contactos y está preparada para posicionar en Google.",
-  alternates: { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/" },
+  alternates: alternatesFor("/diseno-de-paginas-web/paginas-corporativas/") ?? { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/" },
   openGraph: {
     title: "Diseño de Páginas Web Corporativas | Mkt Web 360",
     description:

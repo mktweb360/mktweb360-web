@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "SEO Web Positioning — Rank on Google"
       : "SEO Positionnement Web — Première page Google",
     description: isEn
-      ? "Professional SEO service for businesses in Spain and abroad. Audits, keyword strategy and content that takes your website to the first page of Google."
-      : "Service SEO professionnel pour les entreprises en Espagne et à l'étranger. Audits, stratégie de mots-clés et contenu pour hisser votre site en première page de Google.",
+      ? "Professional SEO service for businesses in Spain and abroad. Audits, keyword strategy and content to grow your organic visibility on Google."
+      : "Service SEO professionnel pour les entreprises en Espagne et à l'étranger. Audits, stratégie de mots-clés et contenu pour développer votre visibilité organique sur Google.",
     alternates: alternatesFor(`/${lang}/seo-web-positioning/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-web-positioning/`,
     },
@@ -120,7 +120,7 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
               { label: isEn ? "SEO Positioning" : "Positionnement SEO" },
             ]} />
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
-              {isEn ? "First page of Google," : "Première page de Google,"}
+              {isEn ? "More visibility on Google," : "Plus de visibilité sur Google,"}
               <br />
               <span className="text-accent-400">
                 {isEn ? "clients that find you" : "des clients qui vous trouvent"}
@@ -341,8 +341,8 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
                 {isEn
-                  ? "At Mkt Web 360 we are pioneers in GEO in Spain. Our SEO services already include the technical foundation needed for AI visibility: structured schemas, llms.txt, LLM-optimised content architecture and semantic authority strategy."
-                  : "Chez Mkt Web 360, nous sommes pionniers en GEO en Espagne. Nos services SEO incluent déjà la base technique nécessaire pour la visibilité dans l'IA : schémas structurés, llms.txt, architecture de contenu optimisée pour les LLM et stratégie d'autorité sémantique."}
+                  ? "At Mkt Web 360 we work on GEO alongside SEO. Our SEO services already include the technical foundation needed for AI visibility: structured schemas, llms.txt, LLM-optimised content architecture and semantic authority strategy."
+                  : "Chez Mkt Web 360, nous travaillons le GEO avec le SEO. Nos services SEO incluent déjà la base technique nécessaire pour la visibilité dans l'IA : schémas structurés, llms.txt, architecture de contenu optimisée pour les LLM et stratégie d'autorité sémantique."}
               </p>
               <Link href={`/${lang}/${langSlug(lang, "geo-generative-engine-optimization")}/`} className="inline-flex items-center gap-2 text-accent-500 font-semibold hover:underline">
                 {isEn ? "Discover the GEO service →" : "Découvrir le service GEO →"}

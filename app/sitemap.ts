@@ -78,9 +78,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/blog-para-monetizacion/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/ecommerce-dropshipping-con-participacion/", priority: 0.8, changeFrequency: "monthly" as const },
     { url: "/contacto/", priority: 0.7, changeFrequency: "yearly" as const },
-    { url: "/aviso-legal/", priority: 0.3, changeFrequency: "yearly" as const },
-    { url: "/politica-de-privacidad/", priority: 0.3, changeFrequency: "yearly" as const },
-    { url: "/politica-de-cookies/", priority: 0.3, changeFrequency: "yearly" as const },
     { url: "/seo-para-servicios-urgentes-24h/", priority: 0.6, changeFrequency: "yearly" as const },
     { url: "/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/", priority: 0.6, changeFrequency: "yearly" as const },
     { url: "/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/", priority: 0.6, changeFrequency: "yearly" as const },
@@ -185,6 +182,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/auditoria-geo-aparecer-chatgpt-gemini-google/", priority: 0.7, changeFrequency: "weekly" as const },
   ];
 
+  // Páginas legales con noindex: fuera del sitemap en los tres idiomas (28/10/2026).
+  const LEGAL_NOINDEX = new Set(["/aviso-legal/", "/politica-de-privacidad/", "/politica-de-cookies/"]);
+
   const esSitemap: MetadataRoute.Sitemap = pages.map((p) => ({
     url: `${BASE}${p.url}`,
     lastModified: lastModFor(p.url),
@@ -196,6 +196,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Appended here so new routes in lib/i18n/routes.ts are automatically indexed.
   const intlSitemap: MetadataRoute.Sitemap = allUrls()
     .filter((u) => u.startsWith("/en/") || u.startsWith("/fr/"))
+    // Legales EN/FR: llevan noindex, no van al sitemap (las ES tampoco).
+    .filter((u) => !LEGAL_NOINDEX.has(esPathOf(u) ?? ""))
     .map((u) => ({
       url: `${BASE}${u}`,
       lastModified: (() => { const es = esPathOf(u); return es ? lastModFor(es) : undefined; })(),

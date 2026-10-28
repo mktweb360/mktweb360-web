@@ -64,8 +64,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
           <p className="text-gray-600 leading-relaxed mb-8">
             {isFr
-              ? "Ce guide complet couvre les stratégies essentielles pour les entreprises opérant en Espagne en 2026. Chaque section inclut des recommandations pratiques basées sur notre expérience avec plus de 50 projets de marketing digital."
-              : "This comprehensive guide covers the essential strategies for businesses operating in Spain in 2026. Each section includes practical recommendations based on our experience with over 50 digital marketing projects."
+              ? "Ce guide complet couvre les stratégies essentielles pour les entreprises opérant en Espagne en 2026. Chaque section inclut des recommandations pratiques issues de notre travail quotidien avec nos clients."
+              : "This comprehensive guide covers the essential strategies for businesses operating in Spain in 2026. Each section includes practical recommendations drawn from our day-to-day work with clients."
             }
           </p>
         </div>

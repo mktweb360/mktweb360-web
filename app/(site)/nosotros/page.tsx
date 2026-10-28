@@ -184,8 +184,8 @@ export default function NosotrosPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Diferenciador estratégico</span>
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Pioneros en GEO en España</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Somos una de las primeras agencias en España en implementar GEO — Generative Engine Optimization — la disciplina de optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini. Implementamos <code className="font-mono text-sm bg-gray-100 px-1 rounded">llms.txt</code> y <code className="font-mono text-sm bg-gray-100 px-1 rounded">llms-full.txt</code> desde principios de 2026 — uno de los primeros sitios de agencia en España en adoptar el estándar emergente que indica a los modelos de IA cómo indexar y entender un negocio.</p>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">SEO y GEO: Google y los asistentes de IA</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Trabajamos el GEO (Generative Engine Optimization) junto al SEO: que tu negocio sea fácil de entender y de citar para ChatGPT, Perplexity y Gemini, con datos coherentes en la web, el schema y los perfiles, y contenido que responde preguntas concretas. También publicamos <code className="font-mono text-sm bg-gray-100 px-1 rounded">llms.txt</code> y <code className="font-mono text-sm bg-gray-100 px-1 rounded">llms-full.txt</code>, un formato propuesto que por ahora no ha demostrado mejorar la visibilidad y que tratamos como un complemento.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {[

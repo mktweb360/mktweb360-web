@@ -257,12 +257,12 @@ export default async function SeoParaPymesPage() {
           <h2 className="text-2xl font-bold text-primary-600">Cómo elegir a quién contratar: 6 preguntas</h2>
           <Lista items={preguntas} numerada />
           <p>
-            Tienes más criterios en <Link href="/como-elegir-agencia-marketing-digital-espana/" className="text-accent-500 hover:underline">cómo elegir una agencia de marketing digital</Link>.
+            Tienes más criterios para elegir en <Link href="/cuanto-cuesta-agencia-marketing-digital-espana-2026/" className="text-accent-500 hover:underline">cuánto cuesta una agencia de marketing digital y cómo elegirla</Link>.
           </p>
 
           <h2 className="text-2xl font-bold text-primary-600">Por dónde empezar</h2>
           <p>
-            Si no sabes cómo está tu web, empieza por ahí. Puedes hacerlo tú con la <Link href="/auditoria-seo-basica/" className="text-accent-500 hover:underline">checklist de 30 puntos</Link> o pedirnos el diagnóstico gratuito. Si después quieres que nos encarguemos, este es nuestro <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">servicio de posicionamiento SEO</Link>.
+            Si no sabes cómo está tu web, empieza por ahí. Puedes hacerlo tú con la <Link href="/auditoria-seo-basica/" className="text-accent-500 hover:underline">checklist de 30 puntos</Link> o pedirnos el diagnóstico gratuito. Si después quieres que nos encarguemos, este es nuestro <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">servicio de posicionamiento SEO</Link>. Y si prefieres llevarlo con tu equipo y solo necesitas el diagnóstico y el plan, está la <Link href="/consultor-seo/" className="text-accent-500 hover:underline">consultoría SEO</Link>.
           </p>
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">Diagnóstico gratuito de tu web</p>
@@ -300,7 +300,7 @@ export default async function SeoParaPymesPage() {
           </ol>
 
           <p className="text-sm text-gray-500 pt-4">
-            Servicios relacionados: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Planes y precios SEO</Link> · <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO local</Link>
+            Servicios relacionados: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Planes y precios SEO</Link> · <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO local</Link>
           </p>
         </div>
 

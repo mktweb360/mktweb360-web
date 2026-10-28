@@ -165,13 +165,13 @@ export default async function DigitalMarketingAgencySpainPage({
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
           {(isEn
             ? [
-                { value: "+10", label: "Years experience" },
+                { value: "2016", label: "Founded" },
                 { value: "3", label: "Languages" },
                 { value: "0%", label: "Commission on ad spend" },
                 { value: "1", label: "Client per sector" },
               ]
             : [
-                { value: "+10", label: "Ans d'expérience" },
+                { value: "2016", label: "Fondée en" },
                 { value: "3", label: "Langues" },
                 { value: "0%", label: "Commission sur budget" },
                 { value: "1", label: "Client par secteur" },

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -8,7 +9,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 export const metadata: Metadata = {
   title: "Páginas Web para Empresas a Medida",
   description: "Diseño de páginas web para empresas con funcionalidades a medida: portales, catálogos, reservas y plataformas web, con SEO técnico desde el primer día.",
-  alternates: { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/diseno-paginas-web-empresa/" },
+  alternates: alternatesFor("/diseno-de-paginas-web/diseno-paginas-web-empresa/") ?? { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/diseno-paginas-web-empresa/" },
   openGraph: {
     title: "Diseño de Páginas Web para Empresas | Mkt Web 360",
     description: "Webs empresariales a medida con SEO técnico, funcionalidades avanzadas y gestión autónoma. Portales, catálogos, reservas y más.",

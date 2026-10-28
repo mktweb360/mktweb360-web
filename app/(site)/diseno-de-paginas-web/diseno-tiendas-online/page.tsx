@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { alternatesFor } from "@/lib/i18n/routes";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -10,7 +11,7 @@ import { OfferBannerTiendaOnline } from "@/components/offers/OfferBannerTiendaOn
 export const metadata: Metadata = {
   title: "Diseño de Tiendas Online sin Comisiones",
   description: "Diseño y desarrollo de tiendas online profesionales sin comisiones por venta ni licencias mensuales. Pasarelas de pago, SEO técnico y formación incluidos.",
-  alternates: { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/diseno-tiendas-online/" },
+  alternates: alternatesFor("/diseno-de-paginas-web/diseno-tiendas-online/") ?? { canonical: "https://www.mktweb360.com/diseno-de-paginas-web/diseno-tiendas-online/" },
   openGraph: {
     title: "Diseño de Tiendas Online sin Comisiones | Mkt Web 360",
     description: "Tu tienda online profesional sin pagar comisiones por venta ni licencias mensuales. Diseño 100% personalizado.",

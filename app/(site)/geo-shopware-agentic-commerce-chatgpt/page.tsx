@@ -104,7 +104,7 @@ export default function GeoShopwarePage() {
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">Adelántate en el comercio con IA</h2>
             <p className="text-primary-200 mb-6">
-              Somos pioneros en GEO en España. Preparamos tu tienda Shopware para el Agentic Commerce y para que la IA la recomiende cuando tus clientes preguntan.
+              Trabajamos el GEO junto al SEO. Preparamos tu tienda Shopware para el Agentic Commerce y para que la IA la recomiende cuando tus clientes preguntan.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/marketing-shopware/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">

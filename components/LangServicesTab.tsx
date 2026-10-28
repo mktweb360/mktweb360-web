@@ -27,7 +27,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       emoji: "🔍",
       allHref: "/en/seo-web-positioning/",
       servicios: [
-        { title: "SEO Web Positioning", desc: "First page of Google. Organic traffic without paying per click. Results that last.", href: "/en/seo-web-positioning/", icon: "📈" },
+        { title: "SEO Web Positioning", desc: "More visibility on Google. Organic traffic without paying per click. Results that last.", href: "/en/seo-web-positioning/", icon: "📈" },
         { title: "GEO — AI Positioning", desc: "Appear in ChatGPT, Perplexity and Gemini. SEO for the AI era.", href: "/en/geo-generative-engine-optimization/", icon: "🤖" },
         { title: "Google Ads", desc: "Appear at the top of Google from day one. You only pay when someone clicks.", href: "/en/google-ads-management/", icon: "⚡" },
         { title: "Local SEO", desc: "Dominate search results in your city and area of influence.", href: "/en/seo-web-positioning/", icon: "📌" },
@@ -102,7 +102,7 @@ const SERVICE_TABS_LANG: Record<string, LangServiceTab[]> = {
       emoji: "🔍",
       allHref: "/fr/positionnement-seo/",
       servicios: [
-        { title: "SEO Positionnement Web", desc: "Première page de Google. Trafic organique sans payer par clic.", href: "/fr/positionnement-seo/", icon: "📈" },
+        { title: "SEO Positionnement Web", desc: "Plus de visibilité sur Google. Trafic organique sans payer par clic.", href: "/fr/positionnement-seo/", icon: "📈" },
         { title: "GEO — Positionnement IA", desc: "Apparaissez dans ChatGPT, Perplexity et Gemini.", href: "/fr/geo-optimisation-moteurs-generatifs/", icon: "🤖" },
         { title: "Google Ads", desc: "Apparaissez en tête de Google dès le premier jour.", href: "/fr/gestion-google-ads/", icon: "⚡" },
         { title: "SEO Local", desc: "Dominez les résultats de recherche dans votre ville.", href: "/fr/positionnement-seo/", icon: "📌" },

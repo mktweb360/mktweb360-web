@@ -9,7 +9,15 @@ import { LangHeroSlider } from "@/components/LangHeroSlider";
 import { LangServicesTab } from "@/components/LangServicesTab";
 import { getLatestPosts } from "@/lib/blog";
 import { getPostI18n, getCategoryI18n } from "@/lib/blog-i18n";
-import { translatedSlugFor } from "@/lib/i18n/routes";
+import type { Metadata } from "next";
+import { alternatesFor, translatedSlugFor } from "@/lib/i18n/routes";
+
+// Canonical y hreflang de /en/ y /fr/ (no tenían ninguno de los dos).
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const alternates = alternatesFor(`/${lang}/`);
+  return alternates ? { alternates } : {};
+}
 
 export default async function LangHomePage({
   params,
