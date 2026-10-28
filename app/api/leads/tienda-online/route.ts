@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
+import { checkSpam } from "@/lib/antispam";
 
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 function checkRateLimit(ip: string): boolean {
@@ -28,6 +29,13 @@ export async function POST(req: NextRequest) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
     return NextResponse.json({ ok: false, error: "Email no valido." }, { status: 400 });
 
+  // Antispam (lib/antispam.ts): campo trampa → descarte; sospechoso → solo email marcado, sin oportunidad en MktOS.
+  const spam = checkSpam({ honeypot: body._hp, startedAt: body._ts, texts: [String(nombre), String(body.notas ?? "")], domains: ["", String(email).split("@")[1] ?? ""] });
+  if (spam.level === "bot") return NextResponse.json({ ok: true, id: randomUUID() });
+  const suspicious = spam.level === "sospechoso";
+  if (suspicious) console.warn("[leads/tienda-online] Posible spam:", { ip, email, reasons: spam.reasons });
+  const esc = (v: unknown) => String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
   const id = randomUUID();
 
   const apiKey = process.env.RESEND_API_KEY;
@@ -35,19 +43,20 @@ export async function POST(req: NextRequest) {
     const { Resend } = await import("resend");
     await new Resend(apiKey).emails.send({
       from: "web@mktweb360.com", to: "info@mktweb360.com", replyTo: email,
-      subject: `Nuevo lead Tienda Online — ${nombre}`,
-      html: `<p><strong>${nombre}</strong> | ${email} | ${body.telefono || "—"}</p>
-             <p>Sector: ${body.sector || "—"}</p>
-             <p>Situacion: ${body.situacionActual || "—"}</p>
-             <p>Catalogo: ${body.catalogo || "—"} | Canal: ${body.canalVenta || "—"}</p>
-             ${body.notas ? `<p>Notas: ${body.notas}</p>` : ""}
-             ${body.utm_source ? `<p>Fuente: ${body.utm_source} / ${body.utm_campaign || "—"}</p>` : ""}
+      subject: `${suspicious ? "[Posible spam] " : ""}Nuevo lead Tienda Online — ${nombre}`,
+      html: `<p><strong>${esc(nombre)}</strong> | ${esc(email)} | ${esc(body.telefono) || "—"}</p>
+             <p>Sector: ${esc(body.sector) || "—"}</p>
+             <p>Situacion: ${esc(body.situacionActual) || "—"}</p>
+             <p>Catalogo: ${esc(body.catalogo) || "—"} | Canal: ${esc(body.canalVenta) || "—"}</p>
+             ${body.notas ? `<p>Notas: ${esc(body.notas)}</p>` : ""}
+             ${body.utm_source ? `<p>Fuente: ${esc(body.utm_source)} / ${esc(body.utm_campaign) || "—"}</p>` : ""}
+             ${suspicious ? `<p style="color:#b91c1c">Posible spam (${esc(spam.reasons.join("; "))}): no se ha creado la oportunidad en MktOS.</p>` : ""}
              <p style="color:#999;font-size:11px">ID: ${id}</p>`,
     }).catch((e: unknown) => console.error("[leads/tienda-online] Resend:", e));
   }
 
   let opportunityId: string | null = null;
-  try {
+  if (!suspicious) try {
     const r = await fetch(MKTOS_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-webhook-secret": MKTOS_SECRET },

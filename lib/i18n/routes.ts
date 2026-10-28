@@ -51,7 +51,6 @@ export const ROUTES: Route[] = [
   // Ecommerce sin comisiones — pagina propia (0€ comision como argumento comercial),
   // NO alias de online-store: contenido comercial exclusivo con su propia landing ES.
   { es: "/diseno-web-tienda-online/", en: "ecommerce-no-commissions", fr: "boutique-en-ligne-sans-commissions" },
-  { es: "/ejemplos-y-diferencias-entre-buscadores-y-navegadores/", en: "search-engines-vs-browsers", fr: "search-engines-vs-browsers" },
   { es: "/email-marketing/", en: "email-marketing-campaigns", fr: "campagnes-email-marketing", aliases: [{ lang: "fr", slug: "email-marketing-entreprises" }, { lang: "en", slug: "email-marketing-service" }] },
   { es: "/errores-digitales-negocio-nuevo/", en: "digital-errors-new-business", fr: "digital-errors-new-business" },
   { es: "/factura-electronica-obligatoria-autonomos-pymes/", en: "electronic-invoice-spain", fr: "electronic-invoice-spain" },

@@ -848,16 +848,6 @@ export const BLOG_I18N: Record<string, PostI18n> = {
       excerpt: "Comment les entreprises de Castille-La Manche peuvent se digitaliser en 2025. Aides disponibles, outils essentiels et comment choisir un partenaire de digitalisation dans la région.",
     },
   },
-  "ejemplos-y-diferencias-entre-buscadores-y-navegadores": {
-    en: {
-      title: "Search Engines vs Browsers: Differences",
-      excerpt: "The key difference between search engines and browsers, with examples of each, and why this distinction matters for digital marketing.",
-    },
-    fr: {
-      title: "Moteurs de recherche vs navigateurs",
-      excerpt: "La différence clé entre moteurs de recherche et navigateurs, avec des exemples de chacun, et pourquoi cette distinction compte pour le marketing digital.",
-    },
-  },
   "instagram-para-empresas-que-poner-en-la-biografia-de-instagram": {
     en: {
       title: "Instagram Bio for Businesses: What to Include",

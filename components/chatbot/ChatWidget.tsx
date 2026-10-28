@@ -271,6 +271,8 @@ function LeadForm({ kind, t, lang, token, transcript, page, onDone, onCancel }: 
   onDone: (ok: boolean, reserva?: string) => void; onCancel: () => void;
 }) {
   const [v, setV] = useState({ name: "", email: "", phone: "", business: "", need: "", preference: kind === "llamada" ? "llamada" : "email", slot: "", gdpr: false, marketing: false, _hp: "" });
+  // Momento en que se abre el formulario del chat (antispam en el servidor).
+  const [startedAt] = useState(() => Date.now());
   const [st, setSt] = useState<"idle" | "sending" | "error">("idle");
   const [slots, setSlots] = useState<string[] | null>(null);
   const [slotIso, setSlotIso] = useState("");
@@ -292,7 +294,7 @@ function LeadForm({ kind, t, lang, token, transcript, page, onDone, onCancel }: 
       const utm = new URLSearchParams(window.location.search);
       const r = await fetch("/api/chat/lead", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...v, slotIso: asap ? "" : slotIso, slot: asap ? t.asap : slotIso ? fmtSlot(slotIso) : v.slot, urgent: asap && v.preference === "llamada", kind, token, lang, page, transcript: transcript.map((m) => ({ role: m.role, content: m.content })),
+        body: JSON.stringify({ ...v, _ts: startedAt, slotIso: asap ? "" : slotIso, slot: asap ? t.asap : slotIso ? fmtSlot(slotIso) : v.slot, urgent: asap && v.preference === "llamada", kind, token, lang, page, transcript: transcript.map((m) => ({ role: m.role, content: m.content })),
           utm_source: utm.get("utm_source") ?? "", utm_medium: utm.get("utm_medium") ?? "", utm_campaign: utm.get("utm_campaign") ?? "" }),
       });
       const j = await r.json();

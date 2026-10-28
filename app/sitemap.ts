@@ -145,7 +145,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/diseno-web-para-dentistas/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/diseno-web-tienda-online/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/como-usar-planificador-de-palabras-clave-google-ads/", priority: 0.7, changeFrequency: "monthly" as const },
-    { url: "/ejemplos-y-diferencias-entre-buscadores-y-navegadores/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026/", priority: 0.7, changeFrequency: "weekly" as const },
     { url: "/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/", priority: 0.7, changeFrequency: "weekly" as const },

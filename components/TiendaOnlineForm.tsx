@@ -37,6 +37,9 @@ function Label({ children, required }: { children: React.ReactNode; required?: b
 export function TiendaOnlineForm() {
   const router = useRouter();
   const utmRef = useRef<UtmData>({});
+  // Momento en que se pinta el formulario (antispam en el servidor) y campo trampa.
+  const startedAt = useRef(0);
+  const hpRef = useRef<HTMLInputElement>(null);
   const [paso, setPaso] = useState<1 | 2>(1);
   const [status, setStatus] = useState<Status>("idle");
   const [p1, setP1] = useState<Paso1>({ nombre: "", email: "", telefono: "", sector: "" });
@@ -44,6 +47,7 @@ export function TiendaOnlineForm() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    startedAt.current = Date.now();
     const params = new URLSearchParams(window.location.search);
     const utm: UtmData = { utm_source: params.get("utm_source") || undefined, utm_medium: params.get("utm_medium") || undefined, utm_campaign: params.get("utm_campaign") || undefined, utm_content: params.get("utm_content") || undefined, utm_term: params.get("utm_term") || undefined, page_origin: window.location.pathname };
     try {
@@ -62,7 +66,7 @@ export function TiendaOnlineForm() {
     if (!paso2OK) return;
     setStatus("sending");
     try {
-      const res = await fetch("/api/leads/tienda-online", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...p1, ...p2, oferta: "tienda-online-490", ...utmRef.current }) });
+      const res = await fetch("/api/leads/tienda-online", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...p1, ...p2, oferta: "tienda-online-490", _ts: startedAt.current, _hp: hpRef.current?.value ?? "", ...utmRef.current }) });
       if (!res.ok) throw new Error();
       trackLead("tienda-online-landing");
       router.push("/tienda-online/gracias/");
@@ -106,6 +110,7 @@ export function TiendaOnlineForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <input ref={hpRef} name="_hp" type="text" autoComplete="off" tabIndex={-1} aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px", opacity: 0, height: 0, width: 0, overflow: "hidden" }} />
       <ProgBar />
       <div className="space-y-4">
         <div>

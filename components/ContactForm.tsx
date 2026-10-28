@@ -129,11 +129,14 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
   const t = T[detectedLang];
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
   const utmRef = useRef<UtmData>({});
+  // Momento en que se pinta el formulario: el servidor descarta envíos de bots que llegan en menos de 3 s.
+  const startedAt = useRef(0);
   // Ids únicos por instancia: puede haber varios formularios en la misma página (p. ej. la home).
   const uid = useId();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    startedAt.current = Date.now();
     const params = new URLSearchParams(window.location.search);
     const utm: UtmData = {
       utm_source: params.get("utm_source") || undefined,
@@ -171,6 +174,7 @@ export function ContactForm({ formType = "contacto", websiteRequired = false, me
       ...data,
       form_type: formType,
       lang: detectedLang,
+      _ts: startedAt.current,
       ...utmRef.current,
     };
     const res = await fetch("/api/contact", {
