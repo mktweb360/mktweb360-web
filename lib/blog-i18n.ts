@@ -17,6 +17,16 @@ export type PostI18n = {
 };
 
 export const BLOG_I18N: Record<string, PostI18n> = {
+  "anuncios-chatgpt-ads-espana": {
+    en: {
+      title: "ChatGPT Ads in Spain: How Ads in ChatGPT Work and When to Test Them",
+      excerpt: "Who sees ChatGPT ads in Spain, how they are chosen, how they differ from an organic mention (GEO) and a 30-day test plan for SMEs, based on OpenAI's own documentation.",
+    },
+    fr: {
+      title: "ChatGPT Ads en Espagne : comment fonctionnent les annonces et quand les tester",
+      excerpt: "Qui voit les annonces ChatGPT en Espagne, comment elles sont choisies, la différence avec une mention organique (GEO) et un plan de test de 30 jours pour PME, d'après la documentation d'OpenAI.",
+    },
+  },
   "ai-max-google-ads-que-es-como-controlarlo": {
     en: {
       title: "Google Ads AI Max: What It Is and How to Control It",

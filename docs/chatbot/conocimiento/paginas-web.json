@@ -188,6 +188,14 @@
    "description": "Analítica web para empresas: configuración de GA4 y Google Tag Manager, medición de conversiones y cuadros de mando para decidir con datos dónde invertir."
   },
   {
+   "ruta": "/anuncios-chatgpt-ads-espana/",
+   "url": "https://www.mktweb360.com/anuncios-chatgpt-ads-espana/",
+   "tipo": "articulo",
+   "servicio": "google-ads",
+   "title": "Anuncios en ChatGPT en España: qué son y si a tu pyme le compensa",
+   "description": "ChatGPT Ads ya funciona en España con autoservicio. Quién ve los anuncios, cómo se eligen, en qué se diferencian de una mención orgánica y un plan de prueba de 30 días."
+  },
+  {
    "ruta": "/atencion-cliente-24-7-pymes-sin-contratar-personal/",
    "url": "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/",
    "tipo": "articulo",
