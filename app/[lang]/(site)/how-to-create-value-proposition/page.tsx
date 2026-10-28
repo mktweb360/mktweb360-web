@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "How to Create a Value Proposition" : "Comment créer une proposition de valeur",
     description: isEn ? "Step-by-step guide to create a value proposition that clearly explains why customers should choose you over the competition." : "Guide étape par étape pour créer une proposition de valeur qui explique clairement pourquoi les clients devraient vous choisir plutôt que la concurrence.",
+    openGraph: openGraphIntl(lang, "how-to-create-value-proposition"),
     alternates: alternatesFor(`/${lang}/how-to-create-value-proposition/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-create-value-proposition/`,
     },

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/ai-marketing-real-value/`,
     },
     openGraph: {
+      images: ogImagesIntl("ai-marketing-real-value"),
       title: isEn
         ? "AI Applied to Marketing: Where It Delivers Real Value | Mkt Web 360"
         : "IA appliquée au marketing : où elle apporte une vraie valeur | Mkt Web 360",

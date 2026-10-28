@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
@@ -14,17 +15,18 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Quand choisir le SEO plutôt que Google Ads",
     description: isEn
       ? "How to decide between SEO and Google Ads based on your business, budget, urgency and time horizon. With real examples and a practical decision matrix."
-      : "Comment décider entre SEO et Google Ads selon votre entreprise, budget, urgence et horizon temporel. Avec des exemples réels et une matrice de décision pratique.",
+      : "SEO ou Google Ads : comment choisir selon votre activité, votre budget, l'urgence et l'horizon, quand combiner les deux, avec une matrice de décision.",
     alternates: alternatesFor(`/${lang}/when-to-choose-seo-vs-google-ads/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/when-to-choose-seo-vs-google-ads/`,
     },
     openGraph: {
+      images: ogImagesIntl("when-to-choose-seo-vs-google-ads"),
       title: isEn
         ? "When to Choose SEO vs Google Ads: A Practical Decision Guide | Mkt Web 360"
         : "Quand choisir le SEO plutôt que Google Ads : guide de décision pratique | Mkt Web 360",
       description: isEn
         ? "How to decide between SEO and Google Ads based on your business, budget, urgency and time horizon. With real examples and a practical decision matrix."
-        : "Comment décider entre SEO et Google Ads selon votre entreprise, budget, urgence et horizon temporel. Avec des exemples réels et une matrice de décision pratique.",
+        : "SEO ou Google Ads : comment choisir selon votre activité, votre budget, l'urgence et l'horizon, quand combiner les deux, avec une matrice de décision.",
     },
   };
 }

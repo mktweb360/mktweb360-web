@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -15,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Content strategy and production for businesses. SEO articles, corporate blogs and social media content to attract organic customers. Nationwide service."
       : "Stratégie et production de contenu pour les entreprises. Articles SEO, blogs d'entreprise et contenu pour réseaux sociaux pour attirer des clients organiques.",
+    openGraph: openGraphIntl(lang, "content-marketing"),
     alternates: alternatesFor(`/${lang}/content-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/content-marketing/`,
     },

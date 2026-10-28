@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -15,11 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Migrer vers Shopware sans perdre le SEO",
     description: isEn
       ? "How to migrate your store to Shopware without losing rankings: URL audit, 301 redirect map, launch protocol and post-migration monitoring."
-      : "Comment migrer votre boutique vers Shopware sans perdre le positionnement : audit des URLs, carte de redirections 301, protocole de lancement et suivi post-migration.",
+      : "Migrer vers Shopware sans perdre votre SEO : audit des URL de valeur, plan de redirections 301, protocole du jour de lancement et suivi après la migration.",
     alternates: alternatesFor(`/${lang}/migrate-to-shopware-seo/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/migrate-to-shopware-seo/`,
     },
     openGraph: {
+      images: ogImagesIntl("migrate-to-shopware-seo"),
       title: isEn
         ? "Migrating to Shopware from PrestaShop or WooCommerce Without Losing SEO | Mkt Web 360"
         : "Migrer vers Shopware depuis PrestaShop ou WooCommerce sans perdre le SEO | Mkt Web 360",

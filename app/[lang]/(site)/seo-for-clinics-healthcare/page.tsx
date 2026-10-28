@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
@@ -13,12 +14,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "SEO for Clinics: Attract Patients on Google"
       : "SEO pour cliniques : attirer des patients",
     description: isEn
-      ? "74% of patients search Google before calling a clinic. Specific SEO for dental clinics, physiotherapy and healthcare centres. Attract more patients from the first month."
-      : "74 % des patients cherchent sur Google avant d'appeler une clinique. SEO spécifique pour les cliniques dentaires, la kinésithérapie et les centres de santé. Attirez plus de patients dès le premier mois.",
+      ? "SEO for clinics and healthcare centres: how patients search, why Google Business Profile matters most, the searches that bring bookings and common mistakes."
+      : "SEO pour cliniques : comment cherchent les patients, le rôle de la fiche Google Business Profile, les recherches qui amènent des rendez-vous et les erreurs.",
     alternates: alternatesFor(`/${lang}/seo-for-clinics-healthcare/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-for-clinics-healthcare/`,
     },
     openGraph: {
+      images: ogImagesIntl("seo-for-clinics-healthcare"),
       title: isEn
         ? "SEO for Clinics and Healthcare Centres: How to Attract Patients on Google | Mkt Web 360"
         : "SEO pour les cliniques et centres de santé : comment attirer des patients sur Google | Mkt Web 360",

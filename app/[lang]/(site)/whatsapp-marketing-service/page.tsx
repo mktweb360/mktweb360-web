@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -14,7 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "WhatsApp Marketing : 98 % de taux d'ouverture",
     description: isEn
       ? "WhatsApp Business API marketing service for businesses. 98% open rate, automated sequences and segmented campaigns to convert more customers."
-      : "Service de marketing WhatsApp Business API pour entreprises. 98% de taux d'ouverture, séquences automatisées et campagnes segmentées pour convertir plus de clients.",
+      : "Marketing WhatsApp pour entreprises avec l'API WhatsApp Business : séquences automatisées, campagnes segmentées et cas d'usage par secteur pour vendre plus.",
+    openGraph: openGraphIntl(lang, "whatsapp-marketing-service"),
     alternates: alternatesFor(`/${lang}/whatsapp-marketing-service/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/whatsapp-marketing-service/`,
     },

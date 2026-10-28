@@ -36,7 +36,7 @@ const TXT = {
   fr: {
     title: "Audit de site web pas à pas : checklist en 30 points",
     description:
-      "Comment auditer un site avec des outils gratuits : 30 points sur l'indexation, la vitesse, le contenu, la fiche Google et la visibilité dans l'IA, et comment lire les résultats.",
+      "Audit de site web pas à pas : une checklist de 30 points et des outils gratuits pour vérifier indexation, vitesse, contenu, fiche Google et visibilité IA.",
     h1: "Comment faire un audit de site web pas à pas : checklist en 30 points pour les PME",
     lead: "Une checklist pour examiner votre site avec les outils gratuits de Google : s'il est indexé, s'il se charge bien sur mobile, si le contenu répond à ce que cherchent vos clients, si votre fiche Google correspond au site et si les assistants d'IA vous voient.",
     alt: "Illustration : une loupe examine une page web et trouve une erreur 404, à côté d'une carte avec le résultat de chaque bloc de l'audit",

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogImagesIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -13,11 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Marketing sur les réseaux sociaux",
     description: isEn
       ? "Professional social media management for businesses. Community management, content creation and growth strategy for Instagram, LinkedIn, Facebook and TikTok."
-      : "Gestion professionnelle des réseaux sociaux pour entreprises. Community management, création de contenu et stratégie de croissance pour Instagram, LinkedIn, Facebook et TikTok.",
+      : "Gestion des réseaux sociaux pour entreprises : community management, création de contenu et stratégie sur Instagram, LinkedIn, Facebook et TikTok.",
     alternates: alternatesFor(`/${lang}/social-media-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/social-media-marketing/`,
     },
     openGraph: {
+      images: ogImagesIntl("social-media-marketing"),
       title: isEn
         ? "Social Media Marketing for Businesses — Community Management | Mkt Web 360"
         : "Marketing sur les Réseaux Sociaux pour Entreprises — Community Management | Mkt Web 360",

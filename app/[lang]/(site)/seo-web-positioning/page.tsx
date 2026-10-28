@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogImagesIntl } from "@/lib/og";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -15,11 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "SEO Positionnement Web — Première page Google",
     description: isEn
       ? "Professional SEO service for businesses in Spain and abroad. Audits, keyword strategy and content to grow your organic visibility on Google."
-      : "Service SEO professionnel pour les entreprises en Espagne et à l'étranger. Audits, stratégie de mots-clés et contenu pour développer votre visibilité organique sur Google.",
+      : "Positionnement SEO pour entreprises en Espagne et ailleurs : audit, stratégie de mots-clés, SEO local ou national et contenu pour gagner en visibilité.",
     alternates: alternatesFor(`/${lang}/seo-web-positioning/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-web-positioning/`,
     },
     openGraph: {
+      images: ogImagesIntl("seo-web-positioning"),
       title: isEn
         ? "SEO Web Positioning — Rank on Google | Mkt Web 360"
         : "SEO Positionnement Web — Première page Google | Mkt Web 360",

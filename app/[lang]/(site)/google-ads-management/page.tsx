@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogImagesIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/google-ads-management/`,
     },
     openGraph: {
+      images: ogImagesIntl("google-ads-management"),
       title: isEn
         ? "Google Ads Management — Campaigns that Convert | Mkt Web 360"
         : "Gestion Google Ads — Campagnes qui Convertissent | Mkt Web 360",

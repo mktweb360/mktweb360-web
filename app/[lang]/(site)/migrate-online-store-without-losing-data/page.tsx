@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Complete checklist and step-by-step process for migrating your ecommerce store without losing products, customers, orders or SEO rankings."
       : "Checklist complète et processus étape par étape pour migrer votre boutique e-commerce sans perdre produits, clients, commandes ni classements SEO.",
+    openGraph: openGraphIntl(lang, "migrate-online-store-without-losing-data"),
     alternates: alternatesFor(`/${lang}/${lang === "en" ? "migrate-online-store-without-losing-data" : "migrer-boutique-sans-perdre-donnees"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "migrate-online-store-without-losing-data" : "migrer-boutique-sans-perdre-donnees"}/`,
     },

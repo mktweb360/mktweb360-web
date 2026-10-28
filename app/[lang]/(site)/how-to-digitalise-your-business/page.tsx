@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -13,6 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "How to Digitalise Your Business: Guide" : "Comment digitaliser votre entreprise",
     description: isEn ? "Practical guide to digitalise your business step by step. Tools, strategy and priorities to take your business online without complications." : "Guide pratique pour digitaliser votre entreprise étape par étape. Outils, stratégie et priorités pour mettre votre entreprise en ligne sans complications.",
+    openGraph: openGraphIntl(lang, "how-to-digitalise-your-business"),
     alternates: alternatesFor(`/${lang}/how-to-digitalise-your-business/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-digitalise-your-business/`,
     },

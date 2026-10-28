@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { openGraphIntl } from "@/lib/og";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { alternatesFor, ROUTES } from "@/lib/i18n/routes";
 import { allPosts } from "@/lib/blog";
 import { getPostI18n, getCategoryI18n } from "@/lib/blog-i18n";
+import { JsonLd } from "@/components/JsonLd";
+import { webPageSchema, SITE } from "@/lib/schema";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -15,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Articles, guides and tips on digital marketing, SEO, Google Ads, social media and web design for businesses."
       : "Articles, guides et conseils en marketing digital, SEO, Google Ads, réseaux sociaux et création de sites web pour entreprises.",
+    openGraph: openGraphIntl(lang, "blog"),
     alternates: alternatesFor(`/${lang}/blog/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/blog/`,
     },
@@ -52,6 +56,25 @@ export default async function LangBlogPage({ params }: { params: Promise<{ lang:
     <>
       <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 pt-12 pb-16 md:pb-20">
+          <JsonLd data={webPageSchema("CollectionPage", {
+            lang,
+            path: `/${lang}/blog/`,
+            name: isEn ? "Digital Marketing Blog" : "Blog Marketing Digital",
+            description: isEn
+              ? "Articles, guides and tips on digital marketing, SEO, Google Ads, social media and web design for businesses."
+              : "Articles, guides et conseils en marketing digital, SEO, Google Ads, réseaux sociaux et création de sites web pour entreprises.",
+          }, {
+            mainEntity: {
+              "@type": "ItemList",
+              numberOfItems: translatedPosts.length,
+              itemListElement: translatedPosts.map((p, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                url: `${SITE}/${lang}/${slugMap.get(p.slug)}/`,
+                name: getPostI18n(p.slug, lang as "en" | "fr", { title: p.title, excerpt: p.excerpt }).title,
+              })),
+            },
+          })} />
           <Breadcrumbs
             crumbs={[
               { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },

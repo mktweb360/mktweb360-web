@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Diseño web en Toledo: webs profesionales",
   description: "Diseño de páginas web y tiendas online para negocios de Toledo, con SEO técnico desde el primer día. Sede en la provincia y precios desde 249 € + IVA.",
   alternates: alternatesFor("/diseno-web-toledo/") ?? { canonical: URL },
-  openGraph: { title: "Diseño web en Toledo | Mkt Web 360", description: "Páginas web y tiendas online para negocios de Toledo, rápidas y preparadas para Google.", url: URL },
+  openGraph: { title: "Diseño web en Toledo | Mkt Web 360", description: "Páginas web y tiendas online para negocios de Toledo, rápidas y preparadas para Google.", url: URL, images: [{ url: "https://www.mktweb360.com/og-tiendas-online-toledo.jpg", width: 1200, height: 630 }] },
 };
 
 const c: LocalServiceContent = {

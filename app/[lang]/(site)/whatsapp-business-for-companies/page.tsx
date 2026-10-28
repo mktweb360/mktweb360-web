@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
@@ -13,11 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "WhatsApp Business pour entreprises en 2026",
     description: isEn
       ? "How to use WhatsApp Business to attract and retain clients. Setup, automations, catalogue and strategy for businesses. Updated guide 2026."
-      : "Comment utiliser WhatsApp Business pour attirer et fidéliser des clients. Configuration, automatisations, catalogue et stratégie pour les entreprises. Guide mis à jour 2026.",
+      : "WhatsApp Business pour entreprises : configurer profil, catalogue et réponses automatiques, attirer des clients et savoir quand passer à l'API.",
     alternates: alternatesFor(`/${lang}/whatsapp-business-for-companies/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/whatsapp-business-for-companies/`,
     },
     openGraph: {
+      images: ogImagesIntl("whatsapp-business-for-companies"),
       title: isEn
         ? "WhatsApp Business for Companies: Complete Setup and Strategy Guide 2026 | Mkt Web 360"
         : "WhatsApp Business pour les Entreprises : Guide Complet de Configuration et Stratégie 2026 | Mkt Web 360",

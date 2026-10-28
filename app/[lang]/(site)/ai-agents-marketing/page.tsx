@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -15,11 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Agents IA pour le marketing : usages en PME",
     description: isEn
       ? "AI agents are no longer science fiction. In 2026, accessible tools let any SME automate marketing tasks with agents that work autonomously. Practical guide."
-      : "Les agents IA ne sont plus de la science-fiction. En 2026, des outils accessibles permettent à n'importe quelle PME d'automatiser des tâches marketing avec des agents qui travaillent de façon autonome. Guide pratique.",
+      : "Agents IA pour le marketing : en quoi ils diffèrent de ChatGPT, les tâches qu'ils assurent dans une PME, les outils sans équipe technique et leurs risques.",
     alternates: alternatesFor(`/${lang}/ai-agents-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/ai-agents-marketing/`,
     },
     openGraph: {
+      images: ogImagesIntl("ai-agents-marketing"),
       title: isEn
         ? "AI Agents for Marketing: What They Are and How SMEs Can Use Them | Mkt Web 360"
         : "Agents IA pour le marketing : ce qu'ils sont et comment les PME peuvent les utiliser | Mkt Web 360",

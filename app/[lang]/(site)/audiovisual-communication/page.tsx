@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -12,11 +13,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Communication audiovisuelle pour entreprises",
     description: isEn
       ? "Corporate video production, reels, ads, animated presentations and photography for businesses. Audiovisual content that communicates, connects and converts."
-      : "Production de vidéo d'entreprise, reels, spots publicitaires, présentations animées et photographie pour les entreprises. Des pièces audiovisuelles qui communiquent, connectent et convertissent.",
+      : "Communication audiovisuelle pour entreprises : vidéo corporate, reels, spots, présentations animées et photo pour présenter votre offre et inspirer confiance.",
     alternates: alternatesFor(`/${lang}/audiovisual-communication/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/audiovisual-communication/`,
     },
     openGraph: {
+      images: ogImagesIntl("audiovisual-communication"),
       title: isEn
         ? "Audiovisual Communication for Businesses | Mkt Web 360"
         : "Communication Audiovisuelle pour Entreprises | Mkt Web 360",

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
@@ -12,12 +13,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Social Media for Businesses 2026: What Works"
       : "Réseaux sociaux pour entreprises en 2026",
     description: isEn
-      ? "The Social Media 2026 study by Cyberclick and Metricool analyses millions of posts. TikTok leads on impressions, Instagram on stability, LinkedIn on B2B. What it means for your strategy."
-      : "L'étude Social Media 2026 de Cyberclick et Metricool analyse des millions de publications. TikTok domine les impressions, Instagram la stabilité, LinkedIn le B2B. Ce que cela signifie pour votre stratégie.",
+      ? "Social media for businesses in 2026: what the Cyberclick and Metricool study shows about TikTok, Instagram and LinkedIn, and how to choose your main network."
+      : "Réseaux sociaux pour entreprises en 2026 : ce que l'étude Cyberclick et Metricool montre sur TikTok, Instagram et LinkedIn, et quel réseau prioriser.",
     alternates: alternatesFor(`/${lang}/social-media-for-businesses-2026/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/social-media-for-businesses-2026/`,
     },
     openGraph: {
+      images: ogImagesIntl("social-media-for-businesses-2026"),
       title: isEn
         ? "Social Media for Businesses in 2026: What the Data Actually Says Works | Mkt Web 360"
         : "Réseaux Sociaux pour Entreprises en 2026 : Ce que Disent Vraiment les Données | Mkt Web 360",

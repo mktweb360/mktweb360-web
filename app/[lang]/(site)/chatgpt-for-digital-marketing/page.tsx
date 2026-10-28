@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "How to use ChatGPT for SEO content, Google Ads, social media and email marketing without losing quality."
       : "Comment utiliser ChatGPT pour le contenu SEO, Google Ads, réseaux sociaux et email marketing sans perdre en qualité.",
+    openGraph: openGraphIntl(lang, "chatgpt-for-digital-marketing"),
     alternates: alternatesFor(`/${lang}/${lang === "en" ? "chatgpt-for-digital-marketing" : "chatgpt-pour-marketing-digital"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "chatgpt-for-digital-marketing" : "chatgpt-pour-marketing-digital"}/`,
     },

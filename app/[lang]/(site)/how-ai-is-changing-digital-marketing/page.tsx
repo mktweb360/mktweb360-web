@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
@@ -13,12 +14,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "How AI Is Changing Digital Marketing Forever"
       : "Comment l'IA transforme le marketing digital",
     description: isEn
-      ? "AI is no longer a trend in marketing: it is the infrastructure. More than 70% of digital marketing interactions will be influenced by AI in 2026. What changes, what does not, and what you need to do."
-      : "L'IA n'est plus une tendance en marketing : c'est l'infrastructure. Plus de 70 % des interactions de marketing digital seront influencées par l'IA en 2026. Ce qui change, ce qui ne change pas et ce que vous devez faire.",
+      ? "How AI is changing digital marketing: what it already does well, what it still cannot do, the new role of marketers and how to prepare your company."
+      : "Comment l'IA transforme le marketing digital : ce qu'elle fait déjà bien, ses limites, le nouveau rôle des marketeurs et comment préparer votre entreprise.",
     alternates: alternatesFor(`/${lang}/how-ai-is-changing-digital-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-ai-is-changing-digital-marketing/`,
     },
     openGraph: {
+      images: ogImagesIntl("how-ai-is-changing-digital-marketing"),
       title: isEn
         ? "How AI Is Changing Digital Marketing Forever | Mkt Web 360"
         : "Comment l'IA transforme le marketing digital pour toujours | Mkt Web 360",

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -13,18 +14,19 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "What Is a Business Chatbot? Why You Need One"
       : "Qu'est-ce qu'un chatbot pour entreprises",
     description: isEn
-      ? "A business chatbot is no longer technology reserved for large corporations. In 2026, SMEs that automate their customer service with AI reduce costs, capture more leads and sell more. Complete guide."
-      : "Un chatbot d'entreprise n'est plus réservé aux grandes structures. En 2026, les PME qui automatisent leur service client avec l'IA réduisent leurs coûts, captent plus de leads et vendent plus. Guide complet.",
+      ? "What a business chatbot is and why SMEs use one: the types available, what it can automate, the numbers behind the investment and the legal points to check."
+      : "Qu'est-ce qu'un chatbot pour entreprises : les types existants, ce qu'il automatise dans une PME, les chiffres de l'investissement et le cadre légal.",
     alternates: alternatesFor(`/${lang}/what-is-a-chatbot-for-businesses/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/what-is-a-chatbot-for-businesses/`,
     },
     openGraph: {
+      images: ogImagesIntl("what-is-a-chatbot-for-businesses"),
       title: isEn
         ? "What Is a Business Chatbot and Why You Need One in 2026 | Mkt Web 360"
         : "Qu'est-ce qu'un chatbot pour entreprises et pourquoi en avez-vous besoin en 2026 | Mkt Web 360",
       description: isEn
-        ? "A business chatbot is no longer technology reserved for large corporations. In 2026, SMEs that automate their customer service with AI reduce costs, capture more leads and sell more. Complete guide."
-        : "Un chatbot d'entreprise n'est plus réservé aux grandes structures. En 2026, les PME qui automatisent leur service client avec l'IA réduisent leurs coûts, captent plus de leads et vendent plus. Guide complet.",
+        ? "What a business chatbot is and why SMEs use one: the types available, what it can automate, the numbers behind the investment and the legal points to check."
+        : "Qu'est-ce qu'un chatbot pour entreprises : les types existants, ce qu'il automatise dans une PME, les chiffres de l'investissement et le cadre légal.",
     },
   };
 }

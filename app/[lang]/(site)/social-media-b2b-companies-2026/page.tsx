@@ -12,13 +12,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const isFr = lang === "fr";
   return {
     title: isFr ? "Réseaux sociaux pour entreprises B2B en 2026" : "Social Media for B2B Companies in 2026",
-    description: isFr ? "Guide pratique des réseaux sociaux B2B pour 2026 : quels réseaux prioriser, quel contenu génère des leads et comment mesurer le vrai retour sur investissement." : "Practical B2B social media guide for 2026: which networks to prioritise, what content generates leads and how to measure the real return on your social media investment.",
+    description: isFr ? "Guide pratique des réseaux sociaux B2B pour 2026 : quels réseaux prioriser, quel contenu génère des leads et comment mesurer le vrai retour sur investissement." : "Social media for B2B companies in 2026: which networks to prioritise, what content generates leads and how to measure the real return on your investment.",
     alternates: alternatesFor(`/${lang}/${isFr ? "reseaux-sociaux-entreprises-b2b-2026" : "social-media-b2b-companies-2026"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${isFr ? "reseaux-sociaux-entreprises-b2b-2026" : "social-media-b2b-companies-2026"}/`,
     },
     openGraph: {
       title: `${isFr ? "Réseaux sociaux pour entreprises B2B en 2026" : "Social Media for B2B Companies in 2026"} | Mkt Web 360`,
-      description: isFr ? "Guide pratique des réseaux sociaux B2B pour 2026 : quels réseaux prioriser, quel contenu génère des leads et comment mesurer le vrai retour sur investissement." : "Practical B2B social media guide for 2026: which networks to prioritise, what content generates leads and how to measure the real return on your social media investment.",
+      description: isFr ? "Guide pratique des réseaux sociaux B2B pour 2026 : quels réseaux prioriser, quel contenu génère des leads et comment mesurer le vrai retour sur investissement." : "Social media for B2B companies in 2026: which networks to prioritise, what content generates leads and how to measure the real return on your investment.",
       images: [{ url: "https://www.mktweb360.com/og-redes-sociales-para-empresas-b2b-2026.jpg", width: 1200, height: 630 }],
       type: "article",
       publishedTime: "2026-08-21T08:00:00Z",
@@ -30,7 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const { lang } = await params;
   const isFr = lang === "fr";
   const title = isFr ? "Réseaux sociaux pour entreprises B2B en 2026" : "Social Media for B2B Companies in 2026";
-  const desc = isFr ? "Guide pratique des réseaux sociaux B2B pour 2026 : quels réseaux prioriser, quel contenu génère des leads et comment mesurer le vrai retour sur investissement." : "Practical B2B social media guide for 2026: which networks to prioritise, what content generates leads and how to measure the real return on your social media investment.";
+  const desc = isFr ? "Guide pratique des réseaux sociaux B2B pour 2026 : quels réseaux prioriser, quel contenu génère des leads et comment mesurer le vrai retour sur investissement." : "Social media for B2B companies in 2026: which networks to prioritise, what content generates leads and how to measure the real return on your investment.";
   const cat = "Social Media";
   const faqs = [
     [isFr ? "¿Vale la pena LinkedIn para una PYME?" : "¿Vale la pena LinkedIn para una PYME?", isFr ? "Depende del sector. Para empresas que venden a otras empresas (B2B), LinkedIn es imprescindible. Para B2C con bajo ticket, otras redes tienen mejor ROI." : "Depende del sector. Para empresas que venden a otras empresas (B2B), LinkedIn es imprescindible. Para B2C con bajo ticket, otras redes tienen mejor ROI."],

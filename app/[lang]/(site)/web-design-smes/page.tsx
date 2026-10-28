@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -12,17 +13,18 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Design web pour PME : l'essentiel pour vendre",
     description: isEn
       ? "Web design guide for SMEs. Which elements are essential, which mistakes to avoid and how to make your website generate clients consistently."
-      : "Guide de design web pour les PME. Quels éléments sont indispensables, quelles erreurs éviter et comment faire en sorte que votre site génère des clients de façon constante.",
+      : "Design web pour PME : les 7 éléments indispensables, la vitesse, le SEO technique, les textes et les appels à l'action qui changent les visites en demandes.",
     alternates: alternatesFor(`/${lang}/web-design-smes/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/web-design-smes/`,
     },
     openGraph: {
+      images: ogImagesIntl("web-design-smes"),
       title: isEn
         ? "Web Design for SMEs — What Your Website Needs to Sell | Mkt Web 360"
         : "Design Web pour PME — Ce que Votre Site Doit Avoir pour Vendre | Mkt Web 360",
       description: isEn
         ? "Web design guide for SMEs. Which elements are essential, which mistakes to avoid and how to make your website generate clients consistently."
-        : "Guide de design web pour les PME. Quels éléments sont indispensables, quelles erreurs éviter et comment faire en sorte que votre site génère des clients de façon constante.",
+        : "Design web pour PME : les 7 éléments indispensables, la vitesse, le SEO technique, les textes et les appels à l'action qui changent les visites en demandes.",
     },
   };
 }
@@ -40,7 +42,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     provider: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     description: isEn
       ? "Web design guide for SMEs. Which elements are essential, which mistakes to avoid and how to make your website generate clients consistently."
-      : "Guide de design web pour les PME. Quels éléments sont indispensables, quelles erreurs éviter et comment faire en sorte que votre site génère des clients de façon constante.",
+      : "Design web pour PME : les 7 éléments indispensables, la vitesse, le SEO technique, les textes et les appels à l'action qui changent les visites en demandes.",
     areaServed: isEn ? "Spain" : "Espagne",
     url: `https://www.mktweb360.com/${lang}/web-design-smes/`,
   };

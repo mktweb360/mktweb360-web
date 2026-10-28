@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Google Ads in Spain for Foreign Companies"
       : "Google Ads Espagne : entreprises étrangères",
     description: isEn
-      ? "How Google Ads works in Spain for French and British companies. Campaign setup, Spanish keyword bidding, costs, and how to avoid the most common mistakes foreign companies make."
-      : "Comment fonctionne Google Ads en Espagne pour les entreprises françaises et britanniques. Configuration de campagne, enchères sur mots-clés espagnols, coûts et erreurs à éviter.",
+      ? "Google Ads in Spain for foreign companies: campaign structure, Spanish keywords, CPC benchmarks by sector, landing pages and tracking before you spend a euro."
+      : "Google Ads en Espagne pour entreprises étrangères : structure de campagne, mots-clés espagnols, CPC par secteur, pages d'atterrissage et suivi des ventes.",
     alternates: alternatesFor(`/${lang}/google-ads-spain-foreign-companies/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/google-ads-spain-foreign-companies/`,
     },

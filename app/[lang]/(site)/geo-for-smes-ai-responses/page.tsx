@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -15,11 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "GEO pour les PME : apparaître dans l'IA",
     description: isEn
       ? "SMEs have a real advantage in GEO: niche specificity. A practical guide for any small business to appear in ChatGPT, Gemini and Perplexity responses."
-      : "Les PME ont un véritable avantage en GEO : la spécificité de niche. Guide pratique pour que n'importe quelle petite entreprise apparaisse dans les réponses de ChatGPT, Gemini et Perplexity.",
+      : "GEO pour les PME : pourquoi la spécialisation est un atout pour apparaître dans ChatGPT, Gemini et Perplexity, et cinq étapes à lancer sans outils payants.",
     alternates: alternatesFor(`/${lang}/geo-for-smes-ai-responses/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/geo-for-smes-ai-responses/`,
     },
     openGraph: {
+      images: ogImagesIntl("geo-for-smes-ai-responses"),
       title: isEn
         ? "GEO for SMEs: How to Appear in AI Responses Without Being a Big Brand | Mkt Web 360"
         : "GEO pour les PME : comment apparaître dans les réponses IA sans être une grande marque | Mkt Web 360",

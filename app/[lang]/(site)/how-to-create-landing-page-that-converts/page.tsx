@@ -1,4 +1,6 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
@@ -18,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/how-to-create-landing-page-that-converts/`,
     },
     openGraph: {
+      images: ogImagesIntl("how-to-create-landing-page-that-converts"),
       title: isEn
         ? "How to Create a Landing Page That Converts — Practical Guide | Mkt Web 360"
         : "Comment créer une landing page qui convertit — guide pratique | Mkt Web 360",
@@ -50,6 +53,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "Web Design" : "Web Design"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="how-to-create-landing-page-that-converts" image="/og-como-crear-landing-page-que-convierte.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to create a landing page that converts visitors into customers"

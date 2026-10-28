@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "SEO for Urgent Services: Appear When Needed" : "SEO pour services urgents : être trouvé vite",
     description: isEn ? "SEO strategy for emergency and urgent service businesses. How to appear at the top of Google when someone needs you urgently." : "Stratégie SEO pour les entreprises de services d'urgence. Comment apparaître en tête de Google quand quelqu'un a besoin de vous d'urgence.",
+    openGraph: openGraphIntl(lang, "seo-for-urgent-services"),
     alternates: alternatesFor(`/${lang}/seo-for-urgent-services/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-for-urgent-services/`,
     },

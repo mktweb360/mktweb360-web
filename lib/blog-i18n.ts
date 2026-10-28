@@ -20,21 +20,21 @@ export const BLOG_I18N: Record<string, PostI18n> = {
   "cuanto-tarda-el-seo-en-dar-resultados": {
     en: {
       title: "How long does SEO take to work: what happens month by month and what it depends on",
-      excerpt: "SEO usually takes 3 to 6 months to show first results and 6 to 12 months to consolidate, as a guide. What happens each month and how to see it in Search Console.",
+      excerpt: "How long SEO takes to work: usually 3 to 6 months for first results and 6 to 12 to consolidate. What happens in each phase and how to check Search Console.",
     },
     fr: {
       title: "Combien de temps faut-il pour que le SEO donne des résultats : mois par mois et de quoi cela dépend",
-      excerpt: "Le SEO donne généralement ses premiers résultats en 3 à 6 mois et se consolide en 6 à 12 mois, à titre indicatif. Ce qui se passe chaque mois et comment le voir dans Search Console.",
+      excerpt: "Combien de temps faut-il au SEO : souvent 3 à 6 mois pour les premiers résultats et 6 à 12 pour se consolider. Les étapes et leur suivi dans Search Console.",
     },
   },
   "seo-para-pymes-guia": {
     en: {
       title: "SEO for SMEs in 2026: a practical guide to getting started without wasting money",
-      excerpt: "A practical SEO guide for SMEs in Spain (2026): what you can do yourself this week, what is worth delegating, what an SEO plan costs and how long it takes to show.",
+      excerpt: "SEO for SMEs in Spain (2026): what you can do yourself this week, what is worth delegating, what an SEO plan costs and how long it takes to show results.",
     },
     fr: {
       title: "SEO pour PME en 2026 : guide pratique pour démarrer sans gaspiller d'argent",
-      excerpt: "Guide pratique du SEO pour les PME en Espagne (2026) : ce que vous pouvez faire vous-même cette semaine, ce qu'il vaut mieux déléguer, le coût d'un plan SEO et le délai pour voir des résultats.",
+      excerpt: "SEO pour PME en Espagne (2026) : ce que vous pouvez faire vous-même cette semaine, ce qu'il vaut mieux déléguer, combien coûte un plan SEO et en quel délai.",
     },
   },
   "google-ads-sin-comision-agencia-marketing": {
@@ -44,13 +44,13 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Google Ads sans commission sur le budget",
-      excerpt: "Ce que signifie qu'une agence ne facture pas de commission sur votre investissement Google Ads, combien vous économisez et comment évaluer le modèle qui vous convient.",
+      excerpt: "Google Ads sans commission sur le budget : ce que cela change quand l'agence ne prélève rien sur vos dépenses, ce que vous économisez et comment comparer.",
     },
   },
   "redes-sociales-para-empresas-b2b-2026": {
     en: {
       title: "Social Media for B2B Companies in 2026",
-      excerpt: "Practical B2B social media guide for 2026: which networks to prioritise, what content generates leads and how to measure the real return on your social media investment.",
+      excerpt: "Social media for B2B companies in 2026: which networks to prioritise, what content generates leads and how to measure the real return on your investment.",
     },
     fr: {
       title: "Réseaux sociaux pour entreprises B2B en 2026",
@@ -60,11 +60,11 @@ export const BLOG_I18N: Record<string, PostI18n> = {
   "brandformance-como-unir-marca-y-performance": {
     en: {
       title: "Brandformance: Uniting Brand and Performance",
-      excerpt: "Brandformance integrates branding and performance marketing into one coherent strategy. Why separating them is a costly mistake — and how combining them multiplies results.",
+      excerpt: "Brandformance unites brand and performance marketing in one strategy. Why splitting the budgets costs SMEs money and how to combine both in practice.",
     },
     fr: {
       title: "Brandformance : unir marque et performance",
-      excerpt: "Le brandformance intègre la marque et la performance dans une seule stratégie. Pourquoi les séparer est une erreur coûteuse — et comment les combiner multiplie vos résultats.",
+      excerpt: "Le brandformance réunit marque et performance dans une même stratégie. Pourquoi séparer les budgets coûte cher aux PME et comment unir les deux en pratique.",
     },
   },
   "marketing-digital-con-ia-y-respuestas-cero-clic": {
@@ -80,31 +80,31 @@ export const BLOG_I18N: Record<string, PostI18n> = {
   "como-escribir-contenido-que-no-suene-a-ia": {
     en: {
       title: "Writing Content That Doesn't Sound Like AI",
-      excerpt: "AI-generated content without editing doesn't convert and can hurt your Google rankings. Practical techniques to create human, authentic and useful texts — even when using AI tools.",
+      excerpt: "How to write content that doesn't sound like AI: the patterns that give it away, practical editing techniques and the role of the human editor in the process.",
     },
     fr: {
       title: "Écrire du contenu qui ne ressemble pas à l'IA",
-      excerpt: "Le contenu généré par IA sans édition ne convertit pas et peut nuire à votre classement Google. Techniques pratiques pour créer des textes humains, authentiques et utiles — même avec des outils IA.",
+      excerpt: "Écrire du contenu qui ne ressemble pas à l'IA : les tics qui le trahissent, des techniques d'édition concrètes et le rôle de l'éditeur humain dans le travail.",
     },
   },
   "seo-social-instagram-tiktok-linkedin-como-buscadores": {
     en: {
       title: "Social SEO: Instagram, TikTok and LinkedIn",
-      excerpt: "40% of Gen Z searches on TikTok before Google. Social SEO optimises your presence on Instagram, TikTok and LinkedIn search engines. Platform-specific strategies for 2026.",
+      excerpt: "Social SEO: how to optimise your profiles and content for search on Instagram, TikTok and LinkedIn, with platform-by-platform strategies for 2026.",
     },
     fr: {
       title: "SEO social : Instagram, TikTok et LinkedIn",
-      excerpt: "40% de la Gen Z cherche sur TikTok avant Google. Le SEO social optimise votre présence dans les moteurs de recherche d'Instagram, TikTok et LinkedIn. Stratégies par plateforme pour 2026.",
+      excerpt: "SEO social : comment optimiser vos profils et contenus pour la recherche sur Instagram, TikTok et LinkedIn, avec une stratégie par plateforme pour 2026.",
     },
   },
   "atribucion-de-marketing-como-medir-impacto-real": {
     en: {
       title: "Marketing Attribution: Measuring Real Impact",
-      excerpt: "The last-click model distorts how your customers actually find you. A practical guide to attribution models for SMEs: what they are, which to use, and how to approximate attribution without enterprise tools.",
+      excerpt: "Marketing attribution for SMEs: why last-click distorts your data, the main attribution models and how to approximate real impact without enterprise tools.",
     },
     fr: {
       title: "Attribution marketing : mesurer l'impact réel",
-      excerpt: "Le modèle dernier clic fausse la réalité de la façon dont vos clients vous trouvent. Guide pratique des modèles d'attribution pour PME : ce que c'est, lequel utiliser, et comment approximer l'attribution sans outils enterprise.",
+      excerpt: "Attribution marketing pour PME : pourquoi le dernier clic fausse vos décisions, les principaux modèles et comment mesurer l'impact réel sans outils coûteux.",
     },
   },
   "ha-muerto-el-seo-con-la-ia": {
@@ -124,7 +124,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Comment faire un audit de site web pas à pas : checklist en 30 points pour les PME",
-      excerpt: "Comment auditer un site avec des outils gratuits : 30 points sur l'indexation, la vitesse, le contenu, la fiche Google et la visibilité dans l'IA, et comment lire les résultats.",
+      excerpt: "Audit de site web pas à pas : une checklist de 30 points et des outils gratuits pour vérifier indexation, vitesse, contenu, fiche Google et visibilité IA.",
     },
   },
 
@@ -141,11 +141,11 @@ export const BLOG_I18N: Record<string, PostI18n> = {
   "que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026": {
     en: {
       title: "What Is a Business Chatbot? Why You Need One",
-      excerpt: "A business chatbot is no longer technology reserved for large corporations. In 2026, SMEs that automate their customer service with AI reduce costs, capture more leads and sell more.",
+      excerpt: "What a business chatbot is and why SMEs use one: the types available, what it can automate, the numbers behind the investment and the legal points to check.",
     },
     fr: {
       title: "Qu'est-ce qu'un chatbot pour entreprises",
-      excerpt: "Un chatbot d'entreprise n'est plus réservé aux grandes structures. En 2026, les PME qui automatisent leur service client avec l'IA réduisent leurs coûts, captent plus de leads et vendent plus.",
+      excerpt: "Qu'est-ce qu'un chatbot pour entreprises : les types existants, ce qu'il automatise dans une PME, les chiffres de l'investissement et le cadre légal.",
     },
   },
   "agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio": {
@@ -155,7 +155,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Agents IA pour le marketing : usages en PME",
-      excerpt: "Les agents IA ne sont plus de la science-fiction. En 2026, des outils accessibles permettent à n'importe quelle PME d'automatiser des tâches marketing avec des agents qui travaillent de façon autonome.",
+      excerpt: "Agents IA pour le marketing : en quoi ils diffèrent de ChatGPT, les tâches qu'ils assurent dans une PME, les outils sans équipe technique et leurs risques.",
     },
   },
   "herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan": {
@@ -165,7 +165,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Outils IA pour le marketing digital en 2026",
-      excerpt: "Tous les outils d'IA marketing ne méritent pas le temps qu'il faut pour les apprendre. Analyse honnête de ceux qui apportent une valeur réelle aux PME et agences en 2026.",
+      excerpt: "Outils IA pour le marketing digital en 2026 : ChatGPT, Claude, Canva, HubSpot Breeze, Make et Zapier passés au crible, et la combinaison conseillée en PME.",
     },
   },
   "chatgpt-para-marketing-digital": {
@@ -195,7 +195,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Que vérifier avant d'investir en marketing",
-      excerpt: "Avant d'investir davantage en marketing digital, vérifiez ces 7 domaines clés pour éviter d'amplifier les erreurs et prendre de meilleures décisions d'investissement.",
+      excerpt: "Que vérifier avant d'investir en marketing : site, suivi analytique, canaux actuels, ROI et objectifs, pour ne pas amplifier des erreurs avec plus de budget.",
     },
   },
   "senales-web-necesita-rediseno": {
@@ -251,21 +251,21 @@ export const BLOG_I18N: Record<string, PostI18n> = {
   "actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web": {
     en: {
       title: "Google Algorithm Updates 2026: What Changed",
-      excerpt: "Google has rolled out several algorithm updates in 2026 focused on user experience, AI content and E-E-A-T signals. We analyse what has changed and what you need to do.",
+      excerpt: "Google algorithm updates in 2026: what changed for E-E-A-T, AI Overviews and AI content, which technical signals matter and what to do if traffic has fallen.",
     },
     fr: {
       title: "Mises à jour Google 2026 : ce qui a changé",
-      excerpt: "Google a lancé plusieurs mises à jour d'algorithme en 2026 axées sur l'expérience utilisateur, le contenu IA et les signaux E-E-A-T. Nous analysons ce qui a changé et ce que vous devez faire.",
+      excerpt: "Mises à jour Google 2026 : ce qui change pour l'E-E-A-T, les AI Overviews et le contenu IA, les signaux techniques clés et que faire si votre trafic baisse.",
     },
   },
   "seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini": {
     en: {
       title: "SEO in the AI Era: Ranking with Google Gemini",
-      excerpt: "Google is no longer just a search engine. It is a generative response engine powered by Gemini. How to adapt your SEO strategy to keep capturing traffic when AI answers first.",
+      excerpt: "SEO in the AI era: which searches still bring traffic now that Google answers with Gemini, how to appear in AI Overviews and the content strategy for 2026.",
     },
     fr: {
       title: "SEO à l'ère de l'IA et de Google Gemini",
-      excerpt: "Google n'est plus seulement un moteur de recherche. C'est un moteur de réponses génératives propulsé par Gemini. Comment adapter votre stratégie SEO pour continuer à capter du trafic quand l'IA répond en premier.",
+      excerpt: "SEO à l'ère de l'IA : les recherches qui apportent encore du trafic quand Google répond avec Gemini, comment entrer dans les AI Overviews et quoi publier.",
     },
   },
   "geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca": {
@@ -275,47 +275,47 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "GEO pour les PME : apparaître dans l'IA",
-      excerpt: "Les PME ont un véritable avantage en GEO : la spécificité de niche. Guide pratique pour que n'importe quelle petite entreprise apparaisse dans les réponses de ChatGPT, Gemini et Perplexity.",
+      excerpt: "GEO pour les PME : pourquoi la spécialisation est un atout pour apparaître dans ChatGPT, Gemini et Perplexity, et cinq étapes à lancer sans outils payants.",
     },
   },
   "como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026": {
     en: {
       title: "Optimise Content for AI Citations: GEO 2026",
-      excerpt: "Technical and practical GEO guide for SMEs. Learn how to structure your content, implement advanced schema markup, configure llms.txt and build semantic authority to appear in ChatGPT, Gemini and Perplexity.",
+      excerpt: "Optimise content for AI citations: structure your pages, use advanced schema, set up llms.txt and build entity authority so ChatGPT and Gemini can cite you.",
     },
     fr: {
       title: "Optimiser votre contenu pour l'IA : GEO 2026",
-      excerpt: "Guide technique et pratique de GEO pour les PME. Apprenez à structurer votre contenu, implémenter un schema markup avancé, configurer llms.txt et construire l'autorité sémantique pour apparaître dans ChatGPT, Gemini et Perplexity.",
+      excerpt: "Optimiser votre contenu pour être cité par ChatGPT et Gemini : structure des pages, schema avancé, fichier llms.txt et autorité d'entité, pas à pas.",
     },
   },
   "por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026": {
     en: {
       title: "Why ChatGPT Visibility Matters More Than SEO",
-      excerpt: "Millions of people no longer search on Google. They ask ChatGPT, Perplexity or Gemini. If your business doesn't appear in their responses, you're losing clients without knowing it. GEO guide 2026.",
+      excerpt: "Why appearing in ChatGPT, Perplexity and Gemini matters for SMEs in 2026: how search has changed, what GEO is and the three signals AI looks for in content.",
     },
     fr: {
       title: "Pourquoi ChatGPT compte plus que le SEO",
-      excerpt: "Des millions de personnes ne cherchent plus sur Google. Ils demandent à ChatGPT, Perplexity ou Gemini. Si votre entreprise n'apparaît pas dans leurs réponses, vous perdez des clients sans le savoir. Guide GEO 2026.",
+      excerpt: "Pourquoi apparaître dans ChatGPT, Perplexity et Gemini compte en 2026 : comment la recherche a changé, ce qu'est le GEO et les trois signaux que l'IA repère.",
     },
   },
   "geo-posicionamiento-ia-chatgpt-empresas-espana": {
     en: {
       title: "What Is GEO: Appear in ChatGPT for Business",
-      excerpt: "GEO positions your business in ChatGPT and Perplexity. If AI does not mention you when someone asks about your sector, you are losing customers. Practical guide for businesses.",
+      excerpt: "What GEO is and how to get your business mentioned by ChatGPT and Perplexity: concrete steps, how it differs from SEO and the role of your business listing.",
     },
     fr: {
       title: "GEO : comment apparaître dans ChatGPT",
-      excerpt: "Le GEO positionne votre entreprise dans ChatGPT et Perplexity. Si l'IA ne vous mentionne pas quand quelqu'un pose une question sur votre secteur, vous perdez des clients. Guide pratique pour les entreprises.",
+      excerpt: "GEO : comment faire citer votre entreprise par ChatGPT et Perplexity. Étapes concrètes, différences avec le SEO et rôle de votre fiche et des données locales.",
     },
   },
   "geo-vs-seo-diferencias": {
     en: {
       title: "GEO vs SEO: Differences and How to Combine",
-      excerpt: "What sets GEO (Generative Engine Optimization) apart from traditional SEO, why both matter, and how to integrate both strategies for maximum visibility in search engines and AI.",
+      excerpt: "GEO vs SEO: the key differences between ranking in Google and being cited by ChatGPT, Perplexity and Gemini, and how to prioritise both by business type.",
     },
     fr: {
       title: "GEO vs SEO : différences et comment combiner",
-      excerpt: "Ce qui différencie le GEO (Generative Engine Optimization) du SEO traditionnel, pourquoi les deux comptent et comment intégrer les deux stratégies pour une visibilité maximale.",
+      excerpt: "GEO vs SEO : ce qui distingue le référencement sur Google de la citation par ChatGPT, Perplexity et Gemini, et comment prioriser les deux selon votre secteur.",
     },
   },
   "que-es-geo-generative-engine-optimization": {
@@ -325,107 +325,107 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Qu'est-ce que le GEO (Generative Engine Optimization) ?",
-      excerpt: "GEO : qu'est-ce que c'est, comment ça fonctionne et pourquoi optimiser votre présence pour apparaître dans ChatGPT, Perplexity et Gemini est la nouvelle frontière du SEO.",
+      excerpt: "Qu'est-ce que le GEO : le fonctionnement des moteurs génératifs, ce qui le distingue du SEO et comment préparer votre site aux réponses de ChatGPT et Gemini.",
     },
   },
   "como-la-ia-esta-cambiando-el-marketing-digital-para-siempre": {
     en: {
       title: "How AI Is Changing Digital Marketing Forever",
-      excerpt: "AI is no longer a trend in marketing: it is the infrastructure. More than 70% of digital marketing interactions will be influenced by AI in 2026. What changes, what does not, and what you need to do.",
+      excerpt: "How AI is changing digital marketing: what it already does well, what it still cannot do, the new role of marketers and how to prepare your company.",
     },
     fr: {
       title: "Comment l'IA transforme le marketing digital",
-      excerpt: "L'IA n'est plus une tendance en marketing : c'est l'infrastructure. Plus de 70 % des interactions de marketing digital seront influencées par l'IA en 2026. Ce qui change, ce qui ne change pas et ce que vous devez faire.",
+      excerpt: "Comment l'IA transforme le marketing digital : ce qu'elle fait déjà bien, ses limites, le nouveau rôle des marketeurs et comment préparer votre entreprise.",
     },
   },
   "atencion-cliente-24-7-pymes-sin-contratar-personal": {
     en: {
       title: "24/7 Customer Service for SMEs Without Hiring",
-      excerpt: "Large companies have offered 24/7 customer service for years. In 2026, any SME can do the same with an AI chatbot, without expanding headcount.",
+      excerpt: "24/7 customer service for SMEs without hiring night staff: what an AI chatbot can handle alone, when to hand over to a person and what it costs.",
     },
     fr: {
       title: "Service client 24h/24 pour PME sans recruter",
-      excerpt: "Les grandes entreprises offrent un service client 24h/24 depuis des années. En 2026, toute PME peut faire de même avec un chatbot IA, sans augmenter ses effectifs.",
+      excerpt: "Service client 24h/24 pour PME sans recruter : ce qu'un chatbot IA règle seul, quand passer la main à un humain, son coût et ce qu'attendre à 90 jours.",
     },
   },
   "chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana": {
     en: {
       title: "AI Chatbot Compliance: GDPR and EU AI Act",
-      excerpt: "In August 2026 the main AI Act obligations for chatbots come into force. What you need to do to comply with GDPR and the EU AI Act, and why compliance is a competitive advantage.",
+      excerpt: "AI chatbot compliance with GDPR and the EU AI Act: what applies from 2 August 2026, the four elements every business chatbot needs and a checklist.",
     },
     fr: {
       title: "Chatbot IA et conformité : RGPD et AI Act",
-      excerpt: "En août 2026 entrent en vigueur les principales obligations de l'AI Act pour les chatbots. Ce que vous devez faire pour respecter le RGPD et l'AI Act européen, et pourquoi la conformité est un avantage concurrentiel.",
+      excerpt: "Chatbot IA et conformité : ce qu'imposent le RGPD et l'AI Act dès le 2 août 2026, les quatre éléments obligatoires et une checklist pour être en règle.",
     },
   },
   "cuanto-cuesta-un-chatbot-para-empresas-espana-2026": {
     en: {
       title: "How Much Does a Chatbot Cost in 2026",
-      excerpt: "Business chatbot prices range from free to thousands per month. A guide to real prices in 2026: what market leaders charge, what each tier includes and when the investment pays off.",
+      excerpt: "How much a chatbot costs in 2026: the pricing models on the market, what the main providers charge, what drives the final price and when it pays off.",
     },
     fr: {
       title: "Combien coûte un chatbot d'entreprise en 2026",
-      excerpt: "Les prix des chatbots pour entreprises vont de gratuit à des milliers par mois. Guide des prix réels en 2026 : ce que facturent les leaders du marché, ce qu'inclut chaque niveau et quand l'investissement est rentable.",
+      excerpt: "Combien coûte un chatbot d'entreprise en 2026 : modèles de tarification, prix des principaux acteurs, ce qui fait varier le coût et quand il devient rentable.",
     },
   },
   "chatbot-para-tienda-online-guia-completa-2026": {
     en: {
       title: "Chatbot for Online Stores: Sell More in 2026",
-      excerpt: "A chatbot for your online store can handle enquiries 24/7, recover abandoned carts, answer product questions and manage order status.",
+      excerpt: "Chatbot for online stores: answer product questions, recover abandoned carts and report order status 24/7. Integrations, GDPR and costs for 2026.",
     },
     fr: {
       title: "Chatbot pour boutique en ligne : vendre plus",
-      excerpt: "Un chatbot pour votre boutique en ligne peut traiter les demandes 24h/24, récupérer les paniers abandonnés, répondre aux questions produits et gérer le statut des commandes.",
+      excerpt: "Chatbot pour boutique en ligne : répondre aux questions produits, relancer les paniers abandonnés et suivre les commandes 24h/24. Intégrations, RGPD et coûts.",
     },
   },
   "chatbot-vs-live-chat-diferencias-cual-elegir-empresa": {
     en: {
       title: "Chatbot vs Live Chat: Which to Choose",
-      excerpt: "Chatbot or live chat? They are not mutually exclusive. A guide to the real differences, when each one is right, and why the correct combination beats choosing just one.",
+      excerpt: "Chatbot vs live chat: the real differences, when each one suits your business and why a chatbot with escalation to a person usually works best.",
     },
     fr: {
       title: "Chatbot vs live chat : lequel choisir",
-      excerpt: "Chatbot ou live chat ? Ils ne s'excluent pas mutuellement. Guide des vraies différences, quand chacun convient, et pourquoi la bonne combinaison est meilleure que d'en choisir un seul.",
+      excerpt: "Chatbot ou live chat : les vraies différences, quand chacun convient à votre entreprise et pourquoi un chatbot relayé par un humain fonctionne souvent mieux.",
     },
   },
   "chatbot-captacion-cualificacion-leads-guia-practica": {
     en: {
       title: "Chatbot Lead Generation: Capture and Qualify",
-      excerpt: "A well-configured chatbot can capture leads 24/7, qualify them with strategic questions and pass them to the CRM with full context.",
+      excerpt: "Chatbot lead generation: capture enquiries 24/7, qualify them with the right questions and pass them to your CRM with full context. A practical guide.",
     },
     fr: {
       title: "Chatbot pour capter et qualifier des leads",
-      excerpt: "Un chatbot bien configuré peut capter des leads 24h/24, les qualifier avec des questions stratégiques et les transmettre au CRM avec le contexte complet.",
+      excerpt: "Chatbot pour capter des leads 24h/24, les qualifier avec les bonnes questions et les transmettre à votre CRM avec tout le contexte. Guide pratique pour 2026.",
     },
   },
   "chatbot-para-clinicas-centros-salud-automatizar-citas": {
     en: {
       title: "Chatbot for Clinics: Appointments and FAQs",
-      excerpt: "Clinics and healthcare centres receive hundreds of repetitive enquiries every day. A well-implemented chatbot can automate appointment management, answer FAQs and qualify patients.",
+      excerpt: "Chatbot for clinics: automate appointments, cancellations and FAQs, qualify patients and stay GDPR-compliant. How to integrate it and work out its ROI.",
     },
     fr: {
       title: "Chatbot pour cliniques : rendez-vous et FAQ",
-      excerpt: "Les cliniques et centres de santé reçoivent des centaines de demandes répétitives chaque jour. Un chatbot bien implémenté peut automatiser la gestion des rendez-vous, répondre aux questions fréquentes et qualifier les patients.",
+      excerpt: "Chatbot pour cliniques : automatiser rendez-vous, annulations et questions fréquentes, qualifier les patients et respecter le RGPD. Intégration et ROI.",
     },
   },
   "chatbot-wordpress-como-instalarlo-que-evitar": {
     en: {
       title: "Chatbot for WordPress: Installation Guide",
-      excerpt: "WordPress has dozens of chatbot plugins. Most are not worth the time it takes to test them. An honest guide on what genuinely works in 2026.",
+      excerpt: "Chatbot for WordPress: why most plugins fall short, how to install a useful chatbot step by step without slowing your site, and the mistakes to avoid.",
     },
     fr: {
       title: "Chatbot pour WordPress : guide d'installation",
-      excerpt: "WordPress dispose de dizaines de plugins de chatbot. La plupart ne valent pas le temps qu'il faut pour les tester. Un guide honnête sur ce qui fonctionne vraiment en 2026.",
+      excerpt: "Chatbot pour WordPress : pourquoi la plupart des plugins déçoivent, comment installer un chatbot utile sans ralentir votre site et les erreurs à éviter.",
     },
   },
   "como-elegir-chatbot-para-empresa-checklist-2026": {
     en: {
       title: "How to Choose a Chatbot: 2026 Checklist",
-      excerpt: "Before choosing a chatbot for your business, there are 10 questions you should answer. This checklist helps you avoid the most common mistakes.",
+      excerpt: "How to choose a chatbot: a 10-question checklist on integrations, volume, maintenance, legal compliance and ROI to avoid the most common mistakes.",
     },
     fr: {
       title: "Choisir le bon chatbot : checklist 2026",
-      excerpt: "Avant de choisir un chatbot pour votre entreprise, il y a 10 questions auxquelles vous devez répondre. Cette checklist vous aide à éviter les erreurs les plus courantes.",
+      excerpt: "Choisir le bon chatbot : une checklist de 10 questions sur les intégrations, le volume, la maintenance, la conformité et le ROI pour éviter les erreurs.",
     },
   },
   "cro-shopware-optimizar-conversion-tienda": {
@@ -435,17 +435,17 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "CRO Shopware : optimiser votre conversion",
-      excerpt: "Augmentez le taux de conversion de votre boutique Shopware : événements GA4 essentiels, les 5 vraies causes d'abandon de panier et optimisation des fiches produit et du checkout.",
+      excerpt: "CRO Shopware : les 4 événements GA4 indispensables, les 5 vraies causes d'abandon de panier et comment optimiser fiches produit et checkout pour convertir.",
     },
   },
   "geo-shopware-agentic-commerce-chatgpt": {
     en: {
       title: "GEO for Shopware: Sell via ChatGPT",
-      excerpt: "Shopware 6.7.9 brings native Agentic Commerce. Prepare your store with GEO so ChatGPT and Perplexity recommend and sell your products directly from the conversation.",
+      excerpt: "GEO for Shopware: get your store ready for the native Agentic Commerce in version 6.7.9 so ChatGPT and Perplexity can recommend your products.",
     },
     fr: {
       title: "GEO pour Shopware : vendre via ChatGPT",
-      excerpt: "Shopware 6.7.9 intègre l'Agentic Commerce natif. Préparez votre boutique avec le GEO pour que ChatGPT et Perplexity recommandent et vendent vos produits directement depuis la conversation.",
+      excerpt: "GEO pour Shopware : préparez votre boutique à l'Agentic Commerce natif de la version 6.7.9 pour que ChatGPT et Perplexity puissent recommander vos produits.",
     },
   },
   "google-ads-shopware-campanas-que-venden": {
@@ -455,7 +455,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Campagnes Google Ads pour Shopware",
-      excerpt: "Comment configurer Google Ads pour votre boutique Shopware : suivi des conversions, connexion au Merchant Center, Performance Max, Shopping et optimisation du ROAS.",
+      excerpt: "Google Ads pour Shopware : suivi des conversions, lien avec Merchant Center, Performance Max et Shopping, titres du flux et pilotage au ROAS plutôt qu'au CPC.",
     },
   },
   "migrar-shopware-prestashop-woocommerce-seo": {
@@ -465,7 +465,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Migrer vers Shopware sans perdre le SEO",
-      excerpt: "Comment migrer votre boutique vers Shopware sans perdre le positionnement : audit des URLs, carte de redirections 301, protocole de lancement et suivi post-migration.",
+      excerpt: "Migrer vers Shopware sans perdre votre SEO : audit des URL de valeur, plan de redirections 301, protocole du jour de lancement et suivi après la migration.",
     },
   },
   "seo-shopware-posicionar-tienda-google": {
@@ -475,17 +475,17 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "SEO Shopware : positionner votre boutique",
-      excerpt: "Guide de SEO technique pour Shopware 6 : URLs, navigation à facettes, schéma produit, Core Web Vitals et fiches optimisées pour positionner votre boutique sur Google.",
+      excerpt: "SEO Shopware : URL et canonical, navigation à facettes, schéma produit, Core Web Vitals et fiches uniques pour bien positionner une boutique Shopware 6.",
     },
   },
   "woocommerce-vs-shopify-cual-elegir-tienda-online": {
     en: {
       title: "WooCommerce vs Shopify for Your Store in 2026",
-      excerpt: "WooCommerce is free with total control. Shopify is faster to launch but charges commissions. An honest comparison with real 3-year costs and a recommendation by business type.",
+      excerpt: "WooCommerce vs Shopify in 2026: an honest comparison of 3-year costs, control and commissions, with a recommendation by business type and a word on Shopware.",
     },
     fr: {
       title: "WooCommerce vs Shopify : lequel choisir",
-      excerpt: "WooCommerce est gratuit avec un contrôle total. Shopify est plus rapide à lancer mais prélève des commissions. Comparaison honnête avec coûts réels sur 3 ans et recommandation par type d'activité.",
+      excerpt: "WooCommerce vs Shopify : comparaison honnête des coûts sur 3 ans, du contrôle et des commissions, avec une recommandation selon votre type d'activité.",
     },
   },
   "migrar-shopify-woocommerce": {
@@ -515,7 +515,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Google My Business pour les entreprises",
-      excerpt: "Guide complet de Google My Business (maintenant Google Business Profile). Comment créer, vérifier, optimiser et gérer votre fiche pour attirer des clients locaux.",
+      excerpt: "Google My Business, devenu Google Business Profile : créer, vérifier et optimiser votre fiche, publier des posts et gérer les avis pour attirer des clients.",
     },
   },
   "como-gestionar-reputacion-online-empresa": {
@@ -555,7 +555,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Quand choisir le SEO plutôt que Google Ads",
-      excerpt: "Comment décider entre SEO et Google Ads selon votre entreprise, budget, urgence et horizon temporel. Avec des exemples réels et une matrice de décision pratique.",
+      excerpt: "SEO ou Google Ads : comment choisir selon votre activité, votre budget, l'urgence et l'horizon, quand combiner les deux, avec une matrice de décision.",
     },
   },
   "link-building-pymes": {
@@ -565,7 +565,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Link building pour PME : liens de qualité",
-      excerpt: "Stratégies de link building qui fonctionnent pour les PME. Comment obtenir des backlinks de qualité sans risquer une pénalité Google ou gaspiller le budget sur des liens de faible qualité.",
+      excerpt: "Link building pour PME : quels liens aident et lesquels nuisent, des stratégies sûres pour obtenir des backlinks de qualité et les erreurs qui pénalisent.",
     },
   },
   "google-shopping-tiendas-online": {
@@ -625,7 +625,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Comment configurer les expéditions dans WooCommerce — Guide complet",
-      excerpt: "Comment configurer les zones d'expédition, tarifs et transporteurs dans WooCommerce. Livraison gratuite, tarif fixe et intégration transporteurs étape par étape.",
+      excerpt: "Configurer les expéditions dans WooCommerce : zones, tarifs fixes ou calculés, livraison gratuite dès un montant, transporteurs DHL, DPD et UPS, et retours.",
     },
   },
   "email-marketing-pymes": {
@@ -635,7 +635,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Email marketing pour les PME : premiers pas",
-      excerpt: "Guide d'email marketing pour les PME. Comment commencer, quels outils utiliser, comment construire votre liste et concevoir des campagnes qui convertissent.",
+      excerpt: "Email marketing pour PME : bâtir votre liste de zéro, choisir l'outil, les emails à envoyer, des objets qui donnent envie d'ouvrir et les métriques à suivre.",
     },
   },
   "whatsapp-business-para-empresas": {
@@ -645,7 +645,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "WhatsApp Business pour entreprises en 2026",
-      excerpt: "Comment utiliser WhatsApp Business pour attirer et fidéliser des clients. Configuration, automatisations, catalogue et stratégie pour les entreprises.",
+      excerpt: "WhatsApp Business pour entreprises : configurer profil, catalogue et réponses automatiques, attirer des clients et savoir quand passer à l'API.",
     },
   },
   "como-crear-landing-page-que-convierte": {
@@ -661,61 +661,61 @@ export const BLOG_I18N: Record<string, PostI18n> = {
   "linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads": {
     en: {
       title: "LinkedIn for SMEs: Generating Leads in 2026",
-      excerpt: "LinkedIn has changed more in 2026 than in the previous five years. New algorithm, video as the dominant format, Employee Generated Content and social selling.",
+      excerpt: "LinkedIn for SMEs in 2026: the new algorithm, formats that work, employee content and social selling to generate leads without spending on advertising.",
     },
     fr: {
       title: "LinkedIn pour PME : générer des leads en 2026",
-      excerpt: "LinkedIn a plus changé en 2026 que lors des cinq années précédentes. Nouvel algorithme, vidéo comme format dominant, Employee Generated Content et social selling.",
+      excerpt: "LinkedIn pour PME en 2026 : nouvel algorithme, formats qui marchent, contenu des employés et social selling pour générer des leads sans payer de publicité.",
     },
   },
   "redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos": {
     en: {
       title: "Social Media for Businesses 2026: What Works",
-      excerpt: "The Social Media 2026 study by Cyberclick and Metricool analyses millions of posts. TikTok leads on impressions, Instagram on stability, LinkedIn on B2B.",
+      excerpt: "Social media for businesses in 2026: what the Cyberclick and Metricool study shows about TikTok, Instagram and LinkedIn, and how to choose your main network.",
     },
     fr: {
       title: "Réseaux sociaux pour entreprises en 2026",
-      excerpt: "L'étude Social Media 2026 de Cyberclick et Metricool analyse des millions de publications. TikTok domine les impressions, Instagram la stabilité, LinkedIn le B2B.",
+      excerpt: "Réseaux sociaux pour entreprises en 2026 : ce que l'étude Cyberclick et Metricool montre sur TikTok, Instagram et LinkedIn, et quel réseau prioriser.",
     },
   },
   "cuota-autonomos-2026-todo-lo-que-tienes-que-saber": {
     en: {
       title: "Freelancer Social Security Contributions in Spain 2026: Full Guide",
-      excerpt: "Spain's self-employed social security contributions for 2026 remain equal to 2025 by government extension, except the MEI which rises to 0.9%. Full bracket table, the €80 flat rate and how to change your contribution base up to 6 times per year.",
+      excerpt: "Freelancer social security in Spain 2026: the full bracket table, the MEI rising to 0.9%, the €80 flat rate and how to change your base up to 6 times a year.",
     },
     fr: {
       title: "Cotisations Sociales des Indépendants en Espagne 2026 : Guide Complet",
-      excerpt: "Les cotisations des indépendants en 2026 restent identiques à 2025 par prorogation du gouvernement, sauf le MEI qui monte à 0,9 %. Tableau complet des tranches, le forfait à 80 € et comment changer votre base jusqu'à 6 fois par an.",
+      excerpt: "Cotisations des indépendants en Espagne 2026 : tableau des tranches, MEI porté à 0,9 %, forfait à 80 € et changement de base jusqu'à 6 fois par an.",
     },
   },
   "marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia": {
     en: {
       title: "Digital Marketing for Freelancers in 2026",
-      excerpt: "Freelancers have more tools than ever to get online clients on their own. Practical guide: local SEO, Google Business Profile, LinkedIn and content for freelancers in 2026.",
+      excerpt: "Digital marketing for freelancers in 2026: the order that works, from Google Business Profile and local SEO to LinkedIn and content, to win clients online.",
     },
     fr: {
       title: "Marketing digital pour indépendants en 2026",
-      excerpt: "Les indépendants ont plus d'outils que jamais pour obtenir des clients en ligne par eux-mêmes. Guide pratique : SEO local, Google Business Profile, LinkedIn et contenu pour indépendants en 2026.",
+      excerpt: "Marketing digital pour indépendants en 2026 : par où commencer, de la fiche Google Business Profile au SEO local, puis LinkedIn et le contenu.",
     },
   },
   "cuanto-cuesta-agencia-marketing-digital-espana-2026": {
     en: {
       title: "Digital Marketing Agency Cost in Spain 2026",
-      excerpt: "Real prices for digital marketing agencies in Spain 2026: SEO, Google Ads and social media management. What each price range includes and how to choose without making mistakes.",
+      excerpt: "Digital marketing agency costs in Spain in 2026: real prices for SEO, Google Ads and social media, what each range includes and red flags in a quote.",
     },
     fr: {
       title: "Coût d'une agence marketing en Espagne 2026",
-      excerpt: "Prix réels des agences de marketing digital en Espagne 2026 : SEO, Google Ads et gestion des réseaux sociaux. Ce qu'inclut chaque gamme de prix et comment ne pas se tromper dans le choix.",
+      excerpt: "Coût d'une agence de marketing digital en Espagne en 2026 : prix réels du SEO, de Google Ads et des réseaux sociaux, ce que couvre chaque tarif et les pièges.",
     },
   },
   "seo-para-clinicas-centros-salud-captar-pacientes-google": {
     en: {
       title: "SEO for Clinics: Attract Patients on Google",
-      excerpt: "74% of patients search Google before calling a clinic. Specific SEO for dental clinics, physiotherapy and healthcare centres. Attract more patients from the first month.",
+      excerpt: "SEO for clinics and healthcare centres: how patients search, why Google Business Profile matters most, the searches that bring bookings and common mistakes.",
     },
     fr: {
       title: "SEO pour cliniques : attirer des patients",
-      excerpt: "74 % des patients cherchent sur Google avant d'appeler une clinique. SEO spécifique pour les cliniques dentaires, la kinésithérapie et les centres de santé. Attirez plus de patients dès le premier mois.",
+      excerpt: "SEO pour cliniques : comment cherchent les patients, le rôle de la fiche Google Business Profile, les recherches qui amènent des rendez-vous et les erreurs.",
     },
   },
   "como-medir-roi-marketing-digital": {
@@ -845,7 +845,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
     },
     fr: {
       title: "Digitalisation en Castille-La Manche",
-      excerpt: "Comment les entreprises de Castille-La Manche peuvent se digitaliser en 2025. Aides disponibles, outils essentiels et comment choisir un partenaire de digitalisation dans la région.",
+      excerpt: "Digitaliser votre entreprise en Castille-La Manche : par où commencer, les outils essentiels d'une PME, les aides du Kit Digital et le choix d'un partenaire.",
     },
   },
   "instagram-para-empresas-que-poner-en-la-biografia-de-instagram": {

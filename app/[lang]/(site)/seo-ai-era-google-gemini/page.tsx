@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -14,12 +15,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "SEO in the AI Era: Ranking with Google Gemini"
       : "SEO à l'ère de l'IA et de Google Gemini",
     description: isEn
-      ? "Google is no longer just a search engine. It is a generative response engine powered by Gemini. How to adapt your SEO strategy to keep capturing traffic when AI answers first."
-      : "Google n'est plus seulement un moteur de recherche. C'est un moteur de réponses génératives propulsé par Gemini. Comment adapter votre stratégie SEO pour continuer à capter du trafic quand l'IA répond en premier.",
+      ? "SEO in the AI era: which searches still bring traffic now that Google answers with Gemini, how to appear in AI Overviews and the content strategy for 2026."
+      : "SEO à l'ère de l'IA : les recherches qui apportent encore du trafic quand Google répond avec Gemini, comment entrer dans les AI Overviews et quoi publier.",
     alternates: alternatesFor(`/${lang}/seo-ai-era-google-gemini/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-ai-era-google-gemini/`,
     },
     openGraph: {
+      images: ogImagesIntl("seo-ai-era-google-gemini"),
       title: isEn
         ? "SEO in the AI Era: How to Rank When Google Uses Gemini to Answer | Mkt Web 360"
         : "SEO à l'ère de l'IA : comment se positionner quand Google utilise Gemini pour répondre | Mkt Web 360",

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
@@ -52,11 +53,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Création de site web pour dentistes",
     description: isEn
       ? "Professional web design for dentists and dental clinics. Optimised for local SEO, Google Maps and new patient acquisition. No commission fees."
-      : "Création de site web professionnel pour dentistes et cliniques dentaires. Optimisé pour le référencement local, Google Maps et l'acquisition de nouveaux patients. Sans commission.",
+      : "Création de site web pour dentistes : un site professionnel optimisé pour le référencement local et Google Maps afin d'attirer de nouveaux patients.",
     alternates: alternatesFor(`/${lang}/web-design-dentists/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/web-design-dentists/`,
     },
     openGraph: {
+      images: ogImagesIntl("web-design-dentists"),
       title: isEn
         ? "Web Design for Dentists and Dental Clinics | Mkt Web 360"
         : "Création de Site Web pour Dentistes et Cliniques Dentaires | Mkt Web 360",

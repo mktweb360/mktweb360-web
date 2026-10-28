@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "SEO in Spain for Foreign Companies 2026"
       : "SEO en Espagne pour entreprises étrangères",
     description: isEn
-      ? "How SEO works in Spain for French and British companies. Spanish search behaviour, local vs national strategy, and how to rank on Google.es without a physical office."
-      : "Comment fonctionne le SEO en Espagne pour les entreprises françaises et britanniques. Comportement de recherche espagnol, stratégie locale vs nationale et comment se positionner sur Google.es.",
+      ? "SEO in Spain for foreign companies: how Spanish users search, local vs national strategy, whether you need a .es domain and realistic timelines for results."
+      : "SEO en Espagne pour entreprises étrangères : comment cherchent les Espagnols, SEO local ou national, faut-il un domaine .es et quels délais réalistes prévoir.",
     alternates: alternatesFor(`/${lang}/seo-spain-foreign-companies/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/seo-spain-foreign-companies/`,
     },

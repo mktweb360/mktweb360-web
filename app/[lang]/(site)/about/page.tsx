@@ -1,4 +1,5 @@
 import type { Lang } from "@/lib/i18n";
+import { openGraphIntl } from "@/lib/og";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -15,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       lang === "en"
         ? "Meet Mkt Web 360. Senior experience, AI protocols and sector exclusivity. Digital marketing agency for SMEs. Nationwide service."
         : "Découvrez Mkt Web 360. Expérience senior, protocoles IA et exclusivité sectorielle. Agence de marketing digital pour PME.",
+    openGraph: openGraphIntl(lang, "about"),
     alternates: alternatesFor(`/${lang}/about/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/about/`,
     },

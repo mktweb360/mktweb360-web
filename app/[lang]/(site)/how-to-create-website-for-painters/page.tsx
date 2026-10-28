@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Website for Painters: Get Customers on Google" : "Site web pour peintres : attirer des clients",
     description: isEn ? "How to create a professional website for painters that attracts customers through Google. SEO, Google Business Profile and local strategy." : "Comment créer un site web professionnel pour peintres qui attire des clients via Google. SEO, Google Business Profile et stratégie locale.",
+    openGraph: openGraphIntl(lang, "how-to-create-website-for-painters"),
     alternates: alternatesFor(`/${lang}/how-to-create-website-for-painters/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-create-website-for-painters/`,
     },

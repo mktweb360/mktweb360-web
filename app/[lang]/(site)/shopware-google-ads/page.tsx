@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -15,11 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       : "Campagnes Google Ads pour Shopware",
     description: isEn
       ? "How to set up Google Ads for your Shopware store: conversion tracking, Merchant Center connection, Performance Max, Shopping and ROAS optimisation."
-      : "Comment configurer Google Ads pour votre boutique Shopware : suivi des conversions, connexion au Merchant Center, Performance Max, Shopping et optimisation du ROAS.",
+      : "Google Ads pour Shopware : suivi des conversions, lien avec Merchant Center, Performance Max et Shopping, titres du flux et pilotage au ROAS plutôt qu'au CPC.",
     alternates: alternatesFor(`/${lang}/shopware-google-ads/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/shopware-google-ads/`,
     },
     openGraph: {
+      images: ogImagesIntl("shopware-google-ads"),
       title: isEn
         ? "Google Ads for Shopware: Campaigns That Actually Sell | Mkt Web 360"
         : "Google Ads pour Shopware : des campagnes qui vendent vraiment | Mkt Web 360",

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/case-studies/`,
     },
     openGraph: {
+      images: ogImagesIntl("case-studies"),
       title: isEn
         ? "Case Studies and Projects | Mkt Web 360"
         : "Études de Cas et Projets | Mkt Web 360",

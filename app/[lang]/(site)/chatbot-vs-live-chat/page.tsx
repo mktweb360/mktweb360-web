@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -13,18 +14,19 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Chatbot vs Live Chat: Which to Choose"
       : "Chatbot vs live chat : lequel choisir",
     description: isEn
-      ? "Chatbot or live chat? They are not mutually exclusive, but they are not the same thing either. A guide to the real differences, when each one is right, and why the correct combination beats choosing just one."
-      : "Chatbot ou live chat ? Ils ne s'excluent pas mutuellement, mais ils ne sont pas non plus la même chose. Guide des vraies différences, quand chacun convient, et pourquoi la bonne combinaison est meilleure que d'en choisir un seul.",
+      ? "Chatbot vs live chat: the real differences, when each one suits your business and why a chatbot with escalation to a person usually works best."
+      : "Chatbot ou live chat : les vraies différences, quand chacun convient à votre entreprise et pourquoi un chatbot relayé par un humain fonctionne souvent mieux.",
     alternates: alternatesFor(`/${lang}/chatbot-vs-live-chat/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/chatbot-vs-live-chat/`,
     },
     openGraph: {
+      images: ogImagesIntl("chatbot-vs-live-chat"),
       title: isEn
         ? "Chatbot vs Live Chat: Real Differences and Which to Choose for Your Business | Mkt Web 360"
         : "Chatbot vs live chat : vraies différences et lequel choisir pour votre entreprise | Mkt Web 360",
       description: isEn
-        ? "Chatbot or live chat? They are not mutually exclusive, but they are not the same thing either. A guide to the real differences, when each one is right, and why the correct combination beats choosing just one."
-        : "Chatbot ou live chat ? Ils ne s'excluent pas mutuellement, mais ils ne sont pas non plus la même chose. Guide des vraies différences, quand chacun convient, et pourquoi la bonne combinaison est meilleure que d'en choisir un seul.",
+        ? "Chatbot vs live chat: the real differences, when each one suits your business and why a chatbot with escalation to a person usually works best."
+        : "Chatbot ou live chat : les vraies différences, quand chacun convient à votre entreprise et pourquoi un chatbot relayé par un humain fonctionne souvent mieux.",
     },
   };
 }

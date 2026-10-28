@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "SWOT Analysis in Digital Marketing" : "Analyse SWOT en marketing digital",
     description: isEn ? "How to use SWOT analysis in digital marketing. Practical guide with examples to identify your strengths, weaknesses, opportunities and threats." : "Comment utiliser l'analyse SWOT dans le marketing digital. Guide pratique avec exemples pour identifier vos forces, faiblesses, opportunités et menaces.",
+    openGraph: openGraphIntl(lang, "swot-analysis-marketing"),
     alternates: alternatesFor(`/${lang}/swot-analysis-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/swot-analysis-marketing/`,
     },

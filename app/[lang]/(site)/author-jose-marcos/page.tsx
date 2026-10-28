@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { alternatesFor, ROUTES, urlFor, translatedSlugFor } from "@/lib/i18n/routes";
 import { allPosts } from "@/lib/blog";
@@ -94,7 +95,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     alternates: alternatesFor(AUTOR_PATH[lang]) ?? { canonical: url },
     // noindex hasta completar la página con la trayectoria de José (decisión del 28/10/2026).
     robots: { index: false, follow: true },
-    openGraph: { title: `${t.title}`, description: t.lead, url, type: "profile" },
+    openGraph: {
+      images: ogImagesIntl("author-jose-marcos"), title: `${t.title}`, description: t.lead, url, type: "profile" },
   };
 }
 

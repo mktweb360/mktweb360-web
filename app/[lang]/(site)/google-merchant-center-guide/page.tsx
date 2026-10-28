@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Google Merchant Center for Ecommerce" : "Google Merchant Center pour l'e-commerce",
     description: isEn ? "Complete guide to setting up Google Merchant Center for your online store. Product feed, common errors and link with Google Ads." : "Guide complet pour configurer Google Merchant Center pour votre boutique en ligne. Flux de produits, erreurs courantes et lien avec Google Ads.",
+    openGraph: openGraphIntl(lang, "google-merchant-center-guide"),
     alternates: alternatesFor(`/${lang}/google-merchant-center-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/google-merchant-center-guide/`,
     },

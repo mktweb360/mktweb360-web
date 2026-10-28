@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -13,6 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Instagram Bio for Businesses: What to Include" : "Instagram entreprise : que mettre dans la bio",
     description: isEn ? "How to optimise your Instagram business profile. What to write in your bio, how to attract followers and convert them into customers." : "Comment optimiser votre profil Instagram d'entreprise. Quoi écrire dans votre bio, comment attirer des abonnés et les convertir en clients.",
+    openGraph: openGraphIntl(lang, "instagram-for-businesses"),
     alternates: alternatesFor(`/${lang}/instagram-for-businesses/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/instagram-for-businesses/`,
     },

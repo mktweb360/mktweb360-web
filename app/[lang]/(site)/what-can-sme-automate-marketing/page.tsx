@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "What Can an SME Automate in Marketing" : "Ce qu'une PME peut automatiser en marketing",
     description: isEn ? "What marketing and sales processes can an SME automate to save time, improve follow-up and capture better leads." : "Quels processus de marketing et de vente une PME peut automatiser pour gagner du temps, améliorer le suivi et mieux capturer des leads.",
+    openGraph: openGraphIntl(lang, "what-can-sme-automate-marketing"),
     alternates: alternatesFor(`/${lang}/what-can-sme-automate-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/what-can-sme-automate-marketing/`,
     },

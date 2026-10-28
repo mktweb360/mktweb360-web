@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -13,18 +14,19 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Chatbot for Clinics: Appointments and FAQs"
       : "Chatbot pour cliniques : rendez-vous et FAQ",
     description: isEn
-      ? "Clinics and healthcare centres receive hundreds of repetitive enquiries every day. A well-implemented chatbot can automate appointment management, answer FAQs and qualify patients, while complying with GDPR."
-      : "Les cliniques et centres de santé reçoivent des centaines de demandes répétitives chaque jour. Un chatbot bien implémenté peut automatiser la gestion des rendez-vous, répondre aux questions fréquentes et qualifier les patients, en respectant le RGPD.",
+      ? "Chatbot for clinics: automate appointments, cancellations and FAQs, qualify patients and stay GDPR-compliant. How to integrate it and work out its ROI."
+      : "Chatbot pour cliniques : automatiser rendez-vous, annulations et questions fréquentes, qualifier les patients et respecter le RGPD. Intégration et ROI.",
     alternates: alternatesFor(`/${lang}/chatbot-for-clinics/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/chatbot-for-clinics/`,
     },
     openGraph: {
+      images: ogImagesIntl("chatbot-for-clinics"),
       title: isEn
         ? "Chatbot for Clinics and Healthcare Centres: Appointments, FAQs and Healthcare Compliance | Mkt Web 360"
         : "Chatbot pour cliniques et centres de santé : rendez-vous, questions fréquentes et conformité sanitaire | Mkt Web 360",
       description: isEn
-        ? "Clinics and healthcare centres receive hundreds of repetitive enquiries every day. A well-implemented chatbot can automate appointment management, answer FAQs and qualify patients, while complying with GDPR."
-        : "Les cliniques et centres de santé reçoivent des centaines de demandes répétitives chaque jour. Un chatbot bien implémenté peut automatiser la gestion des rendez-vous, répondre aux questions fréquentes et qualifier les patients, en respectant le RGPD.",
+        ? "Chatbot for clinics: automate appointments, cancellations and FAQs, qualify patients and stay GDPR-compliant. How to integrate it and work out its ROI."
+        : "Chatbot pour cliniques : automatiser rendez-vous, annulations et questions fréquentes, qualifier les patients et respecter le RGPD. Intégration et ROI.",
     },
   };
 }

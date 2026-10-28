@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -13,18 +14,19 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Chatbot Lead Generation: Capture and Qualify"
       : "Chatbot pour capter et qualifier des leads",
     description: isEn
-      ? "A well-configured chatbot can capture leads 24/7, qualify them with strategic questions and pass them to the CRM with full context. Practical guide to implementing a chatbot lead capture system in 2026."
-      : "Un chatbot bien configuré peut capter des leads 24h/24, les qualifier avec des questions stratégiques et les transmettre au CRM avec le contexte complet. Guide pratique pour mettre en place un système de captation de leads par chatbot en 2026.",
+      ? "Chatbot lead generation: capture enquiries 24/7, qualify them with the right questions and pass them to your CRM with full context. A practical guide."
+      : "Chatbot pour capter des leads 24h/24, les qualifier avec les bonnes questions et les transmettre à votre CRM avec tout le contexte. Guide pratique pour 2026.",
     alternates: alternatesFor(`/${lang}/chatbot-lead-generation/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/chatbot-lead-generation/`,
     },
     openGraph: {
+      images: ogImagesIntl("chatbot-lead-generation"),
       title: isEn
         ? "How to Use a Chatbot to Capture and Qualify Leads: A Practical Guide | Mkt Web 360"
         : "Comment utiliser un chatbot pour capter et qualifier des leads : guide pratique | Mkt Web 360",
       description: isEn
-        ? "A well-configured chatbot can capture leads 24/7, qualify them with strategic questions and pass them to the CRM with full context. Practical guide to implementing a chatbot lead capture system in 2026."
-        : "Un chatbot bien configuré peut capter des leads 24h/24, les qualifier avec des questions stratégiques et les transmettre au CRM avec le contexte complet. Guide pratique pour mettre en place un système de captation de leads par chatbot en 2026.",
+        ? "Chatbot lead generation: capture enquiries 24/7, qualify them with the right questions and pass them to your CRM with full context. A practical guide."
+        : "Chatbot pour capter des leads 24h/24, les qualifier avec les bonnes questions et les transmettre à votre CRM avec tout le contexte. Guide pratique pour 2026.",
     },
   };
 }

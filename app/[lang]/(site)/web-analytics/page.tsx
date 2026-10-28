@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
@@ -13,6 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional web analytics service. GA4, GTM, business dashboards and conversion tracking. Make decisions based on real data."
       : "Service d'analytique web professionnel. GA4, GTM, tableaux de bord métier et suivi des conversions. Prenez des décisions basées sur des données réelles.",
+    openGraph: openGraphIntl(lang, "web-analytics"),
     alternates: alternatesFor(`/${lang}/web-analytics/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/web-analytics/`,
     },

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -13,18 +14,19 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Chatbot for WordPress: Installation Guide"
       : "Chatbot pour WordPress : guide d'installation",
     description: isEn
-      ? "WordPress has dozens of chatbot plugins. Most are not worth the time it takes to test them. An honest guide on what genuinely works and how to implement a useful chatbot on a WordPress website in 2026."
-      : "WordPress dispose de dizaines de plugins de chatbot. La plupart ne valent pas le temps qu'il faut pour les tester. Un guide honnête sur ce qui fonctionne vraiment et comment implémenter un chatbot utile sur un site WordPress en 2026.",
+      ? "Chatbot for WordPress: why most plugins fall short, how to install a useful chatbot step by step without slowing your site, and the mistakes to avoid."
+      : "Chatbot pour WordPress : pourquoi la plupart des plugins déçoivent, comment installer un chatbot utile sans ralentir votre site et les erreurs à éviter.",
     alternates: alternatesFor(`/${lang}/chatbot-wordpress/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/chatbot-wordpress/`,
     },
     openGraph: {
+      images: ogImagesIntl("chatbot-wordpress"),
       title: isEn
         ? "Chatbot for WordPress: How to Install It, What to Avoid and What to Expect | Mkt Web 360"
         : "Chatbot pour WordPress : comment l'installer, ce qu'il faut éviter et ce qu'il faut attendre | Mkt Web 360",
       description: isEn
-        ? "WordPress has dozens of chatbot plugins. Most are not worth the time it takes to test them. An honest guide on what genuinely works and how to implement a useful chatbot on a WordPress website in 2026."
-        : "WordPress dispose de dizaines de plugins de chatbot. La plupart ne valent pas le temps qu'il faut pour les tester. Un guide honnête sur ce qui fonctionne vraiment et comment implémenter un chatbot utile sur un site WordPress en 2026.",
+        ? "Chatbot for WordPress: why most plugins fall short, how to install a useful chatbot step by step without slowing your site, and the mistakes to avoid."
+        : "Chatbot pour WordPress : pourquoi la plupart des plugins déçoivent, comment installer un chatbot utile sans ralentir votre site et les erreurs à éviter.",
     },
   };
 }
