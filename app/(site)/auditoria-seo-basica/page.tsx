@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: URL,
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-auditoria-seo-basica.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-auditoria-web-checklist.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -39,7 +40,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
   datePublished: "2026-06-13",
   dateModified: DATE_MODIFIED,
-  image: "https://www.mktweb360.com/og-auditoria-seo-basica.jpg",
+  image: "https://www.mktweb360.com/og-auditoria-web-checklist.jpg",
   url: URL,
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
 };
@@ -237,6 +238,14 @@ export default function Page() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Una checklist para revisar tu web con herramientas gratuitas de Google: si se indexa, si carga bien en móvil, si el contenido responde a lo que busca tu cliente, si tu ficha de Google cuadra con la web y si te ven los asistentes de IA.
           </p>
+          <Image
+            src="/og-auditoria-web-checklist.jpg"
+            alt="Ilustración: una lupa revisa una página web y encuentra un error 404, junto a una tarjeta con el resultado de cada bloque de la auditoría"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
