@@ -10,7 +10,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 // ../publicite-chatgpt-ads-espagne/ y reexporta esta página. Datos de OpenAI comprobados el 28/10/2026.
 
 const ES_SLUG = "anuncios-chatgpt-ads-espana";
-const OG = "/og-anuncios-chatgpt-ads-espana.jpg";
+const OGS = { en: "/og-chatgpt-ads-spain.jpg", fr: "/og-publicite-chatgpt-ads-espagne.jpg" } as const;
 const DATE = "2026-11-04";
 const SLUGS = { en: "chatgpt-ads-spain", fr: "publicite-chatgpt-ads-espagne" } as const;
 
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       description: m.description,
       url: pageUrl(l),
       type: "article",
-      images: [{ url: OG, width: 1200, height: 630 }],
+      images: [{ url: OGS[l], width: 1200, height: 630 }],
     },
   };
 }
@@ -153,7 +153,7 @@ function content(l: Lng, link: (s: string, t: string) => ReactNode): Content {
       category: "SEM",
       dateLabel: "November 4, 2026",
       lead: "What ChatGPT ads are, who sees them in Spain, how they are chosen and how they differ from ChatGPT mentioning you on its own. With a 30-day test plan for a small business.",
-      alt: "Mock-up of a chat conversation: the answer mentions two brands organically and below it a block labelled «Sponsored» is marked as a paid ad",
+      alt: "Mock-up of a chat conversation: the answer mentions two brands organically and below it a block labelled “Sponsored” is marked as a paid ad",
       answer:
         "ChatGPT Ads are the paid ads OpenAI shows inside ChatGPT. In Spain they have been running since late August 2026, and businesses based in Spain can buy them self-serve through Ads Manager. They appear below the answer, labelled as sponsored, and only adult users on the Free and Go plans see them.",
       hSummary: "Quick summary",
@@ -200,7 +200,7 @@ function content(l: Lng, link: (s: string, t: string) => ReactNode): Content {
         "This is the most common confusion. ChatGPT recommending your business in its answer and your ad appearing below it are two different things, achieved in different ways. OpenAI insists that ads do not influence answers: paying does not put you in the text of the answer.",
       vsHead: ["", "Ad (ChatGPT Ads)", "Organic mention (GEO)"],
       vs: [
-        ["What it is", "A paid block, labelled «Sponsored»", "Your brand cited or recommended inside the answer"],
+        ["What it is", "A paid block, labelled “Sponsored”", "Your brand cited or recommended inside the answer"],
         ["Where it appears", "Below the answer, separate from it", "In the text of the answer or its sources"],
         ["Who sees it", "Only adults on Free and Go", "Any user, on any plan"],
         ["What you control", "Text, image, landing page, budget, bid and context hints", "Only what you publish: your website, data, reviews and mentions elsewhere"],
@@ -440,7 +440,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     datePublished: DATE,
     dateModified: DATE,
-    image: `https://www.mktweb360.com${OG}`,
+    image: `https://www.mktweb360.com${OGS[l]}`,
     url,
     mainEntityOfPage: url,
   };
@@ -466,7 +466,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">{m.h1}</h1>
           <p className="text-xl text-gray-600 leading-relaxed">{c.lead}</p>
-          <Image src={OG} alt={c.alt} width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
+          <Image src={OGS[l]} alt={c.alt} width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
