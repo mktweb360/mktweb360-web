@@ -161,10 +161,15 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               </li>
               <li>
                 {isEn
-                  ? "From the fourth bracket upwards, amounts increase progressively up to €1,542/month for the highest earners."
-                  : "À partir de la quatrième tranche, les montants augmentent progressivement jusqu'à 1 542 €/mois pour les revenus les plus élevés."}
+                  ? "From the fourth bracket upwards, the minimum contribution rises with your income to around €590/month in the top bracket (over €6,000 a month). If you choose a base above the minimum you can pay considerably more; the exact figure depends on the base you choose."
+                  : "À partir de la quatrième tranche, la cotisation minimale augmente avec les revenus jusqu'à environ 590 €/mois dans la tranche la plus haute (plus de 6 000 € par mois). Si vous choisissez une base supérieure au minimum, vous pouvez payer nettement plus : le montant exact dépend de la base choisie."}
               </li>
             </ul>
+            <p className="text-gray-600 mt-4 leading-relaxed">
+              {isEn
+                ? "For your specific case, check the official table of bases and brackets on the Spanish Social Security website or ask your accountant: the figures in this article are a guide."
+                : "Pour votre cas précis, consultez le tableau officiel des bases et tranches sur le site de la Sécurité sociale espagnole ou demandez à votre comptable : les chiffres de cet article sont indicatifs."}
+            </p>
             <p className="text-gray-600 mt-4 leading-relaxed">
               {isEn
                 ? "The key to the system is that the contribution is adjusted to your actual net income. If your income changes throughout the year, you have the ability to adjust your base so that the contribution corresponds to your actual situation."
@@ -208,7 +213,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </p>
           </section>
 
-          <BlogBanner lang={lang} />
+          <BlogBanner
+            lang={lang}
+            badge={isEn ? "For freelancers" : "Pour les indépendants"}
+            title={isEn ? "Registered? Now clients need to find you" : "Inscrit ? Maintenant, les clients doivent vous trouver"}
+            desc={isEn
+              ? "We review for free how you appear on Google today: your website (if you have one), your Google Business Profile and what AI assistants see. You get a report with what to fix first."
+              : "Nous analysons gratuitement votre présence actuelle sur Google : votre site (si vous en avez un), votre fiche Google Business Profile et ce que voient les assistants IA. Vous recevez un rapport avec les priorités."}
+            cta={isEn ? "Request my free audit" : "Demander mon audit gratuit"}
+            href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"}
+            secondary={{
+              text: isEn ? "No website yet? See how we build websites for small businesses" : "Pas encore de site ? Découvrez nos sites pour petites entreprises",
+              href: isEn ? "/en/web-design/" : "/fr/creation-site-web/",
+            }}
+          />
 
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-primary-600 mb-4">
@@ -244,31 +262,42 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 ? "For self-employed workers with stable income who are approaching 50, reviewing whether the monthly saving from the minimum base compensates for the reduction in future benefits can be a worthwhile exercise. The answer depends on each individual situation and is worth analysing with an adviser."
                 : "Pour les indépendants avec des revenus stables qui approchent la cinquantaine, il peut être utile de revoir si l'économie mensuelle de la base minimale compense la réduction des prestations futures. La réponse dépend de chaque situation individuelle et mérite d'être analysée avec un conseiller."}
             </p>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              {isEn ? "The contribution is due every month, whether you invoice or not. So once your registration and contributions are sorted, the next step is making sure clients find you when they search for what you do: a " : "La cotisation est due chaque mois, que vous facturiez ou non. Une fois l'inscription et les cotisations en ordre, l'étape suivante est que les clients vous trouvent quand ils cherchent ce que vous faites : un "}
+              <a href={isEn ? "/en/web-design/" : "/fr/creation-site-web/"} className="text-accent-500 hover:underline">
+                {isEn ? "professional website for your business" : "site web professionnel pour votre activité"}
+              </a>
+              {isEn ? " and a " : " et une "}
+              <a href={isEn ? "/en/google-business-profile-service/" : "/fr/gestion-google-business-profile/"} className="text-accent-500 hover:underline">
+                {isEn ? "well-managed Google Business Profile" : "fiche Google Business Profile bien gérée"}
+              </a>
+              {isEn ? ", which is what shows up on Google Maps when someone looks for a professional nearby." : ", celle qui apparaît sur Google Maps quand quelqu'un cherche un professionnel à proximité."}
+            </p>
           </section>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">
               {isEn
-                ? "Grow your business to contribute better"
-                : "Faites croître votre entreprise pour mieux cotiser"}
+                ? "Do you know how potential clients see you on Google today?"
+                : "Savez-vous comment vos futurs clients vous voient aujourd'hui sur Google ?"}
             </h2>
             <p className="text-primary-200 mb-6">
               {isEn
-                ? "At Mkt Web 360 we help self-employed workers and SMEs attract more and better online clients, with a digital presence that supports growth."
-                : "Chez Mkt Web 360, nous aidons les indépendants et les PME à obtenir plus et de meilleurs clients en ligne, avec une présence digitale qui soutient la croissance."}
+                ? "Request the free audit: we review your website, your Google Business Profile and your visibility in AI assistants, and tell you what to fix first. No cost, no commitment."
+                : "Demandez l'audit gratuit : nous analysons votre site, votre fiche Google Business Profile et votre visibilité dans les assistants IA, et nous vous disons quoi corriger en premier. Sans frais ni engagement."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={`/${lang}/contact/`}
+                href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"}
                 className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors"
               >
-                {isEn ? "Talk to a specialist" : "Parler à un spécialiste"}
+                {isEn ? "Request the free audit" : "Demander l'audit gratuit"}
               </a>
               <a
-                href={`/${lang}/contact/`}
+                href={isEn ? "/en/google-business-profile-service/" : "/fr/gestion-google-business-profile/"}
                 className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
-                {isEn ? "Request information" : "Demander des informations"}
+                {isEn ? "See the Google Business Profile service" : "Voir le service fiche Google"}
               </a>
             </div>
           </div>

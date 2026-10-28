@@ -76,14 +76,14 @@ export default function AnalisisPESTELPage() {
                 name: "Factores Políticos",
                 color: "bg-blue-50 border-blue-200 text-blue-800",
                 headerColor: "text-blue-700",
-                desc: "Las políticas gubernamentales afectan directamente al marketing digital. El Kit Digital es un claro ejemplo: una política pública que genera oportunidades para agencias y PYMEs. También incluye regulaciones sobre publicidad online, restricciones en redes sociales (como las limitaciones para menores) o cambios en las políticas de datos.",
+                desc: "Las políticas gubernamentales afectan directamente al marketing digital. Las ayudas públicas a la digitalización son un ejemplo: cuando se abre una convocatoria, cambia lo que una pyme puede invertir en su web o su marketing, y cuando se cierra, también. También incluye regulaciones sobre publicidad online, restricciones en redes sociales (como las limitaciones para menores) o cambios en las políticas de datos.",
               },
               {
                 letter: "E",
                 name: "Factores Económicos",
                 color: "bg-emerald-50 border-emerald-200 text-emerald-800",
                 headerColor: "text-emerald-700",
-                desc: "El contexto económico determina el presupuesto disponible de tus clientes. En periodos de incertidumbre económica, las empresas recortan en marketing, pero también buscan maximizar el ROI. El SEO y el marketing de contenidos ganan peso frente a la publicidad de pago cuando los presupuestos se ajustan.",
+                desc: "El contexto económico determina el presupuesto disponible de tus clientes. En periodos de incertidumbre económica, muchas empresas recortan en marketing y miran con más lupa cada euro. Es el momento de revisar qué canal te trae clientes de verdad antes de recortar a ciegas.",
               },
               {
                 letter: "S",
@@ -97,7 +97,7 @@ export default function AnalisisPESTELPage() {
                 name: "Factores Tecnológicos",
                 color: "bg-yellow-50 border-yellow-200 text-yellow-800",
                 headerColor: "text-yellow-700",
-                desc: "La IA está transformando el marketing digital: desde la generación de contenido hasta la automatización de campañas. Las actualizaciones del algoritmo de Google (Search Generative Experience, Core Updates) o los cambios en iOS que limitan el tracking son factores tecnológicos que afectan directamente a tu estrategia.",
+                desc: "La IA está transformando el marketing digital: desde la generación de contenido hasta la automatización de campañas. Las actualizaciones del algoritmo de Google (las respuestas generadas con IA en los resultados, las core updates) o los cambios en iOS que limitan el tracking son factores tecnológicos que afectan directamente a tu estrategia.",
               },
               {
                 letter: "E",
@@ -111,7 +111,7 @@ export default function AnalisisPESTELPage() {
                 name: "Factores Legales",
                 color: "bg-red-50 border-red-200 text-red-800",
                 headerColor: "text-red-700",
-                desc: "El RGPD ha transformado la forma en que las empresas gestionan datos y hacen email marketing. La Ley de Cookies, las normas sobre publicidad digital, las regulaciones de la IA Act europea... Son factores legales que toda estrategia de marketing digital debe tener en cuenta para evitar sanciones.",
+                desc: "El RGPD ha transformado la forma en que las empresas gestionan datos y hacen email marketing. La Ley de Cookies, las normas sobre publicidad digital, el Reglamento europeo de IA (AI Act)... Son factores legales que toda estrategia de marketing digital debe tener en cuenta para evitar sanciones.",
               },
             ].map(factor => (
               <div key={factor.letter + factor.name} className={`border rounded-xl p-5 ${factor.color}`}>
@@ -124,21 +124,35 @@ export default function AnalisisPESTELPage() {
           </div>
 
           <p>Antes de definir cualquier estrategia de marketing, conviene hacer una revisión honesta de tu estado digital actual. Una <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría digital</Link> te da los datos reales sobre los que aplicar el análisis PESTEL.</p>
+          <p>El factor social tiene una lectura muy concreta para un negocio de servicios: cada vez más gente busca «cerca de mí» y decide por las reseñas. Si trabajas con clientes de tu zona, el <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO local y tu ficha en Google Maps</Link> son la forma de aprovechar esa tendencia en lugar de sufrirla.</p>
           <p>El factor tecnológico del PESTEL tiene una consecuencia directa en el canal online: si tus competidores están mejor posicionados en Google, eso es una amenaza medible. Una buena <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">estrategia de publicidad en buscadores</Link> puede compensar esa desventaja mientras trabajas el SEO a largo plazo.</p>
           <p>Las oportunidades que detectes en el análisis se traducen en contenidos, campañas y mensajes. Una <Link href="/marketing-de-contenidos/" className="text-accent-500 hover:underline">estrategia de contenidos</Link> bien construida convierte esas oportunidades en visibilidad real y clientes potenciales.</p>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            variant="default"
+            badge="Del entorno a tu web"
+            title="Mira cómo te afectan estos factores hoy"
+            desc="La auditoría gratuita revisa tu web, tu posicionamiento en Google, tu ficha de Google Business Profile y tu visibilidad en los asistentes de IA: los puntos donde los cambios del entorno ya se notan. Sin coste ni compromiso."
+            cta="Pedir mi auditoría gratuita"
+            href="/auditoria-digital/"
+            secondary={{ text: "Ver el servicio de consultoría SEO", href: "/consultor-seo/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo integrar el PESTEL en tu plan de marketing digital</h2>
-          <p>El PESTEL no es un análisis que se hace una vez: debe revisarse periódicamente (al menos una vez al año) porque el entorno cambia constantemente. Los resultados del PESTEL deben integrarse con el DAFO para tener una visión completa: los factores externos del PESTEL alimentan las Oportunidades y Amenazas del DAFO.</p>
-          <p>En la práctica, el PESTEL te ayuda a anticipar cambios antes de que te impacten, identificar nuevas oportunidades de negocio y ajustar mensajes y canales de comunicación según el contexto social y tecnológico del momento.</p>
+          <p>El PESTEL no es un análisis que se hace una vez: debe revisarse periódicamente (al menos una vez al año) porque el entorno cambia constantemente. Los resultados del PESTEL deben integrarse con el <Link href="/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/" className="text-accent-500 hover:underline">análisis DAFO</Link> para tener una visión completa: los factores externos del PESTEL alimentan las Oportunidades y Amenazas del DAFO.</p>
+          <p>En la práctica, el PESTEL te ayuda a anticipar cambios antes de que te impacten, identificar nuevas oportunidades de negocio y ajustar mensajes y canales de comunicación según el contexto social y tecnológico del momento. Si quieres que alguien convierta esas conclusiones en un plan de visibilidad con prioridades, eso es lo que hace un <Link href="/consultor-seo/" className="text-accent-500 hover:underline">consultor SEO con diagnóstico y plan priorizado</Link>.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
-            <p className="font-semibold text-primary-700 mb-2">¿Necesitas asesoría estratégica para tu marketing digital?</p>
-            <p className="text-gray-600 text-sm mb-4">En Mkt Web 360 integramos el análisis del entorno en todas las estrategias de marketing que diseñamos para nuestros clientes.</p>
-            <Link href="/contacto/" className="bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
-              Solicitar consultoría gratuita
-            </Link>
+            <p className="font-semibold text-primary-700 mb-2">¿Bajamos el PESTEL a tu caso?</p>
+            <p className="text-gray-600 text-sm mb-4">Empieza por saber dónde estás: te enviamos un informe de tu web, tu SEO, tu ficha de Google y tu visibilidad en IA con las acciones que más impacto tendrían. Si trabajas con clientes de tu zona, mira también cómo funciona el SEO local.</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/auditoria-digital/" className="bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
+                Pedir auditoría gratuita
+              </Link>
+              <Link href="/seo-local/" className="border-2 border-accent-500 text-accent-600 px-6 py-2 rounded-full font-semibold text-sm hover:bg-accent-50 transition-colors">
+                Ver SEO local
+              </Link>
+            </div>
           </div>
         </div>
         <nav className="mt-12 pt-8 border-t border-gray-200">

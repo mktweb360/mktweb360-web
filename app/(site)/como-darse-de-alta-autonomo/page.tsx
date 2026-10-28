@@ -111,9 +111,16 @@ export default function DarseDeAltaAutonomoPage() {
           <p>El primer paso es darse de alta en el Censo de Empresarios, Profesionales y Retenedores de la Agencia Tributaria. Para la mayoría de autónomos, el Modelo 037 (versión simplificada) es suficiente. En él debes indicar tu actividad (epígrafe del IAE), si vas a aplicar IVA o estás exento, si tributarás en estimación directa simplificada o módulos, y la fecha de inicio de actividad. Este trámite es gratuito y puede hacerse online con certificado digital o Cl@ve PIN.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Paso 2 — Alta en la Seguridad Social (RETA)</h2>
-          <p>Una vez dado de alta en Hacienda, tienes 30 días naturales para inscribirte en el Régimen Especial de Trabajadores Autónomos. Aquí eliges tu base de cotización, que determinará tu cuota mensual y tus prestaciones futuras. Desde 2023 existe el sistema de cotización por ingresos reales, que permite ajustar la base según lo que realmente ganes cada mes. La cuota mínima en 2026 para ingresos bajos puede beneficiarse de la tarifa plana o cuota reducida durante los primeros meses.</p>
+          <p>El alta en el Régimen Especial de Trabajadores Autónomos tiene que estar hecha antes de empezar la actividad: puedes solicitarla con hasta 60 días naturales de antelación a la fecha de inicio, y lo habitual es tramitarla justo después del alta en Hacienda. Aquí eliges tu base de cotización, que determinará tu cuota mensual y tus prestaciones futuras. Desde 2023 existe el sistema de cotización por ingresos reales, que permite ajustar la base según lo que realmente ganes cada mes. La cuota mínima en 2026 para ingresos bajos puede beneficiarse de la tarifa plana o cuota reducida durante los primeros meses.</p>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            badge="Para autónomos que empiezan"
+            title="Cuando tengas el alta, lo siguiente es que te encuentren"
+            desc="Una web profesional integrada en WordPress, para que tú mismo cambies textos y fotos, con la estructura pensada para que los clientes te encuentren en Google y te contacten. Sin permanencia."
+            cta="Ver la oferta de web profesional"
+            href="/oferta-web-seo-organico/"
+            secondary={{ text: "¿Ya tienes algo online? Pide antes la auditoría gratuita", href: "/auditoria-digital/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Errores más frecuentes al darse de alta</h2>
           <p>Los errores más habituales son darse de alta en Seguridad Social antes que en Hacienda, elegir un epígrafe IAE que no corresponde a la actividad real, no calcular bien la base de cotización desde el inicio, y no revisar si la actividad tiene obligaciones específicas de IVA o retenciones. También es frecuente no tener claro el régimen de estimación más conveniente antes de empezar.</p>
@@ -130,23 +137,23 @@ export default function DarseDeAltaAutonomoPage() {
           <p>Antes de iniciar los trámites conviene tener claro el tipo de actividad que vas a desarrollar, si tendrás clientes con IVA o exentos, una estimación razonable de tus ingresos para elegir bien la base de cotización, y si vas a necesitar algún permiso o licencia adicional según tu sector. Contar con asesoramiento desde el principio puede ahorrarte tiempo y evitar correcciones costosas después.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Presencia digital desde el primer día</h2>
-          <p>Darse de alta es el paso legal. Pero para que el negocio funcione, también necesitas una presencia digital mínima que te permita ser encontrado, transmitir confianza y facilitar el contacto. Una web sencilla, una ficha de Google bien trabajada y un perfil profesional coherente son la base digital de cualquier autónomo que quiera crecer con orden.</p>
+          <p>Darse de alta es el paso legal. Pero para que el negocio funcione, también necesitas una presencia digital mínima que te permita ser encontrado, transmitir confianza y facilitar el contacto. Una <Link href="/oferta-web-seo-organico/" className="text-accent-500 hover:underline">web profesional sencilla</Link>, una <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile bien trabajada</Link> y un perfil profesional coherente son la base digital de cualquier autónomo que quiera crecer con orden. La ficha de Google es gratuita y es lo que aparece en Google Maps cuando alguien busca tu servicio cerca: conviene tenerla lista desde la primera semana.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/como-puede-un-autonomo-conseguir-clientes-por-internet/" className="text-accent-500 hover:underline">Cómo puede un autónomo conseguir clientes por internet</Link> · <Link href="/errores-digitales-negocio-nuevo/" className="text-accent-500 hover:underline">Errores digitales al montar un negocio desde cero</Link>
           </p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
-            <h2 className="text-2xl font-bold mb-3">Empieza con buen pie tu actividad como autónomo</h2>
+            <h2 className="text-2xl font-bold mb-3">Alta hecha: ahora, que te encuentren</h2>
             <p className="text-primary-200 mb-6">
-              Si acabas de darte de alta o estás a punto de hacerlo, podemos ayudarte a construir una presencia digital que acompañe tu negocio desde el inicio.
+              Si acabas de darte de alta o estás a punto, te revisamos gratis lo que ya tengas (web, ficha de Google, redes) y te decimos por dónde empezar. Si aún no tienes web, te contamos qué incluye la nuestra para autónomos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contacto/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
-                Solicitar información
+              <Link href="/auditoria-digital/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
+                Pedir la auditoría gratuita
               </Link>
-              <Link href="/diseno-de-paginas-web/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                Ver servicio de diseño web
+              <Link href="/oferta-web-seo-organico/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
+                Ver la web para autónomos
               </Link>
             </div>
           </div>

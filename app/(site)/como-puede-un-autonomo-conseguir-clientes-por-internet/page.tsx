@@ -92,7 +92,7 @@ export default function AutonomoClientesInternetPage() {
           </p>
           <Image
             src="/og-como-puede-un-autonomo-conseguir-clientes.jpg"
-            alt="Cómo puede un autónomo conseguir clientes por Internet en 2025"
+            alt="Cómo puede un autónomo conseguir clientes por Internet: ficha de Google, web y reseñas"
             width={1200}
             height={630}
             className="w-full rounded-2xl mt-6"
@@ -105,14 +105,14 @@ export default function AutonomoClientesInternetPage() {
             El boca a boca es el canal de captación más barato — cuando funciona. El problema es que no puedes controlarlo ni escalarlo. Hay meses buenos y meses en que el teléfono no suena. Construir presencia digital es construir un sistema de captación que trabaja para ti aunque estés en una obra, en una reunión o durmiendo.
           </p>
           <p>
-            No hace falta una presencia digital compleja ni una inversión grande. La mayoría de autónomos que consiguen clientes online lo hacen con tres elementos bien ejecutados: una ficha de Google optimizada, una web con la página de su servicio bien escrita y reseñas activas. Eso ya marca la diferencia frente a la mayoría de la competencia.
+            No hace falta una presencia digital compleja ni una inversión grande. En la mayoría de negocios de servicios la base son tres elementos bien ejecutados: una ficha de Google optimizada, una web con la página de su servicio bien escrita y reseñas activas. En muchos sectores, con eso ya te diferencias de buena parte de la competencia de tu zona, que suele tener alguno de los tres a medias.
           </p>
 
           <h2 className="text-2xl font-bold text-primary-600">Qué necesita de verdad un autónomo</h2>
           <p>Un autónomo necesita ser encontrado cuando alguien busca lo que ofrece, generar confianza rápida y facilitar el contacto sin fricción. No necesita una presencia digital enorme ni estar en todos los canales. Necesita que los canales que usa estén bien ejecutados y orientados a generar oportunidades reales, no solo visibilidad.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Qué priorizar si el presupuesto es limitado</h2>
-          <p>La ficha de Google bien hecha, una página de servicio clara en la web y reseñas activas son la base que más retorno da con menos inversión. Están orientadas exactamente a cuando el potencial cliente tiene intención de buscar y contratar. Añadir más canales antes de tener esa base sólida suele diluir el esfuerzo sin mejorar los resultados.</p>
+          <p>La <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile bien optimizada</Link>, una página de servicio clara en la web y reseñas activas son la base que más retorno da con menos inversión. Están orientadas exactamente a cuando el potencial cliente tiene intención de buscar y contratar. Añadir más canales antes de tener esa base sólida suele diluir el esfuerzo sin mejorar los resultados.</p>
           <ul className="space-y-2">
             {["Ficha de Google con fotos reales, servicios y zona", "Página de servicio que explica qué haces, para quién y cómo contactar", "Reseñas pedidas activamente después de cada trabajo"].map((item) => (
               <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
@@ -132,8 +132,17 @@ export default function AutonomoClientesInternetPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Web, ficha de Google o redes: qué va primero</h2>
           <p>En la mayoría de sectores de servicios, la ficha de Google va primero porque capta demanda activa con muy poco esfuerzo. La web va segundo porque refuerza la credibilidad y permite posicionar búsquedas orgánicas. Las redes sociales, en la mayoría de casos, tienen un papel más de mantenimiento de imagen que de captación directa. Si el tiempo es limitado, en esas prioridades conviene centrarse.</p>
+          <p>Cuando la ficha ya funciona, el siguiente paso es una web sencilla que confirme lo que el cliente ha visto en Google y le dé un motivo para llamarte a ti. No hace falta una web enorme: una <Link href="/oferta-web-seo-organico/" className="text-accent-500 hover:underline">web profesional con una página por servicio y el SEO técnico de base</Link> es suficiente para empezar a aparecer también en las búsquedas orgánicas.</p>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            variant="default"
+            badge="Ficha de Google"
+            title="Que te encuentren cuando buscan lo que haces cerca de ellos"
+            desc="Optimizamos tu ficha de Google Business Profile: categorías, servicios, zona, fotos, publicaciones y respuesta a reseñas, para que aparezcas en el mapa con información completa y fiable."
+            cta="Ver el servicio de ficha de Google"
+            href="/google-business-profile/"
+            secondary={{ text: "¿No sabes cómo está tu ficha? Pide la auditoría gratuita", href: "/auditoria-digital/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Plan mínimo viable</h2>
           <p>Ficha de Google creada y verificada, fotos reales del trabajo, descripción clara del servicio, cinco o más reseñas, una página web sencilla con la información clave, teléfono clickable en móvil y formulario de contacto. Con eso bien resuelto, un autónomo tiene una base que muchos competidores no tienen, y desde ahí ya se puede crecer con criterio.</p>
@@ -145,14 +154,14 @@ export default function AutonomoClientesInternetPage() {
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">Construye una base digital que te ayude a captar mejor</h2>
             <p className="text-primary-200 mb-6">
-              Te orientamos sobre qué pasos dar en función de tu situación actual, tu sector y tu presupuesto. Sin humo, sin soluciones que no necesitas.
+              La auditoría gratuita revisa tu ficha de Google, tu web y tu visibilidad en búsquedas locales, y te dice qué tres cosas cambiarías primero. Si no tienes web todavía, empieza por la oferta de web profesional.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/auditoria-digital/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
                 Solicitar diagnóstico gratuito
               </Link>
-              <Link href="/diseno-de-paginas-web/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                Ver servicio de diseño web
+              <Link href="/oferta-web-seo-organico/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
+                Ver la oferta de web profesional
               </Link>
             </div>
           </div>
@@ -171,7 +180,7 @@ export default function AutonomoClientesInternetPage() {
           </div>
 
           <p className="text-sm text-gray-500 pt-4">
-            Servicios relacionados: <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO Local</Link> · <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">Diseño Web</Link> · <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">Auditoría Digital</Link>
+            Servicios relacionados: <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO Local</Link> · <Link href="/google-business-profile/" className="text-accent-500 hover:underline">Ficha de Google</Link> · <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">Diseño Web</Link> · <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">Auditoría Digital</Link>
           </p>
         </div>
 

@@ -85,13 +85,16 @@ export default function MarketingDigitalAutonomos2026Page() {
             Marketing digital para autónomos en 2026: la guía práctica para conseguir clientes
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            En 2026 los autónomos tienen más herramientas que nunca para conseguir clientes online por su cuenta, sin depender de una agencia. Esta guía práctica ordena lo esencial: SEO local, Google Business Profile, LinkedIn y contenido. Y si vendes servicios en tu zona, empieza por el <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local para empresas de servicios</Link>, el canal con mayor retorno.
+            Un autónomo puede conseguir clientes online por su cuenta, sin contratar una agencia, si elige bien por dónde empezar. Esta guía práctica ordena lo esencial: SEO local, Google Business Profile, LinkedIn y contenido. Y si vendes servicios en tu zona, empieza por el <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local para empresas de servicios</Link>, que suele ser el canal que mejor funciona en ese caso.
           </p>
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
-            La mayoría de autónomos cree que hacer marketing digital requiere presupuesto y una agencia. En 2026 eso ya no es cierto: con las herramientas adecuadas y el orden correcto, un autónomo puede construir una presencia digital que le traiga clientes de forma constante. La clave no es hacer más, sino hacer lo correcto en el momento correcto.
+            Muchos autónomos creen que hacer marketing digital requiere presupuesto y una agencia. No siempre: con unas pocas herramientas gratuitas y el orden correcto, un autónomo puede construir una presencia digital que le traiga consultas de forma regular. Se trata de hacer pocas cosas y en el orden adecuado.
+          </p>
+          <p>
+            Lo que más tiempo hace perder es no saber por dónde empezar. Antes de abrir cinco frentes, merece la pena una foto de cómo te ven hoy en Google: puedes pedir nuestra <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría gratuita de tu web y tu ficha de Google</Link>, que te dice qué arreglar primero, y hacerlo tú con esta guía.
           </p>
 
           <h2 className="text-2xl font-bold text-primary-600">La realidad del marketing digital para autónomos en 2026</h2>
@@ -99,38 +102,48 @@ export default function MarketingDigitalAutonomos2026Page() {
           <p>El error más común es querer estar en todas partes a la vez. Con tiempo y presupuesto limitados, la estrategia ganadora es concentrarse en uno o dos canales bien elegidos y dominarlos, en lugar de repartir esfuerzo sin masa crítica en ninguno.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">El orden correcto: primero Google Business Profile, luego el resto</h2>
-          <p>Si tu negocio tiene un componente local, el primer paso siempre es Google Business Profile. Es gratuito, aparece en el momento exacto en que alguien busca lo que ofreces cerca de él, y con una buena optimización los primeros contactos pueden llegar en 1-2 meses.</p>
+          <p>Si tu negocio tiene un componente local, el primer paso siempre es Google Business Profile. Es gratuito, aparece en el momento exacto en que alguien busca lo que ofreces cerca de él y, con una buena optimización, los primeros contactos pueden llegar en 1-2 meses (orientativo: depende del sector, la zona y la competencia).</p>
           <p>Optimizar tu ficha de <Link href="/google-business-profile/" className="text-accent-500 hover:underline">Google Business Profile</Link> con categorías correctas, fotos, horarios actualizados y reseñas es la acción con mejor relación esfuerzo-resultado que puede hacer un autónomo local. Solo después de tener esto en marcha tiene sentido pensar en el resto de canales.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">SEO local: la inversión con mayor ROI para autónomos de servicios</h2>
-          <p>Para un autónomo que presta servicios en su zona, el SEO local es el canal con mayor retorno a medio plazo. Aparecer en las búsquedas de tu ciudad para tu servicio significa captar clientes con intención real de contratar, justo cuando te necesitan.</p>
+          <h2 className="text-2xl font-bold text-primary-600">SEO local: la inversión que más se aprovecha a medio plazo si das servicio en tu zona</h2>
+          <p>Para un autónomo que presta servicios en su zona, el SEO local suele ser el canal que mejor rinde a medio plazo. Aparecer en las búsquedas de tu ciudad para tu servicio significa captar clientes con intención real de contratar, justo cuando te necesitan.</p>
           <p>El SEO orgánico tarda más que Google Ads (3-6 meses para los primeros resultados sólidos), pero construye un activo duradero: una vez posicionado, sigue trayendo clientes sin coste por clic. Para muchos autónomos de servicios, es la base de toda la estrategia digital. Y ese tráfico necesita aterrizar en una <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">página web bien diseñada</Link> que convierta visitas en consultas.</p>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            badge="Gratis y sin compromiso"
+            title="Antes de hacerlo tú, mira por dónde empezar"
+            desc="Revisamos tu web, tu ficha de Google Business Profile y tu visibilidad en los asistentes de IA, y te enviamos las acciones con más impacto ordenadas. Puedes aplicarlas tú mismo."
+            cta="Pedir mi auditoría gratuita"
+            href="/auditoria-digital/"
+            secondary={{ text: "Si no llegas a todo: SEO local hecho por nosotros", href: "/seo-local/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">LinkedIn para autónomos que venden a empresas</h2>
-          <p>Si tu cliente es una empresa, LinkedIn es tu canal prioritario. En 2026, el contenido publicado desde el perfil personal genera mucho más alcance que el de las páginas corporativas, y para un autónomo eso es una ventaja: tu marca personal es tu mejor activo.</p>
+          <p>Si tu cliente es una empresa, LinkedIn es tu canal prioritario. En LinkedIn, lo que publicas desde tu perfil personal suele llegar a más gente que lo que publica una página de empresa, y para un autónomo eso es una ventaja: tu marca personal es tu mejor activo.</p>
           <p>Publicar con constancia sobre tu especialidad, compartir casos y participar en conversaciones de tu sector construye autoridad y genera consultas B2B sin invertir en publicidad. Es un canal de largo recorrido que premia la consistencia por encima del volumen.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Google Ads para autónomos: cuándo vale la pena</h2>
-          <p>Google Ads es la vía más rápida para conseguir clientes: bien configurada, una campaña puede traer el primer contacto el mismo día. Con 100-200€/mes ya se pueden hacer campañas de búsqueda local con resultados medibles.</p>
+          <p>Google Ads es la vía más rápida para aparecer: una campaña bien configurada se muestra desde el primer día a quien busca tu servicio. Con un presupuesto modesto se pueden probar campañas de búsqueda local y medir qué llega; cuánto hace falta depende del coste por clic de tu sector y tu zona.</p>
           <p>La <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">publicidad PPC</Link> vale la pena cuando necesitas resultados inmediatos o mientras el SEO madura. El riesgo es depender solo de ella: en cuanto dejas de pagar, dejan de llegar clientes. Por eso funciona mejor combinada con canales orgánicos que construyen presencia a largo plazo.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">El contenido como diferenciador</h2>
           <p>En un mercado donde muchos autónomos ofrecen lo mismo, el contenido es lo que te diferencia. Explicar cómo trabajas, resolver dudas frecuentes y demostrar experiencia real genera confianza antes de la primera llamada.</p>
-          <p>No necesitas producir mucho: unos pocos contenidos bien hechos que respondan a las preguntas reales de tus clientes potenciales trabajan por ti las 24 horas. Y como todo negocio necesita orden financiero para crecer, conviene tener claras también cuestiones como la <Link href="/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/" className="text-accent-500 hover:underline">cuota de autónomos en 2026</Link>.</p>
+          <p>No necesitas producir mucho: unos pocos contenidos bien hechos que respondan a las preguntas reales de tus clientes potenciales siguen atrayendo visitas meses después de publicarlos. Y como todo negocio necesita orden financiero para crecer, conviene tener claras también cuestiones como la <Link href="/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/" className="text-accent-500 hover:underline">cuota de autónomos en 2026</Link>.</p>
+
+          <h2 className="text-2xl font-bold text-primary-600">Cuándo tiene sentido dejar de hacerlo solo</h2>
+          <p>Hacerlo tú tiene un coste que no se ve: horas que no facturas. Si llevas meses con la ficha de Google a medias, sin publicar y sin saber qué búsquedas te traen clientes, quizá te compense delegar solo la parte que más pesa. Para un autónomo que trabaja en su zona, lo habitual es empezar por el <Link href="/seo-local/" className="text-accent-500 hover:underline">servicio de SEO local</Link> o por un plan que junte <Link href="/oferta-seo-geo-gbp/" className="text-accent-500 hover:underline">SEO, visibilidad en la IA y gestión de la ficha de Google</Link> en una cuota mensual, y seguir haciendo tú LinkedIn o el contenido si te gusta.</p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
-            <h2 className="text-2xl font-bold mb-3">Consigue más clientes sin complicarte la vida</h2>
+            <h2 className="text-2xl font-bold mb-3">Hazlo tú, pero con el orden claro</h2>
             <p className="text-primary-200 mb-6">
-              En Mkt Web 360 ayudamos a autónomos a montar una estrategia digital realista y rentable, con el orden correcto y sin gastar de más.
+              Pide la auditoría gratuita y te decimos qué tocar primero en tu web y tu ficha de Google. Si después prefieres delegarlo, te contamos cómo trabajamos el SEO local.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contacto/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
-                Hablar con un especialista
+              <Link href="/auditoria-digital/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
+                Pedir la auditoría gratuita
               </Link>
-              <Link href="/seo-local-empresas-servicios/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                Ver servicio de SEO local
+              <Link href="/seo-local/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
+                Ver el servicio de SEO local
               </Link>
             </div>
           </div>

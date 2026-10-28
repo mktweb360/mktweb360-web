@@ -21,13 +21,13 @@ export function LangHeroSlider({ lang }: { lang: string }) {
       overlay: "bg-transparent",
     },
     {
-      badge: isEn ? "Only 5 new clients a month" : "Seulement 5 nouveaux clients par mois",
+      badge: isEn ? "Online store offer" : "Offre boutique en ligne",
       headline: isEn ? "Your online store" : "Votre boutique en ligne",
       subheadline: isEn ? "professional, from €490" : "professionnelle dès 490 €",
       subtitle: isEn
         ? "No commissions per sale. No monthly licences. 100% custom design. Technically optimised for SEO from day one."
         : "Sans commission sur les ventes. Sans licence mensuelle. Design 100 % personnalisé. Optimisée techniquement pour le SEO dès le premier jour.",
-      cta: { text: isEn ? "Reserve my place" : "Réserver ma place", href: `/${lang}/${langSlug(lang, "online-store-offer")}/` },
+      cta: { text: isEn ? "I want my online store" : "Je veux ma boutique en ligne", href: `/${lang}/${langSlug(lang, "online-store-offer")}/` },
       cta2: { text: isEn ? "View the offer" : "Voir l'offre", href: `/${lang}/${langSlug(lang, "online-store")}/` },
       bg: "/hero-slide-3.jpg",
       overlay: "bg-primary-900/35",

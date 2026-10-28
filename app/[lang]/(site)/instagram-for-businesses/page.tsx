@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -66,7 +67,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "How to write your bio in 150 characters" : "Comment rédiger votre bio en 150 caractères"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "A practical template: Line 1 — What you do + who you serve. Line 2 — Your key differentiator or value. Line 3 — Social proof or credibility signal. Line 4 — Call to action with emoji arrow pointing to link. Example: 'Digital marketing for SMEs in Spain / No commissions, no lock-in contracts / 200+ businesses helped / Book a free consultation below 👇'" : "Un modèle pratique : Ligne 1 — Ce que vous faites + qui vous servez. Ligne 2 — Votre différenciateur clé ou valeur. Ligne 3 — Preuve sociale ou signal de crédibilité. Ligne 4 — Appel à l'action avec emoji flèche pointant vers le lien. Exemple : 'Marketing digital pour PME en Espagne / Sans commissions, sans contrats d'engagement / 200+ entreprises aidées / Réservez une consultation gratuite ci-dessous 👇'"}
+            {isEn ? "A practical template: Line 1 — What you do + who you serve. Line 2 — Your key differentiator or value. Line 3 — Social proof or credibility signal. Line 4 — Call to action with emoji arrow pointing to link. Example: 'Websites and SEO for service businesses / No lock-in contracts / Real reviews on Google / Book a free consultation below 👇'. Whatever social proof you use, make sure it is true and verifiable." : "Un modèle pratique : Ligne 1 — Ce que vous faites + qui vous servez. Ligne 2 — Votre différenciateur clé ou valeur. Ligne 3 — Preuve sociale ou signal de crédibilité. Ligne 4 — Appel à l'action avec emoji flèche pointant vers le lien. Exemple : 'Sites web et SEO pour entreprises de services / Sans engagement / Avis réels sur Google / Réservez une consultation gratuite ci-dessous 👇'. Quelle que soit la preuve sociale utilisée, elle doit être vraie et vérifiable."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "Use the name field (not the username) strategically — Instagram allows 30 characters in the display name field and this text is searchable. Include your main service keyword in your display name if it fits naturally: 'Mkt Web 360 | Digital Marketing' makes the profile findable for people searching 'digital marketing' in Instagram search." : "Utilisez le champ nom (pas le nom d'utilisateur) de manière stratégique — Instagram permet 30 caractères dans le champ nom d'affichage et ce texte est cherchable. Incluez votre mot-clé de service principal dans votre nom d'affichage si cela s'intègre naturellement : 'Mkt Web 360 | Marketing Digital' rend le profil trouvable pour les personnes recherchant 'marketing digital' dans la recherche Instagram."}
@@ -78,10 +79,17 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "Link in bio: how to use it effectively" : "Lien en bio : comment l'utiliser efficacement"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "The single link in your Instagram bio is valuable real estate. Don't waste it on your homepage — people who click your bio link are already interested and need to land on a page that matches the promise of your bio and has a clear action to take. Use a link-in-bio tool like Linktree or later.com to offer multiple destinations if you want to direct traffic to different offers, or use a dedicated landing page." : "Le lien unique dans votre bio Instagram est un emplacement précieux. Ne le gaspillez pas sur votre page d'accueil — les personnes qui cliquent sur votre lien de bio sont déjà intéressées et doivent atterrir sur une page qui correspond à la promesse de votre bio et a une action claire à prendre. Utilisez un outil lien-en-bio comme Linktree ou later.com pour offrir plusieurs destinations si vous voulez diriger le trafic vers différentes offres, ou utilisez une landing page dédiée."}
+            {isEn ? "Instagram now lets you add several links to your bio, but only the first one is visible at a glance, so it is valuable real estate. Don't waste it on your homepage — people who click your bio link are already interested and need to land on a page that matches the promise of your bio and has a clear action to take. Use a link-in-bio tool like Linktree or later.com to offer multiple destinations if you want to direct traffic to different offers, or use a dedicated landing page." : "Instagram permet désormais d'ajouter plusieurs liens dans la bio, mais seul le premier est visible d'emblée : c'est un emplacement précieux. Ne le gaspillez pas sur votre page d'accueil — les personnes qui cliquent sur votre lien de bio sont déjà intéressées et doivent atterrir sur une page qui correspond à la promesse de votre bio et a une action claire à prendre. Utilisez un outil lien-en-bio comme Linktree ou later.com pour offrir plusieurs destinations si vous voulez diriger le trafic vers différentes offres, ou utilisez une landing page dédiée."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Track your bio link clicks in Google Analytics by using UTM parameters. This gives you data on how many profile visitors actually click through and what they do next. Most businesses are surprised to discover their bio link gets far more clicks than they thought — and also that most of those clicks are lost because the destination page is not optimised for conversion." : "Suivez les clics sur votre lien de bio dans Google Analytics en utilisant des paramètres UTM. Cela vous donne des données sur combien de visiteurs de profil cliquent réellement et ce qu'ils font ensuite. La plupart des entreprises sont surprises de découvrir que leur lien de bio reçoit beaucoup plus de clics qu'elles ne le pensaient — et aussi que la plupart de ces clics sont perdus parce que la page de destination n'est pas optimisée pour la conversion."}
+            {isEn ? "Track your bio link clicks in Google Analytics by using UTM parameters. This gives you data on how many profile visitors actually click through and what they do next. It is common to find that many of those clicks are lost because the destination page is not ready to convert." : "Suivez les clics sur votre lien de bio dans Google Analytics en utilisant des paramètres UTM. Cela vous donne des données sur combien de visiteurs de profil cliquent réellement et ce qu'ils font ensuite. Il est fréquent de constater qu'une bonne partie de ces clics se perd parce que la page de destination n'est pas prête à convertir."}
+          </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? (
+              <>That is why the destination matters as much as the bio: a <Link href="/en/web-design/" className="text-accent-500 hover:underline">fast, mobile-first website with contact one tap away</Link> turns those clicks into enquiries. If your customers are local, many will also look you up on Google afterwards, so keep your <Link href="/en/google-business-profile-service/" className="text-accent-500 hover:underline">Google Business Profile complete and full of reviews</Link>.</>
+            ) : (
+              <>C&apos;est pourquoi la destination compte autant que la bio : un <Link href="/fr/creation-site-web/" className="text-accent-500 hover:underline">site rapide, pensé pour le mobile, avec le contact à portée de doigt</Link> transforme ces clics en demandes. Si vos clients sont locaux, beaucoup vous chercheront ensuite sur Google : gardez votre <Link href="/fr/gestion-google-business-profile/" className="text-accent-500 hover:underline">fiche Google Business Profile complète et riche en avis</Link>.</>
+            )}
           </p>
         </section>
 
@@ -97,13 +105,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         </section>
 
-        <BlogBanner variant="default" />
+        <BlogBanner
+          lang={lang}
+          badge={isEn ? "Social media" : "Réseaux sociaux"}
+          title={isEn ? "Make Instagram bring you enquiries, not just followers" : "Faites d'Instagram une source de demandes, pas seulement d'abonnés"}
+          desc={isEn ? "We manage your profile, posts and bio with one clear goal: that people who discover you on Instagram end up messaging you or visiting your website." : "Nous gérons votre profil, vos publications et votre bio avec un objectif clair : que les personnes qui vous découvrent sur Instagram finissent par vous écrire ou visiter votre site."}
+          cta={isEn ? "See social media management" : "Voir la gestion des réseaux sociaux"}
+          href={isEn ? "/en/social-media-marketing/" : "/fr/marketing-reseaux-sociaux/"}
+          secondary={{ text: isEn ? "Prefer to start with a free audit of your online presence?" : "Vous préférez commencer par un audit gratuit de votre présence en ligne ?", href: isEn ? "/en/digital-audit/" : "/fr/audit-digital/" }}
+        />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
-            {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}
+            {isEn ? "Want help with your Instagram profile?" : "Besoin d'aide avec votre profil Instagram ?"}
           </h2>
           <p className="text-primary-200 mb-6">
-            {isEn ? "Tell us about your project and we'll get back to you within 24 hours." : "Parlez-nous de votre projet et nous vous répondrons dans les 24 heures."}
+            {isEn ? "Send us your profile and tell us what you sell. We will tell you what we would change in your bio, your link and your content." : "Envoyez-nous votre profil et dites-nous ce que vous vendez. Nous vous dirons ce que nous changerions dans votre bio, votre lien et vos contenus."}
           </p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`blog-${lang}`} />

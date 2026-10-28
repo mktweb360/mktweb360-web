@@ -101,11 +101,11 @@ export default function PropuestaDeValorPage() {
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
-            Muchas pymes tienen claro qué hacen, pero no saben articular por qué sus clientes deberían elegirlles a ellas en lugar de a la competencia. Esa falta de claridad se nota en los anuncios, en la web, en las conversaciones de venta y en los resultados. Una propuesta de valor bien construida es el cimiento sobre el que se apoya todo el marketing.
+            Muchas pymes tienen claro qué hacen, pero no saben articular por qué sus clientes deberían elegirlas a ellas en lugar de a la competencia. Esa falta de claridad se nota en los anuncios, en la web, en las conversaciones de venta y en los resultados. Una propuesta de valor bien construida es el cimiento sobre el que se apoya todo el marketing.
           </p>
 
           <h2 className="text-2xl font-bold text-primary-600">Qué es una propuesta de valor y qué no es</h2>
-          <p>Una propuesta de valor es una declaración clara de qué problema resuelves, para quién y qué te hace diferente o mejor. No es un slogan de marca. No es una lista de características del producto. No es "calidad y precio". Es la respuesta honesta a por qué un cliente ideal debería elegirte a ti y no a otra opción — incluyendo no hacer nada.</p>
+          <p>Una propuesta de valor es una declaración clara de qué problema resuelves, para quién y qué te hace diferente o mejor. No es un slogan de marca. No es una lista de características del producto. No es «calidad y precio». Es la respuesta honesta a por qué un cliente ideal debería elegirte a ti y no a otra opción — incluyendo no hacer nada.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Los tres elementos que toda propuesta de valor necesita</h2>
           <p>El primer elemento es la claridad sobre a quién va dirigida: no puedes escribir para todos a la vez sin acabar escribiendo para nadie. El segundo es la relevancia: qué problema o necesidad concreta resuelve tu propuesta para ese cliente. El tercero es la diferenciación: qué hace que tu solución sea mejor, diferente o más adecuada que las alternativas disponibles. Sin estos tres elementos, la propuesta queda débil o genérica.</p>
@@ -115,35 +115,42 @@ export default function PropuestaDeValorPage() {
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Tu web no transmite bien lo que haces y para quién?</p>
-            <p className="text-gray-600 text-sm mb-4">Podemos revisar tu presencia digital y ayudarte a articular una propuesta de valor que convierta visitantes en clientes desde el primer momento.</p>
+            <p className="text-gray-600 text-sm mb-4">Podemos revisar tu presencia digital y ayudarte a llevar tu propuesta de valor a la portada, para que quien entra entienda en unos segundos qué haces, para quién y cómo contactarte.</p>
             <Link href="/diseno-de-paginas-web/" className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
               Ver servicio de diseño web
             </Link>
           </div>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            badge="Gratis y sin compromiso"
+            title="¿Se entiende tu propuesta de valor en tu web?"
+            desc="En la auditoría gratuita revisamos tu portada, tu ficha de Google y cómo te describen los asistentes de IA, y te decimos qué cambiar para que se vea a la primera por qué elegirte."
+            cta="Pedir mi auditoría gratuita"
+            href="/auditoria-digital/"
+            secondary={{ text: "¿Prefieres rehacer la web con la propuesta bien planteada? Mira el servicio de diseño web", href: "/diseno-de-paginas-web/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Dónde debe aparecer tu propuesta de valor</h2>
-          <p>La propuesta de valor debe ser visible y comprensible en menos de 10 segundos en la página de inicio de tu web. En el encabezado, antes de cualquier scroll. También debe estar presente en tus anuncios, en el perfil de redes sociales y en cualquier presentación comercial. Si necesita ser explicada, no está suficientemente bien construida. El objetivo es que sea inmediatamente clara para el cliente que sí es para ti.</p>
+          <p>La propuesta de valor debe verse y entenderse en unos segundos en la página de inicio de tu web: en el encabezado, antes de cualquier scroll. Si tu portada actual no lo permite, suele compensar más un <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">rediseño de la web pensado alrededor de tu propuesta</Link> que seguir añadiendo secciones. También debe estar presente en tus anuncios, en la descripción de tu <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile</Link>, en el perfil de redes sociales y en cualquier presentación comercial. Si necesita ser explicada, no está suficientemente bien construida. El objetivo es que sea inmediatamente clara para el cliente que sí es para ti.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Errores más frecuentes al definirla</h2>
-          <p>Los errores más habituales son ser demasiado genérico ("calidad, compromiso y experiencia"), hablar de características en lugar de resultados para el cliente, intentar abarcar a demasiados perfiles de cliente a la vez y copiar el lenguaje de la competencia en lugar de encontrar la propia voz diferenciadora. Una propuesta de valor que podría pertenecer a cualquier competidor no es una propuesta de valor — es ruido.</p>
+          <p>Los errores más habituales son ser demasiado genérico («calidad, compromiso y experiencia»), hablar de características en lugar de resultados para el cliente, intentar abarcar a demasiados perfiles de cliente a la vez y copiar el lenguaje de la competencia en lugar de encontrar la propia voz diferenciadora. Una propuesta de valor que podría pertenecer a cualquier competidor no es una propuesta de valor — es ruido.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/como-generar-leads-calidad-pyme/" className="text-accent-500 hover:underline">Cómo generar leads de calidad para una pyme</Link> · <Link href="/errores-digitales-negocio-nuevo/" className="text-accent-500 hover:underline">Errores digitales al montar un negocio desde cero</Link>
           </p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
-            <h2 className="text-2xl font-bold mb-3">Construye una estrategia digital sobre bases sólidas</h2>
+            <h2 className="text-2xl font-bold mb-3">Que tu web diga por qué elegirte</h2>
             <p className="text-primary-200 mb-6">
-              Ayudamos a pymes a definir y comunicar su propuesta de valor con claridad, para que el marketing funcione con tracción real.
+              Pide la auditoría gratuita y te decimos si tu portada transmite tu propuesta de valor y qué cambiarías primero. Si hay que rehacer la web, te explicamos cómo lo planteamos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contacto/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
-                Solicitar sesión estratégica
+              <Link href="/auditoria-digital/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
+                Pedir la auditoría gratuita
               </Link>
-              <Link href="/auditoria-digital/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                Ver auditoría digital
+              <Link href="/diseno-de-paginas-web/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
+                Ver el servicio de diseño web
               </Link>
             </div>
           </div>

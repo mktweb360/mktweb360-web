@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: "Blog", href: `/${lang}/blog/` },
           { label: isEn ? "Canvas social media" : "Canvas réseaux sociaux" },
         ]} />
-        <p className="text-sm text-accent-500 font-semibold mb-2">Social Media</p>
+        <p className="text-sm text-accent-500 font-semibold mb-2">{isEn ? "Social Media" : "Réseaux sociaux"}</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to use the Canvas framework to manage your social media strategy" : "Comment utiliser le Canvas pour gérer votre stratégie de réseaux sociaux"}
         </h1>
@@ -69,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "Each social platform should have a clear value proposition — what specific value do you offer followers on that platform, and why should they follow you there rather than elsewhere? Instagram: visual inspiration and behind-the-scenes. LinkedIn: industry insights and professional development. TikTok: entertaining and educational short-form content. X (Twitter): real-time commentary and customer service. If you cannot define a clear, differentiated value for a platform, you probably should not be on it." : "Chaque plateforme sociale devrait avoir une proposition de valeur claire — quelle valeur spécifique offrez-vous aux abonnés sur cette plateforme, et pourquoi devraient-ils vous y suivre plutôt qu'ailleurs ? Instagram : inspiration visuelle et coulisses. LinkedIn : insights sectoriels et développement professionnel. TikTok : contenu court divertissant et éducatif. X (Twitter) : commentaires en temps réel et service client. Si vous ne pouvez pas définir une valeur claire et différenciée pour une plateforme, vous ne devriez probablement pas y être."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Document your value proposition for each platform in the Canvas and review it quarterly. Platforms evolve, algorithm changes shift what types of content perform, and your audience's platform preferences change over time. What worked on Facebook in 2020 does not necessarily work in 2025. The Canvas gives you a framework to regularly reassess whether each platform still justifies the investment of time and resources." : "Documentez votre proposition de valeur pour chaque plateforme dans le Canvas et révisez-la trimestriellement. Les plateformes évoluent, les changements d'algorithme font évoluer les types de contenu qui performent, et les préférences de plateformes de votre audience changent avec le temps. Ce qui fonctionnait sur Facebook en 2020 ne fonctionne pas nécessairement en 2025. Le Canvas vous donne un cadre pour réévaluer régulièrement si chaque plateforme justifie encore l'investissement de temps et de ressources."}
+            {isEn ? "Document your value proposition for each platform in the Canvas and review it quarterly. Platforms evolve, algorithm changes shift what types of content perform, and your audience's platform preferences change over time. What worked on Facebook a few years ago does not necessarily work today. The Canvas gives you a framework to regularly reassess whether each platform still justifies the investment of time and resources." : "Documentez votre proposition de valeur pour chaque plateforme dans le Canvas et révisez-la trimestriellement. Les plateformes évoluent, les changements d'algorithme font évoluer les types de contenu qui performent, et les préférences de plateformes de votre audience changent avec le temps. Ce qui fonctionnait sur Facebook il y a quelques années ne fonctionne pas forcément aujourd'hui. Le Canvas vous donne un cadre pour réévaluer régulièrement si chaque plateforme justifie encore l'investissement de temps et de ressources."}
           </p>
         </section>
 
@@ -83,6 +83,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "Key activities in the Canvas context are the recurring tasks required to execute your social strategy: weekly content creation sessions, daily community management, monthly performance reviews, quarterly strategy adjustments. Map these to responsible team members and time allocations. Most social media failures are not strategy failures — they are execution failures caused by underestimating the time required for consistent, quality content creation." : "Les activités clés dans le contexte Canvas sont les tâches récurrentes nécessaires pour exécuter votre stratégie sociale : sessions hebdomadaires de création de contenu, gestion de communauté quotidienne, révisions mensuelles des performances, ajustements trimestriels de stratégie. Mappez-les aux membres de l'équipe responsables et aux allocations de temps. La plupart des échecs sur les réseaux sociaux ne sont pas des échecs de stratégie — ce sont des échecs d'exécution causés par une sous-estimation du temps nécessaire pour une création de contenu cohérente et de qualité."}
           </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "Execution is exactly the part that small businesses find hardest to sustain. If you would rather hand it over, our " : "L'exécution est justement la partie la plus difficile à tenir pour une petite entreprise. Si vous préférez la confier, notre "}
+            <a href={isEn ? "/en/social-media-marketing/" : "/fr/marketing-reseaux-sociaux/"} className="text-accent-500 hover:underline">
+              {isEn ? "social media management service" : "service de gestion des réseaux sociaux"}
+            </a>
+            {isEn ? " takes the Canvas as its starting point and turns it into a monthly calendar." : " part du Canvas et le transforme en calendrier mensuel."}
+          </p>
         </section>
 
         <section className="mb-10">
@@ -95,15 +102,31 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "Review your Canvas quarterly — not just the metrics but the entire model. Have your audience segments changed? Is your value proposition still relevant? Are the platforms you are on still the right ones? A Canvas that is reviewed and updated regularly becomes a living strategic document that keeps your social media investment aligned with your business goals over time." : "Révisez votre Canvas trimestriellement — pas seulement les métriques mais le modèle entier. Vos segments d'audience ont-ils changé ? Votre proposition de valeur est-elle toujours pertinente ? Les plateformes sur lesquelles vous êtes sont-elles toujours les bonnes ? Un Canvas qui est révisé et mis à jour régulièrement devient un document stratégique vivant qui maintient votre investissement en réseaux sociaux aligné avec vos objectifs commerciaux au fil du temps."}
           </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "Before the first review, it helps to know where people land when they leave social media and visit you. A " : "Avant la première révision, il est utile de savoir où arrivent les gens qui quittent les réseaux pour vous rendre visite. Un "}
+            <a href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"} className="text-accent-500 hover:underline">
+              {isEn ? "free audit of your website and Google Business Profile" : "audit gratuit de votre site et de votre fiche Google Business Profile"}
+            </a>
+            {isEn ? " shows whether that destination is helping or losing the contacts your posts generate." : " montre si cette destination aide ou perd les contacts générés par vos publications."}
+          </p>
         </section>
 
-        <BlogBanner variant="default" />
+        <BlogBanner
+          lang={lang}
+          variant="default"
+          badge={isEn ? "Social media with a plan behind it" : "Des réseaux avec un plan derrière"}
+          title={isEn ? "We help you turn the Canvas into posts" : "Nous vous aidons à transformer le Canvas en publications"}
+          desc={isEn ? "We define objectives, platforms and content pillars with you, then take care of publishing and measuring. If you are not sure where to start, we first run a free diagnosis of your online presence." : "Nous définissons avec vous objectifs, plateformes et piliers de contenu, puis nous nous occupons de publier et de mesurer. Si vous ne savez pas par où commencer, nous réalisons d'abord un diagnostic gratuit de votre présence en ligne."}
+          cta={isEn ? "See social media management" : "Voir la gestion des réseaux sociaux"}
+          href={isEn ? "/en/social-media-marketing/" : "/fr/marketing-reseaux-sociaux/"}
+          secondary={{ text: isEn ? "I would rather start with the free audit" : "Je préfère commencer par l'audit gratuit", href: isEn ? "/en/digital-audit/" : "/fr/audit-digital/" }}
+        />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
-            {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}
+            {isEn ? "Shall we turn your Canvas into a publishing plan?" : "On transforme votre Canvas en plan de publication ?"}
           </h2>
           <p className="text-primary-200 mb-6">
-            {isEn ? "Tell us about your project and we'll get back to you within 24 hours." : "Parlez-nous de votre projet et nous vous répondrons dans les 24 heures."}
+            {isEn ? "Tell us which platforms you use and what you want from them, and we will reply with how we would organise them." : "Dites-nous quelles plateformes vous utilisez et ce que vous en attendez, et nous vous répondrons avec la façon dont nous les organiserions."}
           </p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`blog-${lang}`} />

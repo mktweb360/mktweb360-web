@@ -1,6 +1,6 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
-import { alternatesFor, langSlug } from "@/lib/i18n/routes";
+import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -95,15 +95,22 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
           {isEn
-            ? "In 2026, freelancers have more tools than ever to get online clients on their own — without depending on an agency. This practical guide covers the essentials in order: local SEO, Google Business Profile, LinkedIn and content. If you sell services in your area, start with local SEO for service businesses, the channel with the highest return."
-            : "En 2026, les indépendants ont plus d'outils que jamais pour obtenir des clients en ligne par eux-mêmes — sans dépendre d'une agence. Ce guide pratique couvre l'essentiel dans l'ordre : SEO local, Google Business Profile, LinkedIn et contenu. Si vous vendez des services dans votre zone, commencez par le SEO local pour les entreprises de services, le canal avec le meilleur retour."}
+            ? "A freelancer can get clients online without hiring an agency, as long as they choose well where to start. This practical guide covers the essentials in order: local SEO, Google Business Profile, LinkedIn and content. If you sell services in your area, start with local SEO, which is usually the channel that works best in that case."
+            : "Un indépendant peut obtenir des clients en ligne sans engager d'agence, à condition de bien choisir par où commencer. Ce guide pratique couvre l'essentiel dans l'ordre : SEO local, Google Business Profile, LinkedIn et contenu. Si vous vendez des services dans votre zone, commencez par le SEO local, qui est en général le canal le plus efficace dans ce cas."}
         </p>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             {isEn
-              ? "Most freelancers believe that digital marketing requires budget and an agency. In 2026, that is no longer true: with the right tools and the correct order, a freelancer can build a digital presence that brings in clients consistently. The key is not doing more — it is doing the right thing at the right time."
-              : "La plupart des indépendants pensent que le marketing digital nécessite un budget et une agence. En 2026, ce n'est plus vrai : avec les bons outils et le bon ordre, un indépendant peut construire une présence digitale qui attire des clients de façon constante. La clé n'est pas de faire plus — c'est de faire la bonne chose au bon moment."}
+              ? "Many freelancers believe that digital marketing requires budget and an agency. Not always: with a few free tools and the right order, a freelancer can build a digital presence that brings in enquiries regularly. It comes down to doing a few things, in the right order."
+              : "Beaucoup d'indépendants pensent que le marketing digital nécessite un budget et une agence. Pas toujours : avec quelques outils gratuits et le bon ordre, un indépendant peut construire une présence digitale qui lui apporte des demandes régulièrement. Il s'agit de faire peu de choses, dans le bon ordre."}
+          </p>
+          <p>
+            {isEn ? "What wastes the most time is not knowing where to start. Before opening five fronts, get a picture of how Google sees you today: you can request our " : "Ce qui fait perdre le plus de temps, c'est de ne pas savoir par où commencer. Avant d'ouvrir cinq chantiers, faites un état des lieux de votre présence sur Google : vous pouvez demander notre "}
+            <a href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"} className="text-accent-500 hover:underline">
+              {isEn ? "free audit of your website and Google Business Profile" : "audit gratuit de votre site et de votre fiche Google"}
+            </a>
+            {isEn ? ", which tells you what to fix first, and then do it yourself with this guide." : ", qui vous indique quoi corriger en premier, puis le faire vous-même avec ce guide."}
           </p>
 
           <section className="mb-10">
@@ -132,8 +139,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {isEn
-                ? "If your business has a local component, the first step is always Google Business Profile. It is free, it appears at the exact moment someone searches for what you offer near them, and with good optimisation the first contacts can arrive in 2–4 weeks."
-                : "Si votre entreprise a une composante locale, la première étape est toujours Google Business Profile. C'est gratuit, cela apparaît au moment exact où quelqu'un recherche ce que vous proposez près de lui, et avec une bonne optimisation les premiers contacts peuvent arriver en 2 à 4 semaines."}
+                ? "If your business has a local component, the first step is always Google Business Profile. It is free, it appears at the exact moment someone searches for what you offer near them, and with good optimisation the first contacts can arrive within 1–2 months (as a guide: it depends on the sector, the area and the competition)."
+                : "Si votre entreprise a une composante locale, la première étape est toujours Google Business Profile. C'est gratuit, cela apparaît au moment exact où quelqu'un recherche ce que vous proposez près de lui, et avec une bonne optimisation les premiers contacts peuvent arriver en 1 à 2 mois (à titre indicatif : cela dépend du secteur, de la zone et de la concurrence)."}
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {isEn
@@ -145,22 +152,35 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-primary-600 mb-4">
               {isEn
-                ? "Local SEO: the highest-ROI investment for service freelancers"
-                : "SEO local : l'investissement à meilleur ROI pour les indépendants de services"}
+                ? "Local SEO: the investment that pays off best over time if you serve your area"
+                : "SEO local : l'investissement le plus rentable dans la durée si vous travaillez dans votre zone"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {isEn
-                ? "For a freelancer providing services in their area, local SEO is the channel with the highest medium-term return. Appearing in searches in your city for your service means capturing clients with genuine intent to hire, right when they need you."
-                : "Pour un indépendant qui preste des services dans sa zone, le SEO local est le canal avec le meilleur retour à moyen terme. Apparaître dans les recherches de votre ville pour votre service signifie capter des clients avec une intention réelle d'embauche, exactement quand ils vous ont besoin."}
+                ? "For a freelancer providing services in their area, local SEO is usually the channel that performs best in the medium term. Appearing in searches in your city for your service means capturing clients with genuine intent to hire, right when they need you."
+                : "Pour un indépendant qui preste des services dans sa zone, le SEO local est généralement le canal le plus rentable à moyen terme. Apparaître dans les recherches de votre ville pour votre service signifie capter des clients avec une intention réelle d'embauche, exactement quand ils vous ont besoin."}
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {isEn
-                ? "Organic SEO takes longer than Google Ads (3–4 months for solid results), but it builds a lasting asset: once positioned, it keeps bringing clients without cost per click. For many service freelancers, it is the foundation of the entire digital strategy. And that traffic needs to land on a well-designed website that converts visits into enquiries."
-                : "Le SEO organique prend plus de temps que Google Ads (3 à 4 mois pour des résultats solides), mais il construit un actif durable : une fois positionné, il continue d'amener des clients sans coût par clic. Pour de nombreux indépendants de services, c'est la base de toute la stratégie digitale. Et ce trafic doit atterrir sur un site web bien conçu qui convertit les visites en demandes."}
+                ? "Organic SEO takes longer than Google Ads (as a guide, 3–6 months for the first results and 6–12 to consolidate), but it builds a lasting asset: once positioned, it keeps bringing clients without cost per click. For many service freelancers, it is the foundation of the entire digital strategy. And that traffic needs to land on a well-designed website that converts visits into enquiries."
+                : "Le SEO organique prend plus de temps que Google Ads (à titre indicatif, 3 à 6 mois pour les premiers résultats et 6 à 12 pour se consolider), mais il construit un actif durable : une fois positionné, il continue d'amener des clients sans coût par clic. Pour de nombreux indépendants de services, c'est la base de toute la stratégie digitale. Et ce trafic doit atterrir sur un site web bien conçu qui convertit les visites en demandes."}
             </p>
           </section>
 
-          <BlogBanner lang={lang} />
+          <BlogBanner
+            lang={lang}
+            badge={isEn ? "Free, no commitment" : "Gratuit et sans engagement"}
+            title={isEn ? "Before doing it yourself, see where to start" : "Avant de vous lancer seul, voyez par où commencer"}
+            desc={isEn
+              ? "We review your website, your Google Business Profile and your visibility in AI assistants, and send you the highest-impact actions in order. You can apply them yourself."
+              : "Nous analysons votre site, votre fiche Google Business Profile et votre visibilité dans les assistants IA, et vous envoyons les actions prioritaires dans l'ordre. Vous pouvez les appliquer vous-même."}
+            cta={isEn ? "Request my free audit" : "Demander mon audit gratuit"}
+            href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"}
+            secondary={{
+              text: isEn ? "Can't do it all? Local SEO done for you" : "Pas le temps de tout faire ? Le SEO local, on s'en occupe",
+              href: `/${lang}/local-seo-services/`,
+            }}
+          />
 
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-primary-600 mb-4">
@@ -170,8 +190,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {isEn
-                ? "If your client is a business, LinkedIn is your priority channel. In 2026, content published from the personal profile generates far more reach than corporate pages, and for a freelancer that is an advantage: your personal brand is your best asset."
-                : "Si votre client est une entreprise, LinkedIn est votre canal prioritaire. En 2026, le contenu publié depuis le profil personnel génère beaucoup plus de portée que les pages d'entreprise, et pour un indépendant c'est un avantage : votre marque personnelle est votre meilleur atout."}
+                ? "If your client is a business, LinkedIn is your priority channel. On LinkedIn, what you publish from your personal profile usually reaches more people than posts from a company page, and for a freelancer that is an advantage: your personal brand is your best asset."
+                : "Si votre client est une entreprise, LinkedIn est votre canal prioritaire. Sur LinkedIn, ce que vous publiez depuis votre profil personnel touche en général plus de monde que les publications d'une page d'entreprise, et pour un indépendant c'est un avantage : votre marque personnelle est votre meilleur atout."}
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {isEn
@@ -188,8 +208,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {isEn
-                ? "Google Ads is the fastest route to getting clients: well configured, a campaign can bring the first contact on the same day. With £100–200/month you can already run local search campaigns with measurable results."
-                : "Google Ads est la voie la plus rapide pour obtenir des clients : bien configurée, une campagne peut amener le premier contact le même jour. Avec 100 à 200 €/mois, on peut déjà faire des campagnes de recherche locale avec des résultats mesurables."}
+                ? "Google Ads is the fastest way to appear: a well-configured campaign is shown from day one to people searching for your service. With a modest budget you can test local search campaigns and measure what comes in; how much you need depends on the cost per click in your sector and area."
+                : "Google Ads est la voie la plus rapide pour apparaître : une campagne bien configurée est diffusée dès le premier jour auprès de ceux qui cherchent votre service. Avec un budget modeste, on peut tester des campagnes de recherche locale et mesurer ce qui arrive ; le montant nécessaire dépend du coût par clic de votre secteur et de votre zone."}
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {isEn
@@ -209,31 +229,48 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
               {isEn
-                ? "You do not need to produce a lot: a few well-made pieces of content that answer the real questions of your potential clients work for you 24 hours a day. And like any business that needs financial order to grow, it is worth being clear about practical matters such as self-employed social security contributions in Spain in 2026."
-                : "Vous n'avez pas besoin de produire beaucoup : quelques contenus bien faits qui répondent aux vraies questions de vos clients potentiels travaillent pour vous 24 heures sur 24. Et comme toute entreprise qui a besoin d'ordre financier pour croître, il vaut la peine d'être clair sur des questions pratiques comme les cotisations des indépendants en Espagne en 2026."}
+                ? "You do not need to produce a lot: a few well-made pieces of content that answer the real questions of your potential clients keep attracting visits months after you publish them. And like any business that needs financial order to grow, it is worth being clear about practical matters such as self-employed social security contributions in Spain in 2026."
+                : "Vous n'avez pas besoin de produire beaucoup : quelques contenus bien faits qui répondent aux vraies questions de vos clients potentiels continuent d'attirer des visites des mois après leur publication. Et comme toute entreprise qui a besoin d'ordre financier pour croître, il vaut la peine d'être clair sur des questions pratiques comme les cotisations des indépendants en Espagne en 2026."}
+            </p>
+          </section>
+
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+              {isEn ? "When it makes sense to stop doing it alone" : "Quand il vaut mieux ne plus tout faire seul"}
+            </h2>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              {isEn ? "Doing it yourself has a hidden cost: hours you do not invoice. If your Google profile has been half-finished for months, you are not publishing and you do not know which searches bring you clients, it may pay to delegate only the heaviest part. For a freelancer who works locally, that usually means our " : "Tout faire soi-même a un coût caché : les heures que vous ne facturez pas. Si votre fiche Google est à moitié remplie depuis des mois, que vous ne publiez pas et que vous ne savez pas quelles recherches vous amènent des clients, il peut être rentable de déléguer seulement la partie la plus lourde. Pour un indépendant qui travaille localement, c'est en général notre "}
+              <a href={`/${lang}/local-seo-services/`} className="text-accent-500 hover:underline">
+                {isEn ? "local SEO service" : "service de SEO local"}
+              </a>
+              {isEn ? " or the " : " ou la "}
+              <a href={isEn ? "/en/google-business-profile-service/" : "/fr/gestion-google-business-profile/"} className="text-accent-500 hover:underline">
+                {isEn ? "management of your Google Business Profile" : "gestion de votre fiche Google Business Profile"}
+              </a>
+              {isEn ? ", while you keep doing LinkedIn or content if you enjoy it." : ", et vous continuez LinkedIn ou le contenu si cela vous plaît."}
             </p>
           </section>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">
               {isEn
-                ? "Get more clients without overcomplicating things"
-                : "Obtenez plus de clients sans vous compliquer la vie"}
+                ? "Do it yourself, with a clear order"
+                : "Faites-le vous-même, avec un ordre clair"}
             </h2>
             <p className="text-primary-200 mb-6">
               {isEn
-                ? "At Mkt Web 360 we help freelancers build a realistic and profitable digital strategy, in the correct order and without overspending."
-                : "Chez Mkt Web 360, nous aidons les indépendants à mettre en place une stratégie digitale réaliste et rentable, dans le bon ordre et sans dépenser trop."}
+                ? "Request the free audit and we will tell you what to fix first on your website and Google profile. If you later prefer to delegate, we will explain how we handle local SEO."
+                : "Demandez l'audit gratuit et nous vous dirons quoi corriger en premier sur votre site et votre fiche Google. Si vous préférez ensuite déléguer, nous vous expliquerons comment nous travaillons le SEO local."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={`/${lang}/contact/`}
+                href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"}
                 className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors"
               >
-                {isEn ? "Talk to a specialist" : "Parler à un spécialiste"}
+                {isEn ? "Request the free audit" : "Demander l'audit gratuit"}
               </a>
               <a
-                href={`/${lang}/${langSlug(lang, "local-seo-for-service-businesses")}/`}
+                href={`/${lang}/local-seo-services/`}
                 className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 {isEn ? "See Local SEO service" : "Voir le service SEO local"}
