@@ -17,6 +17,16 @@ export type PostI18n = {
 };
 
 export const BLOG_I18N: Record<string, PostI18n> = {
+  "ai-max-google-ads-que-es-como-controlarlo": {
+    en: {
+      title: "Google Ads AI Max: What It Is and How to Control It",
+      excerpt: "AI Max expands your Search campaigns with AI. How it differs from broad match and DSA, when Google migrates campaigns, and 7 checks before you turn it on.",
+    },
+    fr: {
+      title: "AI Max dans Google Ads : définition et contrôle",
+      excerpt: "AI Max étend vos campagnes Search grâce à l'IA. Ce qui change par rapport à la requête large et aux DSA, le calendrier de migration et 7 vérifications avant de l'activer.",
+    },
+  },
   "estrategia-de-contenidos-calendario-editorial": {
     en: {
       title: "Content Strategy and Editorial Calendar (Free Template)",
