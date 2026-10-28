@@ -22,15 +22,15 @@ const pageUrl = (l: Lng) => `https://www.mktweb360.com/${l}/${SLUGS[l]}/`;
 
 const META = {
   en: {
-    title: "ChatGPT Ads in Spain: What They Are and Whether Your SME Should Try Them",
+    title: "ChatGPT Ads in Spain: What They Are and Are They Worth It?",
     description:
       "ChatGPT Ads is live in Spain with self-serve access. Who sees the ads, how they are chosen, how they differ from an organic mention and a 30-day test plan.",
     h1: "ChatGPT Ads in Spain: how ads in ChatGPT work and when to test them",
   },
   fr: {
-    title: "Publicité ChatGPT en Espagne : ce que c’est et si votre PME doit tester",
+    title: "ChatGPT Ads en Espagne : ce que c’est et pour quelle PME",
     description:
-      "ChatGPT Ads fonctionne en Espagne en libre-service. Qui voit les annonces, comment elles sont choisies, la différence avec une mention organique et un test de 30 jours.",
+      "ChatGPT Ads en Espagne, en libre-service : qui voit les annonces, comment elles sont choisies, l’écart avec une mention organique et un test sur 30 jours.",
     h1: "ChatGPT Ads en Espagne : comment fonctionnent les annonces dans ChatGPT et quand les tester",
   },
 };

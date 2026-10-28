@@ -19,7 +19,7 @@ const URL = `https://www.mktweb360.com/${SLUG}/`;
 const OG = "/og-anuncios-chatgpt-ads-espana.jpg";
 const TITLE = "Anuncios en ChatGPT en España: qué son y si a tu pyme le compensa";
 const DESCRIPTION =
-  "ChatGPT Ads ya funciona en España con autoservicio. Quién ve los anuncios, cómo se eligen, en qué se diferencian de una mención orgánica y un plan de prueba de 30 días.";
+  "ChatGPT Ads ya funciona en España: quién ve los anuncios, cómo se eligen, en qué se diferencian de una mención orgánica y un plan de prueba de 30 días.";
 const H1 = "ChatGPT Ads en España: cómo funcionan los anuncios en ChatGPT y cuándo probarlos";
 const DATE = "2026-11-04";
 
