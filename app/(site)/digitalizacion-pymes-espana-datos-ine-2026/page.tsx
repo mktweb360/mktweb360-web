@@ -16,9 +16,9 @@ import { alternatesFor } from "@/lib/i18n/routes";
 const SLUG = "digitalizacion-pymes-espana-datos-ine-2026";
 const URL = `https://www.mktweb360.com/${SLUG}/`;
 const OG = "/og-digitalizacion-pymes-espana-datos-ine-2026.jpg";
-const TITLE = "Pymes y digitalización en España 2026: los datos oficiales del INE";
+const TITLE = "Digitalización de las pymes en España 2026: datos del INE";
 const DESCRIPTION =
-  "Tiene web el 36,2 % de las empresas de menos de 10 empleados con internet, frente al 82,9 % de las de 10 o más. Web, redes, IA y venta online según el INE (2026).";
+  "Tiene web el 36,2 % de las empresas de menos de 10 empleados con internet, frente al 82,9 % de las de 10 o más. Web, redes, IA y venta online (INE, 2026).";
 const H1 = "Radiografía 2026 de la pyme digital en España: web, redes, IA y comercio electrónico según el INE";
 const DATE = "2026-10-29";
 const INE_URL = "https://www.ine.es/dyngs/Prensa/ETICCE20251T2026.htm";

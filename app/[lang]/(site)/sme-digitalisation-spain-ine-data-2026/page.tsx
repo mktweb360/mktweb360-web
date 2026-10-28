@@ -28,13 +28,13 @@ const META = {
   en: {
     title: "SME Digitalisation in Spain 2026: Official INE Data",
     description:
-      "36.2% of Spanish firms with fewer than 10 employees and internet access have a website, against 82.9% of those with 10 or more. Web, social media, AI and e-commerce (INE, 2026).",
+      "36.2% of Spanish firms with fewer than 10 staff and internet access have a website, against 82.9% of larger ones. Web, social, AI and e-commerce (INE, 2026).",
     h1: "Spain's digital SMEs in 2026: websites, social media, AI and e-commerce according to official INE data",
   },
   fr: {
     title: "Digitalisation des PME en Espagne 2026 : les données de l'INE",
     description:
-      "36,2 % des entreprises espagnoles de moins de 10 salariés connectées à internet ont un site web, contre 82,9 % de celles de 10 salariés ou plus. Web, réseaux, IA et e-commerce (INE, 2026).",
+      "36,2 % des entreprises espagnoles de moins de 10 salariés connectées à internet ont un site web, contre 82,9 % au-delà. Web, réseaux, IA, e-commerce (INE).",
     h1: "La PME numérique en Espagne en 2026 : site web, réseaux sociaux, IA et e-commerce selon l'INE",
   },
 };
