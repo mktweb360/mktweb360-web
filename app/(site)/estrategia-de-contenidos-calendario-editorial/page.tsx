@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AuthorByline } from "@/components/AuthorByline";
+import { autorSchema } from "@/lib/autor";
 import type { ReactNode } from "react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -38,7 +40,7 @@ const articleSchema = {
   "@type": "BlogPosting",
   headline: H1,
   description: DESCRIPTION,
-  author: { "@type": "Organization", name: "Mkt Web 360 SLU" },
+  author: autorSchema(),
   publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: DATE,
   dateModified: DATE,
@@ -224,6 +226,7 @@ export default function EstrategiaContenidosPage() {
             <time className="text-sm text-gray-400" dateTime={DATE}>1 de noviembre de 2026</time>
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">{H1}</h1>
+          <AuthorByline block />
           <p className="text-xl text-gray-600 leading-relaxed">
             Cinco pasos para dejar de publicar por publicar: de qué hablar, en qué formato, cuándo y cómo saber si funciona. Con una plantilla de calendario editorial que puedes copiar en tu hoja de cálculo.
           </p>
