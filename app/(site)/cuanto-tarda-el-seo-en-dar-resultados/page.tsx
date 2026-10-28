@@ -12,7 +12,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 
 const SLUG = "cuanto-tarda-el-seo-en-dar-resultados";
 const URL = `https://www.mktweb360.com/${SLUG}/`;
-const OG = `/og-${SLUG}.jpg`;
+const OG = "/og-cuanto-tarda-seo-grafico.jpg";
 const TITLE = "¿Cuánto tarda el SEO en dar resultados? Plazos por fases";
 const DESCRIPTION =
   "El SEO tarda de 3 a 6 meses en dar los primeros resultados y de 6 a 12 en consolidarse, de forma orientativa. Qué pasa cada mes y cómo verlo en Search Console.";
@@ -202,7 +202,7 @@ export default function CuantoTardaSeoPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El plazo depende de cómo está tu web hoy y de con quién compites. Te explicamos qué pasa en cada fase, qué datos de Search Console se mueven primero y cuándo un retraso indica un problema.
           </p>
-          <Image src={OG} alt="Cuánto tarda el SEO en dar resultados" width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
+          <Image src={OG} alt="Gráfico orientativo de 12 meses: primero suben las impresiones, después mejora la posición y por último llegan los clics y contactos" width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">

@@ -14,7 +14,7 @@ import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 const SLUG = "seo-para-pymes-guia";
 const URL = `https://www.mktweb360.com/${SLUG}/`;
-const OG = `/og-${SLUG}.jpg`;
+const OG = "/og-seo-para-pymes-vineta.jpg";
 const TITLE = "SEO para pymes: qué hacer, cuánto cuesta y por dónde empezar";
 const DESCRIPTION =
   "Guía de SEO para pymes en 2026: qué puedes hacer tú esta semana, qué conviene delegar, cuánto cuesta un plan SEO y cuánto tarda en notarse.";
@@ -209,7 +209,7 @@ export default async function SeoParaPymesPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Qué es el SEO para una pyme, qué puedes hacer tú esta misma semana, qué conviene delegar, cuánto cuesta y cuánto tarda. Sin promesas de posiciones.
           </p>
-          <Image src={OG} alt="SEO para pymes: qué hacer, cuánto cuesta y por dónde empezar" width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
+          <Image src={OG} alt="Viñeta: una comerciante se pregunta por qué nadie la encuentra en Google y después señala su lista de tareas SEO de la semana" width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
