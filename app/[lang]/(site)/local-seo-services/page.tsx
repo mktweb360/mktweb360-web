@@ -146,11 +146,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       ];
 
   const CITIES = [
-    { name: isEn ? "SEO Toledo" : "SEO Tolède", href: `/${lang}/seo-toledo-guide/` },
-    { name: "SEO Madrid", href: `/${lang}/seo-madrid-guide/` },
-    { name: isEn ? "SEO Valencia" : "SEO Valence", href: `/${lang}/seo-valencia-guide/` },
-    { name: "SEO Zaragoza", href: `/${lang}/seo-zaragoza-guide/` },
-    { name: "SEO Bilbao", href: `/${lang}/seo-bilbao-guide/` },
+    { name: isEn ? "SEO agency in Toledo" : "Agence SEO à Tolède", href: `/${lang}/${langSlug(lang, "seo-agency-toledo")}/` },
+    { name: isEn ? "Digital marketing in Toledo" : "Marketing digital à Tolède", href: `/${lang}/${langSlug(lang, "digital-marketing-agency-toledo")}/` },
+    { name: isEn ? "Web design in Toledo" : "Création web à Tolède", href: `/${lang}/${langSlug(lang, "web-design-toledo")}/` },
   ];
 
   return (
@@ -403,15 +401,15 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
-              {isEn ? "Local SEO guides by city" : "Guides de SEO local par ville"}
+              {isEn ? "Where we are based" : "Où nous sommes"}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               {isEn
-                ? "The service is the same for any location. These guides explain what local search looks like in some cities."
-                : "Le service est le même quel que soit le lieu. Ces guides expliquent à quoi ressemble la recherche locale dans quelques villes."}
+                ? "The service is the same for any location in Spain. Our office is in the province of Toledo."
+                : "Le service est le même partout en Espagne. Notre siège est dans la province de Tolède."}
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {CITIES.map((c) => (
               <Link
                 key={c.href}

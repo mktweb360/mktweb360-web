@@ -64,12 +64,10 @@ const METHODOLOGY = [
 ];
 
 const CITIES = [
-  { name: "SEO Toledo", href: "/seo-toledo/" },
-  { name: "SEO Madrid", href: "/seo-madrid/" },
-  { name: "Marketing digital Fuenlabrada", href: "/agencia-marketing-digital-fuenlabrada/" },
-  { name: "SEO Valencia", href: "/seo-valencia/" },
-  { name: "SEO Zaragoza", href: "/seo-zaragoza/" },
-  { name: "SEO Bilbao", href: "/seo-bilbao/" },
+  { name: "Agencia SEO en Toledo", href: "/agencia-seo-toledo/" },
+  { name: "Marketing digital en Toledo", href: "/agencia-marketing-digital-toledo/" },
+  { name: "Diseño web en Toledo", href: "/diseno-web-toledo/" },
+  { name: "Marketing digital en Fuenlabrada", href: "/agencia-marketing-digital-fuenlabrada/" },
 ];
 
 export default async function SeoLocalPage() {
@@ -245,10 +243,10 @@ export default async function SeoLocalPage() {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Guías de SEO local por ciudad</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">El servicio es el mismo para cualquier ubicación. Estas guías explican cómo es la búsqueda local en algunas ciudades.</p>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Donde tenemos presencia</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">El servicio es el mismo para cualquier ubicación de España. Nuestra sede está en la provincia de Toledo y antes estuvo en Fuenlabrada.</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {CITIES.map((c) => (
               <Link key={c.href} href={c.href} className="bg-white rounded-xl p-5 text-center shadow-sm border border-gray-100 hover:border-accent-500 hover:shadow-md transition-all font-semibold text-primary-700 hover:text-accent-500">
                 {c.name}

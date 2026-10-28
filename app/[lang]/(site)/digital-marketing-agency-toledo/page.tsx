@@ -68,8 +68,8 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
         ],
       },
       enlaces: [
-        { href: href(lang, "digital-marketing-agencies-toledo"), text: "Guide : comment choisir une agence à Tolède" },
-        { href: href(lang, "digital-marketing-toledo"), text: "Guide du marketing digital à Tolède" },
+        { href: href(lang, "seo-agency-toledo"), text: "Agence SEO à Tolède" },
+        { href: href(lang, "web-design-toledo"), text: "Création de sites web à Tolède" },
         { href: href(lang, "seo-pricing"), text: "Tarifs SEO" },
       ],
       faqs: [
@@ -119,8 +119,8 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
       ],
     },
     enlaces: [
-      { href: href(lang, "digital-marketing-agencies-toledo"), text: "Guide: how to choose an agency in Toledo" },
-      { href: href(lang, "digital-marketing-toledo"), text: "Guide to digital marketing in Toledo" },
+      { href: href(lang, "seo-agency-toledo"), text: "SEO agency in Toledo" },
+      { href: href(lang, "web-design-toledo"), text: "Web design in Toledo" },
       { href: href(lang, "seo-pricing"), text: "SEO pricing" },
     ],
     faqs: [

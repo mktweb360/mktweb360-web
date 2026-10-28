@@ -67,7 +67,7 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
       },
       enlaces: [
         { href: href(lang, "seo-web-positioning"), text: "Notre service de référencement SEO" },
-        { href: href(lang, "seo-toledo-guide"), text: "Guide : comment faire du SEO à Tolède" },
+        { href: href(lang, "local-seo-services"), text: "Service de SEO local" },
         { href: href(lang, "digital-audit"), text: "Audit SEO gratuit" },
       ],
       faqs: [
@@ -114,7 +114,7 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
     },
     enlaces: [
       { href: href(lang, "seo-web-positioning"), text: "Our SEO service" },
-      { href: href(lang, "seo-toledo-guide"), text: "Guide: how to do SEO in Toledo" },
+      { href: href(lang, "local-seo-services"), text: "Local SEO service" },
       { href: href(lang, "digital-audit"), text: "Free SEO audit" },
     ],
     faqs: [
