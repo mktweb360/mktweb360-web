@@ -781,11 +781,11 @@ export const BLOG_I18N: Record<string, PostI18n> = {
   "factura-electronica-obligatoria-autonomos-pymes": {
     en: {
       title: "Verifactu 2027 and E-invoicing in Spain: Key Dates",
-      excerpt: "Verifactu and Spain's mandatory B2B e-invoice are two different obligations. Official 2027-2029 dates, who they apply to and what your website, online store and POS need to do.",
+      excerpt: "Verifactu and Spain's mandatory B2B e-invoice are two separate obligations: official 2027-2029 dates, who they apply to and what your store and POS need.",
     },
     fr: {
       title: "Verifactu 2027 et facture électronique en Espagne : les dates",
-      excerpt: "Verifactu et la facture électronique B2B obligatoire en Espagne sont deux obligations distinctes. Dates officielles 2027-2029, qui est concerné et ce que doivent faire votre site, votre boutique en ligne et votre TPV.",
+      excerpt: "Verifactu et la facture électronique B2B en Espagne sont deux obligations : dates officielles 2027-2029, qui est concerné et quoi revoir sur site et TPV.",
     },
   },
   "como-puede-un-autonomo-conseguir-clientes-por-internet": {

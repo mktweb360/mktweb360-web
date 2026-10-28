@@ -17,9 +17,9 @@ import { autorSchema } from "@/lib/autor";
 const SLUG = "factura-electronica-obligatoria-autonomos-pymes";
 const URL = `https://www.mktweb360.com/${SLUG}/`;
 const OG = "/og-factura-electronica-obligatoria-autonomos-pymes-v2.jpg";
-const TITLE = "Verifactu 2027 y factura electrónica: fechas para autónomos y pymes";
+const TITLE = "Verifactu 2027 y factura electrónica: fechas para pymes";
 const DESCRIPTION =
-  "Verifactu y la factura electrónica obligatoria son dos cosas distintas. Fechas oficiales 2027-2029, a quién afectan y qué revisar en tu tienda online, tu TPV y tu programa de facturación.";
+  "Verifactu y la factura electrónica obligatoria no son lo mismo: fechas oficiales 2027-2029, a quién afectan y qué revisar en tu tienda, TPV y facturación.";
 const H1 = "Verifactu y factura electrónica obligatoria: fechas 2027-2028 y qué cambia en tu web o tienda online";
 const DATE_PUBLISHED = "2026-06-12";
 const DATE_MODIFIED = "2026-10-31";

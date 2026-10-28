@@ -79,7 +79,7 @@ const a = "text-accent-500 hover:underline";
 const EN: Content = {
   title: "Verifactu 2027 and E-invoicing in Spain: Key Dates",
   description:
-    "Verifactu and Spain's mandatory B2B e-invoice are two different obligations. Official 2027-2029 dates, who they apply to and what your website, online store and POS need to do.",
+    "Verifactu and Spain's mandatory B2B e-invoice are two separate obligations: official 2027-2029 dates, who they apply to and what your store and POS need.",
   h1: "Verifactu and mandatory e-invoicing in Spain: 2027-2028 dates and what your website or online store must do",
   crumb: "Verifactu and e-invoicing in Spain",
   updated: <>Updated <time dateTime={DATE_MODIFIED}>31 October 2026</time> · first published <time dateTime={DATE_PUBLISHED}>12 June 2026</time></>,
@@ -207,7 +207,7 @@ const EN: Content = {
 const FR: Content = {
   title: "Verifactu 2027 et facture électronique en Espagne : les dates",
   description:
-    "Verifactu et la facture électronique B2B obligatoire en Espagne sont deux obligations distinctes. Dates officielles 2027-2029, qui est concerné et ce que doivent faire votre site, votre boutique en ligne et votre TPV.",
+    "Verifactu et la facture électronique B2B en Espagne sont deux obligations : dates officielles 2027-2029, qui est concerné et quoi revoir sur site et TPV.",
   h1: "Verifactu et facture électronique obligatoire en Espagne : dates 2027-2028 et ce que doit faire votre site ou votre boutique en ligne",
   crumb: "Verifactu et facture électronique en Espagne",
   updated: <>Mis à jour le <time dateTime={DATE_MODIFIED}>31 octobre 2026</time> · publié le <time dateTime={DATE_PUBLISHED}>12 juin 2026</time></>,
