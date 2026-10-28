@@ -67,7 +67,7 @@ const faqSchema = {
 const elementos = [
   { titulo: "Nombre de empresa o marca", desc: "El nombre de tu negocio, tal como lo conocen tus clientes. Puede incluir tu especialidad principal para ganar claridad." },
   { titulo: "Propuesta de valor clara", desc: "En una línea, explica qué haces y para quién. Evita tecnicismos. Ejemplo: 'Ayudamos a pymes a crecer en internet'." },
-  { titulo: "Enlace web", desc: "Es el único enlace que permite Instagram. Apunta siempre a tu página más relevante: web principal, landing de oferta o Linktree." },
+  { titulo: "Enlace web", desc: "Instagram permite añadir varios enlaces, pero en la bio solo se ve el primero a simple vista. Que ese apunte a tu página más útil para el cliente: tu web, la página de reservas o tu ficha de Google con las reseñas." },
   { titulo: "Llamada a la acción (CTA)", desc: "Indica qué debe hacer quien visita tu perfil: 'Solicita presupuesto', 'Descarga la guía gratis', 'Reserva tu cita'." },
   { titulo: "Emojis estratégicos", desc: "Úsalos para estructurar visualmente la bio y dar personalidad. Un emoji por punto clave es suficiente. No abuses." },
   { titulo: "Hashtag de marca", desc: "Si tienes un hashtag propio (#TuMarca o #TuSlogan), inclúyelo en la bio para fomentar que tu comunidad lo use." },
@@ -81,8 +81,8 @@ const ejemplosBios = [
   },
   {
     tipo: "Servicio profesional (consultoría)",
-    bio: "📊 Estrategia digital para pymes\n🎯 +200 empresas captando clientes online\n📩 DM o link para auditoría gratuita",
-    analisis: "Incluye prueba social (200 empresas), propuesta de valor clara y llamada a la acción directa.",
+    bio: "📊 Estrategia digital para pymes\n🎯 Webs y SEO para negocios de servicios\n📩 DM o link para auditoría gratuita",
+    analisis: "Propuesta de valor clara, a quién se dirige y llamada a la acción directa. Si añades prueba social (número de clientes, años, reseñas), que sea real y verificable.",
   },
   {
     tipo: "Restaurante",
@@ -142,7 +142,7 @@ export default function InstagramBioEmpresasPage() {
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
-            Cuando alguien llega a tu perfil de Instagram, tarda menos de 3 segundos en decidir si te sigue o se va. La biografía es lo primero que lee después de tu foto de perfil. Una bio bien construida puede marcar la diferencia entre un visitante que rebota y un cliente que contacta.
+            Cuando alguien llega a tu perfil de Instagram, decide en pocos segundos si te sigue o se va. La biografía es lo primero que lee después de tu foto de perfil. Una bio bien construida puede marcar la diferencia entre un visitante que rebota y un cliente que contacta.
           </p>
           <p>
             El problema es que la mayoría de empresas desperdician esos 150 caracteres con frases genéricas, demasiados hashtags o información irrelevante. Como en cualquier <Link href="/como-crear-propuesta-de-valor/" className="text-accent-500 hover:underline">propuesta de valor</Link>, cada palabra debe ganarse su sitio: esta guía te explica exactamente qué incluir, con ejemplos reales y un checklist final.
@@ -189,7 +189,18 @@ export default function InstagramBioEmpresasPage() {
             ))}
           </ul>
 
-          <BlogBanner variant="default" />
+          <p>
+            Piensa también adónde lleva ese enlace. Si apunta a una web lenta, a una página genérica o a un perfil sin información, el trabajo de la bio se pierde en el último paso. Lo que mejor funciona para un negocio pequeño es una <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">web propia, clara y pensada para el móvil</Link>, con el contacto a un toque. Y si tus clientes son de tu zona, muchos te buscarán después en Google: tener la <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile completa y con reseñas</Link> cierra el círculo.
+          </p>
+          <BlogBanner
+            variant="default"
+            badge="Redes sociales"
+            title="Que tu Instagram traiga contactos, no solo seguidores"
+            desc="Nos encargamos de tu perfil, tus publicaciones y tu bio con un objetivo claro: que quien te descubre en Instagram acabe escribiéndote o visitando tu web."
+            cta="Ver gestión de redes sociales"
+            href="/smm-social-media-marketing/"
+            secondary={{ text: "¿Prefieres empezar con una auditoría gratuita de tu presencia digital?", href: "/auditoria-digital/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Checklist: 8 elementos que debe tener tu bio</h2>
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -219,11 +230,16 @@ export default function InstagramBioEmpresasPage() {
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">¿Necesitas ayuda con tu estrategia en redes sociales?</h2>
             <p className="text-primary-200 mb-6">
-              En Mkt Web 360 gestionamos redes sociales para empresas que quieren resultados reales: más seguidores, más interacciones y más clientes desde Instagram.
+              En Mkt Web 360 gestionamos las redes de negocios pequeños con estrategia, contenido e informe mensual, y con el foco puesto en los contactos que llegan, no solo en los seguidores.
             </p>
-            <Link href="/smm-social-media-marketing/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors inline-block">
-              Ver servicio de redes sociales
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/smm-social-media-marketing/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors inline-block">
+                Ver servicio de redes sociales
+              </Link>
+              <Link href="/auditoria-digital/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors inline-block">
+                Pedir auditoría gratuita
+              </Link>
+            </div>
           </div>
 
           <p className="text-sm text-gray-500 pt-4">

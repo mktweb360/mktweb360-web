@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: "Blog", href: `/${lang}/blog/` },
           { label: isEn ? "Get clients online" : "Clients en ligne" },
         ]} />
-        <p className="text-sm text-accent-500 font-semibold mb-2">Strategy</p>
+        <p className="text-sm text-accent-500 font-semibold mb-2">{isEn ? "Strategy" : "Stratégie"}</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How a freelancer can get clients online without depending on platforms" : "Comment un indépendant peut obtenir des clients en ligne sans dépendre des plateformes"}
         </h1>
@@ -57,7 +57,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "A professional website is the freelancer's most important asset. It works for you 24/7 and gives you complete control over your positioning, unlike platform profiles that are subject to algorithm changes and policy updates. Your website should clearly communicate your niche specialisation, showcase your best work with case studies, feature testimonials from clients and have a clear call to action." : "Un site web professionnel est l'actif le plus important du freelance. Il travaille pour vous 24h/24 et vous donne un contrôle total sur votre positionnement, contrairement aux profils de plateformes soumis aux changements d'algorithme et aux mises à jour de politique. Votre site doit clairement communiquer votre spécialisation de niche, présenter votre meilleur travail avec des études de cas, afficher des témoignages de clients et avoir un appel à l'action clair."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "If you do not have one yet, or yours no longer reflects what you do, our " : "Si vous n'en avez pas encore, ou si le vôtre ne reflète plus ce que vous faites, notre "}
+            <a href={isEn ? "/en/web-design/" : "/fr/creation-site-web/"} className="text-accent-500 hover:underline">
+              {isEn ? "web design service for freelancers and small businesses" : "service de création de site pour indépendants et petites entreprises"}
+            </a>
+            {isEn ? " builds it with one page per service and the technical SEO basics in place." : " le construit avec une page par service et les bases du SEO technique en place."}
+          </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "Optimise your website for the specific searches your ideal clients make. If you are a freelance graphic designer specialising in food brand packaging, your website should rank for 'freelance packaging designer Spain' and similar queries. This requires writing content that specifically addresses what your ideal clients search for — service pages, case studies and a blog that demonstrates your expertise." : "Optimisez votre site pour les recherches spécifiques que font vos clients idéaux. Si vous êtes un designer graphique freelance spécialisé dans l'emballage de marques alimentaires, votre site devrait se positionner pour 'designer d'emballage freelance Espagne' et des requêtes similaires. Cela nécessite d'écrire du contenu qui traite spécifiquement de ce que vos clients idéaux recherchent — pages de services, études de cas et un blog qui démontre votre expertise."}
+          </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "If your clients are in your area, add a " : "Si vos clients sont dans votre zone, ajoutez une "}
+            <a href={isEn ? "/en/google-business-profile-service/" : "/fr/gestion-google-business-profile/"} className="text-accent-500 hover:underline">
+              {isEn ? "well-optimised Google Business Profile" : "fiche Google Business Profile bien optimisée"}
+            </a>
+            {isEn ? ": it is often the first thing people see when they search for a service near them, before any website." : ": c'est souvent la première chose que l'on voit en cherchant un service près de chez soi, avant tout site web."}
           </p>
         </section>
 
@@ -69,7 +83,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "LinkedIn is the most powerful platform for B2B freelancers. An optimised profile acts as a landing page that appears in searches and converts profile visitors into leads. Your headline should not just say 'Freelancer' — it should say exactly what you do and for whom: 'I help SaaS companies write content that converts technical buyers.' Your About section should speak to client problems, not your biography." : "LinkedIn est la plateforme la plus puissante pour les freelances B2B. Un profil optimisé agit comme une landing page qui apparaît dans les recherches et convertit les visiteurs de profil en leads. Votre titre ne doit pas juste dire 'Freelance' — il doit dire exactement ce que vous faites et pour qui : 'J'aide les entreprises SaaS à écrire du contenu qui convertit les acheteurs techniques.' Votre section À propos doit parler aux problèmes des clients, pas à votre biographie."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Regular LinkedIn content creation — posts sharing insights about your niche 2-3 times per week — builds visibility with your target audience. The algorithm rewards consistency, and over 6-12 months of regular posting, you will attract inbound inquiries from potential clients who have been following your thinking. This is slower than cold outreach but the quality of clients it attracts is significantly higher." : "La création régulière de contenu LinkedIn — des publications partageant des insights sur votre niche 2 à 3 fois par semaine — construit la visibilité auprès de votre audience cible. L'algorithme récompense la cohérence, et sur 6 à 12 mois de publications régulières, vous attirerez des demandes entrantes de clients potentiels qui ont suivi votre réflexion. C'est plus lent que la prospection à froid mais la qualité des clients attirés est significativement plus élevée."}
+            {isEn ? "Regular LinkedIn content creation — posts sharing insights about your niche 2-3 times per week — builds visibility with your target audience. The algorithm rewards consistency, and after months of regular posting it can start bringing inbound enquiries from people who have been following what you share. It is slower than cold outreach, and the clients who arrive this way usually know what you do before they write." : "La création régulière de contenu LinkedIn — des publications partageant des insights sur votre niche 2 à 3 fois par semaine — construit la visibilité auprès de votre audience cible. L'algorithme récompense la cohérence, et après des mois de publications régulières, cela peut commencer à apporter des demandes entrantes de personnes qui suivent ce que vous partagez. C'est plus lent que la prospection à froid, et les clients qui arrivent ainsi savent généralement ce que vous faites avant d'écrire."}
           </p>
         </section>
 
@@ -78,7 +92,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "SEO and content to attract inbound clients" : "SEO et contenu pour attirer des clients entrants"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "A blog or content hub on your website that addresses the questions your ideal clients ask is one of the highest-leverage investments a freelancer can make. It takes months to gain traction but once established, it generates a steady stream of qualified inbound leads at no cost per acquisition. Focus on specific, low-competition keywords that your ideal clients search for." : "Un blog ou un hub de contenu sur votre site qui répond aux questions que posent vos clients idéaux est l'un des investissements à effet de levier le plus élevé qu'un freelance puisse faire. Il faut des mois pour gagner en traction mais une fois établi, il génère un flux régulier de leads entrants qualifiés sans coût par acquisition. Concentrez-vous sur des mots-clés spécifiques à faible concurrence que vos clients idéaux recherchent."}
+            {isEn ? "A blog or content hub on your website that addresses the questions your ideal clients ask is one of the highest-leverage investments a freelancer can make. It takes months to gain traction but once established, it keeps bringing qualified visits without paying for each click. Focus on specific, low-competition keywords that your ideal clients search for." : "Un blog ou un hub de contenu sur votre site qui répond aux questions que posent vos clients idéaux est l'un des investissements à effet de levier le plus élevé qu'un freelance puisse faire. Il faut des mois pour gagner en traction mais une fois établi, il continue d'apporter des visites qualifiées sans payer chaque clic. Concentrez-vous sur des mots-clés spécifiques à faible concurrence que vos clients idéaux recherchent."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "Guest posting on industry publications and websites your target clients read is another effective content strategy. A well-placed article on an industry publication can generate more qualified leads than months of social media posting. Research the publications your ideal clients read and pitch articles that demonstrate your expertise while providing genuine value to their audience." : "La publication d'articles invités sur des publications et sites web de l'industrie que lisent vos clients cibles est une autre stratégie de contenu efficace. Un article bien placé dans une publication sectorielle peut générer plus de leads qualifiés que des mois de publications sur les réseaux sociaux. Recherchez les publications que lisent vos clients idéaux et proposez des articles qui démontrent votre expertise tout en apportant une vraie valeur à leur audience."}
@@ -97,13 +111,22 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         </section>
 
-        <BlogBanner variant="default" />
+        <BlogBanner
+          lang={lang}
+          variant="default"
+          badge={isEn ? "Free audit" : "Audit gratuit"}
+          title={isEn ? "Find out what is stopping clients from finding you" : "Découvrez ce qui empêche les clients de vous trouver"}
+          desc={isEn ? "We review your website, your Google Business Profile, your visibility in local searches and in AI assistants, and tell you the first three things we would change. No cost, no commitment." : "Nous analysons votre site, votre fiche Google Business Profile, votre visibilité dans les recherches locales et dans les assistants IA, et nous vous indiquons les trois premières choses que nous changerions. Sans coût ni engagement."}
+          cta={isEn ? "Request my free audit" : "Demander mon audit gratuit"}
+          href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"}
+          secondary={{ text: isEn ? "See local SEO and Google Maps" : "Voir le SEO local et Google Maps", href: isEn ? "/en/local-seo-services/" : "/fr/local-seo-services/" }}
+        />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
-            {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}
+            {isEn ? "Want clients to find you without relying on platforms?" : "Vous voulez que les clients vous trouvent sans dépendre des plateformes ?"}
           </h2>
           <p className="text-primary-200 mb-6">
-            {isEn ? "Tell us about your project and we'll get back to you within 24 hours." : "Parlez-nous de votre projet et nous vous répondrons dans les 24 heures."}
+            {isEn ? "Tell us what you do and who your ideal client is, and we will reply with where we would start: website, Google Business Profile or local SEO." : "Dites-nous ce que vous faites et qui est votre client idéal, et nous vous répondrons par où nous commencerions : site web, fiche Google Business Profile ou SEO local."}
           </p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`blog-${lang}`} />

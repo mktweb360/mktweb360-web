@@ -3,6 +3,17 @@ import Link from "next/link";
 interface BlogBannerProps {
   variant?: "seo" | "ecommerce" | "geo" | "seogeogbp" | "default";
   lang?: string;
+  /**
+   * Textos y enlaces propios para adaptar la llamada a la acción al tema del artículo
+   * (p. ej. los artículos para autónomos que llevan a la web, la ficha de Google o la auditoría).
+   * Lo que no se indique se toma de la variante.
+   */
+  badge?: string;
+  title?: string;
+  desc?: string;
+  cta?: string;
+  href?: string;
+  secondary?: { text: string; href: string } | null;
 }
 
 type BannerData = {
@@ -127,9 +138,20 @@ const BANNERS_FR: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = 
   },
 };
 
-export function BlogBanner({ variant = "default", lang }: BlogBannerProps) {
+export function BlogBanner({ variant = "default", lang, badge, title, desc, cta, href, secondary }: BlogBannerProps) {
   const banners = lang === "en" ? BANNERS_EN : lang === "fr" ? BANNERS_FR : BANNERS_ES;
-  const b = banners[variant] ?? banners.seo;
+  const base = banners[variant] ?? banners.seo;
+  const custom = Boolean(title || desc || href);
+  const b: BannerData = {
+    badge: badge ?? base.badge,
+    title: title ?? base.title,
+    desc: desc ?? base.desc,
+    cta: cta ?? base.cta,
+    href: href ?? base.href,
+    // Con textos propios no se arrastra el precio de la variante: el banner deja de hablar de esa oferta.
+    price: custom ? undefined : base.price,
+    secondary: secondary === null ? undefined : secondary ?? base.secondary,
+  };
   return (
     <div className="mw-skin-cta my-10 rounded-3xl p-8 text-white">
       <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">

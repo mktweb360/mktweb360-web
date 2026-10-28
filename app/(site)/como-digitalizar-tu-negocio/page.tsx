@@ -101,17 +101,17 @@ export default function DigitalizarNegocioPage() {
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
-            La palabra "digitalización" asusta a muchos empresarios. Suena grande, costosa y complicada. Pero en la práctica, digitalizar un negocio es un proceso gradual que empieza por resolver lo que más frena o lo que más oportunidades tiene, y continúa desde ahí con criterio.
+            La palabra «digitalización» asusta a muchos empresarios. Suena grande, costosa y complicada. Pero en la práctica, digitalizar un negocio es un proceso gradual que empieza por resolver lo que más frena o lo que más oportunidades tiene, y continúa desde ahí con criterio.
           </p>
 
           <h2 className="text-2xl font-bold text-primary-600">Qué significa realmente digitalizar un negocio</h2>
           <p>Digitalizar un negocio significa trasladar procesos, comunicaciones, ventas y gestión a herramientas digitales que los hacen más eficientes, escalables y medibles. No es sinónimo de tener redes sociales activas ni de comprar un CRM caro. Es una transformación progresiva que empieza por los puntos de mayor impacto y se va ampliando a medida que el negocio está preparado para absorber los cambios.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Por dónde empezar: los pilares fundamentales</h2>
-          <p>La presencia digital es casi siempre el primer paso. Una web que funciona bien, una ficha de Google actualizada y una forma clara de contacto son la base desde la que todo lo demás se construye. Después viene la gestión: facturación digital, agenda de clientes, comunicación por email o mensajería. Y después los canales de captación: publicidad, contenidos o redes sociales según el sector. Hacerlo en ese orden evita construir sobre arena.</p>
+          <p>La presencia digital es casi siempre el primer paso. Una web que funciona bien, una <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile completa y al día</Link> y una forma clara de contacto son la base desde la que todo lo demás se construye. Después viene la gestión: facturación digital, agenda de clientes, comunicación por email o mensajería. Y después los canales de captación: publicidad, contenidos o redes sociales según el sector. Hacerlo en ese orden evita construir sobre arena.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Qué herramientas tienen sentido para una pyme</h2>
-          <p>Las herramientas deben resolver problemas concretos, no añadir complejidad. Para la presencia web, un sitio bien hecho con SEO básico. Para la gestión, un software de facturación adaptado al tamaño del negocio. Para la comunicación, una herramienta de email que permita automatizar comunicaciones básicas. Para la captación, Google Ads o SEO según el objetivo. No hay que implementar todo a la vez — hay que implementar lo que resuelve el problema actual.</p>
+          <p>Las herramientas deben resolver problemas concretos, no añadir complejidad. Para la presencia web, un sitio bien hecho con SEO básico (aquí puedes ver <Link href="/oferta-web-seo-organico/" className="text-accent-500 hover:underline">qué incluye una web profesional y cuánto cuesta</Link>). Para la gestión, un software de facturación adaptado al tamaño del negocio. Para la comunicación, una herramienta de email que permita automatizar comunicaciones básicas. Para la captación, Google Ads o SEO según el objetivo. No hay que implementar todo a la vez — hay que implementar lo que resuelve el problema actual.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Quieres saber por dónde empezar en tu caso?</p>
@@ -121,13 +121,21 @@ export default function DigitalizarNegocioPage() {
             </Link>
           </div>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            variant="default"
+            badge="El primer paso"
+            title="Una web y una ficha de Google que te traigan contactos"
+            desc="Si tu negocio todavía no tiene una web clara o tu ficha de Google está a medias, es lo que más rápido se nota en las llamadas y mensajes. Te ayudamos a montarlo bien desde el principio."
+            cta="Ver diseño de páginas web"
+            href="/diseno-de-paginas-web/"
+            secondary={{ text: "¿Ya tienes web? Pide una auditoría gratuita", href: "/auditoria-digital/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Errores habituales en la digitalización de pymes</h2>
           <p>Digitalizar sin objetivos claros, comprar software antes de entender qué problema resuelve, delegar todo a un proveedor sin implicación interna y creer que digitalizar es solo tener presencia en redes son los errores más frecuentes. También lo es hacer todo a la vez — la sobrecarga de cambios simultáneos hace que nada se consolide bien. La digitalización exitosa es gradual, ordenada y medida.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El Kit Digital como acelerador</h2>
-          <p>El programa Kit Digital ofrece subvenciones para que pymes y autónomos contraten soluciones digitales homologadas — desde diseño web hasta CRM, pasando por presencia en redes o comercio electrónico. Es una herramienta útil para digitalizar algunos aspectos con coste reducido o cero, siempre que se elija el agente digitalizador y la solución adecuados para el negocio concreto.</p>
+          <h2 className="text-2xl font-bold text-primary-600">Y las ayudas, ¿qué queda del Kit Digital?</h2>
+          <p>El Kit Digital subvencionó durante varios años web, tienda online, CRM o presencia en redes para pymes y autónomos, pero cerró sus últimas convocatorias el 31 de octubre de 2025 y hoy no admite solicitudes nuevas. Siguen saliendo ayudas de Cámaras de Comercio y comunidades autónomas, con bases y plazos distintos en cada caso. Lo tienes resumido en <Link href="/ayudas-digitalizar-pyme-2026-tras-kit-digital/" className="text-accent-500 hover:underline">qué ayudas para digitalizar una pyme quedan en 2026</Link>; consulta siempre la convocatoria vigente antes de decidir. Y no esperes a una ayuda para lo básico: una ficha de Google bien hecha es gratis y una web sencilla no requiere una gran inversión.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/errores-digitales-negocio-nuevo/" className="text-accent-500 hover:underline">Errores digitales al montar un negocio desde cero</Link> · <Link href="/que-revisar-antes-de-invertir-mas-en-marketing-digital/" className="text-accent-500 hover:underline">Qué revisar antes de invertir más en marketing digital</Link>
@@ -136,11 +144,14 @@ export default function DigitalizarNegocioPage() {
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
             <h2 className="text-2xl font-bold mb-3">Digitaliza tu negocio con un plan real</h2>
             <p className="text-primary-200 mb-6">
-              Ayudamos a pymes a entender qué pasos digitales tienen sentido en su situación actual y a ejecutarlos con orden, sin inversiones innecesarias.
+              Empieza por saber dónde estás: revisamos gratis tu web, tu ficha de Google y cómo te encuentran en buscadores y asistentes de IA, y te decimos qué paso dar primero.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contacto/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
-                Hablar con un especialista
+              <Link href="/auditoria-digital/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
+                Pedir auditoría gratuita
+              </Link>
+              <Link href="/google-business-profile/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
+                Optimizar mi ficha de Google
               </Link>
             </div>
           </div>

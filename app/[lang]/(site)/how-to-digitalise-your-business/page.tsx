@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -34,7 +35,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </h1>
         <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">
-          {isEn ? "Digitalising your business is no longer optional — it is a matter of survival. But it doesn't have to be complicated. This guide explains the steps, the priorities and the tools you need." : "Digitaliser votre entreprise n'est plus optionnel — c'est une question de survie. Mais ça ne doit pas être compliqué. Ce guide explique les étapes, les priorités et les outils dont vous avez besoin."}
+          {isEn ? "Digitalising your business does not have to be complicated. This guide explains the steps, the priorities and the tools you need." : "Digitaliser votre entreprise ne doit pas être compliqué. Ce guide explique les étapes, les priorités et les outils dont vous avez besoin."}
         </p>
 
         <section className="mb-10">
@@ -81,6 +82,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "The best place to start depends on your current situation. If you have no website, start there — it is the foundation of everything else. If you have a website but no one finds you, SEO and Google Business Profile are the priority. If you have traffic but no conversions, fix your website's UX and content before spending more on advertising. Always solve the bottleneck before amplifying it." : "Le meilleur endroit pour commencer dépend de votre situation actuelle. Si vous n'avez pas de site web, commencez par là — c'est le fondement de tout le reste. Si vous avez un site mais que personne ne vous trouve, le SEO et Google Business Profile sont la priorité. Si vous avez du trafic mais pas de conversions, corrigez l'UX et le contenu de votre site avant de dépenser davantage en publicité. Résolvez toujours le goulot d'étranglement avant de l'amplifier."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? (
+              <>If you are not sure which of these situations applies to you, a <Link href="/en/digital-audit/" className="text-accent-500 hover:underline">free review of your website, Google profile and search visibility</Link> will show you where the bottleneck is. And if local customers are the priority, start with a <Link href="/en/google-business-profile-service/" className="text-accent-500 hover:underline">complete, up-to-date Google Business Profile</Link>.</>
+            ) : (
+              <>Si vous ne savez pas laquelle de ces situations est la vôtre, un <Link href="/fr/audit-digital/" className="text-accent-500 hover:underline">audit gratuit de votre site, de votre fiche Google et de votre visibilité dans les moteurs de recherche</Link> vous montrera où se trouve le blocage. Et si vos clients sont locaux, commencez par une <Link href="/fr/gestion-google-business-profile/" className="text-accent-500 hover:underline">fiche Google Business Profile complète et à jour</Link>.</>
+            )}
+          </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "A practical approach: set a 90-day sprint for each digital initiative. Define a clear objective (e.g., 'generate 10 qualified leads per month from Google'), identify the 2-3 actions most likely to achieve it, execute consistently for 90 days, measure the results and then decide whether to continue, scale or pivot. This iterative approach prevents the paralysis that comes from trying to perfect everything at once." : "Une approche pratique : fixez un sprint de 90 jours pour chaque initiative digitale. Définissez un objectif clair (ex. 'générer 10 leads qualifiés par mois depuis Google'), identifiez les 2 à 3 actions les plus susceptibles de l'atteindre, exécutez régulièrement pendant 90 jours, mesurez les résultats puis décidez de continuer, d'amplifier ou de pivoter. Cette approche itérative évite la paralysie qui vient d'essayer de tout perfectionner à la fois."}
           </p>
         </section>
@@ -97,13 +105,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         </section>
 
-        <BlogBanner variant="default" />
+        <BlogBanner
+          lang={lang}
+          badge={isEn ? "Free audit" : "Audit gratuit"}
+          title={isEn ? "Find out which step to take first" : "Sachez par quelle étape commencer"}
+          desc={isEn ? "We review your website, your Google Business Profile and how you appear in search engines and AI assistants, and tell you what to fix first. No cost, no commitment." : "Nous analysons votre site, votre fiche Google Business Profile et votre présence dans les moteurs de recherche et les assistants IA, et nous vous disons quoi corriger en premier. Sans frais ni engagement."}
+          cta={isEn ? "Request my free audit" : "Demander mon audit gratuit"}
+          href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"}
+          secondary={{ text: isEn ? "No website yet? See our web design service" : "Pas encore de site ? Découvrez notre création de site web", href: isEn ? "/en/web-design/" : "/fr/creation-site-web/" }}
+        />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
-            {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}
+            {isEn ? "Tell us where your business is today" : "Dites-nous où en est votre entreprise"}
           </h2>
           <p className="text-primary-200 mb-6">
-            {isEn ? "Tell us about your project and we'll get back to you within 24 hours." : "Parlez-nous de votre projet et nous vous répondrons dans les 24 heures."}
+            {isEn ? "Explain what you already have (website, Google profile, tools) and what is holding you back. We will reply with the first steps that make sense for your case." : "Expliquez ce que vous avez déjà (site, fiche Google, outils) et ce qui vous freine. Nous vous répondrons avec les premières étapes qui ont du sens dans votre cas."}
           </p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`blog-${lang}`} />

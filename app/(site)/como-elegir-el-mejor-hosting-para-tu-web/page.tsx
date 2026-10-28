@@ -55,7 +55,7 @@ export default function MejorHostingPage() {
           </p>
           <Image
             src="/og-como-elegir-el-mejor-hosting-para-tu-web.jpg"
-            alt="Cómo Elegir el Mejor Hosting para tu Web — Guía Completa 2024"
+            alt="Cómo elegir el mejor hosting para tu web: tipos, factores y efecto en el SEO"
             width={1200}
             height={630}
             className="w-full rounded-2xl mt-6"
@@ -65,9 +65,10 @@ export default function MejorHostingPage() {
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <h2 className="text-2xl font-bold text-primary-600">¿Qué es un hosting y por qué es importante?</h2>
           <p>El hosting web es el servicio que almacena los archivos de tu web en servidores conectados a internet 24/7. Cuando alguien escribe tu dominio en el navegador, se conecta a ese servidor para cargar tu web. La calidad del hosting determina la velocidad de carga, la disponibilidad y la seguridad de tu sitio.</p>
-          <p>Google usa la velocidad de carga como factor de posicionamiento (Core Web Vitals). Un hosting lento perjudica directamente tu SEO, aumenta la tasa de rebote y reduce las conversiones. Por eso la elección del hosting no es un tema menor.</p>
+          <p>Google usa la velocidad de carga como factor de posicionamiento (Core Web Vitals). Un hosting lento perjudica directamente tu SEO, aumenta la tasa de rebote y reduce las conversiones. Por eso la elección del hosting no es un tema menor, y conviene decidirlo a la vez que el <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">diseño de la página web</Link>: no pide lo mismo una web corporativa de diez páginas que una tienda online.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Tipos de hosting</h2>
+          <p>Los precios que verás son orientativos del mercado y cambian según el proveedor y la promoción del momento; sirven para comparar tipos, no proveedores.</p>
 
           <div className="space-y-4">
             {[
@@ -122,18 +123,31 @@ export default function MejorHostingPage() {
             <li><strong>Escalabilidad:</strong> Que puedas aumentar recursos fácilmente si tu web crece.</li>
           </ul>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            variant="default"
+            badge="Web profesional"
+            title="El hosting es la base; lo que te trae clientes es la web"
+            desc="Diseñamos tu web a medida, rápida y adaptada a móvil, integrada en WordPress para que edites tú los contenidos y con el SEO técnico de base hecho. Si lo necesitas, te ayudamos también con el hosting y el dominio, que se contratan aparte."
+            cta="Ver la oferta de web profesional"
+            href="/oferta-web-seo-organico/"
+            secondary={{ text: "¿Ya tienes web? Pide una auditoría gratuita de velocidad y SEO", href: "/auditoria-digital/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo afecta el hosting al SEO</h2>
           <p>Un hosting lento impacta negativamente en el LCP (Largest Contentful Paint), uno de los Core Web Vitals que Google usa como factor de ranking. Además, si tu web cae frecuentemente, los bots de Google pueden tener problemas para indexarla correctamente.</p>
-          <p>Para webs WordPress, los plugins de caché (como WP Rocket o LiteSpeed Cache) pueden compensar parte de un hosting lento, pero no pueden sustituir a un buen servidor. Lo ideal es empezar con un buen hosting desde el principio.</p>
+          <p>Para webs WordPress, los plugins de caché (como WP Rocket o LiteSpeed Cache) pueden compensar parte de un hosting lento, pero no pueden sustituir a un buen servidor. Lo ideal es empezar con un buen hosting desde el principio. Si tu web ya está publicada y no sabes si el servidor te está frenando, una <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría gratuita de tu web con datos de velocidad y SEO</Link> te lo dice antes de cambiar de proveedor.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
-            <p className="font-semibold text-primary-700 mb-2">¿Necesitas ayuda para elegir hosting para tu web?</p>
-            <p className="text-gray-600 text-sm mb-4">En Mkt Web 360 nos encargamos del hosting, la seguridad y el mantenimiento técnico de tu web para que tú puedas centrarte en tu negocio.</p>
-            <Link href="/diseno-de-paginas-web/" className="bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
-              Ver diseño web profesional
-            </Link>
+            <p className="font-semibold text-primary-700 mb-2">¿Vas a hacer o rehacer tu web?</p>
+            <p className="text-gray-600 text-sm mb-4">Te la diseñamos pensando en la velocidad y en que te contacten, y te orientamos con el hosting adecuado para ese proyecto. Si ya tienes web, empieza por ver qué falla.</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/oferta-web-seo-organico/" className="bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
+                Ver la oferta de web profesional
+              </Link>
+              <Link href="/auditoria-digital/" className="border-2 border-accent-500 text-accent-600 px-6 py-2 rounded-full font-semibold text-sm hover:bg-accent-50 transition-colors">
+                Auditar mi web gratis
+              </Link>
+            </div>
           </div>
         </div>
         <nav className="mt-12 pt-8 border-t border-gray-200">

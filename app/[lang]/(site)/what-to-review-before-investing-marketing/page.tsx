@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -59,6 +60,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "A site that loads in under 3 seconds, has a clear value proposition on the homepage, makes it easy to contact you and works flawlessly on mobile is a prerequisite for profitable paid advertising. Fixing these issues before spending on ads is almost always a better return on investment than running ads to a broken funnel." : "Un site qui se charge en moins de 3 secondes, a une proposition de valeur claire sur la page d'accueil, facilite le contact et fonctionne parfaitement sur mobile est un prérequis pour une publicité payante rentable. Corriger ces problèmes avant de dépenser en publicité est presque toujours un meilleur retour sur investissement que de diffuser des publicités vers un entonnoir défaillant."}
           </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? (
+              <>If you would rather have someone else look at it, we offer a <Link href="/en/digital-audit/" className="text-accent-500 hover:underline">free audit of your website, SEO and Google Business Profile</Link>: it tells you what to fix before you spend more on traffic.</>
+            ) : (
+              <>Si vous préférez un regard extérieur, nous proposons un <Link href="/fr/audit-digital/" className="text-accent-500 hover:underline">audit gratuit de votre site, de votre SEO et de votre fiche Google</Link> : il vous indique quoi corriger avant de payer plus de trafic.</>
+            )}
+          </p>
         </section>
 
         <section className="mb-10">
@@ -69,7 +77,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "You cannot improve what you cannot measure. Before investing more in marketing, verify that your analytics setup is correct: Is Google Analytics 4 properly installed and collecting data? Are your conversion goals configured (form submissions, phone clicks, purchases)? Is Google Tag Manager set up? Are you tracking which specific channels generate your best leads?" : "Vous ne pouvez pas améliorer ce que vous ne pouvez pas mesurer. Avant d'investir davantage en marketing, vérifiez que votre configuration analytique est correcte : Google Analytics 4 est-il correctement installé et collecte-t-il des données ? Vos objectifs de conversion sont-ils configurés (soumissions de formulaires, clics téléphoniques, achats) ? Google Tag Manager est-il configuré ? Suivez-vous quels canaux spécifiques génèrent vos meilleurs leads ?"}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Without proper conversion tracking, you are making investment decisions blind. Many SMEs discover when they first set up proper tracking that their assumptions about which marketing channels work were completely wrong. The channel that felt most productive was actually generating low-quality leads, while an overlooked channel was quietly generating the best customers." : "Sans suivi de conversion approprié, vous prenez des décisions d'investissement à l'aveugle. De nombreuses PME découvrent lorsqu'elles configurent pour la première fois un suivi approprié que leurs hypothèses sur les canaux marketing qui fonctionnent étaient complètement erronées. Le canal qui semblait le plus productif générait en réalité des leads de mauvaise qualité, tandis qu'un canal négligé générait silencieusement les meilleurs clients."}
+            {isEn ? "Without proper conversion tracking, you are making investment decisions blind. Many SMEs discover when they first set up proper tracking that their assumptions about which marketing channels work were wrong. The channel that felt most productive was actually generating low-quality leads, while an overlooked channel was quietly generating the best customers." : "Sans suivi de conversion approprié, vous prenez des décisions d'investissement à l'aveugle. De nombreuses PME découvrent lorsqu'elles configurent pour la première fois un suivi approprié que leurs hypothèses sur les canaux marketing qui fonctionnent étaient complètement erronées. Le canal qui semblait le plus productif générait en réalité des leads de mauvaise qualité, tandis qu'un canal négligé générait silencieusement les meilleurs clients."}
+          </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? (
+              <>If you are not sure your tracking is right, our <Link href="/en/web-analytics/" className="text-accent-500 hover:underline">web analytics service sets up GA4, Tag Manager and conversions</Link> so you can see which channel brings the customers who actually buy.</>
+            ) : (
+              <>Si vous n&apos;êtes pas sûr de votre suivi, notre <Link href="/fr/analytique-web/" className="text-accent-500 hover:underline">service d&apos;analytique web configure GA4, Tag Manager et les conversions</Link> pour voir quel canal amène les clients qui achètent vraiment.</>
+            )}
           </p>
         </section>
 
@@ -97,13 +112,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         </section>
 
-        <BlogBanner variant="default" />
+        <BlogBanner
+          lang={lang}
+          badge={isEn ? "Before raising the budget" : "Avant d'augmenter le budget"}
+          title={isEn ? "Find out what is holding your results back" : "Découvrez ce qui freine vos résultats"}
+          desc={isEn ? "We review your website, SEO, Google Business Profile and how you appear in AI assistants for free, and tell you what to fix before investing more. No commitment." : "Nous analysons gratuitement votre site, votre SEO, votre fiche Google et votre présence dans les assistants IA, et nous vous disons quoi corriger avant d'investir davantage. Sans engagement."}
+          cta={isEn ? "Request my free audit" : "Demander mon audit gratuit"}
+          href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"}
+          secondary={{ text: isEn ? "Not sure where your customers come from? See web analytics" : "Vous ne savez pas d'où viennent vos clients ? Voir l'analytique web", href: isEn ? "/en/web-analytics/" : "/fr/analytique-web/" }}
+        />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
-            {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}
+            {isEn ? "Review before you invest more" : "Vérifiez avant d'investir davantage"}
           </h2>
           <p className="text-primary-200 mb-6">
-            {isEn ? "Tell us about your project and we'll get back to you within 24 hours." : "Parlez-nous de votre projet et nous vous répondrons dans les 24 heures."}
+            {isEn ? "Tell us which channels you use today and what results you are getting. We will tell you what we would review first." : "Dites-nous quels canaux vous utilisez aujourd'hui et quels résultats vous obtenez. Nous vous dirons ce que nous vérifierions en premier."}
           </p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`blog-${lang}`} />

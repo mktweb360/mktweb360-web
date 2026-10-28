@@ -66,10 +66,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "How to identify your real differentiators" : "Comment identifier vos vrais différenciateurs"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Your real differentiators are rarely what you think they are. Companies often believe their differentiator is quality, experience or customer service — but these are table stakes that every competitor claims. Real differentiators are specific: a proprietary process, a particular expertise, a unique guarantee, a speed advantage, access to something competitors don't have." : "Vos vrais différenciateurs sont rarement ce que vous croyez qu'ils sont. Les entreprises croient souvent que leur différenciateur est la qualité, l'expérience ou le service client — mais ce sont des bases que chaque concurrent revendique. Les vrais différenciateurs sont spécifiques : un processus propriétaire, une expertise particulière, une garantie unique, un avantage de vitesse, l'accès à quelque chose que les concurrents n't ont pas."}
+            {isEn ? "Your real differentiators are rarely what you think they are. Companies often believe their differentiator is quality, experience or customer service — but these are table stakes that every competitor claims. Real differentiators are specific: a proprietary process, a particular expertise, a unique guarantee, a speed advantage, access to something competitors don't have." : "Vos vrais différenciateurs sont rarement ce que vous croyez qu'ils sont. Les entreprises croient souvent que leur différenciateur est la qualité, l'expérience ou le service client — mais ce sont des bases que chaque concurrent revendique. Les vrais différenciateurs sont spécifiques : un processus propriétaire, une expertise particulière, une garantie unique, un avantage de vitesse, l'accès à quelque chose que les concurrents n'ont pas."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "To find yours, ask your best customers why they chose you over alternatives. Ask what would happen to them if they could no longer use your service. Ask what they would lose. Their answers will reveal your real value — often things you take for granted because they seem obvious to you but are genuinely rare in your market." : "Pour trouver les vôtres, demandez à vos meilleurs clients pourquoi ils vous ont choisi plutôt qu'une alternative. Demandez ce qui leur arriverait s'ils ne pouvaient plus utiliser votre service. Demandez ce qu'ils perdraient. Leurs réponses révéleront votre vraie valeur — souvent des choses que vous tenez pour acquises car elles semblent évidentes pour vous mais sont genuinement rares sur votre marché."}
+            {isEn ? "To find yours, ask your best customers why they chose you over alternatives. Ask what would happen to them if they could no longer use your service. Ask what they would lose. Their answers will reveal your real value — often things you take for granted because they seem obvious to you but are genuinely rare in your market." : "Pour trouver les vôtres, demandez à vos meilleurs clients pourquoi ils vous ont choisi plutôt qu'une alternative. Demandez ce qui leur arriverait s'ils ne pouvaient plus utiliser votre service. Demandez ce qu'ils perdraient. Leurs réponses révéleront votre vraie valeur — souvent des choses que vous tenez pour acquises car elles semblent évidentes pour vous mais sont réellement rares sur votre marché."}
           </p>
         </section>
 
@@ -81,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "Several proven frameworks help structure a value proposition. The Geoff Moore formula: 'For [target customer] who [statement of need], our [product/service] is a [product category] that [key benefit]. Unlike [competition], we [primary differentiation].' This structure forces specificity and makes it impossible to be generic." : "Plusieurs cadres éprouvés aident à structurer une proposition de valeur. La formule de Geoff Moore : 'Pour [client cible] qui [besoin déclaré], notre [produit/service] est un [catégorie de produit] qui [bénéfice clé]. Contrairement à [concurrence], nous [différenciation principale].' Cette structure force la spécificité et rend impossible d'être générique."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "A simpler formula for smaller businesses: '[We/Our product] helps [specific audience] [do X] without [specific pain point].' For example: 'We help small businesses in Toledo attract more local customers through Google without the complexity and cost of large agencies.' This works because it is specific, names a real audience and addresses a real frustration." : "Une formule plus simple pour les petites entreprises : '[Nous/Notre produit] aide [audience spécifique] à [faire X] sans [point de douleur spécifique].' Par exemple : 'Nous aidons les petites entreprises de Tolède à attirer plus de clients locaux via Google sans la complexité et le coût des grandes agences.' Cela fonctionne parce que c'est spécifique, nomme une vraie audience et adresse une vraie frustration."}
+            {isEn ? "A simpler formula for smaller businesses: '[We/Our product] helps [specific audience] [do X] without [specific pain point].' For example: 'We help small businesses attract more customers in their area through Google without the complexity and cost of large agencies.' This works because it is specific, names a real audience and addresses a real frustration." : "Une formule plus simple pour les petites entreprises : '[Nous/Notre produit] aide [audience spécifique] à [faire X] sans [point de douleur spécifique].' Par exemple : 'Nous aidons les petites entreprises à attirer plus de clients dans leur zone via Google sans la complexité et le coût des grandes agences.' Cela fonctionne parce que c'est spécifique, nomme une vraie audience et adresse une vraie frustration."}
           </p>
         </section>
 
@@ -97,13 +97,43 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
         </section>
 
-        <BlogBanner variant="default" />
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            {isEn ? "Where your value proposition must appear" : "Où doit apparaître votre proposition de valeur"}
+          </h2>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "Your value proposition should be visible and understood within a few seconds on your homepage, in the header, before any scrolling. If your current homepage does not allow that, a " : "Votre proposition de valeur doit se voir et se comprendre en quelques secondes sur votre page d'accueil, dans l'en-tête, avant tout défilement. Si votre page d'accueil actuelle ne le permet pas, une "}
+            <a href={isEn ? "/en/web-design/" : "/fr/creation-site-web/"} className="text-accent-500 hover:underline">
+              {isEn ? "website redesign built around your proposition" : "refonte du site construite autour de votre proposition"}
+            </a>
+            {isEn ? " usually pays off more than adding sections. It should also appear in your ads, in the description of your " : " est souvent plus utile que d'ajouter des sections. Elle doit aussi figurer dans vos annonces, dans la description de votre "}
+            <a href={isEn ? "/en/google-business-profile-service/" : "/fr/gestion-google-business-profile/"} className="text-accent-500 hover:underline">
+              {isEn ? "Google Business Profile" : "fiche Google Business Profile"}
+            </a>
+            {isEn ? ", on your social profiles and in every sales presentation." : ", sur vos réseaux sociaux et dans chaque présentation commerciale."}
+          </p>
+        </section>
+
+        <BlogBanner
+          lang={lang}
+          badge={isEn ? "Free, no commitment" : "Gratuit et sans engagement"}
+          title={isEn ? "Does your website make your value proposition clear?" : "Votre site rend-il votre proposition de valeur claire ?"}
+          desc={isEn
+            ? "In the free audit we review your homepage, your Google Business Profile and how AI assistants describe you, and tell you what to change so visitors see straight away why they should choose you."
+            : "Dans l'audit gratuit, nous analysons votre page d'accueil, votre fiche Google Business Profile et la façon dont les assistants IA vous décrivent, et nous vous disons quoi changer pour que l'on comprenne tout de suite pourquoi vous choisir."}
+          cta={isEn ? "Request my free audit" : "Demander mon audit gratuit"}
+          href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"}
+          secondary={{
+            text: isEn ? "Rather rebuild the website around it? See our web design service" : "Plutôt refaire le site autour d'elle ? Voir notre service de création de site",
+            href: isEn ? "/en/web-design/" : "/fr/creation-site-web/",
+          }}
+        />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
-            {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}
+            {isEn ? "Want your website to say why clients should choose you?" : "Vous voulez que votre site dise pourquoi vous choisir ?"}
           </h2>
           <p className="text-primary-200 mb-6">
-            {isEn ? "Tell us about your project and we'll get back to you within 24 hours." : "Parlez-nous de votre projet et nous vous répondrons dans les 24 heures."}
+            {isEn ? "Tell us what you do and who your ideal client is, and we will reply with how we would present it on your homepage." : "Dites-nous ce que vous faites et qui est votre client idéal : nous vous répondrons avec la façon dont nous le présenterions sur votre page d'accueil."}
           </p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`blog-${lang}`} />

@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: "Blog", href: `/${lang}/blog/` },
           { label: isEn ? "Best hosting" : "Meilleur hébergement" },
         ]} />
-        <p className="text-sm text-accent-500 font-semibold mb-2">Web Design</p>
+        <p className="text-sm text-accent-500 font-semibold mb-2">{isEn ? "Web Design" : "Création de site"}</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to choose the best hosting for your website without overpaying" : "Comment choisir le meilleur hébergement pour votre site web sans trop payer"}
         </h1>
@@ -46,6 +46,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "For most SME websites, a quality shared hosting plan or a basic VPS is sufficient. The key is choosing a reputable provider with servers in Spain or Europe (for GDPR compliance and speed) and genuine 24/7 support. Cheap shared hosting from unknown providers often comes with hidden problems: oversold servers, poor support and unreliable uptime." : "Pour la plupart des sites web de PME, un plan d'hébergement partagé de qualité ou un VPS de base est suffisant. La clé est de choisir un fournisseur réputé avec des serveurs en Espagne ou en Europe (pour la conformité RGPD et la vitesse) et un vrai support 24h/24. L'hébergement partagé bon marché de fournisseurs inconnus s'accompagne souvent de problèmes cachés : serveurs surchargés, mauvais support et disponibilité peu fiable."}
+          </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "Decide the hosting at the same time as the " : "Choisissez l'hébergement en même temps que la "}
+            <a href={isEn ? "/en/web-design/" : "/fr/creation-site-web/"} className="text-accent-500 hover:underline">
+              {isEn ? "design of your website" : "conception de votre site web"}
+            </a>
+            {isEn ? ": a ten-page corporate site does not need the same server as an online store." : ": un site vitrine de dix pages n'a pas besoin du même serveur qu'une boutique en ligne."}
           </p>
         </section>
 
@@ -78,7 +85,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "Speed, uptime and security: what to look for" : "Vitesse, disponibilité et sécurité : quoi chercher"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Page speed directly affects both user experience and Google rankings. A hosting provider that loads pages in under 2 seconds is essential. Look for providers that use SSD storage (much faster than traditional hard drives), have CDN (Content Delivery Network) integration, and offer PHP 8+ support for WordPress sites. You can test a hosting provider's speed by looking at independent benchmarks from sources like Hosting Tribunal or WP Beginner." : "La vitesse de chargement affecte directement à la fois l'expérience utilisateur et les classements Google. Un fournisseur d'hébergement qui charge les pages en moins de 2 secondes est essentiel. Cherchez des fournisseurs qui utilisent le stockage SSD (beaucoup plus rapide que les disques durs traditionnels), ont une intégration CDN (Content Delivery Network), et offrent le support PHP 8+ pour les sites WordPress. Vous pouvez tester la vitesse d'un fournisseur d'hébergement en consultant des benchmarks indépendants."}
+            {isEn ? "Page speed directly affects both user experience and Google rankings. A hosting provider that loads pages in under 2 seconds is essential. Look for providers that use SSD storage (much faster than traditional hard drives), have CDN (Content Delivery Network) integration, and offer PHP 8+ support for WordPress sites. You can measure the result yourself on any site hosted with them using Google PageSpeed Insights." : "La vitesse de chargement affecte directement à la fois l'expérience utilisateur et les classements Google. Un fournisseur d'hébergement qui charge les pages en moins de 2 secondes est essentiel. Cherchez des fournisseurs qui utilisent le stockage SSD (beaucoup plus rapide que les disques durs traditionnels), ont une intégration CDN (Content Delivery Network), et offrent le support PHP 8+ pour les sites WordPress. Vous pouvez mesurer vous-même le résultat sur un site hébergé chez eux avec Google PageSpeed Insights."}
+          </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "If your website is already live and you are not sure whether the server is slowing it down, a " : "Si votre site est déjà en ligne et que vous ne savez pas si le serveur le ralentit, un "}
+            <a href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"} className="text-accent-500 hover:underline">
+              {isEn ? "free audit of your website with speed and SEO data" : "audit gratuit de votre site avec données de vitesse et de SEO"}
+            </a>
+            {isEn ? " tells you before you switch provider." : " vous le dit avant de changer de fournisseur."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "For security, ensure your hosting plan includes: a free SSL certificate (HTTPS), daily malware scanning, automatic backups with easy restore, and DDoS protection. These should not be expensive add-ons — any decent hosting provider includes them in standard plans. Also ensure the provider keeps server software updated and has a responsible disclosure policy for vulnerabilities." : "Pour la sécurité, assurez-vous que votre plan d'hébergement inclut : un certificat SSL gratuit (HTTPS), une analyse quotidienne des logiciels malveillants, des sauvegardes automatiques avec restauration facile, et une protection DDoS. Ce ne doivent pas être des add-ons coûteux — tout fournisseur d'hébergement décent les inclut dans les plans standard. Assurez-vous également que le fournisseur maintient les logiciels serveur à jour."}
@@ -93,17 +107,26 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "For Spanish SMEs, reputable options include SiteGround (excellent support, Spanish servers, slightly more expensive), Raiola Networks (Spanish provider, good support), Dinahosting (Spanish, reliable), and for WordPress-specific sites, Kinsta or WP Engine for high-performance needs. For very budget-conscious businesses, Hostinger offers good performance at low cost, but check their support quality." : "Pour les PME espagnoles, les options réputées incluent SiteGround (excellent support, serveurs espagnols, légèrement plus cher), Raiola Networks (fournisseur espagnol, bon support), Dinahosting (espagnol, fiable), et pour les sites spécifiquement WordPress, Kinsta ou WP Engine pour les besoins haute performance. Pour les entreprises très soucieuses du budget, Hostinger offre de bonnes performances à faible coût, mais vérifiez la qualité de leur support."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Our recommendation: for a standard SME website, invest in a mid-range SiteGround or Raiola plan (€8-15 per month). This gives you reliability, good support and performance without overpaying. Only upgrade to VPS or managed WordPress if your traffic justifies it — above 10,000 monthly visits is usually the threshold where the upgrade starts to make financial sense." : "Notre recommandation : pour un site web standard de PME, investissez dans un plan SiteGround ou Raiola de milieu de gamme (8 à 15€ par mois). Cela vous offre fiabilité, bon support et performances sans trop payer. Passez au VPS ou WordPress géré uniquement si votre trafic le justifie — au-dessus de 10 000 visites mensuelles est généralement le seuil où la mise à niveau commence à avoir du sens financièrement."}
+            {isEn ? "Our recommendation: for a standard SME website, invest in a mid-range SiteGround or Raiola plan (€8-15 per month). This gives you reliability, good support and performance without overpaying. Only upgrade to VPS or managed WordPress when your traffic or your store actually needs it: if the site slows down at peak times or the plan's limits fall short, that is the signal. Prices are indicative and change with each provider's promotions." : "Notre recommandation : pour un site web standard de PME, investissez dans un plan SiteGround ou Raiola de milieu de gamme (8 à 15€ par mois). Cela vous offre fiabilité, bon support et performances sans trop payer. Passez au VPS ou au WordPress géré seulement quand votre trafic ou votre boutique l'exigent : si le site ralentit aux heures de pointe ou si les limites du plan ne suffisent plus, c'est le signal. Les prix sont indicatifs et varient selon les promotions de chaque fournisseur."}
           </p>
         </section>
 
-        <BlogBanner variant="default" />
+        <BlogBanner
+          lang={lang}
+          variant="default"
+          badge={isEn ? "Professional website" : "Site web professionnel"}
+          title={isEn ? "Hosting is the foundation; the website is what brings clients" : "L'hébergement est la base ; c'est le site qui apporte les clients"}
+          desc={isEn ? "We design your website to measure, fast and mobile-friendly, on WordPress so you can edit the content yourself, with the technical SEO basics done. If you need it, we also help you with hosting and the domain, which are contracted separately." : "Nous concevons votre site sur mesure, rapide et adapté au mobile, sous WordPress pour que vous puissiez modifier vous-même le contenu, avec les bases du SEO technique en place. Si besoin, nous vous aidons aussi pour l'hébergement et le nom de domaine, souscrits à part."}
+          cta={isEn ? "See our web design service" : "Voir notre service de création de site"}
+          href={isEn ? "/en/web-design/" : "/fr/creation-site-web/"}
+          secondary={{ text: isEn ? "Already have a website? Request a free speed and SEO audit" : "Vous avez déjà un site ? Demandez un audit gratuit de vitesse et de SEO", href: isEn ? "/en/digital-audit/" : "/fr/audit-digital/" }}
+        />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
-            {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}
+            {isEn ? "Building or rebuilding your website?" : "Vous créez ou refaites votre site ?"}
           </h2>
           <p className="text-primary-200 mb-6">
-            {isEn ? "Tell us about your project and we'll get back to you within 24 hours." : "Parlez-nous de votre projet et nous vous répondrons dans les 24 heures."}
+            {isEn ? "Tell us what your website needs to do and we will reply with how we would build it and what hosting suits that project." : "Dites-nous ce que votre site doit faire et nous vous répondrons avec la façon dont nous le construirions et l'hébergement adapté à ce projet."}
           </p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`blog-${lang}`} />
