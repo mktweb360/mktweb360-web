@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/geo-ai-positioning-chatgpt-businesses/`,
     },
     openGraph: {
+      images: ogImagesIntl("geo-ai-positioning-chatgpt-businesses"),
       title: isEn
         ? "What Is GEO and How to Appear in ChatGPT for Your Business | Mkt Web 360"
         : "Qu'est-ce que le GEO et comment apparaître dans ChatGPT pour votre entreprise | Mkt Web 360",

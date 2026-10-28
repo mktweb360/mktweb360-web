@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/shopware-seo-google/`,
     },
     openGraph: {
+      images: ogImagesIntl("shopware-seo-google"),
       title: isEn
         ? "Shopware SEO: How to Rank Your Store on Google | Mkt Web 360"
         : "SEO Shopware : comment positionner votre boutique sur Google | Mkt Web 360",

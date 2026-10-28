@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/ai-chatbot-gdpr-eu-ai-act-compliance/`,
     },
     openGraph: {
+      images: ogImagesIntl("ai-chatbot-gdpr-eu-ai-act-compliance"),
       title: isEn
         ? "AI Chatbot and Legal Compliance: GDPR, EU AI Act and What Changes in August 2026 | Mkt Web 360"
         : "Chatbot IA et conformité légale : RGPD, AI Act européen et ce qui change en août 2026 | Mkt Web 360",

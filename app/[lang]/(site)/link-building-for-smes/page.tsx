@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Link Building for SMEs: Safe Quality Links" : "Link building pour PME : liens de qualité",
     description: isEn ? "Link building strategies that work for SMEs. How to get quality backlinks without risking a Google penalty or wasting budget on low-quality links." : "Stratégies de link building qui fonctionnent pour les PME. Comment obtenir des backlinks de qualité sans risquer une pénalité Google ou gaspiller le budget sur des liens de faible qualité.",
+    openGraph: openGraphIntl(lang, "link-building-for-smes"),
     alternates: alternatesFor(`/${lang}/link-building-for-smes/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/link-building-for-smes/`,
     },

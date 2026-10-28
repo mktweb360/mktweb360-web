@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional web design and development for businesses. Fast, optimised websites built to convert visitors into customers. React + Next.js. Nationwide service."
       : "Création et développement de sites web professionnels pour les entreprises. Sites rapides et optimisés, conçus pour convertir les visiteurs en clients.",
+    openGraph: openGraphIntl(lang, "web-design"),
     alternates: alternatesFor(`/${lang}/web-design/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/web-design/`,
     },

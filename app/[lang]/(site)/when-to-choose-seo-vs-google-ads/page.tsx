@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/when-to-choose-seo-vs-google-ads/`,
     },
     openGraph: {
+      images: ogImagesIntl("when-to-choose-seo-vs-google-ads"),
       title: isEn
         ? "When to Choose SEO vs Google Ads: A Practical Decision Guide | Mkt Web 360"
         : "Quand choisir le SEO plutôt que Google Ads : guide de décision pratique | Mkt Web 360",

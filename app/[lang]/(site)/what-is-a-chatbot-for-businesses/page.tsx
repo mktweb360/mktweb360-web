@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/what-is-a-chatbot-for-businesses/`,
     },
     openGraph: {
+      images: ogImagesIntl("what-is-a-chatbot-for-businesses"),
       title: isEn
         ? "What Is a Business Chatbot and Why You Need One in 2026 | Mkt Web 360"
         : "Qu'est-ce qu'un chatbot pour entreprises et pourquoi en avez-vous besoin en 2026 | Mkt Web 360",

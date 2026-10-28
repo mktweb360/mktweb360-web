@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/dropshipping-ecommerce/`,
     },
     openGraph: {
+      images: ogImagesIntl("dropshipping-ecommerce"),
       title: isEn
         ? "Dropshipping Ecommerce with Revenue Sharing | Mkt Web 360"
         : "Dropshipping et Ecommerce avec Participation aux Résultats | Mkt Web 360",

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/chatbot-wordpress/`,
     },
     openGraph: {
+      images: ogImagesIntl("chatbot-wordpress"),
       title: isEn
         ? "Chatbot for WordPress: How to Install It, What to Avoid and What to Expect | Mkt Web 360"
         : "Chatbot pour WordPress : comment l'installer, ce qu'il faut éviter et ce qu'il faut attendre | Mkt Web 360",

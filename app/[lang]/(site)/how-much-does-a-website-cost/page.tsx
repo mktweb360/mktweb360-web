@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "What really influences the price of a professional website, what it should include and how to compare quotes."
       : "Ce qui influence vraiment le prix d'un site web professionnel, ce qu'il doit inclure et comment comparer les devis.",
+    openGraph: openGraphIntl(lang, "how-much-does-a-website-cost"),
     alternates: alternatesFor(`/${lang}/${lang === "en" ? "how-much-does-a-website-cost" : "combien-coute-site-web"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "how-much-does-a-website-cost" : "combien-coute-site-web"}/`,
     },

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/whatsapp-business-for-companies/`,
     },
     openGraph: {
+      images: ogImagesIntl("whatsapp-business-for-companies"),
       title: isEn
         ? "WhatsApp Business for Companies: Complete Setup and Strategy Guide 2026 | Mkt Web 360"
         : "WhatsApp Business pour les Entreprises : Guide Complet de Configuration et Stratégie 2026 | Mkt Web 360",

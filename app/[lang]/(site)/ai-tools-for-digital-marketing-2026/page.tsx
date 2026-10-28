@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/ai-tools-for-digital-marketing-2026/`,
     },
     openGraph: {
+      images: ogImagesIntl("ai-tools-for-digital-marketing-2026"),
       title: isEn
         ? "AI Tools for Digital Marketing in 2026: The Ones That Actually Work | Mkt Web 360"
         : "Outils IA pour le Marketing Digital en 2026 : Ceux qui Fonctionnent Vraiment | Mkt Web 360",

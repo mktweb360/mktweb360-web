@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/ecommerce-revenue-sharing/`,
     },
     openGraph: {
+      images: ogImagesIntl("ecommerce-revenue-sharing"),
       title: isEn
         ? "Ecommerce with Revenue Sharing — Hybrid Model | Mkt Web 360"
         : "Ecommerce avec Participation aux Résultats — Modèle Hybride | Mkt Web 360",

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/how-much-does-a-chatbot-cost/`,
     },
     openGraph: {
+      images: ogImagesIntl("how-much-does-a-chatbot-cost"),
       title: isEn
         ? "How Much Does a Business Chatbot Cost in 2026: A Guide to Real Prices | Mkt Web 360"
         : "Combien coûte un chatbot pour entreprise en 2026 : guide des prix réels | Mkt Web 360",

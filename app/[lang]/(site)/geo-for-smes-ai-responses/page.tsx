@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/geo-for-smes-ai-responses/`,
     },
     openGraph: {
+      images: ogImagesIntl("geo-for-smes-ai-responses"),
       title: isEn
         ? "GEO for SMEs: How to Appear in AI Responses Without Being a Big Brand | Mkt Web 360"
         : "GEO pour les PME : comment apparaître dans les réponses IA sans être une grande marque | Mkt Web 360",

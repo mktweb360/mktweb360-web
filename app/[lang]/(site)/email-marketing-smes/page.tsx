@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/email-marketing-smes/`,
     },
     openGraph: {
+      images: ogImagesIntl("email-marketing-smes"),
       title: isEn
         ? "Email Marketing for SMEs: First Steps and Strategy Guide | Mkt Web 360"
         : "Email Marketing pour les PME : Guide des Premiers Pas et Stratégie | Mkt Web 360",

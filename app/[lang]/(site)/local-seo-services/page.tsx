@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogImagesIntl } from "@/lib/og";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/local-seo-services/`,
     },
     openGraph: {
+      images: ogImagesIntl("local-seo-services"),
       title: isEn
         ? "Local SEO — Google Maps Positioning | Mkt Web 360"
         : "SEO Local — Positionnement sur Google Maps | Mkt Web 360",

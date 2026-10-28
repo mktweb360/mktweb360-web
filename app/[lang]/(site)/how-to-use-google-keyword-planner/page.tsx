@@ -1,4 +1,6 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
@@ -17,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/how-to-use-google-keyword-planner/`,
     },
     openGraph: {
+      images: ogImagesIntl("how-to-use-google-keyword-planner"),
       title: isEn
         ? "Google Keyword Planner: Complete Step-by-Step Guide 2026 | Mkt Web 360"
         : "Planificateur de mots-clés Google Ads : guide complet 2026 | Mkt Web 360",
@@ -84,6 +87,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "Google Ads" : "Google Ads"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="how-to-use-google-keyword-planner" image="/og-como-usar-planificador-de-palabras-clave-google-ads.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to use Google Keyword Planner: complete guide 2026"

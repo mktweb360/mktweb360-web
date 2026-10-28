@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "How a Freelancer Can Get Clients Online" : "Obtenir des clients en ligne en indépendant",
     description: isEn ? "Strategies for freelancers to attract clients online. SEO, LinkedIn, referrals, portfolio and positioning to grow your client base." : "Stratégies pour que les indépendants attirent des clients en ligne. SEO, LinkedIn, références, portfolio et positionnement pour développer votre clientèle.",
+    openGraph: openGraphIntl(lang, "how-to-get-clients-online-freelancer"),
     alternates: alternatesFor(`/${lang}/how-to-get-clients-online-freelancer/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-get-clients-online-freelancer/`,
     },

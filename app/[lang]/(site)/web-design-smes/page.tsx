@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/web-design-smes/`,
     },
     openGraph: {
+      images: ogImagesIntl("web-design-smes"),
       title: isEn
         ? "Web Design for SMEs — What Your Website Needs to Sell | Mkt Web 360"
         : "Design Web pour PME — Ce que Votre Site Doit Avoir pour Vendre | Mkt Web 360",

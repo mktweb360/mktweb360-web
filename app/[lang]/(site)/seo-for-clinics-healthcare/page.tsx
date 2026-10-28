@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/seo-for-clinics-healthcare/`,
     },
     openGraph: {
+      images: ogImagesIntl("seo-for-clinics-healthcare"),
       title: isEn
         ? "SEO for Clinics and Healthcare Centres: How to Attract Patients on Google | Mkt Web 360"
         : "SEO pour les cliniques et centres de santé : comment attirer des patients sur Google | Mkt Web 360",

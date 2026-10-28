@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -15,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional online reputation management. Review monitoring and management on Google and Trustpilot. Build trust and attract more customers."
       : "Gestion professionnelle de la réputation en ligne. Surveillance et gestion des avis sur Google et Trustpilot. Renforcez la confiance et attirez plus de clients.",
+    openGraph: openGraphIntl(lang, "online-reputation"),
     alternates: alternatesFor(`/${lang}/online-reputation/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/online-reputation/`,
     },

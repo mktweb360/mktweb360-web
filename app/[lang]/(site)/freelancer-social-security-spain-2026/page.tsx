@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/freelancer-social-security-spain-2026/`,
     },
     openGraph: {
+      images: ogImagesIntl("freelancer-social-security-spain-2026"),
       title: isEn
         ? "Freelancer Social Security Contributions in Spain 2026: Full Guide | Mkt Web 360"
         : "Cotisations Sociales des Indépendants en Espagne 2026 : Guide Complet | Mkt Web 360",

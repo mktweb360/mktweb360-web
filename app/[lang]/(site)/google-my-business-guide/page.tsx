@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Google My Business for Businesses: Guide" : "Google My Business pour les entreprises",
     description: isEn ? "Complete guide to Google My Business (now Google Business Profile). How to create, verify, optimise and manage your listing to attract local customers." : "Guide complet de Google My Business (maintenant Google Business Profile). Comment créer, vérifier, optimiser et gérer votre fiche pour attirer des clients locaux.",
+    openGraph: openGraphIntl(lang, "google-my-business-guide"),
     alternates: alternatesFor(`/${lang}/google-my-business-guide/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/google-my-business-guide/`,
     },

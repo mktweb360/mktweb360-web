@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/how-to-choose-chatbot/`,
     },
     openGraph: {
+      images: ogImagesIntl("how-to-choose-chatbot"),
       title: isEn
         ? "How to Choose the Right Chatbot for Your Business: A Complete Checklist for 2026 | Mkt Web 360"
         : "Comment choisir le bon chatbot pour votre entreprise : checklist complète pour 2026 | Mkt Web 360",

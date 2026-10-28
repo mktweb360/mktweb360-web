@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogImagesIntl } from "@/lib/og";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -21,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/shopware-marketing/`,
     },
     openGraph: {
+      images: ogImagesIntl("shopware-marketing"),
       title: isEn
         ? "Digital Marketing for Shopware Stores | Mkt Web 360"
         : "Marketing Digital pour Boutiques Shopware | Mkt Web 360",

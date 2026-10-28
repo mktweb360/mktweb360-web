@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -13,6 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional Google Business Profile management. Optimise your profile, generate more reviews and appear first on Google Maps. Nationwide service from Spain."
       : "Gestion professionnelle du Google Business Profile. Optimisez votre fiche, générez plus d'avis et apparaissez en premier sur Google Maps.",
+    openGraph: openGraphIntl(lang, "google-business-profile-service"),
     alternates: alternatesFor(`/${lang}/google-business-profile-service/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/google-business-profile-service/`,
     },

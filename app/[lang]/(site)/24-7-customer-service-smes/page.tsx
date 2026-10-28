@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/24-7-customer-service-smes/`,
     },
     openGraph: {
+      images: ogImagesIntl("24-7-customer-service-smes"),
       title: isEn
         ? "24/7 Customer Service for SMEs: How to Achieve It Without Hiring More Staff | Mkt Web 360"
         : "Service client 24h/24 pour PME : comment y parvenir sans recruter | Mkt Web 360",

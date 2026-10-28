@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "With ChatGPT and AI search engines on the rise, many wonder if SEO is still worth investing in. Here is the honest answer."
       : "Avec la montée de ChatGPT et des moteurs IA, beaucoup se demandent si le SEO vaut encore la peine. Voici la réponse honnête.",
+    openGraph: openGraphIntl(lang, "is-seo-dead-with-ai"),
     alternates: alternatesFor(`/${lang}/${lang === "en" ? "is-seo-dead-with-ai" : "le-seo-est-il-mort-avec-ia"}/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/${lang === "en" ? "is-seo-dead-with-ai" : "le-seo-est-il-mort-avec-ia"}/`,
     },

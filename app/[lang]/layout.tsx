@@ -43,6 +43,7 @@ export async function generateMetadata({
       locale: langLocales[lang as Lang] ?? "en_GB",
       url: `https://www.mktweb360.com/${lang}`,
       siteName: "Mkt Web 360",
+      images: [{ url: "https://www.mktweb360.com/og-image.jpg", width: 1200, height: 630 }],
     },
   };
 }

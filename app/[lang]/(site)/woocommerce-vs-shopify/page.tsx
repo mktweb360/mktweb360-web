@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/woocommerce-vs-shopify/`,
     },
     openGraph: {
+      images: ogImagesIntl("woocommerce-vs-shopify"),
       title: isEn
         ? "WooCommerce vs Shopify: Which to Choose for Your Online Store in 2026 | Mkt Web 360"
         : "WooCommerce vs Shopify : lequel choisir pour votre boutique en ligne en 2026 | Mkt Web 360",

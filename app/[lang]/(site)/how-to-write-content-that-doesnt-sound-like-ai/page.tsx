@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { openGraphIntl } from "@/lib/og";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "AI-generated content without editing doesn't convert and can hurt your Google rankings. Practical techniques to create human, authentic and useful texts — even when using AI tools."
       : "Le contenu généré par IA sans édition ne convertit pas et peut nuire à votre classement Google. Techniques pratiques pour créer des textes humains, authentiques et utiles — même avec des outils IA.",
+    openGraph: openGraphIntl(lang, "how-to-write-content-that-doesnt-sound-like-ai"),
     alternates:
       alternatesFor(
         `/${lang}/${lang === "en" ? "how-to-write-content-that-doesnt-sound-like-ai" : "comment-ecrire-contenu-qui-ne-sonne-pas-ia"}/`

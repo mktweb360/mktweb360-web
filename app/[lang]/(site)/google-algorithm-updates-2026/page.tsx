@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/google-algorithm-updates-2026/`,
     },
     openGraph: {
+      images: ogImagesIntl("google-algorithm-updates-2026"),
       title: isEn
         ? "Google Algorithm Updates 2026: What Has Changed and How It Affects Your Website | Mkt Web 360"
         : "Mises à jour de l'algorithme Google en 2026 : ce qui a changé et comment ça affecte votre site | Mkt Web 360",

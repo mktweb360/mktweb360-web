@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/cost-digital-marketing-agency-spain-2026/`,
     },
     openGraph: {
+      images: ogImagesIntl("cost-digital-marketing-agency-spain-2026"),
       title: isEn
         ? "How Much Does a Digital Marketing Agency Cost in Spain in 2026? | Mkt Web 360"
         : "Combien Coûte une Agence de Marketing Digital en Espagne en 2026 ? | Mkt Web 360",

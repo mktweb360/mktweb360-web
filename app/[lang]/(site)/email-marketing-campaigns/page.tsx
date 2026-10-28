@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -13,6 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Professional email marketing service for businesses. Newsletter design, automated sequences and acquisition campaigns. Average ROI: €36 per euro invested."
       : "Service d'email marketing professionnel pour entreprises. Design de newsletters, séquences automatisées et campagnes d'acquisition avec ROI prouvé.",
+    openGraph: openGraphIntl(lang, "email-marketing-campaigns"),
     alternates: alternatesFor(`/${lang}/email-marketing-campaigns/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/email-marketing-campaigns/`,
     },

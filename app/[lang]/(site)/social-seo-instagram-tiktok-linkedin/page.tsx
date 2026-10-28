@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { openGraphIntl } from "@/lib/og";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "40% of Gen Z searches on TikTok before Google. Social SEO optimises your presence on Instagram, TikTok and LinkedIn search engines. Platform-specific strategies for 2026."
       : "40% de la Gen Z cherche sur TikTok avant Google. Le SEO social optimise votre présence dans les moteurs de recherche d'Instagram, TikTok et LinkedIn. Stratégies par plateforme pour 2026.",
+    openGraph: openGraphIntl(lang, "social-seo-instagram-tiktok-linkedin"),
     alternates:
       alternatesFor(
         `/${lang}/${lang === "en" ? "social-seo-instagram-tiktok-linkedin" : "seo-social-instagram-tiktok-linkedin-moteurs-recherche"}/`

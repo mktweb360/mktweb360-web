@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Contacto: presupuesto de marketing digital",
   description: "Contacta con Mkt Web 360. Solicita tu presupuesto gratuito de marketing digital, SEO, Google Ads, redes sociales o diseño web. Tel: +34 622 748 987.",
   alternates: alternatesFor("/contacto/") ?? { canonical: "https://www.mktweb360.com/contacto/" },
+  openGraph: { type: "website", locale: "es_ES", siteName: "Mkt Web 360", url: "https://www.mktweb360.com/contacto/", images: [{ url: "https://www.mktweb360.com/og-contacto.jpg", width: 1200, height: 630 }] },
 };
 
 // ContactPage: los datos de contacto (teléfono, email, dirección) ya están en el schema de la

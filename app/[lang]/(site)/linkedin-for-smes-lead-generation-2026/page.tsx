@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/linkedin-for-smes-lead-generation-2026/`,
     },
     openGraph: {
+      images: ogImagesIntl("linkedin-for-smes-lead-generation-2026"),
       title: isEn
         ? "LinkedIn for SMEs: Practical Guide to Generating Leads in 2026 | Mkt Web 360"
         : "LinkedIn pour les PME : Guide Pratique pour Générer des Leads en 2026 | Mkt Web 360",

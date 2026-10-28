@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/chatbot-lead-generation/`,
     },
     openGraph: {
+      images: ogImagesIntl("chatbot-lead-generation"),
       title: isEn
         ? "How to Use a Chatbot to Capture and Qualify Leads: A Practical Guide | Mkt Web 360"
         : "Comment utiliser un chatbot pour capter et qualifier des leads : guide pratique | Mkt Web 360",

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogImagesIntl } from "@/lib/og";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/seo-web-positioning/`,
     },
     openGraph: {
+      images: ogImagesIntl("seo-web-positioning"),
       title: isEn
         ? "SEO Web Positioning — Rank on Google | Mkt Web 360"
         : "SEO Positionnement Web — Première page Google | Mkt Web 360",

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/seo-ai-era-google-gemini/`,
     },
     openGraph: {
+      images: ogImagesIntl("seo-ai-era-google-gemini"),
       title: isEn
         ? "SEO in the AI Era: How to Rank When Google Uses Gemini to Answer | Mkt Web 360"
         : "SEO à l'ère de l'IA : comment se positionner quand Google utilise Gemini pour répondre | Mkt Web 360",

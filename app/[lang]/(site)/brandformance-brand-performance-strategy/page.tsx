@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { openGraphIntl } from "@/lib/og";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "Brandformance integrates branding and performance marketing into one coherent strategy. Why separating them is a costly mistake — and how combining them multiplies results."
       : "Le brandformance intègre la marque et la performance dans une seule stratégie. Pourquoi les séparer est une erreur coûteuse — et comment les combiner multiplie vos résultats.",
+    openGraph: openGraphIntl(lang, "brandformance-brand-performance-strategy"),
     alternates:
       alternatesFor(
         `/${lang}/${lang === "en" ? "brandformance-brand-performance-strategy" : "brandformance-strategie-marque-performance"}/`

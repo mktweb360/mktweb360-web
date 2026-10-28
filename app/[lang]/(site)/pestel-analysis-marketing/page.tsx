@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "PESTEL Analysis in Digital Marketing" : "Analyse PESTEL en marketing digital",
     description: isEn ? "What PESTEL analysis is, how to apply it to your digital marketing strategy and what insights it provides for your business." : "Qu'est-ce que l'analyse PESTEL, comment l'appliquer à votre stratégie de marketing digital et quels enseignements elle apporte pour votre entreprise.",
+    openGraph: openGraphIntl(lang, "pestel-analysis-marketing"),
     alternates: alternatesFor(`/${lang}/pestel-analysis-marketing/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/pestel-analysis-marketing/`,
     },

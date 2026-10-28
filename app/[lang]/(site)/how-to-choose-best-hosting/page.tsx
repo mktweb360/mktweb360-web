@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "How to Choose the Best Website Hosting" : "Comment choisir le meilleur hébergement web",
     description: isEn ? "Guide to choosing the best web hosting for your website. Shared, VPS, managed WordPress and cloud hosting compared." : "Guide pour choisir le meilleur hébergement web pour votre site. Hébergement partagé, VPS, WordPress géré et cloud comparés.",
+    openGraph: openGraphIntl(lang, "how-to-choose-best-hosting"),
     alternates: alternatesFor(`/${lang}/how-to-choose-best-hosting/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/how-to-choose-best-hosting/`,
     },

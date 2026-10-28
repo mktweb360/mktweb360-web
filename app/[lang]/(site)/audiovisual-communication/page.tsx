@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/audiovisual-communication/`,
     },
     openGraph: {
+      images: ogImagesIntl("audiovisual-communication"),
       title: isEn
         ? "Audiovisual Communication for Businesses | Mkt Web 360"
         : "Communication Audiovisuelle pour Entreprises | Mkt Web 360",

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/ai-agents-marketing/`,
     },
     openGraph: {
+      images: ogImagesIntl("ai-agents-marketing"),
       title: isEn
         ? "AI Agents for Marketing: What They Are and How SMEs Can Use Them | Mkt Web 360"
         : "Agents IA pour le marketing : ce qu'ils sont et comment les PME peuvent les utiliser | Mkt Web 360",

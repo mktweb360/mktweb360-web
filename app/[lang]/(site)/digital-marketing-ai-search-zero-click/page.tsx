@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { openGraphIntl } from "@/lib/og";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "AI answers directly without users clicking through. How to adapt your digital marketing strategy to keep winning customers in the zero-click era."
       : "L'IA répond directement sans que l'utilisateur ne clique. Comment adapter votre stratégie marketing pour continuer à capter des clients à l'ère du zéro clic.",
+    openGraph: openGraphIntl(lang, "digital-marketing-ai-search-zero-click"),
     alternates:
       alternatesFor(
         `/${lang}/${lang === "en" ? "digital-marketing-ai-search-zero-click" : "marketing-digital-ia-zero-clic"}/`

@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
+import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/geo-generative-engine-optimization/`,
     },
     openGraph: {
+      images: ogImagesIntl("geo-generative-engine-optimization"),
       title: isEn
         ? "GEO — Generative Engine Optimization | Mkt Web 360"
         : "GEO — Optimisation pour Moteurs Génératifs | Mkt Web 360",

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/how-to-optimize-content-for-ai-citations/`,
     },
     openGraph: {
+      images: ogImagesIntl("how-to-optimize-content-for-ai-citations"),
       title: isEn
         ? "How to Optimise Your Content for AI Citations: GEO Guide 2026 | Mkt Web 360"
         : "Comment optimiser votre contenu pour être cité par l'IA : guide GEO 2026 | Mkt Web 360",

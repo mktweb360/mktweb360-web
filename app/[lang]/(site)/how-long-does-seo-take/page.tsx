@@ -35,7 +35,7 @@ const TXT = {
     home: "Home",
   },
   fr: {
-    title: "Combien de temps faut-il pour que le SEO fonctionne ? Délais par phase",
+    title: "Combien de temps pour que le SEO fonctionne ? Délais par phase",
     description:
       "Le SEO donne généralement ses premiers résultats en 3 à 6 mois et se consolide en 6 à 12 mois, à titre indicatif. Ce qui se passe chaque mois et comment le voir dans Search Console.",
     h1: "Combien de temps faut-il pour que le SEO donne des résultats : mois par mois et de quoi cela dépend",

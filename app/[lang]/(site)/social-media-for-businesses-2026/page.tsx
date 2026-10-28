@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/social-media-for-businesses-2026/`,
     },
     openGraph: {
+      images: ogImagesIntl("social-media-for-businesses-2026"),
       title: isEn
         ? "Social Media for Businesses in 2026: What the Data Actually Says Works | Mkt Web 360"
         : "Réseaux Sociaux pour Entreprises en 2026 : Ce que Disent Vraiment les Données | Mkt Web 360",

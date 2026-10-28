@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/blog-monetization/`,
     },
     openGraph: {
+      images: ogImagesIntl("blog-monetization"),
       title: isEn
         ? "Monetisation Blog — Passive Income with AdSense and Affiliates | Mkt Web 360"
         : "Blog de Monétisation — Revenus Passifs avec AdSense et Affiliés | Mkt Web 360",

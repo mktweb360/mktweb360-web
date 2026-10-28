@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/shopware-cro-conversion-optimization/`,
     },
     openGraph: {
+      images: ogImagesIntl("shopware-cro-conversion-optimization"),
       title: isEn
         ? "Shopware CRO: How to Optimise Your Store's Conversion Rate | Mkt Web 360"
         : "CRO Shopware : comment optimiser le taux de conversion de votre boutique | Mkt Web 360",

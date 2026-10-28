@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
@@ -57,6 +58,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/web-design-clinics/`,
     },
     openGraph: {
+      images: ogImagesIntl("web-design-clinics"),
       title: isEn
         ? "Web Design for Clinics and Health Centres | Mkt Web 360"
         : "Création de Site Web pour Cliniques et Centres de Santé | Mkt Web 360",

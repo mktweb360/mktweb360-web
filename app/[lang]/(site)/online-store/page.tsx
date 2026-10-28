@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogImagesIntl } from "@/lib/og";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/online-store/`,
     },
     openGraph: {
+      images: ogImagesIntl("online-store"),
       title: isEn
         ? "Professional Online Store — No Commissions | Mkt Web 360"
         : "Boutique en Ligne Professionnelle — Sans Commissions | Mkt Web 360",

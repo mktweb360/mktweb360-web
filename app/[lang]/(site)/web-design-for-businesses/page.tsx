@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/web-design-for-businesses/`,
     },
     openGraph: {
+      images: ogImagesIntl("web-design-for-businesses"),
       title: isEn
         ? "Web Design for Businesses — Custom Solutions | Mkt Web 360"
         : "Création de Site Web pour Entreprises — Solutions Sur Mesure | Mkt Web 360",

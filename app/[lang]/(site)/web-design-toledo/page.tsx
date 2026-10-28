@@ -1,4 +1,5 @@
 import { LocalServicePage, localServiceSchemas, type LocalServiceContent } from "@/components/LocalServicePage";
+import { ogImagesIntl } from "@/lib/og";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 // 09/10/2026 — EN/FR de /diseno-web-toledo/. Esta carpeta sirve /en/web-design-toledo/;
@@ -137,7 +138,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title: m.title,
     description: m.description,
     alternates: alternatesFor(path(lang)) ?? { canonical: url },
-    openGraph: { title: m.ogTitle, description: m.ogDescription, url },
+    openGraph: {
+      images: ogImagesIntl("web-design-toledo"), title: m.ogTitle, description: m.ogDescription, url },
   };
 }
 

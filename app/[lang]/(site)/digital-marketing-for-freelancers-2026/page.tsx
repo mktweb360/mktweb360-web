@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/digital-marketing-for-freelancers-2026/`,
     },
     openGraph: {
+      images: ogImagesIntl("digital-marketing-for-freelancers-2026"),
       title: isEn
         ? "Digital Marketing for Freelancers in 2026: How to Get Clients Without Hiring an Agency | Mkt Web 360"
         : "Marketing Digital pour Indépendants en 2026 : Comment Obtenir des Clients Sans Agence | Mkt Web 360",

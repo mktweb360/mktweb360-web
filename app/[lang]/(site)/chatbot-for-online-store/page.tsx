@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/chatbot-for-online-store/`,
     },
     openGraph: {
+      images: ogImagesIntl("chatbot-for-online-store"),
       title: isEn
         ? "Chatbot for Online Stores: The Complete Guide to Selling More and Serving Better in 2026 | Mkt Web 360"
         : "Chatbot pour boutique en ligne : le guide complet pour vendre plus et mieux servir en 2026 | Mkt Web 360",

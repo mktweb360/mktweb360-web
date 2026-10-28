@@ -18,7 +18,9 @@ import { webPageSchema, ORG_ID } from "@/lib/schema";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const alternates = alternatesFor(`/${lang}/`);
-  return alternates ? { alternates } : {};
+  // og:image igual que la portada ES (antes /en/ y /fr/ salían sin imagen al compartirlas).
+  const openGraph = { type: "website" as const, locale: lang === "fr" ? "fr_FR" : "en_GB", siteName: "Mkt Web 360", url: `https://www.mktweb360.com/${lang}/`, images: [{ url: "https://www.mktweb360.com/og-homepage.jpg", width: 1200, height: 630 }] };
+  return alternates ? { alternates, openGraph } : { openGraph };
 }
 
 export default async function LangHomePage({

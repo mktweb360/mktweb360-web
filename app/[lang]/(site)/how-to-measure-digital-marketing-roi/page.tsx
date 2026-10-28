@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/how-to-measure-digital-marketing-roi/`,
     },
     openGraph: {
+      images: ogImagesIntl("how-to-measure-digital-marketing-roi"),
       title: isEn
         ? "How to Measure the ROI of Your Digital Marketing Campaigns | Mkt Web 360"
         : "Comment mesurer le ROI de vos campagnes de marketing digital | Mkt Web 360",

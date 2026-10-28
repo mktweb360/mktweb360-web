@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/shopware-google-ads/`,
     },
     openGraph: {
+      images: ogImagesIntl("shopware-google-ads"),
       title: isEn
         ? "Google Ads for Shopware: Campaigns That Actually Sell | Mkt Web 360"
         : "Google Ads pour Shopware : des campagnes qui vendent vraiment | Mkt Web 360",

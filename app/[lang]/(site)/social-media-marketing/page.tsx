@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ogImagesIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/social-media-marketing/`,
     },
     openGraph: {
+      images: ogImagesIntl("social-media-marketing"),
       title: isEn
         ? "Social Media Marketing for Businesses — Community Management | Mkt Web 360"
         : "Marketing sur les Réseaux Sociaux pour Entreprises — Community Management | Mkt Web 360",

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/shopware-geo-agentic-commerce/`,
     },
     openGraph: {
+      images: ogImagesIntl("shopware-geo-agentic-commerce"),
       title: isEn
         ? "GEO for Shopware: Sell via ChatGPT with Agentic Commerce | Mkt Web 360"
         : "GEO pour Shopware : vendre via ChatGPT avec l'Agentic Commerce | Mkt Web 360",

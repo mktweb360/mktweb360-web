@@ -1,4 +1,6 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { openGraphIntl } from "@/lib/og";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -11,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: isEn ? "Electronic Invoice Obligations in Spain" : "Facture électronique : obligations en Espagne",
     description: isEn ? "Everything you need to know about electronic invoicing obligations in Spain for autónomos and SMEs. When, who, and how to comply." : "Tout ce que vous devez savoir sur les obligations de facturation électronique en Espagne pour les indépendants et PME. Quand, qui, et comment se conformer.",
+    openGraph: openGraphIntl(lang, "electronic-invoice-spain"),
     alternates: alternatesFor(`/${lang}/electronic-invoice-spain/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/electronic-invoice-spain/`,
     },
@@ -29,6 +32,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Electronic invoice Spain" : "Facture électronique Espagne" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Business</p>
+        <IntlArticleJsonLd lang={lang} slug="electronic-invoice-spain" image="/og-factura-electronica-obligatoria-autonomos-pymes.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Electronic invoice: obligations for freelancers and SMEs in Spain" : "Facture électronique : obligations pour indépendants et PME en Espagne"}
         </h1>

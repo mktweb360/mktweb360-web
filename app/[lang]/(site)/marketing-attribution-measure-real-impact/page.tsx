@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { openGraphIntl } from "@/lib/og";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: isEn
       ? "The last-click model distorts how your customers actually find you. A practical guide to attribution models for SMEs: what they are, which to use, and how to approximate attribution without enterprise tools."
       : "Le modèle dernier clic fausse la réalité de la façon dont vos clients vous trouvent. Guide pratique des modèles d'attribution pour PME : ce que c'est, lequel utiliser, et comment approximer l'attribution sans outils enterprise.",
+    openGraph: openGraphIntl(lang, "marketing-attribution-measure-real-impact"),
     alternates:
       alternatesFor(
         `/${lang}/${lang === "en" ? "marketing-attribution-measure-real-impact" : "attribution-marketing-mesurer-impact-reel"}/`

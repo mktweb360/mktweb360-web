@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/chatbot-for-clinics/`,
     },
     openGraph: {
+      images: ogImagesIntl("chatbot-for-clinics"),
       title: isEn
         ? "Chatbot for Clinics and Healthcare Centres: Appointments, FAQs and Healthcare Compliance | Mkt Web 360"
         : "Chatbot pour cliniques et centres de santé : rendez-vous, questions fréquentes et conformité sanitaire | Mkt Web 360",

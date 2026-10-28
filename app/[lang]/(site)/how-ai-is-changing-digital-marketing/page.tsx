@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/how-ai-is-changing-digital-marketing/`,
     },
     openGraph: {
+      images: ogImagesIntl("how-ai-is-changing-digital-marketing"),
       title: isEn
         ? "How AI Is Changing Digital Marketing Forever | Mkt Web 360"
         : "Comment l'IA transforme le marketing digital pour toujours | Mkt Web 360",

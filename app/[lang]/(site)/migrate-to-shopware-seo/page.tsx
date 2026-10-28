@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `https://www.mktweb360.com/${lang}/migrate-to-shopware-seo/`,
     },
     openGraph: {
+      images: ogImagesIntl("migrate-to-shopware-seo"),
       title: isEn
         ? "Migrating to Shopware from PrestaShop or WooCommerce Without Losing SEO | Mkt Web 360"
         : "Migrer vers Shopware depuis PrestaShop ou WooCommerce sans perdre le SEO | Mkt Web 360",
