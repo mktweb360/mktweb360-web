@@ -1,9 +1,10 @@
+// Página 404 (antes app/not-found.tsx). La usan app/global-not-found.tsx y los not-found de cada layout raíz.
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-export const metadata: Metadata = {
+export const notFoundMetadata: Metadata = {
   title: "Página no encontrada",
   robots: { index: false, follow: false },
 };
@@ -14,10 +15,11 @@ const NAV_LINKS = [
   { label: "Tiendas Online", href: "/diseno-de-paginas-web/diseno-tiendas-online/" },
 ];
 
-export default function NotFound() {
+// conCabecera: true cuando no hay layout que ponga cabecera y pie (404 global).
+export function NotFoundView({ conCabecera = false }: { conCabecera?: boolean }) {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-primary-700 to-primary-900">
-      <Header lang="es" />
+      {conCabecera && <Header lang="es" />}
       <section className="flex-1 flex items-center justify-center px-4 py-16">
         <div className="text-center max-w-xl">
           <p className="text-[120px] md:text-[160px] font-bold text-white/10 leading-none mb-0 select-none">
@@ -58,7 +60,7 @@ export default function NotFound() {
           </div>
         </div>
       </section>
-      <Footer lang="es" />
+      {conCabecera && <Footer lang="es" />}
     </div>
   );
 }

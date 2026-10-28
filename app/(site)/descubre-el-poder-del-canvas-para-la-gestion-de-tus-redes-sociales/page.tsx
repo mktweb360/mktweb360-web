@@ -95,23 +95,37 @@ export default function CanvasRedesSocialesPage() {
           <ol className="list-decimal pl-6 space-y-2">
             <li>Reúne al equipo de marketing y define los objetivos de negocio para el año.</li>
             <li>Crea o actualiza el buyer persona con datos reales de tus clientes actuales.</li>
-            <li>Audita tu presencia actual en redes: qué funciona, qué no, qué publicamos y con qué resultados.</li>
+            <li>Audita tu presencia actual en redes: qué funciona, qué no, qué publicamos y con qué resultados. Aprovecha para mirar también fuera de las redes: una <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría gratuita de tu web y tu ficha de Google</Link> te dice adónde llega quien te descubre en Instagram o LinkedIn.</li>
             <li>Completa cada bloque del Canvas de forma colaborativa.</li>
             <li>Revisa el Canvas cada trimestre y ajusta según los resultados obtenidos.</li>
           </ol>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            variant="default"
+            badge="Redes con un plan detrás"
+            title="Te ayudamos a pasar el Canvas a publicaciones"
+            desc="Definimos contigo objetivos, canales y pilares de contenido, y nos ocupamos de publicar y medir. Si aún no sabes por dónde empezar, te hacemos antes un diagnóstico gratuito de tu presencia digital."
+            cta="Ver gestión de redes sociales"
+            href="/smm-social-media-marketing/"
+            secondary={{ text: "Prefiero empezar con la auditoría gratuita", href: "/auditoria-digital/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Beneficios para tu negocio</h2>
-          <p>Las empresas que planifican su <Link href="/smm-social-media-marketing/" className="text-accent-500 hover:underline">estrategia de redes sociales</Link> con herramientas como el Canvas obtienen resultados hasta 3 veces mejores que las que publican sin una estrategia definida. El Canvas elimina la improvisación, reduce el tiempo de producción de contenidos y asegura que cada publicación tiene un propósito claro y medible.</p>
+          <p>Las empresas que planifican su <Link href="/smm-social-media-marketing/" className="text-accent-500 hover:underline">estrategia de redes sociales</Link> con herramientas como el Canvas saben qué esperan de cada publicación y pueden medir si lo consiguen, algo imposible cuando se publica sin estrategia. El Canvas elimina la improvisación, reduce el tiempo de producción de contenidos y asegura que cada publicación tiene un propósito claro y medible.</p>
           <p>Además, al tener todo documentado en un solo lugar, es mucho más fácil incorporar a nuevos miembros del equipo o comunicar la estrategia a stakeholders y directivos.</p>
+          <p>Un apunte si tu negocio trabaja con clientes de tu zona: mucha gente te verá antes en Google que en redes. Rellena el bloque de canales pensando también en tu <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile</Link>, que admite publicaciones igual que una red social y aparece cuando alguien busca lo que haces cerca de él.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Quieres una estrategia de redes sociales profesional?</p>
-            <p className="text-gray-600 text-sm mb-4">En Mkt Web 360 diseñamos estrategias de social media basadas en datos y orientadas a resultados reales para tu negocio.</p>
-            <Link href="/smm-social-media-marketing/" className="bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
-              Ver gestión de redes sociales
-            </Link>
+            <p className="text-gray-600 text-sm mb-4">Si ya tienes tu Canvas, lo convertimos en un calendario de publicaciones y en métricas que se revisan cada mes. Si no, empezamos por ver dónde estás hoy.</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/smm-social-media-marketing/" className="bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
+                Ver gestión de redes sociales
+              </Link>
+              <Link href="/auditoria-digital/" className="border-2 border-accent-500 text-accent-600 px-6 py-2 rounded-full font-semibold text-sm hover:bg-accent-50 transition-colors">
+                Pedir auditoría gratuita
+              </Link>
+            </div>
           </div>
         </div>
         <nav className="mt-12 pt-8 border-t border-gray-200">

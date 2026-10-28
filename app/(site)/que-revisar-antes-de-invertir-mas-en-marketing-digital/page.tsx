@@ -75,7 +75,7 @@ const AREAS = [
   { num: "01", title: "Web y conversión", desc: "¿Tu web convierte visitas en contactos? Revisa la velocidad, el diseño en móvil, los CTAs, los formularios y los textos. Invertir en tráfico sobre una web que no convierte es tirar dinero." },
   { num: "02", title: "Propuesta de valor clara", desc: "¿Sabe un visitante en menos de 5 segundos qué haces, para quién y por qué contigo? Si la propuesta de valor no es obvia, ningún canal de captación funcionará bien." },
   { num: "03", title: "Seguimiento y analítica", desc: "¿Sabes de dónde vienen tus clientes? ¿Tienes GA4 y Search Console bien configurados? Sin datos fiables es imposible tomar buenas decisiones de inversión." },
-  { num: "04", title: "Proceso comercial", desc: "¿En cuánto tiempo respondes a los leads? ¿Tienes seguimiento estructurado? Un lead sin respuesta en menos de 1h tiene 7 veces menos probabilidad de cerrar." },
+  { num: "04", title: "Proceso comercial", desc: "¿En cuánto tiempo respondes a los leads? ¿Tienes seguimiento estructurado? Cuanto más tarda la respuesta, más se enfría el contacto." },
   { num: "05", title: "Presupuesto realista", desc: "¿El presupuesto que destinas permite resultados medibles? El marketing con presupuesto insuficiente genera datos demasiado pequeños para optimizar y frustración innecesaria." },
   { num: "06", title: "Audiencia definida", desc: "¿Sabes exactamente a quién te diriges? Cuanto más específico sea tu cliente ideal, más efectivos serán los mensajes, los canales y la inversión." },
   { num: "07", title: "Objetivos medibles", desc: "¿Tienes objetivos concretos con plazos y métricas? 'Quiero más clientes' no es un objetivo. '20 leads cualificados al mes en 6 meses' sí lo es." },
@@ -117,11 +117,11 @@ export default function QueRevisarPage() {
             Es un patrón muy frecuente: la empresa no consigue los resultados que espera, y la respuesta instintiva es invertir más — más presupuesto en Ads, más publicaciones en redes, más acciones de SEO. Pero si el problema está en la base, más inversión solo genera más gasto con los mismos resultados pobres.
           </p>
           <p>
-            El marketing digital funciona como un amplificador. Si lo que tienes es bueno, lo amplifica. Si tiene fallos, los amplifica también. Revisar estas 7 áreas antes de escalar es lo que separa las empresas que crecen de las que gastan sin resultados.
+            El marketing digital funciona como un amplificador. Si lo que tienes es bueno, lo amplifica. Si tiene fallos, los amplifica también. Por eso conviene revisar estas áreas antes de escalar: es más barato corregir la base que pagar más tráfico que no convierte.
           </p>
 
           <h2 className="text-2xl font-bold text-primary-600">Las áreas que conviene auditar primero</h2>
-          <p>La propuesta de valor y el mensaje, la web y su capacidad de conversión, el SEO, las campañas activas o previstas, la medición, el embudo comercial y la alineación entre marketing y negocio son las capas que más suelen explicar el bajo rendimiento. Si una o varias de estas piezas fallan, aumentar inversión rara vez corrige el problema principal.</p>
+          <p>La propuesta de valor y el mensaje, la web y su capacidad de conversión, el SEO, las campañas activas o previstas, la medición, el embudo comercial y la alineación entre marketing y negocio son las capas que más suelen explicar el bajo rendimiento. Si una o varias de estas piezas fallan, aumentar inversión rara vez corrige el problema principal. Puedes hacer esta revisión por tu cuenta con la lista de abajo o pedir una <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría gratuita de tu web, tu SEO y tu ficha de Google</Link> para tener una primera foto sin coste.</p>
           <ul className="space-y-2">
             {["Propuesta de valor y claridad del mensaje", "Web, estructura de páginas y confianza", "SEO, indexación y páginas con intención", "Campañas, segmentación y calidad del tráfico", "Analítica, medición y seguimiento comercial"].map((item) => (
               <li key={item} className="flex items-start gap-2 text-sm text-gray-700 py-1">
@@ -140,12 +140,20 @@ export default function QueRevisarPage() {
           </div>
 
           <h2 className="text-2xl font-bold text-primary-600">Señales de que se está invirtiendo sin base suficiente</h2>
-          <p>Hay varios síntomas recurrentes: tráfico que no convierte, campañas con métricas de actividad pero poco negocio, falta de claridad sobre qué canal funciona mejor, leads que no se atienden bien y decisiones tomadas con prisa o intuición. Cuando ocurre esto, la prioridad no es meter más presupuesto, sino entender qué está rompiendo el sistema.</p>
+          <p>Hay varios síntomas recurrentes: tráfico que no convierte, campañas con métricas de actividad pero poco negocio, falta de claridad sobre qué canal funciona mejor, leads que no se atienden bien y decisiones tomadas con prisa o intuición. Cuando ocurre esto, la prioridad no es meter más presupuesto, sino entender qué está rompiendo el sistema. Y para eso hace falta medir bien: si no sabes qué canal te trae los contactos que acaban siendo clientes, empieza por una <Link href="/analitica-web/" className="text-accent-500 hover:underline">analítica web con GA4 y conversiones bien configuradas</Link>.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Qué errores se repiten</h2>
           <p>Pensar que el problema es solo de tráfico, no revisar la web antes de escalar campañas, querer hacerlo todo a la vez y medir solo clics o leads sin conectarlos con valor real son errores muy frecuentes. También es habitual invertir en canales sin haber definido bien la propuesta de valor ni el proceso comercial posterior.</p>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            variant="default"
+            badge="Antes de subir el presupuesto"
+            title="Descubre qué está frenando tus resultados"
+            desc="Revisamos gratis tu web, tu SEO, tu ficha de Google y cómo apareces en los asistentes de IA, y te decimos qué corregir antes de invertir más. Sin compromiso."
+            cta="Pedir mi auditoría gratuita"
+            href="/auditoria-digital/"
+            secondary={{ text: "¿No sabes de dónde vienen tus clientes? Mira el servicio de analítica web", href: "/analitica-web/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Qué revisar antes de escalar</h2>
           <p>Antes de subir presupuesto, conviene revisar si la web convierte, si el mensaje es claro para el cliente correcto, si el SEO base está resuelto, si las campañas tienen datos suficientes para optimizar y si el equipo comercial puede absorber más demanda con criterio. Escalar sobre una base débil amplifica los problemas, no los resuelve.</p>
@@ -160,11 +168,11 @@ export default function QueRevisarPage() {
               Una auditoría digital te da una imagen clara de dónde estás, qué está fallando y qué acciones tendrían más impacto. Antes de gastar más, saber más.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contacto/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
-                Hablar con un especialista
+              <Link href="/auditoria-digital/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
+                Pedir auditoría gratuita
               </Link>
-              <Link href="/auditoria-digital/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                Ver servicio de auditoría
+              <Link href="/analitica-web/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
+                Medir bien con analítica web
               </Link>
             </div>
           </div>

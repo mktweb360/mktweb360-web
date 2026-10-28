@@ -110,10 +110,10 @@ export default function ErroresDigitalesNegocioNuevoPage() {
           <p>El nombre de dominio de tu negocio puede estar ocupado si esperas. Lo mismo con los perfiles de redes sociales. El primer día, o incluso antes de abrir, conviene registrar el dominio y reservar el nombre de usuario en las redes que vayas a usar — aunque todavía no las actives. Es rápido, barato y evita encontrarte con que alguien más usa tu nombre en internet.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Lanzar una web sin SEO básico</h2>
-          <p>Una web que no está mínimamente optimizada para buscadores es invisible para Google. No hace falta una estrategia SEO compleja desde el inicio, pero sí una web bien estructurada, con títulos y descripciones correctos, velocidad de carga aceptable y contenido que responde las búsquedas que hacen tus clientes potenciales. Sin eso, la web existe pero no trabaja.</p>
+          <p>A una web que no está mínimamente optimizada para buscadores le cuesta mucho aparecer en Google. No hace falta una estrategia SEO compleja desde el inicio, pero sí una web bien estructurada, con títulos y descripciones correctos, velocidad de carga aceptable y contenido que responde las búsquedas que hacen tus clientes potenciales. Sin eso, la web existe pero no trabaja. Por eso nuestra <Link href="/oferta-web-seo-organico/" className="text-accent-500 hover:underline">web profesional para negocios que empiezan</Link> ya sale con el SEO técnico de base hecho: estructura, títulos, descripciones y velocidad.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">No crear ni verificar la ficha de Google Business Profile</h2>
-          <p>Muchos negocios nuevos abren sin crear su ficha de Google. Eso significa no aparecer en el mapa local, no recibir las visitas que llegarían de búsquedas locales y perder visibilidad frente a competidores que sí la tienen activa. Crear y verificar la ficha es gratuito y puede hacerse en pocas horas. No hacerlo desde el principio es uno de los errores con mayor impacto en captación local.</p>
+          <p>Muchos negocios nuevos abren sin crear su ficha de Google. Eso significa no aparecer en el mapa local, no recibir las visitas que llegarían de búsquedas locales y perder visibilidad frente a competidores que sí la tienen activa. Crear la ficha es gratuito y lleva poco tiempo; la verificación de Google puede tardar unos días, así que conviene empezar pronto. Si no tienes tiempo de trabajarla, existe la opción de <Link href="/google-business-profile/" className="text-accent-500 hover:underline">delegar la gestión de tu ficha de Google</Link> (fotos, publicaciones y respuesta a reseñas). No hacerlo desde el principio es uno de los errores que más pesan en la captación local.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Estás montando un negocio y quieres evitar errores costosos?</p>
@@ -123,7 +123,14 @@ export default function ErroresDigitalesNegocioNuevoPage() {
             </Link>
           </div>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            badge="Para negocios que empiezan"
+            title="Empieza con una web que ya trabaja para ti"
+            desc="Diseño a medida integrado en WordPress para que edites tú los contenidos, adaptado a móvil, con formulario de contacto, páginas legales básicas y SEO técnico de base. Sin permanencia."
+            cta="Ver la oferta de web profesional"
+            href="/oferta-web-seo-organico/"
+            secondary={{ text: "¿Ya has abierto? Pide la auditoría gratuita y mira qué corregir", href: "/auditoria-digital/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Invertir en publicidad antes de tener la base resuelta</h2>
           <p>Arrancar Google Ads o Meta Ads cuando la web no convierte, el mensaje no está claro o no hay capacidad de responder los contactos es gastar dinero para atraer tráfico que no se va a convertir. La publicidad amplifica lo que ya funciona — si nada funciona bien, la amplificación del problema es cara. La base primero, la publicidad después.</p>
@@ -139,16 +146,16 @@ export default function ErroresDigitalesNegocioNuevoPage() {
           </p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
-            <h2 className="text-2xl font-bold mb-3">Arranca tu negocio con la base digital bien construida</h2>
+            <h2 className="text-2xl font-bold mb-3">¿Ya has cometido alguno de estos errores?</h2>
             <p className="text-primary-200 mb-6">
-              En Mkt Web 360 ayudamos a negocios nuevos a construir su presencia digital con orden desde el primer día, evitando los errores que después son caros de corregir.
+              Pide la auditoría gratuita: revisamos tu web, tu ficha de Google y tu visibilidad en la IA, y te decimos qué corregir primero. Si aún no tienes web, mira qué incluye la nuestra para negocios que empiezan.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contacto/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
-                Solicitar orientación gratuita
+              <Link href="/auditoria-digital/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
+                Pedir la auditoría gratuita
               </Link>
-              <Link href="/auditoria-digital/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                Ver auditoría digital
+              <Link href="/oferta-web-seo-organico/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
+                Ver la web profesional
               </Link>
             </div>
           </div>

@@ -109,8 +109,9 @@ export default function CuotaAutonomos2026Page() {
             <li>Primer tramo (ingresos hasta 670€/mes): 200€/mes.</li>
             <li>Segundo tramo (670€ - 900€): 220€/mes.</li>
             <li>Tercer tramo (900€ - 1.166,70€): 260€/mes.</li>
-            <li>A partir del cuarto tramo, los importes suben progresivamente hasta los 1.542€/mes para los ingresos más altos.</li>
+            <li>A partir del cuarto tramo, la cuota mínima sube con los rendimientos hasta rondar los 590 €/mes en el tramo más alto (más de 6.000 € al mes). Si eliges cotizar por una base superior a la mínima, puedes pagar bastante más: la cifra exacta depende de la base que elijas.</li>
           </ul>
+          <p>Para tu caso concreto, consulta la tabla oficial de bases y tramos en la web de la Seguridad Social o pregunta a tu gestor: las cifras de este artículo son orientativas.</p>
           <p>La clave del sistema es que la cuota se ajusta a tus rendimientos netos reales. Si tus ingresos cambian a lo largo del año, tienes la posibilidad de ajustar tu base para que la cuota se corresponda con tu situación real.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">El MEI en 2026: qué es y cuánto sube tu cuota</h2>
@@ -121,7 +122,14 @@ export default function CuotaAutonomos2026Page() {
           <p>La tarifa plana sigue siendo la gran ventaja para quien empieza. Consiste en una cuota reducida de 80€/mes (88,64€ con el MEI incluido) durante los primeros 12 meses de actividad.</p>
           <p>Esta bonificación es prorrogable a 24 meses si tus ingresos no superan el SMI, y solo aplica si no has sido autónomo en los últimos 2 años. Si estás valorando dar el paso, la tarifa plana reduce de forma notable la barrera de entrada durante el primer año.</p>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            badge="Para autónomos"
+            title="Con el alta hecha, toca que te encuentren"
+            desc="Te revisamos gratis cómo apareces hoy en Google: tu web (si la tienes), tu ficha de Google Business Profile y lo que ven los asistentes de IA. Recibes un informe con lo primero que conviene arreglar."
+            cta="Pedir mi auditoría gratuita"
+            href="/auditoria-digital/"
+            secondary={{ text: "¿Aún no tienes web? Mira cómo trabajamos las webs para autónomos", href: "/diseno-de-paginas-web/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo cambiar tu base de cotización a lo largo del año</h2>
           <p>Uno de los aspectos más útiles del sistema actual es la flexibilidad: puedes cambiar tu base de cotización hasta 6 veces al año. Esto te permite adaptar la cuota a la evolución real de tus ingresos.</p>
@@ -130,18 +138,19 @@ export default function CuotaAutonomos2026Page() {
           <h2 className="text-2xl font-bold text-primary-600">Planificación: cuándo te conviene cotizar más</h2>
           <p>Cotizar por la base mínima reduce tu cuota hoy, pero también reduce la base de cálculo de tu pensión, tu prestación por baja médica y el cese de actividad. Es una decisión que tiene consecuencias a largo plazo.</p>
           <p>Para autónomos cercanos a los 50 años, en particular, puede ser conveniente revisar si el ahorro mensual compensa la reducción en prestaciones futuras. Y como todo negocio necesita ingresos estables para poder planificar su cotización, conviene acompañar la parte fiscal con una estrategia sólida para <Link href="/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/" className="text-accent-500 hover:underline">conseguir clientes como autónomo en 2026</Link>. También te interesa preparar tu negocio para la <Link href="/factura-electronica-obligatoria-autonomos-pymes/" className="text-accent-500 hover:underline">factura electrónica obligatoria</Link> que llega para autónomos y pymes.</p>
+          <p>La cuota se paga todos los meses, factures o no. Por eso, cuando tengas el alta y la cotización en orden, lo siguiente es que los clientes te encuentren cuando buscan lo que haces: una <Link href="/oferta-web-seo-organico/" className="text-accent-500 hover:underline">página web profesional para tu negocio</Link> y una <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile bien trabajada</Link>, que es lo que aparece en Google Maps cuando alguien busca un profesional cerca.</p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
-            <h2 className="text-2xl font-bold mb-3">Haz crecer tu negocio para poder cotizar mejor</h2>
+            <h2 className="text-2xl font-bold mb-3">¿Sabes cómo te ven hoy tus posibles clientes en Google?</h2>
             <p className="text-primary-200 mb-6">
-              En Mkt Web 360 ayudamos a autónomos y pymes a conseguir más y mejores clientes online, con una presencia digital que sostiene el crecimiento.
+              Pide la auditoría gratuita: revisamos tu web, tu ficha de Google y tu visibilidad en la IA, y te decimos qué arreglar primero. Sin coste y sin compromiso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contacto/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
-                Hablar con un especialista
+              <Link href="/auditoria-digital/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
+                Pedir la auditoría gratuita
               </Link>
-              <Link href="/contacto/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                Solicitar información
+              <Link href="/google-business-profile/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
+                Ver el servicio de ficha de Google
               </Link>
             </div>
           </div>

@@ -58,6 +58,8 @@ pnpm run check:seo -- 3430 --sin-lang --ignorar ai-max-google-ads-que-es-como-co
 - **El contenido importante va en el HTML que sirve el servidor.** Los buscadores y los asistentes de IA (el lector web de Claude no ejecuta JavaScript) deben verlo sin JS. Nada de precios, servicios o FAQ cargados solo en el cliente.
 - **robots.ts:** dejar pasar a los rastreadores de búsqueda y de asistentes (Googlebot, Claude-User, Claude-SearchBot, OAI-SearchBot, ChatGPT-User, PerplexityBot). Bloquear uno de ellos reduce la visibilidad del cliente en esa plataforma.
 - **Schema y FAQ:** el texto del JSON-LD y el visible deben coincidir.
+- **Tres layouts raíz, un `<html lang>` por idioma (28/10/2026):** `app/(site)/layout.tsx` (ES, con cabecera y pie), `app/(app)/layout.tsx` (área privada, portal y landings, sin cabecera, noindex) y `app/[lang]/layout.tsx` (EN/FR). Los tres pintan `components/RootDocument.tsx` (GTM, Consent Mode, Metricool, schema de la organización, banner de cookies y asistente): lo común se cambia ahí, una sola vez. No hay `app/layout.tsx`; las URL que no existen las sirve `app/global-not-found.tsx` (`experimental.globalNotFound`). Una página nueva en español va en `app/(site)/`; nunca suelta en `app/`.
+- **Una página en otro idioma con `lang` equivocado es un error, no un detalle.** Lo mismo con hreflang, canonical, título, descripción, H1 y datos estructurados: se comprueban antes de publicar.
 - **Commits como José** (`git -c user.name="José Marcos" -c user.email="mktweb360@gmail.com"`), en español y sin `Co-Authored-By`. Rama de trabajo y luego `main`; antes de publicar, tipos y lint en verde.
 
 Los hooks de `.claude/settings.json` bloquean los `.env`, pasan eslint a cada archivo editado y, si se toca el asistente, sus pruebas.

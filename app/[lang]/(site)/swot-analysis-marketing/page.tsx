@@ -29,7 +29,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: "Blog", href: `/${lang}/blog/` },
           { label: isEn ? "SWOT analysis" : "Analyse SWOT" },
         ]} />
-        <p className="text-sm text-accent-500 font-semibold mb-2">Strategy</p>
+        <p className="text-sm text-accent-500 font-semibold mb-2">{isEn ? "Strategy" : "Stratégie"}</p>
         <IntlArticleJsonLd lang={lang} slug="swot-analysis-marketing" headline={isEn ? "SWOT analysis in digital marketing: how to use it to improve your strategy" : "Analyse SWOT en marketing digital : comment l'utiliser pour améliorer votre stratégie"} image="/og-todo-lo-que-necesitas-saber-sobre-el-analisis-dafo.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "SWOT analysis in digital marketing: how to use it to improve your strategy" : "Analyse SWOT en marketing digital : comment l'utiliser pour améliorer votre stratégie"}
@@ -73,6 +73,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "Digital weaknesses to identify honestly: slow website loading, low review count or poor review score, weak or inconsistent social media presence, no email marketing, heavy dependence on one traffic channel (e.g., all traffic comes from paid ads with no organic base), poor mobile experience, outdated content or website design, or no tracking and analytics. Each identified weakness is a specific improvement opportunity." : "Faiblesses digitales à identifier honnêtement : chargement lent du site, faible nombre d'avis ou mauvais score d'avis, présence faible ou incohérente sur les réseaux sociaux, pas d'email marketing, forte dépendance à un canal de trafic (ex. tout le trafic vient des publicités payantes sans base organique), mauvaise expérience mobile, contenu ou design de site web dépassés, ou pas de suivi et analytics. Chaque faiblesse identifiée est une opportunité d'amélioration spécifique."}
           </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "Most of these weaknesses can be measured rather than guessed. If you want that starting data, a " : "La plupart de ces faiblesses se mesurent au lieu de se deviner. Si vous voulez ces données de départ, un "}
+            <a href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"} className="text-accent-500 hover:underline">
+              {isEn ? "free audit of your website and Google Business Profile" : "audit gratuit de votre site et de votre fiche Google Business Profile"}
+            </a>
+            {isEn ? " gives you the specific weaknesses to put in the W of your SWOT." : " vous donne les faiblesses concrètes à placer dans le F de votre SWOT."}
+          </p>
         </section>
 
         <section className="mb-10">
@@ -95,17 +102,33 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "A SWOT matrix that stays on paper produces no results. The follow-through is the strategic action that SWOT is designed to generate. From your SWOT, identify the most important action in each of four combinations: SO (use a Strength to pursue an Opportunity), WO (fix a Weakness to better exploit an Opportunity), ST (use a Strength to mitigate a Threat), WT (work on a Weakness to reduce vulnerability to a Threat). Each combination yields one high-priority action." : "Une matrice SWOT qui reste sur papier ne produit aucun résultat. Le suivi est l'action stratégique que le SWOT est conçu pour générer. À partir de votre SWOT, identifiez l'action la plus importante dans chacune des quatre combinaisons : SO (utiliser une Force pour poursuivre une Opportunité), WO (corriger une Faiblesse pour mieux exploiter une Opportunité), ST (utiliser une Force pour atténuer une Menace), WT (travailler sur une Faiblesse pour réduire la vulnérabilité à une Menace). Chaque combinaison génère une action hautement prioritaire."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Assign each action to a specific person with a completion date and a measurable outcome. This transforms your SWOT from a diagnostic tool into an execution roadmap. Review progress monthly and update your SWOT quarterly. The businesses that consistently outperform their market are rarely the ones with the best initial strategy — they are the ones that most consistently execute and adapt their strategy based on results and changing conditions." : "Assignez chaque action à une personne spécifique avec une date de réalisation et un résultat mesurable. Cela transforme votre SWOT d'un outil de diagnostic en feuille de route d'exécution. Révisez les progrès mensuellement et mettez à jour votre SWOT trimestriellement. Les entreprises qui surperforment systématiquement leur marché sont rarement celles qui ont la meilleure stratégie initiale — ce sont celles qui exécutent et adaptent le plus systématiquement leur stratégie en fonction des résultats et des conditions changeantes."}
+            {isEn ? "Assign each action to a specific person with a completion date and a measurable outcome. This transforms your SWOT from a diagnostic tool into an execution roadmap. Review progress monthly and update your SWOT quarterly." : "Assignez chaque action à une personne spécifique avec une date de réalisation et un résultat mesurable. Cela transforme votre SWOT d'un outil de diagnostic en feuille de route d'exécution. Révisez les progrès mensuellement et mettez à jour votre SWOT trimestriellement."}
+          </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "If most of the actions that come out of your SWOT are about being found online, the next step is to turn them into a plan with priorities and realistic timeframes. That is what an " : "Si la plupart des actions qui sortent de votre SWOT concernent votre visibilité en ligne, l'étape suivante est d'en faire un plan avec des priorités et des délais réalistes. C'est le travail d'un "}
+            <a href={isEn ? "/en/seo-consultant/" : "/fr/consultant-seo/"} className="text-accent-500 hover:underline">
+              {isEn ? "SEO consultant with a diagnosis and prioritised plan" : "consultant SEO avec diagnostic et plan priorisé"}
+            </a>
+            {isEn ? " does." : "."}
           </p>
         </section>
 
-        <BlogBanner variant="default" />
+        <BlogBanner
+          lang={lang}
+          variant="default"
+          badge={isEn ? "Your digital SWOT, free" : "Votre SWOT digital, gratuit"}
+          title={isEn ? "Fill in your weaknesses with data, not guesses" : "Remplissez vos faiblesses avec des données, pas des suppositions"}
+          desc={isEn ? "We review your website, your Google rankings, your Google Business Profile and how AI assistants describe you, and tell you what to fix first. No cost, no commitment." : "Nous analysons votre site, votre positionnement sur Google, votre fiche Google Business Profile et la façon dont les assistants IA vous présentent, et nous vous disons quoi corriger en premier. Sans coût ni engagement."}
+          cta={isEn ? "Request my free audit" : "Demander mon audit gratuit"}
+          href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"}
+          secondary={{ text: isEn ? "Prefer a full SEO plan with a consultant?" : "Vous préférez un plan SEO complet avec un consultant ?", href: isEn ? "/en/seo-consultant/" : "/fr/consultant-seo/" }}
+        />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
-            {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}
+            {isEn ? "Shall we do the digital part of your SWOT together?" : "On fait ensemble la partie digitale de votre SWOT ?"}
           </h2>
           <p className="text-primary-200 mb-6">
-            {isEn ? "Tell us about your project and we'll get back to you within 24 hours." : "Parlez-nous de votre projet et nous vous répondrons dans les 24 heures."}
+            {isEn ? "Tell us about your business and we will reply with the first points we would look at in your website, your Google profile and your visibility in AI search." : "Parlez-nous de votre activité et nous vous répondrons avec les premiers points que nous regarderions sur votre site, votre fiche Google et votre visibilité dans les recherches IA."}
           </p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`blog-${lang}`} />

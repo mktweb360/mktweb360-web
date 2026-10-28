@@ -237,8 +237,19 @@ export default function AyudasDigitalizarPymePage() {
           <p>
             La regla es simple: <strong>solo es subvencionable lo que dicen las bases</strong>, en el plazo y con la justificación que exigen.
           </p>
+          <p>
+            Y no todo depende de una ayuda. Hay pasos que cuestan poco o nada y que conviene dar ya: la <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile bien configurada</Link> es gratuita y es lo primero que ve quien te busca en el mapa. Si lo que te falta es una web que explique bien qué haces y facilite el contacto, puedes ver <Link href="/oferta-web-seo-organico/" className="text-accent-500 hover:underline">qué incluye y cuánto cuesta una web profesional</Link> y decidir si esperar a una convocatoria compensa.
+          </p>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            variant="default"
+            badge="Antes de pedir una ayuda"
+            title="Ten claro qué digitalizar primero"
+            desc="Revisamos gratis tu web, tu ficha de Google y cómo apareces en buscadores y asistentes de IA, y te decimos qué conviene hacer ya y qué puede esperar a una convocatoria."
+            cta="Pedir mi auditoría gratuita"
+            href="/auditoria-digital/"
+            secondary={{ text: "¿Lo que necesitas es una web? Mira qué incluye", href: "/diseno-de-paginas-web/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo no perder la próxima convocatoria</h2>
           <p>Muchas ayudas se conceden por orden de solicitud o tienen plazos cortos. Ten preparado antes de que se publiquen:</p>
@@ -273,9 +284,14 @@ export default function AyudasDigitalizarPymePage() {
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Quieres saber qué digitalizar primero en tu pyme?</p>
             <p className="text-gray-600 text-sm mb-4">En Mkt Web 360 analizamos tu situación y te decimos qué inversión tiene sentido ahora y cuál puede esperar, haya o no convocatoria abierta.</p>
-            <Link href="/auditoria-digital/" className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
-              Ver auditoría digital
-            </Link>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/auditoria-digital/" className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
+                Pedir auditoría gratuita
+              </Link>
+              <Link href="/diseno-de-paginas-web/" className="inline-block border-2 border-accent-500 text-accent-500 px-6 py-2 rounded-full font-semibold text-sm hover:bg-accent-50 transition-colors">
+                Ver diseño de páginas web
+              </Link>
+            </div>
           </div>
 
           <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>

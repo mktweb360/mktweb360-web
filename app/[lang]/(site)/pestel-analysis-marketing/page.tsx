@@ -29,7 +29,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: "Blog", href: `/${lang}/blog/` },
           { label: isEn ? "PESTEL analysis" : "Analyse PESTEL" },
         ]} />
-        <p className="text-sm text-accent-500 font-semibold mb-2">Strategy</p>
+        <p className="text-sm text-accent-500 font-semibold mb-2">{isEn ? "Strategy" : "Stratégie"}</p>
         <IntlArticleJsonLd lang={lang} slug="pestel-analysis-marketing" headline={isEn ? "PESTEL analysis in digital marketing: how to apply it to your strategy" : "Analyse PESTEL en marketing digital : comment l'appliquer à votre stratégie"} image="/og-descubre-el-analisis-pestel.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "PESTEL analysis in digital marketing: how to apply it to your strategy" : "Analyse PESTEL en marketing digital : comment l'appliquer à votre stratégie"}
@@ -61,6 +61,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "A practical approach: for each of the 6 PESTEL factors, identify 2-3 specific trends or changes that are most relevant to your business and digital marketing channels. For each, assess whether it represents a risk or an opportunity, and rate the likely impact on your business. This creates a prioritised list of external factors to incorporate into your marketing planning." : "Une approche pratique : pour chacun des 6 facteurs PESTEL, identifiez 2 à 3 tendances ou changements spécifiques les plus pertinents pour votre entreprise et vos canaux de marketing digital. Pour chacun, évaluez s'il représente un risque ou une opportunité, et notez l'impact probable sur votre entreprise. Cela crée une liste priorisée de facteurs externes à intégrer dans votre planification marketing."}
           </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "To rate the impact you need to know where you start from. A " : "Pour noter l'impact, il faut savoir d'où vous partez. Un "}
+            <a href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"} className="text-accent-500 hover:underline">
+              {isEn ? "free audit of your website, Google rankings and Google Business Profile" : "audit gratuit de votre site, de votre positionnement Google et de votre fiche Google Business Profile"}
+            </a>
+            {isEn ? " gives you that baseline in a single report." : " vous donne ce point de départ dans un seul rapport."}
+          </p>
         </section>
 
         <section className="mb-10">
@@ -71,7 +78,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "Political factors with immediate digital marketing impact include: data privacy regulations (GDPR, the Spanish Organic Data Protection Law), cookie consent requirements, advertising platform regulations (restrictions on targeting specific audiences), and digital services taxation. These directly affect how you run campaigns, how you track results and what data you can use." : "Les facteurs politiques ayant un impact immédiat sur le marketing digital incluent : les réglementations de confidentialité des données (RGPD, la loi organique espagnole de protection des données), les exigences de consentement aux cookies, les réglementations des plateformes publicitaires (restrictions sur le ciblage d'audiences spécifiques), et la taxation des services numériques. Ceux-ci affectent directement la façon dont vous gérez les campagnes, comment vous suivez les résultats et quelles données vous pouvez utiliser."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Economic factors are especially important for planning advertising spend. In periods of economic uncertainty, consumers become more price-sensitive and purchase consideration cycles lengthen — this affects which keywords convert best and what messaging resonates. Higher inflation typically increases advertising costs (as more advertisers compete for the same attention) while simultaneously reducing consumer purchasing power. Smart marketers adjust their channel mix and messaging in response." : "Les facteurs économiques sont particulièrement importants pour planifier les dépenses publicitaires. En périodes d'incertitude économique, les consommateurs deviennent plus sensibles aux prix et les cycles de considération d'achat s'allongent — cela affecte quels mots-clés convertissent le mieux et quel message résonne. Une inflation plus élevée augmente généralement les coûts publicitaires (à mesure que plus d'annonceurs rivalisent pour la même attention) tout en réduisant simultanément le pouvoir d'achat des consommateurs. Les marketeurs avisés ajustent leur mix de canaux et leur messagerie en réponse."}
+            {isEn ? "Economic factors are especially important for planning advertising spend. In periods of economic uncertainty, consumers become more price-sensitive and purchase consideration cycles lengthen — this affects which keywords convert best and what messaging resonates. Inflation also squeezes consumer purchasing power, so it is worth reviewing which channel actually brings in customers before cutting budgets blindly." : "Les facteurs économiques sont particulièrement importants pour planifier les dépenses publicitaires. En périodes d'incertitude économique, les consommateurs deviennent plus sensibles aux prix et les cycles de considération d'achat s'allongent — cela affecte quels mots-clés convertissent le mieux et quel message résonne. L'inflation réduit aussi le pouvoir d'achat des consommateurs : mieux vaut vérifier quel canal vous apporte réellement des clients avant de couper le budget à l'aveugle."}
           </p>
         </section>
 
@@ -83,7 +90,14 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "Social factors in digital marketing include changing demographics (aging population shifting towards more online activity, Gen Z expecting different digital experiences), trust in online information (increasing scepticism toward advertising, growing importance of peer reviews and user-generated content), and platform behaviour shifts (declining Facebook usage among younger demographics, rise of short-form video). Understanding these trends helps you allocate resources to channels that match where your audience is going." : "Les facteurs sociaux dans le marketing digital incluent les démographies changeantes (vieillissement de la population se tournant davantage vers l'activité en ligne, génération Z attendant des expériences digitales différentes), la confiance dans l'information en ligne (scepticisme croissant envers la publicité, importance croissante des avis pairs et du contenu généré par les utilisateurs), et les changements de comportement sur les plateformes (déclin de l'usage de Facebook chez les jeunes, essor de la vidéo courte). Comprendre ces tendances aide à allouer les ressources aux canaux qui correspondent à l'orientation de votre audience."}
           </p>
           <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Technological factors are the most rapidly changing PESTEL element for digital marketing. AI-generated content, generative search (AI summaries replacing traditional search results), voice search growth, and cookieless tracking are all technological shifts that are already affecting how marketing works. GEO (Generative Engine Optimisation) — ensuring your brand appears in AI-generated responses — is emerging as a new discipline alongside traditional SEO." : "Les facteurs technologiques sont l'élément PESTEL changeant le plus rapidement pour le marketing digital. Le contenu généré par IA, la recherche générative (les résumés IA remplaçant les résultats de recherche traditionnels), la croissance de la recherche vocale, et le suivi sans cookies sont tous des changements technologiques qui affectent déjà le fonctionnement du marketing. Le GEO (Optimisation pour Moteurs Génératifs) — s'assurer que votre marque apparaît dans les réponses générées par IA — émerge comme une nouvelle discipline aux côtés du SEO traditionnel."}
+            {isEn ? "For a service business the social trend is very concrete: more and more people search for providers near them and decide on reviews. If you work with local clients, " : "Pour une entreprise de services, la tendance sociale est très concrète : de plus en plus de gens cherchent un prestataire près de chez eux et décident selon les avis. Si vous travaillez avec des clients locaux, le "}
+            <a href={isEn ? "/en/local-seo-services/" : "/fr/local-seo-services/"} className="text-accent-500 hover:underline">
+              {isEn ? "local SEO and your Google Maps listing" : "SEO local et votre fiche Google Maps"}
+            </a>
+            {isEn ? " are how you make that trend work for you." : " sont le moyen de tirer parti de cette tendance."}
+          </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "Technological factors are the most rapidly changing PESTEL element for digital marketing. AI-generated content, generative search (AI summaries shown above traditional search results), voice search growth, and cookieless tracking are all technological shifts that are already affecting how marketing works. GEO (Generative Engine Optimisation) — ensuring your brand appears in AI-generated responses — is emerging as a new discipline alongside traditional SEO." : "Les facteurs technologiques sont l'élément PESTEL changeant le plus rapidement pour le marketing digital. Le contenu généré par IA, la recherche générative (les résumés IA affichés au-dessus des résultats de recherche traditionnels), la croissance de la recherche vocale, et le suivi sans cookies sont tous des changements technologiques qui affectent déjà le fonctionnement du marketing. Le GEO (Optimisation pour Moteurs Génératifs) — s'assurer que votre marque apparaît dans les réponses générées par IA — émerge comme une nouvelle discipline aux côtés du SEO traditionnel."}
           </p>
         </section>
 
@@ -97,15 +111,31 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn ? "Use PESTEL when: planning a new digital strategy, entering a new market, making significant budget decisions, or conducting an annual strategic review. Use SWOT when: evaluating a specific product or service launch, comparing yourself to specific competitors, or making tactical decisions about channel allocation. Both are simple frameworks that become powerful when completed with honest, specific data rather than generic statements." : "Utilisez PESTEL quand : vous planifiez une nouvelle stratégie digitale, entrez sur un nouveau marché, prenez des décisions de budget significatives, ou menez une révision stratégique annuelle. Utilisez SWOT quand : vous évaluez le lancement d'un produit ou service spécifique, vous comparez à des concurrents spécifiques, ou prenez des décisions tactiques sur l'allocation des canaux. Les deux sont des cadres simples qui deviennent puissants quand ils sont complétés avec des données honnêtes et spécifiques plutôt que des déclarations génériques."}
           </p>
+          <p className="text-gray-600 mb-4 leading-relaxed">
+            {isEn ? "If you want help turning those conclusions into a visibility plan with priorities and realistic timeframes, that is the job of an " : "Si vous voulez de l'aide pour transformer ces conclusions en plan de visibilité avec des priorités et des délais réalistes, c'est le travail d'un "}
+            <a href={isEn ? "/en/seo-consultant/" : "/fr/consultant-seo/"} className="text-accent-500 hover:underline">
+              {isEn ? "SEO consultant with a diagnosis and prioritised plan" : "consultant SEO avec diagnostic et plan priorisé"}
+            </a>
+            {isEn ? "." : "."}
+          </p>
         </section>
 
-        <BlogBanner variant="default" />
+        <BlogBanner
+          lang={lang}
+          variant="default"
+          badge={isEn ? "From the environment to your website" : "De l'environnement à votre site"}
+          title={isEn ? "See how these factors affect you today" : "Voyez comment ces facteurs vous touchent aujourd'hui"}
+          desc={isEn ? "The free audit reviews your website, your Google rankings, your Google Business Profile and your visibility in AI assistants: the places where changes in the environment already show. No cost, no commitment." : "L'audit gratuit passe en revue votre site, votre positionnement sur Google, votre fiche Google Business Profile et votre visibilité dans les assistants IA : là où les changements de l'environnement se voient déjà. Sans coût ni engagement."}
+          cta={isEn ? "Request my free audit" : "Demander mon audit gratuit"}
+          href={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"}
+          secondary={{ text: isEn ? "See the SEO consulting service" : "Voir le service de consultant SEO", href: isEn ? "/en/seo-consultant/" : "/fr/consultant-seo/" }}
+        />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
-            {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}
+            {isEn ? "Shall we apply PESTEL to your business?" : "On applique le PESTEL à votre activité ?"}
           </h2>
           <p className="text-primary-200 mb-6">
-            {isEn ? "Tell us about your project and we'll get back to you within 24 hours." : "Parlez-nous de votre projet et nous vous répondrons dans les 24 heures."}
+            {isEn ? "Tell us about your business and the market you work in, and we will reply with the external factors we would watch first in your digital presence." : "Parlez-nous de votre activité et de votre marché, et nous vous répondrons avec les facteurs externes que nous surveillerions en premier dans votre présence en ligne."}
           </p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`blog-${lang}`} />

@@ -86,20 +86,29 @@ export default function AnalisisDAFOPage() {
             </div>
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
               <h3 className="font-bold text-blue-700 mb-2">O — Oportunidades (externas)</h3>
-              <p className="text-sm text-blue-800">Factores externos positivos que podemos aprovechar. Ejemplos: crecimiento del comercio electrónico, subvenciones Kit Digital, tendencia hacia lo local y sostenible.</p>
+              <p className="text-sm text-blue-800">Factores externos positivos que podemos aprovechar. Ejemplos: crecimiento del comercio electrónico, ayudas públicas a la digitalización que estén abiertas, tendencia hacia lo local y sostenible.</p>
             </div>
           </div>
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo aplicar el DAFO en marketing digital</h2>
+          <p>Para el cuadrante interno de lo digital no hace falta intuición: tu web, tu ficha de Google y lo que dicen de ti los asistentes de IA se pueden medir. Si quieres esos datos de partida, una <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría digital gratuita de tu web y tu ficha de Google</Link> te da las debilidades concretas con las que rellenar la D del DAFO.</p>
           <p>Una vez completado el análisis DAFO, el siguiente paso es cruzar los cuadrantes para definir estrategias:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>F + O (Estrategias ofensivas):</strong> Usa tus fortalezas para aprovechar las oportunidades. Si eres experto en tu sector y hay demanda creciente online, crea contenido que te posicione como referente.</li>
-            <li><strong>D + O (Estrategias de reorientación):</strong> Supera tus debilidades aprovechando oportunidades. Si tu web está desactualizada pero el Kit Digital ofrece financiación, es el momento de renovarla.</li>
+            <li><strong>D + O (Estrategias de reorientación):</strong> Supera tus debilidades aprovechando oportunidades. Si tu web está desactualizada y hay una ayuda o línea de financiación abierta para digitalizarte, es buen momento para renovarla.</li>
             <li><strong>F + A (Estrategias defensivas):</strong> Usa tus fortalezas para minimizar amenazas. Si entra nueva competencia, refuerza la fidelización de clientes actuales con un programa de retención.</li>
-            <li><strong>D + A (Estrategias de supervivencia):</strong> Minimiza debilidades y amenazas simultáneamente. Si tu <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">presencia digital</Link> es débil y la competencia online crece, la acción urgente es el SEO y la presencia en redes.</li>
+            <li><strong>D + A (Estrategias de supervivencia):</strong> Minimiza debilidades y amenazas simultáneamente. Si tu presencia digital es débil y la competencia online crece, lo prioritario es que te encuentren: SEO, ficha de Google y redes, en ese orden según tu negocio.</li>
           </ul>
 
-          <BlogBanner variant="default" />
+          <BlogBanner
+            variant="default"
+            badge="Tu DAFO digital, gratis"
+            title="Rellena las debilidades con datos, no con suposiciones"
+            desc="Revisamos tu web, tu posicionamiento en Google, tu ficha de Google Business Profile y cómo apareces en los asistentes de IA, y te decimos qué corregir primero. Sin coste ni compromiso."
+            cta="Pedir mi auditoría gratuita"
+            href="/auditoria-digital/"
+            secondary={{ text: "¿Prefieres un plan SEO completo con un consultor?", href: "/consultor-seo/" }}
+          />
 
           <h2 className="text-2xl font-bold text-primary-600">Ejemplo práctico: DAFO para una clínica dental</h2>
           <p>Supongamos una clínica dental con 10 años de experiencia en una ciudad mediana:</p>
@@ -110,13 +119,19 @@ export default function AnalisisDAFOPage() {
             <li><strong>Amenazas:</strong> Nuevas clínicas con fuerte inversión en marketing digital, franquicias low-cost.</li>
           </ul>
           <p><strong>Estrategia resultante:</strong> Renovar la web con enfoque en tratamientos estéticos (F+O), implementar un sistema de reseñas en Google (D+O) y reforzar el SEO local antes de que la competencia consolide su posición (F+A).</p>
+          <p>Fíjate en que casi todas las acciones que salen del cruce son de presencia digital. Si en tu DAFO pasa lo mismo, el siguiente paso es convertirlo en un plan con prioridades y plazos realistas; es justo lo que hace un <Link href="/consultor-seo/" className="text-accent-500 hover:underline">consultor SEO con diagnóstico y plan priorizado</Link>.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
-            <p className="font-semibold text-primary-700 mb-2">¿Necesitas ayuda para definir tu estrategia de marketing?</p>
-            <p className="text-gray-600 text-sm mb-4">En Mkt Web 360 realizamos análisis completos de tu situación digital y diseñamos estrategias personalizadas basadas en datos reales.</p>
-            <Link href="/contacto/" className="bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
-              Solicitar consultoría gratuita
-            </Link>
+            <p className="font-semibold text-primary-700 mb-2">¿Hacemos juntos la parte digital de tu DAFO?</p>
+            <p className="text-gray-600 text-sm mb-4">Te enviamos un informe de tu web, tu SEO, tu ficha de Google y tu visibilidad en IA con las acciones que más impacto tendrían. Tú decides después si lo haces por tu cuenta o con nosotros.</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/auditoria-digital/" className="bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
+                Pedir auditoría gratuita
+              </Link>
+              <Link href="/consultor-seo/" className="border-2 border-accent-500 text-accent-600 px-6 py-2 rounded-full font-semibold text-sm hover:bg-accent-50 transition-colors">
+                Ver consultoría SEO
+              </Link>
+            </div>
           </div>
         </div>
         <nav className="mt-12 pt-8 border-t border-gray-200">
