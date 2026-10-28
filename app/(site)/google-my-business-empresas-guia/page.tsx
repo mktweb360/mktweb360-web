@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Google Business Profile para empresas: guía completa 2026",
   description: "Aprende a optimizar tu ficha de Google Business Profile para aparecer en búsquedas locales, conseguir más reseñas y convertir visitas en clientes.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-12",
   dateModified: "2026-06-12",
   url: "https://www.mktweb360.com/google-my-business-empresas-guia/",
   mainEntityOfPage: "https://www.mktweb360.com/google-my-business-empresas-guia/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-google-my-business-empresas-guia.jpg",
 };
 
 const FAQS = [

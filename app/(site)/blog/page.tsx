@@ -4,6 +4,8 @@ import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { allPosts } from "@/lib/blog";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { JsonLd } from "@/components/JsonLd";
+import { webPageSchema, fromMeta, SITE } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Blog de Marketing Digital",
@@ -24,6 +26,13 @@ export default function BlogPage() {
     <>
       <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 pt-12 pb-16 md:pb-20">
+          <JsonLd data={webPageSchema("CollectionPage", { lang: "es", path: "/blog/", ...fromMeta(metadata) }, {
+            mainEntity: {
+              "@type": "ItemList",
+              numberOfItems: posts.length,
+              itemListElement: posts.map((p, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE}/${p.slug}/`, name: p.title })),
+            },
+          })} />
           <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog" }]} />
           <p className="mt-2 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
             <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden="true" />

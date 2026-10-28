@@ -3,6 +3,8 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { JsonLd } from "@/components/JsonLd";
+import { serviceSchema, intlPath, fromMeta } from "@/lib/schema";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -103,6 +105,7 @@ export default async function GoogleAdsSpainPage({
     <>
       <section className="mw-skin-hero text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
+          <JsonLd data={serviceSchema({ lang, path: intlPath(lang, "google-ads-spain-foreign-companies"), ...fromMeta(await generateMetadata({ params })) })} />
           <Breadcrumbs
             lang={lang}
             items={[

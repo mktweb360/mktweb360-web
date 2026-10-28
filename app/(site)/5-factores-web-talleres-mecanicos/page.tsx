@@ -31,11 +31,13 @@ const articleSchema = {
   description:
     "Los 5 factores que determinan si la web de un taller mecánico capta clientes: hoja de reclamaciones, presupuesto previo por escrito según el RD 1457/1986, solicitud de cita online, garantía de reparación clara y transparencia de precios.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-06",
   dateModified: "2026-09-06",
   url: "https://www.mktweb360.com/5-factores-web-talleres-mecanicos/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-talleres-mecanicos/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-5-factores-web-talleres-mecanicos.jpg",
 };
 
 const FAQS = [

@@ -4,6 +4,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -87,6 +88,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "AI · Digital Marketing" : "IA · Marketing Digital"}
         </p>
 
+        <IntlArticleJsonLd lang={lang} slug="ai-agents-marketing" headline={isEn ? "AI Agents for Marketing in 2026: What They Are, What They Can Do and How to Start" : "Agents IA pour le marketing en 2026 : ce qu'ils sont, ce qu'ils peuvent faire et comment commencer"} image="/og-chatgpt-para-marketing-digital.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "AI Agents for Marketing in 2026: What They Are, What They Can Do and How to Start"

@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Cómo crear una propuesta de valor que atraiga a los clientes que quieres",
   description: "Una propuesta de valor clara es la base de cualquier estrategia de marketing efectiva. Aprende a construirla con ejemplos prácticos para pymes.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-12",
   dateModified: "2026-06-12",
   url: "https://www.mktweb360.com/como-crear-propuesta-de-valor/",
   mainEntityOfPage: "https://www.mktweb360.com/como-crear-propuesta-de-valor/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-como-crear-propuesta-de-valor.jpg",
 };
 
 const FAQS = [

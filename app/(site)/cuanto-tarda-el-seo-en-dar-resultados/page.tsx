@@ -41,12 +41,13 @@ const articleSchema = {
   headline: H1,
   description: DESCRIPTION,
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: DATE,
   dateModified: DATE,
   image: `https://www.mktweb360.com${OG}`,
   url: URL,
   mainEntityOfPage: URL,
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

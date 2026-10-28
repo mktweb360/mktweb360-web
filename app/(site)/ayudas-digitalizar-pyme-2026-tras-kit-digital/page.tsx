@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "El Kit Digital cerró solicitudes en octubre de 2025. Qué ayudas quedan en 2026 para digitalizar tu pyme, qué hace la Orden TDF/39/2026 y cómo prepararte.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
   image: "https://www.mktweb360.com/og-ayudas-digitalizar-pyme-2026-tras-kit-digital.jpg",
   url: "https://www.mktweb360.com/ayudas-digitalizar-pyme-2026-tras-kit-digital/",
   mainEntityOfPage: "https://www.mktweb360.com/ayudas-digitalizar-pyme-2026-tras-kit-digital/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

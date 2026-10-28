@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Canvas social media" : "Canvas réseaux sociaux" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">{isEn ? "Social Media" : "Réseaux sociaux"}</p>
+        <IntlArticleJsonLd lang={lang} slug="canvas-for-social-media" headline={isEn ? "How to use the Canvas framework to manage your social media strategy" : "Comment utiliser le Canvas pour gérer votre stratégie de réseaux sociaux"} image="/og-descubre-el-poder-del-canvas.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to use the Canvas framework to manage your social media strategy" : "Comment utiliser le Canvas pour gérer votre stratégie de réseaux sociaux"}
         </h1>

@@ -29,11 +29,13 @@ const articleSchema = {
   headline: "Qué puede automatizar una pyme en marketing y ventas para ahorrar tiempo y captar mejor",
   description: "Descubre qué procesos puede automatizar una pyme en marketing y ventas para ahorrar tiempo, mejorar seguimiento y captar mejor.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-04-28",
   dateModified: "2025-04-28",
   url: "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/",
   mainEntityOfPage: "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-que-puede-automatizar-una-pyme.jpg",
 };
 
 const FAQS = [

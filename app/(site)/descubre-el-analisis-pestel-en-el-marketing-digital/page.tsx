@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Descubre el Análisis PESTEL en el Marketing Digital",
   description: "Cómo aplicar el análisis PESTEL en estrategias de marketing digital para PYMEs.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2023-11-18",
   dateModified: "2023-11-18",
   url: "https://www.mktweb360.com/descubre-el-analisis-pestel-en-el-marketing-digital/",
   mainEntityOfPage: "https://www.mktweb360.com/descubre-el-analisis-pestel-en-el-marketing-digital/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-descubre-el-analisis-pestel.jpg",
 };
 
 export default function AnalisisPESTELPage() {

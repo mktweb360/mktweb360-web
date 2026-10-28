@@ -31,11 +31,13 @@ const articleSchema = {
   description:
     "Los 5 factores que definen si la web de un despacho de abogados capta casos: identificación colegial obligatoria, confidencialidad del cliente, arquitectura por área de práctica, prueba social dentro de la deontología y captación con intención inmediata.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-04",
   dateModified: "2026-09-04",
   url: "https://www.mktweb360.com/5-factores-web-despacho-abogados/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-despacho-abogados/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-5-factores-web-despacho-abogados.jpg",
 };
 
 const FAQS = [

@@ -5,6 +5,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -30,6 +31,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Digitalise business" : "Digitaliser entreprise" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Strategy</p>
+        <IntlArticleJsonLd lang={lang} slug="how-to-digitalise-your-business" headline={isEn ? "How to digitalise your business without getting lost in the process" : "Comment digitaliser votre entreprise sans se perdre dans le processus"} image="/og-como-digitalizar-tu-negocio.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to digitalise your business without getting lost in the process" : "Comment digitaliser votre entreprise sans se perdre dans le processus"}
         </h1>

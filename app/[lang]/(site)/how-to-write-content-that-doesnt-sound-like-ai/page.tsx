@@ -5,6 +5,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -89,6 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </time>
             <AuthorByline lang={lang} />
           </div>
+          <IntlArticleJsonLd lang={lang} slug="how-to-write-content-that-doesnt-sound-like-ai" headline={isEn ? "How to write content that doesn't sound like AI: techniques to humanise your copy" : "Comment écrire du contenu qui ne ressemble pas à l'IA : techniques pour humaniser vos textes"} image="/og-como-escribir-contenido-que-no-suene-a-ia.jpg" />
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn
               ? "How to write content that doesn't sound like AI: techniques to humanise your copy"

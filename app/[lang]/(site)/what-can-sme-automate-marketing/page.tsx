@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "SME automation" : "Automatisation PME" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Strategy</p>
+        <IntlArticleJsonLd lang={lang} slug="what-can-sme-automate-marketing" headline={isEn ? "What can an SME automate in marketing and sales to save time and capture better" : "Ce qu'une PME peut automatiser en marketing et ventes pour gagner du temps et mieux capturer"} image="/og-que-puede-automatizar-una-pyme.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "What can an SME automate in marketing and sales to save time and capture better" : "Ce qu'une PME peut automatiser en marketing et ventes pour gagner du temps et mieux capturer"}
         </h1>

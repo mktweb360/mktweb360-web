@@ -29,11 +29,13 @@ const articleSchema = {
   headline: "IA aplicada a marketing: dónde aporta valor real y dónde sigue siendo humo",
   description: "Descubre dónde la IA aplicada a marketing aporta valor real, qué usos conviene priorizar y dónde sigue habiendo demasiado ruido.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-03-01",
   dateModified: "2025-03-01",
   url: "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/",
   mainEntityOfPage: "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-ia-aplicada-a-marketing-valor-real-o-humo.jpg",
 };
 
 const FAQS = [

@@ -5,6 +5,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -87,6 +88,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </time>
             <AuthorByline lang={lang} />
           </div>
+          <IntlArticleJsonLd lang={lang} slug="digital-marketing-ai-search-zero-click" headline={isEn ? "Digital marketing with AI and zero-click answers: what to do now" : "Marketing digital à l'ère de l'IA et du zéro clic : que faire maintenant"} image="/og-marketing-digital-con-ia-y-respuestas-cero-clic.jpg" />
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn
               ? "Digital marketing with AI and zero-click answers: what to do now"

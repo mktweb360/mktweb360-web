@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 const FAQS_EN = [
   {
     q: "How much money does a freelancer need for digital marketing?",
-    a: "With £0 you can do a lot: optimise your Google Business Profile, post on LinkedIn, improve the basic SEO of your website. With £100–200/month you can already run Google Ads for local searches with measurable results.",
+    a: "With no budget you can do a lot: optimise your Google Business Profile, post on LinkedIn, improve the basic SEO of your website. With a modest budget you can test local search campaigns on Google Ads and measure what comes in; how much you need depends on the cost per click in your sector and area.",
   },
   {
     q: "Does a freelancer need a website to get clients online?",
@@ -42,14 +43,14 @@ const FAQS_EN = [
   },
   {
     q: "How long does it take for the first client to arrive via Google?",
-    a: "With a well-optimised Google Business Profile in mid-sized cities, the first contacts can arrive in 2–4 weeks. With organic SEO: 3–4 months. With Google Ads: the first day if the campaign is well configured.",
+    a: "With a well-optimised Google Business Profile, the first contacts can arrive within 1–2 months. With organic SEO, as a guide, 3–6 months for the first results and 6–12 to consolidate. With Google Ads: the first day if the campaign is well configured.",
   },
 ];
 
 const FAQS_FR = [
   {
     q: "Combien d'argent un indépendant a-t-il besoin pour le marketing digital ?",
-    a: "Avec 0 € on peut faire beaucoup : optimiser Google Business Profile, publier sur LinkedIn, améliorer le SEO basique du site web. Avec 100 à 200 €/mois, on peut déjà faire Google Ads pour des recherches locales avec des résultats mesurables.",
+    a: "Sans budget, on peut faire beaucoup : optimiser Google Business Profile, publier sur LinkedIn, améliorer le SEO basique du site web. Avec un budget modeste, on peut tester des campagnes Google Ads de recherche locale et mesurer ce qui arrive ; le montant nécessaire dépend du coût par clic de votre secteur et de votre zone.",
   },
   {
     q: "Un indépendant a-t-il besoin d'un site web pour obtenir des clients en ligne ?",
@@ -61,7 +62,7 @@ const FAQS_FR = [
   },
   {
     q: "Combien de temps faut-il pour que le premier client arrive via Google ?",
-    a: "Avec un Google Business Profile bien optimisé dans des villes moyennes, les premiers contacts peuvent arriver en 2 à 4 semaines. Avec le SEO organique : 3 à 4 mois. Avec Google Ads : le premier jour si la campagne est bien configurée.",
+    a: "Avec un Google Business Profile bien optimisé, les premiers contacts peuvent arriver en 1 à 2 mois. Avec le SEO organique, à titre indicatif, 3 à 6 mois pour les premiers résultats et 6 à 12 pour les consolider. Avec Google Ads : le premier jour si la campagne est bien configurée.",
   },
 ];
 
@@ -87,6 +88,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "Freelancers & Autónomos" : "Freelances & Indépendants"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="digital-marketing-for-freelancers-2026" headline={isEn ? "Digital marketing for freelancers in 2026: the practical guide to getting clients" : "Marketing digital pour les indépendants en 2026 : le guide pratique pour obtenir des clients"} image="/og-homepage.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Digital marketing for freelancers in 2026: the practical guide to getting clients"

@@ -3,6 +3,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -50,6 +51,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "SEO & SEM" : "SEO & SEM"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="when-to-choose-seo-vs-google-ads" headline={isEn ? "When to choose SEO and when to choose Google Ads: a guide to making the right decision for your business" : "Quand choisir le SEO et quand choisir Google Ads : guide pour prendre la bonne décision selon votre entreprise"} image="/og-cuando-elegir-seo-vs-google-ads.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "When to choose SEO and when to choose Google Ads: a guide to making the right decision for your business"

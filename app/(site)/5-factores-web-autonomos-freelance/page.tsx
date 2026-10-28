@@ -31,11 +31,13 @@ const articleSchema = {
   description:
     "Los 5 factores que determinan si la web de un autónomo o freelance genera confianza y encargos: aviso legal LSSI-CE, preparación ante la factura electrónica obligatoria (Ley Crea y Crece), portfolio y prueba social, solicitud de presupuesto online y posicionamiento frente a plataformas de intermediación.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-06",
   dateModified: "2026-09-06",
   url: "https://www.mktweb360.com/5-factores-web-autonomos-freelance/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-autonomos-freelance/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-5-factores-web-autonomos-freelance.jpg",
 };
 
 const FAQS = [

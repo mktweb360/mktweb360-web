@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Antes de elegir un chatbot para tu empresa, hay 10 preguntas que debes responder. Esta checklist te ayuda a evitar los errores más frecuentes y a elegir la solución que realmente se adapta a lo que necesitas.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/como-elegir-chatbot-para-empresa-checklist-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/como-elegir-chatbot-para-empresa-checklist-2026/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

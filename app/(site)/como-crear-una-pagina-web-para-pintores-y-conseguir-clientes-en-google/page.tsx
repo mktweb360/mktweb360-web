@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Cómo Crear una Página Web para Pintores y Conseguir Clientes en Google",
   description: "Guía para pintores que quieren presencia online y clientes desde Google.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2024-02-20",
   dateModified: "2024-02-20",
   url: "https://www.mktweb360.com/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/",
   mainEntityOfPage: "https://www.mktweb360.com/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-como-crear-una-pagina-web-para-pintores.jpg",
 };
 
 export default function PaginaWebPintoresPage() {

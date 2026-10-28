@@ -31,11 +31,13 @@ const articleSchema = {
   description:
     "Los 5 factores que determinan si la web de una peluquería o centro de estética capta clientes: cualificación profesional visible, cumplimiento de la reforma del RD 1277/2003, reserva online, registro sanitario y ficha de Google Business Profile.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-06",
   dateModified: "2026-09-06",
   url: "https://www.mktweb360.com/5-factores-web-peluquerias-estetica/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-peluquerias-estetica/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-5-factores-web-peluquerias-estetica.jpg",
 };
 
 const FAQS = [

@@ -18,7 +18,30 @@ pnpm build                # build completo (necesita RESEND_API_KEY definida aun
 pnpm chatbot:kb           # regenera lib/chatbot/kb.json desde las FAQ aprobadas y las páginas
 pnpm chatbot:check        # pruebas del asistente (deben salir todas correctas)
 pnpm validate-i18n        # coherencia de las versiones EN/FR
+pnpm check:seo -- 3430    # guarda SEO sobre el HTML servido (ver abajo)
 ```
+
+## Guarda SEO antes de publicar (obligatoria)
+
+Toda página indexable (todas las URLs de `app/sitemap.ts`, en ES/EN/FR) debe llevar datos estructurados correctos. **Antes de publicar cualquier página o artículo nuevo** (y antes de fusionar a `main`):
+
+```bash
+RESEND_API_KEY=x pnpm run build
+npx next start -p 3430            # en otra terminal
+pnpm run check:seo -- 3430        # exit 1 si algo falla
+```
+
+Falla si una URL del sitemap: no da 200 o lleva noindex; no tiene JSON-LD de página (además de Organization/WebSite del layout y BreadcrumbList); tiene JSON-LD inválido; no tiene canonical o apunta a otra URL; no tiene exactamente un H1; le falta title o meta description; un `inLanguage` no coincide con el idioma de la URL; o, si es artículo (está en `lib/blog.ts` o lleva la firma `rel="author"`), no tiene BlogPosting con author Person, headline, fechas, `mainEntityOfPage`, publisher con `@id` de la organización e image (si la página tiene og:image). También comprueba que `<html lang>` coincide con el idioma de la URL.
+
+- Opciones: `--sin-lang` (no comprueba `<html lang>`), `--ignorar a,b,c` (slugs o rutas como `en/blog`; se listan como IGNORADA), `--inventario` (tipos JSON-LD por URL, sin fallar).
+- Cómo añadir schema: helpers de `lib/schema.ts` (`blogPostingSchema`, `serviceSchema`, `webPageSchema`, `fromMeta`) y `components/JsonLd.tsx` (`<JsonLd>`, `<IntlArticleJsonLd>` para artículos EN/FR). Las migas (`components/Breadcrumbs.tsx`) ya emiten su BreadcrumbList: no añadir otro. Nada inventado: el schema dice lo mismo que el texto visible (sin valoraciones, reseñas ni precios que no estén en la página).
+- **Excepción temporal hasta el 04/11/2026** (archivos de la cadena de ramas de publicación diaria; se arreglan después y entonces se quita la lista):
+
+```bash
+pnpm run check:seo -- 3430 --sin-lang --ignorar ai-max-google-ads-que-es-como-controlarlo,anuncios-chatgpt-ads-espana,como-crear-landing-page-que-convierte,como-usar-planificador-de-palabras-clave-google-ads,digitalizacion-pymes-espana-datos-ine-2026,estrategia-de-contenidos-calendario-editorial,factura-electronica-obligatoria-autonomos-pymes,ai-max-google-ads-definition-controle,en/blog,fr/blog,chatgpt-ads-spain,content-strategy-editorial-calendar,digitalisation-pme-espagne-donnees-ine-2026,electronic-invoice-spain,google-ads-ai-max-what-it-is-how-to-control-it,how-to-create-landing-page-that-converts,how-to-use-google-keyword-planner,publicite-chatgpt-ads-espagne,sme-digitalisation-spain-ine-data-2026,strategie-de-contenu-calendrier-editorial
+```
+
+  `--sin-lang` también es temporal: el `<html lang>` de EN/FR se corrige en otra rama.
 
 ## Reglas del contenido (y por qué)
 

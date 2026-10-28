@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Las grandes empresas llevan años ofreciendo atención al cliente 24/7. En 2026, las pymes españolas pueden conseguir lo mismo con chatbots de IA, sin contratar más personal. Aquí está cómo funciona y qué cuesta.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/",
   mainEntityOfPage: "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

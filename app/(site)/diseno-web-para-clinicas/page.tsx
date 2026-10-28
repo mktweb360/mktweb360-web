@@ -30,12 +30,13 @@ const articleSchema = {
   description:
     "Diseño web profesional para clínicas, centros médicos y de salud. Web optimizada para SEO local y captación de pacientes. Fisioterapia, psicología, estética y más.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
   image: "https://www.mktweb360.com/og-diseno-web-para-clinicas.jpg",
   url: "https://www.mktweb360.com/diseno-web-para-clinicas/",
   mainEntityOfPage: "https://www.mktweb360.com/diseno-web-para-clinicas/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

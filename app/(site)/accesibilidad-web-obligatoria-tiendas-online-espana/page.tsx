@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Desde el 28 de junio de 2025 las tiendas online deben ser accesibles. Quién está obligado por la Ley 11/2023, excepciones y checklist práctico para cumplir.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
   image: "https://www.mktweb360.com/og-accesibilidad-web-obligatoria-tiendas-online-espana.jpg",
   url: "https://www.mktweb360.com/accesibilidad-web-obligatoria-tiendas-online-espana/",
   mainEntityOfPage: "https://www.mktweb360.com/accesibilidad-web-obligatoria-tiendas-online-espana/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

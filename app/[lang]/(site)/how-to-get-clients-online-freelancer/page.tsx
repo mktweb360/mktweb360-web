@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Get clients online" : "Clients en ligne" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">{isEn ? "Strategy" : "Stratégie"}</p>
+        <IntlArticleJsonLd lang={lang} slug="how-to-get-clients-online-freelancer" headline={isEn ? "How a freelancer can get clients online without depending on platforms" : "Comment un indépendant peut obtenir des clients en ligne sans dépendre des plateformes"} image="/og-como-puede-un-autonomo-conseguir-clientes.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How a freelancer can get clients online without depending on platforms" : "Comment un indépendant peut obtenir des clients en ligne sans dépendre des plateformes"}
         </h1>

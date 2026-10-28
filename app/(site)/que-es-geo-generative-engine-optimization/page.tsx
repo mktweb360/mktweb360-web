@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "Qué es el GEO (Generative Engine Optimization) y por qué importa en 2025 | Mkt Web 360",
   description: "GEO: qué es, cómo funciona y por qué optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini es la nueva frontera del SEO.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-que-es-geo-generative-engine-optimization.jpg",
   url: "https://www.mktweb360.com/que-es-geo-generative-engine-optimization/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/que-es-geo-generative-engine-optimization/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {

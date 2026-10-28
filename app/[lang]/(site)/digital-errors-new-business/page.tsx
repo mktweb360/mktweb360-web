@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Digital errors" : "Erreurs digitales" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Strategy</p>
+        <IntlArticleJsonLd lang={lang} slug="digital-errors-new-business" headline={isEn ? "Digital mistakes new businesses make and how to avoid them from day one" : "Erreurs digitales des nouvelles entreprises et comment les éviter dès le premier jour"} image="/og-errores-digitales-negocio-nuevo.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Digital mistakes new businesses make and how to avoid them from day one" : "Erreurs digitales des nouvelles entreprises et comment les éviter dès le premier jour"}
         </h1>

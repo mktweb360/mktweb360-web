@@ -3,6 +3,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
+import { serviceSchema, intlPath, fromMeta } from "@/lib/schema";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -205,6 +207,7 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
       {/* Hero */}
       <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
+          <JsonLd data={serviceSchema({ lang, path: intlPath(lang, "web-design"), ...fromMeta(await generateMetadata({ params })) })} />
           <Breadcrumbs
             crumbs={[
               { label: t.breadcrumbHome, href: `/${lang}/` },

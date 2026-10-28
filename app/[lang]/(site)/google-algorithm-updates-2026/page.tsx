@@ -4,6 +4,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -85,6 +86,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO · {isEn ? "Google Algorithm" : "Algorithme Google"}</p>
 
+        <IntlArticleJsonLd lang={lang} slug="google-algorithm-updates-2026" headline={isEn ? "Google Algorithm Updates 2026: What Has Changed and What You Need to Do" : "Mises à jour de l'algorithme Google en 2026 : ce qui a changé et ce que vous devez faire"} image="/og-seo.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Google Algorithm Updates 2026: What Has Changed and What You Need to Do"

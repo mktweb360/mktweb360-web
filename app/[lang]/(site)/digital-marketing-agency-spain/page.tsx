@@ -1,6 +1,8 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { JsonLd } from "@/components/JsonLd";
+import { serviceSchema, intlPath, fromMeta } from "@/lib/schema";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -92,6 +94,7 @@ export default async function DigitalMarketingAgencySpainPage({
       {/* Hero */}
       <section className="mw-skin-hero text-white py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
+          <JsonLd data={serviceSchema({ lang, path: intlPath(lang, "digital-marketing-agency-spain"), ...fromMeta(await generateMetadata({ params })) })} />
           <Breadcrumbs
             lang={lang}
             items={[

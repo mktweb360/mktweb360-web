@@ -29,11 +29,13 @@ const articleSchema = {
   headline: "Cuánto cuesta una página web profesional y qué debe incluir para generar clientes",
   description: "Descubre qué influye de verdad en el precio de una web profesional y qué debe incluir para ayudarte a captar clientes.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-03-10",
   dateModified: "2025-03-10",
   url: "https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/",
   mainEntityOfPage: "https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-cuanto-cuesta-pagina-web-profesional.jpg",
 };
 
 const FAQS = [

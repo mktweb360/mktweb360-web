@@ -49,6 +49,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     author: autorSchema(lang),
     publisher: {
       "@type": "Organization",
+      "@id": "https://www.mktweb360.com/#organization",
       name: "Mkt Web 360 SLU",
       logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" },
     },

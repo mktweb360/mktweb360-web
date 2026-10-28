@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -36,6 +37,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">AI · Strategy</p>
+        <IntlArticleJsonLd lang={lang} slug="what-is-geo-generative-engine-optimization" headline={isEn ? "What is GEO and why it matters more than SEO in 2025" : "Qu'est-ce que le GEO et pourquoi il est plus important que le SEO en 2025"} image="/og-que-es-geo-generative-engine-optimization.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "What is GEO and why it matters more than SEO in 2025"

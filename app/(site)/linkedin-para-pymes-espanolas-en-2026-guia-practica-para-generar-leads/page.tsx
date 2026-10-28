@@ -27,12 +27,13 @@ const articleSchema = {
   headline: "LinkedIn para pymes españolas en 2026: guía práctica para generar leads",
   description: "LinkedIn ha cambiado más en 2026 que en los 5 años anteriores. Nuevo algoritmo, vídeo como formato dominante, Employee Generated Content y social selling. Cómo aprovecharlo si eres una pyme.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-smm.jpg",
   url: "https://www.mktweb360.com/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/",
   mainEntityOfPage: "https://www.mktweb360.com/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

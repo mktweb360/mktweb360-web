@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -44,6 +45,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "Email Marketing" : "Email Marketing"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="email-marketing-smes" headline={isEn ? "Email marketing for SMEs: a first-steps guide to start selling by email" : "Email marketing pour les PME : guide des premiers pas pour commencer à vendre par email"} image="/og-email-marketing-pymes.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Email marketing for SMEs: a first-steps guide to start selling by email"

@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -36,6 +37,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
+        <IntlArticleJsonLd lang={lang} slug="migrate-shopify-to-woocommerce" headline={isEn ? "Migrate from Shopify to WooCommerce: the complete step-by-step guide" : "Migrer de Shopify vers WooCommerce : le guide complet étape par étape"} image="/og-migrar-shopify-woocommerce.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Migrate from Shopify to WooCommerce: the complete step-by-step guide"

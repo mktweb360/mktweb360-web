@@ -39,12 +39,13 @@ const articleSchema = {
   headline: H1,
   description: DESCRIPTION,
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: DATE_MODIFIED,
   image: "https://www.mktweb360.com/og-auditoria-web-checklist.jpg",
   url: URL,
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

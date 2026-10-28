@@ -33,11 +33,13 @@ const articleSchema = {
   description:
     "El brandformance combina branding y performance marketing en una sola estrategia coherente que reduce el CPL y aumenta el LTV.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-08-04",
   dateModified: "2026-08-04",
   url: URL_CANONICAL,
   mainEntityOfPage: URL_CANONICAL,
+  inLanguage: "es-ES",
+  image: `https://www.mktweb360.com/og-${SLUG}.jpg`,
 };
 
 const FAQS = [

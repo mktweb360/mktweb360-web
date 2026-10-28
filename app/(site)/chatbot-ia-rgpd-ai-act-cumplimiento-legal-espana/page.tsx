@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "En agosto de 2026 entran en vigor las principales obligaciones del AI Act para chatbots. Qué tienes que hacer para cumplir con el RGPD y el AI Act en España, y por qué el cumplimiento es una ventaja competitiva.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

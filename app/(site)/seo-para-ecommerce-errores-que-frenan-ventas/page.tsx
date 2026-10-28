@@ -29,11 +29,13 @@ const articleSchema = {
   headline: "SEO para ecommerce: los errores que más frenan ventas en una tienda online",
   description: "Descubre los errores SEO más comunes en ecommerce y qué revisar para mejorar visibilidad, tráfico cualificado y ventas.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-04-21",
   dateModified: "2025-04-21",
   url: "https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/",
   mainEntityOfPage: "https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-seo-para-ecommerce-errores-que-frenan-ventas.jpg",
 };
 
 const FAQS = [

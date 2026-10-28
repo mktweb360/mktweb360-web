@@ -27,12 +27,13 @@ const articleSchema = {
   headline: "Cómo optimizar tu contenido para que la IA te cite: guía GEO 2026",
   description: "Guía técnica y práctica de GEO para pymes. Aprende a estructurar tu contenido, implementar schema markup avanzado, configurar llms.txt y construir autoridad semántica para aparecer en ChatGPT, Gemini y Perplexity.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-geo.jpg",
   url: "https://www.mktweb360.com/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

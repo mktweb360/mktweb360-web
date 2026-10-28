@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "Cómo Medir el ROI de tus Campañas de Marketing Digital | Mkt Web 360",
   description: "Aprende a calcular y medir el ROI de tus inversiones en marketing digital. Google Analytics 4, atribución, métricas clave y errores que debes evitar.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-como-medir-roi-marketing-digital.jpg",
   url: "https://www.mktweb360.com/como-medir-roi-marketing-digital/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/como-medir-roi-marketing-digital/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {

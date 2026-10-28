@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "Cómo Importar Productos en WooCommerce con CSV: Guía Paso a Paso | Mkt Web 360",
   description: "Aprende a importar productos en WooCommerce usando archivos CSV. Formato correcto, errores comunes y cómo subir miles de productos sin trabajo manual.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-importar-productos-woocommerce.jpg",
   url: "https://www.mktweb360.com/importar-productos-woocommerce/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/importar-productos-woocommerce/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {

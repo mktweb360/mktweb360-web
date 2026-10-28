@@ -4,6 +4,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -95,6 +96,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Ecommerce" : "E-commerce"}
         </p>
 
+        <IntlArticleJsonLd lang={lang} slug="woocommerce-vs-shopify" headline={isEn ? "WooCommerce vs Shopify for Your Store in 2026" : "WooCommerce vs Shopify : lequel choisir"} image="/og-woocommerce-vs-shopify-cual-elegir-2026.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "WooCommerce vs Shopify for Your Store in 2026"

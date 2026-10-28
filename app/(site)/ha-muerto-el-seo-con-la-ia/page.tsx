@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "¿Ha muerto el SEO con la IA? La analogía del Ferrari y Fernando Alonso",
   description: "Muchos creen que la IA ha matado el SEO. Analizamos por qué eso no es cierto y por qué IA + técnico cualificado es la fórmula ganadora.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-12",
   dateModified: "2026-06-12",
   url: "https://www.mktweb360.com/ha-muerto-el-seo-con-la-ia/",
   mainEntityOfPage: "https://www.mktweb360.com/ha-muerto-el-seo-con-la-ia/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-ha-muerto-el-seo-con-la-ia.jpg",
 };
 
 const FAQS = [

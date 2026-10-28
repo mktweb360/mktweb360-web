@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -44,6 +45,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "WhatsApp Marketing" : "WhatsApp Marketing"}
         </p>
+        <IntlArticleJsonLd lang={lang} slug="whatsapp-business-for-companies" headline={isEn ? "WhatsApp Business for companies: complete guide to setup and strategy" : "WhatsApp Business pour les entreprises : guide complet de configuration et stratégie"} image="/og-whatsapp-business-para-empresas.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "WhatsApp Business for companies: complete guide to setup and strategy"

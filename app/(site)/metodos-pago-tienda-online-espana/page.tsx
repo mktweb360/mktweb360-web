@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "Métodos de Pago Tienda Online España | Mkt Web 360",
   description: "Comparativa de pasarelas de pago para ecommerce en España: Stripe, Bizum, PayPal, Redsys y alternativas. Comisiones, integración con WooCommerce y cuál funciona mejor.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-metodos-pago-tienda-online-espana.jpg",
   url: "https://www.mktweb360.com/metodos-pago-tienda-online-espana/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/metodos-pago-tienda-online-espana/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {

@@ -69,7 +69,10 @@ export const organizationSchema = {
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  // @id: lo referencian los schemas de página (isPartOf) de lib/schema.ts.
+  "@id": "https://www.mktweb360.com/#website",
   name: "Mkt Web 360",
+  publisher: { "@id": "https://www.mktweb360.com/#organization" },
   url: "https://www.mktweb360.com",
   potentialAction: {
     "@type": "SearchAction",

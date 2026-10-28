@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Auditoría GEO paso a paso: cómo comprobar si tu empresa aparece en ChatGPT, Perplexity, Gemini y la IA de Google, qué medir y qué hacer si no te mencionan.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
   image: "https://www.mktweb360.com/og-auditoria-geo-aparecer-chatgpt-gemini-google.jpg",
   url: "https://www.mktweb360.com/auditoria-geo-aparecer-chatgpt-gemini-google/",
   mainEntityOfPage: "https://www.mktweb360.com/auditoria-geo-aparecer-chatgpt-gemini-google/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

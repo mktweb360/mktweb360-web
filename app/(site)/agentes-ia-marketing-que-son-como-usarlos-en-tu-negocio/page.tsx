@@ -27,12 +27,13 @@ const articleSchema = {
   headline: "Agentes de IA para marketing: qué son y cómo puede usarlos una pyme",
   description: "Los agentes de IA ya no son ciencia ficción. En 2026, herramientas accesibles permiten que cualquier pyme automatice tareas de marketing con agentes que trabajan de forma autónoma. Guía práctica.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/",
   mainEntityOfPage: "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

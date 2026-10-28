@@ -29,11 +29,13 @@ const articleSchema = {
   headline: "Cómo puede un autónomo conseguir clientes por Internet sin depender solo del boca a boca",
   description: "Descubre cómo puede un autónomo conseguir clientes por Internet con una base digital clara, rentable y sin depender solo del boca a boca.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2025-05-05",
   dateModified: "2025-05-05",
   url: "https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/",
   mainEntityOfPage: "https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-como-puede-un-autonomo-conseguir-clientes.jpg",
 };
 
 const FAQS = [

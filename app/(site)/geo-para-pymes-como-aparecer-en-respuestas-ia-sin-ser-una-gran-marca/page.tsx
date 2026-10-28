@@ -27,12 +27,13 @@ const articleSchema = {
   headline: "GEO para pymes: cómo aparecer en ChatGPT sin ser una gran marca",
   description: "Las pymes tienen una ventaja real en GEO: la especificidad de nicho. Guía práctica para que cualquier negocio pequeño aparezca en las respuestas de ChatGPT, Gemini y Perplexity.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-geo.jpg",
   url: "https://www.mktweb360.com/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/",
   mainEntityOfPage: "https://www.mktweb360.com/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Google My Business" : "Google My Business" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
+        <IntlArticleJsonLd lang={lang} slug="google-my-business-guide" headline={isEn ? "Google My Business for businesses: complete guide to attract local customers" : "Google My Business pour les entreprises : guide complet pour attirer des clients locaux"} image="/og-google-my-business-empresas-guia.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Google My Business for businesses: complete guide to attract local customers" : "Google My Business pour les entreprises : guide complet pour attirer des clients locaux"}
         </h1>

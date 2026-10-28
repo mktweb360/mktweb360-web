@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -36,6 +37,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO Local</p>
+        <IntlArticleJsonLd lang={lang} slug="local-seo-for-service-businesses" headline={isEn ? "Local SEO for service businesses: how to get customers in your area" : "SEO local pour les entreprises de services : comment attirer des clients dans votre zone"} image="/og-seo-local-empresas-servicios.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Local SEO for service businesses: how to get customers in your area"

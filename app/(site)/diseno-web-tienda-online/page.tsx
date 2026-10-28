@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Diseño y desarrollo de tienda online profesional sin comisiones por venta ni licencias mensuales. WooCommerce, SEO incluido, desde 490€.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
   image: "https://www.mktweb360.com/og-diseno-web-tienda-online.jpg",
   url: "https://www.mktweb360.com/diseno-web-tienda-online/",
   mainEntityOfPage: "https://www.mktweb360.com/diseno-web-tienda-online/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

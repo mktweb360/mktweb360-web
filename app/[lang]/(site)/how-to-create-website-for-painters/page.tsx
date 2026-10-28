@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Website for painters" : "Site web pour peintres" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Web Design</p>
+        <IntlArticleJsonLd lang={lang} slug="how-to-create-website-for-painters" headline={isEn ? "How to create a website for painters that generates customers on Google" : "Comment créer un site web pour peintres qui génère des clients sur Google"} image="/og-como-crear-una-pagina-web-para-pintores.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to create a website for painters that generates customers on Google" : "Comment créer un site web pour peintres qui génère des clients sur Google"}
         </h1>

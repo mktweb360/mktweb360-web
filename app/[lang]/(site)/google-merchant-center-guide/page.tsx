@@ -4,6 +4,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
+import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -29,6 +30,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Google Merchant Center" : "Google Merchant Center" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
+        <IntlArticleJsonLd lang={lang} slug="google-merchant-center-guide" headline={isEn ? "Google Merchant Center for ecommerce: complete setup guide" : "Google Merchant Center pour e-commerce : guide de configuration complet"} image="/og-google-merchant-center-ecommerce-guia.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Google Merchant Center for ecommerce: complete setup guide" : "Google Merchant Center pour e-commerce : guide de configuration complet"}
         </h1>

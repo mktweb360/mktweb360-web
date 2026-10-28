@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Cómo conseguir más reseñas en Google sin infringir las políticas ni la ley española: qué está prohibido, cómo pedirlas bien y cómo responder a las negativas.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
   image: "https://www.mktweb360.com/og-resenas-google-como-conseguirlas-legalmente.jpg",
   url: "https://www.mktweb360.com/resenas-google-como-conseguirlas-legalmente/",
   mainEntityOfPage: "https://www.mktweb360.com/resenas-google-como-conseguirlas-legalmente/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

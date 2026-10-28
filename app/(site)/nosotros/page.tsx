@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { JsonLd } from "@/components/JsonLd";
+import { webPageSchema, fromMeta, ORG_ID } from "@/lib/schema";
 import { ContactForm } from "@/components/ContactForm";
 import { alternatesFor } from "@/lib/i18n/routes";
 
@@ -39,6 +41,7 @@ export default function NosotrosPage() {
       {/* Hero */}
       <section className="mw-skin-hero text-white">
         <div className="max-w-6xl mx-auto px-4 py-16">
+          <JsonLd data={webPageSchema("AboutPage", { lang: "es", path: "/nosotros/", ...fromMeta(metadata) }, { mainEntity: { "@id": ORG_ID } })} />
           <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Quiénes Somos" }]} />
           <div className="max-w-3xl mt-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">

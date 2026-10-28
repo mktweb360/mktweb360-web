@@ -31,11 +31,13 @@ const articleSchema = {
   description:
     "Los 5 factores que definen si la web de una inmobiliaria vende: certificado energético obligatorio en cada ficha, sindicación con portales, velocidad con fotografía pesada, buscador avanzado de propiedades y captación de leads cualificados por inmueble.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-04",
   dateModified: "2026-09-04",
   url: "https://www.mktweb360.com/5-factores-web-inmobiliaria/",
   mainEntityOfPage: "https://www.mktweb360.com/5-factores-web-inmobiliaria/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-5-factores-web-inmobiliaria.jpg",
 };
 
 const FAQS = [

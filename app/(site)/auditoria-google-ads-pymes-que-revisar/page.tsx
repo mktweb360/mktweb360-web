@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Cómo saber si estás tirando dinero en Google Ads: conversiones, términos de búsqueda, concordancias, ubicación, presupuesto y landing, paso a paso para pymes.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
   image: "https://www.mktweb360.com/og-auditoria-google-ads-pymes-que-revisar.jpg",
   url: "https://www.mktweb360.com/auditoria-google-ads-pymes-que-revisar/",
   mainEntityOfPage: "https://www.mktweb360.com/auditoria-google-ads-pymes-que-revisar/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

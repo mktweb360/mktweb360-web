@@ -28,11 +28,13 @@ const articleSchema = {
   headline: "Google Merchant Center para ecommerce: guía completa 2026",
   description: "Aprende a configurar Google Merchant Center, crear tu feed de productos y aparecer en Google Shopping para aumentar las ventas de tu tienda online.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-12",
   dateModified: "2026-06-12",
   url: "https://www.mktweb360.com/google-merchant-center-ecommerce-guia/",
   mainEntityOfPage: "https://www.mktweb360.com/google-merchant-center-ecommerce-guia/",
+  inLanguage: "es-ES",
+  image: "https://www.mktweb360.com/og-google-merchant-center-ecommerce-guia.jpg",
 };
 
 const FAQS = [

@@ -29,12 +29,13 @@ const articleSchema = {
   description:
     "Un chatbot para empresas ya no es tecnología de grandes corporaciones. En 2026, las pymes españolas que automatizan su atención al cliente con IA reducen costes, captan más leads y venden más. Guía completa.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
   image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
   url: "https://www.mktweb360.com/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/",
+  inLanguage: "es-ES",
 };
 
 const FAQS = [

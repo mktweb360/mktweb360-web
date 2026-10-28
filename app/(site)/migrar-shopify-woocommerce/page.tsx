@@ -26,12 +26,13 @@ const articleSchema = {
   headline: "Cómo Migrar de Shopify a WooCommerce Sin Perder tu Tienda ni tu SEO | Mkt Web 360",
   description: "Guía completa para migrar de Shopify a WooCommerce. Qué datos migrar, cómo preservar el SEO, redireccionamientos y comparativa de costes a largo plazo.",
   author: autorSchema(),
-  publisher: { "@type": "Organization", name: "Mkt Web 360 SLU", logo: { "@type": "ImageObject", url: "https://www.mktweb360.com/logo.png" } },
+  publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
   image: "https://www.mktweb360.com/og-migrar-shopify-woocommerce.jpg",
   url: "https://www.mktweb360.com/migrar-shopify-woocommerce/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/migrar-shopify-woocommerce/" },
+  inLanguage: "es-ES",
 };
 
 export default function Page() {
