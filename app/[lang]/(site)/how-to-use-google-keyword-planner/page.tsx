@@ -79,7 +79,7 @@ function copyFor(lang: string): Copy {
     return {
       title: "Google Keyword Planner: How to Use It (2026 Guide)",
       description:
-        "How to use Google Keyword Planner without an active campaign, why search volume shows up in ranges and what “competition” really means. With a Search Console comparison.",
+        "How to use Google Keyword Planner without an active campaign, why volumes show as ranges and what “competition” really means, compared with Search Console.",
       h1: "How to use Google Keyword Planner (2026): a step-by-step guide",
       crumb: "Google Keyword Planner",
       updated: "Updated on October 30, 2026",

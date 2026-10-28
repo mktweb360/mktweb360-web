@@ -20,7 +20,7 @@ export const BLOG_I18N: Record<string, PostI18n> = {
   "como-usar-planificador-de-palabras-clave-google-ads": {
     en: {
       title: "Google Keyword Planner: How to Use It (2026 Guide)",
-      excerpt: "How to use Google Keyword Planner without an active campaign, why search volume shows up in ranges and what “competition” really means. With a Search Console comparison.",
+      excerpt: "How to use Google Keyword Planner without an active campaign, why volumes show as ranges and what “competition” really means, compared with Search Console.",
     },
     fr: {
       title: "Outil de planification des mots clés Google Ads : guide 2026",
