@@ -168,6 +168,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/seo-para-pymes-guia/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/digitalizacion-pymes-espana-datos-ine-2026/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/estrategia-de-contenidos-calendario-editorial/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/ai-max-google-ads-que-es-como-controlarlo/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/auditoria-geo-aparecer-chatgpt-gemini-google/", priority: 0.7, changeFrequency: "weekly" as const },
   ];
 

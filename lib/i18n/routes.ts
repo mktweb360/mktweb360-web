@@ -176,6 +176,7 @@ export const ROUTES: Route[] = [
   { es: "/autor/jose-marcos/", en: "author-jose-marcos", fr: "auteur-jose-marcos" },
   { es: "/digitalizacion-pymes-espana-datos-ine-2026/", en: "sme-digitalisation-spain-ine-data-2026", fr: "digitalisation-pme-espagne-donnees-ine-2026" },
   { es: "/estrategia-de-contenidos-calendario-editorial/", en: "content-strategy-editorial-calendar", fr: "strategie-de-contenu-calendrier-editorial" },
+  { es: "/ai-max-google-ads-que-es-como-controlarlo/", en: "google-ads-ai-max-what-it-is-how-to-control-it", fr: "ai-max-google-ads-definition-controle" },
 ];
 
 // ---------- helpers derivados ----------
