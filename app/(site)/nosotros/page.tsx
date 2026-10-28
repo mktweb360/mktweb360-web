@@ -190,7 +190,7 @@ export default function NosotrosPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {[
               { title: "SEO", desc: "Te posicionamos en Google con estrategias probadas y duraderas.", href: "/seo-posicionamiento-web-organico/", badge: "Consolidado" },
-              { title: "GEO", desc: "Optimizamos tu presencia para aparecer en las respuestas de ChatGPT, Perplexity y Gemini.", href: "/geo-posicionamiento-ia/", badge: "Pioneros" },
+              { title: "GEO", desc: "Optimizamos tu presencia para aparecer en las respuestas de ChatGPT, Perplexity y Gemini.", href: "/geo-posicionamiento-ia/", badge: "IA" },
               { title: "SEO + GEO", desc: "La estrategia completa para visibilidad total en todos los canales de búsqueda actuales y futuros.", href: "/contacto/", badge: "Recomendado" },
             ].map((s) => (
               <a key={s.title} href={s.href} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">

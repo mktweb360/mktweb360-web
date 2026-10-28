@@ -87,12 +87,12 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
   const sectors = isEn
     ? [
         { title: "SEO", desc: "We position you on Google with proven and lasting strategies.", href: `/${lang}/${lang === "en" ? "seo-web-positioning" : "positionnement-seo"}/`, badge: "Established" },
-        { title: "GEO", desc: "We optimise your presence to appear in ChatGPT, Perplexity and Gemini responses.", href: `/${lang}/geo-ai-positioning-chatgpt-businesses/`, badge: "Pioneers" },
+        { title: "GEO", desc: "We optimise your presence to appear in ChatGPT, Perplexity and Gemini responses.", href: `/${lang}/geo-ai-positioning-chatgpt-businesses/`, badge: "AI" },
         { title: "SEO + GEO", desc: "The complete strategy for total visibility across all current and future search channels.", href: `/${lang}/contact/`, badge: "Recommended" },
       ]
     : [
         { title: "SEO", desc: "Nous vous positionnons sur Google avec des stratégies éprouvées et durables.", href: `/${lang}/${lang === "en" ? "seo-web-positioning" : "positionnement-seo"}/`, badge: "Établi" },
-        { title: "GEO", desc: "Nous optimisons votre présence pour apparaître dans les réponses de ChatGPT, Perplexity et Gemini.", href: `/${lang}/geo-ai-positioning-chatgpt-businesses/`, badge: "Pionniers" },
+        { title: "GEO", desc: "Nous optimisons votre présence pour apparaître dans les réponses de ChatGPT, Perplexity et Gemini.", href: `/${lang}/geo-ai-positioning-chatgpt-businesses/`, badge: "IA" },
         { title: "SEO + GEO", desc: "La stratégie complète pour une visibilité totale sur tous les canaux de recherche actuels et futurs.", href: `/${lang}/contact/`, badge: isEn ? "Recommended" : "Recommandé" },
       ];
 
