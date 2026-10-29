@@ -49,10 +49,15 @@ function slugEn(articulo: Articulo, lang: LangArticulo): string {
   return rutaEn(articulo.esPath, lang).replace(/^\/(en|fr)\//, "/").replace(/^\/|\/$/g, "");
 }
 
+/** Imagen og/cabecera en ese idioma: /og-{slug del idioma}.jpg (textos de la imagen traducidos). */
+function ogDe(articulo: Articulo, lang: LangArticulo): string {
+  return `${BASE}/og-${slugEn(articulo, lang)}.jpg`;
+}
+
 export function metadataArticulo(articulo: Articulo, lang: LangArticulo): Metadata {
   const c = articulo.contenido[lang];
   const path = rutaEn(articulo.esPath, lang);
-  const og = `${BASE}/og-${articulo.esPath.replace(/^\/|\/$/g, "")}.jpg`;
+  const og = ogDe(articulo, lang);
   return {
     title: { absolute: c.title },
     description: c.description,
@@ -182,7 +187,7 @@ export function ArticuloTendencia({ articulo, lang }: { articulo: Articulo; lang
   const ui = UI[lang];
   const path = rutaEn(articulo.esPath, lang);
   const url = `${BASE}${path}`;
-  const og = `${BASE}/og-${articulo.esPath.replace(/^\/|\/$/g, "")}.jpg`;
+  const og = ogDe(articulo, lang);
   const minutos = Math.max(1, Math.round(palabras(c) / 200));
 
   const articleSchema = {
