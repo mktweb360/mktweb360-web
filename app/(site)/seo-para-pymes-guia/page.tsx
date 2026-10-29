@@ -7,7 +7,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { planesSeo, precioTexto, type PlanSeo } from "@/lib/planes-seo";
-import { PRECIO_SEO_GEO_MAPS_PERMANENCIA_6M as P6, PRECIO_SEO_GEO_MAPS_SIN_PERMANENCIA as P349 } from "@/lib/ofertas";
+import type { PreciosOfertaSeo } from "@/lib/ofertas";
+import { preciosOfertaSeo } from "@/lib/precios-planes"; // precio de la oferta SEO: fuente única (MktOS con respaldo en lib/ofertas.ts)
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
@@ -48,7 +49,7 @@ const PARA_QUIEN: Record<string, string> = {
   "ecommerce-m": "Tiendas medianas (hasta 5.000 productos)",
 };
 
-function faqs() {
+function faqs({ sinPermanencia: P349, permanencia6m: P6 }: PreciosOfertaSeo) {
   return [
     {
       q: "¿Merece la pena el SEO para una pyme pequeña?",
@@ -157,9 +158,11 @@ function Lista({ items, numerada = false }: { items: ReactNode[]; numerada?: boo
 }
 
 export default async function SeoParaPymesPage() {
+  const po = await preciosOfertaSeo();
+  const { sinPermanencia: P349, permanencia6m: P6 } = po;
   const planes = planesSeo("es");
   const tabla = ORDEN.map((id) => planes.find((p) => p.id === id)).filter((p): p is PlanSeo => !!p);
-  const FAQS = faqs();
+  const FAQS = faqs(po);
 
   const articleSchema = {
     "@context": "https://schema.org",

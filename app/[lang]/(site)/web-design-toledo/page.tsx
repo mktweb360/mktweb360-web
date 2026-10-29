@@ -1,3 +1,5 @@
+import { preciosEnDatos } from "@/lib/ofertas";
+import { preciosOfertaSeo } from "@/lib/precios-planes";
 import { LocalServicePage, localServiceSchemas, type LocalServiceContent } from "@/components/LocalServicePage";
 import { ogImagesIntl } from "@/lib/og";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
@@ -146,7 +148,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang: raw } = await params;
   const lang: L = raw === "fr" ? "fr" : "en";
-  const c = content(lang);
+  // Precio de la oferta SEO: el vigente (preciosOfertaSeo, fuente única); los textos llevan el de respaldo.
+  const c = preciosEnDatos(content(lang), await preciosOfertaSeo());
   return (
     <>
       {localServiceSchemas(c, lang === "fr" ? "Création de sites web à Tolède" : "Web design in Toledo").map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}

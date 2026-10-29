@@ -3,6 +3,8 @@
 // si no encaja o la modalidad no está, se mantiene el precio de la web y se deja un aviso (lo ve MktOS › Web conectada).
 import { leerCatalogo } from "@/lib/catalogo";
 import { PLAN_EN_CATALOGO, precioLocal, type PlanId, type PreciosPlanes } from "@/lib/planes-seo";
+import { PRECIOS_OFERTA_SEO_RESPALDO, type PreciosOfertaSeo } from "@/lib/ofertas";
+export type { PreciosOfertaSeo } from "@/lib/ofertas";
 
 export interface EstadoPlan {
   id: PlanId;
@@ -41,4 +43,26 @@ export async function preciosPlanesSeo(): Promise<{ precios: PreciosPlanes; plan
     planes.push({ id, offering: ref.servicio, key: ref.modalidad, nombre: m?.nombre ?? id, local, catalogo: m ? m.precio : undefined, usado, fuente, aviso });
   }
   return { precios, planes, conectado: !!cat, leido: cat?.leido ?? null };
+}
+
+// ── Oferta SEO + GEO + Google Business Profile: FUENTE ÚNICA de su precio (decisión de José, 29/10/2026) ──
+// Todo lo que muestra o cita este precio (página de la oferta, consultor-seo / seo-consultant, guía SEO para pymes,
+// banners de blog, portada, páginas de Toledo y el asistente) llama a esta función. Si MktOS cambia el precio,
+// cambia en toda la web y en el asistente en ≤5 minutos (caché del catálogo). Respaldo: lib/ofertas.ts.
+// - Sin permanencia: la modalidad del plan «pyme» del catálogo, con la misma validación que los planes.
+// - Con permanencia de 6 meses: hoy NO está publicada en MktOS, así que sale del respaldo. Si se publica con la
+//   modalidad de PERMANENCIA_6M_EN_CATALOGO (mensual, sin IVA, cerrada y con 6 meses de permanencia), se usa esa.
+export const PERMANENCIA_6M_EN_CATALOGO = { servicio: "mw360-oferta-seo-geo-gbp", modalidad: "permanencia-6-meses" };
+
+export async function preciosOfertaSeo(): Promise<PreciosOfertaSeo> {
+  const [{ precios }, cat] = await Promise.all([preciosPlanesSeo(), leerCatalogo()]);
+  const sin = precios.pyme;
+  const m6 = cat?.servicios
+    .find((s) => s.id === PERMANENCIA_6M_EN_CATALOGO.servicio)
+    ?.modalidades.find((x) => x.key === PERMANENCIA_6M_EN_CATALOGO.modalidad);
+  const p6Valido = m6 && m6.precio != null && m6.periodo === "mes" && !m6.iva_incluido && !m6.desde && m6.permanencia_meses === 6 && m6.precio > 0 && m6.precio < 100000;
+  return {
+    sinPermanencia: typeof sin === "number" ? sin : PRECIOS_OFERTA_SEO_RESPALDO.sinPermanencia,
+    permanencia6m: p6Valido ? (m6.precio as number) : PRECIOS_OFERTA_SEO_RESPALDO.permanencia6m,
+  };
 }

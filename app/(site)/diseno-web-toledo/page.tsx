@@ -1,3 +1,5 @@
+import { preciosEnDatos } from "@/lib/ofertas";
+import { preciosOfertaSeo } from "@/lib/precios-planes";
 import type { Metadata } from "next";
 import { LocalServicePage, localServiceSchemas, type LocalServiceContent } from "@/components/LocalServicePage";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -11,7 +13,8 @@ export const metadata: Metadata = {
   openGraph: { title: "Diseño web en Toledo | Mkt Web 360", description: "Páginas web y tiendas online para negocios de Toledo, rápidas y preparadas para Google.", url: URL, images: [{ url: "https://www.mktweb360.com/og-tiendas-online-toledo.jpg", width: 1200, height: 630 }] },
 };
 
-const c: LocalServiceContent = {
+// Cifras de la oferta SEO escritas con los valores de respaldo; en la página se ponen las vigentes (preciosOfertaSeo).
+const contenido: LocalServiceContent = {
   url: URL,
   breadcrumb: "Diseño web en Toledo",
   h1: "Diseño web en Toledo",
@@ -61,7 +64,8 @@ const c: LocalServiceContent = {
   formType: "diseno-web-toledo",
 };
 
-export default function DisenoWebToledoPage() {
+export default async function DisenoWebToledoPage() {
+  const c = preciosEnDatos(contenido, await preciosOfertaSeo());
   return (
     <>
       {localServiceSchemas(c, "Diseño web en Toledo").map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}

@@ -3,8 +3,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
-import { reemplazarPrecios } from "@/lib/planes-seo";
-import { preciosPlanesSeo } from "@/lib/precios-planes";
+import { preciosEnTexto } from "@/lib/ofertas";
+import { preciosOfertaSeo } from "@/lib/precios-planes";
 
 // 09/10/2026 — EN/FR de /consultor-seo/. Esta carpeta sirve /en/seo-consultant/;
 // /fr/consultant-seo/ reexporta este módulo.
@@ -179,9 +179,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
-  const { precios } = await preciosPlanesSeo();
+  // Precio de la oferta SEO: fuente única (catálogo de MktOS con respaldo en lib/ofertas.ts).
+  const po = await preciosOfertaSeo();
   const base = lang === "fr" ? C.fr : C.en;
-  const t = { ...base, linkPack: reemplazarPrecios(base.linkPack, precios) };
+  const t = { ...base, linkPack: preciosEnTexto(base.linkPack, po) };
   const url = BASE + pathFor(lang);
   const href = (slug: string) => `/${lang}/${langSlug(lang, slug)}/`;
 

@@ -912,3 +912,86 @@ export function getPostI18n(
 export function getCategoryI18n(category: string, lang: "en" | "fr"): string {
   return CATEGORY_I18N[category]?.[lang] ?? category;
 }
+
+/**
+ * Títulos y resúmenes EN/FR de los artículos que SOLO existen en español (29/10/2026).
+ * Se usan en la sección «More articles (in Spanish)» / «Plus d'articles (en espagnol)» del blog EN/FR, que enlaza
+ * a la versión española con la etiqueta «ES»: así esa lista no muestra texto en español en una página EN/FR.
+ * No van en BLOG_I18N porque ese mapa es de artículos con página traducida.
+ * Cuando un artículo se traduzca, quítalo de aquí y añádelo a BLOG_I18N.
+ */
+export const SOLO_ES_I18N: Record<string, PostI18n> = {
+  "accesibilidad-web-obligatoria-tiendas-online-espana": {
+    en: { title: "Mandatory web accessibility in Spain: what online shops must do", excerpt: "Since June 2025, Spain's Law 11/2023 requires e-commerce services to be accessible. Who is affected, which exemptions apply and how to comply step by step." },
+    fr: { title: "Accessibilité web obligatoire en Espagne : ce que doivent faire les boutiques en ligne", excerpt: "Depuis juin 2025, la loi espagnole 11/2023 impose l'accessibilité des services de commerce électronique. Qui est concerné, quelles exceptions existent et comment s'y conformer étape par étape." },
+  },
+  "ayudas-digitalizar-pyme-2026-tras-kit-digital": {
+    en: { title: "Grants to digitalise an SME in Spain in 2026: what is left after the Kit Digital", excerpt: "The Kit Digital no longer accepts new applications. What Order TDF/39/2026 means, where to find real grants in 2026 and how to prepare your paperwork so you do not miss a call." },
+    fr: { title: "Aides à la numérisation d'une PME en Espagne en 2026 : ce qui reste après le Kit Digital", excerpt: "Le Kit Digital n'accepte plus de nouvelles demandes. Ce que signifie l'arrêté TDF/39/2026, où trouver de vraies aides en 2026 et comment préparer votre dossier pour ne pas manquer un appel." },
+  },
+  "auditoria-google-ads-pymes-que-revisar": {
+    en: { title: "Google Ads audit for SMEs: how to tell whether you are wasting money", excerpt: "A practical checklist for reviewing your Google Ads account without being technical: conversions, real search terms, match types, location, budget, structure and landing page." },
+    fr: { title: "Audit Google Ads pour les PME : comment savoir si vous gaspillez votre budget", excerpt: "Une liste de contrôle pratique pour examiner votre compte Google Ads sans être technicien : conversions, recherches réelles, types de correspondance, ciblage géographique, budget, structure et page de destination." },
+  },
+  "resenas-google-como-conseguirlas-legalmente": {
+    en: { title: "Google reviews for businesses: how to get more without breaking the law", excerpt: "What you can and cannot do to get reviews on your Business Profile: Google's policies, Spanish consumer law and how to reply to negative reviews." },
+    fr: { title: "Avis Google pour les entreprises : en obtenir davantage sans enfreindre la loi", excerpt: "Ce que vous pouvez faire, ou non, pour obtenir des avis sur votre fiche d'établissement : règles de Google, droit espagnol de la consommation et comment répondre aux avis négatifs." },
+  },
+  "auditoria-geo-aparecer-chatgpt-gemini-google": {
+    en: { title: "How to find out whether your business appears in ChatGPT, Perplexity and Google's AI", excerpt: "A GEO audit method any business can follow: queries to test, how to score the answers, a technical review and a 90-day plan to improve your visibility in AI." },
+    fr: { title: "Comment savoir si votre entreprise apparaît dans ChatGPT, Perplexity et l'IA de Google", excerpt: "Une méthode d'audit GEO à la portée de toute entreprise : requêtes à tester, notation des réponses, revue technique et plan sur 90 jours pour améliorer votre visibilité dans l'IA." },
+  },
+  "5-factores-web-servicios-profesionales": {
+    en: { title: "5 key factors for a professional services website", excerpt: "A legal notice that complies with Spain's LSSI-CE, privacy and cookie policies, and consent for marketing communications: the 5 factors that decide whether your professional services website builds trust." },
+    fr: { title: "5 facteurs clés pour le site web d'une activité de services professionnels", excerpt: "Mentions légales conformes à la LSSI-CE espagnole, politique de confidentialité et de cookies, consentement aux communications commerciales : les 5 facteurs qui déterminent si votre site inspire confiance." },
+  },
+  "5-factores-web-asesorias-gestorias": {
+    en: { title: "5 key factors for an accountancy or administrative agency website", excerpt: "GDPR, professional registration of administrative agents and e-invoicing: the 5 factors that decide whether your accountancy or agency website wins clients." },
+    fr: { title: "5 facteurs clés pour le site web d'un cabinet comptable ou de conseil administratif", excerpt: "RGPD, inscription des gestionnaires administratifs à leur ordre et facture électronique : les 5 facteurs qui déterminent si le site de votre cabinet attire des clients." },
+  },
+  "5-factores-web-autonomos-freelance": {
+    en: { title: "5 key factors for a self-employed or freelance website", excerpt: "Legal notice, mandatory e-invoicing and winning clients directly: the 5 factors that decide whether your freelance website brings in work." },
+    fr: { title: "5 facteurs clés pour le site web d'un indépendant ou d'un freelance", excerpt: "Mentions légales, facture électronique obligatoire et prospection directe : les 5 facteurs qui déterminent si votre site d'indépendant vous apporte des missions." },
+  },
+  "5-factores-web-clinicas-dentales": {
+    en: { title: "5 key factors for a dental practice website", excerpt: "Healthcare advertising under Royal Decree 1907/1996, health data protected by the GDPR, a visible registration number and price transparency: the 5 factors that decide whether your dental practice website attracts patients." },
+    fr: { title: "5 facteurs clés pour le site web d'un cabinet dentaire", excerpt: "Publicité sanitaire selon le décret royal 1907/1996, données de santé protégées par le RGPD, numéro d'inscription à l'ordre visible et transparence des prix : les 5 facteurs qui déterminent si votre site attire des patients." },
+  },
+  "5-factores-web-talleres-mecanicos": {
+    en: { title: "5 key factors for a car repair garage website", excerpt: "Complaint forms, a prior written quote (Royal Decree 1457/1986) and a repair guarantee: the 5 factors that decide whether your garage website wins customers or loses their trust." },
+    fr: { title: "5 facteurs clés pour le site web d'un garage automobile", excerpt: "Feuilles de réclamation, devis écrit préalable (décret royal 1457/1986) et garantie de réparation : les 5 facteurs qui déterminent si le site de votre garage gagne des clients ou perd leur confiance." },
+  },
+  "5-factores-web-peluquerias-estetica": {
+    en: { title: "5 key factors for a hair salon or beauty clinic website", excerpt: "Visible professional qualifications, the reform of Royal Decree 1277/2003 on treatments with a health purpose and health registration: the 5 factors that decide whether your website attracts clients." },
+    fr: { title: "5 facteurs clés pour le site web d'un salon de coiffure ou d'un institut de beauté", excerpt: "Qualifications professionnelles visibles, réforme du décret royal 1277/2003 sur les soins à finalité sanitaire et enregistrement sanitaire : les 5 facteurs qui déterminent si votre site attire des clients." },
+  },
+  "5-factores-web-restaurantes-hosteleria": {
+    en: { title: "5 key factors for a restaurant or hotel website", excerpt: "Complaint forms, allergens under EU Regulation 1169/2011, online booking and your Google Business Profile: the 5 factors that decide whether your hospitality website fills tables." },
+    fr: { title: "5 facteurs clés pour le site web d'un restaurant ou d'un hôtel", excerpt: "Feuilles de réclamation, allergènes selon le règlement UE 1169/2011, réservation en ligne et fiche Google : les 5 facteurs qui déterminent si votre site remplit vos tables." },
+  },
+  "5-factores-web-construccion-reformas": {
+    en: { title: "5 key factors for a construction or renovation company website", excerpt: "Written quotes, Spain's Building Act (LOE), a before-and-after portfolio and local SEO: the 5 factors that decide whether your renovation website generates quote requests or mistrust." },
+    fr: { title: "5 facteurs clés pour le site web d'une entreprise de construction ou de rénovation", excerpt: "Devis écrit, loi espagnole sur la construction (LOE), portfolio avant/après et SEO local : les 5 facteurs qui déterminent si votre site génère des demandes de devis ou de la méfiance." },
+  },
+  "5-factores-web-academias-centros-formacion": {
+    en: { title: "5 key factors for a training centre or academy website", excerpt: "Advertising results without exaggerating, GDPR for minors, a mandatory data protection officer and real-time place availability: the 5 factors that decide whether your academy website attracts students." },
+    fr: { title: "5 facteurs clés pour le site web d'une école ou d'un centre de formation", excerpt: "Communiquer sur les résultats sans exagérer, RGPD des mineurs, DPO obligatoire et disponibilité des places en temps réel : les 5 facteurs qui déterminent si votre site attire des élèves." },
+  },
+  "5-factores-web-clinicas-centros-salud": {
+    en: { title: "5 key factors for a clinic or health centre website", excerpt: "A clinic website is not a digital leaflet: it is the first test of trust before a patient picks up the phone. These are the 5 factors that make the difference." },
+    fr: { title: "5 facteurs clés pour le site web d'une clinique ou d'un centre de santé", excerpt: "Le site d'une clinique n'est pas une brochure numérique : c'est le premier filtre de confiance avant qu'un patient ne décroche son téléphone. Voici les 5 facteurs qui font la différence." },
+  },
+  "5-factores-web-despacho-abogados": {
+    en: { title: "5 key factors for a law firm website", excerpt: "A law firm website has to convey authority and comply with the Spanish Bar's Code of Conduct. These are the 5 factors that decide whether it generates enquiries or loses them." },
+    fr: { title: "5 facteurs clés pour le site web d'un cabinet d'avocats", excerpt: "Le site d'un cabinet d'avocats doit inspirer l'autorité et respecter le code de déontologie de la profession. Voici les 5 facteurs qui déterminent s'il génère des consultations ou les perd." },
+  },
+  "5-factores-web-inmobiliaria": {
+    en: { title: "5 key factors for an estate agency website", excerpt: "An estate agency without its own website depends on third-party portals and pays a commission for every lead. These are the 5 factors that turn an estate agency website into a real lead-generation channel." },
+    fr: { title: "5 facteurs clés pour le site web d'une agence immobilière", excerpt: "Une agence immobilière sans site propre dépend des portails tiers et paie une commission pour chaque contact. Voici les 5 facteurs qui transforment son site en véritable canal d'acquisition." },
+  },
+};
+
+/** Título y resumen EN/FR de un artículo que solo existe en español (fallback: los textos ES). */
+export function getSoloEsI18n(esSlug: string, lang: "en" | "fr", fallback: PostTranslation): PostTranslation {
+  return SOLO_ES_I18N[esSlug]?.[lang] ?? fallback;
+}

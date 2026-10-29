@@ -1,3 +1,5 @@
+import { preciosEnDatos, preciosEnTexto } from "@/lib/ofertas";
+import { preciosOfertaSeo } from "@/lib/precios-planes";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -111,10 +113,14 @@ const schema = {
   ],
 };
 
-export default function OfertaWebCorporativaPage() {
+export default async function OfertaWebCorporativaPage() {
+  // Las cifras de la oferta SEO + GEO + Maps que se citan aquí son las vigentes (preciosOfertaSeo, fuente única).
+  const po = await preciosOfertaSeo();
+  const R = (t: string) => preciosEnTexto(t, po);
+  const faqs = preciosEnDatos(FAQS, po);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: R(JSON.stringify(schema)) }} />
 
       <div className="max-w-5xl mx-auto px-4 pt-6">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Oferta web profesional" }]} />
@@ -199,7 +205,7 @@ export default function OfertaWebCorporativaPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-primary-600 mb-3">¿Quieres que además te encuentren?</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            La web es la base. Para aparecer en Google, en las respuestas de la IA y en el mapa trabajamos el posicionamiento de forma continua, con una opción de 6 meses a 149 €/mes y otra sin permanencia a 349 €/mes.
+            {R("La web es la base. Para aparecer en Google, en las respuestas de la IA y en el mapa trabajamos el posicionamiento de forma continua, con una opción de 6 meses a 149 €/mes y otra sin permanencia a 349 €/mes.")}
           </p>
           <Link href="/oferta-seo-geo-gbp/" className="inline-block bg-primary-600 text-white px-7 py-3 rounded-full font-semibold hover:bg-primary-700 transition-colors">
             Ver SEO + GEO + Google Maps
@@ -225,7 +231,7 @@ export default function OfertaWebCorporativaPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">Preguntas frecuentes</h2>
           <div className="space-y-4">
-            {FAQS.map((f) => (
+            {faqs.map((f) => (
               <details key={f.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-bold text-primary-700 [&::-webkit-details-marker]:hidden">
                   {f.q}

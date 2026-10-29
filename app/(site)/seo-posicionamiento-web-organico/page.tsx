@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { MetodologiaSeo } from "@/components/MetodologiaSeo";
 import { OfertasSlider } from "@/components/OfertasSlider";
+import { preciosOfertaSeo } from "@/lib/precios-planes";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 import { BlogBanner } from "@/components/BlogBanner";
@@ -60,7 +61,9 @@ const METHODOLOGY = [
   { step: "06", title: "Seguimiento y reportes", desc: "Monitorizamos posiciones, tráfico y conversiones. Informe mensual con evolución y próximos pasos." },
 ];
 
-export default function SeoPage() {
+export default async function SeoPage() {
+  const precios = await preciosOfertaSeo(); // precio de la oferta SEO: fuente única
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
@@ -206,7 +209,7 @@ export default function SeoPage() {
       </section>
 
       {/* Offer slider */}
-      <OfertasSlider />
+      <OfertasSlider precios={precios} />
 
       <MetodologiaSeo />
 

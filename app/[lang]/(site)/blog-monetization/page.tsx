@@ -186,8 +186,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             {isEn
-              ? "There are two main income sources. Google AdSense displays ads on your blog and pays you per thousand impressions (CPM). The niches with the highest RPM in Spain are finance, technology, health and home. With 10,000 monthly visits, a well-monetised blog can generate between €30 and €150/month with AdSense."
-              : "Il y a deux sources de revenus principales. Google AdSense affiche des publicités sur votre blog et vous paie pour chaque millier d'impressions (CPM). Les niches avec le RPM le plus élevé en Espagne sont la finance, la technologie, la santé et la maison. Avec 10 000 visites mensuelles, un blog bien monétisé peut générer entre 30 et 150€/mois avec AdSense."}
+              ? "There are two main income sources. Google AdSense displays ads on your blog and pays you per thousand impressions (CPM). The niches with the highest RPM in Spain are finance, technology, health and home. What AdSense earns depends on traffic volume, the niche, where visitors are located and how the ads are placed, so we do not quote a generic figure: we estimate the potential of your niche in the free diagnosis."
+              : "Il y a deux sources de revenus principales. Google AdSense affiche des publicités sur votre blog et vous paie pour chaque millier d'impressions (CPM). Les niches avec le RPM le plus élevé en Espagne sont la finance, la technologie, la santé et la maison. Ce que rapporte AdSense dépend du volume de trafic, de la niche, du pays des visiteurs et de l'emplacement des annonces : nous ne donnons donc pas de chiffre générique et estimons le potentiel de votre niche lors du diagnostic gratuit."}
           </p>
           <p className="text-gray-700 leading-relaxed">
             {isEn

@@ -25,7 +25,7 @@ type Lead = {
 };
 
 const OFERTA_LABELS: Record<string, string> = {
-  "seo-6x3": "SEO 6x3",
+  "seo-6x3": "SEO 6x3 (retirada; histórico)",
   "tienda-online-490": "Tienda 490€",
   "web-seo-999": "Web + SEO 999€ (retirada 20-oct-2026)",
   "web-corporativa-249": "Web profesional 249€",
@@ -62,8 +62,10 @@ export default function LeadsPage() {
     ? leads.filter((l) => l.oferta === ofertaFilter)
     : leads;
 
+  // Solo la tienda online tiene formulario de cualificación aquí. El del SEO 6x3 se retiró el 29/10/2026 (oferta
+  // caducada; guardaba en un archivo local que no persiste en Vercel). Los leads antiguos siguen en MktOS y en esta lista.
   const goToLead = (lead: Lead) => {
-    const oferta = lead.oferta === "tienda-online-490" ? "tienda-online" : "seo-6x3";
+    const oferta = "tienda-online";
     router.push(`/area-privada/leads/${oferta}?opportunity_id=${lead.opportunity_id}&nombre=${encodeURIComponent(lead.contact.nombre)}&email=${encodeURIComponent(lead.contact.email)}&telefono=${encodeURIComponent(lead.contact.telefono)}&dominio=${encodeURIComponent(lead.domain)}`);
   };
 
@@ -126,7 +128,7 @@ export default function LeadsPage() {
                 </div>
                 <div className="flex items-center justify-between">
                   <p className="text-xs text-gray-400">{new Date(lead.created_at).toLocaleDateString("es-ES")}</p>
-                  {lead.status === "open" && (
+                  {lead.status === "open" && lead.oferta === "tienda-online-490" && (
                     <button onClick={() => goToLead(lead)} className="bg-primary-600 hover:bg-primary-700 text-white text-xs font-bold px-4 py-2 rounded-xl transition-colors">
                       Cualificar →
                     </button>

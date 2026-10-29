@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { preciosEnDatos, type PreciosOfertaSeo } from "@/lib/ofertas";
 
 type Slide = {
   badge: string;
@@ -17,7 +18,7 @@ type Slide = {
   price?: { old?: string; new: string; note?: string };
 };
 
-const SLIDES: Slide[] = [
+const SLIDES_BASE: Slide[] = [
   {
     badge: "SEO + GEO + Google Maps",
     title: "Que te encuentren en Google, en la IA y en el mapa",
@@ -51,12 +52,14 @@ const SLIDES: Slide[] = [
   },
 ];
 
-export function OfertasSlider() {
+// Los textos llevan las cifras de respaldo de la oferta SEO; el servidor pasa en «precios» las vigentes (preciosOfertaSeo).
+export function OfertasSlider({ precios }: { precios?: PreciosOfertaSeo }) {
+  const SLIDES = preciosEnDatos(SLIDES_BASE, precios);
   const [active, setActive] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % SLIDES.length);
+      setActive((prev) => (prev + 1) % SLIDES_BASE.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);

@@ -4,8 +4,8 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
-import { reemplazarPrecios } from "@/lib/planes-seo";
-import { preciosPlanesSeo } from "@/lib/precios-planes";
+import { PRECIOS_OFERTA_SEO_RESPALDO, preciosEnTexto } from "@/lib/ofertas";
+import { preciosOfertaSeo } from "@/lib/precios-planes";
 
 const URL = "https://www.mktweb360.com/consultor-seo/";
 
@@ -87,7 +87,7 @@ const STEPS = [
 ];
 
 export default async function ConsultorSeoPage() {
-  const { precios } = await preciosPlanesSeo();
+  const po = await preciosOfertaSeo(); // precio de la oferta SEO: fuente única (MktOS con respaldo en lib/ofertas.ts)
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
@@ -171,7 +171,7 @@ export default async function ConsultorSeoPage() {
             </p>
             <div className="flex flex-col gap-3">
               <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 font-semibold hover:underline">Servicio de posicionamiento SEO →</Link>
-              <Link href="/oferta-seo-geo-gbp/" className="text-accent-500 font-semibold hover:underline">{reemplazarPrecios("Oferta: SEO + GEO + Google Business Profile por 349 €/mes + IVA →", precios)}</Link>
+              <Link href="/oferta-seo-geo-gbp/" className="text-accent-500 font-semibold hover:underline">{preciosEnTexto(`Oferta: SEO + GEO + Google Business Profile por ${PRECIOS_OFERTA_SEO_RESPALDO.sinPermanencia} €/mes + IVA →`, po)}</Link>
               <Link href="/auditoria-digital/" className="text-accent-500 font-semibold hover:underline">Auditoría SEO gratuita →</Link>
             </div>
           </div>

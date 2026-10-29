@@ -18,7 +18,7 @@ type Props = {  currentSlug?: string;  category?: string;  title?: string;  lang
  *  - Hace lookup inverso del slug EN/FR → slug ES para encontrar los relatedSlugs.
  *  - Para cada artículo relacionado, busca su traducción EN/FR en ROUTES.
  *  - Si existe traducción → link a /{lang}/{translatedSlug}/.
- *  - Si no existe → link a /{esSlug}/ (fallback en ES, sin badge por ahora).
+ *  - Solo se muestran artículos con traducción en ese idioma (29/10/2026): nada de títulos en español en EN/FR.
  *  - Textos de UI localizados (título de sección, CTA).
  *
  * No requiere prop `lang`: lo detecta automáticamente del pathname.
@@ -43,7 +43,9 @@ export function RelatedArticles({ currentSlug, category, title }: Props) {
 
   // Tema: el propio de la página (servicio o artículo) y, si no se conoce, el de la prop category.
   const topic = topicOfPage(esSlug) ?? topicFromCategoryProp(category);
-  const posts = relatedFor(esSlug, topic, 3);
+  const posts = isTranslated
+    ? relatedFor(esSlug, topic, 60).filter((p) => translatedSlugFor(p.slug, lang as "en" | "fr")).slice(0, 3)
+    : relatedFor(esSlug, topic, 3);
   const pillar = isTranslated ? null : pillarFor(esSlug, topic);
 
   // Textos de UI localizados

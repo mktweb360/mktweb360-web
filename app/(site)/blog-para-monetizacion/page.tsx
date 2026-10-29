@@ -93,7 +93,7 @@ export default function BlogMonetizacionPage() {
         <section className="mb-16 bg-gray-50 rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-primary-600 mb-6">Cómo funciona la monetización con AdSense y afiliados</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Hay dos fuentes de ingresos principales. Google AdSense muestra anuncios en tu blog y te paga por cada mil impresiones (CPM). Los nichos con mayor RPM en España son finanzas, tecnología, salud y hogar. Con 10.000 visitas mensuales, un blog bien monetizado puede generar entre 30 y 150€/mes con AdSense.
+            Hay dos fuentes de ingresos principales. Google AdSense muestra anuncios en tu blog y te paga por cada mil impresiones (CPM). Los nichos con mayor RPM en España son finanzas, tecnología, salud y hogar. Lo que se gana con AdSense depende del volumen de tráfico, del nicho, del país de las visitas y de cómo se colocan los anuncios, así que no damos una cifra genérica: el potencial de tu nicho lo estimamos en el diagnóstico gratuito.
           </p>
           <p className="text-gray-700 leading-relaxed">
             El marketing de afiliados es más rentable a volumen menor: cuando un lector hace clic en un enlace de afiliado y compra el producto recomendado, tú cobras una comisión. Amazon Associates paga entre el 1% y el 10% según la categoría. Un blog de fitness con 5.000 visitas mensuales que recomienda equipamiento puede generar más con afiliación que con AdSense. La combinación de las dos fuentes — AdSense para el volumen de tráfico general y afiliados para los artículos de mayor intención de compra — es la estrategia que maximiza los ingresos.

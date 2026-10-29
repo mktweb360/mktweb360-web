@@ -12,7 +12,8 @@ import {
 } from "./core";
 import { TXT, pick } from "./texts";
 import { CTX_ROUTE, ctxOf, funnelChips, openingChips, type Chip, type ChipId } from "./funnel";
-import { IMPORTES_OFERTAS, lineasOfertas } from "@/lib/ofertas";
+import { importesOfertas, lineasOfertas, preciosEnTexto, PRECIOS_OFERTA_SEO_RESPALDO, type PreciosOfertaSeo } from "@/lib/ofertas";
+import { preciosOfertaSeo } from "@/lib/precios-planes";
 
 const KB = kbData as unknown as { faqs: KbFaq[]; paginas: KbPagina[] };
 const titleOf = (ruta: string) => KB.paginas.find((p) => samePath(p.ruta, ruta))?.title || ruta.replace(/\//g, " ").replace(/-/g, " ").trim();
@@ -87,12 +88,13 @@ export const aiEnabled = () => !!process.env.ANTHROPIC_API_KEY && process.env.CH
 
 // ── Precios (decisión de José, 25/10/2026) ──────────────────────────────
 // El asistente NO da precios de servicios: solo los de las OFERTAS vigentes (lib/ofertas.ts). Para cualquier otro servicio:
-// «a medida tras un diagnóstico gratuito» + ofertas vigentes con su precio + dejar datos. Ya no lee el catálogo de MktOS.
-const importeAutorizado = (n: number) => IMPORTES_OFERTAS.includes(n);
+// «a medida tras un diagnóstico gratuito» + ofertas vigentes con su precio + dejar datos.
+// El precio de la oferta SEO + GEO + GBP sale de preciosOfertaSeo() (catálogo de MktOS con respaldo en lib/ofertas.ts),
+// la misma función que usan las páginas: se lee en cada respuesta (caché de 5 minutos) y llega aquí como «po».
 /** ¿El texto cita algún importe que no sea el de una oferta vigente? */
-const citaPrecioNoAutorizado = (text: string) => amounts(text).some((n) => !importeAutorizado(n));
-function respuestaSinTarifas(lang: Lang, n: number): string {
-  return [pick(TXT.sinTarifas, lang, n), pick(TXT.ofertasIntro, lang, n), lineasOfertas(lang).join("\n"), pick(TXT.sinTarifasCierre, lang, n)].join("\n\n");
+const citaPrecioNoAutorizado = (text: string, po: PreciosOfertaSeo) => amounts(text).some((n) => !importesOfertas(po).includes(n));
+function respuestaSinTarifas(lang: Lang, n: number, po: PreciosOfertaSeo): string {
+  return [pick(TXT.sinTarifas, lang, n), pick(TXT.ofertasIntro, lang, n), lineasOfertas(lang, po).join("\n"), pick(TXT.sinTarifasCierre, lang, n)].join("\n\n");
 }
 
 // ── IA ────────────────────────────────────────────────────────────────
@@ -180,6 +182,10 @@ export async function reply(
 ): Promise<{ reply: Reply; state: ChatState; costUsd: number; meta: Meta }> {
   const lang = page.lang;
   const n = st.n;
+  // Precio vigente de la oferta SEO (fuente única). Si el catálogo falla, preciosOfertaSeo ya devuelve el respaldo.
+  const po = await preciosOfertaSeo().catch(() => PRECIOS_OFERTA_SEO_RESPALDO);
+  // Las FAQ de la base se generaron con los precios de respaldo: se ponen al precio vigente.
+  const faqA = (a: string) => preciosEnTexto(a, po);
   const ctx = ctxOf(page.path);
   let meta: Meta = { intent: "normal", chip: chipId ?? undefined };
   const done = (r: Partial<Reply> & { text: string; sinSugerencias?: boolean }, s: ChatState, costUsd = 0) => ({
@@ -219,11 +225,11 @@ export async function reply(
       case "precio": {
         const hit = search(INDEX, text, { lang, path: page.path, limit: 1 })[0];
         // Solo se responde con la FAQ si habla de una oferta (sus importes son los autorizados).
-        if (isDirect(hit) && hit.faq.tipo === "servicio" && amounts(hit.faq.a).length > 0 && !citaPrecioNoAutorizado(hit.faq.a)) {
+        if (isDirect(hit) && hit.faq.tipo === "servicio" && amounts(hit.faq.a).length > 0 && !citaPrecioNoAutorizado(faqA(hit.faq.a), po)) {
           meta = { ...meta, faqId: hit.faq.id };
-          return done({ text: `${hit.faq.a}\n\n${pick(TXT.precioPropio, lang, n)}`, actions: ["presupuesto"], modo: "kb" }, s);
+          return done({ text: `${faqA(hit.faq.a)}\n\n${pick(TXT.precioPropio, lang, n)}`, actions: ["presupuesto"], modo: "kb" }, s);
         }
-        return done({ text: respuestaSinTarifas(lang, n), actions: ["presupuesto"] }, s);
+        return done({ text: respuestaSinTarifas(lang, n, po), actions: ["presupuesto"] }, s);
       }
     }
   }
@@ -281,10 +287,10 @@ export async function reply(
   // IA (si está activada y queda presupuesto)
   if (aiEnabled() && budgetLeft() && s.ia < LIMITS.maxIaPerSession) {
     try {
-      const conocimiento = (hits.length ? hits : []).map((h) => `P: ${h.faq.q}\nR: ${h.faq.a}\nFuente: ${SITE}${h.faq.r}${h.faq.tipo === "informativa" ? " (artículo informativo)" : ""}`).join("\n\n");
+      const conocimiento = (hits.length ? hits : []).map((h) => `P: ${h.faq.q}\nR: ${faqA(h.faq.a)}\nFuente: ${SITE}${h.faq.r}${h.faq.tipo === "informativa" ? " (artículo informativo)" : ""}`).join("\n\n");
       // Importes permitidos: solo los de las ofertas vigentes. Las cifras de mercado de los artículos no se pueden presentar como propias.
-      const allowed = new Set<number>(IMPORTES_OFERTAS);
-      const stable = `${SYSTEM_RULES}\n\n<ofertas>\n${lineasOfertas(lang).join("\n")}\n</ofertas>`;
+      const allowed = new Set<number>(importesOfertas(po));
+      const stable = `${SYSTEM_RULES}\n\n<ofertas>\n${lineasOfertas(lang, po).join("\n")}\n</ofertas>`;
       const dyn = `<contexto>\nPágina actual: ${SITE}${page.path}${pagina ? ` — ${pagina.title}: ${pagina.description}` : page.title ? ` — ${page.title}` : ""}\nEl visitante ${s.biz ? "ya ha hablado de su negocio" : "aún no ha dicho nada de su negocio: tras responder, pregunta por él"}.\n</contexto>\n<conocimiento>\n${conocimiento || "(sin coincidencias en la base aprobada)"}\n</conocimiento>`;
       const msgs = [...history.slice(-10), { role: "user" as const, content: text }];
       const { text: out, usd, usage } = await callClaude([{ text: stable, cache: true }, { text: dyn }], msgs);
@@ -315,16 +321,16 @@ export async function reply(
     // Red de seguridad: una FAQ de servicio nunca puede dar un precio que no sea el de una oferta vigente.
     // Y si preguntan el precio y la FAQ encontrada no habla de precios (p. ej. «¿cuánto cuesta el SEO local?» casa con «¿cuánto tarda?»),
     // no se responde con otra cosa: se explica la política de precios.
-    if ((f.tipo === "servicio" && citaPrecioNoAutorizado(f.a)) || (esPreguntaDePrecio(text) && amounts(f.a).length === 0)) {
+    if ((f.tipo === "servicio" && citaPrecioNoAutorizado(faqA(f.a), po)) || (esPreguntaDePrecio(text) && amounts(f.a).length === 0)) {
       meta.intent = "precio_sin_tarifas";
-      return done({ text: respuestaSinTarifas(lang, n), actions: ["presupuesto"] }, s);
+      return done({ text: respuestaSinTarifas(lang, n, po), actions: ["presupuesto"] }, s);
     }
     // Las FAQs de una oferta concreta se responden diciendo de qué oferta hablan (la permanencia cambia entre ofertas).
     const deOferta = /oferta|landing/.test(f.r) && !samePath(f.r, page.path) ? (KB.paginas.find((p) => samePath(p.ruta, f.r))?.title ?? f.r.replace(/\//g, " ").replace(/-/g, " ").trim()) : undefined;
     const extra = f.cifras ? pick(f.tipo === "informativa" ? TXT.mercado : TXT.precioPropio, lang, n) : s.biz ? "" : pick(TXT.reconducir, lang, n);
     return done(
       {
-        text: [deOferta ? `${lang === "es" ? "En la oferta" : lang === "en" ? "In the offer" : "Dans l'offre"} «${deOferta}»: ${f.a}` : f.a, extra].filter(Boolean).join("\n\n"),
+        text: [deOferta ? `${lang === "es" ? "En la oferta" : lang === "en" ? "In the offer" : "Dans l'offre"} «${deOferta}»: ${faqA(f.a)}` : faqA(f.a), extra].filter(Boolean).join("\n\n"),
         link: f.tipo === "informativa" && f.r ? linkTo(f.r, pick(TXT.leidoArticulo, lang, n)) : deOferta ? linkTo(f.r, pick(TXT.masInfo, lang, n)) : undefined,
         actions: f.cifras || s.biz ? ["presupuesto"] : [],
         modo: "kb",
@@ -334,7 +340,7 @@ export async function reply(
   }
   if (esPreguntaDePrecio(text)) {
     meta.intent = "precio_sin_tarifas";
-    return done({ text: respuestaSinTarifas(lang, n), actions: ["presupuesto"] }, s);
+    return done({ text: respuestaSinTarifas(lang, n, po), actions: ["presupuesto"] }, s);
   }
   // Ha hablado de su negocio: siguiente paso, la propuesta.
   if (business) { meta.intent = "negocio"; return done({ text: pick(TXT.negocio, lang, n), actions: ["presupuesto"] }, s); }
