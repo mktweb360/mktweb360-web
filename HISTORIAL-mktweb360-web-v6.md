@@ -39,8 +39,7 @@ tsc limpio; `pnpm validate-i18n` sin incoherencias; `pnpm chatbot:check` 58/58; 
 ### Para decidir / revisar
 - Hosting de 49 € (HostingModal): quitado; José puede recuperarlo como complemento de las ofertas.
 - Porcentajes de dropshipping/participación en resultados: retirados en los tres idiomas.
-- Rangos de mercado que se mantienen etiquetados: diseno-web-barcelona, cuanto-cuesta-agencia-marketing-digital-espana-2026, marketing-digital-toledo, online-stores-toledo, migrate-online-store EN/FR. Algunos coinciden numéricamente con antiguas tarifas propias.
-- «El ROI suele ser positivo desde el primer trimestre» en páginas SEO de ciudad: cercano a promesa de resultado; valorar.
+- Rangos de mercado que se mantienen etiquetados: cuanto-cuesta-agencia-marketing-digital-espana-2026 y migrate-online-store EN/FR (Barcelona y las guías de Toledo ya no existen en main). Algunos coinciden numéricamente con antiguas tarifas propias.
 - blog-para-monetizacion: «30–150 €/mes con AdSense» sin fuente.
 - diseno-web-para-clinicas conserva «desde 249 € + IVA» como oferta; dentistas se reformuló: revisar coherencia.
 - `google-ads-no-commission-marketing-agency` tiene texto en español en las versiones EN/FR (ajeno a esta tarea).
@@ -48,3 +47,13 @@ tsc limpio; `pnpm validate-i18n` sin incoherencias; `pnpm chatbot:check` 58/58; 
 - Contrato SEO 6x3 (600 € + IVA): José confirma el 26/10 que ese contrato ya no existe. Queda código huérfano por retirar en una PR aparte: `app/api/admin/leads/seo-6x3/*`, `app/api/leads/seo-6x3`, `app/area-privada/leads/seo-6x3/*`, el enlace en `app/area-privada/leads/page.tsx` y las referencias de `next.config.ts`.
 - `check:precios` no está en el build ni en un hook, y su lista de páginas de oferta es amplia: afinar.
 - El catálogo de MktOS conserva los precios internamente; `app/area-privada`, `app/api` y contratos no se han tocado.
+
+## SESIÓN 29/10/2026: reaplicación sobre main (rama `contenido/sin-precios-servicios-v2`)
+
+La PR #55 se quedó atrás respecto a main (Toledo consolidado, ciudades retiradas, página de autor, captación en artículos, schema completo, `check:seo`). Se reaplica con cherry-pick y resolución manual:
+- Las páginas de ciudades, guías de Toledo y navegadores borradas en main siguen borradas.
+- Se conservan captación, schema y descripciones de main; encima, la retirada de precios (p. ej. la descripción nueva de blog-monetization EN/FR pierde «desde 990 €»).
+- Lo añadido el 28/10 que contradecía la decisión: menú (ES/EN/FR) «Precios SEO» → «Cuánto cuesta el SEO» con descripción de presupuesto a medida; enlaces con ancla «precios SEO» / «planes y precios SEO» en artículos → «cuánto cuesta el SEO» (y frases que decían «tarifas publicadas» reescritas); la guía «SEO para pymes» (ES/EN/FR) mostraba los planes con precio (199–790 €) leídos del catálogo: ahora tamaños de proyecto con `precioTexto` y solo la oferta SEO + GEO + GBP con cifra (de `lib/ofertas.ts`); fuera el `Offer` con precio de los Service de páginas corporativas (ES/EN/FR); llms.txt cita la guía como «Cuánto cuesta el SEO».
+- Portada (ES/EN/FR): retirado el testimonio de Miguel Palomino (decisión de José del 29/10: suena a promesa de posición).
+- `check:precios`: nueva regla 4 (precios de planes leídos por código, `preciosPlanesSeo` / `p.precio`, fuera de páginas de oferta) y la cotización de autónomos EN/FR cuenta como cifra de terceros.
+- Barrido del HTML servido (403 URLs del sitemap): «€» solo en ofertas (banners, menú, páginas de oferta) y en cifras de mercado o de terceros (sanciones, cuotas de autónomos, Shopify/Tidio/Zendesk, inversión publicitaria, ROI del email, rangos de mercado etiquetados).

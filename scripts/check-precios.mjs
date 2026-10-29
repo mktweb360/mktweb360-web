@@ -6,6 +6,7 @@
 //  1. Ningún `priceRange` en el código de la web (JSON-LD de precio orientativo).
 //  2. `offers` / `priceSpecification` con precio solo en páginas de oferta (lista OFERTA_FILES).
 //  3. Importes que fueron precios propios de servicios (lista PRECIOS_RETIRADOS) en líneas que no sean de mercado/terceros.
+//  4. Precios de planes leídos por código (preciosPlanesSeo, p.precio) fuera de las páginas de oferta.
 // Si añades una oferta nueva, añade su página a OFERTA_FILES y sus importes a lib/ofertas.ts.
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
@@ -44,6 +45,9 @@ for (const root of ROOTS) {
       if (/priceRange\s*:/.test(line)) fallos.push(`${ref}  priceRange en JSON-LD (no se publican precios orientativos)`);
       if (!esOferta && /priceSpecification|"price"\s*:|\bprice:\s*(?:p\.|String|\d)/.test(line) && !/price:\s*(?:0|"0")\b/.test(line))
         fallos.push(`${ref}  schema con precio fuera de una página de oferta`);
+      // Precios que llegan por código (catálogo de MktOS o importes de los planes), invisibles para la lista de importes.
+      if (!esOferta && /preciosPlanesSeo|\.precio as number|\$\{p\.precio\}/.test(line))
+        fallos.push(`${ref}  precio de plan leído del catálogo fuera de una página de oferta (usa precioTexto o lib/ofertas.ts)`);
       if (!esOferta && !MERCADO.test(line)) {
         for (const n of PRECIOS_RETIRADOS) {
           const rx = new RegExp(`(?<![\\d.,])${n}\\s?(€|euros?\\b)|€\\s?${n}(?![\\d.,])`, "i");
