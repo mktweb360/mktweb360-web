@@ -107,7 +107,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Plan Standard Shopify sur 3 ans : ~2 844 USD en frais de plateforme seuls, plus les frais de transaction (0 à 2% par vente si vous n'utilisez pas Shopify Payments). WooCommerce sur 3 ans : 1 080 à 1 800€ d'hébergement + ~300 à 600€ de plugins premium = ~1 380 à 2 400€ au total, zéro frais de transaction. Pour la plupart des PME, WooCommerce est 30 à 60% moins cher sur 3 ans."}
         </p>
 
-        <BlogBanner variant="ecommerce" />
+        <BlogBanner variant="ecommerce" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

@@ -122,7 +122,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Les entreprises qui investissent à la fois dans le SEO et le GEO maintenant captureront des clics des recherches Google traditionnelles et apparaîtront également comme recommandations dans les réponses IA. Cette double présence est le nouvel avantage concurrentiel en visibilité de recherche."}
         </p>
 
-        <BlogBanner variant="geo" />
+        <BlogBanner variant="geo" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

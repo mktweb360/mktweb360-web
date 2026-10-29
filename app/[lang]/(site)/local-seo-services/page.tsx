@@ -1,3 +1,4 @@
+import { BlogBanner } from "@/components/BlogBanner";
 import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import Link from "next/link";
@@ -516,6 +517,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       </section>
 
       <RelatedArticles category="SEO" title={isEn ? "More about SEO and local positioning" : "Plus sur le SEO et le positionnement local"} />
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="seogeogbp" lang={lang} />
+      </div>
     </>
   );
 }

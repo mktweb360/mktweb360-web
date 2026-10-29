@@ -127,7 +127,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "N'offrez pas d'incitations pour les avis — cela viole les politiques de Google et peut entraîner la pénalisation de votre fiche. Facilitez plutôt : un lien direct, un code QR dans votre lieu physique, une séquence d'emails de suivi. Le volume et la constance au fil du temps est ce qui construit un profil d'avis solide."}
         </p>
 
-        <BlogBanner variant="default" />
+        <BlogBanner variant="default" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

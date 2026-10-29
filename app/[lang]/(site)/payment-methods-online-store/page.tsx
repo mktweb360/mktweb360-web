@@ -117,7 +117,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Configuration recommandée pour la plupart des boutiques européennes : Stripe comme passerelle principale (cartes + Apple Pay + Google Pay + SEPA), PayPal comme alternative optionnelle pour les acheteurs qui le préfèrent, et Klarna ou Sequra pour les achats au-dessus de 80€. Cette combinaison couvre 95%+ des préférences de paiement des acheteurs européens."}
         </p>
 
-        <BlogBanner variant="ecommerce" />
+        <BlogBanner variant="ecommerce" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

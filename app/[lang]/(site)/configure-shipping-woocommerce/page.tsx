@@ -127,7 +127,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Un processus de retours clair et facile augmente la confiance à l'achat et réduit l'abandon de panier. Paradoxalement, les boutiques avec des politiques de retour généreuses ont souvent des taux de retour plus faibles — parce que les clients achètent avec confiance plutôt que d'hésiter et finalement ne pas acheter du tout."}
         </p>
 
-        <BlogBanner variant="ecommerce" />
+        <BlogBanner variant="ecommerce" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

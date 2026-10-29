@@ -1,3 +1,4 @@
+import { BlogBanner } from "@/components/BlogBanner";
 import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import Link from "next/link";
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 const FAQS_EN = [
   { q: "What does your SEO service include?", a: "Full initial technical audit, keyword research, on-page optimisation, creation of optimised content, ethical link building, monthly position tracking and results reports." },
-  { q: "How long does it take to see SEO results?", a: "First position movements usually appear within 2 to 4 months. For consolidated results, expect 6 to 12 months, although this depends on competition and the initial state of the website." },
+  { q: "How long does it take to see SEO results?", a: "First position movements usually appear within 3 to 6 months. For consolidated results, expect 6 to 12 months, although this depends on competition and the initial state of the website." },
   { q: "Do you work with Google algorithm updates?", a: "Yes, we closely follow all Google algorithm updates and adapt strategies to always stay within best practices (white hat SEO)." },
   { q: "Do you do local and national SEO?", a: "We do both. Local SEO is ideal for businesses with a physical presence that want to attract customers from their area. National SEO targets keywords with broader geographical reach." },
   { q: "How do you measure results?", a: "We monitor Google positions, organic traffic, conversions attributed to SEO and brand visibility. You receive a detailed monthly report with progress and next steps." },
@@ -44,7 +45,7 @@ const FAQS_EN = [
 
 const FAQS_FR = [
   { q: "Qu'est-ce que votre service SEO comprend ?", a: "Audit technique initial complet, recherche de mots-clés, optimisation on-page, création de contenu optimisé, link building éthique, suivi mensuel des positions et rapports de résultats." },
-  { q: "Combien de temps faut-il pour voir des résultats SEO ?", a: "Les premiers mouvements de positions apparaissent généralement entre 2 et 4 mois. Pour des résultats consolidés, comptez entre 6 et 12 mois, selon la concurrence et l'état initial du site." },
+  { q: "Combien de temps faut-il pour voir des résultats SEO ?", a: "Les premiers mouvements de positions apparaissent généralement entre 3 et 6 mois. Pour des résultats consolidés, comptez entre 6 et 12 mois, selon la concurrence et l'état initial du site." },
   { q: "Travaillez-vous avec les mises à jour de l'algorithme Google ?", a: "Oui, nous suivons de près toutes les mises à jour de l'algorithme Google et adaptons les stratégies pour toujours rester dans les bonnes pratiques (SEO white hat)." },
   { q: "Faites-vous du SEO local et national ?", a: "Nous faisons les deux. Le SEO local est idéal pour les entreprises avec une présence physique qui souhaitent attirer des clients de leur zone. Le SEO national cible des mots-clés à portée géographique plus large." },
   { q: "Comment mesurez-vous les résultats ?", a: "Nous surveillons les positions Google, le trafic organique, les conversions attribuées au SEO et la visibilité de la marque. Vous recevez un rapport mensuel détaillé avec l'évolution et les prochaines étapes." },
@@ -309,14 +310,14 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
                 <p>Local SEO and national SEO respond to different search intentions and require different strategies. Neither is better than the other — it is a matter of what type of customer searches for your service and from where.</p>
                 <p>Local SEO is the right strategy for businesses that serve customers in a specific geographical area: clinics, offices, physical shops, workshops, restaurants, academies, installers, renovators. In this case, the searches that matter include a local modifier — "plumber Toledo", "accountant Madrid centre", "dental clinic Salamanca" — or are made from a mobile device with location activated. The most important channel for local SEO is Google Business Profile: the listing that appears on the map when someone searches for your service nearby.</p>
                 <p>National SEO targets keywords without a geographical modifier: "digital marketing agency", "management software for SMEs", "sustainable fashion online store". It competes in a broader and more competitive universe, requiring greater domain authority, more content and more time to see significant results.</p>
-                <p>At Mkt Web 360 we work in both modes. For businesses with a physical presence in Toledo and Castilla-La Mancha, local SEO is generally the investment with the highest short-term return: less competition, searches with high purchase intent, and visible results in 2–4 months instead of 6–12.</p>
+                <p>At Mkt Web 360 we work in both modes. For businesses with a physical presence in Toledo and Castilla-La Mancha, local SEO is generally the investment with the highest short-term return: less competition, searches with high purchase intent, and first movements on the map usually in 1–2 months and in organic results in 3–6 months.</p>
               </>
             ) : (
               <>
                 <p>Le SEO local et le SEO national répondent à des intentions de recherche différentes et nécessitent des stratégies distinctes. L'un n'est pas meilleur que l'autre — c'est une question de quel type de client recherche votre service et d'où.</p>
                 <p>Le SEO local est la bonne stratégie pour les entreprises qui servent des clients dans une zone géographique spécifique : cliniques, cabinets, boutiques physiques, ateliers, restaurants, académies, installateurs, rénovateurs. Dans ce cas, les recherches qui comptent incluent un modificateur local — "plombier Toulouse", "comptable Lyon centre", "cabinet dentaire Bordeaux" — ou sont effectuées depuis un appareil mobile avec la localisation activée. Le canal le plus important pour le SEO local est Google Business Profile : la fiche qui apparaît sur la carte quand quelqu'un recherche votre service à proximité.</p>
                 <p>Le SEO national cible des mots-clés sans modificateur géographique : "agence de marketing digital", "logiciel de gestion pour PME", "boutique en ligne de mode durable". Il est en concurrence dans un univers plus large et plus compétitif, ce qui nécessite une plus grande autorité de domaine, plus de contenu et plus de temps pour voir des résultats significatifs.</p>
-                <p>Chez Mkt Web 360, nous travaillons dans les deux modes. Pour les entreprises ayant une présence physique en Espagne, le SEO local est généralement l'investissement avec le meilleur retour à court terme : moins de concurrence, des recherches avec une forte intention d'achat, et des résultats visibles en 2 à 4 mois au lieu de 6 à 12.</p>
+                <p>Chez Mkt Web 360, nous travaillons dans les deux modes. Pour les entreprises ayant une présence physique en Espagne, le SEO local est généralement l'investissement avec le meilleur retour à court terme : moins de concurrence, des recherches avec une forte intention d'achat, et des premiers mouvements sur la carte en général en 1 à 2 mois, et dans les résultats organiques en 3 à 6 mois.</p>
               </>
             )}
           </div>
@@ -458,6 +459,9 @@ export default async function SeoWebPositioningPage({ params }: { params: Promis
       </section>
 
       <RelatedArticles category="SEO" title={isEn ? "More about SEO and positioning" : "Plus sur le SEO et le positionnement"} />
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="seogeogbp" lang={lang} />
+      </div>
     </>
   );
 }
