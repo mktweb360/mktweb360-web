@@ -5,12 +5,15 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ROUTES, alternatesFor, urlFor } from "@/lib/i18n/routes";
 import type { Articulo, Bloque, ContenidoArticulo, LangArticulo } from "@/lib/articulos-tendencia/tipos";
+import { AuthorByline } from "@/components/AuthorByline";
+import { AUTOR_NOMBRE, autorSchema } from "@/lib/autor";
 
 // Plantilla común de los artículos «de tendencia» en ES, EN y FR.
 // Todo se renderiza en el servidor: el texto, la FAQ y el JSON-LD están en el HTML servido.
 
 const BASE = "https://www.mktweb360.com";
-const AUTOR = "José Marcos Galindo";
+// Mismo autor y página de autor que el resto del blog (lib/autor.ts).
+const AUTOR = AUTOR_NOMBRE;
 
 const UI: Record<LangArticulo, {
   inicio: string; blog: string; por: string; lectura: string; respuesta: string;
@@ -190,9 +193,10 @@ export function ArticuloTendencia({ articulo, lang }: { articulo: Articulo; lang
     inLanguage: ui.inLanguage,
     datePublished: `${articulo.fecha}T08:00:00+02:00`,
     dateModified: `${articulo.fecha}T08:00:00+02:00`,
-    author: { "@type": "Person", name: AUTOR, url: `${BASE}${rutaEn("/nosotros/", lang)}` },
+    author: autorSchema(lang),
     publisher: {
       "@type": "Organization",
+      "@id": `${BASE}/#organization`,
       name: "Mkt Web 360 SLU",
       url: BASE,
       logo: { "@type": "ImageObject", url: `${BASE}/logo.png` },
@@ -231,7 +235,7 @@ export function ArticuloTendencia({ articulo, lang }: { articulo: Articulo; lang
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">{c.categoria}</span>
             <time dateTime={articulo.fecha}>{ui.fecha(articulo.fecha)}</time>
             <span>·</span>
-            <span>{ui.por} {AUTOR}</span>
+            <AuthorByline lang={lang} />
             <span>·</span>
             <span>{minutos} {ui.lectura}</span>
           </div>
