@@ -79,7 +79,7 @@ const C = {
   fr: {
     title: "Tarifs SEO : combien coûte le référencement ?",
     description:
-      "Ce qui fait varier le prix d'un projet SEO, ce que comprend chaque taille de projet et comment comparer les devis. Diagnostic gratuit et devis écrit, sans engagement.",
+      "Ce qui fait varier le prix d'un projet SEO, ce que comprend chaque taille de projet et comment comparer les devis. Diagnostic gratuit et devis écrit.",
     ogTitle: "Tarifs SEO : combien coûte le référencement ? | Mkt Web 360",
     ogDescription: "Ce qui fait varier le prix d'un projet de référencement, ce que comprend chaque taille de projet et comment comparer les devis.",
     ogAlt: "Tarifs SEO — Mkt Web 360",

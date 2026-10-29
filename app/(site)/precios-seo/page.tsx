@@ -12,7 +12,7 @@ const URL = "https://www.mktweb360.com/precios-seo/";
 export const metadata: Metadata = {
   title: "Precios SEO: cuánto cuesta el posicionamiento",
   description:
-    "Qué hace variar el precio de un proyecto SEO, qué incluye cada tamaño de proyecto y cómo comparar presupuestos. Diagnóstico gratuito y presupuesto por escrito, sin permanencia.",
+    "Qué hace variar el precio de un proyecto SEO, qué incluye cada tamaño y cómo comparar presupuestos. Diagnóstico gratuito y presupuesto por escrito.",
   alternates: alternatesFor("/precios-seo/") ?? { canonical: URL },
   openGraph: {
     title: "Precios SEO: cuánto cuesta el posicionamiento | Mkt Web 360",

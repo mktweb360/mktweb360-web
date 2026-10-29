@@ -6,7 +6,7 @@ const URL = "https://www.mktweb360.com/agencia-marketing-digital-toledo/";
 
 export const metadata: Metadata = {
   title: "Agencia de marketing digital en Toledo",
-  description: "Agencia de marketing digital con sede en Toledo: SEO, Google Maps, IA, Google Ads, diseño web y redes para pymes y profesionales. Diagnóstico gratuito y presupuesto sin compromiso.",
+  description: "Agencia de marketing digital en Toledo: SEO, Google Maps, IA, Google Ads, diseño web y redes para pymes. Diagnóstico gratuito y presupuesto sin compromiso.",
   alternates: alternatesFor("/agencia-marketing-digital-toledo/") ?? { canonical: URL },
   openGraph: { title: "Agencia de marketing digital en Toledo | Mkt Web 360", description: "Marketing digital para pymes y profesionales de Toledo, con sede en la provincia.", url: URL, images: [{ url: "/og-marketing-digital-toledo.jpg", width: 1200, height: 630 }] },
 };

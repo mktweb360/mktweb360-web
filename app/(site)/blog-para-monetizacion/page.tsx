@@ -7,7 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Creación de Blogs para Monetizar con AdSense",
-  description: "Creamos tu blog de nicho para generar ingresos con AdSense y afiliación: setup completo con dominio, hosting, 15 artículos SEO, monetización y formación, con presupuesto a medida tras un diagnóstico gratuito.",
+  description: "Blog de nicho para ganar con AdSense y afiliación: dominio, hosting, 15 artículos SEO, monetización y formación. Presupuesto tras diagnóstico gratuito.",
   alternates: alternatesFor("/blog-para-monetizacion/") ?? { canonical: "https://www.mktweb360.com/blog-para-monetizacion/" },
   openGraph: {
     title: "Creación de Blogs para Monetizar con AdSense | Mkt Web 360",

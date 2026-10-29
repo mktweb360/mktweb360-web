@@ -6,7 +6,7 @@ const URL = "https://www.mktweb360.com/agencia-seo-toledo/";
 
 export const metadata: Metadata = {
   title: "Agencia SEO en Toledo: posicionamiento web",
-  description: "Agencia SEO con sede en Toledo: posicionamiento web, Google Maps y visibilidad en IA para negocios de la provincia. Presupuesto tras un diagnóstico gratuito y sin permanencia.",
+  description: "Agencia SEO en Toledo: posicionamiento web, Google Maps y visibilidad en IA para negocios de la provincia. Diagnóstico gratuito y sin permanencia.",
   alternates: alternatesFor("/agencia-seo-toledo/") ?? { canonical: URL },
   openGraph: { title: "Agencia SEO en Toledo | Mkt Web 360", description: "Posicionamiento web para negocios de Toledo, con sede en la provincia.", url: URL, images: [{ url: "/og-seo-toledo.jpg", width: 1200, height: 630 }] },
 };
