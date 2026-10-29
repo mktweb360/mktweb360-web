@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { alternatesFor, ROUTES } from "@/lib/i18n/routes";
 import { allPosts } from "@/lib/blog";
 import { ogImageFor } from "@/lib/blog-og-i18n";
-import { getPostI18n, getCategoryI18n } from "@/lib/blog-i18n";
+import { getPostI18n, getCategoryI18n, getSoloEsI18n } from "@/lib/blog-i18n";
 import { JsonLd } from "@/components/JsonLd";
 import { webPageSchema, SITE } from "@/lib/schema";
 
@@ -162,7 +162,7 @@ export default async function LangBlogPage({ params }: { params: Promise<{ lang:
                   : "Ces articles sont actuellement disponibles en espagnol uniquement. Traductions à venir."}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {untranslatedPosts.map((post) => (
+                {untranslatedPosts.map((post) => ({ post, tr: getSoloEsI18n(post.slug, lang as "en" | "fr", { title: post.title, excerpt: post.excerpt }) })).map(({ post, tr }) => (
                   <article
                     key={post.slug}
                     className="border border-gray-100 rounded-xl overflow-hidden hover:border-gray-300 transition-colors"
@@ -170,7 +170,7 @@ export default async function LangBlogPage({ params }: { params: Promise<{ lang:
                     <Link href={`/${post.slug}/`} className="block relative w-full overflow-hidden" style={{ aspectRatio: "1200/630" }}>
                       <Image
                         src={`/og-${post.slug}.jpg`}
-                        alt={post.title}
+                        alt={tr.title}
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -182,10 +182,10 @@ export default async function LangBlogPage({ params }: { params: Promise<{ lang:
                       </span>
                       <h3 className="text-base font-semibold text-gray-700 line-clamp-2 mb-1">
                         <Link href={`/${post.slug}/`} className="hover:text-primary-600 transition-colors">
-                          {post.title}
+                          {tr.title}
                         </Link>
                       </h3>
-                      <p className="text-gray-500 text-xs line-clamp-2">{post.excerpt}</p>
+                      <p className="text-gray-500 text-xs line-clamp-2">{tr.excerpt}</p>
                     </div>
                   </article>
                 ))}

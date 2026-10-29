@@ -7,7 +7,7 @@ import { HomeFaq } from "@/components/HomeFaq";
 import { TestimonialsCarousel } from "@/components/HomeInteractive";
 import { LangHeroSlider } from "@/components/LangHeroSlider";
 import { LangServicesTab } from "@/components/LangServicesTab";
-import { getLatestPosts } from "@/lib/blog";
+import { getVisiblePosts } from "@/lib/blog";
 import { getPostI18n, getCategoryI18n } from "@/lib/blog-i18n";
 import type { Metadata } from "next";
 import { alternatesFor, translatedSlugFor } from "@/lib/i18n/routes";
@@ -35,7 +35,8 @@ export default async function LangHomePage({
   // Blog posts — translated
   // [lang]/(site)/page.tsx only serves "en" | "fr" — cast is safe
   const langI18n = lang as "en" | "fr";
-  const rawPosts = getLatestPosts(9);
+  // Solo artículos con versión en este idioma: una portada EN/FR no muestra títulos en español.
+  const rawPosts = getVisiblePosts().filter((p) => translatedSlugFor(p.slug, langI18n)).slice(0, 9);
   const blogPosts = rawPosts.map((p) => {
     const t = getPostI18n(p.slug, langI18n, { title: p.title, excerpt: p.excerpt });
     const category = getCategoryI18n(p.category, langI18n);
