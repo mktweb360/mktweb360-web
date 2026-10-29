@@ -15,13 +15,13 @@ const href = (lang: L, slug: string) => `/${lang}/${langSlug(lang, slug)}/`;
 const META = {
   en: {
     title: "SEO Agency in Toledo: Website Rankings",
-    description: "SEO agency based in Toledo: search rankings, Google Maps and AI visibility for businesses across the province. Free diagnosis, a quote with no obligation and a free SEO audit.",
+    description: "SEO agency in Toledo: search rankings, Google Maps and AI visibility for businesses across the province. Free diagnosis and a no-obligation quote.",
     ogTitle: "SEO Agency in Toledo | Mkt Web 360",
     ogDescription: "Search engine optimisation for businesses in Toledo, from our base in the province.",
   },
   fr: {
     title: "Agence SEO à Tolède : référencement web",
-    description: "Agence SEO basée à Tolède : référencement, Google Maps et visibilité dans l'IA pour les entreprises de la province. Diagnostic gratuit, devis sans engagement et audit SEO gratuit.",
+    description: "Agence SEO à Tolède : référencement, Google Maps et visibilité dans l'IA pour les entreprises de la province. Diagnostic gratuit et devis sans engagement.",
     ogTitle: "Agence SEO à Tolède | Mkt Web 360",
     ogDescription: "Référencement pour les entreprises de Tolède, depuis notre siège dans la province.",
   },

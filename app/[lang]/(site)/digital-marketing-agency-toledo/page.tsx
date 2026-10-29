@@ -15,13 +15,13 @@ const href = (lang: L, slug: string) => `/${lang}/${langSlug(lang, slug)}/`;
 const META = {
   en: {
     title: "Digital Marketing Agency in Toledo, Spain",
-    description: "Digital marketing agency based in Toledo: SEO, Google Maps, AI, Google Ads, web design and social media for SMEs and professionals. Free diagnosis and a quote with no obligation.",
+    description: "Digital marketing agency in Toledo: SEO, Google Maps, AI, Google Ads, web design and social media for SMEs. Free diagnosis and a no-obligation quote.",
     ogTitle: "Digital Marketing Agency in Toledo | Mkt Web 360",
     ogDescription: "Digital marketing for SMEs and professionals in Toledo, from our base in the province.",
   },
   fr: {
     title: "Agence de marketing digital à Tolède, Espagne",
-    description: "Agence de marketing digital basée à Tolède : SEO, Google Maps, IA, Google Ads, création web et réseaux sociaux pour PME et professionnels. Diagnostic gratuit et devis sans engagement.",
+    description: "Agence de marketing digital à Tolède : SEO, Google Maps, IA, Google Ads, création web et réseaux sociaux pour PME. Diagnostic gratuit, devis sans engagement.",
     ogTitle: "Agence de marketing digital à Tolède | Mkt Web 360",
     ogDescription: "Marketing digital pour les PME et les professionnels de Tolède, depuis notre siège dans la province.",
   },
