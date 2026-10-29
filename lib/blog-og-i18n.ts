@@ -14,6 +14,7 @@ export const OG_I18N: Record<string, { en: string; fr: string }> = {
   "como-crear-landing-page-que-convierte": { en: "/og-how-to-create-landing-page-that-converts-en.jpg", fr: "/og-how-to-create-landing-page-that-converts-fr.jpg" },
   "ai-max-google-ads-que-es-como-controlarlo": { en: "/og-google-ads-ai-max-what-it-is-how-to-control-it.jpg", fr: "/og-ai-max-google-ads-definition-controle.jpg" },
   "anuncios-chatgpt-ads-espana": { en: "/og-chatgpt-ads-spain.jpg", fr: "/og-publicite-chatgpt-ads-espagne.jpg" },
+  "black-friday-tienda-online-que-preparar": { en: "/og-black-friday-online-store-checklist.jpg", fr: "/og-black-friday-boutique-en-ligne-preparer.jpg" },
 };
 
 export function ogImageFor(esSlug: string, lang: string): string {

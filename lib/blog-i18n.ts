@@ -17,6 +17,16 @@ export type PostI18n = {
 };
 
 export const BLOG_I18N: Record<string, PostI18n> = {
+  "black-friday-tienda-online-que-preparar": {
+    en: {
+      title: "Black Friday 2026 for online stores in Spain: what to prepare in the weeks left",
+      excerpt: "Black Friday 2026 is on 27 November. What an online store selling in Spain should prepare: website, Merchant Center, legal previous price, Google profile.",
+    },
+    fr: {
+      title: "Black Friday 2026 pour les boutiques en ligne en Espagne : que préparer dans les semaines qui restent",
+      excerpt: "Black Friday 2026 : le 27 novembre. Que préparer pour une boutique qui vend en Espagne : site, Merchant Center, prix antérieur légal et fiche Google.",
+    },
+  },
   "anuncios-chatgpt-ads-espana": {
     en: {
       title: "ChatGPT Ads in Spain: How Ads in ChatGPT Work and When to Test Them",

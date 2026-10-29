@@ -178,6 +178,7 @@ export const ROUTES: Route[] = [
   { es: "/estrategia-de-contenidos-calendario-editorial/", en: "content-strategy-editorial-calendar", fr: "strategie-de-contenu-calendrier-editorial" },
   { es: "/ai-max-google-ads-que-es-como-controlarlo/", en: "google-ads-ai-max-what-it-is-how-to-control-it", fr: "ai-max-google-ads-definition-controle" },
   { es: "/anuncios-chatgpt-ads-espana/", en: "chatgpt-ads-spain", fr: "publicite-chatgpt-ads-espagne" },
+  { es: "/black-friday-tienda-online-que-preparar/", en: "black-friday-online-store-checklist", fr: "black-friday-boutique-en-ligne-preparer" },
 ];
 
 // ---------- helpers derivados ----------
