@@ -26,13 +26,6 @@ const serviceSchema = {
   description: "Gestión de campañas de publicidad SEM en Google Ads para empresas. Search, Display, Shopping y YouTube Ads.",
   areaServed: "España",
   url: "https://www.mktweb360.com/sem-publicidad-ppc/",
-  offers: {
-    "@type": "Offer",
-    description: "Gestión de campañas Google Ads desde 100€/mes. Precio según volumen de inversión publicitaria gestionada.",
-    priceCurrency: "EUR",
-    availability: "https://schema.org/InStock",
-    url: "https://www.mktweb360.com/sem-publicidad-ppc/",
-  },
 };
 const CAMPAIGNS = [
   { title: "Google Search", desc: "Anuncios en los resultados de búsqueda para captar usuarios con intención de compra." },

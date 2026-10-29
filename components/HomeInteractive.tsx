@@ -115,11 +115,6 @@ const TESTIMONIALS = [
     text: "Mkt Web 360 es desde hace ya 4 años nuestro proveedor en posicionamiento y web de nuestros diferentes negocios. Estamos realmente contentos del trabajo.",
   },
   {
-    name: "Miguel Palomino",
-    company: "Cliente web + SEO",
-    text: "Encargamos una web y nos la pusieron los primeros en Google en dos meses y con un precio muy ajustado. Muy recomendables.",
-  },
-  {
     name: "CC LASER",
     company: "Empresa cliente",
     text: "Muy profesionales, siempre están disponibles y resuelven rápido todo lo que necesites. Los recomiendo 100x100.",

@@ -7,7 +7,6 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { planPorId, precioTexto } from "@/lib/planes-seo";
-import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -37,11 +36,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
-  // 09/10/2026 — alineado con /seo-local/: planes con precio (fuente única lib/planes-seo.ts),
-  // FAQ de precio, Offer en el schema y sin cifras sin fuente ni experiencia por ciudades.
+  // 09/10/2026 — alineado con /seo-local/: planes como tamaños de proyecto SIN precio (decisión 25/10/2026; fuente única lib/planes-seo.ts),
+  // FAQ de presupuesto, sin Offer en el schema y sin cifras sin fuente ni experiencia por ciudades.
   const L = isEn ? "en" : "fr";
-  const { precios } = await preciosPlanesSeo();
-  const PLANES_LOCAL = [planPorId("local", L, precios), planPorId("pyme", L, precios), planPorId("crecimiento", L, precios)];
+  const PLANES_LOCAL = [planPorId("local", L), planPorId("pyme", L), planPorId("crecimiento", L)];
   const [pLocal, pPyme, pCrec] = PLANES_LOCAL;
 
   const serviceSchema = {
@@ -55,7 +53,6 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       ? "Local SEO service: positioning on Google Maps, Google Business Profile optimisation, review management and local searches for businesses and professionals."
       : "Service de SEO local : positionnement sur Google Maps, optimisation de Google Business Profile, gestion des avis et des recherches locales pour les entreprises et les professionnels.",
     url: `https://www.mktweb360.com/${lang}/local-seo-services/`,
-    offers: { "@type": "Offer", name: pLocal.nombre, priceSpecification: { "@type": "UnitPriceSpecification", price: pLocal.precio, priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false } },
   };
 
   const FAQS = isEn
@@ -82,7 +79,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         },
         {
           q: "How much does local SEO cost?",
-          a: `The ${pLocal.nombre} plan costs ${precioTexto(pLocal, L)}, with no minimum term, for websites of up to 10 pages with 1 Google Business Profile listing and 2 pieces of content per month. If you also want to work on visibility in AI assistants and your website is larger, the ${pPyme.nombre} plan costs ${precioTexto(pPyme, L)}. For several locations, the ${pCrec.nombre} plan costs ${precioTexto(pCrec, L)}.`,
+          a: `It depends on the size of your website and the number of locations, so we do not publish a fixed rate: after a free diagnosis we give you a written quote with no obligation. As a guide to sizes: the ${pLocal.nombre} plan is designed for websites of up to 10 pages with 1 Google Business Profile listing and 2 pieces of content per month; the ${pPyme.nombre} plan, for larger websites that also want to work on visibility in AI assistants; and the ${pCrec.nombre} plan, for several locations. If there is a current offer, you will find it with its price on the home page.`,
         },
         {
           q: "Do you do local SEO in any city?",
@@ -112,7 +109,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         },
         {
           q: "Combien coûte le SEO local ?",
-          a: `La formule ${pLocal.nombre} coûte ${precioTexto(pLocal, L)}, sans engagement, pour les sites de 10 pages maximum avec 1 fiche Google et 2 contenus par mois. Si vous souhaitez aussi travailler la visibilité dans les assistants d'IA et que votre site est plus étendu, la formule ${pPyme.nombre} coûte ${precioTexto(pPyme, L)}. Pour plusieurs établissements, la formule ${pCrec.nombre} coûte ${precioTexto(pCrec, L)}.`,
+          a: `Cela dépend de la taille de votre site et du nombre d'établissements, c'est pourquoi nous ne publions pas de tarif fixe : après un diagnostic gratuit, nous vous remettons un devis écrit et sans engagement. À titre de repère sur les tailles : la formule ${pLocal.nombre} est pensée pour les sites de 10 pages maximum avec 1 fiche Google et 2 contenus par mois ; la formule ${pPyme.nombre}, pour les sites plus étendus qui veulent aussi travailler la visibilité dans les assistants d'IA ; et la formule ${pCrec.nombre}, pour plusieurs établissements. S'il y a une offre en cours, vous la trouverez avec son prix sur la page d'accueil.`,
         },
         {
           q: "Faites-vous du SEO local dans n'importe quelle ville ?",
@@ -238,8 +235,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">{isEn ? "Local SEO plans" : "Formules de SEO local"}</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               {isEn
-                ? "A service in its own right, with a fixed price and no minimum term. Choose based on the size of your website and the number of locations."
-                : "Un service à part entière, à prix fixe et sans engagement. Choisissez selon la taille de votre site et le nombre d'établissements."}
+                ? "A service in its own right, with no minimum term and a written quote after a free diagnosis. Choose based on the size of your website and the number of locations."
+                : "Un service à part entière, sans engagement, avec un devis écrit après un diagnostic gratuit. Choisissez selon la taille de votre site et le nombre d'établissements."}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -248,7 +245,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
                 {i === 0 && <span className="self-start bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">{isEn ? "Local SEO" : "SEO local"}</span>}
                 <h3 className="font-bold text-primary-700 text-lg mb-1">{p.nombre}</h3>
                 <p className="text-sm text-gray-500 mb-3">{p.paraQuien}</p>
-                <p className="text-2xl font-bold text-accent-500 mb-4">{precioTexto(p, L)}</p>
+                <p className="text-base font-bold text-accent-500 mb-4">{precioTexto(p, L)}</p>
                 <ul className="space-y-1 text-sm text-gray-700 mb-4">
                   {p.limites.map((l) => <li key={l}>• {l}</li>)}
                 </ul>
@@ -262,8 +259,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
           <p className="text-sm text-gray-500 text-center mt-6">
-            {isEn ? "Prices exclude VAT. Do you have an online store or a larger website? " : "Prix hors taxes. Vous avez une boutique en ligne ou un site plus grand ? "}
-            <Link href={`/${lang}/${langSlug(lang, "seo-pricing")}/`} className="text-accent-600 underline">{isEn ? "Work out your plan" : "Calculez votre formule"}</Link>.
+            {isEn ? "Do you have an online store or a larger website? " : "Vous avez une boutique en ligne ou un site plus grand ? "}
+            <Link href={`/${lang}/${langSlug(lang, "seo-pricing")}/`} className="text-accent-600 underline">{isEn ? "Work out the size of your SEO project" : "Estimez la taille de votre projet SEO"}</Link>.
           </p>
         </div>
       </section>

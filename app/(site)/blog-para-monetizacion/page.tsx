@@ -7,11 +7,11 @@ import { alternatesFor } from "@/lib/i18n/routes";
 
 export const metadata: Metadata = {
   title: "Creación de Blogs para Monetizar con AdSense",
-  description: "Creamos tu blog de nicho para generar ingresos con AdSense y afiliación: setup de 990 € con dominio, hosting, 15 artículos SEO, monetización y formación.",
+  description: "Creamos tu blog de nicho para generar ingresos con AdSense y afiliación: setup completo con dominio, hosting, 15 artículos SEO, monetización y formación, con presupuesto a medida tras un diagnóstico gratuito.",
   alternates: alternatesFor("/blog-para-monetizacion/") ?? { canonical: "https://www.mktweb360.com/blog-para-monetizacion/" },
   openGraph: {
     title: "Creación de Blogs para Monetizar con AdSense | Mkt Web 360",
-    description: "Creamos tu blog de nicho optimizado para generar ingresos pasivos con AdSense y marketing de afiliados. Setup completo desde 990€ con 15 artículos SEO, configuración de monetización y formación.",
+    description: "Creamos tu blog de nicho optimizado para generar ingresos pasivos con AdSense y marketing de afiliados. Setup completo con 15 artículos SEO, configuración de monetización y formación, con presupuesto a medida tras un diagnóstico gratuito.",
     url: "https://www.mktweb360.com/blog-para-monetizacion/",
     images: [{ url: "https://www.mktweb360.com/og-blog-monetizacion.jpg", width: 1200, height: 630 }],
   },
@@ -26,24 +26,16 @@ const serviceSchema = {
   description: "Creación y optimización de blogs de nicho para generar ingresos pasivos mediante Google AdSense y marketing de afiliados. Setup completo con estrategia SEO, contenido inicial y formación.",
   areaServed: "España",
   url: "https://www.mktweb360.com/blog-para-monetizacion/",
-  offers: {
-    "@type": "Offer",
-    price: "990",
-    priceCurrency: "EUR",
-    description: "Setup completo de blog para monetización desde 990€. Incluye dominio, hosting, WordPress, 15 artículos SEO, configuración AdSense y Amazon Associates.",
-    availability: "https://schema.org/InStock",
-    url: "https://www.mktweb360.com/blog-para-monetizacion/",
-  },
 };
 const FAQS = [
   { q: "¿Cuánto tiempo tarda un blog en generar ingresos?",
     a: "Los primeros ingresos con AdSense suelen aparecer entre los 4 y 8 meses, cuando el blog empieza a acumular tráfico orgánico. Para generar ingresos consistentes y significativos, el horizonte habitual es de 12 a 18 meses. Los blogs de nicho bien enfocados con marketing de afiliados pueden acortar este plazo si el nicho tiene alta intención de compra." },
-  { q: "¿Qué incluye el setup de 990€?",
+  { q: "¿Qué incluye el setup?",
     a: "El setup incluye: elección y registro del dominio, hosting del primer año, instalación y configuración de WordPress con tema optimizado para SEO y velocidad, configuración de Google AdSense y Amazon Associates, 15 artículos SEO iniciales optimizados para las keywords de mayor potencial del nicho, y una sesión de formación para que puedas gestionar el blog de forma autónoma." },
   { q: "¿Qué nicho debo elegir para que el blog sea rentable?",
     a: "Los nichos más rentables combinan tres factores: volumen de búsquedas suficiente, competencia moderada y alta intención de compra o interés publicitario. Nichos como hogar y jardín, mascotas, fitness, tecnología de consumo, juguetes o emprendimiento digital tienen buen rendimiento en España con AdSense y Amazon Associates. Analizamos el potencial del nicho antes de empezar para elegir la mejor oportunidad." },
   { q: "¿Puedo gestionar el blog yo mismo después del setup?",
-    a: "Sí. Desarrollamos el blog sobre WordPress con formación incluida para que puedas publicar artículos, actualizar productos de afiliados, revisar el rendimiento de AdSense y gestionar el blog de forma completamente autónoma. Si prefieres que lo gestionemos nosotros, tenemos un plan de mantenimiento mensual de 290€ que incluye 10 artículos SEO mensuales, actualización de productos de afiliados y informe de ingresos." },
+    a: "Sí. Desarrollamos el blog sobre WordPress con formación incluida para que puedas publicar artículos, actualizar productos de afiliados, revisar el rendimiento de AdSense y gestionar el blog de forma completamente autónoma. Si prefieres que lo gestionemos nosotros, tenemos un plan de mantenimiento mensual, con presupuesto a medida, que incluye 10 artículos SEO mensuales, actualización de productos de afiliados y informe de ingresos." },
 ];
 
 const faqSchema = {
@@ -70,7 +62,7 @@ export default function BlogMonetizacionPage() {
               Blog para Monetización: crea un activo digital que genera ingresos mientras duermes
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
-              Creamos tu blog de nicho optimizado para generar ingresos pasivos con Google AdSense y marketing de afiliados. Setup completo desde 990€ con 15 artículos SEO, configuración de monetización y formación para que lo gestiones de forma autónoma.
+              Creamos tu blog de nicho optimizado para generar ingresos pasivos con Google AdSense y marketing de afiliados. Setup completo con 15 artículos SEO, configuración de monetización y formación para que lo gestiones de forma autónoma. Presupuesto a medida tras un diagnóstico gratuito.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#contacto" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors text-center">
@@ -119,11 +111,11 @@ export default function BlogMonetizacionPage() {
           </p>
         </section>
 
-        {/* Setup 990 */}
+        {/* Setup */}
         <section className="mb-16 bg-primary-50 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-primary-600 mb-6">Qué incluye el setup de 990€</h2>
+          <h2 className="text-2xl font-bold text-primary-600 mb-6">Qué incluye el setup</h2>
           <p className="text-gray-700 leading-relaxed">
-            El setup de 990€ incluye todo lo necesario para tener un blog de monetización operativo y con los primeros artículos publicados: elección del nicho y validación del potencial de ingresos, registro del dominio y contratación del hosting del primer año, instalación y configuración de WordPress con tema optimizado para velocidad y SEO, configuración de Google AdSense y Amazon Associates, investigación de keywords y arquitectura de contenido para los primeros 6 meses, redacción y publicación de 15 artículos SEO iniciales (entre 800 y 1.200 palabras cada uno), y una sesión de formación de 2 horas para gestión autónoma del blog.
+            El setup incluye todo lo necesario para tener un blog de monetización operativo y con los primeros artículos publicados: elección del nicho y validación del potencial de ingresos, registro del dominio y contratación del hosting del primer año, instalación y configuración de WordPress con tema optimizado para velocidad y SEO, configuración de Google AdSense y Amazon Associates, investigación de keywords y arquitectura de contenido para los primeros 6 meses, redacción y publicación de 15 artículos SEO iniciales (entre 800 y 1.200 palabras cada uno), y una sesión de formación de 2 horas para gestión autónoma del blog.
           </p>
         </section>
 
@@ -131,7 +123,7 @@ export default function BlogMonetizacionPage() {
         <section className="mb-16">
           <h2 className="text-2xl font-bold text-primary-600 mb-6">Plan de mantenimiento mensual</h2>
           <p className="text-gray-700 leading-relaxed">
-            Si prefieres que gestionemos el crecimiento del blog, el plan de mantenimiento mensual de 290€/mes incluye: 10 artículos SEO nuevos cada mes (800-1.200 palabras, optimizados para keywords de alto potencial), actualización y optimización de artículos de afiliados existentes (precios actualizados, nuevos productos, mejora de CTR), revisión del rendimiento de AdSense y ajuste de posición de anuncios, e informe mensual de tráfico, ingresos y próximas acciones. El mantenimiento es opcional — el blog queda en tus manos tras el setup — pero acelera significativamente el crecimiento.
+            Si prefieres que gestionemos el crecimiento del blog, el plan de mantenimiento mensual (presupuesto a medida) incluye: 10 artículos SEO nuevos cada mes (800-1.200 palabras, optimizados para keywords de alto potencial), actualización y optimización de artículos de afiliados existentes (precios actualizados, nuevos productos, mejora de CTR), revisión del rendimiento de AdSense y ajuste de posición de anuncios, e informe mensual de tráfico, ingresos y próximas acciones. El mantenimiento es opcional — el blog queda en tus manos tras el setup — pero acelera significativamente el crecimiento.
           </p>
         </section>
 

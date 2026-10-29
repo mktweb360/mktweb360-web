@@ -125,14 +125,14 @@ export default function EcommerceParticipacionPage() {
               {
                 num: "01",
                 title: "Setup fijo",
-                price: "1.500€ – 2.500€",
+                price: "Presupuesto a medida",
                 desc: "Diseño y desarrollo de la tienda online, configuración de campañas, analítica y toda la infraestructura inicial.",
                 items: ["Tienda online profesional", "Google Ads configurado", "SEO técnico inicial", "Analítica y tracking"],
               },
               {
                 num: "02",
                 title: "Gestión mensual",
-                price: "300€ – 500€/mes",
+                price: "Presupuesto a medida",
                 desc: "Gestión continua de campañas, SEO y optimización. Garantiza la sostenibilidad del servicio sin depender solo del éxito.",
                 items: ["Gestión Google Ads", "SEO mensual", "Informes de resultados", "Optimización continua"],
               },
@@ -243,7 +243,7 @@ export default function EcommerceParticipacionPage() {
             {[
               {
                 q: "¿Cómo se define el bonus de resultados?",
-                a: "Lo acordamos antes de empezar basándonos en los datos reales de tu negocio: ticket medio, margen bruto y objetivo de ventas mensual. El bonus se activa cuando las ventas superan un umbral definido conjuntamente — por ejemplo, el 10% de las ventas por encima de 15.000€/mes. Los términos exactos se recogen en el contrato antes de empezar.",
+                a: "Lo acordamos antes de empezar basándonos en los datos reales de tu negocio: ticket medio, margen bruto y objetivo de ventas mensual. El bonus se activa cuando las ventas superan un umbral definido conjuntamente, con un porcentaje sobre las ventas por encima de ese umbral. Los términos exactos se recogen en el contrato antes de empezar.",
               },
               {
                 q: "¿Qué pasa si los resultados no llegan?",

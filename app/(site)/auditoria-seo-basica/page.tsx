@@ -317,7 +317,7 @@ export default function Page() {
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Quieres una segunda opinión sobre tu web?</p>
             <p className="text-gray-600 text-sm mb-4">
-              Nuestro diagnóstico gratuito revisa el estado técnico, tu visibilidad en Google y en asistentes de IA, tu ficha de Google y tres oportunidades de búsqueda. Lo recibes por correo en un máximo de 24 horas laborables, sin compromiso. Si después quieres que nos encarguemos, tienes los <Link href="/precios-seo/" className="text-accent-500 hover:underline">planes y precios SEO</Link> publicados. Si lo que necesitas es una revisión a fondo con un plan priorizado que ejecute tu equipo, eso es la <Link href="/consultor-seo/" className="text-accent-500 hover:underline">consultoría SEO</Link>.
+              Nuestro diagnóstico gratuito revisa el estado técnico, tu visibilidad en Google y en asistentes de IA, tu ficha de Google y tres oportunidades de búsqueda. Lo recibes por correo en un máximo de 24 horas laborables, sin compromiso. Si después quieres que nos encarguemos, te preparamos un presupuesto a medida; en <Link href="/precios-seo/" className="text-accent-500 hover:underline">cuánto cuesta el SEO</Link> explicamos qué lo hace variar. Si lo que necesitas es una revisión a fondo con un plan priorizado que ejecute tu equipo, eso es la <Link href="/consultor-seo/" className="text-accent-500 hover:underline">consultoría SEO</Link>.
             </p>
             <Link href="/auditoria-digital/" className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
               Pedir el diagnóstico gratuito
@@ -350,7 +350,7 @@ export default function Page() {
           </ol>
 
           <p className="text-sm text-gray-500 pt-4">
-            Servicios relacionados: <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">Auditoría SEO gratuita</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Precios SEO</Link> · <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">Posicionamiento en IA (GEO)</Link>
+            Servicios relacionados: <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">Auditoría SEO gratuita</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Cuánto cuesta el SEO</Link> · <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">Posicionamiento en IA (GEO)</Link>
           </p>
         </div>
 

@@ -103,6 +103,11 @@ export function isPriceQuestion(text: string): boolean {
   return RX_PRICE_CONTEXT.test(normalize(text));
 }
 
+/** Pregunta de precio inequívoca (más estricta que isPriceQuestion: «¿cuánto tarda?» o «combien de temps» no cuentan). */
+const RX_PRECIO_FUERTE = /\b(precios?|cuestan?|cuesta|coste|costo|tarifas?|presupuesto|price|prices|cost|how much|prix|combien (co[uû]te|ça co[uû]te)|tarifs?)\b|cu[aá]nto (cuesta|cobr[\wáéíóú]+|vale|sale|me cuesta|me sale|ser[ií]a|es)\b|\b(importe|cuota|fee|honorarios)\b/i;
+const RX_NO_PRECIO = /cu[aá]nto tiempo|cu[aá]nto tarda|how long|how much time|combien de temps/i;
+export const esPreguntaDePrecio = (text: string) => RX_PRECIO_FUERTE.test(text) && !RX_NO_PRECIO.test(text);
+
 // ── Búsqueda en la base de conocimiento ──────────────────────────────────
 
 const STOP = new Set(
@@ -211,6 +216,18 @@ export function amounts(text: string): number[] {
     const n = Number(v);
     if (Number.isFinite(n)) out.push(n);
   }
+  // «EUR 350» (símbolo delante).
+  const rxEur = /\beur\s?(\d{1,3}(?:[.\s]\d{3})*(?:,\d{1,2})?|\d+)/gi;
+  while ((m = rxEur.exec(text))) {
+    const n = Number(m[1].replace(/[.\s]/g, "").replace(",", "."));
+    if (Number.isFinite(n)) out.push(n);
+  }
+  // Rangos «300-349 €», «300 a 349 euros»: también cuenta el primer número.
+  const rxRango = /(\d{1,3}(?:[.\s]\d{3})*(?:,\d{1,2})?|\d+)\s?(?:-|–|—|a|y|to|and|à)\s?(?:\d{1,3}(?:[.\s]\d{3})*(?:,\d{1,2})?|\d+)\s?(?:€|euros?\b|eur\b)/gi;
+  while ((m = rxRango.exec(text))) {
+    const n = Number(m[1].replace(/[.\s]/g, "").replace(",", "."));
+    if (Number.isFinite(n)) out.push(n);
+  }
   return out;
 }
 
@@ -221,7 +238,10 @@ export function validateAiReply(reply: string, allowedAmounts: Set<number>): { o
     return { ok: false, reason: "filtra instrucciones" };
   if (/\b(garantiz\w*|te aseguro|aseguramos|primera posici[oó]n|primer puesto|primeros puestos|resultados garantizados|guarantee\w*|garanti\w*)\b/i.test(t))
     return { ok: false, reason: "promesa de resultados" };
-  if (/\$\s?\d|\d\s?(\$|usd|dolares)/i.test(reply)) return { ok: false, reason: "importe en dólares" };
+  if (/\$\s?\d|\d\s?(\$|usd|d[oó]lares)/i.test(reply)) return { ok: false, reason: "importe en dólares" };
+  // Importes escritos con letra o abreviados («mil euros», «trescientos euros», «1,5k €»): no se pueden validar, se descartan.
+  if (/\b(cien|ciento|doscientos|trescientos|cuatrocientos|quinientos|seiscientos|setecientos|ochocientos|novecientos|mil|cincuenta|sesenta|setenta|ochenta|noventa)\s+(\w+\s+)?(euros?|€)/i.test(reply) || /\d\s?k\s?(€|euros?)/i.test(reply))
+    return { ok: false, reason: "importe no verificable" };
   for (const a of amounts(reply)) if (!allowedAmounts.has(a)) return { ok: false, reason: `importe no autorizado (${a})` };
   return { ok: true };
 }

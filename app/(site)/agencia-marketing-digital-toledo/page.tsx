@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import { LocalServicePage, localServiceSchemas, type LocalServiceContent } from "@/components/LocalServicePage";
 import { alternatesFor } from "@/lib/i18n/routes";
-import { reemplazarPrecios } from "@/lib/planes-seo";
-import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 const URL = "https://www.mktweb360.com/agencia-marketing-digital-toledo/";
 
 export const metadata: Metadata = {
   title: "Agencia de marketing digital en Toledo",
-  description: "Agencia de marketing digital con sede en Toledo: SEO, Google Maps, IA, Google Ads, diseño web y redes para pymes y profesionales. Precios publicados.",
+  description: "Agencia de marketing digital con sede en Toledo: SEO, Google Maps, IA, Google Ads, diseño web y redes para pymes y profesionales. Diagnóstico gratuito y presupuesto sin compromiso.",
   alternates: alternatesFor("/agencia-marketing-digital-toledo/") ?? { canonical: URL },
   openGraph: { title: "Agencia de marketing digital en Toledo | Mkt Web 360", description: "Marketing digital para pymes y profesionales de Toledo, con sede en la provincia.", url: URL, images: [{ url: "/og-marketing-digital-toledo.jpg", width: 1200, height: 630 }] },
 };
@@ -22,7 +20,7 @@ const contenido: LocalServiceContent = {
   bullets: ["Un único responsable de tu cuenta", "Especialistas por área en cada fase del proyecto", "Google Ads sin comisión sobre tu inversión"],
   porQue: [
     { t: "Empezamos por el diagnóstico", d: "Antes de proponer acciones revisamos tu web, tu ficha de Google y tus datos. Así sabes qué corregir primero y qué no merece la pena hacer todavía." },
-    { t: "Precios claros", d: "Publicamos nuestras tarifas y lo que incluye cada una, con sus límites. Sin permanencia en los servicios mensuales." },
+    { t: "Presupuesto claro", d: "Tras un diagnóstico gratuito te damos un presupuesto por escrito, con lo que incluye y sus límites. Sin permanencia en los servicios mensuales." },
     { t: "Medimos lo que importa", d: "Contactos, llamadas y ventas, no solo visitas. Cada mes te enviamos un informe con lo hecho y los siguientes pasos." },
   ],
   queHacemosTitulo: "Servicios de marketing digital para negocios de Toledo",
@@ -35,9 +33,9 @@ const contenido: LocalServiceContent = {
     { t: "Auditoría gratuita", d: "Un diagnóstico SEO y de visibilidad en IA de tu web en tu correo.", href: "/auditoria-digital/", linkText: "Pedir auditoría gratuita" },
   ],
   precios: [
-    { nombre: "SEO + GEO + Google Business Profile", precio: "349 €/mes + IVA", detalle: "El paquete más completo para pymes con web de hasta 30 páginas.", href: "/oferta-seo-geo-gbp/" },
-    { nombre: "Web profesional", precio: "Desde 249 € + IVA", detalle: "Diseño a medida integrado en WordPress. Hosting, dominio y correo no incluidos.", href: "/oferta-web-seo-organico/" },
-    { nombre: "Calcula tu plan SEO", precio: "Desde 199 €/mes + IVA", detalle: "Planes según el tamaño de tu web, tus sedes y tus idiomas.", href: "/precios-seo/" },
+    { nombre: "SEO + GEO + Google Business Profile", precio: "Oferta: 349 €/mes + IVA", detalle: "El paquete más completo para pymes con web de hasta 30 páginas.", href: "/oferta-seo-geo-gbp/" },
+    { nombre: "Web profesional", precio: "Oferta: desde 249 € + IVA", detalle: "Diseño a medida integrado en WordPress. Hosting, dominio y correo no incluidos.", href: "/oferta-web-seo-organico/" },
+    { nombre: "Calcula el tamaño de tu proyecto SEO", precio: "Presupuesto a medida", detalle: "Según el tamaño de tu web, tus sedes y tus idiomas.", href: "/precios-seo/" },
   ],
   contexto: {
     titulo: "Cómo elegir agencia de marketing digital en Toledo",
@@ -50,7 +48,7 @@ const contenido: LocalServiceContent = {
   enlaces: [
     { href: "/agencia-seo-toledo/", text: "Agencia SEO en Toledo" },
     { href: "/diseno-web-toledo/", text: "Diseño web en Toledo" },
-    { href: "/precios-seo/", text: "Precios SEO" },
+    { href: "/precios-seo/", text: "Cuánto cuesta el SEO" },
   ],
   faqs: [
     { q: "¿Dónde está la agencia?", a: "Nuestra sede está en Calle Chopo 98, 45215 El Viso de San Juan (Toledo). Trabajamos con negocios de toda la provincia y del resto de España." },
@@ -66,10 +64,9 @@ const contenido: LocalServiceContent = {
   formType: "marketing-toledo",
 };
 
-export default async function AgenciaMarketingDigitalToledoPage() {
-  // Precios de los planes SEO: los vigentes en el catálogo de MktOS (los del texto son el respaldo).
-  const { precios } = await preciosPlanesSeo();
-  const c = JSON.parse(reemplazarPrecios(JSON.stringify(contenido), precios)) as LocalServiceContent;
+export default function AgenciaMarketingDigitalToledoPage() {
+  // Sin precios de servicios (decisión 25/10/2026): solo las ofertas vigentes muestran precio.
+  const c = contenido;
   return (
     <>
       {localServiceSchemas(c, "Marketing digital en Toledo").map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}

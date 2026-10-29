@@ -27,19 +27,6 @@ const serviceSchema = {
   description: "Diseño y desarrollo de páginas web corporativas profesionales para empresas. Web optimizada para SEO, captación de leads y conversión.",
   areaServed: "España",
   url: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/",
-  offers: {
-    "@type": "Offer",
-    price: "249",
-    priceCurrency: "EUR",
-    priceSpecification: {
-      "@type": "UnitPriceSpecification",
-      price: "249",
-      priceCurrency: "EUR",
-      description: "Precio desde 249€ + IVA para web corporativa profesional con diseño a medida y SEO técnico de base",
-    },
-    availability: "https://schema.org/InStock",
-    url: "https://www.mktweb360.com/diseno-de-paginas-web/paginas-corporativas/",
-  },
 };
 
 const FAQS = [

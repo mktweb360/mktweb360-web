@@ -13,7 +13,7 @@ export function HostingBanner() {
           <span className="text-2xl shrink-0">🌐</span>
           <div>
             <p className="font-semibold text-primary-600 text-sm">¿Necesitas hosting y dominio?</p>
-            <p className="text-gray-500 text-xs mt-0.5">Hosting profesional + dominio .com + correos corporativos desde <strong>49€ el primer año</strong>.</p>
+            <p className="text-gray-500 text-xs mt-0.5">Hosting profesional + dominio .com + correos corporativos. <strong>Te preparamos el presupuesto a medida.</strong></p>
           </div>
         </div>
         <button
@@ -84,7 +84,7 @@ export function HostingBanner() {
             {/* Price + CTA */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
-                <p className="text-3xl font-bold text-accent-500">49€<span className="text-base font-normal text-gray-400"> / primer año</span></p>
+                <p className="text-xl font-bold text-accent-500">Presupuesto a medida</p>
                 <p className="text-xs text-gray-400 mt-0.5">Dominio .com + hosting profesional incluidos</p>
               </div>
               <Link

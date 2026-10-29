@@ -20,7 +20,7 @@ const DESC =
   "SEO, GEO y ficha de Google Business Profile en un solo servicio: desde 149 €/mes + IVA con 6 meses de permanencia, o 349 €/mes sin permanencia.";
 
 const METADATA: Metadata = {
-  title: "SEO, GEO y ficha de Google desde 149 €/mes",
+  title: "SEO, GEO y ficha de Google: oferta desde 149 €/mes",
   description: DESC,
   alternates: { canonical: URL },
   robots: { index: true, follow: true },

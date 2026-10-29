@@ -6,14 +6,15 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
-import { planesSeo, type PlanSeo } from "@/lib/planes-seo";
-import { preciosPlanesSeo } from "@/lib/precios-planes";
+import { planesSeo, precioTexto, type PlanSeo } from "@/lib/planes-seo";
+import { PRECIO_SEO_GEO_MAPS_PERMANENCIA_6M as P6, PRECIO_SEO_GEO_MAPS_SIN_PERMANENCIA as P349 } from "@/lib/ofertas";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 // 28/10/2026 — tema 2 de la propuesta de blog del 27/10, aprobado por José.
 // Borrador y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 BORRADOR — Tema 2 SEO para pymes».
-// Los precios NO se escriben a mano: salen del catálogo de MktOS (preciosPlanesSeo) como en /precios-seo/.
+// 29/10/2026 — sin precios de servicios (decisión de José del 25/10): los planes se muestran como tamaños de proyecto
+// con presupuesto a medida; solo se cita la oferta SEO + GEO + Google Business Profile, con sus cifras de lib/ofertas.ts.
 
 const SLUG = "seo-para-pymes-guia";
 const URL = `https://www.mktweb360.com/${SLUG}/`;
@@ -47,7 +48,7 @@ const PARA_QUIEN: Record<string, string> = {
   "ecommerce-m": "Tiendas medianas (hasta 5.000 productos)",
 };
 
-function faqs(min: number, max: number) {
+function faqs() {
   return [
     {
       q: "¿Merece la pena el SEO para una pyme pequeña?",
@@ -59,7 +60,7 @@ function faqs(min: number, max: number) {
     },
     {
       q: "¿Cuánto cuesta el SEO para una pyme?",
-      a: `En nuestros planes publicados sin permanencia, entre ${min} y ${max} € al mes sin IVA, según el tamaño de la web, el número de fichas de Google y el contenido mensual. Las tiendas con más de 5.000 productos o varios idiomas van a presupuesto.`,
+      a: `No publicamos tarifas de servicios: preparamos un presupuesto a medida tras un diagnóstico gratuito, según el tamaño de la web, el número de fichas de Google y el contenido mensual. La única cifra publicada es la de la oferta vigente SEO + GEO + Google Business Profile, para webs de hasta 30 páginas: ${P349} €/mes + IVA sin permanencia, o ${P6} €/mes + IVA con 6 meses de permanencia.`,
     },
     {
       q: "¿Qué diferencia hay entre SEO local y SEO para pymes?",
@@ -156,13 +157,9 @@ function Lista({ items, numerada = false }: { items: ReactNode[]; numerada?: boo
 }
 
 export default async function SeoParaPymesPage() {
-  const { precios } = await preciosPlanesSeo();
-  const planes = planesSeo("es", precios);
-  const tabla = ORDEN.map((id) => planes.find((p) => p.id === id)).filter((p): p is PlanSeo => !!p && p.precio !== null);
-  const importes = tabla.map((p) => p.precio as number);
-  const min = Math.min(...importes);
-  const max = Math.max(...importes);
-  const FAQS = faqs(min, max);
+  const planes = planesSeo("es");
+  const tabla = ORDEN.map((id) => planes.find((p) => p.id === id)).filter((p): p is PlanSeo => !!p);
+  const FAQS = faqs();
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -192,7 +189,7 @@ export default async function SeoParaPymesPage() {
     <><strong>El punto de partida importa:</strong> según el INE (22/10/2026), solo el 36,2 % de las empresas españolas de menos de 10 empleados tiene web, frente al 82,9 % de las de 10 o más.</>,
     <><strong>Hay tareas que puedes hacer tú,</strong> como dar de alta Search Console, completar la ficha de Google o reescribir tus páginas de servicio.</>,
     <><strong>Conviene delegar</strong> lo técnico, la estrategia de palabras clave y el seguimiento mensual.</>,
-    <><strong>Precio:</strong> en nuestros planes publicados va de {min} a {max} € al mes sin IVA, según el tamaño de la web.</>,
+    <><strong>Precio:</strong> presupuesto a medida tras un diagnóstico gratuito, según el tamaño de la web. La oferta SEO + GEO + Google Business Profile tiene precio publicado: {P349} €/mes + IVA sin permanencia, o {P6} €/mes + IVA con 6 meses de permanencia.</>,
     <><strong>Plazos orientativos:</strong> 3-6 meses para los primeros resultados y 6-12 para consolidar. Nadie puede garantizarte un puesto.</>,
   ];
 
@@ -244,11 +241,11 @@ export default async function SeoParaPymesPage() {
 
           <h2 className="text-2xl font-bold text-primary-600">Cuánto cuesta el SEO para una pyme</h2>
           <p>
-            Depende del tamaño de la web, de cuántas fichas de Google tengas y de cuánto contenido haga falta. Estos son nuestros planes publicados, sin IVA y sin permanencia:
+            Depende del tamaño de la web, de cuántas fichas de Google tengas y de cuánto contenido haga falta. Estos son los tamaños de proyecto con los que trabajamos; cada uno se presupuesta a medida, sin permanencia en el servicio mensual:
           </p>
-          <Tabla cabecera={["Plan", "Para quién", "Precio al mes (sin IVA)"]} filas={tabla.map((p) => [p.nombre, PARA_QUIEN[p.id], `${p.precio} €`])} />
+          <Tabla cabecera={["Tamaño de proyecto", "Para quién", "Precio"]} filas={tabla.map((p) => [p.nombre, PARA_QUIEN[p.id], precioTexto(p, "es")])} />
           <p>
-            Qué incluye cada plan y sus límites está en <Link href="/precios-seo/" className="text-accent-500 hover:underline">precios SEO</Link>. Si quieres comparar con el mercado, revisa <Link href="/cuanto-cuesta-agencia-marketing-digital-espana-2026/" className="text-accent-500 hover:underline">cuánto cuesta una agencia de marketing digital en España</Link>.
+            Qué hace variar el precio de un proyecto SEO lo explicamos en <Link href="/precios-seo/" className="text-accent-500 hover:underline">cuánto cuesta el SEO</Link>; el nuestro es un presupuesto a medida tras un diagnóstico gratuito. Si quieres comparar con el mercado, revisa <Link href="/cuanto-cuesta-agencia-marketing-digital-espana-2026/" className="text-accent-500 hover:underline">cuánto cuesta una agencia de marketing digital en España</Link>.
           </p>
 
           <BlogBanner variant="seogeogbp" />
@@ -304,7 +301,7 @@ export default async function SeoParaPymesPage() {
           </ol>
 
           <p className="text-sm text-gray-500 pt-4">
-            Servicios relacionados: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Planes y precios SEO</Link> · <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO local</Link>
+            Servicios relacionados: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Cuánto cuesta el SEO</Link> · <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO local</Link>
           </p>
         </div>
 

@@ -17,7 +17,7 @@ const c: LocalServiceContent = {
   h1: "Diseño web en Toledo",
   h1Accent: "webs que cargan rápido y traen clientes",
   intro: "Diseñamos páginas web y tiendas online para negocios de Toledo desde nuestra sede en El Viso de San Juan. Webs pensadas para que el cliente entienda qué haces, confíe y te contacte, y preparadas para aparecer en Google desde el primer día.",
-  bullets: ["Precio cerrado y publicado", "SEO técnico y medición incluidos", "Agencia con sede en la provincia de Toledo"],
+  bullets: ["Ofertas con precio publicado", "SEO técnico y medición incluidos", "Agencia con sede en la provincia de Toledo"],
   porQue: [
     { t: "Una web es una herramienta de ventas", d: "No la valoramos por lo bonita que queda, sino por si genera contactos: mensajes claros, llamadas a la acción visibles y formularios que funcionan y se miden." },
     { t: "Rápida en el móvil", d: "La mayoría de tus clientes te buscará desde el móvil. Optimizamos imágenes, tipografías y código para que la web cargue rápido donde más importa." },

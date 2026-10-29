@@ -294,7 +294,7 @@ export default function CuantoTardaSeoPage() {
           </ol>
 
           <p className="text-sm text-gray-500 pt-4">
-            Servicios relacionados: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Planes y precios SEO</Link> · <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO local</Link>
+            Servicios relacionados: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Cuánto cuesta el SEO</Link> · <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO local</Link>
           </p>
         </div>
 

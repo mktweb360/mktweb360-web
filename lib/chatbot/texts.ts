@@ -66,14 +66,31 @@ export const TXT = {
     fr: ["Parfait. Laissez vos coordonnées et José vous prépare une proposition sans engagement."],
   } as T,
   mercado: {
-    es: ["Ojo: esas cifras son una referencia del mercado, no nuestras tarifas. Lo mejor es que te preparemos un presupuesto con tu caso: ¿te lo pido?"],
+    es: ["Ojo: esas cifras son una referencia del mercado, no una tarifa nuestra. Lo mejor es que te preparemos un presupuesto con tu caso: ¿te lo pido?"],
     en: ["Note: those figures are a market reference, not our rates. The best thing is a quote for your case: shall I request one?"],
     fr: ["Attention : ces chiffres sont une référence du marché, pas nos tarifs. Le mieux est un devis pour votre cas : je le demande ?"],
   } as T,
+  // Tras una respuesta que cita el precio de una OFERTA vigente.
   precioPropio: {
-    es: ["Los precios son sin IVA y pueden variar según el alcance. Para darte una cifra cerrada, lo mejor es un presupuesto con tu caso: ¿te lo preparamos?"],
-    en: ["Prices exclude VAT and may vary with scope. For a firm figure, a quote for your case is best: shall we prepare one?"],
-    fr: ["Les prix sont hors TVA et peuvent varier selon le périmètre. Pour un chiffre précis, le mieux est un devis : on vous le prépare ?"],
+    es: ["Ese es el precio de la oferta vigente (sin IVA, salvo que se indique). Para otro servicio o un caso más amplio preparamos un presupuesto a medida tras un diagnóstico gratuito: ¿te lo preparamos?"],
+    en: ["That is the price of the current offer (excluding VAT unless stated). For another service or a broader case we prepare a custom quote after a free diagnosis: shall we prepare one?"],
+    fr: ["C'est le prix de l'offre en cours (hors TVA sauf mention contraire). Pour un autre service ou un cas plus large, nous préparons un devis sur mesure après un diagnostic gratuit : on vous le prépare ?"],
+  } as T,
+  // Pregunta de precio de un servicio que no es una oferta: a medida + ofertas vigentes + dejar datos.
+  sinTarifas: {
+    es: ["No publicamos tarifas de servicios: el precio depende de tu caso y lo calculamos tras un diagnóstico gratuito."],
+    en: ["We do not publish service rates: the price depends on your case and we work it out after a free diagnosis."],
+    fr: ["Nous ne publions pas de tarifs de services : le prix dépend de votre cas et nous le calculons après un diagnostic gratuit."],
+  } as T,
+  ofertasIntro: {
+    es: ["Ahora mismo tenemos estas ofertas, con su precio:"],
+    en: ["We currently have these offers, with their price:"],
+    fr: ["Nous avons actuellement ces offres, avec leur prix :"],
+  } as T,
+  sinTarifasCierre: {
+    es: ["Si quieres, dejas tus datos y José te prepara un presupuesto a medida, sin compromiso: ¿te lo pido?"],
+    en: ["If you like, leave your details and José will prepare a no-obligation custom quote: shall I request one?"],
+    fr: ["Si vous le souhaitez, laissez vos coordonnées et José vous prépare un devis sur mesure sans engagement : je le demande ?"],
   } as T,
   negocio: {
     es: ["Perfecto, con eso ya podemos ayudarte. Lo que mejor suele funcionar es empezar por un diagnóstico de tu visibilidad en Google y en la IA, y a partir de ahí una propuesta a medida. ¿Te la preparamos, sin compromiso?", "Gracias por contármelo. Para decirte qué te conviene de verdad, lo mejor es que José vea tu caso y te prepare una propuesta. ¿Te la pido?"],
@@ -81,9 +98,9 @@ export const TXT = {
     fr: ["Parfait. Le mieux est de commencer par un diagnostic de votre visibilité sur Google et l'IA, puis une proposition sur mesure. On vous la prépare, sans engagement ?"],
   } as T,
   iva: {
-    es: ["Los precios que publicamos son sin IVA, salvo que se indique lo contrario; a los servicios se les suma el 21 %. Si quieres una cifra cerrada para tu caso, te preparamos un presupuesto: ¿te lo pido?"],
-    en: ["Our published prices exclude VAT unless stated otherwise; 21% Spanish VAT is added to services. For a firm figure for your case, we can prepare a quote: shall I request one?"],
-    fr: ["Nos prix publiés sont hors TVA, sauf mention contraire ; la TVA espagnole de 21 % s'ajoute aux services. Pour un chiffre précis, nous préparons un devis : je le demande ?"],
+    es: ["Los precios de nuestras ofertas se indican sin IVA; a los servicios se les suma el 21 %. Cada presupuesto a medida indica expresamente si lleva IVA. Si quieres una cifra para tu caso, te preparamos un presupuesto: ¿te lo pido?"],
+    en: ["The prices of our offers exclude VAT; 21% Spanish VAT is added to services. Each custom quote states expressly whether VAT is included. For a figure for your case, we can prepare a quote: shall I request one?"],
+    fr: ["Les prix de nos offres sont hors TVA ; la TVA espagnole de 21 % s'ajoute aux services. Chaque devis sur mesure indique expressément si la TVA est incluse. Pour un chiffre adapté à votre cas, nous préparons un devis : je le demande ?"],
   } as T,
   masInfo: {
     es: ["Más información:"],

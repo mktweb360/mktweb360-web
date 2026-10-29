@@ -35,8 +35,8 @@ const UI: Record<LocalLang, { home: string; homeHref: string; formTitle: string;
     formTitle: "Pide tu propuesta o tu auditoría gratuita",
     formSub: "Te respondemos por correo con el siguiente paso.",
     porQue: "Por qué trabajar con nosotros",
-    precios: "Precios",
-    preciosSub: "Los mismos precios publicados para toda España. Sin permanencia en los servicios mensuales.",
+    precios: "Servicios y ofertas",
+    preciosSub: "Presupuesto a medida tras un diagnóstico gratuito, igual para toda España. Las ofertas vigentes indican su precio. Sin permanencia en los servicios mensuales.",
     detalle: "Ver el detalle",
     faq: "Preguntas frecuentes",
     area: "Provincia de Toledo",
@@ -47,8 +47,8 @@ const UI: Record<LocalLang, { home: string; homeHref: string; formTitle: string;
     formTitle: "Request your proposal or your free audit",
     formSub: "We will reply by email with the next step.",
     porQue: "Why work with us",
-    precios: "Pricing",
-    preciosSub: "The same published prices for the whole of Spain. No minimum term on monthly services.",
+    precios: "Services and offers",
+    preciosSub: "Custom quote after a free diagnosis, the same for the whole of Spain. Current offers show their price. No minimum term on monthly services.",
     detalle: "See the details",
     faq: "Frequently asked questions",
     area: "Province of Toledo",
@@ -59,8 +59,8 @@ const UI: Record<LocalLang, { home: string; homeHref: string; formTitle: string;
     formTitle: "Demandez votre proposition ou votre audit gratuit",
     formSub: "Nous vous répondons par e-mail avec la prochaine étape.",
     porQue: "Pourquoi travailler avec nous",
-    precios: "Tarifs",
-    preciosSub: "Les mêmes tarifs publiés pour toute l'Espagne. Sans engagement sur les services mensuels.",
+    precios: "Services et offres",
+    preciosSub: "Devis sur mesure après un diagnostic gratuit, identique pour toute l'Espagne. Les offres en cours indiquent leur prix. Sans engagement sur les services mensuels.",
     detalle: "Voir le détail",
     faq: "Questions fréquentes",
     area: "Province de Tolède",
@@ -129,7 +129,7 @@ export function LocalServicePage({ c }: { c: LocalServiceContent }) {
             {c.precios.map((p) => (
               <div key={p.nombre} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col">
                 <h3 className="font-bold text-primary-700 mb-1">{p.nombre}</h3>
-                <p className="text-2xl font-bold text-accent-500 mb-2">{p.precio}</p>
+                <p className="text-lg font-bold text-accent-500 mb-2">{p.precio}</p>
                 <p className="text-sm text-gray-600 mb-4 flex-1">{p.detalle}</p>
                 {p.href && <Link href={p.href} className="text-accent-600 font-semibold text-sm hover:underline">{u.detalle} →</Link>}
               </div>

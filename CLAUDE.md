@@ -6,7 +6,7 @@ Responde y comenta siempre en español, en lenguaje claro.
 
 ## Antes de empezar
 
-- Lee el `HISTORIAL-mktweb360-web-v*.md` de número más alto (hoy v5; la v3 sigue vigente para arquitectura y reglas permanentes) y el `git log` reciente.
+- Lee el `HISTORIAL-mktweb360-web-v*.md` de número más alto (hoy v6; la v3 sigue vigente para arquitectura y reglas permanentes) y el `git log` reciente.
 - Si la tarea es una oferta, promoción, banner o landing con fecha de caducidad, usa la skill `gestion-campanas-temporales`: inventaría todo lo que hay que crear y luego retirar.
 
 ## Comandos
@@ -19,6 +19,7 @@ pnpm chatbot:kb           # regenera lib/chatbot/kb.json desde las FAQ aprobadas
 pnpm chatbot:check        # pruebas del asistente (deben salir todas correctas)
 pnpm validate-i18n        # coherencia de las versiones EN/FR
 pnpm check:seo -- 3430    # guarda SEO sobre el HTML servido (ver abajo)
+pnpm check:precios        # avisa si hay precios de servicios fuera de las ofertas (política del 25/10/2026)
 ```
 
 ## Guarda SEO antes de publicar (obligatoria)
@@ -46,7 +47,7 @@ pnpm run check:seo -- 3430 --sin-lang --ignorar ai-max-google-ads-que-es-como-co
 ## Reglas del contenido (y por qué)
 
 - **Nada inventado.** Ni cifras de clientes, ni testimonios, ni capacidades. Los testimonios solo si son reales y autorizados; las reseñas, las de Google. Un dato falso en la web es un problema legal y de confianza.
-- **Precios: el catálogo de MktOS manda** (`lib/catalogo.ts`, `lib/precios-planes.ts`). Precio exacto, sin IVA y sin «desde» si el precio es fijo. Si el catálogo no responde, la web usa sus datos de respaldo.
+- **Precios: solo en las OFERTAS** (decisión de José, 25/10/2026). La web, el asistente y toda la presencia digital NO muestran precios de servicios; solo llevan precio las ofertas vigentes, cuyas cifras viven en `lib/ofertas.ts` (SEO + GEO + Maps 349 €/mes sin permanencia o 149 €/mes ×6 con permanencia de 6 meses; Web profesional desde 249 € + IVA; Tienda online desde 490 €). Para cualquier otro servicio: «presupuesto a medida tras un diagnóstico gratuito». Las cifras de terceros y los rangos de mercado pueden quedar si se dice claramente que son referencia de mercado y no tarifa nuestra. No se usa precio tachado. `pnpm check:precios` avisa si reaparece una tarifa propia. El catálogo de MktOS (`lib/catalogo.ts`, `lib/precios-planes.ts`) ya no pinta precios en páginas que no sean de oferta ni alimenta al asistente.
 - **Plazos y resultados:** nunca prometer posiciones ni resultados garantizados. Los plazos orientativos deben ser coherentes entre páginas (unificados el 18/10: SEO 3-6 meses primeros resultados y 6-12 consolidación; Maps 1-2 meses).
 - **Equipo:** hoy hay un solo técnico. Nada de «equipo de expertos»; sí «criterio / experiencia senior».
 - **Captación nacional:** los materiales de captación no mencionan ciudad ni provincia. Las páginas de SEO local por ciudad son la excepción, porque su objetivo es posicionar esa ciudad.
@@ -69,6 +70,7 @@ Los hooks de `.claude/settings.json` bloquean los `.env`, pasan eslint a cada ar
 - Diseño completo en `docs/chatbot/DISENO-asistente-ia-v1.md`. Decisiones de las FAQ en `docs/chatbot/conocimiento/`.
 - Modelo `claude-haiku-5-5`, effort `low`, sin razonamiento extendido, caché del prompt. Topes de gasto: 1 €/día y 15 €/mes en el código, y 15 $/mes en el espacio de trabajo `chatbot-web` de la Console.
 - Responde primero con FAQ aprobadas; la IA solo cuando no hay FAQ directa, con validación de la salida (sin precios no autorizados, sin garantías, sin fugas del prompt).
+- Precios del asistente: solo los de las ofertas vigentes (`lib/ofertas.ts`). Ante «¿cuánto cuesta…?» responde «a medida tras diagnóstico gratuito» + ofertas con su precio + dejar datos. Ya no lee precios del catálogo de MktOS.
 - Solo atiende consultas sobre servicios de Mkt Web 360. Máximo 2 preguntas informativas por conversación.
 - Leads → webhook `web-lead` de MktOS (canal `web-chatbot`) + email a info@. «Lo antes posible» envía la oferta `llamada-urgente` (aviso destacado al móvil de José).
 - Cada cambio en el asistente: `pnpm chatbot:check` en verde; si cambian las FAQ, `pnpm chatbot:kb` antes.

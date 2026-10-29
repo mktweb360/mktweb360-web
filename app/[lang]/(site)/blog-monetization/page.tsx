@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       ? "Blog Monetisation: AdSense and Affiliates"
       : "Monétisation de blog : AdSense et affiliation",
     description: isEn
-      ? "Blog monetisation with AdSense and affiliates: we build your niche blog with 15 SEO articles, monetisation set-up and training, all from €990."
-      : "Monétisation de blog avec AdSense et l'affiliation : nous créons votre blog de niche avec 15 articles SEO, la configuration et une formation, dès 990 €.",
+      ? "Blog monetisation with AdSense and affiliates: we build your niche blog with 15 SEO articles, monetisation set-up and training. Tailored quote."
+      : "Monétisation de blog avec AdSense et l'affiliation : nous créons votre blog de niche avec 15 articles SEO, la configuration et une formation. Sur devis.",
     alternates: alternatesFor(`/${lang}/blog-monetization/`) ?? {
       canonical: `https://www.mktweb360.com/${lang}/blog-monetization/`,
     },
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "Monetisation Blog — Passive Income with AdSense and Affiliates | Mkt Web 360"
         : "Blog de Monétisation — Revenus Passifs avec AdSense et Affiliés | Mkt Web 360",
       description: isEn
-        ? "Blog monetisation with AdSense and affiliates: we build your niche blog with 15 SEO articles, monetisation set-up and training, all from €990."
-        : "Monétisation de blog avec AdSense et l'affiliation : nous créons votre blog de niche avec 15 articles SEO, la configuration et une formation, dès 990 €.",
+        ? "Blog monetisation with AdSense and affiliates: we build your niche blog with 15 SEO articles, monetisation set-up and training. Tailored quote."
+        : "Monétisation de blog avec AdSense et l'affiliation : nous créons votre blog de niche avec 15 articles SEO, la configuration et une formation. Sur devis.",
     },
   };
 }
@@ -47,16 +47,6 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       : "Création et optimisation de blogs de niche pour générer des revenus passifs via Google AdSense et le marketing d'affiliation. Setup complet avec stratégie SEO, contenu initial et formation.",
     areaServed: isEn ? "Spain" : "Espagne",
     url: `https://www.mktweb360.com/${lang}/blog-monetization/`,
-    offers: {
-      "@type": "Offer",
-      price: "990",
-      priceCurrency: "EUR",
-      description: isEn
-        ? "Complete blog monetisation setup from €990. Includes domain, hosting, WordPress, 15 SEO articles, AdSense and Amazon Associates configuration."
-        : "Setup complet de blog de monétisation à partir de 990€. Inclut domaine, hébergement, WordPress, 15 articles SEO, configuration AdSense et Amazon Associates.",
-      availability: "https://schema.org/InStock",
-      url: `https://www.mktweb360.com/${lang}/blog-monetization/`,
-    },
   };
 
   const breadcrumbSchema = {
@@ -80,7 +70,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           a: "The first earnings with AdSense usually appear between 4 and 8 months, when the blog starts accumulating organic traffic. To generate consistent and significant income, the typical horizon is 12 to 18 months. Well-focused niche blogs with affiliate marketing can shorten this timeframe if the niche has high purchase intent.",
         },
         {
-          q: "What is included in the €990 setup?",
+          q: "What is included in the setup?",
           a: "The setup includes: domain selection and registration, first-year hosting, WordPress installation and configuration with a theme optimised for SEO and speed, Google AdSense and Amazon Associates configuration, 15 initial SEO articles optimised for the highest-potential keywords in the niche, and a training session so you can manage the blog independently.",
         },
         {
@@ -89,7 +79,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         },
         {
           q: "Can I manage the blog myself after the setup?",
-          a: "Yes. We build the blog on WordPress with training included so you can publish articles, update affiliate products, review AdSense performance and manage the blog completely independently. If you prefer us to manage it, we have a monthly maintenance plan at €290 that includes 10 monthly SEO articles, affiliate product updates and an income report.",
+          a: "Yes. We build the blog on WordPress with training included so you can publish articles, update affiliate products, review AdSense performance and manage the blog completely independently. If you prefer us to manage it, we have a monthly maintenance plan (custom quote) that includes 10 monthly SEO articles, affiliate product updates and an income report.",
         },
       ]
     : [
@@ -98,7 +88,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           a: "Les premiers revenus avec AdSense apparaissent généralement entre 4 et 8 mois, quand le blog commence à accumuler du trafic organique. Pour générer des revenus constants et significatifs, l'horizon habituel est de 12 à 18 mois. Les blogs de niche bien ciblés avec le marketing d'affiliation peuvent raccourcir ce délai si le créneau a une forte intention d'achat.",
         },
         {
-          q: "Qu'est-ce qui est inclus dans le setup à 990€ ?",
+          q: "Qu'est-ce qui est inclus dans le setup ?",
           a: "Le setup comprend : choix et enregistrement du domaine, hébergement de la première année, installation et configuration de WordPress avec un thème optimisé pour le SEO et la vitesse, configuration de Google AdSense et Amazon Associates, 15 articles SEO initiaux optimisés pour les mots-clés à plus fort potentiel du créneau, et une session de formation pour que vous puissiez gérer le blog de manière autonome.",
         },
         {
@@ -107,7 +97,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         },
         {
           q: "Puis-je gérer le blog moi-même après le setup ?",
-          a: "Oui. Nous développons le blog sur WordPress avec une formation incluse pour que vous puissiez publier des articles, mettre à jour les produits d'affiliation, examiner les performances d'AdSense et gérer le blog de façon complètement autonome. Si vous préférez que nous le gérions, nous avons un plan de maintenance mensuel à 290€ qui comprend 10 articles SEO mensuels, la mise à jour des produits d'affiliation et un rapport de revenus.",
+          a: "Oui. Nous développons le blog sur WordPress avec une formation incluse pour que vous puissiez publier des articles, mettre à jour les produits d'affiliation, examiner les performances d'AdSense et gérer le blog de façon complètement autonome. Si vous préférez que nous le gérions, nous avons un plan de maintenance mensuel (sur devis) qui comprend 10 articles SEO mensuels, la mise à jour des produits d'affiliation et un rapport de revenus.",
         },
       ];
 
@@ -142,8 +132,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </h1>
             <p className="text-xl text-primary-200 mb-8 leading-relaxed">
               {isEn
-                ? "We build your niche blog optimised to generate passive income with Google AdSense and affiliate marketing. Complete setup from €990 with 15 SEO articles, monetisation configuration and training so you can manage it independently."
-                : "Nous créons votre blog de niche optimisé pour générer des revenus passifs avec Google AdSense et le marketing d'affiliation. Setup complet à partir de 990€ avec 15 articles SEO, configuration de la monétisation et formation pour que vous puissiez le gérer de façon autonome."}
+                ? "We build your niche blog optimised to generate passive income with Google AdSense and affiliate marketing. Complete setup with 15 SEO articles, monetisation configuration and training so you can manage it independently."
+                : "Nous créons votre blog de niche optimisé pour générer des revenus passifs avec Google AdSense et le marketing d'affiliation. Setup complet avec 15 articles SEO, configuration de la monétisation et formation pour que vous puissiez le gérer de façon autonome."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -226,12 +216,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         {/* Setup 990 */}
         <section className="mb-16 bg-primary-50 rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-primary-600 mb-6">
-            {isEn ? "What is included in the €990 setup" : "Ce qui est inclus dans le setup à 990€"}
+            {isEn ? "What is included in the setup" : "Ce qui est inclus dans le setup"}
           </h2>
           <p className="text-gray-700 leading-relaxed">
             {isEn
-              ? "The €990 setup includes everything you need to have an operational monetisation blog with the first articles published: niche selection and validation of income potential, domain registration and first-year hosting, WordPress installation and configuration with a theme optimised for speed and SEO, Google AdSense and Amazon Associates configuration, keyword research and content architecture for the first 6 months, writing and publishing of 15 initial SEO articles (between 800 and 1,200 words each), and a 2-hour training session for autonomous blog management."
-              : "Le setup à 990€ comprend tout le nécessaire pour avoir un blog de monétisation opérationnel avec les premiers articles publiés : choix du créneau et validation du potentiel de revenus, enregistrement du domaine et hébergement de la première année, installation et configuration de WordPress avec un thème optimisé pour la vitesse et le SEO, configuration de Google AdSense et Amazon Associates, recherche de mots-clés et architecture de contenu pour les 6 premiers mois, rédaction et publication de 15 articles SEO initiaux (entre 800 et 1 200 mots chacun), et une session de formation de 2 heures pour la gestion autonome du blog."}
+              ? "The setup includes everything you need to have an operational monetisation blog with the first articles published: niche selection and validation of income potential, domain registration and first-year hosting, WordPress installation and configuration with a theme optimised for speed and SEO, Google AdSense and Amazon Associates configuration, keyword research and content architecture for the first 6 months, writing and publishing of 15 initial SEO articles (between 800 and 1,200 words each), and a 2-hour training session for autonomous blog management."
+              : "Le setup comprend tout le nécessaire pour avoir un blog de monétisation opérationnel avec les premiers articles publiés : choix du créneau et validation du potentiel de revenus, enregistrement du domaine et hébergement de la première année, installation et configuration de WordPress avec un thème optimisé pour la vitesse et le SEO, configuration de Google AdSense et Amazon Associates, recherche de mots-clés et architecture de contenu pour les 6 premiers mois, rédaction et publication de 15 articles SEO initiaux (entre 800 et 1 200 mots chacun), et une session de formation de 2 heures pour la gestion autonome du blog."}
           </p>
         </section>
 
@@ -242,8 +232,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-gray-700 leading-relaxed">
             {isEn
-              ? "If you prefer us to manage the blog's growth, the monthly maintenance plan at €290/month includes: 10 new SEO articles every month (800–1,200 words, optimised for high-potential keywords), update and optimisation of existing affiliate articles (updated prices, new products, improved CTR), review of AdSense performance and adjustment of ad positions, and a monthly report on traffic, income and next actions. Maintenance is optional — the blog is yours after setup — but it significantly accelerates growth."
-              : "Si vous préférez que nous gérions la croissance du blog, le plan de maintenance mensuel à 290€/mois comprend : 10 nouveaux articles SEO chaque mois (800 à 1 200 mots, optimisés pour les mots-clés à fort potentiel), mise à jour et optimisation des articles d'affiliation existants (prix mis à jour, nouveaux produits, amélioration du CTR), révision des performances AdSense et ajustement de la position des annonces, et un rapport mensuel sur le trafic, les revenus et les prochaines actions. La maintenance est facultative — le blog reste entre vos mains après le setup — mais elle accélère significativement la croissance."}
+              ? "If you prefer us to manage the blog's growth, the monthly maintenance plan (custom quote) includes: 10 new SEO articles every month (800–1,200 words, optimised for high-potential keywords), update and optimisation of existing affiliate articles (updated prices, new products, improved CTR), review of AdSense performance and adjustment of ad positions, and a monthly report on traffic, income and next actions. Maintenance is optional — the blog is yours after setup — but it significantly accelerates growth."
+              : "Si vous préférez que nous gérions la croissance du blog, le plan de maintenance mensuel (sur devis) comprend : 10 nouveaux articles SEO chaque mois (800 à 1 200 mots, optimisés pour les mots-clés à fort potentiel), mise à jour et optimisation des articles d'affiliation existants (prix mis à jour, nouveaux produits, amélioration du CTR), révision des performances AdSense et ajustement de la position des annonces, et un rapport mensuel sur le trafic, les revenus et les prochaines actions. La maintenance est facultative — le blog reste entre vos mains après le setup — mais elle accélère significativement la croissance."}
           </p>
         </section>
 
