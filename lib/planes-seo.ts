@@ -16,7 +16,7 @@
 // se traducen en PLAN_TEXT / EXTRAS / CONDICIONES / NOTAS. La salida ES es idéntica a la anterior.
 
 import { ROUTES, urlFor } from "@/lib/i18n/routes";
-import { PRECIO_SEO_GEO_MAPS_PERMANENCIA_6M, PRECIO_SEO_GEO_MAPS_SIN_PERMANENCIA } from "@/lib/ofertas";
+import { PRECIO_SEO_GEO_MAPS_SIN_PERMANENCIA } from "@/lib/ofertas";
 
 export type PlanLang = "es" | "en" | "fr";
 export type PlanId = "local" | "pyme" | "crecimiento" | "ecommerce-s" | "ecommerce-m" | "ecommerce-l";
@@ -326,27 +326,12 @@ export const PLAN_EN_CATALOGO: Record<PlanId, { servicio: string; modalidad: str
   "ecommerce-l": { servicio: "mw360-seo-planes", modalidad: "ecommerce-l-a-medida" },
 };
 
-// Opción con permanencia de 6 meses del plan «pyme» (SEO + GEO + GBP): 149 €/mes + IVA los 6 primeros meses,
-// después la tarifa vigente sin permanencia. Penalización por baja anticipada: 50 % de las mensualidades restantes.
-// Decidido por Manué el 20-oct-2026. No está (aún) en el catálogo de MktOS: se mantiene aquí. Ver CAMPAÑA-ofertas-web-y-seo-2026-10-20.md.
-export const PRECIO_PYME_PERMANENCIA_6M = PRECIO_SEO_GEO_MAPS_PERMANENCIA_6M;
+// El precio de la oferta SEO + GEO + GBP (sin permanencia y con 6 meses) se lee SIEMPRE con preciosOfertaSeo()
+// (lib/precios-planes.ts): catálogo de MktOS con respaldo en lib/ofertas.ts. Penalización por baja anticipada con
+// permanencia: 50 % de las mensualidades restantes (Manué, 20-oct-2026).
 
 export function precioLocal(id: PlanId): number | null {
   return BASE.find((b) => b.id === id)!.precio;
-}
-
-// Para textos traducidos que citan precios («from €199/month», «dès 199 €/mois»): cambia el precio de la web
-// por el vigente de MktOS. Solo toca cifras pegadas al símbolo € y solo de los planes cuyo precio ha cambiado.
-export function reemplazarPrecios(texto: string, precios?: PreciosPlanes | null): string {
-  if (!precios) return texto;
-  const cambios = BASE.filter((b) => b.precio != null && precios[b.id] != null && precios[b.id] !== b.precio);
-  let out = texto;
-  // Dos pasadas con marcas para que un precio nuevo no se confunda con el precio antiguo de otro plan.
-  for (const b of cambios) {
-    out = out.replace(new RegExp(`€${b.precio}(?![\\d.,])`, "g"), `€\u0000${b.id}\u0000`).replace(new RegExp(`(?<![\\d.,])${b.precio}(\\s?€)`, "g"), `\u0000${b.id}\u0000$1`);
-  }
-  for (const b of cambios) out = out.split(`\u0000${b.id}\u0000`).join(String(precios[b.id]));
-  return out;
 }
 
 function conPrecios(planes: PlanSeo[], precios?: PreciosPlanes | null): PlanSeo[] {

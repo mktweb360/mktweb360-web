@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { preciosEnDatos } from "@/lib/ofertas";
+import { preciosOfertaSeo } from "@/lib/precios-planes";
 
 interface BlogBannerProps {
   variant?: "seo" | "ecommerce" | "geo" | "seogeogbp" | "default";
@@ -155,7 +157,9 @@ const BANNERS_FR: BannerVariants = {
   },
 };
 
-export function BlogBanner({ variant = "default", lang, badge, title, desc, cta, href, secondary }: BlogBannerProps) {
+// Componente de servidor. Las cifras de la oferta SEO de los banners son las de respaldo y se cambian por las
+// vigentes (preciosOfertaSeo, fuente única) solo cuando el banner muestra precio.
+export async function BlogBanner({ variant = "default", lang, badge, title, desc, cta, href, secondary }: BlogBannerProps) {
   const banners = lang === "en" ? BANNERS_EN : lang === "fr" ? BANNERS_FR : BANNERS_ES;
   const base = banners[variant] ?? banners.seo;
   const custom = Boolean(title || desc || href);
@@ -166,7 +170,7 @@ export function BlogBanner({ variant = "default", lang, badge, title, desc, cta,
     cta: cta ?? base.cta,
     href: href ?? base.href,
     // Con textos propios no se arrastra el precio de la variante: el banner deja de hablar de esa oferta.
-    price: custom ? undefined : base.price,
+    price: custom || !base.price ? undefined : preciosEnDatos(base.price, await preciosOfertaSeo()),
     secondary: secondary === null ? undefined : secondary ?? base.secondary,
   };
   return (

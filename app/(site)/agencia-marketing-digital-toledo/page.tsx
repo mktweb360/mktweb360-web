@@ -1,3 +1,5 @@
+import { preciosEnDatos } from "@/lib/ofertas";
+import { preciosOfertaSeo } from "@/lib/precios-planes";
 import type { Metadata } from "next";
 import { LocalServicePage, localServiceSchemas, type LocalServiceContent } from "@/components/LocalServicePage";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -64,9 +66,10 @@ const contenido: LocalServiceContent = {
   formType: "marketing-toledo",
 };
 
-export default function AgenciaMarketingDigitalToledoPage() {
+export default async function AgenciaMarketingDigitalToledoPage() {
   // Sin precios de servicios (decisión 25/10/2026): solo las ofertas vigentes muestran precio.
-  const c = contenido;
+  // Precio de la oferta SEO: el vigente (preciosOfertaSeo, fuente única); el texto lleva el de respaldo.
+  const c = preciosEnDatos(contenido, await preciosOfertaSeo());
   return (
     <>
       {localServiceSchemas(c, "Marketing digital en Toledo").map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}

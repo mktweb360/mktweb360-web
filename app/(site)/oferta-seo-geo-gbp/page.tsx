@@ -2,19 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
-import { precioLocal, reemplazarPrecios } from "@/lib/planes-seo";
-import { preciosPlanesSeo } from "@/lib/precios-planes";
-import { PRECIO_PYME_PERMANENCIA_6M } from "@/lib/planes-seo";
+import { preciosOfertaSeo } from "@/lib/precios-planes";
+import { PRECIOS_OFERTA_SEO_RESPALDO, preciosEnTexto } from "@/lib/ofertas";
 
 // Oferta permanente (sin fecha de fin ni plazas), relanzada el 2-oct-2026.
 // Inventario: CAMPAÑA-oferta-seo-geo-gbp-2026-10-02-v2.md y CAMPAÑA-ofertas-web-y-seo-2026-10-20.md (Drive, Sistema Operativo).
 const URL = "https://www.mktweb360.com/oferta-seo-geo-gbp/";
-// Precio vigente: el del plan «pyme» en el catálogo de MktOS (lib/precios-planes.ts); 349 es el respaldo.
-const PRICE = String(precioLocal("pyme"));
+// Precio vigente: preciosOfertaSeo() (catálogo de MktOS con respaldo en lib/ofertas.ts), la fuente única que usan
+// también las demás páginas y el asistente. Los textos de aquí se escriben con las cifras de respaldo y
+// preciosEnTexto() las cambia por las vigentes (también en metadatos, imagen OG y JSON-LD).
+const PRICE = String(PRECIOS_OFERTA_SEO_RESPALDO.sinPermanencia);
+const PRICE_6M = String(PRECIOS_OFERTA_SEO_RESPALDO.permanencia6m);
 async function vigente() {
-  const { precios } = await preciosPlanesSeo();
-  const P = String(precios.pyme ?? PRICE);
-  return { P, R: (t: string) => reemplazarPrecios(t, precios) };
+  const p = await preciosOfertaSeo();
+  return { p, P: String(p.sinPermanencia), PERM: String(p.permanencia6m), R: (t: string) => preciosEnTexto(t, p) };
 }
 const DESC =
   "SEO, GEO y ficha de Google Business Profile en un solo servicio: desde 149 €/mes + IVA con 6 meses de permanencia, o 349 €/mes sin permanencia.";
@@ -39,10 +40,9 @@ const METADATA: Metadata = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { P, R } = await vigente();
-  // La imagen OG lleva el precio codificado en la URL: se cambia aparte.
-  const json = R(JSON.stringify(METADATA)).split(encodeURIComponent(`${PRICE} €`)).join(encodeURIComponent(`${P} €`));
-  return JSON.parse(json);
+  const { R } = await vigente();
+  // preciosEnTexto también cambia el precio codificado en la URL de la imagen OG.
+  return JSON.parse(R(JSON.stringify(METADATA)));
 }
 
 const INCLUYE = [
@@ -172,13 +172,13 @@ const schema = {
     {
       "@type": "Offer",
       name: "SEO + GEO + Google Business Profile con 6 meses de permanencia",
-      price: String(PRECIO_PYME_PERMANENCIA_6M),
+      price: PRICE_6M,
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
       url: URL,
       priceSpecification: {
         "@type": "UnitPriceSpecification",
-        price: String(PRECIO_PYME_PERMANENCIA_6M),
+        price: PRICE_6M,
         priceCurrency: "EUR",
         unitCode: "MON",
         billingDuration: 6,
@@ -193,11 +193,10 @@ const schema = {
 };
 
 export default async function OfertaSeoGeoGbpPage() {
-  const { P, R } = await vigente();
-  const PERM = String(PRECIO_PYME_PERMANENCIA_6M);
-  const EJEMPLO = PRECIO_PYME_PERMANENCIA_6M * 3 * 0.5; // si quedan 3 meses: 50 % de 3 × 149 €
+  const { p, P, PERM, R } = await vigente();
+  const EJEMPLO = p.permanencia6m * 3 * 0.5; // si quedan 3 meses: 50 % de 3 mensualidades con permanencia
   const faqs = FAQS.map((f) => ({ q: R(f.q), a: R(f.a) }));
-  const ld = R(JSON.stringify(schema)).split(`"price":"${PRICE}"`).join(`"price":"${P}"`);
+  const ld = R(JSON.stringify(schema));
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />

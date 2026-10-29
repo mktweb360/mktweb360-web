@@ -6,7 +6,8 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, ROUTES, urlFor } from "@/lib/i18n/routes";
 import { planesSeo, precioTexto, type PlanSeo } from "@/lib/planes-seo";
-import { PRECIO_SEO_GEO_MAPS_PERMANENCIA_6M as P6, PRECIO_SEO_GEO_MAPS_SIN_PERMANENCIA as P349 } from "@/lib/ofertas";
+import type { PreciosOfertaSeo } from "@/lib/ofertas";
+import { preciosOfertaSeo } from "@/lib/precios-planes"; // precio de la oferta SEO: fuente única (MktOS con respaldo en lib/ofertas.ts)
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
@@ -49,7 +50,7 @@ const TXT = {
   },
 } as const;
 
-function faqs(lang: L) {
+function faqs(lang: L, { sinPermanencia: P349, permanencia6m: P6 }: PreciosOfertaSeo) {
   return lang === "en"
     ? [
         { q: "Is SEO worth it for a small business?", a: "It is usually worth it when people are searching for what you sell and you can keep the work going for at least 6-12 months. If you need clients next week, Google Ads delivers results sooner, and the two can be combined." },
@@ -127,9 +128,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const t = TXT[lang];
   const url = `https://www.mktweb360.com/${lang}/${SLUG[lang]}/`;
 
+  const po = await preciosOfertaSeo();
+  const { sinPermanencia: P349, permanencia6m: P6 } = po;
   const planes = planesSeo(lang);
   const tabla = ORDEN.map((id) => planes.find((p) => p.id === id)).filter((p): p is PlanSeo => !!p);
-  const FAQS = faqs(lang);
+  const FAQS = faqs(lang, po);
 
   const articleSchema = {
     "@context": "https://schema.org",

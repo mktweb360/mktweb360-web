@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { getVisiblePosts } from "@/lib/blog";
 import { OfertasSlider } from "@/components/OfertasSlider";
+import { PRECIOS_OFERTA_SEO_RESPALDO } from "@/lib/ofertas";
+import { preciosOfertaSeo } from "@/lib/precios-planes";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogCarousel } from "@/components/BlogCarousel";
 import { HeroSlider, ServicesTab, TestimonialsCarousel } from "@/components/HomeInteractive";
@@ -44,7 +46,9 @@ const faqSchema = {
   })),
 };
 
-export default function HomeClient() {
+export default async function HomeClient() {
+  // Precio de la oferta SEO + GEO + GBP: fuente única (catálogo de MktOS con respaldo en lib/ofertas.ts).
+  const po = await preciosOfertaSeo().catch(() => PRECIOS_OFERTA_SEO_RESPALDO);
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -98,9 +102,9 @@ export default function HomeClient() {
               Tus clientes te buscan en el buscador, en Google Maps y también preguntando a un asistente de IA. Trabajamos los tres frentes en un solo servicio mensual: posicionamiento SEO, GEO para que cualquier IA pueda encontrarte y citarte, y tu ficha de Google Business Profile.
             </p>
             <p className="mb-8 flex flex-wrap items-baseline justify-center lg:justify-start gap-x-3 gap-y-1">
-              <span className="text-[#ff7a00] text-4xl md:text-5xl font-bold whitespace-nowrap [text-shadow:0_2px_10px_rgba(15,28,46,0.6)]">Desde 149 €/mes</span>
+              <span className="text-[#ff7a00] text-4xl md:text-5xl font-bold whitespace-nowrap [text-shadow:0_2px_10px_rgba(15,28,46,0.6)]">Desde {po.permanencia6m} €/mes</span>
               <span className="text-white/90 text-base whitespace-nowrap">+ IVA</span>
-              <span className="basis-full text-white/90 text-base">Con 6 meses de permanencia · o 349 €/mes sin permanencia</span>
+              <span className="basis-full text-white/90 text-base">Con 6 meses de permanencia · o {po.sinPermanencia} €/mes sin permanencia</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link href="/oferta-seo-geo-gbp/" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-accent-600 transition-colors">
@@ -153,7 +157,7 @@ export default function HomeClient() {
       </section>
 
       {/* Slider ofertas */}
-      <OfertasSlider />
+      <OfertasSlider precios={po} />
 
       {/* FAQ */}
       <HomeFaq items={FAQS} />
