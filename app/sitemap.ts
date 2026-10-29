@@ -172,6 +172,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/anuncios-chatgpt-ads-espana/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/auditoria-geo-aparecer-chatgpt-gemini-google/", priority: 0.7, changeFrequency: "weekly" as const },
     { url: "/black-friday-tienda-online-que-preparar/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/modo-ia-google-que-es-como-aparecer/", priority: 0.7, changeFrequency: "monthly" as const },
   ];
 
   // Páginas legales con noindex: fuera del sitemap en los tres idiomas (28/10/2026).

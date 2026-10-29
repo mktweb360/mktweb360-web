@@ -1,7 +1,7 @@
 {
  "generado": "2026-10-17T19:09:54.935Z",
  "fuente": "app/(site)/*/page.tsx (metadata)",
- "total": 166,
+ "total": 167,
  "paginas": [
   {
    "ruta": "/5-factores-web-academias-centros-formacion/",
@@ -1010,6 +1010,14 @@
    "servicio": "tienda-online",
    "title": "Migrar una tienda online sin perder SEO",
    "description": "Guía completa para migrar una tienda online a WooCommerce sin perder productos, clientes, pedidos ni posicionamiento en Google. Proceso y errores a evitar."
+  },
+  {
+   "ruta": "/modo-ia-google-que-es-como-aparecer/",
+   "url": "https://www.mktweb360.com/modo-ia-google-que-es-como-aparecer/",
+   "tipo": "articulo",
+   "servicio": "seo",
+   "title": "Modo IA de Google: qué es y cómo aparecer con tu negocio",
+   "description": "Qué es el Modo IA de Google, qué cambió en octubre de 2026 y qué puede hacer tu empresa para aparecer en sus respuestas y medir si te trae clientes."
   },
   {
    "ruta": "/nosotros/",

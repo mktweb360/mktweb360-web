@@ -17,6 +17,16 @@ export type PostI18n = {
 };
 
 export const BLOG_I18N: Record<string, PostI18n> = {
+  "modo-ia-google-que-es-como-aparecer": {
+    en: {
+      title: "Google AI Mode: what it is and how your business can appear in its answers",
+      excerpt: "What Google AI Mode is, what changed in October 2026 and what your business can do to appear in its answers and measure whether it brings you customers.",
+    },
+    fr: {
+      title: "Mode IA de Google : de quoi s'agit-il et comment votre entreprise peut apparaître dans ses réponses",
+      excerpt: "Le Mode IA de Google : ce qui a changé en octobre 2026 et ce que votre entreprise peut faire pour apparaître dans ses réponses et en mesurer l'impact.",
+    },
+  },
   "black-friday-tienda-online-que-preparar": {
     en: {
       title: "Black Friday 2026 for online stores in Spain: what to prepare in the weeks left",

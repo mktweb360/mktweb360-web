@@ -179,6 +179,7 @@ export const ROUTES: Route[] = [
   { es: "/ai-max-google-ads-que-es-como-controlarlo/", en: "google-ads-ai-max-what-it-is-how-to-control-it", fr: "ai-max-google-ads-definition-controle" },
   { es: "/anuncios-chatgpt-ads-espana/", en: "chatgpt-ads-spain", fr: "publicite-chatgpt-ads-espagne" },
   { es: "/black-friday-tienda-online-que-preparar/", en: "black-friday-online-store-checklist", fr: "black-friday-boutique-en-ligne-preparer" },
+  { es: "/modo-ia-google-que-es-como-aparecer/", en: "google-ai-mode-what-it-is-how-to-appear", fr: "mode-ia-google-comment-apparaitre" },
 ];
 
 // ---------- helpers derivados ----------
