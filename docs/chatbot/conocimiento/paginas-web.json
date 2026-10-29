@@ -1,7 +1,7 @@
 {
  "generado": "2026-10-17T19:09:54.935Z",
  "fuente": "app/(site)/*/page.tsx (metadata)",
- "total": 167,
+ "total": 168,
  "paginas": [
   {
    "ruta": "/5-factores-web-academias-centros-formacion/",
@@ -978,6 +978,14 @@
    "servicio": "tienda-online",
    "title": "Agencia Shopware: Marketing para Tiendas",
    "description": "Agencia de marketing para tiendas Shopware: SEO, Google Ads, GEO y optimización de la conversión para tiendas ya construidas que necesitan vender más."
+  },
+  {
+   "ruta": "/medir-trafico-ia-google-analytics-search-console/",
+   "url": "https://www.mktweb360.com/medir-trafico-ia-google-analytics-search-console/",
+   "tipo": "articulo",
+   "servicio": "analitica",
+   "title": "Medir el tráfico de la IA en Analytics y Search Console",
+   "description": "Cómo medir las visitas que llegan desde ChatGPT, Gemini, Perplexity y el Modo IA de Google con Google Analytics 4 y Search Console, paso a paso."
   },
   {
    "ruta": "/metodos-pago-tienda-online-espana/",

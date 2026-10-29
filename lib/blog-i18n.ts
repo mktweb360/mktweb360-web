@@ -17,6 +17,16 @@ export type PostI18n = {
 };
 
 export const BLOG_I18N: Record<string, PostI18n> = {
+  "medir-trafico-ia-google-analytics-search-console": {
+    en: {
+      title: "How to measure the traffic you get from AI with Google Analytics 4 and Search Console",
+      excerpt: "How to measure visits from ChatGPT, Gemini, Perplexity and Google AI Mode with Google Analytics 4 and Search Console, step by step.",
+    },
+    fr: {
+      title: "Comment mesurer le trafic issu de l'IA avec Google Analytics 4 et Search Console",
+      excerpt: "Comment mesurer les visites issues de ChatGPT, Gemini, Perplexity et du Mode IA de Google avec Google Analytics 4 et Search Console, étape par étape.",
+    },
+  },
   "modo-ia-google-que-es-como-aparecer": {
     en: {
       title: "Google AI Mode: what it is and how your business can appear in its answers",

@@ -16,6 +16,7 @@ export const OG_I18N: Record<string, { en: string; fr: string }> = {
   "anuncios-chatgpt-ads-espana": { en: "/og-chatgpt-ads-spain.jpg", fr: "/og-publicite-chatgpt-ads-espagne.jpg" },
   "black-friday-tienda-online-que-preparar": { en: "/og-black-friday-online-store-checklist.jpg", fr: "/og-black-friday-boutique-en-ligne-preparer.jpg" },
   "modo-ia-google-que-es-como-aparecer": { en: "/og-google-ai-mode-what-it-is-how-to-appear.jpg", fr: "/og-mode-ia-google-comment-apparaitre.jpg" },
+  "medir-trafico-ia-google-analytics-search-console": { en: "/og-measure-ai-traffic-google-analytics-search-console.jpg", fr: "/og-mesurer-trafic-ia-google-analytics-search-console.jpg" },
 };
 
 export function ogImageFor(esSlug: string, lang: string): string {

@@ -64,7 +64,7 @@ export const modoIaGoogle: Articulo = {
         { t: "p", x: "Datos de tu sector explicados con fuente, guías que resuelven un problema concreto y respuestas honestas (también «esto no te conviene si…») son más citables que textos genéricos. Lo desarrollamos en la [auditoría GEO para saber si apareces en ChatGPT, Perplexity y la IA de Google](/auditoria-geo-aparecer-chatgpt-gemini-google/)." },
         { t: "h2", x: "Cómo saber si el Modo IA te trae visitas" },
         { t: "p", x: "Aquí hay una sorpresa para muchos negocios: las visitas que llegan desde el Modo IA **no se separan** como tráfico de IA. En Google Analytics 4, el [grupo de canales predeterminado](" + F.ga4Canales + ") tiene un canal de asistentes de IA para fuentes como ChatGPT, Gemini o Copilot, pero Google indica que las visiones generales con IA y el Modo IA cuentan como **Búsqueda orgánica**. En Search Console, ese tráfico se incluye en el informe de rendimiento, tipo de búsqueda «Web»." },
-        { t: "p", x: "En junio de 2026 Google anunció [informes específicos de IA generativa en Search Console](" + F.gscIA + "), que se están probando con una parte de las webs." },
+        { t: "p", x: "En junio de 2026 Google anunció [informes específicos de IA generativa en Search Console](" + F.gscIA + "), que se están probando con una parte de las webs. Te contamos cómo combinar todo esto en la guía para [medir el tráfico de la IA en Google Analytics y Search Console](/medir-trafico-ia-google-analytics-search-console/)." },
         { t: "h2", x: "Qué no hacer" },
         {
           t: "ul",
@@ -151,7 +151,7 @@ export const modoIaGoogle: Articulo = {
         { t: "p", x: "Sector data explained with a source, guides that solve a specific problem and honest answers (including “this is not for you if…”) are more citable than generic copy. We go deeper in our [GEO audit to check whether you appear in ChatGPT, Perplexity and Google's AI](/auditoria-geo-aparecer-chatgpt-gemini-google/) (in Spanish)." },
         { t: "h2", x: "How to know whether AI Mode sends you visits" },
         { t: "p", x: "Many businesses are surprised here: visits from AI Mode are **not separated** as AI traffic. In Google Analytics 4, the [default channel group](" + F.ga4Canales + ") includes a channel for AI assistants such as ChatGPT, Gemini or Copilot, but Google states that AI Overviews and AI Mode count as **Organic Search**. In Search Console, that traffic is included in the performance report, search type “Web”." },
-        { t: "p", x: "In June 2026 Google announced [dedicated generative AI reports in Search Console](" + F.gscIA + "), which are being tested with a subset of websites." },
+        { t: "p", x: "In June 2026 Google announced [dedicated generative AI reports in Search Console](" + F.gscIA + "), which are being tested with a subset of websites. We explain how to combine all of this in our guide to [measuring AI traffic in Google Analytics and Search Console](/medir-trafico-ia-google-analytics-search-console/)." },
         { t: "h2", x: "What not to do" },
         {
           t: "ul",
@@ -238,7 +238,7 @@ export const modoIaGoogle: Articulo = {
         { t: "p", x: "Des données de votre secteur expliquées avec leur source, des guides qui résolvent un problème précis et des réponses honnêtes (y compris « ce n'est pas pour vous si… ») sont plus citables que des textes génériques. Nous l'approfondissons dans notre [audit GEO pour savoir si vous apparaissez dans ChatGPT, Perplexity et l'IA de Google](/auditoria-geo-aparecer-chatgpt-gemini-google/) (en espagnol)." },
         { t: "h2", x: "Comment savoir si le Mode IA vous apporte des visites" },
         { t: "p", x: "Beaucoup d'entreprises sont surprises : les visites issues du Mode IA **ne sont pas isolées** comme trafic IA. Dans Google Analytics 4, le [groupe de canaux par défaut](" + F.ga4Canales + ") comprend un canal pour les assistants IA comme ChatGPT, Gemini ou Copilot, mais Google précise que les aperçus IA et le Mode IA sont comptés en **recherche organique**. Dans Search Console, ce trafic est inclus dans le rapport sur les performances, type de recherche « Web »." },
-        { t: "p", x: "En juin 2026, Google a annoncé [des rapports dédiés à l'IA générative dans Search Console](" + F.gscIA + "), en test auprès d'une partie des sites." },
+        { t: "p", x: "En juin 2026, Google a annoncé [des rapports dédiés à l'IA générative dans Search Console](" + F.gscIA + "), en test auprès d'une partie des sites. Nous expliquons comment combiner tout cela dans notre guide pour [mesurer le trafic issu de l'IA dans Google Analytics et Search Console](/medir-trafico-ia-google-analytics-search-console/)." },
         { t: "h2", x: "Ce qu'il ne faut pas faire" },
         {
           t: "ul",

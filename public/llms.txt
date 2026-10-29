@@ -37,6 +37,7 @@
 - [Tienda online profesional — desde 490€](https://www.mktweb360.com/tienda-online/)
 
 ## Blog — Artículos recientes
+- [Cómo medir el tráfico de la IA con Google Analytics 4 y Search Console](https://www.mktweb360.com/medir-trafico-ia-google-analytics-search-console/) (EN: [Measure AI traffic](https://www.mktweb360.com/en/measure-ai-traffic-google-analytics-search-console/) · FR: [Mesurer le trafic IA](https://www.mktweb360.com/fr/mesurer-trafic-ia-google-analytics-search-console/))
 - [Modo IA de Google: qué es y cómo puede aparecer tu negocio](https://www.mktweb360.com/modo-ia-google-que-es-como-aparecer/) (EN: [Google AI Mode](https://www.mktweb360.com/en/google-ai-mode-what-it-is-how-to-appear/) · FR: [Mode IA de Google](https://www.mktweb360.com/fr/mode-ia-google-comment-apparaitre/))
 - [Black Friday 2026 en tu tienda online: qué preparar](https://www.mktweb360.com/black-friday-tienda-online-que-preparar/) (EN: [Black Friday for online stores in Spain](https://www.mktweb360.com/en/black-friday-online-store-checklist/) · FR: [Black Friday pour boutiques en ligne](https://www.mktweb360.com/fr/black-friday-boutique-en-ligne-preparer/))
 - [¿Ha muerto el SEO con la IA?](https://www.mktweb360.com/ha-muerto-el-seo-con-la-ia/)
