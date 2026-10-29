@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: alternatesFor("/tienda-online/") ?? { canonical: "https://www.mktweb360.com/tienda-online/" },
   openGraph: {
     title: "Tienda Online desde 490 € sin Comisiones | Mkt Web 360",
-    description: "Tu tienda online profesional desde 490€. Sin comisiones. Web orientada al SEO..",
+    description: "Tu tienda online profesional desde 490€. Sin comisiones. Web orientada al SEO.",
     url: "https://www.mktweb360.com/tienda-online/",
     images: [{ url: "/imagen-tiendas-online.jpg", width: 1200, height: 900, alt: "Tienda online profesional desde 490€" }],
   },
@@ -110,7 +110,7 @@ export default function TiendaOnlineLandingPage() {
           <h2 className="text-2xl font-bold mb-3">Cuéntanos tu proyecto</h2>
           <p className="text-primary-200 mb-6">Cuéntanos qué quieres vender y te respondemos con una propuesta clara.</p>
           <a href="#contacto" className="bg-accent-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors inline-block">
-            Quiero mi plaza — 490€
+            Quiero mi tienda — 490 €
           </a>
         </div>
       </section>

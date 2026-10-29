@@ -221,7 +221,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </p>
           </section>
 
-          <BlogBanner lang={lang} />
+          <BlogBanner variant="seogeogbp" lang={lang} />
 
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-primary-600 mb-4">

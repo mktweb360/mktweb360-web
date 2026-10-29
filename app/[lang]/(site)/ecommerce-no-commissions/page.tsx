@@ -1,3 +1,4 @@
+import { BlogBanner } from "@/components/BlogBanner";
 import { ContactForm } from "@/components/ContactForm";
 import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -362,6 +363,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <ContactForm formType={`${lang}-ecommerce`} />
         </div>
       </section>
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="ecommerce" lang={lang} />
+      </div>
     </>
   );
 }

@@ -107,7 +107,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Testez toujours avec un petit lot de 10 à 20 produits avant de lancer l'import complet. Examinez attentivement les produits importés — vérifiez les images, les prix, le stock et les variantes avant de mettre en ligne."}
         </p>
 
-        <BlogBanner variant="ecommerce" />
+        <BlogBanner variant="ecommerce" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

@@ -1,3 +1,4 @@
+import { BlogBanner } from "@/components/BlogBanner";
 import { ContactForm } from "@/components/ContactForm";
 import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -377,6 +378,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         category="SEO"
         title={isEn ? "More about local search positioning" : "Plus sur le positionnement local"}
       />
+      <div className="max-w-4xl mx-auto px-4 pb-4">
+        <BlogBanner variant="seogeogbp" lang={lang} />
+      </div>
     </>
   );
 }

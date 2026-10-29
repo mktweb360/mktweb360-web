@@ -117,7 +117,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "L'objectif n'est pas de convertir 100% des leads — c'est d'investir l'effort commercial là où il génère le meilleur retour. Un entonnoir plus petit de leads mieux qualifiés se clôt plus vite, à marges plus élevées, avec moins de friction."}
         </p>
 
-        <BlogBanner variant="default" />
+        <BlogBanner variant="default" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
