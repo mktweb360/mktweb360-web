@@ -127,7 +127,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Les avis sont le signal d'autorité locale le plus puissant. Une stratégie cohérente : demandez à chaque client satisfait un avis immédiatement après la fin du service, répondez à chaque avis dans les 24 heures, et visez un minimum de 20 à 30 avis avant d'investir dans d'autres tactiques de SEO local. La quantité, la récence et la cohérence des réponses contribuent toutes à votre classement local."}
         </p>
 
-        <BlogBanner variant="seo" />
+        <BlogBanner variant="seo" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

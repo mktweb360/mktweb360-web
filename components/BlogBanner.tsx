@@ -65,18 +65,18 @@ const BANNERS_ES: BannerVariants = {
     cta: "Ver qué incluye",
     href: "/oferta-seo-geo-gbp/",
     price: { new: "Desde 149 €/mes + IVA", note: "Con 6 meses de permanencia · o 349 €/mes sin permanencia" },
-    secondary: { text: "¿Prefieres empezar con una auditoría gratuita?", href: "/auditoria-digital/" },
+    secondary: { text: "¿Prefieres empezar con un diagnóstico gratuito?", href: "/auditoria-digital/" },
   },
   default: {
     badge: "Gratis y sin compromiso",
-    title: "Auditoría SEO gratuita de tu web en 24 h",
+    title: "Diagnóstico gratuito de tu web en 24 h",
     desc: "SEO, visibilidad en IA y tu ficha de Google en el mismo informe, con las acciones que más impacto tendrían. Sin coste ni compromiso.",
-    cta: "Pedir mi auditoría gratuita",
+    cta: "Pedir mi diagnóstico gratuito",
     href: "/auditoria-digital/",
   },
 };
 
-const BANNERS_EN: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = {
+const BANNERS_EN: BannerVariants = {
   seo: {
     badge: "SEO Positioning",
     title: "More visibility on Google, without paying per click",
@@ -88,7 +88,7 @@ const BANNERS_EN: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = 
     badge: "Special offer",
     title: "Professional online store from €490",
     desc: "No sales commissions, no monthly licences. Custom design and technical SEO from day one. Hosting and domain not included.",
-    cta: "Reserve my spot",
+    cta: "I want my online store",
     href: "/en/online-store-offer/",
   },
   geo: {
@@ -98,16 +98,25 @@ const BANNERS_EN: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = 
     cta: "Request free audit",
     href: "/en/geo-generative-engine-optimization/",
   },
-  default: {
-    badge: "No commitment",
-    title: "Free digital diagnosis",
-    desc: "We analyse your online presence and tell you exactly what is holding back your growth. No cost, no commitment.",
+  // La oferta SEO + GEO + Maps solo tiene landing en ES: en EN/FR se muestra el precio y el CTA lleva al diagnóstico gratuito.
+  seogeogbp: {
+    badge: "SEO + GEO + Google Maps",
+    title: "Be found on Google, in AI and on the map",
+    desc: "SEO positioning, GEO so that any AI assistant can find and cite you, and your Google Business Profile optimised. One monthly service.",
     cta: "Request free diagnosis",
-    href: "/en/contact/",
+    href: "/en/digital-audit/",
+    price: { new: "From €149/month + VAT", note: "With a 6-month commitment · or €349/month with no commitment" },
+  },
+  default: {
+    badge: "Free, no commitment",
+    title: "Free diagnosis of your website in 24 h",
+    desc: "SEO, visibility in AI and your Google Business Profile in the same report, with the highest-impact actions. No cost and no commitment.",
+    cta: "Request free diagnosis",
+    href: "/en/digital-audit/",
   },
 };
 
-const BANNERS_FR: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = {
+const BANNERS_FR: BannerVariants = {
   seo: {
     badge: "Référencement SEO",
     title: "Plus de visibilité sur Google, sans payer au clic",
@@ -129,12 +138,20 @@ const BANNERS_FR: Omit<BannerVariants, "seogeogbp"> & Partial<BannerVariants> = 
     cta: "Demander un audit gratuit",
     href: "/fr/geo-optimisation-moteurs-generatifs/",
   },
-  default: {
-    badge: "Sans engagement",
-    title: "Diagnostic digital gratuit",
-    desc: "Nous analysons votre présence en ligne et vous disons exactement ce qui freine votre croissance. Sans coût, sans engagement.",
+  seogeogbp: {
+    badge: "SEO + GEO + Google Maps",
+    title: "Soyez trouvé sur Google, dans l'IA et sur la carte",
+    desc: "Référencement SEO, GEO pour que tout assistant d'IA puisse vous trouver et vous citer, et votre fiche Google Business Profile optimisée. Un seul service mensuel.",
     cta: "Demander un diagnostic gratuit",
-    href: "/fr/contact/",
+    href: "/fr/audit-digital/",
+    price: { new: "À partir de 149 €/mois HT", note: "Avec 6 mois d'engagement · ou 349 €/mois sans engagement" },
+  },
+  default: {
+    badge: "Gratuit et sans engagement",
+    title: "Diagnostic gratuit de votre site en 24 h",
+    desc: "SEO, visibilité dans l'IA et votre fiche Google Business dans le même rapport, avec les actions au plus fort impact. Sans coût ni engagement.",
+    cta: "Demander un diagnostic gratuit",
+    href: "/fr/audit-digital/",
   },
 };
 

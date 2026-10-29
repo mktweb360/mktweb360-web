@@ -122,7 +122,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Chez Mkt Web 360, nous avons développé nos propres protocoles GEO intégrés dans chaque service — des données structurées à la stratégie de contenu, en passant par la construction d'autorité et les signaux de crawlers IA. Nous vous aidons à être visible là où vos clients cherchent déjà."}
         </p>
 
-        <BlogBanner variant="geo" />
+        <BlogBanner variant="geo" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

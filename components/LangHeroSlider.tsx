@@ -14,7 +14,7 @@ export function LangHeroSlider({ lang }: { lang: string }) {
       subtitle: isEn
         ? "We put you where people search for you: more online visibility, more customers and a business that grows with proven digital marketing strategies. Nationwide service across Spain."
         : "Nous vous plaçons là où l'on vous cherche : plus de visibilité en ligne, plus de clients et une entreprise qui grandit grâce à des stratégies de marketing digital éprouvées. Service dans toute l'Espagne.",
-      cta: { text: isEn ? "Free diagnosis" : "Diagnostic gratuit", href: `/${lang}/contact/` },
+      cta: { text: isEn ? "Free diagnosis" : "Diagnostic gratuit", href: `/${lang}/${langSlug(lang, "digital-audit")}/` },
       cta2: { text: isEn ? "View services" : "Voir les services", href: "#services" },
       bg: "tech",
       visual: "tech",

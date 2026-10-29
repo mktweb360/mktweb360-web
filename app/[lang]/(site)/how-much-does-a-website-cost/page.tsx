@@ -117,7 +117,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Un bon devis est détaillé, explique ce qui est inclus et ce qui ne l'est pas, a un calendrier clair et précise la propriété des livrables finaux. Si un prestataire est vague sur l'un de ces points, c'est un signal d'alarme."}
         </p>
 
-        <BlogBanner variant="default" />
+        <BlogBanner variant="default" lang={lang} />
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">

@@ -233,7 +233,7 @@ export function HeroSlider({ slides: slidesProp, dotLabel = "Ir a la diapositiva
       headline: "Agencia de Marketing Digital 360",
       subheadline: "Sin clientes, no hay paraíso",
       subtitle: "Te ponemos donde te buscan: más visibilidad online, más clientes y un negocio que crece con estrategias de marketing digital probadas. Servicio nacional.",
-      cta: { text: "Diagnóstico gratuito", href: "/contacto/" },
+      cta: { text: "Diagnóstico gratuito", href: "/auditoria-digital/" },
       cta2: { text: "Ver servicios", href: "#servicios" },
       bg: "tech",
       visual: "tech",

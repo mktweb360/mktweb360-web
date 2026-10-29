@@ -259,7 +259,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Cela rompt la hiérarchie habituelle. Une grande marque peut dominer des centaines de termes génériques et pourtant ne pas être la référence sur une requête très spécifique de votre secteur. Une PME avec un contenu bien travaillé, un schema markup correct et un focus sur sa spécialité peut devenir exactement cette référence, et l'IA n'a aucune raison de préférer le grand acteur si le petit répond mieux à la question."}
           </p>
 
-          <BlogBanner variant="geo" />
+          <BlogBanner variant="geo" lang={lang} />
 
           <h2 className="text-2xl font-bold text-primary-600">
             {isEn
