@@ -6,38 +6,33 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { CalculadoraSeo } from "@/components/CalculadoraSeo";
 import { planesSeo, EXTRAS_SEO, CONDICIONES_COMUNES, precioTexto, type PlanSeo } from "@/lib/planes-seo";
-import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 const URL = "https://www.mktweb360.com/precios-seo/";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { precios } = await preciosPlanesSeo();
-  const [local, pyme] = planesSeo("es", precios);
-  return {
+export const metadata: Metadata = {
   title: "Precios SEO: cuánto cuesta el posicionamiento",
   description:
-    `Precios SEO por tamaño de web: desde ${precioTexto(local)} para profesionales, ${(pyme.precio ?? 0) > 0 ? `${pyme.precio} €/mes` : "presupuesto"} para pymes y planes para ecommerce. Calcula tu plan y sin permanencia.`,
+    "Qué hace variar el precio de un proyecto SEO, qué incluye cada tamaño de proyecto y cómo comparar presupuestos. Diagnóstico gratuito y presupuesto por escrito, sin permanencia.",
   alternates: alternatesFor("/precios-seo/") ?? { canonical: URL },
   openGraph: {
     title: "Precios SEO: cuánto cuesta el posicionamiento | Mkt Web 360",
-    description: "Tarifas SEO publicadas, qué incluye cada una y qué hace variar el precio de un proyecto de posicionamiento.",
+    description: "Qué hace variar el precio de un proyecto de posicionamiento, qué incluye cada tamaño de proyecto y cómo comparar presupuestos.",
     url: URL,
     images: [{ url: "/og-seo.jpg", width: 1200, height: 630, alt: "Precios SEO — Mkt Web 360" }],
   },
 };
-}
 
 const OTRAS = [
   {
     name: "Web profesional",
-    price: "Desde 249 € + IVA",
+    price: "Oferta: desde 249 € + IVA",
     note: "Pago único · hosting, dominio y correo no incluidos",
     href: "/oferta-web-seo-organico/",
     cta: "Ver qué incluye",
   },
   {
     name: "Consultoría SEO",
-    price: "Presupuesto a medida",
+    price: "Presupuesto a medida tras diagnóstico gratuito",
     note: "Diagnóstico, estrategia y plan priorizado para equipos propios",
     href: "/consultor-seo/",
     cta: "Ver la consultoría",
@@ -56,28 +51,22 @@ const FACTORS = [
 const faqs = (pl: PlanSeo[]) => {
   const [local, pyme, crec, ecoS] = pl;
   return [
-  { q: "¿Cuánto cuesta el SEO al mes?", a: `Depende del tamaño de la web y de la carga de trabajo: desde ${precioTexto(local)} para un profesional con una web de hasta 10 páginas, ${precioTexto(pyme)} para una pyme con web de hasta 30 páginas, ${precioTexto(crec)} para webs más grandes o con varias sedes, y desde ${precioTexto(ecoS)} para tiendas online. La calculadora de esta página te indica el plan que encaja con tu caso.` },
+  { q: "¿Cuánto cuesta el SEO al mes?", a: `Depende del tamaño de la web y de la carga de trabajo, por eso no publicamos una tarifa fija: tras un diagnóstico gratuito te damos un presupuesto por escrito y sin compromiso. Como referencia de tamaños: el plan ${local.nombre} está pensado para un profesional con una web de hasta 10 páginas, el plan ${pyme.nombre} para una pyme con web de hasta 30 páginas, el plan ${crec.nombre} para webs más grandes o con varias sedes, y el plan ${ecoS.nombre} para tiendas online pequeñas. La calculadora de esta página te indica el tamaño que encaja con tu caso. Si hay una oferta vigente, la encontrarás con su precio en la portada de la web.` },
   { q: "¿Hay permanencia?", a: "No. El servicio mensual no tiene permanencia. Lo habitual es valorar los resultados con datos de Search Console a los pocos meses, porque el SEO necesita tiempo para reflejarse en las posiciones." },
   { q: "¿Por qué hay presupuestos SEO tan distintos en el mercado?", a: "Porque se comparan cosas distintas: un informe automático, una consultoría sin ejecución o un servicio con contenidos, cambios técnicos y seguimiento mensual. Antes de comparar precios, compara qué incluye cada propuesta, cuántos contenidos al mes, quién ejecuta y cómo se mide." },
-  { q: "¿Garantizáis posiciones por ese precio?", a: "No. Nadie puede garantizar posiciones en Google. Lo que incluye el precio es el trabajo descrito, con informes mensuales y métricas que te permiten comprobar la evolución." },
-  { q: "¿El precio incluye link building?", a: "No. El paquete mensual no incluye compra de enlaces. Si tu proyecto lo necesita, lo planteamos aparte, con presupuesto y criterios de calidad explícitos." },
-  { q: "¿Los precios incluyen IVA?", a: "No. Todos los precios de esta página se indican sin IVA." },
+  { q: "¿Garantizáis posiciones?", a: "No. Nadie puede garantizar posiciones en Google. Lo que incluye el presupuesto es el trabajo descrito, con informes mensuales y métricas que te permiten comprobar la evolución." },
+  { q: "¿El servicio incluye link building?", a: "No. El paquete mensual no incluye compra de enlaces. Si tu proyecto lo necesita, lo planteamos aparte, con presupuesto y criterios de calidad explícitos." },
+  { q: "¿Los presupuestos incluyen IVA?", a: "Cada presupuesto indica expresamente si incluye o no el IVA. En nuestras ofertas, el precio se indica sin IVA." },
   ];
 };
 
-const serviceSchema = (PLANES_SEO: PlanSeo[]) => ({
+const serviceSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Posicionamiento SEO",
   provider: { "@id": "https://www.mktweb360.com/#organization" },
   areaServed: { "@type": "Country", name: "España" },
   url: URL,
-  offers: PLANES_SEO.filter((p) => p.precio !== null).map((p) => ({
-    "@type": "Offer",
-    name: p.nombre,
-    url: URL,
-    priceSpecification: { "@type": "UnitPriceSpecification", price: p.precio, priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false },
-  })),
 });
 
 const faqSchema = (FAQS: { q: string; a: string }[]) => ({
@@ -87,13 +76,12 @@ const faqSchema = (FAQS: { q: string; a: string }[]) => ({
 });
 
 export default async function PreciosSeoPage() {
-  // Precios vigentes desde MktOS (con los de lib/planes-seo.ts de respaldo).
-  const { precios } = await preciosPlanesSeo();
-  const PLANES_SEO = planesSeo("es", precios);
+  // Sin precios (decisión 25/10/2026): tamaños de proyecto y presupuesto tras diagnóstico gratuito.
+  const PLANES_SEO = planesSeo("es");
   const FAQS = faqs(PLANES_SEO);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(PLANES_SEO)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema()) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(FAQS)) }} />
 
       <section className="mw-skin-hero text-white">
@@ -104,7 +92,7 @@ export default async function PreciosSeoPage() {
             <span className="text-accent-400">posicionar tu web en Google</span>
           </h1>
           <p className="text-xl text-primary-200 leading-relaxed max-w-3xl">
-            Publicamos nuestras tarifas y lo que incluye cada una. Sin letra pequeña: precio, límites del servicio y qué queda fuera, para que puedas comparar con criterio.
+            Qué hace variar el precio de un proyecto SEO, qué incluye cada tamaño de proyecto y qué queda fuera, para que puedas comparar presupuestos con criterio. Tu presupuesto, por escrito y tras un diagnóstico gratuito.
           </p>
         </div>
       </section>
@@ -112,20 +100,20 @@ export default async function PreciosSeoPage() {
       <section id="calculadora" className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3 text-center">Calcula tu plan SEO</h2>
-          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">Cuatro preguntas sobre tu web y te decimos qué plan encaja y cuánto cuesta. El precio sigue a la carga real de trabajo: no es lo mismo la web de un profesional con cuatro servicios que una tienda con cien categorías.</p>
-          <CalculadoraSeo precios={precios} />
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">Cuatro preguntas sobre tu web y te decimos qué tamaño de proyecto encaja. El presupuesto sigue a la carga real de trabajo: no es lo mismo la web de un profesional con cuatro servicios que una tienda con cien categorías.</p>
+          <CalculadoraSeo />
         </div>
       </section>
 
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">Planes SEO mensuales</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">Tamaños de proyecto SEO</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {PLANES_SEO.map((p) => (
               <div key={p.id} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 flex flex-col">
                 <h3 className="font-bold text-primary-700 text-lg mb-1">{p.nombre}</h3>
                 <p className="text-sm text-gray-500 mb-3">{p.paraQuien}</p>
-                <p className="text-2xl font-bold text-accent-500 mb-4">{precioTexto(p)}</p>
+                <p className="text-base font-bold text-accent-500 mb-4">{precioTexto(p)}</p>
                 <ul className="space-y-1 text-sm text-gray-700 mb-4">
                   {p.limites.map((l) => <li key={l} className="flex gap-2"><span className="text-primary-500 shrink-0">•</span>{l}</li>)}
                 </ul>
@@ -155,7 +143,7 @@ export default async function PreciosSeoPage() {
             {OTRAS.map((o) => (
               <div key={o.name} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col">
                 <h3 className="font-bold text-primary-700 mb-1">{o.name}</h3>
-                <p className="text-xl font-bold text-accent-500">{o.price}</p>
+                <p className="text-base font-bold text-accent-500">{o.price}</p>
                 <p className="text-sm text-gray-500 mb-4 flex-1">{o.note}</p>
                 <Link href={o.href} className="text-accent-600 font-semibold hover:underline">{o.cta} →</Link>
               </div>
@@ -209,7 +197,7 @@ export default async function PreciosSeoPage() {
       <section id="contacto" className="py-16 px-4 mw-skin-band text-white">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold mb-4 text-center">Pide tu presupuesto SEO</h2>
-          <p className="text-primary-200 mb-8 text-center">Indica tu web y tus objetivos. Te respondemos con una propuesta cerrada.</p>
+          <p className="text-primary-200 mb-8 text-center">Indica tu web y tus objetivos. Te respondemos con un diagnóstico gratuito y una propuesta por escrito.</p>
           <ContactForm formType="precios-seo" />
         </div>
       </section>

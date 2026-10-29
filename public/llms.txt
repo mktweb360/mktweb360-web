@@ -24,17 +24,17 @@
 - [Reputación Online](https://www.mktweb360.com/reputacion-online/)
 - [GEO — Posicionamiento en IA](https://www.mktweb360.com/geo-posicionamiento-ia/): Optimización para aparecer en ChatGPT, Gemini y Perplexity. Estrategia semántica, llms.txt y schema para LLMs.
 - [IA Aplicada al Marketing](https://www.mktweb360.com/ia-aplicada-al-marketing/)
-- [Blog para Monetización](https://www.mktweb360.com/blog-para-monetizacion/): Blog profesional SEO para posicionamiento orgánico y monetización. 15 artículos de lanzamiento + 10 artículos/mes. Setup 990€ + 290€/mes.
-- Chatbot Empresarial IA: Asistente conversacional conectado a datos reales del negocio (web, PDF, catálogo, CRM, stock). Plataforma gestionada con 4 niveles: FAQs/web → recuperación de documentos → acciones (reservas/pedidos/CRM) → recomendación. Cumplimiento RGPD + AI Act. Setup 300–500€ + 149–299€/mes.
+- [Blog para Monetización](https://www.mktweb360.com/blog-para-monetizacion/): Blog profesional SEO para posicionamiento orgánico y monetización. 15 artículos de lanzamiento + 10 artículos/mes. Presupuesto a medida tras un diagnóstico gratuito.
+- Chatbot Empresarial IA: Asistente conversacional conectado a datos reales del negocio (web, PDF, catálogo, CRM, stock). Plataforma gestionada con 4 niveles: FAQs/web → recuperación de documentos → acciones (reservas/pedidos/CRM) → recomendación. Cumplimiento RGPD + AI Act. Presupuesto a medida tras un diagnóstico gratuito.
 - [Auditoría SEO gratuita](https://www.mktweb360.com/auditoria-digital/): diagnóstico SEO, de visibilidad en IA y de la ficha de Google Business Profile de una web, enviado por correo en un máximo de 24 horas laborables, con plan de mejora y propuesta.
 - [Consultor SEO](https://www.mktweb360.com/consultor-seo/): consultoría SEO con auditoría técnica, estrategia de keywords y arquitectura, plan priorizado y acompañamiento con datos de Search Console.
-- [Precios SEO](https://www.mktweb360.com/precios-seo/): planes SEO por tamaño de web con calculadora — SEO Local Esencial 199 €/mes, SEO + GEO + GBP desde 149 €/mes (6 meses de permanencia) o 349 €/mes sin permanencia, Crecimiento/Multisede 590 €/mes, Ecommerce S 449 €/mes, Ecommerce M 790 €/mes (precios + IVA, sin permanencia).
+- [Precios SEO](https://www.mktweb360.com/precios-seo/): qué hace variar el precio de un proyecto SEO y calculadora de tamaño de proyecto (SEO local, pyme, multisede, ecommerce). No se publican tarifas de servicios: presupuesto a medida tras un diagnóstico gratuito, sin permanencia. Los precios solo se indican en las ofertas activas.
 - [Agencia SEO en Toledo](https://www.mktweb360.com/agencia-seo-toledo/) · [Diseño web en Toledo](https://www.mktweb360.com/diseno-web-toledo/) · [Agencia de marketing digital en Toledo](https://www.mktweb360.com/agencia-marketing-digital-toledo/): servicios para negocios de la provincia, donde está la sede.
 
 ## Ofertas activas
 - [SEO + GEO + Google Business Profile — 349 €/mes + IVA, o 149 €/mes durante 6 meses con permanencia de 6 meses](https://www.mktweb360.com/oferta-seo-geo-gbp/) (posicionamiento en Google, visibilidad en asistentes de IA y ficha de Google Maps en un solo servicio mensual)
 - [Web profesional corporativa — desde 249€](https://www.mktweb360.com/oferta-web-seo-organico/) (diseño a medida integrado en WordPress; hosting, dominio y correo no incluidos; sin permanencia)
-- [Tienda online profesional — 490€](https://www.mktweb360.com/tienda-online/)
+- [Tienda online profesional — desde 490€](https://www.mktweb360.com/tienda-online/)
 
 ## Blog — Artículos recientes
 - [¿Ha muerto el SEO con la IA?](https://www.mktweb360.com/ha-muerto-el-seo-con-la-ia/)
@@ -58,7 +58,7 @@ Trabajamos SEO y GEO (Generative Engine Optimization) a la vez. Integramos SEO +
 - [SEO in Spain for Foreign Companies](https://www.mktweb360.com/en/seo-spain-foreign-companies/): How SEO works in Spain for French and British companies. Spanish search behaviour, local vs national strategy, realistic timelines.
 - [Google Ads in Spain for Foreign Companies](https://www.mktweb360.com/en/google-ads-spain-foreign-companies/): Setup, costs, Spanish CPCs and management structure for foreign companies running Google Ads in Spain.
 - [Free SEO Audit](https://www.mktweb360.com/en/digital-audit/) · [Audit SEO gratuit](https://www.mktweb360.com/fr/audit-digital/): SEO, AI-visibility and Google Business Profile diagnosis of a website, sent by email within 24 business hours, with an improvement plan and a proposal.
-- [SEO Pricing](https://www.mktweb360.com/en/seo-pricing/) · [Tarifs SEO](https://www.mktweb360.com/fr/tarifs-seo/): SEO plans by website size with a calculator — Essential Local SEO €199/month, SEO + GEO + GBP €349/month, Growth/Multi-location €590/month, Ecommerce S €449/month, Ecommerce M €790/month (prices + VAT, no minimum term).
+- [SEO Pricing](https://www.mktweb360.com/en/seo-pricing/) · [Tarifs SEO](https://www.mktweb360.com/fr/tarifs-seo/): what makes the price of an SEO project vary, plus a project-size calculator (local SEO, SME, multi-location, ecommerce). Service rates are not published: custom quote after a free diagnosis, no minimum term. Prices are only shown for the current offers.
 - [SEO Consultant](https://www.mktweb360.com/en/seo-consultant/) · [Consultant SEO](https://www.mktweb360.com/fr/consultant-seo/): SEO consultancy with technical audit, keyword and architecture strategy, prioritised plan and support using Search Console data.
 - [SEO agency in Toledo](https://www.mktweb360.com/en/seo-agency-toledo/) · [Web design in Toledo](https://www.mktweb360.com/en/web-design-toledo/) · [Digital marketing agency in Toledo](https://www.mktweb360.com/en/digital-marketing-agency-toledo/) (FR: [Agence SEO à Tolède](https://www.mktweb360.com/fr/agence-seo-tolede/), [Création de sites web à Tolède](https://www.mktweb360.com/fr/creation-site-web-tolede/), [Agence de marketing digital à Tolède](https://www.mktweb360.com/fr/agence-marketing-digital-tolede/)): services for businesses in the province, where the agency is based.
 ## Sobre nosotros

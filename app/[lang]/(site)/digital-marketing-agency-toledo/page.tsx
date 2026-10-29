@@ -1,7 +1,6 @@
 import { LocalServicePage, localServiceSchemas, type LocalServiceContent } from "@/components/LocalServicePage";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
-import { planPorId, precioTexto, type PreciosPlanes } from "@/lib/planes-seo";
-import { preciosPlanesSeo } from "@/lib/precios-planes";
+import { planPorId } from "@/lib/planes-seo";
 
 // 09/10/2026 — EN/FR de /agencia-marketing-digital-toledo/. Esta carpeta sirve
 // /en/digital-marketing-agency-toledo/; /fr/agence-marketing-digital-tolede/ reexporta este módulo.
@@ -16,21 +15,20 @@ const href = (lang: L, slug: string) => `/${lang}/${langSlug(lang, slug)}/`;
 const META = {
   en: {
     title: "Digital Marketing Agency in Toledo, Spain",
-    description: "Digital marketing agency based in Toledo: SEO, Google Maps, AI, Google Ads, web design and social media for SMEs and professionals. Published prices.",
+    description: "Digital marketing agency based in Toledo: SEO, Google Maps, AI, Google Ads, web design and social media for SMEs and professionals. Free diagnosis and a quote with no obligation.",
     ogTitle: "Digital Marketing Agency in Toledo | Mkt Web 360",
     ogDescription: "Digital marketing for SMEs and professionals in Toledo, from our base in the province.",
   },
   fr: {
     title: "Agence de marketing digital à Tolède, Espagne",
-    description: "Agence de marketing digital basée à Tolède : SEO, Google Maps, IA, Google Ads, création web et réseaux sociaux pour PME et professionnels. Tarifs publiés.",
+    description: "Agence de marketing digital basée à Tolède : SEO, Google Maps, IA, Google Ads, création web et réseaux sociaux pour PME et professionnels. Diagnostic gratuit et devis sans engagement.",
     ogTitle: "Agence de marketing digital à Tolède | Mkt Web 360",
     ogDescription: "Marketing digital pour les PME et les professionnels de Tolède, depuis notre siège dans la province.",
   },
 };
 
-function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
-  const pyme = planPorId("pyme", lang, precios);
-  const local = planPorId("local", lang, precios);
+function content(lang: L): LocalServiceContent {
+  const pyme = planPorId("pyme", lang);
   if (lang === "fr") {
     return {
       lang,
@@ -42,7 +40,7 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
       bullets: ["Un seul responsable pour votre compte", "Des spécialistes par domaine à chaque étape du projet", "Google Ads sans commission sur votre investissement"],
       porQue: [
         { t: "Nous commençons par un diagnostic", d: "Avant de proposer des actions, nous examinons votre site, votre fiche Google et vos données. Vous savez ainsi quoi corriger en premier et ce qui ne vaut pas encore la peine d'être fait." },
-        { t: "Des prix clairs", d: "Nous publions nos tarifs et ce que comprend chacun d'eux, avec leurs limites. Sans engagement sur les services mensuels." },
+        { t: "Un devis clair", d: "Après un diagnostic gratuit, nous vous remettons un devis écrit avec ce qu'il comprend et ses limites. Sans engagement sur les services mensuels." },
         { t: "Nous mesurons ce qui compte", d: "Contacts, appels et ventes, pas seulement des visites. Chaque mois, nous vous envoyons un rapport avec le travail réalisé et les prochaines étapes." },
       ],
       queHacemosTitulo: "Services de marketing digital pour les entreprises de Tolède",
@@ -55,9 +53,9 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
         { t: "Audit gratuit", d: "Un diagnostic SEO et de visibilité dans l'IA de votre site, dans votre boîte mail.", href: href(lang, "digital-audit"), linkText: "Demander l'audit gratuit" },
       ],
       precios: [
-        { nombre: pyme.nombre, precio: precioTexto(pyme, lang), detalle: "La formule la plus complète pour les PME dont le site compte jusqu'à 30 pages.", href: pyme.href },
-        { nombre: "Site professionnel", precio: "À partir de 249 € HT", detalle: "Design sur mesure intégré à WordPress. Hébergement, nom de domaine et messagerie non inclus." },
-        { nombre: "Calculez votre formule SEO", precio: `À partir de ${precioTexto(local, lang)}`, detalle: "Des formules selon la taille de votre site, vos établissements et vos langues.", href: href(lang, "seo-pricing") },
+        { nombre: pyme.nombre, precio: "Offre en cours avec prix", detalle: "La formule la plus complète pour les PME dont le site compte jusqu'à 30 pages. Consultez l'offre et son prix.", href: pyme.href },
+        { nombre: "Site professionnel", precio: "Offre : à partir de 249 € HT", detalle: "Design sur mesure intégré à WordPress. Hébergement, nom de domaine et messagerie non inclus." },
+        { nombre: "Trouvez la taille de votre projet SEO", precio: "Devis sur mesure", detalle: "Selon la taille de votre site, vos établissements et vos langues.", href: href(lang, "seo-pricing") },
       ],
       contexto: {
         titulo: "Comment choisir une agence de marketing digital à Tolède",
@@ -70,7 +68,7 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
       enlaces: [
         { href: href(lang, "seo-agency-toledo"), text: "Agence SEO à Tolède" },
         { href: href(lang, "web-design-toledo"), text: "Création de sites web à Tolède" },
-        { href: href(lang, "seo-pricing"), text: "Tarifs SEO" },
+        { href: href(lang, "seo-pricing"), text: "Combien coûte le SEO" },
       ],
       faqs: [
         { q: "Où se trouve l'agence ?", a: "Notre siège se trouve Calle Chopo 98, 45215 El Viso de San Juan (Tolède). Nous travaillons avec des entreprises de toute la province et du reste de l'Espagne." },
@@ -93,7 +91,7 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
     bullets: ["A single person responsible for your account", "Specialists in each area at every stage of the project", "Google Ads with no commission on your ad spend"],
     porQue: [
       { t: "We start with a diagnosis", d: "Before proposing any actions, we review your website, your Google listing and your data. That way you know what to fix first and what is not worth doing yet." },
-      { t: "Clear prices", d: "We publish our rates and what each one includes, with its limits. No minimum term on monthly services." },
+      { t: "A clear quote", d: "After a free diagnosis we give you a written quote with what it includes and its limits. No minimum term on monthly services." },
       { t: "We measure what matters", d: "Enquiries, calls and sales, not just visits. Every month we send you a report with what has been done and the next steps." },
     ],
     queHacemosTitulo: "Digital marketing services for businesses in Toledo",
@@ -106,9 +104,9 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
       { t: "Free audit", d: "An SEO and AI-visibility diagnosis of your website, sent to your inbox.", href: href(lang, "digital-audit"), linkText: "Request a free audit" },
     ],
     precios: [
-      { nombre: pyme.nombre, precio: precioTexto(pyme, lang), detalle: "The most complete package for SMEs with a website of up to 30 pages.", href: pyme.href },
-      { nombre: "Professional website", precio: "From €249 + VAT", detalle: "Custom design integrated with WordPress. Hosting, domain and email not included." },
-      { nombre: "Work out your SEO plan", precio: `From ${precioTexto(local, lang)}`, detalle: "Plans based on the size of your website, your locations and your languages.", href: href(lang, "seo-pricing") },
+      { nombre: pyme.nombre, precio: "Current offer with price", detalle: "The most complete package for SMEs with a website of up to 30 pages. See the offer and its price.", href: pyme.href },
+      { nombre: "Professional website", precio: "Offer: from €249 + VAT", detalle: "Custom design integrated with WordPress. Hosting, domain and email not included." },
+      { nombre: "Find your SEO project size", precio: "Custom quote", detalle: "Based on the size of your website, your locations and your languages.", href: href(lang, "seo-pricing") },
     ],
     contexto: {
       titulo: "How to choose a digital marketing agency in Toledo",
@@ -121,7 +119,7 @@ function content(lang: L, precios?: PreciosPlanes | null): LocalServiceContent {
     enlaces: [
       { href: href(lang, "seo-agency-toledo"), text: "SEO agency in Toledo" },
       { href: href(lang, "web-design-toledo"), text: "Web design in Toledo" },
-      { href: href(lang, "seo-pricing"), text: "SEO pricing" },
+      { href: href(lang, "seo-pricing"), text: "How much SEO costs" },
     ],
     faqs: [
       { q: "Where is the agency?", a: "Our base is at Calle Chopo 98, 45215 El Viso de San Juan (Toledo). We work with businesses across the province and the rest of Spain." },
@@ -151,8 +149,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang: raw } = await params;
   const lang: L = raw === "fr" ? "fr" : "en";
-  const { precios } = await preciosPlanesSeo();
-  const c = content(lang, precios);
+  const c = content(lang);
   return (
     <>
       {localServiceSchemas(c, lang === "fr" ? "Marketing digital à Tolède" : "Digital marketing in Toledo").map((s, i) => <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />)}

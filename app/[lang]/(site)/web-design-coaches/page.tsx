@@ -9,7 +9,7 @@ import { serviceSchema, intlPath, fromMeta } from "@/lib/schema";
 const FAQS_EN = [
   {
     q: "How much does a website for a coach or consultant cost?",
-    a: "A professional website for a coach or consultant starts from £690/€690 depending on the number of services, whether it includes a blog, resource area or payment platform integration. The price includes design, development, technical SEO and training for autonomous management.",
+    a: "The budget for a professional website for a coach or consultant depends on the number of services and on whether it includes a blog, resource area or payment platform integration; we prepare a custom quote after a free diagnosis. The project includes design, development, technical SEO and training for autonomous management.",
   },
   {
     q: "Can I sell my programmes or courses directly from the website?",
@@ -28,7 +28,7 @@ const FAQS_EN = [
 const FAQS_FR = [
   {
     q: "Combien coûte un site web pour un coach ou un consultant ?",
-    a: "Un site web professionnel pour coach ou consultant commence à partir de 690 € selon le nombre de services, s'il inclut un blog, un espace de ressources ou une intégration avec des plateformes de paiement. Le prix inclut la conception, le développement, le référencement technique et la formation à la gestion autonome.",
+    a: "Le budget d'un site web professionnel pour coach ou consultant dépend du nombre de services et de l'inclusion d'un blog, d'un espace de ressources ou d'une intégration avec des plateformes de paiement ; nous préparons un devis sur mesure après un diagnostic gratuit. Le projet inclut la conception, le développement, le référencement technique et la formation à la gestion autonome.",
   },
   {
     q: "Puis-je vendre mes programmes ou formations directement depuis le site ?",

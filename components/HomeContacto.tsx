@@ -12,7 +12,7 @@ const TXT = {
     pasos: [
       { n: "1", title: "Nos cuentas tu caso", desc: "Con un par de líneas basta. Si tienes web o ficha de Google, déjanos el enlace." },
       { n: "2", title: "Revisamos tu situación", desc: "Analizamos tu presencia digital y la de tu competencia. Sin coste y sin compromiso." },
-      { n: "3", title: "Te proponemos un plan", desc: "Una propuesta a tu medida, con objetivos y precio claros. Si encaja, empezamos." },
+      { n: "3", title: "Te proponemos un plan", desc: "Una propuesta a tu medida, con objetivos y presupuesto claros. Si encaja, empezamos." },
     ],
     direct: "¿Prefieres hablar directamente?",
     formTitle: "Escríbenos",

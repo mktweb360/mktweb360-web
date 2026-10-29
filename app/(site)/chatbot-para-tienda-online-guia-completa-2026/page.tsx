@@ -118,7 +118,7 @@ export default function ChatbotTiendaOnlinePage() {
           <p>A esto se suma el AI Act, cuyas obligaciones de transparencia son obligatorias desde agosto de 2026. En la práctica, tu chatbot debe informar de que es una IA y respetar la normativa de datos. No es un trámite opcional: es condición para poder operar sin riesgo legal.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Cuánto cuesta implementar un chatbot en una tienda online</h2>
-          <p>El coste depende del nivel. En el extremo básico, un chatbot de FAQs gestionado parte de unos 149€/mes. En el extremo avanzado, con integración de catálogo y pedidos y capacidad accionable, la mensualidad se sitúa en torno a 249-299€/mes, a lo que suele sumarse un coste de puesta en marcha.</p>
+          <p>El coste depende del nivel. En el extremo básico, un chatbot de FAQs gestionado tiene un coste contenido. En el extremo avanzado, con integración de catálogo y pedidos y capacidad accionable, la mensualidad es mayor y suele sumarse un coste de puesta en marcha. En Mkt Web 360 lo presupuestamos a medida tras un diagnóstico gratuito.</p>
           <p>La forma correcta de mirar el número no es el gasto, sino el retorno: cuántas ventas rescata y cuántas horas de atención ahorra. En una tienda con volumen, el punto de equilibrio se alcanza rápido. Elegir el nivel adecuado a tu realidad es la decisión que más peso tiene en esa ecuación.</p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">

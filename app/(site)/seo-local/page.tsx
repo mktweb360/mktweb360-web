@@ -6,7 +6,6 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { planPorId, precioTexto, type PlanSeo } from "@/lib/planes-seo";
-import { preciosPlanesSeo } from "@/lib/precios-planes";
 
 import { BlogBanner } from "@/components/BlogBanner";
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-const serviceSchema = (pLocal: PlanSeo) => ({
+const serviceSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Service",
   name: "SEO Local",
@@ -30,7 +29,6 @@ const serviceSchema = (pLocal: PlanSeo) => ({
   areaServed: { "@type": "Country", name: "España" },
   description: "Servicio de SEO local: posicionamiento en Google Maps, optimización de Google Business Profile, gestión de reseñas y búsquedas locales para empresas y profesionales.",
   url: "https://www.mktweb360.com/seo-local/",
-  offers: { "@type": "Offer", name: pLocal.nombre, priceSpecification: { "@type": "UnitPriceSpecification", price: pLocal.precio, priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false } },
 });
 
 
@@ -40,7 +38,7 @@ const faqs = ([pLocal, pPyme, pCrec]: PlanSeo[]) => [
   { q: "¿Necesito una ficha de Google Business Profile para hacer SEO local?", a: "Sí. La ficha de Google Business Profile es el activo central del SEO local: es lo que te permite aparecer en Google Maps y en el pack local de resultados. Si no la tienes, la creamos y verificamos; si ya la tienes, la auditamos y optimizamos (categorías, servicios, fotos, productos, horarios, atributos y publicaciones). Sin una ficha optimizada, el resto del trabajo local pierde gran parte de su efecto." },
   { q: "¿El SEO local funciona si tengo varias sedes o varias ciudades?", a: "Sí. Para negocios multisede creamos y optimizamos una ficha por ubicación y diseñamos una arquitectura de páginas locales coherente, evitando contenido duplicado entre ciudades. Cada sede compite por su propia zona con su ficha, su NAP (nombre, dirección y teléfono) consistente y sus reseñas, mientras la web mantiene una estructura que Google entiende sin penalizaciones." },
   { q: "¿Por qué importan las reseñas para el posicionamiento local y cómo conseguís más?", a: "Las reseñas son uno de los factores de ranking local más influyentes y, además, el principal motor de confianza antes del primer contacto. Implementamos procesos para solicitar reseñas en el momento adecuado, facilitamos el enlace directo a tus clientes y te ayudamos a responderlas todas —también las negativas— con criterio. El objetivo es un flujo constante de reseñas reales, no picos artificiales." },
-  { q: "¿Cuánto cuesta el SEO local?", a: `El plan ${pLocal.nombre} cuesta ${precioTexto(pLocal)}, sin permanencia, para webs de hasta 10 páginas con 1 ficha de Google y 2 contenidos al mes. Si además quieres trabajar la visibilidad en asistentes de IA y tu web es más amplia, el plan ${pPyme.nombre} cuesta ${precioTexto(pPyme)}. Para varias sedes, el plan ${pCrec.nombre} cuesta ${precioTexto(pCrec)}.` },
+  { q: "¿Cuánto cuesta el SEO local?", a: `Depende del tamaño de tu web y del número de sedes, por eso no publicamos una tarifa fija: tras un diagnóstico gratuito te preparamos un presupuesto por escrito y sin compromiso. Como referencia, el plan ${pLocal.nombre} está pensado para webs de hasta 10 páginas con 1 ficha de Google y 2 contenidos al mes; el plan ${pPyme.nombre}, para webs de hasta 30 páginas que además quieren trabajar la visibilidad en asistentes de IA; y el plan ${pCrec.nombre}, para varias sedes. Si hay una oferta vigente, la encontrarás con su precio en la portada de la web.` },
   { q: "¿Hacéis SEO local en cualquier ciudad?", a: "Sí. El SEO local es un servicio propio que trabajamos para negocios de cualquier ubicación de España: posicionamos cada negocio en su zona, esté donde esté, adaptando la estrategia a la competencia y al mercado de esa localidad." },
 ];
 
@@ -71,13 +69,12 @@ const CITIES = [
 ];
 
 export default async function SeoLocalPage() {
-  // Precios vigentes desde MktOS (con los de lib/planes-seo.ts de respaldo).
-  const { precios } = await preciosPlanesSeo();
-  const PLANES_LOCAL = [planPorId("local", "es", precios), planPorId("pyme", "es", precios), planPorId("crecimiento", "es", precios)];
+  // Sin precios (decisión 25/10/2026): los planes se muestran como tamaños de proyecto.
+  const PLANES_LOCAL = [planPorId("local", "es"), planPorId("pyme", "es"), planPorId("crecimiento", "es")];
   const FAQS = faqs(PLANES_LOCAL);
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(PLANES_LOCAL[0])) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema()) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(FAQS)) }} />
 
       {/* Hero */}
@@ -129,7 +126,7 @@ export default async function SeoLocalPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Planes de SEO local</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Un servicio propio, con precio cerrado y sin permanencia. Elige según el tamaño de tu web y el número de sedes.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">Un servicio propio, sin permanencia y con presupuesto por escrito tras un diagnóstico gratuito. Elige según el tamaño de tu web y el número de sedes.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {PLANES_LOCAL.map((p, i) => (
@@ -137,7 +134,7 @@ export default async function SeoLocalPage() {
                 {i === 0 && <span className="self-start bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">SEO local</span>}
                 <h3 className="font-bold text-primary-700 text-lg mb-1">{p.nombre}</h3>
                 <p className="text-sm text-gray-500 mb-3">{p.paraQuien}</p>
-                <p className="text-2xl font-bold text-accent-500 mb-4">{precioTexto(p)}</p>
+                <p className="text-base font-bold text-accent-500 mb-4">{precioTexto(p)}</p>
                 <ul className="space-y-1 text-sm text-gray-700 mb-4">
                   {p.limites.map((l) => <li key={l}>• {l}</li>)}
                 </ul>
@@ -148,7 +145,7 @@ export default async function SeoLocalPage() {
               </div>
             ))}
           </div>
-          <p className="text-sm text-gray-500 text-center mt-6">Precios sin IVA. ¿Tienes tienda online o una web más grande? <Link href="/precios-seo/" className="text-accent-600 underline">Calcula tu plan</Link>.</p>
+          <p className="text-sm text-gray-500 text-center mt-6">¿Tienes tienda online o una web más grande? <Link href="/precios-seo/" className="text-accent-600 underline">Calcula tu plan</Link>.</p>
         </div>
       </section>
 

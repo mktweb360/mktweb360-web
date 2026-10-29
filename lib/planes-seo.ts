@@ -4,15 +4,19 @@
 // (ver registro de sesión del 09/10/2026).
 // 16/10/2026: el precio vigente se gestiona en MktOS (Servicios y contratos › Planes SEO) y la web lo lee
 // cada 5 minutos (lib/precios-planes.ts). Los precios de BASE son el respaldo si MktOS no responde.
-// Cambiar aquí actualiza /precios-seo/, /seo-local/
-// (y sus versiones EN/FR) y el schema de ofertas.
-// Precios sin IVA. No usar nunca precio tachado sin precio de referencia real (Ley 3/1991, art. 5).
+// 25/10/2026 — DECISIÓN DE JOSÉ: la web, el asistente y toda la presencia digital NO muestran precios de
+// servicios; los precios solo aparecen en las OFERTAS vigentes (SEO + GEO + Maps, Web profesional, Tienda online).
+// Por eso los planes de aquí se muestran como TAMAÑOS DE PROYECTO (límites + qué incluye) y su «precio» visible es
+// siempre «presupuesto a medida tras diagnóstico gratuito» (ver precioTexto). Las cifras de BASE se conservan solo
+// para: (1) la oferta SEO + GEO + Maps (plan «pyme», que usa precioLocal) y (2) validar el catálogo de MktOS.
+// No usar nunca precio tachado sin precio de referencia real (Ley 3/1991, art. 5).
 //
 // i18n (09/10/2026): precios, ids, enlaces y lógica de recomendación son ÚNICOS para los tres
 // idiomas; solo los textos (nombre, para quién, límites, incluye, extras, condiciones y notas)
 // se traducen en PLAN_TEXT / EXTRAS / CONDICIONES / NOTAS. La salida ES es idéntica a la anterior.
 
 import { ROUTES, urlFor } from "@/lib/i18n/routes";
+import { PRECIO_SEO_GEO_MAPS_PERMANENCIA_6M, PRECIO_SEO_GEO_MAPS_SIN_PERMANENCIA } from "@/lib/ofertas";
 
 export type PlanLang = "es" | "en" | "fr";
 export type PlanId = "local" | "pyme" | "crecimiento" | "ecommerce-s" | "ecommerce-m" | "ecommerce-l";
@@ -30,7 +34,7 @@ export interface PlanSeo {
 // ── Datos únicos (no traducibles) ────────────────────────────────────────────
 const BASE: { id: PlanId; precio: number | null; esHref?: string }[] = [
   { id: "local", precio: 199, esHref: "/seo-local/" },
-  { id: "pyme", precio: 349, esHref: "/oferta-seo-geo-gbp/" },
+  { id: "pyme", precio: PRECIO_SEO_GEO_MAPS_SIN_PERMANENCIA, esHref: "/oferta-seo-geo-gbp/" },
   { id: "crecimiento", precio: 590 },
   { id: "ecommerce-s", precio: 449 },
   { id: "ecommerce-m", precio: 790 },
@@ -261,19 +265,19 @@ const EXTRAS: Record<PlanLang, string[]> = {
 
 const CONDICIONES: Record<PlanLang, string[]> = {
   es: [
-    "Precios sin IVA",
+    "Presupuesto por escrito tras un diagnóstico gratuito y sin compromiso",
     "Sin permanencia: baja avisando con 30 días de antelación",
     "No incluyen rediseño o desarrollo web, link building, fotografía o vídeo ni publicidad de pago",
     "No garantizamos posiciones: trabajamos con método, datos e informe mensual",
   ],
   en: [
-    "Prices exclude VAT",
+    "Written quote after a free diagnosis, with no obligation",
     "No minimum term: cancel with 30 days' notice",
     "Not included: website redesign or development, link building, photography or video, or paid advertising",
     "We do not guarantee rankings: we work with a method, data and a monthly report",
   ],
   fr: [
-    "Prix hors taxes",
+    "Devis écrit après un diagnostic gratuit et sans engagement",
     "Sans engagement : résiliation avec un préavis de 30 jours",
     "Ne comprennent pas la refonte ou le développement du site, le netlinking, la photo ou la vidéo, ni la publicité payante",
     "Nous ne garantissons pas de positions : nous travaillons avec une méthode, des données et un rapport mensuel",
@@ -325,7 +329,7 @@ export const PLAN_EN_CATALOGO: Record<PlanId, { servicio: string; modalidad: str
 // Opción con permanencia de 6 meses del plan «pyme» (SEO + GEO + GBP): 149 €/mes + IVA los 6 primeros meses,
 // después la tarifa vigente sin permanencia. Penalización por baja anticipada: 50 % de las mensualidades restantes.
 // Decidido por Manué el 20-oct-2026. No está (aún) en el catálogo de MktOS: se mantiene aquí. Ver CAMPAÑA-ofertas-web-y-seo-2026-10-20.md.
-export const PRECIO_PYME_PERMANENCIA_6M = 149;
+export const PRECIO_PYME_PERMANENCIA_6M = PRECIO_SEO_GEO_MAPS_PERMANENCIA_6M;
 
 export function precioLocal(id: PlanId): number | null {
   return BASE.find((b) => b.id === id)!.precio;
@@ -378,10 +382,17 @@ export function planPorId(id: PlanId, lang: PlanLang = "es", precios?: PreciosPl
   return planesSeo(lang, precios).find((p) => p.id === id)!;
 }
 
+// Texto visible en lugar del precio. NO devuelve cifras: los precios solo se muestran en las ofertas vigentes.
 export function precioTexto(p: PlanSeo, lang: PlanLang = "es"): string {
-  if (lang === "en") return p.precio === null ? "Custom quote" : `€${p.precio}/month + VAT`;
-  if (lang === "fr") return p.precio === null ? "Sur devis" : `${p.precio} €/mois HT`;
-  return p.precio === null ? "Presupuesto a medida" : `${p.precio} €/mes + IVA`;
+  // El plan «pyme» es la oferta SEO + GEO + Maps: su precio está en la página de la oferta.
+  if (p.id === "pyme") {
+    if (lang === "en") return "Current offer: price on the offer page";
+    if (lang === "fr") return "Offre en cours : prix sur la page de l'offre";
+    return "Oferta vigente: precio en la página de la oferta";
+  }
+  if (lang === "en") return "Custom quote after a free diagnosis";
+  if (lang === "fr") return "Devis sur mesure après un diagnostic gratuit";
+  return "Presupuesto a medida tras diagnóstico gratuito";
 }
 
 // Recomendación de la calculadora. Reglas simples y explicables (únicas para los tres idiomas).

@@ -41,7 +41,7 @@ const articleSchema = {
 const FAQS = [
   {
     q: "¿Cuánto cuesta una web para una clínica dental?",
-    a: "Una web profesional para dentistas parte desde 249€ + IVA dependiendo del número de páginas, funcionalidades (reserva online, blog, galería de casos) y nivel de personalización. El precio incluye diseño a medida integrado en WordPress y SEO técnico de base, para que gestiones tú los contenidos (hosting, dominio y correo no incluidos).",
+    a: "El presupuesto de una web profesional para dentistas es a medida tras un diagnóstico gratuito, y depende del número de páginas, funcionalidades (reserva online, blog, galería de casos) y nivel de personalización. Incluye diseño a medida integrado en WordPress y SEO técnico de base, para que gestiones tú los contenidos (hosting, dominio y correo no incluidos).",
   },
   {
     q: "¿Puedo añadir un sistema de reserva de cita online?",

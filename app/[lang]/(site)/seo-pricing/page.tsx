@@ -4,11 +4,10 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { CalculadoraSeo } from "@/components/CalculadoraSeo";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
-import { planesSeo, extrasSeo, condicionesComunes, precioTexto, reemplazarPrecios } from "@/lib/planes-seo";
-import { preciosPlanesSeo } from "@/lib/precios-planes";
+import { planesSeo, extrasSeo, condicionesComunes, precioTexto } from "@/lib/planes-seo";
 
 // 09/10/2026 — EN/FR de /precios-seo/. Precios, límites y lógica de la calculadora salen de
-// lib/planes-seo.ts (fuente única); aquí solo van los textos de la página.
+// lib/planes-seo.ts (fuente única); aquí solo van los textos de la página. Sin precios (decisión 25/10/2026).
 // Esta carpeta sirve /en/seo-pricing/; /fr/tarifs-seo/ reexporta este módulo.
 // La landing «Web profesional desde 249 €» solo existe en ES: en EN/FR se muestra el precio sin enlace.
 
@@ -18,28 +17,28 @@ const C = {
   en: {
     title: "SEO Pricing: How Much Does SEO Cost a Month?",
     description:
-      "SEO pricing by website size: from €199/month + VAT for professionals, €349/month for SMEs and plans for online stores. Find your plan, with no minimum term.",
+      "What makes the price of an SEO project vary, what each project size includes and how to compare quotes. Free diagnosis and a written quote, with no minimum term.",
     ogTitle: "SEO Pricing: How Much Does SEO Cost a Month? | Mkt Web 360",
-    ogDescription: "Published SEO rates, what each one includes and what makes the price of an SEO project vary.",
+    ogDescription: "What makes the price of an SEO project vary, what each project size includes and how to compare quotes.",
     ogAlt: "SEO pricing — Mkt Web 360",
     home: "Home",
     crumb: "SEO pricing",
     h1: "SEO pricing: how much it costs",
     h1Accent: "to rank your website on Google",
     intro:
-      "We publish our rates and what each one includes. No small print: price, service limits and what is not included, so that you can compare with sound judgement.",
-    calcTitle: "Work out your SEO plan",
+      "What makes the price of an SEO project vary, what each project size includes and what is not included, so that you can compare quotes with sound judgement. Your written quote comes after a free diagnosis.",
+    calcTitle: "Find the right SEO project size",
     calcSub:
-      "Four questions about your website and we will tell you which plan fits and how much it costs. The price follows the real workload: a professional's website with four services is not the same as a store with a hundred categories.",
-    plansTitle: "Monthly SEO plans",
+      "Four questions about your website and we will tell you which project size fits. The quote follows the real workload: a professional's website with four services is not the same as a store with a hundred categories.",
+    plansTitle: "SEO project sizes",
     seeDetail: "See the details",
-    requestPlan: "Request this plan",
+    requestPlan: "Request my quote",
     extrasTitle: "Extras",
     extrasNote: "Quoted on a case-by-case basis.",
-    conditionsTitle: "Conditions for all plans",
+    conditionsTitle: "Conditions for all projects",
     others: [
-      { name: "Professional website", price: "From €249 + VAT", note: "One-off payment · hosting, domain and email not included" },
-      { name: "SEO consultancy", price: "Custom quote", note: "Diagnosis, strategy and a prioritised plan for in-house teams", slug: "seo-consultant", cta: "See the consultancy" },
+      { name: "Professional website", price: "Offer: from €249 + VAT", note: "One-off payment · hosting, domain and email not included" },
+      { name: "SEO consultancy", price: "Custom quote after a free diagnosis", note: "Diagnosis, strategy and a prioritised plan for in-house teams", slug: "seo-consultant", cta: "See the consultancy" },
     ],
     factorsTitle: "What makes the price of SEO vary",
     factorsSub:
@@ -64,15 +63,15 @@ const C = {
     costAfter: ".",
     faqTitle: "Frequently asked questions about SEO pricing",
     faqs: [
-      { q: "How much does SEO cost per month?", a: "It depends on the size of the website and the workload: from €199/month + VAT for a professional with a website of up to 10 pages, €349/month + VAT for an SME with a website of up to 30 pages, €590/month + VAT for larger websites or those with several locations, and from €449/month + VAT for online stores. The calculator on this page shows you the plan that fits your case." },
+      { q: "How much does SEO cost per month?", a: "It depends on the size of the website and the workload, so we do not publish a fixed rate: after a free diagnosis we give you a written quote with no obligation. As a guide to sizes: the Essential Local SEO plan is designed for a professional with a website of up to 10 pages, the SEO + GEO + Google Business Profile plan for an SME with a website of up to 30 pages, the Growth / Multi-location plan for larger websites or those with several locations, and the Ecommerce plans for online stores. The calculator on this page shows you the size that fits your case. If there is a current offer, you will find it with its price on the home page." },
       { q: "Is there a minimum term?", a: "No. The monthly service has no minimum term. The usual approach is to assess the results with Search Console data after a few months, because SEO needs time to be reflected in rankings." },
       { q: "Why are SEO quotes on the market so different?", a: "Because different things are being compared: an automated report, consultancy without execution, or a service with content, technical changes and monthly monitoring. Before comparing prices, compare what each proposal includes, how many pieces of content per month, who does the work and how it is measured." },
-      { q: "Do you guarantee rankings for that price?", a: "No. Nobody can guarantee rankings on Google. What the price includes is the work described, with monthly reports and metrics that let you check how things are progressing." },
-      { q: "Does the price include link building?", a: "No. The monthly package does not include buying links. If your project needs it, we propose it separately, with a quote and explicit quality criteria." },
-      { q: "Do the prices include VAT?", a: "No. All prices on this page are shown excluding VAT." },
+      { q: "Do you guarantee rankings?", a: "No. Nobody can guarantee rankings on Google. What the quote includes is the work described, with monthly reports and metrics that let you check how things are progressing." },
+      { q: "Does the service include link building?", a: "No. The monthly package does not include buying links. If your project needs it, we propose it separately, with a quote and explicit quality criteria." },
+      { q: "Do the quotes include VAT?", a: "Each quote states expressly whether VAT is included. In our offers, the price is shown excluding VAT." },
     ],
     contactTitle: "Request your SEO quote",
-    contactSub: "Tell us your website and your goals. We will reply with a fixed proposal.",
+    contactSub: "Tell us your website and your goals. We will reply with a free diagnosis and a written proposal.",
     related: "More about SEO and rankings",
     schemaName: "Search engine optimisation (SEO)",
     country: "Spain",
@@ -80,28 +79,28 @@ const C = {
   fr: {
     title: "Tarifs SEO : combien coûte le référencement ?",
     description:
-      "Tarifs SEO selon la taille du site : dès 199 €/mois HT pour les professionnels, 349 €/mois pour les PME et des formules e-commerce. Sans engagement.",
+      "Ce qui fait varier le prix d'un projet SEO, ce que comprend chaque taille de projet et comment comparer les devis. Diagnostic gratuit et devis écrit, sans engagement.",
     ogTitle: "Tarifs SEO : combien coûte le référencement ? | Mkt Web 360",
-    ogDescription: "Des tarifs SEO publiés, ce que comprend chacun d'eux et ce qui fait varier le prix d'un projet de référencement.",
+    ogDescription: "Ce qui fait varier le prix d'un projet de référencement, ce que comprend chaque taille de projet et comment comparer les devis.",
     ogAlt: "Tarifs SEO — Mkt Web 360",
     home: "Accueil",
     crumb: "Tarifs SEO",
     h1: "Tarifs SEO : combien coûte",
     h1Accent: "le positionnement de votre site sur Google",
     intro:
-      "Nous publions nos tarifs et ce que comprend chacun d'eux. Pas de petites lignes : prix, limites du service et ce qui n'est pas inclus, pour que vous puissiez comparer en connaissance de cause.",
-    calcTitle: "Calculez votre formule SEO",
+      "Ce qui fait varier le prix d'un projet SEO, ce que comprend chaque taille de projet et ce qui n'est pas inclus, pour que vous puissiez comparer les devis en connaissance de cause. Votre devis écrit arrive après un diagnostic gratuit.",
+    calcTitle: "Trouvez la taille de projet SEO adaptée",
     calcSub:
-      "Quatre questions sur votre site et nous vous indiquons la formule adaptée et son prix. Le prix suit la charge de travail réelle : le site d'un professionnel avec quatre services n'a rien à voir avec une boutique de cent catégories.",
-    plansTitle: "Formules SEO mensuelles",
+      "Quatre questions sur votre site et nous vous indiquons la taille de projet adaptée. Le devis suit la charge de travail réelle : le site d'un professionnel avec quatre services n'a rien à voir avec une boutique de cent catégories.",
+    plansTitle: "Tailles de projet SEO",
     seeDetail: "Voir le détail",
-    requestPlan: "Demander cette formule",
+    requestPlan: "Demander mon devis",
     extrasTitle: "Options",
     extrasNote: "Chiffrées au cas par cas.",
-    conditionsTitle: "Conditions communes à toutes les formules",
+    conditionsTitle: "Conditions communes à tous les projets",
     others: [
-      { name: "Site professionnel", price: "À partir de 249 € HT", note: "Paiement unique · hébergement, nom de domaine et messagerie non inclus" },
-      { name: "Conseil SEO", price: "Sur devis", note: "Diagnostic, stratégie et plan priorisé pour les équipes internes", slug: "seo-consultant", cta: "Voir le conseil SEO" },
+      { name: "Site professionnel", price: "Offre : à partir de 249 € HT", note: "Paiement unique · hébergement, nom de domaine et messagerie non inclus" },
+      { name: "Conseil SEO", price: "Sur devis après un diagnostic gratuit", note: "Diagnostic, stratégie et plan priorisé pour les équipes internes", slug: "seo-consultant", cta: "Voir le conseil SEO" },
     ],
     factorsTitle: "Ce qui fait varier le prix du SEO",
     factorsSub:
@@ -126,15 +125,15 @@ const C = {
     costAfter: ".",
     faqTitle: "Questions fréquentes sur les tarifs SEO",
     faqs: [
-      { q: "Combien coûte le SEO par mois ?", a: "Cela dépend de la taille du site et de la charge de travail : à partir de 199 €/mois HT pour un professionnel avec un site de 10 pages maximum, 349 €/mois HT pour une PME avec un site de 30 pages maximum, 590 €/mois HT pour les sites plus grands ou avec plusieurs établissements, et à partir de 449 €/mois HT pour les boutiques en ligne. Le calculateur de cette page vous indique la formule adaptée à votre cas." },
+      { q: "Combien coûte le SEO par mois ?", a: "Cela dépend de la taille du site et de la charge de travail, c'est pourquoi nous ne publions pas de tarif fixe : après un diagnostic gratuit, nous vous remettons un devis écrit et sans engagement. À titre de repère sur les tailles : la formule SEO Local Essentiel est pensée pour un professionnel avec un site de 10 pages maximum, la formule SEO + GEO + Google Business Profile pour une PME avec un site de 30 pages maximum, la formule Croissance / Multi-établissements pour les sites plus grands ou avec plusieurs établissements, et les formules E-commerce pour les boutiques en ligne. Le calculateur de cette page vous indique la taille adaptée à votre cas. S'il y a une offre en cours, vous la trouverez avec son prix sur la page d'accueil." },
       { q: "Y a-t-il un engagement ?", a: "Non. Le service mensuel est sans engagement. L'usage est d'évaluer les résultats avec les données de Search Console au bout de quelques mois, car le SEO a besoin de temps pour se refléter dans les positions." },
       { q: "Pourquoi les devis SEO sont-ils si différents sur le marché ?", a: "Parce que l'on compare des choses différentes : un rapport automatique, du conseil sans mise en œuvre ou un service avec contenus, modifications techniques et suivi mensuel. Avant de comparer les prix, comparez ce que comprend chaque proposition, combien de contenus par mois, qui exécute et comment on mesure." },
-      { q: "Garantissez-vous des positions pour ce prix ?", a: "Non. Personne ne peut garantir des positions sur Google. Ce que comprend le prix, c'est le travail décrit, avec des rapports mensuels et des indicateurs qui vous permettent de vérifier l'évolution." },
-      { q: "Le prix inclut-il le netlinking ?", a: "Non. La formule mensuelle n'inclut pas l'achat de liens. Si votre projet en a besoin, nous le proposons à part, avec un devis et des critères de qualité explicites." },
-      { q: "Les prix incluent-ils la TVA ?", a: "Non. Tous les prix de cette page sont indiqués hors taxes." },
+      { q: "Garantissez-vous des positions ?", a: "Non. Personne ne peut garantir des positions sur Google. Ce que comprend le devis, c'est le travail décrit, avec des rapports mensuels et des indicateurs qui vous permettent de vérifier l'évolution." },
+      { q: "Le service inclut-il le netlinking ?", a: "Non. La formule mensuelle n'inclut pas l'achat de liens. Si votre projet en a besoin, nous le proposons à part, avec un devis et des critères de qualité explicites." },
+      { q: "Les devis incluent-ils la TVA ?", a: "Chaque devis indique expressément si la TVA est incluse ou non. Dans nos offres, le prix est indiqué hors taxes." },
     ],
     contactTitle: "Demandez votre devis SEO",
-    contactSub: "Indiquez votre site et vos objectifs. Nous vous répondons avec une proposition ferme.",
+    contactSub: "Indiquez votre site et vos objectifs. Nous vous répondons avec un diagnostic gratuit et une proposition écrite.",
     related: "Plus sur le SEO et le positionnement",
     schemaName: "Référencement naturel (SEO)",
     country: "Espagne",
@@ -149,10 +148,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const t = lang === "fr" ? C.fr : C.en;
   const url = BASE + pathFor(lang);
-  const { precios } = await preciosPlanesSeo();
   return {
     title: t.title,
-    description: reemplazarPrecios(t.description, precios),
+    description: t.description,
     alternates: alternatesFor(pathFor(lang)) ?? { canonical: url },
     openGraph: {
       title: t.ogTitle,
@@ -168,9 +166,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const lang = rawLang === "fr" ? "fr" : "en";
   const t = C[lang];
   const url = BASE + pathFor(lang);
-  const { precios } = await preciosPlanesSeo();
-  const planes = planesSeo(lang, precios);
-  const faqs = t.faqs.map((f) => ({ ...f, a: reemplazarPrecios(f.a, precios) }));
+  const planes = planesSeo(lang);
+  const faqs = t.faqs;
   const href = (slug: string) => `/${lang}/${langSlug(lang, slug)}/`;
 
   const serviceSchema = {
@@ -180,12 +177,6 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     provider: { "@id": "https://www.mktweb360.com/#organization" },
     areaServed: { "@type": "Country", name: t.country },
     url,
-    offers: planes.filter((p) => p.precio !== null).map((p) => ({
-      "@type": "Offer",
-      name: p.nombre,
-      url,
-      priceSpecification: { "@type": "UnitPriceSpecification", price: p.precio, priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false },
-    })),
   };
   const faqSchema = {
     "@context": "https://schema.org",
@@ -213,7 +204,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3 text-center">{t.calcTitle}</h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-10">{t.calcSub}</p>
-          <CalculadoraSeo lang={lang} precios={precios} />
+          <CalculadoraSeo lang={lang} />
         </div>
       </section>
 
@@ -225,7 +216,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               <div key={p.id} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 flex flex-col">
                 <h3 className="font-bold text-primary-700 text-lg mb-1">{p.nombre}</h3>
                 <p className="text-sm text-gray-500 mb-3">{p.paraQuien}</p>
-                <p className="text-2xl font-bold text-accent-500 mb-4">{precioTexto(p, lang)}</p>
+                <p className="text-base font-bold text-accent-500 mb-4">{precioTexto(p, lang)}</p>
                 <ul className="space-y-1 text-sm text-gray-700 mb-4">
                   {p.limites.map((l) => <li key={l} className="flex gap-2"><span className="text-primary-500 shrink-0">•</span>{l}</li>)}
                 </ul>
@@ -255,7 +246,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {t.others.map((o) => (
               <div key={o.name} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col">
                 <h3 className="font-bold text-primary-700 mb-1">{o.name}</h3>
-                <p className="text-xl font-bold text-accent-500">{o.price}</p>
+                <p className="text-base font-bold text-accent-500">{o.price}</p>
                 <p className="text-sm text-gray-500 mb-4 flex-1">{o.note}</p>
                 {"slug" in o && o.slug && (
                   <Link href={href(o.slug)} className="text-accent-600 font-semibold hover:underline">{o.cta} →</Link>

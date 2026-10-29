@@ -39,7 +39,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     ? [
         {
           q: "How much does a business chatbot cost?",
-          a: "It depends on the level of sophistication. A basic FAQ chatbot can start from around £130/month with a managed platform. An actionable assistant connected to a CRM and product catalogue may require a setup fee of £250–450 plus a monthly fee of £170–260.",
+          a: "It depends on the level of sophistication: a basic FAQ chatbot on a managed platform is not the same as an actionable assistant connected to a CRM and product catalogue, which may require a setup fee plus a monthly fee. We prepare a custom quote after a free diagnosis.",
         },
         {
           q: "How long does it take to go live?",
@@ -61,7 +61,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     : [
         {
           q: "Combien coûte un chatbot pour entreprise ?",
-          a: "Cela dépend du niveau de sophistication. Un chatbot FAQ basique peut démarrer à partir de 149 €/mois avec une plateforme gérée. Un assistant actionnable connecté à un CRM et à un catalogue de produits peut nécessiter des frais de mise en place de 300 à 500 € plus un abonnement mensuel de 199 à 299 €.",
+          a: "Cela dépend du niveau de sophistication : un chatbot FAQ basique sur une plateforme gérée n'est pas équivalent à un assistant actionnable connecté à un CRM et à un catalogue de produits, qui peut nécessiter des frais de mise en place plus un abonnement mensuel. Nous préparons un devis sur mesure après un diagnostic gratuit.",
         },
         {
           q: "Combien de temps faut-il pour le mettre en service ?",

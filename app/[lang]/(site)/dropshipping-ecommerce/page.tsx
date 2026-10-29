@@ -44,7 +44,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         },
         {
           q: "Why a hybrid model rather than pure commission on sales?",
-          a: "The pure sales commission model has an attribution problem: it is very difficult to determine how much of the sales is due to the agency's work and how much to other factors. The hybrid model — fixed setup + monthly management + bonus on net profit — is fairer for both parties: the client pays for the real work done each month, and the agency has an additional incentive when the business exceeds the profitability threshold. The bonus only applies when the business is already generating more than £2,000/€2,000/month in net profit, which guarantees the client is making money before paying more.",
+          a: "The pure sales commission model has an attribution problem: it is very difficult to determine how much of the sales is due to the agency's work and how much to other factors. The hybrid model — fixed setup + monthly management + bonus on net profit — is fairer for both parties: the client pays for the real work done each month, and the agency has an additional incentive when the business exceeds the profitability threshold. The bonus only applies when the business is already above a net-profit threshold agreed in the contract, which guarantees the client is making money before paying more.",
         },
         {
           q: "How long does it take for a dropshipping store to become profitable?",
@@ -62,7 +62,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         },
         {
           q: "Pourquoi un modèle hybride plutôt qu'une simple commission sur les ventes ?",
-          a: "Le modèle de pure commission sur les ventes présente un problème d'attribution : il est très difficile de déterminer quelle part des ventes est due au travail de l'agence et quelle part à d'autres facteurs. Le modèle hybride — setup fixe + gestion mensuelle + bonus sur le bénéfice net — est plus juste pour les deux parties : le client paie pour le travail réel effectué chaque mois, et l'agence a une incitation supplémentaire quand l'entreprise dépasse le seuil de rentabilité. Le bonus ne s'applique que quand l'entreprise génère déjà plus de 2 000 €/mois de bénéfice net, ce qui garantit que le client gagne de l'argent avant de payer davantage.",
+          a: "Le modèle de pure commission sur les ventes présente un problème d'attribution : il est très difficile de déterminer quelle part des ventes est due au travail de l'agence et quelle part à d'autres facteurs. Le modèle hybride — setup fixe + gestion mensuelle + bonus sur le bénéfice net — est plus juste pour les deux parties : le client paie pour le travail réel effectué chaque mois, et l'agence a une incitation supplémentaire quand l'entreprise dépasse le seuil de rentabilité. Le bonus ne s'applique que quand l'entreprise dépasse déjà un seuil de bénéfice net convenu au contrat, ce qui garantit que le client gagne de l'argent avant de payer davantage.",
         },
         {
           q: "Combien de temps faut-il pour qu'une boutique dropshipping soit rentable ?",
@@ -145,19 +145,19 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             {isEn
-              ? "The revenue sharing model works like this: you pay an initial setup to build the store, a monthly management fee for us to maintain and grow it, and an additional bonus when the business exceeds the profitability threshold. The setup covers the complete store creation. The monthly management fee of £400/€400 per month covers the real work we do each month: SEO, product page optimisation, supplier management, performance analysis and strategy adjustments."
-              : "Le modèle de participation aux résultats fonctionne ainsi : vous payez un setup initial pour monter la boutique, une gestion mensuelle pour que nous la maintenions et la fassions croître, et un bonus supplémentaire quand l'entreprise dépasse le seuil de rentabilité. Le setup couvre la création complète de la boutique. La gestion mensuelle de 400 €/mois couvre le travail réel que nous faisons chaque mois : SEO, optimisation des fiches produit, gestion des fournisseurs, analyse des performances et ajustements de stratégie."}
+              ? "The revenue sharing model works like this: you pay an initial setup to build the store, a monthly management fee for us to maintain and grow it, and an additional bonus when the business exceeds the profitability threshold. The setup covers the complete store creation. The monthly management fee covers the real work we do each month: SEO, product page optimisation, supplier management, performance analysis and strategy adjustments."
+              : "Le modèle de participation aux résultats fonctionne ainsi : vous payez un setup initial pour monter la boutique, une gestion mensuelle pour que nous la maintenions et la fassions croître, et un bonus supplémentaire quand l'entreprise dépasse le seuil de rentabilité. Le setup couvre la création complète de la boutique. La gestion mensuelle couvre le travail réel que nous faisons chaque mois : SEO, optimisation des fiches produit, gestion des fournisseurs, analyse des performances et ajustements de stratégie."}
           </p>
           <p className="text-gray-700 leading-relaxed">
             {isEn
-              ? "The 10% bonus on monthly net profit — calculated on revenue minus product cost and direct expenses — only applies when the business exceeds £2,000/€2,000 per month in net profit. This guarantees that before paying more, you are already making money. If the business doesn't exceed that threshold, you only pay the monthly management fee."
-              : "Le bonus de 10 % sur le bénéfice net mensuel — calculé sur les revenus moins le coût du produit et les dépenses directes — ne s'applique que quand l'entreprise dépasse 2 000 €/mois de bénéfice net. Cela garantit qu'avant de payer davantage, vous gagnez déjà de l'argent. Si l'entreprise ne dépasse pas ce seuil, vous ne payez que la gestion mensuelle."}
+              ? "The bonus on monthly net profit — calculated on revenue minus product cost and direct expenses — only applies when the business exceeds the net-profit threshold agreed in the contract. This guarantees that before paying more, you are already making money. If the business doesn't exceed that threshold, you only pay the monthly management fee."
+              : "Le bonus sur le bénéfice net mensuel — calculé sur les revenus moins le coût du produit et les dépenses directes — ne s'applique que quand l'entreprise dépasse le seuil de bénéfice net convenu au contrat. Cela garantit qu'avant de payer davantage, vous gagnez déjà de l'argent. Si l'entreprise ne dépasse pas ce seuil, vous ne payez que la gestion mensuelle."}
           </p>
         </section>
 
         <section className="mb-16 bg-primary-50 rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-primary-600 mb-6">
-            {isEn ? "What the £1,500/€1,500 setup includes" : "Ce que le setup de 1 500 € inclut"}
+            {isEn ? "What the setup includes" : "Ce que le setup inclut"}
           </h2>
           <p className="text-gray-700 leading-relaxed">
             {isEn
@@ -172,13 +172,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             {isEn
-              ? "The £400/€400/month management fee includes: catalogue updates with new products and optimisation of existing ones; continuous SEO improvement of product pages and categories; supplier relationship management (pricing, availability, incidents); monthly analysis of margins by product and pricing adjustments; and a monthly sales, margin and next-actions report."
-              : "La gestion mensuelle de 400 €/mois inclut : la mise à jour du catalogue avec de nouveaux produits et l'optimisation des existants ; l'amélioration continue du SEO des fiches produit et des catégories ; la gestion des relations avec les fournisseurs (prix, disponibilité, incidents) ; l'analyse mensuelle des marges par produit et l'ajustement des prix ; et un rapport mensuel des ventes, marges et prochaines actions."}
+              ? "The monthly management fee includes: catalogue updates with new products and optimisation of existing ones; continuous SEO improvement of product pages and categories; supplier relationship management (pricing, availability, incidents); monthly analysis of margins by product and pricing adjustments; and a monthly sales, margin and next-actions report."
+              : "La gestion mensuelle inclut : la mise à jour du catalogue avec de nouveaux produits et l'optimisation des existants ; l'amélioration continue du SEO des fiches produit et des catégories ; la gestion des relations avec les fournisseurs (prix, disponibilité, incidents) ; l'analyse mensuelle des marges par produit et l'ajustement des prix ; et un rapport mensuel des ventes, marges et prochaines actions."}
           </p>
           <p className="text-gray-700 leading-relaxed">
             {isEn
-              ? "The 10% bonus on net profit applies from £2,000/€2,000 per month of net profit. Net profit is calculated as: total revenue minus product cost (supplier price + shipping) minus the monthly management fee. Paid advertising costs, if any, are also deducted. The calculation is done monthly with verifiable platform data."
-              : "Le bonus de 10 % sur le bénéfice net s'applique à partir de 2 000 €/mois de bénéfice net. Le bénéfice net est calculé comme : revenus totaux moins le coût du produit (prix fournisseur + expédition) moins la quote-part mensuelle de gestion. Les dépenses de publicité payante, le cas échéant, sont également déduites. Le calcul est effectué mensuellement avec des données vérifiables de la plateforme."}
+              ? "The bonus on net profit applies above the net-profit threshold agreed in the contract. Net profit is calculated as: total revenue minus product cost (supplier price + shipping) minus the monthly management fee. Paid advertising costs, if any, are also deducted. The calculation is done monthly with verifiable platform data."
+              : "Le bonus sur le bénéfice net s'applique au-delà du seuil de bénéfice net convenu au contrat. Le bénéfice net est calculé comme : revenus totaux moins le coût du produit (prix fournisseur + expédition) moins la quote-part mensuelle de gestion. Les dépenses de publicité payante, le cas échéant, sont également déduites. Le calcul est effectué mensuellement avec des données vérifiables de la plateforme."}
           </p>
         </section>
 

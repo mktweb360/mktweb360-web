@@ -26,14 +26,6 @@ const serviceSchema = {
   description: "Servicio de gestión de redes sociales para empresas. Estrategia de contenidos, diseño gráfico, publicaciones, atención al cliente y análisis de resultados mensuales.",
   areaServed: "España",
   url: "https://www.mktweb360.com/smm-social-media-marketing/",
-  offers: {
-    "@type": "Offer",
-    price: "350",
-    priceCurrency: "EUR",
-    description: "Gestión profesional de redes sociales desde 350€/mes. Estrategia, contenido e informes mensuales incluidos.",
-    availability: "https://schema.org/InStock",
-    url: "https://www.mktweb360.com/smm-social-media-marketing/",
-  },
 };
 const FAQS = [
   {
@@ -182,25 +174,25 @@ export default function SmmPage() {
         {/* Planes */}
         <section className="mb-16">
           <h2 className="text-2xl font-bold text-primary-600 mb-4">Planes de gestión de redes sociales</h2>
-          <p className="text-gray-600 mb-8">Precios orientativos. El presupuesto final depende del número de redes, volumen de contenido y si se incluye publicidad.</p>
+          <p className="text-gray-600 mb-8">Presupuesto a medida tras un diagnóstico gratuito. Depende del número de redes, volumen de contenido y si se incluye publicidad.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 plan: "Plan Básico",
-                precio: "Desde 500 €/mes",
+                precio: "Presupuesto a medida",
                 redes: "2 redes sociales",
                 items: ["12 publicaciones mensuales", "Diseño gráfico incluido", "Copies optimizados", "Gestión de comentarios", "Informe mensual"],
               },
               {
                 plan: "Plan Avanzado",
-                precio: "Desde 750 €/mes",
+                precio: "Presupuesto a medida",
                 redes: "3 redes sociales",
                 items: ["20 publicaciones mensuales", "Reels y stories", "Diseño gráfico premium", "Gestión activa de comunidad", "Informe avanzado con KPIs", "Reunión mensual de seguimiento"],
                 destacado: true,
               },
               {
                 plan: "Plan Completo",
-                precio: "Desde 1.200 €/mes",
+                precio: "Presupuesto a medida",
                 redes: "Todas las redes",
                 items: ["Publicaciones ilimitadas", "Social Ads incluido", "Producción de vídeo básica", "Estrategia de influencers", "Informe semanal", "Account manager dedicado"],
               },

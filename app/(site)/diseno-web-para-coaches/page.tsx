@@ -41,7 +41,7 @@ const articleSchema = {
 const FAQS = [
   {
     q: "¿Cuánto cuesta una web para un coach o consultor?",
-    a: "Una web profesional para coach o consultor parte desde 690€ dependiendo del número de servicios, si incluye blog, área de recursos o integración con plataformas de pago. El precio incluye diseño, desarrollo, SEO técnico y formación para gestión autónoma.",
+    a: "El presupuesto de una web profesional para coach o consultor es a medida tras un diagnóstico gratuito, y depende del número de servicios, de si incluye blog, área de recursos o integración con plataformas de pago. Incluye diseño, desarrollo, SEO técnico y formación para gestión autónoma.",
   },
   {
     q: "¿Puedo vender mis programas o cursos directamente desde la web?",

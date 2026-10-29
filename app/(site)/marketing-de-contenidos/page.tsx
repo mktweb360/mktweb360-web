@@ -26,14 +26,6 @@ const serviceSchema = {
   description: "Servicio de marketing de contenidos para empresas. Artículos SEO, estrategia editorial y contenidos para redes sociales.",
   areaServed: "España",
   url: "https://www.mktweb360.com/marketing-de-contenidos/",
-  offers: {
-    "@type": "Offer",
-    price: "390",
-    priceCurrency: "EUR",
-    description: "Estrategia y creación de contenidos SEO desde 390€/mes. Artículos optimizados, calendario editorial y análisis de resultados.",
-    availability: "https://schema.org/InStock",
-    url: "https://www.mktweb360.com/marketing-de-contenidos/",
-  },
 };
 const FAQS = [
   { q: "¿Cuántos artículos al mes necesito para ver resultados en SEO?",
@@ -163,23 +155,23 @@ export default function ContentMarketingPage() {
         {/* Planes */}
         <section className="mb-16 bg-primary-50 rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-primary-600 mb-4">Planes de marketing de contenidos</h2>
-          <p className="text-gray-600 mb-8">Precios orientativos. El presupuesto final depende del volumen, los formatos y el nivel de especialización requerido.</p>
+          <p className="text-gray-600 mb-8">Presupuesto a medida tras un diagnóstico gratuito. Depende del volumen, los formatos y el nivel de especialización requerido.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 plan: "Plan Básico",
-                precio: "Desde 300 €/mes",
+                precio: "Presupuesto a medida",
                 items: ["2 artículos SEO mensuales", "Investigación de keywords", "Optimización on-page", "Publicación en tu web", "Informe de posicionamiento"],
               },
               {
                 plan: "Plan Avanzado",
-                precio: "Desde 550 €/mes",
+                precio: "Presupuesto a medida",
                 items: ["4 artículos SEO mensuales", "Contenido para 2 redes sociales", "Estrategia editorial completa", "Enlazado interno optimizado", "Informe mensual de resultados"],
                 destacado: true,
               },
               {
                 plan: "Plan Completo",
-                precio: "Desde 900 €/mes",
+                precio: "Presupuesto a medida",
                 items: ["6+ artículos SEO mensuales", "Contenido multicanal", "Newsletter mensual", "Guía o ebook trimestral", "Estrategia de link building", "Consultoría editorial mensual"],
               },
             ].map(p => (

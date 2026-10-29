@@ -24,7 +24,7 @@ const INCLUDES = [
 
 const COMPARATIVA = [
   { plataforma: "Shopify — 3 años", items: ["Licencia ~39€/mes = 1.404€", "Comisión 2% por venta = ~2.160€", "Plantilla 200-500€", "Apps y plugins 300-600€"], total: "~4.864€", color: "bg-gray-50 border-gray-200" },
-  { plataforma: "Mkt Web 360 — 3 años", items: ["Desarrollo desde 490€", "Comisión por venta: 0€", "Licencia plataforma: 0€", "Hosting ~150€/año = 450€"], total: "~940€", color: "bg-primary-50 border-primary-200" },
+  { plataforma: "Mkt Web 360 — 3 años", items: ["Desarrollo desde 490€", "Comisión por venta: 0€", "Licencia plataforma: 0€", "Hosting y dominio: aparte, según proveedor"], total: "", color: "bg-primary-50 border-primary-200" },
 ];
 
 const WA = "https://wa.me/34622748987?text=Hola%2C%20me%20interesa%20la%20tienda%20online%20desde%20490%E2%82%AC";
@@ -128,7 +128,7 @@ export default function LandingTiendaOnline490Page() {
                     </li>
                   ))}
                 </ul>
-                <p className="font-bold text-primary-700 text-lg border-t border-gray-200 pt-3">Total estimado: {c.total}</p>
+                {c.total && <p className="font-bold text-primary-700 text-lg border-t border-gray-200 pt-3">Total estimado: {c.total}</p>}
               </div>
             ))}
           </div>

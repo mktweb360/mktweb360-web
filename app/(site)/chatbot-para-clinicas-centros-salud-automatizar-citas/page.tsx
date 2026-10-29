@@ -110,7 +110,7 @@ export default function ChatbotClinicasPage() {
           <BlogBanner variant="default" />
 
           <h2 className="text-2xl font-bold text-primary-600">ROI del chatbot para una clínica: cálculo práctico</h2>
-          <p>El cálculo suele ser favorable. En una clínica dental, un chatbot con un coste aproximado de 199 euros al mes puede generar un ahorro cercano a los 600 euros mensuales en tiempo de personal, al absorber las consultas y gestiones repetitivas que antes ocupaban a recepción.</p>
+          <p>El cálculo suele ser favorable. En una clínica dental, un chatbot gestionado puede generar un ahorro cercano a los 600 euros mensuales en tiempo de personal, al absorber las consultas y gestiones repetitivas que antes ocupaban a recepción.</p>
           <p>A ese ahorro directo se suman las citas que se recuperan porque el paciente puede reservar fuera del horario de atención telefónica. Reforzar además la ficha en <Link href="/google-business-profile/" className="text-accent-500 hover:underline">Google Business Profile</Link> multiplica el número de pacientes que llegan hasta ese chatbot, cerrando el círculo entre visibilidad y conversión.</p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
