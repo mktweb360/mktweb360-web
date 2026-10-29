@@ -71,11 +71,6 @@ export default async function LangHomePage({
           text: "Mkt Web 360 has been our provider for positioning and web for our various businesses for 4 years now. We are really happy with the work.",
         },
         {
-          name: "Miguel Palomino",
-          company: "Web + SEO client",
-          text: "We commissioned a website and they got us to the top of Google within two months at a very competitive price. Highly recommended.",
-        },
-        {
           name: "CC LASER",
           company: "Business client",
           text: "Very professional, always available and quick to resolve whatever you need. I recommend them 100%.",
@@ -141,11 +136,6 @@ export default async function LangHomePage({
           name: "Yves Billiet",
           company: "Client multi-sites",
           text: "Mkt Web 360 est depuis 4 ans notre prestataire en positionnement et web pour nos différentes entreprises. Nous sommes vraiment contents du travail.",
-        },
-        {
-          name: "Miguel Palomino",
-          company: "Client web + SEO",
-          text: "Nous avons commandé un site web et ils nous ont mis en tête de Google en deux mois à un prix très compétitif. Très recommandable.",
         },
         {
           name: "CC LASER",

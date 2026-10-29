@@ -25,7 +25,7 @@ const OFERTA_FILES = [
 // Importes que fueron precios propios de servicios y ya no deben aparecer como tarifa nuestra.
 const PRECIOS_RETIRADOS = [199, 590, 449, 790, 690, 990, 290, 390, 350, 100];
 // Líneas que hablan de mercado o de terceros: se permiten.
-const MERCADO = /mercado|market|march[eé]|terceros|referencia|reference|competencia|agencias? (pequeñ|medi|grand)|shopify|wix|woocommerce|tidio|intercom|zendesk|botpress|stripe|paypal|redsys|sancion|multa|cuota|aut[oó]nomo|self-employed|social security|cotisation|ind[eé]pendant|hosting|dominio|cpc|inversi[oó]n publicitaria|presupuesto publicitario|roas|adsense|rpm|ahorro/i;
+const MERCADO = /mercado|market|march[eé]|terceros|referencia|reference|competencia|agencias? (pequeñ|medi|grand)|shopify|wix|woocommerce|tidio|intercom|zendesk|botpress|stripe|paypal|redsys|sancion|multa|cuota|aut[oó]nomo|self-employed|social security|contribution|cotisation|ind[eé]pendant|hosting|dominio|cpc|inversi[oó]n publicitaria|presupuesto publicitario|roas|adsense|rpm|ahorro/i;
 
 function* walk(p) {
   let st;

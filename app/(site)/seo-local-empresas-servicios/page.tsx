@@ -173,7 +173,7 @@ export default function SeoLocalPage() {
           </div>
 
           <p className="text-sm text-gray-500 pt-4">
-            Servicio relacionado: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Precios SEO</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">Auditoría Digital</Link>
+            Servicio relacionado: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Cuánto cuesta el SEO</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">Auditoría Digital</Link>
           </p>
         </div>
 

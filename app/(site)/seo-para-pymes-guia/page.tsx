@@ -248,7 +248,7 @@ export default async function SeoParaPymesPage() {
           </p>
           <Tabla cabecera={["Plan", "Para quién", "Precio al mes (sin IVA)"]} filas={tabla.map((p) => [p.nombre, PARA_QUIEN[p.id], `${p.precio} €`])} />
           <p>
-            Qué incluye cada plan y sus límites está en <Link href="/precios-seo/" className="text-accent-500 hover:underline">precios SEO</Link>. Si quieres comparar con el mercado, revisa <Link href="/cuanto-cuesta-agencia-marketing-digital-espana-2026/" className="text-accent-500 hover:underline">cuánto cuesta una agencia de marketing digital en España</Link>.
+            Qué hace variar el precio de un proyecto SEO lo explicamos en <Link href="/precios-seo/" className="text-accent-500 hover:underline">cuánto cuesta el SEO</Link>; el nuestro es un presupuesto a medida tras un diagnóstico gratuito. Si quieres comparar con el mercado, revisa <Link href="/cuanto-cuesta-agencia-marketing-digital-espana-2026/" className="text-accent-500 hover:underline">cuánto cuesta una agencia de marketing digital en España</Link>.
           </p>
 
           <BlogBanner variant="seogeogbp" />
@@ -304,7 +304,7 @@ export default async function SeoParaPymesPage() {
           </ol>
 
           <p className="text-sm text-gray-500 pt-4">
-            Servicios relacionados: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Planes y precios SEO</Link> · <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO local</Link>
+            Servicios relacionados: <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link> · <Link href="/consultor-seo/" className="text-accent-500 hover:underline">Consultor SEO</Link> · <Link href="/precios-seo/" className="text-accent-500 hover:underline">Cuánto cuesta el SEO</Link> · <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO local</Link>
           </p>
         </div>
 

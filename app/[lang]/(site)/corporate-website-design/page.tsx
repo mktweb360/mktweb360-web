@@ -44,13 +44,6 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       : "Conception et développement de sites web corporatifs professionnels pour entreprises. Site optimisé pour le SEO, la génération de leads et la conversion.",
     areaServed: isEn ? "Spain" : "Espagne",
     url: `https://www.mktweb360.com/${lang}/corporate-website-design/`,
-    offers: {
-      "@type": "Offer",
-      price: "249",
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-      url: `https://www.mktweb360.com/${lang}/corporate-website-design/`,
-    },
   };
 
   const FAQS = isEn

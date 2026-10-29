@@ -145,7 +145,7 @@ export default async function SeoLocalPage() {
               </div>
             ))}
           </div>
-          <p className="text-sm text-gray-500 text-center mt-6">¿Tienes tienda online o una web más grande? <Link href="/precios-seo/" className="text-accent-600 underline">Calcula tu plan</Link>.</p>
+          <p className="text-sm text-gray-500 text-center mt-6">¿Tienes tienda online o una web más grande? <Link href="/precios-seo/" className="text-accent-600 underline">Calcula el tamaño de tu proyecto SEO</Link>.</p>
         </div>
       </section>
 

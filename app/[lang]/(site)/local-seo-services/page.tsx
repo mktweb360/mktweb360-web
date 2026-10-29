@@ -259,7 +259,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
           <p className="text-sm text-gray-500 text-center mt-6">
             {isEn ? "Do you have an online store or a larger website? " : "Vous avez une boutique en ligne ou un site plus grand ? "}
-            <Link href={`/${lang}/${langSlug(lang, "seo-pricing")}/`} className="text-accent-600 underline">{isEn ? "Work out your plan" : "Calculez votre formule"}</Link>.
+            <Link href={`/${lang}/${langSlug(lang, "seo-pricing")}/`} className="text-accent-600 underline">{isEn ? "Work out the size of your SEO project" : "Estimez la taille de votre projet SEO"}</Link>.
           </p>
         </div>
       </section>
