@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
 const MKTOS_URL = "https://mktos360.app/api/webhooks/commercial-close";
-const MKTOS_SECRET = process.env.MKTOS_WEBHOOK_SECRET!;
+// Secreto propio de este webhook (= COMMERCIAL_CLOSE_SECRET en MktOS). No se reutiliza MKTOS_WEBHOOK_SECRET.
+const MKTOS_SECRET = process.env.MKTOS_COMMERCIAL_CLOSE_SECRET;
 const MKTOS_APP_URL = process.env.MKTOS_APP_URL || "https://mktos360.app";
 
 export async function POST(req: NextRequest) {
@@ -10,6 +11,11 @@ export async function POST(req: NextRequest) {
   const session = cookieStore.get("admin_session");
   if (!session || session.value !== "authenticated") {
     return NextResponse.json({ ok: false }, { status: 401 });
+  }
+
+  if (!MKTOS_SECRET) {
+    console.error("[cerrar-contrato/tienda-online] Falta MKTOS_COMMERCIAL_CLOSE_SECRET");
+    return NextResponse.json({ ok: false, error: "Integración con MktOS sin configurar" }, { status: 500 });
   }
 
   const {
