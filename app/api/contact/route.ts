@@ -140,6 +140,9 @@ export async function POST(req: NextRequest) {
         sector: "", canal, oferta, opcionPago: "",
         mensaje: gbp ? `${message}${message ? "\n\n" : ""}Ficha de Google: ${gbp}` : message,
         fichaGoogle: gbp || "",
+        // Primera capa RGPD: la casilla de privacidad es obligatoria (se valida arriba con !gdpr), así que aquí siempre es true.
+        consentimiento: true,
+        consentimientoFecha: new Date().toISOString(),
         consentimientoComercial: consentComercial,
         // Prueba del consentimiento: texto exacto que vio, idioma, página, IP y navegador (MktOS › crm.consent_events).
         ...(consentComercial
