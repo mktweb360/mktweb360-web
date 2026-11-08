@@ -147,12 +147,14 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
           "Construction & renovation", "E-commerce & retail", "Real estate",
           "Education & training", "Technology & SaaS", "Industry & manufacturing",
           "Accounting & tax advisory", "Law firms", "Freelancers & consultants",
+          "Painters & painting companies",
         ]
       : [
           "Services professionnels", "Cliniques & santé", "Hôtellerie & tourisme",
           "Construction & rénovation", "E-commerce & retail", "Immobilier",
           "Éducation & formation", "Technologie & SaaS", "Industrie & fabrication",
           "Comptabilité & conseil fiscal", "Cabinets d'avocats", "Freelances & consultants",
+          "Peintres & entreprises de peinture",
         ],
     faqTitle: isEn ? "Frequently asked questions about web design" : "Questions fréquentes sur la création web",
     faqs: isEn
@@ -343,11 +345,18 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
           <h2 className="text-2xl font-bold text-primary-600 mb-6">{t.sectorsTitle}</h2>
           <p className="text-gray-700 leading-relaxed mb-6">{t.sectorsIntro}</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {t.sectors.map((s) => (
-              <div key={s} className="bg-white rounded-xl p-3 text-center border border-gray-100 shadow-sm">
-                <p className="text-gray-700 text-sm font-medium">{s}</p>
-              </div>
-            ))}
+            {t.sectors.map((s) => {
+              const painters = s === "Painters & painting companies" || s === "Peintres & entreprises de peinture";
+              return painters ? (
+                <Link key={s} href={`/${lang}/${lang === "fr" ? "creation-site-web-peintres" : "web-design-for-painters"}/`} className="bg-white rounded-xl p-3 text-center border border-gray-100 shadow-sm hover:border-accent-300 hover:shadow-md transition-all">
+                  <p className="text-gray-700 text-sm font-medium">{s}</p>
+                </Link>
+              ) : (
+                <div key={s} className="bg-white rounded-xl p-3 text-center border border-gray-100 shadow-sm">
+                  <p className="text-gray-700 text-sm font-medium">{s}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

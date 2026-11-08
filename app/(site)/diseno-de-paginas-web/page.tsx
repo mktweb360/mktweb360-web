@@ -54,6 +54,7 @@ const SECTOR_LINKS: Record<string, string> = {
   "Servicios profesionales": "/5-factores-web-servicios-profesionales/",
   "Asesorías y gestorías": "/5-factores-web-asesorias-gestorias/",
   "Autónomos y freelance": "/5-factores-web-autonomos-freelance/",
+  "Pintores y empresas de pintura": "/paginas-web-para-pintores/",
 };
 
 const FEATURES = [
@@ -324,6 +325,7 @@ export default function WebDesignPage() {
               "Educación y formación", "Tecnología y SaaS", "Industria y manufactura",
               "Asesorías y gestorías", "Despachos de abogados", "Autónomos y freelance",
               "Clínicas dentales", "Talleres mecánicos", "Peluquerías y estética",
+              "Pintores y empresas de pintura",
             ].map(s => {
               const href = SECTOR_LINKS[s];
               const label = <p className="text-gray-700 text-sm font-medium">{s}</p>;

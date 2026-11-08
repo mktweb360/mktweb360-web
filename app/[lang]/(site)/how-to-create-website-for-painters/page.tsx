@@ -1,11 +1,13 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
-import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
+import { PintoresCta } from "@/components/PintoresCta";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -20,94 +22,219 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   };
 }
 
+type L = "en" | "fr";
+type Bi = { en: string; fr: string };
+
+const H2 = "text-2xl font-bold text-primary-600 mb-4";
+const P = "text-gray-600 mb-4 leading-relaxed";
+const UL = "list-disc pl-6 space-y-1 text-gray-600 mb-4";
+
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params;
-  const isEn = lang === "en";
+  const { lang: raw } = await params;
+  const lang: L = raw === "fr" ? "fr" : "en";
+  const t = (b: Bi) => b[lang];
+  const landing = lang === "fr" ? "/fr/creation-site-web-peintres/" : "/en/web-design-for-painters/";
+  const headline = t({
+    en: "How to create a website for painters that generates customers on Google",
+    fr: "Comment créer un site web pour peintres qui génère des clients sur Google",
+  });
+
   return (
     <>
       <div className="max-w-3xl mx-auto px-4 py-12">
         <Breadcrumbs crumbs={[
-          { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
+          { label: t({ en: "Home", fr: "Accueil" }), href: `/${lang}/` },
           { label: "Blog", href: `/${lang}/blog/` },
-          { label: isEn ? "Website for painters" : "Site web pour peintres" },
+          { label: t({ en: "Website for painters", fr: "Site web pour peintres" }) },
         ]} />
-        <p className="text-sm text-accent-500 font-semibold mb-2">Web Design</p>
-        <IntlArticleJsonLd lang={lang} slug="how-to-create-website-for-painters" headline={isEn ? "How to create a website for painters that generates customers on Google" : "Comment créer un site web pour peintres qui génère des clients sur Google"} image="/og-como-crear-una-pagina-web-para-pintores.jpg" />
-        <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
-          {isEn ? "How to create a website for painters that generates customers on Google" : "Comment créer un site web pour peintres qui génère des clients sur Google"}
-        </h1>
+        <p className="text-sm text-accent-500 font-semibold mb-2">{t({ en: "Web Design", fr: "Création Web" })}</p>
+        <IntlArticleJsonLd lang={lang} slug="how-to-create-website-for-painters" headline={headline} image="/og-como-crear-una-pagina-web-para-pintores.jpg" />
+        <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">{headline}</h1>
         <AuthorByline lang={lang} block />
-        <p className="text-xl text-gray-500 mb-8 leading-relaxed">
-          {isEn ? "A professional website is the most powerful tool a painter can have to attract customers. This guide explains what it needs to include, how to appear on Google and how to convert visits into calls." : "Un site web professionnel est l'outil le plus puissant qu'un peintre peut avoir pour attirer des clients. Ce guide explique ce qu'il doit inclure, comment apparaître sur Google et comment convertir les visites en appels."}
+        <p className="text-xl text-gray-500 mb-6 leading-relaxed">
+          {t({
+            en: "A professional website is the most powerful tool a painter can have to attract customers. This guide explains what it needs to include, how to appear on Google and how to turn visits into quote requests.",
+            fr: "Un site web professionnel est l'outil le plus puissant qu'un peintre puisse avoir pour attirer des clients. Ce guide explique ce qu'il doit inclure, comment apparaître sur Google et comment transformer les visites en demandes de devis.",
+          })}
         </p>
+        <Image
+          src="/og-como-crear-una-pagina-web-para-pintores.jpg"
+          alt={t({
+            en: "Illustration of a painting company's website with job gallery, Google profile and quote button",
+            fr: "Illustration du site d'une entreprise de peinture avec galerie de chantiers, fiche Google et bouton de devis",
+          })}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <PintoresCta
+          lang={lang}
+          where="intro"
+          title={t({ en: "Would you rather we do it for you?", fr: "Vous préférez que nous le fassions pour vous ?" })}
+          desc={t({
+            en: "We design websites for painters and painting companies built to receive quote requests, with local SEO and a Google profile. Start with a free diagnosis.",
+            fr: "Nous concevons des sites pour peintres et entreprises de peinture pensés pour recevoir des demandes de devis, avec SEO local et fiche Google. Commencez par un diagnostic gratuit.",
+          })}
+        />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
-            {isEn ? "What a painter's website must include to generate customers" : "Ce que le site web d'un peintre doit inclure pour générer des clients"}
-          </h2>
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "A painting contractor's website needs to answer three questions immediately: What services do you offer? Where do you work? How do I contact you? Your homepage should make all three clear within the first screen, without the visitor having to scroll or search. Include your city and service area prominently — 'Painter in [your city and surrounding area]' — and your phone number in the header on every page." : "Le site web d'un peintre doit répondre à trois questions immédiatement : Quels services proposez-vous ? Où travaillez-vous ? Comment vous contacter ? Votre page d'accueil doit clarifier les trois dans le premier écran, sans que le visiteur ait à faire défiler ou chercher. Incluez votre ville et votre zone de service de manière bien visible — 'Peintre à [votre ville et zone environnante]' — et votre numéro de téléphone dans l'en-tête sur chaque page."}
+          <h2 className={H2}>{t({ en: "What a painter's website must include to generate customers", fr: "Ce que le site web d'un peintre doit inclure pour générer des clients" })}</h2>
+          <p className={P}>
+            {t({
+              en: "A painting contractor's website needs to answer three questions immediately: what services do you offer, where do you work and how do I contact you? Make all three clear on the first screen:",
+              fr: "Le site d'un peintre doit répondre immédiatement à trois questions : quels services proposez-vous, où travaillez-vous et comment vous contacter ? Rendez les trois clairs dès le premier écran :",
+            })}
           </p>
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Beyond the basics, your website should include: a detailed services page for each type of work you do (interior painting, exterior painting, commercial painting, etc.), a portfolio with before and after photos, genuine customer reviews and a simple contact form. Each service page is a separate landing page that can rank independently on Google for queries like 'exterior painter in [city]'." : "Au-delà des bases, votre site web doit inclure : une page de services détaillée pour chaque type de travail que vous faites (peinture intérieure, extérieure, commerciale, etc.), un portfolio avec des photos avant/après, de vrais avis clients et un formulaire de contact simple. Chaque page de service est une landing page séparée qui peut se positionner indépendamment sur Google pour des requêtes comme 'peintre extérieur à [ville]'."}
+          <ul className={UL}>
+            <li>{t({ en: "A headline with your city and service area: “Painter in [your city and surroundings]”.", fr: "Un titre avec votre ville et votre zone d'intervention : « Peintre à [votre ville et alentours] »." })}</li>
+            <li>{t({ en: "Your phone number in the header of every page.", fr: "Votre numéro de téléphone dans l'en-tête de chaque page." })}</li>
+            <li>{t({ en: "A visible quote button.", fr: "Un bouton de devis visible." })}</li>
+          </ul>
+          <p className={P}>
+            {t({
+              en: "Beyond the basics, include a detailed page for each type of work (interior, exterior, commercial…), a portfolio with before and after photos, genuine customer reviews and a simple contact form. Each service page can rank independently on Google for searches like “exterior painter in [city]”.",
+              fr: "Au-delà des bases, prévoyez une page détaillée pour chaque type de travaux (intérieur, extérieur, commercial…), un portfolio avec photos avant/après, de vrais avis clients et un formulaire de contact simple. Chaque page de service peut se positionner indépendamment sur Google pour des recherches comme « peintre extérieur à [ville] ».",
+            })}
+          </p>
+          <Image
+            src="/pintores-ruta-cliente.jpg"
+            alt={t({
+              en: "Diagram of the customer journey: Google search, website with jobs, Google profile with reviews, and a call or WhatsApp to ask for a quote",
+              fr: "Schéma du parcours client : recherche Google, site avec chantiers, fiche Google avec avis, puis appel ou WhatsApp pour demander un devis",
+            })}
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl"
+          />
+          <p className="text-sm text-gray-500 mt-2">{t({ en: "Indicative diagram of a customer's path from search to contact.", fr: "Schéma indicatif du parcours d'un client, de la recherche au contact." })}</p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className={H2}>{t({ en: "Local SEO for painters: how to appear in Google searches", fr: "SEO local pour peintres : comment apparaître dans les recherches Google" })}</h2>
+          <p className={P}>
+            {t({
+              en: "When someone searches “painter in [city]”, Google shows three kinds of results: the local pack (a map with three businesses), organic results and ads. Your goal is to appear in as many as possible:",
+              fr: "Quand quelqu'un cherche « peintre à [ville] », Google affiche trois types de résultats : le pack local (une carte avec trois entreprises), les résultats organiques et les annonces. Votre objectif est d'apparaître dans le plus grand nombre possible :",
+            })}
+          </p>
+          <ul className={UL}>
+            <li>{t({ en: "For the local pack, you need a well-optimised Google Business Profile.", fr: "Pour le pack local, il vous faut un Google Business Profile bien optimisé." })}</li>
+            <li>{t({ en: "For organic results, you need a website with proper on-page SEO.", fr: "Pour les résultats organiques, il vous faut un site avec un bon SEO on-page." })}</li>
+          </ul>
+          <p className={P}>
+            {t({
+              en: "For each city or neighbourhood you serve, create a dedicated page for “painter in [location]” searches. Mention the place naturally, embed a map, list the specific areas you cover and add reviews from customers in that area. This structure helps Google understand where you operate. More detail in our guide to ",
+              fr: "Pour chaque ville ou quartier que vous desservez, créez une page dédiée aux recherches « peintre à [lieu] ». Mentionnez le lieu naturellement, intégrez une carte, listez les zones couvertes et ajoutez les avis de clients de cette zone. Cette structure aide Google à comprendre où vous intervenez. Plus de détails dans notre guide du ",
+            })}
+            <Link href={lang === "fr" ? "/fr/seo-local-entreprises-de-services/" : "/en/local-seo-for-service-businesses/"} className="text-accent-600 hover:underline">
+              {t({ en: "local SEO for service businesses", fr: "SEO local pour les entreprises de services" })}
+            </Link>.
           </p>
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
-            {isEn ? "Local SEO for painters: how to appear in Google searches" : "SEO local pour peintres : comment apparaître dans les recherches Google"}
-          </h2>
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "When someone searches 'painter in [city]', Google shows them three types of results: the local pack (map with three businesses), organic results (regular website listings) and Google Ads. Your goal as a painter is to appear in as many of these as possible. For the local pack, you need a well-optimised Google Business Profile. For organic results, you need a website with proper on-page SEO." : "Quand quelqu'un cherche 'peintre à [ville]', Google lui montre trois types de résultats : le pack local (carte avec trois entreprises), les résultats organiques (listings de sites web ordinaires) et Google Ads. Votre objectif en tant que peintre est d'apparaître dans autant de ces résultats que possible. Pour le pack local, vous avez besoin d'un Google Business Profile bien optimisé. Pour les résultats organiques, vous avez besoin d'un site avec un bon SEO on-page."}
+          <h2 className={H2}>{t({ en: "Google Business Profile for painting companies", fr: "Google Business Profile pour les entreprises de peinture" })}</h2>
+          <p className={P}>
+            {t({
+              en: "Your Google Business Profile is often the first thing potential customers see: it appears in Google Maps and in the local pack for searches in your area. A well-maintained profile can generate calls even without a website. For painters, the key elements are:",
+              fr: "Votre Google Business Profile est souvent la première chose que voient vos clients potentiels : il apparaît dans Google Maps et dans le pack local pour les recherches de votre zone. Une fiche bien entretenue peut générer des appels même sans site web. Pour un peintre, les éléments clés sont :",
+            })}
           </p>
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "For each city or neighbourhood you serve, create a dedicated page optimised for 'painter in [location]' keywords. Include the location name naturally throughout the page, embed a Google Map, list the specific areas you serve and include local reviews from customers in that area. This geographic content structure helps Google understand where you operate and serves customers in different parts of your service area." : "Pour chaque ville ou quartier que vous servez, créez une page dédiée optimisée pour les mots-clés 'peintre à [localisation]'. Incluez le nom de la localisation naturellement dans toute la page, intégrez une Google Map, listez les zones spécifiques que vous servez et incluez des avis locaux de clients dans cette zone. Cette structure de contenu géographique aide Google à comprendre où vous opérez et sert les clients dans différentes parties de votre zone de service."}
+          <ul className={UL}>
+            <li>{t({ en: "Complete and accurate business information.", fr: "Des informations complètes et exactes sur l'entreprise." })}</li>
+            <li>{t({ en: "Photos of finished jobs (before and after works best).", fr: "Des photos de chantiers terminés (l'avant/après fonctionne le mieux)." })}</li>
+            <li>{t({ en: "A steady flow of genuine reviews and a reply to every one.", fr: "Un flux régulier de vrais avis et une réponse à chacun." })}</li>
+          </ul>
+          <p className={P}>
+            {t({
+              en: "Ask every satisfied customer for a review with a direct link: most will do it if you make it easy. Prefer to delegate it? See our ",
+              fr: "Demandez un avis à chaque client satisfait avec un lien direct : la plupart le feront si vous leur facilitez la tâche. Vous préférez déléguer ? Découvrez notre ",
+            })}
+            <Link href={lang === "fr" ? "/fr/gestion-google-business-profile/" : "/en/google-business-profile-service/"} className="text-accent-600 hover:underline">
+              {t({ en: "Google Business Profile service", fr: "service Google Business Profile" })}
+            </Link>.
+          </p>
+        </section>
+
+        <PintoresCta
+          lang={lang}
+          where="medio"
+          title={t({ en: "How is your website doing today?", fr: "Où en est votre site aujourd'hui ?" })}
+          desc={t({
+            en: "We review your website and your Google profile and tell you what is costing you quote requests and what to fix first. Free, with no obligation.",
+            fr: "Nous examinons votre site et votre fiche Google et nous vous disons ce qui vous coûte des demandes de devis et quoi corriger en premier. Gratuit et sans engagement.",
+          })}
+        />
+
+        <section className="mb-10">
+          <h2 className={H2}>{t({ en: "Photos and portfolio: your best sales tool", fr: "Photos et portfolio : votre meilleur outil de vente" })}</h2>
+          <p className={P}>
+            {t({
+              en: "For painting services, the portfolio is everything: customers want to see what they will get before they call. You do not need professional photography; a modern smartphone in good light is enough. Photograph each job before, during and after, and show a range of work types, rooms and settings.",
+              fr: "Pour les services de peinture, le portfolio est essentiel : les clients veulent voir ce qu'ils vont obtenir avant d'appeler. Pas besoin de photographe professionnel : un smartphone récent avec une bonne lumière suffit. Photographiez chaque chantier avant, pendant et après, et montrez différents types de travaux, de pièces et de cadres.",
+            })}
+          </p>
+          <Image
+            src="/pintores-antes-despues.jpg"
+            alt={t({
+              en: "Illustration of a wall before and after painting: stains and peeling on the left, a clean blue finish on the right, with a roller in the middle",
+              fr: "Illustration d'un mur avant et après peinture : taches et écaillages à gauche, finition bleue propre à droite, avec un rouleau au centre",
+            })}
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mb-4"
+          />
+          <p className={P}>
+            {t({
+              en: "Organise the portfolio by service type and location, and give every photo a descriptive alt text: it helps visitors and it helps SEO.",
+              fr: "Organisez le portfolio par type de service et par lieu, et donnez à chaque photo un texte alternatif descriptif : c'est utile pour les visiteurs et pour le SEO.",
+            })}
           </p>
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
-            {isEn ? "Google Business Profile for painting companies" : "Google Business Profile pour les entreprises de peinture"}
-          </h2>
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Your Google Business Profile is often the first thing potential customers see. It appears in the Google Maps results and the local pack for searches in your area. A well-maintained profile with good reviews, regular photo updates and weekly posts can generate a significant number of calls on its own — even without a website." : "Votre Google Business Profile est souvent la première chose que voient les clients potentiels. Il apparaît dans les résultats Google Maps et dans le pack local pour les recherches dans votre zone. Un profil bien entretenu avec de bons avis, des mises à jour régulières de photos et des publications hebdomadaires peut générer un nombre significatif d'appels par lui-même — même sans site web."}
+          <h2 className={H2}>{t({ en: "How to turn website visits into phone calls", fr: "Comment transformer les visites du site en appels" })}</h2>
+          <p className={P}>
+            {t({
+              en: "Traffic without contacts is useless. Many painters' websites get decent traffic but few calls because contacting them is hard. Check these points:",
+              fr: "Du trafic sans contacts ne sert à rien. Beaucoup de sites de peintres reçoivent du trafic mais peu d'appels parce que les contacter est compliqué. Vérifiez ces points :",
+            })}
           </p>
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "For painters, the key elements are: complete and accurate business information, photos of completed jobs (before and after works best), a steady stream of positive reviews and prompt responses to all reviews. Ask every satisfied customer to leave a review — most will do it if you send them a direct link and make it easy. Even five or ten genuine 5-star reviews can make a dramatic difference in how many calls you receive." : "Pour les peintres, les éléments clés sont : des informations commerciales complètes et précises, des photos de travaux terminés (avant/après fonctionne mieux), un flux régulier d'avis positifs et des réponses rapides à tous les avis. Demandez à chaque client satisfait de laisser un avis — la plupart le feront si vous leur envoyez un lien direct et rendez les choses faciles. Même cinq ou dix vrais avis 5 étoiles peuvent faire une différence dramatique dans le nombre d'appels reçus."}
-          </p>
-        </section>
-
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
-            {isEn ? "Photos and portfolio: your best sales tool" : "Photos et portfolio : votre meilleur outil de vente"}
-          </h2>
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "For painting services, the portfolio is everything. Customers want to see what they will get before they call. Invest time in taking good photos of every project: before the work, during and after. You don't need professional photography — a modern smartphone in good light is sufficient. What matters is showing a range of work types, different rooms and settings, and a clear demonstration of quality." : "Pour les services de peinture, le portfolio est tout. Les clients veulent voir ce qu'ils vont obtenir avant d'appeler. Investissez du temps à prendre de bonnes photos de chaque projet : avant les travaux, pendant et après. Vous n'avez pas besoin de photographie professionnelle — un smartphone moderne dans une bonne lumière suffit. Ce qui compte, c'est de montrer une gamme de types de travaux, différentes pièces et environnements, et une démonstration claire de qualité."}
-          </p>
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Organise your portfolio by service type and location. A gallery of exterior painting jobs, another of interior residential work, another of commercial projects. This makes it easy for customers to find examples relevant to their own project. Each photo should have an alt text describing what it shows — this also helps with SEO." : "Organisez votre portfolio par type de service et localisation. Une galerie de travaux de peinture extérieure, une autre de travaux intérieurs résidentiels, une autre de projets commerciaux. Cela facilite la recherche d'exemples pertinents pour leur propre projet. Chaque photo doit avoir un texte alt décrivant ce qu'elle montre — cela aide aussi pour le SEO."}
+          <ul className={UL}>
+            <li>{t({ en: "The phone number is a tap-to-call link (tel:) on mobile.", fr: "Le numéro de téléphone est un lien cliquable (tel:) sur mobile." })}</li>
+            <li>{t({ en: "The quote form only asks for job type, location and preferred contact method.", fr: "Le formulaire de devis ne demande que le type de travaux, le lieu et le moyen de contact préféré." })}</li>
+            <li>{t({ en: "Email or SMS alerts for every form submission, so you can reply within minutes.", fr: "Des alertes par e-mail ou SMS pour chaque formulaire, afin de répondre en quelques minutes." })}</li>
+          </ul>
+          <p className={P}>
+            {t({
+              en: "Response time matters: someone who asks for a quote is usually comparing several painters and tends to hire the first one who replies.",
+              fr: "La rapidité de réponse compte : quelqu'un qui demande un devis compare en général plusieurs peintres et choisit souvent le premier qui répond.",
+            })}
           </p>
         </section>
 
-        <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
-            {isEn ? "How to turn website visits into phone calls" : "Comment transformer les visites du site en appels téléphoniques"}
-          </h2>
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Traffic without conversions is useless. Many painter websites get decent traffic but few calls because they bury the phone number or make the contact process too complicated. Your phone number should be visible on every page, ideally in the header. On mobile, it should be a clickable link (tel:) so visitors can call with one tap. Include a simple quote request form that asks for the job type, location and preferred contact method." : "Le trafic sans conversions est inutile. Beaucoup de sites de peintres ont un trafic décent mais peu d'appels parce qu'ils cachent le numéro de téléphone ou compliquent trop le processus de contact. Votre numéro de téléphone doit être visible sur chaque page, idéalement dans l'en-tête. Sur mobile, ce doit être un lien cliquable (tel:) pour que les visiteurs puissent appeler en un tap. Incluez un formulaire simple de demande de devis qui demande le type de travail, la localisation et le mode de contact préféré."}
-          </p>
-          <p className="text-gray-600 mb-4 leading-relaxed">
-            {isEn ? "Response time is critical for service businesses. If someone fills in a quote request form, they are usually comparing multiple painters simultaneously. The first to respond almost always wins the job. Set up email and SMS notifications for form submissions so you can respond within minutes rather than hours. This alone can double your conversion rate from online leads." : "La rapidité de réponse est critique pour les entreprises de service. Si quelqu'un remplit un formulaire de demande de devis, il compare généralement plusieurs peintres simultanément. Le premier à répondre gagne presque toujours le travail. Configurez des notifications par email et SMS pour les soumissions de formulaires afin de pouvoir répondre en minutes plutôt qu'en heures. Cela seul peut doubler votre taux de conversion depuis les leads en ligne."}
-          </p>
-        </section>
+        <PintoresCta
+          lang={lang}
+          where="final"
+          strong
+          title={t({ en: "Request a free review of your painting company's website", fr: "Demandez une analyse gratuite du site de votre entreprise de peinture" })}
+          desc={t({
+            en: "We analyse your website and your Google profile and tell you, with concrete examples, what to improve to receive more quote requests. No obligation.",
+            fr: "Nous analysons votre site et votre fiche Google et nous vous disons, avec des exemples concrets, quoi améliorer pour recevoir plus de demandes de devis. Sans engagement.",
+          })}
+        />
 
-        <BlogBanner variant="default" lang={lang} />
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
           <h2 className="text-2xl font-bold mb-4">
-            {isEn ? "Need help with your digital marketing?" : "Besoin d'aide avec votre marketing digital ?"}
+            {t({ en: "Tell us about your project", fr: "Parlez-nous de votre projet" })}
           </h2>
           <p className="text-primary-200 mb-6">
-            {isEn ? "Tell us about your project and we'll get back to you within 24 hours." : "Parlez-nous de votre projet et nous vous répondrons dans les 24 heures."}
+            {t({ en: "We will get back to you within 24 hours. You can also see our ", fr: "Nous vous répondons sous 24 heures. Vous pouvez aussi consulter notre " })}
+            <Link href={landing} className="underline text-white">
+              {t({ en: "website design service for painters", fr: "service de création de site pour peintres" })}
+            </Link>.
           </p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType={`blog-${lang}`} />
