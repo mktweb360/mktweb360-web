@@ -159,6 +159,11 @@ const nextConfig: NextConfig = {
       { source: '/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/en/search-engines-vs-browsers/', destination: '/en/seo-web-positioning/', permanent: true },
       { source: '/fr/search-engines-vs-browsers/', destination: '/fr/positionnement-seo/', permanent: true },
+      // 08/11/2026: 404 de Search Console (informe Páginas) con destino claro; misma pauta que sus equivalentes ES/EN.
+      { source: '/fr/ejemplos-y-diferencias-entre-buscadores-y-navegadores/', destination: '/fr/positionnement-seo/', permanent: true },
+      { source: '/fr/seo-bilbao/', destination: '/fr/local-seo-services/', permanent: true },
+      { source: '/fr/marketing-digital-barcelona/', destination: '/fr/local-seo-services/', permanent: true },
+      { source: '/en/marketing-digital-barcelona/', destination: '/en/local-seo-services/', permanent: true },
       // URL antigua de WordPress enlazada desde larepublica.es (T8 auditoría Semrush 2-oct-2026): la raíz daba 404.
       { source: '/posicionamiento-web-buscadores/', destination: '/seo-posicionamiento-web-organico/', permanent: true },
       { source: '/posicionamiento-web-buscadores/seo-posicionamiento-web-organico/', destination: '/seo-posicionamiento-web-organico/', permanent: true },

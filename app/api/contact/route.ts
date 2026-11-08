@@ -19,6 +19,7 @@ const FORM_MAP: Record<string, { oferta: string; canal: string }> = {
   "seo-toledo":            { oferta: "seo-mensual",       canal: "web-toledo-seo" },
   "diseno-web-toledo":     { oferta: "diseno-web",        canal: "web-toledo-diseno" },
   "marketing-toledo":      { oferta: "general",           canal: "web-toledo-marketing" },
+  "landing-pintores":     { oferta: "diseno-web",        canal: "web-landing-pintores" },
   "contacto":              { oferta: "general",           canal: "web-contacto" },
 };
 function getMktOSMeta(formType: string) {

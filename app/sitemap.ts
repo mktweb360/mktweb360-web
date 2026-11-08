@@ -127,6 +127,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "/diseno-web-para-clinicas/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/diseno-web-para-coaches/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/diseno-web-para-dentistas/", priority: 0.7, changeFrequency: "monthly" as const },
+    { url: "/paginas-web-para-pintores/", priority: 0.9, changeFrequency: "monthly" as const },
     { url: "/diseno-web-tienda-online/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/como-usar-planificador-de-palabras-clave-google-ads/", priority: 0.7, changeFrequency: "monthly" as const },
     { url: "/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/", priority: 0.7, changeFrequency: "monthly" as const },

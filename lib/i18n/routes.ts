@@ -101,6 +101,7 @@ export const ROUTES: Route[] = [
   { es: "/seo-local/", en: "local-seo-services", fr: "local-seo-services" },
   { es: "/blog-para-monetizacion/", en: "blog-monetization", fr: "blog-monetization" },
   { es: "/diseno-web-para-dentistas/", en: "web-design-dentists", fr: "web-design-dentists" },
+  { es: "/paginas-web-para-pintores/", en: "web-design-for-painters", fr: "creation-site-web-peintres" },
   { es: "/diseno-web-para-coaches/", en: "web-design-coaches", fr: "web-design-coaches" },
   { es: "/diseno-web-para-clinicas/", en: "web-design-clinics", fr: "web-design-clinics" },
     { es: "/marketing-shopware/", en: "shopware-marketing", fr: "shopware-marketing" },
