@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -42,8 +43,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Digitalising your business does not have to be complicated. This guide explains the steps, the priorities and the tools you need." : "Digitaliser votre entreprise ne doit pas être compliqué. Ce guide explique les étapes, les priorités et les outils dont vous avez besoin."}
         </p>
 
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "what-digitalising-your-business-really-means", label: isEn ? "What digitalising your business really means" : "Ce que digitaliser votre entreprise signifie vraiment" }, { id: "the-5-pillars-of-digital-transformation-for-smes", label: isEn ? "The 5 pillars of digital transformation for SMEs" : "Les 5 piliers de la transformation digitale pour les PME" }, { id: "essential-digital-tools-for-any-business", label: isEn ? "Essential digital tools for any business" : "Outils numériques essentiels pour toute entreprise" }, { id: "how-to-prioritise-where-to-start", label: isEn ? "How to prioritise: where to start" : "Comment prioriser : par où commencer" }, { id: "common-mistakes-when-digitalising-a-business", label: isEn ? "Common mistakes when digitalising a business" : "Erreurs courantes lors de la digitalisation d'une entreprise" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-digitalising-your-business-really-means" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "What digitalising your business really means" : "Ce que digitaliser votre entreprise signifie vraiment"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -55,7 +60,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-5-pillars-of-digital-transformation-for-smes" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "The 5 pillars of digital transformation for SMEs" : "Les 5 piliers de la transformation digitale pour les PME"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -67,7 +72,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="essential-digital-tools-for-any-business" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Essential digital tools for any business" : "Outils numériques essentiels pour toute entreprise"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -79,7 +84,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-prioritise-where-to-start" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to prioritise: where to start" : "Comment prioriser : par où commencer"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -98,7 +103,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="common-mistakes-when-digitalising-a-business" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Common mistakes when digitalising a business" : "Erreurs courantes lors de la digitalisation d'une entreprise"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

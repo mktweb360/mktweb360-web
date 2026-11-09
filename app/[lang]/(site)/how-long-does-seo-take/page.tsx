@@ -8,6 +8,7 @@ import { alternatesFor, ROUTES, urlFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 28/10/2026 — versiones EN/FR de /cuanto-tarda-el-seo-en-dar-resultados/ (tema 3 del plan de blog).
 // La carpeta FR (seo-combien-de-temps-resultats) reexporta esta página. Plazos: los unificados de la web.
 
@@ -306,36 +307,40 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>{intro}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.resumen}</h2>
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={8} items={[{ id: "resumen", label: h.resumen }, { id: "porque", label: h.porque }, { id: "fases", label: h.fases }, { id: "variables", label: h.variables }, { id: "local", label: h.local }, { id: "sc", label: h.sc }, { id: "upd", label: h.upd }, { id: "alarm", label: h.alarm }, { id: "faq", label: h.faq }, { id: "fuentes", label: h.fuentes }]} />
+        </div>
+
+          <h2 id="resumen" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.resumen}</h2>
           <Lista items={resumen} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.porque}</h2>
+          <h2 id="porque" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.porque}</h2>
           <p>{h.porqueIntro}</p>
           <Lista items={esperas} numerada />
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.fases}</h2>
+          <h2 id="fases" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.fases}</h2>
           <Tabla cabecera={h.fasesCab} filas={fases} />
           <p>{h.fasesNota}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.variables}</h2>
+          <h2 id="variables" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.variables}</h2>
           <Tabla cabecera={h.varCab} filas={variables} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.local}</h2>
+          <h2 id="local" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.local}</h2>
           <p>{localTxt}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.sc}</h2>
+          <h2 id="sc" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.sc}</h2>
           <p>{h.scIntro}</p>
           <Lista items={metricas} numerada />
           <p>{h.scIA}</p>
 
           <BlogBanner variant="seogeogbp" lang={lang} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.upd}</h2>
+          <h2 id="upd" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.upd}</h2>
           <p>{h.updIntro}</p>
           <Tabla cabecera={h.updCab} filas={actualizaciones} />
           <p>{h.updNota}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.alarm}</h2>
+          <h2 id="alarm" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.alarm}</h2>
           <Lista items={alarmas} />
           <p><Link href={auditoria} className={a}>{h.alarmNota}</Link></p>
 
@@ -345,7 +350,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <Link href={diagnostico} className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">{h.ctaB}</Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.faq}</h2>
+          <h2 id="faq" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.faq}</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -358,7 +363,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.fuentes}</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.fuentes}</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

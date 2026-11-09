@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -8,6 +9,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Diseño Web para Clínicas y Centros de Salud",
   description:
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
       "Diseño web profesional para clínicas, centros médicos y de salud. Web optimizada para SEO local y captación de pacientes. Fisioterapia, psicología, estética y más.",
     url: "https://www.mktweb360.com/diseno-web-para-clinicas/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-diseno-web-para-clinicas.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-diseno-web-para-clinicas-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -33,7 +35,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
-  image: "https://www.mktweb360.com/og-diseno-web-para-clinicas.jpg",
+  image: "https://www.mktweb360.com/og-diseno-web-para-clinicas-v2.jpg",
   url: "https://www.mktweb360.com/diseno-web-para-clinicas/",
   mainEntityOfPage: "https://www.mktweb360.com/diseno-web-para-clinicas/",
   inLanguage: "es-ES",
@@ -89,14 +91,26 @@ export default function DisenoWebClinicasPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Fisioterapeutas, psicólogos, nutricionistas, clínicas de estética… todos comparten el mismo problema: sus pacientes los buscan en Google y si no aparecen o su web no genera confianza, pierden esa oportunidad. Esta guía explica qué necesita la web de una clínica para captar pacientes de forma constante.
           </p>
+          <Image
+            src="/og-diseno-web-para-clinicas-v2.jpg"
+            alt="Fisioterapeuta atendiendo a un paciente en una clínica luminosa"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "por-que-tu-clinica-necesita-una-web-profesional", "label": "Por qué tu clínica necesita una web profesional en 2026"}, {"id": "que-debe-incluir-la-web-de-una-clinica", "label": "Qué debe incluir la web de una clínica"}, {"id": "seo-local-para-clinicas-como-aparecer-primero-en", "label": "SEO local para clínicas: cómo aparecer primero en tu zona"}, {"id": "proceso-de-trabajo-de-cero-a-web-en-4-pasos", "label": "Proceso de trabajo: de cero a web en 4 pasos"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El sector salud y bienestar tiene una particularidad que lo diferencia de otros negocios: el paciente no solo busca un servicio, busca a alguien en quien confiar. Esa confianza se construye antes de la primera cita, y hoy se construye mayoritariamente en internet. Una web profesional no es un lujo para una clínica — es la herramienta más importante de captación de pacientes que existe.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué tu clínica necesita una web profesional en 2026</h2>
+          <h2 id="por-que-tu-clinica-necesita-una-web-profesional" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué tu clínica necesita una web profesional en 2026</h2>
           <p>
             Más del 70% de las personas buscan profesionales de la salud en Google antes de decidirse. En ese momento de búsqueda, comparan varias opciones: leen reseñas, miran las fotos, ven si la especialidad coincide con lo que necesitan y valoran si la web transmite seriedad y profesionalidad.
           </p>
@@ -107,7 +121,7 @@ export default function DisenoWebClinicasPage() {
             Además, Google premia con mejor posicionamiento local a los centros que tienen una web activa y bien optimizada. Aparecer en el "pack local" de tres resultados que muestra Google Maps en la parte superior de las búsquedas puede duplicar las llamadas y formularios de contacto recibidos.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué debe incluir la web de una clínica</h2>
+          <h2 id="que-debe-incluir-la-web-de-una-clinica" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué debe incluir la web de una clínica</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Página de especialidades y servicios:</strong> cada tratamiento o especialidad con su propia sección, bien explicada y con keywords locales. Fisioterapia, psicología, nutrición, estética médica, osteopatía… cada una debe tener su espacio.</li>
             <li><strong>Equipo profesional:</strong> foto, nombre, formación y especialización de cada profesional. El paciente quiere saber quién le va a atender antes de pedir cita.</li>
@@ -117,7 +131,7 @@ export default function DisenoWebClinicasPage() {
             <li><strong>Datos de contacto y ubicación:</strong> teléfono, dirección, mapa de Google y horario actualizado en un lugar visible, sin que el usuario tenga que buscarlos.</li>
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">SEO local para clínicas: cómo aparecer primero en tu zona</h2>
+          <h2 id="seo-local-para-clinicas-como-aparecer-primero-en" className="text-2xl font-bold text-primary-600 scroll-mt-24">SEO local para clínicas: cómo aparecer primero en tu zona</h2>
           <p>
             El SEO local es la estrategia que permite que tu clínica aparezca cuando alguien busca "fisioterapeuta en [ciudad]" o "psicólogo cerca de mí". Se trabaja en dos frentes complementarios:
           </p>
@@ -136,7 +150,7 @@ export default function DisenoWebClinicasPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Proceso de trabajo: de cero a web en 4 pasos</h2>
+          <h2 id="proceso-de-trabajo-de-cero-a-web-en-4-pasos" className="text-2xl font-bold text-primary-600 scroll-mt-24">Proceso de trabajo: de cero a web en 4 pasos</h2>
           <ul className="list-none space-y-4">
             {[
               { n: "1", t: "Análisis y estrategia local", d: "Estudiamos tu competencia en la zona, las keywords de tu especialidad y la estructura óptima para posicionarte bien desde el lanzamiento." },
@@ -169,7 +183,7 @@ export default function DisenoWebClinicasPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

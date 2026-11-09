@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 const SLUG = "seo-social-instagram-tiktok-linkedin-como-buscadores";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
       "El SEO social posiciona tu contenido en los buscadores internos de Instagram, TikTok y LinkedIn. Estrategias por plataforma.",
     url: URL_CANONICAL,
     type: "article",
-    images: [{ url: `/og-${SLUG}.jpg`, width: 1200, height: 630 }],
+    images: [{ url: `/og-${SLUG}-v2.jpg`, width: 1200, height: 630 }],
   },
 };
 
@@ -38,7 +39,7 @@ const articleSchema = {
   url: URL_CANONICAL,
   mainEntityOfPage: URL_CANONICAL,
   inLanguage: "es-ES",
-  image: `https://www.mktweb360.com/og-${SLUG}.jpg`,
+  image: `https://www.mktweb360.com/og-${SLUG}-v2.jpg`,
 };
 
 const FAQS = [
@@ -102,7 +103,7 @@ export default function SeoSocialPage() {
             El 40% de la Generación Z ya busca en TikTok antes que en Google. Instagram, LinkedIn y TikTok son motores de búsqueda activos con millones de consultas diarias. Optimizar para ellos — el SEO social — es ya una disciplina imprescindible para cualquier estrategia de contenido.
           </p>
           <Image
-            src={`/og-${SLUG}.jpg`}
+            src={`/og-${SLUG}-v2.jpg`}
             alt="SEO social: Instagram, TikTok y LinkedIn como motores de búsqueda"
             width={1200}
             height={630}
@@ -111,12 +112,16 @@ export default function SeoSocialPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "que-es-el-seo-social-y-por-que-importa", "label": "Qué es el SEO social y por qué importa"}, {"id": "seo-social-en-instagram", "label": "SEO social en Instagram"}, {"id": "seo-social-en-tiktok", "label": "SEO social en TikTok"}, {"id": "seo-social-en-linkedin", "label": "SEO social en LinkedIn"}, {"id": "preguntas-frecuentes-sobre-seo-social", "label": "Preguntas frecuentes sobre SEO social"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Las redes sociales dejaron de ser solo canales de distribución de contenido para convertirse en motores de búsqueda con comportamientos propios. Un usuario que busca "restaurante japonés en Madrid" puede hacerlo en Google, pero también en Instagram (para ver fotos reales) o en TikTok (para ver vídeos de experiencias). Si solo estás optimizando para Google, no estás presente en una parte creciente del proceso de decisión.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué es el SEO social y por qué importa</h2>
+          <h2 id="que-es-el-seo-social-y-por-que-importa" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué es el SEO social y por qué importa</h2>
           <p>
             El SEO social es la optimización de tu presencia en redes sociales para aparecer en los buscadores internos de cada plataforma. Igual que el SEO web optimiza para Google, el SEO social optimiza para los algoritmos de búsqueda de Instagram, TikTok y LinkedIn.
           </p>
@@ -137,7 +142,7 @@ export default function SeoSocialPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">SEO social en Instagram</h2>
+          <h2 id="seo-social-en-instagram" className="text-2xl font-bold text-primary-600 scroll-mt-24">SEO social en Instagram</h2>
           <p>
             Instagram indexa texto en varios lugares: la biografía, los títulos de contenido, los alt texts de imágenes y — desde 2022 — las palabras clave en los captions. Para posicionarte en el buscador de Instagram, necesitas: una biografía que incluya términos de búsqueda relevantes (sin sacrificar claridad), captions que usen lenguaje natural con las palabras clave de tu tema, y hashtags estratégicos que actúan como categorías de búsqueda.
           </p>
@@ -145,7 +150,7 @@ export default function SeoSocialPage() {
             Un restaurante japonés en Madrid debería tener en su bio algo como "Cocina japonesa tradicional en Madrid · Sushi · Ramen · Reservas" — términos que alguien buscaría. Sus posts deberían incluir captions que mencionen de forma natural "sushi en Madrid", "ramen artesanal" y similares. No se trata de rellenar texto con keywords, sino de escribir como lo haría alguien que quiere ser encontrado.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">SEO social en TikTok</h2>
+          <h2 id="seo-social-en-tiktok" className="text-2xl font-bold text-primary-600 scroll-mt-24">SEO social en TikTok</h2>
           <p>
             TikTok es el caso más interesante porque indexa el audio. Su sistema de transcripción automática convierte lo que dices en el vídeo en texto indexable. Esto significa que mencionar las palabras clave de tu tema en el vídeo — no solo en el caption — tiene impacto directo en la visibilidad de búsqueda.
           </p>
@@ -155,7 +160,7 @@ export default function SeoSocialPage() {
 
           <BlogBanner variant="geo" />
 
-          <h2 className="text-2xl font-bold text-primary-600">SEO social en LinkedIn</h2>
+          <h2 id="seo-social-en-linkedin" className="text-2xl font-bold text-primary-600 scroll-mt-24">SEO social en LinkedIn</h2>
           <p>
             LinkedIn tiene el buscador de mayor intención comercial entre las tres plataformas. Sus usuarios buscan proveedores, expertos, soluciones y contenido profesional. Las áreas a optimizar son: el titular de tu perfil (equivale al H1 del SEO web), la sección "Acerca de" (donde puedes incluir términos de búsqueda de forma natural), los artículos nativos de LinkedIn (indexados en su buscador y en Google) y los posts que generan conversación.
           </p>
@@ -184,7 +189,7 @@ export default function SeoSocialPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre SEO social</h2>
+          <h2 id="preguntas-frecuentes-sobre-seo-social" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre SEO social</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

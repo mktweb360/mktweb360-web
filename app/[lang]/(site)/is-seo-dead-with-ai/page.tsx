@@ -7,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -52,7 +53,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Chaque année, quelqu'un déclare le SEO mort. Cette fois, l'argument est plus sérieux : l'IA change la façon dont les gens cherchent. Mais le SEO ne meurt pas — il évolue. Voici ce que vous devez savoir."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "how-ai-is-changing-search-behaviour", label: isEn ? "How AI is changing search behaviour" : "Comment l'IA change le comportement de recherche" }, { id: "what-google-says-about-ai-content-and-seo", label: isEn ? "What Google says about AI content and SEO" : "Ce que Google dit sur le contenu IA et le SEO" }, { id: "why-seo-still-matters-in-the-ai-era", label: isEn ? "Why SEO still matters in the AI era" : "Pourquoi le SEO est toujours important à l'ère de l'IA" }, { id: "what-is-changing-in-seo-strategy", label: isEn ? "What is changing in SEO strategy" : "Ce qui change dans la stratégie SEO" }, { id: "seo-geo-the-future-of-search-visibility", label: isEn ? "SEO + GEO: the future of search visibility" : "SEO + GEO : l'avenir de la visibilité en recherche" }]} />
+        </div>
+
+        <h2 id="how-ai-is-changing-search-behaviour" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "How AI is changing search behaviour" : "Comment l'IA change le comportement de recherche"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -66,7 +71,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Cependant, les recherches à intention transactionnelle et commerciale — 'meilleure agence près de moi', 'acheter X', 'embaucher Y à Paris' — poussent encore les gens à cliquer. Les utilisateurs cherchant avec une intention d'achat ont encore besoin de comparer, vérifier et contacter. Aucune IA ne répond définitivement à 'quel plombier appeler aujourd'hui'."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="what-google-says-about-ai-content-and-seo" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "What Google says about AI content and SEO" : "Ce que Google dit sur le contenu IA et le SEO"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -80,7 +85,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le système de contenu utile de Google évalue si le contenu aide vraiment les utilisateurs ou n'existe que pour les moteurs de recherche. Ce standard existait avant l'IA — l'IA facilite simplement la production de mauvais contenu à grande échelle, ce qui rend le signal encore plus critique."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="why-seo-still-matters-in-the-ai-era" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Why SEO still matters in the AI era" : "Pourquoi le SEO est toujours important à l'ère de l'IA"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -94,7 +99,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "De plus, les outils d'IA comme ChatGPT et Perplexity puisent leurs réponses dans des sites web de haute autorité. Si votre site web a un SEO solide, il est aussi plus susceptible d'être cité dans les réponses IA. Un bon SEO et un bon GEO se renforcent mutuellement."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="what-is-changing-in-seo-strategy" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "What is changing in SEO strategy" : "Ce qui change dans la stratégie SEO"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -108,7 +113,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le SEO technique est plus important que jamais : données structurées, Core Web Vitals, performance mobile. Les backlinks restent un signal fort. Le SEO local continue de dominer pour les entreprises locales. Ce qui décline, c'est le bourrage de mots-clés basé sur le volume et le contenu mince et dupliqué."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="seo-geo-the-future-of-search-visibility" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "SEO + GEO: the future of search visibility" : "SEO + GEO : l'avenir de la visibilité en recherche"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">

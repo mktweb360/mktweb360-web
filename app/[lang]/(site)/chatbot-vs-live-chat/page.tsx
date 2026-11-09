@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -88,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Chatbots" : "Chatbots"}
         </p>
 
-        <IntlArticleJsonLd lang={lang} slug="chatbot-vs-live-chat" headline={isEn ? "Chatbot vs Live Chat: Which to Choose" : "Chatbot vs live chat : lequel choisir"} image="/og-chatgpt-para-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="chatbot-vs-live-chat" headline={isEn ? "Chatbot vs Live Chat: Which to Choose" : "Chatbot vs live chat : lequel choisir"} image="/og-chatgpt-para-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Chatbot vs Live Chat: Which to Choose"
@@ -108,8 +110,33 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La question est presque toujours mal posée. Beaucoup d'entreprises s'assoient pour décider entre chatbot et live chat comme s'il s'agissait de deux chemins opposés, alors qu'en réalité ils répondent à des besoins différents et fonctionnent mieux ensemble. Comprendre ce que chacun fait bien est la première étape pour ne pas dépenser trop ou frustrer vos clients."}
         </p>
 
+        <Image
+          src="/og-chatbot-vs-live-chat-diferencias-cual-elegir-empresa-v2.jpg"
+          alt={!isEn ? "Un robot traite une file de messages et passe le relais à une agente humaine casquée, qui résout une demande complexe" : "A robot handles a queue of messages and hands over to a human agent wearing a headset, who solves a complex request"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "what-live-chat-is-and-what-a-chatbot-is", label: isEn
+              ? "What live chat is and what a chatbot is"
+              : "Ce qu'est le live chat et ce qu'est un chatbot" }, { id: "the-differences-that-matter-most-in-practice", label: isEn
+              ? "The differences that matter most in practice"
+              : "Les différences qui comptent le plus en pratique" }, { id: "when-live-chat-is-the-right-option", label: isEn
+              ? "When live chat is the right option"
+              : "Quand le live chat est la bonne option" }, { id: "when-a-chatbot-is-the-right-option", label: isEn
+              ? "When a chatbot is the right option"
+              : "Quand un chatbot est la bonne option" }, { id: "the-model-that-works-best-chatbot-escalation-to", label: isEn
+              ? "The model that works best: chatbot + escalation to human"
+              : "Le modèle qui fonctionne le mieux : chatbot + escalade vers un humain" }, { id: "how-to-implement-the-hybrid-model", label: isEn
+              ? "How to implement the hybrid model"
+              : "Comment implémenter le modèle hybride" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-live-chat-is-and-what-a-chatbot-is" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What live chat is and what a chatbot is"
               : "Ce qu'est le live chat et ce qu'est un chatbot"}
@@ -127,7 +154,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-differences-that-matter-most-in-practice" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The differences that matter most in practice"
               : "Les différences qui comptent le plus en pratique"}
@@ -145,7 +172,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="when-live-chat-is-the-right-option" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "When live chat is the right option"
               : "Quand le live chat est la bonne option"}
@@ -163,7 +190,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="when-a-chatbot-is-the-right-option" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "When a chatbot is the right option"
               : "Quand un chatbot est la bonne option"}
@@ -183,7 +210,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-model-that-works-best-chatbot-escalation-to" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The model that works best: chatbot + escalation to human"
               : "Le modèle qui fonctionne le mieux : chatbot + escalade vers un humain"}
@@ -201,7 +228,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-implement-the-hybrid-model" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How to implement the hybrid model"
               : "Comment implémenter le modèle hybride"}
@@ -219,7 +246,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

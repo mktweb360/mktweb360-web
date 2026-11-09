@@ -8,6 +8,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -90,7 +91,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </time>
             <AuthorByline lang={lang} />
           </div>
-          <IntlArticleJsonLd lang={lang} slug="digital-marketing-ai-search-zero-click" headline={isEn ? "Digital marketing with AI and zero-click answers: what to do now" : "Marketing digital à l'ère de l'IA et du zéro clic : que faire maintenant"} image="/og-marketing-digital-con-ia-y-respuestas-cero-clic.jpg" />
+          <IntlArticleJsonLd lang={lang} slug="digital-marketing-ai-search-zero-click" headline={isEn ? "Digital marketing with AI and zero-click answers: what to do now" : "Marketing digital à l'ère de l'IA et du zéro clic : que faire maintenant"} image="/og-marketing-digital-con-ia-y-respuestas-cero-clic-v2.jpg" />
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn
               ? "Digital marketing with AI and zero-click answers: what to do now"
@@ -102,7 +103,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Google répond avant que l'utilisateur ne clique. ChatGPT et Perplexity répondent sans visite de site web. Le trafic organique change de forme — et toute stratégie marketing qui n'en tient pas compte optimise pour un monde qui n'existe plus."}
           </p>
           <Image
-            src="/og-marketing-digital-con-ia-y-respuestas-cero-clic.jpg"
+            src="/og-marketing-digital-con-ia-y-respuestas-cero-clic-v2.jpg"
             alt={isEn ? "Digital marketing AI and zero-click" : "Marketing digital IA et zéro clic"}
             width={1200}
             height={630}
@@ -118,7 +119,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Les AI Overviews de Google, les réponses directes de ChatGPT et les résumés de Perplexity ont une chose en commun : ils résolvent la requête de l'utilisateur sans qu'il visite aucun site web. Cela modifie la composition du trafic organique pour la plupart des entreprises, et continuera de le faire."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "what-zero-click-is-and-how-we-got-here", label: isEn ? "What zero-click is and how we got here" : "Qu'est-ce que le zéro clic et comment en sommes-nous arrivés là" }, { id: "what-this-really-means-for-your-web-traffic", label: isEn ? "What this really means for your web traffic" : "Ce que cela signifie vraiment pour votre trafic web" }, { id: "strategies-to-keep-winning-customers", label: isEn ? "Strategies to keep winning customers" : "Stratégies pour continuer à capter des clients" }, { id: "geo-as-a-new-visibility-layer", label: isEn ? "GEO as a new visibility layer" : "Le GEO comme nouvelle couche de visibilité" }, { id: "frequently-asked-questions-about-ai-and-zero-cli", label: isEn ? "Frequently asked questions about AI and zero-click" : "Questions fréquentes sur l'IA et le zéro clic" }]} />
+        </div>
+
+          <h2 id="what-zero-click-is-and-how-we-got-here" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "What zero-click is and how we got here" : "Qu'est-ce que le zéro clic et comment en sommes-nous arrivés là"}
           </h2>
           <p>
@@ -144,7 +149,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="what-this-really-means-for-your-web-traffic" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "What this really means for your web traffic" : "Ce que cela signifie vraiment pour votre trafic web"}
           </h2>
           <p>
@@ -153,7 +158,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "L'impact du zéro clic n'est pas uniforme. Les recherches informationnelles — 'qu'est-ce que X', 'comment fonctionne Y', 'différence entre A et B' — sont les plus touchées. Les recherches de bas de tunnel — 'acheter X à Paris', 'prix du service Y' — maintiennent des taux de clic relativement stables car l'utilisateur veut accéder à un site spécifique."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="strategies-to-keep-winning-customers" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Strategies to keep winning customers" : "Stratégies pour continuer à capter des clients"}
           </h2>
           <p>
@@ -169,7 +174,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
           <BlogBanner variant="geo" lang={lang} />
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="geo-as-a-new-visibility-layer" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "GEO as a new visibility layer" : "Le GEO comme nouvelle couche de visibilité"}
           </h2>
           <p>
@@ -203,7 +208,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="frequently-asked-questions-about-ai-and-zero-cli" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Frequently asked questions about AI and zero-click" : "Questions fréquentes sur l'IA et le zéro clic"}
           </h2>
           <div className="space-y-3">

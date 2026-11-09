@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -98,7 +100,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "AI & Marketing" : "IA & Marketing"}
         </p>
 
-        <IntlArticleJsonLd lang={lang} slug="ai-marketing-real-value" headline={isEn ? "AI Applied to Marketing: Where It Delivers Real Value and Where It Is Still Hype" : "IA appliquée au marketing : où elle apporte une vraie valeur et où c'est encore du bruit"} image="/og-ia-aplicada-a-marketing-valor-real-o-humo.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="ai-marketing-real-value" headline={isEn ? "AI Applied to Marketing: Where It Delivers Real Value and Where It Is Still Hype" : "IA appliquée au marketing : où elle apporte une vraie valeur et où c'est encore du bruit"} image="/og-ia-aplicada-a-marketing-valor-real-o-humo-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "AI Applied to Marketing: Where It Delivers Real Value and Where It Is Still Hype"
@@ -123,7 +125,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "L'IA n'est pas une stratégie — c'est un outil. Et comme tout outil, sa valeur dépend de si vous l'utilisez pour le bon travail. Bien utilisée, elle peut multiplier la productivité de l'équipe et améliorer la personnalisation à l'échelle. Mal utilisée, elle génère du contenu médiocre en masse et ajoute des couches d'automatisation que personne ne comprend."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <Image
+          src="/og-ia-aplicada-a-marketing-valor-real-o-humo-v2.jpg"
+          alt={!isEn ? "Mains tenant une batée de chercheur d’or dans une rivière, avec des pépites brillantes et une fumée qui se dissipe" : "Hands holding a gold prospector’s pan in a river, with shiny nuggets and smoke fading away"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "where-it-genuinely-adds-value-today", label: isEn ? "Where it genuinely adds value today" : "Où elle apporte vraiment de la valeur aujourd'hui" }, { id: "where-caution-is-advised", label: isEn ? "Where caution is advised" : "Où la prudence est conseillée" }, { id: "what-a-company-needs-before-applying-ai-with-jud", label: isEn ? "What a company needs before applying AI with judgement" : "Ce dont une entreprise a besoin avant d'appliquer l'IA avec discernement" }, { id: "ai-and-agents-the-right-approach", label: isEn ? "AI and agents: the right approach" : "IA et agents : la bonne approche" }, { id: "frequently-asked-questions-about-ai-in-marketing", label: isEn ? "Frequently asked questions about AI in marketing" : "Questions fréquentes sur l'IA en marketing" }]} />
+        </div>
+
+        <h2 id="where-it-genuinely-adds-value-today" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Where it genuinely adds value today" : "Où elle apporte vraiment de la valeur aujourd'hui"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -172,7 +187,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </Link>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="where-caution-is-advised" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Where caution is advised" : "Où la prudence est conseillée"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
@@ -181,7 +196,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La stratégie de marque, la créativité différenciante, les décisions avec beaucoup de contexte qualitatif et la vente relationnelle à ticket élevé sont des domaines où l'IA produit des résultats médiocres ou nuit directement. Il faut aussi être prudent avec les chatbots qui gèrent des réclamations ou les premières interactions dans des secteurs où la confiance est primordiale. La règle pratique : plus le jugement et le contexte comptent, moins il convient de déléguer à l'IA sans supervision."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="what-a-company-needs-before-applying-ai-with-jud" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "What a company needs before applying AI with judgement" : "Ce dont une entreprise a besoin avant d'appliquer l'IA avec discernement"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
@@ -190,7 +205,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "L'IA fonctionne bien quand le problème est bien défini, les données sont fiables et la supervision existe. S'il n'y a pas de clarté sur ce qu'on veut résoudre, si les données sont rares ou de mauvaise qualité, ou si personne dans l'entreprise ne va réviser ce que génère l'outil, le résultat sera médiocre ou contre-productif. Avant d'implémenter l'IA, ce qui vaut la peine d'examiner, c'est si les bases du marketing sont bien résolues."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="ai-and-agents-the-right-approach" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "AI and agents: the right approach" : "IA et agents : la bonne approche"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
@@ -224,7 +239,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions-about-ai-in-marketing" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions about AI in marketing" : "Questions fréquentes sur l'IA en marketing"}
         </h2>
         <div className="space-y-3 mb-8">

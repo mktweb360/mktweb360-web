@@ -5,6 +5,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -118,8 +119,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Demander un devis à trois agences et recevoir des chiffres allant de 300 à 3 000 € par mois pour ce qui semble être « la même chose » déconcerte n'importe qui. La réalité est que ce n'est presque jamais la même chose : derrière chaque prix il y a une portée, un niveau d'équipe et un modèle de travail différents. Comprendre ce que vous payez à chaque gamme est la seule façon de bien choisir."}
           </p>
 
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-there-is-such-a-wide-price-range-between-age", label: isEn
+                ? "Why there is such a wide price range between agencies"
+                : "Pourquoi il y a une telle différence de prix entre les agences" }, { id: "real-prices-per-service-in-spain-in-2026", label: isEn
+                ? "Real prices per service in Spain in 2026"
+                : "Prix réels par service en Espagne en 2026" }, { id: "management-fee-and-advertising-spend-they-are-no", label: isEn
+                ? "Management fee and advertising spend: they are not the same thing"
+                : "Honoraires de gestion et investissement publicitaire : ce n'est pas la même chose" }, { id: "when-it-makes-sense-to-hire-an-agency", label: isEn ? "When it makes sense to hire an agency" : "Quand il est judicieux d'engager une agence" }, { id: "red-flags-in-a-budget-proposal", label: isEn ? "Red flags in a budget proposal" : "Signaux d'alarme dans un devis" }, { id: "frequently-asked-questions-about-agency-pricing", label: isEn
+                ? "Frequently asked questions about agency pricing"
+                : "Questions fréquentes sur les prix des agences" }]} />
+        </div>
+
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="why-there-is-such-a-wide-price-range-between-age" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Why there is such a wide price range between agencies"
                 : "Pourquoi il y a une telle différence de prix entre les agences"}
@@ -132,7 +145,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="real-prices-per-service-in-spain-in-2026" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Real prices per service in Spain in 2026"
                 : "Prix réels par service en Espagne en 2026"}
@@ -169,7 +182,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="management-fee-and-advertising-spend-they-are-no" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Management fee and advertising spend: they are not the same thing"
                 : "Honoraires de gestion et investissement publicitaire : ce n'est pas la même chose"}
@@ -206,7 +219,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="when-it-makes-sense-to-hire-an-agency" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "When it makes sense to hire an agency" : "Quand il est judicieux d'engager une agence"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -224,7 +237,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <BlogBanner variant="seogeogbp" lang={lang} />
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="red-flags-in-a-budget-proposal" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "Red flags in a budget proposal" : "Signaux d'alarme dans un devis"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -289,7 +302,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="frequently-asked-questions-about-agency-pricing" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Frequently asked questions about agency pricing"
                 : "Questions fréquentes sur les prix des agences"}

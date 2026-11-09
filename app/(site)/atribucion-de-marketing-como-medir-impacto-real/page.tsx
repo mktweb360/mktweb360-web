@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 const SLUG = "atribucion-de-marketing-como-medir-impacto-real";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
       "Guía práctica de modelos de atribución para PYMEs. Qué son, cuál usar y cómo medir el verdadero impacto de tu marketing.",
     url: URL_CANONICAL,
     type: "article",
-    images: [{ url: `/og-${SLUG}.jpg`, width: 1200, height: 630 }],
+    images: [{ url: `/og-${SLUG}-v2.jpg`, width: 1200, height: 630 }],
   },
 };
 
@@ -38,7 +39,7 @@ const articleSchema = {
   url: URL_CANONICAL,
   mainEntityOfPage: URL_CANONICAL,
   inLanguage: "es-ES",
-  image: `https://www.mktweb360.com/og-${SLUG}.jpg`,
+  image: `https://www.mktweb360.com/og-${SLUG}-v2.jpg`,
 };
 
 const FAQS = [
@@ -102,7 +103,7 @@ export default function AtribucionPage() {
             El modelo de "último clic" asigna toda la venta al último anuncio que vio el cliente. Pero el cliente llevaba semanas viendo tus contenidos, leyendo tus artículos y siguiendo tus redes. Si mides solo el último clic, estás tomando decisiones de presupuesto sobre información incompleta.
           </p>
           <Image
-            src={`/og-${SLUG}.jpg`}
+            src={`/og-${SLUG}-v2.jpg`}
             alt="Atribución de marketing: cómo medir el impacto real"
             width={1200}
             height={630}
@@ -111,12 +112,16 @@ export default function AtribucionPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "por-que-el-ultimo-clic-distorsiona-la-realidad", "label": "Por qué el último clic distorsiona la realidad"}, {"id": "los-modelos-de-atribucion-principales", "label": "Los modelos de atribución principales"}, {"id": "el-mundo-cookieless-y-su-impacto-en-la-atribucio", "label": "El mundo cookieless y su impacto en la atribución"}, {"id": "como-aproximar-la-atribucion-sin-herramientas-en", "label": "Cómo aproximar la atribución sin herramientas enterprise"}, {"id": "preguntas-frecuentes-sobre-atribucion-de-marketi", "label": "Preguntas frecuentes sobre atribución de marketing"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             La atribución de marketing es el proceso de determinar qué canales, campañas o touchpoints contribuyeron a que un usuario tomara una decisión de compra o contacto. Parece sencillo hasta que consideras que el cliente promedio de B2B tiene entre 7 y 12 puntos de contacto antes de convertir, y que esos puntos ocurren en diferentes dispositivos, canales y momentos.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el último clic distorsiona la realidad</h2>
+          <h2 id="por-que-el-ultimo-clic-distorsiona-la-realidad" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el último clic distorsiona la realidad</h2>
           <p>
             El modelo de último clic — el más común porque es el default de muchas herramientas — asigna el 100% del mérito de la conversión al último canal por el que llegó el usuario antes de comprar. Esto lleva sistemáticamente a sobrevalorar los canales de fondo de embudo (Google Ads de búsqueda directa, remarketing) y a infravalorar los canales de construcción de demanda (contenidos, redes sociales, SEO informacional).
           </p>
@@ -137,7 +142,7 @@ export default function AtribucionPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los modelos de atribución principales</h2>
+          <h2 id="los-modelos-de-atribucion-principales" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los modelos de atribución principales</h2>
           <p>
             El modelo de <strong>primer clic</strong> asigna todo el mérito al primer touchpoint — útil para entender cómo te descubren, pero ignora el proceso de maduración. El modelo <strong>lineal</strong> distribuye el mérito por igual entre todos los touchpoints — honesto pero poco matizado. El modelo de <strong>decaimiento temporal</strong> da más peso a los touchpoints más cercanos a la conversión — más realista para ciclos de venta cortos.
           </p>
@@ -145,7 +150,7 @@ export default function AtribucionPage() {
             El modelo <strong>basado en posición</strong> (40-20-40) da más peso al primer y último touchpoint — bueno para valorar tanto el descubrimiento como el cierre. Y el modelo <strong>basado en datos</strong> de GA4 y Google Ads usa machine learning para distribuir el crédito según el impacto estadístico real de cada touchpoint — el más preciso, pero requiere suficiente volumen de conversiones para ser fiable.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El mundo cookieless y su impacto en la atribución</h2>
+          <h2 id="el-mundo-cookieless-y-su-impacto-en-la-atribucio" className="text-2xl font-bold text-primary-600 scroll-mt-24">El mundo cookieless y su impacto en la atribución</h2>
           <p>
             iOS14+ de Apple, la eliminación progresiva de cookies de terceros en Chrome y las restricciones de privacidad en Europa han reducido significativamente la visibilidad cross-channel. Google Ads ya no puede rastrear el 20-30% de las conversiones que antes rastreaba con cookies. Meta tiene un problema similar.
           </p>
@@ -155,7 +160,7 @@ export default function AtribucionPage() {
 
           <BlogBanner variant="geo" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo aproximar la atribución sin herramientas enterprise</h2>
+          <h2 id="como-aproximar-la-atribucion-sin-herramientas-en" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo aproximar la atribución sin herramientas enterprise</h2>
           <p>
             Las herramientas enterprise de atribución multi-touch (Northbeam, Triple Whale, Rockerbox) cuestan miles de euros al mes y están diseñadas para ecommerce con altos volúmenes. Para una PYME, el enfoque pragmático combina: GA4 con modelo de atribución basado en datos, Google Ads con Enhanced Conversions, la pregunta "¿cómo nos conociste?" en el formulario de contacto, y análisis periódico de qué canales generan tráfico de marca.
           </p>
@@ -184,7 +189,7 @@ export default function AtribucionPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre atribución de marketing</h2>
+          <h2 id="preguntas-frecuentes-sobre-atribucion-de-marketi" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre atribución de marketing</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

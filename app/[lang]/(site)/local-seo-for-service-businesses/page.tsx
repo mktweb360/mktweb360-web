@@ -7,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -52,7 +53,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le SEO local est la stratégie la plus rentable pour les entreprises de services avec une présence physique. Ce guide explique comment ça fonctionne, quels facteurs déterminent votre position et ce que vous pouvez faire pour l'améliorer."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "what-local-seo-is-and-why-it-matters", label: isEn
+            ? "What local SEO is and why it matters"
+            : "Qu'est-ce que le SEO local et pourquoi c'est important" }, { id: "google-business-profile-your-local-card-on-googl", label: isEn
+            ? "Google Business Profile: your local card on Google Maps"
+            : "Google Business Profile : votre fiche locale sur Google Maps" }, { id: "local-ranking-factors", label: isEn
+            ? "Local ranking factors"
+            : "Facteurs de positionnement local" }, { id: "local-keywords-with-the-most-potential", label: isEn
+            ? "Local keywords with the most potential"
+            : "Mots-clés locaux avec le plus de potentiel" }, { id: "how-to-build-local-authority-with-reviews-and-ci", label: isEn
+            ? "How to build local authority with reviews and citations"
+            : "Comment construire une autorité locale avec les avis et les citations" }]} />
+        </div>
+
+        <h2 id="what-local-seo-is-and-why-it-matters" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "What local SEO is and why it matters"
             : "Qu'est-ce que le SEO local et pourquoi c'est important"}
@@ -68,7 +83,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Pour les entreprises de services — plombiers, avocats, comptables, cliniques, restaurants, artisans — la recherche locale est la façon dont la majorité des nouveaux clients vous trouvent. Contrairement au SEO national, le SEO local cible des personnes qui recherchent activement un service dans un endroit spécifique, lui donnant la plus haute intention d'achat de tout type de trafic de recherche."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="google-business-profile-your-local-card-on-googl" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Google Business Profile: your local card on Google Maps"
             : "Google Business Profile : votre fiche locale sur Google Maps"}
@@ -84,7 +99,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Choisissez la catégorie principale la plus spécifique possible. Un 'Entrepreneur Général' se classe moins bien pour 'plombier à Paris' qu'une entreprise avec 'Plombier' comme catégorie principale. Ajoutez des catégories secondaires pour les services supplémentaires, mais votre catégorie principale doit être la plus spécifique qui décrit précisément votre service principal."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="local-ranking-factors" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Local ranking factors"
             : "Facteurs de positionnement local"}
@@ -100,7 +115,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Signaux de notoriété que vous pouvez améliorer : nombre d'avis Google et note moyenne, réponses aux avis, backlinks du site web depuis des sources locales (actualités locales, associations professionnelles, annuaires), cohérence NAP (Nom, Adresse, Téléphone doit être identique partout), et activité sur votre Google Business Profile (posts, réponses Q&R, nouvelles photos)."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="local-keywords-with-the-most-potential" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Local keywords with the most potential"
             : "Mots-clés locaux avec le plus de potentiel"}
@@ -111,7 +126,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Les mots-clés locaux les plus précieux combinent un service avec une localisation : '[service] à [ville]', '[service] près de [quartier]', '[service] [ville] prix'. Ceux-ci ont un volume de recherche plus faible que les termes nationaux mais une conversion bien plus élevée — quelqu'un qui cherche 'plombier Marseille 24h urgence' va appeler quelqu'un, pas juste naviguer. Optimisez vos pages de site web et votre Google Business Profile pour ces termes très spécifiques."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="how-to-build-local-authority-with-reviews-and-ci" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "How to build local authority with reviews and citations"
             : "Comment construire une autorité locale avec les avis et les citations"}

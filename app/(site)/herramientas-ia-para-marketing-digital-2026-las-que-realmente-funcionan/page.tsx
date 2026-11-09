@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Herramientas de IA para marketing en 2026",
   description:
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     description: "No todas las herramientas de IA para marketing merecen el tiempo que cuesta aprenderlas. Análisis honesto de las que aportan valor real a pymes y agencias en 2026.",
     url: "https://www.mktweb360.com/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -30,7 +32,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
+  image: "https://www.mktweb360.com/og-herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan-v2.jpg",
   url: "https://www.mktweb360.com/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/",
   mainEntityOfPage: "https://www.mktweb360.com/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/",
   inLanguage: "es-ES",
@@ -86,40 +88,52 @@ export default function HerramientasIaMarketingPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             No todas las herramientas de IA para marketing merecen el tiempo que cuesta aprenderlas. Este es un análisis honesto de las que aportan valor real a pymes y agencias en 2026, dentro de una estrategia sensata de <Link href="/ia-aplicada-al-marketing/" className="text-accent-500 hover:underline">IA aplicada al marketing</Link>.
           </p>
+          <Image
+            src="/og-herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan-v2.jpg"
+            alt="Caja de herramientas de madera abierta con un megáfono, una lupa, un embudo y un lápiz sobre una mesa"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "por-que-la-mayoria-de-herramientas-de-ia-no-apor", "label": "Por qué la mayoría de herramientas de IA no aportan lo que prometen"}, {"id": "chatgpt-y-claude-la-base-de-cualquier-stack-de-i", "label": "ChatGPT y Claude: la base de cualquier stack de IA"}, {"id": "canva-ia-diseno-accesible-sin-disenador", "label": "Canva IA: diseño accesible sin diseñador"}, {"id": "hubspot-breeze-ia-dentro-del-crm", "label": "HubSpot Breeze: IA dentro del CRM"}, {"id": "make-y-zapier-automatizacion-sin-codigo", "label": "Make y Zapier: automatización sin código"}, {"id": "las-herramientas-de-monitorizacion-de-ia-que-emp", "label": "Las herramientas de monitorización de IA que empiezan a importar"}, {"id": "el-stack-recomendado-para-una-pyme-en-2026", "label": "El stack recomendado para una pyme en 2026"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Cada semana aparece una herramienta de IA que promete revolucionar tu marketing. La mayoría no cumple. El problema no es la falta de opciones, sino saber cuáles justifican el tiempo de aprendizaje y la suscripción. Aquí van las que, después de filtrar el ruido, siguen siendo útiles de verdad.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué la mayoría de herramientas de IA no aportan lo que prometen</h2>
+          <h2 id="por-que-la-mayoria-de-herramientas-de-ia-no-apor" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué la mayoría de herramientas de IA no aportan lo que prometen</h2>
           <p>La mayoría de herramientas «con IA» son un envoltorio sobre un modelo de lenguaje que ya podrías usar directamente por menos dinero. Añaden una interfaz bonita y una promesa de especialización, pero el resultado rara vez supera al de una buena instrucción en ChatGPT o Claude.</p>
           <p>La pregunta correcta no es «¿usa IA?», sino «¿me ahorra tiempo real o me hace producir algo mejor?». Con ese filtro, la lista de herramientas imprescindibles se reduce bastante y el presupuesto se concentra donde de verdad hay retorno.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">ChatGPT y Claude: la base de cualquier stack de IA</h2>
+          <h2 id="chatgpt-y-claude-la-base-de-cualquier-stack-de-i" className="text-2xl font-bold text-primary-600 scroll-mt-24">ChatGPT y Claude: la base de cualquier stack de IA</h2>
           <p>Los modelos de lenguaje generalistas son el núcleo de todo. ChatGPT (GPT-4o o superior) y Claude sirven para redactar borradores, estructurar contenido, resumir informes, generar variaciones de copy y pensar estrategias. Para uso profesional, la diferencia entre el plan gratuito y el de pago es notable en calidad de resultado.</p>
           <p>La revisión editorial humana sigue siendo obligatoria antes de publicar nada. La IA acelera el primer borrador; el criterio de marca lo pones tú. Si quieres exprimir estas herramientas, revisa nuestra guía de <Link href="/chatgpt-para-marketing-digital/" className="text-accent-500 hover:underline">ChatGPT para marketing digital</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Canva IA: diseño accesible sin diseñador</h2>
+          <h2 id="canva-ia-diseno-accesible-sin-disenador" className="text-2xl font-bold text-primary-600 scroll-mt-24">Canva IA: diseño accesible sin diseñador</h2>
           <p>Canva con IA permite generar imágenes, adaptar formatos y crear piezas visuales coherentes sin dominar herramientas de diseño profesional. Para una pyme que necesita alimentar sus redes y su blog con constancia, es la forma más rápida de mantener una imagen digna sin depender de un diseñador para cada pieza.</p>
           <p>No sustituye el trabajo de un buen diseñador en proyectos de marca, pero cubre con solvencia el día a día del contenido social y de blog.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">HubSpot Breeze: IA dentro del CRM</h2>
+          <h2 id="hubspot-breeze-ia-dentro-del-crm" className="text-2xl font-bold text-primary-600 scroll-mt-24">HubSpot Breeze: IA dentro del CRM</h2>
           <p>Cuando la IA vive dentro del CRM, deja de ser un experimento aislado y pasa a formar parte del proceso comercial. HubSpot Breeze ayuda a redactar emails, resumir conversaciones con clientes y clasificar oportunidades sin salir de la herramienta donde ya gestionas tus contactos.</p>
           <p>Tiene sentido para negocios que ya usan un CRM y quieren añadir capa de IA sin montar integraciones nuevas. Para quien aún no gestiona sus leads de forma ordenada, el paso previo es organizar ese proceso.</p>
 
           <BlogBanner variant="geo" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Make y Zapier: automatización sin código</h2>
+          <h2 id="make-y-zapier-automatizacion-sin-codigo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Make y Zapier: automatización sin código</h2>
           <p>Make y Zapier conectan tus aplicaciones y dejan que la IA ejecute tareas de forma automática: clasificar leads, disparar emails, publicar contenido o mover datos entre herramientas. Es la puerta de entrada a los <Link href="/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/" className="text-accent-500 hover:underline">agentes de IA para marketing</Link> sin necesidad de programar.</p>
           <p>La curva de aprendizaje ronda las 2-4 semanas, pero el ahorro de tiempo posterior compensa con creces. Empieza por automatizar una sola tarea repetitiva y amplía desde ahí.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Las herramientas de monitorización de IA que empiezan a importar</h2>
+          <h2 id="las-herramientas-de-monitorizacion-de-ia-que-emp" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las herramientas de monitorización de IA que empiezan a importar</h2>
           <p>A medida que la gente busca en ChatGPT, Perplexity o Gemini, saber si tu marca aparece en esas respuestas se vuelve relevante. Empiezan a consolidarse herramientas de monitorización específicas para motores generativos, y su importancia crecerá al mismo ritmo que el <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">posicionamiento en IA</Link>.</p>
           <p>Para la mayoría de pymes, este apartado todavía es opcional, pero conviene tenerlo en el radar antes de que se convierta en un estándar.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El stack recomendado para una pyme en 2026</h2>
+          <h2 id="el-stack-recomendado-para-una-pyme-en-2026" className="text-2xl font-bold text-primary-600 scroll-mt-24">El stack recomendado para una pyme en 2026</h2>
           <p>Reunir todo lo anterior no requiere un gran presupuesto. Un stack equilibrado para una pyme parte de una suscripción a un modelo de lenguaje potente y se completa con diseño, automatización y medición de redes:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li>ChatGPT Plus o Claude Pro (20€/mes) para generación y estructura de contenido.</li>
@@ -144,7 +158,7 @@ export default function HerramientasIaMarketingPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

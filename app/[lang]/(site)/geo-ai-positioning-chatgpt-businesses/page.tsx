@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -116,7 +118,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Pendant vingt ans, être visible sur internet signifiait apparaître en première page de Google. Ce jeu est en train de changer. Aujourd'hui, une part croissante des requêtes se termine par une réponse générée par intelligence artificielle qui résume, recommande et, surtout, décide quelles marques mentionner et lesquelles ignorer. Le GEO — Generative Engine Optimization — est la discipline qui travaille pour que votre entreprise soit l'une des marques mentionnées."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <Image
+          src="/og-geo-posicionamiento-ia-chatgpt-empresas-espana-v2.jpg"
+          alt={!isEn ? "Robot assistant qui éclaire avec une lampe de poche une épicerie de quartier, pendant qu’un client interroge un assistant sur son téléphone" : "Robot assistant lighting up a neighborhood greengrocer with a flashlight while a customer asks an assistant on their phone"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "what-geo-is-generative-engine-optimization", label: isEn ? "What GEO is (Generative Engine Optimization)" : "Qu'est-ce que le GEO (Generative Engine Optimization)" }, { id: "why-geo-already-matters-for-businesses", label: isEn ? "Why GEO already matters for businesses" : "Pourquoi le GEO compte déjà pour les entreprises" }, { id: "seo-and-geo-are-not-the-same-but-they-need-each", label: isEn ? "SEO and GEO are not the same, but they need each other" : "SEO et GEO ne sont pas la même chose, mais ils se complètent" }, { id: "how-to-appear-in-chatgpt-and-perplexity-concrete", label: isEn ? "How to appear in ChatGPT and Perplexity: concrete steps" : "Comment apparaître dans ChatGPT et Perplexity : étapes concrètes" }, { id: "the-role-of-your-listing-and-local-data", label: isEn ? "The role of your listing and local data" : "Le rôle de votre fiche et des données locales" }, { id: "how-to-start-without-wasting-time", label: isEn ? "How to start without wasting time" : "Comment commencer sans perdre de temps" }, { id: "frequently-asked-questions-about-geo", label: isEn ? "Frequently asked questions about GEO" : "Questions fréquentes sur le GEO" }]} />
+        </div>
+
+        <h2 id="what-geo-is-generative-engine-optimization" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "What GEO is (Generative Engine Optimization)" : "Qu'est-ce que le GEO (Generative Engine Optimization)"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -125,7 +140,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le GEO est l'ensemble des techniques visant à faire en sorte que les moteurs génératifs — ChatGPT, Perplexity, Gemini, Claude et les AI Overviews de Google — citent votre entreprise dans leurs réponses. La différence avec le SEO classique est fondamentale : le SEO rivalise pour une position dans une liste de liens ; le GEO rivalise pour être la source que l'IA utilise pour construire la réponse que l'utilisateur lit. Dans le premier cas, l'utilisateur choisit parmi des options ; dans le second, l'IA a déjà choisi pour lui."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="why-geo-already-matters-for-businesses" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Why GEO already matters for businesses" : "Pourquoi le GEO compte déjà pour les entreprises"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -134,7 +149,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Ce n'est pas une tendance de laboratoire. Selon les données de Google Search Central d'avril 2026, entre 14 % et 16 % des recherches sur Google déclenchent déjà une réponse générative. À cela s'ajoute que, selon Gartner, 41,8 % des utilisateurs utilisent déjà des outils IA régulièrement. Quand près de la moitié de vos clients potentiels demandent à une IA et qu'une recherche Google sur six reçoit une réponse en texte généré, la visibilité dans ces canaux n'est plus optionnelle."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="seo-and-geo-are-not-the-same-but-they-need-each" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "SEO and GEO are not the same, but they need each other" : "SEO et GEO ne sont pas la même chose, mais ils se complètent"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -162,7 +177,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </Link>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="how-to-appear-in-chatgpt-and-perplexity-concrete" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "How to appear in ChatGPT and Perplexity: concrete steps" : "Comment apparaître dans ChatGPT et Perplexity : étapes concrètes"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -192,7 +207,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ))}
         </ul>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="the-role-of-your-listing-and-local-data" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "The role of your listing and local data" : "Le rôle de votre fiche et des données locales"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -201,7 +216,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Quand la question a une composante locale — 'meilleur comptable pour indépendants à Lyon' — les moteurs génératifs combinent l'autorité thématique avec des signaux de proximité. Là, votre fiche Google Business Profile, vos avis et la cohérence de vos données (nom, adresse, téléphone et spécialité) deviennent la matière première pour que l'IA vous recommande. Une entreprise locale avec sa maison numérique en ordre part avec un avantage en GEO."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="how-to-start-without-wasting-time" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "How to start without wasting time" : "Comment commencer sans perdre de temps"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
@@ -235,7 +250,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions-about-geo" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions about GEO" : "Questions fréquentes sur le GEO"}
         </h2>
         <div className="space-y-3 mb-8">

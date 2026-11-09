@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -110,7 +112,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Une migration bien planifiée conserve plus de 90 % du trafic dès la première semaine. Voici le processus qui sépare une migration réussie d'un désastre."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <Image
+          src="/og-migrar-shopware-prestashop-woocommerce-seo-v2.jpg"
+          alt={!isEn ? "Une grue déplace une petite boutique en ligne protégée par des boucliers vers un nouveau bâtiment plus grand, le long d’un chemin fléché" : "A crane moves a small online shop protected by shields toward a larger new building along a path of arrows"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "before-migrating-auditing-valuable-urls", label: isEn ? "Before migrating: auditing valuable URLs" : "Avant de migrer : auditer les URLs de valeur" }, { id: "the-301-redirect-map-the-critical-document", label: isEn ? "The 301 redirect map: the critical document" : "La carte de redirections 301 : le document critique" }, { id: "url-structure-prestashop-vs-woocommerce-vs-shopw", label: isEn ? "URL structure: PrestaShop vs WooCommerce vs Shopware" : "Structure d'URL : PrestaShop vs WooCommerce vs Shopware" }, { id: "launch-day-the-protocol", label: isEn ? "Launch day: the protocol" : "Le jour du lancement : le protocole" }, { id: "post-migration-monitoring", label: isEn ? "Post-migration monitoring" : "Suivi post-migration" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
+        <h2 id="before-migrating-auditing-valuable-urls" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Before migrating: auditing valuable URLs" : "Avant de migrer : auditer les URLs de valeur"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -119,7 +134,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La première étape n'est pas technique, c'est un inventaire. Il faut identifier quelles URLs ont de la valeur SEO : celles qui reçoivent du trafic organique, celles qui ont des backlinks et celles qui se positionnent sur des mots-clés pertinents. On croise les données Google Search Console (trafic et positions réels) avec un crawl complet Screaming Frog (toutes les URLs existantes). Le résultat est la liste des pages qui ne peuvent être perdues sous aucun prétexte."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="the-301-redirect-map-the-critical-document" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "The 301 redirect map: the critical document" : "La carte de redirections 301 : le document critique"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -128,7 +143,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Chaque URL de valeur de l'ancienne boutique doit rediriger avec un 301 vers son équivalent dans la nouvelle. Cette carte de redirections — un document qui associe URL ancienne à URL nouvelle, une par une — est le livrable le plus important de toute la migration. Les données sont claires : les boutiques qui migrent avec une carte de redirections correcte conservent plus de 90 % de leur trafic organique dès la première semaine. Celles qui improvisent, non."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="url-structure-prestashop-vs-woocommerce-vs-shopw" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "URL structure: PrestaShop vs WooCommerce vs Shopware" : "Structure d'URL : PrestaShop vs WooCommerce vs Shopware"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -156,7 +171,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </Link>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="launch-day-the-protocol" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Launch day: the protocol" : "Le jour du lancement : le protocole"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -165,7 +180,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La migration s'exécute dans un ordre strict et, idéalement, en une seule journée. D'abord, tout est préparé et validé dans un environnement de staging : redirections, contenu, schéma et performance. On vérifie que chaque redirection fonctionne et qu'il n'y a pas de liens cassés. Seulement alors le DNS est changé pour pointer vers le nouveau site. Et le même jour, le nouveau sitemap est soumis à Google Search Console pour accélérer l'exploration de la nouvelle structure. Improviser l'ordre est la première cause de chute de trafic."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="post-migration-monitoring" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Post-migration monitoring" : "Suivi post-migration"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -199,7 +214,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions" : "Questions fréquentes"}
         </h2>
         <div className="space-y-3 mb-8">

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -110,7 +111,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Les campagnes n'échouent pas à cause des campagnes elles-mêmes — elles échouent à cause de ce qui se trouve en dessous. Voici l'ordre correct pour que Google Ads soit rentable dans votre boutique Shopware."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "conversion-tracking-is-the-prerequisite", label: isEn ? "Conversion tracking is the prerequisite" : "Le suivi des conversions est le prérequis" }, { id: "connecting-shopware-with-google-merchant-center", label: isEn ? "Connecting Shopware with Google Merchant Center" : "Connecter Shopware avec Google Merchant Center" }, { id: "a-campaign-structure-that-works", label: isEn ? "A campaign structure that works" : "Une structure de campagnes qui fonctionne" }, { id: "optimise-your-feed-titles", label: isEn ? "Optimise your feed titles" : "Optimisez les titres de votre flux" }, { id: "roas-not-cpc-the-right-metric", label: isEn ? "ROAS, not CPC: the right metric" : "ROAS, pas CPC : la bonne métrique" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
+        <h2 id="conversion-tracking-is-the-prerequisite" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Conversion tracking is the prerequisite" : "Le suivi des conversions est le prérequis"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -119,7 +124,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Avant d'investir un seul euro, votre boutique doit mesurer correctement. L'événement clé est purchase, et il doit être envoyé avec transaction_id (pour éviter les doublons de conversion), value et currency (pour calculer le retour réel) et items (pour attribuer les ventes à des produits spécifiques). L'implémentation standard se fait via Google Tag Manager, déclenchant l'événement sur la page de confirmation de commande avec les données réelles de l'achat. Sans cela, Google optimise à l'aveugle."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="connecting-shopware-with-google-merchant-center" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Connecting Shopware with Google Merchant Center" : "Connecter Shopware avec Google Merchant Center"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -128,7 +133,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le flux produit est le carburant de Shopping et de Performance Max. Il y a trois façons de le connecter : le plugin officiel Shopware pour Merchant Center, qui synchronise le catalogue automatiquement ; un flux XML généré et uploadé manuellement ou de façon planifiée, plus laborieux mais avec un contrôle total ; ou des outils tiers comme Channable, qui ajoutent des règles avancées de transformation de flux pour les catalogues complexes. Le bon choix dépend de la taille et de la complexité de votre catalogue."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="a-campaign-structure-that-works" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "A campaign structure that works" : "Une structure de campagnes qui fonctionne"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -137,7 +142,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Une structure efficace combine trois éléments. Performance Max pour couvrir tout l'inventaire Google (Shopping, Recherche, Display, YouTube) avec l'IA optimisant les dépenses. Shopping standard quand vous voulez plus de contrôle manuel sur des produits ou marges spécifiques. Et le remarketing dynamique pour re-engager les utilisateurs qui ont déjà visité la boutique ou abandonné le panier avec les produits exacts qu'ils ont consultés. L'objectif n'est pas d'en choisir un, mais de les orchestrer tous les trois."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="optimise-your-feed-titles" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Optimise your feed titles" : "Optimisez les titres de votre flux"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -165,7 +170,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </Link>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="roas-not-cpc-the-right-metric" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "ROAS, not CPC: the right metric" : "ROAS, pas CPC : la bonne métrique"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -199,7 +204,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions" : "Questions fréquentes"}
         </h2>
         <div className="space-y-3 mb-8">

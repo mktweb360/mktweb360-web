@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -88,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Chatbots" : "Chatbots"}
         </p>
 
-        <IntlArticleJsonLd lang={lang} slug="how-much-does-a-chatbot-cost" headline={isEn ? "How Much Does a Chatbot Cost in 2026" : "Combien coûte un chatbot d'entreprise en 2026"} image="/og-chatgpt-para-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="how-much-does-a-chatbot-cost" headline={isEn ? "How Much Does a Chatbot Cost in 2026" : "Combien coûte un chatbot d'entreprise en 2026"} image="/og-chatgpt-para-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How Much Does a Chatbot Cost in 2026"
@@ -108,8 +110,31 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Avant de demander des devis, il est utile de comprendre qu'il n'existe pas de prix unique, mais plusieurs modèles de facturation qui suivent des logiques différentes. Deux chatbots aux fonctionnalités similaires peuvent coûter cinq fois plus ou moins selon la manière dont le service est facturé. Plutôt que de chercher le chiffre le plus bas, il vaut mieux comprendre ce qui se cache derrière chaque tarif."}
         </p>
 
+        <Image
+          src="/og-cuanto-cuesta-un-chatbot-para-empresas-espana-2026-v2.jpg"
+          alt={!isEn ? "Balance en laiton qui compare une tirelire en forme de cochon à un petit robot, avec des pièces au centre" : "Brass scale weighing a piggy bank against a small robot, with coins in the center"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "the-pricing-models-that-exist-in-the-market", label: isEn
+              ? "The pricing models that exist in the market"
+              : "Les modèles tarifaires qui existent sur le marché" }, { id: "what-the-main-market-players-charge", label: isEn
+              ? "What the main market players charge"
+              : "Ce que facturent les principaux acteurs du marché" }, { id: "what-determines-the-real-price-of-a-chatbot", label: isEn
+              ? "What determines the real price of a chatbot"
+              : "Ce qui détermine le prix réel d'un chatbot" }, { id: "pricing-model-for-a-managed-solution", label: isEn
+              ? "Pricing model for a managed solution"
+              : "Modèle tarifaire pour une solution gérée" }, { id: "when-a-chatbot-is-profitable", label: isEn
+              ? "When a chatbot is profitable"
+              : "Quand un chatbot est rentable" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-pricing-models-that-exist-in-the-market" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The pricing models that exist in the market"
               : "Les modèles tarifaires qui existent sur le marché"}
@@ -127,7 +152,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-the-main-market-players-charge" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What the main market players charge"
               : "Ce que facturent les principaux acteurs du marché"}
@@ -145,7 +170,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-determines-the-real-price-of-a-chatbot" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What determines the real price of a chatbot"
               : "Ce qui détermine le prix réel d'un chatbot"}
@@ -165,7 +190,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="pricing-model-for-a-managed-solution" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Pricing model for a managed solution"
               : "Modèle tarifaire pour une solution gérée"}
@@ -183,7 +208,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="when-a-chatbot-is-profitable" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "When a chatbot is profitable"
               : "Quand un chatbot est rentable"}
@@ -201,7 +226,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

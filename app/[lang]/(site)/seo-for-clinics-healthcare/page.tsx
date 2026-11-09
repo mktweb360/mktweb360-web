@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -6,6 +7,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -109,6 +111,33 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "74 % des patients cherchent sur Google avant d'appeler une clinique. Si votre centre n'apparaît pas quand quelqu'un cherche votre spécialité dans votre zone, ce patient finit dans le cabinet d'à côté. Le SEO médical a ses propres règles, et il vaut la peine de les connaître."}
         </p>
 
+        <Image
+          src="/og-seo-para-clinicas-centros-salud-captar-pacientes-google-v2.jpg"
+          alt={!isEn ? "Patiente souriante, téléphone à la main, qui entre dans l’accueil lumineux d’une clinique où la réceptionniste l’accueille" : "Smiling patient holding a phone as she walks into the bright reception area of a clinic, where the receptionist greets her"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-clinic-seo-is-different", label: isEn
+              ? "Why clinic SEO is different"
+              : "Pourquoi le SEO des cliniques est différent" }, { id: "the-triple-intent-of-the-patient", label: isEn
+              ? "The triple intent of the patient"
+              : "La triple intention du patient" }, { id: "google-business-profile-the-main-asset", label: isEn
+              ? "Google Business Profile: the main asset"
+              : "Google Business Profile : l'actif principal" }, { id: "the-searches-that-generate-real-patients", label: isEn
+              ? "The searches that generate real patients"
+              : "Les recherches qui génèrent de vrais patients" }, { id: "common-mistakes-in-a-clinic-s-blog", label: isEn
+              ? "Common mistakes in a clinic's blog"
+              : "Erreurs fréquentes dans le blog d'une clinique" }, { id: "how-long-before-you-notice-results", label: isEn
+              ? "How long before you notice results"
+              : "Combien de temps avant de voir des résultats" }, { id: "frequently-asked-questions-about-seo-for-clinics", label: isEn
+              ? "Frequently asked questions about SEO for clinics"
+              : "Questions fréquentes sur le SEO pour les cliniques" }]} />
+        </div>
+
         <section className="mb-10">
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn
@@ -118,7 +147,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="why-clinic-seo-is-different" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Why clinic SEO is different"
               : "Pourquoi le SEO des cliniques est différent"}
@@ -131,7 +160,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-triple-intent-of-the-patient" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The triple intent of the patient"
               : "La triple intention du patient"}
@@ -144,7 +173,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="google-business-profile-the-main-asset" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Google Business Profile: the main asset"
               : "Google Business Profile : l'actif principal"}
@@ -178,7 +207,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </div>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-searches-that-generate-real-patients" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The searches that generate real patients"
               : "Les recherches qui génèrent de vrais patients"}
@@ -193,7 +222,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="common-mistakes-in-a-clinic-s-blog" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Common mistakes in a clinic's blog"
               : "Erreurs fréquentes dans le blog d'une clinique"}
@@ -206,7 +235,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-long-before-you-notice-results" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How long before you notice results"
               : "Combien de temps avant de voir des résultats"}
@@ -250,7 +279,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </div>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions-about-seo-for-clinics" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Frequently asked questions about SEO for clinics"
               : "Questions fréquentes sur le SEO pour les cliniques"}

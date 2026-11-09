@@ -10,6 +10,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web para peluquerías y estética: 5 claves",
   description:
@@ -110,6 +111,10 @@ export default function FactoresWebPeluqueriasEsteticaPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "1-cualificacion-profesional-visible", "label": "1. Cualificación profesional visible"}, {"id": "2-la-reforma-del-rd-1277-2003-sobre-tratamientos", "label": "2. La reforma del RD 1277/2003 sobre tratamientos con finalidad sanitaria"}, {"id": "3-reserva-online-de-citas-sin-llamar", "label": "3. Reserva online de citas, sin llamar"}, {"id": "4-registro-sanitario-y-licencia-de-actividad-vis", "label": "4. Registro sanitario y licencia de actividad visibles"}, {"id": "5-ficha-de-google-business-profile-y-resenas-con", "label": "5. Ficha de Google Business Profile y reseñas con fotos reales"}, {"id": "tu-web-trabaja-aunque-el-centro-este-a-tope-de-c", "label": "Tu web trabaja aunque el centro esté a tope de citas"}, {"id": "preguntas-frecuentes-sobre-la-web-de-una-peluque", "label": "Preguntas frecuentes sobre la web de una peluquería o centro de estética"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Entre la reforma normativa sobre tratamientos con finalidad sanitaria, el registro sanitario obligatorio y la desconfianza creciente sobre el intrusismo profesional, la web de una peluquería o centro de estética tiene que demostrar cualificación real antes de pedir la confianza del cliente. Estos son los cinco factores que determinan si esa web capta clientes o los pierde.
@@ -117,12 +122,12 @@ export default function FactoresWebPeluqueriasEsteticaPage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.estetica} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Cualificación profesional visible</h2>
+          <h2 id="1-cualificacion-profesional-visible" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Cualificación profesional visible</h2>
           <p>
             La formación reglada de referencia en el sector es el Técnico en Estética y Belleza (Grado Medio) o el Grado Superior en Estética Integral, según el Real Decreto 256/2022, junto con el Certificado de Profesionalidad de Nivel 3 en los servicios que corresponda. Mostrar esta cualificación con claridad en la web —no solo en el local— combate el intrusismo del sector y es exactamente lo que un cliente exigente busca antes de reservar un tratamiento.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. La reforma del RD 1277/2003 sobre tratamientos con finalidad sanitaria</h2>
+          <h2 id="2-la-reforma-del-rd-1277-2003-sobre-tratamientos" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. La reforma del RD 1277/2003 sobre tratamientos con finalidad sanitaria</h2>
           <p>
             La modificación del Real Decreto 1277/2003, que entra en vigor el 1 de julio de 2026, exige que los centros cuenten con profesionales sanitarios con titulación oficial para los tratamientos que tengan una finalidad sanitaria. Dejar claro en la web qué tratamientos requieren esa supervisión —y quién la ofrece en el centro— no es solo cumplimiento normativo: es la garantía que diferencia un centro serio de uno que opera en el límite de la legalidad.
           </p>
@@ -135,26 +140,26 @@ export default function FactoresWebPeluqueriasEsteticaPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Reserva online de citas, sin llamar</h2>
+          <h2 id="3-reserva-online-de-citas-sin-llamar" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Reserva online de citas, sin llamar</h2>
           <p>
             Buena parte de las decisiones sobre qué tratamiento reservar y en qué centro ocurren fuera del horario de atención — por la noche, viendo fotos de otros trabajos, o un domingo planeando la semana. Un sistema de reserva integrado en la web capta a ese cliente en el momento exacto en que decide, sin depender de que alguien conteste el teléfono.
           </p>
 
           <OfferBannerWebSeo />
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Registro sanitario y licencia de actividad visibles</h2>
+          <h2 id="4-registro-sanitario-y-licencia-de-actividad-vis" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Registro sanitario y licencia de actividad visibles</h2>
           <p>
             Abrir una peluquería o centro de estética exige la Declaración Responsable de actividad en el ayuntamiento y el registro en la consejería de Sanidad de la comunidad autónoma correspondiente. Reflejar que el centro cumple estos trámites —igual que se refleja la cualificación del personal— refuerza la percepción de un negocio serio frente a la competencia informal del sector.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Ficha de Google Business Profile y reseñas con fotos reales</h2>
+          <h2 id="5-ficha-de-google-business-profile-y-resenas-con" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Ficha de Google Business Profile y reseñas con fotos reales</h2>
           <p>
             Para este sector, las fotos del trabajo realizado —con el consentimiento del cliente— y las reseñas activas pesan tanto o más que el diseño de la propia web en la decisión final. Una ficha de Google cuidada, con horario actualizado y gestión activa de reseñas, suele ser la primera parada antes incluso de visitar la web.
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque el centro esté a tope de citas</h2>
+              <h2 id="tu-web-trabaja-aunque-el-centro-este-a-tope-de-c" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja aunque el centro esté a tope de citas</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras atiendes citas o cierras el centro al final del día, tu web sigue abierta. Alguien que busca centro de estética un domingo por la noche encuentra tu ficha, ve la cualificación del equipo y reserva — sin que tengas que estar disponible para atenderlo en ese momento.
               </p>
@@ -189,7 +194,7 @@ export default function FactoresWebPeluqueriasEsteticaPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de una peluquería o centro de estética</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-una-peluque" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de una peluquería o centro de estética</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

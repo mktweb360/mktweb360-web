@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { JsonLd } from "@/components/JsonLd";
 import { serviceSchema, intlPath, fromMeta } from "@/lib/schema";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 const FAQS_EN = [
   {
     q: "How much does a website for a coach or consultant cost?",
@@ -128,7 +130,28 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Le coaching et la consultance sont des services où la confiance est primordiale. Avant d'engager un coach, un client potentiel va rechercher qui vous êtes, quels résultats vous avez obtenus pour d'autres clients, quelle méthodologie vous utilisez et si votre façon de communiquer lui correspond. Tout cela se passe sur votre site web, bien avant la première conversation."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+        <Image
+          src="/og-diseno-web-para-coaches-v2.jpg"
+          alt={!isEn ? "Coach en discussion avec une cliente dans un cabinet accueillant" : "Coach talking with a client in a cosy consulting room"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-personal-brand-is-the-centre-of-everything", label: isEn
+              ? "Why personal brand is the centre of everything"
+              : "Pourquoi la marque personnelle est au cœur de tout" }, { id: "what-a-coach-or-consultant-s-website-must-have", label: isEn
+              ? "What a coach or consultant's website must have"
+              : "Ce que doit avoir le site web d'un coach ou consultant" }, { id: "seo-for-coaches-how-your-ideal-clients-find-you", label: isEn
+              ? "SEO for coaches: how your ideal clients find you"
+              : "SEO pour coachs : comment vos clients idéaux vous trouvent" }, { id: "our-process-from-zero-to-website-in-4-steps", label: isEn
+              ? "Our process: from zero to website in 4 steps"
+              : "Notre processus : de zéro à un site web en 4 étapes" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
+          <h2 id="why-personal-brand-is-the-centre-of-everything" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "Why personal brand is the centre of everything"
               : "Pourquoi la marque personnelle est au cœur de tout"}
@@ -149,7 +172,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Le design doit accompagner cette authenticité : couleurs, typographies, photographies et ton de communication alignés avec votre personnalité et avec le type de client auquel vous vous adressez. Un coach en leadership d'entreprise a besoin d'un site très différent de celui d'un coach de bien-être ou d'un consultant financier."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="what-a-coach-or-consultant-s-website-must-have" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "What a coach or consultant's website must have"
               : "Ce que doit avoir le site web d'un coach ou consultant"}
@@ -193,7 +216,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </li>
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="seo-for-coaches-how-your-ideal-clients-find-you" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "SEO for coaches: how your ideal clients find you"
               : "SEO pour coachs : comment vos clients idéaux vous trouvent"}
@@ -233,7 +256,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="our-process-from-zero-to-website-in-4-steps" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "Our process: from zero to website in 4 steps"
               : "Notre processus : de zéro à un site web en 4 étapes"}
@@ -279,7 +302,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

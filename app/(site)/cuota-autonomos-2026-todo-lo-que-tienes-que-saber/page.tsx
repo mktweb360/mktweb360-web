@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cuota de autónomos 2026: tramos y cambios",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "Las cuotas de autónomos 2026 se mantienen iguales a 2025 por prórroga del Gobierno, salvo el MEI que sube al 0,9%. Tabla completa de tramos, tarifa plana de 80€ y cómo cambiar tu base hasta 6 veces al año.",
     url: "https://www.mktweb360.com/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-homepage.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-cuota-autonomos-2026-todo-lo-que-tienes-que-saber-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-homepage.jpg",
+  image: "https://www.mktweb360.com/og-cuota-autonomos-2026-todo-lo-que-tienes-que-saber-v2.jpg",
   url: "https://www.mktweb360.com/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/",
   mainEntityOfPage: "https://www.mktweb360.com/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/",
   inLanguage: "es-ES",
@@ -92,18 +94,30 @@ export default function CuotaAutonomos2026Page() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Las cuotas de autónomos de 2026 se mantienen iguales a las de 2025 por prórroga del Gobierno, con una única variación: el MEI sube al 0,9%. En esta guía tienes la tabla de tramos, la tarifa plana de 80€ y cómo cambiar tu base hasta 6 veces al año. Si además estás empezando, te interesa saber <Link href="/como-darse-de-alta-autonomo/" className="text-accent-500 hover:underline">cómo darte de alta como autónomo</Link> sin errores.
           </p>
+          <Image
+            src="/og-cuota-autonomos-2026-todo-lo-que-tienes-que-saber-v2.jpg"
+            alt="Artesano autónomo en su taller haciendo cuentas con una calculadora, papeles y una hucha de cerámica con monedas"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={8} items={[{"id": "las-cuotas-de-2026-que-ha-cambiado-y-que-no", "label": "Las cuotas de 2026: qué ha cambiado y qué no"}, {"id": "tabla-completa-de-tramos-y-cuotas-minimas-2026", "label": "Tabla completa de tramos y cuotas mínimas 2026"}, {"id": "el-mei-en-2026-que-es-y-cuanto-sube-tu-cuota", "label": "El MEI en 2026: qué es y cuánto sube tu cuota"}, {"id": "tarifa-plana-2026-80-mes-para-nuevos-autonomos", "label": "Tarifa plana 2026: 80€/mes para nuevos autónomos"}, {"id": "como-cambiar-tu-base-de-cotizacion-a-lo-largo-de", "label": "Cómo cambiar tu base de cotización a lo largo del año"}, {"id": "planificacion-cuando-te-conviene-cotizar-mas", "label": "Planificación: cuándo te conviene cotizar más"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Pocos temas generan tanta confusión entre los autónomos como la cuota que pagan cada mes. Entre el sistema de tramos por ingresos reales, el MEI y la tarifa plana, es fácil perderse. Este artículo ordena la información esencial de 2026 para que sepas exactamente qué pagas y por qué.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Las cuotas de 2026: qué ha cambiado y qué no</h2>
+          <h2 id="las-cuotas-de-2026-que-ha-cambiado-y-que-no" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las cuotas de 2026: qué ha cambiado y qué no</h2>
           <p>La noticia principal es que las tablas de cotización de 2026 se mantienen iguales a las de 2025. El Gobierno ha prorrogado los importes, por lo que los tramos y las cuotas mínimas no varían respecto al año anterior.</p>
           <p>La única variación real es el MEI (Mecanismo de Equidad Intergeneracional), que sube del 0,8% al 0,9%. Es un incremento pequeño pero que afecta a todos los autónomos, independientemente de su tramo. En la práctica, significa que pagarás prácticamente lo mismo que en 2025, con un ligero aumento derivado del MEI.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Tabla completa de tramos y cuotas mínimas 2026</h2>
+          <h2 id="tabla-completa-de-tramos-y-cuotas-minimas-2026" className="text-2xl font-bold text-primary-600 scroll-mt-24">Tabla completa de tramos y cuotas mínimas 2026</h2>
           <p>El sistema de cotización por ingresos reales asigna una cuota según lo que facturas. Estas son las cuotas mínimas de los primeros tramos en 2026:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li>Primer tramo (ingresos hasta 670€/mes): 200€/mes.</li>
@@ -114,11 +128,11 @@ export default function CuotaAutonomos2026Page() {
           <p>Para tu caso concreto, consulta la tabla oficial de bases y tramos en la web de la Seguridad Social o pregunta a tu gestor: las cifras de este artículo son orientativas.</p>
           <p>La clave del sistema es que la cuota se ajusta a tus rendimientos netos reales. Si tus ingresos cambian a lo largo del año, tienes la posibilidad de ajustar tu base para que la cuota se corresponda con tu situación real.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El MEI en 2026: qué es y cuánto sube tu cuota</h2>
+          <h2 id="el-mei-en-2026-que-es-y-cuanto-sube-tu-cuota" className="text-2xl font-bold text-primary-600 scroll-mt-24">El MEI en 2026: qué es y cuánto sube tu cuota</h2>
           <p>El MEI es un recargo destinado a reforzar la sostenibilidad del sistema de pensiones. En 2026 pasa del 0,8% al 0,9%, aplicándose sobre la base de cotización de cada autónomo.</p>
           <p>Aunque el porcentaje es pequeño, conviene tenerlo en cuenta al calcular tu cuota total: es la razón por la que, pese a que las tablas no cambian, la cifra final que pagas cada mes es ligeramente superior a la de 2025.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Tarifa plana 2026: 80€/mes para nuevos autónomos</h2>
+          <h2 id="tarifa-plana-2026-80-mes-para-nuevos-autonomos" className="text-2xl font-bold text-primary-600 scroll-mt-24">Tarifa plana 2026: 80€/mes para nuevos autónomos</h2>
           <p>La tarifa plana sigue siendo la gran ventaja para quien empieza. Consiste en una cuota reducida de 80€/mes (88,64€ con el MEI incluido) durante los primeros 12 meses de actividad.</p>
           <p>Esta bonificación es prorrogable a 24 meses si tus ingresos no superan el SMI, y solo aplica si no has sido autónomo en los últimos 2 años. Si estás valorando dar el paso, la tarifa plana reduce de forma notable la barrera de entrada durante el primer año.</p>
 
@@ -131,11 +145,11 @@ export default function CuotaAutonomos2026Page() {
             secondary={{ text: "¿Aún no tienes web? Mira cómo trabajamos las webs para autónomos", href: "/diseno-de-paginas-web/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo cambiar tu base de cotización a lo largo del año</h2>
+          <h2 id="como-cambiar-tu-base-de-cotizacion-a-lo-largo-de" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo cambiar tu base de cotización a lo largo del año</h2>
           <p>Uno de los aspectos más útiles del sistema actual es la flexibilidad: puedes cambiar tu base de cotización hasta 6 veces al año. Esto te permite adaptar la cuota a la evolución real de tus ingresos.</p>
           <p>Los cambios tienen efecto diferido según el momento en que los solicites, y toda la gestión se realiza a través del portal Importass de la Seguridad Social. Revisar tu base varias veces al año es una buena práctica para no pagar de más ni de menos.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Planificación: cuándo te conviene cotizar más</h2>
+          <h2 id="planificacion-cuando-te-conviene-cotizar-mas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Planificación: cuándo te conviene cotizar más</h2>
           <p>Cotizar por la base mínima reduce tu cuota hoy, pero también reduce la base de cálculo de tu pensión, tu prestación por baja médica y el cese de actividad. Es una decisión que tiene consecuencias a largo plazo.</p>
           <p>Para autónomos cercanos a los 50 años, en particular, puede ser conveniente revisar si el ahorro mensual compensa la reducción en prestaciones futuras. Y como todo negocio necesita ingresos estables para poder planificar su cotización, conviene acompañar la parte fiscal con una estrategia sólida para <Link href="/marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia/" className="text-accent-500 hover:underline">conseguir clientes como autónomo en 2026</Link>. También te interesa preparar tu negocio para la <Link href="/factura-electronica-obligatoria-autonomos-pymes/" className="text-accent-500 hover:underline">factura electrónica obligatoria</Link> que llega para autónomos y pymes.</p>
           <p>La cuota se paga todos los meses, factures o no. Por eso, cuando tengas el alta y la cotización en orden, lo siguiente es que los clientes te encuentren cuando buscan lo que haces: una <Link href="/oferta-web-seo-organico/" className="text-accent-500 hover:underline">página web profesional para tu negocio</Link> y una <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile bien trabajada</Link>, que es lo que aparece en Google Maps cuando alguien busca un profesional cerca.</p>
@@ -155,7 +169,7 @@ export default function CuotaAutonomos2026Page() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

@@ -8,6 +8,9 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 import { PintoresCta } from "@/components/PintoresCta";
+import { ArticleIndex } from "@/components/ArticleIndex";
+import { PintoresDemosBox } from "@/components/PintoresDemosBox";
+import { OfferBannerWebPintores } from "@/components/offers/OfferBannerWebPintores";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -25,7 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 type L = "en" | "fr";
 type Bi = { en: string; fr: string };
 
-const H2 = "text-2xl font-bold text-primary-600 mb-4";
+const H2 = "text-2xl font-bold text-primary-600 mb-4 scroll-mt-24";
+const MIN_LECTURA = { en: 6, fr: 7 };
 const P = "text-gray-600 mb-4 leading-relaxed";
 const UL = "list-disc pl-6 space-y-1 text-gray-600 mb-4";
 
@@ -48,7 +52,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: t({ en: "Website for painters", fr: "Site web pour peintres" }) },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">{t({ en: "Web Design", fr: "Création Web" })}</p>
-        <IntlArticleJsonLd lang={lang} slug="how-to-create-website-for-painters" headline={headline} image="/og-como-crear-una-pagina-web-para-pintores.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="how-to-create-website-for-painters" headline={headline} image="/og-paginas-web-pintores-guia.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">{headline}</h1>
         <AuthorByline lang={lang} block />
         <p className="text-xl text-gray-500 mb-6 leading-relaxed">
@@ -58,7 +62,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           })}
         </p>
         <Image
-          src="/og-como-crear-una-pagina-web-para-pintores.jpg"
+          src="/og-paginas-web-pintores-guia.jpg"
           alt={t({
             en: "Illustration of a painting company's website with job gallery, Google profile and quote button",
             fr: "Illustration du site d'une entreprise de peinture avec galerie de chantiers, fiche Google et bouton de devis",
@@ -67,6 +71,19 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           height={630}
           className="w-full rounded-2xl mb-6"
           priority
+        />
+
+
+        <ArticleIndex
+          lang={lang}
+          minutes={MIN_LECTURA[lang]}
+          items={[
+            { id: "include", label: t({ en: "What a painter's website must include", fr: "Ce que doit inclure le site d'un peintre" }) },
+            { id: "local-seo", label: t({ en: "Local SEO for painters", fr: "SEO local pour peintres" }) },
+            { id: "gbp", label: t({ en: "Google Business Profile", fr: "Google Business Profile" }) },
+            { id: "photos", label: t({ en: "Photos and portfolio", fr: "Photos et portfolio" }) },
+            { id: "calls", label: t({ en: "From website visits to phone calls", fr: "Des visites du site aux appels" }) },
+          ]}
         />
 
         <PintoresCta
@@ -80,7 +97,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         />
 
         <section className="mb-10">
-          <h2 className={H2}>{t({ en: "What a painter's website must include to generate customers", fr: "Ce que le site web d'un peintre doit inclure pour générer des clients" })}</h2>
+          <h2 id="include" className={H2}>{t({ en: "What a painter's website must include to generate customers", fr: "Ce que le site web d'un peintre doit inclure pour générer des clients" })}</h2>
           <p className={P}>
             {t({
               en: "A painting contractor's website needs to answer three questions immediately: what services do you offer, where do you work and how do I contact you? Make all three clear on the first screen:",
@@ -99,20 +116,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             })}
           </p>
           <Image
-            src="/pintores-ruta-cliente.jpg"
+            src={`/pintores-ruta-cliente-${lang}.jpg`}
             alt={t({
-              en: "Diagram of the customer journey: Google search, website with jobs, Google profile with reviews, and a call or WhatsApp to ask for a quote",
-              fr: "Schéma du parcours client : recherche Google, site avec chantiers, fiche Google avec avis, puis appel ou WhatsApp pour demander un devis",
+              en: "Infographic: this is how a customer finds you. 1 they search Google for a painter near me, 2 they see your website and photos of your jobs, 3 they read your reviews and your map listing, 4 they call you or ask for a quote",
+              fr: "Infographie : voici comment un client arrive jusqu'à vous. 1 il cherche un peintre sur Google, 2 il voit votre site et les photos de vos chantiers, 3 il lit vos avis et votre fiche sur la carte, 4 il vous appelle ou demande un devis",
             })}
             width={1200}
             height={630}
             className="w-full rounded-2xl"
           />
-          <p className="text-sm text-gray-500 mt-2">{t({ en: "Indicative diagram of a customer's path from search to contact.", fr: "Schéma indicatif du parcours d'un client, de la recherche au contact." })}</p>
+          <p className="text-sm text-gray-500 mt-2">{t({ en: "How a customer goes from searching for a painter to contacting you. Your website, your reviews and your Google listing are the three stops.", fr: "Le parcours d'un client, de la recherche d'un peintre jusqu'au contact. Votre site, vos avis et votre fiche Google sont les trois étapes." })}</p>
         </section>
 
         <section className="mb-10">
-          <h2 className={H2}>{t({ en: "Local SEO for painters: how to appear in Google searches", fr: "SEO local pour peintres : comment apparaître dans les recherches Google" })}</h2>
+          <h2 id="local-seo" className={H2}>{t({ en: "Local SEO for painters: how to appear in Google searches", fr: "SEO local pour peintres : comment apparaître dans les recherches Google" })}</h2>
           <p className={P}>
             {t({
               en: "When someone searches “painter in [city]”, Google shows three kinds of results: the local pack (a map with three businesses), organic results and ads. Your goal is to appear in as many as possible:",
@@ -135,7 +152,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className={H2}>{t({ en: "Google Business Profile for painting companies", fr: "Google Business Profile pour les entreprises de peinture" })}</h2>
+          <h2 id="gbp" className={H2}>{t({ en: "Google Business Profile for painting companies", fr: "Google Business Profile pour les entreprises de peinture" })}</h2>
           <p className={P}>
             {t({
               en: "Your Google Business Profile is often the first thing potential customers see: it appears in Google Maps and in the local pack for searches in your area. A well-maintained profile can generate calls even without a website. For painters, the key elements are:",
@@ -169,7 +186,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         />
 
         <section className="mb-10">
-          <h2 className={H2}>{t({ en: "Photos and portfolio: your best sales tool", fr: "Photos et portfolio : votre meilleur outil de vente" })}</h2>
+          <h2 id="photos" className={H2}>{t({ en: "Photos and portfolio: your best sales tool", fr: "Photos et portfolio : votre meilleur outil de vente" })}</h2>
           <p className={P}>
             {t({
               en: "For painting services, the portfolio is everything: customers want to see what they will get before they call. You do not need professional photography; a modern smartphone in good light is enough. Photograph each job before, during and after, and show a range of work types, rooms and settings.",
@@ -177,13 +194,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             })}
           </p>
           <Image
-            src="/pintores-antes-despues.jpg"
+            src="/pintores-foto-antes-despues.jpg"
             alt={t({
-              en: "Illustration of a wall before and after painting: stains and peeling on the left, a clean blue finish on the right, with a roller in the middle",
-              fr: "Illustration d'un mur avant et après peinture : taches et écaillages à gauche, finition bleue propre à droite, avec un rouleau au centre",
+              en: "Photograph of a living-room wall before and after painting: damp stains and peeling on the left, the same wall clean and freshly painted on the right",
+              fr: "Photographie d'un mur de salon avant et après peinture : taches d'humidité et écaillages à gauche, le même mur propre et fraîchement peint à droite",
             })}
             width={1200}
-            height={630}
+            height={675}
             className="w-full rounded-2xl mb-4"
           />
           <p className={P}>
@@ -195,7 +212,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className={H2}>{t({ en: "How to turn website visits into phone calls", fr: "Comment transformer les visites du site en appels" })}</h2>
+          <h2 id="calls" className={H2}>{t({ en: "How to turn website visits into phone calls", fr: "Comment transformer les visites du site en appels" })}</h2>
           <p className={P}>
             {t({
               en: "Traffic without contacts is useless. Many painters' websites get decent traffic but few calls because contacting them is hard. Check these points:",
@@ -214,6 +231,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             })}
           </p>
         </section>
+
+        <PintoresDemosBox lang={lang} where="articulo" />
+
+        <OfferBannerWebPintores lang={lang} />
 
         <PintoresCta
           lang={lang}

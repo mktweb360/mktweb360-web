@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -32,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Google Merchant Center" : "Google Merchant Center" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
-        <IntlArticleJsonLd lang={lang} slug="google-merchant-center-guide" headline={isEn ? "Google Merchant Center for ecommerce: complete setup guide" : "Google Merchant Center pour e-commerce : guide de configuration complet"} image="/og-google-merchant-center-ecommerce-guia.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="google-merchant-center-guide" headline={isEn ? "Google Merchant Center for ecommerce: complete setup guide" : "Google Merchant Center pour e-commerce : guide de configuration complet"} image="/og-google-merchant-center-ecommerce-guia-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Google Merchant Center for ecommerce: complete setup guide" : "Google Merchant Center pour e-commerce : guide de configuration complet"}
         </h1>
@@ -41,8 +43,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Google Merchant Center is the gateway to appearing in Google Shopping results. This guide explains how to set it up correctly, fix errors and maximise your product visibility." : "Google Merchant Center est la porte d'entrée pour apparaître dans les résultats Google Shopping. Ce guide explique comment le configurer correctement, corriger les erreurs et maximiser la visibilité de vos produits."}
         </p>
 
+        <Image
+          src="/og-google-merchant-center-ecommerce-guia-v2.jpg"
+          alt={!isEn ? "Entrepôt où des cartons de produits circulent sur un tapis roulant jusqu’à une vitrine en ligne présentant des baskets, une tasse et une lampe" : "Warehouse with product boxes traveling on a conveyor belt to an online shop window showing sneakers, a mug and a lamp"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "what-google-merchant-center-is-and-why-you-need", label: isEn ? "What Google Merchant Center is and why you need it" : "Qu'est-ce que Google Merchant Center et pourquoi vous en avez besoin" }, { id: "how-to-create-and-verify-your-merchant-center-ac", label: isEn ? "How to create and verify your Merchant Center account" : "Comment créer et vérifier votre compte Merchant Center" }, { id: "how-to-create-your-product-feed", label: isEn ? "How to create your product feed" : "Comment créer votre flux de produits" }, { id: "common-feed-errors-and-how-to-fix-them", label: isEn ? "Common feed errors and how to fix them" : "Erreurs courantes de flux et comment les corriger" }, { id: "linking-merchant-center-with-google-ads", label: isEn ? "Linking Merchant Center with Google Ads" : "Lier Merchant Center avec Google Ads" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-google-merchant-center-is-and-why-you-need" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "What Google Merchant Center is and why you need it" : "Qu'est-ce que Google Merchant Center et pourquoi vous en avez besoin"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-create-and-verify-your-merchant-center-ac" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to create and verify your Merchant Center account" : "Comment créer et vérifier votre compte Merchant Center"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-create-your-product-feed" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to create your product feed" : "Comment créer votre flux de produits"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -78,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="common-feed-errors-and-how-to-fix-them" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Common feed errors and how to fix them" : "Erreurs courantes de flux et comment les corriger"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -90,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="linking-merchant-center-with-google-ads" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Linking Merchant Center with Google Ads" : "Lier Merchant Center avec Google Ads"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

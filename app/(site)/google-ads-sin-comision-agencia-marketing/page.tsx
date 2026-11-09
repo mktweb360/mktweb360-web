@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -6,6 +7,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Google Ads sin comisión sobre tu inversión",
   description: "Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras y cómo evaluar el modelo de gestión que más te conviene.",
@@ -20,13 +22,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Google Ads sin comisión sobre presupuesto: por qué cambia todo | Mkt Web 360",
     description: "Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras y cómo evaluar el modelo de gestión que más te conviene.",
-    images: [{ url: "https://www.mktweb360.com/og-google-ads-sin-comision-agencia-marketing.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-google-ads-sin-comision-agencia-marketing-v2.jpg", width: 1200, height: 630 }],
     type: "article",
     publishedTime: "2026-08-20T08:00:00Z",
   },
 };
 
-const schemaArticle = {"@context":"https://schema.org","@type":"BlogPosting","headline":"Google Ads sin comisión sobre presupuesto: por qué cambia todo","description":"Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras y cómo evaluar el modelo de gestión que más te conviene.","datePublished":"2026-08-20T08:00:00Z","dateModified":"2026-08-20T08:00:00Z","author":autorSchema(),"publisher":{ "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },"image":"https://www.mktweb360.com/og-google-ads-sin-comision-agencia-marketing.jpg","url":"https://www.mktweb360.com/google-ads-sin-comision-agencia-marketing/","inLanguage":"es-ES", mainEntityOfPage: "https://www.mktweb360.com/google-ads-sin-comision-agencia-marketing/" };
+const schemaArticle = {"@context":"https://schema.org","@type":"BlogPosting","headline":"Google Ads sin comisión sobre presupuesto: por qué cambia todo","description":"Qué significa que una agencia no cobre comisión sobre tu inversión en Google Ads, cuánto te ahorras y cómo evaluar el modelo de gestión que más te conviene.","datePublished":"2026-08-20T08:00:00Z","dateModified":"2026-08-20T08:00:00Z","author":autorSchema(),"publisher":{ "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },"image":"https://www.mktweb360.com/og-google-ads-sin-comision-agencia-marketing-v2.jpg","url":"https://www.mktweb360.com/google-ads-sin-comision-agencia-marketing/","inLanguage":"es-ES", mainEntityOfPage: "https://www.mktweb360.com/google-ads-sin-comision-agencia-marketing/" };
 const schemaFAQ = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "¿Qué es la comisión sobre presupuesto en Google Ads?", "acceptedAnswer": {"@type": "Answer", "text": "Es un porcentaje (normalmente 10-20%) que la agencia cobra sobre lo que inviertes en Google. Si inviertes 2.000€/mes, pagas 200-400€ adicionales a la agencia solo por gestionar ese dinero."}}, {"@type": "Question", "name": "¿Por qué algunas agencias cobran comisión y otras no?", "acceptedAnswer": {"@type": "Answer", "text": "Es un modelo heredado del marketing offline. Las agencias que cobran comisión tienen incentivo económico para que gastes más, no para que conviertas mejor. Las de tarifa plana se alinean más con tu objetivo."}}, {"@type": "Question", "name": "¿Una agencia sin comisión es más cara en total?", "acceptedAnswer": {"@type": "Answer", "text": "Generalmente no. Con comisión pagas más cuanto más inviertes. Con tarifa plana, el coste de gestión es fijo. A partir de cierto presupuesto, la tarifa plana siempre sale más barata."}}, {"@type": "Question", "name": "¿Cómo saber si mi agencia está inflando el presupuesto?", "acceptedAnswer": {"@type": "Answer", "text": "Pide acceso de lectura a tu cuenta de Google Ads. Revisa el historial de cambios y si el presupuesto ha subido sin justificación de resultados. Una agencia seria te da acceso siempre."}}, {"@type": "Question", "name": "¿Cuánto debería invertir en Google Ads para empezar?", "acceptedAnswer": {"@type": "Answer", "text": "Para tener datos significativos en menos de 3 meses, recomendamos mínimo 500-800€/mes de inversión publicitaria. Por debajo de eso, el aprendizaje del algoritmo es muy lento."}}]};
 
 export default function Page() {
@@ -49,6 +51,11 @@ export default function Page() {
         </div>
       </section>
 
+        <div className="max-w-3xl mx-auto px-4 mb-8">
+          <Image src="/og-google-ads-sin-comision-agencia-marketing-v2.jpg" alt="Monedas que caen desde una hucha por un embudo hasta el centro de una diana, completas y sin comisión, con un hombre observando" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
+          <ArticleIndex lang="es" minutes={8} items={[{"id": "el-modelo-de-comision-estandar-en-agencias-de-go", "label": "El modelo de comisión estándar en agencias de Google Ads"}, {"id": "cuanto-dinero-pierde-una-empresa-con-el-modelo-d", "label": "Cuánto dinero pierde una empresa con el modelo de comisión"}, {"id": "el-modelo-de-tarifa-plana-ventajas-e-inconvenien", "label": "El modelo de tarifa plana: ventajas e inconvenientes"}, {"id": "como-incentiva-cada-modelo-el-trabajo-de-la-agen", "label": "Cómo incentiva cada modelo el trabajo de la agencia"}, {"id": "preguntas-que-debes-hacer-antes-de-contratar-ges", "label": "Preguntas que debes hacer antes de contratar gestión de Ads"}, {"id": "calculadora-cuanto-ahorras-sin-comision", "label": "Calculadora: cuánto ahorras sin comisión"}, {"id": "senales-de-alerta-en-la-gestion-de-google-ads", "label": "Señales de alerta en la gestión de Google Ads"}, {"id": "como-evaluar-el-rendimiento-real-de-tu-campana", "label": "Cómo evaluar el rendimiento real de tu campaña"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "necesitas-ayuda-con-tu-estrategia-digital", "label": "¿Necesitas ayuda con tu estrategia digital?"}]} />
+        </div>
+
       <BlogBanner lang="es" />
 
       <section className="py-16 px-4 bg-white">
@@ -58,42 +65,42 @@ export default function Page() {
           </p>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">El modelo de comisión estándar en agencias de Google Ads</h2>
+        <h2 id="el-modelo-de-comision-estandar-en-agencias-de-go" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">El modelo de comisión estándar en agencias de Google Ads</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de el modelo de comisión estándar en agencias de google ads: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">Cuánto dinero pierde una empresa con el modelo de comisión</h2>
+        <h2 id="cuanto-dinero-pierde-una-empresa-con-el-modelo-d" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">Cuánto dinero pierde una empresa con el modelo de comisión</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de cuánto dinero pierde una empresa con el modelo de comisión: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">El modelo de tarifa plana: ventajas e inconvenientes</h2>
+        <h2 id="el-modelo-de-tarifa-plana-ventajas-e-inconvenien" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">El modelo de tarifa plana: ventajas e inconvenientes</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de el modelo de tarifa plana: ventajas e inconvenientes: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">Cómo incentiva cada modelo el trabajo de la agencia</h2>
+        <h2 id="como-incentiva-cada-modelo-el-trabajo-de-la-agen" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">Cómo incentiva cada modelo el trabajo de la agencia</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de cómo incentiva cada modelo el trabajo de la agencia: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">Preguntas que debes hacer antes de contratar gestión de Ads</h2>
+        <h2 id="preguntas-que-debes-hacer-antes-de-contratar-ges" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">Preguntas que debes hacer antes de contratar gestión de Ads</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de preguntas que debes hacer antes de contratar gestión de ads: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">Calculadora: cuánto ahorras sin comisión</h2>
+        <h2 id="calculadora-cuanto-ahorras-sin-comision" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">Calculadora: cuánto ahorras sin comisión</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de calculadora: cuánto ahorras sin comisión: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">Señales de alerta en la gestión de Google Ads</h2>
+        <h2 id="senales-de-alerta-en-la-gestion-de-google-ads" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">Señales de alerta en la gestión de Google Ads</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de señales de alerta en la gestión de google ads: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">Cómo evaluar el rendimiento real de tu campaña</h2>
+        <h2 id="como-evaluar-el-rendimiento-real-de-tu-campana" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">Cómo evaluar el rendimiento real de tu campaña</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de cómo evaluar el rendimiento real de tu campaña: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
         </div>
@@ -101,7 +108,7 @@ export default function Page() {
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center scroll-mt-24">Preguntas frecuentes</h2>
       <div className="border-b border-gray-100 pb-6 mb-6">
         <h3 className="font-bold text-primary-700 mb-2">¿Qué es la comisión sobre presupuesto en Google Ads?</h3>
         <p className="text-gray-600 text-sm leading-relaxed">Es un porcentaje (normalmente 10-20%) que la agencia cobra sobre lo que inviertes en Google. Si inviertes 2.000€/mes, pagas 200-400€ adicionales a la agencia solo por gestionar ese dinero.</p>
@@ -127,7 +134,7 @@ export default function Page() {
 
       <section className="py-16 px-4 bg-primary-50">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-primary-700 mb-4">¿Necesitas ayuda con tu estrategia digital?</h2>
+          <h2 id="necesitas-ayuda-con-tu-estrategia-digital" className="text-3xl font-bold text-primary-700 mb-4 scroll-mt-24">¿Necesitas ayuda con tu estrategia digital?</h2>
           <p className="text-gray-600 mb-8">Agencia de marketing digital especializada en SEO, GEO y Google Ads. Sin permanencia. Sin comisión sobre presupuesto.</p>
           <ContactForm formType="blog-cta" />
         </div>

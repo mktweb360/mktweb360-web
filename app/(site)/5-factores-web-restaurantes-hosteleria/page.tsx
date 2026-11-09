@@ -10,6 +10,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web para restaurantes y hoteles: 5 claves",
   description:
@@ -110,6 +111,10 @@ export default function FactoresWebRestaurantesPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "1-hoja-de-reclamaciones-obligatoria-y-visible-ta", "label": "1. Hoja de reclamaciones: obligatoria y visible, también en la web"}, {"id": "2-alergenos-reglamento-ue-1169-2011-no-es-opcion", "label": "2. Alérgenos: Reglamento (UE) 1169/2011, no es opcional"}, {"id": "3-reserva-online-sin-llamar", "label": "3. Reserva online sin llamar"}, {"id": "4-ficha-de-google-business-profile-y-resenas-act", "label": "4. Ficha de Google Business Profile y reseñas activas"}, {"id": "5-carta-siempre-actualizada-con-precios-reales", "label": "5. Carta siempre actualizada, con precios reales"}, {"id": "tu-web-trabaja-aunque-el-restaurante-este-a-tope", "label": "Tu web trabaja aunque el restaurante esté a tope"}, {"id": "preguntas-frecuentes-sobre-la-web-de-un-restaura", "label": "Preguntas frecuentes sobre la web de un restaurante"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Si no resuelve lo básico —qué se puede comer, si hay alérgenos, cómo reservar— en los primeros segundos, el cliente vuelve al buscador y elige otra opción. Estos son los cinco factores que determinan si una web de hostelería convierte visitas en mesas ocupadas.
@@ -117,12 +122,12 @@ export default function FactoresWebRestaurantesPage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.restaurante} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Hoja de reclamaciones: obligatoria y visible, también en la web</h2>
+          <h2 id="1-hoja-de-reclamaciones-obligatoria-y-visible-ta" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Hoja de reclamaciones: obligatoria y visible, también en la web</h2>
           <p>
             Todo establecimiento de hostelería está obligado a disponer de hojas de reclamaciones y a anunciarlo mediante un cartel visible ("Existen hojas de reclamaciones a disposición del consumidor"). No tenerlas, o negarse a entregarlas cuando un cliente las pide, puede acarrear sanciones de hasta 15.000€. Aunque la obligación nace en el local físico, una web seria refleja esta información en su página legal o de contacto — es una señal de cumplimiento normativo que un negocio de confianza no esconde.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. Alérgenos: Reglamento (UE) 1169/2011, no es opcional</h2>
+          <h2 id="2-alergenos-reglamento-ue-1169-2011-no-es-opcion" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. Alérgenos: Reglamento (UE) 1169/2011, no es opcional</h2>
           <p>
             El Reglamento (UE) 1169/2011 obliga a todo establecimiento de restauración a informar sobre la presencia de alérgenos en cada plato, de forma clara y visible, antes de que el cliente pida — en la carta física, en pizarra o en la carta digital de la web. Los alérgenos deben destacarse tipográficamente (negrita, color o subrayado) respecto al resto del texto. El incumplimiento se regula por la Ley 17/2011 de Seguridad Alimentaria y Nutrición, con sanciones que en los casos más graves llegan a los 600.000€. Publicar la carta en la web sin esta información no es solo un riesgo legal — es la primera pregunta que hace cualquier cliente con alergia antes de reservar.
           </p>
@@ -135,26 +140,26 @@ export default function FactoresWebRestaurantesPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Reserva online sin llamar</h2>
+          <h2 id="3-reserva-online-sin-llamar" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Reserva online sin llamar</h2>
           <p>
             Buena parte de las búsquedas de restaurante ocurren fuera del horario en que alguien puede coger el teléfono — a las 22:00 decidiendo dónde cenar mañana, o un domingo planeando una comida familiar. Un sistema de reserva integrado en la web (no un teléfono como único canal) capta a ese cliente en el momento exacto en que decide, sin fricción y sin depender de que alguien atienda la llamada.
           </p>
 
           <OfferBannerWebSeo />
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Ficha de Google Business Profile y reseñas activas</h2>
+          <h2 id="4-ficha-de-google-business-profile-y-resenas-act" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Ficha de Google Business Profile y reseñas activas</h2>
           <p>
             Para hostelería, el "Local Pack" de Google —el bloque de resultados con mapa— suele ser la primera parada antes incluso de visitar la web. Fotos reales del local y de los platos, horario siempre actualizado y gestión activa de reseñas (responder, no ignorar) pesan tanto o más que el diseño de la propia web en la decisión final del cliente.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Carta siempre actualizada, con precios reales</h2>
+          <h2 id="5-carta-siempre-actualizada-con-precios-reales" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Carta siempre actualizada, con precios reales</h2>
           <p>
             Una carta desactualizada en la web —con platos que ya no se sirven o precios distintos a los del local— genera la reclamación más común del sector y daña la confianza antes incluso de que el cliente entre por la puerta. La carta de la web debe ser un reflejo exacto y editable de la carta real, no un PDF subido una vez y olvidado.
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque el restaurante esté a tope</h2>
+              <h2 id="tu-web-trabaja-aunque-el-restaurante-este-a-tope" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja aunque el restaurante esté a tope</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras atiendes mesas o cierras la cocina al final del servicio, tu web sigue abierta. Alguien que busca dónde cenar a las 22:00 o un domingo por la mañana encuentra tu ficha, ve la carta con los alérgenos claros y reserva — sin que tengas que estar disponible para atenderlo en ese momento.
               </p>
@@ -189,7 +194,7 @@ export default function FactoresWebRestaurantesPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de un restaurante</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-un-restaura" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de un restaurante</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

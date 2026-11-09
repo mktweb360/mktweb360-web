@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -96,7 +98,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Chatbots" : "Chatbots"}
         </p>
 
-        <IntlArticleJsonLd lang={lang} slug="what-is-a-chatbot-for-businesses" headline={isEn ? "What Is a Business Chatbot? Why You Need One" : "Qu'est-ce qu'un chatbot pour entreprises"} image="/og-chatgpt-para-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="what-is-a-chatbot-for-businesses" headline={isEn ? "What Is a Business Chatbot? Why You Need One" : "Qu'est-ce qu'un chatbot pour entreprises"} image="/og-chatgpt-para-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "What Is a Business Chatbot? Why You Need One"
@@ -116,8 +118,33 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Pendant des années, « chatbot » était synonyme de ces formulaires rigides qui ne comprenaient que trois phrases et frustraient quiconque tentait de les utiliser. Cette époque est révolue. Avec plus de 800 millions de personnes utilisant ChatGPT chaque semaine, les utilisateurs sont désormais habitués à converser avec une machine qui comprend le langage naturel. Et ils attendent la même chose quand ils écrivent à votre entreprise."}
         </p>
 
+        <Image
+          src="/og-que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026-v2.jpg"
+          alt={!isEn ? "Propriétaire d’une boutique de quartier qui sert une cliente, pendant qu’un téléphone posé sur le comptoir affiche une conversation avec un assistant robot" : "Neighborhood shop owner serving a customer while a phone on the counter shows a chat with a robot assistant"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "why-the-business-chatbot-has-changed-in-the-past", label: isEn
+              ? "Why the business chatbot has changed in the past two years"
+              : "Pourquoi le chatbot d'entreprise a changé au cours des deux dernières années" }, { id: "what-types-of-business-chatbot-exist", label: isEn
+              ? "What types of business chatbot exist"
+              : "Quels types de chatbots d'entreprise existent" }, { id: "the-problem-with-the-generic-chatbot-everyone-wi", label: isEn
+              ? "The problem with the generic chatbot everyone will try to sell you"
+              : "Le problème du chatbot générique que tout le monde va essayer de vous vendre" }, { id: "what-a-chatbot-can-automate-for-your-business", label: isEn
+              ? "What a chatbot can automate for your business"
+              : "Ce qu'un chatbot peut automatiser pour votre entreprise" }, { id: "the-numbers-that-justify-the-investment", label: isEn
+              ? "The numbers that justify the investment"
+              : "Les chiffres qui justifient l'investissement" }, { id: "legal-compliance-what-you-cannot-ignore", label: isEn
+              ? "Legal compliance: what you cannot ignore"
+              : "Conformité légale : ce que vous ne pouvez pas ignorer" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="why-the-business-chatbot-has-changed-in-the-past" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Why the business chatbot has changed in the past two years"
               : "Pourquoi le chatbot d'entreprise a changé au cours des deux dernières années"}
@@ -135,7 +162,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-types-of-business-chatbot-exist" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What types of business chatbot exist"
               : "Quels types de chatbots d'entreprise existent"}
@@ -153,7 +180,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-problem-with-the-generic-chatbot-everyone-wi" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The problem with the generic chatbot everyone will try to sell you"
               : "Le problème du chatbot générique que tout le monde va essayer de vous vendre"}
@@ -171,7 +198,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-a-chatbot-can-automate-for-your-business" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What a chatbot can automate for your business"
               : "Ce qu'un chatbot peut automatiser pour votre entreprise"}
@@ -191,7 +218,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-numbers-that-justify-the-investment" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The numbers that justify the investment"
               : "Les chiffres qui justifient l'investissement"}
@@ -209,7 +236,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="legal-compliance-what-you-cannot-ignore" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Legal compliance: what you cannot ignore"
               : "Conformité légale : ce que vous ne pouvez pas ignorer"}
@@ -227,7 +254,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

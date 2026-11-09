@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -88,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Chatbots" : "Chatbots"}
         </p>
 
-        <IntlArticleJsonLd lang={lang} slug="how-to-choose-chatbot" headline={isEn ? "How to Choose a Chatbot: 2026 Checklist" : "Choisir le bon chatbot : checklist 2026"} image="/og-chatgpt-para-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="how-to-choose-chatbot" headline={isEn ? "How to Choose a Chatbot: 2026 Checklist" : "Choisir le bon chatbot : checklist 2026"} image="/og-chatgpt-para-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to Choose a Chatbot: 2026 Checklist"
@@ -108,8 +110,41 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Choisir un chatbot, ce n'est pas choisir un outil — c'est choisir comment vous allez servir vos clients pendant les prochaines années. L'erreur la plus courante est de commencer par le prestataire plutôt que par vos propres besoins. Ces dix questions inversent cet ordre : vous définissez d'abord ce dont vous avez besoin, puis vous cherchez qui le satisfait."}
         </p>
 
+        <Image
+          src="/og-como-elegir-chatbot-para-empresa-checklist-2026-v2.jpg"
+          alt={!isEn ? "Plan de travail avec trois robots jouets en guise de candidats, dont un marqué d’une punaise, et une liste de contrôle cochée" : "Workbench with three toy robots as candidates, one marked with a pin, and a checklist with check marks"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={8} items={[{ id: "question-1-what-specific-problem-do-i-want-to-so", label: isEn
+              ? "Question 1: What specific problem do I want to solve?"
+              : "Question 1 : Quel problème concret veux-je résoudre ?" }, { id: "question-2-which-systems-does-it-need-to-integra", label: isEn
+              ? "Question 2: Which systems does it need to integrate with?"
+              : "Question 2 : Avec quels systèmes doit-il s'intégrer ?" }, { id: "question-3-what-volume-of-conversations-do-i-exp", label: isEn
+              ? "Question 3: What volume of conversations do I expect?"
+              : "Question 3 : Quel volume de conversations est-ce que j'attends ?" }, { id: "question-4-who-will-train-and-maintain-the-chatb", label: isEn
+              ? "Question 4: Who will train and maintain the chatbot?"
+              : "Question 4 : Qui va entraîner et maintenir le chatbot ?" }, { id: "question-5-what-are-my-legal-compliance-requirem", label: isEn
+              ? "Question 5: What are my legal compliance requirements?"
+              : "Question 5 : Quelles sont mes exigences de conformité légale ?" }, { id: "question-6-do-i-need-it-to-work-across-multiple", label: isEn
+              ? "Question 6: Do I need it to work across multiple channels?"
+              : "Question 6 : Ai-je besoin qu'il fonctionne sur plusieurs canaux ?" }, { id: "question-7-what-level-of-customisation-do-i-need", label: isEn
+              ? "Question 7: What level of customisation do I need?"
+              : "Question 7 : De quel niveau de personnalisation ai-je besoin ?" }, { id: "question-8-how-am-i-going-to-measure-whether-it", label: isEn
+              ? "Question 8: How am I going to measure whether it works?"
+              : "Question 8 : Comment vais-je mesurer si ça fonctionne ?" }, { id: "question-9-what-level-of-technical-support-do-i", label: isEn
+              ? "Question 9: What level of technical support do I need?"
+              : "Question 9 : De quel niveau de support technique ai-je besoin ?" }, { id: "question-10-what-is-my-time-horizon-and-expected", label: isEn
+              ? "Question 10: What is my time horizon and expected ROI?"
+              : "Question 10 : Quel est mon horizon temporel et le ROI attendu ?" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="question-1-what-specific-problem-do-i-want-to-so" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Question 1: What specific problem do I want to solve?"
               : "Question 1 : Quel problème concret veux-je résoudre ?"}
@@ -127,7 +162,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="question-2-which-systems-does-it-need-to-integra" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Question 2: Which systems does it need to integrate with?"
               : "Question 2 : Avec quels systèmes doit-il s'intégrer ?"}
@@ -145,7 +180,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="question-3-what-volume-of-conversations-do-i-exp" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Question 3: What volume of conversations do I expect?"
               : "Question 3 : Quel volume de conversations est-ce que j'attends ?"}
@@ -163,7 +198,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="question-4-who-will-train-and-maintain-the-chatb" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Question 4: Who will train and maintain the chatbot?"
               : "Question 4 : Qui va entraîner et maintenir le chatbot ?"}
@@ -181,7 +216,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="question-5-what-are-my-legal-compliance-requirem" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Question 5: What are my legal compliance requirements?"
               : "Question 5 : Quelles sont mes exigences de conformité légale ?"}
@@ -201,7 +236,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="question-6-do-i-need-it-to-work-across-multiple" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Question 6: Do I need it to work across multiple channels?"
               : "Question 6 : Ai-je besoin qu'il fonctionne sur plusieurs canaux ?"}
@@ -219,7 +254,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="question-7-what-level-of-customisation-do-i-need" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Question 7: What level of customisation do I need?"
               : "Question 7 : De quel niveau de personnalisation ai-je besoin ?"}
@@ -237,7 +272,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="question-8-how-am-i-going-to-measure-whether-it" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Question 8: How am I going to measure whether it works?"
               : "Question 8 : Comment vais-je mesurer si ça fonctionne ?"}
@@ -255,7 +290,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="question-9-what-level-of-technical-support-do-i" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Question 9: What level of technical support do I need?"
               : "Question 9 : De quel niveau de support technique ai-je besoin ?"}
@@ -273,7 +308,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="question-10-what-is-my-time-horizon-and-expected" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Question 10: What is my time horizon and expected ROI?"
               : "Question 10 : Quel est mon horizon temporel et le ROI attendu ?"}
@@ -291,7 +326,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

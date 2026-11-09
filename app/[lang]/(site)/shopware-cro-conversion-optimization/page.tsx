@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -110,7 +112,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Attirer des visites ne représente que la moitié du travail. L'autre moitié — la plus rentable — c'est les faire acheter. Voici comment augmenter le taux de conversion de votre boutique Shopware en supprimant les frictions là où elles comptent vraiment."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <Image
+          src="/og-cro-shopware-optimizar-conversion-tienda-v2.jpg"
+          alt={!isEn ? "Entonnoir orange au-dessus d’une boutique en ligne, par lequel entrent des chariots d’achat, dont certains atteignent une caisse marquée d’une coche verte" : "Orange funnel above an online store, through which shopping carts enter, and some reach a cash register with a green check mark"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "average-conversion-rates-and-why-yours-matters", label: isEn ? "Average conversion rates and why yours matters" : "Le taux de conversion moyen et pourquoi le vôtre compte" }, { id: "the-4-essential-ga4-events", label: isEn ? "The 4 essential GA4 events" : "Les 4 événements GA4 indispensables" }, { id: "the-5-real-causes-of-cart-abandonment", label: isEn ? "The 5 real causes of cart abandonment" : "Les 5 vraies causes de l'abandon de panier" }, { id: "optimise-your-product-pages", label: isEn ? "Optimise your product pages" : "Optimisez vos fiches produit" }, { id: "diagnostic-tools", label: isEn ? "Diagnostic tools" : "Outils de diagnostic" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
+        <h2 id="average-conversion-rates-and-why-yours-matters" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Average conversion rates and why yours matters" : "Le taux de conversion moyen et pourquoi le vôtre compte"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -119,7 +134,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le taux de conversion moyen du e-commerce est d'environ 2,7 % à l'échelle mondiale, mais en France et en Belgique il se situe entre 1 % et 1,4 % (DemandSage, 2026). Cela signifie qu'améliorer la conversion a un effet multiplicateur direct : passer de 1 % à 1,5 % représente 50 % de ventes supplémentaires sans dépenser un euro de plus en acquisition. C'est pourquoi le CRO est le levier de croissance le plus rentable d'une boutique qui reçoit déjà du trafic."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="the-4-essential-ga4-events" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "The 4 essential GA4 events" : "Les 4 événements GA4 indispensables"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -128,7 +143,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "On ne peut pas améliorer ce qu'on ne mesure pas. Dans une boutique Shopware, les quatre événements GA4 indispensables sont : view_item (quand quelqu'un consulte une fiche produit), add_to_cart (quand il l'ajoute au panier), begin_checkout (quand il commence le processus d'achat) et purchase (quand il finalise la commande). Ces quatre points permettent de construire l'entonnoir complet et de voir exactement où les visiteurs décrochent."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="the-5-real-causes-of-cart-abandonment" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "The 5 real causes of cart abandonment" : "Les 5 vraies causes de l'abandon de panier"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -137,7 +152,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "L'abandon de panier a des causes connues qui se répètent presque toujours. Première : des frais inattendus qui apparaissent à la fin (frais d'expédition que le client n'avait pas vus venir). Deuxième : obliger à s'inscrire pour acheter. Troisième : un checkout long, avec trop d'étapes ou de champs. Quatrième : la méfiance au moment du paiement, par manque de signaux de sécurité ou de méthodes connues. Cinquième : des informations insuffisantes sur la fiche produit, qui laissent des questions sans réponse. Chacun de ces points de friction peut être mesuré et éliminé."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="optimise-your-product-pages" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Optimise your product pages" : "Optimisez vos fiches produit"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -165,7 +180,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </Link>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="diagnostic-tools" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Diagnostic tools" : "Outils de diagnostic"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -199,7 +214,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions" : "Questions fréquentes"}
         </h2>
         <div className="space-y-3 mb-8">

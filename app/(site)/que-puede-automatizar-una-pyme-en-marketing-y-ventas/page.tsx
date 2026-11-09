@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Qué puede automatizar una pyme en marketing",
   description:
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     description: "Descubre qué procesos puede automatizar una pyme en marketing y ventas para ahorrar tiempo, mejorar seguimiento y captar mejor.",
     url: "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/",
     type: "article",
-    images: [{ url: "/og-que-puede-automatizar-una-pyme.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-que-puede-automatizar-una-pyme-en-marketing-y-ventas-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -35,7 +36,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/",
   mainEntityOfPage: "https://www.mktweb360.com/que-puede-automatizar-una-pyme-en-marketing-y-ventas/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-que-puede-automatizar-una-pyme.jpg",
+  image: "https://www.mktweb360.com/og-que-puede-automatizar-una-pyme-en-marketing-y-ventas-v2.jpg",
 };
 
 const FAQS = [
@@ -93,7 +94,7 @@ export default function AutomatizarPymePage() {
             La automatización no es solo para grandes empresas. Una pyme puede ahorrar horas semanales y mejorar el seguimiento de leads con herramientas accesibles y configuraciones sencillas.
           </p>
           <Image
-            src="/og-que-puede-automatizar-una-pyme.jpg"
+            src="/og-que-puede-automatizar-una-pyme-en-marketing-y-ventas-v2.jpg"
             alt="Qué puede automatizar una pyme en marketing y ventas en 2025"
             width={1200}
             height={630}
@@ -101,6 +102,10 @@ export default function AutomatizarPymePage() {
             priority
           />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "que-problemas-resuelve-de-verdad", "label": "Qué problemas resuelve de verdad"}, {"id": "que-no-conviene-automatizar-todavia", "label": "Qué no conviene automatizar todavía"}, {"id": "como-empezar-bien", "label": "Cómo empezar bien"}, {"id": "que-debe-buscar-una-pyme", "label": "Qué debe buscar una pyme"}, {"id": "preguntas-frecuentes-sobre-automatizacion-en-pym", "label": "Preguntas frecuentes sobre automatización en pymes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
@@ -110,10 +115,10 @@ export default function AutomatizarPymePage() {
             Automatizar no significa eliminar el trato humano — significa liberarlo para donde más importa. Las conversaciones de valor, las decisiones complejas y la relación con el cliente siguen necesitando personas. Lo que no las necesita son las tareas administrativas repetitivas.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué problemas resuelve de verdad</h2>
+          <h2 id="que-problemas-resuelve-de-verdad" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué problemas resuelve de verdad</h2>
           <p>La automatización resuelve principalmente tres problemas: la pérdida de oportunidades por tiempo de respuesta lento, la falta de seguimiento sistemático a leads que no responden al primer contacto, y el desgaste de tiempo en tareas repetitivas que no necesitan criterio humano. Son problemas reales con coste de negocio concreto, y la automatización tiene mucho sentido en ellos.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué no conviene automatizar todavía</h2>
+          <h2 id="que-no-conviene-automatizar-todavia" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué no conviene automatizar todavía</h2>
           <p>La primera conversación comercial real, la gestión de reclamaciones, las decisiones estratégicas y cualquier interacción donde el contexto y la empatía son determinantes no son buenos candidatos. Automatizar esas partes suele alejar al cliente o generar fricciones que costaban menos resolverse de forma humana directa.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -124,12 +129,12 @@ export default function AutomatizarPymePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo empezar bien</h2>
+          <h2 id="como-empezar-bien" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo empezar bien</h2>
           <p>Lo más útil suele ser empezar por automatizaciones simples con impacto inmediato: notificación de lead al comercial, email de confirmación al contacto, solicitud de reseña tras el servicio. Estas tres acciones son fáciles de implementar con herramientas accesibles, tienen un efecto claro y no requieren transformar todo el proceso desde cero.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué debe buscar una pyme</h2>
+          <h2 id="que-debe-buscar-una-pyme" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué debe buscar una pyme</h2>
           <p>Una pyme no necesita la automatización más compleja, sino la más adecuada a su momento. Herramientas modulares, fáciles de ajustar y que no requieran mantenimiento intensivo son mejores opciones que sistemas potentes pero frágiles o difíciles de supervisar. El objetivo es liberar tiempo y reducir errores, no añadir complejidad operativa.</p>
 
           <p className="text-sm text-gray-500">
@@ -151,7 +156,7 @@ export default function AutomatizarPymePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre automatización en pymes</h2>
+          <h2 id="preguntas-frecuentes-sobre-automatizacion-en-pym" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre automatización en pymes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

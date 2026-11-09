@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "SEO para clínicas: cómo captar pacientes",
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "SEO específico para clínicas dentales, fisioterapia y centros de salud en España. Capta más pacientes desde Google.",
     url: "https://www.mktweb360.com/seo-para-clinicas-centros-salud-captar-pacientes-google/",
     type: "article",
-    images: [{ url: "/og-seo-clinicas-centros-salud-captar-pacientes.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-seo-para-clinicas-centros-salud-captar-pacientes-google-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/seo-para-clinicas-centros-salud-captar-pacientes-google/",
   mainEntityOfPage: "https://www.mktweb360.com/seo-para-clinicas-centros-salud-captar-pacientes-google/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-seo-clinicas-centros-salud-captar-pacientes.jpg",
+  image: "https://www.mktweb360.com/og-seo-para-clinicas-centros-salud-captar-pacientes-google-v2.jpg",
 };
 
 const FAQS = [
@@ -92,7 +93,7 @@ export default function SeoClinicasPage() {
             El 74% de los pacientes busca en Google antes de llamar a una clínica. Si tu centro no aparece cuando alguien busca tu especialidad en tu zona, ese paciente acaba en la consulta de al lado. El SEO sanitario tiene reglas propias, y conviene conocerlas.
           </p>
           <Image
-            src="/og-seo-clinicas-centros-salud-captar-pacientes.jpg"
+            src="/og-seo-para-clinicas-centros-salud-captar-pacientes-google-v2.jpg"
             alt="SEO para clínicas y centros de salud: cómo captar pacientes en Google"
             width={1200}
             height={630}
@@ -101,18 +102,22 @@ export default function SeoClinicasPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "por-que-el-seo-de-clinicas-es-diferente", "label": "Por qué el SEO de clínicas es diferente"}, {"id": "la-triple-intencion-del-paciente", "label": "La triple intención del paciente"}, {"id": "google-business-profile-el-activo-principal", "label": "Google Business Profile: el activo principal"}, {"id": "las-busquedas-que-generan-pacientes-reales", "label": "Las búsquedas que generan pacientes reales"}, {"id": "errores-frecuentes-en-el-blog-de-una-clinica", "label": "Errores frecuentes en el blog de una clínica"}, {"id": "cuanto-tarda-en-notarse", "label": "Cuánto tarda en notarse"}, {"id": "preguntas-frecuentes-sobre-seo-para-clinicas", "label": "Preguntas frecuentes sobre SEO para clínicas"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Captar pacientes ya no depende del boca a boca ni del cartel en la fachada. Según RankTop (2026), el 74% de los pacientes consulta Google antes de decidir a qué clínica llama. Y la mayoría no pasa de los primeros resultados. Para una clínica dental, un centro de fisioterapia o una consulta de psicología, ser visible en ese momento decide buena parte de la agenda del mes.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el SEO de clínicas es diferente</h2>
+          <h2 id="por-que-el-seo-de-clinicas-es-diferente" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el SEO de clínicas es diferente</h2>
           <p>La salud es, para Google, un sector YMYL —Your Money or Your Life—: contenidos que pueden afectar al bienestar o las decisiones importantes de una persona. En estas temáticas el buscador eleva el listón y exige más señales de E-E-A-T (experiencia, pericia, autoridad y fiabilidad). Una clínica no compite solo por palabras clave: compite por demostrar que es una fuente médica de confianza. Eso significa información del equipo, titulaciones, especialidades claras y contenido con rigor.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">La triple intención del paciente</h2>
+          <h2 id="la-triple-intencion-del-paciente" className="text-2xl font-bold text-primary-600 scroll-mt-24">La triple intención del paciente</h2>
           <p>Quien busca salud en Google no siempre busca lo mismo. Hay una intención informativa ("por qué duele la mandíbula al masticar"), una local ("dentista cerca de mí abierto hoy") y una transaccional ("pedir cita implante dental Toledo"). Una estrategia de SEO sanitario eficaz cubre las tres: contenido que resuelve dudas, presencia local que capta proximidad y páginas de servicio que convierten la búsqueda en cita. Atender solo una de ellas deja pacientes por el camino.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Google Business Profile: el activo principal</h2>
+          <h2 id="google-business-profile-el-activo-principal" className="text-2xl font-bold text-primary-600 scroll-mt-24">Google Business Profile: el activo principal</h2>
           <p>Para una clínica, la ficha de Google es más importante incluso que la web. Según Updent (2026), cerca del 80% de los pacientes elige entre las clínicas del Local Pack —el bloque de tres fichas con mapa— antes de llegar a los resultados orgánicos. Por eso, optimizar tu <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile</Link> con categorías correctas, servicios, fotos reales, horarios y un flujo constante de reseñas es la palanca de captación más rentable que tiene un centro de salud.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -123,15 +128,15 @@ export default function SeoClinicasPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Las búsquedas que generan pacientes reales</h2>
+          <h2 id="las-busquedas-que-generan-pacientes-reales" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las búsquedas que generan pacientes reales</h2>
           <p>No todas las visitas valen lo mismo. Las búsquedas con intención local y transaccional —"clínica dental [ciudad]", "urgencias fisioterapia [barrio]", "primera consulta psicología [zona]"— son las que llenan la agenda. El trabajo consiste en identificar esas consultas para cada especialidad y zona, y construir páginas que respondan a ellas con claridad: qué ofreces, para quién, con qué garantías y cómo pedir cita. Una clínica con varias especialidades necesita una página por servicio, no una sola página genérica.</p>
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Errores frecuentes en el blog de una clínica</h2>
+          <h2 id="errores-frecuentes-en-el-blog-de-una-clinica" className="text-2xl font-bold text-primary-600 scroll-mt-24">Errores frecuentes en el blog de una clínica</h2>
           <p>El blog médico mal entendido resta en lugar de sumar. Los errores más comunes: copiar contenido genérico de otras webs (Google penaliza la falta de originalidad, más aún en salud), publicar sin criterio profesional, o redactar para el buscador y no para el paciente. Un buen contenido sanitario responde a una duda real con rigor, transmite confianza y enlaza de forma natural hacia el servicio correspondiente. Calidad y autoridad por encima de cantidad.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuánto tarda en notarse</h2>
+          <h2 id="cuanto-tarda-en-notarse" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuánto tarda en notarse</h2>
           <p>La buena noticia para las clínicas es que la parte local da resultados rápido. Una ficha de Google Business Profile bien optimizada suele tener impacto visible en 1 a 2 meses. El posicionamiento orgánico de la web para términos competitivos es más lento —primeros resultados entre 3 y 6 meses— pero más estable y defendible en el tiempo. Combinando ambos, una clínica puede empezar a captar pacientes desde el primer mes mientras construye una base sólida a medio plazo.</p>
 
           <p className="text-sm text-gray-500">
@@ -153,7 +158,7 @@ export default function SeoClinicasPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre SEO para clínicas</h2>
+          <h2 id="preguntas-frecuentes-sobre-seo-para-clinicas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre SEO para clínicas</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

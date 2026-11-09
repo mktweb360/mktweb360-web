@@ -8,6 +8,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 28/10/2026 — tema 5 de la propuesta de blog del 27/10 (estrategia de contenidos y calendario editorial).
 // Texto para revisión y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 ARTÍCULO — Estrategia de contenidos y calendario editorial».
 // Datos de IAB Spain: nota de prensa oficial del Estudio de Redes Sociales 2026 (iabspain.es), consultada el 28/10/2026.
@@ -233,15 +234,19 @@ export default function EstrategiaContenidosPage() {
           <Image src={OG} alt="Tablero de calendario editorial de cuatro semanas: un tema pilar del mes se reparte en cinco fichas de colores, blog, carrusel, vídeo corto, newsletter y post" width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={10} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "que-es-una-estrategia-de-contenidos-y-en-que-se", "label": "¿Qué es una estrategia de contenidos y en qué se diferencia de publicar sin más?"}, {"id": "paso-1-para-que-publicas-y-para-quien", "label": "Paso 1. ¿Para qué publicas y para quién?"}, {"id": "paso-2-de-que-temas-hablar", "label": "Paso 2. ¿De qué temas hablar?"}, {"id": "paso-3-como-sacar-cinco-piezas-de-un-solo-tema", "label": "Paso 3. ¿Cómo sacar cinco piezas de un solo tema?"}, {"id": "paso-4-como-se-hace-un-calendario-editorial-plan", "label": "Paso 4. ¿Cómo se hace un calendario editorial? (plantilla)"}, {"id": "paso-5-que-medir-en-cada-canal", "label": "Paso 5. ¿Qué medir en cada canal?"}, {"id": "que-tienen-los-contenidos-que-citan-las-respuest", "label": "¿Qué tienen los contenidos que citan las respuestas de IA?"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Una estrategia de contenidos decide qué publicas, para quién, en qué canal y con qué objetivo de negocio. El calendario editorial la convierte en fechas, formatos y responsables. El método que proponemos: elegir un tema pilar al mes a partir de lo que busca tu cliente, sacar cinco piezas de él y medir guardados, compartidos y contactos, no «me gusta».
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <Lista items={resumen} />
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué es una estrategia de contenidos y en qué se diferencia de publicar sin más?</h2>
+          <h2 id="que-es-una-estrategia-de-contenidos-y-en-que-se" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué es una estrategia de contenidos y en qué se diferencia de publicar sin más?</h2>
           <p>
             Es el plan que conecta lo que publicas con lo que vende tu empresa. Publicar sin estrategia no es publicar poco: muchas empresas publican a menudo, pero cada pieza va por libre y nadie sabe si sirve para algo.
           </p>
@@ -250,13 +255,13 @@ export default function EstrategiaContenidosPage() {
             Nuestro criterio para cada pieza es sencillo: tiene que tener <strong>una función de negocio, una audiencia, un canal y una llamada a la acción</strong>. Si le falta una de las cuatro, no entra en el calendario.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 1. ¿Para qué publicas y para quién?</h2>
+          <h2 id="paso-1-para-que-publicas-y-para-quien" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 1. ¿Para qué publicas y para quién?</h2>
           <p>Empieza por el objetivo de negocio. Cada pieza cumple una de estas cuatro funciones:</p>
           <Lista items={funciones} />
           <p>Después, define a tu cliente ideal con tres preguntas. Si no sabes responderlas, pregúntaselo a tres clientes recientes:</p>
           <Lista items={clienteIdeal} numerada />
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 2. ¿De qué temas hablar?</h2>
+          <h2 id="paso-2-de-que-temas-hablar" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 2. ¿De qué temas hablar?</h2>
           <p>
             Un tema pilar es un asunto amplio que interesa a tu cliente y que tiene relación directa con lo que vendes. Para una empresa de reformas puede ser «cuánto cuesta reformar un baño»; para una asesoría, «qué gastos puede deducir un autónomo». Salen de cuatro sitios:
           </p>
@@ -265,7 +270,7 @@ export default function EstrategiaContenidosPage() {
             Con doce temas tienes un año de calendario. Ordénalos por cercanía a lo que vendes y por interés de búsqueda, y empieza por arriba.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 3. ¿Cómo sacar cinco piezas de un solo tema?</h2>
+          <h2 id="paso-3-como-sacar-cinco-piezas-de-un-solo-tema" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 3. ¿Cómo sacar cinco piezas de un solo tema?</h2>
           <p>
             No hace falta inventar cinco ideas distintas. El artículo de blog es la pieza madre y las otras cuatro adaptan una parte a cada canal, con su propio formato y su propia llamada a la acción:
           </p>
@@ -277,7 +282,7 @@ export default function EstrategiaContenidosPage() {
             Las redes no sustituyen al blog. Según el Estudio de Redes Sociales 2026 de IAB Spain, el 54 % de los usuarios ya usa las redes para buscar información antes de comprar online, y el usuario medio visita 7,2 redes. Esa atención se reparte; el artículo de tu web es la pieza que sigue siendo tuya y la que Google puede mostrar. Si aún no tienes blog, mira nuestro servicio de {enlace("/creacion-de-blog/", "creación de blog")}.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 4. ¿Cómo se hace un calendario editorial? (plantilla)</h2>
+          <h2 id="paso-4-como-se-hace-un-calendario-editorial-plan" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 4. ¿Cómo se hace un calendario editorial? (plantilla)</h2>
           <p>
             Esta es la plantilla que usamos, con una fila de ejemplo. Selecciona la tabla, cópiala y pégala en Google Sheets o Excel: cada columna cae en su celda.
           </p>
@@ -290,7 +295,7 @@ export default function EstrategiaContenidosPage() {
             Un calendario editorial para redes sociales es la misma hoja filtrada por canal. No hace falta otro documento: añade una vista por red y verás de un vistazo si alguna se queda vacía o si repites formato.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 5. ¿Qué medir en cada canal?</h2>
+          <h2 id="paso-5-que-medir-en-cada-canal" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 5. ¿Qué medir en cada canal?</h2>
           <p>
             Medimos guardados y compartidos porque dicen más que un «me gusta». Quien guarda una pieza piensa volver a ella porque le resuelve algo. Quien la comparte la recomienda a otra persona. Un «me gusta» cuesta un toque y no dice nada de eso.
           </p>
@@ -299,7 +304,7 @@ export default function EstrategiaContenidosPage() {
             Revisa los datos una vez al mes, con el calendario abierto: anota el resultado de cada pieza y repite los formatos que funcionan con el tema siguiente.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué tienen los contenidos que citan las respuestas de IA?</h2>
+          <h2 id="que-tienen-los-contenidos-que-citan-las-respuest" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué tienen los contenidos que citan las respuestas de IA?</h2>
           <p>
             Para Google hay documentación oficial; para el resto de asistentes no hay una guía equivalente, así que aplicamos los mismos cuatro rasgos:
           </p>
@@ -315,7 +320,7 @@ export default function EstrategiaContenidosPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -328,7 +333,7 @@ export default function EstrategiaContenidosPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

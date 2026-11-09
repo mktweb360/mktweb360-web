@@ -8,6 +8,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 28/10/2026 — versiones EN/FR del artículo ES /estrategia-de-contenidos-calendario-editorial/ (tema 5).
 // La carpeta FR (strategie-de-contenu-calendrier-editorial) reexporta esta página.
 // Mismas fuentes y cifras que la versión ES; si cambian allí, cambiarlas aquí.
@@ -435,32 +436,36 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>{t.respuesta}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.resumenT}</h2>
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={10} items={[{ id: "resumen-t", label: t.resumenT }, { id: "que", label: t.h2Que }, { id: "p1", label: t.h2P1 }, { id: "p2", label: t.h2P2 }, { id: "p3", label: t.h2P3 }, { id: "p4", label: t.h2P4 }, { id: "p5", label: t.h2P5 }, { id: "ia", label: t.h2IA }, { id: "faq-t", label: t.faqT }, { id: "fuentes-t", label: t.fuentesT }]} />
+        </div>
+
+          <h2 id="resumen-t" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.resumenT}</h2>
           <Lista items={t.resumen} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2Que}</h2>
+          <h2 id="que" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Que}</h2>
           <p>{t.pQue}</p>
           <Tabla cabecera={t.difCab} filas={t.dif} />
           <p>{t.criterio}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2P1}</h2>
+          <h2 id="p1" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2P1}</h2>
           <p>{t.pP1}</p>
           <Lista items={t.funciones} />
           <p>{t.pP1b}</p>
           <Lista items={t.cliente} numerada />
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2P2}</h2>
+          <h2 id="p2" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2P2}</h2>
           <p>{t.pP2}</p>
           <Lista items={t.temas} numerada />
           <p>{t.pP2b}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2P3}</h2>
+          <h2 id="p3" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2P3}</h2>
           <p>{t.pP3}</p>
           <Tabla cabecera={t.piezasCab} filas={t.piezas} />
           <p>{t.pP3b}</p>
           <p>{t.pP3c}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2P4}</h2>
+          <h2 id="p4" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2P4}</h2>
           <p>{t.pP4}</p>
           <Tabla cabecera={t.plantillaCab} filas={t.plantilla} />
           <p>{t.comoT}</p>
@@ -469,12 +474,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <Tabla cabecera={t.repartoCab} filas={t.reparto} />
           <p>{t.pRedes}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2P5}</h2>
+          <h2 id="p5" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2P5}</h2>
           <p>{t.pP5}</p>
           <Tabla cabecera={t.metCab} filas={t.met} />
           <p>{t.pP5b}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2IA}</h2>
+          <h2 id="ia" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2IA}</h2>
           <p>{t.pIA}</p>
           <Lista items={t.rasgos} numerada />
 
@@ -486,7 +491,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.faqT}</h2>
+          <h2 id="faq-t" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.faqT}</h2>
           <div className="space-y-3">
             {FAQ.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -499,7 +504,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.fuentesT}</h2>
+          <h2 id="fuentes-t" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.fuentesT}</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {FUENTES[lang].map((f) => (
               <li key={f.url} className="text-gray-600">

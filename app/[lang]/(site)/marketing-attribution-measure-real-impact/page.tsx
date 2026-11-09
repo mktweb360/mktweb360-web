@@ -8,6 +8,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -92,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </time>
             <AuthorByline lang={lang} />
           </div>
-          <IntlArticleJsonLd lang={lang} slug="marketing-attribution-measure-real-impact" headline={isEn ? "Marketing attribution: how to measure real impact in a multi-channel world" : "Attribution marketing : mesurer l'impact réel"} image="/og-atribucion-de-marketing-como-medir-impacto-real.jpg" />
+          <IntlArticleJsonLd lang={lang} slug="marketing-attribution-measure-real-impact" headline={isEn ? "Marketing attribution: how to measure real impact in a multi-channel world" : "Attribution marketing : mesurer l'impact réel"} image="/og-atribucion-de-marketing-como-medir-impacto-real-v2.jpg" />
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn
               ? "Marketing attribution: how to measure real impact in a multi-channel world"
@@ -104,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Le modèle 'dernier clic' attribue toute la vente à la dernière annonce que le client a vue. Mais le client regardait votre contenu, lisait vos articles et suivait vos réseaux sociaux depuis des semaines. Si vous ne mesurez que le dernier clic, vous prenez des décisions budgétaires sur des informations incomplètes."}
           </p>
           <Image
-            src="/og-atribucion-de-marketing-como-medir-impacto-real.jpg"
+            src="/og-atribucion-de-marketing-como-medir-impacto-real-v2.jpg"
             alt={isEn ? "Marketing attribution: measuring real impact" : "Attribution marketing : mesurer l'impact réel"}
             width={1200}
             height={630}
@@ -120,7 +121,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "L'attribution marketing est le processus de détermination des canaux, campagnes ou points de contact qui ont contribué à ce qu'un utilisateur prenne une décision d'achat ou de contact. Ça semble simple jusqu'à ce que vous considériez que le client B2B moyen a entre 7 et 12 points de contact avant de convertir, et que ces points de contact se produisent sur différents appareils, canaux et moments."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-last-click-distorts-reality", label: isEn ? "Why last-click distorts reality" : "Pourquoi le dernier clic fausse la réalité" }, { id: "the-main-attribution-models", label: isEn ? "The main attribution models" : "Les principaux modèles d'attribution" }, { id: "how-to-approximate-attribution-without-enterpris", label: isEn ? "How to approximate attribution without enterprise tools" : "Comment approximer l'attribution sans outils enterprise" }, { id: "frequently-asked-questions-about-marketing-attri", label: isEn ? "Frequently asked questions about marketing attribution" : "Questions fréquentes sur l'attribution marketing" }]} />
+        </div>
+
+          <h2 id="why-last-click-distorts-reality" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Why last-click distorts reality" : "Pourquoi le dernier clic fausse la réalité"}
           </h2>
           <p>
@@ -146,7 +151,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="the-main-attribution-models" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "The main attribution models" : "Les principaux modèles d'attribution"}
           </h2>
           <p>
@@ -160,7 +165,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Le modèle basé sur la position (40-20-40) donne plus de poids aux premier et dernier points de contact — bon pour valoriser à la fois la découverte et la conclusion. Le modèle basé sur les données de GA4 et Google Ads utilise le machine learning pour distribuer le crédit selon l'impact statistique réel de chaque point de contact — le plus précis, mais nécessite un volume de conversions suffisant."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="how-to-approximate-attribution-without-enterpris" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "How to approximate attribution without enterprise tools" : "Comment approximer l'attribution sans outils enterprise"}
           </h2>
           <p>
@@ -196,7 +201,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="frequently-asked-questions-about-marketing-attri" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Frequently asked questions about marketing attribution" : "Questions fréquentes sur l'attribution marketing"}
           </h2>
           <div className="space-y-3">

@@ -10,6 +10,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web para talleres mecánicos: 5 claves",
   description:
@@ -110,6 +111,10 @@ export default function FactoresWebTalleresMecanicosPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "1-hoja-de-reclamaciones-obligatoria-y-visible-ta", "label": "1. Hoja de reclamaciones: obligatoria y visible, también en la web"}, {"id": "2-presupuesto-previo-por-escrito-obligacion-lega", "label": "2. Presupuesto previo por escrito: obligación legal, no cortesía"}, {"id": "3-solicitud-de-cita-o-presupuesto-online-sin-lla", "label": "3. Solicitud de cita o presupuesto online, sin llamar"}, {"id": "4-garantia-de-reparacion-clara-y-visible", "label": "4. Garantía de reparación clara y visible"}, {"id": "5-transparencia-de-precios-de-mano-de-obra-y-cat", "label": "5. Transparencia de precios de mano de obra y catálogo de servicios"}, {"id": "tu-web-trabaja-aunque-el-taller-este-a-tope-de-e", "label": "Tu web trabaja aunque el taller esté a tope de elevadores"}, {"id": "preguntas-frecuentes-sobre-la-web-de-un-taller-m", "label": "Preguntas frecuentes sobre la web de un taller mecánico"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Entre la obligación de presupuesto por escrito, la garantía legal de la reparación y la desconfianza que arrastra el sector sobre precios, la web de un taller mecánico tiene que demostrar cumplimiento y transparencia antes de pedir la confianza del cliente. Estos son los cinco factores que determinan si esa web capta clientes o los pierde.
@@ -117,12 +122,12 @@ export default function FactoresWebTalleresMecanicosPage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.taller} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Hoja de reclamaciones: obligatoria y visible, también en la web</h2>
+          <h2 id="1-hoja-de-reclamaciones-obligatoria-y-visible-ta" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Hoja de reclamaciones: obligatoria y visible, también en la web</h2>
           <p>
             Todo taller de reparación de vehículos está obligado a disponer de hojas de reclamaciones, en formato físico o, desde 2023, mediante código QR. Aunque la obligación nace en el local físico, reflejar esta información en la web —junto a los datos legales del taller— es una señal de cumplimiento normativo que un cliente que compara varios talleres valora antes de decidir.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. Presupuesto previo por escrito: obligación legal, no cortesía</h2>
+          <h2 id="2-presupuesto-previo-por-escrito-obligacion-lega" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. Presupuesto previo por escrito: obligación legal, no cortesía</h2>
           <p>
             El artículo 12 del Real Decreto 1457/1986 obliga al taller a entregar un presupuesto previo, gratuito y detallado —con el coste de piezas, mano de obra y plazo estimado— antes de iniciar cualquier reparación, con una validez mínima de 12 días hábiles. Una web que permite solicitar ese presupuesto online, sin necesidad de acercarse al taller, convierte una obligación legal en una ventaja competitiva.
           </p>
@@ -135,26 +140,26 @@ export default function FactoresWebTalleresMecanicosPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Solicitud de cita o presupuesto online, sin llamar</h2>
+          <h2 id="3-solicitud-de-cita-o-presupuesto-online-sin-lla" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Solicitud de cita o presupuesto online, sin llamar</h2>
           <p>
             Buena parte de las decisiones sobre dónde llevar el coche ocurren fuera del horario en que alguien puede atender el teléfono del taller — tras una avería nocturna, o planeando la ITV del fin de semana. Un formulario de solicitud de cita o presupuesto integrado en la web capta a ese cliente en el momento exacto en que decide, sin depender de que alguien conteste la llamada.
           </p>
 
           <OfferBannerWebSeo />
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Garantía de reparación clara y visible</h2>
+          <h2 id="4-garantia-de-reparacion-clara-y-visible" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Garantía de reparación clara y visible</h2>
           <p>
             El RD 1457/1986, modificado por el RD 542/2020, fija la garantía de una reparación en 3 meses o 2.000 kilómetros para vehículos particulares, y en 15 días o 2.000 kilómetros para vehículos industriales. Explicar esta garantía con claridad en la web —en lugar de dejarla como una letra pequeña que el cliente descubre solo si reclama— es una de las señales de confianza más efectivas del sector.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Transparencia de precios de mano de obra y catálogo de servicios</h2>
+          <h2 id="5-transparencia-de-precios-de-mano-de-obra-y-cat" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Transparencia de precios de mano de obra y catálogo de servicios</h2>
           <p>
             La opacidad en precios es la queja más repetida sobre los talleres. Publicar un catálogo claro de servicios habituales —cambio de aceite, ITV, frenos, neumáticos— con precios orientativos o rangos, reduce las llamadas de clientes que solo comparan precio y transmite exactamente el tipo de transparencia que compensa la desconfianza histórica del sector.
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque el taller esté a tope de elevadores</h2>
+              <h2 id="tu-web-trabaja-aunque-el-taller-este-a-tope-de-e" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja aunque el taller esté a tope de elevadores</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras reparas vehículos o cierras el taller al final del día, tu web sigue abierta. Alguien que busca taller tras una avería nocturna o antes de la ITV encuentra tu ficha, ve la garantía y el proceso de presupuesto claros, y solicita cita — sin que tengas que estar disponible para atenderlo en ese momento.
               </p>
@@ -189,7 +194,7 @@ export default function FactoresWebTalleresMecanicosPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de un taller mecánico</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-un-taller-m" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de un taller mecánico</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

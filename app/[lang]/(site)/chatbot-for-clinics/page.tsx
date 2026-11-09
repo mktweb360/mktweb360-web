@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -88,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Chatbots" : "Chatbots"}
         </p>
 
-        <IntlArticleJsonLd lang={lang} slug="chatbot-for-clinics" headline={isEn ? "Chatbot for Clinics: Appointments and FAQs" : "Chatbot pour cliniques : rendez-vous et FAQ"} image="/og-diseno-web-para-clinicas.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="chatbot-for-clinics" headline={isEn ? "Chatbot for Clinics: Appointments and FAQs" : "Chatbot pour cliniques : rendez-vous et FAQ"} image="/og-diseno-web-para-clinicas-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Chatbot for Clinics: Appointments and FAQs"
@@ -108,8 +110,29 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le téléphone de la réception d'une clinique sonne sans arrêt pour poser les mêmes questions encore et encore. Chaque appel résolu avec la même information est du temps que l'équipe ne consacre pas au patient devant elle. C'est là qu'un chatbot change le quotidien d'une clinique."}
         </p>
 
+        <Image
+          src="/og-chatbot-para-clinicas-centros-salud-automatizar-citas-v2.jpg"
+          alt={!isEn ? "Accueil d’une clinique avec une femme médecin souriante à côté d’un immense téléphone orné de bulles de chat et d’un calendrier de rendez-vous" : "Clinic reception with a smiling female doctor beside a giant phone with chat bubbles and an appointment calendar"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "what-a-chatbot-can-automate-in-a-clinic", label: isEn
+              ? "What a chatbot can automate in a clinic"
+              : "Ce qu'un chatbot peut automatiser dans une clinique" }, { id: "specific-requirements-for-chatbots-in-the-health", label: isEn
+              ? "Specific requirements for chatbots in the healthcare sector"
+              : "Exigences spécifiques pour les chatbots dans le secteur de la santé" }, { id: "how-to-integrate-the-chatbot-with-clinic-managem", label: isEn
+              ? "How to integrate the chatbot with clinic management software"
+              : "Comment intégrer le chatbot avec le logiciel de gestion de la clinique" }, { id: "roi-of-a-chatbot-for-a-clinic-a-practical-calcul", label: isEn
+              ? "ROI of a chatbot for a clinic: a practical calculation"
+              : "ROI d'un chatbot pour une clinique : calcul pratique" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-a-chatbot-can-automate-in-a-clinic" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What a chatbot can automate in a clinic"
               : "Ce qu'un chatbot peut automatiser dans une clinique"}
@@ -127,7 +150,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="specific-requirements-for-chatbots-in-the-health" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Specific requirements for chatbots in the healthcare sector"
               : "Exigences spécifiques pour les chatbots dans le secteur de la santé"}
@@ -145,7 +168,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-integrate-the-chatbot-with-clinic-managem" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How to integrate the chatbot with clinic management software"
               : "Comment intégrer le chatbot avec le logiciel de gestion de la clinique"}
@@ -165,7 +188,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="roi-of-a-chatbot-for-a-clinic-a-practical-calcul" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "ROI of a chatbot for a clinic: a practical calculation"
               : "ROI d'un chatbot pour une clinique : calcul pratique"}
@@ -183,7 +206,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

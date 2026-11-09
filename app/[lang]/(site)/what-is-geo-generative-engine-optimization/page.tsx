@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">AI · Strategy</p>
-        <IntlArticleJsonLd lang={lang} slug="what-is-geo-generative-engine-optimization" headline={isEn ? "What is GEO and why it matters more than SEO in 2025" : "Qu'est-ce que le GEO et pourquoi il est plus important que le SEO en 2025"} image="/og-que-es-geo-generative-engine-optimization.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="what-is-geo-generative-engine-optimization" headline={isEn ? "What is GEO and why it matters more than SEO in 2025" : "Qu'est-ce que le GEO et pourquoi il est plus important que le SEO en 2025"} image="/og-que-es-geo-generative-engine-optimization-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "What is GEO and why it matters more than SEO in 2025"
@@ -52,7 +54,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le GEO (Generative Engine Optimization) est la discipline d'optimisation de votre présence numérique pour apparaître dans les réponses des modèles d'IA comme ChatGPT, Perplexity, Gemini et Claude. Ce guide explique ce que c'est, comment ça fonctionne et comment commencer."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-que-es-geo-generative-engine-optimization-v2.jpg"
+          alt={!isEn ? "Robot bibliothécaire recommandant une petite boutique à une personne dans une grande bibliothèque" : "Robot librarian recommending a small shop to a person in a large library"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "from-seo-to-geo-how-online-search-has-changed", label: isEn ? "From SEO to GEO: how online search has changed" : "Du SEO au GEO : comment la recherche en ligne a changé" }, { id: "how-generative-search-engines-work", label: isEn ? "How generative search engines work" : "Comment fonctionnent les moteurs de recherche génératifs" }, { id: "differences-between-seo-and-geo", label: isEn ? "Differences between SEO and GEO" : "Différences entre SEO et GEO" }, { id: "how-to-optimise-your-website-to-appear-in-ai-res", label: isEn ? "How to optimise your website to appear in AI responses" : "Comment optimiser votre site pour apparaître dans les réponses IA" }, { id: "the-future-of-search-seo-geo-together", label: isEn ? "The future of search: SEO + GEO together" : "L'avenir de la recherche : SEO + GEO ensemble" }]} />
+        </div>
+
+        <h2 id="from-seo-to-geo-how-online-search-has-changed" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "From SEO to GEO: how online search has changed" : "Du SEO au GEO : comment la recherche en ligne a changé"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le GEO est l'ensemble des stratégies qui optimisent votre présence spécifiquement pour être cité par ces modèles IA. Il combine des éléments de SEO, d'autorité de contenu, de données structurées et de signaux de marque pour rendre votre entreprise reconnaissable et citable par l'IA."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="how-generative-search-engines-work" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "How generative search engines work" : "Comment fonctionnent les moteurs de recherche génératifs"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -80,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Perplexity et Bing Copilot effectuent également des recherches web en temps réel, extrayant le contenu des pages actuelles. Pour ces modèles, les facteurs SEO techniques comptent plus directement — ils indexent et citent des pages qui se classent bien, se chargent rapidement et ont des données structurées claires."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="differences-between-seo-and-geo" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Differences between SEO and GEO" : "Différences entre SEO et GEO"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -94,7 +109,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La bonne nouvelle : les fondations se recoupent. Un site web avec un SEO solide — haute autorité, contenu de qualité, bonnes données structurées — est également mieux positionné pour le GEO. Vous n'avez pas à choisir entre les deux."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="how-to-optimise-your-website-to-appear-in-ai-res" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "How to optimise your website to appear in AI responses" : "Comment optimiser votre site pour apparaître dans les réponses IA"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -108,7 +123,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Également important : revendiquer et optimiser votre entrée Wikipedia si éligible, votre entité Wikidata et votre panneau de connaissances Google. Ces sources structurées sont fortement pondérées dans les données d'entraînement des modèles IA."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="the-future-of-search-seo-geo-together" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "The future of search: SEO + GEO together" : "L'avenir de la recherche : SEO + GEO ensemble"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">

@@ -10,6 +10,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web para autónomos y freelance: 5 claves",
   description:
@@ -110,6 +111,10 @@ export default function FactoresWebAutonomosFreelancePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "1-aviso-legal-conforme-a-la-lssi-ce-tambien-para", "label": "1. Aviso legal conforme a la LSSI-CE, también para autónomos"}, {"id": "2-preparacion-ante-la-factura-electronica-obliga", "label": "2. Preparación ante la factura electrónica obligatoria"}, {"id": "3-portfolio-y-prueba-social-no-solo-un-listado-d", "label": "3. Portfolio y prueba social, no solo un listado de servicios"}, {"id": "4-solicitud-de-presupuesto-online-sin-fricciones", "label": "4. Solicitud de presupuesto online, sin fricciones"}, {"id": "5-posicionamiento-frente-a-plataformas-de-interm", "label": "5. Posicionamiento frente a plataformas de intermediación"}, {"id": "tu-web-trabaja-para-ti-aunque-estes-a-mitad-de-u", "label": "Tu web trabaja para ti aunque estés a mitad de un proyecto"}, {"id": "preguntas-frecuentes-sobre-la-web-de-un-autonomo", "label": "Preguntas frecuentes sobre la web de un autónomo o freelance"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Entre el aviso legal exigido por la LSSI-CE, la factura electrónica que empezará a ser obligatoria en 2027-2028, y la necesidad de diferenciarse de plataformas de intermediación que compiten por precio, la web de un autónomo o freelance cumple una función muy concreta: generar encargos directos, sin comisiones ni algoritmos de por medio. Estos son los cinco factores que marcan la diferencia.
@@ -117,12 +122,12 @@ export default function FactoresWebAutonomosFreelancePage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.reformas} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Aviso legal conforme a la LSSI-CE, también para autónomos</h2>
+          <h2 id="1-aviso-legal-conforme-a-la-lssi-ce-tambien-para" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Aviso legal conforme a la LSSI-CE, también para autónomos</h2>
           <p>
             La Ley de Servicios de la Sociedad de la Información y Comercio Electrónico obliga a cualquier prestador de servicios online —también a un autónomo con web propia— a incluir un aviso legal con su nombre completo, NIF, domicilio y datos de contacto. Omitir esta información no solo es un incumplimiento legal: transmite al visitante que está tratando con alguien que no se ha tomado la molestia de formalizar su actividad.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. Preparación ante la factura electrónica obligatoria</h2>
+          <h2 id="2-preparacion-ante-la-factura-electronica-obliga" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. Preparación ante la factura electrónica obligatoria</h2>
           <p>
             La Ley Crea y Crece fija octubre de 2027 para empresas con facturación superior a 8 millones de euros, y octubre de 2028 para el resto de empresas y autónomos, como fechas límite para operar con factura electrónica estructurada (Facturae o UBL). No cumplir puede acarrear sanciones de hasta 10.000 euros. Un autónomo que ya comunica en su web que está preparado para esta transición transmite una profesionalidad que marca diferencia frente a la competencia informal.
           </p>
@@ -135,26 +140,26 @@ export default function FactoresWebAutonomosFreelancePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Portfolio y prueba social, no solo un listado de servicios</h2>
+          <h2 id="3-portfolio-y-prueba-social-no-solo-un-listado-d" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Portfolio y prueba social, no solo un listado de servicios</h2>
           <p>
             Un cliente que busca un autónomo o freelance necesita ver trabajo real antes de escribir: proyectos anteriores, testimonios concretos, resultados. Una web que se limita a enumerar servicios sin mostrar evidencia de calidad compite en igualdad de condiciones con cualquier perfil anónimo de una plataforma de intermediación — y pierde la ventaja de la confianza directa.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Solicitud de presupuesto online, sin fricciones</h2>
+          <h2 id="4-solicitud-de-presupuesto-online-sin-fricciones" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Solicitud de presupuesto online, sin fricciones</h2>
           <p>
             Cuantos menos pasos separen a un visitante interesado de enviar los detalles de su proyecto, más presupuestos se generan. Un formulario claro, con los campos justos y una respuesta rápida, convierte visitas en encargos reales sin depender de que el autónomo esté disponible para atender una llamada en ese momento.
           </p>
 
           <OfferBannerWebSeo />
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Posicionamiento frente a plataformas de intermediación</h2>
+          <h2 id="5-posicionamiento-frente-a-plataformas-de-interm" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Posicionamiento frente a plataformas de intermediación</h2>
           <p>
             Trabajar a través de plataformas de intermediación tiene un coste: comisiones, dependencia de un algoritmo externo y ausencia de relación directa con el cliente. Una web propia bien posicionada permite captar esos mismos clientes sin intermediarios, con márgenes más altos y una relación comercial que el autónomo controla de principio a fin.
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja para ti aunque estés a mitad de un proyecto</h2>
+              <h2 id="tu-web-trabaja-para-ti-aunque-estes-a-mitad-de-u" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja para ti aunque estés a mitad de un proyecto</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras terminas un encargo, tu web sigue abierta las 24 horas. Alguien que busca un profesional un domingo por la noche encuentra tu portfolio, revisa tus referencias y envía una solicitud de presupuesto — sin que tengas que estar disponible para atenderlo en ese momento.
               </p>
@@ -189,7 +194,7 @@ export default function FactoresWebAutonomosFreelancePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de un autónomo o freelance</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-un-autonomo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de un autónomo o freelance</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

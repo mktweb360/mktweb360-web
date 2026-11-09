@@ -344,6 +344,9 @@ export default function WebDesignPage() {
               );
             })}
           </div>
+          <p className="text-center mt-6">
+            <Link href="/demos/" className="text-accent-600 font-semibold hover:underline">Ver demos de webs de distintos sectores →</Link>
+          </p>
         </div>
       </section>
 

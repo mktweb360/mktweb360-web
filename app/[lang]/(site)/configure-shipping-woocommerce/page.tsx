@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
-        <IntlArticleJsonLd lang={lang} slug="configure-shipping-woocommerce" headline={isEn ? "How to configure shipping in WooCommerce step by step" : "Comment configurer les expéditions dans WooCommerce étape par étape"} image="/og-configurar-envios-woocommerce.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="configure-shipping-woocommerce" headline={isEn ? "How to configure shipping in WooCommerce step by step" : "Comment configurer les expéditions dans WooCommerce étape par étape"} image="/og-configurar-envios-woocommerce-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to configure shipping in WooCommerce step by step"
@@ -52,7 +54,30 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La configuration des expéditions est l'un des aspects les plus critiques d'une boutique en ligne. Une mauvaise configuration peut vous coûter des ventes ou de la marge. Ce guide explique comment bien le faire dès le départ."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-configurar-envios-woocommerce-v2.jpg"
+          alt={!isEn ? "Entrepreneuse préparant des colis avec du ruban adhésif dans l’entrepôt de sa boutique en ligne" : "Entrepreneur packing parcels with adhesive tape in the warehouse of her online store"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "types-of-shipping-in-woocommerce-free-flat-rate", label: isEn
+            ? "Types of shipping in WooCommerce: free, flat rate and calculated"
+            : "Types d'expédition dans WooCommerce : gratuit, tarif fixe et calculé" }, { id: "shipping-zones-how-to-segment-by-region-and-coun", label: isEn
+            ? "Shipping zones: how to segment by region and country"
+            : "Zones d'expédition : comment segmenter par région et pays" }, { id: "free-shipping-from-minimum-order-amount", label: isEn
+            ? "Free shipping from minimum order amount"
+            : "Livraison gratuite à partir d'un montant minimum" }, { id: "carrier-integration-dhl-dpd-and-ups", label: isEn
+            ? "Carrier integration: DHL, DPD and UPS"
+            : "Intégration transporteurs : DHL, DPD et UPS" }, { id: "returns-management-in-woocommerce", label: isEn
+            ? "Returns management in WooCommerce"
+            : "Gestion des retours dans WooCommerce" }]} />
+        </div>
+
+        <h2 id="types-of-shipping-in-woocommerce-free-flat-rate" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Types of shipping in WooCommerce: free, flat rate and calculated"
             : "Types d'expédition dans WooCommerce : gratuit, tarif fixe et calculé"}
@@ -68,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La plupart des PME utilisent la livraison à tarif fixe avec un seuil conditionnel de livraison gratuite. Exemple : 4,95€ pour les commandes en dessous de 50€, gratuit pour les commandes à partir de 50€. C'est simple à comprendre, facile à configurer et incite à des commandes plus importantes."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="shipping-zones-how-to-segment-by-region-and-coun" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Shipping zones: how to segment by region and country"
             : "Zones d'expédition : comment segmenter par région et pays"}
@@ -84,7 +109,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Important : WooCommerce associe les zones dans l'ordre de haut en bas. Placez les zones les plus spécifiques (régions spécifiques) au-dessus des plus générales (pays entiers). Un client à Madrid doit correspondre à la zone Péninsule, pas à la zone Reste du monde."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="free-shipping-from-minimum-order-amount" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Free shipping from minimum order amount"
             : "Livraison gratuite à partir d'un montant minimum"}
@@ -100,7 +125,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Dans WooCommerce, configurez cela dans les paramètres de la méthode Livraison gratuite : définissez le Montant minimum de commande. Affichez une barre de progression dans le panier ('X€ de plus pour la livraison gratuite') pour encourager les clients — il existe des plugins gratuits pour cela. Testez votre seuil en A/B : trop bas vous coûte de la marge, trop haut tue l'incitation."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="carrier-integration-dhl-dpd-and-ups" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Carrier integration: DHL, DPD and UPS"
             : "Intégration transporteurs : DHL, DPD et UPS"}
@@ -111,7 +136,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Pour l'impression automatique d'étiquettes et le suivi en temps réel, intégrez un transporteur directement avec WooCommerce. DHL, DPD, UPS et GLS ont tous des plugins officiels ou bien maintenus par des tiers. Ces plugins : génèrent des étiquettes d'expédition depuis l'écran de commande WooCommerce, calculent les tarifs basés sur le poids/dimensions du colis, envoient automatiquement les numéros de suivi aux clients, et synchronisent les statuts de commande avec le système du transporteur."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="returns-management-in-woocommerce" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Returns management in WooCommerce"
             : "Gestion des retours dans WooCommerce"}

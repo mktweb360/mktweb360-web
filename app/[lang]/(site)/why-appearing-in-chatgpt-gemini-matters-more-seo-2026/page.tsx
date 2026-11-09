@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -6,6 +7,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -28,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : "Des millions de personnes ne cherchent plus sur Google. Ils demandent à ChatGPT, Perplexity ou Gemini. Si votre entreprise n'apparaît pas dans leurs réponses, vous perdez des clients sans le savoir.",
       type: "article",
       url: `https://www.mktweb360.com/${lang}/why-appearing-in-chatgpt-gemini-matters-more-seo-2026/`,
-      images: [{ url: "https://www.mktweb360.com/og-que-es-geo-generative-engine-optimization.jpg", width: 1200, height: 630 }],
+      images: [{ url: "https://www.mktweb360.com/og-que-es-geo-generative-engine-optimization-v2.jpg", width: 1200, height: 630 }],
     },
   };
 }
@@ -47,7 +49,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
     datePublished: "2026-07-07",
     dateModified: "2026-07-07",
-    image: "https://www.mktweb360.com/og-que-es-geo-generative-engine-optimization.jpg",
+    image: "https://www.mktweb360.com/og-que-es-geo-generative-engine-optimization-v2.jpg",
     url: `https://www.mktweb360.com/${lang}/why-appearing-in-chatgpt-gemini-matters-more-seo-2026/`,
     mainEntityOfPage: `https://www.mktweb360.com/${lang}/why-appearing-in-chatgpt-gemini-matters-more-seo-2026/`,
   };
@@ -169,7 +171,30 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Pendant vingt ans, la question était unique : comment apparaître en premier sur Google. En 2026, cette question s'est dédoublée. De plus en plus d'utilisateurs ne voient plus une liste de dix liens bleus, mais une réponse rédigée par une intelligence artificielle qui décide, à leur place, quelles sources méritent d'être citées. Apparaître dans cette réponse est devenu la nouvelle première position, et elle ne coïncide pas toujours avec celui qui domine le moteur de recherche classique."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+        <Image
+          src="/og-por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026-v2.jpg"
+          alt={!isEn ? "Rue au coucher du soleil avec une vitrine presque vide ornée d’une loupe, et un robot assistant IA entouré d’une foule de clients" : "Street at sunset with a nearly empty shop window showing a magnifying glass, and an AI assistant robot surrounded by a crowd of customers"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "how-people-search-in-2026-the-change-that-has-al", label: isEn
+              ? "How people search in 2026: the change that has already happened"
+              : "Comment les gens cherchent en 2026 : le changement qui a déjà eu lieu" }, { id: "what-geo-is-and-why-it-is-not-the-same-as-seo", label: isEn
+              ? "What GEO is and why it is not the same as SEO"
+              : "Ce qu'est le GEO et pourquoi ce n'est pas la même chose que le SEO" }, { id: "why-an-sme-can-appear-where-a-big-brand-does-not", label: isEn
+              ? "Why an SME can appear where a big brand does not"
+              : "Pourquoi une PME peut apparaître là où une grande marque n'apparaît pas" }, { id: "the-three-signals-that-ai-looks-for-in-your-cont", label: isEn
+              ? "The three signals that AI looks for in your content"
+              : "Les trois signaux que l'IA recherche dans votre contenu" }, { id: "the-risk-of-doing-nothing", label: isEn ? "The risk of doing nothing" : "Le risque de ne rien faire" }, { id: "frequently-asked-questions-about-geo-and-ai-posi", label: isEn
+              ? "Frequently asked questions about GEO and AI positioning"
+              : "Questions fréquentes sur le GEO et le positionnement IA" }]} />
+        </div>
+
+          <h2 id="how-people-search-in-2026-the-change-that-has-al" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "How people search in 2026: the change that has already happened"
               : "Comment les gens cherchent en 2026 : le changement qui a déjà eu lieu"}
@@ -190,7 +215,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Dans les décisions professionnelles, le phénomène est encore plus accentué : 94 % des groupes d'achat B2B utilisent l'IA générative avant de parler à un fournisseur. Quand cet acheteur demande à la machine qui peut l'aider, votre marque apparaît dans la réponse ou, simplement, n'existe pas dans cette conversation."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="what-geo-is-and-why-it-is-not-the-same-as-seo" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "What GEO is and why it is not the same as SEO"
               : "Ce qu'est le GEO et pourquoi ce n'est pas la même chose que le SEO"}
@@ -243,7 +268,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             )}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="why-an-sme-can-appear-where-a-big-brand-does-not" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "Why an SME can appear where a big brand does not"
               : "Pourquoi une PME peut apparaître là où une grande marque n'apparaît pas"}
@@ -261,7 +286,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
           <BlogBanner variant="geo" lang={lang} />
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="the-three-signals-that-ai-looks-for-in-your-cont" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "The three signals that AI looks for in your content"
               : "Les trois signaux que l'IA recherche dans votre contenu"}
@@ -304,7 +329,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="the-risk-of-doing-nothing" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "The risk of doing nothing" : "Le risque de ne rien faire"}
           </h2>
           <p>
@@ -318,7 +343,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Certains se demandent si cela signifie que le moteur de recherche classique est terminé. La réponse courte est non : il est vivant, mais coexiste désormais avec un nouveau canal où la visibilité se gagne d'une autre façon. L'approche sensée n'est pas de choisir entre SEO et GEO, mais de travailler les deux comme une seule stratégie de présence numérique."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="frequently-asked-questions-about-geo-and-ai-posi" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "Frequently asked questions about GEO and AI positioning"
               : "Questions fréquentes sur le GEO et le positionnement IA"}

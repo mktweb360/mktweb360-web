@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -32,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Link building SMEs" : "Link building PME" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO</p>
-        <IntlArticleJsonLd lang={lang} slug="link-building-for-smes" headline={isEn ? "Link building for SMEs: how to get quality links without risking your domain" : "Link building pour PME : comment obtenir des liens de qualité sans risquer votre domaine"} image="/og-link-building-pymes.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="link-building-for-smes" headline={isEn ? "Link building for SMEs: how to get quality links without risking your domain" : "Link building pour PME : comment obtenir des liens de qualité sans risquer votre domaine"} image="/og-link-building-pymes-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "Link building for SMEs: how to get quality links without risking your domain" : "Link building pour PME : comment obtenir des liens de qualité sans risquer votre domaine"}
         </h1>
@@ -41,8 +43,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Links from other websites remain one of Google's most important ranking signals. This guide explains how SMEs can build quality backlinks safely, without risking penalties." : "Les liens d'autres sites web restent l'un des signaux de classement les plus importants de Google. Ce guide explique comment les PME peuvent construire des backlinks de qualité en toute sécurité, sans risquer de pénalités."}
         </p>
 
+        <Image
+          src="/og-link-building-pymes-v2.jpg"
+          alt={!isEn ? "Petit atelier relié par des ponts de bois à d’autres îles couvertes de maisons, comme des liens entre sites web" : "Small workshop linked by wooden bridges to other islands with houses, like links between websites"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "what-link-building-is-and-why-it-still-matters", label: isEn ? "What link building is and why it still matters" : "Qu'est-ce que le link building et pourquoi il compte encore" }, { id: "types-of-links-which-help-and-which-hurt", label: isEn ? "Types of links: which help and which hurt" : "Types de liens : lesquels aident et lesquels nuisent" }, { id: "link-building-strategies-for-smes", label: isEn ? "Link building strategies for SMEs" : "Stratégies de link building pour les PME" }, { id: "local-directories-and-mentions-for-spanish-busin", label: isEn ? "Local directories and mentions for Spanish businesses" : "Annuaires locaux et mentions pour les entreprises espagnoles" }, { id: "link-building-mistakes-that-penalise-your-websit", label: isEn ? "Link building mistakes that penalise your website" : "Erreurs de link building qui pénalisent votre site web" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-link-building-is-and-why-it-still-matters" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "What link building is and why it still matters" : "Qu'est-ce que le link building et pourquoi il compte encore"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="types-of-links-which-help-and-which-hurt" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Types of links: which help and which hurt" : "Types de liens : lesquels aident et lesquels nuisent"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="link-building-strategies-for-smes" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Link building strategies for SMEs" : "Stratégies de link building pour les PME"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -78,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="local-directories-and-mentions-for-spanish-busin" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Local directories and mentions for Spanish businesses" : "Annuaires locaux et mentions pour les entreprises espagnoles"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -90,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="link-building-mistakes-that-penalise-your-websit" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Link building mistakes that penalise your website" : "Erreurs de link building qui pénalisent votre site web"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
