@@ -9,6 +9,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 // 29/10/2026 — tema 10 de la propuesta de blog del 27/10 (pieza de datos).
 // Texto y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 ARTÍCULO — Tema 10 Radiografía pyme digital INE 2026».
 // Cifras leídas el 28/10/2026 en la nota de prensa del INE del 22/10/2026 (ETICCE20251T2026). Si el INE revisa los datos, cambiarlos aquí,
@@ -230,7 +231,7 @@ export default function DigitalizacionPymesInePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="web">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Digitalización de las pymes: datos del INE 2026" }]} />
 
         <header className="mb-8">
@@ -362,7 +363,7 @@ export default function DigitalizacionPymesInePage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug={SLUG} />
     </>
   );

@@ -9,6 +9,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 // 30/10/2026 — refuerzo del tema 4 (misma URL). Versión EN/FR del artículo ES
 // /como-usar-planificador-de-palabras-clave-google-ads/. Fuentes comprobadas el 28/10/2026.
 
@@ -451,7 +452,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang={lang} topic="general">
         <Breadcrumbs
           crumbs={[
             { label: lang === "en" ? "Home" : "Accueil", href: `/${lang}/` },
@@ -564,7 +565,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {c.back}
           </Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug="como-usar-planificador-de-palabras-clave-google-ads" />
     </>
   );

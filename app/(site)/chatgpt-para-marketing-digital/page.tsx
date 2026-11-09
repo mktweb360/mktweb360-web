@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "ChatGPT para marketing digital: guía práctica",
   description: "Guía práctica para usar ChatGPT en marketing digital. Qué tareas delegar, cómo mantener la voz de marca, prompts efectivos y qué no dejar en manos de la IA.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="general">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "ChatGPT para marketing digital" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">IA · Estrategia</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo usar ChatGPT para marketing digital sin perder la autenticidad de tu marca</h1>
@@ -88,7 +89,7 @@ export default function Page() {
           <Image src="/og-chatgpt-para-marketing-digital-v2.jpg" alt="Propietaria de una tienda de ropa revisando con un asistente de IA en forma de robot los borradores de publicaciones para redes" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={7} items={[{"id": "el-problema-del-contenido-de-ia-sin-supervision", "label": "El problema del contenido de IA sin supervisión"}, {"id": "que-tareas-de-marketing-puedes-delegar-con-confi", "label": "Qué tareas de marketing puedes delegar con confianza a ChatGPT"}, {"id": "prompts-efectivos-para-marketing-como-obtener-re", "label": "Prompts efectivos para marketing: cómo obtener resultados útiles"}, {"id": "como-mantener-la-voz-de-tu-marca-con-ia", "label": "Cómo mantener la voz de tu marca con IA"}, {"id": "que-tareas-de-marketing-no-debes-delegar-a-chatg", "label": "Qué tareas de marketing NO debes delegar a ChatGPT"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="IA · Estrategia" />
     </>
   );

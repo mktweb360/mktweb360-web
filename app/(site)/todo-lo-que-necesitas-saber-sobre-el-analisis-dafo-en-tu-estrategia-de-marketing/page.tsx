@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Análisis DAFO en marketing: guía completa",
   description: "Qué es el análisis DAFO y cómo aplicarlo a tu estrategia de marketing digital: debilidades, amenazas, fortalezas y oportunidades con ejemplos prácticos.",
@@ -42,7 +43,7 @@ export default function AnalisisDAFOPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="general">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Análisis DAFO en Marketing" }]} />
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-4">
@@ -142,7 +143,7 @@ export default function AnalisisDAFOPage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug="todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing" />
     </>
   );

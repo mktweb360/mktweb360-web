@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Migrar de Shopify a WooCommerce sin perder SEO",
   description: "Guía completa para migrar de Shopify a WooCommerce. Qué datos migrar, cómo preservar el SEO, redireccionamientos y comparativa de costes a largo plazo.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="tienda">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Migrar Shopify a WooCommerce" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo migrar de Shopify a WooCommerce sin perder tu tienda ni tu posicionamiento</h1>
@@ -87,7 +88,7 @@ export default function Page() {
           <Image src="/og-migrar-shopify-woocommerce-v2.jpg" alt="Mudanza de cajas con camión y grúa entre dos tiendas isométricas unidas por un puente" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={6} items={[{"id": "por-que-muchas-tiendas-shopify-migran-a-woocomme", "label": "Por qué muchas tiendas Shopify migran a WooCommerce"}, {"id": "que-puedes-exportar-de-shopify-y-en-que-formato", "label": "Qué puedes exportar de Shopify y en qué formato"}, {"id": "el-reto-del-seo-como-son-las-urls-en-shopify-vs", "label": "El reto del SEO: cómo son las URLs en Shopify vs WooCommerce"}, {"id": "proceso-de-migracion-paso-a-paso", "label": "Proceso de migración paso a paso"}, {"id": "configuracion-post-migracion-imprescindible-en-w", "label": "Configuración post-migración imprescindible en WooCommerce"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Ecommerce" />
     </>
   );

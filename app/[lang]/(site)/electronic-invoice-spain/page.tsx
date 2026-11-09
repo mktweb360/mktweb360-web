@@ -9,6 +9,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 // 31/10/2026 — reescritura EN/FR del artículo ES /factura-electronica-obligatoria-autonomos-pymes/ (tema 6, aprobado por José).
 // Mismas fechas y fuentes que la versión ES (comprobadas el 28/10/2026). Si cambia el calendario de Verifactu, cambiar los tres idiomas.
 
@@ -430,7 +431,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang={lang} topic="general">
         <Breadcrumbs crumbs={[
           { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
           { label: "Blog", href: `/${lang}/blog/` },
@@ -528,7 +529,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href={`/${lang}/blog/`} className="text-accent-500 hover:text-accent-600 font-medium text-sm">{c.back}</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug={SLUG} />
     </>
   );

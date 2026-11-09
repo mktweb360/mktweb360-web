@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "GEO vs SEO: diferencias y cómo combinarlos",
   description: "Qué diferencia el GEO (Generative Engine Optimization) del SEO tradicional, por qué importan los dos y cómo integrar ambas estrategias para máxima visibilidad.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="seo">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "GEO vs SEO diferencias" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">IA · Estrategia</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">GEO vs SEO: diferencias clave y cómo compaginar ambas estrategias en 2025</h1>
@@ -88,7 +89,7 @@ export default function Page() {
           <Image src="/og-geo-vs-seo-diferencias-v2.jpg" alt="Un negocio local en la bifurcación entre un buscador clásico y un asistente de inteligencia artificial" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={8} items={[{"id": "que-es-el-seo-tradicional-y-que-sigue-funcionand", "label": "Qué es el SEO tradicional y qué sigue funcionando"}, {"id": "que-es-el-geo-y-como-funciona-la-optimizacion-pa", "label": "Qué es el GEO y cómo funciona la optimización para IAs"}, {"id": "las-diferencias-clave-entre-seo-y-geo", "label": "Las diferencias clave entre SEO y GEO"}, {"id": "por-que-necesitas-los-dos-seo-y-geo-como-estrate", "label": "Por qué necesitas los dos: SEO y GEO como estrategia integrada"}, {"id": "como-priorizar-seo-vs-geo-segun-el-tipo-de-negoc", "label": "Cómo priorizar SEO vs GEO según el tipo de negocio"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="IA · Estrategia" />
     </>
   );

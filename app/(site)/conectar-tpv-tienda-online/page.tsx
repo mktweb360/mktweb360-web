@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Conectar el TPV con tu tienda online",
   description: "Guía para integrar tu TPV físico con WooCommerce. Stock unificado, ventas sincronizadas y gestión centralizada para negocios con presencia online y física.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="tienda">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Conectar TPV tienda online" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo conectar el TPV de tu tienda física con tu tienda online: guía completa</h1>
@@ -92,7 +93,7 @@ export default function Page() {
           <Image src="/og-conectar-tpv-tienda-online-v2.jpg" alt="Dependienta cobrando con el TPV a una clienta en una tienda de ropa, con un paquete de envío en el mostrador" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={7} items={[{"id": "el-problema-del-stock-desincronizado-entre-canal", "label": "El problema del stock desincronizado entre canal físico y online"}, {"id": "opciones-de-integracion-segun-tu-tpv-actual", "label": "Opciones de integración según tu TPV actual"}, {"id": "que-datos-sincronizar-y-cuales-mantener-separado", "label": "Qué datos sincronizar y cuáles mantener separados"}, {"id": "gestion-centralizada-de-pedidos-y-devoluciones", "label": "Gestión centralizada de pedidos y devoluciones"}, {"id": "costes-y-retorno-de-la-inversion-de-la-integraci", "label": "Costes y retorno de la inversión de la integración"}, {"id": "pasos-para-implementar-la-integracion-sin-interr", "label": "Pasos para implementar la integración sin interrumpir la actividad"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Ecommerce" />
     </>
   );

@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Cómo medir el ROI del marketing digital",
   description: "Aprende a calcular y medir el ROI de tus inversiones en marketing digital. Google Analytics 4, atribución, métricas clave y errores que debes evitar.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="general">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Medir ROI marketing digital" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Analítica</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo medir el ROI de tus campañas de marketing digital paso a paso</h1>
@@ -97,7 +98,7 @@ export default function Page() {
           <Image src="/og-como-medir-roi-marketing-digital-v2.jpg" alt="Planta que da monedas, embudo y caja registradora que representan la inversión en marketing y su retorno" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={8} items={[{"id": "que-es-el-roi-en-marketing-digital-y-como-se-cal", "label": "Qué es el ROI en marketing digital y cómo se calcula"}, {"id": "como-configurar-el-seguimiento-de-conversiones-e", "label": "Cómo configurar el seguimiento de conversiones en GA4"}, {"id": "atribucion-a-que-canal-asignar-cada-venta", "label": "Atribución: a qué canal asignar cada venta"}, {"id": "roi-por-canal-seo-vs-sem-vs-redes-sociales", "label": "ROI por canal: SEO vs SEM vs redes sociales"}, {"id": "errores-que-distorsionan-tus-metricas", "label": "Errores que distorsionan tus métricas"}, {"id": "como-presentar-resultados-de-marketing-a-direcci", "label": "Cómo presentar resultados de marketing a dirección"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Analítica" />
     </>
   );

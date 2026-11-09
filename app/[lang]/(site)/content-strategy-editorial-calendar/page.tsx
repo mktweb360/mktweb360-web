@@ -9,6 +9,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 // 28/10/2026 — versiones EN/FR del artículo ES /estrategia-de-contenidos-calendario-editorial/ (tema 5).
 // La carpeta FR (strategie-de-contenu-calendrier-editorial) reexporta esta página.
 // Mismas fuentes y cifras que la versión ES; si cambian allí, cambiarlas aquí.
@@ -419,7 +420,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang={lang} topic="general">
         <Breadcrumbs crumbs={[{ label: t.home, href: `/${lang}/` }, { label: "Blog", href: `/${lang}/blog/` }, { label: t.crumb }]} />
 
         <header className="mb-8">
@@ -522,7 +523,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href={`/${lang}/blog/`} className="text-accent-500 hover:text-accent-600 font-medium text-sm">{t.volver}</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug={ES_SLUG} />
     </>
   );

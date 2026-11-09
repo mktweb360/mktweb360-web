@@ -9,6 +9,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 // 04/11/2026 — EN/FR del artículo /anuncios-chatgpt-ads-espana/ (tema 9). La versión FR vive en
 // ../publicite-chatgpt-ads-espagne/ y reexporta esta página. Datos de OpenAI comprobados el 28/10/2026.
 
@@ -459,7 +460,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang={lang} topic="general">
         <Breadcrumbs crumbs={[{ label: c.home, href: `/${l}/` }, { label: "Blog", href: `/${l}/blog/` }, { label: c.crumb }]} />
 
         <header className="mb-8">
@@ -572,7 +573,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href={`/${l}/blog/`} className="text-accent-500 hover:text-accent-600 font-medium text-sm">{c.back}</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug={ES_SLUG} />
     </>
   );

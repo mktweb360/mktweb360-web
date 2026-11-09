@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Qué es el GEO (Generative Engine Optimization)",
   description: "GEO: qué es, cómo funciona y por qué optimizar tu presencia para aparecer en ChatGPT, Perplexity y Gemini es la nueva frontera del SEO.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="seo">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Qué es GEO" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">IA · Estrategia</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Qué es el GEO y por qué es más importante que el SEO tradicional en 2025</h1>
@@ -95,7 +96,7 @@ export default function Page() {
           <Image src="/og-que-es-geo-generative-engine-optimization-v2.jpg" alt="Robot bibliotecario recomendando una pequeña tienda a una persona en una gran biblioteca" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={7} items={[{"id": "del-seo-al-geo-como-ha-cambiado-la-busqueda-onli", "label": "Del SEO al GEO: cómo ha cambiado la búsqueda online"}, {"id": "como-funcionan-los-motores-de-busqueda-generativ", "label": "Cómo funcionan los motores de búsqueda generativa"}, {"id": "diferencias-entre-seo-y-geo", "label": "Diferencias entre SEO y GEO"}, {"id": "como-optimizar-tu-web-para-aparecer-en-respuesta", "label": "Cómo optimizar tu web para aparecer en respuestas de IA"}, {"id": "herramientas-para-medir-tu-visibilidad-en-llms", "label": "Herramientas para medir tu visibilidad en LLMs"}, {"id": "el-futuro-de-la-busqueda-seo-geo-juntos", "label": "El futuro de la búsqueda: SEO + GEO juntos"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="IA · Estrategia" />
     </>
   );

@@ -8,6 +8,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -86,7 +87,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   return (
     <>
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang={lang} topic="tienda">
         <Breadcrumbs
           crumbs={[
             { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
@@ -226,7 +227,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "← Back to blog" : "← Retour au blog"}
           </Link>
         </nav>
-      </div>
+      </ArticleShell>
       <RelatedArticles currentSlug="shopware-google-ads" />
     </>
   );

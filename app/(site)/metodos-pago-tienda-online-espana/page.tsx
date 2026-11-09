@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Métodos de Pago Tienda Online España",
   description: "Pasarelas de pago para tiendas online en España: Stripe, Bizum, PayPal y Redsys comparadas por comisiones, integración con WooCommerce y conversión.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="tienda">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Métodos de pago tienda online España" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Métodos de pago para tiendas online en España: cuál elegir y cuánto cobran en 2025</h1>
@@ -90,7 +91,7 @@ export default function Page() {
           <Image src="/og-metodos-pago-tienda-online-espana-v2.jpg" alt="Clienta pagando con el móvil en el datáfono de una tienda de ropa" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={7} items={[{"id": "que-metodos-de-pago-prefieren-los-compradores-es", "label": "Qué métodos de pago prefieren los compradores españoles"}, {"id": "stripe-la-opcion-mas-completa-para-woocommerce", "label": "Stripe: la opción más completa para WooCommerce"}, {"id": "redsys-la-opcion-bancaria-tradicional-en-espana", "label": "Redsys: la opción bancaria tradicional en España"}, {"id": "paypal-pros-contras-y-cuando-tiene-sentido", "label": "PayPal: pros, contras y cuándo tiene sentido"}, {"id": "bizum-en-ecommerce-como-integrarlo-en-woocommerc", "label": "Bizum en ecommerce: cómo integrarlo en WooCommerce"}, {"id": "buy-now-pay-later-klarna-aplazame-y-cofidis", "label": "Buy Now Pay Later: Klarna, Aplazame y Cofidis"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Ecommerce" />
     </>
   );

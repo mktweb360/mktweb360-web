@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Importar productos en WooCommerce con CSV",
   description: "Aprende a importar productos en WooCommerce usando archivos CSV. Formato correcto, errores comunes y cómo subir miles de productos sin trabajo manual.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="tienda">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Importar productos WooCommerce" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo importar productos en WooCommerce con CSV: guía paso a paso sin errores</h1>
@@ -93,7 +94,7 @@ export default function Page() {
           <Image src="/og-importar-productos-woocommerce-v2.jpg" alt="Hoja de cálculo que envía cajas y ropa por una cinta transportadora hasta una tienda online" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={8} items={[{"id": "por-que-usar-csv-para-importar-productos-en-wooc", "label": "Por qué usar CSV para importar productos en WooCommerce"}, {"id": "como-preparar-el-archivo-csv-correctamente", "label": "Cómo preparar el archivo CSV correctamente"}, {"id": "proceso-de-importacion-en-woocommerce-paso-a-pas", "label": "Proceso de importación en WooCommerce paso a paso"}, {"id": "como-importar-productos-variables-con-atributos", "label": "Cómo importar productos variables con atributos"}, {"id": "errores-frecuentes-y-como-solucionarlos", "label": "Errores frecuentes y cómo solucionarlos"}, {"id": "cuando-usar-un-plugin-en-lugar-del-importador-na", "label": "Cuándo usar un plugin en lugar del importador nativo"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Ecommerce" />
     </>
   );

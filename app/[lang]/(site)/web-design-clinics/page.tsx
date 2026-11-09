@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { serviceSchema, intlPath, fromMeta } from "@/lib/schema";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 const FAQS_EN = [
   {
     q: "How much does a website for a clinic or health centre cost?",
@@ -93,7 +94,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   return (
     <>
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang={lang} topic="web">
         <JsonLd data={serviceSchema({ lang, path: intlPath(lang, "web-design-clinics"), ...fromMeta(await generateMetadata({ params })) })} />
         <Breadcrumbs
           crumbs={[
@@ -341,7 +342,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? "← Back to blog" : "← Retour au blog"}
           </Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug="web-design-clinics" category="Web Design" />
       <div className="max-w-4xl mx-auto px-4 pb-4">
         <BlogBanner variant="seogeogbp" lang={lang} />

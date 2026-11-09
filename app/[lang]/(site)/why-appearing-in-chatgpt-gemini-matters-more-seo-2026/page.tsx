@@ -8,6 +8,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -115,7 +116,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang={lang} topic="seo">
         <Breadcrumbs
           crumbs={[
             { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
@@ -373,7 +374,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ← {isEn ? "Back to blog" : "Retour au blog"}
           </Link>
         </nav>
-      </article>
+      </ArticleShell>
 
       <RelatedArticles currentSlug="why-appearing-in-chatgpt-gemini-matters-more-seo-2026" />
     </>

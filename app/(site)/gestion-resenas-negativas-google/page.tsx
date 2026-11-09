@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Eliminar reseñas negativas de Google: guía",
   description: "Cómo responder y gestionar reseñas negativas en Google, cuándo pedir su eliminación y plantillas de respuesta para convertir críticas en confianza.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="seo">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Reseñas negativas Google" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Reputación Online</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo gestionar las reseñas negativas en Google sin perder clientes</h1>
@@ -98,7 +99,7 @@ export default function Page() {
           <Image src="/og-gestion-resenas-negativas-google-v2.jpg" alt="Dueño de un restaurante leyendo una reseña en su móvil con calma" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={8} items={[{"id": "por-que-las-resenas-negativas-importan-mas-de-lo", "label": "Por qué las reseñas negativas importan más de lo que crees"}, {"id": "como-responder-una-resena-negativa-paso-a-paso", "label": "Cómo responder una reseña negativa paso a paso"}, {"id": "plantillas-de-respuesta-profesional-para-resenas", "label": "Plantillas de respuesta profesional para reseñas negativas"}, {"id": "cuando-y-como-solicitar-la-eliminacion-de-una-re", "label": "Cuándo y cómo solicitar la eliminación de una reseña falsa"}, {"id": "estrategia-para-generar-mas-resenas-positivas", "label": "Estrategia para generar más reseñas positivas"}, {"id": "herramientas-para-monitorizar-tu-reputacion-onli", "label": "Herramientas para monitorizar tu reputación online"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Reputación Online" />
     </>
   );

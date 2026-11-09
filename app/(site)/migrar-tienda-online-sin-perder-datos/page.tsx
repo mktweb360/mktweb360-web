@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Migrar una tienda online sin perder SEO",
   description: "Guía completa para migrar una tienda online a WooCommerce sin perder productos, clientes, pedidos ni posicionamiento en Google. Proceso y errores a evitar.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="tienda">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Migrar tienda online sin perder datos" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo migrar tu tienda online sin perder datos, pedidos ni posicionamiento en Google</h1>
@@ -92,7 +93,7 @@ export default function Page() {
           <Image src="/og-migrar-tienda-online-sin-perder-datos-v2.jpg" alt="Dueña de una tienda de decoración empaquetando objetos en cajas de mudanza junto a archivadores" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={6} items={[{"id": "cuando-tiene-sentido-migrar-tu-tienda-a-otra-pla", "label": "Cuándo tiene sentido migrar tu tienda a otra plataforma"}, {"id": "que-datos-hay-que-migrar-y-como-priorizarlos", "label": "Qué datos hay que migrar y cómo priorizarlos"}, {"id": "como-preservar-el-seo-durante-la-migracion", "label": "Cómo preservar el SEO durante la migración"}, {"id": "plan-de-migracion-fases-y-plazos-realistas", "label": "Plan de migración: fases y plazos realistas"}, {"id": "errores-que-destruyen-migraciones-de-ecommerce", "label": "Errores que destruyen migraciones de ecommerce"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Ecommerce" />
     </>
   );

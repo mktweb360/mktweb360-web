@@ -8,6 +8,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 // 29/10/2026 — versión EN/FR del artículo ES /digitalizacion-pymes-espana-datos-ine-2026/ (tema 10, pieza de datos).
 // La versión FR se sirve desde ../digitalisation-pme-espagne-donnees-ine-2026/page.tsx, que reexporta esta página.
 // Cifras: nota de prensa del INE del 22/10/2026 (leída el 28/10/2026). Si cambian, cambiarlas también en la ES y en la infografía.
@@ -343,7 +344,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang={lang} topic="web">
         <Breadcrumbs crumbs={[{ label: t.crumbHome, href: `/${l}/` }, { label: "Blog", href: `/${l}/blog/` }, { label: t.crumb }]} />
 
         <header className="mb-8">
@@ -439,7 +440,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href={`/${l}/blog/`} className="text-accent-500 hover:text-accent-600 font-medium text-sm">{t.back}</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug={ES_SLUG} />
     </>
   );

@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Configurar envíos en WooCommerce para España",
   description: "Cómo configurar los envíos en WooCommerce: zonas, tarifas planas, envío gratis desde un importe e integración con Correos y otros transportistas.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="tienda">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Configurar envíos WooCommerce" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo configurar los envíos en WooCommerce para España: guía completa paso a paso</h1>
@@ -87,7 +88,7 @@ export default function Page() {
           <Image src="/og-configurar-envios-woocommerce-v2.jpg" alt="Emprendedora preparando paquetes con cinta adhesiva en su almacén de tienda online" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={7} items={[{"id": "conceptos-basicos-zonas-metodos-y-clases-de-envi", "label": "Conceptos básicos: zonas, métodos y clases de envío en WooCommerce"}, {"id": "configurar-tarifa-plana-y-envio-gratuito", "label": "Configurar tarifa plana y envío gratuito"}, {"id": "integracion-con-transportistas-espanoles-correos", "label": "Integración con transportistas españoles: Correos, SEUR, MRW"}, {"id": "envios-a-canarias-configuracion-especial-y-consi", "label": "Envíos a Canarias: configuración especial y consideraciones aduaneras"}, {"id": "estrategia-de-precios-de-envio-para-aumentar-con", "label": "Estrategia de precios de envío para aumentar conversiones"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Ecommerce" />
     </>
   );

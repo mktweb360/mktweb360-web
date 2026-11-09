@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "WhatsApp Business para empresas: guía 2026",
   description: "Cómo usar WhatsApp Business para captar y fidelizar clientes. Configuración, automatizaciones, catálogo y estrategia para empresas. Guía actualizada 2025.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="general">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "WhatsApp Business" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Marketing Digital</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">WhatsApp Business para empresas: guía completa de configuración y estrategia</h1>
@@ -98,7 +99,7 @@ export default function Page() {
           <Image src="/og-whatsapp-business-para-empresas-v2.jpg" alt="Peluquera atendiendo clientes por el móvil con burbujas de chat en su salón" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={6} items={[{"id": "whatsapp-business-vs-whatsapp-normal-diferencias", "label": "WhatsApp Business vs WhatsApp normal: diferencias clave"}, {"id": "como-configurar-tu-perfil-de-empresa", "label": "Cómo configurar tu perfil de empresa"}, {"id": "catalogo-de-productos-y-servicios-en-whatsapp", "label": "Catálogo de productos y servicios en WhatsApp"}, {"id": "respuestas-automaticas-y-mensajes-de-bienvenida", "label": "Respuestas automáticas y mensajes de bienvenida"}, {"id": "estrategia-de-captacion-por-whatsapp", "label": "Estrategia de captación por WhatsApp"}, {"id": "whatsapp-business-api-cuando-dar-el-salto", "label": "WhatsApp Business API: cuándo dar el salto"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Marketing Digital" />
     </>
   );
