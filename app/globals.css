@@ -114,8 +114,19 @@
   50% { transform: translateY(-14px); }
 }
 .mw-float { animation: mw-float 10s ease-in-out infinite; }
+/* Banner de oferta con foto: zoom y desplazamiento lentos (Ken Burns) y brillo suave en el botón. */
+@keyframes mw-kenburns {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.1) translate3d(-2%, -1%, 0); }
+}
+.mw-kenburns { animation: mw-kenburns 22s ease-in-out infinite alternate; transform-origin: 70% 40%; }
+@keyframes mw-pulse-soft {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.55); }
+  50% { box-shadow: 0 0 0 12px rgba(249, 115, 22, 0); }
+}
+.mw-pulse-soft { animation: mw-pulse-soft 2.8s ease-out infinite; }
 @media (prefers-reduced-motion: reduce) {
-  .mw-aurora, .mw-grid-floor, .mw-float { animation: none; }
+  .mw-aurora, .mw-grid-floor, .mw-float, .mw-kenburns, .mw-pulse-soft { animation: none; }
 }
 
 /* ─── Piel de marca para toda la web (oct-2026) ─────────────────────────────────────────────
