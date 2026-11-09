@@ -12,6 +12,7 @@ import { ArticleIndex } from "@/components/ArticleIndex";
 import { PintoresDemosBox } from "@/components/PintoresDemosBox";
 import { OfferBannerWebPintores } from "@/components/offers/OfferBannerWebPintores";
 
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -45,7 +46,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   return (
     <>
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang={lang} topic="pintores">
         <Breadcrumbs crumbs={[
           { label: t({ en: "Home", fr: "Accueil" }), href: `/${lang}/` },
           { label: "Blog", href: `/${lang}/blog/` },
@@ -261,7 +262,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <ContactForm formType={`blog-${lang}`} />
           </div>
         </section>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Web Design" />
     </>
   );

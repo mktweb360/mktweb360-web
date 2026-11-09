@@ -12,6 +12,7 @@ import { ArticleIndex } from "@/components/ArticleIndex";
 import { PintoresDemosBox } from "@/components/PintoresDemosBox";
 import { OfferBannerWebPintores } from "@/components/offers/OfferBannerWebPintores";
 
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Página web para pintores: cómo captar clientes",
   description: "Guía para pintores y empresas de pintura: secciones imprescindibles de la web, SEO local y ficha de Google para conseguir clientes desde Google.",
@@ -52,7 +53,7 @@ export default function PaginaWebPintoresPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="pintores">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Página Web para Pintores" }]} />
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-4">
@@ -227,7 +228,7 @@ export default function PaginaWebPintoresPage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug="como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google" />
     </>
   );
