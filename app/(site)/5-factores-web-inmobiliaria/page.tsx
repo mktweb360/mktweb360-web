@@ -10,6 +10,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web para inmobiliarias: 5 factores clave",
   description:
@@ -114,6 +115,10 @@ export default function FactoresWebInmobiliariaPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={8} items={[{"id": "1-certificado-de-eficiencia-energetica-en-cada-f", "label": "1. Certificado de eficiencia energética en cada ficha"}, {"id": "2-sindicacion-automatica-con-los-portales", "label": "2. Sindicación automática con los portales"}, {"id": "3-velocidad-de-carga-con-fotografia-pesada", "label": "3. Velocidad de carga con fotografía pesada"}, {"id": "4-buscador-avanzado-de-propiedades", "label": "4. Buscador avanzado de propiedades"}, {"id": "5-captacion-de-leads-cualificados-por-inmueble", "label": "5. Captación de leads cualificados por inmueble"}, {"id": "tu-web-trabaja-aunque-tu-no-puedas-atender", "label": "Tu web trabaja aunque tú no puedas atender"}, {"id": "preguntas-frecuentes-sobre-la-web-de-una-inmobil", "label": "Preguntas frecuentes sobre la web de una inmobiliaria"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Una inmobiliaria no vende una vivienda desde su web: la muestra, la compara y la filtra. El comprador o inquilino decide en gran medida antes de llamar, a partir de las fotos, el precio y los datos del inmueble que ve en pantalla. Eso convierte a la web en un catálogo vivo, no en una tarjeta de presentación, y le exige un nivel de rendimiento y de cumplimiento normativo que muchas webs del sector todavía no tienen resuelto.
@@ -121,12 +126,12 @@ export default function FactoresWebInmobiliariaPage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.inmobiliaria} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Certificado de eficiencia energética en cada ficha</h2>
+          <h2 id="1-certificado-de-eficiencia-energetica-en-cada-f" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Certificado de eficiencia energética en cada ficha</h2>
           <p>
             El Real Decreto 390/2021 obliga a incluir la calificación de eficiencia energética en cualquier soporte publicitario de venta o alquiler de un inmueble —web y portales incluidos— y establece que el certificado debe obtenerse antes de anunciarlo, no después. En la práctica, esto significa que la ficha de cada inmueble en tu web necesita un campo obligatorio y visible para la etiqueta energética (de la A a la G), y que el proceso de alta de un inmueble debe bloquear la publicación si ese dato falta. No es un detalle estético: es un requisito legal que aplica tanto a particulares como a empresas inmobiliarias.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. Sindicación automática con los portales</h2>
+          <h2 id="2-sindicacion-automatica-con-los-portales" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. Sindicación automática con los portales</h2>
           <p>
             Cargar cada inmueble a mano en la web, en Idealista, en Fotocasa y en Habitaclia multiplica el trabajo y multiplica el riesgo de que un inmueble aparezca desactualizado en algún canal —vendido en la web pero disponible todavía en un portal—. La solución técnica correcta es que la web genere un feed XML (formato Avancxml u otro estándar del sector) que se sincronice automáticamente con cada portal: un inmueble se da de alta, se actualiza de precio o se retira una sola vez, en la propia web, y el cambio se replica solo en el resto de canales.
           </p>
@@ -139,26 +144,26 @@ export default function FactoresWebInmobiliariaPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Velocidad de carga con fotografía pesada</h2>
+          <h2 id="3-velocidad-de-carga-con-fotografia-pesada" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Velocidad de carga con fotografía pesada</h2>
           <p>
             Una ficha de inmueble puede tener entre 20 y 30 fotografías en alta resolución, y ese volumen de imagen sin optimizar es, con diferencia, el principal responsable de que las webs inmobiliarias vayan lentas. La solución no es reducir la calidad de las fotos —son el elemento que más vende— sino optimizar el formato (WebP o AVIF en lugar de JPG sin comprimir), servir tamaños distintos según el dispositivo y cargar las imágenes de forma diferida (lazy loading) para que solo se descarguen las que el usuario realmente ve. Una ficha que tarda más de tres segundos en mostrar las fotos pierde usuarios antes de que lleguen a valorar el inmueble.
           </p>
 
           <OfferBannerWebSeo />
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Buscador avanzado de propiedades</h2>
+          <h2 id="4-buscador-avanzado-de-propiedades" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Buscador avanzado de propiedades</h2>
           <p>
             El buscador es la puerta de entrada real al catálogo, y necesita como mínimo los filtros con los que empieza a decidir cualquier usuario: zona o localidad, tipo de operación (venta o alquiler), rango de precio, número de habitaciones y metros cuadrados. Un buscador que obliga a abrir inmuebles uno por uno para descubrir el precio, o que no permite combinar zona y presupuesto, genera abandono inmediato. La experiencia de filtrado es, para una inmobiliaria, lo que el catálogo de producto es para una tienda online: el elemento de conversión más importante de toda la web.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Captación de leads cualificados por inmueble</h2>
+          <h2 id="5-captacion-de-leads-cualificados-por-inmueble" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Captación de leads cualificados por inmueble</h2>
           <p>
             Un formulario genérico de "contacto" al final de la web capta muchos menos leads que un formulario específico en cada ficha de inmueble ("Solicitar visita a este piso", con el inmueble ya identificado). Ese contexto reduce la fricción, mejora la calidad del lead —el comercial sabe exactamente qué inmueble interesa antes de descolgar el teléfono— y permite medir qué inmuebles generan más interés real, información que también sirve para ajustar precio o estrategia de venta. La captación por inmueble, no genérica, es lo que convierte tráfico en visitas concertadas.
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque tú no puedas atender</h2>
+              <h2 id="tu-web-trabaja-aunque-tu-no-puedas-atender" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja aunque tú no puedas atender</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras enseñas un piso, cierras una operación o la oficina ya está cerrada por la tarde, tu web sigue abierta. Alguien que busca piso en tu zona un sábado por la noche filtra por precio y habitaciones, ve las fotos de cada inmueble y pide visita para el que le interesa — sin que tú tengas que estar disponible para atenderlo en ese momento. Esa es la diferencia entre un catálogo que solo existe y uno que capta leads mientras tú trabajas en otra cosa.
               </p>
@@ -193,7 +198,7 @@ export default function FactoresWebInmobiliariaPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de una inmobiliaria</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-una-inmobil" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de una inmobiliaria</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

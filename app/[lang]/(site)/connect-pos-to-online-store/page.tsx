@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
-        <IntlArticleJsonLd lang={lang} slug="connect-pos-to-online-store" headline={isEn ? "How to connect your physical POS to your online store" : "Comment connecter votre TPV physique à votre boutique en ligne"} image="/og-conectar-tpv-tienda-online.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="connect-pos-to-online-store" headline={isEn ? "How to connect your physical POS to your online store" : "Comment connecter votre TPV physique à votre boutique en ligne"} image="/og-conectar-tpv-tienda-online-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to connect your physical POS to your online store"
@@ -52,7 +54,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Si vous avez une boutique physique et une boutique en ligne, gérer le stock dans deux endroits séparés est un problème. Ce guide vous montre comment les synchroniser et éviter la survente, les ruptures de stock et la double saisie de données."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-conectar-tpv-tienda-online-v2.jpg"
+          alt={!isEn ? "Vendeuse encaissant une cliente sur un terminal de paiement dans une boutique de vêtements, avec un colis d’expédition sur le comptoir" : "Shop assistant charging a customer at a POS terminal in a clothing store, with a shipping parcel on the counter"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "the-problem-of-unsynchronised-stock", label: isEn ? "The problem of unsynchronised stock" : "Le problème du stock désynchronisé" }, { id: "what-is-a-pos-and-how-does-ecommerce-integration", label: isEn ? "What is a POS and how does ecommerce integration work" : "Qu'est-ce qu'un TPV et comment fonctionne l'intégration e-commerce" }, { id: "woocommerce-pos-the-native-solution", label: isEn ? "WooCommerce POS: the native solution" : "WooCommerce POS : la solution native" }, { id: "other-pos-solutions-compatible-with-online-store", label: isEn ? "Other POS solutions compatible with online stores" : "Autres solutions TPV compatibles avec les boutiques en ligne" }, { id: "what-data-synchronises-stock-sales-customers-and", label: isEn ? "What data synchronises: stock, sales, customers and billing" : "Quelles données se synchronisent : stock, ventes, clients et facturation" }]} />
+        </div>
+
+        <h2 id="the-problem-of-unsynchronised-stock" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "The problem of unsynchronised stock" : "Le problème du stock désynchronisé"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -61,7 +76,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Sans synchronisation, vous faites face à trois problèmes : la survente (un client achète en ligne quelque chose déjà vendu en boutique), les ruptures de stock (vous affichez des articles disponibles en ligne qui sont en réalité épuisés), et le double travail (mise à jour du stock manuellement dans deux systèmes). Même avec des mises à jour manuelles quotidiennes, il y a toujours une fenêtre d'erreur."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="what-is-a-pos-and-how-does-ecommerce-integration" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "What is a POS and how does ecommerce integration work" : "Qu'est-ce qu'un TPV et comment fonctionne l'intégration e-commerce"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -70,7 +85,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Un TPV (Terminal Point de Vente) est le système utilisé en boutique pour traiter les ventes, gérer le stock et suivre les clients. L'intégration avec une boutique en ligne signifie que les deux systèmes partagent une source unique de vérité pour le stock, les données produits et les informations clients. Quand une vente se produit dans l'un ou l'autre canal, les deux systèmes se mettent à jour en temps réel."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="woocommerce-pos-the-native-solution" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "WooCommerce POS: the native solution" : "WooCommerce POS : la solution native"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -79,7 +94,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "WooCommerce POS (plugin gratuit) transforme votre boutique WooCommerce en un système TPV complet. Vous traitez les ventes en boutique via une interface navigateur qui partage les mêmes données produits et stocks que votre boutique en ligne. Le stock se met à jour instantanément dans les deux sens. Il nécessite une tablette ou un ordinateur portable en caisse, une imprimante de reçus et un lecteur de carte (compatible Stripe ou Square)."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="other-pos-solutions-compatible-with-online-store" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Other POS solutions compatible with online stores" : "Autres solutions TPV compatibles avec les boutiques en ligne"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -88,7 +103,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Square POS s'intègre nativement avec WooCommerce via le plugin officiel Square for WooCommerce — le stock se synchronise en temps réel. Lightspeed Retail se connecte à WooCommerce et Shopify. Pour les boutiques Shopify, Shopify POS est le choix naturel mais nécessite de rester dans l'écosystème Shopify. Vend (maintenant Lightspeed X) est une option populaire pour le commerce omnicanal."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="what-data-synchronises-stock-sales-customers-and" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "What data synchronises: stock, sales, customers and billing" : "Quelles données se synchronisent : stock, ventes, clients et facturation"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">

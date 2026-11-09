@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "SEO local para empresas de servicios",
   description:
@@ -102,6 +103,10 @@ export default function SeoLocalPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "como-busca-un-cliente-local", "label": "Cómo busca un cliente local"}, {"id": "los-pilares-que-si-importan", "label": "Los pilares que sí importan"}, {"id": "errores-frecuentes", "label": "Errores frecuentes"}, {"id": "que-debe-tener-una-web-local-para-convertir", "label": "Qué debe tener una web local para convertir"}, {"id": "preguntas-frecuentes-sobre-seo-local", "label": "Preguntas frecuentes sobre SEO local"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Las búsquedas locales tienen una característica que las hace especialmente valiosas: alta intención de compra. Alguien que busca "instalador de aires acondicionados en Sevilla" no está navegando por curiosidad — está buscando contratar. Estar en las primeras posiciones de esa búsqueda es equivalente a tener el local en la calle más transitada.
@@ -110,10 +115,10 @@ export default function SeoLocalPage() {
             Google Business Profile (antes Google My Business) es la palanca más importante del SEO local. Una ficha bien optimizada, con fotos reales, horario correcto, categorías adecuadas y reseñas activas puede generar contactos directos sin necesidad de web ni de publicidad de pago.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo busca un cliente local</h2>
+          <h2 id="como-busca-un-cliente-local" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo busca un cliente local</h2>
           <p>El proceso suele ser bastante directo: detecta una necesidad, busca por servicio y ubicación, compara varias opciones y contacta con una o dos. Esto hace que el SEO local no se gane solo por "estar", sino por aparecer bien y convencer rápido. Por eso importan tanto la ficha, la web, las reseñas y la claridad del servicio.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los pilares que sí importan</h2>
+          <h2 id="los-pilares-que-si-importan" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los pilares que sí importan</h2>
           <p>Google Business Profile, la coherencia del NAP, la web orientada a servicio, las páginas bien planteadas por servicio y la reputación visible son las piezas que más suelen marcar la diferencia. También importa mucho que la web deje claro qué haces, a quién ayudas, en qué zona trabajas y cómo se puede contactar sin fricción.</p>
           <ul className="space-y-2">
             {["Ficha de Google bien gestionada y actualizada", "Web clara con páginas de servicio útiles y bien enfocadas", "Reseñas y señales de confianza", "Experiencia móvil y medición de llamadas o formularios"].map((item) => (
@@ -132,12 +137,12 @@ export default function SeoLocalPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Errores frecuentes</h2>
+          <h2 id="errores-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Errores frecuentes</h2>
           <p>Depender solo de la ficha, tener una web genérica, crear páginas locales vacías, no cuidar la reputación o no medir son fallos muy habituales que reducen bastante el rendimiento local. También es un error intentar forzar decenas de páginas por ciudades sin una lógica real de servicio o sin contenido útil.</p>
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué debe tener una web local para convertir</h2>
+          <h2 id="que-debe-tener-una-web-local-para-convertir" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué debe tener una web local para convertir</h2>
           <p>Una buena web local debe presentar con claridad el servicio, la zona de trabajo, las señales de credibilidad y la forma de contacto. La versión móvil tiene que estar muy bien resuelta porque gran parte de la demanda local llega desde el teléfono. El objetivo no es solo atraer clics, sino generar oportunidades útiles en el mercado local.</p>
 
           <p className="text-sm text-gray-500">
@@ -159,7 +164,7 @@ export default function SeoLocalPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre SEO local</h2>
+          <h2 id="preguntas-frecuentes-sobre-seo-local" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre SEO local</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

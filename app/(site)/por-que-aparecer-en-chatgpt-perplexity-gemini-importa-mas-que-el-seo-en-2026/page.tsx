@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Por qué aparecer en ChatGPT y Gemini importa",
   description:
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     description: "Millones de personas ya no buscan en Google. Preguntan a ChatGPT, Perplexity o Gemini. Si tu negocio no aparece en sus respuestas, estás perdiendo clientes sin saberlo. Guía GEO 2026.",
     url: "https://www.mktweb360.com/por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-que-es-geo-generative-engine-optimization.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -30,7 +32,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-que-es-geo-generative-engine-optimization.jpg",
+  image: "https://www.mktweb360.com/og-por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026-v2.jpg",
   url: "https://www.mktweb360.com/por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026/",
   inLanguage: "es-ES",
@@ -90,29 +92,41 @@ export default function AparecerEnChatGPTGeminiPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Millones de personas ya no escriben en Google: le preguntan directamente a ChatGPT, Perplexity o Gemini. Si tu negocio no aparece en esas respuestas, estás perdiendo clientes sin ni siquiera saberlo. El <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">GEO o posicionamiento en IA</Link> es la disciplina que decide si la máquina te menciona o menciona a tu competencia.
           </p>
+          <Image
+            src="/og-por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026-v2.jpg"
+            alt="Calle al atardecer con un escaparate de lupa casi vacío y un robot asistente de IA rodeado de una multitud de clientes"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={7} items={[{"id": "como-busca-la-gente-en-2026-el-cambio-que-ya-ocu", "label": "Cómo busca la gente en 2026: el cambio que ya ocurrió"}, {"id": "que-es-el-geo-y-por-que-no-es-lo-mismo-que-el-se", "label": "Qué es el GEO y por qué no es lo mismo que el SEO"}, {"id": "por-que-una-pyme-puede-aparecer-donde-no-aparece", "label": "Por qué una pyme puede aparecer donde no aparece una gran marca"}, {"id": "las-tres-senales-que-la-ia-busca-en-tu-contenido", "label": "Las tres señales que la IA busca en tu contenido"}, {"id": "el-riesgo-de-no-hacer-nada", "label": "El riesgo de no hacer nada"}, {"id": "preguntas-frecuentes-sobre-geo-y-posicionamiento", "label": "Preguntas frecuentes sobre GEO y posicionamiento en IA"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Durante veinte años, la pregunta era una sola: cómo salir el primero en Google. En 2026 esa pregunta se ha desdoblado. Cada vez más usuarios no ven una lista de diez enlaces azules, sino una respuesta redactada por una inteligencia artificial que decide, por ti, qué fuentes merecen ser citadas. Aparecer en esa respuesta se ha convertido en el nuevo primer puesto, y no siempre coincide con quien manda en el buscador clásico.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo busca la gente en 2026: el cambio que ya ocurrió</h2>
+          <h2 id="como-busca-la-gente-en-2026-el-cambio-que-ya-ocu" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo busca la gente en 2026: el cambio que ya ocurrió</h2>
           <p>El cambio de hábito no es una previsión: ya ha pasado. ChatGPT supera los 800 millones de usuarios semanales, y una parte creciente de esa gente lo usa exactamente para lo que antes usaba Google: resolver dudas, comparar productos y pedir recomendaciones de proveedores. Gartner estima que las búsquedas en el buscador tradicional caerán en torno a un 25% antes de finales de 2026, precisamente porque parte de esas consultas migran a asistentes conversacionales.</p>
           <p>Y no solo se trata de asistentes independientes. Google integra sus propias respuestas generativas, los AI Overviews, en el 58% de las búsquedas. Es decir, incluso cuando el usuario sigue en Google, muchas veces obtiene una respuesta redactada por IA antes de bajar a los resultados orgánicos. El interfaz de la búsqueda ha cambiado, y con él las reglas de la visibilidad.</p>
           <p>En decisiones profesionales el fenómeno es todavía más acusado: el 94% de los grupos de compra B2B usan IA generativa antes de hablar con un proveedor. Cuando ese comprador pregunta a la máquina quién puede ayudarle, tu marca o aparece en la respuesta o, sencillamente, no existe en esa conversación.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué es el GEO y por qué no es lo mismo que el SEO</h2>
+          <h2 id="que-es-el-geo-y-por-que-no-es-lo-mismo-que-el-se" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué es el GEO y por qué no es lo mismo que el SEO</h2>
           <p>El GEO (Generative Engine Optimization) es la disciplina que optimiza tu contenido para que los modelos de IA te citen en sus respuestas. Comparte fundamentos con el <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO orgánico</Link>, pero persigue un objetivo distinto: no pelear por un puesto en una lista, sino ser la fuente que la máquina elige para construir su explicación.</p>
           <p>La diferencia práctica es importante y por eso conviene entender bien las <Link href="/geo-vs-seo-diferencias/" className="text-accent-500 hover:underline">diferencias entre GEO y SEO</Link>. El SEO premia autoridad de dominio, enlaces y palabras clave. El GEO premia claridad semántica, estructura de pregunta-respuesta y entidades verificables que la IA puede entender y relacionar sin ambigüedad. Un buen SEO técnico es el suelo sobre el que se construye el GEO, pero no lo sustituye.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué una pyme puede aparecer donde no aparece una gran marca</h2>
+          <h2 id="por-que-una-pyme-puede-aparecer-donde-no-aparece" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué una pyme puede aparecer donde no aparece una gran marca</h2>
           <p>Aquí está la buena noticia para los negocios pequeños. Los modelos de IA no reparten citas por tamaño de empresa ni por presupuesto de marketing, sino por autoridad semántica sobre un tema concreto. Cuando el asistente busca la mejor fuente para responder una pregunta específica, valora que el contenido sea claro, estructurado y demostrablemente competente en ese nicho.</p>
           <p>Eso rompe la jerarquía habitual. Una gran marca puede dominar cientos de términos genéricos y, sin embargo, no ser la referencia sobre una consulta muy específica de tu sector. Una pyme con contenido bien trabajado, schema markup correcto y foco en su especialidad puede convertirse justo en esa referencia, y la IA no tiene ningún incentivo para preferir al grande si el pequeño responde mejor a la pregunta.</p>
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Las tres señales que la IA busca en tu contenido</h2>
+          <h2 id="las-tres-senales-que-la-ia-busca-en-tu-contenido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las tres señales que la IA busca en tu contenido</h2>
           <p>Simplificando mucho, los motores generativos evalúan tres cosas. La primera es la estructura: contenido organizado en preguntas y respuestas, con encabezados claros y párrafos que resuelven una idea cada uno, es mucho más fácil de extraer y citar. La segunda es la autoridad semántica: que tu marca aparezca vinculada de forma coherente a los temas en los que quieres ser referencia, con entidades y datos verificables.</p>
           <p>La tercera es la solidez técnica: web en HTTPS, buen rendimiento, schema markup correcto y señales limpias para los crawlers de IA. Ninguna de estas tres señales es exótica; todas se construyen sobre el trabajo que ya hace un buen profesional de SEO, ordenado ahora con la lógica de que quien lee no es solo una persona, sino también una máquina que va a resumir.</p>
 
@@ -131,11 +145,11 @@ export default function AparecerEnChatGPTGeminiPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">El riesgo de no hacer nada</h2>
+          <h2 id="el-riesgo-de-no-hacer-nada" className="text-2xl font-bold text-primary-600 scroll-mt-24">El riesgo de no hacer nada</h2>
           <p>El coste de ignorar el GEO no se ve en una factura, sino en las oportunidades que nunca llegan. Cuando un cliente potencial le pregunta a la IA por soluciones de tu sector y tu marca no aparece, esa venta se decide sin que tú entres siquiera en la conversación. Es una pérdida silenciosa, difícil de medir precisamente porque no deja rastro en tus analíticas.</p>
           <p>Hay quien se pregunta si esto significa que el buscador clásico está acabado. La respuesta corta es no, y merece la pena leer con calma el análisis sobre si <Link href="/ha-muerto-el-seo-con-la-ia/" className="text-accent-500 hover:underline">ha muerto el SEO con la IA</Link>: sigue vivo, pero convive ahora con un nuevo canal donde la visibilidad se gana de otra forma. Lo sensato no es elegir entre SEO y GEO, sino trabajar ambos como una sola estrategia de presencia digital.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre GEO y posicionamiento en IA</h2>
+          <h2 id="preguntas-frecuentes-sobre-geo-y-posicionamiento" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre GEO y posicionamiento en IA</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

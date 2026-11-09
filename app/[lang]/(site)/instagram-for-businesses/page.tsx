@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -8,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -42,8 +44,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Your Instagram bio is the first thing a potential customer sees. You have 150 characters to convince them to follow you or contact you. This guide explains how to make every character count." : "Votre bio Instagram est la première chose qu'un client potentiel voit. Vous avez 150 caractères pour le convaincre de vous suivre ou de vous contacter. Ce guide explique comment faire compter chaque caractère."}
         </p>
 
+        <Image
+          src="/og-instagram-para-empresas-que-poner-en-la-biografia-de-instagram-v2.jpg"
+          alt={!isEn ? "Téléphone affichant un profil de réseau social générique à côté d’un café de quartier, avec des icônes de localisation, de message et de j’aime" : "Phone showing a generic social media profile next to a neighborhood café, with location, message and like icons"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-your-instagram-bio-matters-more-than-you-thi", label: isEn ? "Why your Instagram bio matters more than you think" : "Pourquoi votre bio Instagram compte plus que vous ne le pensez" }, { id: "the-5-elements-of-a-perfect-business-bio", label: isEn ? "The 5 elements of a perfect business bio" : "Les 5 éléments d'une bio d'entreprise parfaite" }, { id: "how-to-write-your-bio-in-150-characters", label: isEn ? "How to write your bio in 150 characters" : "Comment rédiger votre bio en 150 caractères" }, { id: "link-in-bio-how-to-use-it-effectively", label: isEn ? "Link in bio: how to use it effectively" : "Lien en bio : comment l'utiliser efficacement" }, { id: "instagram-profile-mistakes-that-cost-you-followe", label: isEn ? "Instagram profile mistakes that cost you followers" : "Erreurs de profil Instagram qui vous coûtent des abonnés" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="why-your-instagram-bio-matters-more-than-you-thi" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Why your Instagram bio matters more than you think" : "Pourquoi votre bio Instagram compte plus que vous ne le pensez"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -55,7 +70,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-5-elements-of-a-perfect-business-bio" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "The 5 elements of a perfect business bio" : "Les 5 éléments d'une bio d'entreprise parfaite"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -67,7 +82,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-write-your-bio-in-150-characters" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to write your bio in 150 characters" : "Comment rédiger votre bio en 150 caractères"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -79,7 +94,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="link-in-bio-how-to-use-it-effectively" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Link in bio: how to use it effectively" : "Lien en bio : comment l'utiliser efficacement"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -98,7 +113,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="instagram-profile-mistakes-that-cost-you-followe" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Instagram profile mistakes that cost you followers" : "Erreurs de profil Instagram qui vous coûtent des abonnés"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

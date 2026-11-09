@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cómo digitalizar tu negocio: guía para pymes",
   description:
@@ -101,18 +102,22 @@ export default function DigitalizarNegocioPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "que-significa-realmente-digitalizar-un-negocio", "label": "Qué significa realmente digitalizar un negocio"}, {"id": "por-donde-empezar-los-pilares-fundamentales", "label": "Por dónde empezar: los pilares fundamentales"}, {"id": "que-herramientas-tienen-sentido-para-una-pyme", "label": "Qué herramientas tienen sentido para una pyme"}, {"id": "errores-habituales-en-la-digitalizacion-de-pymes", "label": "Errores habituales en la digitalización de pymes"}, {"id": "y-las-ayudas-que-queda-del-kit-digital", "label": "Y las ayudas, ¿qué queda del Kit Digital?"}, {"id": "preguntas-frecuentes-sobre-digitalizacion-de-neg", "label": "Preguntas frecuentes sobre digitalización de negocios"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             La palabra «digitalización» asusta a muchos empresarios. Suena grande, costosa y complicada. Pero en la práctica, digitalizar un negocio es un proceso gradual que empieza por resolver lo que más frena o lo que más oportunidades tiene, y continúa desde ahí con criterio.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué significa realmente digitalizar un negocio</h2>
+          <h2 id="que-significa-realmente-digitalizar-un-negocio" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué significa realmente digitalizar un negocio</h2>
           <p>Digitalizar un negocio significa trasladar procesos, comunicaciones, ventas y gestión a herramientas digitales que los hacen más eficientes, escalables y medibles. No es sinónimo de tener redes sociales activas ni de comprar un CRM caro. Es una transformación progresiva que empieza por los puntos de mayor impacto y se va ampliando a medida que el negocio está preparado para absorber los cambios.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por dónde empezar: los pilares fundamentales</h2>
+          <h2 id="por-donde-empezar-los-pilares-fundamentales" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por dónde empezar: los pilares fundamentales</h2>
           <p>La presencia digital es casi siempre el primer paso. Una web que funciona bien, una <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile completa y al día</Link> y una forma clara de contacto son la base desde la que todo lo demás se construye. Después viene la gestión: facturación digital, agenda de clientes, comunicación por email o mensajería. Y después los canales de captación: publicidad, contenidos o redes sociales según el sector. Hacerlo en ese orden evita construir sobre arena.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué herramientas tienen sentido para una pyme</h2>
+          <h2 id="que-herramientas-tienen-sentido-para-una-pyme" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué herramientas tienen sentido para una pyme</h2>
           <p>Las herramientas deben resolver problemas concretos, no añadir complejidad. Para la presencia web, un sitio bien hecho con SEO básico (aquí puedes ver <Link href="/oferta-web-seo-organico/" className="text-accent-500 hover:underline">qué incluye una web profesional y cuánto cuesta</Link>). Para la gestión, un software de facturación adaptado al tamaño del negocio. Para la comunicación, una herramienta de email que permita automatizar comunicaciones básicas. Para la captación, Google Ads o SEO según el objetivo. No hay que implementar todo a la vez — hay que implementar lo que resuelve el problema actual.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -133,10 +138,10 @@ export default function DigitalizarNegocioPage() {
             secondary={{ text: "¿Ya tienes web? Pide una auditoría gratuita", href: "/auditoria-digital/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Errores habituales en la digitalización de pymes</h2>
+          <h2 id="errores-habituales-en-la-digitalizacion-de-pymes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Errores habituales en la digitalización de pymes</h2>
           <p>Digitalizar sin objetivos claros, comprar software antes de entender qué problema resuelve, delegar todo a un proveedor sin implicación interna y creer que digitalizar es solo tener presencia en redes son los errores más frecuentes. También lo es hacer todo a la vez — la sobrecarga de cambios simultáneos hace que nada se consolide bien. La digitalización exitosa es gradual, ordenada y medida.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Y las ayudas, ¿qué queda del Kit Digital?</h2>
+          <h2 id="y-las-ayudas-que-queda-del-kit-digital" className="text-2xl font-bold text-primary-600 scroll-mt-24">Y las ayudas, ¿qué queda del Kit Digital?</h2>
           <p>El Kit Digital subvencionó durante varios años web, tienda online, CRM o presencia en redes para pymes y autónomos, pero cerró sus últimas convocatorias el 31 de octubre de 2025 y hoy no admite solicitudes nuevas. Siguen saliendo ayudas de Cámaras de Comercio y comunidades autónomas, con bases y plazos distintos en cada caso. Lo tienes resumido en <Link href="/ayudas-digitalizar-pyme-2026-tras-kit-digital/" className="text-accent-500 hover:underline">qué ayudas para digitalizar una pyme quedan en 2026</Link>; consulta siempre la convocatoria vigente antes de decidir. Y no esperes a una ayuda para lo básico: una ficha de Google bien hecha es gratis y una web sencilla no requiere una gran inversión.</p>
 
           <p className="text-sm text-gray-500">
@@ -158,7 +163,7 @@ export default function DigitalizarNegocioPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre digitalización de negocios</h2>
+          <h2 id="preguntas-frecuentes-sobre-digitalizacion-de-neg" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre digitalización de negocios</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

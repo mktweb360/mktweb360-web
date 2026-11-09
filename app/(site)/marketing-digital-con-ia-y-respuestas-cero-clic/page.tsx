@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 const SLUG = "marketing-digital-con-ia-y-respuestas-cero-clic";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
       "La IA responde directamente sin clic. Cómo adaptar tu marketing para seguir captando clientes.",
     url: URL_CANONICAL,
     type: "article",
-    images: [{ url: `/og-${SLUG}.jpg`, width: 1200, height: 630 }],
+    images: [{ url: `/og-${SLUG}-v2.jpg`, width: 1200, height: 630 }],
   },
 };
 
@@ -38,7 +39,7 @@ const articleSchema = {
   url: URL_CANONICAL,
   mainEntityOfPage: URL_CANONICAL,
   inLanguage: "es-ES",
-  image: `https://www.mktweb360.com/og-${SLUG}.jpg`,
+  image: `https://www.mktweb360.com/og-${SLUG}-v2.jpg`,
 };
 
 const FAQS = [
@@ -102,7 +103,7 @@ export default function CeroClicPage() {
             Google responde antes de que el usuario haga clic. ChatGPT y Perplexity responden sin necesidad de web. El tráfico orgánico está cambiando de forma — y la estrategia de marketing digital que no lo contemple está optimizando para un mundo que ya no existe.
           </p>
           <Image
-            src={`/og-${SLUG}.jpg`}
+            src={`/og-${SLUG}-v2.jpg`}
             alt="Marketing digital con IA y respuestas de cero clic"
             width={1200}
             height={630}
@@ -111,12 +112,16 @@ export default function CeroClicPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "que-es-el-cero-clic-y-como-llegamos-aqui", "label": "Qué es el cero clic y cómo llegamos aquí"}, {"id": "que-significa-realmente-para-tu-trafico-web", "label": "Qué significa realmente para tu tráfico web"}, {"id": "estrategias-para-seguir-captando-clientes", "label": "Estrategias para seguir captando clientes"}, {"id": "el-geo-como-nueva-capa-de-visibilidad", "label": "El GEO como nueva capa de visibilidad"}, {"id": "preguntas-frecuentes-sobre-marketing-digital-y-c", "label": "Preguntas frecuentes sobre marketing digital y cero clic"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Los AI Overviews de Google, las respuestas directas de ChatGPT y los summaries de Perplexity tienen algo en común: resuelven la consulta del usuario sin que este tenga que hacer clic en ninguna web. Esto está cambiando la composición del tráfico orgánico para la mayoría de las empresas, y seguirá haciéndolo.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué es el cero clic y cómo llegamos aquí</h2>
+          <h2 id="que-es-el-cero-clic-y-como-llegamos-aqui" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué es el cero clic y cómo llegamos aquí</h2>
           <p>
             El término "cero clic" describe las búsquedas que Google (u otro motor) resuelve directamente en la página de resultados sin que el usuario visite ninguna web. Existía antes de la IA — los featured snippets ya lo hacían — pero la generación de respuestas por IA lo amplifica de forma radical.
           </p>
@@ -137,7 +142,7 @@ export default function CeroClicPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué significa realmente para tu tráfico web</h2>
+          <h2 id="que-significa-realmente-para-tu-trafico-web" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué significa realmente para tu tráfico web</h2>
           <p>
             El impacto del cero clic no es uniforme. Las búsquedas informacionales — "qué es X", "cómo funciona Y", "diferencia entre A y B" — son las más afectadas. Las búsquedas de fondo de embudo — "comprar X en Madrid", "precio de servicio Y" — mantienen tasas de clic relativamente estables porque el usuario quiere ir a un sitio concreto, no solo una respuesta.
           </p>
@@ -145,7 +150,7 @@ export default function CeroClicPage() {
             Para una empresa de servicios o una PYME, el efecto más visible es la caída del tráfico de blog en artículos puramente informativos. La visita llega menos, aunque la marca haya aparecido en la respuesta de IA. El reto es que la visibilidad ya no se traduce siempre en clics — y la métrica de "posición en Google" deja de ser suficiente.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Estrategias para seguir captando clientes</h2>
+          <h2 id="estrategias-para-seguir-captando-clientes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Estrategias para seguir captando clientes</h2>
           <p>
             La adaptación requiere trabajar en varias dimensiones simultáneamente. La primera es el GEO: optimizar el contenido para que la IA lo cite con frecuencia. Esto implica estructurar el contenido con respuestas claras a preguntas concretas, usar schema markup bien implementado, citar fuentes y datos verificables, y construir autoridad temática en el sector.
           </p>
@@ -158,7 +163,7 @@ export default function CeroClicPage() {
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">El GEO como nueva capa de visibilidad</h2>
+          <h2 id="el-geo-como-nueva-capa-de-visibilidad" className="text-2xl font-bold text-primary-600 scroll-mt-24">El GEO como nueva capa de visibilidad</h2>
           <p>
             Aparecer en la respuesta de ChatGPT cuando alguien pregunta "¿cuál es la mejor agencia de marketing digital en Toledo?" es el equivalente moderno del posicionamiento en la primera página de Google. No siempre genera un clic inmediato — pero construye reconocimiento, credibilidad y, con el tiempo, búsquedas directas de marca.
           </p>
@@ -187,7 +192,7 @@ export default function CeroClicPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre marketing digital y cero clic</h2>
+          <h2 id="preguntas-frecuentes-sobre-marketing-digital-y-c" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre marketing digital y cero clic</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

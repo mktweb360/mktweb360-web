@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Reputation</p>
-        <IntlArticleJsonLd lang={lang} slug="manage-negative-reviews-google" headline={isEn ? "How to manage negative reviews on Google without losing customers" : "Comment gérer les avis négatifs sur Google sans perdre de clients"} image="/og-gestion-resenas-negativas-google.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="manage-negative-reviews-google" headline={isEn ? "How to manage negative reviews on Google without losing customers" : "Comment gérer les avis négatifs sur Google sans perdre de clients"} image="/og-gestion-resenas-negativas-google-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to manage negative reviews on Google without losing customers"
@@ -52,7 +54,30 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Un avis négatif mal géré peut coûter plus de clients que la critique elle-même. Ce guide explique comment répondre, quoi dire et comment transformer une critique en opportunité de montrer son professionnalisme."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-gestion-resenas-negativas-google-v2.jpg"
+          alt={!isEn ? "Propriétaire de restaurant lisant calmement un avis sur son téléphone" : "Restaurant owner calmly reading a review on his phone"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={8} items={[{ id: "why-negative-reviews-matter-more-than-you-think", label: isEn
+            ? "Why negative reviews matter more than you think"
+            : "Pourquoi les avis négatifs comptent plus que vous ne le pensez" }, { id: "how-to-respond-to-a-negative-review-step-by-step", label: isEn
+            ? "How to respond to a negative review step by step"
+            : "Comment répondre à un avis négatif étape par étape" }, { id: "professional-response-templates-for-negative-rev", label: isEn
+            ? "Professional response templates for negative reviews"
+            : "Modèles de réponse professionnelle aux avis négatifs" }, { id: "when-and-how-to-request-removal-of-a-fake-review", label: isEn
+            ? "When and how to request removal of a fake review"
+            : "Quand et comment demander la suppression d'un avis faux" }, { id: "strategy-to-generate-more-positive-reviews", label: isEn
+            ? "Strategy to generate more positive reviews"
+            : "Stratégie pour générer plus d'avis positifs" }]} />
+        </div>
+
+        <h2 id="why-negative-reviews-matter-more-than-you-think" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Why negative reviews matter more than you think"
             : "Pourquoi les avis négatifs comptent plus que vous ne le pensez"}
@@ -68,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Google utilise également les signaux d'avis (quantité, récence, note) comme facteur de classement local. Ignorer les avis — positifs ou négatifs — signale à Google que vous ne gérez pas activement la présence de votre entreprise, ce qui peut affecter votre classement dans les résultats locaux."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="how-to-respond-to-a-negative-review-step-by-step" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "How to respond to a negative review step by step"
             : "Comment répondre à un avis négatif étape par étape"}
@@ -84,7 +109,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Ne débattez jamais publiquement. Même si l'évaluateur a factuellement tort, se disputer en public vous fait paraître pire aux centaines de futurs clients qui liront l'échange. Reconnaissez, adressez, invitez à résoudre en privé. Laissez les futurs clients voir que vous gérez les critiques avec professionnalisme."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="professional-response-templates-for-negative-rev" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Professional response templates for negative reviews"
             : "Modèles de réponse professionnelle aux avis négatifs"}
@@ -100,7 +125,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Adaptez le modèle à la plainte spécifique — une réponse générique est pire qu'aucune réponse. Utilisez le nom de l'évaluateur s'il est visible, référencez le problème spécifique, et terminez toujours par une invitation de contact direct."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="when-and-how-to-request-removal-of-a-fake-review" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "When and how to request removal of a fake review"
             : "Quand et comment demander la suppression d'un avis faux"}
@@ -111,7 +136,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Google vous permet de signaler les avis qui violent leurs politiques : avis de personnes qui n'étaient pas vos clients, avis contenant du spam ou du contenu faux, avis de concurrents, ou avis avec du contenu prohibé (discours de haine, informations personnelles, contenu illégal). Signalez via Google Business Profile Manager {'>'} sélectionnez l'avis {'>'} Signaler comme inapproprié. Le processus d'examen de Google prend 7 à 14 jours et ne résulte pas toujours en suppression."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="strategy-to-generate-more-positive-reviews" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Strategy to generate more positive reviews"
             : "Stratégie pour générer plus d'avis positifs"}

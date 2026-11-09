@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cómo elegir el mejor hosting para tu web",
   description: "Cómo elegir el mejor hosting para tu web: tipos de alojamiento, factores que importan, cómo afecta al SEO y recomendaciones según el tipo de proyecto.",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "Guía para elegir el hosting adecuado según tu tipo de web, presupuesto y necesidades de rendimiento.",
     url: "https://www.mktweb360.com/como-elegir-el-mejor-hosting-para-tu-web/",
     type: "article",
-    images: [{ url: "/og-como-elegir-el-mejor-hosting-para-tu-web.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-como-elegir-el-mejor-hosting-para-tu-web-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/como-elegir-el-mejor-hosting-para-tu-web/",
   mainEntityOfPage: "https://www.mktweb360.com/como-elegir-el-mejor-hosting-para-tu-web/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-como-elegir-el-mejor-hosting-para-tu-web.jpg",
+  image: "https://www.mktweb360.com/og-como-elegir-el-mejor-hosting-para-tu-web-v2.jpg",
 };
 
 export default function MejorHostingPage() {
@@ -56,7 +57,7 @@ export default function MejorHostingPage() {
             El hosting es la base de tu presencia online. Una mala elección puede afectar gravemente a la velocidad de tu web, a tu posicionamiento SEO y a la experiencia de tus usuarios.
           </p>
           <Image
-            src="/og-como-elegir-el-mejor-hosting-para-tu-web.jpg"
+            src="/og-como-elegir-el-mejor-hosting-para-tu-web-v2.jpg"
             alt="Cómo elegir el mejor hosting para tu web: tipos, factores y efecto en el SEO"
             width={1200}
             height={630}
@@ -64,12 +65,16 @@ export default function MejorHostingPage() {
             priority
           />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={4} items={[{"id": "que-es-un-hosting-y-por-que-es-importante", "label": "¿Qué es un hosting y por qué es importante?"}, {"id": "tipos-de-hosting", "label": "Tipos de hosting"}, {"id": "que-factores-mirar-al-elegir-un-hosting", "label": "Qué factores mirar al elegir un hosting"}, {"id": "como-afecta-el-hosting-al-seo", "label": "Cómo afecta el hosting al SEO"}]} />
+        </div>
         <div className="text-gray-700 space-y-6 leading-relaxed">
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué es un hosting y por qué es importante?</h2>
+          <h2 id="que-es-un-hosting-y-por-que-es-importante" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué es un hosting y por qué es importante?</h2>
           <p>El hosting web es el servicio que almacena los archivos de tu web en servidores conectados a internet 24/7. Cuando alguien escribe tu dominio en el navegador, se conecta a ese servidor para cargar tu web. La calidad del hosting determina la velocidad de carga, la disponibilidad y la seguridad de tu sitio.</p>
           <p>Google usa la velocidad de carga como factor de posicionamiento (Core Web Vitals). Un hosting lento perjudica directamente tu SEO, aumenta la tasa de rebote y reduce las conversiones. Por eso la elección del hosting no es un tema menor, y conviene decidirlo a la vez que el <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">diseño de la página web</Link>: no pide lo mismo una web corporativa de diez páginas que una tienda online.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Tipos de hosting</h2>
+          <h2 id="tipos-de-hosting" className="text-2xl font-bold text-primary-600 scroll-mt-24">Tipos de hosting</h2>
           <p>Los precios que verás son orientativos del mercado y cambian según el proveedor y la promoción del momento; sirven para comparar tipos, no proveedores.</p>
 
           <div className="space-y-4">
@@ -115,7 +120,7 @@ export default function MejorHostingPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué factores mirar al elegir un hosting</h2>
+          <h2 id="que-factores-mirar-al-elegir-un-hosting" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué factores mirar al elegir un hosting</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Uptime garantizado:</strong> Busca al menos un 99.9% de disponibilidad. Cada hora de caída cuesta ventas y daña tu SEO.</li>
             <li><strong>Velocidad y localización de servidores:</strong> Para webs dirigidas a España, elige servidores en España o en la Unión Europea.</li>
@@ -135,7 +140,7 @@ export default function MejorHostingPage() {
             secondary={{ text: "¿Ya tienes web? Pide una auditoría gratuita de velocidad y SEO", href: "/auditoria-digital/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo afecta el hosting al SEO</h2>
+          <h2 id="como-afecta-el-hosting-al-seo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo afecta el hosting al SEO</h2>
           <p>Un hosting lento impacta negativamente en el LCP (Largest Contentful Paint), uno de los Core Web Vitals que Google usa como factor de ranking. Además, si tu web cae frecuentemente, los bots de Google pueden tener problemas para indexarla correctamente.</p>
           <p>Para webs WordPress, los plugins de caché (como WP Rocket o LiteSpeed Cache) pueden compensar parte de un hosting lento, pero no pueden sustituir a un buen servidor. Lo ideal es empezar con un buen hosting desde el principio. Si tu web ya está publicada y no sabes si el servidor te está frenando, una <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría gratuita de tu web con datos de velocidad y SEO</Link> te lo dice antes de cambiar de proveedor.</p>
 

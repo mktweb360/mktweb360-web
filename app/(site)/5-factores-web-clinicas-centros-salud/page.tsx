@@ -10,6 +10,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web para clínicas: 5 factores clave en 2026",
   description:
@@ -114,6 +115,10 @@ export default function FactoresWebClinicasPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={9} items={[{"id": "1-publicidad-sanitaria-lo-que-puedes-decir-y-lo", "label": "1. Publicidad sanitaria: lo que puedes decir y lo que no"}, {"id": "2-datos-de-salud-una-categoria-especial-del-rgpd", "label": "2. Datos de salud: una categoría especial del RGPD"}, {"id": "3-reserva-de-cita-online-sin-friccion", "label": "3. Reserva de cita online sin fricción"}, {"id": "4-google-business-profile-integrado-con-la-estra", "label": "4. Google Business Profile integrado con la estrategia web"}, {"id": "5-senales-de-confianza-medica-e-e-a-t", "label": "5. Señales de confianza médica (E-E-A-T)"}, {"id": "tu-web-trabaja-aunque-tu-no-puedas-atender", "label": "Tu web trabaja aunque tú no puedas atender"}, {"id": "preguntas-frecuentes-sobre-la-web-de-una-clinica", "label": "Preguntas frecuentes sobre la web de una clínica"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Una clínica dental, un centro de fisioterapia o una consulta de psicología no pueden tratar su web como la de cualquier negocio. Hay dos capas normativas que condicionan cada decisión de diseño y de contenido: la publicidad sanitaria, regulada por el Real Decreto 1907/1996, y el tratamiento de datos de salud, que el RGPD clasifica como categoría especial con requisitos reforzados. Ignorarlas no solo es un riesgo legal — también es la diferencia entre una web que transmite autoridad médica y una que parece cualquier landing genérica.
@@ -124,12 +129,12 @@ export default function FactoresWebClinicasPage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.clinica} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Publicidad sanitaria: lo que puedes decir y lo que no</h2>
+          <h2 id="1-publicidad-sanitaria-lo-que-puedes-decir-y-lo" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Publicidad sanitaria: lo que puedes decir y lo que no</h2>
           <p>
             El Real Decreto 1907/1996 sobre publicidad y promoción comercial de productos y servicios con finalidad sanitaria aplica a todo soporte publicitario del centro, web incluida. Su artículo 4 prohíbe sugerir efectos preventivos o terapéuticos que no hayan sido demostrados, aportar seguridades de alivio o curación cierta, o invocar autorizaciones sanitarias que no existan realmente. En la práctica, esto significa redactar cada página de servicio en términos descriptivos —qué es el tratamiento, para quién está indicado, cómo se realiza— y evitar el lenguaje de resultado garantizado que es habitual en otros sectores ("elimina el dolor para siempre", "resultados garantizados"). Además, hay que identificar con claridad al profesional responsable de cada servicio anunciado, y en algunas comunidades autónomas la publicidad del centro requiere autorización o comunicación previa a la autoridad sanitaria correspondiente.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. Datos de salud: una categoría especial del RGPD</h2>
+          <h2 id="2-datos-de-salud-una-categoria-especial-del-rgpd" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. Datos de salud: una categoría especial del RGPD</h2>
           <p>
             En cuanto un formulario de contacto o de cita pide el motivo de la consulta, un síntoma o cualquier dato relacionado con la salud del paciente, deja de ser un formulario cualquiera: pasa a tratar una categoría especial de datos según el artículo 9 del RGPD, con requisitos de consentimiento explícito más estrictos que los de un formulario comercial. Esto tiene consecuencias directas de diseño: el formulario debe pedir el consentimiento de forma inequívoca y separada del resto de casillas, el hosting y el envío de datos deben ir cifrados, y la política de privacidad de la web necesita una cláusula específica sobre datos de salud, no la genérica que sirve para una tienda online. Cuantos menos datos clínicos pida el formulario público —limitándose al motivo de contacto general y dejando el detalle para la consulta— menor es el riesgo y la fricción para el paciente.
           </p>
@@ -142,26 +147,26 @@ export default function FactoresWebClinicasPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Reserva de cita online sin fricción</h2>
+          <h2 id="3-reserva-de-cita-online-sin-friccion" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Reserva de cita online sin fricción</h2>
           <p>
             Cada llamada que un paciente tiene que hacer para pedir cita es una oportunidad de que elija a otra clínica en su lugar, especialmente fuera del horario de atención telefónica. Un sistema de reserva online integrado en la propia web —sincronizado con la agenda real del centro, no un formulario que genera un email que alguien revisa al día siguiente— reduce llamadas, reduce huecos sin cubrir y capta a los pacientes que buscan fuera de horario comercial. La clave de diseño es que el botón de "pedir cita" esté visible en todo momento, no escondido al final de una página de servicio.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Google Business Profile integrado con la estrategia web</h2>
+          <h2 id="4-google-business-profile-integrado-con-la-estra" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Google Business Profile integrado con la estrategia web</h2>
           <p>
             Para una clínica, la ficha de Google suele pesar más en la captación local que la propia web: la mayoría de los pacientes elige entre las fichas del Local Pack —el bloque de tres resultados con mapa— antes de llegar a los resultados orgánicos. Eso no hace prescindible la web; la hace complementaria. La web necesita una página propia por cada especialidad (odontología, fisioterapia, psicología, cada una con su propia URL) en lugar de una única página de "servicios" genérica, porque así es como busca realmente el paciente y porque cada página enlaza de vuelta con la categoría correcta en Google Business Profile. Web y ficha de Google deben decir siempre lo mismo: mismo nombre, mismo horario, misma dirección.
           </p>
 
           <OfferBannerWebSeo />
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Señales de confianza médica (E-E-A-T)</h2>
+          <h2 id="5-senales-de-confianza-medica-e-e-a-t" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Señales de confianza médica (E-E-A-T)</h2>
           <p>
             La salud es, para Google, un sector YMYL (Your Money or Your Life): contenidos que pueden afectar al bienestar de una persona. El buscador exige más señales de experiencia, pericia, autoridad y fiabilidad que en un sector convencional, y el paciente exige exactamente lo mismo antes de reservar cita. En la práctica esto se traduce en biografías reales del equipo con titulación y número de colegiación visibles, reseñas de pacientes gestionadas de forma activa, y contenido de blog redactado con criterio médico —nunca copiado de otra web— que responda a dudas reales en lugar de generar volumen sin rigor. Una clínica que muestra quién trata al paciente, con qué formación y qué dicen otros pacientes, convierte más que una que solo enseña instalaciones bonitas.
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque tú no puedas atender</h2>
+              <h2 id="tu-web-trabaja-aunque-tu-no-puedas-atender" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja aunque tú no puedas atender</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras atiendes a un paciente, revisas historiales o cierras la consulta al final del día, tu web sigue abierta. Alguien que busca fisioterapeuta a las 23:00 o un domingo por la mañana encuentra tu ficha, lee tus especialidades, ve las reseñas y pide cita — sin que tú tengas que estar disponible para recibirlo en ese momento. Esa es la diferencia entre una web que solo existe y una que capta pacientes mientras tú trabajas en otra cosa.
               </p>
@@ -196,7 +201,7 @@ export default function FactoresWebClinicasPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de una clínica</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-una-clinica" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de una clínica</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

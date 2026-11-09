@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cómo gestionar la reputación online",
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "La reputación online se construye o destruye en público. Descubre cómo gestionarla con criterio: reseñas, menciones, respuestas y prevención de crisis.",
     url: "https://www.mktweb360.com/como-gestionar-reputacion-online-empresa/",
     type: "article",
-    images: [{ url: "/og-como-gestionar-reputacion-online-empresa.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-como-gestionar-reputacion-online-empresa-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/como-gestionar-reputacion-online-empresa/",
   mainEntityOfPage: "https://www.mktweb360.com/como-gestionar-reputacion-online-empresa/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-como-gestionar-reputacion-online-empresa.jpg",
+  image: "https://www.mktweb360.com/og-como-gestionar-reputacion-online-empresa-v2.jpg",
 };
 
 const FAQS = [
@@ -92,7 +93,7 @@ export default function ReputacionOnlinePage() {
             Antes de contratar, la mayoría de personas busca opiniones sobre el negocio. Lo que encuentran — reseñas, menciones, respuestas — forma la primera impresión que determina si te llaman o se van a la competencia. Gestionar eso no es opcional.
           </p>
           <Image
-            src="/og-como-gestionar-reputacion-online-empresa.jpg"
+            src="/og-como-gestionar-reputacion-online-empresa-v2.jpg"
             alt="Cómo gestionar la reputación online de tu empresa: guía práctica 2026"
             width={1200}
             height={630}
@@ -101,18 +102,22 @@ export default function ReputacionOnlinePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "que-es-la-reputacion-online-y-por-que-importa", "label": "Qué es la reputación online y por qué importa"}, {"id": "las-resenas-el-pilar-mas-visible", "label": "Las reseñas: el pilar más visible"}, {"id": "como-responder-a-las-resenas-negativas", "label": "Cómo responder a las reseñas negativas"}, {"id": "monitorizar-menciones-y-alertas", "label": "Monitorizar menciones y alertas"}, {"id": "la-prevencion-es-mas-barata-que-la-gestion-de-cr", "label": "La prevención es más barata que la gestión de crisis"}, {"id": "preguntas-frecuentes-sobre-reputacion-online", "label": "Preguntas frecuentes sobre reputación online"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             La reputación online ya no es solo para grandes marcas. Cualquier negocio — un fontanero, una clínica, una tienda local — tiene una reputación digital que se construye o destruye en reseñas, redes sociales y foros. La diferencia entre gestionarla activamente o ignorarla puede ser la diferencia entre crecer o perder clientes silenciosamente.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué es la reputación online y por qué importa</h2>
+          <h2 id="que-es-la-reputacion-online-y-por-que-importa" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué es la reputación online y por qué importa</h2>
           <p>La reputación online es la percepción pública que se forma sobre tu empresa a partir de lo que aparece en internet: reseñas de Google, menciones en redes sociales, artículos, opiniones en plataformas sectoriales. Es el equivalente digital del boca a boca — pero permanente, visible para todos y accesible antes de cualquier contacto directo. No gestionarla no significa que no exista — significa que la están construyendo otros sin tu participación.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Las reseñas: el pilar más visible</h2>
+          <h2 id="las-resenas-el-pilar-mas-visible" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las reseñas: el pilar más visible</h2>
           <p>Las reseñas de Google son el activo de reputación más importante para la mayoría de negocios locales. Influyen en el posicionamiento en Google Maps, en el CTR de los resultados y en la decisión de compra. La estrategia de reseñas tiene tres partes: pedir activamente después de cada servicio bien terminado, responder a todas (positivas y negativas) con profesionalidad, y nunca comprar ni fabricar reseñas falsas — Google las detecta y penaliza.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo responder a las reseñas negativas</h2>
+          <h2 id="como-responder-a-las-resenas-negativas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo responder a las reseñas negativas</h2>
           <p>Una reseña negativa bien respondida puede ser más poderosa que diez reseñas positivas sin respuesta. La clave es no ponerse a la defensiva, agradecer el feedback aunque sea injusto, explicar si hubo algún malentendido y ofrecer resolver el problema por un canal privado. El objetivo no es ganar la discusión — es demostrar a quien lee la respuesta que el negocio es profesional y responsable.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -125,10 +130,10 @@ export default function ReputacionOnlinePage() {
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Monitorizar menciones y alertas</h2>
+          <h2 id="monitorizar-menciones-y-alertas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Monitorizar menciones y alertas</h2>
           <p>Saber qué se dice de tu empresa en internet es el primer paso para gestionarlo. Configurar alertas de Google con el nombre del negocio, revisar periódicamente las principales plataformas de reseñas de tu sector y tener un proceso para detectar menciones en redes sociales permite actuar a tiempo en lugar de descubrir problemas cuando ya se han amplificado.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">La prevención es más barata que la gestión de crisis</h2>
+          <h2 id="la-prevencion-es-mas-barata-que-la-gestion-de-cr" className="text-2xl font-bold text-primary-600 scroll-mt-24">La prevención es más barata que la gestión de crisis</h2>
           <p>La mayoría de crisis de reputación online son evitables. Procesos de atención al cliente claros, comunicación proactiva cuando algo sale mal antes de que el cliente lo publique, y una política coherente de resolución de problemas reducen drásticamente la probabilidad de que un incidente se convierta en una crisis pública. La reputación se construye en el día a día — no solo cuando hay un problema.</p>
 
           <p className="text-sm text-gray-500">
@@ -150,7 +155,7 @@ export default function ReputacionOnlinePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre reputación online</h2>
+          <h2 id="preguntas-frecuentes-sobre-reputacion-online" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre reputación online</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

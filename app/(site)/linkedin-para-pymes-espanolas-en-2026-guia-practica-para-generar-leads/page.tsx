@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "LinkedIn para pymes: cómo generar leads",
   description:
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     description: "LinkedIn ha cambiado más en 2026 que en los 5 años anteriores. Nuevo algoritmo, vídeo como formato dominante, Employee Generated Content y social selling. Cómo aprovecharlo si eres una pyme.",
     url: "https://www.mktweb360.com/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-smm.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -30,7 +32,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-smm.jpg",
+  image: "https://www.mktweb360.com/og-linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads-v2.jpg",
   url: "https://www.mktweb360.com/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/",
   mainEntityOfPage: "https://www.mktweb360.com/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/",
   inLanguage: "es-ES",
@@ -86,36 +88,48 @@ export default function LinkedInPymesPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             LinkedIn ha cambiado más en 2026 que en los cinco años anteriores: nuevo algoritmo, vídeo dominante, contenido de empleados y social selling. Bien aprovechado, es hoy uno de los canales más rentables para <Link href="/como-generar-leads-calidad-pyme/" className="text-accent-500 hover:underline">generar leads de calidad</Link> sin depender de la publicidad.
           </p>
+          <Image
+            src="/og-linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads-v2.jpg"
+            alt="Equipo de una pyme sonriendo en la oficina mientras graba un vídeo corto con el móvil en un trípode, con una libreta de contactos en red"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "el-nuevo-linkedin-de-2026-que-ha-cambiado", "label": "El nuevo LinkedIn de 2026: qué ha cambiado"}, {"id": "por-que-el-perfil-personal-gana-a-la-pagina-de-e", "label": "Por qué el perfil personal gana a la página de empresa"}, {"id": "los-formatos-que-funcionan-en-2026-con-datos-rea", "label": "Los formatos que funcionan en 2026 con datos reales"}, {"id": "employee-generated-content-la-tendencia-que-mas", "label": "Employee Generated Content: la tendencia que más oportunidades crea"}, {"id": "social-selling-como-convertir-linkedin-en-fuente", "label": "Social selling: cómo convertir LinkedIn en fuente de clientes"}, {"id": "el-error-que-destruye-la-estrategia-de-linkedin", "label": "El error que destruye la estrategia de LinkedIn de muchas pymes"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Muchas pymes siguen viendo LinkedIn como una simple base de datos de currículums. Es un error caro. En 2026, LinkedIn es la plataforma B2B con mayor crecimiento orgánico y, para negocios que venden a empresas, un canal capaz de generar consultas cualificadas sin invertir un euro en anuncios. La clave está en entender cómo funciona hoy.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El nuevo LinkedIn de 2026: qué ha cambiado</h2>
+          <h2 id="el-nuevo-linkedin-de-2026-que-ha-cambiado" className="text-2xl font-bold text-primary-600 scroll-mt-24">El nuevo LinkedIn de 2026: qué ha cambiado</h2>
           <p>El dato lo resume todo: según Metricool, el número de cuentas activas de empresa en LinkedIn creció un 88% en el último periodo analizado. Cada vez más marcas entienden que aquí está su cliente B2B, y el algoritmo ha evolucionado para premiar el contenido que genera conversación real, no el que solo busca visibilidad.</p>
           <p>Ese algoritmo prioriza ahora los formatos que retienen la atención (vídeo y carruseles) y penaliza el contenido puramente autopromocional. Para una pyme, esto es una buena noticia: no hace falta un gran presupuesto, hace falta contenido relevante y constante. Es la misma lógica que rige el resto de plataformas según los <Link href="/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/" className="text-accent-500 hover:underline">datos de redes sociales para empresas en 2026</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el perfil personal gana a la página de empresa</h2>
+          <h2 id="por-que-el-perfil-personal-gana-a-la-pagina-de-e" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el perfil personal gana a la página de empresa</h2>
           <p>La página de empresa sigue siendo necesaria como escaparate, pero el motor real de alcance en 2026 son los perfiles personales. El contenido publicado por personas genera hasta 8 veces más engagement que el de las páginas corporativas, porque la gente conecta con personas, no con logotipos.</p>
           <p>Para una pyme esto tiene una implicación estratégica clara: hay que activar al fundador, a la persona que lidera el negocio o al equipo comercial como creadores de contenido. No se trata de convertirse en influencer, sino de compartir con criterio lo que ya se sabe del sector. Esa presencia personal es también el mejor complemento a una estrategia de <Link href="/marketing-de-contenidos/" className="text-accent-500 hover:underline">marketing de contenidos</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los formatos que funcionan en 2026 con datos reales</h2>
+          <h2 id="los-formatos-que-funcionan-en-2026-con-datos-rea" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los formatos que funcionan en 2026 con datos reales</h2>
           <p>Los números marcan el camino. Los carruseles generan un 278% más de interacción que las publicaciones de solo texto, lo que los convierte en el formato estrella para explicar procesos, compartir aprendizajes o desglosar un caso paso a paso. El vídeo nativo, por su parte, creció un 30% interanual y el algoritmo lo prioriza de forma activa.</p>
           <p>La buena noticia para una pyme es que no hace falta una gran producción: los vídeos de 60-90 segundos grabados con el móvil, con buena luz y audio claro, funcionan mejor que las piezas corporativas muy producidas. La autenticidad rinde más que la perfección.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Employee Generated Content: la tendencia que más oportunidades crea</h2>
+          <h2 id="employee-generated-content-la-tendencia-que-mas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Employee Generated Content: la tendencia que más oportunidades crea</h2>
           <p>El Employee Generated Content (EGC), o contenido generado por los propios empleados, es una de las mayores oportunidades de 2026. Cuando varias personas del equipo comparten contenido relacionado con la empresa desde sus perfiles, la marca multiplica su alcance sin coste publicitario y con mucha más credibilidad.</p>
           <p>Para una pyme, activar a tres o cuatro personas del equipo como creadores puede tener más impacto que cualquier campaña de pago. La coordinación es sencilla: temas comunes, libertad de estilo y constancia. El resultado es una presencia distribuida y auténtica que ninguna página corporativa puede igualar.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Social selling: cómo convertir LinkedIn en fuente de clientes</h2>
+          <h2 id="social-selling-como-convertir-linkedin-en-fuente" className="text-2xl font-bold text-primary-600 scroll-mt-24">Social selling: cómo convertir LinkedIn en fuente de clientes</h2>
           <p>El social selling consiste en usar LinkedIn para construir relaciones que acaban en oportunidades comerciales, sin recurrir a los mensajes en frío de siempre. Se basa en aportar valor de forma constante para que, cuando el potencial cliente tenga la necesidad, tu negocio sea el primero que le venga a la mente.</p>
           <p>En la práctica: publicar contenido útil, comentar de forma genuina en las publicaciones de tu red y contactar solo cuando hay contexto real. Esta forma de vender encaja de manera natural dentro de una estrategia más amplia de <Link href="/smm-social-media-marketing/" className="text-accent-500 hover:underline">social media marketing</Link> orientada a resultados.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El error que destruye la estrategia de LinkedIn de muchas pymes</h2>
+          <h2 id="el-error-que-destruye-la-estrategia-de-linkedin" className="text-2xl font-bold text-primary-600 scroll-mt-24">El error que destruye la estrategia de LinkedIn de muchas pymes</h2>
           <p>El error más común es la inconsistencia. Muchas pymes empiezan con energía, publican durante dos semanas y lo abandonan al no ver resultados inmediatos. LinkedIn es un canal de construcción a medio plazo: por debajo de 3-5 publicaciones semanales, el algoritmo reduce la distribución y el esfuerzo se diluye.</p>
           <p>El segundo error es convertir el perfil en un catálogo de autobombo. LinkedIn premia a quien enseña, aporta y conversa, no a quien solo se anuncia. La regla es sencilla: aportar valor la mayor parte del tiempo y vender de forma explícita solo de vez en cuando.</p>
 
@@ -134,7 +148,7 @@ export default function LinkedInPymesPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

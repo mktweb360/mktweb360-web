@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 03/11/2026 — versión EN/FR del artículo ES /ai-max-google-ads-que-es-como-controlarlo/.
 // La versión FR vive en ../ai-max-google-ads-definition-controle/ y reutiliza esta página.
 // Fechas de migración comprobadas el 28/10/2026 en la ayuda de Google Ads y en el blog de Google.
@@ -440,35 +441,39 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>{t.answer}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.summaryTitle}</h2>
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={12} items={[{ id: "summary-title", label: t.summaryTitle }, { id: "what-title", label: t.whatTitle }, { id: "compare-title", label: t.compareTitle }, { id: "mig-title", label: t.migTitle }, { id: "checks-title", label: t.checksTitle }, { id: "reports-title", label: t.reportsTitle }, { id: "fit-title", label: t.fitTitle }, { id: "faq-title", label: t.faqTitle }, { id: "sources-title", label: t.sourcesTitle }]} />
+        </div>
+
+          <h2 id="summary-title" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.summaryTitle}</h2>
           <Lista items={t.summary} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.whatTitle}</h2>
+          <h2 id="what-title" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.whatTitle}</h2>
           <p>{t.whatIntro}</p>
           <Lista items={t.features} numerada />
           <p>{t.whatAfter}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.compareTitle}</h2>
+          <h2 id="compare-title" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.compareTitle}</h2>
           <Tabla cabecera={t.compareHead} filas={t.compare} />
           <p>{t.compareAfter(lang)}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.migTitle}</h2>
+          <h2 id="mig-title" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.migTitle}</h2>
           <p>{t.migIntro}</p>
           <Tabla cabecera={t.migHead} filas={t.mig} />
           <p>{t.migAfter}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.checksTitle}</h2>
+          <h2 id="checks-title" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.checksTitle}</h2>
           <p>{t.checksIntro}</p>
           <Lista items={t.checks} numerada />
           <p>{t.checksAfter}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.reportsTitle}</h2>
+          <h2 id="reports-title" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.reportsTitle}</h2>
           <p>{t.reportsIntro}</p>
           <Lista items={t.reports} />
           <p>{t.signalsIntro}</p>
           <Tabla cabecera={t.signalsHead} filas={t.signals} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.fitTitle}</h2>
+          <h2 id="fit-title" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.fitTitle}</h2>
           <p>{t.fitIntro}</p>
           <Tabla cabecera={t.fitHead} filas={t.fit} />
           <p>{t.fitAfter(lang)}</p>
@@ -481,7 +486,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.faqTitle}</h2>
+          <h2 id="faq-title" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.faqTitle}</h2>
           <div className="space-y-3">
             {faqs.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -494,7 +499,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.sourcesTitle}</h2>
+          <h2 id="sources-title" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.sourcesTitle}</h2>
           <p className="text-sm text-gray-500">{t.sourcesNote}</p>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {SOURCES.map((f) => (

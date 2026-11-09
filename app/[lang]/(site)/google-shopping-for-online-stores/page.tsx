@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
-        <IntlArticleJsonLd lang={lang} slug="google-shopping-for-online-stores" headline={isEn ? "Google Shopping for online stores: how to appear in Google product results" : "Google Shopping pour boutiques en ligne : comment apparaître dans les résultats produits Google"} image="/og-google-shopping-tiendas-online.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="google-shopping-for-online-stores" headline={isEn ? "Google Shopping for online stores: how to appear in Google product results" : "Google Shopping pour boutiques en ligne : comment apparaître dans les résultats produits Google"} image="/og-google-shopping-tiendas-online-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Google Shopping for online stores: how to appear in Google product results"
@@ -52,7 +54,30 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Google Shopping affiche vos produits avec image et prix directement dans les résultats de recherche. C'est l'un des canaux avec la plus haute intention d'achat disponibles. Ce guide explique comment le configurer et l'optimiser."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-google-shopping-tiendas-online-v2.jpg"
+          alt={!isEn ? "Téléphone affichant une vitrine de produits et un panier, avec une entrepreneuse emballant des commandes" : "Mobile phone showing a product shop window and cart, with an entrepreneur packing orders"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={8} items={[{ id: "what-google-shopping-is-and-why-it-matters-for-y", label: isEn
+            ? "What Google Shopping is and why it matters for your store"
+            : "Qu'est-ce que Google Shopping et pourquoi c'est important pour votre boutique" }, { id: "how-to-set-up-google-merchant-center", label: isEn
+            ? "How to set up Google Merchant Center"
+            : "Comment configurer Google Merchant Center" }, { id: "how-to-create-and-optimise-your-product-feed", label: isEn
+            ? "How to create and optimise your product feed"
+            : "Comment créer et optimiser votre flux de produits" }, { id: "shopping-campaigns-in-google-ads", label: isEn
+            ? "Shopping campaigns in Google Ads"
+            : "Campagnes Shopping dans Google Ads" }, { id: "free-vs-paid-google-shopping", label: isEn
+            ? "Free vs paid Google Shopping"
+            : "Google Shopping gratuit vs payant" }]} />
+        </div>
+
+        <h2 id="what-google-shopping-is-and-why-it-matters-for-y" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "What Google Shopping is and why it matters for your store"
             : "Qu'est-ce que Google Shopping et pourquoi c'est important pour votre boutique"}
@@ -68,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Pour les boutiques e-commerce, Google Shopping génère généralement un coût par conversion inférieur aux annonces textuelles grâce à cette pré-qualification. Un utilisateur qui clique sait déjà à quoi ressemble le produit et à peu près combien il coûte — la seule question est s'il faut acheter chez vous ou chez un concurrent."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="how-to-set-up-google-merchant-center" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "How to set up Google Merchant Center"
             : "Comment configurer Google Merchant Center"}
@@ -79,7 +104,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Google Merchant Center est la plateforme qui contient votre flux de produits et se connecte à Google Ads. Pour le configurer : créez un compte sur merchants.google.com, vérifiez et réclamez votre domaine de site web, configurez les paramètres d'expédition et de retour pour votre pays, liez votre compte Google Ads. Sans lier Merchant Center à Ads, vous ne pouvez pas lancer de campagnes Shopping payantes."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="how-to-create-and-optimise-your-product-feed" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "How to create and optimise your product feed"
             : "Comment créer et optimiser votre flux de produits"}
@@ -95,7 +120,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Pour WooCommerce, le plugin gratuit Google Listings and Ads synchronise votre catalogue vers Merchant Center automatiquement et maintient le stock et les prix à jour en temps réel. Pour Shopify, l'application Google channel fait de même. Examinez votre flux hebdomadairement pour les produits désapprouvés — Merchant Center signale les erreurs qui bloquent l'affichage des produits."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="shopping-campaigns-in-google-ads" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Shopping campaigns in Google Ads"
             : "Campagnes Shopping dans Google Ads"}
@@ -106,7 +131,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Les campagnes Performance Max sont désormais le format recommandé par Google pour Shopping — elles utilisent l'apprentissage automatique pour afficher vos produits sur Search, Shopping, Display, YouTube et Gmail. Pour plus de contrôle, utilisez des campagnes Shopping Standard où vous pouvez définir des enchères par groupe de produits. Commencez avec le Smart Bidding (ROAS cible) une fois que vous avez au moins 30 conversions en 30 jours ; utilisez le CPC manuel pendant la phase d'apprentissage initiale."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="free-vs-paid-google-shopping" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Free vs paid Google Shopping"
             : "Google Shopping gratuit vs payant"}

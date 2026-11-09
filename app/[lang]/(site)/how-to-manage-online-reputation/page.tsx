@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
@@ -6,6 +7,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -96,7 +98,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "Online Reputation" : "Réputation en ligne"}
         </p>
-        <IntlArticleJsonLd lang={lang} slug="how-to-manage-online-reputation" headline={isEn ? "How to manage your company's online reputation: practical guide 2026" : "Gérer votre réputation en ligne : guide 2026"} image="/og-como-gestionar-reputacion-online-empresa.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="how-to-manage-online-reputation" headline={isEn ? "How to manage your company's online reputation: practical guide 2026" : "Gérer votre réputation en ligne : guide 2026"} image="/og-como-gestionar-reputacion-online-empresa-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to manage your company's online reputation: practical guide 2026"
@@ -109,6 +111,31 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Avant de prendre une décision, la plupart des gens recherchent des avis sur une entreprise. Ce qu'ils trouvent — avis, mentions, réponses — forme la première impression qui détermine s'ils vous appellent ou vont chez un concurrent. Gérer cela n'est pas facultatif."}
         </p>
 
+        <Image
+          src="/og-como-gestionar-reputacion-online-empresa-v2.jpg"
+          alt={!isEn ? "Propriétaire de restaurant consultant sur son téléphone des avis à cinq étoiles, pendant qu’un client satisfait dîne en arrière-plan" : "Restaurant owner looking at five-star reviews on her phone while a satisfied customer eats in the background"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "what-is-online-reputation-and-why-does-it-matter", label: isEn
+              ? "What is online reputation and why does it matter"
+              : "Qu'est-ce que la réputation en ligne et pourquoi est-elle importante" }, { id: "reviews-the-most-visible-pillar", label: isEn
+              ? "Reviews: the most visible pillar"
+              : "Les avis : le pilier le plus visible" }, { id: "how-to-respond-to-negative-reviews", label: isEn
+              ? "How to respond to negative reviews"
+              : "Comment répondre aux avis négatifs" }, { id: "monitoring-mentions-and-alerts", label: isEn
+              ? "Monitoring mentions and alerts"
+              : "Surveiller les mentions et les alertes" }, { id: "prevention-is-cheaper-than-crisis-management", label: isEn
+              ? "Prevention is cheaper than crisis management"
+              : "La prévention coûte moins cher que la gestion de crise" }, { id: "frequently-asked-questions-about-online-reputati", label: isEn
+              ? "Frequently asked questions about online reputation"
+              : "Questions fréquentes sur la réputation en ligne" }]} />
+        </div>
+
         <section className="mb-10">
           <p className="text-gray-600 mb-6 leading-relaxed">
             {isEn
@@ -118,7 +145,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-is-online-reputation-and-why-does-it-matter" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What is online reputation and why does it matter"
               : "Qu'est-ce que la réputation en ligne et pourquoi est-elle importante"}
@@ -131,7 +158,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="reviews-the-most-visible-pillar" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Reviews: the most visible pillar"
               : "Les avis : le pilier le plus visible"}
@@ -144,7 +171,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-respond-to-negative-reviews" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How to respond to negative reviews"
               : "Comment répondre aux avis négatifs"}
@@ -180,7 +207,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="monitoring-mentions-and-alerts" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Monitoring mentions and alerts"
               : "Surveiller les mentions et les alertes"}
@@ -193,7 +220,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="prevention-is-cheaper-than-crisis-management" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Prevention is cheaper than crisis management"
               : "La prévention coûte moins cher que la gestion de crise"}
@@ -233,7 +260,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </div>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions-about-online-reputati" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Frequently asked questions about online reputation"
               : "Questions fréquentes sur la réputation en ligne"}

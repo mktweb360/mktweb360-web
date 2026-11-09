@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -88,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Chatbots" : "Chatbots"}
         </p>
 
-        <IntlArticleJsonLd lang={lang} slug="ai-chatbot-gdpr-eu-ai-act-compliance" headline={isEn ? "AI Chatbot Compliance: GDPR and EU AI Act" : "Chatbot IA et conformité : RGPD et AI Act"} image="/og-chatgpt-para-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="ai-chatbot-gdpr-eu-ai-act-compliance" headline={isEn ? "AI Chatbot Compliance: GDPR and EU AI Act" : "Chatbot IA et conformité : RGPD et AI Act"} image="/og-chatgpt-para-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "AI Chatbot Compliance: GDPR and EU AI Act"
@@ -108,8 +110,33 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "De nombreuses entreprises découvrent que leur chatbot n'est pas conforme seulement après l'avoir mis en production. La bonne nouvelle est qu'il est plus simple de se mettre à jour qu'il n'y paraît si l'on comprend ce qu'exige chaque cadre juridique. Ici, nous séparons ce que dit l'AI Act de ce que dit la réglementation sur la protection des données, et nous traduisons les deux en actions concrètes."}
         </p>
 
+        <Image
+          src="/og-chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana-v2.jpg"
+          alt={!isEn ? "Balance de la justice, cadenas de confidentialité, bouclier bleu et robot de service client sur un comptoir" : "Scale of justice, a privacy padlock, a blue shield and a customer service robot on a counter"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "what-the-eu-ai-act-says-about-chatbots", label: isEn
+              ? "What the EU AI Act says about chatbots"
+              : "Ce que dit l'AI Act européen sur les chatbots" }, { id: "what-gdpr-says-about-chatbots", label: isEn
+              ? "What GDPR says about chatbots"
+              : "Ce que dit le RGPD sur les chatbots" }, { id: "the-four-elements-every-business-chatbot-must-ha", label: isEn
+              ? "The four elements every business chatbot must have from August 2026"
+              : "Les quatre éléments que tout chatbot d'entreprise doit avoir à partir d'août 2026" }, { id: "why-compliance-is-a-competitive-advantage", label: isEn
+              ? "Why compliance is a competitive advantage"
+              : "Pourquoi la conformité est un avantage concurrentiel" }, { id: "compliance-checklist-for-chatbots-in-the-eu", label: isEn
+              ? "Compliance checklist for chatbots in the EU"
+              : "Checklist de conformité pour les chatbots dans l'UE" }, { id: "sectors-with-additional-requirements", label: isEn
+              ? "Sectors with additional requirements"
+              : "Secteurs soumis à des exigences supplémentaires" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-the-eu-ai-act-says-about-chatbots" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What the EU AI Act says about chatbots"
               : "Ce que dit l'AI Act européen sur les chatbots"}
@@ -127,7 +154,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-gdpr-says-about-chatbots" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What GDPR says about chatbots"
               : "Ce que dit le RGPD sur les chatbots"}
@@ -145,7 +172,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-four-elements-every-business-chatbot-must-ha" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The four elements every business chatbot must have from August 2026"
               : "Les quatre éléments que tout chatbot d'entreprise doit avoir à partir d'août 2026"}
@@ -165,7 +192,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="why-compliance-is-a-competitive-advantage" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Why compliance is a competitive advantage"
               : "Pourquoi la conformité est un avantage concurrentiel"}
@@ -183,7 +210,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="compliance-checklist-for-chatbots-in-the-eu" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Compliance checklist for chatbots in the EU"
               : "Checklist de conformité pour les chatbots dans l'UE"}
@@ -201,7 +228,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="sectors-with-additional-requirements" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Sectors with additional requirements"
               : "Secteurs soumis à des exigences supplémentaires"}
@@ -219,7 +246,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

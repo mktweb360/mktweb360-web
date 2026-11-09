@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Diseño Web para Dentistas y Clínicas",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "Diseño web profesional para dentistas y clínicas dentales. Web optimizada para SEO local, Google Maps y captación de nuevos pacientes. Sin comisiones.",
     url: "https://www.mktweb360.com/diseno-web-para-dentistas/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-diseno-web-para-dentistas.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-diseno-web-para-dentistas-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
-  image: "https://www.mktweb360.com/og-diseno-web-para-dentistas.jpg",
+  image: "https://www.mktweb360.com/og-diseno-web-para-dentistas-v2.jpg",
   url: "https://www.mktweb360.com/diseno-web-para-dentistas/",
   mainEntityOfPage: "https://www.mktweb360.com/diseno-web-para-dentistas/",
   inLanguage: "es-ES",
@@ -88,14 +90,26 @@ export default function DisenoWebDentistaPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Cuando alguien necesita un dentista, lo primero que hace es buscar en Google. Si tu clínica no aparece o tiene una web que no genera confianza, ese paciente va a la competencia. Esta guía explica qué necesita la web de una clínica dental para captar pacientes de verdad.
           </p>
+          <Image
+            src="/og-diseno-web-para-dentistas-v2.jpg"
+            alt="Dentista atendiendo a una paciente sonriente en una clínica dental moderna"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "por-que-una-clinica-dental-necesita-una-web-prof", "label": "Por qué una clínica dental necesita una web profesional"}, {"id": "que-debe-tener-la-web-de-una-clinica-dental", "label": "Qué debe tener la web de una clínica dental"}, {"id": "seo-local-para-dentistas", "label": "SEO local para dentistas"}, {"id": "proceso-de-trabajo-de-cero-a-web-en-4-pasos", "label": "Proceso de trabajo: de cero a web en 4 pasos"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El sector dental es uno de los más competidos en búsqueda local. En cualquier ciudad de tamaño medio hay decenas de clínicas compitiendo por los mismos pacientes. La diferencia entre las que llenan agenda y las que dependen del boca a boca ya no es solo la calidad clínica — es la visibilidad digital y la confianza que transmite la presencia online.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué una clínica dental necesita una web profesional</h2>
+          <h2 id="por-que-una-clinica-dental-necesita-una-web-prof" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué una clínica dental necesita una web profesional</h2>
           <p>
             La web de una clínica dental cumple tres funciones simultáneas que no puede cubrir ninguna otra herramienta digital: <strong>generar confianza antes del primer contacto</strong>, <strong>posicionarse en búsquedas locales</strong> y <strong>convertir visitas en citas</strong>.
           </p>
@@ -106,7 +120,7 @@ export default function DisenoWebDentistaPage() {
             Además, Google Business Profile — la ficha que aparece en Google Maps — funciona mucho mejor cuando está respaldada por una web bien estructurada. Las clínicas con web optimizada aparecen más en el llamado "pack local" de tres resultados que Google muestra antes que los resultados orgánicos.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué debe tener la web de una clínica dental</h2>
+          <h2 id="que-debe-tener-la-web-de-una-clinica-dental" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué debe tener la web de una clínica dental</h2>
           <p>Una web para dentistas que realmente capta pacientes debe incluir, como mínimo, los siguientes elementos:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Página de servicios detallada:</strong> ortodoncia, implantes, blanqueamiento, estética dental, endodoncia... cada servicio en su propia página con información real y precios orientativos si es posible.</li>
@@ -117,7 +131,7 @@ export default function DisenoWebDentistaPage() {
             <li><strong>Datos de contacto visibles:</strong> teléfono, dirección con mapa, horario actualizado y WhatsApp si se usa.</li>
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">SEO local para dentistas</h2>
+          <h2 id="seo-local-para-dentistas" className="text-2xl font-bold text-primary-600 scroll-mt-24">SEO local para dentistas</h2>
           <p>
             El SEO local es la estrategia que permite aparecer en Google cuando alguien busca "dentista cerca de mí" o "clínica dental en [tu ciudad]". Tiene dos pilares fundamentales:
           </p>
@@ -136,7 +150,7 @@ export default function DisenoWebDentistaPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Proceso de trabajo: de cero a web en 4 pasos</h2>
+          <h2 id="proceso-de-trabajo-de-cero-a-web-en-4-pasos" className="text-2xl font-bold text-primary-600 scroll-mt-24">Proceso de trabajo: de cero a web en 4 pasos</h2>
           <ul className="list-none space-y-4">
             {[
               { n: "1", t: "Análisis y estrategia", d: "Estudiamos tu zona, tu competencia y las keywords con más volumen local. Definimos la estructura de la web y los servicios a priorizar." },
@@ -169,7 +183,7 @@ export default function DisenoWebDentistaPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

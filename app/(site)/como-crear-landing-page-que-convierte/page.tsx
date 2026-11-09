@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 02/11/2026 — refuerzo del tema 7 de la propuesta de blog del 27/10 (misma URL; publicado el 13/06/2026).
 // Texto para revisión y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 ARTÍCULO — Tema 7 Landing page».
 // Ejemplos de demostración, sin marcas de terceros ni cifras de conversión. Lo de Google Ads, solo lo que dice su ayuda oficial.
@@ -287,15 +288,19 @@ export default function LandingPageQueConviertePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={12} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "que-es-una-landing-page-y-en-que-se-diferencia-d", "label": "¿Qué es una landing page y en qué se diferencia de la página de inicio?"}, {"id": "que-elementos-tiene-una-landing-page-que-convier", "label": "¿Qué elementos tiene una landing page que convierte?"}, {"id": "landing-page-ejemplos-anotados-por-tipo-de-negoc", "label": "Landing page: ejemplos anotados por tipo de negocio"}, {"id": "que-errores-hacen-que-una-landing-page-no-convie", "label": "¿Qué errores hacen que una landing page no convierta?"}, {"id": "mi-landing-no-convierte-diagnostico-en-10-pregun", "label": "Mi landing no convierte: diagnóstico en 10 preguntas"}, {"id": "que-pide-google-ads-a-una-landing-page", "label": "¿Qué pide Google Ads a una landing page?"}, {"id": "con-que-herramienta-se-crea-una-landing-page", "label": "¿Con qué herramienta se crea una landing page?"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Una <strong>landing page</strong> (página de aterrizaje) es una página web pensada para que el visitante haga una sola cosa: pedir presupuesto, reservar, comprar o descargar algo. A diferencia de la página de inicio, no presenta toda la empresa: responde a una búsqueda o a un anuncio concreto y quita todo lo que distrae de esa acción.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <Lista items={resumen} />
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué es una landing page y en qué se diferencia de la página de inicio?</h2>
+          <h2 id="que-es-una-landing-page-y-en-que-se-diferencia-d" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué es una landing page y en qué se diferencia de la página de inicio?</h2>
           <p>
             La página de inicio tiene que servir a todo el mundo: clientes, candidatos, proveedores y gente que solo quiere el teléfono. Una landing page sirve a una sola persona con una sola necesidad. Por eso suele llevar menos enlaces, un mensaje más concreto y un único botón.
           </p>
@@ -304,11 +309,11 @@ export default function LandingPageQueConviertePage() {
             Es la página a la que conviene llevar las <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">campañas de Google Ads</Link>: quien pulsa un anuncio de «reparación de calderas» quiere ver eso, no la portada con todos tus servicios.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué elementos tiene una landing page que convierte?</h2>
+          <h2 id="que-elementos-tiene-una-landing-page-que-convier" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué elementos tiene una landing page que convierte?</h2>
           <p>No hay una plantilla única, pero estos siete elementos aparecen en casi todas las que funcionan:</p>
           <Lista items={elementos} numerada />
 
-          <h2 className="text-2xl font-bold text-primary-600">Landing page: ejemplos anotados por tipo de negocio</h2>
+          <h2 id="landing-page-ejemplos-anotados-por-tipo-de-negoc" className="text-2xl font-bold text-primary-600 scroll-mt-24">Landing page: ejemplos anotados por tipo de negocio</h2>
           <p>
             Son ejemplos de demostración, descritos en lugar de capturados, para que puedas comparar con tu página punto por punto. Cada uno tiene cinco elementos que se comprueban con solo abrir la página en el móvil.
           </p>
@@ -331,7 +336,7 @@ export default function LandingPageQueConviertePage() {
             </p>
           </section>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué errores hacen que una landing page no convierta?</h2>
+          <h2 id="que-errores-hacen-que-una-landing-page-no-convie" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué errores hacen que una landing page no convierta?</h2>
           <Lista items={errores} />
           <p>
             Si estos fallos se repiten en toda la web y no solo en una página, quizá toque algo más que un retoque: repasa las <Link href="/senales-web-necesita-rediseno/" className="text-accent-500 hover:underline">señales de que tu web necesita un rediseño</Link>.
@@ -339,13 +344,13 @@ export default function LandingPageQueConviertePage() {
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Mi landing no convierte: diagnóstico en 10 preguntas</h2>
+          <h2 id="mi-landing-no-convierte-diagnostico-en-10-pregun" className="text-2xl font-bold text-primary-600 scroll-mt-24">Mi landing no convierte: diagnóstico en 10 preguntas</h2>
           <p>Respóndelas con la página abierta en el móvil. Cada «no» es una tarea concreta:</p>
           <Lista items={diagnostico} numerada />
           <p>Para saber por dónde empezar, cruza lo que ves en tus datos con las preguntas:</p>
           <Tabla cabecera={["Síntoma", "Causa probable", "Preguntas que revisar"]} filas={sintomas} />
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué pide Google Ads a una landing page?</h2>
+          <h2 id="que-pide-google-ads-a-una-landing-page" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué pide Google Ads a una landing page?</h2>
           <p>
             Según la ayuda de Google Ads, la <strong>experiencia en la página de destino</strong> es uno de los tres componentes del nivel de calidad y mide la relevancia y utilidad de la página para quien hace clic en el anuncio. Se valora comparándola con los anuncios de otros anunciantes que se mostraron para la misma búsqueda en los últimos 90 días, y su estado puede ser «Por encima de la media», «Media» o «Por debajo de la media».
           </p>
@@ -355,7 +360,7 @@ export default function LandingPageQueConviertePage() {
             El informe «Páginas de destino» de Google Ads muestra, para cada URL, los clics, el CTR y el porcentaje de clics que llegan a páginas optimizadas para móviles. Es el primer sitio que mirar si la experiencia en la página de destino sale «Por debajo de la media».
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Con qué herramienta se crea una landing page?</h2>
+          <h2 id="con-que-herramienta-se-crea-una-landing-page" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Con qué herramienta se crea una landing page?</h2>
           <p>
             Con casi cualquiera. Lo que hace que convierta es el contenido y la velocidad, no la herramienta. Esta tabla no es un ranking, sino cuándo encaja cada opción:
           </p>
@@ -374,7 +379,7 @@ export default function LandingPageQueConviertePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -387,7 +392,7 @@ export default function LandingPageQueConviertePage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

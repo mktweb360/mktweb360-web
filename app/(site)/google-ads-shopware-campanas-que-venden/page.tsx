@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Google Ads para Shopware: campañas que venden",
   description:
@@ -86,15 +87,19 @@ export default function GoogleAdsShopwarePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "el-tracking-de-conversiones-es-el-prerrequisito", "label": "El tracking de conversiones es el prerrequisito"}, {"id": "conectar-shopware-con-google-merchant-center", "label": "Conectar Shopware con Google Merchant Center"}, {"id": "estructura-de-campanas-que-funciona", "label": "Estructura de campañas que funciona"}, {"id": "optimiza-los-titulos-del-feed", "label": "Optimiza los títulos del feed"}, {"id": "roas-no-cpc-la-metrica-correcta", "label": "ROAS, no CPC: la métrica correcta"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>Google Ads puede ser el canal más rentable de una tienda Shopware o un agujero por el que se escapa el presupuesto. La diferencia casi nunca está en las campañas: está en lo que hay debajo. Sin medición fiable y sin un feed de productos bien conectado, ninguna optimización funciona. Este es el orden correcto para que las campañas vendan de verdad.</p>
-          <h2 className="text-2xl font-bold text-primary-600">El tracking de conversiones es el prerrequisito</h2>
+          <h2 id="el-tracking-de-conversiones-es-el-prerrequisito" className="text-2xl font-bold text-primary-600 scroll-mt-24">El tracking de conversiones es el prerrequisito</h2>
           <p>Antes de invertir un euro, la tienda tiene que medir bien. El evento clave es purchase, y debe enviarse con transaction_id (para no duplicar conversiones), value y currency (para calcular el retorno real) e items (para atribuir ventas a productos concretos). Lo habitual es implementarlo mediante Google Tag Manager, disparando el evento en la página de confirmación de pedido con los datos reales de la compra. Sin esto, Google optimiza a ciegas.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Conectar Shopware con Google Merchant Center</h2>
+          <h2 id="conectar-shopware-con-google-merchant-center" className="text-2xl font-bold text-primary-600 scroll-mt-24">Conectar Shopware con Google Merchant Center</h2>
           <p>El feed de productos es el combustible de Shopping y Performance Max. Hay tres formas de conectarlo: el plugin oficial de Shopware para Merchant Center, que sincroniza el catálogo de forma automática; un feed XML generado y subido de forma manual o programada, más laborioso pero con control total; o herramientas de terceros como Channable, que añaden reglas avanzadas de transformación del feed para catálogos complejos. La elección depende del tamaño y la complejidad del catálogo.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Estructura de campañas que funciona</h2>
+          <h2 id="estructura-de-campanas-que-funciona" className="text-2xl font-bold text-primary-600 scroll-mt-24">Estructura de campañas que funciona</h2>
           <p>Una estructura eficaz combina tres piezas. Performance Max para cubrir todo el inventario de Google (Shopping, búsqueda, display, YouTube) con la IA optimizando la inversión. Shopping estándar cuando se quiere más control manual sobre productos o márgenes concretos. Y remarketing dinámico para impactar a quien ya visitó la tienda o abandonó el carrito con los productos exactos que vio. No se trata de elegir una, sino de orquestarlas.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Optimiza los títulos del feed</h2>
+          <h2 id="optimiza-los-titulos-del-feed" className="text-2xl font-bold text-primary-600 scroll-mt-24">Optimiza los títulos del feed</h2>
           <p>En Shopping, el título del producto es lo que más afecta a qué búsquedas activas. Un título optimizado incluye lo que el cliente busca: tipo de producto, marca, modelo, característica clave y, cuando aplica, talla o color. Pasar de un título genérico a uno estructurado por intención de búsqueda puede multiplicar las impresiones cualificadas sin tocar la puja.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -104,7 +109,7 @@ export default function GoogleAdsShopwarePage() {
               Ver marketing para Shopware
             </Link>
           </div>
-          <h2 className="text-2xl font-bold text-primary-600">ROAS, no CPC: la métrica correcta</h2>
+          <h2 id="roas-no-cpc-la-metrica-correcta" className="text-2xl font-bold text-primary-600 scroll-mt-24">ROAS, no CPC: la métrica correcta</h2>
           <p>Optimizar por coste por clic lleva a decisiones equivocadas: un clic barato que no vende es caro, y un clic caro que genera una venta rentable es una ganga. La métrica que importa en ecommerce es el ROAS (retorno de la inversión publicitaria): cuántos euros de venta genera cada euro invertido. Toda la estructura —medición, feed y campañas— existe para poder optimizar por ROAS con datos fiables.</p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
@@ -122,7 +127,7 @@ export default function GoogleAdsShopwarePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

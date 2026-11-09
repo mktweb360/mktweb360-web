@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -32,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Digitalisation CLM" : "Digitalisation CLM" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Strategy</p>
-        <IntlArticleJsonLd lang={lang} slug="digitalization-castilla-la-mancha" headline={isEn ? "How to digitalise your business in Castilla-La Mancha in 2025" : "Comment digitaliser votre entreprise en Castille-La Manche en 2025"} image="/og-digitalizacion-empresas-castilla-la-mancha.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="digitalization-castilla-la-mancha" headline={isEn ? "How to digitalise your business in Castilla-La Mancha in 2025" : "Comment digitaliser votre entreprise en Castille-La Manche en 2025"} image="/og-digitalizacion-empresas-castilla-la-mancha-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to digitalise your business in Castilla-La Mancha in 2025" : "Comment digitaliser votre entreprise en Castille-La Manche en 2025"}
         </h1>
@@ -41,8 +43,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Businesses in Castilla-La Mancha face a digital opportunity: lower competition online than in major cities, with the same customers searching Google every day. This guide explains how to capitalise on it." : "Les entreprises de Castille-La Manche font face à une opportunité digitale : moins de concurrence en ligne que dans les grandes villes, avec les mêmes clients cherchant sur Google chaque jour. Ce guide explique comment en profiter."}
         </p>
 
+        <Image
+          src="/og-digitalizacion-empresas-castilla-la-mancha-v2.jpg"
+          alt={!isEn ? "Artisan de La Manche utilisant une tablette pour vendre en ligne ses fromages et sa poterie, avec des moulins à vent en arrière-plan" : "La Mancha craftsman using a tablet to sell cheeses and pottery online, with windmills in the background"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "the-state-of-digitalisation-in-castilla-la-manch", label: isEn ? "The state of digitalisation in Castilla-La Mancha" : "L'état de la digitalisation en Castille-La Manche" }, { id: "where-to-start-the-pillars-of-digital-transforma", label: isEn ? "Where to start: the pillars of digital transformation" : "Par où commencer : les piliers de la transformation digitale" }, { id: "essential-digital-tools-for-smes", label: isEn ? "Essential digital tools for SMEs" : "Outils digitaux essentiels pour les PME" }, { id: "kit-digital-available-aids-for-businesses-in-the", label: isEn ? "Kit Digital: available aids for businesses in the region" : "Kit Digital : aides disponibles pour les entreprises de la région" }, { id: "how-to-choose-a-digitalisation-partner-in-your-a", label: isEn ? "How to choose a digitalisation partner in your area" : "Comment choisir un partenaire de digitalisation dans votre région" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-state-of-digitalisation-in-castilla-la-manch" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "The state of digitalisation in Castilla-La Mancha" : "L'état de la digitalisation en Castille-La Manche"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="where-to-start-the-pillars-of-digital-transforma" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Where to start: the pillars of digital transformation" : "Par où commencer : les piliers de la transformation digitale"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="essential-digital-tools-for-smes" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Essential digital tools for SMEs" : "Outils digitaux essentiels pour les PME"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -78,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="kit-digital-available-aids-for-businesses-in-the" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Kit Digital: available aids for businesses in the region" : "Kit Digital : aides disponibles pour les entreprises de la région"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -90,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-choose-a-digitalisation-partner-in-your-a" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to choose a digitalisation partner in your area" : "Comment choisir un partenaire de digitalisation dans votre région"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

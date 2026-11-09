@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">AI · Strategy</p>
-        <IntlArticleJsonLd lang={lang} slug="chatgpt-for-digital-marketing" headline={isEn ? "How to use ChatGPT for digital marketing without losing quality" : "Comment utiliser ChatGPT pour le marketing digital sans perdre en qualité"} image="/og-chatgpt-para-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="chatgpt-for-digital-marketing" headline={isEn ? "How to use ChatGPT for digital marketing without losing quality" : "Comment utiliser ChatGPT pour le marketing digital sans perdre en qualité"} image="/og-chatgpt-para-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to use ChatGPT for digital marketing without losing quality"
@@ -52,7 +54,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "ChatGPT peut accélérer de nombreuses tâches de marketing digital. Mais l'utiliser mal produit du contenu générique qui ne se positionne pas et ne convertit pas. Ce guide vous montre la bonne façon de l'utiliser."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-chatgpt-para-marketing-digital-v2.jpg"
+          alt={!isEn ? "Propriétaire d’une boutique de vêtements vérifiant avec un assistant IA en forme de robot les brouillons de publications pour les réseaux sociaux" : "Clothing store owner reviewing social media post drafts with a robot-shaped AI assistant"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "what-chatgpt-can-and-cannot-do-for-your-marketin", label: isEn ? "What ChatGPT can and cannot do for your marketing" : "Ce que ChatGPT peut et ne peut pas faire pour votre marketing" }, { id: "chatgpt-for-seo-content-prompts-that-work", label: isEn ? "ChatGPT for SEO content: prompts that work" : "ChatGPT pour le contenu SEO : des prompts qui fonctionnent" }, { id: "chatgpt-for-google-ads-copy-and-extensions", label: isEn ? "ChatGPT for Google Ads: copy and extensions" : "ChatGPT pour Google Ads : textes et extensions" }, { id: "chatgpt-for-social-media-calendars-and-copy", label: isEn ? "ChatGPT for social media: calendars and copy" : "ChatGPT pour les réseaux sociaux : calendriers et textes" }, { id: "the-limits-of-ai-in-marketing-when-you-need-a-pr", label: isEn ? "The limits of AI in marketing: when you need a professional" : "Les limites de l'IA en marketing : quand vous avez besoin d'un professionnel" }]} />
+        </div>
+
+        <h2 id="what-chatgpt-can-and-cannot-do-for-your-marketin" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "What ChatGPT can and cannot do for your marketing" : "Ce que ChatGPT peut et ne peut pas faire pour votre marketing"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Ce qu'il ne peut pas faire de manière fiable : rechercher des événements actuels ou des données sur les concurrents (ses connaissances ont une date limite), vérifier des faits, remplacer la réflexion stratégique, comprendre votre voix de marque spécifique sans des instructions détaillées, ou produire du contenu qui se classe seul sans édition humaine et expertise superposées."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="chatgpt-for-seo-content-prompts-that-work" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "ChatGPT for SEO content: prompts that work" : "ChatGPT pour le contenu SEO : des prompts qui fonctionnent"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -80,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Modifiez toujours le résultat : ajoutez vos propres exemples, statistiques et expertise. Supprimez les phrases génériques. L'article doit passer le test 'est-ce que seul moi pourrais écrire cela ?' Le contenu que n'importe quelle marque pourrait publier ne vaut rien en SEO."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="chatgpt-for-google-ads-copy-and-extensions" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "ChatGPT for Google Ads: copy and extensions" : "ChatGPT pour Google Ads : textes et extensions"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -94,7 +109,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "C'est également utile pour le texte des extensions : descriptions de liens annexes, extensions d'accroche et extraits de site. Donnez-lui vos USP et votre audience cible et demandez un texte d'extension concis. Cela fait gagner beaucoup de temps lors de la configuration des campagnes."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="chatgpt-for-social-media-calendars-and-copy" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "ChatGPT for social media: calendars and copy" : "ChatGPT pour les réseaux sociaux : calendriers et textes"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -103,7 +118,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Utilisez ChatGPT pour créer un calendrier de contenu mensuel en quelques minutes : donnez-lui votre marque, audience, 3 piliers de contenu et demandez 20 idées de posts avec légendes. Affinez ensuite ceux qui correspondent à votre voix de marque. C'est là que l'IA fait vraiment gagner des heures — pas en remplaçant la créativité mais en vous donnant un point de départ auquel réagir."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="the-limits-of-ai-in-marketing-when-you-need-a-pr" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "The limits of AI in marketing: when you need a professional" : "Les limites de l'IA en marketing : quand vous avez besoin d'un professionnel"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">

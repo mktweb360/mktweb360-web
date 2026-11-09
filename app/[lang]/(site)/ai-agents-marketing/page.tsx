@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -90,7 +92,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "AI · Digital Marketing" : "IA · Marketing Digital"}
         </p>
 
-        <IntlArticleJsonLd lang={lang} slug="ai-agents-marketing" headline={isEn ? "AI Agents for Marketing in 2026: What They Are, What They Can Do and How to Start" : "Agents IA pour le marketing en 2026 : ce qu'ils sont, ce qu'ils peuvent faire et comment commencer"} image="/og-chatgpt-para-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="ai-agents-marketing" headline={isEn ? "AI Agents for Marketing in 2026: What They Are, What They Can Do and How to Start" : "Agents IA pour le marketing en 2026 : ce qu'ils sont, ce qu'ils peuvent faire et comment commencer"} image="/og-chatgpt-para-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "AI Agents for Marketing in 2026: What They Are, What They Can Do and How to Start"
@@ -110,7 +112,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Pendant des années, l'automatisation du marketing consistait à programmer quelques emails et peu d'autre chose. Ça a changé. Un agent IA ne se limite pas à suivre des règles fixes : il reçoit un objectif, décide des étapes et les exécute. Pour une PME sans grande équipe, cela signifie pouvoir déléguer des tâches qui nécessitaient auparavant des heures de travail manuel."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <Image
+          src="/og-agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio-v2.jpg"
+          alt={!isEn ? "Bureau de petite entreprise où de minuscules robots assistants envoient des e-mails, planifient un calendrier et analysent des graphiques, pendant que le patron supervise, un café à la main" : "Small business office where tiny assistant robots send emails, schedule a calendar and review charts while the owner supervises with a coffee"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "what-ai-agents-are-and-how-they-differ-from-chat", label: isEn ? "What AI agents are and how they differ from ChatGPT" : "Ce que sont les agents IA et en quoi ils diffèrent de ChatGPT" }, { id: "what-marketing-tasks-an-ai-agent-can-do-today", label: isEn ? "What marketing tasks an AI agent can do today" : "Quelles tâches marketing un agent IA peut faire aujourd'hui" }, { id: "accessible-tools-for-smes-without-a-technical-te", label: isEn ? "Accessible tools for SMEs without a technical team" : "Outils accessibles pour les PME sans équipe technique" }, { id: "how-to-implement-your-first-ai-agent", label: isEn ? "How to implement your first AI agent" : "Comment implémenter votre premier agent IA" }, { id: "the-risks-nobody-mentions-about-ai-agents", label: isEn ? "The risks nobody mentions about AI agents" : "Les risques que personne ne mentionne sur les agents IA" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
+        <h2 id="what-ai-agents-are-and-how-they-differ-from-chat" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "What AI agents are and how they differ from ChatGPT" : "Ce que sont les agents IA et en quoi ils diffèrent de ChatGPT"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -124,7 +139,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La différence clé est l'autonomie. Alors qu'un chatbot attend votre prochaine question, un agent enchaîne des actions pour atteindre un objectif. C'est pourquoi le marché évolue si vite : Gartner estime que 40 % des logiciels d'entreprise auront des agents IA intégrés en 2026, et IBM indique que 75 % des dirigeants prévoient d'investir dans l'IA agentique."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="what-marketing-tasks-an-ai-agent-can-do-today" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "What marketing tasks an AI agent can do today" : "Quelles tâches marketing un agent IA peut faire aujourd'hui"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -138,7 +153,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le nuance importante est que tout cela fonctionne mieux avec une supervision humaine sur les décisions qui comptent. L'agent économise le travail répétitif ; vous maintenez le jugement sur ce qui est publié et envoyé. Bien planifié, cela s'intègre naturellement à votre stratégie globale de positionnement IA."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="accessible-tools-for-smes-without-a-technical-te" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Accessible tools for SMEs without a technical team" : "Outils accessibles pour les PME sans équipe technique"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -154,7 +169,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <BlogBanner lang={lang} />
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="how-to-implement-your-first-ai-agent" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "How to implement your first AI agent" : "Comment implémenter votre premier agent IA"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -168,7 +183,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Une fois que ce premier agent fonctionne et que vous lui faites confiance, passez à la tâche suivante. Cette approche progressive évite l'erreur courante d'essayer de tout automatiser d'un coup."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="the-risks-nobody-mentions-about-ai-agents" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "The risks nobody mentions about AI agents" : "Les risques que personne ne mentionne sur les agents IA"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -207,7 +222,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions" : "Questions fréquentes"}
         </h2>
         <div className="space-y-3 mb-8">

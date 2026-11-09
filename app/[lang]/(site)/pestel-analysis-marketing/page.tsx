@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -41,8 +43,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "PESTEL analysis helps you understand the external factors that affect your business and your digital marketing strategy. This guide explains how to use it practically." : "L'analyse PESTEL vous aide à comprendre les facteurs externes qui affectent votre entreprise et votre stratégie de marketing digital. Ce guide explique comment l'utiliser de manière pratique."}
         </p>
 
+        <Image
+          src="/og-descubre-el-analisis-pestel-en-el-marketing-digital-v2.jpg"
+          alt={!isEn ? "Entrepreneur à la barre d’un voilier au lever du soleil, entouré d’un phare, de pièces, de gens sur la rive, d’une tour technologique, d’un arbre et d’une balance de la justice" : "Entrepreneur at the helm of a sailboat at dawn, surrounded by a lighthouse, coins, people on the shore, a tech tower, a tree and a scale of justice"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "what-pestel-analysis-is-and-its-6-factors", label: isEn ? "What PESTEL analysis is and its 6 factors" : "Qu'est-ce que l'analyse PESTEL et ses 6 facteurs" }, { id: "how-to-apply-pestel-to-your-digital-marketing", label: isEn ? "How to apply PESTEL to your digital marketing" : "Comment appliquer le PESTEL à votre marketing digital" }, { id: "political-and-economic-factors-affecting-digital", label: isEn ? "Political and economic factors affecting digital marketing" : "Facteurs politiques et économiques affectant le marketing digital" }, { id: "social-technological-and-environmental-factors", label: isEn ? "Social, technological and environmental factors" : "Facteurs sociaux, technologiques et environnementaux" }, { id: "pestel-vs-swot-when-to-use-each", label: isEn ? "PESTEL vs SWOT: when to use each" : "PESTEL vs SWOT : quand utiliser chacun" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-pestel-analysis-is-and-its-6-factors" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "What PESTEL analysis is and its 6 factors" : "Qu'est-ce que l'analyse PESTEL et ses 6 facteurs"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-apply-pestel-to-your-digital-marketing" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to apply PESTEL to your digital marketing" : "Comment appliquer le PESTEL à votre marketing digital"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -73,7 +88,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="political-and-economic-factors-affecting-digital" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Political and economic factors affecting digital marketing" : "Facteurs politiques et économiques affectant le marketing digital"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -85,7 +100,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="social-technological-and-environmental-factors" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Social, technological and environmental factors" : "Facteurs sociaux, technologiques et environnementaux"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -104,7 +119,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="pestel-vs-swot-when-to-use-each" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "PESTEL vs SWOT: when to use each" : "PESTEL vs SWOT : quand utiliser chacun"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

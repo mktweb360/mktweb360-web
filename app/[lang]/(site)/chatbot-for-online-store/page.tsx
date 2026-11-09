@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -88,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "E-commerce" : "E-commerce"}
         </p>
 
-        <IntlArticleJsonLd lang={lang} slug="chatbot-for-online-store" headline={isEn ? "Chatbot for Online Stores: Sell More in 2026" : "Chatbot pour boutique en ligne : vendre plus"} image="/og-diseno-web-tienda-online.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="chatbot-for-online-store" headline={isEn ? "Chatbot for Online Stores: Sell More in 2026" : "Chatbot pour boutique en ligne : vendre plus"} image="/og-diseno-web-tienda-online-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Chatbot for Online Stores: Sell More in 2026"
@@ -108,8 +110,33 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "L'e-commerce continue de croître rapidement à travers l'Europe. Dans ce contexte, le service client n'est plus un extra — c'est une partie de l'entonnoir de vente. Un chatbot bien conçu ne se contente pas de répondre aux questions ; il pousse des conversions qui autrement seraient perdues."}
         </p>
 
+        <Image
+          src="/og-chatbot-para-tienda-online-guia-completa-2026-v2.jpg"
+          alt={!isEn ? "Chariot d’achat et colis, avec un robot assistant qui discute avec un client, une horloge et un panier abandonné qui revient" : "Shopping cart and package with a robot assistant chatting with a customer, a clock, and an abandoned cart coming back"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "what-a-chatbot-can-do-in-an-online-store", label: isEn
+              ? "What a chatbot can do in an online store"
+              : "Ce qu'un chatbot peut faire dans une boutique en ligne" }, { id: "why-the-generic-chatbot-fails-in-e-commerce", label: isEn
+              ? "Why the generic chatbot fails in e-commerce"
+              : "Pourquoi le chatbot générique échoue dans l'e-commerce" }, { id: "integration-with-the-main-e-commerce-platforms", label: isEn
+              ? "Integration with the main e-commerce platforms"
+              : "Intégration avec les principales plateformes e-commerce" }, { id: "real-data-on-the-impact-in-e-commerce", label: isEn
+              ? "Real data on the impact in e-commerce"
+              : "Données réelles sur l'impact dans l'e-commerce" }, { id: "gdpr-compliance-for-the-e-commerce-chatbot", label: isEn
+              ? "GDPR compliance for the e-commerce chatbot"
+              : "Conformité RGPD pour le chatbot e-commerce" }, { id: "how-much-does-it-cost-to-implement-a-chatbot-in", label: isEn
+              ? "How much does it cost to implement a chatbot in an online store"
+              : "Combien coûte l'implémentation d'un chatbot dans une boutique en ligne" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-a-chatbot-can-do-in-an-online-store" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What a chatbot can do in an online store"
               : "Ce qu'un chatbot peut faire dans une boutique en ligne"}
@@ -127,7 +154,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="why-the-generic-chatbot-fails-in-e-commerce" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Why the generic chatbot fails in e-commerce"
               : "Pourquoi le chatbot générique échoue dans l'e-commerce"}
@@ -145,7 +172,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="integration-with-the-main-e-commerce-platforms" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Integration with the main e-commerce platforms"
               : "Intégration avec les principales plateformes e-commerce"}
@@ -165,7 +192,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="real-data-on-the-impact-in-e-commerce" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Real data on the impact in e-commerce"
               : "Données réelles sur l'impact dans l'e-commerce"}
@@ -183,7 +210,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="gdpr-compliance-for-the-e-commerce-chatbot" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "GDPR compliance for the e-commerce chatbot"
               : "Conformité RGPD pour le chatbot e-commerce"}
@@ -201,7 +228,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-much-does-it-cost-to-implement-a-chatbot-in" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How much does it cost to implement a chatbot in an online store"
               : "Combien coûte l'implémentation d'un chatbot dans une boutique en ligne"}
@@ -219,7 +246,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

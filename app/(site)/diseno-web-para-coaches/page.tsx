@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { OfferBannerWebSeo } from "@/components/offers/OfferBannerWebSeo";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Diseño Web para Coaches",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "Diseño web profesional para coaches, consultores y formadores. Web que transmite autoridad, capta leads y convierte visitas en clientes. Sin comisiones.",
     url: "https://www.mktweb360.com/diseno-web-para-coaches/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-diseno-web-para-coaches.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-diseno-web-para-coaches-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
-  image: "https://www.mktweb360.com/og-diseno-web-para-coaches.jpg",
+  image: "https://www.mktweb360.com/og-diseno-web-para-coaches-v2.jpg",
   url: "https://www.mktweb360.com/diseno-web-para-coaches/",
   mainEntityOfPage: "https://www.mktweb360.com/diseno-web-para-coaches/",
   inLanguage: "es-ES",
@@ -88,14 +90,26 @@ export default function DisenoWebCoachesPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Para un coach o consultor, la web no es solo un escaparate — es la herramienta principal de construcción de autoridad y captación de clientes. Una web bien diseñada trabaja mientras tú duermes, atrayendo a las personas correctas y filtrando a las que no son tu cliente ideal.
           </p>
+          <Image
+            src="/og-diseno-web-para-coaches-v2.jpg"
+            alt="Coach conversando con una clienta en un consultorio acogedor"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "por-que-la-marca-personal-es-el-centro-de-todo", "label": "Por qué la marca personal es el centro de todo"}, {"id": "que-debe-tener-la-web-de-un-coach-o-consultor", "label": "Qué debe tener la web de un coach o consultor"}, {"id": "seo-para-coaches-como-te-encuentran-tus-clientes", "label": "SEO para coaches: cómo te encuentran tus clientes ideales"}, {"id": "proceso-de-trabajo-de-cero-a-web-en-4-pasos", "label": "Proceso de trabajo: de cero a web en 4 pasos"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El coaching y la consultoría son servicios donde la confianza lo es todo. Antes de contratar a un coach, un potencial cliente va a investigar quién eres, qué resultados has conseguido con otros clientes, qué metodología usas y si tu forma de comunicarte conecta con él. Todo eso sucede en tu web, mucho antes de la primera conversación.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué la marca personal es el centro de todo</h2>
+          <h2 id="por-que-la-marca-personal-es-el-centro-de-todo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué la marca personal es el centro de todo</h2>
           <p>
             A diferencia de otras empresas donde el producto o el precio son los protagonistas, en el coaching el protagonista eres tú. Tu historia, tu experiencia, tu metodología y los resultados que has conseguido con tus clientes son los argumentos de venta más potentes que tienes. La web tiene que reflejar todo eso de forma auténtica y coherente.
           </p>
@@ -106,7 +120,7 @@ export default function DisenoWebCoachesPage() {
             El diseño debe acompañar esa autenticidad: colores, tipografía, fotografías y tono de comunicación alineados con tu personalidad y con el tipo de cliente al que te diriges. Un coach de liderazgo empresarial necesita una web muy distinta a la de una coach de bienestar o un consultor financiero.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué debe tener la web de un coach o consultor</h2>
+          <h2 id="que-debe-tener-la-web-de-un-coach-o-consultor" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué debe tener la web de un coach o consultor</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Página "Sobre mí" potente:</strong> no es una bio cronológica — es tu historia de transformación y los motivos por los que haces lo que haces. Es la página más visitada después de la home en las webs de coaches.</li>
             <li><strong>Servicios con claridad total:</strong> qué incluye cada programa, a quién va dirigido, qué resultados puede esperar el cliente y cómo es el proceso. Sin vaguedades ni jerga que no entienda tu cliente ideal.</li>
@@ -116,7 +130,7 @@ export default function DisenoWebCoachesPage() {
             <li><strong>Llamada a la acción clara:</strong> reserva de sesión de descubrimiento, formulario de contacto o acceso al programa. Cada página debe tener un solo objetivo claro.</li>
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">SEO para coaches: cómo te encuentran tus clientes ideales</h2>
+          <h2 id="seo-para-coaches-como-te-encuentran-tus-clientes" className="text-2xl font-bold text-primary-600 scroll-mt-24">SEO para coaches: cómo te encuentran tus clientes ideales</h2>
           <p>
             La mayoría de coaches subestiman el SEO porque creen que sus clientes llegan por redes sociales o referidos. Y es cierto que esos canales funcionan — pero no escalan. Una vez que tu web posiciona en Google para las búsquedas de tu nicho, atrae tráfico cualificado de forma continua y completamente gratuita.
           </p>
@@ -135,7 +149,7 @@ export default function DisenoWebCoachesPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Proceso de trabajo: de cero a web en 4 pasos</h2>
+          <h2 id="proceso-de-trabajo-de-cero-a-web-en-4-pasos" className="text-2xl font-bold text-primary-600 scroll-mt-24">Proceso de trabajo: de cero a web en 4 pasos</h2>
           <ul className="list-none space-y-4">
             {[
               { n: "1", t: "Estrategia de marca y posicionamiento", d: "Definimos juntos tu propuesta de valor, tu cliente ideal, tu diferenciación y los mensajes clave que van a aparecer en la web. Sin esto, el diseño no tiene base." },
@@ -168,7 +182,7 @@ export default function DisenoWebCoachesPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
-        <IntlArticleJsonLd lang={lang} slug="migrate-online-store-without-losing-data" headline={isEn ? "How to migrate your online store without losing products, customers or SEO rankings" : "Comment migrer votre boutique en ligne sans perdre produits, clients ni positionnement SEO"} image="/og-migrar-tienda-online-sin-perder-datos.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="migrate-online-store-without-losing-data" headline={isEn ? "How to migrate your online store without losing products, customers or SEO rankings" : "Comment migrer votre boutique en ligne sans perdre produits, clients ni positionnement SEO"} image="/og-migrar-tienda-online-sin-perder-datos-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to migrate your online store without losing products, customers or SEO rankings"
@@ -52,7 +54,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Changer de plateforme e-commerce fait peur — et à juste titre. Une migration mal faite peut vous coûter des années de positionnement SEO et des mois de données clients. Ce guide vous montre exactement comment éviter les erreurs les plus courantes et les plus coûteuses."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-migrar-tienda-online-sin-perder-datos-v2.jpg"
+          alt={!isEn ? "Propriétaire d’une boutique de décoration emballant des objets dans des cartons de déménagement à côté de classeurs" : "Homeware shop owner packing items into moving boxes next to filing cabinets"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-online-store-migrations-fail", label: isEn ? "Why online store migrations fail" : "Pourquoi les migrations de boutiques en ligne échouent" }, { id: "what-needs-to-be-migrated-complete-checklist", label: isEn ? "What needs to be migrated: complete checklist" : "Ce qu'il faut migrer : checklist complète" }, { id: "how-to-preserve-seo-during-a-migration", label: isEn ? "How to preserve SEO during a migration" : "Comment préserver le SEO pendant une migration" }, { id: "migrating-from-shopify-to-woocommerce-step-by-st", label: isEn ? "Migrating from Shopify to WooCommerce step by step" : "Migrer de Shopify vers WooCommerce étape par étape" }, { id: "why-it-pays-to-outsource-the-migration", label: isEn ? "Why it pays to outsource the migration" : "Pourquoi il vaut mieux externaliser la migration" }]} />
+        </div>
+
+        <h2 id="why-online-store-migrations-fail" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Why online store migrations fail" : "Pourquoi les migrations de boutiques en ligne échouent"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -61,7 +76,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Les échecs les plus courants : (1) Pas de redirections 301 — les URLs changent et Google traite chaque nouvelle URL comme une page complètement nouvelle avec zéro autorité. (2) Images non migrées — les produits s'affichent sans images après le lancement. (3) Mots de passe clients perdus — les clients ne peuvent pas se connecter et abandonnent. (4) Historique de commandes manquant — le service client ne peut pas consulter les commandes passées. (5) Checkout non testé — les intégrations de paiement échouent silencieusement en production."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="what-needs-to-be-migrated-complete-checklist" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "What needs to be migrated: complete checklist" : "Ce qu'il faut migrer : checklist complète"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -70,7 +85,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Données à migrer : produits (toutes les variantes, prix, niveaux de stock, images, descriptions, SKUs), catégories et attributs, clients (coordonnées, adresses, historique de commandes), commandes historiques, codes de réduction, pages et contenu de blog, avis et évaluations. Configuration à recréer : zones et règles d'expédition, taux de TVA, passerelles de paiement, modèles d'e-mail, flux de paiement."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="how-to-preserve-seo-during-a-migration" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "How to preserve SEO during a migration" : "Comment préserver le SEO pendant une migration"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -79,7 +94,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Étape 1 : Avant la migration, crawlez toutes les URLs avec Screaming Frog et exportez-les avec leurs données de classement depuis Google Search Console. Étape 2 : Conservez la même structure d'URL dans la mesure du possible. Étape 3 : Pour chaque URL qui change, créez une redirection 301. Étape 4 : Soumettez le nouveau sitemap à Google Search Console immédiatement après le lancement. Étape 5 : Surveillez les erreurs 404 hebdomadairement pendant les 60 premiers jours."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="migrating-from-shopify-to-woocommerce-step-by-st" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Migrating from Shopify to WooCommerce step by step" : "Migrer de Shopify vers WooCommerce étape par étape"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -88,7 +103,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "1. Installez WooCommerce sur un domaine de staging. 2. Exportez les données Shopify (produits, clients, commandes). 3. Importez avec Cart2Cart ou LitExtension. 4. Vérifiez toutes les données — contrôlez 20% des produits, un échantillon de clients et de commandes. 5. Configurez les redirections 301. 6. Testez le checkout de bout en bout avec un vrai achat. 7. Mettez à jour le DNS pour pointer vers le nouveau serveur. 8. Surveillez pendant 48 heures post-lancement."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="why-it-pays-to-outsource-the-migration" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Why it pays to outsource the migration" : "Pourquoi il vaut mieux externaliser la migration"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">

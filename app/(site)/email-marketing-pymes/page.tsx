@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -8,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Email marketing para pymes: primeros pasos",
   description: "Guía de email marketing para PYMEs. Cómo empezar, qué herramientas usar, cómo construir tu lista y diseñar campañas que convierten. Resultados reales.",
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
     title: "Email Marketing para PYMEs — Primeros Pasos y Estrategia | Mkt Web 360",
     description: "Guía de email marketing para PYMEs. Cómo empezar, qué herramientas usar, cómo construir tu lista y diseñar campañas que convierten. Resultados reales.",
     url: "https://www.mktweb360.com/email-marketing-pymes/",
-    images: [{ url: "https://www.mktweb360.com/og-email-marketing-pymes.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-email-marketing-pymes-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -29,7 +31,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
-  image: "https://www.mktweb360.com/og-email-marketing-pymes.jpg",
+  image: "https://www.mktweb360.com/og-email-marketing-pymes-v2.jpg",
   url: "https://www.mktweb360.com/email-marketing-pymes/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/email-marketing-pymes/" },
   inLanguage: "es-ES",
@@ -46,19 +48,19 @@ export default function Page() {
         <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">El email marketing sigue siendo el canal con mayor ROI en marketing digital. Esta guía explica cómo empezar desde cero, qué herramientas usar y cómo diseñar campañas que generen resultados reales.</p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Por qué el email marketing sigue funcionando en 2025</h2>
+        <h2 id="por-que-el-email-marketing-sigue-funcionando-en" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Por qué el email marketing sigue funcionando en 2025</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Hay un mito recurrente en el marketing digital: "el email ha muerto". Lo llevan diciendo desde hace 15 años, y cada año el email marketing demuestra lo contrario. El ROI medio del email marketing es de 42€ por cada euro invertido, según datos de la Data & Marketing Association. Ningún otro canal digital se le acerca.</p>
         <p className="text-gray-700 leading-relaxed mb-4">La razón por la que el email funciona tan bien es estructural: cuando alguien te da su dirección de email, te está dando permiso para comunicarte con él directamente. No hay un algoritmo de red social que decida si tu mensaje llega o no. No hay que pagar por cada impresión. El email llega a la bandeja de entrada del suscriptor, que ha decidido libremente recibir tus comunicaciones.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para una PYME, el email marketing tiene además la ventaja de que no requiere grandes presupuestos ni equipos especializados para empezar. Con las herramientas actuales, una persona sola puede gestionar una estrategia de email marketing efectiva con unas pocas horas al mes.</p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cómo construir tu lista de suscriptores desde cero</h2>
+        <h2 id="como-construir-tu-lista-de-suscriptores-desde-ce" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Cómo construir tu lista de suscriptores desde cero</h2>
         <p className="text-gray-700 leading-relaxed mb-4">La lista de suscriptores es el activo más valioso del email marketing. Una lista pequeña pero bien cualificada (personas realmente interesadas en lo que ofreces) vale infinitamente más que una lista grande de contactos genéricos.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Formulario en tu web:</strong> La forma más básica. Coloca un formulario de suscripción en lugares estratégicos de tu web: el header, el footer, después de los artículos del blog y como popup de intención de salida. El texto del formulario debe comunicar claramente qué van a recibir y con qué frecuencia.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong><Link href="/como-crear-landing-page-que-convierte/" className="text-accent-500 hover:underline">Lead magnet</Link>:</strong> Un recurso gratuito (guía, checklist, plantilla, video) que el usuario recibe a cambio de su email. El lead magnet debe ser relevante para tu negocio y valioso para tu cliente potencial. Un electricista podría ofrecer "Checklist de seguridad eléctrica para tu hogar". Una asesoría fiscal podría ofrecer "Guía de deducciones fiscales para autónomos".</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Clientes actuales:</strong> Si ya tienes clientes, pide su permiso explícito para suscribirlos a tu lista. La RGPD requiere consentimiento expreso, así que no importes contactos sin permiso. Pero un email personalizado a tus mejores clientes invitándoles a suscribirse a tu newsletter tiene una tasa de conversión muy alta.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Formulario físico en tu local:</strong> Si tienes establecimiento físico, un tablet con un formulario de suscripción en el mostrador (con un incentivo como un descuento en la próxima compra) puede generar suscriptores locales de alta calidad.</p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Herramientas de email marketing para PYMEs</h2>
+        <h2 id="herramientas-de-email-marketing-para-pymes" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Herramientas de email marketing para PYMEs</h2>
         <p className="text-gray-700 leading-relaxed mb-4">No necesitas una herramienta cara para empezar. Las plataformas de email marketing tienen planes gratuitos suficientes para una PYME en sus primeras etapas.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Mailchimp:</strong> El más conocido. Plan gratuito hasta 500 contactos y 1.000 emails al mes. Fácil de usar, buen editor de templates, automatizaciones básicas incluidas. Suficiente para empezar.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Brevo (antes Sendinblue):</strong> Plan gratuito con contactos ilimitados y hasta 300 emails al día. Muy buena relación calidad-precio en los planes de pago. Incluye SMS marketing y CRM básico.</p>
@@ -67,30 +69,35 @@ export default function Page() {
 
         <BlogBanner variant="default" />
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Tipos de emails que debe enviar tu empresa</h2>
+        <h2 id="tipos-de-emails-que-debe-enviar-tu-empresa" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Tipos de emails que debe enviar tu empresa</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Una estrategia de email marketing sólida combina distintos tipos de emails con objetivos diferentes.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Newsletter periódica:</strong> <Link href="/marketing-de-contenidos/" className="text-accent-500 hover:underline">Contenido de valor regular</Link> (semanal, quincenal o mensual). El objetivo es mantener la relación y posicionarte como referente. No vende directamente, pero construye confianza que luego convierte.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Emails de bienvenida:</strong> La secuencia más importante. Los emails enviados en las primeras 24-48 horas después de la suscripción tienen las tasas de apertura más altas. Úsalos para presentarte, establecer expectativas y ofrecer el lead magnet si prometiste uno.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Emails promocionales:</strong> Ofertas, lanzamientos, descuentos. Deben usarse con moderación — si todo es promoción, la lista se desenganchará. La regla general es 80% contenido de valor, 20% contenido comercial.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Emails de recuperación:</strong> Para suscriptores inactivos o clientes que han dejado de comprar. Un email personalizado con un incentivo puede reactivar una parte significativa de estos contactos.</p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cómo escribir asuntos que se abren</h2>
+        <h2 id="como-escribir-asuntos-que-se-abren" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Cómo escribir asuntos que se abren</h2>
         <p className="text-gray-700 leading-relaxed mb-4">El asunto del email es lo que determina si el suscriptor abre o ignora tu email. Puedes tener el mejor contenido del mundo, pero si el asunto no genera curiosidad, el email no se abre. La tasa de apertura media en email marketing ronda el 21%, pero con buenos asuntos se puede superar el 35-40%.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Los elementos que más influyen en la apertura son: la personalización (incluir el nombre del suscriptor en el asunto mejora las aperturas), la especificidad (un asunto concreto funciona mejor que uno vago), la curiosidad (generar una pregunta que solo se responde abriendo el email) y la urgencia genuina (no fabricada).</p>
         <p className="text-gray-700 leading-relaxed mb-4">Evita palabras que activan los filtros de spam: "GRATIS", "GANA DINERO", "OFERTA EXCLUSIVA" en mayúsculas, exceso de signos de exclamación. Testea siempre dos versiones de asunto (A/B test) con una parte pequeña de tu lista antes de enviar al total.</p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Métricas de email marketing: qué medir y qué optimizar</h2>
+        <h2 id="metricas-de-email-marketing-que-medir-y-que-opti" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Métricas de email marketing: qué medir y qué optimizar</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Las métricas principales que debes monitorizar en cada campaña son: tasa de apertura, tasa de clics (CTR), tasa de conversión, tasa de rebote (bounces) y tasa de baja.</p>
         <p className="text-gray-700 leading-relaxed mb-4">La <strong>tasa de apertura</strong> mide el interés en el asunto y el reconocimiento de tu marca. Si cae consistentemente, revisa la calidad de tu lista y la relevancia de tus asuntos. La <strong>tasa de clics</strong> mide el interés en el contenido del email. Si las aperturas son buenas pero los clics son bajos, el problema está en el cuerpo del email o en el CTA.</p>
         <p className="text-gray-700 leading-relaxed mb-4">La <strong>tasa de baja</strong> es un indicador de salud de tu lista: si supera el 0,5% consistentemente, estás enviando demasiado, enviando contenido irrelevante o a personas que no recuerdan haberse suscrito. Limpiar la lista regularmente (eliminar suscriptores inactivos) mejora las métricas globales y evita problemas de entregabilidad. Si aún no tienes una estrategia para <Link href="/como-generar-leads-calidad-pyme/" className="text-accent-500 hover:underline">conseguir leads cualificados</Link>, el email marketing solo puede nutrirse correctamente si hay captación de calidad detrás.</p>
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
-          <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
+          <h2 id="necesitas-ayuda-con-tu-marketing-digital" className="text-2xl font-bold mb-4 scroll-mt-24">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
             <ContactForm formType="blog" />
           </div>
         </section>
+
+        <div className="max-w-3xl mx-auto px-4 mb-8">
+          <Image src="/og-email-marketing-pymes-v2.jpg" alt="Dueña de una tienda enviando un gran correo a clientes con móvil" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
+          <ArticleIndex lang="es" minutes={7} items={[{"id": "por-que-el-email-marketing-sigue-funcionando-en", "label": "Por qué el email marketing sigue funcionando en 2025"}, {"id": "como-construir-tu-lista-de-suscriptores-desde-ce", "label": "Cómo construir tu lista de suscriptores desde cero"}, {"id": "herramientas-de-email-marketing-para-pymes", "label": "Herramientas de email marketing para PYMEs"}, {"id": "tipos-de-emails-que-debe-enviar-tu-empresa", "label": "Tipos de emails que debe enviar tu empresa"}, {"id": "como-escribir-asuntos-que-se-abren", "label": "Cómo escribir asuntos que se abren"}, {"id": "metricas-de-email-marketing-que-medir-y-que-opti", "label": "Métricas de email marketing: qué medir y qué optimizar"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
+        </div>
       </div>
       <RelatedArticles category="Marketing Digital" />
     </>

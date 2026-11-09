@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cómo darse de alta como autónomo en 2026",
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "Guía completa para darse de alta como autónomo en 2026. Pasos en Hacienda y Seguridad Social, cuota, errores frecuentes y qué necesitas tener listo.",
     url: "https://www.mktweb360.com/como-darse-de-alta-autonomo/",
     type: "article",
-    images: [{ url: "/og-como-darse-de-alta-autonomo.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-como-darse-de-alta-autonomo-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/como-darse-de-alta-autonomo/",
   mainEntityOfPage: "https://www.mktweb360.com/como-darse-de-alta-autonomo/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-como-darse-de-alta-autonomo.jpg",
+  image: "https://www.mktweb360.com/og-como-darse-de-alta-autonomo-v2.jpg",
 };
 
 const FAQS = [
@@ -92,7 +93,7 @@ export default function DarseDeAltaAutonomoPage() {
             Empezar a trabajar por cuenta propia implica cumplir con dos obligaciones antes de emitir la primera factura: el alta en Hacienda y el alta en la Seguridad Social. Este artículo te explica el proceso completo sin tecnicismos.
           </p>
           <Image
-            src="/og-como-darse-de-alta-autonomo.jpg"
+            src="/og-como-darse-de-alta-autonomo-v2.jpg"
             alt="Cómo darse de alta como autónomo en 2026: pasos, costes y errores a evitar"
             width={1200}
             height={630}
@@ -101,18 +102,22 @@ export default function DarseDeAltaAutonomoPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "que-significa-darse-de-alta-como-autonomo", "label": "Qué significa darse de alta como autónomo"}, {"id": "paso-1-alta-en-hacienda-modelo-036-o-037", "label": "Paso 1 — Alta en Hacienda (Modelo 036 o 037)"}, {"id": "paso-2-alta-en-la-seguridad-social-reta", "label": "Paso 2 — Alta en la Seguridad Social (RETA)"}, {"id": "errores-mas-frecuentes-al-darse-de-alta", "label": "Errores más frecuentes al darse de alta"}, {"id": "que-necesitas-tener-preparado-antes-de-empezar", "label": "Qué necesitas tener preparado antes de empezar"}, {"id": "presencia-digital-desde-el-primer-dia", "label": "Presencia digital desde el primer día"}, {"id": "preguntas-frecuentes-sobre-el-alta-de-autonomo", "label": "Preguntas frecuentes sobre el alta de autónomo"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Muchos autónomos cometen errores en los primeros pasos — no por descuido, sino por falta de información clara. Saber el orden correcto, qué documentación necesitas y qué decisiones afectan a tu cuota mensual puede ahorrarte tiempo, dinero y problemas desde el primer día.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué significa darse de alta como autónomo</h2>
+          <h2 id="que-significa-darse-de-alta-como-autonomo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué significa darse de alta como autónomo</h2>
           <p>Darse de alta como autónomo implica registrarse como trabajador por cuenta propia ante dos organismos: la Agencia Tributaria (Hacienda) y la Tesorería General de la Seguridad Social (TGSS). Ambos trámites son obligatorios antes de comenzar a ejercer cualquier actividad económica de forma habitual. Hacerlo en el orden correcto y con la información adecuada evita sanciones y problemas desde el primer día.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 1 — Alta en Hacienda (Modelo 036 o 037)</h2>
+          <h2 id="paso-1-alta-en-hacienda-modelo-036-o-037" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 1 — Alta en Hacienda (Modelo 036 o 037)</h2>
           <p>El primer paso es darse de alta en el Censo de Empresarios, Profesionales y Retenedores de la Agencia Tributaria. Para la mayoría de autónomos, el Modelo 037 (versión simplificada) es suficiente. En él debes indicar tu actividad (epígrafe del IAE), si vas a aplicar IVA o estás exento, si tributarás en estimación directa simplificada o módulos, y la fecha de inicio de actividad. Este trámite es gratuito y puede hacerse online con certificado digital o Cl@ve PIN.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 2 — Alta en la Seguridad Social (RETA)</h2>
+          <h2 id="paso-2-alta-en-la-seguridad-social-reta" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 2 — Alta en la Seguridad Social (RETA)</h2>
           <p>El alta en el Régimen Especial de Trabajadores Autónomos tiene que estar hecha antes de empezar la actividad: puedes solicitarla con hasta 60 días naturales de antelación a la fecha de inicio, y lo habitual es tramitarla justo después del alta en Hacienda. Aquí eliges tu base de cotización, que determinará tu cuota mensual y tus prestaciones futuras. Desde 2023 existe el sistema de cotización por ingresos reales, que permite ajustar la base según lo que realmente ganes cada mes. La cuota mínima en 2026 para ingresos bajos puede beneficiarse de la tarifa plana o cuota reducida durante los primeros meses.</p>
 
           <BlogBanner
@@ -124,7 +129,7 @@ export default function DarseDeAltaAutonomoPage() {
             secondary={{ text: "¿Ya tienes algo online? Pide antes la auditoría gratuita", href: "/auditoria-digital/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Errores más frecuentes al darse de alta</h2>
+          <h2 id="errores-mas-frecuentes-al-darse-de-alta" className="text-2xl font-bold text-primary-600 scroll-mt-24">Errores más frecuentes al darse de alta</h2>
           <p>Los errores más habituales son darse de alta en Seguridad Social antes que en Hacienda, elegir un epígrafe IAE que no corresponde a la actividad real, no calcular bien la base de cotización desde el inicio, y no revisar si la actividad tiene obligaciones específicas de IVA o retenciones. También es frecuente no tener claro el régimen de estimación más conveniente antes de empezar.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -135,10 +140,10 @@ export default function DarseDeAltaAutonomoPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué necesitas tener preparado antes de empezar</h2>
+          <h2 id="que-necesitas-tener-preparado-antes-de-empezar" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué necesitas tener preparado antes de empezar</h2>
           <p>Antes de iniciar los trámites conviene tener claro el tipo de actividad que vas a desarrollar, si tendrás clientes con IVA o exentos, una estimación razonable de tus ingresos para elegir bien la base de cotización, y si vas a necesitar algún permiso o licencia adicional según tu sector. Contar con asesoramiento desde el principio puede ahorrarte tiempo y evitar correcciones costosas después.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Presencia digital desde el primer día</h2>
+          <h2 id="presencia-digital-desde-el-primer-dia" className="text-2xl font-bold text-primary-600 scroll-mt-24">Presencia digital desde el primer día</h2>
           <p>Darse de alta es el paso legal. Pero para que el negocio funcione, también necesitas una presencia digital mínima que te permita ser encontrado, transmitir confianza y facilitar el contacto. Una <Link href="/oferta-web-seo-organico/" className="text-accent-500 hover:underline">web profesional sencilla</Link>, una <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile bien trabajada</Link> y un perfil profesional coherente son la base digital de cualquier autónomo que quiera crecer con orden. La ficha de Google es gratuita y es lo que aparece en Google Maps cuando alguien busca tu servicio cerca: conviene tenerla lista desde la primera semana.</p>
 
           <p className="text-sm text-gray-500">
@@ -160,7 +165,7 @@ export default function DarseDeAltaAutonomoPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre el alta de autónomo</h2>
+          <h2 id="preguntas-frecuentes-sobre-el-alta-de-autonomo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre el alta de autónomo</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

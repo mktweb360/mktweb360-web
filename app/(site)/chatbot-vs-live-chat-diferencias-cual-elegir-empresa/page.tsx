@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Chatbot vs live chat: cuál elegir",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "¿Chatbot o live chat? No son opciones excluyentes, pero tampoco son lo mismo. Guía de las diferencias reales, cuándo conviene cada uno, y por qué la combinación correcta es mejor que elegir solo uno.",
     url: "https://www.mktweb360.com/chatbot-vs-live-chat-diferencias-cual-elegir-empresa/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-chatbot-vs-live-chat-diferencias-cual-elegir-empresa-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
+  image: "https://www.mktweb360.com/og-chatbot-vs-live-chat-diferencias-cual-elegir-empresa-v2.jpg",
   url: "https://www.mktweb360.com/chatbot-vs-live-chat-diferencias-cual-elegir-empresa/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-vs-live-chat-diferencias-cual-elegir-empresa/",
   inLanguage: "es-ES",
@@ -88,36 +90,48 @@ export default function ChatbotVsLiveChatPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             ¿Chatbot o live chat? No son opciones excluyentes, pero tampoco son lo mismo. En esta guía repasamos las diferencias reales, cuándo conviene cada uno y por qué la combinación correcta suele ganar a elegir uno solo. Si aún dudas por dónde empezar, apóyate en la <Link href="/ia-aplicada-al-marketing/" className="text-accent-500 hover:underline">IA aplicada al marketing</Link>.
           </p>
+          <Image
+            src="/og-chatbot-vs-live-chat-diferencias-cual-elegir-empresa-v2.jpg"
+            alt="Un robot atiende una fila de mensajes y pasa el relevo a una agente humana con auriculares que resuelve una consulta compleja"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={7} items={[{"id": "que-es-el-live-chat-y-que-es-el-chatbot", "label": "Qué es el live chat y qué es el chatbot"}, {"id": "las-diferencias-que-mas-importan-en-la-practica", "label": "Las diferencias que más importan en la práctica"}, {"id": "cuando-el-live-chat-es-la-opcion-correcta", "label": "Cuándo el live chat es la opción correcta"}, {"id": "cuando-el-chatbot-es-la-opcion-correcta", "label": "Cuándo el chatbot es la opción correcta"}, {"id": "el-modelo-que-funciona-mejor-chatbot-derivacion", "label": "El modelo que funciona mejor: chatbot + derivación a humano"}, {"id": "como-implementar-el-modelo-hibrido", "label": "Cómo implementar el modelo híbrido"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             La pregunta está mal planteada casi siempre. Muchas empresas se sientan a decidir entre chatbot y live chat como si fueran dos caminos opuestos, cuando en realidad resuelven necesidades distintas y funcionan mejor juntos. Entender qué hace bien cada uno es el primer paso para no gastar de más ni frustrar a tus clientes.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué es el live chat y qué es el chatbot</h2>
+          <h2 id="que-es-el-live-chat-y-que-es-el-chatbot" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué es el live chat y qué es el chatbot</h2>
           <p>El live chat es una ventana de conversación en tu web donde un agente humano responde en tiempo real. Detrás siempre hay una persona: alguien lee el mensaje, lo interpreta y contesta. Es directo, cálido y flexible, pero está atado a la disponibilidad y al horario de tu equipo.</p>
           <p>El chatbot, en cambio, es un sistema automatizado que mantiene la conversación por sí mismo. Los chatbots actuales, basados en IA, entienden lenguaje natural y responden con el contenido y las reglas que se les han configurado. Si quieres una base sobre el concepto, tenemos una guía dedicada a <Link href="/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/" className="text-accent-500 hover:underline">qué es un chatbot para empresas y por qué lo necesitas en 2026</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Las diferencias que más importan en la práctica</h2>
+          <h2 id="las-diferencias-que-mas-importan-en-la-practica" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las diferencias que más importan en la práctica</h2>
           <p>Más allá de la definición, lo que decide la elección son cinco factores concretos. En disponibilidad, el chatbot gana sin discusión: responde 24/7 sin depender de turnos, mientras que el live chat solo cubre el horario de tu equipo. En velocidad, el bot contesta al instante y en paralelo a muchos usuarios; el humano, por bueno que sea, atiende de uno en uno.</p>
           <p>En coste, el chatbot escala sin sumar personal a cada nueva conversación, mientras que el live chat crece a golpe de contratación. En personalización y matiz emocional, el humano sigue por delante: capta ironías, contextos delicados y frustraciones que un bot puede pasar por alto. Y en el tipo de consulta, el bot brilla con lo repetitivo (horarios, precios, estado de un pedido) y el humano con lo complejo y sensible. De hecho, un chatbot bien entrenado resuelve de forma autónoma entre el 65 % y el 70 % de las consultas, dejando a las personas justo lo que aporta más valor.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuándo el live chat es la opción correcta</h2>
+          <h2 id="cuando-el-live-chat-es-la-opcion-correcta" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuándo el live chat es la opción correcta</h2>
           <p>El live chat tiene sentido cuando tus conversaciones son pocas pero de alto valor, o cuando el matiz humano marca la diferencia: ventas consultivas, incidencias delicadas, reclamaciones o clientes que necesitan sentirse escuchados por una persona. En esos casos, la calidez y la capacidad de improvisar de un agente valen más que la inmediatez.</p>
           <p>El problema aparece cuando el volumen crece o cuando los clientes escriben fuera de horario. Ahí el live chat en solitario se queda corto: quedan consultas sin responder de madrugada y los fines de semana, justo cuando muchos usuarios investigan. Para cubrir esa franja sin ampliar plantilla, conviene mirar cómo dar <Link href="/atencion-cliente-24-7-pymes-sin-contratar-personal/" className="text-accent-500 hover:underline">atención al cliente 24/7 en pymes sin contratar personal</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuándo el chatbot es la opción correcta</h2>
+          <h2 id="cuando-el-chatbot-es-la-opcion-correcta" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuándo el chatbot es la opción correcta</h2>
           <p>El chatbot es la opción natural cuando recibes muchas consultas parecidas, cuando quieres estar disponible a cualquier hora o cuando necesitas filtrar y cualificar antes de que intervenga una persona. Si buena parte de tus mensajes son preguntas frecuentes, el bot las resuelve al momento y libera a tu equipo.</p>
           <p>También es la mejor herramienta cuando el objetivo es comercial: recoger datos, entender qué busca el visitante y separar a quien tiene intención real de compra. Para ese uso concreto puedes ver nuestra guía de <Link href="/chatbot-captacion-cualificacion-leads-guia-practica/" className="text-accent-500 hover:underline">chatbot para captación y cualificación de leads</Link>, donde detallamos cómo convertir conversaciones en oportunidades.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">El modelo que funciona mejor: chatbot + derivación a humano</h2>
+          <h2 id="el-modelo-que-funciona-mejor-chatbot-derivacion" className="text-2xl font-bold text-primary-600 scroll-mt-24">El modelo que funciona mejor: chatbot + derivación a humano</h2>
           <p>La respuesta que dan las empresas que ya han pasado por esto es casi siempre la misma: no elijas, combina. El modelo híbrido pone al bot primero, resolviendo todo lo que puede de forma autónoma, y reserva a las personas para lo que de verdad necesita criterio humano. Así aprovechas la inmediatez y disponibilidad del bot sin renunciar a la calidad del trato humano.</p>
           <p>La clave está en la derivación. Cuando el bot detecta que no puede resolver algo, o cuando el usuario lo pide, la conversación pasa a un agente con el historial completo delante. El cliente no tiene que repetirse: la persona ve todo lo que ya se ha hablado y continúa desde ahí. Con ese reparto, el bot absorbe ese 65-70 % de consultas repetitivas y el equipo humano se concentra en el 30-35 % que aporta más valor.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo implementar el modelo híbrido</h2>
+          <h2 id="como-implementar-el-modelo-hibrido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo implementar el modelo híbrido</h2>
           <p>Implementarlo bien empieza por definir las reglas de escalado: qué temas resuelve el bot, en qué casos deriva y cómo se avisa al usuario del cambio. Es importante que el traspaso sea transparente. Además, el AI Act obliga a que los sistemas de IA se identifiquen como tales, así que el cliente debe saber en cada momento si habla con un bot o con una persona.</p>
           <p>Después toca entrenar al bot con tu contenido real y medir. Revisa qué consultas resuelve solo, cuáles deriva y dónde se atasca, y ajusta con esos datos. Si prefieres apoyarte en un partner para montar todo el sistema, en Mkt Web 360 trabajamos la <Link href="/ia-aplicada-al-marketing/" className="text-accent-500 hover:underline">IA aplicada al marketing</Link> con este enfoque híbrido de serie.</p>
 
@@ -136,7 +150,7 @@ export default function ChatbotVsLiveChatPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

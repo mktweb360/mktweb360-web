@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -32,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Register freelancer Spain" : "Inscription indépendant Espagne" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Business</p>
-        <IntlArticleJsonLd lang={lang} slug="how-to-register-as-freelancer" headline={isEn ? "How to register as a self-employed freelancer in Spain: complete guide" : "Comment s'inscrire comme travailleur indépendant en Espagne : guide complet"} image="/og-como-darse-de-alta-autonomo.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="how-to-register-as-freelancer" headline={isEn ? "How to register as a self-employed freelancer in Spain: complete guide" : "Comment s'inscrire comme travailleur indépendant en Espagne : guide complet"} image="/og-como-darse-de-alta-autonomo-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to register as a self-employed freelancer in Spain: complete guide" : "Comment s'inscrire comme travailleur indépendant en Espagne : guide complet"}
         </h1>
@@ -41,8 +43,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Registering as self-employed in Spain (autónomo) involves several steps across different government bodies. This guide explains everything you need to do, the costs involved and the obligations you will have." : "S'inscrire comme travailleur indépendant en Espagne (autónomo) implique plusieurs étapes auprès de différents organismes gouvernementaux. Ce guide explique tout ce que vous devez faire, les coûts impliqués et les obligations que vous aurez."}
         </p>
 
+        <Image
+          src="/og-como-darse-de-alta-autonomo-v2.jpg"
+          alt={!isEn ? "Entrepreneuse portant une clé dorée qui franchit une porte ouverte vers un chemin lumineux, avec des dossiers, un tampon et une liste de contrôle sur la table" : "Entrepreneur holding a golden key as she crosses an open door toward a bright path, with folders, a stamp and a checklist on the table"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "what-it-means-to-be-self-employed-autonomo-in-sp", label: isEn ? "What it means to be self-employed (autónomo) in Spain" : "Ce que signifie être travailleur indépendant (autónomo) en Espagne" }, { id: "steps-to-register-as-autonomo", label: isEn ? "Steps to register as autónomo" : "Étapes pour s'inscrire comme autónomo" }, { id: "social-security-contributions-for-freelancers", label: isEn ? "Social security contributions for freelancers" : "Cotisations de sécurité sociale pour indépendants" }, { id: "tax-obligations-vat-and-income-tax", label: isEn ? "Tax obligations: VAT and income tax" : "Obligations fiscales : TVA et impôt sur le revenu" }, { id: "flat-rate-and-benefits-for-new-freelancers", label: isEn ? "Flat rate and benefits for new freelancers" : "Tarif forfaitaire et avantages pour les nouveaux indépendants" }, { id: "after-registering-making-sure-clients-find-you", label: isEn ? "After registering: making sure clients find you" : "Après l'inscription : faire en sorte que les clients vous trouvent" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-it-means-to-be-self-employed-autonomo-in-sp" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "What it means to be self-employed (autónomo) in Spain" : "Ce que signifie être travailleur indépendant (autónomo) en Espagne"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="steps-to-register-as-autonomo" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Steps to register as autónomo" : "Étapes pour s'inscrire comme autónomo"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="social-security-contributions-for-freelancers" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Social security contributions for freelancers" : "Cotisations de sécurité sociale pour indépendants"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -78,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="tax-obligations-vat-and-income-tax" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Tax obligations: VAT and income tax" : "Obligations fiscales : TVA et impôt sur le revenu"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -90,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="flat-rate-and-benefits-for-new-freelancers" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Flat rate and benefits for new freelancers" : "Tarif forfaitaire et avantages pour les nouveaux indépendants"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -102,7 +117,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="after-registering-making-sure-clients-find-you" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "After registering: making sure clients find you" : "Après l'inscription : faire en sorte que les clients vous trouvent"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

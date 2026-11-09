@@ -7,6 +7,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -110,7 +111,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Shopware dispose d'une excellente base technique pour le SEO, mais elle ne vend que si elle est bien configurée. Voici les points qui font vraiment bouger les positions pour une boutique Shopware."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "why-shopware-seo-is-different", label: isEn ? "Why Shopware SEO is different" : "Pourquoi le SEO de Shopware est différent" }, { id: "urls-and-canonical-the-control-shopware-6-gives", label: isEn ? "URLs and canonical: the control Shopware 6 gives you" : "URLs et canonical : le contrôle qu'offre Shopware 6" }, { id: "faceted-navigation-the-error-that-ruins-your-cra", label: isEn ? "Faceted navigation: the error that ruins your crawl budget" : "Navigation à facettes : l'erreur qui ruine votre budget de crawl" }, { id: "product-schema-product-offer-and-aggregaterating", label: isEn ? "Product schema: Product, Offer and AggregateRating" : "Schéma produit : Product, Offer et AggregateRating" }, { id: "core-web-vitals-in-shopware", label: isEn ? "Core Web Vitals in Shopware" : "Core Web Vitals dans Shopware" }, { id: "product-pages-and-categories-unique-content-that", label: isEn ? "Product pages and categories: unique content that ranks" : "Fiches et catégories : du contenu unique qui se positionne" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
+        <h2 id="why-shopware-seo-is-different" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Why Shopware SEO is different" : "Pourquoi le SEO de Shopware est différent"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -119,7 +124,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Contrairement à un CMS générique, Shopware est conçu pour les catalogues : variantes, propriétés, filtres et des milliers de combinaisons d'URLs. Cette flexibilité est un avantage pour vendre et un risque pour le SEO si elle n'est pas maîtrisée. Le travail technique consiste à dire à Google quelles pages ont de la valeur et lesquelles n'en ont pas, pour qu'il concentre son exploration là où il y a du business."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="urls-and-canonical-the-control-shopware-6-gives" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "URLs and canonical: the control Shopware 6 gives you" : "URLs et canonical : le contrôle qu'offre Shopware 6"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -128,7 +133,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Shopware permet de configurer des modèles d'URL propres et descriptifs pour les produits et les catégories, et génère automatiquement des balises canonical pour les variantes d'un même produit. Cela évite que les tailles, couleurs ou présentations se fassent concurrence dans Google. Bien configuré, chaque produit consolide son autorité dans une seule URL canonique plutôt que de la disperser entre des dizaines de variantes."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="faceted-navigation-the-error-that-ruins-your-cra" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Faceted navigation: the error that ruins your crawl budget" : "Navigation à facettes : l'erreur qui ruine votre budget de crawl"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -137,7 +142,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "C'est le problème le plus fréquent et le plus coûteux. Chaque filtre (marque, prix, couleur, taille) qui génère une URL crawlable multiplie les combinaisons : une catégorie avec cinq filtres peut produire des milliers d'URLs quasi-identiques qui diluent l'autorité et consomment le budget de crawl que Google consacre à votre boutique. La solution passe par décider quelles facettes sont indexées (celles qui ont une vraie demande de recherche), bloquer le reste avec noindex ou des règles de crawl, et maintenir le canonical pointant vers la catégorie parente."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="product-schema-product-offer-and-aggregaterating" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Product schema: Product, Offer and AggregateRating" : "Schéma produit : Product, Offer et AggregateRating"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -146,7 +151,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Les données structurées activent les résultats enrichis : prix, disponibilité et étoiles directement dans la recherche Google. Pour une boutique Shopware, le balisage minimum est Product avec son Offer (prix, devise et disponibilité) et, quand il y a des avis réels, AggregateRating. Ce balisage améliore le CTR sans toucher au positionnement, car votre résultat occupe plus d'espace et transmet plus de confiance."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="core-web-vitals-in-shopware" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Core Web Vitals in Shopware" : "Core Web Vitals dans Shopware"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -155,7 +160,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La performance est à la fois un facteur de classement et un facteur de conversion. Les trois défaillances typiques dans Shopware : LCP élevé quand l'image hero se charge sans priorité (corrigé en la marquant avec une fetchpriority élevée), CLS causé par des images sans dimensions déclarées qui décalent la mise en page au chargement, et INP dégradé par des plugins JavaScript qui bloquent l'interaction. Auditer et corriger ces trois points donne généralement le plus grand saut de performance."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="product-pages-and-categories-unique-content-that" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Product pages and categories: unique content that ranks" : "Fiches et catégories : du contenu unique qui se positionne"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -208,7 +213,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions" : "Questions fréquentes"}
         </h2>
         <div className="space-y-3 mb-8">

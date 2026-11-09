@@ -1,4 +1,5 @@
 import { BlogBanner } from "@/components/BlogBanner";
+import Image from "next/image";
 import Link from "next/link";
 import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -7,6 +8,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { JsonLd } from "@/components/JsonLd";
 import { serviceSchema, intlPath, fromMeta } from "@/lib/schema";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 const FAQS_EN = [
   {
     q: "How much does a website for a clinic or health centre cost?",
@@ -129,7 +131,28 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Le secteur santé et bien-être a une particularité qui le distingue des autres entreprises : le patient ne cherche pas seulement un service, il cherche quelqu'un en qui avoir confiance. Cette confiance se construit avant le premier rendez-vous, et aujourd'hui elle se construit principalement sur internet. Un site web professionnel n'est pas un luxe pour une clinique — c'est l'outil d'acquisition de patients le plus important qui soit."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+        <Image
+          src="/og-diseno-web-para-clinicas-v2.jpg"
+          alt={!isEn ? "Kinésithérapeute soignant un patient dans une clinique lumineuse" : "Physiotherapist treating a patient in a bright clinic"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-your-clinic-needs-a-professional-website-in", label: isEn
+              ? "Why your clinic needs a professional website in 2026"
+              : "Pourquoi votre clinique a besoin d'un site web professionnel en 2026" }, { id: "what-a-clinic-s-website-must-include", label: isEn
+              ? "What a clinic's website must include"
+              : "Ce que doit inclure le site web d'une clinique" }, { id: "local-seo-for-clinics-how-to-appear-first-in-you", label: isEn
+              ? "Local SEO for clinics: how to appear first in your area"
+              : "Référencement local pour cliniques : comment apparaître en premier dans votre zone" }, { id: "our-process-from-zero-to-website-in-4-steps", label: isEn
+              ? "Our process: from zero to website in 4 steps"
+              : "Notre processus : de zéro à un site web en 4 étapes" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
+          <h2 id="why-your-clinic-needs-a-professional-website-in" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "Why your clinic needs a professional website in 2026"
               : "Pourquoi votre clinique a besoin d'un site web professionnel en 2026"}
@@ -150,7 +173,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "De plus, Google récompense avec un meilleur positionnement local les centres qui ont un site actif et bien optimisé. Apparaître dans le pack local de trois résultats que Google Maps affiche en haut des recherches peut doubler les appels et formulaires de contact reçus."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="what-a-clinic-s-website-must-include" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "What a clinic's website must include"
               : "Ce que doit inclure le site web d'une clinique"}
@@ -194,7 +217,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </li>
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="local-seo-for-clinics-how-to-appear-first-in-you" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "Local SEO for clinics: how to appear first in your area"
               : "Référencement local pour cliniques : comment apparaître en premier dans votre zone"}
@@ -236,7 +259,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="our-process-from-zero-to-website-in-4-steps" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "Our process: from zero to website in 4 steps"
               : "Notre processus : de zéro à un site web en 4 étapes"}
@@ -282,7 +305,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

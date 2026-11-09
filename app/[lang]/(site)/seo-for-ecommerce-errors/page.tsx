@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -32,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Ecommerce SEO" : "SEO e-commerce" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO</p>
-        <IntlArticleJsonLd lang={lang} slug="seo-for-ecommerce-errors" headline={isEn ? "SEO for ecommerce: errors that slow down sales in your online store" : "SEO pour e-commerce : erreurs qui freinent les ventes dans votre boutique en ligne"} image="/og-seo-para-ecommerce-errores-que-frenan-ventas.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="seo-for-ecommerce-errors" headline={isEn ? "SEO for ecommerce: errors that slow down sales in your online store" : "SEO pour e-commerce : erreurs qui freinent les ventes dans votre boutique en ligne"} image="/og-seo-para-ecommerce-errores-que-frenan-ventas-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "SEO for ecommerce: errors that slow down sales in your online store" : "SEO pour e-commerce : erreurs qui freinent les ventes dans votre boutique en ligne"}
         </h1>
@@ -41,8 +43,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Most online stores lose sales not because of the product but because of invisible SEO errors. This guide explains the most common ones and how to fix them." : "La plupart des boutiques en ligne perdent des ventes non pas à cause du produit mais à cause d'erreurs SEO invisibles. Ce guide explique les plus courantes et comment les corriger."}
         </p>
 
+        <Image
+          src="/og-seo-para-ecommerce-errores-que-frenan-ventas-v2.jpg"
+          alt={!isEn ? "Camions de livraison arrêtés devant une route bloquée par des cônes, une barrière et un nid-de-poule, qui mène à l’entrepôt d’une boutique en ligne" : "Delivery trucks stopped before a road blocked by cones, a barrier and a pothole, leading to an online store warehouse"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "why-seo-is-critical-for-ecommerce", label: isEn ? "Why SEO is critical for ecommerce" : "Pourquoi le SEO est critique pour l'e-commerce" }, { id: "most-common-technical-seo-errors-in-online-store", label: isEn ? "Most common technical SEO errors in online stores" : "Erreurs techniques SEO les plus courantes dans les boutiques en ligne" }, { id: "product-page-optimisation", label: isEn ? "Product page optimisation" : "Optimisation des pages produits" }, { id: "category-structure-and-internal-linking", label: isEn ? "Category structure and internal linking" : "Structure des catégories et maillage interne" }, { id: "how-to-measure-seo-performance-in-your-online-st", label: isEn ? "How to measure SEO performance in your online store" : "Comment mesurer la performance SEO dans votre boutique en ligne" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="why-seo-is-critical-for-ecommerce" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Why SEO is critical for ecommerce" : "Pourquoi le SEO est critique pour l'e-commerce"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="most-common-technical-seo-errors-in-online-store" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Most common technical SEO errors in online stores" : "Erreurs techniques SEO les plus courantes dans les boutiques en ligne"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="product-page-optimisation" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Product page optimisation" : "Optimisation des pages produits"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -78,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="category-structure-and-internal-linking" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Category structure and internal linking" : "Structure des catégories et maillage interne"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -90,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-measure-seo-performance-in-your-online-st" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to measure SEO performance in your online store" : "Comment mesurer la performance SEO dans votre boutique en ligne"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

@@ -9,6 +9,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 02/11/2026 — refuerzo del tema 7 (misma URL, EN y FR en esta carpeta compartida). Versión ES: app/(site)/como-crear-landing-page-que-convierte.
 // Ejemplos de demostración, sin marcas de terceros ni cifras de conversión. Lo de Google Ads, solo lo que dice su ayuda oficial.
 
@@ -622,19 +623,23 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>{c.answer}</p>
 
-          <h2 className={h2}>{c.h.resumen}</h2>
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={12} items={[{ id: "resumen", label: c.h.resumen }, { id: "diferencia", label: c.h.diferencia }, { id: "elementos", label: c.h.elementos }, { id: "ejemplos", label: c.h.ejemplos }, { id: "errores", label: c.h.errores }, { id: "diagnostico", label: c.h.diagnostico }, { id: "ads", label: c.h.ads }, { id: "erramientas", label: c.h.herramientas }, { id: "faq", label: c.h.faq }, { id: "fuentes", label: c.h.fuentes }]} />
+        </div>
+
+          <h2 id="resumen" className={h2 + " scroll-mt-24"}>{c.h.resumen}</h2>
           <Lista items={c.resumen} />
 
-          <h2 className={h2}>{c.h.diferencia}</h2>
+          <h2 id="diferencia" className={h2 + " scroll-mt-24"}>{c.h.diferencia}</h2>
           <p>{c.diferenciaTexto}</p>
           <Tabla cabecera={c.diferenciaCab} filas={c.diferencias} />
           <p>{c.diferenciaAds}</p>
 
-          <h2 className={h2}>{c.h.elementos}</h2>
+          <h2 id="elementos" className={h2 + " scroll-mt-24"}>{c.h.elementos}</h2>
           <p>{c.elementosIntro}</p>
           <Lista items={c.elementos} numerada />
 
-          <h2 className={h2}>{c.h.ejemplos}</h2>
+          <h2 id="ejemplos" className={h2 + " scroll-mt-24"}>{c.h.ejemplos}</h2>
           <p>{c.ejemplosIntro}</p>
           {c.ejemplos.map((e) => (
             <section key={e.titulo} className="space-y-3">
@@ -651,25 +656,25 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <p>{c.propioNota}</p>
           </section>
 
-          <h2 className={h2}>{c.h.errores}</h2>
+          <h2 id="errores" className={h2 + " scroll-mt-24"}>{c.h.errores}</h2>
           <Lista items={c.errores} />
           <p>{c.erroresNota}</p>
 
           <BlogBanner lang={lang} />
 
-          <h2 className={h2}>{c.h.diagnostico}</h2>
+          <h2 id="diagnostico" className={h2 + " scroll-mt-24"}>{c.h.diagnostico}</h2>
           <p>{c.diagnosticoIntro}</p>
           <Lista items={c.diagnostico} numerada />
           <p>{c.sintomasIntro}</p>
           <Tabla cabecera={c.sintomasCab} filas={c.sintomas} />
 
-          <h2 className={h2}>{c.h.ads}</h2>
+          <h2 id="ads" className={h2 + " scroll-mt-24"}>{c.h.ads}</h2>
           <p>{c.adsTexto}</p>
           <p>{c.adsIntro}</p>
           <Tabla cabecera={c.adsCab} filas={c.ads} />
           <p>{c.adsInforme}</p>
 
-          <h2 className={h2}>{c.h.herramientas}</h2>
+          <h2 id="erramientas" className={h2 + " scroll-mt-24"}>{c.h.herramientas}</h2>
           <p>{c.herramientasTexto}</p>
           <Tabla cabecera={c.herramientasCab} filas={c.herramientas} />
           <p>{c.herramientasNota}</p>
@@ -685,7 +690,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className={h2}>{c.h.faq}</h2>
+          <h2 id="faq" className={h2 + " scroll-mt-24"}>{c.h.faq}</h2>
           <div className="space-y-3">
             {faqs.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -698,7 +703,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
 
-          <h2 className={h2}>{c.h.fuentes}</h2>
+          <h2 id="fuentes" className={h2 + " scroll-mt-24"}>{c.h.fuentes}</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {c.fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

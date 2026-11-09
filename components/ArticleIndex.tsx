@@ -1,4 +1,3 @@
-import type { Lang } from "@/lib/i18n/routes";
 
 /**
  * Índice del artículo (protocolo del blog, 09/11/2026): resumen con enlaces de ancla a cada apartado
@@ -6,14 +5,15 @@ import type { Lang } from "@/lib/i18n/routes";
  * en su <h2> (y la clase `scroll-mt-24` para que la cabecera fija no lo tape).
  * Tiempo de lectura = palabras del cuerpo / 200 por minuto, redondeado hacia arriba.
  */
-const T: Record<Lang, { title: string; min: (n: number) => string }> = {
+type L = "es" | "en" | "fr";
+const T: Record<L, { title: string; min: (n: number) => string }> = {
   es: { title: "En este artículo", min: (n) => `${n} min de lectura` },
   en: { title: "In this article", min: (n) => `${n} min read` },
   fr: { title: "Dans cet article", min: (n) => `${n} min de lecture` },
 };
 
-export function ArticleIndex({ lang, minutes, items }: { lang: Lang; minutes: number; items: { id: string; label: string }[] }) {
-  const t = T[lang];
+export function ArticleIndex({ lang, minutes, items }: { lang: string; minutes: number; items: { id: string; label: string }[] }) {
+  const t = T[lang === "en" || lang === "fr" ? lang : "es"];
   return (
     <nav aria-label={t.title} className="bg-gray-50 border border-gray-100 rounded-xl p-5 text-sm">
       <p className="flex flex-wrap items-baseline justify-between gap-2 mb-2">

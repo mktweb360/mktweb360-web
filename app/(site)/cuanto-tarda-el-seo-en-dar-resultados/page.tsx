@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 28/10/2026 — tema 3 de la propuesta de blog del 27/10, aprobado por José.
 // Borrador y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 BORRADOR — Tema 3 Cuánto tarda el SEO en dar resultados».
 // Plazos: los unificados de la web (CLAUDE.md, 18/10). Si cambian, cambiarlos aquí también.
@@ -210,33 +211,37 @@ export default function CuantoTardaSeoPage() {
           <Image src={OG} alt="Gráfico orientativo de 12 meses: primero suben las impresiones, después mejora la posición y por último llegan los clics y contactos" width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={8} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "por-que-el-seo-tarda", "label": "Por qué el SEO tarda"}, {"id": "que-pasa-en-cada-fase", "label": "Qué pasa en cada fase"}, {"id": "de-que-depende-que-vaya-mas-rapido-o-mas-lento", "label": "De qué depende que vaya más rápido o más lento"}, {"id": "por-que-el-seo-local-suele-ir-mas-rapido", "label": "Por qué el SEO local suele ir más rápido"}, {"id": "como-saber-en-search-console-si-vas-por-buen-cam", "label": "Cómo saber en Search Console si vas por buen camino"}, {"id": "y-las-actualizaciones-de-google-cambian-el-plazo", "label": "Y las actualizaciones de Google, ¿cambian el plazo?"}, {"id": "senales-de-alarma-cuando-el-problema-no-es-el-ti", "label": "Señales de alarma: cuando el problema no es el tiempo"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Con un trabajo constante, el SEO de una web suele empezar a dar resultados visibles <strong>entre los 3 y los 6 meses</strong>, y se consolida <strong>entre los 6 y los 12 meses</strong>. Son plazos orientativos: dependen de cómo está la web al empezar, de la competencia de tu sector y de lo que hagas cada mes. La ficha de Google de un negocio local suele moverse antes, en 1-2 meses. Nadie puede garantizarte una posición concreta, y Google lo dice expresamente.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <Lista items={resumen} />
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el SEO tarda</h2>
+          <h2 id="por-que-el-seo-tarda" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el SEO tarda</h2>
           <p>Hay tres esperas que se suman:</p>
           <Lista items={esperas} numerada />
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué pasa en cada fase</h2>
+          <h2 id="que-pasa-en-cada-fase" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué pasa en cada fase</h2>
           <Tabla cabecera={["Fase", "Qué se hace", "Qué se ve en Search Console"]} filas={fases} />
           <p>
             Las fases se solapan. Una web que ya tiene años y algo de autoridad puede saltarse parte del arranque. Una recién estrenada empieza de cero.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">De qué depende que vaya más rápido o más lento</h2>
+          <h2 id="de-que-depende-que-vaya-mas-rapido-o-mas-lento" className="text-2xl font-bold text-primary-600 scroll-mt-24">De qué depende que vaya más rápido o más lento</h2>
           <Tabla cabecera={["Variable", "Acelera", "Frena"]} filas={variables} />
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el SEO local suele ir más rápido</h2>
+          <h2 id="por-que-el-seo-local-suele-ir-mas-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el SEO local suele ir más rápido</h2>
           <p>
             En una búsqueda local como «fontanero en mi zona», Google compara pocos negocios: los de tu área. Una ficha de Google completa y con los mismos datos que tu web, más reseñas respondidas, suele notarse en 1-2 meses. Las búsquedas nacionales tienen más competencia y van más despacio. Lo explicamos en <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local para empresas de servicios</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo saber en Search Console si vas por buen camino</h2>
+          <h2 id="como-saber-en-search-console-si-vas-por-buen-cam" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo saber en Search Console si vas por buen camino</h2>
           <p>Compara siempre el mismo periodo (por ejemplo, últimos 3 meses frente a los 3 anteriores) y el mismo país:</p>
           <Lista items={metricas} numerada />
           <p>
@@ -245,14 +250,14 @@ export default function CuantoTardaSeoPage() {
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Y las actualizaciones de Google, ¿cambian el plazo?</h2>
+          <h2 id="y-las-actualizaciones-de-google-cambian-el-plazo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Y las actualizaciones de Google, ¿cambian el plazo?</h2>
           <p>Pueden adelantarlo o retrasarlo unas semanas, pero no cambian lo que funciona. En 2026, el panel oficial de estado de la Búsqueda de Google recoge:</p>
           <Tabla cabecera={["Actualización", "Inicio", "Duración"]} filas={actualizaciones} />
           <p>
             Si tus datos cambian bruscamente en esas fechas, compara antes y después de la actualización antes de tocar nada. Lo contamos en <Link href="/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/" className="text-accent-500 hover:underline">actualizaciones del algoritmo de Google en 2026</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Señales de alarma: cuando el problema no es el tiempo</h2>
+          <h2 id="senales-de-alarma-cuando-el-problema-no-es-el-ti" className="text-2xl font-bold text-primary-600 scroll-mt-24">Señales de alarma: cuando el problema no es el tiempo</h2>
           <Lista items={alarmas} />
           <p>
             En cualquiera de estos casos, una <Link href="/auditoria-seo-basica/" className="text-accent-500 hover:underline">auditoría web con la checklist de 30 puntos</Link> te dice por dónde empezar.
@@ -268,7 +273,7 @@ export default function CuantoTardaSeoPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -281,7 +286,7 @@ export default function CuantoTardaSeoPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

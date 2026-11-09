@@ -7,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -41,8 +42,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "A website that looks dated, loads slowly or doesn't convert is costing you customers every day. This guide explains the clearest signs that it is time to redesign." : "Un site web qui semble dépassé, se charge lentement ou ne convertit pas vous coûte des clients chaque jour. Ce guide explique les signes les plus clairs qu'il est temps de le refondre."}
         </p>
 
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "your-website-is-older-than-3-years", label: isEn ? "Your website is older than 3 years" : "Votre site web a plus de 3 ans" }, { id: "it-loads-slowly-on-mobile", label: isEn ? "It loads slowly on mobile" : "Il se charge lentement sur mobile" }, { id: "visitors-leave-without-converting", label: isEn ? "Visitors leave without converting" : "Les visiteurs partent sans convertir" }, { id: "it-is-not-optimised-for-seo", label: isEn ? "It is not optimised for SEO" : "Il n'est pas optimisé pour le SEO" }, { id: "your-competition-has-a-better-website", label: isEn ? "Your competition has a better website" : "Votre concurrence a un meilleur site web" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="your-website-is-older-than-3-years" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Your website is older than 3 years" : "Votre site web a plus de 3 ans"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +59,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="it-loads-slowly-on-mobile" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "It loads slowly on mobile" : "Il se charge lentement sur mobile"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +71,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="visitors-leave-without-converting" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Visitors leave without converting" : "Les visiteurs partent sans convertir"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -78,7 +83,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="it-is-not-optimised-for-seo" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "It is not optimised for SEO" : "Il n'est pas optimisé pour le SEO"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -90,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="your-competition-has-a-better-website" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Your competition has a better website" : "Votre concurrence a un meilleur site web"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

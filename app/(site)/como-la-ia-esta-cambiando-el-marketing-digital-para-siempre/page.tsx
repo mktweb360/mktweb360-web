@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cómo la IA está cambiando el marketing digital",
   description:
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     description: "La IA ya no es una tendencia en marketing: es la infraestructura. Más del 70% de las interacciones de marketing digital estarán influenciadas por IA en 2026. Qué cambia, qué no cambia y qué tienes que hacer.",
     url: "https://www.mktweb360.com/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-como-la-ia-esta-cambiando-el-marketing-digital-para-siempre-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -30,7 +32,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
+  image: "https://www.mktweb360.com/og-como-la-ia-esta-cambiando-el-marketing-digital-para-siempre-v2.jpg",
   url: "https://www.mktweb360.com/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/",
   mainEntityOfPage: "https://www.mktweb360.com/como-la-ia-esta-cambiando-el-marketing-digital-para-siempre/",
   inLanguage: "es-ES",
@@ -86,36 +88,48 @@ export default function ComoLaIaCambiaMarketingPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             La IA ya no es una tendencia en marketing: es la infraestructura. Más del 70% de las interacciones de marketing digital estarán influenciadas por IA en 2026. Analizamos qué cambia, qué no cambia y qué tienes que hacer, empezando por entender la <Link href="/ia-aplicada-al-marketing/" className="text-accent-500 hover:underline">IA aplicada al marketing</Link>.
           </p>
+          <Image
+            src="/og-como-la-ia-esta-cambiando-el-marketing-digital-para-siempre-v2.jpg"
+            alt="Comerciante sonriente ante su escaparate en una calle antigua al amanecer, con hilos de luz azul que conectan las tiendas"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={7} items={[{"id": "el-cambio-que-ya-ocurrio-la-ia-como-infraestruct", "label": "El cambio que ya ocurrió: la IA como infraestructura de marketing"}, {"id": "lo-que-la-ia-hace-bien-en-marketing-con-datos-re", "label": "Lo que la IA hace bien en marketing con datos reales"}, {"id": "lo-que-la-ia-no-puede-hacer-todavia", "label": "Lo que la IA no puede hacer todavía"}, {"id": "el-nuevo-rol-del-profesional-de-marketing-en-la", "label": "El nuevo rol del profesional de marketing en la era de la IA"}, {"id": "como-preparar-tu-empresa-para-el-marketing-con-i", "label": "Cómo preparar tu empresa para el marketing con IA"}, {"id": "la-ventana-de-oportunidad-que-se-esta-cerrando", "label": "La ventana de oportunidad que se está cerrando"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Hablar de si la IA «va a cambiar» el marketing ya es tarde: el cambio ocurrió. Lo que antes era una herramienta que algunos probaban hoy es la capa sobre la que funcionan la búsqueda, la publicidad, la creación de contenido y la relación con el cliente. La pregunta útil ya no es si adoptarla, sino cómo hacerlo con criterio.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El cambio que ya ocurrió: la IA como infraestructura de marketing</h2>
+          <h2 id="el-cambio-que-ya-ocurrio-la-ia-como-infraestruct" className="text-2xl font-bold text-primary-600 scroll-mt-24">El cambio que ya ocurrió: la IA como infraestructura de marketing</h2>
           <p>Según IEBS, más del 70% de las interacciones de marketing digital estarán influenciadas por IA en 2026. Esto significa que la IA ya no es un canal ni una campaña: está por debajo de todo, desde el buscador que decide qué respuesta muestra hasta el sistema publicitario que optimiza tu inversión.</p>
           <p>El dato de fondo lo confirma la inversión: IBM señala que el 75% de los ejecutivos planea invertir en IA agéntica. Cuando la infraestructura cambia, las empresas que no se adaptan no compiten en desventaja; simplemente dejan de aparecer donde su cliente busca.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Lo que la IA hace bien en marketing con datos reales</h2>
+          <h2 id="lo-que-la-ia-hace-bien-en-marketing-con-datos-re" className="text-2xl font-bold text-primary-600 scroll-mt-24">Lo que la IA hace bien en marketing con datos reales</h2>
           <p>La IA destaca en tres frentes concretos. El primero es la producción de contenido: multiplica hasta por diez la velocidad de generación de borradores, textos y variaciones. El segundo es el análisis de datos, donde procesa volúmenes que ningún equipo humano abarcaría a mano. El tercero es la personalización a escala, adaptando mensajes a segmentos que antes eran imposibles de atender uno a uno.</p>
           <p>Estos tres usos son los que dan retorno inmediato a una pyme. Para aprovecharlos sin dispersarte, conviene apoyarse en las <Link href="/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/" className="text-accent-500 hover:underline">herramientas de IA que realmente funcionan</Link> y descartar el resto.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Lo que la IA no puede hacer todavía</h2>
+          <h2 id="lo-que-la-ia-no-puede-hacer-todavia" className="text-2xl font-bold text-primary-600 scroll-mt-24">Lo que la IA no puede hacer todavía</h2>
           <p>Frente a lo que cambia, hay un núcleo que se mantiene: la estrategia, el criterio, las relaciones y la creatividad genuina. La IA no decide el posicionamiento de tu marca, no entiende las particularidades de tu mercado como quien lo vive cada día, ni construye la confianza que se genera entre personas.</p>
           <p>Confundir velocidad con estrategia es el error más caro de esta etapa. Producir mucho contenido mediocre a gran velocidad no mejora ningún negocio. La IA amplifica lo que ya tienes: si la estrategia es buena, la multiplica; si no la hay, multiplica el ruido.</p>
 
           <BlogBanner variant="geo" />
 
-          <h2 className="text-2xl font-bold text-primary-600">El nuevo rol del profesional de marketing en la era de la IA</h2>
+          <h2 id="el-nuevo-rol-del-profesional-de-marketing-en-la" className="text-2xl font-bold text-primary-600 scroll-mt-24">El nuevo rol del profesional de marketing en la era de la IA</h2>
           <p>El profesional de marketing no desaparece, se transforma. Su valor se desplaza desde ejecutar tareas repetitivas hacia dirigir, revisar y dar criterio a lo que la IA produce. La alfabetización en IA se convierte en una competencia básica, tan importante como saber redactar o analizar datos hace unos años.</p>
           <p>El perfil que gana es el que combina conocimiento profundo del negocio con soltura en las herramientas de IA. Ahí entran también los <Link href="/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/" className="text-accent-500 hover:underline">agentes de IA para marketing</Link>, que delegan la ejecución para que las personas se concentren en decidir.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo preparar tu empresa para el marketing con IA</h2>
+          <h2 id="como-preparar-tu-empresa-para-el-marketing-con-i" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo preparar tu empresa para el marketing con IA</h2>
           <p>La preparación no empieza comprando herramientas, sino ordenando lo que ya tienes. Define qué tareas repetitivas consumen más tiempo, elige una o dos herramientas para atacarlas y reserva las 20-40 horas iniciales de aprendizaje que exige la puesta en marcha. Con un presupuesto de entre 50 y 200€/mes ya se obtienen ventajas reales de productividad.</p>
           <p>Un frente que ninguna empresa debería descuidar es la visibilidad en los motores generativos. A medida que la gente pregunta directamente a la IA, aparecer en sus respuestas se vuelve tan importante como aparecer en Google, y ahí entra en juego el <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">posicionamiento en IA</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">La ventana de oportunidad que se está cerrando</h2>
+          <h2 id="la-ventana-de-oportunidad-que-se-esta-cerrando" className="text-2xl font-bold text-primary-600 scroll-mt-24">La ventana de oportunidad que se está cerrando</h2>
           <p>Ahora mismo hay una ventaja para quien se mueve pronto: la mayoría de pymes todavía no ha integrado la IA de forma seria en su marketing. Esa ventana no durará. A medida que las herramientas SaaS ponen al alcance de cualquiera capacidades que hace tres años solo tenían las grandes corporaciones, la ventaja de ser temprano se diluye.</p>
           <p>El coste de esperar no es solo tecnológico, es competitivo. Quien construye ahora su músculo de marketing con IA parte con años de recorrido cuando esto sea el estándar de todos.</p>
 
@@ -134,7 +148,7 @@ export default function ComoLaIaCambiaMarketingPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

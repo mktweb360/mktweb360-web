@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "SEO en la era de la IA: cómo posicionarse",
   description:
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     description: "Google ya no es solo un buscador. Es un motor de respuestas generativas con Gemini. Cómo adaptar tu estrategia SEO para que tu web siga captando tráfico cuando la IA responde antes que tú.",
     url: "https://www.mktweb360.com/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-seo.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -30,7 +32,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-seo.jpg",
+  image: "https://www.mktweb360.com/og-seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini-v2.jpg",
   url: "https://www.mktweb360.com/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/",
   mainEntityOfPage: "https://www.mktweb360.com/seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini/",
   inLanguage: "es-ES",
@@ -86,32 +88,44 @@ export default function SeoEraIaPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Google ya no es solo un buscador: es un motor de respuestas generativas impulsado por Gemini. Adaptar tu <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">estrategia SEO</Link> para seguir captando tráfico cuando la IA responde antes que tú no es opcional, es la diferencia entre crecer o quedarte fuera de la conversación.
           </p>
+          <Image
+            src="/og-seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini-v2.jpg"
+            alt="Emprendedor ante el ordenador con una tarjeta de respuesta de IA destacada sobre la lista de resultados de búsqueda"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "que-ha-cambiado-en-google-con-la-integracion-de", "label": "Qué ha cambiado en Google con la integración de Gemini"}, {"id": "que-tipos-de-busquedas-siguen-generando-trafico", "label": "Qué tipos de búsquedas siguen generando tráfico orgánico"}, {"id": "como-optimizar-para-aparecer-dentro-de-un-ai-ove", "label": "Cómo optimizar para aparecer dentro de un AI Overview"}, {"id": "la-estrategia-de-contenido-que-funciona-en-2026", "label": "La estrategia de contenido que funciona en 2026"}, {"id": "seo-geo-la-combinacion-que-da-resultados", "label": "SEO + GEO: la combinación que da resultados"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Durante años, el objetivo del SEO era claro: subir al primer puesto y captar el clic. Hoy Google puede responder directamente con Gemini antes de que el usuario llegue a ese primer puesto. Eso no significa que el SEO haya muerto, sino que las reglas del juego han cambiado y hay que entender dónde sigue habiendo tráfico y valor.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué ha cambiado en Google con la integración de Gemini</h2>
+          <h2 id="que-ha-cambiado-en-google-con-la-integracion-de" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué ha cambiado en Google con la integración de Gemini</h2>
           <p>Con Gemini integrado, Google ha pasado de mostrar diez enlaces azules a construir respuestas sintetizadas a partir de múltiples fuentes. Los AI Overviews aparecen ya en más del 58% de las búsquedas y ocupan el espacio más visible de la página, empujando los resultados orgánicos hacia abajo.</p>
           <p>Para el usuario esto suele ser cómodo: obtiene una respuesta inmediata sin navegar. Para las webs, el reto es doble: ya no basta con posicionar, ahora también hay que ser la fuente que la IA elige para construir su respuesta. Es un cambio de mentalidad que conecta el SEO clásico con el <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">posicionamiento en IA</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué tipos de búsquedas siguen generando tráfico orgánico</h2>
+          <h2 id="que-tipos-de-busquedas-siguen-generando-trafico" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué tipos de búsquedas siguen generando tráfico orgánico</h2>
           <p>No todas las búsquedas se ven afectadas por igual. Las consultas informacionales puras (definiciones, datos concretos, respuestas cerradas) son las más absorbidas por los AI Overviews, porque la IA puede resolverlas sin que el usuario necesite profundizar.</p>
           <p>En cambio, las búsquedas con intención comercial (comparar servicios, elegir proveedor, decidir una compra) siguen generando clics con fuerza, porque el usuario necesita contrastar, ver ejemplos y ganar confianza antes de decidir. El SEO local también resiste bien: el pack de mapas mantiene su prominencia para negocios con presencia física. Ahí es donde conviene concentrar el esfuerzo.</p>
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo optimizar para aparecer dentro de un AI Overview</h2>
+          <h2 id="como-optimizar-para-aparecer-dentro-de-un-ai-ove" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo optimizar para aparecer dentro de un AI Overview</h2>
           <p>Aparecer como fuente citada dentro de un AI Overview se ha convertido en un objetivo de SEO en sí mismo. Google elige esas fuentes en función de la autoridad de la página y de lo fácil que sea extraer una respuesta clara de ella. Un contenido bien estructurado, con encabezados que responden preguntas y párrafos directos, tiene ventaja.</p>
           <p>El schema markup correcto (FAQPage, Article, Organization) ayuda a desambiguar entidades y facilita que Gemini procese tu contenido con mayor precisión semántica. Google no lo define como requisito para aparecer en AI Overviews, pero forma parte de una base técnica sólida. Un SEO técnico impecable, combinado con contenido bien estructurado, te posiciona mejor tanto en resultados orgánicos como en fuentes citadas. Si además entiendes las <Link href="/geo-vs-seo-diferencias/" className="text-accent-500 hover:underline">diferencias entre GEO y SEO</Link>, podrás preparar cada página para ambos escenarios a la vez.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">La estrategia de contenido que funciona en 2026</h2>
+          <h2 id="la-estrategia-de-contenido-que-funciona-en-2026" className="text-2xl font-bold text-primary-600 scroll-mt-24">La estrategia de contenido que funciona en 2026</h2>
           <p>El contenido que gana en 2026 combina profundidad con claridad. Responder con precisión a una pregunta concreta, aportar experiencia real y estructurar la información para que sea fácil de citar es lo que separa a las webs que siguen captando tráfico de las que se quedan sin visitas.</p>
           <p>Esto implica ajustar el mix de keywords hacia consultas con intención comercial, crear contenido que la IA no pueda resumir sin perder valor (comparativas, casos reales, criterios de decisión) y actualizar lo existente para que siga siendo la mejor respuesta disponible. La coherencia de estos cambios se entiende mejor a la luz de las <Link href="/actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web/" className="text-accent-500 hover:underline">actualizaciones del algoritmo de Google en 2026</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">SEO + GEO: la combinación que da resultados</h2>
+          <h2 id="seo-geo-la-combinacion-que-da-resultados" className="text-2xl font-bold text-primary-600 scroll-mt-24">SEO + GEO: la combinación que da resultados</h2>
           <p>La conclusión práctica es que SEO y GEO ya no son estrategias separadas, sino dos caras del mismo trabajo. Un SEO técnico sólido y contenido de calidad son la base tanto para posicionar en Google como para ser citado por la IA. Invertir solo en uno de los dos es dejar oportunidades sobre la mesa.</p>
           <p>Para una pyme, la ventaja es que no necesita duplicar el presupuesto: el mismo contenido bien hecho trabaja para ambos frentes. Lo importante es planificarlo con criterio desde el principio, en lugar de reaccionar cuando el tráfico ya ha caído.</p>
 
@@ -130,7 +144,7 @@ export default function SeoEraIaPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

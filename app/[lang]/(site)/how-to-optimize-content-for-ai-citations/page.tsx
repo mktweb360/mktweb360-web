@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -6,6 +7,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -101,6 +103,33 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Apparaître dans les réponses de l'IA n'est pas une question de chance, mais de méthode. Ce guide technique de GEO (Generative Engine Optimization) vous accompagne pas à pas pour structurer votre contenu, appliquer un schema markup avancé et construire l'autorité sémantique qui fait que ChatGPT, Gemini et Perplexity vous citent."}
         </p>
 
+        <Image
+          src="/og-como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026-v2.jpg"
+          alt={!isEn ? "Robot IA amical qui examine un document web structuré en blocs, avançant sur un tapis roulant" : "Friendly AI robot reviewing a structured web document made of blocks that moves along a conveyor belt"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "1-content-structure-is-the-most-important-signal", label: isEn
+              ? "1. Content structure is the most important signal"
+              : "1. La structure du contenu est le signal le plus important" }, { id: "2-advanced-schema-markup-beyond-the-basics", label: isEn
+              ? "2. Advanced schema markup: beyond the basics"
+              : "2. Schema markup avancé : au-delà des bases" }, { id: "3-the-llms-txt-file-the-signal-ai-crawlers-read", label: isEn
+              ? "3. The llms.txt file: the signal AI crawlers read"
+              : "3. Le fichier llms.txt : le signal que lisent les robots d'IA" }, { id: "4-entity-authority-making-everything-say-the-sam", label: isEn
+              ? "4. Entity authority: making everything say the same thing about you"
+              : "4. Autorité d'entité : faire en sorte que tout dise la même chose sur vous" }, { id: "5-content-that-demonstrates-real-expertise", label: isEn
+              ? "5. Content that demonstrates real expertise"
+              : "5. Contenu qui démontre une expertise réelle" }, { id: "how-to-measure-whether-geo-is-working", label: isEn
+              ? "How to measure whether GEO is working"
+              : "Comment mesurer si le GEO fonctionne" }, { id: "frequently-asked-questions-about-geo-optimisatio", label: isEn
+              ? "Frequently asked questions about GEO optimisation"
+              : "Questions fréquentes sur l'optimisation GEO" }]} />
+        </div>
+
         <section className="mb-10">
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn
@@ -110,7 +139,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="1-content-structure-is-the-most-important-signal" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "1. Content structure is the most important signal"
               : "1. La structure du contenu est le signal le plus important"}
@@ -128,7 +157,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="2-advanced-schema-markup-beyond-the-basics" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "2. Advanced schema markup: beyond the basics"
               : "2. Schema markup avancé : au-delà des bases"}
@@ -146,7 +175,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="3-the-llms-txt-file-the-signal-ai-crawlers-read" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "3. The llms.txt file: the signal AI crawlers read"
               : "3. Le fichier llms.txt : le signal que lisent les robots d'IA"}
@@ -166,7 +195,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="4-entity-authority-making-everything-say-the-sam" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "4. Entity authority: making everything say the same thing about you"
               : "4. Autorité d'entité : faire en sorte que tout dise la même chose sur vous"}
@@ -184,7 +213,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="5-content-that-demonstrates-real-expertise" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "5. Content that demonstrates real expertise"
               : "5. Contenu qui démontre une expertise réelle"}
@@ -229,7 +258,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </div>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-measure-whether-geo-is-working" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How to measure whether GEO is working"
               : "Comment mesurer si le GEO fonctionne"}
@@ -247,7 +276,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions-about-geo-optimisatio" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Frequently asked questions about GEO optimisation"
               : "Questions fréquentes sur l'optimisation GEO"}

@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Canvas para gestionar tus redes sociales",
   description: "Descubre cómo usar el modelo Canvas adaptado a las redes sociales para planificar tu estrategia de contenidos. Herramienta práctica para empresas.",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "Aprende a usar el Social Media Canvas para planificar tu estrategia de contenidos en redes sociales.",
     url: "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/",
     type: "article",
-    images: [{ url: "/og-descubre-el-poder-del-canvas.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/",
   mainEntityOfPage: "https://www.mktweb360.com/descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-descubre-el-poder-del-canvas.jpg",
+  image: "https://www.mktweb360.com/og-descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales-v2.jpg",
 };
 
 export default function CanvasRedesSocialesPage() {
@@ -56,7 +57,7 @@ export default function CanvasRedesSocialesPage() {
             El modelo Canvas, famoso en el mundo del emprendimiento, tiene una adaptación muy potente para planificar estrategias de redes sociales. Te explicamos cómo aprovecharlo.
           </p>
           <Image
-            src="/og-descubre-el-poder-del-canvas.jpg"
+            src="/og-descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales-v2.jpg"
             alt="Canvas para la Gestión de Redes Sociales — Guía Práctica"
             width={1200}
             height={630}
@@ -64,12 +65,16 @@ export default function CanvasRedesSocialesPage() {
             priority
           />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={4} items={[{"id": "que-es-el-social-media-canvas", "label": "¿Qué es el Social Media Canvas?"}, {"id": "los-bloques-del-social-media-canvas", "label": "Los bloques del Social Media Canvas"}, {"id": "como-usar-el-canvas-en-tu-empresa", "label": "Cómo usar el Canvas en tu empresa"}, {"id": "beneficios-para-tu-negocio", "label": "Beneficios para tu negocio"}]} />
+        </div>
         <div className="text-gray-700 space-y-6 leading-relaxed">
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué es el Social Media Canvas?</h2>
+          <h2 id="que-es-el-social-media-canvas" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué es el Social Media Canvas?</h2>
           <p>El Business Model Canvas de Osterwalder ha inspirado múltiples adaptaciones sectoriales. El Social Media Canvas es una herramienta visual que permite planificar de forma estructurada la presencia en redes sociales de una empresa, respondiendo a las preguntas clave de cualquier <Link href="/marketing-de-contenidos/" className="text-accent-500 hover:underline">estrategia de contenidos</Link>.</p>
           <p>Su gran ventaja es que permite tener una visión global de toda la estrategia en un solo documento visual, facilitando la comunicación entre el equipo y el cliente, y asegurando la coherencia de todos los elementos.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los bloques del Social Media Canvas</h2>
+          <h2 id="los-bloques-del-social-media-canvas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los bloques del Social Media Canvas</h2>
 
           <div className="space-y-4">
             {[
@@ -90,7 +95,7 @@ export default function CanvasRedesSocialesPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo usar el Canvas en tu empresa</h2>
+          <h2 id="como-usar-el-canvas-en-tu-empresa" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo usar el Canvas en tu empresa</h2>
           <p>El proceso para crear tu Social Media Canvas es el siguiente:</p>
           <ol className="list-decimal pl-6 space-y-2">
             <li>Reúne al equipo de marketing y define los objetivos de negocio para el año.</li>
@@ -110,7 +115,7 @@ export default function CanvasRedesSocialesPage() {
             secondary={{ text: "Prefiero empezar con la auditoría gratuita", href: "/auditoria-digital/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Beneficios para tu negocio</h2>
+          <h2 id="beneficios-para-tu-negocio" className="text-2xl font-bold text-primary-600 scroll-mt-24">Beneficios para tu negocio</h2>
           <p>Las empresas que planifican su <Link href="/smm-social-media-marketing/" className="text-accent-500 hover:underline">estrategia de redes sociales</Link> con herramientas como el Canvas saben qué esperan de cada publicación y pueden medir si lo consiguen, algo imposible cuando se publica sin estrategia. El Canvas elimina la improvisación, reduce el tiempo de producción de contenidos y asegura que cada publicación tiene un propósito claro y medible.</p>
           <p>Además, al tener todo documentado en un solo lugar, es mucho más fácil incorporar a nuevos miembros del equipo o comunicar la estrategia a stakeholders y directivos.</p>
           <p>Un apunte si tu negocio trabaja con clientes de tu zona: mucha gente te verá antes en Google que en redes. Rellena el bloque de canales pensando también en tu <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile</Link>, que admite publicaciones igual que una red social y aparece cuando alguien busca lo que haces cerca de él.</p>

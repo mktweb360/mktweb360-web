@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "GEO para pymes: cómo aparecer en ChatGPT",
   description:
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     description: "Las pymes tienen una ventaja real en GEO: la especificidad de nicho. Guía práctica para que cualquier negocio pequeño aparezca en las respuestas de ChatGPT, Gemini y Perplexity.",
     url: "https://www.mktweb360.com/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-geo.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -30,7 +32,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-geo.jpg",
+  image: "https://www.mktweb360.com/og-geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca-v2.jpg",
   url: "https://www.mktweb360.com/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/",
   mainEntityOfPage: "https://www.mktweb360.com/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/",
   inLanguage: "es-ES",
@@ -86,25 +88,37 @@ export default function GeoParaPymesPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Aparecer en ChatGPT, Gemini o Perplexity no es un privilegio reservado a las grandes marcas. Las pymes tienen una ventaja real y a menudo desaprovechada: la especificidad de nicho. Esta guía de <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">GEO o posicionamiento en IA</Link> recoge los pasos concretos que cualquier negocio pequeño puede dar hoy.
           </p>
+          <Image
+            src="/og-geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca-v2.jpg"
+            alt="Panadera sonriente en la puerta de su tienda de barrio con el móvil en la mano y una burbuja con estrella dorada de recomendación"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={7} items={[{"id": "por-que-las-pymes-tienen-una-ventaja-real-en-geo", "label": "Por qué las pymes tienen una ventaja real en GEO"}, {"id": "los-cinco-pasos-que-cualquier-pyme-puede-dar-hoy", "label": "Los cinco pasos que cualquier pyme puede dar hoy"}, {"id": "el-error-que-cometen-la-mayoria-de-pymes-al-empe", "label": "El error que cometen la mayoría de pymes al empezar con GEO"}, {"id": "casos-de-uso-donde-el-geo-tiene-mas-impacto", "label": "Casos de uso donde el GEO tiene más impacto"}, {"id": "como-empezar-sin-invertir-en-herramientas-de-mon", "label": "Cómo empezar sin invertir en herramientas de monitorización"}, {"id": "preguntas-frecuentes-sobre-geo-para-pymes", "label": "Preguntas frecuentes sobre GEO para pymes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Muchos negocios pequeños dan por perdida la batalla de la IA antes de empezar, convencidos de que solo las grandes marcas aparecen en esas respuestas. Es un error de percepción. Los modelos generativos no reparten menciones por presupuesto, sino por quién responde mejor a una pregunta concreta, y ahí una pyme especializada puede ganar a un gigante genérico.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué las pymes tienen una ventaja real en GEO</h2>
+          <h2 id="por-que-las-pymes-tienen-una-ventaja-real-en-geo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué las pymes tienen una ventaja real en GEO</h2>
           <p>La ventaja se llama especificidad. Una gran marca tiende a hablar de todo para todos, con un mensaje amplio y por tanto diluido. Una pyme habla de una sola cosa, con detalle, para un público muy definido. Cuando alguien le hace a la IA una pregunta muy concreta, el modelo prefiere la fuente que aborda ese tema en profundidad, no la que lo menciona de pasada.</p>
           <p>Ese es el punto ciego de las marcas grandes: la generalidad. Y es exactamente el terreno donde una pyme puede convertirse en la referencia que la IA cita, precisamente porque nadie más trata ese nicho con la misma dedicación. Trabajar el GEO, en el fondo, es apoyarse en algo que la pyme ya tiene: foco.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los cinco pasos que cualquier pyme puede dar hoy</h2>
+          <h2 id="los-cinco-pasos-que-cualquier-pyme-puede-dar-hoy" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los cinco pasos que cualquier pyme puede dar hoy</h2>
           <p>No hace falta un gran despliegue técnico para empezar. Hay cinco movimientos, ordenados y asequibles, que marcan la diferencia. Primero, auditar el robots.txt para permitir el acceso de los bots de IA a tu contenido: de nada sirve escribir bien si los crawlers no pueden leerte. Segundo, reorganizar tu contenido hacia un formato de pregunta-respuesta, para que cada sección resuelva una duda concreta.</p>
           <p>Tercero, añadir schema markup de tipo FAQPage a tus páginas clave, para que la máquina procese tus respuestas sin ambigüedad. Cuarto, cuidar la coherencia del NAP —nombre, dirección y teléfono— en todos los canales, algo que se solapa con un buen trabajo de <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local</Link>. Y quinto, producir contenido específico de tu nicho, ese que solo tú puedes escribir con conocimiento real.</p>
           <p>Ninguno de estos pasos exige un presupuesto de gran empresa. La mayoría se apoyan en una base de <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO orgánico</Link> que muchas pymes ya tienen a medio construir; el GEO simplemente la ordena con la lógica de que ahora también lee una máquina.</p>
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">El error que cometen la mayoría de pymes al empezar con GEO</h2>
+          <h2 id="el-error-que-cometen-la-mayoria-de-pymes-al-empe" className="text-2xl font-bold text-primary-600 scroll-mt-24">El error que cometen la mayoría de pymes al empezar con GEO</h2>
           <p>El fallo más común es querer aparecer en todo. Es la tentación de perseguir cada búsqueda posible de tu sector, dispersando el esfuerzo y sin dominar ninguna. El resultado es contenido superficial que compite en desventaja justo donde las grandes marcas son fuertes: en lo genérico.</p>
           <p>La estrategia acertada es la contraria: dominar una sola búsqueda antes de ir a por la siguiente. Elige la pregunta concreta donde puedes ser, sin discusión, la mejor respuesta del mercado, y trabájala hasta que la IA te reconozca como referencia. Desde esa posición de autoridad ganada es mucho más fácil expandirse a temas vecinos.</p>
 
@@ -123,15 +137,15 @@ export default function GeoParaPymesPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Casos de uso donde el GEO tiene más impacto</h2>
+          <h2 id="casos-de-uso-donde-el-geo-tiene-mas-impacto" className="text-2xl font-bold text-primary-600 scroll-mt-24">Casos de uso donde el GEO tiene más impacto</h2>
           <p>El GEO rinde especialmente bien en dos escenarios. El primero es el negocio local: cuando alguien le pide a la IA un proveedor de una zona concreta, el modelo intenta dar una respuesta específica, y un negocio con ficha bien optimizada, NAP coherente y contenido de autoridad local tiene opciones reales de ser el nombre que aparece.</p>
           <p>El segundo son los sectores muy especializados. Los modelos tienen dificultad para encontrar fuentes de calidad en nichos estrechos, así que una empresa que produce contenido riguroso sobre su especialidad puede convertirse en la referencia que la IA cita casi por ausencia de competencia real. Cuanto más específico y menos saturado el tema, mayor es la oportunidad para la pyme.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo empezar sin invertir en herramientas de monitorización</h2>
+          <h2 id="como-empezar-sin-invertir-en-herramientas-de-mon" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo empezar sin invertir en herramientas de monitorización</h2>
           <p>No necesitas pagar nada para dar los primeros pasos ni para comprobar si funcionan. La monitorización básica es manual y gratuita: pregunta tú mismo a ChatGPT, Gemini y Perplexity por los temas de tu sector y anota si tu marca aparece y cómo. Repite la prueba cada cierto tiempo para ver la evolución.</p>
           <p>El coste real del GEO para una pyme no está en el software, sino en el tiempo editorial: escribir bien, con foco y de forma constante. Si ese trabajo de contenido ya está planificado, integrar el GEO no añade un gasto significativo. Cuando el negocio crezca, siempre podrás incorporar herramientas de monitorización más avanzadas; para empezar, basta con método y disciplina. Si quieres profundizar en la parte técnica, la <Link href="/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/" className="text-accent-500 hover:underline">guía sobre cómo optimizar tu contenido para que la IA te cite</Link> lo desarrolla paso a paso.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre GEO para pymes</h2>
+          <h2 id="preguntas-frecuentes-sobre-geo-para-pymes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre GEO para pymes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

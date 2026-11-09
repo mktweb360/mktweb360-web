@@ -1,10 +1,12 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -117,8 +119,31 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {isEn ? ", which tells you what to fix first, and then do it yourself with this guide." : ", qui vous indique quoi corriger en premier, puis le faire vous-même avec ce guide."}
           </p>
 
+        <Image
+          src="/og-marketing-digital-para-autonomos-en-2026-como-conseguir-clientes-sin-agencia-v2.jpg"
+          alt={!isEn ? "Propriétaire de boutique devant un grand repère de localisation au-dessus de sa façade, des clients qui entrent et un téléphone affichant une carte et une loupe" : "Shop owner beside a large location marker above the storefront, customers walking in, and a phone showing a map and a magnifying glass"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "the-reality-of-digital-marketing-for-freelancers", label: isEn
+                ? "The reality of digital marketing for freelancers in 2026"
+                : "La réalité du marketing digital pour les indépendants en 2026" }, { id: "the-correct-order-google-business-profile-first", label: isEn
+                ? "The correct order: Google Business Profile first, then the rest"
+                : "L'ordre correct : d'abord Google Business Profile, puis le reste" }, { id: "local-seo-the-investment-that-pays-off-best-over", label: isEn
+                ? "Local SEO: the investment that pays off best over time if you serve your area"
+                : "SEO local : l'investissement le plus rentable dans la durée si vous travaillez dans votre zone" }, { id: "linkedin-for-freelancers-who-sell-to-businesses", label: isEn
+                ? "LinkedIn for freelancers who sell to businesses"
+                : "LinkedIn pour les indépendants qui vendent à des entreprises" }, { id: "google-ads-for-freelancers-when-it-is-worth-it", label: isEn
+                ? "Google Ads for freelancers: when it is worth it"
+                : "Google Ads pour les indépendants : quand ça vaut la peine" }, { id: "content-as-a-differentiator", label: isEn ? "Content as a differentiator" : "Le contenu comme différenciateur" }, { id: "when-it-makes-sense-to-stop-doing-it-alone", label: isEn ? "When it makes sense to stop doing it alone" : "Quand il vaut mieux ne plus tout faire seul" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="the-reality-of-digital-marketing-for-freelancers" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "The reality of digital marketing for freelancers in 2026"
                 : "La réalité du marketing digital pour les indépendants en 2026"}
@@ -136,7 +161,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="the-correct-order-google-business-profile-first" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "The correct order: Google Business Profile first, then the rest"
                 : "L'ordre correct : d'abord Google Business Profile, puis le reste"}
@@ -154,7 +179,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="local-seo-the-investment-that-pays-off-best-over" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Local SEO: the investment that pays off best over time if you serve your area"
                 : "SEO local : l'investissement le plus rentable dans la durée si vous travaillez dans votre zone"}
@@ -187,7 +212,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           />
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="linkedin-for-freelancers-who-sell-to-businesses" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "LinkedIn for freelancers who sell to businesses"
                 : "LinkedIn pour les indépendants qui vendent à des entreprises"}
@@ -205,7 +230,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="google-ads-for-freelancers-when-it-is-worth-it" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Google Ads for freelancers: when it is worth it"
                 : "Google Ads pour les indépendants : quand ça vaut la peine"}
@@ -223,7 +248,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="content-as-a-differentiator" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "Content as a differentiator" : "Le contenu comme différenciateur"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -239,7 +264,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="when-it-makes-sense-to-stop-doing-it-alone" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "When it makes sense to stop doing it alone" : "Quand il vaut mieux ne plus tout faire seul"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -283,7 +308,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "Frequently asked questions" : "Questions fréquentes"}
             </h2>
             <div className="space-y-3">
