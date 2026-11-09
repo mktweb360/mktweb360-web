@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 28/10/2026 — reescrita como checklist de auditoría web de 30 puntos (tema 1 de la propuesta de blog del 27/10,
 // opción A aprobada por José: se reescribe esta URL en lugar de crear otra, para no canibalizarla).
 // Borrador y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 BORRADOR — Tema 1 Auditoría web paso a paso».
@@ -252,12 +253,16 @@ export default function Page() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={12} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "que-necesitas-antes-de-empezar", "label": "Qué necesitas antes de empezar"}, {"id": "como-anotar-los-resultados", "label": "Cómo anotar los resultados"}, {"id": "como-priorizar-lo-que-has-encontrado", "label": "Cómo priorizar lo que has encontrado"}, {"id": "cada-cuanto-repetir-la-auditoria", "label": "Cada cuánto repetir la auditoría"}, {"id": "cuando-conviene-una-auditoria-profesional", "label": "Cuándo conviene una auditoría profesional"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Una <strong>auditoría web</strong> es una revisión ordenada de todo lo que impide que tu página aparezca en Google y convierta visitas en clientes. Una auditoría básica cubre cinco bloques: indexación, velocidad, contenido, presencia local y visibilidad en IA. Cada punto da uno de estos cuatro resultados: <strong>pasa</strong>, <strong>falla</strong>, <strong>desconocido</strong> o <strong>no aplica</strong>. Se corrige primero lo que falla y más pesa.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <ul className="space-y-3">
             {resumen.map((item, i) => (
               <li key={i} className="flex items-start gap-3 p-4 border border-gray-200 rounded-xl">
@@ -267,13 +272,13 @@ export default function Page() {
             ))}
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué necesitas antes de empezar</h2>
+          <h2 id="que-necesitas-antes-de-empezar" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué necesitas antes de empezar</h2>
           <Tabla cabecera={["Herramienta", "Para qué sirve en la auditoría", "Coste"]} filas={herramientas} />
           <p>
             Si todavía no tienes Search Console, configúralo antes que nada. Es la única fuente con datos reales de Google sobre tu web. Las demás herramientas de SEO estiman.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo anotar los resultados</h2>
+          <h2 id="como-anotar-los-resultados" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo anotar los resultados</h2>
           <p>
             Abre una hoja de cálculo con cinco columnas: punto, resultado, prueba (captura o dato), prioridad y responsable. Usa siempre los mismos cuatro resultados:
           </p>
@@ -296,7 +301,7 @@ export default function Page() {
             </section>
           ))}
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo priorizar lo que has encontrado</h2>
+          <h2 id="como-priorizar-lo-que-has-encontrado" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo priorizar lo que has encontrado</h2>
           <p>
             Ordena los «falla» con dos preguntas: ¿cuánto afecta a que te encuentren o te contacten? ¿Cuánto cuesta arreglarlo?
           </p>
@@ -305,12 +310,12 @@ export default function Page() {
             Los «desconocido» van a una lista aparte con el dato que falta, por ejemplo «sin acceso a Search Console» o «poco tráfico para Core Web Vitals». No los mezcles con los fallos.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cada cuánto repetir la auditoría</h2>
+          <h2 id="cada-cuanto-repetir-la-auditoria" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cada cuánto repetir la auditoría</h2>
           <p>
             Haz una auditoría completa una vez al año, y también antes y después de un rediseño, una migración o un cambio de dominio. Los bloques 1 y 5 conviene repasarlos cada mes en Search Console: es lo que cambia sin que toques nada. Si estás empezando a trabajar el SEO, aquí explicamos <Link href="/cuanto-tarda-el-seo-en-dar-resultados/" className="text-accent-500 hover:underline">cuánto tarda en dar resultados y qué se mueve primero</Link>. Y si quieres una visión general de por dónde empezar, tienes nuestra <Link href="/seo-para-pymes-guia/" className="text-accent-500 hover:underline">guía de SEO para pymes</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuándo conviene una auditoría profesional</h2>
+          <h2 id="cuando-conviene-una-auditoria-profesional" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuándo conviene una auditoría profesional</h2>
           <p>
             Esta checklist te dice qué está mal. Lo que suele costar más es saber por qué pasa y qué corregir primero en tu caso, sobre todo cuando hay migraciones, muchas páginas o datos que se contradicen.
           </p>
@@ -324,7 +329,7 @@ export default function Page() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -337,7 +342,7 @@ export default function Page() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

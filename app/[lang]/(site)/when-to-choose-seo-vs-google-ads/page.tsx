@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -6,6 +7,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -53,7 +55,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "SEO & SEM" : "SEO & SEM"}
         </p>
-        <IntlArticleJsonLd lang={lang} slug="when-to-choose-seo-vs-google-ads" headline={isEn ? "When to choose SEO and when to choose Google Ads: a guide to making the right decision for your business" : "Quand choisir le SEO et quand choisir Google Ads : guide pour prendre la bonne décision selon votre entreprise"} image="/og-cuando-elegir-seo-vs-google-ads.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="when-to-choose-seo-vs-google-ads" headline={isEn ? "When to choose SEO and when to choose Google Ads: a guide to making the right decision for your business" : "Quand choisir le SEO et quand choisir Google Ads : guide pour prendre la bonne décision selon votre entreprise"} image="/og-cuando-elegir-seo-vs-google-ads-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "When to choose SEO and when to choose Google Ads: a guide to making the right decision for your business"
@@ -66,8 +68,31 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Il n'existe pas de réponse universelle à 'SEO ou Google Ads ?'. La bonne réponse dépend de votre entreprise, de votre urgence, de votre budget et de vos objectifs. Ce guide vous donne un cadre clair pour décider — sans que personne ne vous vende ce qu'il veut vendre."}
         </p>
 
+        <Image
+          src="/og-cuando-elegir-seo-vs-google-ads-v2.jpg"
+          alt={!isEn ? "Chef d’entreprise face à une bifurcation : un arbre aux racines (SEO) d’un côté, une fusée et un robinet à pièces (Google Ads) de l’autre" : "Businessman facing a fork in the road: a tree with roots (SEO) versus a rocket and a coin tap (Google Ads)"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "the-fundamental-differences-between-seo-and-goog", label: isEn
+              ? "The fundamental differences between SEO and Google Ads"
+              : "Les différences fondamentales entre SEO et Google Ads" }, { id: "when-google-ads-is-clearly-the-best-option", label: isEn
+              ? "When Google Ads is clearly the best option"
+              : "Quand Google Ads est clairement la meilleure option" }, { id: "when-seo-is-clearly-the-best-investment", label: isEn
+              ? "When SEO is clearly the best investment"
+              : "Quand le SEO est clairement le meilleur investissement" }, { id: "the-combined-strategy-when-to-use-both-at-the-sa", label: isEn
+              ? "The combined strategy: when to use both at the same time"
+              : "La stratégie combinée : quand utiliser les deux en même temps" }, { id: "decision-matrix-which-to-choose-according-to-you", label: isEn
+              ? "Decision matrix: which to choose according to your circumstances"
+              : "Matrice de décision : lequel choisir selon votre situation" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-fundamental-differences-between-seo-and-goog" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The fundamental differences between SEO and Google Ads"
               : "Les différences fondamentales entre SEO et Google Ads"}
@@ -90,7 +115,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="when-google-ads-is-clearly-the-best-option" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "When Google Ads is clearly the best option"
               : "Quand Google Ads est clairement la meilleure option"}
@@ -138,7 +163,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="when-seo-is-clearly-the-best-investment" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "When SEO is clearly the best investment"
               : "Quand le SEO est clairement le meilleur investissement"}
@@ -188,7 +213,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-combined-strategy-when-to-use-both-at-the-sa" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The combined strategy: when to use both at the same time"
               : "La stratégie combinée : quand utiliser les deux en même temps"}
@@ -231,7 +256,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="decision-matrix-which-to-choose-according-to-you" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Decision matrix: which to choose according to your circumstances"
               : "Matrice de décision : lequel choisir selon votre situation"}

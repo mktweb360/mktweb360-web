@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 31/10/2026 — reescritura (tema 6 de la propuesta de blog del 27/10, aprobada por José). Misma URL.
 // Texto y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 ARTÍCULO — Verifactu 2027 y factura electrónica».
 // Fechas comprobadas el 28/10/2026 en el BOE y la sede de la AEAT. Verifactu: Hacienda anunció el 05/10/2026
@@ -218,6 +219,10 @@ export default function FacturaElectronicaPage() {
           <Image src={OG} alt="Línea temporal 2027-2029 con dos carriles: Verifactu (1 de enero y 1 de julio de 2027, aplazamiento a octubre de 2028 anunciado) y factura electrónica entre empresas (6 de octubre de 2027, 2028 y 2029)" width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={15} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "en-que-se-diferencian-verifactu-y-la-factura-ele", "label": "¿En qué se diferencian Verifactu y la factura electrónica?"}, {"id": "cual-es-el-calendario-oficial-de-2027-a-2029", "label": "¿Cuál es el calendario oficial de 2027 a 2029?"}, {"id": "me-afecta-seis-preguntas-para-saberlo", "label": "¿Me afecta? Seis preguntas para saberlo"}, {"id": "que-tiene-que-hacer-tu-tienda-online-woocommerce", "label": "¿Qué tiene que hacer tu tienda online (WooCommerce, Shopify) o tu TPV?"}, {"id": "que-puedes-hacer-ya-sin-esperar-a-la-fecha", "label": "¿Qué puedes hacer ya, sin esperar a la fecha?"}, {"id": "que-errores-y-bulos-se-repiten-sobre-verifactu", "label": "¿Qué errores y bulos se repiten sobre Verifactu?"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Verifactu y la factura electrónica son dos obligaciones distintas. <strong>Verifactu</strong> afecta al programa con el que facturas, también al de tu tienda online y tu TPV: desde el 1 de enero de 2027 para las sociedades y desde el 1 de julio de 2027 para los autónomos. La <strong>factura electrónica entre empresas</strong> llega el 6 de octubre de 2027 si facturas más de 8 millones de euros, y el 6 de octubre de 2028 para el resto.
@@ -230,29 +235,29 @@ export default function FacturaElectronicaPage() {
             </p>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <Lista items={resumen} />
 
-          <h2 className="text-2xl font-bold text-primary-600">¿En qué se diferencian Verifactu y la factura electrónica?</h2>
+          <h2 id="en-que-se-diferencian-verifactu-y-la-factura-ele" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿En qué se diferencian Verifactu y la factura electrónica?</h2>
           <p>
             Verifactu es el nombre con el que se conoce el Reglamento de sistemas informáticos de facturación. No cambia a quién facturas ni cómo envías la factura: cambia el programa que la genera, que tiene que guardar un registro de cada factura, encadenado con el anterior, y poner un código QR en ella. La factura electrónica obligatoria, en cambio, cambia el formato de las facturas entre empresas y profesionales: dejan de ser un papel o un PDF y pasan a ser un fichero estructurado que se intercambia por una plataforma.
           </p>
           <Tabla cabecera={["", "Verifactu", "Factura electrónica entre empresas"]} filas={diferencias} />
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Cuál es el calendario oficial de 2027 a 2029?</h2>
+          <h2 id="cual-es-el-calendario-oficial-de-2027-a-2029" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Cuál es el calendario oficial de 2027 a 2029?</h2>
           <p>Estas son las fechas comprobadas el 28 de octubre de 2026 en el BOE y en la sede de la Agencia Tributaria:</p>
           <Tabla cabecera={["Fecha", "Qué empieza", "A quién", "Fuente"]} filas={calendario} />
           <p>
             Sobre el aplazamiento de Verifactu: el 5 de octubre de 2026 el Ministerio de Hacienda publicó una nota en la que prevé retrasar sus obligaciones pendientes hasta octubre de 2028, para hacerlas coincidir con la factura electrónica de las empresas que no superan los 8 millones de euros. A 28 de octubre de 2026, el texto consolidado del Real Decreto 1007/2023 en el BOE mantiene el 1 de enero y el 1 de julio de 2027. Prepárate con esas fechas y revisa este artículo: lo actualizaremos cuando se publique la norma.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Me afecta? Seis preguntas para saberlo</h2>
+          <h2 id="me-afecta-seis-preguntas-para-saberlo" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Me afecta? Seis preguntas para saberlo</h2>
           <Lista items={arbol} numerada />
           <p>
             Si estás empezando, en <Link href="/como-darse-de-alta-autonomo/" className="text-accent-500 hover:underline">cómo darse de alta como autónomo</Link> tienes los pasos previos, y en <Link href="/cuota-autonomos-2026-todo-lo-que-tienes-que-saber/" className="text-accent-500 hover:underline">la cuota de autónomos de 2026</Link>, lo que pagarás cada mes.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué tiene que hacer tu tienda online (WooCommerce, Shopify) o tu TPV?</h2>
+          <h2 id="que-tiene-que-hacer-tu-tienda-online-woocommerce" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué tiene que hacer tu tienda online (WooCommerce, Shopify) o tu TPV?</h2>
           <p>
             La Agencia Tributaria es clara en un punto: da igual que vendas en una tienda física o en internet. Si un programa expide tus facturas o tus tickets, ese programa tiene que cumplir el Reglamento. Lo que cambia es dónde está ese programa en cada caso:
           </p>
@@ -261,12 +266,12 @@ export default function FacturaElectronicaPage() {
             Si vendes en tienda física y online, el punto delicado es que las dos ventas no acaben en sistemas distintos sin control. Lo explicamos en <Link href="/conectar-tpv-tienda-online/" className="text-accent-500 hover:underline">cómo conectar el TPV con tu tienda online</Link>. Y si estás eligiendo plataforma, conviene preguntar por la facturación antes de decidir: lo comparamos en <Link href="/woocommerce-vs-shopify-cual-elegir-tienda-online/" className="text-accent-500 hover:underline">WooCommerce o Shopify</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué puedes hacer ya, sin esperar a la fecha?</h2>
+          <h2 id="que-puedes-hacer-ya-sin-esperar-a-la-fecha" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué puedes hacer ya, sin esperar a la fecha?</h2>
           <Lista items={pasos} numerada />
 
           <BlogBanner variant="ecommerce" />
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué errores y bulos se repiten sobre Verifactu?</h2>
+          <h2 id="que-errores-y-bulos-se-repiten-sobre-verifactu" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué errores y bulos se repiten sobre Verifactu?</h2>
           <Lista items={bulos} />
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -279,7 +284,7 @@ export default function FacturaElectronicaPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -292,7 +297,7 @@ export default function FacturaElectronicaPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

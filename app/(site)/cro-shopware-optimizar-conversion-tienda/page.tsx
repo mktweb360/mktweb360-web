@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "CRO para Shopware: mejora la conversión",
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "CRO para Shopware: eventos GA4, causas de abandono y optimización de fichas y checkout para vender más con el mismo tráfico.",
     url: "https://www.mktweb360.com/cro-shopware-optimizar-conversion-tienda/",
     type: "article",
-    images: [{ url: "/og-cro-shopware-optimizar-conversion.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-cro-shopware-optimizar-conversion-tienda-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/cro-shopware-optimizar-conversion-tienda/",
   mainEntityOfPage: "https://www.mktweb360.com/cro-shopware-optimizar-conversion-tienda/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-cro-shopware-optimizar-conversion.jpg",
+  image: "https://www.mktweb360.com/og-cro-shopware-optimizar-conversion-tienda-v2.jpg",
 };
 
 const FAQS = [
@@ -77,7 +78,7 @@ export default function CroShopwarePage() {
             Atraer visitas es media batalla; que compren es la otra media. Te enseñamos a subir la conversión de tu tienda Shopware quitando fricción donde de verdad importa.
           </p>
           <Image
-            src="/og-cro-shopware-optimizar-conversion.jpg"
+            src="/og-cro-shopware-optimizar-conversion-tienda-v2.jpg"
             alt="CRO para Shopware: cómo optimizar la conversión de tu tienda"
             width={1200}
             height={630}
@@ -86,15 +87,19 @@ export default function CroShopwarePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "la-conversion-media-y-por-que-la-tuya-importa", "label": "La conversión media y por qué la tuya importa"}, {"id": "los-4-eventos-ga4-imprescindibles", "label": "Los 4 eventos GA4 imprescindibles"}, {"id": "las-5-causas-reales-de-abandono", "label": "Las 5 causas reales de abandono"}, {"id": "optimiza-tus-fichas-de-producto", "label": "Optimiza tus fichas de producto"}, {"id": "herramientas-de-diagnostico", "label": "Herramientas de diagnóstico"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>Atraer tráfico a tu tienda Shopware es solo la mitad del trabajo. La otra mitad —y la más rentable— es conseguir que ese tráfico compre. Subir la conversión no requiere más visitas ni más presupuesto de publicidad: requiere quitar fricción donde el cliente la encuentra. Y casi siempre está en los mismos sitios.</p>
-          <h2 className="text-2xl font-bold text-primary-600">La conversión media y por qué la tuya importa</h2>
+          <h2 id="la-conversion-media-y-por-que-la-tuya-importa" className="text-2xl font-bold text-primary-600 scroll-mt-24">La conversión media y por qué la tuya importa</h2>
           <p>La tasa de conversión media del ecommerce ronda el 2,7% a nivel global, pero en España se sitúa entre el 1% y el 1,4% (DemandSage, 2026). Esto significa que mejorar la conversión tiene un efecto directo y multiplicador: pasar de un 1% a un 1,5% es aumentar las ventas un 50% sin gastar un euro más en captación. Por eso el CRO es la palanca de crecimiento más rentable de una tienda con tráfico.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Los 4 eventos GA4 imprescindibles</h2>
+          <h2 id="los-4-eventos-ga4-imprescindibles" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los 4 eventos GA4 imprescindibles</h2>
           <p>No se puede mejorar lo que no se mide. En una tienda Shopware, los cuatro eventos de GA4 que no pueden faltar son: view_item (cuando alguien ve una ficha de producto), add_to_cart (cuando la añade al carrito), begin_checkout (cuando inicia el proceso de compra) y purchase (cuando completa el pedido). Con estos cuatro puntos se construye el embudo y se ve exactamente en qué paso se cae la gente.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Las 5 causas reales de abandono</h2>
+          <h2 id="las-5-causas-reales-de-abandono" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las 5 causas reales de abandono</h2>
           <p>El abandono de carrito tiene causas conocidas y casi siempre se repiten. Una: costes inesperados que aparecen al final (gastos de envío que el cliente no veía venir). Dos: obligar a registrarse para comprar. Tres: un checkout largo, con demasiados pasos o campos. Cuatro: desconfianza en el momento del pago, por falta de señales de seguridad o métodos conocidos. Cinco: información insuficiente en la ficha, que deja dudas sin resolver. Cada una de estas fricciones se puede medir y eliminar.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Optimiza tus fichas de producto</h2>
+          <h2 id="optimiza-tus-fichas-de-producto" className="text-2xl font-bold text-primary-600 scroll-mt-24">Optimiza tus fichas de producto</h2>
           <p>La ficha es donde se gana o se pierde la venta. Lo esencial: el CTA de compra visible sin hacer scroll en móvil, precio y disponibilidad claros desde el primer vistazo, la política de devoluciones presente en la propia ficha (reduce el miedo a equivocarse), un mínimo de 4 a 6 imágenes reales del producto y reseñas marcadas con schema AggregateRating para que muestren estrellas y aporten prueba social. Cada uno de estos elementos sube la conversión por separado; juntos, la transforman.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -104,7 +109,7 @@ export default function CroShopwarePage() {
               Ver marketing para Shopware
             </Link>
           </div>
-          <h2 className="text-2xl font-bold text-primary-600">Herramientas de diagnóstico</h2>
+          <h2 id="herramientas-de-diagnostico" className="text-2xl font-bold text-primary-600 scroll-mt-24">Herramientas de diagnóstico</h2>
           <p>Para saber dónde actuar, tres herramientas bastan y dos son gratuitas. GA4 da el embudo cuantitativo: dónde y cuánto se cae la gente. Microsoft Clarity, gratuito, aporta lo cualitativo: grabaciones de sesión y mapas de calor que muestran cómo se comporta el usuario de verdad. Y Shopware Analytics, el panel nativo, cruza estos datos con los de tu catálogo y pedidos. Con esta combinación se pasa de suponer a saber qué está frenando las ventas.</p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
@@ -122,7 +127,7 @@ export default function CroShopwarePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

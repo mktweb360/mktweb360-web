@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "10 errores digitales al montar un negocio",
   description:
@@ -101,18 +102,22 @@ export default function ErroresDigitalesNegocioNuevoPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "no-asegurar-el-dominio-y-las-redes-sociales-desd", "label": "No asegurar el dominio y las redes sociales desde el principio"}, {"id": "lanzar-una-web-sin-seo-basico", "label": "Lanzar una web sin SEO básico"}, {"id": "no-crear-ni-verificar-la-ficha-de-google-busines", "label": "No crear ni verificar la ficha de Google Business Profile"}, {"id": "invertir-en-publicidad-antes-de-tener-la-base-re", "label": "Invertir en publicidad antes de tener la base resuelta"}, {"id": "depender-solo-de-las-redes-sociales-como-canal-d", "label": "Depender solo de las redes sociales como canal digital principal"}, {"id": "no-medir-nada-desde-el-principio", "label": "No medir nada desde el principio"}, {"id": "preguntas-frecuentes-sobre-errores-digitales-en", "label": "Preguntas frecuentes sobre errores digitales en negocios nuevos"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Emprender en 2026 implica tomar decisiones digitales desde el primer día. Dominio, web, redes, publicidad, herramientas de gestión — y hacerlo bajo presión, con poco tiempo y muchas otras cosas en la cabeza. No es raro cometer errores que después cuestan dinero o tiempo para corregir.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">No asegurar el dominio y las redes sociales desde el principio</h2>
+          <h2 id="no-asegurar-el-dominio-y-las-redes-sociales-desd" className="text-2xl font-bold text-primary-600 scroll-mt-24">No asegurar el dominio y las redes sociales desde el principio</h2>
           <p>El nombre de dominio de tu negocio puede estar ocupado si esperas. Lo mismo con los perfiles de redes sociales. El primer día, o incluso antes de abrir, conviene registrar el dominio y reservar el nombre de usuario en las redes que vayas a usar — aunque todavía no las actives. Es rápido, barato y evita encontrarte con que alguien más usa tu nombre en internet.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Lanzar una web sin SEO básico</h2>
+          <h2 id="lanzar-una-web-sin-seo-basico" className="text-2xl font-bold text-primary-600 scroll-mt-24">Lanzar una web sin SEO básico</h2>
           <p>A una web que no está mínimamente optimizada para buscadores le cuesta mucho aparecer en Google. No hace falta una estrategia SEO compleja desde el inicio, pero sí una web bien estructurada, con títulos y descripciones correctos, velocidad de carga aceptable y contenido que responde las búsquedas que hacen tus clientes potenciales. Sin eso, la web existe pero no trabaja. Por eso nuestra <Link href="/oferta-web-seo-organico/" className="text-accent-500 hover:underline">web profesional para negocios que empiezan</Link> ya sale con el SEO técnico de base hecho: estructura, títulos, descripciones y velocidad.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">No crear ni verificar la ficha de Google Business Profile</h2>
+          <h2 id="no-crear-ni-verificar-la-ficha-de-google-busines" className="text-2xl font-bold text-primary-600 scroll-mt-24">No crear ni verificar la ficha de Google Business Profile</h2>
           <p>Muchos negocios nuevos abren sin crear su ficha de Google. Eso significa no aparecer en el mapa local, no recibir las visitas que llegarían de búsquedas locales y perder visibilidad frente a competidores que sí la tienen activa. Crear la ficha es gratuito y lleva poco tiempo; la verificación de Google puede tardar unos días, así que conviene empezar pronto. Si no tienes tiempo de trabajarla, existe la opción de <Link href="/google-business-profile/" className="text-accent-500 hover:underline">delegar la gestión de tu ficha de Google</Link> (fotos, publicaciones y respuesta a reseñas). No hacerlo desde el principio es uno de los errores que más pesan en la captación local.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -132,13 +137,13 @@ export default function ErroresDigitalesNegocioNuevoPage() {
             secondary={{ text: "¿Ya has abierto? Pide la auditoría gratuita y mira qué corregir", href: "/auditoria-digital/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Invertir en publicidad antes de tener la base resuelta</h2>
+          <h2 id="invertir-en-publicidad-antes-de-tener-la-base-re" className="text-2xl font-bold text-primary-600 scroll-mt-24">Invertir en publicidad antes de tener la base resuelta</h2>
           <p>Arrancar Google Ads o Meta Ads cuando la web no convierte, el mensaje no está claro o no hay capacidad de responder los contactos es gastar dinero para atraer tráfico que no se va a convertir. La publicidad amplifica lo que ya funciona — si nada funciona bien, la amplificación del problema es cara. La base primero, la publicidad después.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Depender solo de las redes sociales como canal digital principal</h2>
+          <h2 id="depender-solo-de-las-redes-sociales-como-canal-d" className="text-2xl font-bold text-primary-600 scroll-mt-24">Depender solo de las redes sociales como canal digital principal</h2>
           <p>Las redes sociales son canales prestados. Los algoritmos cambian, el alcance orgánico se reduce, las cuentas pueden suspenderse. Una pyme que construye toda su presencia digital sobre redes sociales sin tener web propia y lista de contactos propia está construyendo sobre terreno que no controla. Las redes son un canal más — no la base.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">No medir nada desde el principio</h2>
+          <h2 id="no-medir-nada-desde-el-principio" className="text-2xl font-bold text-primary-600 scroll-mt-24">No medir nada desde el principio</h2>
           <p>Sin métricas no hay aprendizaje. Instalar Google Analytics y Google Search Console desde el inicio es gratuito y tarda poco. Tener datos desde el primer mes permite entender qué funciona, de dónde viene el tráfico y qué páginas convierten. Empezar a medir tarde significa perder semanas o meses de datos que habrían permitido tomar mejores decisiones antes.</p>
 
           <p className="text-sm text-gray-500">
@@ -160,7 +165,7 @@ export default function ErroresDigitalesNegocioNuevoPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre errores digitales en negocios nuevos</h2>
+          <h2 id="preguntas-frecuentes-sobre-errores-digitales-en" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre errores digitales en negocios nuevos</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

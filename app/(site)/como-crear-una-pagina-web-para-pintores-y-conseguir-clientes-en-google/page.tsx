@@ -8,7 +8,11 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 import { PintoresCta } from "@/components/PintoresCta";
+import { ArticleIndex } from "@/components/ArticleIndex";
+import { PintoresDemosBox } from "@/components/PintoresDemosBox";
+import { OfferBannerWebPintores } from "@/components/offers/OfferBannerWebPintores";
 
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Página web para pintores: cómo captar clientes",
   description: "Guía para pintores y empresas de pintura: secciones imprescindibles de la web, SEO local y ficha de Google para conseguir clientes desde Google.",
@@ -18,7 +22,7 @@ export const metadata: Metadata = {
     description: "Cómo crear una web para una empresa de pintura y posicionarla en Google para conseguir clientes locales.",
     url: "https://www.mktweb360.com/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/",
     type: "article",
-    images: [{ url: "/og-como-crear-una-pagina-web-para-pintores.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-paginas-web-pintores-guia.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -35,20 +39,21 @@ const articleSchema = {
   mainEntityOfPage: "https://www.mktweb360.com/como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google/",
   inLanguage: "es-ES",
   image: [
-    "https://www.mktweb360.com/og-como-crear-una-pagina-web-para-pintores.jpg",
-    "https://www.mktweb360.com/pintores-antes-despues.jpg",
-    "https://www.mktweb360.com/pintores-ruta-cliente.jpg",
+    "https://www.mktweb360.com/og-paginas-web-pintores-guia.jpg",
+    "https://www.mktweb360.com/pintores-foto-antes-despues.jpg",
+    "https://www.mktweb360.com/pintores-ruta-cliente-es.jpg",
   ],
 };
 
-const H2 = "text-2xl font-bold text-primary-600";
+const H2 = "text-2xl font-bold text-primary-600 scroll-mt-24";
+const MIN_LECTURA = 7;
 const H3 = "text-xl font-semibold text-primary-700";
 
 export default function PaginaWebPintoresPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="pintores">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Página Web para Pintores" }]} />
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-4">
@@ -63,7 +68,7 @@ export default function PaginaWebPintoresPage() {
             Una web profesional es la herramienta más potente para que una empresa de pintura capte clientes. Te explicamos qué debe tener, cómo posicionarla en Google y cómo conseguir que las visitas acaben en una solicitud de presupuesto.
           </p>
           <Image
-            src="/og-como-crear-una-pagina-web-para-pintores.jpg"
+            src="/og-paginas-web-pintores-guia.jpg"
             alt="Ilustración de la web de una empresa de pintura con galería de trabajos, ficha de Google y botón de presupuesto"
             width={1200}
             height={630}
@@ -80,18 +85,19 @@ export default function PaginaWebPintoresPage() {
             desc="Diseñamos webs para pintores y empresas de pintura pensadas para recibir solicitudes de presupuesto, con SEO local y ficha de Google. Empieza por un diagnóstico gratuito."
           />
 
-          <nav aria-label="Contenido del artículo" className="bg-gray-50 border border-gray-100 rounded-xl p-5 text-sm">
-            <p className="font-semibold text-primary-700 mb-2">En este artículo</p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li><a href="#por-que" className="text-accent-600 hover:underline">Por qué un pintor necesita página web</a></li>
-              <li><a href="#objetivos" className="text-accent-600 hover:underline">Objetivos de una empresa de pinturas y de su web</a></li>
-              <li><a href="#secciones" className="text-accent-600 hover:underline">Secciones imprescindibles</a></li>
-              <li><a href="#seo-local" className="text-accent-600 hover:underline">SEO local: palabras clave que funcionan</a></li>
-              <li><a href="#google-business-profile" className="text-accent-600 hover:underline">Google Business Profile</a></li>
-              <li><a href="#clientes" className="text-accent-600 hover:underline">Cómo conseguir clientes para pintar casas</a></li>
-              <li><a href="#convertir" className="text-accent-600 hover:underline">Cómo convertir visitas en presupuestos</a></li>
-            </ul>
-          </nav>
+          <ArticleIndex
+            lang="es"
+            minutes={MIN_LECTURA}
+            items={[
+              { id: "por-que", label: "Por qué un pintor necesita página web" },
+              { id: "objetivos", label: "Objetivos de una empresa de pinturas y de su web" },
+              { id: "secciones", label: "Secciones imprescindibles de la web" },
+              { id: "seo-local", label: "SEO local: palabras clave que funcionan" },
+              { id: "google-business-profile", label: "Google Business Profile" },
+              { id: "clientes", label: "Cómo conseguir clientes para pintar casas" },
+              { id: "convertir", label: "De la visita al presupuesto" },
+            ]}
+          />
 
           <h2 id="por-que" className={H2}>¿Por qué un pintor necesita página web?</h2>
           <p>Quien necesita pintar su casa, su comunidad o su local suele buscar en Google, mira dos o tres empresas y llama a la que le transmite más confianza. Si no apareces, o apareces con una web que no inspira confianza, esa llamada se la lleva otro.</p>
@@ -115,13 +121,13 @@ export default function PaginaWebPintoresPage() {
           <p>La web es la pieza que conecta todo: recibe el tráfico de Google, enseña tu trabajo y recoge el contacto.</p>
 
           <Image
-            src="/pintores-ruta-cliente.jpg"
-            alt="Esquema del camino del cliente: búsqueda en Google, web con trabajos, ficha de Google con reseñas y llamada o WhatsApp para pedir presupuesto"
+            src="/pintores-ruta-cliente-es.jpg"
+            alt="Infografía: así llega un cliente hasta ti. 1 busca en Google pintor en tu ciudad, 2 ve tu web y fotos de tus obras, 3 lee tus reseñas y tu ficha del mapa, 4 te llama o te pide presupuesto"
             width={1200}
             height={630}
             className="w-full rounded-2xl"
           />
-          <p className="text-sm text-gray-500 -mt-3">Esquema orientativo del camino de un cliente: de la búsqueda en Google al contacto.</p>
+          <p className="text-sm text-gray-500 -mt-3">Así recorre un cliente el camino desde que busca un pintor hasta que te contacta. Tu web, tus reseñas y tu ficha de Google son las tres paradas.</p>
 
           <h2 id="secciones" className={H2}>Secciones imprescindibles en la web de un pintor</h2>
 
@@ -137,12 +143,13 @@ export default function PaginaWebPintoresPage() {
           <p>Las fotos del antes y el después son lo que más convence a quien va a contratar a un pintor. Los clientes quieren ver la calidad de tu trabajo antes de llamar.</p>
           <p>Organiza el portfolio por tipo de trabajo (interior, exterior, fachadas, decorativos, industriales) para que cada cliente encuentre algo parecido a lo que necesita.</p>
           <Image
-            src="/pintores-antes-despues.jpg"
-            alt="Ilustración de una pared antes y después de pintarla: a la izquierda manchas y desconchones, a la derecha acabado limpio en azul, con un rodillo en el centro"
+            src="/pintores-foto-antes-despues.jpg"
+            alt="Fotografía de una pared de salón antes y después de pintarla: a la izquierda manchas de humedad y desconchones, a la derecha la misma pared limpia y recién pintada"
             width={1200}
-            height={630}
+            height={675}
             className="w-full rounded-2xl"
           />
+          <p className="text-sm text-gray-500 -mt-3">Antes y después: es lo primero que mira quien te va a contratar. Súbelas a tu web, ordenadas por tipo de trabajo.</p>
 
           <PintoresCta
             lang="es"
@@ -206,6 +213,10 @@ export default function PaginaWebPintoresPage() {
             <li>Mides las llamadas y los formularios para saber qué canal funciona.</li>
           </ul>
 
+          <PintoresDemosBox lang="es" where="articulo" />
+
+          <OfferBannerWebPintores lang="es" />
+
           <PintoresCta
             lang="es"
             where="final"
@@ -217,7 +228,7 @@ export default function PaginaWebPintoresPage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug="como-crear-una-pagina-web-para-pintores-y-conseguir-clientes-en-google" />
     </>
   );

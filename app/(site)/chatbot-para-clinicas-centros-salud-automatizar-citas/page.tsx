@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Chatbot para clínicas: citas automatizadas",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "Las clínicas y centros de salud reciben cientos de consultas repetitivas cada día. Un chatbot bien implementado puede automatizar la gestión de citas, responder preguntas frecuentes y cualificar pacientes, cumpliendo con el RGPD.",
     url: "https://www.mktweb360.com/chatbot-para-clinicas-centros-salud-automatizar-citas/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-diseno-web-para-clinicas.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-chatbot-para-clinicas-centros-salud-automatizar-citas-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-diseno-web-para-clinicas.jpg",
+  image: "https://www.mktweb360.com/og-chatbot-para-clinicas-centros-salud-automatizar-citas-v2.jpg",
   url: "https://www.mktweb360.com/chatbot-para-clinicas-centros-salud-automatizar-citas/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-para-clinicas-centros-salud-automatizar-citas/",
   inLanguage: "es-ES",
@@ -88,28 +90,40 @@ export default function ChatbotClinicasPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Las clínicas y centros de salud reciben cientos de consultas repetitivas cada día: horarios, citas, precios, cancelaciones. Un chatbot bien implementado automatiza la gestión de citas, responde preguntas frecuentes y cualifica pacientes cumpliendo el RGPD, y encaja de forma natural con el <Link href="/diseno-web-para-clinicas/" className="text-accent-500 hover:underline">diseño web para clínicas</Link>.
           </p>
+          <Image
+            src="/og-chatbot-para-clinicas-centros-salud-automatizar-citas-v2.jpg"
+            alt="Recepción de una clínica con una doctora sonriente junto a un móvil gigante con burbujas de chat y un calendario de citas"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "que-puede-automatizar-un-chatbot-en-una-clinica", "label": "Qué puede automatizar un chatbot en una clínica"}, {"id": "requisitos-especificos-para-chatbots-en-el-secto", "label": "Requisitos específicos para chatbots en el sector sanitario"}, {"id": "como-integrar-el-chatbot-con-el-software-de-gest", "label": "Cómo integrar el chatbot con el software de gestión de la clínica"}, {"id": "roi-del-chatbot-para-una-clinica-calculo-practic", "label": "ROI del chatbot para una clínica: cálculo práctico"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El teléfono de recepción de una clínica suena sin parar para preguntar lo mismo una y otra vez. Cada llamada resuelta con un mismo dato es tiempo que el equipo no dedica al paciente que tiene delante. Ahí es donde un chatbot cambia el día a día de una clínica.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué puede automatizar un chatbot en una clínica</h2>
+          <h2 id="que-puede-automatizar-un-chatbot-en-una-clinica" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué puede automatizar un chatbot en una clínica</h2>
           <p>Un chatbot puede encargarse de la gestión de citas —reservar, confirmar, recordar y cancelar—, de responder las preguntas frecuentes sobre horarios, ubicación, precios o tratamientos, y de cualificar a los pacientes antes de derivarlos al profesional adecuado. Todo ello a cualquier hora, incluso cuando la clínica está cerrada.</p>
           <p>En un escenario tipo de unas 40 llamadas al día, buena parte son consultas repetitivas que no requieren criterio clínico. Automatizarlas descarga a recepción y mejora la experiencia del paciente, que obtiene respuesta al instante. Esto se complementa muy bien con un buen <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local para empresas de servicios</Link> que atraiga a esos pacientes hasta la web.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Requisitos específicos para chatbots en el sector sanitario</h2>
+          <h2 id="requisitos-especificos-para-chatbots-en-el-secto" className="text-2xl font-bold text-primary-600 scroll-mt-24">Requisitos específicos para chatbots en el sector sanitario</h2>
           <p>El sector sanitario tiene un requisito clave: los datos de salud son categoría especial según el artículo 9 del RGPD. Esto implica garantías reforzadas de seguridad, base jurídica adecuada e información clara al paciente sobre el tratamiento de sus datos.</p>
           <p>Además, hay un límite que no se debe cruzar: el chatbot no puede dar diagnósticos. Su función es gestionar y atender, no valorar clínicamente. Puede informar sobre los síntomas que trata cada especialista, pero la valoración corresponde siempre al profesional sanitario. Y con menores, la protección de los datos de salud es todavía mayor.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo integrar el chatbot con el software de gestión de la clínica</h2>
+          <h2 id="como-integrar-el-chatbot-con-el-software-de-gest" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo integrar el chatbot con el software de gestión de la clínica</h2>
           <p>Para que el chatbot sea útil de verdad, tiene que hablar con el software de gestión que ya usa la clínica. Los sistemas modernos permiten integrarse con plataformas como Dendros, Docline o Doctoralia, de modo que las citas gestionadas por el bot se reflejen directamente en la agenda del centro.</p>
           <p>Esa integración evita la doble gestión y los errores de agenda. El paciente reserva desde la web o desde WhatsApp y la cita aparece automáticamente en el sistema del centro, igual que si la hubiera introducido recepción. Es la misma lógica de coherencia digital que aplicamos en el <Link href="/diseno-web-para-dentistas/" className="text-accent-500 hover:underline">diseño web para dentistas</Link>.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">ROI del chatbot para una clínica: cálculo práctico</h2>
+          <h2 id="roi-del-chatbot-para-una-clinica-calculo-practic" className="text-2xl font-bold text-primary-600 scroll-mt-24">ROI del chatbot para una clínica: cálculo práctico</h2>
           <p>El cálculo suele ser favorable. En una clínica dental, un chatbot gestionado puede generar un ahorro cercano a los 600 euros mensuales en tiempo de personal, al absorber las consultas y gestiones repetitivas que antes ocupaban a recepción.</p>
           <p>A ese ahorro directo se suman las citas que se recuperan porque el paciente puede reservar fuera del horario de atención telefónica. Reforzar además la ficha en <Link href="/google-business-profile/" className="text-accent-500 hover:underline">Google Business Profile</Link> multiplica el número de pacientes que llegan hasta ese chatbot, cerrando el círculo entre visibilidad y conversión.</p>
 
@@ -128,7 +142,7 @@ export default function ChatbotClinicasPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

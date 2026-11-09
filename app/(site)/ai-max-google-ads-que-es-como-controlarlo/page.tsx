@@ -8,6 +8,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 03/11/2026 — tema 8 de la propuesta de blog del 27/10 (AI Max en Google Ads).
 // Texto, fuentes y verificación: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 ARTÍCULO — AI Max en Google Ads».
 // Fechas de migración comprobadas el 28/10/2026 en la ayuda de Google Ads y en el blog de Google (actualización del 11/06/2026).
@@ -224,15 +225,19 @@ export default function AiMaxGoogleAdsPage() {
           <Image src={OG} alt="Panel de control ilustrado de AI Max: un dial de concordancia de exacta a IA, interruptores de términos de búsqueda, textos generados y expansión de URL final, y exclusiones de marcas y de URL" width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={12} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "que-es-ai-max-en-google-ads", "label": "¿Qué es AI Max en Google Ads?"}, {"id": "que-cambia-frente-a-la-concordancia-amplia-y-las", "label": "¿Qué cambia frente a la concordancia amplia y las DSA?"}, {"id": "migracion-automatica-que-hara-google-y-cuando", "label": "Migración automática: ¿qué hará Google y cuándo?"}, {"id": "7-comprobaciones-antes-de-activar-ai-max", "label": "7 comprobaciones antes de activar AI Max"}, {"id": "como-se-leen-los-informes-de-ai-max", "label": "¿Cómo se leen los informes de AI Max?"}, {"id": "le-compensa-ai-max-a-una-pyme", "label": "¿Le compensa AI Max a una pyme?"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             AI Max es un conjunto de funciones de Google Ads que se activa dentro de una campaña de búsqueda, no un tipo de campaña nuevo. Amplía las búsquedas en las que aparece tu anuncio, genera textos a partir de tu web y puede llevar al usuario a otra página de tu dominio. Todo se puede limitar con ajustes y exclusiones.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <Lista items={resumen} />
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué es AI Max en Google Ads?</h2>
+          <h2 id="que-es-ai-max-en-google-ads" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué es AI Max en Google Ads?</h2>
           <p>
             Google lo describe como una capa de optimización para las campañas de búsqueda que reúne mejoras de segmentación y de anuncios. En la ayuda de Google en español también aparece como «IA Max». Tiene tres funciones:
           </p>
@@ -241,13 +246,13 @@ export default function AiMaxGoogleAdsPage() {
             Además de estas funciones, AI Max añade controles que antes no tenían las campañas de búsqueda: exclusiones e inclusiones de marca, exclusiones e inclusiones de URL, ubicaciones de interés por grupo de anuncios y directrices para los textos generados.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué cambia frente a la concordancia amplia y las DSA?</h2>
+          <h2 id="que-cambia-frente-a-la-concordancia-amplia-y-las" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué cambia frente a la concordancia amplia y las DSA?</h2>
           <Tabla cabecera={["", "Concordancia amplia de campaña", "DSA", "AI Max"]} filas={comparativa} />
           <p>
             Un detalle que pasa desapercibido si usabas el ajuste de concordancia amplia de campaña: con ese ajuste, Google trata cada palabra clave como si existiera también en exacta a la hora de elegir cuál se usa. Al pasar a AI Max eso deja de ocurrir. Si quieres conservar esa prioridad, Google indica que añadas copias de esas palabras clave en concordancia exacta. Si estás montando la lista de palabras clave desde cero, te sirve nuestra guía del <Link href="/como-usar-planificador-de-palabras-clave-google-ads/" className="text-accent-500 hover:underline">Planificador de palabras clave de Google Ads</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Migración automática: ¿qué hará Google y cuándo?</h2>
+          <h2 id="migracion-automatica-que-hara-google-y-cuando" className="text-2xl font-bold text-primary-600 scroll-mt-24">Migración automática: ¿qué hará Google y cuándo?</h2>
           <p>
             Google anunció el 15 de abril de 2026 que las DSA, los recursos creados automáticamente y la concordancia amplia a nivel de campaña pasarían a AI Max a partir de septiembre de 2026. El 11 de junio actualizó ese anuncio: las DSA se retrasan a febrero de 2027 y el resto mantiene septiembre de 2026. Por eso encontrarás artículos con fechas distintas. Este es el calendario que figura hoy en la ayuda y en el blog de Google:
           </p>
@@ -256,14 +261,14 @@ export default function AiMaxGoogleAdsPage() {
             Puedes adelantarte: Google ofrece una herramienta para actualizar las DSA y un aviso en la interfaz para el resto. Al actualizar una campaña con DSA, los anuncios dinámicos antiguos siguen funcionando durante un periodo de transición y se pausan cuando los nuevos anuncios adaptables ya están aptos. Las fechas pueden volver a cambiar: comprueba los avisos de tu cuenta y la ayuda de Google Ads antes de planificar.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">7 comprobaciones antes de activar AI Max</h2>
+          <h2 id="7-comprobaciones-antes-de-activar-ai-max" className="text-2xl font-bold text-primary-600 scroll-mt-24">7 comprobaciones antes de activar AI Max</h2>
           <p>Sirven igual si lo vas a activar tú o si Google va a migrar tu campaña:</p>
           <Lista items={comprobaciones} numerada />
           <p>
             Si quieres medir el efecto antes de decidir, Google permite crear un experimento de AI Max que reparte el tráfico y el presupuesto de la propia campaña entre una parte con AI Max y otra sin él, sin duplicar la campaña. Si no aplicas el resultado, la campaña vuelve a sus ajustes anteriores.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Cómo se leen los informes de AI Max?</h2>
+          <h2 id="como-se-leen-los-informes-de-ai-max" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Cómo se leen los informes de AI Max?</h2>
           <p>Hay cuatro sitios donde ver lo que ha hecho la IA:</p>
           <Lista items={informes} />
           <p>Y lo que suele tocar después, según lo que veas:</p>
@@ -272,7 +277,7 @@ export default function AiMaxGoogleAdsPage() {
             Si llevas tiempo sin revisar la cuenta en conjunto, empieza por nuestra <Link href="/auditoria-google-ads-pymes-que-revisar/" className="text-accent-500 hover:underline">auditoría de Google Ads para pymes</Link>: conversiones, búsquedas reales, concordancias y página de destino, antes de añadir más automatización.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Le compensa AI Max a una pyme?</h2>
+          <h2 id="le-compensa-ai-max-a-una-pyme" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Le compensa AI Max a una pyme?</h2>
           <p>
             Google afirma que los anunciantes que no son del sector retail y activan AI Max obtienen de media un 14 % más de conversiones o de valor de conversión con un CPA o ROAS similar (datos internos de Google, 2025). Es un dato del propio Google sobre medias de muchos anunciantes, no una previsión para tu cuenta. Lo que decide si te conviene es tu punto de partida:
           </p>
@@ -291,7 +296,7 @@ export default function AiMaxGoogleAdsPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -304,7 +309,7 @@ export default function AiMaxGoogleAdsPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <p className="text-sm text-gray-500">Consultadas el 28 de octubre de 2026.</p>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (

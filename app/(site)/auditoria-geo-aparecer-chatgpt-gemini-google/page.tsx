@@ -7,6 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: { absolute: "Auditoría GEO: cómo saber si apareces en ChatGPT y Gemini" },
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
       "Auditoría GEO paso a paso: cómo comprobar si tu empresa aparece en ChatGPT, Perplexity, Gemini y la IA de Google, qué medir y qué hacer si no te mencionan.",
     url: "https://www.mktweb360.com/auditoria-geo-aparecer-chatgpt-gemini-google/",
     type: "article",
-    images: [{ url: "/og-auditoria-geo-aparecer-chatgpt-gemini-google.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-auditoria-geo-aparecer-chatgpt-gemini-google-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +33,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
-  image: "https://www.mktweb360.com/og-auditoria-geo-aparecer-chatgpt-gemini-google.jpg",
+  image: "https://www.mktweb360.com/og-auditoria-geo-aparecer-chatgpt-gemini-google-v2.jpg",
   url: "https://www.mktweb360.com/auditoria-geo-aparecer-chatgpt-gemini-google/",
   mainEntityOfPage: "https://www.mktweb360.com/auditoria-geo-aparecer-chatgpt-gemini-google/",
   inLanguage: "es-ES",
@@ -131,7 +132,7 @@ export default function AuditoriaGeoPage() {
             Método de auditoría GEO que cualquier empresa puede hacer: consultas a probar, cómo puntuar las respuestas, revisión técnica y un plan de 90 días para mejorar tu visibilidad en IA.
           </p>
           <Image
-            src="/og-auditoria-geo-aparecer-chatgpt-gemini-google.jpg"
+            src="/og-auditoria-geo-aparecer-chatgpt-gemini-google-v2.jpg"
             alt="Auditoría GEO: cómo saber si apareces en ChatGPT y Gemini"
             width={1200}
             height={630}
@@ -140,12 +141,16 @@ export default function AuditoriaGeoPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={7} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "paso-1-prepara-tu-matriz-de-consultas", "label": "Paso 1: prepara tu matriz de consultas"}, {"id": "paso-2-lanza-las-consultas-en-cada-plataforma", "label": "Paso 2: lanza las consultas en cada plataforma"}, {"id": "paso-3-puntua-cada-respuesta", "label": "Paso 3: puntúa cada respuesta"}, {"id": "paso-4-revision-tecnica-de-tu-web", "label": "Paso 4: revisión técnica de tu web"}, {"id": "paso-5-coherencia-de-tu-empresa-en-toda-la-red", "label": "Paso 5: coherencia de tu empresa en toda la red"}, {"id": "paso-6-contenido-que-la-ia-pueda-citar", "label": "Paso 6: contenido que la IA pueda citar"}, {"id": "plan-de-90-dias", "label": "Plan de 90 días"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Para saber si tu empresa aparece en los motores de IA, tienes que <strong>preguntarles como lo haría un cliente</strong>, registrar si te mencionan y con qué fuentes, y repetirlo en varias plataformas y fechas. No existe una posición 1 estable en ChatGPT o Gemini: las respuestas cambian según la consulta, el modelo, la ubicación, el idioma y si la herramienta está buscando en la web. Por eso una auditoría GEO mide <strong>tendencias</strong>, no una foto única.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <ul className="space-y-3">
             {[
               <>Prueba consultas de <strong>marca, servicio, problema, zona y comparación</strong>.</>,
@@ -162,7 +167,7 @@ export default function AuditoriaGeoPage() {
             ))}
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 1: prepara tu matriz de consultas</h2>
+          <h2 id="paso-1-prepara-tu-matriz-de-consultas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 1: prepara tu matriz de consultas</h2>
           <p>Escribe entre 15 y 25 preguntas reales, repartidas en cinco tipos:</p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
@@ -186,7 +191,7 @@ export default function AuditoriaGeoPage() {
             Usa el lenguaje de tus clientes, no el tuyo. Si tus clientes dicen arreglar la web y tú dices optimización técnica, pregunta como ellos.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 2: lanza las consultas en cada plataforma</h2>
+          <h2 id="paso-2-lanza-las-consultas-en-cada-plataforma" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 2: lanza las consultas en cada plataforma</h2>
           <ul className="space-y-3">
             {[
               <><strong>ChatGPT</strong>: cuando busca en la web, muestra enlaces y fuentes. OpenAI indica que las webs públicas pueden aparecer en sus resultados de búsqueda y que su rastreador para búsqueda es <strong>OAI-SearchBot</strong>.</>,
@@ -204,7 +209,7 @@ export default function AuditoriaGeoPage() {
             Hazlo en sesión nueva o en modo incógnito y anota fecha, plataforma y ubicación. Guarda capturas: las respuestas cambian.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 3: puntúa cada respuesta</h2>
+          <h2 id="paso-3-puntua-cada-respuesta" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 3: puntúa cada respuesta</h2>
           <p>Valora cada consulta con 0, 1 o 2 puntos en estos criterios:</p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
@@ -234,7 +239,7 @@ export default function AuditoriaGeoPage() {
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 4: revisión técnica de tu web</h2>
+          <h2 id="paso-4-revision-tecnica-de-tu-web" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 4: revisión técnica de tu web</h2>
           <p>Si la IA no te encuentra, primero descarta que no pueda leerte:</p>
           <ul className="space-y-3">
             {[
@@ -254,7 +259,7 @@ export default function AuditoriaGeoPage() {
             Google anunció en junio de 2026 <strong>informes de rendimiento de IA generativa en Search Console</strong>. Si ya están disponibles para tu propiedad, úsalos para ver cómo apareces en sus funciones de IA.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 5: coherencia de tu empresa en toda la red</h2>
+          <h2 id="paso-5-coherencia-de-tu-empresa-en-toda-la-red" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 5: coherencia de tu empresa en toda la red</h2>
           <p>
             Los modelos contrastan fuentes. Si tu web dice una dirección, tu Perfil de Empresa otra y un directorio antiguo una tercera, la IA duda o se equivoca. Unifica:
           </p>
@@ -275,7 +280,7 @@ export default function AuditoriaGeoPage() {
             Revisa también qué dicen <strong>terceros</strong> de ti: asociaciones, medios, partners, casos publicados. Las menciones reales en sitios fiables pesan. <strong>No compres artículos ni enlaces</strong> para manipular respuestas: además de arriesgado, suele detectarse.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso 6: contenido que la IA pueda citar</h2>
+          <h2 id="paso-6-contenido-que-la-ia-pueda-citar" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso 6: contenido que la IA pueda citar</h2>
           <p>
             Las páginas que más se citan responden <strong>de forma directa</strong> a una pregunta concreta, con datos verificables y estructura clara. Aplica:
           </p>
@@ -296,7 +301,7 @@ export default function AuditoriaGeoPage() {
             Lo desarrollamos en detalle en la guía sobre <Link href="/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/" className="text-accent-500 hover:underline">cómo optimizar tu contenido para que la IA te cite</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Plan de 90 días</h2>
+          <h2 id="plan-de-90-dias" className="text-2xl font-bold text-primary-600 scroll-mt-24">Plan de 90 días</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
@@ -327,7 +332,7 @@ export default function AuditoriaGeoPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -340,7 +345,7 @@ export default function AuditoriaGeoPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

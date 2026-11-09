@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -88,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Chatbots" : "Chatbots"}
         </p>
 
-        <IntlArticleJsonLd lang={lang} slug="chatbot-wordpress" headline={isEn ? "Chatbot for WordPress: Installation Guide" : "Chatbot pour WordPress : guide d'installation"} image="/og-chatgpt-para-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="chatbot-wordpress" headline={isEn ? "Chatbot for WordPress: Installation Guide" : "Chatbot pour WordPress : guide d'installation"} image="/og-chatgpt-para-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Chatbot for WordPress: Installation Guide"
@@ -108,8 +110,31 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "WordPress propulse environ 59 % des sites web utilisant un CMS. Cette popularité a un revers : un écosystème saturé de plugins qui promettent un « chatbot IA » et livrent peu. Avant d'installer le premier qui apparaît dans les résultats de recherche, il vaut la peine de comprendre ce qui sépare un chatbot utile d'un plugin de plus qui ralentit votre site."}
         </p>
 
+        <Image
+          src="/og-chatbot-wordpress-como-instalarlo-que-evitar-v2.jpg"
+          alt={!isEn ? "Page web avec une pièce de puzzle de chatbot raccordée par un câble, à côté de pièces mises au rebut et d’un panneau d’avertissement" : "Web page with a chatbot puzzle piece attached by a cable, next to discarded pieces and a warning sign"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "the-problem-with-wordpress-chatbot-plugins", label: isEn
+              ? "The problem with WordPress chatbot plugins"
+              : "Le problème avec les plugins de chatbot WordPress" }, { id: "what-distinguishes-a-useful-chatbot-from-a-gener", label: isEn
+              ? "What distinguishes a useful chatbot from a generic plugin"
+              : "Ce qui distingue un chatbot utile d'un plugin quelconque" }, { id: "how-a-well-integrated-chatbot-works-in-wordpress", label: isEn
+              ? "How a well-integrated chatbot works in WordPress"
+              : "Comment fonctionne un chatbot bien intégré dans WordPress" }, { id: "steps-to-implement-a-chatbot-that-works-on-your", label: isEn
+              ? "Steps to implement a chatbot that works on your WordPress site"
+              : "Étapes pour implémenter un chatbot qui fonctionne sur votre site WordPress" }, { id: "the-most-common-mistakes-when-implementing-a-cha", label: isEn
+              ? "The most common mistakes when implementing a chatbot on WordPress"
+              : "Les erreurs les plus courantes lors de l'implémentation d'un chatbot sur WordPress" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-problem-with-wordpress-chatbot-plugins" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The problem with WordPress chatbot plugins"
               : "Le problème avec les plugins de chatbot WordPress"}
@@ -127,7 +152,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-distinguishes-a-useful-chatbot-from-a-gener" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What distinguishes a useful chatbot from a generic plugin"
               : "Ce qui distingue un chatbot utile d'un plugin quelconque"}
@@ -145,7 +170,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-a-well-integrated-chatbot-works-in-wordpress" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How a well-integrated chatbot works in WordPress"
               : "Comment fonctionne un chatbot bien intégré dans WordPress"}
@@ -165,7 +190,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="steps-to-implement-a-chatbot-that-works-on-your" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Steps to implement a chatbot that works on your WordPress site"
               : "Étapes pour implémenter un chatbot qui fonctionne sur votre site WordPress"}
@@ -183,7 +208,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-most-common-mistakes-when-implementing-a-cha" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The most common mistakes when implementing a chatbot on WordPress"
               : "Les erreurs les plus courantes lors de l'implémentation d'un chatbot sur WordPress"}
@@ -201,7 +226,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

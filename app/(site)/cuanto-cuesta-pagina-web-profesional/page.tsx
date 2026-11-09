@@ -9,6 +9,8 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Precio de una página web profesional en 2026",
   description:
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
     description: "Descubre qué influye de verdad en el precio de una web profesional y qué debe incluir para captar clientes.",
     url: "https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/",
     type: "article",
-    images: [{ url: "/og-cuanto-cuesta-pagina-web-profesional.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-cuanto-cuesta-pagina-web-profesional-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -35,7 +37,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/",
   mainEntityOfPage: "https://www.mktweb360.com/cuanto-cuesta-pagina-web-profesional/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-cuanto-cuesta-pagina-web-profesional.jpg",
+  image: "https://www.mktweb360.com/og-cuanto-cuesta-pagina-web-profesional-v2.jpg",
 };
 
 const FAQS = [
@@ -77,7 +79,7 @@ export default function CuantoCuestaWebPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="web">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Precio página web profesional 2025" }]} />
 
         <header className="mb-8">
@@ -93,7 +95,7 @@ export default function CuantoCuestaWebPage() {
             El precio de una web varía enormemente según quién la hace y con qué criterio. Pero la pregunta relevante no es cuánto cuesta hacerla, sino cuánto te cuesta no tenerla bien hecha.
           </p>
           <Image
-            src="/og-cuanto-cuesta-pagina-web-profesional.jpg"
+            src="/og-cuanto-cuesta-pagina-web-profesional-v2.jpg"
             alt="Precio de una página web profesional en 2025: qué debe incluir"
             width={1200}
             height={630}
@@ -101,6 +103,10 @@ export default function CuantoCuestaWebPage() {
             priority
           />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "por-que-no-todas-las-webs-cuestan-lo-mismo", "label": "Por qué no todas las webs cuestan lo mismo"}, {"id": "que-debe-incluir-una-web-profesional-orientada-a", "label": "Qué debe incluir una web profesional orientada a negocio"}, {"id": "cuando-una-web-barata-sale-cara", "label": "Cuándo una web barata sale cara"}, {"id": "que-conviene-preguntar-antes-de-contratar", "label": "Qué conviene preguntar antes de contratar"}, {"id": "preguntas-frecuentes-sobre-el-precio-de-una-web", "label": "Preguntas frecuentes sobre el precio de una web profesional"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
@@ -110,7 +116,7 @@ export default function CuantoCuestaWebPage() {
             La opción más barata suele ser la más cara a largo plazo: si la web no posiciona en Google, no convierte visitas y no genera confianza, el coste real son los clientes que pierdes cada mes frente a tu competencia.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué no todas las webs cuestan lo mismo</h2>
+          <h2 id="por-que-no-todas-las-webs-cuestan-lo-mismo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué no todas las webs cuestan lo mismo</h2>
           <p>El precio cambia según el tipo de proyecto, el nivel de personalización, la calidad del diseño, la estrategia previa, el trabajo de copy, la base SEO, las integraciones y la medición. No es lo mismo una web corporativa simple que una web de servicios bien estructurada, una landing de captación o una tienda online con lógica comercial.</p>
           <ul className="space-y-2">
             {["Tipo de negocio y complejidad del proyecto", "Número y función real de las páginas", "Necesidad de copywriting, SEO y arquitectura", "Integraciones, formularios, automatizaciones o comercio electrónico"].map((item) => (
@@ -129,7 +135,7 @@ export default function CuantoCuestaWebPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué debe incluir una web profesional orientada a negocio</h2>
+          <h2 id="que-debe-incluir-una-web-profesional-orientada-a" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué debe incluir una web profesional orientada a negocio</h2>
           <p>Una web profesional debería dejar claro en pocos segundos qué hace la empresa, para quién trabaja y qué paso quiere que dé el usuario. También debería ordenar bien la información, reforzar la credibilidad y preparar el terreno para SEO, campañas y medición. Cuando falta esa capa estratégica, aparecen webs bonitas pero confusas, con poca capacidad de conversión y demasiado dependientes de explicaciones posteriores.</p>
           <ul className="space-y-2">
             {["Mensaje principal claro y diferenciador", "Estructura y jerarquía orientadas a intención de búsqueda y conversión", "Diseño profesional y experiencia móvil correcta", "CTAs bien planteados y pruebas de confianza", "Base SEO y sistema de medición"].map((item) => (
@@ -140,12 +146,12 @@ export default function CuantoCuestaWebPage() {
             ))}
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuándo una web barata sale cara</h2>
+          <h2 id="cuando-una-web-barata-sale-cara" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuándo una web barata sale cara</h2>
           <p>Una web barata puede servir en algunos contextos, pero muchas veces el ahorro inicial desaparece rápido cuando la página no convierte, no posiciona bien, no transmite confianza o requiere rehacerse en poco tiempo. En términos de negocio, una web que no apoya la captación ni acompaña la estrategia comercial suele salir más cara que una inversión bien hecha desde el principio.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué conviene preguntar antes de contratar</h2>
+          <h2 id="que-conviene-preguntar-antes-de-contratar" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué conviene preguntar antes de contratar</h2>
           <p>Antes de aceptar un presupuesto, conviene saber qué incluye exactamente: estrategia, arquitectura, diseño, copy, SEO base, analítica, integraciones, revisiones y soporte. También conviene aclarar si la web está pensada solo para verse o también para captar, y si será mantenible y escalable cuando el negocio evolucione.</p>
 
           <p className="text-sm text-gray-500">
@@ -167,7 +173,7 @@ export default function CuantoCuestaWebPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre el precio de una web profesional</h2>
+          <h2 id="preguntas-frecuentes-sobre-el-precio-de-una-web" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre el precio de una web profesional</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -188,7 +194,7 @@ export default function CuantoCuestaWebPage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug="cuanto-cuesta-pagina-web-profesional" />
     </>
   );

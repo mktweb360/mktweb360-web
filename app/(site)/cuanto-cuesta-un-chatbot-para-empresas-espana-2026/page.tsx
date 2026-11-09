@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cuánto cuesta un chatbot para empresas",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "Los precios de los chatbots para empresas varían desde 0€ hasta miles de euros al mes. Guía de precios reales en 2026: qué cobran los líderes del mercado, qué incluye cada nivel y cuándo sale rentable.",
     url: "https://www.mktweb360.com/cuanto-cuesta-un-chatbot-para-empresas-espana-2026/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-cuanto-cuesta-un-chatbot-para-empresas-espana-2026-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
+  image: "https://www.mktweb360.com/og-cuanto-cuesta-un-chatbot-para-empresas-espana-2026-v2.jpg",
   url: "https://www.mktweb360.com/cuanto-cuesta-un-chatbot-para-empresas-espana-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/cuanto-cuesta-un-chatbot-para-empresas-espana-2026/",
   inLanguage: "es-ES",
@@ -89,14 +91,26 @@ export default function CuantoCuestaChatbotPage() {
             Los precios de los chatbots para empresas van desde 0€ hasta miles de euros al mes, y esa horquilla tan amplia genera mucha confusión. En esta guía repasamos qué cobran los líderes del mercado en 2026, qué incluye cada nivel y cuándo sale rentable la inversión, dentro de una estrategia de{" "}
             <Link href="/ia-aplicada-al-marketing/" className="text-accent-500 hover:underline">IA aplicada al marketing</Link>.
           </p>
+          <Image
+            src="/og-cuanto-cuesta-un-chatbot-para-empresas-espana-2026-v2.jpg"
+            alt="Balanza de latón que compara una hucha de cerdito con un pequeño robot, con monedas en el centro"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "los-modelos-de-pricing-que-existen-en-el-mercado", "label": "Los modelos de pricing que existen en el mercado"}, {"id": "que-cobran-los-principales-players-del-mercado", "label": "Qué cobran los principales players del mercado"}, {"id": "que-determina-el-precio-real-de-un-chatbot", "label": "Qué determina el precio real de un chatbot"}, {"id": "modelo-de-precios-para-una-solucion-gestionada-e", "label": "Modelo de precios para una solución gestionada en España"}, {"id": "cuando-sale-rentable-un-chatbot", "label": "Cuándo sale rentable un chatbot"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Antes de pedir presupuestos conviene entender que no existe un precio único, sino varios modelos de facturación que responden a lógicas distintas. Dos chatbots con funciones parecidas pueden costar cinco veces más o menos según cómo se cobre el servicio. Por eso, más que buscar el número más bajo, interesa comprender qué hay detrás de cada tarifa.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los modelos de pricing que existen en el mercado</h2>
+          <h2 id="los-modelos-de-pricing-que-existen-en-el-mercado" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los modelos de pricing que existen en el mercado</h2>
           <p>
             En 2026 conviven principalmente tres formas de cobrar un chatbot. La tarifa plana mensual es la más predecible: pagas una cuota fija independientemente del volumen de conversaciones. El pago por conversación o por resolución cobra en función del uso real, de modo que el coste crece con el tráfico. Y los modelos por agente cobran según el número de usuarios internos que gestionan el sistema.
           </p>
@@ -104,7 +118,7 @@ export default function CuantoCuestaChatbotPage() {
             Cada modelo tiene sentido en un contexto distinto. La tarifa plana da tranquilidad presupuestaria a una pyme con volumen estable. El pago por resultado puede ser eficiente si el volumen es bajo, pero se dispara cuando el chatbot empieza a funcionar bien y atiende muchas más conversaciones. Entender esto de entrada evita sorpresas en la factura.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué cobran los principales players del mercado</h2>
+          <h2 id="que-cobran-los-principales-players-del-mercado" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué cobran los principales players del mercado</h2>
           <p>
             Como referencia orientativa, estos son algunos precios públicos de las plataformas más conocidas en 2026. Tidio parte desde 29€/mes con planes escalonados. Intercom cobra por resolución, en torno a 0,99&nbsp;$ por outcome resuelto. HubSpot factura aproximadamente 0,50&nbsp;€ por conversación resuelta dentro de su ecosistema.
           </p>
@@ -113,7 +127,7 @@ export default function CuantoCuestaChatbotPage() {
             <Link href="/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/" className="text-accent-500 hover:underline">agentes de IA en marketing</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué determina el precio real de un chatbot</h2>
+          <h2 id="que-determina-el-precio-real-de-un-chatbot" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué determina el precio real de un chatbot</h2>
           <p>
             El precio de la plataforma es solo una parte. El coste real depende del entrenamiento con contenido propio, de las integraciones con tus sistemas (CRM, calendario, catálogo), del nivel de personalización de las respuestas y del mantenimiento continuo. Un chatbot barato sin entrenar apenas aporta valor; uno bien configurado exige trabajo de puesta en marcha.
           </p>
@@ -125,7 +139,7 @@ export default function CuantoCuestaChatbotPage() {
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Modelo de precios para una solución gestionada en España</h2>
+          <h2 id="modelo-de-precios-para-una-solucion-gestionada-e" className="text-2xl font-bold text-primary-600 scroll-mt-24">Modelo de precios para una solución gestionada en España</h2>
           <p>
             Frente al SaaS de autoservicio, una solución gestionada por una agencia en España incluye setup, entrenamiento, integración y mantenimiento dentro de una cuota mensual. En Mkt Web 360 el presupuesto es a medida tras un diagnóstico gratuito, según el nivel de funcionalidad y el volumen de conversaciones.
           </p>
@@ -133,7 +147,7 @@ export default function CuantoCuestaChatbotPage() {
             La diferencia entre niveles no suele estar en el número de conversaciones, sino en la profundidad de las integraciones, el grado de personalización y el nivel de acompañamiento. En este modelo pagas por un servicio completo, no solo por acceder a una herramienta que luego tienes que configurar tú.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuándo sale rentable un chatbot</h2>
+          <h2 id="cuando-sale-rentable-un-chatbot" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuándo sale rentable un chatbot</h2>
           <p>
             La rentabilidad se ve comparando el coste mensual con el tiempo y las oportunidades que el chatbot libera. Un ejemplo ilustrativo: un bot gestionado que automatiza consultas repetitivas y capta leads fuera de horario puede suponer un ahorro de unos 700€/mes, contando el tiempo del equipo que deja de dedicarse a tareas manuales.
           </p>
@@ -156,7 +170,7 @@ export default function CuantoCuestaChatbotPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

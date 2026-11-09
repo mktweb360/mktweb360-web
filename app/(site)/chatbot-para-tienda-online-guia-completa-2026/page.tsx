@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Chatbot para tienda online: guía completa",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "Un chatbot para tienda online puede atender consultas 24/7, recuperar carritos abandonados, responder preguntas de producto y gestionar el estado de pedidos. Guía completa con casos reales para 2026.",
     url: "https://www.mktweb360.com/chatbot-para-tienda-online-guia-completa-2026/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-diseno-web-tienda-online.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-chatbot-para-tienda-online-guia-completa-2026-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-diseno-web-tienda-online.jpg",
+  image: "https://www.mktweb360.com/og-chatbot-para-tienda-online-guia-completa-2026-v2.jpg",
   url: "https://www.mktweb360.com/chatbot-para-tienda-online-guia-completa-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-para-tienda-online-guia-completa-2026/",
   inLanguage: "es-ES",
@@ -88,36 +90,48 @@ export default function ChatbotTiendaOnlinePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Un chatbot para tienda online puede atender consultas las 24 horas, recuperar carritos abandonados, responder preguntas de producto y gestionar el estado de los pedidos. Si estás valorando el <Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="text-accent-500 hover:underline">diseño de tu tienda online</Link>, un asistente conversacional bien integrado es hoy parte del estándar. Esta guía te explica qué esperar y cómo hacerlo bien.
           </p>
+          <Image
+            src="/og-chatbot-para-tienda-online-guia-completa-2026-v2.jpg"
+            alt="Carrito de compra y paquete con un asistente robot conversando con un cliente, un reloj y un carrito abandonado que vuelve"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "que-puede-hacer-un-chatbot-en-una-tienda-online", "label": "Qué puede hacer un chatbot en una tienda online"}, {"id": "por-que-el-chatbot-generico-falla-en-ecommerce", "label": "Por qué el chatbot genérico falla en ecommerce"}, {"id": "integracion-con-los-principales-cms-de-ecommerce", "label": "Integración con los principales CMS de ecommerce"}, {"id": "datos-reales-del-impacto-en-ecommerce", "label": "Datos reales del impacto en ecommerce"}, {"id": "cumplimiento-rgpd-en-el-chatbot-de-ecommerce", "label": "Cumplimiento RGPD en el chatbot de ecommerce"}, {"id": "cuanto-cuesta-implementar-un-chatbot-en-una-tien", "label": "Cuánto cuesta implementar un chatbot en una tienda online"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El ecommerce en España movió 114.800 millones de euros en 2025 según la CNMC, y sigue creciendo. En ese contexto, la atención al cliente ya no es un extra: es una parte del embudo de venta. Un chatbot bien diseñado no solo responde dudas, empuja conversiones que de otro modo se perderían.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué puede hacer un chatbot en una tienda online</h2>
+          <h2 id="que-puede-hacer-un-chatbot-en-una-tienda-online" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué puede hacer un chatbot en una tienda online</h2>
           <p>La lista es más larga de lo que parece. Un chatbot puede responder preguntas de producto (tallas, materiales, compatibilidad), informar del estado de un pedido consultando el sistema en tiempo real, ayudar a encontrar el artículo adecuado dentro del catálogo y recuperar carritos abandonados abriendo conversación en el momento justo.</p>
           <p>También cubre la postventa: cambios, plazos de entrega, dudas de facturación. Con la implementación adecuada, hasta el 75% de las consultas se resuelven de forma automática, sin que nadie de tu equipo tenga que intervenir. Ese porcentaje es el que cambia la economía de la atención en una tienda con volumen.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el chatbot genérico falla en ecommerce</h2>
+          <h2 id="por-que-el-chatbot-generico-falla-en-ecommerce" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el chatbot genérico falla en ecommerce</h2>
           <p>Un chatbot que no conoce tu catálogo es un buscador con formato de chat, y encima peor. Cuando un cliente pregunta si un producto está disponible en otro color o cuándo le llegará el pedido, un asistente genérico no puede responder porque no está conectado a tus datos.</p>
           <p>En ecommerce, la utilidad del chatbot es directamente proporcional a su integración. Necesita leer stock, pedidos y catálogo para ser algo más que decorativo. Por eso, antes de contratar cualquier solución, conviene tener la tienda sobre una base sólida; si estás pensando en <Link href="/migrar-shopify-woocommerce/" className="text-accent-500 hover:underline">migrar de Shopify a WooCommerce</Link> o al revés, es el momento de plantear también la capa conversacional.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Integración con los principales CMS de ecommerce</h2>
+          <h2 id="integracion-con-los-principales-cms-de-ecommerce" className="text-2xl font-bold text-primary-600 scroll-mt-24">Integración con los principales CMS de ecommerce</h2>
           <p>La buena noticia es que las plataformas más usadas están bien soportadas. WooCommerce, con un 48,6% de cuota del ecommerce, cuenta con conectores maduros que permiten al chatbot acceder a productos y pedidos sin desarrollos a medida excesivos. Shopify, PrestaShop y Shopware ofrecen vías equivalentes.</p>
           <p>La integración es la que determina qué nivel de chatbot puedes tener. Una tienda con el catálogo bien estructurado y una buena arquitectura de datos permite llegar al nivel accionable con menos fricción. Aquí es donde el trabajo previo de <Link href="/seo-para-ecommerce-errores-que-frenan-ventas/" className="text-accent-500 hover:underline">SEO y estructura para ecommerce</Link> paga doble: ordena la tienda para Google y para el chatbot a la vez.</p>
 
           <BlogBanner variant="ecommerce" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Datos reales del impacto en ecommerce</h2>
+          <h2 id="datos-reales-del-impacto-en-ecommerce" className="text-2xl font-bold text-primary-600 scroll-mt-24">Datos reales del impacto en ecommerce</h2>
           <p>El impacto se mide en dos frentes. El primero es la reducción de carga: cuando hasta tres de cada cuatro consultas se resuelven solas, el equipo humano deja de apagar fuegos repetitivos y se concentra en las conversaciones que venden o retienen.</p>
           <p>El segundo es la conversión. Un cliente que recibe respuesta inmediata a la duda que le frenaba —el plazo de entrega, una talla, la política de devolución— compra en ese momento en lugar de abandonar la web. En una plataforma como <Link href="/marketing-shopware/" className="text-accent-500 hover:underline">Shopware y su ecosistema de marketing</Link>, esta capa conversacional se integra de forma natural en la estrategia de conversión.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cumplimiento RGPD en el chatbot de ecommerce</h2>
+          <h2 id="cumplimiento-rgpd-en-el-chatbot-de-ecommerce" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cumplimiento RGPD en el chatbot de ecommerce</h2>
           <p>En ecommerce el chatbot maneja datos personales casi por definición: nombres, direcciones, números de pedido. Eso lo pone de lleno bajo el RGPD. El tratamiento de esos datos debe ser transparente, con base legal clara y con información al usuario sobre qué se hace con lo que escribe.</p>
           <p>A esto se suma el AI Act, cuyas obligaciones de transparencia son obligatorias desde agosto de 2026. En la práctica, tu chatbot debe informar de que es una IA y respetar la normativa de datos. No es un trámite opcional: es condición para poder operar sin riesgo legal.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuánto cuesta implementar un chatbot en una tienda online</h2>
+          <h2 id="cuanto-cuesta-implementar-un-chatbot-en-una-tien" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuánto cuesta implementar un chatbot en una tienda online</h2>
           <p>El coste depende del nivel. En el extremo básico, un chatbot de FAQs gestionado tiene un coste contenido. En el extremo avanzado, con integración de catálogo y pedidos y capacidad accionable, la mensualidad es mayor y suele sumarse un coste de puesta en marcha. En Mkt Web 360 lo presupuestamos a medida tras un diagnóstico gratuito.</p>
           <p>La forma correcta de mirar el número no es el gasto, sino el retorno: cuántas ventas rescata y cuántas horas de atención ahorra. En una tienda con volumen, el punto de equilibrio se alcanza rápido. Elegir el nivel adecuado a tu realidad es la decisión que más peso tiene en esa ecuación.</p>
 
@@ -136,7 +150,7 @@ export default function ChatbotTiendaOnlinePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

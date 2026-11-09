@@ -8,6 +8,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 29/10/2026 — tema 10 de la propuesta de blog del 27/10 (pieza de datos).
 // Texto y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 ARTÍCULO — Tema 10 Radiografía pyme digital INE 2026».
 // Cifras leídas el 28/10/2026 en la nota de prensa del INE del 22/10/2026 (ETICCE20251T2026). Si el INE revisa los datos, cambiarlos aquí,
@@ -252,19 +253,23 @@ export default function DigitalizacionPymesInePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={10} items={[{"id": "datos-clave", "label": "Los 5 datos clave de 2026"}, {"id": "cuantas-microempresas-tienen-pagina-web", "label": "¿Cuántas microempresas tienen página web?"}, {"id": "cuantas-usan-redes-sociales", "label": "¿Cuántas usan redes sociales?"}, {"id": "quien-usa-inteligencia-artificial", "label": "¿Quién usa inteligencia artificial?"}, {"id": "cuantas-pymes-venden-por-internet", "label": "¿Cuántas pymes venden por internet?"}, {"id": "ha-mejorado-respecto-al-ano-pasado", "label": "¿Ha mejorado respecto al año pasado?"}, {"id": "y-frente-a-europa", "label": "¿Y frente a Europa?"}, {"id": "que-significa-para-tu-negocio-4-oportunidades", "label": "Qué significa para tu negocio: 4 oportunidades"}, {"id": "metodologia-como-leer-bien-estos-porcentajes", "label": "Metodología: cómo leer bien estos porcentajes"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Según el INE (22/10/2026), en el primer trimestre de 2026 tiene web el <strong>36,2 %</strong> de las empresas de menos de 10 empleados con conexión a internet, frente al <strong>82,9 %</strong> de las de 10 o más. Usan redes sociales el 32,1 % y el 65,4 %, e inteligencia artificial el 21,4 % y el 33,6 %. En 2025 vendieron por internet el 11,8 % y el 29,0 %.
           </p>
 
-          <h2 id="datos-clave" className="text-2xl font-bold text-primary-600">Los 5 datos clave de 2026</h2>
+          <h2 id="datos-clave" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los 5 datos clave de 2026</h2>
           <Lista items={resumen} />
           <Tabla cabecera={["Indicador (INE)", "Menos de 10 empleados", "10 o más empleados", "Base del porcentaje y periodo"]} filas={datosClave} />
           <p className="text-sm text-gray-500">
             Fuente: INE, Encuesta sobre el uso de TIC y del comercio electrónico en las empresas, nota de prensa del 22/10/2026.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Cuántas microempresas tienen página web?</h2>
+          <h2 id="cuantas-microempresas-tienen-pagina-web" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Cuántas microempresas tienen página web?</h2>
           <p>
             El 36,2 % de las empresas de menos de 10 empleados con conexión a internet tiene sitio web. Dicho al revés, el <strong>63,8 % de las microempresas conectadas no tiene página propia</strong> (cálculo propio). En las de 10 o más empleados, la web es lo normal: la tiene el 82,9 %.
           </p>
@@ -272,12 +277,12 @@ export default function DigitalizacionPymesInePage() {
             Hay que leer bien la base. El porcentaje se calcula sobre las empresas que tienen internet, que en las de menos de 10 empleados son el 81,2 %. Las que no tienen conexión no entran en el cálculo.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Cuántas usan redes sociales?</h2>
+          <h2 id="cuantas-usan-redes-sociales" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Cuántas usan redes sociales?</h2>
           <p>
             Usa medios sociales el <strong>32,1 %</strong> de las empresas de menos de 10 empleados con internet y el <strong>65,4 %</strong> de las de 10 o más. En las microempresas, la proporción (32,1 %) es parecida a la de las que tienen web (36,2 %): en torno a una de cada tres.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Quién usa inteligencia artificial?</h2>
+          <h2 id="quien-usa-inteligencia-artificial" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Quién usa inteligencia artificial?</h2>
           <p>
             Emplea alguna tecnología de IA el <strong>33,6 %</strong> de las empresas de 10 o más empleados y el <strong>21,4 %</strong> de las de menos de 10 (en ambos casos, sobre las que tienen internet). Es el indicador en el que la diferencia entre unas y otras es menor. La nota de prensa no detalla para qué la usan.
           </p>
@@ -289,12 +294,12 @@ export default function DigitalizacionPymesInePage() {
             ERP y CRM, sobre las empresas con conexión a internet (tabla por comunidades autónomas, fila del total). Fuente: INE, 22/10/2026.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Cuántas pymes venden por internet?</h2>
+          <h2 id="cuantas-pymes-venden-por-internet" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Cuántas pymes venden por internet?</h2>
           <p>
             En 2025 vendió por comercio electrónico el <strong>29,0 %</strong> de las empresas de 10 o más empleados, con un volumen de negocio de <strong>419.706 millones de euros</strong>. En las de menos de 10 empleados, el porcentaje baja al <strong>11,8 %</strong>. Por sectores, en las de 10 o más, vende online el 35,1 % de las de servicios, el 27,7 % de las industriales y el 7,0 % de las de construcción.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Ha mejorado respecto al año pasado?</h2>
+          <h2 id="ha-mejorado-respecto-al-ano-pasado" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Ha mejorado respecto al año pasado?</h2>
           <p>
             Esta tabla pone al lado los datos de la nota del año anterior. <strong>No son estrictamente comparables</strong>, porque la encuesta ha cambiado de clasificación de actividades y ha incluido sectores nuevos, así que sirve para ver tendencias, no para calcular subidas exactas.
           </p>
@@ -303,12 +308,12 @@ export default function DigitalizacionPymesInePage() {
             Lo que sí se ve con claridad es el salto de la IA, que en las empresas de 10 o más empleados ya había pasado del 12,4 % en 2024 al 21,1 % en 2025. En web y redes, las cifras de 2026 son algo más bajas, y con el cambio de población de la encuesta no se puede saber si es un retroceso real.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Y frente a Europa?</h2>
+          <h2 id="y-frente-a-europa" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Y frente a Europa?</h2>
           <p>
             Es otro indicador, con otra metodología, así que no se mezcla con los del INE. Según el informe de la Comisión Europea sobre la Década Digital 2026, el <strong>75,35 %</strong> de las pymes españolas alcanza al menos un nivel básico de intensidad digital (dato de 2025), por encima de la media de la UE (71,39 %). El objetivo europeo para 2030 es el 90 %.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué significa para tu negocio: 4 oportunidades</h2>
+          <h2 id="que-significa-para-tu-negocio-4-oportunidades" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué significa para tu negocio: 4 oportunidades</h2>
           <Lista items={oportunidades} numerada />
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -321,10 +326,10 @@ export default function DigitalizacionPymesInePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Metodología: cómo leer bien estos porcentajes</h2>
+          <h2 id="metodologia-como-leer-bien-estos-porcentajes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Metodología: cómo leer bien estos porcentajes</h2>
           <Lista items={metodologia} />
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -337,7 +342,7 @@ export default function DigitalizacionPymesInePage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

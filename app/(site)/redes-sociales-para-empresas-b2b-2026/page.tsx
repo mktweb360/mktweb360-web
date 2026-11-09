@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -6,6 +7,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Redes sociales para empresas B2B en 2026",
   description: "Guía práctica de social media B2B para 2026: qué redes priorizar, qué contenido genera leads y cómo medir el retorno real de tu inversión en redes sociales.",
@@ -20,13 +22,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Redes sociales para empresas B2B en 2026: qué funciona realmente | Mkt Web 360",
     description: "Guía práctica de social media B2B para 2026: qué redes priorizar, qué contenido genera leads y cómo medir el retorno real de tu inversión en redes sociales.",
-    images: [{ url: "https://www.mktweb360.com/og-redes-sociales-para-empresas-b2b-2026.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-redes-sociales-para-empresas-b2b-2026-v2.jpg", width: 1200, height: 630 }],
     type: "article",
     publishedTime: "2026-08-21T08:00:00Z",
   },
 };
 
-const schemaArticle = {"@context":"https://schema.org","@type":"BlogPosting","headline":"Redes sociales para empresas B2B en 2026: qué funciona realmente","description":"Guía práctica de social media B2B para 2026: qué redes priorizar, qué contenido genera leads y cómo medir el retorno real de tu inversión en redes sociales.","datePublished":"2026-08-21T08:00:00Z","dateModified":"2026-08-21T08:00:00Z","author":autorSchema(),"publisher":{ "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },"image":"https://www.mktweb360.com/og-redes-sociales-para-empresas-b2b-2026.jpg","url":"https://www.mktweb360.com/redes-sociales-para-empresas-b2b-2026/","inLanguage":"es-ES", mainEntityOfPage: "https://www.mktweb360.com/redes-sociales-para-empresas-b2b-2026/" };
+const schemaArticle = {"@context":"https://schema.org","@type":"BlogPosting","headline":"Redes sociales para empresas B2B en 2026: qué funciona realmente","description":"Guía práctica de social media B2B para 2026: qué redes priorizar, qué contenido genera leads y cómo medir el retorno real de tu inversión en redes sociales.","datePublished":"2026-08-21T08:00:00Z","dateModified":"2026-08-21T08:00:00Z","author":autorSchema(),"publisher":{ "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },"image":"https://www.mktweb360.com/og-redes-sociales-para-empresas-b2b-2026-v2.jpg","url":"https://www.mktweb360.com/redes-sociales-para-empresas-b2b-2026/","inLanguage":"es-ES", mainEntityOfPage: "https://www.mktweb360.com/redes-sociales-para-empresas-b2b-2026/" };
 const schemaFAQ = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "¿Vale la pena LinkedIn para una PYME?", "acceptedAnswer": {"@type": "Answer", "text": "Depende del sector. Para empresas que venden a otras empresas (B2B), LinkedIn es imprescindible. Para B2C con bajo ticket, otras redes tienen mejor ROI."}}, {"@type": "Question", "name": "¿Cuántas publicaciones semanales son suficientes en LinkedIn?", "acceptedAnswer": {"@type": "Answer", "text": "Para una empresa, 3-5 publicaciones semanales es el rango óptimo. La consistencia es más importante que la frecuencia. Mejor 3 publicaciones buenas que 7 mediocres."}}, {"@type": "Question", "name": "¿Merece la pena pagar LinkedIn Premium para hacer negocio?", "acceptedAnswer": {"@type": "Answer", "text": "LinkedIn Premium Carrera o Business no aporta mucho para generar negocio. Sales Navigator sí puede ser útil si tienes un proceso de outbound definido. Sin proceso, es dinero malgastado."}}, {"@type": "Question", "name": "¿Cómo medir si mis redes sociales están generando clientes?", "acceptedAnswer": {"@type": "Answer", "text": "Configura UTM parameters en todos los links de tus publicaciones. Así Google Analytics te muestra qué tráfico viene de cada red y si esas visitas convierten en contactos."}}, {"@type": "Question", "name": "¿Instagram tiene sentido para una empresa industrial o de servicios B2B?", "acceptedAnswer": {"@type": "Answer", "text": "Instagram puede ser útil para mostrar cultura de empresa y atraer talento, pero raramente genera leads B2B directos. LinkedIn y Google son más eficientes para captación B2B."}}]};
 
 export default function Page() {
@@ -49,6 +51,11 @@ export default function Page() {
         </div>
       </section>
 
+        <div className="max-w-3xl mx-auto px-4 mb-8">
+          <Image src="/og-redes-sociales-para-empresas-b2b-2026-v2.jpg" alt="Dos profesionales ante un portátil con los móviles conectados mediante líneas a iconos de empresas, contactos y maletines" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
+          <ArticleIndex lang="es" minutes={8} items={[{"id": "linkedin-sigue-siendo-el-rey-del-b2b-en-2026", "label": "LinkedIn sigue siendo el rey del B2B en 2026"}, {"id": "el-contenido-que-mejor-funciona-para-empresas-b2", "label": "El contenido que mejor funciona para empresas B2B"}, {"id": "errores-de-social-media-que-cometen-las-empresas", "label": "Errores de social media que cometen las empresas B2B"}, {"id": "como-convertir-seguidores-en-leads-cualificados", "label": "Cómo convertir seguidores en leads cualificados"}, {"id": "frecuencia-de-publicacion-recomendada-por-red", "label": "Frecuencia de publicación recomendada por red"}, {"id": "metricas-que-importan-en-b2b-vs-metricas-de-vani", "label": "Métricas que importan en B2B vs métricas de vanidad"}, {"id": "linkedin-ads-vs-google-ads-para-b2b", "label": "LinkedIn Ads vs Google Ads para B2B"}, {"id": "plan-de-contenidos-b2b-para-90-dias", "label": "Plan de contenidos B2B para 90 días"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "necesitas-ayuda-con-tu-estrategia-digital", "label": "¿Necesitas ayuda con tu estrategia digital?"}]} />
+        </div>
+
       <BlogBanner lang="es" />
 
       <section className="py-16 px-4 bg-white">
@@ -58,42 +65,42 @@ export default function Page() {
           </p>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">LinkedIn sigue siendo el rey del B2B en 2026</h2>
+        <h2 id="linkedin-sigue-siendo-el-rey-del-b2b-en-2026" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">LinkedIn sigue siendo el rey del B2B en 2026</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de linkedin sigue siendo el rey del b2b en 2026: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">El contenido que mejor funciona para empresas B2B</h2>
+        <h2 id="el-contenido-que-mejor-funciona-para-empresas-b2" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">El contenido que mejor funciona para empresas B2B</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de el contenido que mejor funciona para empresas b2b: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">Errores de social media que cometen las empresas B2B</h2>
+        <h2 id="errores-de-social-media-que-cometen-las-empresas" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">Errores de social media que cometen las empresas B2B</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de errores de social media que cometen las empresas b2b: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">Cómo convertir seguidores en leads cualificados</h2>
+        <h2 id="como-convertir-seguidores-en-leads-cualificados" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">Cómo convertir seguidores en leads cualificados</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de cómo convertir seguidores en leads cualificados: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">Frecuencia de publicación recomendada por red</h2>
+        <h2 id="frecuencia-de-publicacion-recomendada-por-red" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">Frecuencia de publicación recomendada por red</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de frecuencia de publicación recomendada por red: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">Métricas que importan en B2B vs métricas de vanidad</h2>
+        <h2 id="metricas-que-importan-en-b2b-vs-metricas-de-vani" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">Métricas que importan en B2B vs métricas de vanidad</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de métricas que importan en b2b vs métricas de vanidad: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">LinkedIn Ads vs Google Ads para B2B</h2>
+        <h2 id="linkedin-ads-vs-google-ads-para-b2b" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">LinkedIn Ads vs Google Ads para B2B</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de linkedin ads vs google ads para b2b: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-bold text-primary-700 mb-4">Plan de contenidos B2B para 90 días</h2>
+        <h2 id="plan-de-contenidos-b2b-para-90-dias" className="text-2xl font-bold text-primary-700 mb-4 scroll-mt-24">Plan de contenidos B2B para 90 días</h2>
         <p className="text-gray-600 leading-relaxed">Análisis detallado de plan de contenidos b2b para 90 días: estrategias probadas, datos actualizados de 2026 y recomendaciones aplicables para empresas y PYMEs españolas con presupuesto limitado y objetivos claros de crecimiento digital.</p>
       </section>
         </div>
@@ -101,7 +108,7 @@ export default function Page() {
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center scroll-mt-24">Preguntas frecuentes</h2>
       <div className="border-b border-gray-100 pb-6 mb-6">
         <h3 className="font-bold text-primary-700 mb-2">¿Vale la pena LinkedIn para una PYME?</h3>
         <p className="text-gray-600 text-sm leading-relaxed">Depende del sector. Para empresas que venden a otras empresas (B2B), LinkedIn es imprescindible. Para B2C con bajo ticket, otras redes tienen mejor ROI.</p>
@@ -127,7 +134,7 @@ export default function Page() {
 
       <section className="py-16 px-4 bg-primary-50">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-primary-700 mb-4">¿Necesitas ayuda con tu estrategia digital?</h2>
+          <h2 id="necesitas-ayuda-con-tu-estrategia-digital" className="text-3xl font-bold text-primary-700 mb-4 scroll-mt-24">¿Necesitas ayuda con tu estrategia digital?</h2>
           <p className="text-gray-600 mb-8">Agencia de marketing digital especializada en SEO, GEO y Google Ads. Sin permanencia. Sin comisión sobre presupuesto.</p>
           <ContactForm formType="blog-cta" />
         </div>

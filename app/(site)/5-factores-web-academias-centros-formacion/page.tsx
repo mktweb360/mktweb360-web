@@ -10,6 +10,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web para academias: 5 factores clave en 2026",
   description:
@@ -110,6 +111,10 @@ export default function FactoresWebAcademiasPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "1-publicidad-de-resultados-sin-cifras-infladas-n", "label": "1. Publicidad de resultados: sin cifras infladas ni promesas vacías"}, {"id": "2-rgpd-y-datos-de-menores-consentimiento-segun-l", "label": "2. RGPD y datos de menores: consentimiento según la edad"}, {"id": "3-delegado-de-proteccion-de-datos-si-es-centro-d", "label": "3. Delegado de Protección de Datos si es centro docente reglado"}, {"id": "4-disponibilidad-de-plazas-y-horarios-en-tiempo", "label": "4. Disponibilidad de plazas y horarios en tiempo real"}, {"id": "5-prueba-social-real-profesorado-titulacion-test", "label": "5. Prueba social real: profesorado, titulación, testimonios verificables"}, {"id": "tu-web-trabaja-aunque-estes-dando-clase", "label": "Tu web trabaja aunque estés dando clase"}, {"id": "preguntas-frecuentes-sobre-la-web-de-una-academi", "label": "Preguntas frecuentes sobre la web de una academia"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Estos son los cinco factores que hay que resolver antes de diseñar la web, no después de recibir la primera reclamación.
@@ -117,12 +122,12 @@ export default function FactoresWebAcademiasPage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.academia} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Publicidad de resultados: sin cifras infladas ni promesas vacías</h2>
+          <h2 id="1-publicidad-de-resultados-sin-cifras-infladas-n" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Publicidad de resultados: sin cifras infladas ni promesas vacías</h2>
           <p>
             La normativa de prácticas comerciales desleales prohíbe la publicidad engañosa, y en el sector formativo esto se traduce en un riesgo muy concreto: cifras de empleabilidad o de aprobados infladas o inventadas ("95% de inserción laboral", "aprueba seguro") son motivo de reclamación y de sanción cuando no se pueden justificar con datos reales. La web debe comunicar resultados verificables — número real de alumnos, testimonios reales, metodología — no cifras de marketing sin respaldo.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. RGPD y datos de menores: consentimiento según la edad</h2>
+          <h2 id="2-rgpd-y-datos-de-menores-consentimiento-segun-l" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. RGPD y datos de menores: consentimiento según la edad</h2>
           <p>
             En España, el artículo 7 de la LOPDGDD fija en 14 años la edad a partir de la cual un menor puede prestar su propio consentimiento para el tratamiento de sus datos; por debajo de esa edad, hace falta el consentimiento de padres o tutores. Cualquier academia que trabaje con niños o adolescentes necesita que su formulario de inscripción y su web reflejen esta distinción de forma explícita, no un único checkbox genérico de "acepto la política de privacidad" igual para un adulto que para un niño de 8 años.
           </p>
@@ -135,26 +140,26 @@ export default function FactoresWebAcademiasPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Delegado de Protección de Datos si es centro docente reglado</h2>
+          <h2 id="3-delegado-de-proteccion-de-datos-si-es-centro-d" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Delegado de Protección de Datos si es centro docente reglado</h2>
           <p>
             El artículo 34 de la LOPDGDD obliga a designar un Delegado de Protección de Datos (DPD) a los centros docentes que impartan cualquier enseñanza regulada por la legislación educativa — desde infantil hasta formación profesional o idiomas. Si la academia encaja en ese supuesto, la web debería identificar quién ejerce esa función y cómo contactar, igual que cualquier información legal obligatoria.
           </p>
 
           <OfferBannerWebSeo />
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Disponibilidad de plazas y horarios en tiempo real</h2>
+          <h2 id="4-disponibilidad-de-plazas-y-horarios-en-tiempo" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Disponibilidad de plazas y horarios en tiempo real</h2>
           <p>
             Una de las fricciones más comunes del sector es tener que llamar para preguntar si queda plaza en un horario concreto. Una tabla de horarios con disponibilidad visible en la propia web —completo / plazas libres— reduce esas llamadas y deja que el interesado se autogestione hasta el punto de reservar o pedir información ya decidido.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Prueba social real: profesorado, titulación, testimonios verificables</h2>
+          <h2 id="5-prueba-social-real-profesorado-titulacion-test" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Prueba social real: profesorado, titulación, testimonios verificables</h2>
           <p>
             En un sector donde el resultado no es inmediato, la confianza inicial depende de quién enseña y qué dicen quienes ya han pasado por la academia. Mostrar la titulación real del profesorado y testimonios de alumnos verificables pesa mucho más que un claim genérico de "los mejores profesores".
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque estés dando clase</h2>
+              <h2 id="tu-web-trabaja-aunque-estes-dando-clase" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja aunque estés dando clase</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras estás dando clase o atendiendo a un alumno, tu web sigue abierta. Alguien que busca academia de inglés un domingo por la tarde encuentra tu horario disponible, ve la titulación del profesorado y se inscribe — sin que tengas que estar disponible para atenderlo en ese momento.
               </p>
@@ -189,7 +194,7 @@ export default function FactoresWebAcademiasPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de una academia</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-una-academi" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de una academia</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

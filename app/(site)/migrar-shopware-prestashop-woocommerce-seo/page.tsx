@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Migrar a Shopware sin perder SEO",
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "Migra a Shopware sin perder SEO: auditoría de URLs, mapa de redirecciones 301 y protocolo de lanzamiento paso a paso.",
     url: "https://www.mktweb360.com/migrar-shopware-prestashop-woocommerce-seo/",
     type: "article",
-    images: [{ url: "/og-migrar-shopware-seo.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-migrar-shopware-prestashop-woocommerce-seo-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/migrar-shopware-prestashop-woocommerce-seo/",
   mainEntityOfPage: "https://www.mktweb360.com/migrar-shopware-prestashop-woocommerce-seo/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-migrar-shopware-seo.jpg",
+  image: "https://www.mktweb360.com/og-migrar-shopware-prestashop-woocommerce-seo-v2.jpg",
 };
 
 const FAQS = [
@@ -77,7 +78,7 @@ export default function MigrarShopwarePage() {
             Una migración bien planificada conserva más del 90% del tráfico desde la primera semana. Te explicamos el proceso que separa una migración exitosa de un desastre.
           </p>
           <Image
-            src="/og-migrar-shopware-seo.jpg"
+            src="/og-migrar-shopware-prestashop-woocommerce-seo-v2.jpg"
             alt="Migrar a Shopware desde PrestaShop o WooCommerce sin perder SEO"
             width={1200}
             height={630}
@@ -86,13 +87,17 @@ export default function MigrarShopwarePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "antes-de-migrar-auditoria-de-urls-con-valor", "label": "Antes de migrar: auditoría de URLs con valor"}, {"id": "el-mapa-de-redirecciones-301-el-documento-critic", "label": "El mapa de redirecciones 301: el documento crítico"}, {"id": "estructura-de-url-prestashop-vs-woocommerce-vs-s", "label": "Estructura de URL: PrestaShop vs WooCommerce vs Shopware"}, {"id": "el-dia-del-lanzamiento-protocolo", "label": "El día del lanzamiento: protocolo"}, {"id": "seguimiento-post-migracion", "label": "Seguimiento post-migración"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>Migrar a Shopware desde PrestaShop o WooCommerce es una de las operaciones con más potencial de mejora y más riesgo de desastre. Hecho bien, ganas una plataforma superior sin perder posiciones. Hecho mal, despiertas el lunes con el tráfico hundido y meses de recuperación por delante. La diferencia está en la preparación, no en la suerte.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Antes de migrar: auditoría de URLs con valor</h2>
+          <h2 id="antes-de-migrar-auditoria-de-urls-con-valor" className="text-2xl font-bold text-primary-600 scroll-mt-24">Antes de migrar: auditoría de URLs con valor</h2>
           <p>El primer paso no es técnico, es de inventario. Hay que identificar qué URLs tienen valor SEO: las que reciben tráfico orgánico, las que tienen backlinks y las que posicionan para keywords relevantes. Se cruzan los datos de Google Search Console (tráfico y posiciones reales) con un rastreo completo en Screaming Frog (todas las URLs existentes). El resultado es la lista de páginas que no se pueden perder bajo ningún concepto.</p>
-          <h2 className="text-2xl font-bold text-primary-600">El mapa de redirecciones 301: el documento crítico</h2>
+          <h2 id="el-mapa-de-redirecciones-301-el-documento-critic" className="text-2xl font-bold text-primary-600 scroll-mt-24">El mapa de redirecciones 301: el documento crítico</h2>
           <p>Cada URL con valor de la tienda antigua debe redirigir con un 301 a su equivalente en la nueva. Ese mapa de redirecciones —un documento que empareja URL antigua con URL nueva, una a una— es el entregable más importante de toda la migración. El dato lo deja claro: las tiendas que migran con un mapa de redirecciones correcto conservan más del 90% de su tráfico orgánico desde la primera semana. Las que improvisan, no.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Estructura de URL: PrestaShop vs WooCommerce vs Shopware</h2>
+          <h2 id="estructura-de-url-prestashop-vs-woocommerce-vs-s" className="text-2xl font-bold text-primary-600 scroll-mt-24">Estructura de URL: PrestaShop vs WooCommerce vs Shopware</h2>
           <p>Cada plataforma construye las URLs de forma distinta y eso condiciona el mapa. PrestaShop tiende a usar IDs numéricos en la ruta; WooCommerce trabaja con slugs basados en el nombre del producto o categoría; Shopware permite plantillas de URL configurables, más flexibles. Conocer las diferencias evita redirecciones rotas y permite diseñar en Shopware una estructura limpia que, además, mejore la de origen.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -102,9 +107,9 @@ export default function MigrarShopwarePage() {
               Ver marketing para Shopware
             </Link>
           </div>
-          <h2 className="text-2xl font-bold text-primary-600">El día del lanzamiento: protocolo</h2>
+          <h2 id="el-dia-del-lanzamiento-protocolo" className="text-2xl font-bold text-primary-600 scroll-mt-24">El día del lanzamiento: protocolo</h2>
           <p>La migración se ejecuta en un orden estricto y, idealmente, en una sola jornada. Primero se prepara y valida todo en un entorno de staging: redirecciones, contenido, schema y rendimiento. Se verifica que cada redirección funciona y que no hay enlaces rotos. Solo entonces se hace el cambio de DNS para apuntar al nuevo sitio. Y el mismo día se envía el nuevo sitemap a Google Search Console para acelerar el rastreo de la estructura nueva. Improvisar el orden es la causa número uno de caídas de tráfico.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Seguimiento post-migración</h2>
+          <h2 id="seguimiento-post-migracion" className="text-2xl font-bold text-primary-600 scroll-mt-24">Seguimiento post-migración</h2>
           <p>El trabajo no acaba con el lanzamiento. Durante las semanas siguientes se monitoriza la cobertura en Search Console (errores 404, redirecciones detectadas, indexación), se vigilan las posiciones de las keywords críticas y se corrige cualquier redirección que se haya escapado. Una migración bien seguida recupera y supera el tráfico previo; una abandonada deja dinero por el camino.</p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
@@ -122,7 +127,7 @@ export default function MigrarShopwarePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

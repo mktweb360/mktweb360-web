@@ -1,10 +1,12 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -106,8 +108,25 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Chaque année, un nouveau réseau social apparaît en promettant de tout révolutionner, et un ancien est supposément mort. Le problème est que la plupart des décisions sur les réseaux sociaux se prennent par intuition ou par mode, pas par les données. L'Étude Social Media 2026 permet de faire exactement le contraire : regarder ce qui fonctionne avant d'investir du temps et du budget."}
           </p>
 
+        <Image
+          src="/og-redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos-v2.jpg"
+          alt={!isEn ? "Homme d’affaires étudiant un histogramme coloré orné d’icônes de réseaux sociaux et d’une loupe d’analyse, avec une icône d’appareil photo générique" : "Businessman studying a colorful bar chart with social media icons and a magnifying glass for analysis, with a generic camera icon"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "the-data-from-the-social-media-2026-study", label: isEn ? "The data from the Social Media 2026 Study" : "Les données de l'Étude Social Media 2026" }, { id: "tiktok-leads-on-impressions-but-instagram-domina", label: isEn
+                ? "TikTok leads on impressions but Instagram dominates on stability"
+                : "TikTok domine les impressions mais Instagram règne sur la stabilité" }, { id: "linkedin-the-fastest-growing-channel-for-b2b", label: isEn ? "LinkedIn: the fastest-growing channel for B2B" : "LinkedIn : le canal à la plus forte croissance pour le B2B" }, { id: "short-video-is-no-longer-a-trend-it-is-the-stand", label: isEn ? "Short video is no longer a trend: it is the standard" : "La vidéo courte n'est plus une tendance : c'est le standard" }, { id: "from-quantity-to-focus-the-strategic-shift-of-20", label: isEn
+                ? "From quantity to focus: the strategic shift of 2026"
+                : "De la quantité au focus : le changement stratégique de 2026" }, { id: "how-to-decide-which-network-to-prioritise", label: isEn ? "How to decide which network to prioritise" : "Comment décider quel réseau prioriser" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="the-data-from-the-social-media-2026-study" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "The data from the Social Media 2026 Study" : "Les données de l'Étude Social Media 2026"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -123,7 +142,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="tiktok-leads-on-impressions-but-instagram-domina" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "TikTok leads on impressions but Instagram dominates on stability"
                 : "TikTok domine les impressions mais Instagram règne sur la stabilité"}
@@ -141,7 +160,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="linkedin-the-fastest-growing-channel-for-b2b" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "LinkedIn: the fastest-growing channel for B2B" : "LinkedIn : le canal à la plus forte croissance pour le B2B"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -157,7 +176,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="short-video-is-no-longer-a-trend-it-is-the-stand" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "Short video is no longer a trend: it is the standard" : "La vidéo courte n'est plus une tendance : c'est le standard"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -175,7 +194,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <BlogBanner lang={lang} />
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="from-quantity-to-focus-the-strategic-shift-of-20" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "From quantity to focus: the strategic shift of 2026"
                 : "De la quantité au focus : le changement stratégique de 2026"}
@@ -193,7 +212,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="how-to-decide-which-network-to-prioritise" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "How to decide which network to prioritise" : "Comment décider quel réseau prioriser"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -236,7 +255,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "Frequently asked questions" : "Questions fréquentes"}
             </h2>
             <div className="space-y-3">

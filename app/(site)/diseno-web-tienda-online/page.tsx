@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { BlogBanner } from "@/components/BlogBanner";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Diseño web para tienda online sin comisiones",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "Diseño y desarrollo de tienda online profesional sin comisiones por venta ni licencias mensuales. WooCommerce, SEO incluido. Oferta: desde 490€. Gestión autónoma.",
     url: "https://www.mktweb360.com/diseno-web-tienda-online/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-diseno-web-tienda-online.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-diseno-web-tienda-online-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-25",
   dateModified: "2026-06-25",
-  image: "https://www.mktweb360.com/og-diseno-web-tienda-online.jpg",
+  image: "https://www.mktweb360.com/og-diseno-web-tienda-online-v2.jpg",
   url: "https://www.mktweb360.com/diseno-web-tienda-online/",
   mainEntityOfPage: "https://www.mktweb360.com/diseno-web-tienda-online/",
   inLanguage: "es-ES",
@@ -88,14 +90,26 @@ export default function DisenoWebTiendaOnlinePage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Tener una tienda online no debería costar un porcentaje de cada venta que hagas. Diseñamos tiendas online profesionales sobre WooCommerce sin comisiones por venta, sin licencias mensuales y con todo lo que necesitas para vender desde el primer día.
           </p>
+          <Image
+            src="/og-diseno-web-tienda-online-v2.jpg"
+            alt="Tienda con toldo dentro de una pantalla, paquetes, furgoneta y hucha que recibe monedas"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "woocommerce-vs-shopify-la-diferencia-que-nadie-t", "label": "WooCommerce vs Shopify: la diferencia que nadie te cuenta"}, {"id": "que-incluye-una-tienda-online-profesional", "label": "Qué incluye una tienda online profesional"}, {"id": "proceso-de-trabajo-de-cero-a-tienda-activa-en-4", "label": "Proceso de trabajo: de cero a tienda activa en 4 pasos"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El modelo de plataformas como Shopify se ha normalizado tanto que mucha gente asume que pagar una cuota mensual más un porcentaje de cada venta es lo normal. No lo es. Existen alternativas que te dan el mismo control, la misma profesionalidad y mejores prestaciones — sin que la plataforma se lleve parte de tus ingresos cada vez que vendes.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">WooCommerce vs Shopify: la diferencia que nadie te cuenta</h2>
+          <h2 id="woocommerce-vs-shopify-la-diferencia-que-nadie-t" className="text-2xl font-bold text-primary-600 scroll-mt-24">WooCommerce vs Shopify: la diferencia que nadie te cuenta</h2>
           <p>
             Shopify es una plataforma SaaS: pagas una suscripción mensual (desde 29€ hasta 299€ según el plan) y además cedes entre el 0,5% y el 2% de cada venta que haces a través de la plataforma. Parece poco, pero si vendes 5.000€ al mes y pagas un 1% de comisión, son 50€ extra al mes solo en comisiones — 600€ al año que se suman a la cuota de la plataforma.
           </p>
@@ -106,7 +120,7 @@ export default function DisenoWebTiendaOnlinePage() {
             Shopify tiene su ventaja en la curva de aprendizaje inicial — es más sencilla para alguien sin conocimientos técnicos. Pero para quien va en serio con su tienda, WooCommerce ofrece más flexibilidad, sin comisiones y sin el riesgo de que la plataforma cambie sus tarifas y te deje sin opciones.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué incluye una tienda online profesional</h2>
+          <h2 id="que-incluye-una-tienda-online-profesional" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué incluye una tienda online profesional</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Diseño 100% personalizado:</strong> adaptado a tu marca, tus colores y tu identidad. No plantillas genéricas — un diseño que diferencia tu tienda de la competencia.</li>
             <li><strong>Catálogo de productos:</strong> carga inicial de tus productos con fotos, descripciones, variantes (talla, color, etc.), precios y stock. Importación masiva por CSV si tienes catálogos grandes.</li>
@@ -124,7 +138,7 @@ export default function DisenoWebTiendaOnlinePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Proceso de trabajo: de cero a tienda activa en 4 pasos</h2>
+          <h2 id="proceso-de-trabajo-de-cero-a-tienda-activa-en-4" className="text-2xl font-bold text-primary-600 scroll-mt-24">Proceso de trabajo: de cero a tienda activa en 4 pasos</h2>
           <ul className="list-none space-y-4">
             {[
               { n: "1", t: "Análisis y planificación", d: "Estudiamos tu catálogo, tus competidores online y las keywords con más volumen de búsqueda para estructurar la tienda de forma que posicione bien desde el lanzamiento." },
@@ -157,7 +171,7 @@ export default function DisenoWebTiendaOnlinePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

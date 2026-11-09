@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { JsonLd } from "@/components/JsonLd";
 import { serviceSchema, intlPath, fromMeta } from "@/lib/schema";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 const FAQS_EN = [
   {
     q: "How much does a website for a dental clinic cost?",
@@ -128,7 +130,26 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Le secteur dentaire est l'un des plus concurrentiels dans la recherche locale. Dans toute ville de taille moyenne, il y a des dizaines de cliniques qui se disputent les mêmes patients. La différence entre celles qui ont leur agenda plein et celles qui dépendent du bouche-à-oreille n'est plus seulement la qualité clinique — c'est la visibilité numérique et la confiance que transmet leur présence en ligne."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+        <Image
+          src="/og-diseno-web-para-dentistas-v2.jpg"
+          alt={!isEn ? "Dentiste accueillant une patiente souriante dans un cabinet dentaire moderne" : "Dentist attending a smiling patient in a modern dental clinic"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-a-dental-clinic-needs-a-professional-website", label: isEn
+              ? "Why a dental clinic needs a professional website"
+              : "Pourquoi une clinique dentaire a besoin d'un site web professionnel" }, { id: "what-a-dental-clinic-website-must-have", label: isEn
+              ? "What a dental clinic website must have"
+              : "Ce que doit avoir le site web d'une clinique dentaire" }, { id: "local-seo-for-dentists", label: isEn ? "Local SEO for dentists" : "Référencement local pour dentistes" }, { id: "our-process-from-zero-to-website-in-4-steps", label: isEn
+              ? "Our process: from zero to website in 4 steps"
+              : "Notre processus : de zéro à un site web en 4 étapes" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
+          <h2 id="why-a-dental-clinic-needs-a-professional-website" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "Why a dental clinic needs a professional website"
               : "Pourquoi une clinique dentaire a besoin d'un site web professionnel"}
@@ -149,7 +170,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "De plus, Google Business Profile — la fiche qui apparaît sur Google Maps — fonctionne bien mieux quand elle est soutenue par un site web bien structuré. Les cliniques avec un site optimisé apparaissent plus souvent dans le pack local de trois résultats que Google affiche avant les résultats organiques."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="what-a-dental-clinic-website-must-have" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "What a dental clinic website must have"
               : "Ce que doit avoir le site web d'une clinique dentaire"}
@@ -198,7 +219,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </li>
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="local-seo-for-dentists" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Local SEO for dentists" : "Référencement local pour dentistes"}
           </h2>
           <p>
@@ -238,7 +259,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="our-process-from-zero-to-website-in-4-steps" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn
               ? "Our process: from zero to website in 4 steps"
               : "Notre processus : de zéro à un site web en 4 étapes"}
@@ -284,7 +305,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

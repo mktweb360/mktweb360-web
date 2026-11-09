@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cómo aparecer en ChatGPT si tienes un negocio",
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "El GEO posiciona tu negocio en ChatGPT y Perplexity. Guía práctica para negocios en España.",
     url: "https://www.mktweb360.com/geo-posicionamiento-ia-chatgpt-empresas-espana/",
     type: "article",
-    images: [{ url: "/og-geo-chatgpt-negocios-espana.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-geo-posicionamiento-ia-chatgpt-empresas-espana-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/geo-posicionamiento-ia-chatgpt-empresas-espana/",
   mainEntityOfPage: "https://www.mktweb360.com/geo-posicionamiento-ia-chatgpt-empresas-espana/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-geo-chatgpt-negocios-espana.jpg",
+  image: "https://www.mktweb360.com/og-geo-posicionamiento-ia-chatgpt-empresas-espana-v2.jpg",
 };
 
 const FAQS = [
@@ -92,7 +93,7 @@ export default function GeoChatgptEmpresasEspanaPage() {
             Cada vez más personas no buscan en Google: le preguntan directamente a una IA. Si ChatGPT o Perplexity no mencionan tu negocio cuando alguien pregunta por tu sector, estás perdiendo clientes que ni siquiera llegan a hacer la búsqueda tradicional.
           </p>
           <Image
-            src="/og-geo-chatgpt-negocios-espana.jpg"
+            src="/og-geo-posicionamiento-ia-chatgpt-empresas-espana-v2.jpg"
             alt="Qué es el GEO y cómo aparecer en ChatGPT si tienes un negocio en España"
             width={1200}
             height={630}
@@ -101,18 +102,22 @@ export default function GeoChatgptEmpresasEspanaPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={7} items={[{"id": "que-es-el-geo-generative-engine-optimization", "label": "Qué es el GEO (Generative Engine Optimization)"}, {"id": "por-que-el-geo-ya-importa-para-los-negocios-en-e", "label": "Por qué el GEO ya importa para los negocios en España"}, {"id": "seo-y-geo-no-son-lo-mismo-pero-se-necesitan", "label": "SEO y GEO no son lo mismo, pero se necesitan"}, {"id": "como-aparecer-en-chatgpt-y-perplexity-pasos-conc", "label": "Cómo aparecer en ChatGPT y Perplexity: pasos concretos"}, {"id": "el-papel-de-tu-ficha-y-los-datos-locales", "label": "El papel de tu ficha y los datos locales"}, {"id": "como-empezar-sin-perder-el-tiempo", "label": "Cómo empezar sin perder el tiempo"}, {"id": "preguntas-frecuentes-sobre-el-geo", "label": "Preguntas frecuentes sobre el GEO"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Durante veinte años, ser visible en internet significaba aparecer en la primera página de Google. Ese juego está cambiando. Hoy, una parte creciente de las consultas termina en una respuesta generada por inteligencia artificial que resume, recomienda y, sobre todo, decide qué marcas menciona y cuáles ignora. El GEO —Generative Engine Optimization— es la disciplina que trabaja para que tu negocio sea una de las marcas mencionadas.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué es el GEO (Generative Engine Optimization)</h2>
+          <h2 id="que-es-el-geo-generative-engine-optimization" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué es el GEO (Generative Engine Optimization)</h2>
           <p>El GEO es el conjunto de técnicas orientadas a que los motores generativos —ChatGPT, Perplexity, Gemini, Claude y los AI Overviews de Google— citen tu negocio en sus respuestas. La diferencia con el SEO clásico es fundamental: el SEO compite por una posición dentro de una lista de enlaces; el GEO compite por ser la fuente que la IA usa para construir la respuesta que el usuario lee. En el primer caso el usuario elige entre opciones; en el segundo, la IA ya ha elegido por él.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el GEO ya importa para los negocios en España</h2>
+          <h2 id="por-que-el-geo-ya-importa-para-los-negocios-en-e" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el GEO ya importa para los negocios en España</h2>
           <p>No es una tendencia de laboratorio. Según datos de Google Search Central de abril de 2026, entre el 14% y el 16% de las búsquedas en google.es ya activan una respuesta generativa. A eso se suma que, según Gartner, el 41,8% de los usuarios en España ya utiliza herramientas de IA de forma habitual. Cuando casi la mitad de tus clientes potenciales pregunta a una IA y una de cada seis búsquedas en Google se responde con texto generado, la visibilidad en esos canales deja de ser opcional.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">SEO y GEO no son lo mismo, pero se necesitan</h2>
+          <h2 id="seo-y-geo-no-son-lo-mismo-pero-se-necesitan" className="text-2xl font-bold text-primary-600 scroll-mt-24">SEO y GEO no son lo mismo, pero se necesitan</h2>
           <p>El GEO no sustituye al SEO: lo amplifica. Los motores generativos se alimentan de contenido bien estructurado, con autoridad temática y datos verificables, exactamente lo que produce una estrategia de <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">posicionamiento SEO</Link> bien ejecutada. Una web técnicamente sólida, con schemas correctos y contenido que responde preguntas reales, es a la vez buena para Google y buena para la IA. Por eso el GEO se construye sobre una base SEO, no en su lugar.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -123,7 +128,7 @@ export default function GeoChatgptEmpresasEspanaPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo aparecer en ChatGPT y Perplexity: pasos concretos</h2>
+          <h2 id="como-aparecer-en-chatgpt-y-perplexity-pasos-conc" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo aparecer en ChatGPT y Perplexity: pasos concretos</h2>
           <p>Aparecer en las respuestas de IA no es cuestión de suerte. Los estudios sobre el comportamiento de estos motores apuntan a patrones claros. Una investigación de Princeton de 2024 demostró que incluir estadísticas concretas e inline en el contenido aumenta un 41% la probabilidad de ser citado por un motor generativo. Y según Seer Interactive (2025), las marcas citadas en los AI Overviews de Google reciben un 35% más de clics que las que solo aparecen en los resultados orgánicos.</p>
           <ul className="space-y-2">
             {["Responde preguntas concretas con datos y cifras verificables, no con generalidades", "Estructura el contenido con encabezados claros y respuestas autocontenidas", "Refuerza tu autoridad temática: sé citado por otros, no solo cítate a ti mismo", "Mantén coherencia de marca, datos de contacto y especialidad en toda tu presencia digital"].map((item) => (
@@ -136,10 +141,10 @@ export default function GeoChatgptEmpresasEspanaPage() {
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">El papel de tu ficha y los datos locales</h2>
+          <h2 id="el-papel-de-tu-ficha-y-los-datos-locales" className="text-2xl font-bold text-primary-600 scroll-mt-24">El papel de tu ficha y los datos locales</h2>
           <p>Cuando la pregunta tiene componente local —"mejor asesoría para autónomos en Toledo"— los motores generativos combinan autoridad temática con señales de proximidad. Ahí, tu <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile</Link>, tus reseñas y la coherencia de tus datos (nombre, dirección, teléfono y especialidad) se convierten en materia prima para que la IA te recomiende. Un negocio local con la casa digital ordenada parte con ventaja en GEO.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo empezar sin perder el tiempo</h2>
+          <h2 id="como-empezar-sin-perder-el-tiempo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo empezar sin perder el tiempo</h2>
           <p>El primer paso es siempre el mismo: preguntar. Plantea a ChatGPT, Perplexity y Gemini las consultas que haría tu cliente ideal y observa si apareces, con qué contexto y frente a qué competidores. Esa auditoría revela tu punto de partida real. A partir de ahí, se prioriza: reforzar el contenido que responde a esas preguntas, mejorar las señales de autoridad y mantener la coherencia de marca. El GEO es un trabajo de medio plazo, pero quien empieza antes consolida una ventaja difícil de recuperar.</p>
 
           <p className="text-sm text-gray-500">
@@ -161,7 +166,7 @@ export default function GeoChatgptEmpresasEspanaPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre el GEO</h2>
+          <h2 id="preguntas-frecuentes-sobre-el-geo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre el GEO</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

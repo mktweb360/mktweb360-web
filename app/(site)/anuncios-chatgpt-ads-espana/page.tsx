@@ -9,6 +9,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 04/11/2026 — tema 9 de la propuesta de blog del 27/10 (anuncios en ChatGPT en España).
 // Texto y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 ARTÍCULO — Tema 9 Anuncios en ChatGPT en España».
 // Todos los datos de OpenAI se leyeron en openai.com, ads.openai.com y help.openai.com el 28/10/2026.
@@ -217,15 +218,19 @@ export default function AnunciosChatgptPage() {
           <Image src={OG} alt="Maqueta de una conversación de chat: la respuesta menciona dos marcas de forma orgánica y debajo aparece un bloque «Patrocinado» señalado como anuncio de pago" width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={14} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "que-son-los-anuncios-de-chatgpt-y-quien-los-ve-e", "label": "¿Qué son los anuncios de ChatGPT y quién los ve en España?"}, {"id": "como-se-decide-que-anuncio-sale-segmentacion", "label": "¿Cómo se decide qué anuncio sale? (segmentación)"}, {"id": "cuanto-cuesta-y-como-se-paga", "label": "¿Cuánto cuesta y cómo se paga?"}, {"id": "en-que-se-diferencia-un-anuncio-de-una-mencion-o", "label": "¿En qué se diferencia un anuncio de una mención orgánica?"}, {"id": "le-compensa-a-una-pyme-5-preguntas-antes-de-inve", "label": "¿Le compensa a una pyme? 5 preguntas antes de invertir"}, {"id": "plan-de-prueba-de-30-dias-estructura-presupuesto", "label": "Plan de prueba de 30 días: estructura, presupuesto cerrado y medición"}, {"id": "que-preparar-en-tu-web-antes-de-anunciarte", "label": "¿Qué preparar en tu web antes de anunciarte?"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             ChatGPT Ads son los anuncios de pago que OpenAI muestra en ChatGPT. En España funcionan desde finales de agosto de 2026 y las empresas con sede en España pueden contratarlos por autoservicio en Ads Manager. Aparecen debajo de la respuesta, marcados como patrocinados, y solo los ven los usuarios adultos de los planes Free y Go.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <Lista items={resumen} />
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué son los anuncios de ChatGPT y quién los ve en España?</h2>
+          <h2 id="que-son-los-anuncios-de-chatgpt-y-quien-los-ve-e" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué son los anuncios de ChatGPT y quién los ve en España?</h2>
           <p>
             OpenAI empezó a probar anuncios en Estados Unidos el 9 de febrero de 2026. El 18 de agosto anunció que llegaban «la próxima semana» a 31 países europeos, entre ellos España, y el 31 de agosto actualizó el anuncio para confirmar que el autoservicio a través del Gestor de anuncios (Ads Manager) ya estaba disponible en esos mercados. A 28 de octubre de 2026, España figura como «Disponible» en la tabla de países de Ads Manager. Para usarlo, la entidad que se anuncia y recibe las facturas tiene que tener su sede en un país de esa lista.
           </p>
@@ -235,7 +240,7 @@ export default function AnunciosChatgptPage() {
           <p>Los ven los usuarios de los planes Free y Go. No los ven:</p>
           <Lista items={quienNo} />
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Cómo se decide qué anuncio sale? (segmentación)</h2>
+          <h2 id="como-se-decide-que-anuncio-sale-segmentacion" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Cómo se decide qué anuncio sale? (segmentación)</h2>
           <p>
             No es una subasta de palabras clave como en Google Ads. El sistema elige por relevancia y resultado esperado, y ordena con una subasta de segundo precio ponderada por relevancia. En el grupo de anuncios escribes <strong>pistas de contexto</strong>: los temas o conversaciones en los que tu producto encaja. Orientan la entrega, pero no garantizan aparecer en una conversación concreta.
           </p>
@@ -244,12 +249,12 @@ export default function AnunciosChatgptPage() {
             En la actualización de agosto, OpenAI cita además la segmentación geográfica y las audiencias personalizadas entre las novedades de la plataforma. Comprueba en tu cuenta de Ads Manager cuáles tienes disponibles, porque la personalización está limitada en Europa.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Cuánto cuesta y cómo se paga?</h2>
+          <h2 id="cuanto-cuesta-y-como-se-paga" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Cuánto cuesta y cómo se paga?</h2>
           <p>
             Puedes comprar por impresiones (CPM), por clics (CPC) u optimizar para conversiones; en este último caso, con facturación por clic, pagas los clics válidos, no las conversiones. Tú fijas la puja máxima y el presupuesto. Para las campañas de CPC, OpenAI recomienda empezar con una puja máxima de entre 3 y 5 dólares por clic. Es su recomendación de partida: el coste real depende de la subasta y de tu sector, y no hemos encontrado datos oficiales de coste medio en España.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿En qué se diferencia un anuncio de una mención orgánica?</h2>
+          <h2 id="en-que-se-diferencia-un-anuncio-de-una-mencion-o" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿En qué se diferencia un anuncio de una mención orgánica?</h2>
           <p>
             Es la confusión más habitual. Que ChatGPT recomiende tu empresa en su respuesta y que aparezca tu anuncio debajo son dos cosas distintas, que se consiguen de forma diferente. OpenAI insiste en que los anuncios no influyen en las respuestas: pagar no te mete en el texto de la respuesta.
           </p>
@@ -260,10 +265,10 @@ export default function AnunciosChatgptPage() {
 
           <BlogBanner variant="geo" />
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Le compensa a una pyme? 5 preguntas antes de invertir</h2>
+          <h2 id="le-compensa-a-una-pyme-5-preguntas-antes-de-inve" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Le compensa a una pyme? 5 preguntas antes de invertir</h2>
           <Lista items={preguntas} numerada />
 
-          <h2 className="text-2xl font-bold text-primary-600">Plan de prueba de 30 días: estructura, presupuesto cerrado y medición</h2>
+          <h2 id="plan-de-prueba-de-30-dias-estructura-presupuesto" className="text-2xl font-bold text-primary-600 scroll-mt-24">Plan de prueba de 30 días: estructura, presupuesto cerrado y medición</h2>
           <p>
             La idea es aprender con poco dinero y con una decisión clara al final. Antes de empezar, decide el <strong>gasto total máximo</strong> de la prueba: una cantidad que puedas dar por perdida sin que afecte al negocio. Repártela por días en la campaña y no la amplíes hasta el día 22.
           </p>
@@ -277,7 +282,7 @@ export default function AnunciosChatgptPage() {
             Si ya gestionas campañas de búsqueda, el método es el mismo que en <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">Google Ads</Link>: objetivos claros, medición antes de gastar y decisiones con datos. Y si te lo lleva una agencia, que el presupuesto de anuncios sea tuyo y transparente, como explicamos en <Link href="/google-ads-sin-comision-agencia-marketing/" className="text-accent-500 hover:underline">Google Ads sin comisión sobre la inversión</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué preparar en tu web antes de anunciarte?</h2>
+          <h2 id="que-preparar-en-tu-web-antes-de-anunciarte" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué preparar en tu web antes de anunciarte?</h2>
           <Lista items={web} />
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -290,7 +295,7 @@ export default function AnunciosChatgptPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -303,7 +308,7 @@ export default function AnunciosChatgptPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <p className="text-sm text-gray-500">Todas consultadas el 28/10/2026.</p>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (

@@ -10,6 +10,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web para asesorías y gestorías: 5 claves",
   description:
@@ -110,6 +111,10 @@ export default function FactoresWebAsesoriasGestoriasPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "1-rgpd-el-doble-rol-de-responsable-y-encargada-d", "label": "1. RGPD: el doble rol de responsable y encargada del tratamiento"}, {"id": "2-delegado-de-proteccion-de-datos-cuando-el-volu", "label": "2. Delegado de Protección de Datos, cuando el volumen lo justifica"}, {"id": "3-solicitud-de-cita-online-sin-llamar", "label": "3. Solicitud de cita online, sin llamar"}, {"id": "4-colegiacion-visible-del-gestor-administrativo", "label": "4. Colegiación visible del gestor administrativo"}, {"id": "5-preparacion-ante-la-factura-electronica-obliga", "label": "5. Preparación ante la factura electrónica obligatoria"}, {"id": "tu-web-trabaja-aunque-la-asesoria-este-a-tope-en", "label": "Tu web trabaja aunque la asesoría esté a tope en campaña fiscal"}, {"id": "preguntas-frecuentes-sobre-la-web-de-una-asesori", "label": "Preguntas frecuentes sobre la web de una asesoría o gestoría"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Entre el doble rol de responsable y encargada del tratamiento de datos, la colegiación del gestor administrativo y la transición hacia la factura electrónica obligatoria, la web de una asesoría o gestoría tiene que transmitir un nivel de rigor normativo que va más allá del diseño. Estos son los cinco factores que determinan si esa web capta clientes o genera dudas.
@@ -117,12 +122,12 @@ export default function FactoresWebAsesoriasGestoriasPage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.abogados} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. RGPD: el doble rol de responsable y encargada del tratamiento</h2>
+          <h2 id="1-rgpd-el-doble-rol-de-responsable-y-encargada-d" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. RGPD: el doble rol de responsable y encargada del tratamiento</h2>
           <p>
             Una asesoría actúa como encargada del tratamiento cuando gestiona nóminas, contabilidad o fiscalidad por cuenta de sus clientes — lo que exige un contrato conforme al artículo 28 del RGPD con cada uno de ellos — y como responsable respecto de sus propios datos de plantilla y gestión interna. Confundir ambos roles, o no formalizarlos por escrito, es uno de los incumplimientos más frecuentes del sector.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. Delegado de Protección de Datos, cuando el volumen lo justifica</h2>
+          <h2 id="2-delegado-de-proteccion-de-datos-cuando-el-volu" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. Delegado de Protección de Datos, cuando el volumen lo justifica</h2>
           <p>
             El volumen y la sensibilidad de los datos que gestiona a diario una asesoría —nóminas, datos fiscales, información bancaria— hacen recomendable contar con un Delegado de Protección de Datos, ya sea un profesional interno formado para ello o un servicio externo especializado. Mostrar en la web que existe esa figura es una señal de seriedad que un cliente exigente valora.
           </p>
@@ -135,26 +140,26 @@ export default function FactoresWebAsesoriasGestoriasPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Solicitud de cita online, sin llamar</h2>
+          <h2 id="3-solicitud-de-cita-online-sin-llamar" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Solicitud de cita online, sin llamar</h2>
           <p>
             Buena parte de las búsquedas de asesoría ocurren fuera del horario de oficina — al cierre del trimestre fiscal, o un domingo por la noche antes de una gestión urgente. Un sistema de solicitud de cita integrado en la web capta a ese cliente en el momento exacto en que decide, sin depender de que alguien conteste el teléfono.
           </p>
 
           <OfferBannerWebSeo />
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Colegiación visible del gestor administrativo</h2>
+          <h2 id="4-colegiacion-visible-del-gestor-administrativo" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Colegiación visible del gestor administrativo</h2>
           <p>
             Ejercer como gestor administrativo exige superar el examen o máster habilitante correspondiente e inscribirse en el Colegio Oficial de Gestores Administrativos. Mostrar esta colegiación con claridad en la web —igual que un abogado muestra su número de colegiado— es una garantía de cualificación que diferencia a una asesoría seria de la competencia informal del sector.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Preparación ante la factura electrónica obligatoria</h2>
+          <h2 id="5-preparacion-ante-la-factura-electronica-obliga" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Preparación ante la factura electrónica obligatoria</h2>
           <p>
             La Ley Crea y Crece marca octubre de 2027 para empresas con facturación superior a 8 millones de euros, y octubre de 2028 para el resto de empresas y autónomos, como fechas límite para la factura electrónica obligatoria entre empresas. Una asesoría que ya comunica en su web cómo va a acompañar a sus clientes en esta transición se posiciona un paso por delante del resto.
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque la asesoría esté a tope en campaña fiscal</h2>
+              <h2 id="tu-web-trabaja-aunque-la-asesoria-este-a-tope-en" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja aunque la asesoría esté a tope en campaña fiscal</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras cierras nóminas o preparas declaraciones, tu web sigue abierta. Alguien que busca asesoría un domingo por la noche encuentra tu colegiación visible, entiende cómo proteges sus datos y solicita cita — sin que tengas que estar disponible para atenderlo en ese momento.
               </p>
@@ -189,7 +194,7 @@ export default function FactoresWebAsesoriasGestoriasPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de una asesoría o gestoría</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-una-asesori" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de una asesoría o gestoría</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

@@ -1,10 +1,12 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -118,8 +120,33 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Peu de sujets génèrent autant de confusion parmi les indépendants que la cotisation qu'ils paient chaque mois. Entre le système de tranches par revenus réels, le MEI et le forfait, il est facile de se perdre. Cet article organise les informations essentielles de 2026 pour que vous sachiez exactement ce que vous payez et pourquoi."}
           </p>
 
+        <Image
+          src="/og-cuota-autonomos-2026-todo-lo-que-tienes-que-saber-v2.jpg"
+          alt={!isEn ? "Artisan indépendant dans son atelier qui fait ses comptes à la calculatrice, entouré de papiers et d’une tirelire en céramique pleine de pièces" : "Self-employed craftsman in his workshop doing the accounts with a calculator, papers and a ceramic piggy bank full of coins"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={8} items={[{ id: "2026-contributions-what-has-changed-and-what-has", label: isEn
+                ? "2026 contributions: what has changed and what has not"
+                : "Cotisations 2026 : ce qui a changé et ce qui n'a pas changé" }, { id: "full-bracket-and-minimum-contribution-table-for", label: isEn
+                ? "Full bracket and minimum contribution table for 2026"
+                : "Tableau complet des tranches et cotisations minimales 2026" }, { id: "the-mei-in-2026-what-it-is-and-how-much-it-raise", label: isEn
+                ? "The MEI in 2026: what it is and how much it raises your contribution"
+                : "Le MEI en 2026 : ce que c'est et combien il augmente votre cotisation" }, { id: "flat-rate-2026-80-month-for-new-self-employed-wo", label: isEn
+                ? "Flat rate 2026: €80/month for new self-employed workers"
+                : "Forfait 2026 : 80 €/mois pour les nouveaux indépendants" }, { id: "how-to-change-your-contribution-base-throughout", label: isEn
+                ? "How to change your contribution base throughout the year"
+                : "Comment changer votre base de cotisation au cours de l'année" }, { id: "planning-when-it-makes-sense-to-contribute-more", label: isEn
+                ? "Planning: when it makes sense to contribute more"
+                : "Planification : quand il est judicieux de cotiser davantage" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="2026-contributions-what-has-changed-and-what-has" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "2026 contributions: what has changed and what has not"
                 : "Cotisations 2026 : ce qui a changé et ce qui n'a pas changé"}
@@ -137,7 +164,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="full-bracket-and-minimum-contribution-table-for" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Full bracket and minimum contribution table for 2026"
                 : "Tableau complet des tranches et cotisations minimales 2026"}
@@ -182,7 +209,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="the-mei-in-2026-what-it-is-and-how-much-it-raise" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "The MEI in 2026: what it is and how much it raises your contribution"
                 : "Le MEI en 2026 : ce que c'est et combien il augmente votre cotisation"}
@@ -200,7 +227,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="flat-rate-2026-80-month-for-new-self-employed-wo" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Flat rate 2026: €80/month for new self-employed workers"
                 : "Forfait 2026 : 80 €/mois pour les nouveaux indépendants"}
@@ -233,7 +260,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           />
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="how-to-change-your-contribution-base-throughout" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "How to change your contribution base throughout the year"
                 : "Comment changer votre base de cotisation au cours de l'année"}
@@ -251,7 +278,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="planning-when-it-makes-sense-to-contribute-more" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Planning: when it makes sense to contribute more"
                 : "Planification : quand il est judicieux de cotiser davantage"}
@@ -307,7 +334,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "Frequently asked questions" : "Questions fréquentes"}
             </h2>
             <div className="space-y-3">

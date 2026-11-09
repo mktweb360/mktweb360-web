@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Chatbot para captar y cualificar leads",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "Un chatbot bien configurado puede captar leads 24/7, cualificarlos con preguntas estratégicas y pasarlos al CRM con contexto completo. Guía práctica para implementar un sistema de captación con chatbot en 2026.",
     url: "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-como-generar-leads-calidad-pyme.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-chatbot-captacion-cualificacion-leads-guia-practica-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-como-generar-leads-calidad-pyme.jpg",
+  image: "https://www.mktweb360.com/og-chatbot-captacion-cualificacion-leads-guia-practica-v2.jpg",
   url: "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-captacion-cualificacion-leads-guia-practica/",
   inLanguage: "es-ES",
@@ -89,14 +91,26 @@ export default function ChatbotCaptacionLeadsPage() {
             Un chatbot bien configurado puede captar leads las 24 horas, cualificarlos con preguntas estratégicas y pasarlos al CRM con todo el contexto. En esta guía práctica vemos cómo montar un sistema de captación con chatbot que alimente tu embudo de{" "}
             <Link href="/como-generar-leads-calidad-pyme/" className="text-accent-500 hover:underline">generación de leads de calidad</Link>.
           </p>
+          <Image
+            src="/og-chatbot-captacion-cualificacion-leads-guia-practica-v2.jpg"
+            alt="Embudo transparente en el que un robot filtra a muchas personas y deja salir a unas pocas, destacadas en naranja, hacia una carpeta"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "por-que-el-chatbot-capta-mas-leads-que-el-formul", "label": "Por qué el chatbot capta más leads que el formulario"}, {"id": "como-estructurar-un-chatbot-de-captacion-de-lead", "label": "Cómo estructurar un chatbot de captación de leads"}, {"id": "que-preguntas-de-cualificacion-incluir", "label": "Qué preguntas de cualificación incluir"}, {"id": "como-integrar-el-chatbot-con-el-crm", "label": "Cómo integrar el chatbot con el CRM"}, {"id": "medir-el-impacto-del-chatbot-en-la-captacion-de", "label": "Medir el impacto del chatbot en la captación de leads"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             La mayoría de webs siguen confiando toda su captación a un formulario de contacto. Funciona, pero deja mucho valor sobre la mesa: no responde preguntas, no cualifica y no está disponible cuando el visitante realmente tiene interés. Un chatbot bien pensado cubre justo ese hueco.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el chatbot capta más leads que el formulario</h2>
+          <h2 id="por-que-el-chatbot-capta-mas-leads-que-el-formul" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el chatbot capta más leads que el formulario</h2>
           <p>
             El formulario introduce fricción: pide datos por adelantado, no aclara dudas y muchas veces el visitante lo abandona. El chatbot reduce esa fricción porque conversa, resuelve objeciones al momento y está disponible 24/7, incluso cuando tu equipo no lo está.
           </p>
@@ -104,7 +118,7 @@ export default function ChatbotCaptacionLeadsPage() {
             La velocidad de respuesta es determinante. Contactar a un lead en los primeros 5 minutos puede multiplicar por 9 la probabilidad de conversión frente a esperar horas. Un chatbot responde de forma instantánea, algo que ningún equipo humano puede garantizar durante todo el día.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo estructurar un chatbot de captación de leads</h2>
+          <h2 id="como-estructurar-un-chatbot-de-captacion-de-lead" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo estructurar un chatbot de captación de leads</h2>
           <p>
             El primer principio es dar valor antes de pedir datos. En lugar de exigir el email de entrada, el chatbot ayuda, responde una duda o guía al visitante hacia lo que busca, y solo entonces solicita la información de contacto.
           </p>
@@ -113,7 +127,7 @@ export default function ChatbotCaptacionLeadsPage() {
             <Link href="/como-crear-landing-page-que-convierte/" className="text-accent-500 hover:underline">landing page que convierte</Link> como punto de aterrizaje.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué preguntas de cualificación incluir</h2>
+          <h2 id="que-preguntas-de-cualificacion-incluir" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué preguntas de cualificación incluir</h2>
           <p>
             Las preguntas de cualificación dependen del tipo de negocio, pero el objetivo siempre es el mismo: distinguir a quién merece la pena que el equipo comercial dedique tiempo. Suelen girar en torno a la necesidad concreta, el plazo, el presupuesto aproximado y el papel del interlocutor en la decisión.
           </p>
@@ -124,7 +138,7 @@ export default function ChatbotCaptacionLeadsPage() {
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo integrar el chatbot con el CRM</h2>
+          <h2 id="como-integrar-el-chatbot-con-el-crm" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo integrar el chatbot con el CRM</h2>
           <p>
             De poco sirve captar leads si se quedan sueltos en un chat. La integración con el CRM es lo que convierte al chatbot en una máquina de captación real: cada lead cualificado entra directamente en HubSpot, Salesforce o Pipedrive con su contexto completo.
           </p>
@@ -133,7 +147,7 @@ export default function ChatbotCaptacionLeadsPage() {
             <Link href="/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/" className="text-accent-500 hover:underline">qué es un chatbot para empresas y por qué lo necesitas</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Medir el impacto del chatbot en la captación de leads</h2>
+          <h2 id="medir-el-impacto-del-chatbot-en-la-captacion-de" className="text-2xl font-bold text-primary-600 scroll-mt-24">Medir el impacto del chatbot en la captación de leads</h2>
           <p>
             Sin métricas no hay mejora posible. Las cifras que conviene seguir son la tasa de conversión del chatbot (que suele situarse entre el 10% y el 25% de los visitantes que interactúan), la tasa de cualificación de los leads captados y el tiempo entre la captación y el primer contacto comercial.
           </p>
@@ -156,7 +170,7 @@ export default function ChatbotCaptacionLeadsPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

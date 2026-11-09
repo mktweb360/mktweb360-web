@@ -39,3 +39,10 @@ export const DEMO_BY_ID: Record<string, DemoItem> = {
   psicologo: SERVICE_DEMOS[8],
   taller: SERVICE_DEMOS[9],
 };
+
+/** Demos de webs de pintores (9/11/2026): páginas estáticas alojadas en subdominios propios, con noindex y contenido de ejemplo. */
+export const PINTORES_DEMOS: (DemoItem & { id: string })[] = [
+  { id: "autonomo", nombre: "Marcos Ruiz · Pintor y decorador", sector: "Pintor autónomo", url: "https://pintor-autonomo-demo.mktweb360.com", image: "/demos/pintor-autonomo.jpg" },
+  { id: "viviendas", nombre: "Pinturas Lumen", sector: "Empresa de viviendas y locales", url: "https://pintura-viviendas-demo.mktweb360.com", image: "/demos/pintura-viviendas.jpg" },
+  { id: "fachadas", nombre: "Fachadas Norte", sector: "Fachadas y comunidades", url: "https://fachadas-demo.mktweb360.com", image: "/demos/fachadas.jpg" },
+];

@@ -12,6 +12,8 @@ import { preciosOfertaSeo } from "@/lib/precios-planes"; // precio de la oferta 
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 // 28/10/2026 — tema 2 de la propuesta de blog del 27/10, aprobado por José.
 // Borrador y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 BORRADOR — Tema 2 SEO para pymes».
 // 29/10/2026 — sin precios de servicios (decisión de José del 25/10): los planes se muestran como tamaños de proyecto
@@ -201,7 +203,7 @@ export default async function SeoParaPymesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="seo">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "SEO para pymes" }]} />
 
         <header className="mb-8">
@@ -217,15 +219,19 @@ export default async function SeoParaPymesPage() {
           <Image src={OG} alt="Viñeta: una comerciante se pregunta por qué nadie la encuentra en Google y después señala su lista de tareas SEO de la semana" width={1200} height={630} className="w-full rounded-2xl mt-6" priority />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={9} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "por-que-el-seo-tiene-sentido-para-una-pyme", "label": "Por qué el SEO tiene sentido para una pyme"}, {"id": "los-5-frentes-del-seo-de-una-pyme", "label": "Los 5 frentes del SEO de una pyme"}, {"id": "lo-que-puedes-hacer-tu-esta-semana", "label": "Lo que puedes hacer tú esta semana"}, {"id": "que-conviene-delegar-y-por-que", "label": "Qué conviene delegar y por qué"}, {"id": "cuanto-cuesta-el-seo-para-una-pyme", "label": "Cuánto cuesta el SEO para una pyme"}, {"id": "cuanto-tarda-el-seo-en-notarse", "label": "Cuánto tarda el SEO en notarse"}, {"id": "como-elegir-a-quien-contratar-6-preguntas", "label": "Cómo elegir a quién contratar: 6 preguntas"}, {"id": "por-donde-empezar", "label": "Por dónde empezar"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El <strong>SEO para pymes</strong> es el trabajo de conseguir que tu web aparezca en Google cuando un posible cliente busca lo que vendes, sin pagar por cada clic. En una pyme suele tener cinco frentes: que Google pueda leer la web, que cada página responda a una búsqueda concreta, que la ficha de Google esté completa, que otros sitios te mencionen y que los asistentes de IA te puedan citar. Los primeros resultados suelen llegar entre los 3 y los 6 meses.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <Lista items={resumen} />
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el SEO tiene sentido para una pyme</h2>
+          <h2 id="por-que-el-seo-tiene-sentido-para-una-pyme" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el SEO tiene sentido para una pyme</h2>
           <p>
             Una pyme no puede competir en presupuesto de publicidad con una gran empresa, pero sí en búsquedas concretas: un servicio en una zona, un problema muy específico de su sector, una pregunta que sus clientes hacen siempre. Ahí, una web bien hecha y una ficha de Google cuidada compiten de tú a tú.
           </p>
@@ -233,16 +239,16 @@ export default async function SeoParaPymesPage() {
             Además, la mayoría de las pequeñas empresas parte de cero. Con el 36,2 % de las microempresas con web (INE, 2026), tener una página que responda bien a lo que buscan tus clientes ya te separa de buena parte de tu competencia local.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los 5 frentes del SEO de una pyme</h2>
+          <h2 id="los-5-frentes-del-seo-de-una-pyme" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los 5 frentes del SEO de una pyme</h2>
           <Tabla cabecera={["Frente", "Qué es", "Señal de que va bien"]} filas={frentes} />
 
-          <h2 className="text-2xl font-bold text-primary-600">Lo que puedes hacer tú esta semana</h2>
+          <h2 id="lo-que-puedes-hacer-tu-esta-semana" className="text-2xl font-bold text-primary-600 scroll-mt-24">Lo que puedes hacer tú esta semana</h2>
           <Lista items={tareas} numerada />
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué conviene delegar y por qué</h2>
+          <h2 id="que-conviene-delegar-y-por-que" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué conviene delegar y por qué</h2>
           <Lista items={delegar} />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuánto cuesta el SEO para una pyme</h2>
+          <h2 id="cuanto-cuesta-el-seo-para-una-pyme" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuánto cuesta el SEO para una pyme</h2>
           <p>
             Depende del tamaño de la web, de cuántas fichas de Google tengas y de cuánto contenido haga falta. Estos son los tamaños de proyecto con los que trabajamos; cada uno se presupuesta a medida, sin permanencia en el servicio mensual:
           </p>
@@ -253,18 +259,18 @@ export default async function SeoParaPymesPage() {
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuánto tarda el SEO en notarse</h2>
+          <h2 id="cuanto-tarda-el-seo-en-notarse" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuánto tarda el SEO en notarse</h2>
           <p>
             De forma orientativa, los primeros resultados llegan entre los 3 y los 6 meses y se consolidan entre los 6 y los 12. La ficha de Google suele moverse antes, en 1-2 meses. Lo primero que sube son las impresiones en Search Console; los clics y los contactos llegan después. Lo explicamos fase a fase en <Link href="/cuanto-tarda-el-seo-en-dar-resultados/" className="text-accent-500 hover:underline">cuánto tarda el SEO en dar resultados</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo elegir a quién contratar: 6 preguntas</h2>
+          <h2 id="como-elegir-a-quien-contratar-6-preguntas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo elegir a quién contratar: 6 preguntas</h2>
           <Lista items={preguntas} numerada />
           <p>
             Tienes más criterios para elegir en <Link href="/cuanto-cuesta-agencia-marketing-digital-espana-2026/" className="text-accent-500 hover:underline">cuánto cuesta una agencia de marketing digital y cómo elegirla</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por dónde empezar</h2>
+          <h2 id="por-donde-empezar" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por dónde empezar</h2>
           <p>
             Si no sabes cómo está tu web, empieza por ahí. Puedes hacerlo tú con la <Link href="/auditoria-seo-basica/" className="text-accent-500 hover:underline">checklist de 30 puntos</Link> o pedirnos el diagnóstico gratuito. Si después quieres que nos encarguemos, este es nuestro <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">servicio de posicionamiento SEO</Link>. Y si prefieres llevarlo con tu equipo y solo necesitas el diagnóstico y el plan, está la <Link href="/consultor-seo/" className="text-accent-500 hover:underline">consultoría SEO</Link>.
           </p>
@@ -278,7 +284,7 @@ export default async function SeoParaPymesPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -291,7 +297,7 @@ export default async function SeoParaPymesPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">
@@ -311,7 +317,7 @@ export default async function SeoParaPymesPage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug={SLUG} />
     </>
   );

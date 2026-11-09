@@ -8,6 +8,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -92,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </time>
             <AuthorByline lang={lang} />
           </div>
-          <IntlArticleJsonLd lang={lang} slug="brandformance-brand-performance-strategy" headline={isEn ? "Brandformance: how to unite brand and performance marketing to grow better" : "Brandformance : unir marque et performance"} image="/og-brandformance-como-unir-marca-y-performance.jpg" />
+          <IntlArticleJsonLd lang={lang} slug="brandformance-brand-performance-strategy" headline={isEn ? "Brandformance: how to unite brand and performance marketing to grow better" : "Brandformance : unir marque et performance"} image="/og-brandformance-como-unir-marca-y-performance-v2.jpg" />
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn
               ? "Brandformance: how to unite brand and performance marketing to grow better"
@@ -104,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Les entreprises qui séparent 'investissement marque' et 'investissement performance' commettent une erreur stratégique coûteuse. Le brandformance n'est pas une tendance — c'est la correction d'une séparation artificielle que l'on paie depuis des décennies."}
           </p>
           <Image
-            src="/og-brandformance-como-unir-marca-y-performance.jpg"
+            src="/og-brandformance-como-unir-marca-y-performance-v2.jpg"
             alt={isEn ? "Brandformance: brand and performance strategy" : "Brandformance : stratégie marque et performance"}
             width={1200}
             height={630}
@@ -120,7 +121,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Pendant des décennies, le marketing digital s'est organisé en deux mondes parallèles : l'équipe brand construisait la marque à long terme avec créativité et storytelling, tandis que l'équipe performance optimisait les conversions avec des données et de l'automatisation. Cela semblait logique. Le problème, c'est que le client ne fonctionne pas ainsi — et le budget non plus."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "what-brandformance-is-and-why-it-matters", label: isEn ? "What brandformance is and why it matters" : "Qu'est-ce que le brandformance et pourquoi ça compte" }, { id: "how-brand-strengthens-performance", label: isEn ? "How brand strengthens performance" : "Comment la marque renforce la performance" }, { id: "how-performance-data-improves-the-brand", label: isEn ? "How performance data improves the brand" : "Comment les données de performance améliorent la marque" }, { id: "the-mistake-of-separating-budgets", label: isEn ? "The mistake of separating budgets" : "L'erreur de séparer les budgets" }, { id: "brandformance-in-practice-for-smes", label: isEn ? "Brandformance in practice for SMEs" : "Le brandformance en pratique pour les PME" }, { id: "frequently-asked-questions-about-brandformance", label: isEn ? "Frequently asked questions about brandformance" : "Questions fréquentes sur le brandformance" }]} />
+        </div>
+
+          <h2 id="what-brandformance-is-and-why-it-matters" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "What brandformance is and why it matters" : "Qu'est-ce que le brandformance et pourquoi ça compte"}
           </h2>
           <p>
@@ -151,7 +156,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="how-brand-strengthens-performance" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "How brand strengthens performance" : "Comment la marque renforce la performance"}
           </h2>
           <p>
@@ -160,7 +165,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Quand un utilisateur connaît déjà votre marque, tout l'entonnoir de conversion fonctionne mieux. Votre CTR Google Ads est plus élevé parce qu'il reconnaît votre nom. Votre taux d'ouverture email s'améliore parce qu'il fait confiance à l'expéditeur. Votre taux de transformation commercial est plus élevé parce que vous avez déjà réduit la friction de l'inconnu."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="how-performance-data-improves-the-brand" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "How performance data improves the brand" : "Comment les données de performance améliorent la marque"}
           </h2>
           <p>
@@ -171,7 +176,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
           <BlogBanner variant="geo" lang={lang} />
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="the-mistake-of-separating-budgets" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "The mistake of separating budgets" : "L'erreur de séparer les budgets"}
           </h2>
           <p>
@@ -180,7 +185,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Le symptôme le plus courant de la mauvaise approche est d'avoir deux lignes budgétaires séparées — 'branding' et 'performance' — avec des équipes différentes, des KPI différents et des stratégies qui se contredisent souvent. L'annonce Google Ads promet un prix bas, et la campagne réseaux sociaux promet des valeurs premium. Sans cohérence, l'utilisateur ne sait pas quoi croire."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="brandformance-in-practice-for-smes" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Brandformance in practice for SMEs" : "Le brandformance en pratique pour les PME"}
           </h2>
           <p>
@@ -214,7 +219,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="frequently-asked-questions-about-brandformance" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Frequently asked questions about brandformance" : "Questions fréquentes sur le brandformance"}
           </h2>
           <div className="space-y-3">

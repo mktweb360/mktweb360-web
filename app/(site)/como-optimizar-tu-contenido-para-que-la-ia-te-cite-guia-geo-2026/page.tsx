@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cómo lograr que la IA cite tu contenido",
   description:
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     description: "Guía técnica y práctica de GEO para pymes. Aprende a estructurar tu contenido, implementar schema markup avanzado, configurar llms.txt y construir autoridad semántica para aparecer en ChatGPT, Gemini y Perplexity.",
     url: "https://www.mktweb360.com/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-geo.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -30,7 +32,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-geo.jpg",
+  image: "https://www.mktweb360.com/og-como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026-v2.jpg",
   url: "https://www.mktweb360.com/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026/",
   inLanguage: "es-ES",
@@ -86,32 +88,44 @@ export default function OptimizarContenidoGEOPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Aparecer en las respuestas de la IA no es cuestión de suerte, sino de método. Esta guía técnica de <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">GEO (Generative Engine Optimization)</Link> recorre, paso a paso, cómo estructurar tu contenido, aplicar schema markup avanzado y construir la autoridad semántica que hace que ChatGPT, Gemini y Perplexity te citen.
           </p>
+          <Image
+            src="/og-como-optimizar-tu-contenido-para-que-la-ia-te-cite-guia-geo-2026-v2.jpg"
+            alt="Robot de IA amistoso que revisa un documento web estructurado en bloques que avanza por una cinta transportadora"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={7} items={[{"id": "1-la-estructura-del-contenido-es-la-senal-mas-im", "label": "1. La estructura del contenido es la señal más importante"}, {"id": "2-schema-markup-avanzado-mas-alla-del-basico", "label": "2. Schema markup avanzado: más allá del básico"}, {"id": "3-el-fichero-llms-txt-la-senal-que-los-crawlers", "label": "3. El fichero llms.txt: la señal que los crawlers de IA leen"}, {"id": "4-autoridad-de-entidad-que-todo-diga-lo-mismo-so", "label": "4. Autoridad de entidad: que todo diga lo mismo sobre ti"}, {"id": "5-contenido-que-demuestra-experiencia-real", "label": "5. Contenido que demuestra experiencia real"}, {"id": "como-medir-si-el-geo-esta-funcionando", "label": "Cómo medir si el GEO está funcionando"}, {"id": "preguntas-frecuentes-sobre-optimizacion-geo", "label": "Preguntas frecuentes sobre optimización GEO"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El GEO no reemplaza a tu trabajo de posicionamiento: lo prolonga. Todo lo que sigue asume que ya tienes una base decente de <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO orgánico</Link> —web rápida, en HTTPS y con contenido útil— y añade encima las señales que los motores generativos necesitan para elegirte como fuente. Si aún dudas de por qué esto importa, conviene leer antes por qué <Link href="/por-que-aparecer-en-chatgpt-perplexity-gemini-importa-mas-que-el-seo-en-2026/" className="text-accent-500 hover:underline">aparecer en ChatGPT y Gemini importa más que el SEO en 2026</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">1. La estructura del contenido es la señal más importante</h2>
+          <h2 id="1-la-estructura-del-contenido-es-la-senal-mas-im" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. La estructura del contenido es la señal más importante</h2>
           <p>Los modelos de lenguaje no leen como una persona: extraen fragmentos autocontenidos que puedan reutilizar para responder. Por eso la estructura pesa más que casi cualquier otra cosa. Un contenido organizado en preguntas explícitas y respuestas directas, con un encabezado por idea y párrafos que resuelven un solo punto, es mucho más citable que un texto largo y sinuoso donde la respuesta está diluida.</p>
           <p>La regla práctica es sencilla: cada sección debería poder leerse de forma aislada y seguir teniendo sentido. Empieza cada bloque respondiendo la pregunta y luego desarrolla. Ese formato pregunta-respuesta no solo ayuda a la IA; también mejora la experiencia del lector humano, que encuentra lo que busca sin rodeos.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. Schema markup avanzado: más allá del básico</h2>
+          <h2 id="2-schema-markup-avanzado-mas-alla-del-basico" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. Schema markup avanzado: más allá del básico</h2>
           <p>El schema markup traduce tu contenido a un lenguaje que las máquinas entienden sin ambigüedad. Ir más allá de lo básico significa combinar varios tipos de forma coherente: FAQPage para las preguntas frecuentes, Article para el cuerpo del contenido, Organization para identificar quién publica y Service para lo que ofreces.</p>
           <p>Este marcado tiene un doble beneficio. Facilita que los modelos de IA procesen y relacionen tu información con mayor precisión, y contribuye a que Google pueda mostrar rich results en la búsqueda orgánica. Google no define el schema como mecanismo de acceso a los AI Overviews, pero un marcado limpio y coherente refuerza la comprensión semántica de tu contenido, que sí es un factor relevante para GEO. Un schema bien implementado sigue siendo una de las inversiones técnicas con mejor relación esfuerzo-resultado.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. El fichero llms.txt: la señal que los crawlers de IA leen</h2>
+          <h2 id="3-el-fichero-llms-txt-la-senal-que-los-crawlers" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. El fichero llms.txt: la señal que los crawlers de IA leen</h2>
           <p>El llms.txt es una representación orientativa y legible del sitio para sistemas de IA. A diferencia del robots.txt, no controla el acceso de los crawlers ni garantiza indexación ni citación; tampoco es una señal oficial de Google. Su utilidad real es estructural: permite que los modelos de lenguaje encuentren y relacionen más fácilmente tus páginas más relevantes, siempre que el contenido detrás de esas URLs sea de calidad.</p>
           <p>Configurarlo bien pasa por revisar primero qué bots de IA quieres permitir y cuáles no, y por señalar de forma ordenada los recursos que quieres que la máquina priorice. Es un archivo pequeño, pero forma parte de esa capa técnica que separa a quien improvisa de quien trabaja el GEO con criterio.</p>
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Autoridad de entidad: que todo diga lo mismo sobre ti</h2>
+          <h2 id="4-autoridad-de-entidad-que-todo-diga-lo-mismo-so" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Autoridad de entidad: que todo diga lo mismo sobre ti</h2>
           <p>Los modelos de IA construyen una idea de quién eres a partir de todas las menciones que encuentran. Si tu nombre, tu actividad y tus datos aparecen de forma coherente en la web, en tu ficha de <Link href="/seo-local-empresas-servicios/" className="text-accent-500 hover:underline">SEO local</Link> y en cada canal donde estás presente, esa entidad se vuelve sólida y verificable. Si hay contradicciones, la máquina duda y prefiere citar a alguien más consistente.</p>
           <p>Trabajar la autoridad de entidad significa alinear el mensaje: mismos datos de contacto, misma descripción de lo que haces, mismas áreas de especialidad repetidas de forma coherente. Cuanto más claro sea para la IA qué eres y sobre qué eres experto, más fácil le resulta asociarte a las preguntas donde quieres aparecer.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Contenido que demuestra experiencia real</h2>
+          <h2 id="5-contenido-que-demuestra-experiencia-real" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Contenido que demuestra experiencia real</h2>
           <p>La densidad semántica gana a la extensión. Un artículo de 1.200 palabras que responde con precisión a una pregunta concreta tiene más opciones de ser citado que uno de 3.000 genérico. Lo que los motores valoran es que el contenido demuestre competencia real: ejemplos concretos, matices que solo aporta quien conoce el tema y respuestas que no se limitan a repetir lugares comunes.</p>
           <p>Escribir para la IA no significa escribir de forma artificial. Significa ser claro, específico y honesto sobre lo que sabes. El contenido que aporta valor genuino es también el que la máquina reconoce como fuente fiable.</p>
 
@@ -130,11 +144,11 @@ export default function OptimizarContenidoGEOPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo medir si el GEO está funcionando</h2>
+          <h2 id="como-medir-si-el-geo-esta-funcionando" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo medir si el GEO está funcionando</h2>
           <p>La medición del GEO es distinta a la del SEO clásico, porque no hay un ranking único que consultar. El primer nivel es manual: pregunta a ChatGPT, Gemini y Perplexity por temas de tu sector y observa si tu marca aparece y en qué términos. Es artesanal, pero da una foto rápida y gratuita de tu visibilidad generativa.</p>
           <p>Para un seguimiento sistemático existen herramientas como Profound, Otterly.ai o AthenaHQ, que monitorizan la presencia de tu marca en los motores generativos a lo largo del tiempo. Con paciencia —los plazos son similares al SEO— verás cómo el trabajo constante de estructura, schema y autoridad se traduce en menciones acumuladas.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre optimización GEO</h2>
+          <h2 id="preguntas-frecuentes-sobre-optimizacion-geo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre optimización GEO</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -6,6 +7,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -53,7 +55,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "Analytics" : "Analytique"}
         </p>
-        <IntlArticleJsonLd lang={lang} slug="how-to-measure-digital-marketing-roi" headline={isEn ? "How to measure the ROI of your digital marketing campaigns step by step" : "Comment mesurer le ROI de vos campagnes de marketing digital étape par étape"} image="/og-como-medir-roi-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="how-to-measure-digital-marketing-roi" headline={isEn ? "How to measure the ROI of your digital marketing campaigns step by step" : "Comment mesurer le ROI de vos campagnes de marketing digital étape par étape"} image="/og-como-medir-roi-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to measure the ROI of your digital marketing campaigns step by step"
@@ -66,8 +68,33 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Investir dans le marketing digital sans mesurer le retour, c'est comme conduire les yeux fermés. Ce guide explique comment calculer le ROI, quels outils utiliser et quelles métriques comptent vraiment."}
         </p>
 
+        <Image
+          src="/og-como-medir-roi-marketing-digital-v2.jpg"
+          alt={!isEn ? "Plante qui produit des pièces, un entonnoir et une caisse enregistreuse représentant l’investissement en marketing et son retour" : "Plant that grows coins, a funnel and a cash register representing marketing investment and its return"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={8} items={[{ id: "what-is-roi-in-digital-marketing-and-how-is-it-c", label: isEn
+              ? "What is ROI in digital marketing and how is it calculated"
+              : "Qu'est-ce que le ROI en marketing digital et comment le calculer" }, { id: "how-to-configure-conversion-tracking-in-ga4", label: isEn
+              ? "How to configure conversion tracking in GA4"
+              : "Comment configurer le suivi des conversions dans GA4" }, { id: "attribution-which-channel-gets-credit-for-each-s", label: isEn
+              ? "Attribution: which channel gets credit for each sale"
+              : "Attribution : quel canal reçoit le crédit pour chaque vente" }, { id: "roi-by-channel-seo-vs-sem-vs-social-media", label: isEn
+              ? "ROI by channel: SEO vs SEM vs social media"
+              : "ROI par canal : SEO vs SEM vs réseaux sociaux" }, { id: "mistakes-that-distort-your-metrics", label: isEn
+              ? "Mistakes that distort your metrics"
+              : "Erreurs qui faussent vos métriques" }, { id: "how-to-present-marketing-results-to-management", label: isEn
+              ? "How to present marketing results to management"
+              : "Comment présenter les résultats marketing à la direction" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-is-roi-in-digital-marketing-and-how-is-it-c" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What is ROI in digital marketing and how is it calculated"
               : "Qu'est-ce que le ROI en marketing digital et comment le calculer"}
@@ -90,7 +117,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-configure-conversion-tracking-in-ga4" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How to configure conversion tracking in GA4"
               : "Comment configurer le suivi des conversions dans GA4"}
@@ -118,7 +145,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="attribution-which-channel-gets-credit-for-each-s" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Attribution: which channel gets credit for each sale"
               : "Attribution : quel canal reçoit le crédit pour chaque vente"}
@@ -148,7 +175,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="roi-by-channel-seo-vs-sem-vs-social-media" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "ROI by channel: SEO vs SEM vs social media"
               : "ROI par canal : SEO vs SEM vs réseaux sociaux"}
@@ -185,7 +212,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="mistakes-that-distort-your-metrics" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Mistakes that distort your metrics"
               : "Erreurs qui faussent vos métriques"}
@@ -233,7 +260,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-present-marketing-results-to-management" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How to present marketing results to management"
               : "Comment présenter les résultats marketing à la direction"}

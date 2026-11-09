@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -41,8 +43,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Most SMEs spend too much time on repetitive tasks that could be automated. This guide explains which marketing and sales processes are worth automating and how to start." : "La plupart des PME passent trop de temps sur des tâches répétitives qui pourraient être automatisées. Ce guide explique quels processus de marketing et de vente valent la peine d'être automatisés et comment commencer."}
         </p>
 
+        <Image
+          src="/og-que-puede-automatizar-una-pyme-en-marketing-y-ventas-v2.jpg"
+          alt={!isEn ? "Fleuriste où la propriétaire prend un café et sert une cliente, pendant qu’un robot et un tapis roulant traitent automatiquement les e-mails et le calendrier" : "Flower shop where the owner has a coffee and serves a customer while a robot and a conveyor belt process emails and the calendar automatically"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "why-automation-matters-for-smes", label: isEn ? "Why automation matters for SMEs" : "Pourquoi l'automatisation est importante pour les PME" }, { id: "email-marketing-automation-sequences-and-flows", label: isEn ? "Email marketing automation: sequences and flows" : "Automatisation de l'email marketing : séquences et flux" }, { id: "lead-capture-and-crm-automation", label: isEn ? "Lead capture and CRM automation" : "Automatisation de la capture de leads et CRM" }, { id: "social-media-scheduling-and-automation", label: isEn ? "Social media scheduling and automation" : "Planification et automatisation des réseaux sociaux" }, { id: "reporting-automation-save-hours-every-month", label: isEn ? "Reporting automation: save hours every month" : "Automatisation des rapports : économisez des heures chaque mois" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="why-automation-matters-for-smes" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Why automation matters for SMEs" : "Pourquoi l'automatisation est importante pour les PME"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="email-marketing-automation-sequences-and-flows" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Email marketing automation: sequences and flows" : "Automatisation de l'email marketing : séquences et flux"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="lead-capture-and-crm-automation" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Lead capture and CRM automation" : "Automatisation de la capture de leads et CRM"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -78,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="social-media-scheduling-and-automation" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Social media scheduling and automation" : "Planification et automatisation des réseaux sociaux"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -90,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="reporting-automation-save-hours-every-month" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Reporting automation: save hours every month" : "Automatisation des rapports : économisez des heures chaque mois"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

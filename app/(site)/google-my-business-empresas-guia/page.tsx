@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Google Business Profile: guía para empresas",
   description:
@@ -101,18 +102,22 @@ export default function GoogleMyBusinessGuiaPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "que-es-google-business-profile-y-por-que-importa", "label": "Qué es Google Business Profile y por qué importa"}, {"id": "como-crear-y-verificar-tu-ficha", "label": "Cómo crear y verificar tu ficha"}, {"id": "que-optimizar-para-mejorar-el-posicionamiento-lo", "label": "Qué optimizar para mejorar el posicionamiento local"}, {"id": "las-resenas-el-factor-mas-importante", "label": "Las reseñas: el factor más importante"}, {"id": "publicaciones-y-actualizaciones-periodicas", "label": "Publicaciones y actualizaciones periódicas"}, {"id": "preguntas-frecuentes-sobre-google-business-profi", "label": "Preguntas frecuentes sobre Google Business Profile"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Cuando alguien busca "fontanero cerca de mí" o "clínica dental en Toledo", lo primero que ve es el pack de resultados locales de Google: tres fichas con nombre, valoración, horario y dirección. Aparecer ahí — y hacerlo bien — es lo que marca la diferencia entre ser encontrado o ser invisible para los clientes de tu zona.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué es Google Business Profile y por qué importa</h2>
+          <h2 id="que-es-google-business-profile-y-por-que-importa" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué es Google Business Profile y por qué importa</h2>
           <p>Google Business Profile (antes Google My Business) es la herramienta gratuita de Google que permite a empresas gestionar cómo aparecen en Google Search y Google Maps. Una ficha completa y optimizada aparece en el "local pack" — el bloque de resultados locales que se muestra antes de los resultados orgánicos en búsquedas con intención local. Para negocios con clientes locales, es la herramienta de mayor impacto por menor coste que existe.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo crear y verificar tu ficha</h2>
+          <h2 id="como-crear-y-verificar-tu-ficha" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo crear y verificar tu ficha</h2>
           <p>El proceso empieza en business.google.com. Necesitas una cuenta de Google, el nombre de tu negocio, la categoría principal, la dirección (o zona de servicio si no atiendes en local fijo), el teléfono y el horario. La verificación confirma que el negocio existe en la dirección indicada — Google puede pedirla por postal, teléfono, video o de forma instantánea según la categoría. Sin verificación, la ficha no aparece en resultados.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué optimizar para mejorar el posicionamiento local</h2>
+          <h2 id="que-optimizar-para-mejorar-el-posicionamiento-lo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué optimizar para mejorar el posicionamiento local</h2>
           <p>La descripción del negocio debe incluir las palabras clave relevantes de tu sector y zona de forma natural. Las categorías (principal y secundarias) deben reflejar con precisión lo que haces. Las fotos reales del negocio, el equipo y los trabajos mejoran el CTR. Los horarios actualizados, el precio si aplica y los servicios detallados completan la información que Google usa para evaluar la relevancia de la ficha.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -125,10 +130,10 @@ export default function GoogleMyBusinessGuiaPage() {
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Las reseñas: el factor más importante</h2>
+          <h2 id="las-resenas-el-factor-mas-importante" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las reseñas: el factor más importante</h2>
           <p>Las reseñas son el indicador de confianza más visible en tu ficha. Influyen directamente en el posicionamiento local y en la decisión de nuevos clientes. La estrategia más efectiva es simple: pide la reseña justo después de terminar el trabajo, cuando el cliente está más satisfecho, con un enlace directo a la ficha. Responder a todas las reseñas — especialmente las negativas, con calma y profesionalidad — muestra que el negocio está activo y se preocupa por sus clientes.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Publicaciones y actualizaciones periódicas</h2>
+          <h2 id="publicaciones-y-actualizaciones-periodicas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Publicaciones y actualizaciones periódicas</h2>
           <p>Google valora las fichas activas. Publicar novedades, ofertas o contenido relevante de forma periódica mantiene la ficha fresca y puede mejorar su visibilidad. No hace falta publicar cada día — una o dos publicaciones al mes son suficientes para demostrar que el negocio está activo y para aprovechar el espacio de visibilidad adicional que ofrecen las publicaciones.</p>
 
           <p className="text-sm text-gray-500">
@@ -150,7 +155,7 @@ export default function GoogleMyBusinessGuiaPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre Google Business Profile</h2>
+          <h2 id="preguntas-frecuentes-sobre-google-business-profi" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre Google Business Profile</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

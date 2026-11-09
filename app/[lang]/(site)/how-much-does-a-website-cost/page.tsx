@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Web Design</p>
-        <IntlArticleJsonLd lang={lang} slug="how-much-does-a-website-cost" headline={isEn ? "How much does a professional website cost in 2025?" : "Combien coûte un site web professionnel en 2025 ?"} image="/og-cuanto-cuesta-pagina-web-profesional.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="how-much-does-a-website-cost" headline={isEn ? "How much does a professional website cost in 2025?" : "Combien coûte un site web professionnel en 2025 ?"} image="/og-cuanto-cuesta-pagina-web-profesional-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How much does a professional website cost in 2025?"
@@ -52,7 +54,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le prix d'un site web professionnel peut varier de 500€ à 50 000€. Ce guide explique ce qui influence vraiment le prix et comment obtenir un bon rapport qualité-prix."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-cuanto-cuesta-pagina-web-profesional-v2.jpg"
+          alt={!isEn ? "Ouvriers assemblant des blocs de site web sur la façade d’une boutique, pendant qu’un aimant attire les clients et que des pièces tombent dans une tirelire" : "Workers assembling website blocks on the facade of a shop while a magnet draws in customers and coins fall into a piggy bank"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "why-website-prices-vary-so-much", label: isEn ? "Why website prices vary so much" : "Pourquoi les prix des sites web varient autant" }, { id: "types-of-websites-and-their-price-ranges", label: isEn ? "Types of websites and their price ranges" : "Types de sites web et leurs fourchettes de prix" }, { id: "what-a-professional-website-must-include", label: isEn ? "What a professional website must include" : "Ce qu'un site web professionnel doit inclure" }, { id: "agency-vs-freelancer-vs-diy-real-comparison", label: isEn ? "Agency vs freelancer vs DIY: real comparison" : "Agence vs freelance vs DIY : comparaison réelle" }, { id: "red-flags-in-web-design-quotes", label: isEn ? "Red flags in web design quotes" : "Red flags dans les devis de création web" }]} />
+        </div>
+
+        <h2 id="why-website-prices-vary-so-much" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Why website prices vary so much" : "Pourquoi les prix des sites web varient autant"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Un autre facteur majeur est qui le construit. Un freelance travaillant seul facture moins mais livre la capacité d'une seule personne. Une agence a plus de ressources, un contrôle qualité et une continuité — mais coûte plus cher. Ni l'un ni l'autre n'est intrinsèquement meilleur ; cela dépend de la complexité de votre projet."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="types-of-websites-and-their-price-ranges" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Types of websites and their price ranges" : "Types de sites web et leurs fourchettes de prix"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -80,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Ces fourchettes supposent un développement professionnel avec le SEO technique inclus. Si vous voyez des prix significativement inférieurs, demandez ce qui N'est PAS inclus. Les coûts cachés viennent souvent de l'hébergement, du domaine, du SSL, de la maintenance, des mises à jour et du support post-livraison."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="what-a-professional-website-must-include" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "What a professional website must include" : "Ce qu'un site web professionnel doit inclure"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -94,7 +109,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Insistez également sur : la sécurité (SSL, sauvegardes régulières, mises à jour), une formation pour gérer le site vous-même, un support post-livraison d'au moins 30 jours, et la clarté sur qui possède le code et le domaine à la fin du projet."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="agency-vs-freelancer-vs-diy-real-comparison" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Agency vs freelancer vs DIY: real comparison" : "Agence vs freelance vs DIY : comparaison réelle"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -103,7 +118,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Plateformes DIY (Wix, Squarespace) : bon marché (10 à 30€/mois) mais avec des limitations sévères pour le SEO, la personnalisation et les performances. Acceptable pour une présence temporaire ou très petite, pas pour une entreprise sérieuse. Freelance : coût inférieur (30 à 60% de moins qu'une agence) mais point de défaillance unique — s'il disparaît, qui maintient le site ? Agence : investissement plus élevé mais équipe, contrôle qualité, responsabilité et service complet au-delà de la construction initiale."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="red-flags-in-web-design-quotes" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Red flags in web design quotes" : "Red flags dans les devis de création web"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">

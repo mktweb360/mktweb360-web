@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cómo generar leads de calidad para una pyme",
   description:
@@ -102,6 +103,10 @@ export default function LeadsCalidadPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "por-que-llegan-contactos-que-no-valen-lo-suficie", "label": "Por qué llegan contactos que no valen lo suficiente"}, {"id": "las-piezas-de-un-sistema-de-captacion-de-calidad", "label": "Las piezas de un sistema de captación de calidad"}, {"id": "que-papel-juegan-seo-ads-y-automatizacion", "label": "Qué papel juegan SEO, Ads y automatización"}, {"id": "que-metricas-importan-de-verdad", "label": "Qué métricas importan de verdad"}, {"id": "preguntas-frecuentes-sobre-generacion-de-leads", "label": "Preguntas frecuentes sobre generación de leads"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Es un problema muy frecuente en pymes que llevan un tiempo haciendo marketing digital: el formulario de contacto recibe mensajes, pero la mayoría no cierran. No tienen presupuesto, buscan algo diferente, o simplemente no son el tipo de cliente con el que trabajas bien.
@@ -110,10 +115,10 @@ export default function LeadsCalidadPage() {
             Generar más tráfico sobre un sistema que no filtra bien solo multiplica el problema. La solución no es siempre más volumen — es mejor mensaje, mejor segmentación y un proceso que filtre desde el primer contacto.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué llegan contactos que no valen lo suficiente</h2>
+          <h2 id="por-que-llegan-contactos-que-no-valen-lo-suficie" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué llegan contactos que no valen lo suficiente</h2>
           <p>El problema suele estar en el mensaje, la segmentación o la página de aterrizaje, no en el canal. Si el mensaje es demasiado amplio, atrae a cualquiera. Si la landing no filtra, cualquiera puede rellenar el formulario. Si el canal tiene poca intención de compra, el perfil será más frío. El problema de lead no cualificado casi siempre viene de uno de estos tres puntos.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Las piezas de un sistema de captación de calidad</h2>
+          <h2 id="las-piezas-de-un-sistema-de-captacion-de-calidad" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las piezas de un sistema de captación de calidad</h2>
           <p>Un mensaje que filtra, un canal con intención adecuada, una landing que cualifica y un seguimiento rápido y bien ejecutado son las cuatro piezas que, cuando funcionan juntas, cambian radicalmente la calidad de los contactos. Mejorar solo una no suele ser suficiente si otra falla gravemente.</p>
           <ul className="space-y-2">
             {["Propuesta de valor que habla al cliente correcto", "Canal con intención real de compra o consulta", "Página de aterrizaje que convierte y pre-cualifica", "Seguimiento rápido y con criterio"].map((item) => (
@@ -132,12 +137,12 @@ export default function LeadsCalidadPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué papel juegan SEO, Ads y automatización</h2>
+          <h2 id="que-papel-juegan-seo-ads-y-automatizacion" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué papel juegan SEO, Ads y automatización</h2>
           <p>El SEO trae demanda con intención real y suele generar leads más maduros porque el usuario ya buscaba algo concreto. Google Ads permite afinar el perfil con más rapidez pero exige buena página de aterrizaje. La automatización ayuda a no perder leads por tiempo de respuesta o falta de seguimiento. Lo que no se puede delegar a ninguno de los tres es la claridad del mensaje ni la calidad del proceso comercial posterior.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué métricas importan de verdad</h2>
+          <h2 id="que-metricas-importan-de-verdad" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué métricas importan de verdad</h2>
           <p>El volumen de leads, la tasa de cualificación, el coste por oportunidad útil y la tasa de cierre son los indicadores que permiten entender si el sistema funciona bien o mal. Si solo se mide el número de contactos, se optimiza para cantidad, no para calidad. Y si se mide solo el coste por lead, se puede estar ante una cifra engañosamente buena mientras los cierres son escasos.</p>
 
           <p className="text-sm text-gray-500">
@@ -159,7 +164,7 @@ export default function LeadsCalidadPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre generación de leads</h2>
+          <h2 id="preguntas-frecuentes-sobre-generacion-de-leads" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre generación de leads</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

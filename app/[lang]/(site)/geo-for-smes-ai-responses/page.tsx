@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -108,7 +110,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Beaucoup de petites entreprises donnent la bataille de l'IA pour perdue avant même de commencer, convaincues que seules les grandes marques apparaissent dans ces réponses. C'est une erreur de perception. Les modèles génératifs ne distribuent pas les mentions par budget — ils les distribuent en fonction de qui répond le mieux à une question concrète, et là une PME spécialisée peut battre un géant générique."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <Image
+          src="/og-geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca-v2.jpg"
+          alt={!isEn ? "Boulangère souriante devant la porte de sa boutique de quartier, téléphone à la main, avec une bulle portant une étoile dorée de recommandation" : "Smiling baker at the door of her neighborhood shop holding a phone, with a speech bubble showing a golden recommendation star"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "why-smes-have-a-real-advantage-in-geo", label: isEn ? "Why SMEs have a real advantage in GEO" : "Pourquoi les PME ont un véritable avantage en GEO" }, { id: "five-steps-any-sme-can-take-today", label: isEn ? "Five steps any SME can take today" : "Cinq étapes que n'importe quelle PME peut entreprendre dès aujourd'hui" }, { id: "the-mistake-most-smes-make-when-starting-with-ge", label: isEn ? "The mistake most SMEs make when starting with GEO" : "L'erreur que font la plupart des PME en commençant avec le GEO" }, { id: "where-geo-has-the-most-impact", label: isEn ? "Where GEO has the most impact" : "Où le GEO a le plus d'impact" }, { id: "how-to-start-without-investing-in-monitoring-too", label: isEn ? "How to start without investing in monitoring tools" : "Comment commencer sans investir dans des outils de surveillance" }, { id: "frequently-asked-questions-about-geo-for-smes", label: isEn ? "Frequently asked questions about GEO for SMEs" : "Questions fréquentes sur le GEO pour les PME" }]} />
+        </div>
+
+        <h2 id="why-smes-have-a-real-advantage-in-geo" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Why SMEs have a real advantage in GEO" : "Pourquoi les PME ont un véritable avantage en GEO"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -122,7 +137,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "C'est le point aveugle des grandes marques : la généralité. Et c'est exactement le terrain où une PME peut devenir la référence que l'IA cite, précisément parce que personne d'autre ne traite ce niche avec la même dévotion. Travailler le GEO, au fond, c'est s'appuyer sur quelque chose que la PME possède déjà : le focus."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="five-steps-any-sme-can-take-today" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Five steps any SME can take today" : "Cinq étapes que n'importe quelle PME peut entreprendre dès aujourd'hui"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -141,7 +156,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Aucune de ces étapes ne nécessite un budget de grande entreprise. La plupart s'appuient sur une base de SEO organique que beaucoup de PME ont déjà à moitié construite ; le GEO l'organise simplement avec la logique qu'une machine lit maintenant aussi."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="the-mistake-most-smes-make-when-starting-with-ge" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "The mistake most SMEs make when starting with GEO" : "L'erreur que font la plupart des PME en commençant avec le GEO"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -180,7 +195,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="where-geo-has-the-most-impact" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Where GEO has the most impact" : "Où le GEO a le plus d'impact"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -194,7 +209,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le second concerne les secteurs très spécialisés. Les modèles ont du mal à trouver des sources de qualité dans des niches étroites, donc une entreprise qui produit du contenu rigoureux sur sa spécialité peut devenir la référence que l'IA cite presque par absence de vraie concurrence. Plus le sujet est spécifique et peu saturé, plus l'opportunité pour la PME est grande."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="how-to-start-without-investing-in-monitoring-too" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "How to start without investing in monitoring tools" : "Comment commencer sans investir dans des outils de surveillance"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -208,7 +223,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le vrai coût du GEO pour une PME n'est pas dans le logiciel, mais dans le temps éditorial : bien écrire, avec focus et de façon constante. Si ce travail de contenu est déjà planifié, intégrer le GEO n'ajoute pas de dépense significative. Quand l'entreprise grandit, vous pourrez toujours incorporer des outils de surveillance plus avancés ; pour commencer, la méthode et la discipline suffisent."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions-about-geo-for-smes" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions about GEO for SMEs" : "Questions fréquentes sur le GEO pour les PME"}
         </h2>
         <div className="space-y-3 mb-8">

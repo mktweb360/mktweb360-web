@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cómo elegir chatbot para tu empresa",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "Antes de elegir un chatbot para tu empresa, hay 10 preguntas que debes responder. Esta checklist te ayuda a evitar los errores más frecuentes y a elegir la solución que realmente se adapta a lo que necesitas.",
     url: "https://www.mktweb360.com/como-elegir-chatbot-para-empresa-checklist-2026/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-como-elegir-chatbot-para-empresa-checklist-2026-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
+  image: "https://www.mktweb360.com/og-como-elegir-chatbot-para-empresa-checklist-2026-v2.jpg",
   url: "https://www.mktweb360.com/como-elegir-chatbot-para-empresa-checklist-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/como-elegir-chatbot-para-empresa-checklist-2026/",
   inLanguage: "es-ES",
@@ -88,52 +90,64 @@ export default function ComoElegirChatbotChecklistPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Antes de elegir un chatbot para tu empresa hay 10 preguntas que conviene responder. Esta checklist te ayuda a evitar los errores más frecuentes y a quedarte con la solución que de verdad se adapta a lo que necesitas. Si primero quieres entender el terreno, empieza por la <Link href="/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/" className="text-accent-500 hover:underline">guía sobre qué es un chatbot para empresas</Link>.
           </p>
+          <Image
+            src="/og-como-elegir-chatbot-para-empresa-checklist-2026-v2.jpg"
+            alt="Mesa de trabajo con tres robots de juguete como candidatos, uno marcado con una chincheta, y una lista de verificación con tics"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={8} items={[{"id": "pregunta-1-que-problema-concreto-quiero-resolver", "label": "Pregunta 1: ¿Qué problema concreto quiero resolver?"}, {"id": "pregunta-2-con-que-sistemas-necesita-integrarse", "label": "Pregunta 2: ¿Con qué sistemas necesita integrarse?"}, {"id": "pregunta-3-que-volumen-de-conversaciones-espero", "label": "Pregunta 3: ¿Qué volumen de conversaciones espero?"}, {"id": "pregunta-4-quien-va-a-entrenar-y-mantener-el-cha", "label": "Pregunta 4: ¿Quién va a entrenar y mantener el chatbot?"}, {"id": "pregunta-5-cuales-son-mis-requisitos-de-cumplimi", "label": "Pregunta 5: ¿Cuáles son mis requisitos de cumplimiento legal?"}, {"id": "pregunta-6-necesito-que-funcione-en-varios-canal", "label": "Pregunta 6: ¿Necesito que funcione en varios canales?"}, {"id": "pregunta-7-que-nivel-de-personalizacion-necesito", "label": "Pregunta 7: ¿Qué nivel de personalización necesito?"}, {"id": "pregunta-8-como-voy-a-medir-si-funciona", "label": "Pregunta 8: ¿Cómo voy a medir si funciona?"}, {"id": "pregunta-9-que-soporte-tecnico-necesito", "label": "Pregunta 9: ¿Qué soporte técnico necesito?"}, {"id": "pregunta-10-cual-es-mi-horizonte-temporal-y-roi", "label": "Pregunta 10: ¿Cuál es mi horizonte temporal y ROI esperado?"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Elegir chatbot no es elegir una herramienta, es elegir cómo vas a atender a tus clientes durante los próximos años. El error más común es empezar por el proveedor en lugar de empezar por tus propias necesidades. Estas diez preguntas invierten ese orden: primero defines qué necesitas y luego buscas quién lo cumple.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Pregunta 1: ¿Qué problema concreto quiero resolver?</h2>
+          <h2 id="pregunta-1-que-problema-concreto-quiero-resolver" className="text-2xl font-bold text-primary-600 scroll-mt-24">Pregunta 1: ¿Qué problema concreto quiero resolver?</h2>
           <p>Antes de mirar ninguna plataforma, escribe en una frase qué problema te lleva a plantearte un chatbot. No es lo mismo querer reducir el volumen de consultas repetitivas que buscar captar leads fuera de horario o descargar de trabajo a un equipo de atención saturado. Cada objetivo lleva a una configuración distinta.</p>
           <p>Si no defines el problema, acabarás comparando funciones que no te importan y pagando por capacidades que no vas a usar. Un chatbot orientado a ventas se mide y se entrena distinto que uno orientado a soporte. Ten clara la meta antes de dar un paso más.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Pregunta 2: ¿Con qué sistemas necesita integrarse?</h2>
+          <h2 id="pregunta-2-con-que-sistemas-necesita-integrarse" className="text-2xl font-bold text-primary-600 scroll-mt-24">Pregunta 2: ¿Con qué sistemas necesita integrarse?</h2>
           <p>Un chatbot aislado sirve de poco. Piensa con qué herramientas debe hablar: tu CRM, tu tienda online, tu sistema de reservas, tu base de conocimiento o tu pasarela de tickets. Si el bot no puede consultar el estado de un pedido o registrar un lead donde ya trabajas, gran parte de su valor se pierde.</p>
           <p>Haz la lista de integraciones imprescindibles antes de hablar con proveedores y pregúntales por cada una de forma explícita. Las integraciones son, con frecuencia, lo que separa a una solución que encaja de una que te obligará a duplicar trabajo manual.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Pregunta 3: ¿Qué volumen de conversaciones espero?</h2>
+          <h2 id="pregunta-3-que-volumen-de-conversaciones-espero" className="text-2xl font-bold text-primary-600 scroll-mt-24">Pregunta 3: ¿Qué volumen de conversaciones espero?</h2>
           <p>El volumen determina el plan que necesitas y el coste real. No es lo mismo un negocio que recibe unas decenas de consultas al mes que uno con miles. Muchos proveedores facturan por conversaciones o por resoluciones, así que una estimación realista te evita sorpresas en la factura.</p>
           <p>Revisa tu histórico de consultas por email, teléfono o chat para calcular una cifra de partida. Ten en cuenta también la estacionalidad: si tienes picos en fechas concretas, asegúrate de que la solución escala sin penalizarte de forma desproporcionada.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Pregunta 4: ¿Quién va a entrenar y mantener el chatbot?</h2>
+          <h2 id="pregunta-4-quien-va-a-entrenar-y-mantener-el-cha" className="text-2xl font-bold text-primary-600 scroll-mt-24">Pregunta 4: ¿Quién va a entrenar y mantener el chatbot?</h2>
           <p>Un chatbot no se configura una vez y se olvida. Alguien tiene que entrenarlo con tu contenido, revisar las conversaciones que falla y ajustar las respuestas con el tiempo. Decide desde el principio si esa responsabilidad recae en tu equipo o en el proveedor.</p>
           <p>Si nadie internamente va a dedicarle tiempo, prioriza soluciones gestionadas donde el mantenimiento esté incluido. Un bot sin mantenimiento se degrada: aparecen preguntas nuevas que no sabe responder y la calidad cae poco a poco.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Pregunta 5: ¿Cuáles son mis requisitos de cumplimiento legal?</h2>
+          <h2 id="pregunta-5-cuales-son-mis-requisitos-de-cumplimi" className="text-2xl font-bold text-primary-600 scroll-mt-24">Pregunta 5: ¿Cuáles son mis requisitos de cumplimiento legal?</h2>
           <p>Un chatbot maneja datos personales y conversaciones, así que el cumplimiento no es opcional. En España y la UE debes cumplir el RGPD y el AI Act, que obliga, entre otras cosas, a identificar los sistemas de IA como tales. Repasa una checklist de cumplimiento con al menos diez puntos: información al usuario, base legal del tratamiento, conservación de datos, derechos de acceso y supresión, y ubicación del alojamiento, entre otros.</p>
           <p>Pregunta a cada proveedor cómo cubre estos requisitos y pide que lo pongan por escrito. Para no dejarte nada, apóyate en nuestra guía específica de <Link href="/chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana/" className="text-accent-500 hover:underline">chatbots de IA, RGPD y AI Act en España</Link>.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Pregunta 6: ¿Necesito que funcione en varios canales?</h2>
+          <h2 id="pregunta-6-necesito-que-funcione-en-varios-canal" className="text-2xl font-bold text-primary-600 scroll-mt-24">Pregunta 6: ¿Necesito que funcione en varios canales?</h2>
           <p>Piensa dónde están tus clientes. Puede que te baste con el chat de la web, o puede que necesites atender también por WhatsApp, Instagram, Facebook Messenger o incluso dentro de tu app. Cada canal añade complejidad y, a menudo, coste.</p>
           <p>No caigas en la tentación de contratar todos los canales por si acaso. Empieza por donde tus clientes ya te escriben y amplía cuando tenga sentido. Confirma que la plataforma soporta los canales que realmente vas a usar antes de firmar.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Pregunta 7: ¿Qué nivel de personalización necesito?</h2>
+          <h2 id="pregunta-7-que-nivel-de-personalizacion-necesito" className="text-2xl font-bold text-primary-600 scroll-mt-24">Pregunta 7: ¿Qué nivel de personalización necesito?</h2>
           <p>Algunas empresas se conforman con respuestas estándar bien resueltas; otras necesitan que el bot hable con el tono de su marca, siga flujos de conversación propios y se adapte a casos particulares. Cuanto más a medida, más potente debe ser la plataforma y más tiempo de configuración requerirá.</p>
           <p>Sé honesto con lo que de verdad necesitas. Una personalización excesiva encarece el proyecto y lo hace más difícil de mantener, mientras que una demasiado rígida puede dar una imagen impersonal. Busca el punto que encaja con tu marca sin complicarte de más.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Pregunta 8: ¿Cómo voy a medir si funciona?</h2>
+          <h2 id="pregunta-8-como-voy-a-medir-si-funciona" className="text-2xl font-bold text-primary-600 scroll-mt-24">Pregunta 8: ¿Cómo voy a medir si funciona?</h2>
           <p>Sin métricas no sabrás si la inversión merece la pena. Define desde el inicio qué vas a medir: porcentaje de consultas resueltas por el bot, tiempo de respuesta, leads captados, satisfacción del usuario o carga de trabajo liberada al equipo humano. Esos números serán tu vara de medir.</p>
           <p>Ten en cuenta los tiempos: los primeros 30-60 días son de calibración, así que no esperes cifras estables de inmediato. A partir del tercer mes deberías ver resultados medibles y una tendencia clara. Asegúrate de que la plataforma te da los datos que necesitas para juzgar.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Pregunta 9: ¿Qué soporte técnico necesito?</h2>
+          <h2 id="pregunta-9-que-soporte-tecnico-necesito" className="text-2xl font-bold text-primary-600 scroll-mt-24">Pregunta 9: ¿Qué soporte técnico necesito?</h2>
           <p>Cuando algo falla, el soporte marca la diferencia. Valora qué nivel necesitas: ¿te basta con documentación y email, o quieres un contacto directo que responda rápido? Pregunta por los tiempos de respuesta, el idioma de atención y si hay acompañamiento en la puesta en marcha.</p>
           <p>Un buen soporte es especialmente importante en las primeras semanas, cuando estás calibrando el bot. Si tu equipo no es técnico, prioriza proveedores que ofrezcan onboarding guiado y acompañamiento real, no solo un manual.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Pregunta 10: ¿Cuál es mi horizonte temporal y ROI esperado?</h2>
+          <h2 id="pregunta-10-cual-es-mi-horizonte-temporal-y-roi" className="text-2xl font-bold text-primary-600 scroll-mt-24">Pregunta 10: ¿Cuál es mi horizonte temporal y ROI esperado?</h2>
           <p>Por último, aterriza las expectativas de tiempo y retorno. Con un proceso ordenado, evaluar 3-4 opciones lleva unas 2-3 semanas: una para definir requisitos, otra para pedir demos y propuestas, y otra para analizar y decidir. La implementación tiene después su propia curva.</p>
           <p>En cuanto al retorno, cuenta con un período de calibración de 30-60 días y un ROI medible a partir del mes 3. Si a los tres meses no hay mejora observable, hay un problema de implementación que resolver. Para dimensionar la inversión, revisa <Link href="/cuanto-cuesta-un-chatbot-para-empresas-espana-2026/" className="text-accent-500 hover:underline">cuánto cuesta un chatbot para empresas en España</Link> y contrasta con lo que esperas ganar.</p>
 
@@ -152,7 +166,7 @@ export default function ComoElegirChatbotChecklistPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

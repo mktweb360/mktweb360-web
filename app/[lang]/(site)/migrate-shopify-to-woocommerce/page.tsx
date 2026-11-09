@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
-        <IntlArticleJsonLd lang={lang} slug="migrate-shopify-to-woocommerce" headline={isEn ? "Migrate from Shopify to WooCommerce: the complete step-by-step guide" : "Migrer de Shopify vers WooCommerce : le guide complet étape par étape"} image="/og-migrar-shopify-woocommerce.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="migrate-shopify-to-woocommerce" headline={isEn ? "Migrate from Shopify to WooCommerce: the complete step-by-step guide" : "Migrer de Shopify vers WooCommerce : le guide complet étape par étape"} image="/og-migrar-shopify-woocommerce-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Migrate from Shopify to WooCommerce: the complete step-by-step guide"
@@ -52,7 +54,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Shopify facture des frais mensuels et jusqu'à 2% par vente. WooCommerce non. La migration peut vous faire économiser des milliers d'euros par an — si elle est bien faite. Ce guide couvre tout."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-migrar-shopify-woocommerce-v2.jpg"
+          alt={!isEn ? "Déménagement de cartons avec un camion et une grue entre deux boutiques isométriques reliées par un pont" : "Moving boxes loaded on a truck with a crane between two isometric shops joined by a bridge"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-more-stores-are-migrating-from-shopify-to-wo", label: isEn ? "Why more stores are migrating from Shopify to WooCommerce" : "Pourquoi de plus en plus de boutiques migrent de Shopify vers WooCommerce" }, { id: "what-you-can-migrate-from-shopify", label: isEn ? "What you can migrate from Shopify" : "Ce que vous pouvez migrer depuis Shopify" }, { id: "tools-to-migrate-from-shopify-to-woocommerce", label: isEn ? "Tools to migrate from Shopify to WooCommerce" : "Outils pour migrer de Shopify vers WooCommerce" }, { id: "how-to-preserve-seo-during-migration", label: isEn ? "How to preserve SEO during migration" : "Comment préserver le SEO pendant la migration" }, { id: "real-costs-shopify-vs-woocommerce-over-3-years", label: isEn ? "Real costs: Shopify vs WooCommerce over 3 years" : "Coûts réels : Shopify vs WooCommerce sur 3 ans" }]} />
+        </div>
+
+        <h2 id="why-more-stores-are-migrating-from-shopify-to-wo" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Why more stores are migrating from Shopify to WooCommerce" : "Pourquoi de plus en plus de boutiques migrent de Shopify vers WooCommerce"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "WooCommerce est gratuit. Vous payez pour l'hébergement (10 à 50€/mois pour un hébergement managé de qualité) et les plugins premium dont vous avez besoin, mais il n'y a pas de frais de transaction et pas d'enfermement dans la plateforme. Pour la plupart des PME européennes, l'économie est significative après 12 à 18 mois."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="what-you-can-migrate-from-shopify" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "What you can migrate from Shopify" : "Ce que vous pouvez migrer depuis Shopify"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -75,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Une migration complète peut transférer : produits (avec images, variantes, prix, inventaire), clients (nom, email, adresse, historique d'achats), commandes (commandes historiques avec statut), collections/catégories, pages et articles de blog, codes de réduction, et données SEO (URLs, titres meta, descriptions)."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="tools-to-migrate-from-shopify-to-woocommerce" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Tools to migrate from Shopify to WooCommerce" : "Outils pour migrer de Shopify vers WooCommerce"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -84,7 +99,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Pour les boutiques simples (produits uniquement, pas d'historique de commandes nécessaire) : utilisez l'importateur CSV natif de WooCommerce après avoir formaté votre export Shopify. Pour les migrations complètes incluant commandes et clients : Cart2Cart et LitExtension sont les outils payants les plus fiables — ils gèrent automatiquement la correspondance des champs, le transfert d'images et la validation des données."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="how-to-preserve-seo-during-migration" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "How to preserve SEO during migration" : "Comment préserver le SEO pendant la migration"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -98,7 +113,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Également : soumettez votre nouveau sitemap à Google Search Console, mettez à jour tous les backlinks externes que vous contrôlez, et surveillez Google Search Console pour les erreurs 404 dans les 30 premiers jours post-migration. Détecter et corriger rapidement les erreurs de redirection évite une perte permanente de classement."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="real-costs-shopify-vs-woocommerce-over-3-years" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Real costs: Shopify vs WooCommerce over 3 years" : "Coûts réels : Shopify vs WooCommerce sur 3 ans"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">

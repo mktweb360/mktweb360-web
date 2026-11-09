@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Chatbot para WordPress: cómo instalarlo",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "WordPress tiene decenas de plugins de chatbot. La mayoría no merece el tiempo que cuesta probarlos. Guía honesta sobre qué funciona de verdad y cómo implementar un chatbot útil en una web WordPress en 2026.",
     url: "https://www.mktweb360.com/chatbot-wordpress-como-instalarlo-que-evitar/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-chatbot-wordpress-como-instalarlo-que-evitar-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
+  image: "https://www.mktweb360.com/og-chatbot-wordpress-como-instalarlo-que-evitar-v2.jpg",
   url: "https://www.mktweb360.com/chatbot-wordpress-como-instalarlo-que-evitar/",
   mainEntityOfPage: "https://www.mktweb360.com/chatbot-wordpress-como-instalarlo-que-evitar/",
   inLanguage: "es-ES",
@@ -88,32 +90,44 @@ export default function ChatbotWordPressPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             WordPress tiene decenas de plugins de chatbot y la mayoría no merece el tiempo que cuesta probarlos. En esta guía honesta te explicamos qué funciona de verdad, qué errores evitar y cómo implementar un chatbot útil sin cargarte la velocidad de tu <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">web WordPress</Link>.
           </p>
+          <Image
+            src="/og-chatbot-wordpress-como-instalarlo-que-evitar-v2.jpg"
+            alt="Página web con una pieza de puzle de chatbot encajada mediante un cable, junto a piezas descartadas y una señal de aviso"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "el-problema-con-los-plugins-de-chatbot-de-wordpr", "label": "El problema con los plugins de chatbot de WordPress"}, {"id": "que-diferencia-un-chatbot-util-de-un-plugin-cual", "label": "Qué diferencia un chatbot útil de un plugin cualquiera"}, {"id": "como-funciona-un-chatbot-bien-integrado-en-wordp", "label": "Cómo funciona un chatbot bien integrado en WordPress"}, {"id": "pasos-para-implementar-un-chatbot-que-funcione-e", "label": "Pasos para implementar un chatbot que funcione en tu web WordPress"}, {"id": "los-errores-mas-comunes-al-implementar-un-chatbo", "label": "Los errores más comunes al implementar un chatbot en WordPress"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             WordPress mueve el 59,2% de las webs con CMS según W3Techs en 2026. Esa popularidad tiene una cara B: un ecosistema saturado de plugins que prometen "chatbot con IA" y entregan poco. Antes de instalar el primero que aparece en el buscador, conviene entender qué separa a un chatbot útil de un plugin más que ralentiza tu web.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El problema con los plugins de chatbot de WordPress</h2>
+          <h2 id="el-problema-con-los-plugins-de-chatbot-de-wordpr" className="text-2xl font-bold text-primary-600 scroll-mt-24">El problema con los plugins de chatbot de WordPress</h2>
           <p>El directorio de WordPress está lleno de soluciones. Tidio, por ejemplo, supera las 80.000 instalaciones. Números así generan confianza, pero también esconden un problema: muchos de estos plugins hacen lo mismo, resuelven poco y compiten por instalarse aunque no encajen con tu negocio.</p>
           <p>La mayoría se quedan en el nivel más básico: un formulario disfrazado de chat o una bandeja de mensajes. Probar uno tras otro consume horas y deja la impresión de que "los chatbots no funcionan", cuando el problema no es la tecnología, sino la elección. Distinguir el grano de la paja es el primer paso.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué diferencia un chatbot útil de un plugin cualquiera</h2>
+          <h2 id="que-diferencia-un-chatbot-util-de-un-plugin-cual" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué diferencia un chatbot útil de un plugin cualquiera</h2>
           <p>La diferencia está en el conocimiento y en la conexión. Un plugin cualquiera responde con reglas rígidas o con información genérica. Un chatbot útil está entrenado con tu contenido y entiende lo que pregunta el visitante, aunque lo formule de forma imprecisa.</p>
           <p>El segundo factor es la integración. Un chatbot que solo muestra un texto es un panfleto; uno que consulta datos, registra leads o deriva a una persona cuando toca es una herramienta. Ese salto de calidad es el mismo que separa una web que solo existe de una que trabaja, y tiene mucho que ver con el <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">posicionamiento web orgánico</Link>: la utilidad real retiene al visitante.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo funciona un chatbot bien integrado en WordPress</h2>
+          <h2 id="como-funciona-un-chatbot-bien-integrado-en-wordp" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo funciona un chatbot bien integrado en WordPress</h2>
           <p>La arquitectura correcta no mete la inteligencia dentro de WordPress. El núcleo del chatbot vive en un servicio SaaS externo, donde se procesa el lenguaje y se guarda el conocimiento, y en WordPress solo se instala un plugin ligero que actúa de puente. Ese widget se carga como JavaScript en el footer, sin sobrecargar el servidor.</p>
           <p>Esta separación es la que protege el rendimiento. El trabajo pesado ocurre fuera; tu web solo muestra la ventana de chat. Es también el enfoque que se apoya en la <Link href="/ia-aplicada-al-marketing/" className="text-accent-500 hover:underline">IA aplicada al marketing</Link> sin convertir tu WordPress en un servidor de inteligencia artificial que no está preparado para ese trabajo.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Pasos para implementar un chatbot que funcione en tu web WordPress</h2>
+          <h2 id="pasos-para-implementar-un-chatbot-que-funcione-e" className="text-2xl font-bold text-primary-600 scroll-mt-24">Pasos para implementar un chatbot que funcione en tu web WordPress</h2>
           <p>El proceso, bien hecho, sigue siete pasos. Primero, definir qué quieres que resuelva el chatbot y qué consultas recibe hoy. Segundo, elegir un servicio con núcleo externo en lugar de un plugin que lo haga todo dentro. Tercero, entrenarlo con tu contenido real: servicios, precios, condiciones.</p>
           <p>Cuarto, instalar el plugin puente y conectarlo. Quinto, diseñar el mecanismo de derivación a una persona para cuando el chatbot no sepa responder. Sexto, probar con conversaciones reales antes de lanzar. Y séptimo, medir y ajustar durante las primeras semanas. Si prefieres partir de una base más amplia, entender primero <Link href="/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/" className="text-accent-500 hover:underline">qué es un chatbot para empresas</Link> ayuda a tomar mejores decisiones en cada uno de estos pasos.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los errores más comunes al implementar un chatbot en WordPress</h2>
+          <h2 id="los-errores-mas-comunes-al-implementar-un-chatbo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los errores más comunes al implementar un chatbot en WordPress</h2>
           <p>Hay cinco fallos que se repiten. El primero es elegir un plugin que procesa la IA localmente y penaliza la velocidad, sobre todo en hosting compartido. El segundo es no entrenarlo con contenido propio y dejar respuestas genéricas. El tercero es no diseñar la derivación a una persona, de modo que el usuario se queda atascado.</p>
           <p>El cuarto es olvidar la transparencia legal: el chatbot debe informar de que es una IA. Y el quinto es lanzarlo sin probarlo con casos reales, descubriendo los agujeros con los clientes en directo. Evitar estos cinco errores es, en la práctica, la diferencia entre un chatbot que suma y uno que hay que desinstalar a las dos semanas.</p>
 
@@ -132,7 +146,7 @@ export default function ChatbotWordPressPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

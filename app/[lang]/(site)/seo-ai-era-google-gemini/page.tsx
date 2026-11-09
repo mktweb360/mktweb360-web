@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -108,7 +110,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Pendant des années, l'objectif du SEO était clair : monter à la première position et capter le clic. Aujourd'hui, Google peut répondre directement avec Gemini avant que l'utilisateur atteigne cette première position. Cela ne signifie pas que le SEO est mort — cela signifie que les règles du jeu ont changé et qu'il faut comprendre où se trouve encore le trafic et la valeur."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <Image
+          src="/og-seo-en-la-era-de-la-ia-como-posicionarse-cuando-google-usa-gemini-v2.jpg"
+          alt={!isEn ? "Entrepreneur devant son ordinateur, avec une carte de réponse IA mise en avant au-dessus de la liste des résultats de recherche" : "Entrepreneur at a computer with a highlighted AI answer card above the list of search results"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "what-has-changed-in-google-with-gemini-integrati", label: isEn ? "What has changed in Google with Gemini integration" : "Ce qui a changé dans Google avec l'intégration de Gemini" }, { id: "which-types-of-searches-still-generate-organic-t", label: isEn ? "Which types of searches still generate organic traffic" : "Quels types de recherches génèrent encore du trafic organique" }, { id: "how-to-optimise-to-appear-inside-an-ai-overview", label: isEn ? "How to optimise to appear inside an AI Overview" : "Comment optimiser pour apparaître dans un AI Overview" }, { id: "the-content-strategy-that-works-in-2026", label: isEn ? "The content strategy that works in 2026" : "La stratégie de contenu qui fonctionne en 2026" }, { id: "seo-geo-the-combination-that-delivers-results", label: isEn ? "SEO + GEO: the combination that delivers results" : "SEO + GEO : la combinaison qui donne des résultats" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
+        <h2 id="what-has-changed-in-google-with-gemini-integrati" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "What has changed in Google with Gemini integration" : "Ce qui a changé dans Google avec l'intégration de Gemini"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -122,7 +137,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Pour l'utilisateur, c'est généralement pratique : il obtient une réponse immédiate sans naviguer. Pour les sites web, le défi est double : il ne suffit plus de se positionner — maintenant, il faut aussi être la source que l'IA choisit pour construire sa réponse. C'est un changement de mentalité qui connecte le SEO classique avec le positionnement IA."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="which-types-of-searches-still-generate-organic-t" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Which types of searches still generate organic traffic" : "Quels types de recherches génèrent encore du trafic organique"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -138,7 +153,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <BlogBanner lang={lang} />
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="how-to-optimise-to-appear-inside-an-ai-overview" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "How to optimise to appear inside an AI Overview" : "Comment optimiser pour apparaître dans un AI Overview"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -152,7 +167,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le schema markup correct (FAQPage, Article, Organization) aide à désambiguïser les entités et facilite le traitement de votre contenu par Gemini avec une plus grande précision sémantique. Un SEO technique impeccable, combiné à un contenu bien structuré, vous positionne mieux à la fois dans les résultats organiques et comme sources citées. Si vous comprenez aussi les différences entre GEO et SEO, vous pourrez préparer chaque page pour les deux scénarios à la fois."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="the-content-strategy-that-works-in-2026" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "The content strategy that works in 2026" : "La stratégie de contenu qui fonctionne en 2026"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -166,7 +181,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Cela implique d'ajuster le mix de mots-clés vers des requêtes à intention commerciale, de créer du contenu que l'IA ne peut pas résumer sans perdre de valeur (comparatifs, cas réels, critères de décision) et de mettre à jour le contenu existant pour qu'il reste la meilleure réponse disponible."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="seo-geo-the-combination-that-delivers-results" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "SEO + GEO: the combination that delivers results" : "SEO + GEO : la combinaison qui donne des résultats"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -205,7 +220,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions" : "Questions fréquentes"}
         </h2>
         <div className="space-y-3 mb-8">

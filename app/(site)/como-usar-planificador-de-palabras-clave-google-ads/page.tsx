@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 30/10/2026 — refuerzo del tema 4 de la propuesta de blog del 27/10 (misma URL; publicado el 25/06/2026).
 // Texto y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 ARTÍCULO — Planificador de palabras clave».
 // Datos de Google comprobados en la ayuda oficial de Google Ads el 28/10/2026.
@@ -223,15 +224,19 @@ export default function PlanificadorPalabrasClavePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={12} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "que-es-el-planificador-de-palabras-clave-y-para", "label": "¿Qué es el Planificador de palabras clave y para qué sirve?"}, {"id": "como-entrar-sin-crear-una-campana-de-pago", "label": "¿Cómo entrar sin crear una campaña de pago?"}, {"id": "paso-a-paso-como-descubrir-palabras-clave-nuevas", "label": "Paso a paso: ¿cómo descubrir palabras clave nuevas?"}, {"id": "paso-a-paso-como-obtener-el-volumen-y-las-previs", "label": "Paso a paso: ¿cómo obtener el volumen y las previsiones?"}, {"id": "como-se-leen-los-datos-rangos-competencia-y-puja", "label": "¿Cómo se leen los datos: rangos, «competencia» y pujas?"}, {"id": "planificador-search-console-o-semrush-que-dato-u", "label": "Planificador, Search Console o Semrush: ¿qué dato usar para qué?"}, {"id": "5-errores-frecuentes-al-usar-el-planificador", "label": "5 errores frecuentes al usar el Planificador"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El Planificador de palabras clave es una herramienta gratuita de Google Ads que da ideas de búsquedas relacionadas con tu negocio y estima cuántas veces se buscan al mes y cuánto pagan los anunciantes por ellas. No necesitas una campaña activa, pero sí completar la cuenta con los datos de facturación. Si gastas poco en anuncios, el volumen aparece en rangos.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <Lista items={resumen} />
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué es el Planificador de palabras clave y para qué sirve?</h2>
+          <h2 id="que-es-el-planificador-de-palabras-clave-y-para" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué es el Planificador de palabras clave y para qué sirve?</h2>
           <p>
             Es la herramienta que Google pone dentro de Google Ads para preparar campañas de búsqueda. Sirve para dos cosas: <strong>encontrar palabras clave nuevas</strong> a partir de unos términos o de una web, y <strong>ver el volumen y las previsiones</strong> de una lista que ya tienes. Aunque está pensada para anuncios, también se usa en SEO para saber cómo busca la gente un servicio, agrupar búsquedas por tema y ver en qué meses sube la demanda.
           </p>
@@ -239,19 +244,19 @@ export default function PlanificadorPalabrasClavePage() {
             Sus datos salen de Google, pero tienen límites: los volúmenes se redondean, las búsquedas con muy poco volumen o consideradas sensibles no aparecen, y la columna de competencia habla de anuncios, no de resultados orgánicos.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Cómo entrar sin crear una campaña de pago?</h2>
+          <h2 id="como-entrar-sin-crear-una-campana-de-pago" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Cómo entrar sin crear una campaña de pago?</h2>
           <Lista items={acceso} numerada />
           <p>
             Cuando ya tengas la cuenta, también puedes ir directo a <strong>ads.google.com/aw/keywordplanner/home</strong>. Si no ves la opción de ideas de palabras clave, lo habitual es que falte terminar la configuración de facturación.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso a paso: ¿cómo descubrir palabras clave nuevas?</h2>
+          <h2 id="paso-a-paso-como-descubrir-palabras-clave-nuevas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso a paso: ¿cómo descubrir palabras clave nuevas?</h2>
           <Lista items={descubrir} numerada />
           <p>
             Un consejo práctico: empieza con términos cortos y amplios, y deja que la herramienta te enseñe las variantes. Las búsquedas largas, con más palabras, suelen tener menos volumen pero una intención más clara, y son las más fáciles de atacar con una página concreta.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Paso a paso: ¿cómo obtener el volumen y las previsiones?</h2>
+          <h2 id="paso-a-paso-como-obtener-el-volumen-y-las-previs" className="text-2xl font-bold text-primary-600 scroll-mt-24">Paso a paso: ¿cómo obtener el volumen y las previsiones?</h2>
           <Lista items={volumen} numerada />
           <p>Lo que conviene saber de las previsiones, según la ayuda de Google Ads:</p>
           <Lista items={previsiones} />
@@ -259,7 +264,7 @@ export default function PlanificadorPalabrasClavePage() {
             Úsalas para calcular cuánto presupuesto necesitarías en una campaña de búsqueda. Si estás pensando en anunciarte, lo explicamos en <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">nuestro servicio de Google Ads</Link>; y si ya tienes campañas, revisa antes la <Link href="/auditoria-google-ads-pymes-que-revisar/" className="text-accent-500 hover:underline">auditoría de Google Ads para pymes</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Cómo se leen los datos: rangos, «competencia» y pujas?</h2>
+          <h2 id="como-se-leen-los-datos-rangos-competencia-y-puja" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Cómo se leen los datos: rangos, «competencia» y pujas?</h2>
           <Tabla cabecera={["Columna", "Qué dice Google", "Cómo usarla"]} filas={lectura} />
           <p>
             <strong>Sobre los rangos.</strong> Google no explica en su ayuda a partir de qué gasto se ven cifras exactas. El aviso de Google que recogió Search Engine Journal en 2016 dice que los anunciantes con menor gasto mensual pueden ver una vista de datos limitada. En la práctica verás tramos como 100 – 1K o 1K – 10K. Para decidir qué tema trabajar primero, es suficiente.
@@ -268,7 +273,7 @@ export default function PlanificadorPalabrasClavePage() {
             <strong>Sobre la «competencia».</strong> Es el error más común. Una «competencia alta» significa que muchos anunciantes pujan por esa búsqueda, lo que suele indicar que tiene valor comercial. No dice si es difícil salir en los resultados orgánicos. Para eso hay que mirar quién ocupa la primera página o usar una métrica de dificultad SEO, como la KD % de Semrush.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Planificador, Search Console o Semrush: ¿qué dato usar para qué?</h2>
+          <h2 id="planificador-search-console-o-semrush-que-dato-u" className="text-2xl font-bold text-primary-600 scroll-mt-24">Planificador, Search Console o Semrush: ¿qué dato usar para qué?</h2>
           <Tabla cabecera={["Qué necesitas saber", "Planificador de palabras clave", "Search Console", "Semrush"]} filas={comparativa} />
           <p>
             El orden que usamos: primero <strong>Search Console</strong>, para ver por qué búsquedas aparece ya tu web (las que tienen muchas impresiones y pocos clics son las oportunidades más rápidas); después el <strong>Planificador</strong>, para encontrar búsquedas que aún no trabajas y ver su demanda; y por último una herramienta SEO, para estimar la dificultad antes de crear la página. Lo contamos con más detalle en la <Link href="/seo-para-pymes-guia/" className="text-accent-500 hover:underline">guía de SEO para pymes</Link>, y en la <Link href="/auditoria-seo-basica/" className="text-accent-500 hover:underline">auditoría web paso a paso</Link> tienes cómo revisar Search Console.
@@ -276,7 +281,7 @@ export default function PlanificadorPalabrasClavePage() {
 
           <BlogBanner variant="seo" />
 
-          <h2 className="text-2xl font-bold text-primary-600">5 errores frecuentes al usar el Planificador</h2>
+          <h2 id="5-errores-frecuentes-al-usar-el-planificador" className="text-2xl font-bold text-primary-600 scroll-mt-24">5 errores frecuentes al usar el Planificador</h2>
           <Lista items={errores} numerada />
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -289,7 +294,7 @@ export default function PlanificadorPalabrasClavePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -302,7 +307,7 @@ export default function PlanificadorPalabrasClavePage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <p className="text-sm text-gray-500">Consultadas el 28/10/2026.</p>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (

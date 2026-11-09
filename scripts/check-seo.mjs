@@ -110,6 +110,17 @@ async function revisar(url) {
       if (nodo.publisher?.["@id"] !== ORG_ID) fallos.push("BlogPosting sin publisher @id de la organización");
       if (/<meta[^>]+property="og:image"/.test(head) && !nodo.image) fallos.push("BlogPosting sin image (la página tiene og:image)");
     }
+    // Protocolo del blog (09/11/2026): índice con enlaces de ancla y tiempo de lectura bajo la cabecera.
+    // Con 3 o más H2, el artículo lleva <nav aria-label="En este artículo|In this article|Dans cet article">
+    // y cada enlace #ancla apunta a un id existente.
+    const nH2 = (html.match(/<h2[\s>]/g) ?? []).length;
+    const nav = html.match(/<nav aria-label="(?:En este artículo|In this article|Dans cet article)"[\s\S]*?<\/nav>/);
+    if (nH2 >= 3 && !nav) fallos.push("artículo sin índice de anclas (ArticleIndex)");
+    if (nav) {
+      for (const m of nav[0].matchAll(/href="#([^"]+)"/g)) {
+        if (!html.includes(`id="${m[1]}"`)) fallos.push(`índice: la ancla #${m[1]} no existe en la página`);
+      }
+    }
   }
   // inLanguage de los schemas de página: es-ES / en / fr según la URL
   for (const { tipos: t, nodo } of nodos) {

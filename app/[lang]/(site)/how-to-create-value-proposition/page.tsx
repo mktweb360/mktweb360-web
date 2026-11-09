@@ -7,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -41,8 +42,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Most businesses struggle to explain what makes them different. A strong value proposition solves this — it tells your ideal customer exactly why they should choose you over anyone else." : "La plupart des entreprises ont du mal à expliquer ce qui les rend différentes. Une proposition de valeur solide résout ce problème — elle dit à votre client idéal exactement pourquoi il devrait vous choisir plutôt que quelqu'un d'autre."}
         </p>
 
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "what-a-value-proposition-is-and-why-it-matters", label: isEn ? "What a value proposition is and why it matters" : "Qu'est-ce qu'une proposition de valeur et pourquoi c'est important" }, { id: "the-3-elements-of-a-powerful-value-proposition", label: isEn ? "The 3 elements of a powerful value proposition" : "Les 3 éléments d'une proposition de valeur puissante" }, { id: "how-to-identify-your-real-differentiators", label: isEn ? "How to identify your real differentiators" : "Comment identifier vos vrais différenciateurs" }, { id: "value-proposition-formulas-that-work", label: isEn ? "Value proposition formulas that work" : "Formules de proposition de valeur qui fonctionnent" }, { id: "examples-of-strong-value-propositions", label: isEn ? "Examples of strong value propositions" : "Exemples de propositions de valeur solides" }, { id: "where-your-value-proposition-must-appear", label: isEn ? "Where your value proposition must appear" : "Où doit apparaître votre proposition de valeur" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-a-value-proposition-is-and-why-it-matters" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "What a value proposition is and why it matters" : "Qu'est-ce qu'une proposition de valeur et pourquoi c'est important"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +59,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-3-elements-of-a-powerful-value-proposition" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "The 3 elements of a powerful value proposition" : "Les 3 éléments d'une proposition de valeur puissante"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +71,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-identify-your-real-differentiators" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to identify your real differentiators" : "Comment identifier vos vrais différenciateurs"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -78,7 +83,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="value-proposition-formulas-that-work" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Value proposition formulas that work" : "Formules de proposition de valeur qui fonctionnent"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -90,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="examples-of-strong-value-propositions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Examples of strong value propositions" : "Exemples de propositions de valeur solides"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -102,7 +107,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="where-your-value-proposition-must-appear" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Where your value proposition must appear" : "Où doit apparaître votre proposition de valeur"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

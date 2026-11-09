@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -8,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Importar productos en WooCommerce con CSV",
   description: "Aprende a importar productos en WooCommerce usando archivos CSV. Formato correcto, errores comunes y cómo subir miles de productos sin trabajo manual.",
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
     title: "Cómo Importar Productos en WooCommerce con CSV | Mkt Web 360",
     description: "Aprende a importar productos en WooCommerce usando archivos CSV. Formato correcto, errores comunes y cómo subir miles de productos sin trabajo manual.",
     url: "https://www.mktweb360.com/importar-productos-woocommerce/",
-    images: [{ url: "https://www.mktweb360.com/og-importar-productos-woocommerce.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-importar-productos-woocommerce-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -29,7 +31,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-13",
   dateModified: "2026-06-23",
-  image: "https://www.mktweb360.com/og-importar-productos-woocommerce.jpg",
+  image: "https://www.mktweb360.com/og-importar-productos-woocommerce-v2.jpg",
   url: "https://www.mktweb360.com/importar-productos-woocommerce/",
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.mktweb360.com/importar-productos-woocommerce/" },
   inLanguage: "es-ES",
@@ -46,18 +48,18 @@ export default function Page() {
         <AuthorByline block />
         <p className="text-xl text-gray-500 mb-8 leading-relaxed">Subir 500 productos uno a uno llevaría semanas. La importación masiva con CSV lo hace en minutos, pero hay que preparar bien el archivo. Esta guía explica el proceso completo para que salga a la primera.</p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Por qué usar CSV para importar productos en WooCommerce</h2>
+        <h2 id="por-que-usar-csv-para-importar-productos-en-wooc" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Por qué usar CSV para importar productos en WooCommerce</h2>
         <p className="text-gray-700 leading-relaxed mb-4">WooCommerce incluye de forma nativa un importador de productos basado en archivos CSV (Comma Separated Values). Es la forma más eficiente de cargar catálogos grandes, actualizar precios de forma masiva o <Link href="/migrar-shopify-woocommerce/" className="text-accent-500 hover:underline">migrar productos desde otra plataforma como Shopify</Link>, Prestashop o una hoja de cálculo Excel.</p>
         <p className="text-gray-700 leading-relaxed mb-4">La alternativa — introducir cada producto manualmente desde el panel — tiene sentido para catálogos pequeños de 10-20 productos, pero a partir de 50 artículos el tiempo invertido se dispara. Si además necesitas mantener precios actualizados con frecuencia o trabajas con un proveedor que te envía tarifas en Excel, el flujo de trabajo basado en CSV se convierte en imprescindible. Si estás montando una <Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="text-accent-500 hover:underline">tienda online profesional</Link> desde cero, la importación masiva es parte del proceso de lanzamiento.</p>
         <p className="text-gray-700 leading-relaxed mb-4">El importador nativo de WooCommerce (disponible desde la versión 3.1) funciona bien para la mayoría de casos. Para necesidades más avanzadas — como importación de imágenes desde URL, productos variables con muchas combinaciones o sincronización automática con un ERP — existen plugins como WP All Import o Product Import Export for WooCommerce que amplían las capacidades.</p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cómo preparar el archivo CSV correctamente</h2>
+        <h2 id="como-preparar-el-archivo-csv-correctamente" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Cómo preparar el archivo CSV correctamente</h2>
         <p className="text-gray-700 leading-relaxed mb-4">El 90% de los problemas en la importación de WooCommerce vienen de un CSV mal preparado. Antes de importar, descarga la plantilla de ejemplo que ofrece el propio WooCommerce: ve a Productos → Importar → Descargar plantilla de muestra. Esto te da el formato exacto de columnas que espera el sistema.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Las columnas más importantes son: <strong>ID</strong> (para actualizar productos existentes; déjalo vacío para productos nuevos), <strong>Type</strong> (simple, variable, grouped, external), <strong>SKU</strong> (referencia única del producto), <strong>Name</strong> (nombre del producto), <strong>Published</strong> (1 para publicado, 0 para borrador), <strong>Regular price</strong> (precio sin IVA si así lo configuras), <strong>Stock</strong> (cantidad en stock), <strong>Categories</strong> (categorías separadas por {'">"'}), <strong>Images</strong> (URLs de las imágenes separadas por coma).</p>
         <p className="text-gray-700 leading-relaxed mb-4">Un error frecuente es usar comas dentro de los valores de texto sin encerrarlos entre comillas dobles. Si el nombre de un producto contiene una coma — por ejemplo "Silla de escritorio, regulable en altura" — debes escribirlo en el CSV como: <code>"Silla de escritorio, regulable en altura"</code>. Si no, el importador interpretará la coma como un separador de columna y el dato quedará cortado.</p>
         <p className="text-gray-700 leading-relaxed mb-4">La codificación del archivo debe ser UTF-8. Si usas Excel y guardas directamente como CSV, puede que genere el archivo en codificación ANSI o Windows-1252, lo que provoca que los caracteres especiales (ñ, tildes, ü) aparezcan incorrectamente. Para forzar UTF-8 en Excel: Archivo → Guardar como → CSV UTF-8 (con BOM). En LibreOffice Calc esta opción es más directa.</p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Proceso de importación en WooCommerce paso a paso</h2>
+        <h2 id="proceso-de-importacion-en-woocommerce-paso-a-pas" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Proceso de importación en WooCommerce paso a paso</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Con el CSV listo, ve a tu panel de WordPress → Productos → Importar. El asistente de importación tiene tres pasos: subir el archivo, mapear columnas y ejecutar la importación.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Paso 1 — Subir el archivo:</strong> Selecciona tu CSV. Si el delimitador no es la coma estándar (algunos CSV usan punto y coma, especialmente los generados en español), puedes especificarlo en esta pantalla. Marca la opción "Actualizar los productos existentes" si quieres que los productos con SKU coincidente se actualicen en lugar de duplicarse.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Paso 2 — Mapear columnas:</strong> WooCommerce muestra una tabla donde en la columna izquierda aparecen las cabeceras de tu CSV y en la derecha puedes seleccionar a qué campo de WooCommerce corresponde cada una. Si usaste la plantilla oficial, el mapeo es automático. Si usas un CSV propio o exportado de otro sistema, aquí es donde asignas manualmente cada columna.</p>
@@ -65,27 +67,32 @@ export default function Page() {
 
         <BlogBanner variant="ecommerce" />
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cómo importar productos variables con atributos</h2>
+        <h2 id="como-importar-productos-variables-con-atributos" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Cómo importar productos variables con atributos</h2>
         <p className="text-gray-700 leading-relaxed mb-4">Los productos variables (con variantes de talla, color, etc.) requieren una estructura especial en el CSV. Hay un producto padre de tipo "variable" y tantos productos hijo de tipo "variation" como combinaciones existan. El SKU del producto padre debe coincidir con el campo "Parent" de cada variación.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Por ejemplo, una camiseta en tres tallas (S, M, L) y dos colores (blanco, negro) generaría un producto padre y 6 variaciones (S-blanco, S-negro, M-blanco, M-negro, L-blanco, L-negro). Cada variación tiene su propio precio, stock y opcionalmente su propio SKU e imagen.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Los atributos se definen en el producto padre con columnas del tipo <code>Attribute 1 name</code>, <code>Attribute 1 value(s)</code> y <code>Attribute 1 visible</code>. En las variaciones, las columnas son <code>Attribute 1 value(s)</code> con el valor específico de esa variación. Es la parte más compleja del CSV de WooCommerce y la que más errores genera si no se sigue la estructura exacta.</p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Errores frecuentes y cómo solucionarlos</h2>
+        <h2 id="errores-frecuentes-y-como-solucionarlos" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Errores frecuentes y cómo solucionarlos</h2>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>"No se puede procesar este archivo CSV":</strong> Suele indicar un problema de codificación. Guarda el archivo como UTF-8 y vuelve a intentarlo. Puedes verificar la codificación abriendo el archivo con un editor de texto como Notepad++ y comprobando la barra inferior.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Las imágenes no se importan:</strong> El importador nativo solo soporta imágenes alojadas en URLs accesibles públicamente. Si las imágenes están en un servidor local o requieren autenticación, no se importarán. Primero sube las imágenes a tu servidor (por FTP o Media Library) y luego usa las URLs resultantes en el CSV.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Los precios aparecen a 0:</strong> Comprueba que no haya caracteres extraños en los campos de precio. Solo números y punto decimal (nunca coma). Si el precio tiene descuento, usa "Sale price" para el precio rebajado y "Regular price" para el original.</p>
         <p className="text-gray-700 leading-relaxed mb-4"><strong>Las categorías no se crean:</strong> Si las categorías del CSV no existen en WooCommerce, el importador puede crearlas automáticamente o ignorarlas según la configuración. Usa el separador {'">"'} para jerarquía de categorías: "Ropa {'>'} Camisetas".</p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">Cuándo usar un plugin en lugar del importador nativo</h2>
+        <h2 id="cuando-usar-un-plugin-en-lugar-del-importador-na" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">Cuándo usar un plugin en lugar del importador nativo</h2>
         <p className="text-gray-700 leading-relaxed mb-4">El importador nativo de WooCommerce es suficiente para la mayoría de tiendas, pero hay situaciones donde un plugin especializado aporta más valor. Si necesitas importar más de 5.000 productos de forma regular, el importador nativo puede tener problemas de tiempo de ejecución (timeout). Plugins como WP All Import procesan en lotes y no tienen este problema.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Si tu proveedor te envía un XML en lugar de CSV, o si necesitas mapear campos de un ERP a campos personalizados de WooCommerce, un plugin de importación avanzada te dará la flexibilidad necesaria. También son útiles si necesitas programar importaciones automáticas — por ejemplo, actualizar precios y stock cada noche desde el catálogo de tu proveedor.</p>
         <p className="text-gray-700 leading-relaxed mb-4">Para catálogos que provienen de plataformas como Shopify o Prestashop, existen plugins específicos de <Link href="/migrar-tienda-online-sin-perder-datos/" className="text-accent-500 hover:underline">migración completa de tu tienda</Link> que entienden el formato de origen y lo traducen correctamente a WooCommerce, incluyendo pedidos, clientes e historial de compras — no solo productos.</p>
 
         <section className="mw-skin-cta text-white rounded-3xl p-8 mt-12">
-          <h2 className="text-2xl font-bold mb-4">¿Necesitas ayuda con tu marketing digital?</h2>
+          <h2 id="necesitas-ayuda-con-tu-marketing-digital" className="text-2xl font-bold mb-4 scroll-mt-24">¿Necesitas ayuda con tu marketing digital?</h2>
           <p className="text-primary-200 mb-6">Cuéntanos tu proyecto y te respondemos en menos de 24 horas.</p>
           <div className="rounded-3xl bg-white p-6 sm:p-8 text-gray-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/10"><ContactForm formType="blog" /></div>
         </section>
+
+        <div className="max-w-3xl mx-auto px-4 mb-8">
+          <Image src="/og-importar-productos-woocommerce-v2.jpg" alt="Hoja de cálculo que envía cajas y ropa por una cinta transportadora hasta una tienda online" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
+          <ArticleIndex lang="es" minutes={8} items={[{"id": "por-que-usar-csv-para-importar-productos-en-wooc", "label": "Por qué usar CSV para importar productos en WooCommerce"}, {"id": "como-preparar-el-archivo-csv-correctamente", "label": "Cómo preparar el archivo CSV correctamente"}, {"id": "proceso-de-importacion-en-woocommerce-paso-a-pas", "label": "Proceso de importación en WooCommerce paso a paso"}, {"id": "como-importar-productos-variables-con-atributos", "label": "Cómo importar productos variables con atributos"}, {"id": "errores-frecuentes-y-como-solucionarlos", "label": "Errores frecuentes y cómo solucionarlos"}, {"id": "cuando-usar-un-plugin-en-lugar-del-importador-na", "label": "Cuándo usar un plugin en lugar del importador nativo"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
+        </div>
       </div>
       <RelatedArticles category="Ecommerce" />
     </>

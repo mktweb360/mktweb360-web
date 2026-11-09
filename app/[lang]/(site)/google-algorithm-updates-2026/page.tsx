@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -108,7 +110,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Chaque mise à jour d'algorithme génère de l'inquiétude, et celles de 2026 ne font pas exception. La bonne nouvelle est que la direction de Google est cohérente avec ce qu'il demande depuis des années : du contenu utile, une vraie expérience derrière les pages et un site web techniquement sain. Ceux qui ont travaillé avec rigueur ont peu à craindre ; ceux qui ont cherché des raccourcis, oui."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <Image
+          src="/og-actualizaciones-algoritmo-google-2026-que-ha-cambiado-y-como-afecta-tu-web-v2.jpg"
+          alt={!isEn ? "Sismographe géant au-dessus d’une ville de petites maisons web, certaines aux fondations solides et d’autres chancelantes, surveillée par une loupe" : "Giant seismograph above a town of little web houses, some with firm foundations and others wobbling, watched over by a magnifying glass"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "the-main-google-updates-in-2026", label: isEn ? "The main Google updates in 2026" : "Les principales mises à jour Google en 2026" }, { id: "e-e-a-t-in-2026-how-it-has-evolved", label: isEn ? "E-E-A-T in 2026: how it has evolved" : "L'E-E-A-T en 2026 : comment il a évolué" }, { id: "ai-overviews-how-to-adapt-without-losing-traffic", label: isEn ? "AI Overviews: how to adapt without losing traffic" : "AI Overviews : comment s'adapter sans perdre de trafic" }, { id: "content-and-ai-what-google-rewards-and-penalises", label: isEn ? "Content and AI: what Google rewards and penalises" : "Contenu et IA : ce que Google récompense et pénalise" }, { id: "technical-signals-that-carry-the-most-weight-in", label: isEn ? "Technical signals that carry the most weight in 2026" : "Signaux techniques qui pèsent le plus en 2026" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
+        <h2 id="the-main-google-updates-in-2026" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "The main Google updates in 2026" : "Les principales mises à jour Google en 2026"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -122,7 +137,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Aucune de ces mises à jour n'a été une rupture brutale. Google continue de récompenser les mêmes choses qu'avant, mais avec plus de précision : des pages qui résolvent une intention concrète, se chargent vite et proviennent d'une source avec une autorité démontrable. Si vous avez remarqué des mouvements dans votre trafic, la première étape est de diagnostiquer l'origine avec un audit SEO avant de toucher quoi que ce soit."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="e-e-a-t-in-2026-how-it-has-evolved" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "E-E-A-T in 2026: how it has evolved" : "L'E-E-A-T en 2026 : comment il a évolué"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -136,7 +151,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "En pratique, cela signifie signer les articles avec des auteurs identifiables, montrer de vraies accréditations, inclure des exemples et des détails que seul quelqu'un avec une expérience directe peut apporter, et maintenir la cohérence de marque sur tout le site web. Pour les secteurs sensibles comme la santé ou les finances, ces signaux de confiance sont déterminants."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="ai-overviews-how-to-adapt-without-losing-traffic" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "AI Overviews: how to adapt without losing traffic" : "AI Overviews : comment s'adapter sans perdre de trafic"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -152,7 +167,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <BlogBanner lang={lang} />
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="content-and-ai-what-google-rewards-and-penalises" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Content and AI: what Google rewards and penalises" : "Contenu et IA : ce que Google récompense et pénalise"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -166,7 +181,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le risque est à l'autre extrême : publier des dizaines d'articles automatiques sans révision pour gonfler le site. Cette stratégie, qui donnait autrefois des résultats à court terme, est aujourd'hui une voie rapide vers la perte de positions. La règle est simple : si le contenu ne servirait pas un lecteur réel, il ne servira pas non plus à Google."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="technical-signals-that-carry-the-most-weight-in" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Technical signals that carry the most weight in 2026" : "Signaux techniques qui pèsent le plus en 2026"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
@@ -200,7 +215,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions" : "Questions fréquentes"}
         </h2>
         <div className="space-y-3 mb-8">

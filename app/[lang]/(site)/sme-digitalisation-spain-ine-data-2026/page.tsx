@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 29/10/2026 — versión EN/FR del artículo ES /digitalizacion-pymes-espana-datos-ine-2026/ (tema 10, pieza de datos).
 // La versión FR se sirve desde ../digitalisation-pme-espagne-donnees-ine-2026/page.tsx, que reexporta esta página.
 // Cifras: nota de prensa del INE del 22/10/2026 (leída el 28/10/2026). Si cambian, cambiarlas también en la ES y en la infografía.
@@ -359,33 +360,37 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>{t.answer}</p>
 
-          <h2 id="key-figures" className="text-2xl font-bold text-primary-600">{t.h2Key}</h2>
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={10} items={[{ id: "key-figures", label: t.h2Key }, { id: "web", label: t.h2Web }, { id: "social", label: t.h2Social }, { id: "ai", label: t.h2Ai }, { id: "shop", label: t.h2Shop }, { id: "trend", label: t.h2Trend }, { id: "eu", label: t.h2Eu }, { id: "opp", label: t.h2Opp }, { id: "method", label: t.h2Method }, { id: "faq", label: t.h2Faq }, { id: "sources", label: t.h2Sources }]} />
+        </div>
+
+          <h2 id="key-figures" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Key}</h2>
           <Tabla cabecera={t.keyHead} filas={t.key} />
           <p className="text-sm text-gray-500">{t.keySource}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2Web}</h2>
+          <h2 id="web" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Web}</h2>
           {t.web.map((p, i) => <p key={i}>{p}</p>)}
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2Social}</h2>
+          <h2 id="social" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Social}</h2>
           <p>{t.social}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2Ai}</h2>
+          <h2 id="ai" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Ai}</h2>
           <p>{t.ai}</p>
           <p>{t.sectorIntro}</p>
           <Tabla cabecera={t.sectorHead} filas={t.sectors} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2Shop}</h2>
+          <h2 id="shop" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Shop}</h2>
           <p>{t.shop}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2Trend}</h2>
+          <h2 id="trend" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Trend}</h2>
           <p>{t.trend}</p>
           <Tabla cabecera={t.trendHead} filas={t.trendRows} />
           <p>{t.trendNote}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2Eu}</h2>
+          <h2 id="eu" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Eu}</h2>
           <p>{t.eu}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2Opp}</h2>
+          <h2 id="opp" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Opp}</h2>
           <Lista items={oportunidades(l)} numerada />
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -396,10 +401,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2Method}</h2>
+          <h2 id="method" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Method}</h2>
           <Lista items={t.method} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2Faq}</h2>
+          <h2 id="faq" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Faq}</h2>
           <div className="space-y-3">
             {t.faqs.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -412,7 +417,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{t.h2Sources}</h2>
+          <h2 id="sources" className="text-2xl font-bold text-primary-600 scroll-mt-24">{t.h2Sources}</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {t.sources.map((f) => (
               <li key={f.url} className="text-gray-600">

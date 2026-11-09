@@ -1,10 +1,12 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -47,7 +49,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "WhatsApp Marketing" : "WhatsApp Marketing"}
         </p>
-        <IntlArticleJsonLd lang={lang} slug="whatsapp-business-for-companies" headline={isEn ? "WhatsApp Business for companies: complete guide to setup and strategy" : "WhatsApp Business pour les entreprises : guide complet de configuration et stratégie"} image="/og-whatsapp-business-para-empresas.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="whatsapp-business-for-companies" headline={isEn ? "WhatsApp Business for companies: complete guide to setup and strategy" : "WhatsApp Business pour les entreprises : guide complet de configuration et stratégie"} image="/og-whatsapp-business-para-empresas-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "WhatsApp Business for companies: complete guide to setup and strategy"
@@ -61,8 +63,29 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </p>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
+        <Image
+          src="/og-whatsapp-business-para-empresas-v2.jpg"
+          alt={!isEn ? "Coiffeuse répondant à ses clients sur téléphone, avec des bulles de discussion dans son salon" : "Hairdresser serving clients by phone with chat bubbles in her salon"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "whatsapp-business-vs-regular-whatsapp-key-differ", label: isEn
+                ? "WhatsApp Business vs regular WhatsApp: key differences"
+                : "WhatsApp Business vs WhatsApp normal : différences clés" }, { id: "how-to-set-up-your-business-profile", label: isEn ? "How to set up your business profile" : "Comment configurer votre profil d'entreprise" }, { id: "product-and-service-catalogue-in-whatsapp", label: isEn
+                ? "Product and service catalogue in WhatsApp"
+                : "Catalogue de produits et services dans WhatsApp" }, { id: "automatic-replies-and-welcome-messages", label: isEn
+                ? "Automatic replies and welcome messages"
+                : "Réponses automatiques et messages de bienvenue" }, { id: "whatsapp-lead-generation-strategy", label: isEn ? "WhatsApp lead generation strategy" : "Stratégie d'acquisition via WhatsApp" }, { id: "whatsapp-business-api-when-to-make-the-leap", label: isEn
+                ? "WhatsApp Business API: when to make the leap"
+                : "API WhatsApp Business : quand franchir le pas" }]} />
+        </div>
+
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="whatsapp-business-vs-regular-whatsapp-key-differ" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "WhatsApp Business vs regular WhatsApp: key differences"
                 : "WhatsApp Business vs WhatsApp normal : différences clés"}
@@ -85,7 +108,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="how-to-set-up-your-business-profile" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "How to set up your business profile" : "Comment configurer votre profil d'entreprise"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -126,7 +149,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="product-and-service-catalogue-in-whatsapp" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Product and service catalogue in WhatsApp"
                 : "Catalogue de produits et services dans WhatsApp"}
@@ -151,7 +174,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <BlogBanner lang={lang} />
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="automatic-replies-and-welcome-messages" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Automatic replies and welcome messages"
                 : "Réponses automatiques et messages de bienvenue"}
@@ -182,7 +205,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="whatsapp-lead-generation-strategy" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "WhatsApp lead generation strategy" : "Stratégie d'acquisition via WhatsApp"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -208,7 +231,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="whatsapp-business-api-when-to-make-the-leap" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "WhatsApp Business API: when to make the leap"
                 : "API WhatsApp Business : quand franchir le pas"}

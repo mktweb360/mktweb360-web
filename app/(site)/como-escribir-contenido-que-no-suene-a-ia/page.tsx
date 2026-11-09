@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 const SLUG = "como-escribir-contenido-que-no-suene-a-ia";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
       "Técnicas para crear contenido humano y auténtico aunque uses herramientas de IA. Para marketing, blog y web.",
     url: URL_CANONICAL,
     type: "article",
-    images: [{ url: `/og-${SLUG}.jpg`, width: 1200, height: 630 }],
+    images: [{ url: `/og-${SLUG}-v2.jpg`, width: 1200, height: 630 }],
   },
 };
 
@@ -38,7 +39,7 @@ const articleSchema = {
   url: URL_CANONICAL,
   mainEntityOfPage: URL_CANONICAL,
   inLanguage: "es-ES",
-  image: `https://www.mktweb360.com/og-${SLUG}.jpg`,
+  image: `https://www.mktweb360.com/og-${SLUG}-v2.jpg`,
 };
 
 const FAQS = [
@@ -102,7 +103,7 @@ export default function ContenidoHumanoPage() {
             Usar IA para escribir no es el problema. El problema es publicar el output sin editar. El contenido que "suena a IA" se reconoce a kilómetros de distancia — y ni Google ni tus clientes lo reciben igual que un texto con criterio, voz y perspectiva real.
           </p>
           <Image
-            src={`/og-${SLUG}.jpg`}
+            src={`/og-${SLUG}-v2.jpg`}
             alt="Cómo escribir contenido que no suene a IA"
             width={1200}
             height={630}
@@ -111,12 +112,16 @@ export default function ContenidoHumanoPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "por-que-el-contenido-ia-sin-editar-no-funciona", "label": "Por qué el contenido IA sin editar no funciona"}, {"id": "los-patrones-que-delatan-el-contenido-de-ia", "label": "Los patrones que delatan el contenido de IA"}, {"id": "tecnicas-concretas-para-humanizar-el-output", "label": "Técnicas concretas para humanizar el output"}, {"id": "el-rol-del-editor-humano-en-el-proceso-de-ia", "label": "El rol del editor humano en el proceso de IA"}, {"id": "preguntas-frecuentes-sobre-contenido-e-ia", "label": "Preguntas frecuentes sobre contenido e IA"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El contenido generado por IA sin edición tiene patrones reconocibles: frases de apertura grandilocuentes, estructuras predecibles, ausencia de opinión real y un tono uniformemente neutro que nunca compromete nada. Es correcto. Es aburrido. Y no convierte.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el contenido IA sin editar no funciona</h2>
+          <h2 id="por-que-el-contenido-ia-sin-editar-no-funciona" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el contenido IA sin editar no funciona</h2>
           <p>
             El contenido que suena a IA tiene dos problemas fundamentales. El primero es de percepción: los lectores — especialmente los decisores de compra B2B — detectan la falta de perspectiva real y lo asocian a falta de expertise. Si una agencia publica artículos genéricos que podrían ser de cualquier agencia del mundo, comunica exactamente eso: que no tiene nada propio que decir.
           </p>
@@ -137,7 +142,7 @@ export default function ContenidoHumanoPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los patrones que delatan el contenido de IA</h2>
+          <h2 id="los-patrones-que-delatan-el-contenido-de-ia" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los patrones que delatan el contenido de IA</h2>
           <p>
             Identificar el contenido IA no editado es fácil una vez sabes qué buscar. Frases de apertura como "en el mundo actual" o "en la era digital en la que vivimos". Cierres como "en conclusión, podemos afirmar que". Transiciones como "es importante destacar que" o "cabe mencionar que". Listas de cinco puntos donde todos tienen el mismo peso y ninguno aporta perspectiva.
           </p>
@@ -145,7 +150,7 @@ export default function ContenidoHumanoPage() {
             El otro patrón es la ausencia de fricción: el texto nunca dice que algo es difícil, que algo falla o que hay excepciones. Todo es equilibrado, todo tiene matices positivos y negativos, todo es razonable. La vida real no funciona así, y los lectores lo notan.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Técnicas concretas para humanizar el output</h2>
+          <h2 id="tecnicas-concretas-para-humanizar-el-output" className="text-2xl font-bold text-primary-600 scroll-mt-24">Técnicas concretas para humanizar el output</h2>
           <p>
             La primera técnica es la más simple: añade una opinión. No un "esto depende del caso" — una posición real. "Creemos que la mayoría de las PYMEs no debería estar en TikTok" es más útil y más memorable que "TikTok puede ser una buena opción dependiendo de tu audiencia y sector". La opinión diferencia, construye autoridad y es recordable.
           </p>
@@ -158,7 +163,7 @@ export default function ContenidoHumanoPage() {
 
           <BlogBanner variant="geo" />
 
-          <h2 className="text-2xl font-bold text-primary-600">El rol del editor humano en el proceso de IA</h2>
+          <h2 id="el-rol-del-editor-humano-en-el-proceso-de-ia" className="text-2xl font-bold text-primary-600 scroll-mt-24">El rol del editor humano en el proceso de IA</h2>
           <p>
             La forma correcta de usar IA en la creación de contenido es usarla como generador de primer borrador, no como publicador autónomo. El editor humano añade: la perspectiva específica del negocio, los datos propios o verificados, la voz de marca, los ejemplos reales y el criterio sobre qué es relevante para la audiencia específica.
           </p>
@@ -187,7 +192,7 @@ export default function ContenidoHumanoPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre contenido e IA</h2>
+          <h2 id="preguntas-frecuentes-sobre-contenido-e-ia" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre contenido e IA</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

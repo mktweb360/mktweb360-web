@@ -8,6 +8,8 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "WooCommerce vs Shopify: cuál elegir en 2026",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
     description: "Comparativa honesta entre WooCommerce y Shopify con coste real a 3 años y recomendación por tipo de negocio.",
     url: "https://www.mktweb360.com/woocommerce-vs-shopify-cual-elegir-tienda-online/",
     type: "article",
-    images: [{ url: "/og-woocommerce-vs-shopify-cual-elegir-2026.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-woocommerce-vs-shopify-cual-elegir-tienda-online-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +36,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/woocommerce-vs-shopify-cual-elegir-tienda-online/",
   mainEntityOfPage: "https://www.mktweb360.com/woocommerce-vs-shopify-cual-elegir-tienda-online/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-woocommerce-vs-shopify-cual-elegir-2026.jpg",
+  image: "https://www.mktweb360.com/og-woocommerce-vs-shopify-cual-elegir-tienda-online-v2.jpg",
 };
 
 const FAQS = [
@@ -76,7 +78,7 @@ export default function WooCommerceShopifyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="tienda">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "WooCommerce vs Shopify" }]} />
 
         <header className="mb-8">
@@ -92,7 +94,7 @@ export default function WooCommerceShopifyPage() {
             Es la decisión que marca los próximos años de tu tienda online. WooCommerce te da control total sin comisiones; Shopify te pone a vender rápido a cambio de cuotas. Aquí tienes la comparativa honesta, con números reales a tres años.
           </p>
           <Image
-            src="/og-woocommerce-vs-shopify-cual-elegir-2026.jpg"
+            src="/og-woocommerce-vs-shopify-cual-elegir-tienda-online-v2.jpg"
             alt="WooCommerce vs Shopify: cuál elegir para tu tienda online en España en 2026"
             width={1200}
             height={630}
@@ -101,18 +103,22 @@ export default function WooCommerceShopifyPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "dos-filosofias-distintas", "label": "Dos filosofías distintas"}, {"id": "el-coste-real-a-3-anos", "label": "El coste real a 3 años"}, {"id": "control-propiedad-y-flexibilidad", "label": "Control, propiedad y flexibilidad"}, {"id": "cuando-elegir-shopify", "label": "Cuándo elegir Shopify"}, {"id": "cuando-elegir-woocommerce-y-cuando-mirar-a-shopw", "label": "Cuándo elegir WooCommerce (y cuándo mirar a Shopware)"}, {"id": "preguntas-frecuentes-sobre-woocommerce-y-shopify", "label": "Preguntas frecuentes sobre WooCommerce y Shopify"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Elegir plataforma de ecommerce no es una decisión técnica menor: condiciona tus costes, tu margen y tu libertad durante años. WooCommerce y Shopify son las dos opciones dominantes y representan dos filosofías opuestas. Entender en qué se diferencian de verdad —más allá del marketing de cada una— es lo que te permite acertar.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Dos filosofías distintas</h2>
+          <h2 id="dos-filosofias-distintas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Dos filosofías distintas</h2>
           <p>WooCommerce es un plugin gratuito de código abierto para WordPress: convierte tu web en una tienda y te deja el control absoluto del código, los datos y el alojamiento. Shopify es una plataforma cerrada de pago por suscripción: te lo da todo hecho —hosting, seguridad, mantenimiento— a cambio de operar dentro de su ecosistema y sus reglas. Uno prioriza la propiedad y la flexibilidad; el otro, la inmediatez y la comodidad.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El coste real a 3 años</h2>
+          <h2 id="el-coste-real-a-3-anos" className="text-2xl font-bold text-primary-600 scroll-mt-24">El coste real a 3 años</h2>
           <p>Aquí es donde la decisión se vuelve concreta. Tomemos una tienda que factura 80.000 € al año. En Shopify, su plan básico aplica en torno a un 2% de comisión sobre ventas si no usas su pasarela propia: son unos 1.600 € al año solo en comisiones, más la cuota mensual de la plataforma. En tres años, esas comisiones suman unos 4.800 € que en WooCommerce simplemente no existen. WooCommerce tiene costes de hosting, dominio y desarrollo, pero no cobra cuota de plataforma ni porcentaje por venta. A más facturación, mayor es la brecha a favor de WooCommerce.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Control, propiedad y flexibilidad</h2>
+          <h2 id="control-propiedad-y-flexibilidad" className="text-2xl font-bold text-primary-600 scroll-mt-24">Control, propiedad y flexibilidad</h2>
           <p>WooCommerce es, a día de hoy, la plataforma de ecommerce más usada del mundo, con un 33,4% de cuota de mercado según DataFirefly (2026). Su fuerza está en la libertad: personalizas cualquier aspecto, eres dueño de tus datos y no dependes de las decisiones de un tercero. Shopify, por su parte, crece a un ritmo del 30% anual gracias a su facilidad de uso, pero a costa de operar dentro de un sistema cerrado con menos margen de personalización profunda.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -123,12 +129,12 @@ export default function WooCommerceShopifyPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuándo elegir Shopify</h2>
+          <h2 id="cuando-elegir-shopify" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuándo elegir Shopify</h2>
           <p>Shopify tiene sentido cuando necesitas lanzar rápido, no quieres preocuparte de la parte técnica y tu facturación todavía es modesta —donde las comisiones pesan poco en términos absolutos—. Es una buena opción para validar una idea, para quien arranca sin equipo técnico o para negocios que valoran la comodidad por encima del control. La contrapartida llega cuando creces: las comisiones escalan con tus ventas y la dependencia de la plataforma se nota.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuándo elegir WooCommerce (y cuándo mirar a Shopware)</h2>
+          <h2 id="cuando-elegir-woocommerce-y-cuando-mirar-a-shopw" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuándo elegir WooCommerce (y cuándo mirar a Shopware)</h2>
           <p>WooCommerce encaja cuando piensas a medio y largo plazo: quieres propiedad total, márgenes sin comisiones y libertad para crecer sin ataduras. Es la opción más rentable a medida que sube tu facturación y la preferida de quien quiere una tienda que sea de verdad suya. Para un escenario distinto —ecommerce B2B con catálogos complejos, precios por cliente y grandes volúmenes— conviene valorar <Link href="/marketing-shopware/" className="text-accent-500 hover:underline">Shopware</Link>, una plataforma orientada específicamente a operaciones mayoristas exigentes. La plataforma correcta depende siempre del tipo de negocio.</p>
 
           <p className="text-sm text-gray-500">
@@ -150,7 +156,7 @@ export default function WooCommerceShopifyPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre WooCommerce y Shopify</h2>
+          <h2 id="preguntas-frecuentes-sobre-woocommerce-y-shopify" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre WooCommerce y Shopify</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -171,7 +177,7 @@ export default function WooCommerceShopifyPage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug="woocommerce-vs-shopify-cual-elegir-tienda-online" />
     </>
   );

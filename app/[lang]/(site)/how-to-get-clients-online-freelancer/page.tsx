@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -41,8 +43,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Getting clients is the biggest challenge for any freelancer. This guide explains the most effective strategies to attract quality clients online without depending on platforms that charge commissions." : "Obtenir des clients est le plus grand défi pour tout indépendant. Ce guide explique les stratégies les plus efficaces pour attirer des clients de qualité en ligne sans dépendre de plateformes qui prennent des commissions."}
         </p>
 
+        <Image
+          src="/og-como-puede-un-autonomo-conseguir-clientes-por-internet-v2.jpg"
+          alt={!isEn ? "Plombier indépendant souriant devant son téléphone à côté de sa camionnette, pendant qu’une cliente l’attend à la porte de son domicile" : "Self-employed plumber smiling at his phone beside his van while a customer waits at the door of her house"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-freelancers-struggle-to-find-clients", label: isEn ? "Why freelancers struggle to find clients" : "Pourquoi les indépendants ont du mal à trouver des clients" }, { id: "your-website-as-your-main-sales-tool", label: isEn ? "Your website as your main sales tool" : "Votre site web comme principal outil de vente" }, { id: "linkedin-strategy-for-freelancers", label: isEn ? "LinkedIn strategy for freelancers" : "Stratégie LinkedIn pour indépendants" }, { id: "seo-and-content-to-attract-inbound-clients", label: isEn ? "SEO and content to attract inbound clients" : "SEO et contenu pour attirer des clients entrants" }, { id: "referral-strategy-your-best-source-of-qualified", label: isEn ? "Referral strategy: your best source of qualified leads" : "Stratégie de référencement : votre meilleure source de leads qualifiés" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="why-freelancers-struggle-to-find-clients" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Why freelancers struggle to find clients" : "Pourquoi les indépendants ont du mal à trouver des clients"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="your-website-as-your-main-sales-tool" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Your website as your main sales tool" : "Votre site web comme principal outil de vente"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -80,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="linkedin-strategy-for-freelancers" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "LinkedIn strategy for freelancers" : "Stratégie LinkedIn pour indépendants"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -92,7 +107,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="seo-and-content-to-attract-inbound-clients" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "SEO and content to attract inbound clients" : "SEO et contenu pour attirer des clients entrants"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -104,7 +119,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="referral-strategy-your-best-source-of-qualified" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Referral strategy: your best source of qualified leads" : "Stratégie de référencement : votre meilleure source de leads qualifiés"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

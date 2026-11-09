@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "IA en marketing: dónde aporta valor real",
   description:
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     description: "Descubre dónde la IA aplicada a marketing aporta valor real, qué usos conviene priorizar y dónde sigue habiendo demasiado ruido.",
     url: "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/",
     type: "article",
-    images: [{ url: "/og-ia-aplicada-a-marketing-valor-real-o-humo.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-ia-aplicada-a-marketing-valor-real-o-humo-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -35,7 +36,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/",
   mainEntityOfPage: "https://www.mktweb360.com/ia-aplicada-a-marketing-valor-real-o-humo/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-ia-aplicada-a-marketing-valor-real-o-humo.jpg",
+  image: "https://www.mktweb360.com/og-ia-aplicada-a-marketing-valor-real-o-humo-v2.jpg",
 };
 
 const FAQS = [
@@ -93,7 +94,7 @@ export default function IaMarketingPage() {
             La inteligencia artificial en marketing está entre lo más hypeado de 2025 y una de las herramientas más útiles si sabes dónde aplicarla. Este artículo separa la señal del ruido.
           </p>
           <Image
-            src="/og-ia-aplicada-a-marketing-valor-real-o-humo.jpg"
+            src="/og-ia-aplicada-a-marketing-valor-real-o-humo-v2.jpg"
             alt="IA aplicada a marketing: dónde aporta valor real en 2025"
             width={1200}
             height={630}
@@ -101,6 +102,10 @@ export default function IaMarketingPage() {
             priority
           />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "donde-si-aporta-valor-hoy", "label": "Dónde sí aporta valor hoy"}, {"id": "donde-conviene-ser-prudente", "label": "Dónde conviene ser prudente"}, {"id": "que-necesita-una-empresa-antes-de-aplicar-ia-con", "label": "Qué necesita una empresa antes de aplicar IA con criterio"}, {"id": "ia-y-agentes-enfoque-correcto", "label": "IA y agentes: enfoque correcto"}, {"id": "preguntas-frecuentes-sobre-ia-en-marketing", "label": "Preguntas frecuentes sobre IA en marketing"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
@@ -110,7 +115,7 @@ export default function IaMarketingPage() {
             La IA no es una estrategia — es una herramienta. Y como cualquier herramienta, su valor depende de si la usas para el trabajo correcto. Usada bien, puede multiplicar la productividad del equipo y mejorar la personalización a escala. Usada mal, genera contenido mediocre en masa y añade capas de automatización que nadie entiende.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Dónde sí aporta valor hoy</h2>
+          <h2 id="donde-si-aporta-valor-hoy" className="text-2xl font-bold text-primary-600 scroll-mt-24">Dónde sí aporta valor hoy</h2>
           <p>La generación de borradores de contenido, la optimización de pujas en plataformas de publicidad, la personalización de email marketing, la segmentación automatizada con datos suficientes y el análisis de grandes volúmenes de texto son áreas donde la IA tiene un impacto real y medible. En estas tareas libera tiempo, mejora la consistencia y permite trabajar a una escala que antes no era posible.</p>
           <ul className="space-y-2">
             {["Borradores y variantes de contenido con revisión humana", "Optimización automática de pujas en Ads", "Segmentación y personalización con datos históricos", "Análisis de reseñas, encuestas y menciones a escala"].map((item) => (
@@ -129,15 +134,15 @@ export default function IaMarketingPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Dónde conviene ser prudente</h2>
+          <h2 id="donde-conviene-ser-prudente" className="text-2xl font-bold text-primary-600 scroll-mt-24">Dónde conviene ser prudente</h2>
           <p>La estrategia de marca, la creatividad diferenciadora, las decisiones con mucho contexto cualitativo y la venta relacional de ticket alto son áreas donde la IA genera resultados mediocres o directamente perjudica. También hay que ser prudente con los chatbots que gestionan reclamaciones o primeras interacciones en sectores donde la confianza es clave. La regla práctica es: cuanto más importa el criterio y el contexto, menos conviene delegar a la IA sin supervisión.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué necesita una empresa antes de aplicar IA con criterio</h2>
+          <h2 id="que-necesita-una-empresa-antes-de-aplicar-ia-con" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué necesita una empresa antes de aplicar IA con criterio</h2>
           <p>La IA trabaja bien cuando el problema está bien definido, los datos son fiables y la supervisión existe. Si no hay claridad sobre qué se quiere resolver, si los datos son escasos o de mala calidad, o si nadie en la empresa va a revisar lo que genera la herramienta, el resultado será mediocre o contraproducente. Antes de implementar IA, lo que conviene revisar es si la base del marketing está bien resuelta.</p>
 
           <BlogBanner variant="geo" />
 
-          <h2 className="text-2xl font-bold text-primary-600">IA y agentes: enfoque correcto</h2>
+          <h2 id="ia-y-agentes-enfoque-correcto" className="text-2xl font-bold text-primary-600 scroll-mt-24">IA y agentes: enfoque correcto</h2>
           <p>Los agentes de IA permiten automatizar flujos más complejos con mayor autonomía, pero también tienen más puntos de fallo y exigen supervisión más cuidadosa. Para una pyme, el enfoque más útil suele ser empezar por usos concretos y bien acotados en lugar de implementar sistemas de agentes complejos. La complejidad sin propósito claro es un coste sin retorno.</p>
 
           <p className="text-sm text-gray-500">
@@ -159,7 +164,7 @@ export default function IaMarketingPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre IA en marketing</h2>
+          <h2 id="preguntas-frecuentes-sobre-ia-en-marketing" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre IA en marketing</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cómo crear una propuesta de valor que venda",
   description:
@@ -101,18 +102,22 @@ export default function PropuestaDeValorPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "que-es-una-propuesta-de-valor-y-que-no-es", "label": "Qué es una propuesta de valor y qué no es"}, {"id": "los-tres-elementos-que-toda-propuesta-de-valor-n", "label": "Los tres elementos que toda propuesta de valor necesita"}, {"id": "como-construirla-desde-cero", "label": "Cómo construirla desde cero"}, {"id": "donde-debe-aparecer-tu-propuesta-de-valor", "label": "Dónde debe aparecer tu propuesta de valor"}, {"id": "errores-mas-frecuentes-al-definirla", "label": "Errores más frecuentes al definirla"}, {"id": "preguntas-frecuentes-sobre-la-propuesta-de-valor", "label": "Preguntas frecuentes sobre la propuesta de valor"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Muchas pymes tienen claro qué hacen, pero no saben articular por qué sus clientes deberían elegirlas a ellas en lugar de a la competencia. Esa falta de claridad se nota en los anuncios, en la web, en las conversaciones de venta y en los resultados. Una propuesta de valor bien construida es el cimiento sobre el que se apoya todo el marketing.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué es una propuesta de valor y qué no es</h2>
+          <h2 id="que-es-una-propuesta-de-valor-y-que-no-es" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué es una propuesta de valor y qué no es</h2>
           <p>Una propuesta de valor es una declaración clara de qué problema resuelves, para quién y qué te hace diferente o mejor. No es un slogan de marca. No es una lista de características del producto. No es «calidad y precio». Es la respuesta honesta a por qué un cliente ideal debería elegirte a ti y no a otra opción — incluyendo no hacer nada.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los tres elementos que toda propuesta de valor necesita</h2>
+          <h2 id="los-tres-elementos-que-toda-propuesta-de-valor-n" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los tres elementos que toda propuesta de valor necesita</h2>
           <p>El primer elemento es la claridad sobre a quién va dirigida: no puedes escribir para todos a la vez sin acabar escribiendo para nadie. El segundo es la relevancia: qué problema o necesidad concreta resuelve tu propuesta para ese cliente. El tercero es la diferenciación: qué hace que tu solución sea mejor, diferente o más adecuada que las alternativas disponibles. Sin estos tres elementos, la propuesta queda débil o genérica.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo construirla desde cero</h2>
+          <h2 id="como-construirla-desde-cero" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo construirla desde cero</h2>
           <p>Un buen punto de partida es hablar con tus mejores clientes actuales. Pregúntales por qué te eligieron, qué problema tenían antes de contratarte y qué cambió después. Sus respuestas suelen contener la propuesta de valor mejor expresada que cualquier ejercicio interno de brainstorming. Después, contrasta esas razones con lo que ofrece la competencia para identificar dónde está la diferenciación real.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -132,10 +137,10 @@ export default function PropuestaDeValorPage() {
             secondary={{ text: "¿Prefieres rehacer la web con la propuesta bien planteada? Mira el servicio de diseño web", href: "/diseno-de-paginas-web/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Dónde debe aparecer tu propuesta de valor</h2>
+          <h2 id="donde-debe-aparecer-tu-propuesta-de-valor" className="text-2xl font-bold text-primary-600 scroll-mt-24">Dónde debe aparecer tu propuesta de valor</h2>
           <p>La propuesta de valor debe verse y entenderse en unos segundos en la página de inicio de tu web: en el encabezado, antes de cualquier scroll. Si tu portada actual no lo permite, suele compensar más un <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">rediseño de la web pensado alrededor de tu propuesta</Link> que seguir añadiendo secciones. También debe estar presente en tus anuncios, en la descripción de tu <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile</Link>, en el perfil de redes sociales y en cualquier presentación comercial. Si necesita ser explicada, no está suficientemente bien construida. El objetivo es que sea inmediatamente clara para el cliente que sí es para ti.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Errores más frecuentes al definirla</h2>
+          <h2 id="errores-mas-frecuentes-al-definirla" className="text-2xl font-bold text-primary-600 scroll-mt-24">Errores más frecuentes al definirla</h2>
           <p>Los errores más habituales son ser demasiado genérico («calidad, compromiso y experiencia»), hablar de características en lugar de resultados para el cliente, intentar abarcar a demasiados perfiles de cliente a la vez y copiar el lenguaje de la competencia en lugar de encontrar la propia voz diferenciadora. Una propuesta de valor que podría pertenecer a cualquier competidor no es una propuesta de valor — es ruido.</p>
 
           <p className="text-sm text-gray-500">
@@ -157,7 +162,7 @@ export default function PropuestaDeValorPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la propuesta de valor</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-propuesta-de-valor" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la propuesta de valor</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

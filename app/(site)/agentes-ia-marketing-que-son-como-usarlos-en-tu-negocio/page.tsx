@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Agentes de IA para marketing: qué son",
   description:
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     description: "Los agentes de IA ya no son ciencia ficción. En 2026, herramientas accesibles permiten que cualquier pyme automatice tareas de marketing con agentes que trabajan de forma autónoma. Guía práctica.",
     url: "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -30,7 +32,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
+  image: "https://www.mktweb360.com/og-agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio-v2.jpg",
   url: "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/",
   mainEntityOfPage: "https://www.mktweb360.com/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/",
   inLanguage: "es-ES",
@@ -86,32 +88,44 @@ export default function AgentesIaMarketingPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Los agentes de IA ya no son ciencia ficción. En 2026, herramientas accesibles permiten que cualquier pyme automatice tareas de marketing con agentes que trabajan de forma autónoma. Te contamos qué son de verdad y cómo dar el primer paso con la <Link href="/ia-aplicada-al-marketing/" className="text-accent-500 hover:underline">IA aplicada al marketing</Link>.
           </p>
+          <Image
+            src="/og-agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio-v2.jpg"
+            alt="Oficina de pyme en la que pequeños robots asistentes envían correos, programan un calendario y revisan gráficos mientras su dueño supervisa con un café"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "que-son-los-agentes-de-ia-y-en-que-se-diferencia", "label": "Qué son los agentes de IA y en qué se diferencian de ChatGPT"}, {"id": "que-tareas-de-marketing-puede-hacer-un-agente-de", "label": "Qué tareas de marketing puede hacer un agente de IA hoy"}, {"id": "las-herramientas-accesibles-para-pymes-sin-equip", "label": "Las herramientas accesibles para pymes sin equipo técnico"}, {"id": "como-implementar-el-primer-agente-de-ia-en-tu-em", "label": "Cómo implementar el primer agente de IA en tu empresa"}, {"id": "los-riesgos-que-nadie-menciona-de-los-agentes-de", "label": "Los riesgos que nadie menciona de los agentes de IA"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Durante años, la automatización del marketing consistía en programar unos cuantos emails y poco más. Eso ha cambiado. Un agente de IA no se limita a seguir reglas fijas: recibe un objetivo, decide los pasos y los ejecuta. Para una pyme sin un gran equipo, esto significa poder delegar tareas que antes requerían horas de trabajo manual.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué son los agentes de IA y en qué se diferencian de ChatGPT</h2>
+          <h2 id="que-son-los-agentes-de-ia-y-en-que-se-diferencia" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué son los agentes de IA y en qué se diferencian de ChatGPT</h2>
           <p>ChatGPT responde en una conversación: le preguntas y te contesta. Un agente de IA va un paso más allá. Recibe un objetivo — por ejemplo, «resume las menciones de mi marca esta semana y envíame un correo» — y ejecuta por su cuenta los pasos necesarios: busca la información, la ordena, redacta el mensaje y lo envía. No necesitas darle cada instrucción una por una.</p>
           <p>La diferencia clave es la autonomía. Mientras un chatbot espera tu siguiente pregunta, un agente encadena acciones para cumplir una meta. Por eso el mercado se mueve tan rápido: Gartner estima que el 40% del software empresarial tendrá agentes de IA integrados en 2026, e IBM señala que el 75% de los ejecutivos planea invertir en IA agéntica.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué tareas de marketing puede hacer un agente de IA hoy</h2>
+          <h2 id="que-tareas-de-marketing-puede-hacer-un-agente-de" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué tareas de marketing puede hacer un agente de IA hoy</h2>
           <p>Las aplicaciones prácticas ya son concretas: monitorizar menciones de marca, generar borradores de contenido, clasificar leads según su interés, enviar emails de seguimiento personalizados, crear reportes de campañas o publicar en redes en los horarios programados. También pueden responder preguntas frecuentes de clientes a través del chat de tu web.</p>
           <p>El matiz importante es que todo esto funciona mejor con supervisión humana en las decisiones que importan. El agente ahorra el trabajo repetitivo; tú mantienes el criterio sobre lo que se publica y lo que se envía. Bien planteado, esto se integra de forma natural con tu estrategia de <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">posicionamiento en IA</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Las herramientas accesibles para pymes sin equipo técnico</h2>
+          <h2 id="las-herramientas-accesibles-para-pymes-sin-equip" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las herramientas accesibles para pymes sin equipo técnico</h2>
           <p>No hace falta un departamento de desarrollo. Plataformas como Make, n8n o Zapier permiten crear flujos con agentes de IA conectando ChatGPT y tus aplicaciones habituales sin escribir código. Para atención al cliente, herramientas como Tidio o ManyChat incorporan agentes conversacionales listos para usar.</p>
           <p>El punto de entrada recomendado para una pyme sin equipo técnico es Make o Zapier con integraciones de ChatGPT: la curva de aprendizaje es asumible y los primeros resultados llegan en días. Si quieres profundizar en el ecosistema de aplicaciones, revisa cómo usar <Link href="/chatgpt-para-marketing-digital/" className="text-accent-500 hover:underline">ChatGPT para marketing digital</Link>.</p>
 
           <BlogBanner variant="geo" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo implementar el primer agente de IA en tu empresa</h2>
+          <h2 id="como-implementar-el-primer-agente-de-ia-en-tu-em" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo implementar el primer agente de IA en tu empresa</h2>
           <p>Empieza por una sola tarea, la más repetitiva y de bajo riesgo que tengas. Puede ser clasificar los leads que llegan por el formulario de contacto o generar un resumen semanal de tus campañas. Define el objetivo con claridad, conecta las herramientas implicadas y prueba el flujo con datos reales antes de darlo por bueno.</p>
           <p>Una vez que ese primer agente funciona y confías en él, amplías a la siguiente tarea. Este enfoque gradual evita el error habitual de intentar automatizarlo todo a la vez. Para ver el abanico completo, consulta nuestra guía de <Link href="/herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan/" className="text-accent-500 hover:underline">herramientas de IA para marketing digital que realmente funcionan</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los riesgos que nadie menciona de los agentes de IA</h2>
+          <h2 id="los-riesgos-que-nadie-menciona-de-los-agentes-de" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los riesgos que nadie menciona de los agentes de IA</h2>
           <p>Un agente que actúa de forma autónoma también puede equivocarse de forma autónoma. Enviar un email erróneo, publicar un contenido sin revisar o clasificar mal a un cliente son riesgos reales cuando se elimina toda supervisión. Por eso el diseño correcto siempre incluye puntos de control humano en las decisiones sensibles.</p>
           <p>El otro riesgo es la privacidad de los datos. Antes de conectar tu CRM o la información de tus clientes a un agente, verifica cómo trata esos datos cada herramienta. La productividad no compensa una brecha de confianza con tus clientes.</p>
 
@@ -130,7 +144,7 @@ export default function AgentesIaMarketingPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

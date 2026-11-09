@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Dropshipping con Participación en Resultados | Mkt Web 360",
     description: "Montamos y gestionamos tu tienda online de dropshipping con un modelo híbrido: setup fijo + gestión mensual + participación en beneficios. Sin riesgo de stock. Con estrategia real.",
     url: "https://www.mktweb360.com/ecommerce-dropshipping-con-participacion/",
-    images: [{ url: "https://www.mktweb360.com/og-diseno-web-tienda-online.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-diseno-web-tienda-online-v2.jpg", width: 1200, height: 630 }],
   },
 };
 

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
-        <IntlArticleJsonLd lang={lang} slug="import-products-woocommerce" headline={isEn ? "How to import products to WooCommerce without typing them one by one" : "Comment importer des produits dans WooCommerce sans les saisir un par un"} image="/og-importar-productos-woocommerce.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="import-products-woocommerce" headline={isEn ? "How to import products to WooCommerce without typing them one by one" : "Comment importer des produits dans WooCommerce sans les saisir un par un"} image="/og-importar-productos-woocommerce-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How to import products to WooCommerce without typing them one by one"
@@ -52,7 +54,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Si vous avez un catalogue de produits dans Excel, CSV ou sur une autre plateforme, vous n'avez pas besoin de les télécharger manuellement. Ce guide vous montre le moyen le plus rapide et le plus sûr d'importer des produits dans WooCommerce."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-importar-productos-woocommerce-v2.jpg"
+          alt={!isEn ? "Tableur envoyant des cartons et des vêtements sur un tapis roulant jusqu’à une boutique en ligne" : "Spreadsheet sending boxes and clothing along a conveyor belt to an online shop"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={8} items={[{ id: "why-bulk-import-is-key-when-launching-a-store", label: isEn ? "Why bulk import is key when launching a store" : "Pourquoi l'import en masse est essentiel lors du lancement d'une boutique" }, { id: "importing-products-from-csv-excel-to-woocommerce", label: isEn ? "Importing products from CSV/Excel to WooCommerce" : "Importer des produits depuis CSV/Excel vers WooCommerce" }, { id: "importing-from-shopify-to-woocommerce", label: isEn ? "Importing from Shopify to WooCommerce" : "Importer depuis Shopify vers WooCommerce" }, { id: "importing-from-prestashop-to-woocommerce", label: isEn ? "Importing from PrestaShop to WooCommerce" : "Importer depuis PrestaShop vers WooCommerce" }, { id: "most-common-import-errors-and-how-to-avoid-them", label: isEn ? "Most common import errors and how to avoid them" : "Les erreurs d'importation les plus courantes et comment les éviter" }]} />
+        </div>
+
+        <h2 id="why-bulk-import-is-key-when-launching-a-store" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Why bulk import is key when launching a store" : "Pourquoi l'import en masse est essentiel lors du lancement d'une boutique"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -61,7 +76,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La saisie manuelle des produits n'est viable que pour de très petits catalogues (moins de 20 produits). Au-delà, la saisie manuelle crée des erreurs, des incohérences et gaspille des jours ou des semaines. L'import en masse n'est pas seulement plus rapide — il est plus fiable : les données d'un fichier structuré sont plus cohérentes que les données saisies manuellement dans des centaines de formulaires."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="importing-products-from-csv-excel-to-woocommerce" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Importing products from CSV/Excel to WooCommerce" : "Importer des produits depuis CSV/Excel vers WooCommerce"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -75,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Les images doivent être accessibles via URL pendant l'import. Hébergez-les sur votre serveur ou un CDN temporaire, ajoutez les URLs à la colonne image, et WooCommerce les téléchargera et les attachera automatiquement. Pour les grands catalogues, augmentez la limite de mémoire PHP et le temps d'exécution maximum avant de lancer l'import."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="importing-from-shopify-to-woocommerce" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Importing from Shopify to WooCommerce" : "Importer depuis Shopify vers WooCommerce"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -84,7 +99,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Exportez vos produits Shopify en CSV depuis la section Produits. Le format est différent de celui de WooCommerce, donc vous devrez reformater les colonnes — soit manuellement dans Excel, soit avec un outil de conversion comme le convertisseur CSV Shopify WooCommerce gratuit. Le principal défi est les images : Shopify exporte des URLs d'images de produits qui restent accessibles brièvement après l'export, donc importez rapidement."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="importing-from-prestashop-to-woocommerce" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Importing from PrestaShop to WooCommerce" : "Importer depuis PrestaShop vers WooCommerce"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -93,7 +108,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "PrestaShop exporte les produits via l'outil d'export de données natif. Le CSV inclut la plupart des champs produit mais la structure diffère significativement de WooCommerce. Utilisez un plugin de migration comme Cart2Cart ou LitExtension pour les grands catalogues — ils gèrent automatiquement la correspondance des champs, le transfert d'images et la structure des variantes/attributs."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="most-common-import-errors-and-how-to-avoid-them" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Most common import errors and how to avoid them" : "Les erreurs d'importation les plus courantes et comment les éviter"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">

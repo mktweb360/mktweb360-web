@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "¿Ha muerto el SEO con la IA?",
   description:
@@ -101,15 +102,19 @@ export default function HaMuertoElSeoPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "la-pregunta-que-todo-el-mundo-se-hace", "label": "La pregunta que todo el mundo se hace"}, {"id": "la-analogia-del-ferrari", "label": "La analogía del Ferrari"}, {"id": "ia-tecnico-cualificado-excelencia", "label": "IA + técnico cualificado = excelencia"}, {"id": "ia-persona-no-cualificada-resultado-aceptable-no", "label": "IA + persona no cualificada = resultado aceptable, no competitivo"}, {"id": "que-cambia-realmente-con-la-ia-en-el-seo", "label": "Qué cambia realmente con la IA en el SEO"}, {"id": "el-seo-no-ha-muerto-ha-evolucionado", "label": "El SEO no ha muerto — ha evolucionado"}, {"id": "preguntas-frecuentes-sobre-ia-y-seo", "label": "Preguntas frecuentes sobre IA y SEO"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             No es la primera vez que se declara la muerte del SEO. Pasó con las actualizaciones de Panda y Penguin, con la llegada del móvil, con los cambios de algoritmo de los últimos años. Y cada vez, lo que murió no fue el SEO, sino una forma determinada de hacerlo mal. Lo que viene ahora con la IA no es diferente.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">La pregunta que todo el mundo se hace</h2>
+          <h2 id="la-pregunta-que-todo-el-mundo-se-hace" className="text-2xl font-bold text-primary-600 scroll-mt-24">La pregunta que todo el mundo se hace</h2>
           <p>Desde que la inteligencia artificial irrumpió con fuerza en el mundo digital, una pregunta se repite constantemente en foros, grupos de empresarios y conversaciones de negocio: ¿tiene sentido seguir invirtiendo en SEO si la IA ya lo hace todo? La respuesta corta es sí, y mucho. La respuesta larga requiere entender qué cambia realmente y qué sigue dependiendo de criterio humano cualificado.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">La analogía del Ferrari</h2>
+          <h2 id="la-analogia-del-ferrari" className="text-2xl font-bold text-primary-600 scroll-mt-24">La analogía del Ferrari</h2>
           <p>Imagina que alguien te regala un Ferrari de Fórmula 1. El mismo coche que conduce Fernando Alonso. ¿Serías capaz de hacer sus tiempos en pista? La respuesta es no. Y no porque el coche sea malo — es el mejor del mundo. Sino porque entre el coche y el resultado está el piloto: años de formación, miles de horas de práctica, criterio bajo presión, conocimiento técnico y capacidad para leer cada situación en tiempo real.</p>
           <p>La IA es ese Ferrari. Una herramienta extraordinaria, sin duda. Pero en manos de alguien sin formación ni experiencia, el resultado será muy diferente al de un profesional que sabe exactamente cómo sacarle partido.</p>
 
@@ -121,18 +126,18 @@ export default function HaMuertoElSeoPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">IA + técnico cualificado = excelencia</h2>
+          <h2 id="ia-tecnico-cualificado-excelencia" className="text-2xl font-bold text-primary-600 scroll-mt-24">IA + técnico cualificado = excelencia</h2>
           <p>Un profesional del SEO que trabaja con IA puede analizar más datos, detectar patrones antes, generar contenido de apoyo más rápido y escalar tareas que antes llevaban semanas. La IA multiplica su capacidad. Pero sigue siendo el profesional quien decide la estrategia, interpreta los datos con contexto real de negocio, identifica oportunidades que un modelo no puede ver y corrige los errores que cualquier herramienta comete cuando no entiende el negocio en profundidad.</p>
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">IA + persona no cualificada = resultado aceptable, no competitivo</h2>
+          <h2 id="ia-persona-no-cualificada-resultado-aceptable-no" className="text-2xl font-bold text-primary-600 scroll-mt-24">IA + persona no cualificada = resultado aceptable, no competitivo</h2>
           <p>Una persona sin experiencia en SEO que usa herramientas de IA puede conseguir resultados razonables. Puede generar contenido, hacer algunas optimizaciones básicas y publicar páginas. Pero no tendrá la capacidad de competir con quien combina conocimiento técnico, experiencia acumulada y las mismas herramientas. Es como la diferencia entre trabajar el campo con un tractor sin saber agricultura versus hacerlo con décadas de conocimiento agrícola y el mismo tractor. La herramienta es la misma. El resultado, no.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué cambia realmente con la IA en el SEO</h2>
+          <h2 id="que-cambia-realmente-con-la-ia-en-el-seo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué cambia realmente con la IA en el SEO</h2>
           <p>Lo que cambia es la velocidad de ejecución, la escala de análisis y la capacidad de automatizar tareas repetitivas. Lo que no cambia es la necesidad de estrategia, criterio, experiencia y comprensión del negocio. Google sigue premiando contenido útil, relevante y bien estructurado. La IA ayuda a producirlo más rápido, pero no garantiza que sea el correcto ni que esté bien orientado. Eso sigue dependiendo de quien dirige el proceso.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El SEO no ha muerto — ha evolucionado</h2>
+          <h2 id="el-seo-no-ha-muerto-ha-evolucionado" className="text-2xl font-bold text-primary-600 scroll-mt-24">El SEO no ha muerto — ha evolucionado</h2>
           <p>El SEO lleva décadas evolucionando. Cuando aparecieron los buscadores, evolucionó. Cuando llegó el móvil, evolucionó. Cuando Google empezó a penalizar el contenido de baja calidad, evolucionó. La IA es un cambio más en esa evolución — probablemente el más importante hasta ahora — pero no el fin del SEO. Es el inicio de una nueva fase en la que la diferencia entre hacerlo bien y hacerlo mal se ampliará, no se reducirá.</p>
 
           <p className="text-sm text-gray-500">
@@ -154,7 +159,7 @@ export default function HaMuertoElSeoPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre IA y SEO</h2>
+          <h2 id="preguntas-frecuentes-sobre-ia-y-seo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre IA y SEO</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
