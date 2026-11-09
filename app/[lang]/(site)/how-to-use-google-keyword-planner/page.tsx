@@ -8,6 +8,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 30/10/2026 — refuerzo del tema 4 (misma URL). Versión EN/FR del artículo ES
 // /como-usar-planificador-de-palabras-clave-google-ads/. Fuentes comprobadas el 28/10/2026.
 
@@ -473,40 +474,44 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>{c.answer}</p>
 
-          <h2 className={h2}>{c.hSummary}</h2>
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={12} items={[{ id: "summary", label: c.hSummary }, { id: "what", label: c.hWhat }, { id: "access", label: c.hAccess }, { id: "discover", label: c.hDiscover }, { id: "volume", label: c.hVolume }, { id: "read", label: c.hRead }, { id: "compare", label: c.hCompare }, { id: "mistakes", label: c.hMistakes }, { id: "faq", label: c.hFaq }, { id: "sources", label: c.hSources }]} />
+        </div>
+
+          <h2 id="summary" className={h2 + " scroll-mt-24"}>{c.hSummary}</h2>
           <Lista items={c.summary} />
 
-          <h2 className={h2}>{c.hWhat}</h2>
+          <h2 id="what" className={h2 + " scroll-mt-24"}>{c.hWhat}</h2>
           {c.what.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
 
-          <h2 className={h2}>{c.hAccess}</h2>
+          <h2 id="access" className={h2 + " scroll-mt-24"}>{c.hAccess}</h2>
           <Lista items={c.access} numerada />
           <p>{c.accessNote}</p>
 
-          <h2 className={h2}>{c.hDiscover}</h2>
+          <h2 id="discover" className={h2 + " scroll-mt-24"}>{c.hDiscover}</h2>
           <Lista items={c.discover} numerada />
           <p>{c.discoverNote}</p>
 
-          <h2 className={h2}>{c.hVolume}</h2>
+          <h2 id="volume" className={h2 + " scroll-mt-24"}>{c.hVolume}</h2>
           <Lista items={c.volume} numerada />
           <p>{c.forecastsIntro}</p>
           <Lista items={c.forecasts} />
           <p>{c.forecastsNote}</p>
 
-          <h2 className={h2}>{c.hRead}</h2>
+          <h2 id="read" className={h2 + " scroll-mt-24"}>{c.hRead}</h2>
           <Tabla cabecera={c.readHead} filas={c.read} />
           <p>{c.ranges}</p>
           <p>{c.competition}</p>
 
-          <h2 className={h2}>{c.hCompare}</h2>
+          <h2 id="compare" className={h2 + " scroll-mt-24"}>{c.hCompare}</h2>
           <Tabla cabecera={c.compareHead} filas={c.compare} />
           <p>{c.compareNote}</p>
 
           <BlogBanner variant="seo" lang={lang} />
 
-          <h2 className={h2}>{c.hMistakes}</h2>
+          <h2 id="mistakes" className={h2 + " scroll-mt-24"}>{c.hMistakes}</h2>
           <Lista items={c.mistakes} numerada />
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -520,7 +525,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className={h2}>{c.hFaq}</h2>
+          <h2 id="faq" className={h2 + " scroll-mt-24"}>{c.hFaq}</h2>
           <div className="space-y-3">
             {c.faqs.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -533,7 +538,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
 
-          <h2 className={h2}>{c.hSources}</h2>
+          <h2 id="sources" className={h2 + " scroll-mt-24"}>{c.hSources}</h2>
           <p className="text-sm text-gray-500">{c.checked}</p>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {c.sources.map((f) => (

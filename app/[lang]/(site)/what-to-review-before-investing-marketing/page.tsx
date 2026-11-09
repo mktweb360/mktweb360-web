@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -8,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -42,8 +44,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Investing more in marketing without reviewing what is already working is one of the most common mistakes SMEs make. This guide explains the 7 areas you must review first." : "Investir davantage en marketing sans vérifier ce qui fonctionne déjà est l'une des erreurs les plus courantes des PME. Ce guide explique les 7 domaines que vous devez vérifier en premier."}
         </p>
 
+        <Image
+          src="/og-que-revisar-antes-de-invertir-mas-en-marketing-digital-v2.jpg"
+          alt={!isEn ? "Homme d’affaires casqué qui rebouche avec des pansements les fissures d’un entonnoir en verre par lequel s’échappent des pièces d’or" : "Businessman wearing a helmet patching the cracks of a glass funnel through which gold coins leak out"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-more-budget-doesn-t-always-mean-better-resul", label: isEn ? "Why more budget doesn't always mean better results" : "Pourquoi plus de budget ne signifie pas toujours de meilleurs résultats" }, { id: "audit-your-website-before-spending-on-ads", label: isEn ? "Audit your website before spending on ads" : "Auditez votre site avant de dépenser en publicité" }, { id: "review-your-tracking-and-analytics-setup", label: isEn ? "Review your tracking and analytics setup" : "Vérifiez votre suivi et configuration analytique" }, { id: "analyse-your-current-channels-and-roi", label: isEn ? "Analyse your current channels and ROI" : "Analysez vos canaux actuels et votre ROI" }, { id: "define-clear-objectives-before-investing", label: isEn ? "Define clear objectives before investing" : "Définissez des objectifs clairs avant d'investir" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="why-more-budget-doesn-t-always-mean-better-resul" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Why more budget doesn't always mean better results" : "Pourquoi plus de budget ne signifie pas toujours de meilleurs résultats"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -55,7 +70,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="audit-your-website-before-spending-on-ads" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Audit your website before spending on ads" : "Auditez votre site avant de dépenser en publicité"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -74,7 +89,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="review-your-tracking-and-analytics-setup" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Review your tracking and analytics setup" : "Vérifiez votre suivi et configuration analytique"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -93,7 +108,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="analyse-your-current-channels-and-roi" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Analyse your current channels and ROI" : "Analysez vos canaux actuels et votre ROI"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -105,7 +120,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="define-clear-objectives-before-investing" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Define clear objectives before investing" : "Définissez des objectifs clairs avant d'investir"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

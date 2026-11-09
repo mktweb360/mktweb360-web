@@ -7,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -41,8 +42,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "When someone needs an emergency plumber, locksmith or electrician, they search Google and call the first result. This guide explains how to be that first result." : "Quand quelqu'un a besoin d'un plombier, serrurier ou électricien d'urgence, il cherche sur Google et appelle le premier résultat. Ce guide explique comment être ce premier résultat."}
         </p>
 
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={4} items={[{ id: "how-urgent-service-searches-work-on-google", label: isEn ? "How urgent service searches work on Google" : "Comment fonctionnent les recherches de services urgents sur Google" }, { id: "keywords-for-urgent-services", label: isEn ? "Keywords for urgent services" : "Mots-clés pour les services urgents" }, { id: "google-business-profile-for-emergency-services", label: isEn ? "Google Business Profile for emergency services" : "Google Business Profile pour les services d'urgence" }, { id: "page-speed-critical-for-urgent-service-websites", label: isEn ? "Page speed: critical for urgent service websites" : "Vitesse de la page : critique pour les sites de services urgents" }, { id: "reviews-and-trust-signals-for-emergency-services", label: isEn ? "Reviews and trust signals for emergency services" : "Avis et signaux de confiance pour les services d'urgence" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-urgent-service-searches-work-on-google" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How urgent service searches work on Google" : "Comment fonctionnent les recherches de services urgents sur Google"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +59,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="keywords-for-urgent-services" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Keywords for urgent services" : "Mots-clés pour les services urgents"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +71,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="google-business-profile-for-emergency-services" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Google Business Profile for emergency services" : "Google Business Profile pour les services d'urgence"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -78,7 +83,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="page-speed-critical-for-urgent-service-websites" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Page speed: critical for urgent service websites" : "Vitesse de la page : critique pour les sites de services urgents"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -90,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="reviews-and-trust-signals-for-emergency-services" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Reviews and trust signals for emergency services" : "Avis et signaux de confiance pour les services d'urgence"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

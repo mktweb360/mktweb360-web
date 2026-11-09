@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 const SLUG = "brandformance-como-unir-marca-y-performance";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
       "El brandformance combina branding y performance marketing en una sola estrategia. Descubre por qué separarlos es un error.",
     url: URL_CANONICAL,
     type: "article",
-    images: [{ url: `/og-${SLUG}.jpg`, width: 1200, height: 630 }],
+    images: [{ url: `/og-${SLUG}-v2.jpg`, width: 1200, height: 630 }],
   },
 };
 
@@ -39,7 +40,7 @@ const articleSchema = {
   url: URL_CANONICAL,
   mainEntityOfPage: URL_CANONICAL,
   inLanguage: "es-ES",
-  image: `https://www.mktweb360.com/og-${SLUG}.jpg`,
+  image: `https://www.mktweb360.com/og-${SLUG}-v2.jpg`,
 };
 
 const FAQS = [
@@ -103,7 +104,7 @@ export default function BrandformancePage() {
             Las empresas que separan "inversión en marca" de "inversión en resultados" están cometiendo un error estratégico costoso. El brandformance no es una tendencia — es la corrección a una separación artificial que llevamos décadas pagando.
           </p>
           <Image
-            src={`/og-${SLUG}.jpg`}
+            src={`/og-${SLUG}-v2.jpg`}
             alt="Brandformance: cómo unir marca y performance para crecer mejor"
             width={1200}
             height={630}
@@ -112,12 +113,16 @@ export default function BrandformancePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "que-es-el-brandformance-y-por-que-importa-ahora", "label": "Qué es el brandformance y por qué importa ahora"}, {"id": "como-la-marca-fortalece-el-performance", "label": "Cómo la marca fortalece el performance"}, {"id": "como-los-datos-de-performance-mejoran-la-marca", "label": "Cómo los datos de performance mejoran la marca"}, {"id": "el-error-de-separar-los-presupuestos", "label": "El error de separar los presupuestos"}, {"id": "brandformance-en-la-practica-para-pymes", "label": "Brandformance en la práctica para PYMEs"}, {"id": "preguntas-frecuentes-sobre-brandformance", "label": "Preguntas frecuentes sobre brandformance"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Durante décadas, el marketing digital se organizó en dos mundos paralelos: el equipo de branding construía la marca a largo plazo con creatividad y storytelling, y el equipo de performance optimizaba conversiones con datos y automatización. Parecía lógico. El problema es que el cliente no funciona así — y el presupuesto tampoco.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué es el brandformance y por qué importa ahora</h2>
+          <h2 id="que-es-el-brandformance-y-por-que-importa-ahora" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué es el brandformance y por qué importa ahora</h2>
           <p>
             El brandformance es la integración estratégica de branding y performance marketing en una sola lógica de negocio. No se trata de mezclar creatividad con datos por estética — se trata de reconocer que la marca fortalece el performance y los datos del performance mejoran la marca en un ciclo que se retroalimenta.
           </p>
@@ -138,7 +143,7 @@ export default function BrandformancePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo la marca fortalece el performance</h2>
+          <h2 id="como-la-marca-fortalece-el-performance" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo la marca fortalece el performance</h2>
           <p>
             Cuando un usuario ya conoce tu marca, todo el embudo de conversión funciona mejor. Tu CTR en Google Ads es más alto porque reconoce tu nombre en los resultados. Tu tasa de apertura en email marketing mejora porque confía en el remitente. Tu tasa de cierre en ventas es mayor porque ya has reducido la fricción de lo desconocido.
           </p>
@@ -146,7 +151,7 @@ export default function BrandformancePage() {
             Los efectos son concretos y medibles: menor CPL (coste por lead), mayor CVR (tasa de conversión) y mayor LTV (valor de vida del cliente). Las empresas con marca fuerte también sufren menos en las guerras de precio, porque parte de sus clientes elige por valor percibido, no solo por precio.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo los datos de performance mejoran la marca</h2>
+          <h2 id="como-los-datos-de-performance-mejoran-la-marca" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo los datos de performance mejoran la marca</h2>
           <p>
             Los datos de performance son el feedback más preciso que puede recibir una estrategia de marca. Si un mensaje en tus anuncios convierte tres veces más que otro, eso no es solo una señal de paid media — es información sobre qué parte de tu propuesta de valor resuena mejor con tu audiencia real.
           </p>
@@ -156,7 +161,7 @@ export default function BrandformancePage() {
 
           <BlogBanner variant="geo" />
 
-          <h2 className="text-2xl font-bold text-primary-600">El error de separar los presupuestos</h2>
+          <h2 id="el-error-de-separar-los-presupuestos" className="text-2xl font-bold text-primary-600 scroll-mt-24">El error de separar los presupuestos</h2>
           <p>
             El síntoma más común del enfoque erróneo es tener dos líneas presupuestarias separadas — "branding" y "performance" — con equipos distintos, KPIs distintos y estrategias que a menudo se contradicen. El anuncio de Google Ads promete precio bajo, y la campaña de redes sociales promete valores premium. Sin coherencia, el usuario no sabe en qué creer y la marca pierde efectividad en ambos frentes.
           </p>
@@ -164,7 +169,7 @@ export default function BrandformancePage() {
             La corrección no es fusionar equipos ni presupuestos mecánicamente. Es asegurarse de que ambos trabajen desde la misma propuesta de valor, con mensajes coherentes adaptados al contexto de cada canal, y con métricas que midan tanto el corto como el largo plazo.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Brandformance en la práctica para PYMEs</h2>
+          <h2 id="brandformance-en-la-practica-para-pymes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Brandformance en la práctica para PYMEs</h2>
           <p>
             Para una PYME, la implementación práctica empieza con claridad estratégica: ¿cuál es tu propuesta de valor diferencial y para quién? Una vez definido, ese mensaje debe aparecer en tus campañas de pago, en tu SEO, en tu contenido editorial, en tu firma de email y en las respuestas que das en las reseñas de Google.
           </p>
@@ -193,7 +198,7 @@ export default function BrandformancePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre brandformance</h2>
+          <h2 id="preguntas-frecuentes-sobre-brandformance" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre brandformance</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

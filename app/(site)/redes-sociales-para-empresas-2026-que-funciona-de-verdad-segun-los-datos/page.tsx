@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Redes sociales para empresas: qué funciona",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "El estudio Social Media 2026 de Cyberclick y Metricool analiza millones de publicaciones. TikTok lidera en impresiones, Instagram en estabilidad, LinkedIn en B2B. Qué significa para tu estrategia.",
     url: "https://www.mktweb360.com/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-smm.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-smm.jpg",
+  image: "https://www.mktweb360.com/og-redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos-v2.jpg",
   url: "https://www.mktweb360.com/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/",
   mainEntityOfPage: "https://www.mktweb360.com/redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos/",
   inLanguage: "es-ES",
@@ -88,36 +90,48 @@ export default function RedesSocialesEmpresas2026Page() {
           <p className="text-xl text-gray-600 leading-relaxed">
             El Estudio Social Media 2026 de Cyberclick y Metricool analiza millones de publicaciones para responder a una pregunta que casi nadie resuelve con datos: qué funciona de verdad. TikTok lidera en impresiones, Instagram gana en estabilidad y LinkedIn es el canal que más crece en B2B. Te ayudamos a traducir esos datos en una <Link href="/smm-social-media-marketing/" className="text-accent-500 hover:underline">estrategia de social media marketing</Link> con criterio.
           </p>
+          <Image
+            src="/og-redes-sociales-para-empresas-2026-que-funciona-de-verdad-segun-los-datos-v2.jpg"
+            alt="Empresario observando un gráfico de barras coloridas con iconos de redes sociales y una lupa de análisis (incluye icono de cámara genérico)"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "los-datos-del-estudio-social-media-2026", "label": "Los datos del Estudio Social Media 2026"}, {"id": "tiktok-lidera-en-impresiones-pero-instagram-domi", "label": "TikTok lidera en impresiones pero Instagram domina en estabilidad"}, {"id": "linkedin-el-canal-que-mas-crece-para-b2b", "label": "LinkedIn: el canal que más crece para B2B"}, {"id": "el-video-corto-ya-no-es-tendencia-es-el-estandar", "label": "El vídeo corto ya no es tendencia: es el estándar"}, {"id": "de-la-cantidad-al-foco-el-cambio-estrategico-de", "label": "De la cantidad al foco: el cambio estratégico de 2026"}, {"id": "como-decidir-que-red-priorizar", "label": "Cómo decidir qué red priorizar"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Cada año aparece una nueva red social que promete revolucionarlo todo y una vieja que supuestamente ha muerto. El problema es que la mayoría de decisiones sobre redes sociales se toman por intuición o por moda, no por datos. El Estudio Social Media 2026 permite hacer justo lo contrario: mirar qué funciona antes de invertir tiempo y presupuesto.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los datos del Estudio Social Media 2026</h2>
+          <h2 id="los-datos-del-estudio-social-media-2026" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los datos del Estudio Social Media 2026</h2>
           <p>El Estudio Social Media 2026 elaborado por Cyberclick y Metricool no se basa en opiniones, sino en el análisis de millones de publicaciones reales de empresas y creadores. Esa escala es lo que lo hace útil para una pyme: en lugar de decidir por lo que "se dice" en tu sector, puedes decidir por lo que efectivamente genera impresiones, interacción y crecimiento.</p>
           <p>La conclusión general del estudio es clara: no hay una red ganadora universal. Hay redes que ganan en alcance, otras en estabilidad y otras en calidad de contacto. La pregunta correcta no es "¿qué red es mejor?", sino "¿qué red es mejor para mi tipo de negocio y mis recursos?".</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">TikTok lidera en impresiones pero Instagram domina en estabilidad</h2>
+          <h2 id="tiktok-lidera-en-impresiones-pero-instagram-domi" className="text-2xl font-bold text-primary-600 scroll-mt-24">TikTok lidera en impresiones pero Instagram domina en estabilidad</h2>
           <p>Según los datos, TikTok es la plataforma con mayor potencial de alcance orgánico: un 67,48% de los profesionales encuestados cree que ganará todavía más relevancia. Para negocios capaces de producir vídeo corto de forma constante, es el canal con mayor techo de crecimiento en impresiones.</p>
           <p>Instagram, en cambio, destaca por su estabilidad. No ofrece los picos de alcance de TikTok, pero mantiene un rendimiento sostenido y predecible que lo convierte en una base sólida para marcas B2C con producto visualmente atractivo. Esa previsibilidad es un activo cuando planificas contenido con recursos limitados.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">LinkedIn: el canal que más crece para B2B</h2>
+          <h2 id="linkedin-el-canal-que-mas-crece-para-b2b" className="text-2xl font-bold text-primary-600 scroll-mt-24">LinkedIn: el canal que más crece para B2B</h2>
           <p>Para las empresas que venden a otras empresas, LinkedIn es el canal con mayor tracción en 2026. La combinación de un algoritmo que premia el contenido de las personas, el auge del vídeo nativo y el Employee Generated Content ha convertido la red en una fuente real de leads cualificados.</p>
           <p>Si tu cliente es una empresa, LinkedIn debería ser tu prioridad. Lo desarrollamos en profundidad en nuestra <Link href="/linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads/" className="text-accent-500 hover:underline">guía de LinkedIn para pymes españolas en 2026</Link>, con las tácticas concretas para generar leads sin gastar en publicidad.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El vídeo corto ya no es tendencia: es el estándar</h2>
+          <h2 id="el-video-corto-ya-no-es-tendencia-es-el-estandar" className="text-2xl font-bold text-primary-600 scroll-mt-24">El vídeo corto ya no es tendencia: es el estándar</h2>
           <p>Durante años el vídeo corto se presentó como "tendencia emergente". En 2026 ya no lo es: se ha convertido en el estándar de mercado. Reels, TikToks y vídeos de LinkedIn dominan la distribución en prácticamente todas las plataformas, y los algoritmos priorizan sistemáticamente este formato.</p>
           <p>Esto no significa que tengas que producir vídeos costosos. Significa que la capacidad de grabar vídeo corto con criterio pasa a ser una competencia básica de tu estrategia de contenidos. Integrarlo bien con el resto de tu <Link href="/marketing-de-contenidos/" className="text-accent-500 hover:underline">marketing de contenidos</Link> es lo que marca la diferencia entre publicar por publicar y construir audiencia.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">De la cantidad al foco: el cambio estratégico de 2026</h2>
+          <h2 id="de-la-cantidad-al-foco-el-cambio-estrategico-de" className="text-2xl font-bold text-primary-600 scroll-mt-24">De la cantidad al foco: el cambio estratégico de 2026</h2>
           <p>El cambio más importante que revela el estudio no es de plataforma, sino de mentalidad: las empresas están pasando del volumen al foco. Publicar mucho en todas partes ha dejado de ser una estrategia; concentrarse en pocas redes y hacerlo bien es lo que produce resultados.</p>
           <p>Este giro tiene una lectura práctica para cualquier pyme con recursos limitados: es preferible dominar una o dos redes con consistencia que mantener una presencia mediocre en cinco. El foco reduce el esfuerzo y aumenta el impacto.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo decidir qué red priorizar</h2>
+          <h2 id="como-decidir-que-red-priorizar" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo decidir qué red priorizar</h2>
           <p>La decisión debería depender de dos variables: dónde está tu cliente ideal y qué recursos de producción tienes. Un negocio B2B prioriza LinkedIn; una marca B2C con producto visual, Instagram; un negocio con capacidad de producir vídeo constante, TikTok. Y las redes de pago, como la <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">publicidad PPC</Link>, entran cuando ya tienes claro qué mensaje convierte.</p>
           <p>Elige 1-2 canales, defínelos con una frecuencia realista y mide durante un trimestre antes de cambiar de estrategia. La consistencia es la variable que los datos correlacionan de forma más directa con el crecimiento sostenido.</p>
 
@@ -136,7 +150,7 @@ export default function RedesSocialesEmpresas2026Page() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

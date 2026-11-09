@@ -1,10 +1,12 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -106,8 +108,31 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Beaucoup de PME voient encore LinkedIn comme une simple base de données de CV. C'est une erreur coûteuse. En 2026, LinkedIn est la plateforme B2B avec la plus forte croissance organique, et pour les entreprises qui vendent à d'autres entreprises, c'est un canal capable de générer des demandes qualifiées sans investir un seul euro en publicité. La clé est de comprendre comment cela fonctionne aujourd'hui."}
           </p>
 
+        <Image
+          src="/og-linkedin-para-pymes-espanolas-en-2026-guia-practica-para-generar-leads-v2.jpg"
+          alt={!isEn ? "Équipe d’une petite entreprise souriante au bureau, en train de filmer une courte vidéo avec un téléphone sur trépied, et un carnet de contacts relié à un réseau" : "Small business team smiling in the office while recording a short video on a tripod phone, with a contact notebook linked to a network"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "the-new-linkedin-of-2026-what-has-changed", label: isEn ? "The new LinkedIn of 2026: what has changed" : "Le nouveau LinkedIn de 2026 : ce qui a changé" }, { id: "why-personal-profiles-outperform-company-pages", label: isEn
+                ? "Why personal profiles outperform company pages"
+                : "Pourquoi les profils personnels surpassent les pages d'entreprise" }, { id: "the-formats-that-work-in-2026-with-real-data", label: isEn
+                ? "The formats that work in 2026 with real data"
+                : "Les formats qui fonctionnent en 2026 avec des données réelles" }, { id: "employee-generated-content-the-trend-creating-th", label: isEn
+                ? "Employee Generated Content: the trend creating the most opportunity"
+                : "Employee Generated Content : la tendance qui crée le plus d'opportunités" }, { id: "social-selling-how-to-turn-linkedin-into-a-sourc", label: isEn
+                ? "Social selling: how to turn LinkedIn into a source of clients"
+                : "Social selling : comment transformer LinkedIn en source de clients" }, { id: "the-mistake-that-destroys-the-linkedin-strategy", label: isEn
+                ? "The mistake that destroys the LinkedIn strategy of many SMEs"
+                : "L'erreur qui détruit la stratégie LinkedIn de nombreuses PME" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="the-new-linkedin-of-2026-what-has-changed" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "The new LinkedIn of 2026: what has changed" : "Le nouveau LinkedIn de 2026 : ce qui a changé"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -123,7 +148,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="why-personal-profiles-outperform-company-pages" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Why personal profiles outperform company pages"
                 : "Pourquoi les profils personnels surpassent les pages d'entreprise"}
@@ -141,7 +166,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="the-formats-that-work-in-2026-with-real-data" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "The formats that work in 2026 with real data"
                 : "Les formats qui fonctionnent en 2026 avec des données réelles"}
@@ -161,7 +186,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <BlogBanner lang={lang} />
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="employee-generated-content-the-trend-creating-th" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Employee Generated Content: the trend creating the most opportunity"
                 : "Employee Generated Content : la tendance qui crée le plus d'opportunités"}
@@ -179,7 +204,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="social-selling-how-to-turn-linkedin-into-a-sourc" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Social selling: how to turn LinkedIn into a source of clients"
                 : "Social selling : comment transformer LinkedIn en source de clients"}
@@ -197,7 +222,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="the-mistake-that-destroys-the-linkedin-strategy" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "The mistake that destroys the LinkedIn strategy of many SMEs"
                 : "L'erreur qui détruit la stratégie LinkedIn de nombreuses PME"}
@@ -242,7 +267,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "Frequently asked questions" : "Questions fréquentes"}
             </h2>
             <div className="space-y-3">

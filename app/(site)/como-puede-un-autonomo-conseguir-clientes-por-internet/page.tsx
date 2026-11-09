@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cómo conseguir clientes online siendo autónomo",
   description:
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     description: "Descubre cómo puede un autónomo conseguir clientes por Internet con una base digital clara, rentable y sin depender solo del boca a boca.",
     url: "https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/",
     type: "article",
-    images: [{ url: "/og-como-puede-un-autonomo-conseguir-clientes.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-como-puede-un-autonomo-conseguir-clientes-por-internet-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -35,7 +36,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/",
   mainEntityOfPage: "https://www.mktweb360.com/como-puede-un-autonomo-conseguir-clientes-por-internet/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-como-puede-un-autonomo-conseguir-clientes.jpg",
+  image: "https://www.mktweb360.com/og-como-puede-un-autonomo-conseguir-clientes-por-internet-v2.jpg",
 };
 
 const FAQS = [
@@ -93,7 +94,7 @@ export default function AutonomoClientesInternetPage() {
             Las recomendaciones funcionan, pero son impredecibles. Construir una presencia digital te permite generar un flujo constante de clientes que te encuentran cuando te necesitan, no solo cuando alguien te recomienda.
           </p>
           <Image
-            src="/og-como-puede-un-autonomo-conseguir-clientes.jpg"
+            src="/og-como-puede-un-autonomo-conseguir-clientes-por-internet-v2.jpg"
             alt="Cómo puede un autónomo conseguir clientes por Internet: ficha de Google, web y reseñas"
             width={1200}
             height={630}
@@ -101,6 +102,10 @@ export default function AutonomoClientesInternetPage() {
             priority
           />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "que-necesita-de-verdad-un-autonomo", "label": "Qué necesita de verdad un autónomo"}, {"id": "que-priorizar-si-el-presupuesto-es-limitado", "label": "Qué priorizar si el presupuesto es limitado"}, {"id": "web-ficha-de-google-o-redes-que-va-primero", "label": "Web, ficha de Google o redes: qué va primero"}, {"id": "plan-minimo-viable", "label": "Plan mínimo viable"}, {"id": "preguntas-frecuentes-sobre-captacion-online-para", "label": "Preguntas frecuentes sobre captación online para autónomos"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
@@ -110,10 +115,10 @@ export default function AutonomoClientesInternetPage() {
             No hace falta una presencia digital compleja ni una inversión grande. En la mayoría de negocios de servicios la base son tres elementos bien ejecutados: una ficha de Google optimizada, una web con la página de su servicio bien escrita y reseñas activas. En muchos sectores, con eso ya te diferencias de buena parte de la competencia de tu zona, que suele tener alguno de los tres a medias.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué necesita de verdad un autónomo</h2>
+          <h2 id="que-necesita-de-verdad-un-autonomo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué necesita de verdad un autónomo</h2>
           <p>Un autónomo necesita ser encontrado cuando alguien busca lo que ofrece, generar confianza rápida y facilitar el contacto sin fricción. No necesita una presencia digital enorme ni estar en todos los canales. Necesita que los canales que usa estén bien ejecutados y orientados a generar oportunidades reales, no solo visibilidad.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué priorizar si el presupuesto es limitado</h2>
+          <h2 id="que-priorizar-si-el-presupuesto-es-limitado" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué priorizar si el presupuesto es limitado</h2>
           <p>La <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile bien optimizada</Link>, una página de servicio clara en la web y reseñas activas son la base que más retorno da con menos inversión. Están orientadas exactamente a cuando el potencial cliente tiene intención de buscar y contratar. Añadir más canales antes de tener esa base sólida suele diluir el esfuerzo sin mejorar los resultados.</p>
           <ul className="space-y-2">
             {["Ficha de Google con fotos reales, servicios y zona", "Página de servicio que explica qué haces, para quién y cómo contactar", "Reseñas pedidas activamente después de cada trabajo"].map((item) => (
@@ -132,7 +137,7 @@ export default function AutonomoClientesInternetPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Web, ficha de Google o redes: qué va primero</h2>
+          <h2 id="web-ficha-de-google-o-redes-que-va-primero" className="text-2xl font-bold text-primary-600 scroll-mt-24">Web, ficha de Google o redes: qué va primero</h2>
           <p>En la mayoría de sectores de servicios, la ficha de Google va primero porque capta demanda activa con muy poco esfuerzo. La web va segundo porque refuerza la credibilidad y permite posicionar búsquedas orgánicas. Las redes sociales, en la mayoría de casos, tienen un papel más de mantenimiento de imagen que de captación directa. Si el tiempo es limitado, en esas prioridades conviene centrarse.</p>
           <p>Cuando la ficha ya funciona, el siguiente paso es una web sencilla que confirme lo que el cliente ha visto en Google y le dé un motivo para llamarte a ti. No hace falta una web enorme: una <Link href="/oferta-web-seo-organico/" className="text-accent-500 hover:underline">web profesional con una página por servicio y el SEO técnico de base</Link> es suficiente para empezar a aparecer también en las búsquedas orgánicas.</p>
 
@@ -146,7 +151,7 @@ export default function AutonomoClientesInternetPage() {
             secondary={{ text: "¿No sabes cómo está tu ficha? Pide la auditoría gratuita", href: "/auditoria-digital/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Plan mínimo viable</h2>
+          <h2 id="plan-minimo-viable" className="text-2xl font-bold text-primary-600 scroll-mt-24">Plan mínimo viable</h2>
           <p>Ficha de Google creada y verificada, fotos reales del trabajo, descripción clara del servicio, cinco o más reseñas, una página web sencilla con la información clave, teléfono clickable en móvil y formulario de contacto. Con eso bien resuelto, un autónomo tiene una base que muchos competidores no tienen, y desde ahí ya se puede crecer con criterio.</p>
 
           <p className="text-sm text-gray-500">
@@ -168,7 +173,7 @@ export default function AutonomoClientesInternetPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre captación online para autónomos</h2>
+          <h2 id="preguntas-frecuentes-sobre-captacion-online-para" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre captación online para autónomos</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

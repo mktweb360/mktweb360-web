@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Qué poner en la biografía de Instagram",
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "Descubre qué poner en la biografía de Instagram de tu empresa para captar más seguidores y clientes. Ejemplos reales y consejos prácticos.",
     url: "https://www.mktweb360.com/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/",
     type: "article",
-    images: [{ url: "/og-instagram-para-empresas-biografia.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-instagram-para-empresas-que-poner-en-la-biografia-de-instagram-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/",
   mainEntityOfPage: "https://www.mktweb360.com/instagram-para-empresas-que-poner-en-la-biografia-de-instagram/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-instagram-para-empresas-biografia.jpg",
+  image: "https://www.mktweb360.com/og-instagram-para-empresas-que-poner-en-la-biografia-de-instagram-v2.jpg",
 };
 
 const FAQS = [
@@ -133,7 +134,7 @@ export default function InstagramBioEmpresasPage() {
             La biografía de Instagram es tu tarjeta de presentación digital. Tienes 150 caracteres para convencer a un visitante de que merece la pena seguirte o contactarte. Cada palabra cuenta.
           </p>
           <Image
-            src="/og-instagram-para-empresas-biografia.jpg"
+            src="/og-instagram-para-empresas-que-poner-en-la-biografia-de-instagram-v2.jpg"
             alt="Qué poner en la biografía de Instagram para empresas — Guía 2025"
             width={1200}
             height={630}
@@ -141,6 +142,10 @@ export default function InstagramBioEmpresasPage() {
             priority
           />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "elementos-imprescindibles-en-tu-bio-de-instagram", "label": "Elementos imprescindibles en tu bio de Instagram"}, {"id": "ejemplos-de-biografias-efectivas-para-empresas", "label": "Ejemplos de biografías efectivas para empresas"}, {"id": "errores-mas-comunes-en-la-bio-de-instagram", "label": "Errores más comunes en la bio de Instagram"}, {"id": "checklist-8-elementos-que-debe-tener-tu-bio", "label": "Checklist: 8 elementos que debe tener tu bio"}, {"id": "preguntas-frecuentes-sobre-la-bio-de-instagram", "label": "Preguntas frecuentes sobre la bio de Instagram"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
@@ -150,7 +155,7 @@ export default function InstagramBioEmpresasPage() {
             El problema es que la mayoría de empresas desperdician esos 150 caracteres con frases genéricas, demasiados hashtags o información irrelevante. Como en cualquier <Link href="/como-crear-propuesta-de-valor/" className="text-accent-500 hover:underline">propuesta de valor</Link>, cada palabra debe ganarse su sitio: esta guía te explica exactamente qué incluir, con ejemplos reales y un checklist final.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Elementos imprescindibles en tu bio de Instagram</h2>
+          <h2 id="elementos-imprescindibles-en-tu-bio-de-instagram" className="text-2xl font-bold text-primary-600 scroll-mt-24">Elementos imprescindibles en tu bio de Instagram</h2>
           <ul className="space-y-3">
             {elementos.map((e) => (
               <li key={e.titulo} className="flex items-start gap-3 p-4 border border-gray-200 rounded-xl">
@@ -163,7 +168,7 @@ export default function InstagramBioEmpresasPage() {
             ))}
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">Ejemplos de biografías efectivas para empresas</h2>
+          <h2 id="ejemplos-de-biografias-efectivas-para-empresas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Ejemplos de biografías efectivas para empresas</h2>
           <div className="space-y-4">
             {ejemplosBios.map((ej) => (
               <div key={ej.tipo} className="border border-gray-200 rounded-xl overflow-hidden">
@@ -178,7 +183,7 @@ export default function InstagramBioEmpresasPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Errores más comunes en la bio de Instagram</h2>
+          <h2 id="errores-mas-comunes-en-la-bio-de-instagram" className="text-2xl font-bold text-primary-600 scroll-mt-24">Errores más comunes en la bio de Instagram</h2>
           <ul className="space-y-3">
             {errores.map((e) => (
               <li key={e.error} className="flex items-start gap-3 p-4 bg-red-50 border border-red-100 rounded-xl">
@@ -204,7 +209,7 @@ export default function InstagramBioEmpresasPage() {
             secondary={{ text: "¿Prefieres empezar con una auditoría gratuita de tu presencia digital?", href: "/auditoria-digital/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Checklist: 8 elementos que debe tener tu bio</h2>
+          <h2 id="checklist-8-elementos-que-debe-tener-tu-bio" className="text-2xl font-bold text-primary-600 scroll-mt-24">Checklist: 8 elementos que debe tener tu bio</h2>
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <ul className="space-y-2">
               {checklist.map((item) => (
@@ -216,7 +221,7 @@ export default function InstagramBioEmpresasPage() {
             </ul>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la bio de Instagram</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-bio-de-instagram" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la bio de Instagram</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -32,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           { label: isEn ? "Best hosting" : "Meilleur hébergement" },
         ]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">{isEn ? "Web Design" : "Création de site"}</p>
-        <IntlArticleJsonLd lang={lang} slug="how-to-choose-best-hosting" headline={isEn ? "How to choose the best hosting for your website without overpaying" : "Comment choisir le meilleur hébergement pour votre site web sans trop payer"} image="/og-como-elegir-el-mejor-hosting-para-tu-web.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="how-to-choose-best-hosting" headline={isEn ? "How to choose the best hosting for your website without overpaying" : "Comment choisir le meilleur hébergement pour votre site web sans trop payer"} image="/og-como-elegir-el-mejor-hosting-para-tu-web-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn ? "How to choose the best hosting for your website without overpaying" : "Comment choisir le meilleur hébergement pour votre site web sans trop payer"}
         </h1>
@@ -41,8 +43,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Choosing the wrong hosting can slow down your website, hurt your SEO and frustrate your visitors. This guide explains the differences between hosting types and how to choose the right one." : "Choisir le mauvais hébergement peut ralentir votre site, nuire à votre SEO et frustrer vos visiteurs. Ce guide explique les différences entre les types d'hébergement et comment choisir le bon."}
         </p>
 
+        <Image
+          src="/og-como-elegir-el-mejor-hosting-para-tu-web-v2.jpg"
+          alt={!isEn ? "Technicien casqué vérifiant un serveur dans un couloir de centre de données éclairé en bleu" : "Technician wearing a helmet checking a server in a data center aisle lit in blue"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={4} items={[{ id: "types-of-web-hosting-shared-vps-dedicated-and-cl", label: isEn ? "Types of web hosting: shared, VPS, dedicated and cloud" : "Types d'hébergement web : partagé, VPS, dédié et cloud" }, { id: "managed-wordpress-hosting-when-it-makes-sense", label: isEn ? "Managed WordPress hosting: when it makes sense" : "Hébergement WordPress géré : quand c'est pertinent" }, { id: "key-factors-when-choosing-hosting", label: isEn ? "Key factors when choosing hosting" : "Facteurs clés pour choisir un hébergement" }, { id: "speed-uptime-and-security-what-to-look-for", label: isEn ? "Speed, uptime and security: what to look for" : "Vitesse, disponibilité et sécurité : quoi chercher" }, { id: "best-hosting-options-for-sme-websites", label: isEn ? "Best hosting options for SME websites" : "Meilleures options d'hébergement pour les sites PME" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="types-of-web-hosting-shared-vps-dedicated-and-cl" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Types of web hosting: shared, VPS, dedicated and cloud" : "Types d'hébergement web : partagé, VPS, dédié et cloud"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -61,7 +76,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="managed-wordpress-hosting-when-it-makes-sense" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Managed WordPress hosting: when it makes sense" : "Hébergement WordPress géré : quand c'est pertinent"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -73,7 +88,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="key-factors-when-choosing-hosting" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Key factors when choosing hosting" : "Facteurs clés pour choisir un hébergement"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -85,7 +100,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="speed-uptime-and-security-what-to-look-for" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Speed, uptime and security: what to look for" : "Vitesse, disponibilité et sécurité : quoi chercher"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -104,7 +119,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="best-hosting-options-for-sme-websites" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Best hosting options for SME websites" : "Meilleures options d'hébergement pour les sites PME"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

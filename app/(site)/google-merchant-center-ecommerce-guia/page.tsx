@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Google Merchant Center para ecommerce: guía",
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "Aprende a configurar Google Merchant Center, crear tu feed de productos y aparecer en Google Shopping para aumentar las ventas de tu tienda online.",
     url: "https://www.mktweb360.com/google-merchant-center-ecommerce-guia/",
     type: "article",
-    images: [{ url: "/og-google-merchant-center-ecommerce-guia.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-google-merchant-center-ecommerce-guia-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/google-merchant-center-ecommerce-guia/",
   mainEntityOfPage: "https://www.mktweb360.com/google-merchant-center-ecommerce-guia/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-google-merchant-center-ecommerce-guia.jpg",
+  image: "https://www.mktweb360.com/og-google-merchant-center-ecommerce-guia-v2.jpg",
 };
 
 const FAQS = [
@@ -92,7 +93,7 @@ export default function GoogleMerchantCenterPage() {
             Si tienes una tienda online y no estás en Google Merchant Center, estás perdiendo visibilidad en el canal donde los compradores buscan productos con intención de compra. Esta guía te explica qué es, cómo configurarlo y cómo sacarle el máximo partido.
           </p>
           <Image
-            src="/og-google-merchant-center-ecommerce-guia.jpg"
+            src="/og-google-merchant-center-ecommerce-guia-v2.jpg"
             alt="Google Merchant Center para ecommerce: guía completa 2026"
             width={1200}
             height={630}
@@ -101,18 +102,22 @@ export default function GoogleMerchantCenterPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "que-es-google-merchant-center-y-para-que-sirve", "label": "Qué es Google Merchant Center y para qué sirve"}, {"id": "como-crear-y-configurar-la-cuenta", "label": "Cómo crear y configurar la cuenta"}, {"id": "el-feed-de-productos-el-corazon-de-merchant-cent", "label": "El feed de productos: el corazón de Merchant Center"}, {"id": "errores-frecuentes-que-generan-productos-rechaza", "label": "Errores frecuentes que generan productos rechazados"}, {"id": "de-fichas-gratuitas-a-campanas-de-shopping-que-v", "label": "De fichas gratuitas a campañas de Shopping que venden"}, {"id": "preguntas-frecuentes-sobre-google-merchant-cente", "label": "Preguntas frecuentes sobre Google Merchant Center"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Google Shopping es uno de los canales de captación más efectivos para ecommerce. Cuando alguien busca "comprar zapatillas trail baratas" o "auriculares inalámbricos oferta", Google muestra fichas de productos con imagen, precio y tienda antes de los resultados orgánicos. Estar ahí — con productos bien configurados — marca una diferencia enorme en visibilidad y ventas.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué es Google Merchant Center y para qué sirve</h2>
+          <h2 id="que-es-google-merchant-center-y-para-que-sirve" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué es Google Merchant Center y para qué sirve</h2>
           <p>Google Merchant Center es la plataforma de Google que permite a las tiendas online subir su catálogo de productos para que aparezcan en Google Shopping, tanto en las fichas gratuitas como en las campañas de Shopping pagadas a través de Google Ads. Es el punto de conexión entre tu tienda y la distribución de productos en los resultados de Google. Sin una cuenta activa y bien configurada, tus productos no pueden aparecer en Google Shopping.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo crear y configurar la cuenta</h2>
+          <h2 id="como-crear-y-configurar-la-cuenta" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo crear y configurar la cuenta</h2>
           <p>El proceso empieza en merchants.google.com con una cuenta de Google. Los pasos fundamentales son verificar y reclamar el dominio de la tienda, configurar la información del negocio (nombre, país, divisa), definir las políticas de envío y devolución, y enlazar la cuenta con Google Ads si quieres hacer campañas pagadas. La verificación del dominio requiere acceso al código de la web o al DNS del dominio.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El feed de productos: el corazón de Merchant Center</h2>
+          <h2 id="el-feed-de-productos-el-corazon-de-merchant-cent" className="text-2xl font-bold text-primary-600 scroll-mt-24">El feed de productos: el corazón de Merchant Center</h2>
           <p>El feed de productos es el archivo que contiene la información de todos tus artículos. La calidad del feed determina directamente la visibilidad y el rendimiento en Shopping. Los atributos más importantes son: título (que debe incluir palabras clave relevantes), descripción, precio actualizado, disponibilidad en tiempo real, imagen de alta calidad y categoría correcta de Google. Un feed con errores o datos incompletos genera productos rechazados y visibilidad reducida.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -125,10 +130,10 @@ export default function GoogleMerchantCenterPage() {
 
           <BlogBanner variant="ecommerce" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Errores frecuentes que generan productos rechazados</h2>
+          <h2 id="errores-frecuentes-que-generan-productos-rechaza" className="text-2xl font-bold text-primary-600 scroll-mt-24">Errores frecuentes que generan productos rechazados</h2>
           <p>Los rechazos más habituales son imágenes con marca de agua o fondo blanco incorrecto, precios que no coinciden entre el feed y la web, disponibilidad desactualizada, URLs de producto rotas o redirigidas incorrectamente, y políticas de devolución que no cumplen los requisitos de Google. Mantener el feed actualizado en tiempo real y con datos coherentes entre el feed y la web es lo que evita la mayoría de rechazos.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">De fichas gratuitas a campañas de Shopping que venden</h2>
+          <h2 id="de-fichas-gratuitas-a-campanas-de-shopping-que-v" className="text-2xl font-bold text-primary-600 scroll-mt-24">De fichas gratuitas a campañas de Shopping que venden</h2>
           <p>Las fichas gratuitas de Google Shopping son un buen punto de partida para ganar visibilidad sin coste. Las campañas de Shopping pagadas (ahora integradas en las campañas Performance Max de Google Ads) permiten mayor control sobre presupuesto, segmentación por tipo de producto y optimización basada en datos de conversión. Combinar ambas — fichas orgánicas bien trabajadas y campañas pagadas optimizadas — es la estrategia que mejor funciona para ecommerce en 2026.</p>
 
           <p className="text-sm text-gray-500">
@@ -150,7 +155,7 @@ export default function GoogleMerchantCenterPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre Google Merchant Center</h2>
+          <h2 id="preguntas-frecuentes-sobre-google-merchant-cente" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre Google Merchant Center</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

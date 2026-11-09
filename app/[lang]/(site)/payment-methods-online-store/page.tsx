@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -39,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
-        <IntlArticleJsonLd lang={lang} slug="payment-methods-online-store" headline={isEn ? "Payment methods for online stores: which ones to install and how to configure them" : "Méthodes de paiement pour boutiques en ligne : lesquelles installer et comment les configurer"} image="/og-metodos-pago-tienda-online-espana.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="payment-methods-online-store" headline={isEn ? "Payment methods for online stores: which ones to install and how to configure them" : "Méthodes de paiement pour boutiques en ligne : lesquelles installer et comment les configurer"} image="/og-metodos-pago-tienda-online-espana-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Payment methods for online stores: which ones to install and how to configure them"
@@ -52,7 +54,30 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Les méthodes de paiement disponibles dans votre boutique en ligne déterminent directement votre taux de conversion. Ce guide explique quelles passerelles utiliser, comment les configurer et lesquelles les acheteurs préfèrent."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-metodos-pago-tienda-online-espana-v2.jpg"
+          alt={!isEn ? "Cliente payant avec son téléphone sur le terminal de paiement d’une boutique de vêtements" : "Customer paying with her phone at the card reader of a clothing store"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "which-payment-methods-online-buyers-prefer", label: isEn
+            ? "Which payment methods online buyers prefer"
+            : "Quelles méthodes de paiement les acheteurs en ligne préfèrent" }, { id: "stripe-the-most-complete-option-for-online-store", label: isEn
+            ? "Stripe: the most complete option for online stores"
+            : "Stripe : l'option la plus complète pour les boutiques en ligne" }, { id: "paypal-apple-pay-and-google-pay", label: isEn
+            ? "PayPal, Apple Pay and Google Pay"
+            : "PayPal, Apple Pay et Google Pay" }, { id: "instalment-payments-klarna-and-sequra", label: isEn
+            ? "Instalment payments: Klarna and Sequra"
+            : "Paiement en plusieurs fois : Klarna et Sequra" }, { id: "real-commissions-of-each-payment-gateway", label: isEn
+            ? "Real commissions of each payment gateway"
+            : "Commissions réelles de chaque passerelle de paiement" }]} />
+        </div>
+
+        <h2 id="which-payment-methods-online-buyers-prefer" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Which payment methods online buyers prefer"
             : "Quelles méthodes de paiement les acheteurs en ligne préfèrent"}
@@ -63,7 +88,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "En Europe, les méthodes de paiement les plus utilisées pour les achats en ligne sont : carte de crédit/débit (Visa, Mastercard) — utilisée par 65 à 75% des acheteurs, portefeuilles numériques (PayPal, Apple Pay, Google Pay) — 25 à 40%, virement bancaire — 10 à 15%, et paiement en plusieurs fois (Klarna, Sequra) — en forte croissance, surtout pour les achats au-dessus de 100€. Ne pas offrir la méthode préférée d'un acheteur est l'une des principales causes d'abandon de paiement."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="stripe-the-most-complete-option-for-online-store" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Stripe: the most complete option for online stores"
             : "Stripe : l'option la plus complète pour les boutiques en ligne"}
@@ -79,7 +104,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le checkout hébergé de Stripe (Stripe Checkout) fournit une page de paiement optimisée pour la conversion qui affiche automatiquement les méthodes de paiement les plus pertinentes selon l'appareil et la localisation du client. Pour les utilisateurs mobiles, cela signifie qu'Apple Pay ou Google Pay apparaît automatiquement, réduisant la friction de paiement à un seul appui."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="paypal-apple-pay-and-google-pay" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "PayPal, Apple Pay and Google Pay"
             : "PayPal, Apple Pay et Google Pay"}
@@ -90,7 +115,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "PayPal reste important pour la confiance des acheteurs — de nombreux acheteurs se sentent plus protégés en utilisant PayPal et choisissent spécifiquement les boutiques qui l'acceptent. Commission : 3,49% + 0,49€ par transaction (plus élevé que Stripe pour les paiements par carte). Apple Pay et Google Pay ne nécessitent pas de configuration supplémentaire si vous utilisez Stripe — ils s'activent automatiquement via l'élément de paiement Stripe."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="instalment-payments-klarna-and-sequra" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Instalment payments: Klarna and Sequra"
             : "Paiement en plusieurs fois : Klarna et Sequra"}
@@ -101,7 +126,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le paiement fractionné (BNPL) augmente significativement la valeur moyenne des commandes et la conversion pour les achats au-dessus de 100€. Klarna (disponible dans toute l'Europe) et Sequra (fort en Espagne et en Italie) permettent aux acheteurs de diviser les paiements en 3 à 12 mensualités. La boutique reçoit le paiement intégral immédiatement ; le prestataire BNPL assume le risque de crédit. Commission : généralement 3 à 5% par transaction."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="real-commissions-of-each-payment-gateway" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Real commissions of each payment gateway"
             : "Commissions réelles de chaque passerelle de paiement"}

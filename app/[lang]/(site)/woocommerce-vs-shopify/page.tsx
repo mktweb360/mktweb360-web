@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -118,7 +120,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Choisir une plateforme e-commerce n'est pas une décision technique mineure : elle conditionne vos coûts, votre marge et votre liberté pendant des années. WooCommerce et Shopify sont les deux options dominantes et représentent deux philosophies opposées. Comprendre en quoi elles diffèrent vraiment — au-delà du marketing de chacune — c'est ce qui vous permet de faire le bon choix."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <Image
+          src="/og-woocommerce-vs-shopify-cual-elegir-tienda-online-v2.jpg"
+          alt={!isEn ? "Entrepreneur songeur devant une balance qui compare une boutique en ligne à un coffre de pièces et une boutique avec caisse et horloge" : "Thoughtful entrepreneur facing a scale that weighs an online store against a coin chest and a shop with a cash register and clock"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "two-different-philosophies", label: isEn ? "Two different philosophies" : "Deux philosophies différentes" }, { id: "the-real-cost-over-3-years", label: isEn ? "The real cost over 3 years" : "Le coût réel sur 3 ans" }, { id: "control-ownership-and-flexibility", label: isEn ? "Control, ownership and flexibility" : "Contrôle, propriété et flexibilité" }, { id: "when-to-choose-shopify", label: isEn ? "When to choose Shopify" : "Quand choisir Shopify" }, { id: "when-to-choose-woocommerce-and-when-to-look-at-s", label: isEn ? "When to choose WooCommerce (and when to look at Shopware)" : "Quand choisir WooCommerce (et quand regarder Shopware)" }, { id: "frequently-asked-questions-about-woocommerce-and", label: isEn ? "Frequently asked questions about WooCommerce and Shopify" : "Questions fréquentes sur WooCommerce et Shopify" }]} />
+        </div>
+
+        <h2 id="two-different-philosophies" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Two different philosophies" : "Deux philosophies différentes"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
@@ -127,7 +142,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "WooCommerce est un plugin WordPress open source gratuit : il transforme votre site en boutique et vous laisse le contrôle absolu du code, des données et de l'hébergement. Shopify est une plateforme fermée à abonnement : il vous donne tout prêt à l'emploi — hébergement, sécurité, maintenance — en échange d'opérer dans son écosystème et ses règles. L'un priorise la propriété et la flexibilité ; l'autre, l'immédiateté et le confort."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="the-real-cost-over-3-years" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "The real cost over 3 years" : "Le coût réel sur 3 ans"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
@@ -136,7 +151,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "C'est là que la décision devient concrète. Prenons une boutique qui réalise 80 000 € de chiffre d'affaires annuel. Sur Shopify, son plan de base applique environ 2 % de commission par vente si vous n'utilisez pas sa propre passerelle de paiement : ce sont environ 1 600 € par an rien qu'en commissions, plus l'abonnement mensuel de la plateforme. Sur trois ans, ces commissions totalisent environ 4 800 € qui n'existent tout simplement pas sur WooCommerce. WooCommerce a des coûts d'hébergement, de domaine et de développement, mais ne facture pas d'abonnement de plateforme ni de pourcentage par vente. Plus votre chiffre d'affaires est élevé, plus l'écart est en faveur de WooCommerce."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="control-ownership-and-flexibility" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Control, ownership and flexibility" : "Contrôle, propriété et flexibilité"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
@@ -164,7 +179,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </Link>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="when-to-choose-shopify" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "When to choose Shopify" : "Quand choisir Shopify"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
@@ -173,7 +188,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Shopify a du sens quand vous avez besoin de lancer rapidement, que vous ne voulez pas vous soucier de la partie technique et que votre chiffre d'affaires est encore modeste — là où les commissions pèsent peu en termes absolus. C'est une bonne option pour valider une idée, pour ceux qui démarrent sans équipe technique ou pour les entreprises qui valorisent le confort au-dessus du contrôle. La contrepartie arrive quand vous grandissez : les commissions s'adaptent à vos ventes et la dépendance à la plateforme se fait ressentir."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="when-to-choose-woocommerce-and-when-to-look-at-s" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "When to choose WooCommerce (and when to look at Shopware)" : "Quand choisir WooCommerce (et quand regarder Shopware)"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
@@ -209,7 +224,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions-about-woocommerce-and" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions about WooCommerce and Shopify" : "Questions fréquentes sur WooCommerce et Shopify"}
         </h2>
         <div className="space-y-3 mb-8">

@@ -7,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -41,8 +42,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Most new businesses make the same digital mistakes. This guide identifies the 5 most costly and explains how to avoid them from the very start." : "La plupart des nouvelles entreprises font les mêmes erreurs digitales. Ce guide identifie les 5 plus coûteuses et explique comment les éviter dès le début."}
         </p>
 
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "not-having-a-professional-website-from-day-one", label: isEn ? "Not having a professional website from day one" : "Ne pas avoir un site web professionnel dès le premier jour" }, { id: "ignoring-seo-and-local-search", label: isEn ? "Ignoring SEO and local search" : "Ignorer le SEO et la recherche locale" }, { id: "not-setting-up-tracking-and-analytics", label: isEn ? "Not setting up tracking and analytics" : "Ne pas configurer le suivi et les analytics" }, { id: "trying-to-be-on-every-social-platform", label: isEn ? "Trying to be on every social platform" : "Essayer d'être sur chaque plateforme sociale" }, { id: "not-having-a-clear-digital-strategy-before-spend", label: isEn ? "Not having a clear digital strategy before spending" : "Ne pas avoir de stratégie digitale claire avant de dépenser" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="not-having-a-professional-website-from-day-one" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Not having a professional website from day one" : "Ne pas avoir un site web professionnel dès le premier jour"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -61,7 +66,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="ignoring-seo-and-local-search" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Ignoring SEO and local search" : "Ignorer le SEO et la recherche locale"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -80,7 +85,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="not-setting-up-tracking-and-analytics" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Not setting up tracking and analytics" : "Ne pas configurer le suivi et les analytics"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -92,7 +97,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="trying-to-be-on-every-social-platform" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Trying to be on every social platform" : "Essayer d'être sur chaque plateforme sociale"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -104,7 +109,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="not-having-a-clear-digital-strategy-before-spend" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Not having a clear digital strategy before spending" : "Ne pas avoir de stratégie digitale claire avant de dépenser"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

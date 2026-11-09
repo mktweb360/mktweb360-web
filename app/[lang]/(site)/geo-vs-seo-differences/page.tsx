@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { ContactForm } from "@/components/ContactForm";
@@ -7,6 +8,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -28,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         ? "GEO vs SEO: the key differences between ranking in Google and being cited by ChatGPT, Perplexity and Gemini, and how to prioritise both by business type."
         : "GEO vs SEO : ce qui distingue le référencement sur Google de la citation par ChatGPT, Perplexity et Gemini, et comment prioriser les deux selon votre secteur.",
       url: `https://www.mktweb360.com/${lang}/geo-vs-seo-differences/`,
-      images: [{ url: "https://www.mktweb360.com/og-geo-vs-seo-diferencias.jpg", width: 1200, height: 630 }],
+      images: [{ url: "https://www.mktweb360.com/og-geo-vs-seo-diferencias-v2.jpg", width: 1200, height: 630 }],
     },
   };
 }
@@ -55,7 +57,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
     },
     datePublished: "2026-06-13",
     dateModified: "2026-06-23",
-    image: "https://www.mktweb360.com/og-geo-vs-seo-diferencias.jpg",
+    image: "https://www.mktweb360.com/og-geo-vs-seo-diferencias-v2.jpg",
     url: `https://www.mktweb360.com/${lang}/geo-vs-seo-differences/`,
     mainEntityOfPage: { "@type": "WebPage", "@id": `https://www.mktweb360.com/${lang}/geo-vs-seo-differences/` },
   };
@@ -133,7 +135,28 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           )}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <Image
+          src="/og-geo-vs-seo-diferencias-v2.jpg"
+          alt={!isEn ? "Commerce local à la croisée des chemins entre un moteur de recherche classique et un assistant d’intelligence artificielle" : "Local business at the crossroads between a classic search engine and an artificial intelligence assistant"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={8} items={[{ id: "what-traditional-seo-is-and-what-still-works", label: isEn
+            ? "What traditional SEO is and what still works"
+            : "Ce qu'est le SEO traditionnel et ce qui fonctionne encore" }, { id: "what-geo-is-and-how-ai-optimisation-works", label: isEn
+            ? "What GEO is and how AI optimisation works"
+            : "Ce qu'est le GEO et comment fonctionne l'optimisation pour les IA" }, { id: "the-key-differences-between-seo-and-geo", label: isEn ? "The key differences between SEO and GEO" : "Les différences clés entre SEO et GEO" }, { id: "why-you-need-both-seo-and-geo-as-an-integrated-s", label: isEn
+            ? "Why you need both: SEO and GEO as an integrated strategy"
+            : "Pourquoi vous avez besoin des deux : SEO et GEO comme stratégie intégrée" }, { id: "how-to-prioritise-seo-vs-geo-by-business-type", label: isEn
+            ? "How to prioritise SEO vs GEO by business type"
+            : "Comment prioriser SEO vs GEO selon le type d'entreprise" }]} />
+        </div>
+
+        <h2 id="what-traditional-seo-is-and-what-still-works" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "What traditional SEO is and what still works"
             : "Ce qu'est le SEO traditionnel et ce qui fonctionne encore"}
@@ -154,7 +177,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "En 2026, Google traite encore plus de 8,5 milliards de recherches par jour. La grande majorité de ces recherches se terminent encore par des clics vers des sites web dans les résultats organiques. Affirmer que « le SEO est mort avec l'IA » est prématuré — ce qui a changé, c'est le type de réponse que Google donne pour certaines requêtes informatives, pas le volume total de recherches."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="what-geo-is-and-how-ai-optimisation-works" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "What GEO is and how AI optimisation works"
             : "Ce qu'est le GEO et comment fonctionne l'optimisation pour les IA"}
@@ -194,7 +217,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Les signaux qui influencent le plus la visibilité GEO sont : les mentions dans les médias d'autorité (presse numérique, publications sectorielles), les backlinks depuis des sources à haute crédibilité, les données structurées bien implémentées sur le site web (Schema.org), la présence cohérente sur Wikipedia ou Wikidata pour les marques connues, et un contenu de qualité qui démontre une expertise réelle (E-E-A-T)."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="the-key-differences-between-seo-and-geo" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "The key differences between SEO and GEO" : "Les différences clés entre SEO et GEO"}
         </h2>
         {DIFFS.map(({ label, text }) => (
@@ -205,7 +228,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
         <BlogBanner variant="geo" lang={lang} />
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="why-you-need-both-seo-and-geo-as-an-integrated-s" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "Why you need both: SEO and GEO as an integrated strategy"
             : "Pourquoi vous avez besoin des deux : SEO et GEO comme stratégie intégrée"}
@@ -226,7 +249,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le principal effort supplémentaire que le GEO demande par rapport au SEO est la mise en avant de la construction de l'autorité de marque : avoir un point de vue clair et reconnaissable dans votre secteur, publier dans des médias externes en plus de votre propre blog, et s'assurer que les informations sur votre entreprise sont cohérentes et vérifiables dans de multiples sources externes."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="how-to-prioritise-seo-vs-geo-by-business-type" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn
             ? "How to prioritise SEO vs GEO by business type"
             : "Comment prioriser SEO vs GEO selon le type d'entreprise"}

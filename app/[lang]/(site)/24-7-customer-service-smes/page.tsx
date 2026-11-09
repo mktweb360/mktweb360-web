@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -88,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Chatbots" : "Chatbots"}
         </p>
 
-        <IntlArticleJsonLd lang={lang} slug="24-7-customer-service-smes" headline={isEn ? "24/7 Customer Service for SMEs Without Hiring" : "Service client 24h/24 pour PME sans recruter"} image="/og-chatgpt-para-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="24-7-customer-service-smes" headline={isEn ? "24/7 Customer Service for SMEs Without Hiring" : "Service client 24h/24 pour PME sans recruter"} image="/og-chatgpt-para-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "24/7 Customer Service for SMEs Without Hiring"
@@ -108,8 +110,33 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le client qui a une question à onze heures du soir n'attend pas demain — il va chez un concurrent. C'est la fuite silencieuse que beaucoup de PME ne mesurent même pas. Un chatbot bien pensé ferme cette porte sans que vous ayez à recruter quelqu'un pour le service de nuit."}
         </p>
 
+        <Image
+          src="/og-atencion-cliente-24-7-pymes-sin-contratar-personal-v2.jpg"
+          alt={!isEn ? "Propriétaire d’un commerce de quartier, la nuit, boutique fermée, qui répond à un message de client depuis son téléphone" : "Owner of a neighborhood business, at night with the shop closed, answering a customer’s message from his phone"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "the-real-cost-of-not-having-out-of-hours-support", label: isEn
+              ? "The real cost of not having out-of-hours support"
+              : "Le coût réel de l'absence de support en dehors des heures ouvrables" }, { id: "why-a-chatbot-is-different-from-live-chat-and-an", label: isEn
+              ? "Why a chatbot is different from live chat and an on-call phone line"
+              : "Pourquoi un chatbot est différent du live chat et de la permanence téléphonique" }, { id: "what-types-of-enquiry-a-chatbot-can-resolve-auto", label: isEn
+              ? "What types of enquiry a chatbot can resolve autonomously"
+              : "Quels types de demandes un chatbot peut résoudre de manière autonome" }, { id: "the-hybrid-model-chatbot-human", label: isEn
+              ? "The hybrid model: chatbot + human"
+              : "Le modèle hybride : chatbot + humain" }, { id: "how-much-real-saving-can-a-chatbot-generate", label: isEn
+              ? "How much real saving can a chatbot generate"
+              : "Quelle économie réelle un chatbot peut-il générer" }, { id: "what-to-expect-in-the-first-90-days", label: isEn
+              ? "What to expect in the first 90 days"
+              : "À quoi s'attendre dans les 90 premiers jours" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-real-cost-of-not-having-out-of-hours-support" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The real cost of not having out-of-hours support"
               : "Le coût réel de l'absence de support en dehors des heures ouvrables"}
@@ -127,7 +154,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="why-a-chatbot-is-different-from-live-chat-and-an" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Why a chatbot is different from live chat and an on-call phone line"
               : "Pourquoi un chatbot est différent du live chat et de la permanence téléphonique"}
@@ -145,7 +172,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-types-of-enquiry-a-chatbot-can-resolve-auto" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What types of enquiry a chatbot can resolve autonomously"
               : "Quels types de demandes un chatbot peut résoudre de manière autonome"}
@@ -165,7 +192,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-hybrid-model-chatbot-human" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The hybrid model: chatbot + human"
               : "Le modèle hybride : chatbot + humain"}
@@ -183,7 +210,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-much-real-saving-can-a-chatbot-generate" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How much real saving can a chatbot generate"
               : "Quelle économie réelle un chatbot peut-il générer"}
@@ -201,7 +228,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-to-expect-in-the-first-90-days" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What to expect in the first 90 days"
               : "À quoi s'attendre dans les 90 premiers jours"}
@@ -219,7 +246,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

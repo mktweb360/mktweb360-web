@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Qué es un chatbot para empresas",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "Un chatbot para empresas ya no es tecnología de grandes corporaciones. En 2026, las pymes españolas que automatizan su atención al cliente con IA reducen costes, captan más leads y venden más. Guía completa.",
     url: "https://www.mktweb360.com/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
+  image: "https://www.mktweb360.com/og-que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026-v2.jpg",
   url: "https://www.mktweb360.com/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/",
   mainEntityOfPage: "https://www.mktweb360.com/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/",
   inLanguage: "es-ES",
@@ -92,38 +94,50 @@ export default function ChatbotEmpresasPage() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Un chatbot para empresas ya no es cosa de grandes corporaciones. En 2026, las pymes que automatizan su atención al cliente con <Link href="/ia-aplicada-al-marketing/" className="text-accent-500 hover:underline">inteligencia artificial aplicada al marketing</Link> reducen costes, captan más leads y venden más. En esta guía te explicamos qué es realmente, qué niveles existen y por qué ya no puedes ignorarlo.
           </p>
+          <Image
+            src="/og-que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026-v2.jpg"
+            alt="Dueña de una tienda de barrio atendiendo a una clienta mientras un móvil en el mostrador muestra un chat con un asistente robot"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={7} items={[{"id": "por-que-el-chatbot-empresarial-ha-cambiado-en-lo", "label": "Por qué el chatbot empresarial ha cambiado en los últimos dos años"}, {"id": "que-tipos-de-chatbot-existen-para-empresas", "label": "Qué tipos de chatbot existen para empresas"}, {"id": "el-problema-del-chatbot-generico-que-todos-van-a", "label": "El problema del chatbot genérico que todos van a intentar venderte"}, {"id": "que-puede-automatizar-un-chatbot-para-tu-empresa", "label": "Qué puede automatizar un chatbot para tu empresa"}, {"id": "los-numeros-que-justifican-la-inversion", "label": "Los números que justifican la inversión"}, {"id": "cumplimiento-legal-lo-que-no-puedes-ignorar", "label": "Cumplimiento legal: lo que no puedes ignorar"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Durante años, "chatbot" fue sinónimo de aquellos formularios rígidos que solo entendían tres frases y frustraban a todo el que intentaba usarlos. Esa etapa terminó. Con más de 800 millones de personas usando ChatGPT cada semana, los usuarios ya están acostumbrados a conversar con una máquina que entiende lenguaje natural. Y esperan lo mismo cuando escriben a tu empresa.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el chatbot empresarial ha cambiado en los últimos dos años</h2>
+          <h2 id="por-que-el-chatbot-empresarial-ha-cambiado-en-lo" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el chatbot empresarial ha cambiado en los últimos dos años</h2>
           <p>El salto no es de grado, es de categoría. Los modelos de lenguaje han convertido a los chatbots en asistentes capaces de entender lo que quiere decir una persona aunque lo formule mal, con faltas de ortografía o de forma ambigua. Ya no hace falta que el cliente adivine la palabra clave exacta.</p>
           <p>El dato que mejor resume el cambio es el uso masivo de ChatGPT: 800 millones de usuarios semanales han normalizado la conversación con IA. Cuando una persona escribe a tu web, no espera un menú de botones, espera una respuesta. Esa expectativa es la que obliga a cualquier empresa a replantearse cómo atiende.</p>
           <p>Este cambio va de la mano de otra transformación más amplia: la forma en que la gente busca información. Si quieres entender el panorama completo, te recomendamos leer sobre <Link href="/geo-posicionamiento-ia/" className="text-accent-500 hover:underline">posicionamiento en respuestas de IA</Link>, porque atención y visibilidad son ya dos caras de la misma moneda.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué tipos de chatbot existen para empresas</h2>
+          <h2 id="que-tipos-de-chatbot-existen-para-empresas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué tipos de chatbot existen para empresas</h2>
           <p>No todos los chatbots hacen lo mismo. Conviene pensar en cuatro niveles de capacidad, cada uno con un coste y un valor distintos. El nivel 1 responde preguntas frecuentes: horarios, ubicación, precios. El nivel 2 conoce en profundidad tu negocio porque está entrenado con tu contenido y puede explicar servicios, matices y casos particulares.</p>
           <p>El nivel 3 es accionable: no solo informa, sino que ejecuta. Reserva una cita, registra un lead en el CRM o consulta el estado de un pedido. El nivel 4 va un paso más allá y recomienda: entiende lo que necesita el cliente y le orienta hacia el producto o servicio adecuado, como haría un buen comercial.</p>
           <p>Elegir el nivel correcto es una decisión de negocio, no técnica. Depende de qué consultas recibes y de qué quieres que resuelva sin intervención humana.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El problema del chatbot genérico que todos van a intentar venderte</h2>
+          <h2 id="el-problema-del-chatbot-generico-que-todos-van-a" className="text-2xl font-bold text-primary-600 scroll-mt-24">El problema del chatbot genérico que todos van a intentar venderte</h2>
           <p>En los próximos meses te van a ofrecer decenas de chatbots "con IA". La mayoría son la misma plataforma genérica con tu logo encima. Un chatbot genérico responde con información de internet o con lo que el proveedor decidió cargar, y eso se nota: da respuestas vagas, se equivoca en detalles de tu negocio y genera desconfianza.</p>
           <p>La diferencia real está en el entrenamiento. Un chatbot entrenado con tu contenido propio —tus servicios, tus condiciones, tu forma de trabajar— responde como lo haría alguien de tu equipo. Es la misma lógica que aplicamos cuando usamos <Link href="/chatgpt-para-marketing-digital/" className="text-accent-500 hover:underline">ChatGPT para marketing digital</Link>: la herramienta vale lo que vale el contexto que le das.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué puede automatizar un chatbot para tu empresa</h2>
+          <h2 id="que-puede-automatizar-un-chatbot-para-tu-empresa" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué puede automatizar un chatbot para tu empresa</h2>
           <p>Los casos de uso son más amplios de lo que la mayoría imagina. En atención al cliente, resuelve el grueso de consultas repetitivas que hoy consumen horas de tu equipo. En captación, cualifica y registra leads mientras tú duermes. En agenda, gestiona citas sin llamadas cruzadas.</p>
           <p>En ecommerce, atiende dudas de catálogo, informa del estado de un pedido y da soporte postventa. La clave es que cada una de estas tareas, bien automatizada, libera tiempo humano para lo que de verdad requiere una persona. Si quieres profundizar en cómo encaja esto en una estrategia más amplia, te interesará entender los <Link href="/agentes-ia-marketing-que-son-como-usarlos-en-tu-negocio/" className="text-accent-500 hover:underline">agentes de IA aplicados al marketing</Link>.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Los números que justifican la inversión</h2>
+          <h2 id="los-numeros-que-justifican-la-inversion" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los números que justifican la inversión</h2>
           <p>El argumento de fondo es sencillo: un chatbot bien implementado atiende un volumen de consultas que, hecho por personas, tendría un coste creciente. No sustituye al equipo, absorbe la repetición. Y lo hace las 24 horas, sin turnos ni esperas.</p>
           <p>Cuando cada consulta atendida a tiempo puede convertirse en una venta o un lead cualificado, el retorno no está solo en el ahorro de horas, sino en las oportunidades que hoy se pierden porque nadie respondió a tiempo. Ese es el cálculo que conviene hacer antes de descartarlo por precio.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cumplimiento legal: lo que no puedes ignorar</h2>
+          <h2 id="cumplimiento-legal-lo-que-no-puedes-ignorar" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cumplimiento legal: lo que no puedes ignorar</h2>
           <p>Aquí está la parte que casi nadie te va a contar cuando intente venderte un chatbot. El artículo 50 del Reglamento Europeo de Inteligencia Artificial (AI Act) entra en vigor en agosto de 2026 y establece obligaciones de transparencia concretas para los sistemas que interactúan con personas.</p>
           <p>En la práctica, tu chatbot debe cumplir cuatro elementos mínimos: informar de forma clara de que el usuario está hablando con una IA y no con una persona, hacerlo de manera comprensible, hacerlo en el momento de la interacción y respetar el tratamiento de datos del usuario. No es un detalle estético: es una obligación legal. Implementar un chatbot sin tener esto resuelto es exponerse a un riesgo innecesario.</p>
 
@@ -142,7 +156,7 @@ export default function ChatbotEmpresasPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

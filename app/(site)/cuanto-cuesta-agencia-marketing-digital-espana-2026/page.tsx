@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Cuánto cuesta una agencia de marketing digital",
   description:
@@ -101,15 +102,19 @@ export default function CuantoCuestaAgenciaPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "por-que-hay-tanta-diferencia-de-precio-entre-age", "label": "Por qué hay tanta diferencia de precio entre agencias"}, {"id": "precios-reales-por-servicio-en-espana-en-2026", "label": "Precios reales por servicio en España en 2026"}, {"id": "fee-de-gestion-e-inversion-publicitaria-no-son-l", "label": "Fee de gestión e inversión publicitaria: no son lo mismo"}, {"id": "cuando-tiene-sentido-contratar-una-agencia", "label": "Cuándo tiene sentido contratar una agencia"}, {"id": "senales-de-alarma-en-un-presupuesto", "label": "Señales de alarma en un presupuesto"}, {"id": "preguntas-frecuentes-sobre-precios-de-agencias", "label": "Preguntas frecuentes sobre precios de agencias"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Pedir presupuesto a tres agencias y recibir cifras que van de 300 € a 3.000 € al mes por lo que parece "lo mismo" desconcierta a cualquiera. La realidad es que rara vez es lo mismo: detrás de cada precio hay un alcance, un nivel de equipo y un modelo de trabajo distintos. Entender qué pagas en cada rango es la única forma de elegir bien.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué hay tanta diferencia de precio entre agencias</h2>
+          <h2 id="por-que-hay-tanta-diferencia-de-precio-entre-age" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué hay tanta diferencia de precio entre agencias</h2>
           <p>La horquilla de precios no responde al capricho, sino a tres variables: quién hace el trabajo, cuánto trabajo hay detrás y cómo gana dinero la agencia. Un servicio con perfiles senior, estrategia personalizada y reporting real cuesta más que uno que aplica plantillas y automatiza sin criterio. El precio bajo casi nunca es una ganga: suele significar menos horas, menos seniority o menos responsabilidad sobre los resultados.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Precios reales por servicio en España en 2026</h2>
+          <h2 id="precios-reales-por-servicio-en-espana-en-2026" className="text-2xl font-bold text-primary-600 scroll-mt-24">Precios reales por servicio en España en 2026</h2>
           <p>Estos son los rangos habituales para una pyme, por servicio y al mes. Sirven como referencia para situar cualquier presupuesto que te llegue:</p>
           <ul className="space-y-2">
             {["SEO local: entre 300 € y 600 € al mes", "SEO de crecimiento (nacional o competido): entre 600 € y 1.500 € al mes", "Gestión de Google Ads: entre 300 € y 1.000 € al mes (sin contar la inversión publicitaria)", "Gestión de redes sociales: desde 300 € a 800 € al mes en planes básicos", "Diseño web profesional: proyecto puntual, no cuota mensual, según alcance"].map((item) => (
@@ -121,7 +126,7 @@ export default function CuantoCuestaAgenciaPage() {
           </ul>
           <p>Nosotros no publicamos tarifas de SEO: preparamos un presupuesto a medida tras un diagnóstico gratuito. Qué hace variar ese presupuesto lo explicamos en <Link href="/precios-seo/" className="text-accent-500 hover:underline">cuánto cuesta el SEO</Link>, con una calculadora del tamaño de tu proyecto.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fee de gestión e inversión publicitaria: no son lo mismo</h2>
+          <h2 id="fee-de-gestion-e-inversion-publicitaria-no-son-l" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fee de gestión e inversión publicitaria: no son lo mismo</h2>
           <p>Es el malentendido más caro. En <Link href="/sem-publicidad-ppc/" className="text-accent-500 hover:underline">Google Ads</Link>, el fee de gestión es lo que cobra la agencia por planificar, montar y optimizar tus campañas; la inversión publicitaria es lo que pagas directamente a Google por cada clic. Son partidas independientes y deben aparecer separadas en cualquier presupuesto serio. Si una agencia mezcla ambos conceptos o se lleva un porcentaje opaco de tu inversión, tienes derecho a exigir claridad.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -132,12 +137,12 @@ export default function CuantoCuestaAgenciaPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuándo tiene sentido contratar una agencia</h2>
+          <h2 id="cuando-tiene-sentido-contratar-una-agencia" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuándo tiene sentido contratar una agencia</h2>
           <p>Una agencia aporta cuando ya tienes una base sobre la que construir: una web que convierte, una propuesta de valor clara y un proceso comercial capaz de atender los contactos que genere el marketing. Sin esa base, contratar captación es amplificar problemas: más visitas a una web que no convence solo significan más dinero desperdiciado. Por eso una buena agencia empieza por una <Link href="/consultor-seo/" className="text-accent-500 hover:underline">estrategia y un diagnóstico</Link>, no por venderte un paquete.</p>
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Señales de alarma en un presupuesto</h2>
+          <h2 id="senales-de-alarma-en-un-presupuesto" className="text-2xl font-bold text-primary-600 scroll-mt-24">Señales de alarma en un presupuesto</h2>
           <p>Hay banderas rojas que conviene reconocer antes de firmar. Promesas de "primera posición garantizada en Google" (nadie puede garantizarlas). Precios sospechosamente bajos que esconden trabajo automatizado. Ausencia de informes o métricas claras. Y la más importante: que no puedas calcular el retorno. El dato es revelador —según Esconzeta (2026), el 68% de las pymes con agencia no son capaces de medir el ROI de su inversión—. Si no sabes qué te genera lo que pagas, ese es el verdadero problema, no la cifra del presupuesto.</p>
 
           <p className="text-sm text-gray-500">
@@ -159,7 +164,7 @@ export default function CuantoCuestaAgenciaPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre precios de agencias</h2>
+          <h2 id="preguntas-frecuentes-sobre-precios-de-agencias" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre precios de agencias</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

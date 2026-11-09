@@ -8,6 +8,7 @@ import { alternatesFor, ROUTES, urlFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 28/10/2026 — EN/FR reescritas con el contenido de /auditoria-seo-basica/ (checklist de 30 puntos).
 // Misma carpeta y slug para los dos idiomas (basic-seo-audit), como antes.
 
@@ -369,7 +370,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {h.intro1} <strong>{h.intro2}</strong> {h.intro3} <strong>{h.pass}</strong>, <strong>{h.fail}</strong>, <strong>{h.unknown}</strong> {isEn ? "or" : "ou"} <strong>{h.na}</strong>. {h.intro4}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.resumen}</h2>
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={9} items={[{ id: "summary", label: h.resumen }, { id: "before", label: h.antes }, { id: "scoring", label: h.anotar }, { id: "prioritise", label: h.priorizar }, { id: "repeat", label: h.repetir }, { id: "professional", label: h.pro }, { id: "faq", label: h.faq }]} />
+        </div>
+
+          <h2 id="summary" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.resumen}</h2>
           <ul className="space-y-3">
             {resumen.map((item, i) => (
               <li key={i} className="flex items-start gap-3 p-4 border border-gray-200 rounded-xl">
@@ -379,17 +384,17 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.antes}</h2>
+          <h2 id="before" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.antes}</h2>
           <Tabla cabecera={h.antesCab} filas={herramientas} />
           <p>{h.antesNota}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.anotar}</h2>
+          <h2 id="scoring" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.anotar}</h2>
           <p>{h.anotarTxt}</p>
           <Tabla cabecera={h.anotarCab} filas={estados} />
 
           {bloques.map((bloque, b) => (
             <section key={bloque.titulo} className="space-y-4">
-              <h2 className="text-2xl font-bold text-primary-600">{bloque.titulo}</h2>
+              <h2 id={`block-${b + 1}`} className="text-2xl font-bold text-primary-600 scroll-mt-24">{bloque.titulo}</h2>
               <p>{bloque.intro}</p>
               <ol className="space-y-3">
                 {bloque.puntos.map((punto, i) => (
@@ -404,17 +409,17 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </section>
           ))}
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.priorizar}</h2>
+          <h2 id="prioritise" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.priorizar}</h2>
           <p>{h.priorizarTxt}</p>
           <Tabla cabecera={h.priorizarCab} filas={prioridades} />
           <p>{h.priorizarNota}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.repetir}</h2>
+          <h2 id="repeat" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.repetir}</h2>
           <p>
             {h.repetirTxt} {h.repetirLink1} <Link href={plazos} className={a}>{h.repetirLink1b}</Link>. {h.repetirLink2} <Link href={pymes} className={a}>{h.repetirLink2b}</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.pro}</h2>
+          <h2 id="professional" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.pro}</h2>
           <p>{h.proTxt}</p>
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">{h.ctaT}</p>
@@ -424,7 +429,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <Link href={href(lang, "/auditoria-digital/")} className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">{h.ctaB}</Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.faq}</h2>
+          <h2 id="faq" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.faq}</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -437,7 +442,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.fuentes}</h2>
+          <h2 id="sources" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.fuentes}</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

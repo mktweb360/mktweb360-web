@@ -8,6 +8,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 04/11/2026 — EN/FR del artículo /anuncios-chatgpt-ads-espana/ (tema 9). La versión FR vive en
 // ../publicite-chatgpt-ads-espagne/ y reexporta esta página. Datos de OpenAI comprobados el 28/10/2026.
 
@@ -475,24 +476,28 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>{c.answer}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.hSummary}</h2>
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={14} items={[{ id: "summary", label: c.hSummary }, { id: "what", label: c.hWhat }, { id: "target", label: c.hTarget }, { id: "cost", label: c.hCost }, { id: "vs", label: c.hVs }, { id: "questions", label: c.hQuestions }, { id: "plan", label: c.hPlan }, { id: "web", label: c.hWeb }, { id: "faq", label: c.hFaq }, { id: "sources", label: c.hSources }]} />
+        </div>
+
+          <h2 id="summary" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.hSummary}</h2>
           <Lista items={c.summary} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.hWhat}</h2>
+          <h2 id="what" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.hWhat}</h2>
           <p>{c.what1}</p>
           <p>{c.what2}</p>
           <p>{c.whoIntro}</p>
           <Lista items={c.whoNot} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.hTarget}</h2>
+          <h2 id="target" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.hTarget}</h2>
           <p>{c.target1}</p>
           <Tabla cabecera={c.signalsHead} filas={c.signals} />
           <p>{c.target2}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.hCost}</h2>
+          <h2 id="cost" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.hCost}</h2>
           <p>{c.cost}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.hVs}</h2>
+          <h2 id="vs" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.hVs}</h2>
           <p>{c.vs1}</p>
           <Tabla cabecera={c.vsHead} filas={c.vs} />
           <p>
@@ -505,10 +510,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
           <BlogBanner variant="geo" lang={l} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.hQuestions}</h2>
+          <h2 id="questions" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.hQuestions}</h2>
           <Lista items={c.questions} numerada />
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.hPlan}</h2>
+          <h2 id="plan" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.hPlan}</h2>
           <p>{c.plan1}</p>
           <Tabla cabecera={c.planHead} filas={c.plan} />
           <p>{c.utmIntro}</p>
@@ -522,7 +527,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             )}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.hWeb}</h2>
+          <h2 id="web" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.hWeb}</h2>
           <Lista items={c.web} />
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -533,7 +538,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.hFaq}</h2>
+          <h2 id="faq" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.hFaq}</h2>
           <div className="space-y-3">
             {faqs.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -546,7 +551,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.hSources}</h2>
+          <h2 id="sources" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.hSources}</h2>
           <p className="text-sm text-gray-500">{c.consulted}</p>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {FUENTES.map((f) => (

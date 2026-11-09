@@ -11,6 +11,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web para empresas de reformas: 5 claves",
   description:
@@ -111,6 +112,10 @@ export default function FactoresWebConstruccionPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "1-presupuesto-por-escrito-desglosado-no-es-solo", "label": "1. Presupuesto por escrito, desglosado — no es solo buena práctica"}, {"id": "2-loe-identificar-quien-hace-que-y-con-que-garan", "label": "2. LOE: identificar quién hace qué y con qué garantías"}, {"id": "3-antes-despues-visual-la-prueba-social-que-de-v", "label": "3. Antes/después visual — la prueba social que de verdad convence"}, {"id": "4-seo-local-y-zona-de-servicio-real", "label": "4. SEO local y zona de servicio real"}, {"id": "5-formulario-de-presupuesto-que-cualifica-no-sol", "label": "5. Formulario de presupuesto que cualifica, no solo capta"}, {"id": "tu-web-trabaja-aunque-estes-en-obra", "label": "Tu web trabaja aunque estés en obra"}, {"id": "preguntas-frecuentes-sobre-la-web-de-una-empresa", "label": "Preguntas frecuentes sobre la web de una empresa de reformas"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             La web de una empresa seria de este sector tiene que resolver esa desconfianza antes de que el cliente descuelgue el teléfono. Estos son los cinco factores que marcan la diferencia.
@@ -118,12 +123,12 @@ export default function FactoresWebConstruccionPage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.reformas} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Presupuesto por escrito, desglosado — no es solo buena práctica</h2>
+          <h2 id="1-presupuesto-por-escrito-desglosado-no-es-solo" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Presupuesto por escrito, desglosado — no es solo buena práctica</h2>
           <p>
             Un presupuesto verbal o genérico es la principal fuente de conflicto del sector. Además de ser lo que espera cualquier cliente informado, un presupuesto desglosado por conceptos (materiales, mano de obra) es lo que exige la normativa fiscal para poder aplicar el IVA reducido del 10% en reformas de vivienda particular (art. 91.Uno.2 de la Ley 37/1992 del IVA), cuando la vivienda tiene más de dos años y los materiales no superan el 40% del coste total. La web debería facilitar precisamente ese primer paso: un formulario que pida los datos necesarios para generar un presupuesto real, no una estimación al aire.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. LOE: identificar quién hace qué y con qué garantías</h2>
+          <h2 id="2-loe-identificar-quien-hace-que-y-con-que-garan" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. LOE: identificar quién hace qué y con qué garantías</h2>
           <p>
             La Ley de Ordenación de la Edificación (Ley 38/1999) regula las obligaciones y responsabilidades de cada agente que interviene en una obra — promotor, proyectista, constructor, dirección de obra — y aplica a toda reforma que altere la configuración del edificio (estructura, volumetría, distribución esencial). Una web que muestra con claridad quién ejecuta la obra, qué seguro de responsabilidad civil tiene la empresa y qué garantías cubre cada tipo de intervención transmite justo la seriedad que el sector necesita para vencer la desconfianza inicial.
           </p>
@@ -136,7 +141,7 @@ export default function FactoresWebConstruccionPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Antes/después visual — la prueba social que de verdad convence</h2>
+          <h2 id="3-antes-despues-visual-la-prueba-social-que-de-v" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Antes/después visual — la prueba social que de verdad convence</h2>
           <p>
             En un sector donde la palabra vale poco sin evidencia, mostrar el resultado real de obras anteriores —comparativas de antes y después, fotos verificables, no renders— es el elemento que más pesa en la decisión del cliente. Un comparador interactivo (arrastrable) en la propia web permite que el visitante compruebe la calidad del trabajo sin tener que pedir referencias por teléfono.
           </p>
@@ -144,19 +149,19 @@ export default function FactoresWebConstruccionPage() {
           <OfferBannerWebSeo />
       <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">4. SEO local y zona de servicio real</h2>
+          <h2 id="4-seo-local-y-zona-de-servicio-real" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. SEO local y zona de servicio real</h2>
           <p>
             La reforma es un servicio de proximidad — nadie contrata una empresa de reformas a 200 km. La web necesita páginas o secciones claras por zona de servicio y una ficha de Google Business Profile con el área de cobertura bien configurada, para aparecer cuando alguien busca "reformas de cocina" en su ciudad, no solo en el nombre genérico de la empresa.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Formulario de presupuesto que cualifica, no solo capta</h2>
+          <h2 id="5-formulario-de-presupuesto-que-cualifica-no-sol" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Formulario de presupuesto que cualifica, no solo capta</h2>
           <p>
             Pedir el tipo de obra, los metros aproximados y el plazo deseado directamente en el formulario evita visitas o llamadas para proyectos que no encajan, y permite responder con un rango de precio orientativo mucho más rápido. Menos fricción para el cliente serio, menos tiempo perdido para el equipo comercial.
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque estés en obra</h2>
+              <h2 id="tu-web-trabaja-aunque-estes-en-obra" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja aunque estés en obra</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras estás en obra o cerrando un presupuesto en persona, tu web sigue abierta. Alguien que busca "empresa de reformas" un domingo por la noche encuentra tu portfolio de antes/después, ve tus garantías y rellena el formulario — sin que tengas que estar disponible para atenderlo en ese momento.
               </p>
@@ -191,7 +196,7 @@ export default function FactoresWebConstruccionPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de una empresa de reformas</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-una-empresa" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de una empresa de reformas</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

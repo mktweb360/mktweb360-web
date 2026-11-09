@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "SEO para servicios urgentes 24 horas",
   description: "Cómo posicionar servicios urgentes 24 horas en Google. Estrategias SEO específicas para cerrajeros, fontaneros, electricistas y otros servicios de urgencia.",
@@ -64,12 +65,16 @@ export default function SeoServiciosUrgentesPage() {
             priority
           />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={4} items={[{"id": "por-que-el-seo-es-critico-para-servicios-urgente", "label": "¿Por qué el SEO es crítico para servicios urgentes?"}, {"id": "palabras-clave-para-servicios-urgentes", "label": "Palabras clave para servicios urgentes"}, {"id": "estrategias-seo-clave-para-urgencias", "label": "Estrategias SEO clave para urgencias"}, {"id": "conclusion", "label": "Conclusión"}]} />
+        </div>
         <div className="text-gray-700 space-y-6 leading-relaxed">
-          <h2 className="text-2xl font-bold text-primary-600">¿Por qué el SEO es crítico para servicios urgentes?</h2>
+          <h2 id="por-que-el-seo-es-critico-para-servicios-urgente" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Por qué el SEO es crítico para servicios urgentes?</h2>
           <p>Cuando alguien tiene una emergencia — una tubería rota, una cerradura bloqueada o un cortocircuito — lo primero que hace es buscar en Google. La búsqueda es inmediata, la intención de compra es máxima y la decisión se toma en segundos.</p>
           <p>El que aparece en <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">primeras posiciones</Link> en ese momento se lleva el cliente. No hay tiempo para comparar mucho: si estás arriba y tienes buenas reseñas, el teléfono suena.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Palabras clave para servicios urgentes</h2>
+          <h2 id="palabras-clave-para-servicios-urgentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Palabras clave para servicios urgentes</h2>
           <p>La clave está en combinar el tipo de servicio con la urgencia y la localización:</p>
           <ul className="list-disc pl-6 space-y-1">
             <li>cerrajero urgente [ciudad]</li>
@@ -80,7 +85,7 @@ export default function SeoServiciosUrgentesPage() {
           </ul>
           <p>Estas búsquedas tienen un volumen menor que las genéricas, pero su conversión es altísima. Un usuario que busca &ldquo;cerrajero urgente Madrid ahora&rdquo; va a llamar al primero que aparezca y tenga buenas valoraciones.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Estrategias SEO clave para urgencias</h2>
+          <h2 id="estrategias-seo-clave-para-urgencias" className="text-2xl font-bold text-primary-600 scroll-mt-24">Estrategias SEO clave para urgencias</h2>
 
           <h3 className="text-xl font-semibold text-primary-700">1. Google Business Profile optimizado</h3>
           <p>Para servicios locales urgentes, el Pack Local de Google (el mapa con los 3 resultados destacados) es el objetivo principal. Necesitas tu ficha de <Link href="/google-business-profile/" className="text-accent-500 hover:underline">Google Business Profile</Link> completa, con horario 24h si es el caso, fotos reales y respuestas a todas las reseñas.</p>
@@ -100,7 +105,7 @@ export default function SeoServiciosUrgentesPage() {
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Conclusión</h2>
+          <h2 id="conclusion" className="text-2xl font-bold text-primary-600 scroll-mt-24">Conclusión</h2>
           <p>El SEO para servicios urgentes es una de las inversiones más rentables que puede hacer un negocio de este tipo. Una buena posición en Google significa el teléfono sonando constantemente, las 24 horas del día.</p>
           <p>La clave está en trabajar tanto el Pack Local de Google con una ficha de GBP optimizada y con muchas reseñas positivas, como el SEO orgánico con páginas de servicio por zona y contenido relevante. Y siempre con un número de teléfono bien visible para facilitar la conversión.</p>
 

@@ -7,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -52,7 +53,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Tous les leads ne se valent pas. Un entonnoir rempli de contacts non qualifiés gaspille du temps et des ressources. Ce guide explique comment attirer des leads qui se transforment réellement en clients."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "why-most-smes-struggle-with-lead-quality", label: isEn ? "Why most SMEs struggle with lead quality" : "Pourquoi la plupart des PME ont du mal avec la qualité des leads" }, { id: "how-to-define-your-ideal-customer-profile", label: isEn ? "How to define your ideal customer profile" : "Comment définir votre profil de client idéal" }, { id: "which-channels-generate-the-best-quality-leads", label: isEn ? "Which channels generate the best quality leads" : "Quels canaux génèrent les leads de meilleure qualité" }, { id: "how-your-website-affects-lead-quality", label: isEn ? "How your website affects lead quality" : "Comment votre site web affecte la qualité des leads" }, { id: "lead-qualification-separating-real-opportunities", label: isEn ? "Lead qualification: separating real opportunities from noise" : "Qualification des leads : séparer les vraies opportunités du bruit" }]} />
+        </div>
+
+        <h2 id="why-most-smes-struggle-with-lead-quality" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Why most SMEs struggle with lead quality" : "Pourquoi la plupart des PME ont du mal avec la qualité des leads"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -66,7 +71,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La solution n'est pas de générer moins de leads — c'est d'attirer les bons. Cela nécessite une proposition de valeur plus claire, des canaux mieux ciblés et un site web conçu pour pré-qualifier les visiteurs avant qu'ils soumettent un formulaire."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="how-to-define-your-ideal-customer-profile" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "How to define your ideal customer profile" : "Comment définir votre profil de client idéal"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -80,7 +85,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Une fois que vous avez votre ICP, chaque décision — ciblage publicitaire, sujets de contenu, texte du site web, champs de formulaire de contact — doit être optimisée pour attirer ce profil et implicitement décourager ceux qui ne correspondent pas. Un message ciblé repousse les mauvais leads et attire les bons."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="which-channels-generate-the-best-quality-leads" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Which channels generate the best quality leads" : "Quels canaux génèrent les leads de meilleure qualité"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -94,7 +99,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Les canaux qui génèrent généralement des leads de moindre qualité : les publicités sur les réseaux sociaux larges sans ciblage précis, les lead magnets à faible barrière (guides gratuits qui attirent des personnes qui veulent des informations, pas des services) et la prospection à froid à grande échelle."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="how-your-website-affects-lead-quality" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "How your website affects lead quality" : "Comment votre site web affecte la qualité des leads"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">
@@ -103,7 +108,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Votre site web pré-qualifie ou disqualifie les leads avant qu'ils vous contactent. Des tarifs clairs (même approximatifs) découragent ceux avec des budgets inadaptés. Des études de cas spécifiques dans votre secteur cible attirent des entreprises similaires. Un formulaire de contact qui demande le budget et le délai pré-qualifie l'intention — et un formulaire qui ne demande que le nom et l'email fait l'inverse."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-10 mb-4">
+        <h2 id="lead-qualification-separating-real-opportunities" className="text-2xl font-bold text-primary-600 mt-10 mb-4 scroll-mt-24">
           {isEn ? "Lead qualification: separating real opportunities from noise" : "Qualification des leads : séparer les vraies opportunités du bruit"}
         </h2>
         <p className="text-gray-600 leading-relaxed mb-4">

@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Qué revisar antes de invertir en marketing",
   description:
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     description: "Antes de invertir más en marketing digital, revisa estas áreas clave para no amplificar errores y tomar mejores decisiones.",
     url: "https://www.mktweb360.com/que-revisar-antes-de-invertir-mas-en-marketing-digital/",
     type: "article",
-    images: [{ url: "/og-que-revisar-antes-de-invertir-en-marketing.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-que-revisar-antes-de-invertir-mas-en-marketing-digital-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -35,7 +36,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/que-revisar-antes-de-invertir-mas-en-marketing-digital/",
   mainEntityOfPage: "https://www.mktweb360.com/que-revisar-antes-de-invertir-mas-en-marketing-digital/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-que-revisar-antes-de-invertir-en-marketing.jpg",
+  image: "https://www.mktweb360.com/og-que-revisar-antes-de-invertir-mas-en-marketing-digital-v2.jpg",
 };
 
 const FAQS = [
@@ -103,7 +104,7 @@ export default function QueRevisarPage() {
             Invertir más en marketing sin revisar la base no acelera los resultados — amplifica los errores. Este artículo te ayuda a identificar qué revisar antes de activar más acciones.
           </p>
           <Image
-            src="/og-que-revisar-antes-de-invertir-en-marketing.jpg"
+            src="/og-que-revisar-antes-de-invertir-mas-en-marketing-digital-v2.jpg"
             alt="Qué revisar antes de invertir más en marketing digital en 2025"
             width={1200}
             height={630}
@@ -111,6 +112,10 @@ export default function QueRevisarPage() {
             priority
           />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "las-areas-que-conviene-auditar-primero", "label": "Las áreas que conviene auditar primero"}, {"id": "senales-de-que-se-esta-invirtiendo-sin-base-sufi", "label": "Señales de que se está invirtiendo sin base suficiente"}, {"id": "que-errores-se-repiten", "label": "Qué errores se repiten"}, {"id": "que-revisar-antes-de-escalar", "label": "Qué revisar antes de escalar"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
@@ -120,7 +125,7 @@ export default function QueRevisarPage() {
             El marketing digital funciona como un amplificador. Si lo que tienes es bueno, lo amplifica. Si tiene fallos, los amplifica también. Por eso conviene revisar estas áreas antes de escalar: es más barato corregir la base que pagar más tráfico que no convierte.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Las áreas que conviene auditar primero</h2>
+          <h2 id="las-areas-que-conviene-auditar-primero" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las áreas que conviene auditar primero</h2>
           <p>La propuesta de valor y el mensaje, la web y su capacidad de conversión, el SEO, las campañas activas o previstas, la medición, el embudo comercial y la alineación entre marketing y negocio son las capas que más suelen explicar el bajo rendimiento. Si una o varias de estas piezas fallan, aumentar inversión rara vez corrige el problema principal. Puedes hacer esta revisión por tu cuenta con la lista de abajo o pedir una <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría gratuita de tu web, tu SEO y tu ficha de Google</Link> para tener una primera foto sin coste.</p>
           <ul className="space-y-2">
             {["Propuesta de valor y claridad del mensaje", "Web, estructura de páginas y confianza", "SEO, indexación y páginas con intención", "Campañas, segmentación y calidad del tráfico", "Analítica, medición y seguimiento comercial"].map((item) => (
@@ -139,10 +144,10 @@ export default function QueRevisarPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Señales de que se está invirtiendo sin base suficiente</h2>
+          <h2 id="senales-de-que-se-esta-invirtiendo-sin-base-sufi" className="text-2xl font-bold text-primary-600 scroll-mt-24">Señales de que se está invirtiendo sin base suficiente</h2>
           <p>Hay varios síntomas recurrentes: tráfico que no convierte, campañas con métricas de actividad pero poco negocio, falta de claridad sobre qué canal funciona mejor, leads que no se atienden bien y decisiones tomadas con prisa o intuición. Cuando ocurre esto, la prioridad no es meter más presupuesto, sino entender qué está rompiendo el sistema. Y para eso hace falta medir bien: si no sabes qué canal te trae los contactos que acaban siendo clientes, empieza por una <Link href="/analitica-web/" className="text-accent-500 hover:underline">analítica web con GA4 y conversiones bien configuradas</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué errores se repiten</h2>
+          <h2 id="que-errores-se-repiten" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué errores se repiten</h2>
           <p>Pensar que el problema es solo de tráfico, no revisar la web antes de escalar campañas, querer hacerlo todo a la vez y medir solo clics o leads sin conectarlos con valor real son errores muy frecuentes. También es habitual invertir en canales sin haber definido bien la propuesta de valor ni el proceso comercial posterior.</p>
 
           <BlogBanner
@@ -155,7 +160,7 @@ export default function QueRevisarPage() {
             secondary={{ text: "¿No sabes de dónde vienen tus clientes? Mira el servicio de analítica web", href: "/analitica-web/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué revisar antes de escalar</h2>
+          <h2 id="que-revisar-antes-de-escalar" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué revisar antes de escalar</h2>
           <p>Antes de subir presupuesto, conviene revisar si la web convierte, si el mensaje es claro para el cliente correcto, si el SEO base está resuelto, si las campañas tienen datos suficientes para optimizar y si el equipo comercial puede absorber más demanda con criterio. Escalar sobre una base débil amplifica los problemas, no los resuelve.</p>
 
           <p className="text-sm text-gray-500">
@@ -177,7 +182,7 @@ export default function QueRevisarPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

@@ -10,6 +10,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web para clínicas dentales: 5 factores clave",
   description:
@@ -110,6 +111,10 @@ export default function FactoresWebClinicasDentalesPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "1-publicidad-sanitaria-conforme-al-rd-1907-1996", "label": "1. Publicidad sanitaria conforme al RD 1907/1996"}, {"id": "2-datos-de-salud-protegidos-rgpd-reforzado", "label": "2. Datos de salud protegidos: RGPD reforzado"}, {"id": "3-reserva-de-cita-online-sin-llamar", "label": "3. Reserva de cita online sin llamar"}, {"id": "4-identificacion-profesional-nombre-y-numero-de", "label": "4. Identificación profesional: nombre y número de colegiado"}, {"id": "5-transparencia-de-precios-y-financiacion-de-tra", "label": "5. Transparencia de precios y financiación de tratamientos"}, {"id": "tu-web-trabaja-aunque-la-clinica-este-a-tope-de", "label": "Tu web trabaja aunque la clínica esté a tope de agenda"}, {"id": "preguntas-frecuentes-sobre-la-web-de-una-clinica", "label": "Preguntas frecuentes sobre la web de una clínica dental"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Entre la normativa de publicidad sanitaria, la protección de datos de salud y las expectativas de un paciente que compara varias clínicas antes de decidir, la web de una clínica dental tiene que cumplir mucho más que otras webs de servicios. Estos son los cinco factores que determinan si capta pacientes o genera desconfianza.
@@ -117,12 +122,12 @@ export default function FactoresWebClinicasDentalesPage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.clinica} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Publicidad sanitaria conforme al RD 1907/1996</h2>
+          <h2 id="1-publicidad-sanitaria-conforme-al-rd-1907-1996" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Publicidad sanitaria conforme al RD 1907/1996</h2>
           <p>
             El Real Decreto 1907/1996 regula la publicidad de productos, actividades o servicios con pretendida finalidad sanitaria. Exige que la publicidad se ajuste a criterios de transparencia, exactitud y veracidad, y prohíbe expresamente prometer resultados garantizados, utilizar testimonios de famosos o presentar como gratuitos actos clínicos que no lo son. Una web que promete "sonrisa perfecta garantizada" no solo exagera — incumple la norma.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. Datos de salud protegidos: RGPD reforzado</h2>
+          <h2 id="2-datos-de-salud-protegidos-rgpd-reforzado" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. Datos de salud protegidos: RGPD reforzado</h2>
           <p>
             Los datos que un paciente introduce en un formulario de contacto o de primera consulta —motivo de consulta, historial, fotografías clínicas— son datos de categoría especial según el artículo 9 del RGPD, con un nivel de protección superior al de un dato de contacto habitual. El tratamiento indebido puede acarrear sanciones de hasta 20 millones de euros o el 4% de la facturación anual global. Un formulario sin cifrado, sin política de privacidad clara o sin base legal explícita es un riesgo real, no teórico.
           </p>
@@ -135,26 +140,26 @@ export default function FactoresWebClinicasDentalesPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Reserva de cita online sin llamar</h2>
+          <h2 id="3-reserva-de-cita-online-sin-llamar" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Reserva de cita online sin llamar</h2>
           <p>
             Buena parte de las búsquedas de clínica dental ocurren fuera del horario de atención telefónica — a última hora del día, decidiendo con dolor o con una duda estética que no puede esperar a mañana. Un sistema de reserva de cita integrado en la web capta a ese paciente en el momento exacto en que decide, sin depender de que alguien conteste el teléfono.
           </p>
 
           <OfferBannerWebSeo />
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Identificación profesional: nombre y número de colegiado</h2>
+          <h2 id="4-identificacion-profesional-nombre-y-numero-de" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Identificación profesional: nombre y número de colegiado</h2>
           <p>
             Las autoridades sanitarias controlan que la publicidad de servicios odontológicos incorpore el número de registro o colegiado del profesional responsable. Mostrarlo con claridad en la web —junto al nombre del odontólogo y su colegio profesional— no es solo un requisito de cumplimiento: es una señal de confianza que un paciente exigente busca activamente antes de reservar.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Transparencia de precios y financiación de tratamientos</h2>
+          <h2 id="5-transparencia-de-precios-y-financiacion-de-tra" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Transparencia de precios y financiación de tratamientos</h2>
           <p>
             La opacidad en precios es la principal fuente de desconfianza hacia el sector dental. Publicar rangos de precio orientativos para los tratamientos más buscados —limpieza, implante, ortodoncia— y explicar las opciones de financiación disponibles reduce las llamadas de pacientes que solo comparan precio y filtra mejor las consultas que sí llegan a la clínica.
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque la clínica esté a tope de agenda</h2>
+              <h2 id="tu-web-trabaja-aunque-la-clinica-este-a-tope-de" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja aunque la clínica esté a tope de agenda</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras atiendes pacientes o cierras la agenda del día, tu web sigue abierta. Alguien que busca clínica dental a última hora encuentra tu ficha, ve al profesional identificado con su colegiado, revisa los precios orientativos y reserva — sin que tengas que estar disponible para atenderlo en ese momento.
               </p>
@@ -189,7 +194,7 @@ export default function FactoresWebClinicasDentalesPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de una clínica dental</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-una-clinica" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de una clínica dental</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

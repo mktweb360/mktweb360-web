@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Análisis PESTEL en marketing digital",
   description: "Descubre cómo aplicar el análisis PESTEL en tu estrategia de marketing digital. Factores Políticos, Económicos, Sociales, Tecnológicos, Ambientales y Legales.",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "Cómo el análisis PESTEL afecta a tu estrategia de marketing digital. Guía práctica para PYMEs españolas.",
     url: "https://www.mktweb360.com/descubre-el-analisis-pestel-en-el-marketing-digital/",
     type: "article",
-    images: [{ url: "/og-descubre-el-analisis-pestel.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-descubre-el-analisis-pestel-en-el-marketing-digital-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/descubre-el-analisis-pestel-en-el-marketing-digital/",
   mainEntityOfPage: "https://www.mktweb360.com/descubre-el-analisis-pestel-en-el-marketing-digital/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-descubre-el-analisis-pestel.jpg",
+  image: "https://www.mktweb360.com/og-descubre-el-analisis-pestel-en-el-marketing-digital-v2.jpg",
 };
 
 export default function AnalisisPESTELPage() {
@@ -56,7 +57,7 @@ export default function AnalisisPESTELPage() {
             El análisis PESTEL te ayuda a comprender el entorno macro que rodea a tu empresa y a adaptar tu estrategia de marketing digital a los factores externos que no puedes controlar pero sí anticipar.
           </p>
           <Image
-            src="/og-descubre-el-analisis-pestel.jpg"
+            src="/og-descubre-el-analisis-pestel-en-el-marketing-digital-v2.jpg"
             alt="Análisis PESTEL en el Marketing Digital — Guía para PYMEs"
             width={1200}
             height={630}
@@ -64,12 +65,16 @@ export default function AnalisisPESTELPage() {
             priority
           />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "que-es-el-analisis-pestel", "label": "¿Qué es el análisis PESTEL?"}, {"id": "los-6-factores-pestel-aplicados-al-marketing-dig", "label": "Los 6 factores PESTEL aplicados al marketing digital"}, {"id": "como-integrar-el-pestel-en-tu-plan-de-marketing", "label": "Cómo integrar el PESTEL en tu plan de marketing digital"}]} />
+        </div>
         <div className="text-gray-700 space-y-6 leading-relaxed">
-          <h2 className="text-2xl font-bold text-primary-600">¿Qué es el análisis PESTEL?</h2>
+          <h2 id="que-es-el-analisis-pestel" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Qué es el análisis PESTEL?</h2>
           <p>El PESTEL es una herramienta de análisis estratégico del entorno externo de una empresa. Analiza seis categorías de factores: Políticos, Económicos, Sociales, Tecnológicos, Ecológicos (Ambientales) y Legales. A diferencia del DAFO, que combina factores internos y externos, el PESTEL se centra exclusivamente en el macroentorno.</p>
           <p>En el contexto del marketing digital, el PESTEL es especialmente útil porque el entorno online cambia muy rápido: nuevas leyes de privacidad, cambios en el comportamiento del consumidor, irrupción de nuevas tecnologías... Todo ello afecta directamente a tu estrategia digital.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Los 6 factores PESTEL aplicados al marketing digital</h2>
+          <h2 id="los-6-factores-pestel-aplicados-al-marketing-dig" className="text-2xl font-bold text-primary-600 scroll-mt-24">Los 6 factores PESTEL aplicados al marketing digital</h2>
 
           <div className="space-y-4">
             {[
@@ -140,7 +145,7 @@ export default function AnalisisPESTELPage() {
             secondary={{ text: "Ver el servicio de consultoría SEO", href: "/consultor-seo/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo integrar el PESTEL en tu plan de marketing digital</h2>
+          <h2 id="como-integrar-el-pestel-en-tu-plan-de-marketing" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo integrar el PESTEL en tu plan de marketing digital</h2>
           <p>El PESTEL no es un análisis que se hace una vez: debe revisarse periódicamente (al menos una vez al año) porque el entorno cambia constantemente. Los resultados del PESTEL deben integrarse con el <Link href="/todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing/" className="text-accent-500 hover:underline">análisis DAFO</Link> para tener una visión completa: los factores externos del PESTEL alimentan las Oportunidades y Amenazas del DAFO.</p>
           <p>En la práctica, el PESTEL te ayuda a anticipar cambios antes de que te impacten, identificar nuevas oportunidades de negocio y ajustar mensajes y canales de comunicación según el contexto social y tecnológico del momento. Si quieres que alguien convierta esas conclusiones en un plan de visibilidad con prioridades, eso es lo que hace un <Link href="/consultor-seo/" className="text-accent-500 hover:underline">consultor SEO con diagnóstico y plan priorizado</Link>.</p>
 

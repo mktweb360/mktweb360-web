@@ -7,6 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: { absolute: "Accesibilidad web obligatoria para tiendas online en España" },
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
       "Desde el 28 de junio de 2025 las tiendas online deben ser accesibles. Quién está obligado por la Ley 11/2023, excepciones y checklist práctico para cumplir.",
     url: "https://www.mktweb360.com/accesibilidad-web-obligatoria-tiendas-online-espana/",
     type: "article",
-    images: [{ url: "/og-accesibilidad-web-obligatoria-tiendas-online-espana.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-accesibilidad-web-obligatoria-tiendas-online-espana-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +33,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
-  image: "https://www.mktweb360.com/og-accesibilidad-web-obligatoria-tiendas-online-espana.jpg",
+  image: "https://www.mktweb360.com/og-accesibilidad-web-obligatoria-tiendas-online-espana-v2.jpg",
   url: "https://www.mktweb360.com/accesibilidad-web-obligatoria-tiendas-online-espana/",
   mainEntityOfPage: "https://www.mktweb360.com/accesibilidad-web-obligatoria-tiendas-online-espana/",
   inLanguage: "es-ES",
@@ -131,7 +132,7 @@ export default function AccesibilidadWebTiendasOnlinePage() {
             La Ley 11/2023 obliga desde junio de 2025 a que los servicios de comercio electrónico sean accesibles. Quién está obligado, qué excepciones existen y cómo cumplir paso a paso.
           </p>
           <Image
-            src="/og-accesibilidad-web-obligatoria-tiendas-online-espana.jpg"
+            src="/og-accesibilidad-web-obligatoria-tiendas-online-espana-v2.jpg"
             alt="Accesibilidad web obligatoria para tiendas online en España"
             width={1200}
             height={630}
@@ -140,12 +141,16 @@ export default function AccesibilidadWebTiendasOnlinePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={8} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "que-norma-te-obliga-y-desde-cuando", "label": "Qué norma te obliga y desde cuándo"}, {"id": "tu-tienda-online-esta-obligada", "label": "¿Tu tienda online está obligada?"}, {"id": "la-excepcion-de-las-microempresas", "label": "La excepción de las microempresas"}, {"id": "carga-desproporcionada-no-es-una-puerta-trasera", "label": "Carga desproporcionada: no es una puerta trasera"}, {"id": "que-pide-la-accesibilidad-en-la-practica", "label": "Qué pide la accesibilidad en la práctica"}, {"id": "checklist-para-empezar-esta-semana", "label": "Checklist para empezar esta semana"}, {"id": "vigilancia-y-sanciones", "label": "Vigilancia y sanciones"}, {"id": "accesibilidad-tambien-es-negocio", "label": "Accesibilidad también es negocio"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Desde el <strong>28 de junio de 2025</strong>, las tiendas online que venden a consumidores en España deben cumplir requisitos de accesibilidad. La obligación procede de la <strong>Directiva (UE) 2019/882</strong>, conocida como Acta Europea de Accesibilidad, que España incorporó mediante la <strong>Ley 11/2023</strong>. Si tu web permite comprar o contratar online y tu empresa no es una microempresa, lo más probable es que estés dentro.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <ul className="space-y-3">
             {[
               <>La Ley 11/2023 incorpora la Directiva (UE) 2019/882 y se aplica desde el 28 de junio de 2025.</>,
@@ -161,7 +166,7 @@ export default function AccesibilidadWebTiendasOnlinePage() {
             ))}
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué norma te obliga y desde cuándo</h2>
+          <h2 id="que-norma-te-obliga-y-desde-cuando" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué norma te obliga y desde cuándo</h2>
           <p>
             La Directiva (UE) 2019/882 armoniza en toda la Unión Europea los requisitos de accesibilidad de determinados productos y servicios. Su objetivo es que las personas con discapacidad, y también las personas mayores o con limitaciones temporales, puedan usarlos en igualdad de condiciones.
           </p>
@@ -169,7 +174,7 @@ export default function AccesibilidadWebTiendasOnlinePage() {
             España la transpuso en el <strong>Título I de la Ley 11/2023, de 8 de mayo</strong>. La directiva fijó como fecha de aplicación efectiva el 28 de junio de 2025, y la ley recoge un periodo transitorio en su disposición transitoria única para determinadas situaciones previas a esa fecha.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">¿Tu tienda online está obligada?</h2>
+          <h2 id="tu-tienda-online-esta-obligada" className="text-2xl font-bold text-primary-600 scroll-mt-24">¿Tu tienda online está obligada?</h2>
           <p>
             La norma se aplica a una lista cerrada de productos y servicios. Entre los servicios figuran los de <strong>comercio electrónico</strong>: servicios prestados a distancia, por medios electrónicos y a petición del consumidor, para celebrar un contrato de consumo.
           </p>
@@ -190,7 +195,7 @@ export default function AccesibilidadWebTiendasOnlinePage() {
             Una web <strong>meramente informativa</strong>, sin compra ni contratación, no queda automáticamente dentro de esta obligación concreta. Eso no significa que la accesibilidad no importe: sigue siendo una cuestión de igualdad, de experiencia de usuario y, cada vez más, de posicionamiento.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">La excepción de las microempresas</h2>
+          <h2 id="la-excepcion-de-las-microempresas" className="text-2xl font-bold text-primary-600 scroll-mt-24">La excepción de las microempresas</h2>
           <p>
             La principal excepción afecta a las <strong>microempresas que prestan servicios</strong>. La directiva define microempresa como la que ocupa a <strong>menos de 10 personas</strong> y cuyo volumen de negocio anual o balance general anual <strong>no supera los 2 millones de euros</strong>.
           </p>
@@ -198,7 +203,7 @@ export default function AccesibilidadWebTiendasOnlinePage() {
             Si te acoges a esta excepción, conserva la documentación que lo justifica: plantilla media, cuentas anuales o facturación. Si tu empresa crece y supera esos umbrales, la exención deja de aplicarse.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Carga desproporcionada: no es una puerta trasera</h2>
+          <h2 id="carga-desproporcionada-no-es-una-puerta-trasera" className="text-2xl font-bold text-primary-600 scroll-mt-24">Carga desproporcionada: no es una puerta trasera</h2>
           <p>
             La ley permite no aplicar un requisito cuando cumplirlo exigiría una <strong>alteración fundamental</strong> del servicio o una <strong>carga desproporcionada</strong>. No basta con decirlo. Tienes que:
           </p>
@@ -213,7 +218,7 @@ export default function AccesibilidadWebTiendasOnlinePage() {
             No se considera carga desproporcionada la falta de prioridad o de tiempo. Si recibes financiación pública para accesibilidad, tampoco puedes alegarla.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué pide la accesibilidad en la práctica</h2>
+          <h2 id="que-pide-la-accesibilidad-en-la-practica" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué pide la accesibilidad en la práctica</h2>
           <p>
             La ley describe requisitos funcionales en sus anexos. En la práctica, la referencia técnica habitual para webs y apps es la norma europea <strong>EN 301 549</strong>, que incorpora los criterios de las pautas <strong>WCAG</strong>. Traducido a una tienda online, significa:
           </p>
@@ -241,7 +246,7 @@ export default function AccesibilidadWebTiendasOnlinePage() {
 
           <BlogBanner variant="ecommerce" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Checklist para empezar esta semana</h2>
+          <h2 id="checklist-para-empezar-esta-semana" className="text-2xl font-bold text-primary-600 scroll-mt-24">Checklist para empezar esta semana</h2>
           <ul className="space-y-3">
             {checklist.map((item) => (
               <li key={item} className="flex items-start gap-3 p-4 border border-gray-200 rounded-xl">
@@ -254,12 +259,12 @@ export default function AccesibilidadWebTiendasOnlinePage() {
             Si tu tienda funciona sobre una plantilla o un tema antiguo, lo habitual es que los problemas estén en la base del diseño. En ese caso, a veces compensa más un <Link href="/diseno-de-paginas-web/diseno-tiendas-online/" className="text-accent-500 hover:underline">rediseño de la tienda online</Link> que parchear pantalla por pantalla.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Vigilancia y sanciones</h2>
+          <h2 id="vigilancia-y-sanciones" className="text-2xl font-bold text-primary-600 scroll-mt-24">Vigilancia y sanciones</h2>
           <p>
             La ley encarga la vigilancia a las <strong>autoridades que designen las comunidades autónomas</strong> y a una unidad técnica estatal de coordinación. Regula el régimen de control y sanciones en su <strong>capítulo XI</strong>. La cuantía concreta depende de la infracción y del procedimiento aplicable. Desconfía de cifras genéricas de “multas por accesibilidad” que no citen el artículo exacto.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Accesibilidad también es negocio</h2>
+          <h2 id="accesibilidad-tambien-es-negocio" className="text-2xl font-bold text-primary-600 scroll-mt-24">Accesibilidad también es negocio</h2>
           <p>
             Una web accesible se entiende mejor, se usa mejor en el móvil y comunica mejor su estructura a los buscadores. Muchas de las correcciones, como encabezados ordenados, textos alternativos y formularios claros, coinciden con buenas prácticas de SEO y de conversión. Si quieres saber en qué punto está tu web, una <Link href="/auditoria-digital/" className="text-accent-500 hover:underline">auditoría digital</Link> es el punto de partida más rápido.
           </p>
@@ -272,7 +277,7 @@ export default function AccesibilidadWebTiendasOnlinePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -285,7 +290,7 @@ export default function AccesibilidadWebTiendasOnlinePage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

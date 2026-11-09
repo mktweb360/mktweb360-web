@@ -11,6 +11,7 @@ import { preciosOfertaSeo } from "@/lib/precios-planes"; // precio de la oferta 
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 28/10/2026 — versiones EN/FR de /seo-para-pymes-guia/ (tema 2 del plan de blog).
 // La carpeta FR (seo-pour-pme-guide) reexporta esta página. Precios: catálogo de MktOS, nunca a mano.
 
@@ -281,36 +282,40 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>{intro}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.resumen}</h2>
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={9} items={[{ id: "resumen", label: h.resumen }, { id: "porque", label: h.porque }, { id: "frentes", label: h.frentes }, { id: "tareas", label: h.tareas }, { id: "delegar", label: h.delegar }, { id: "coste", label: h.coste }, { id: "plazos", label: h.plazos }, { id: "elegir", label: h.elegir }, { id: "empezar", label: h.empezar }, { id: "faq", label: h.faq }, { id: "fuentes", label: h.fuentes }]} />
+        </div>
+
+          <h2 id="resumen" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.resumen}</h2>
           <Lista items={resumen} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.porque}</h2>
+          <h2 id="porque" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.porque}</h2>
           <p>{h.porque1}</p>
           <p>{h.porque2}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.frentes}</h2>
+          <h2 id="frentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.frentes}</h2>
           <Tabla cabecera={h.frentesCab} filas={frentes} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.tareas}</h2>
+          <h2 id="tareas" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.tareas}</h2>
           <Lista items={tareas} numerada />
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.delegar}</h2>
+          <h2 id="delegar" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.delegar}</h2>
           <Lista items={delegar} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.coste}</h2>
+          <h2 id="coste" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.coste}</h2>
           <p>{h.costeIntro}</p>
           <Tabla cabecera={h.costeCab} filas={tabla.map((p) => [p.nombre, p.paraQuien, precioTexto(p, lang)])} />
           <p>{h.costeNota1} <Link href={href(lang, "/precios-seo/")} className={a}>{h.costeLink}</Link>.</p>
 
           <BlogBanner variant="seogeogbp" lang={lang} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.plazos}</h2>
+          <h2 id="plazos" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.plazos}</h2>
           <p>{h.plazosTxt} <Link href={plazos} className={a}>{h.plazosLink}</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.elegir}</h2>
+          <h2 id="elegir" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.elegir}</h2>
           <Lista items={preguntas} numerada />
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.empezar}</h2>
+          <h2 id="empezar" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.empezar}</h2>
           <p>
             {h.empezarTxt} <Link href={auditoria} className={a}>{h.empezarCheck}</Link> {h.empezarTxt2} <Link href={href(lang, "/seo-posicionamiento-web-organico/")} className={a}>{h.empezarServ}</Link>.
           </p>
@@ -320,7 +325,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <Link href={href(lang, "/auditoria-digital/")} className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">{h.ctaB}</Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.faq}</h2>
+          <h2 id="faq" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.faq}</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -333,7 +338,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{h.fuentes}</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">{h.fuentes}</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

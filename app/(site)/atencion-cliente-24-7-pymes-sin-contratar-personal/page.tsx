@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Atención al cliente 24/7 para pymes",
   description:
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
       "Las grandes empresas llevan años ofreciendo atención al cliente 24/7. En 2026, las pymes españolas pueden conseguir lo mismo con chatbots de IA, sin contratar más personal. Aquí está cómo funciona y qué cuesta.",
     url: "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/",
     type: "article",
-    images: [{ url: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.mktweb360.com/og-atencion-cliente-24-7-pymes-sin-contratar-personal-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +34,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-07-07",
   dateModified: "2026-07-07",
-  image: "https://www.mktweb360.com/og-chatgpt-para-marketing-digital.jpg",
+  image: "https://www.mktweb360.com/og-atencion-cliente-24-7-pymes-sin-contratar-personal-v2.jpg",
   url: "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/",
   mainEntityOfPage: "https://www.mktweb360.com/atencion-cliente-24-7-pymes-sin-contratar-personal/",
   inLanguage: "es-ES",
@@ -88,36 +90,48 @@ export default function AtencionCliente247Page() {
           <p className="text-xl text-gray-600 leading-relaxed">
             Las grandes empresas llevan años ofreciendo atención al cliente 24 horas al día. En 2026, cualquier pyme española puede hacer lo mismo con un chatbot de IA, sin ampliar plantilla. Si quieres entender el punto de partida, este artículo se apoya en <Link href="/que-es-un-chatbot-para-empresas-y-por-que-lo-necesitas-en-2026/" className="text-accent-500 hover:underline">qué es un chatbot para empresas</Link> y explica cómo funciona y qué cuesta.
           </p>
+          <Image
+            src="/og-atencion-cliente-24-7-pymes-sin-contratar-personal-v2.jpg"
+            alt="Dueño de un negocio de barrio, de noche y con el local cerrado, atiende desde el móvil un mensaje de un cliente"
+            width={1200}
+            height={630}
+            className="w-full rounded-2xl mt-6"
+            priority
+          />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={6} items={[{"id": "el-coste-real-de-no-tener-atencion-fuera-del-hor", "label": "El coste real de no tener atención fuera del horario laboral"}, {"id": "por-que-el-chatbot-es-diferente-del-live-chat-y", "label": "Por qué el chatbot es diferente del live chat y del teléfono de guardia"}, {"id": "que-tipos-de-consultas-puede-resolver-un-chatbot", "label": "Qué tipos de consultas puede resolver un chatbot autónomamente"}, {"id": "el-modelo-hibrido-chatbot-humano", "label": "El modelo híbrido: chatbot + humano"}, {"id": "cuanto-ahorro-real-puede-generar-un-chatbot", "label": "Cuánto ahorro real puede generar un chatbot"}, {"id": "que-esperar-en-los-primeros-90-dias", "label": "Qué esperar en los primeros 90 días"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El cliente que tiene una duda a las once de la noche no espera a mañana: se va a la competencia. Esa es la fuga silenciosa que muchas pymes ni siquiera miden. Un chatbot bien planteado cierra esa puerta sin que tengas que contratar a nadie para el turno de noche.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">El coste real de no tener atención fuera del horario laboral</h2>
+          <h2 id="el-coste-real-de-no-tener-atencion-fuera-del-hor" className="text-2xl font-bold text-primary-600 scroll-mt-24">El coste real de no tener atención fuera del horario laboral</h2>
           <p>Hasta el 70% de los carritos de compra se abandonan, y una parte importante ocurre porque el cliente tiene una duda que nadie resuelve en el momento. Cuando la respuesta llega demasiado tarde, el interés ya se ha enfriado y la venta se pierde.</p>
           <p>La velocidad de respuesta es determinante: responder en los primeros 5 minutos puede multiplicar por 9 la conversión frente a hacerlo horas después. Fuera del horario laboral, sin un sistema automatizado, ese margen simplemente no existe y cada consulta nocturna es una oportunidad que se evapora.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el chatbot es diferente del live chat y del teléfono de guardia</h2>
+          <h2 id="por-que-el-chatbot-es-diferente-del-live-chat-y" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el chatbot es diferente del live chat y del teléfono de guardia</h2>
           <p>El live chat depende de que haya una persona conectada, y el teléfono de guardia depende de que alguien esté disponible a cualquier hora. Ambos tienen un límite humano: cansancio, horarios y coste. El chatbot no tiene ese límite.</p>
           <p>Un chatbot responde al instante, a cualquier hora, sin importar cuántas personas escriban a la vez. No sustituye la atención humana en los casos complejos, pero se ocupa de todo lo que no requiere criterio, que suele ser la mayoría del volumen. Es una pieza más dentro de una estrategia de <Link href="/ia-aplicada-al-marketing/" className="text-accent-500 hover:underline">IA aplicada al marketing</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué tipos de consultas puede resolver un chatbot autónomamente</h2>
+          <h2 id="que-tipos-de-consultas-puede-resolver-un-chatbot" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué tipos de consultas puede resolver un chatbot autónomamente</h2>
           <p>Un chatbot bien configurado resuelve por sí solo entre el 65% y el 70% de las consultas: horarios, precios, disponibilidad, estado de un pedido, preguntas frecuentes, condiciones de un servicio o pasos para completar una compra. Son preguntas repetitivas que consumen mucho tiempo del equipo y que el bot atiende en segundos.</p>
           <p>Ese porcentaje libera al equipo humano para lo que realmente aporta valor: las conversaciones complejas, las negociaciones y los casos delicados. Además, muchas de esas consultas resueltas se convierten en oportunidades comerciales, algo clave cuando el objetivo es <Link href="/como-generar-leads-calidad-pyme/" className="text-accent-500 hover:underline">generar leads de calidad</Link>.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">El modelo híbrido: chatbot + humano</h2>
+          <h2 id="el-modelo-hibrido-chatbot-humano" className="text-2xl font-bold text-primary-600 scroll-mt-24">El modelo híbrido: chatbot + humano</h2>
           <p>El planteamiento que mejor funciona no es chatbot o persona, sino chatbot y persona. El bot atiende el primer contacto, resuelve lo que puede y, cuando detecta que la consulta lo requiere, deriva a una persona con todo el contexto de la conversación ya recogido.</p>
           <p>Así el cliente nunca se queda sin respuesta y el equipo solo interviene cuando de verdad hace falta. El resultado es una atención que combina la inmediatez de la máquina con el criterio humano, y que escala sin disparar los costes.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuánto ahorro real puede generar un chatbot</h2>
+          <h2 id="cuanto-ahorro-real-puede-generar-un-chatbot" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuánto ahorro real puede generar un chatbot</h2>
           <p>El ahorro típico se sitúa entre 600 y 900 euros al mes en tiempo de personal, al absorber el bot el volumen de consultas repetitivas que antes ocupaban horas del equipo. A ese ahorro directo se suma el efecto sobre las ventas: menos carritos abandonados y más consultas atendidas a tiempo.</p>
           <p>La cuenta suele ser favorable desde los primeros meses, porque el coste de un chatbot es fijo y modesto frente al coste creciente de ampliar plantilla. Y a diferencia de una contratación, el bot no necesita formación continua ni cubre solo un turno.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué esperar en los primeros 90 días</h2>
+          <h2 id="que-esperar-en-los-primeros-90-dias" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué esperar en los primeros 90 días</h2>
           <p>La implantación sigue una curva de tres fases a lo largo de unos 90 días. En las primeras semanas se calibra: se ajustan las respuestas según las preguntas reales de tus clientes. Después llega la fase de mejora, en la que el bot resuelve cada vez más consultas correctamente. Y finalmente la estabilización, con el sistema funcionando de forma consistente.</p>
           <p>Entender esta curva evita frustraciones. Un chatbot no está perfecto el primer día; alcanza su máximo rendimiento tras un periodo de ajuste. Conviene tener presentes también los aspectos legales, como los que explicamos en <Link href="/chatbot-ia-rgpd-ai-act-cumplimiento-legal-espana/" className="text-accent-500 hover:underline">chatbot, RGPD y AI Act</Link>, para que el proyecto cumpla desde el principio.</p>
 
@@ -136,7 +150,7 @@ export default function AtencionCliente247Page() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

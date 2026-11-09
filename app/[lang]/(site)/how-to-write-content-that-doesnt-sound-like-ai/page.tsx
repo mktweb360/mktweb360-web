@@ -8,6 +8,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -92,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </time>
             <AuthorByline lang={lang} />
           </div>
-          <IntlArticleJsonLd lang={lang} slug="how-to-write-content-that-doesnt-sound-like-ai" headline={isEn ? "How to write content that doesn't sound like AI: techniques to humanise your copy" : "Comment écrire du contenu qui ne ressemble pas à l'IA : techniques pour humaniser vos textes"} image="/og-como-escribir-contenido-que-no-suene-a-ia.jpg" />
+          <IntlArticleJsonLd lang={lang} slug="how-to-write-content-that-doesnt-sound-like-ai" headline={isEn ? "How to write content that doesn't sound like AI: techniques to humanise your copy" : "Comment écrire du contenu qui ne ressemble pas à l'IA : techniques pour humaniser vos textes"} image="/og-como-escribir-contenido-que-no-suene-a-ia-v2.jpg" />
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn
               ? "How to write content that doesn't sound like AI: techniques to humanise your copy"
@@ -104,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Utiliser l'IA pour écrire n'est pas le problème. Publier l'output sans l'éditer l'est. Le contenu qui 'ressemble à l'IA' se reconnaît à des kilomètres — et ni Google ni vos clients ne le reçoivent de la même façon qu'un texte avec un vrai jugement, une voix et une perspective réelle."}
           </p>
           <Image
-            src="/og-como-escribir-contenido-que-no-suene-a-ia.jpg"
+            src="/og-como-escribir-contenido-que-no-suene-a-ia-v2.jpg"
             alt={isEn ? "How to write content that doesn't sound like AI" : "Écrire du contenu qui ne ressemble pas à l'IA"}
             width={1200}
             height={630}
@@ -120,7 +121,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Le contenu généré par IA sans édition a des schémas reconnaissables : des phrases d'ouverture grandiloquentes, des structures prévisibles, l'absence d'opinion réelle et un ton uniformément neutre qui ne s'engage jamais sur rien. C'est correct. C'est ennuyeux. Et ça ne convertit pas."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-unedited-ai-content-does-not-work", label: isEn ? "Why unedited AI content does not work" : "Pourquoi le contenu IA non édité ne fonctionne pas" }, { id: "the-patterns-that-give-ai-content-away", label: isEn ? "The patterns that give AI content away" : "Les schémas qui trahissent le contenu IA" }, { id: "concrete-techniques-for-humanising-the-output", label: isEn ? "Concrete techniques for humanising the output" : "Techniques concrètes pour humaniser l'output" }, { id: "the-role-of-the-human-editor-in-the-ai-process", label: isEn ? "The role of the human editor in the AI process" : "Le rôle de l'éditeur humain dans le processus IA" }, { id: "frequently-asked-questions-about-ai-content", label: isEn ? "Frequently asked questions about AI content" : "Questions fréquentes sur le contenu IA" }]} />
+        </div>
+
+          <h2 id="why-unedited-ai-content-does-not-work" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Why unedited AI content does not work" : "Pourquoi le contenu IA non édité ne fonctionne pas"}
           </h2>
           <p>
@@ -151,7 +156,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="the-patterns-that-give-ai-content-away" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "The patterns that give AI content away" : "Les schémas qui trahissent le contenu IA"}
           </h2>
           <p>
@@ -160,7 +165,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Identifier le contenu IA non édité est facile une fois qu'on sait quoi chercher. Des phrases d'ouverture comme 'dans le monde d'aujourd'hui' ou 'à l'ère numérique dans laquelle nous vivons'. Des clôtures comme 'en conclusion, nous pouvons affirmer que'. Des listes de cinq points où tous ont le même poids et aucun n'offre une perspective réelle."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="concrete-techniques-for-humanising-the-output" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Concrete techniques for humanising the output" : "Techniques concrètes pour humaniser l'output"}
           </h2>
           <p>
@@ -181,7 +186,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
           <BlogBanner variant="geo" lang={lang} />
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="the-role-of-the-human-editor-in-the-ai-process" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "The role of the human editor in the AI process" : "Le rôle de l'éditeur humain dans le processus IA"}
           </h2>
           <p>
@@ -215,7 +220,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="frequently-asked-questions-about-ai-content" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Frequently asked questions about AI content" : "Questions fréquentes sur le contenu IA"}
           </h2>
           <div className="space-y-3">

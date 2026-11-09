@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -41,8 +43,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "SWOT analysis is one of the most practical tools in strategic marketing. This guide explains how to apply it specifically to your digital marketing to identify what is working and what needs to change." : "L'analyse SWOT est l'un des outils les plus pratiques en marketing stratégique. Ce guide explique comment l'appliquer spécifiquement à votre marketing digital pour identifier ce qui fonctionne et ce qui doit changer."}
         </p>
 
+        <Image
+          src="/og-todo-lo-que-necesitas-saber-sobre-el-analisis-dafo-en-tu-estrategia-de-marketing-v2.jpg"
+          alt={!isEn ? "Petite boutique de quartier au centre de quatre zones colorées : un bouclier avec un poids, une fissure avec une pierre, une porte ouverte avec une flèche de croissance et un nuage d’orage avec un éclair" : "Neighborhood shop in the center of four colored zones: a shield with a weight, a crack with a stone, an open door with a growth arrow, and a storm cloud with lightning"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={4} items={[{ id: "what-swot-analysis-is-strengths-weaknesses-oppor", label: isEn ? "What SWOT analysis is: strengths, weaknesses, opportunities, threats" : "Qu'est-ce que l'analyse SWOT : forces, faiblesses, opportunités, menaces" }, { id: "how-to-apply-swot-to-your-digital-marketing", label: isEn ? "How to apply SWOT to your digital marketing" : "Comment appliquer le SWOT à votre marketing digital" }, { id: "analysing-your-digital-strengths-and-weaknesses", label: isEn ? "Analysing your digital strengths and weaknesses" : "Analyser vos forces et faiblesses digitales" }, { id: "identifying-digital-opportunities-and-threats", label: isEn ? "Identifying digital opportunities and threats" : "Identifier les opportunités et menaces digitales" }, { id: "how-to-turn-your-swot-into-an-action-plan", label: isEn ? "How to turn your SWOT into an action plan" : "Comment transformer votre SWOT en plan d'action" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-swot-analysis-is-strengths-weaknesses-oppor" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "What SWOT analysis is: strengths, weaknesses, opportunities, threats" : "Qu'est-ce que l'analyse SWOT : forces, faiblesses, opportunités, menaces"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-apply-swot-to-your-digital-marketing" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to apply SWOT to your digital marketing" : "Comment appliquer le SWOT à votre marketing digital"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="analysing-your-digital-strengths-and-weaknesses" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Analysing your digital strengths and weaknesses" : "Analyser vos forces et faiblesses digitales"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -85,7 +100,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="identifying-digital-opportunities-and-threats" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Identifying digital opportunities and threats" : "Identifier les opportunités et menaces digitales"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -97,7 +112,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-turn-your-swot-into-an-action-plan" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to turn your SWOT into an action plan" : "Comment transformer votre SWOT en plan d'action"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

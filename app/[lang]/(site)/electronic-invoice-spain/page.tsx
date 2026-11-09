@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 // 31/10/2026 — reescritura EN/FR del artículo ES /factura-electronica-obligatoria-autonomos-pymes/ (tema 6, aprobado por José).
 // Mismas fechas y fuentes que la versión ES (comprobadas el 28/10/2026). Si cambia el calendario de Verifactu, cambiar los tres idiomas.
 
@@ -455,33 +456,37 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             <p>{c.disclaimer}</p>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.summaryH}</h2>
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={15} items={[{ id: "summary-h", label: c.summaryH }, { id: "diff-h", label: c.diffH }, { id: "cal-h", label: c.calH }, { id: "tree-h", label: c.treeH }, { id: "shop-h", label: c.shopH }, { id: "steps-h", label: c.stepsH }, { id: "myths-h", label: c.mythsH }, { id: "faq-h", label: c.faqH }, { id: "sources-h", label: c.sourcesH }]} />
+        </div>
+
+          <h2 id="summary-h" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.summaryH}</h2>
           <Lista items={c.summary} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.diffH}</h2>
+          <h2 id="diff-h" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.diffH}</h2>
           <p>{c.diffP}</p>
           <Tabla cabecera={c.diffHead} filas={c.diff} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.calH}</h2>
+          <h2 id="cal-h" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.calH}</h2>
           <p>{c.calP}</p>
           <Tabla cabecera={c.calHead} filas={c.cal} />
           <p>{c.calNote}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.treeH}</h2>
+          <h2 id="tree-h" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.treeH}</h2>
           <Lista items={c.tree} numerada />
           <p>{c.treeLinks}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.shopH}</h2>
+          <h2 id="shop-h" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.shopH}</h2>
           <p>{c.shopP}</p>
           <Tabla cabecera={c.shopHead} filas={c.shop} />
           <p>{c.shopLinks}</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.stepsH}</h2>
+          <h2 id="steps-h" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.stepsH}</h2>
           <Lista items={c.steps} numerada />
 
           <BlogBanner variant="ecommerce" lang={lang} />
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.mythsH}</h2>
+          <h2 id="myths-h" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.mythsH}</h2>
           <Lista items={c.myths} />
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -492,7 +497,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.faqH}</h2>
+          <h2 id="faq-h" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.faqH}</h2>
           <div className="space-y-3">
             {c.faqs.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -505,7 +510,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">{c.sourcesH}</h2>
+          <h2 id="sources-h" className="text-2xl font-bold text-primary-600 scroll-mt-24">{c.sourcesH}</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {c.sources.map((f) => (
               <li key={f.url} className="text-gray-600">

@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "GEO para Shopware y Agentic Commerce",
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "GEO y Agentic Commerce en Shopware 6.7.9: prepara tu tienda para que ChatGPT y Perplexity recomienden y vendan tus productos.",
     url: "https://www.mktweb360.com/geo-shopware-agentic-commerce-chatgpt/",
     type: "article",
-    images: [{ url: "/og-geo-shopware-agentic-commerce.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-geo-shopware-agentic-commerce-chatgpt-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -34,7 +35,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/geo-shopware-agentic-commerce-chatgpt/",
   mainEntityOfPage: "https://www.mktweb360.com/geo-shopware-agentic-commerce-chatgpt/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-geo-shopware-agentic-commerce.jpg",
+  image: "https://www.mktweb360.com/og-geo-shopware-agentic-commerce-chatgpt-v2.jpg",
 };
 
 const FAQS = [
@@ -77,7 +78,7 @@ export default function GeoShopwarePage() {
             Shopware 6.7.9 trae Agentic Commerce nativo y muy pocas tiendas lo aprovechan. Te explicamos cómo preparar la tuya para vender a través de la IA antes que tu competencia.
           </p>
           <Image
-            src="/og-geo-shopware-agentic-commerce.jpg"
+            src="/og-geo-shopware-agentic-commerce-chatgpt-v2.jpg"
             alt="GEO para Shopware: vende desde ChatGPT con Agentic Commerce"
             width={1200}
             height={630}
@@ -86,13 +87,17 @@ export default function GeoShopwarePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "agentic-commerce-la-novedad-de-shopware-6-7-9", "label": "Agentic Commerce: la novedad de Shopware 6.7.9"}, {"id": "que-es-el-geo-y-por-que-importa-en-ecommerce", "label": "Qué es el GEO y por qué importa en ecommerce"}, {"id": "geo-tecnico-para-tu-tienda-shopware", "label": "GEO técnico para tu tienda Shopware"}, {"id": "preparar-la-tienda-para-agentic-commerce", "label": "Preparar la tienda para Agentic Commerce"}, {"id": "ventaja-competitiva-shopware-geo-en-espana", "label": "Ventaja competitiva: Shopware + GEO en España"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>El comercio electrónico está a punto de cambiar de canal. Cada vez más clientes no buscan productos en Google: se los piden a ChatGPT o Perplexity. Shopware ha sido de las primeras plataformas en responder a ese cambio con Agentic Commerce nativo, y las tiendas que se preparen ahora con GEO tendrán una ventaja difícil de alcanzar después.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Agentic Commerce: la novedad de Shopware 6.7.9</h2>
+          <h2 id="agentic-commerce-la-novedad-de-shopware-6-7-9" className="text-2xl font-bold text-primary-600 scroll-mt-24">Agentic Commerce: la novedad de Shopware 6.7.9</h2>
           <p>Shopware 6.7.9 incorpora Agentic Commerce de forma nativa: una API que permite a asistentes de IA como ChatGPT y Perplexity descubrir productos de tu tienda, recomendarlos y facilitar la compra directamente desde la conversación, sin que el usuario pase por la web tradicional. Es un canal de venta nuevo, y por ahora con muy poca competencia. Quien lo active y lo prepare bien aparece donde casi nadie está todavía.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Qué es el GEO y por qué importa en ecommerce</h2>
+          <h2 id="que-es-el-geo-y-por-que-importa-en-ecommerce" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué es el GEO y por qué importa en ecommerce</h2>
           <p>GEO (Generative Engine Optimization) es la disciplina de optimizar tu presencia para que los motores de IA te citen y recomienden. En ecommerce es especialmente relevante: cuando alguien pide a una IA una recomendación de producto, el motor elige unas pocas tiendas para mencionar. Estar entre ellas equivale a aparecer en el primer resultado de Google, pero en un canal que apenas trabaja la competencia.</p>
-          <h2 className="text-2xl font-bold text-primary-600">GEO técnico para tu tienda Shopware</h2>
+          <h2 id="geo-tecnico-para-tu-tienda-shopware" className="text-2xl font-bold text-primary-600 scroll-mt-24">GEO técnico para tu tienda Shopware</h2>
           <p>Preparar una tienda para la IA tiene una capa técnica concreta. El robots.txt debe permitir el acceso de los rastreadores de IA (GPTBot de OpenAI, ClaudeBot de Anthropic, PerplexityBot de Perplexity); si los bloqueas, la IA no puede conocer tu catálogo. El schema Product completo y las fichas con contenido citable —datos claros, especificaciones, respuestas a dudas— facilitan que el modelo te entienda y te cite. Un NAP consistente (nombre, dirección, teléfono) y un archivo llms.txt refuerzan tu identidad. Y las reseñas verificadas funcionan como señal de confianza para los LLMs, igual que para las personas.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -102,9 +107,9 @@ export default function GeoShopwarePage() {
               Ver marketing para Shopware
             </Link>
           </div>
-          <h2 className="text-2xl font-bold text-primary-600">Preparar la tienda para Agentic Commerce</h2>
+          <h2 id="preparar-la-tienda-para-agentic-commerce" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preparar la tienda para Agentic Commerce</h2>
           <p>Más allá del GEO, el Agentic Commerce exige que la tienda esté lista para responder a una máquina. Eso significa una API de catálogo rápida (la IA consulta en tiempo real), información de stock actualizada al momento (no puede recomendar lo que no hay) y datos de producto completos y estructurados (precio, variantes, atributos, plazos). Una tienda Shopware con estos cimientos bien puestos puede vender de forma agéntica desde el primer día en que el canal madure.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Ventaja competitiva: Shopware + GEO en España</h2>
+          <h2 id="ventaja-competitiva-shopware-geo-en-espana" className="text-2xl font-bold text-primary-600 scroll-mt-24">Ventaja competitiva: Shopware + GEO en España</h2>
           <p>Aquí está la oportunidad real. Muy pocas agencias en España trabajan la combinación de Shopware y GEO, y casi ninguna tienda tiene su catálogo preparado para la venta agéntica. Adelantarse ahora —cuando el canal está naciendo— permite construir autoridad y presencia en la IA antes de que llegue la saturación. Es el mismo tipo de ventaja que tuvieron quienes apostaron por el SEO cuando Google era joven.</p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">
@@ -122,7 +127,7 @@ export default function GeoShopwarePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

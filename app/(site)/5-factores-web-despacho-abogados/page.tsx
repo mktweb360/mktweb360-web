@@ -10,6 +10,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web para abogados: 5 factores clave en 2026",
   description:
@@ -114,6 +115,10 @@ export default function FactoresWebAbogadosPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={8} items={[{"id": "1-identificacion-colegial-obligatoria", "label": "1. Identificación colegial obligatoria"}, {"id": "2-confidencialidad-desde-el-primer-formulario", "label": "2. Confidencialidad desde el primer formulario"}, {"id": "3-arquitectura-por-area-de-practica-no-un-listad", "label": "3. Arquitectura por área de práctica, no un listado genérico"}, {"id": "4-prueba-social-dentro-de-los-limites-deontologi", "label": "4. Prueba social dentro de los límites deontológicos"}, {"id": "5-captacion-con-intencion-inmediata", "label": "5. Captación con intención inmediata"}, {"id": "tu-web-trabaja-aunque-tu-no-puedas-atender", "label": "Tu web trabaja aunque tú no puedas atender"}, {"id": "preguntas-frecuentes-sobre-la-web-de-un-despacho", "label": "Preguntas frecuentes sobre la web de un despacho de abogados"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Un despacho de abogados no vende un producto: vende confianza en un momento en el que el cliente casi siempre está preocupado — un despido, una herencia, un desahucio, una demanda. La web tiene que transmitir esa confianza dentro de un marco muy concreto: el que marca el Código Deontológico de la Abogacía Española, que regula qué publicidad es digna, leal y veraz, y qué cruza la línea.
@@ -124,12 +129,12 @@ export default function FactoresWebAbogadosPage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.abogados} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Identificación colegial obligatoria</h2>
+          <h2 id="1-identificacion-colegial-obligatoria" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Identificación colegial obligatoria</h2>
           <p>
             El Código Deontológico de la Abogacía Española exige que el abogado se identifique con su número de colegiado, el Colegio al que pertenece y el despacho en las comunicaciones que haga a través de su página web. A esto se suma el aviso legal que exige la Ley de Servicios de la Sociedad de la Información (LSSI) para cualquier prestador de servicios online: NIF, domicilio social y datos registrales. No es un trámite menor de pie de página — para un cliente que está comparando despachos, ver esta información visible y completa es una de las primeras señales de que está ante un profesional serio y no ante una web genérica montada sin criterio.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. Confidencialidad desde el primer formulario</h2>
+          <h2 id="2-confidencialidad-desde-el-primer-formulario" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. Confidencialidad desde el primer formulario</h2>
           <p>
             Un formulario de contacto público no es un canal con garantías de confidencialidad equivalentes a una consulta. Pedir en él detalles concretos del caso —nombres de la otra parte, cifras, documentación— expone información sensible sin necesidad. El diseño correcto limita el formulario a datos de contacto y un motivo de consulta muy general ("derecho laboral", "herencias"), y traslada el detalle real del caso a la llamada o la reunión, donde sí aplica el secreto profesional con todas las garantías. Esto además reduce la fricción del formulario, que es más corto y más rápido de rellenar.
           </p>
@@ -142,26 +147,26 @@ export default function FactoresWebAbogadosPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Arquitectura por área de práctica, no un listado genérico</h2>
+          <h2 id="3-arquitectura-por-area-de-practica-no-un-listad" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Arquitectura por área de práctica, no un listado genérico</h2>
           <p>
             Nadie busca en Google "servicios legales". Busca "abogado despido improcedente Toledo" o "abogado herencias sin testamento". Cada área de práctica —laboral, herencias, penal, mercantil, familia— compite por búsquedas distintas, con intención distinta y con un cliente en un momento vital distinto. Una sola página que resume "áreas de práctica" en tres párrafos pierde la inmensa mayoría de esas búsquedas frente a un despacho que tiene una página propia y bien desarrollada por cada especialidad, con su propia URL, su propio contenido y su propio formulario de contacto adaptado a esa situación concreta.
           </p>
 
           <OfferBannerWebSeo />
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Prueba social dentro de los límites deontológicos</h2>
+          <h2 id="4-prueba-social-dentro-de-los-limites-deontologi" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Prueba social dentro de los límites deontológicos</h2>
           <p>
             El Código Deontológico permite publicidad digna, leal y veraz, pero prohíbe expresamente la que implica situaciones protegidas por el secreto profesional, y es especialmente estricto con la que se dirige a personas en momentos de vulnerabilidad, como víctimas de accidentes. Esto no significa renunciar a la prueba social: significa construirla bien. Casos de éxito anonimizados sin datos identificativos, reseñas reales del despacho gestionadas de forma activa, y biografías del equipo con su formación, especialización y años de colegiación son formas de generar confianza sin cruzar ninguna línea deontológica.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Captación con intención inmediata</h2>
+          <h2 id="5-captacion-con-intencion-inmediata" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Captación con intención inmediata</h2>
           <p>
             Quien llega a la web de un despacho suele estar en una situación que necesita resolver pronto, no dentro de un mes. El diseño debe reflejar esa urgencia percibida: teléfono visible en todo momento (no solo en la página de contacto), un formulario corto de "primera consulta" claro y sin fricción, y un mensaje directo sobre qué esperar del primer contacto —si es gratuito, cuánto tarda la respuesta, qué información traer—. Cuanta más incertidumbre elimine la web sobre ese primer paso, más consultas se convierten en llamadas reales.
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque tú no puedas atender</h2>
+              <h2 id="tu-web-trabaja-aunque-tu-no-puedas-atender" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja aunque tú no puedas atender</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras estás en un juicio, en una reunión con un cliente o has cerrado el despacho por el fin de semana, tu web sigue abierta. Alguien que necesita un abogado de despidos un domingo por la noche encuentra tu web, entiende en qué te especializas, ve tu identificación colegial y rellena el formulario de primera consulta — sin que tú tengas que estar disponible en ese momento. Esa es la diferencia entre una web que solo existe y una que capta casos mientras tú trabajas en otra cosa.
               </p>
@@ -196,7 +201,7 @@ export default function FactoresWebAbogadosPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de un despacho de abogados</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-un-despacho" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de un despacho de abogados</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

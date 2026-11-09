@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -7,6 +8,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -110,7 +112,20 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Shopware 6.7.9 intègre l'Agentic Commerce natif et très peu de boutiques en profitent. Voici comment préparer la vôtre pour vendre via l'IA avant votre concurrence."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <Image
+          src="/og-geo-shopware-agentic-commerce-chatgpt-v2.jpg"
+          alt={!isEn ? "Téléphone affichant des bulles de conversation d’un assistant IA, et un tapis roulant qui transporte un chariot en bois dans une boutique de vêtements remplie de cartons d’expédition" : "Phone showing AI assistant chat bubbles, and a conveyor belt carrying a wooden cart through a clothing store with shipping boxes"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "agentic-commerce-the-new-feature-in-shopware-6-7", label: isEn ? "Agentic Commerce: the new feature in Shopware 6.7.9" : "L'Agentic Commerce : la nouveauté de Shopware 6.7.9" }, { id: "what-geo-is-and-why-it-matters-for-ecommerce", label: isEn ? "What GEO is and why it matters for ecommerce" : "Qu'est-ce que le GEO et pourquoi il compte pour le e-commerce" }, { id: "technical-geo-for-your-shopware-store", label: isEn ? "Technical GEO for your Shopware store" : "GEO technique pour votre boutique Shopware" }, { id: "getting-your-store-ready-for-agentic-commerce", label: isEn ? "Getting your store ready for Agentic Commerce" : "Préparer votre boutique pour l'Agentic Commerce" }, { id: "competitive-advantage-shopware-geo", label: isEn ? "Competitive advantage: Shopware + GEO" : "Avantage concurrentiel : Shopware + GEO" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
+        <h2 id="agentic-commerce-the-new-feature-in-shopware-6-7" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Agentic Commerce: the new feature in Shopware 6.7.9" : "L'Agentic Commerce : la nouveauté de Shopware 6.7.9"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -119,7 +134,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Shopware 6.7.9 intègre l'Agentic Commerce de manière native : une API qui permet aux assistants IA comme ChatGPT et Perplexity de découvrir les produits de votre boutique, de les recommander et de faciliter l'achat directement depuis la conversation, sans que l'utilisateur passe par le site web traditionnel. C'est un nouveau canal de vente, et pour l'instant avec très peu de concurrence. Celui qui l'active et le prépare bien apparaît là où presque personne n'est encore."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="what-geo-is-and-why-it-matters-for-ecommerce" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "What GEO is and why it matters for ecommerce" : "Qu'est-ce que le GEO et pourquoi il compte pour le e-commerce"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -128,7 +143,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le GEO (Generative Engine Optimization) est la discipline qui consiste à optimiser votre présence pour que les moteurs IA vous citent et vous recommandent. En e-commerce, c'est particulièrement pertinent : quand quelqu'un demande à une IA une recommandation de produit, le moteur choisit quelques boutiques à mentionner. Figurer parmi elles équivaut à apparaître dans le premier résultat Google, mais dans un canal que votre concurrence a à peine commencé à travailler."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="technical-geo-for-your-shopware-store" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Technical GEO for your Shopware store" : "GEO technique pour votre boutique Shopware"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -156,7 +171,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </Link>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="getting-your-store-ready-for-agentic-commerce" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Getting your store ready for Agentic Commerce" : "Préparer votre boutique pour l'Agentic Commerce"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -165,7 +180,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Au-delà du GEO, l'Agentic Commerce exige que la boutique soit prête à répondre à une machine. Cela signifie une API de catalogue rapide (l'IA interroge en temps réel), des informations de stock mises à jour à la seconde (elle ne peut pas recommander ce qui n'est pas disponible) et des données produit complètes et structurées (prix, variantes, attributs, délais). Une boutique Shopware avec ces fondations bien posées peut vendre de façon agentique dès le premier jour où le canal mûrit."}
         </p>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
+        <h2 id="competitive-advantage-shopware-geo" className="text-2xl font-bold text-primary-600 mt-8 mb-3 scroll-mt-24">
           {isEn ? "Competitive advantage: Shopware + GEO" : "Avantage concurrentiel : Shopware + GEO"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
@@ -199,7 +214,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-4">
+        <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mt-8 mb-4 scroll-mt-24">
           {isEn ? "Frequently asked questions" : "Questions fréquentes"}
         </h2>
         <div className="space-y-3 mb-8">

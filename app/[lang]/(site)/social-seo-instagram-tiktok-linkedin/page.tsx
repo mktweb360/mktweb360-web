@@ -8,6 +8,7 @@ import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -92,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </time>
             <AuthorByline lang={lang} />
           </div>
-          <IntlArticleJsonLd lang={lang} slug="social-seo-instagram-tiktok-linkedin" headline={isEn ? "Social SEO: Instagram, TikTok and LinkedIn as search engines in 2026" : "SEO social : Instagram, TikTok et LinkedIn"} image="/og-seo-social-instagram-tiktok-linkedin-como-buscadores.jpg" />
+          <IntlArticleJsonLd lang={lang} slug="social-seo-instagram-tiktok-linkedin" headline={isEn ? "Social SEO: Instagram, TikTok and LinkedIn as search engines in 2026" : "SEO social : Instagram, TikTok et LinkedIn"} image="/og-seo-social-instagram-tiktok-linkedin-como-buscadores-v2.jpg" />
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
             {isEn
               ? "Social SEO: Instagram, TikTok and LinkedIn as search engines in 2026"
@@ -104,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "40% de la Génération Z cherche sur TikTok avant Google. Instagram, LinkedIn et TikTok sont des moteurs de recherche actifs avec des millions de requêtes quotidiennes. Les optimiser — le SEO social — est désormais une discipline incontournable pour toute stratégie de contenu."}
           </p>
           <Image
-            src="/og-seo-social-instagram-tiktok-linkedin-como-buscadores.jpg"
+            src="/og-seo-social-instagram-tiktok-linkedin-como-buscadores-v2.jpg"
             alt={isEn ? "Social SEO: Instagram, TikTok, LinkedIn as search engines" : "SEO social : Instagram, TikTok, LinkedIn comme moteurs de recherche"}
             width={1200}
             height={630}
@@ -120,7 +121,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Les réseaux sociaux ont cessé d'être de simples canaux de distribution de contenu pour devenir des moteurs de recherche avec leurs propres comportements distincts. Un utilisateur qui cherche 'restaurant japonais à Paris' peut le faire sur Google, mais aussi sur Instagram (pour voir des vraies photos) ou sur TikTok (pour voir des vidéos d'expériences). Si vous n'optimisez que pour Google, vous êtes absent d'une partie croissante du processus de décision."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "what-social-seo-is-and-why-it-matters", label: isEn ? "What social SEO is and why it matters" : "Qu'est-ce que le SEO social et pourquoi ça compte" }, { id: "social-seo-on-instagram", label: isEn ? "Social SEO on Instagram" : "SEO social sur Instagram" }, { id: "social-seo-on-tiktok", label: isEn ? "Social SEO on TikTok" : "SEO social sur TikTok" }, { id: "social-seo-on-linkedin", label: isEn ? "Social SEO on LinkedIn" : "SEO social sur LinkedIn" }, { id: "frequently-asked-questions-about-social-seo", label: isEn ? "Frequently asked questions about social SEO" : "Questions fréquentes sur le SEO social" }]} />
+        </div>
+
+          <h2 id="what-social-seo-is-and-why-it-matters" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "What social SEO is and why it matters" : "Qu'est-ce que le SEO social et pourquoi ça compte"}
           </h2>
           <p>
@@ -151,7 +156,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="social-seo-on-instagram" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Social SEO on Instagram" : "SEO social sur Instagram"}
           </h2>
           <p>
@@ -160,7 +165,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Instagram indexe le texte dans plusieurs endroits : la biographie, les titres de contenu, les textes alternatifs des images et — depuis 2022 — les mots-clés dans les légendes. Pour vous positionner dans le moteur de recherche d'Instagram, vous avez besoin : d'une bio qui inclut des termes de recherche pertinents (sans sacrifier la clarté), de légendes qui utilisent un langage naturel avec les mots-clés de votre sujet, et de hashtags stratégiques."}
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="social-seo-on-tiktok" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Social SEO on TikTok" : "SEO social sur TikTok"}
           </h2>
           <p>
@@ -171,7 +176,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
           <BlogBanner variant="geo" lang={lang} />
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="social-seo-on-linkedin" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Social SEO on LinkedIn" : "SEO social sur LinkedIn"}
           </h2>
           <p>
@@ -205,7 +210,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">
+          <h2 id="frequently-asked-questions-about-social-seo" className="text-2xl font-bold text-primary-600 scroll-mt-24">
             {isEn ? "Frequently asked questions about social SEO" : "Questions fréquentes sur le SEO social"}
           </h2>
           <div className="space-y-3">

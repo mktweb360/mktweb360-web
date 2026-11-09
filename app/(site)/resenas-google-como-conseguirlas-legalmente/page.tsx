@@ -7,6 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: { absolute: "Reseñas en Google: cómo conseguirlas legalmente en 2026" },
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
       "Cómo conseguir más reseñas en Google sin infringir las políticas ni la ley española: qué está prohibido, cómo pedirlas bien y cómo responder a las negativas.",
     url: "https://www.mktweb360.com/resenas-google-como-conseguirlas-legalmente/",
     type: "article",
-    images: [{ url: "/og-resenas-google-como-conseguirlas-legalmente.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-resenas-google-como-conseguirlas-legalmente-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +33,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
-  image: "https://www.mktweb360.com/og-resenas-google-como-conseguirlas-legalmente.jpg",
+  image: "https://www.mktweb360.com/og-resenas-google-como-conseguirlas-legalmente-v2.jpg",
   url: "https://www.mktweb360.com/resenas-google-como-conseguirlas-legalmente/",
   mainEntityOfPage: "https://www.mktweb360.com/resenas-google-como-conseguirlas-legalmente/",
   inLanguage: "es-ES",
@@ -121,7 +122,7 @@ export default function ResenasGoogleLegalmentePage() {
             Qué puedes y qué no puedes hacer para conseguir reseñas en tu Perfil de Empresa: políticas de Google, normativa española de consumo y cómo responder a las opiniones negativas.
           </p>
           <Image
-            src="/og-resenas-google-como-conseguirlas-legalmente.jpg"
+            src="/og-resenas-google-como-conseguirlas-legalmente-v2.jpg"
             alt="Reseñas en Google: cómo conseguirlas legalmente en 2026"
             width={1200}
             height={630}
@@ -130,12 +131,16 @@ export default function ResenasGoogleLegalmentePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={7} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "que-prohibe-google", "label": "Qué prohíbe Google"}, {"id": "que-dice-la-normativa-espanola", "label": "Qué dice la normativa española"}, {"id": "como-conseguir-mas-resenas-de-forma-legal", "label": "Cómo conseguir más reseñas de forma legal"}, {"id": "como-responder-a-las-resenas-negativas", "label": "Cómo responder a las reseñas negativas"}, {"id": "cuando-denunciar-una-resena", "label": "Cuándo denunciar una reseña"}, {"id": "las-resenas-tambien-cuentan-para-posicionar", "label": "Las reseñas también cuentan para posicionar"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Puedes y debes pedir reseñas a tus clientes reales, pero <strong>no puedes comprarlas, incentivarlas ni pedir solo las positivas</strong>. Google lo considera interacción falsa y puede restringir tu Perfil de Empresa. En España, además, la normativa de consumo y de competencia desleal trata como prácticas engañosas determinadas conductas con reseñas falsas. La buena noticia es que el método legal también es el que mejor funciona.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <ul className="space-y-3">
             {[
               <>Pide reseñas a <strong>clientes reales</strong> y con un mensaje <strong>neutral</strong>.</>,
@@ -152,7 +157,7 @@ export default function ResenasGoogleLegalmentePage() {
             ))}
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué prohíbe Google</h2>
+          <h2 id="que-prohibe-google" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué prohíbe Google</h2>
           <p>
             Las políticas de contenido de Google Maps exigen que las reseñas reflejen una <strong>experiencia auténtica</strong>. Quedan prohibidas, entre otras:
           </p>
@@ -174,7 +179,7 @@ export default function ResenasGoogleLegalmentePage() {
             La consecuencia puede ir desde la eliminación de reseñas hasta <strong>restricciones en el Perfil de Empresa</strong>, como avisos visibles o limitación de nuevas reseñas.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué dice la normativa española</h2>
+          <h2 id="que-dice-la-normativa-espanola" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué dice la normativa española</h2>
           <p>Tras la reforma de 2021 que incorporó la Directiva Ómnibus europea (Real Decreto-ley 24/2021):</p>
           <ul className="space-y-3">
             {[
@@ -193,7 +198,7 @@ export default function ResenasGoogleLegalmentePage() {
 
           <BlogBanner variant="seogeogbp" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo conseguir más reseñas de forma legal</h2>
+          <h2 id="como-conseguir-mas-resenas-de-forma-legal" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo conseguir más reseñas de forma legal</h2>
           <ol className="space-y-4 list-decimal list-inside">
             <li className="text-gray-600">
               <strong>Crea el enlace o el código QR de reseñas</strong> desde tu Perfil de Empresa: <em>Leer reseñas &gt; Conseguir más reseñas</em>. Google permite compartirlo por email, WhatsApp o redes y ponerlo en recibos o en el mostrador.
@@ -221,7 +226,7 @@ export default function ResenasGoogleLegalmentePage() {
             La constancia vence al empujón: diez reseñas repartidas en varios meses transmiten más confianza que veinte en una semana.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo responder a las reseñas negativas</h2>
+          <h2 id="como-responder-a-las-resenas-negativas" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo responder a las reseñas negativas</h2>
           <p>Una reseña negativa bien respondida puede generar más confianza que una positiva. Sigue esta estructura:</p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
@@ -245,7 +250,7 @@ export default function ResenasGoogleLegalmentePage() {
             Evita discutir en público, insultar, amenazar con acciones legales en la respuesta o insinuar que el cliente miente. Quien lee tu respuesta no es solo el cliente enfadado: son todos tus futuros clientes. Si quieres profundizar, tienes una guía completa sobre la <Link href="/gestion-resenas-negativas-google/" className="text-accent-500 hover:underline">gestión de reseñas negativas en Google</Link>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuándo denunciar una reseña</h2>
+          <h2 id="cuando-denunciar-una-resena" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuándo denunciar una reseña</h2>
           <p>Solo tiene sentido denunciar reseñas que <strong>incumplan las políticas</strong>, por ejemplo:</p>
           <ul className="space-y-3">
             {denunciar.map((item) => (
@@ -259,7 +264,7 @@ export default function ResenasGoogleLegalmentePage() {
             Google tiene además un procedimiento específico para <strong>intentos de extorsión con reseñas negativas</strong>, cuando alguien te exige dinero a cambio de no publicarlas o de retirarlas. Antes de denunciar, guarda capturas, la URL de la reseña, la fecha y cualquier prueba. Que una opinión sea dura o injusta no es motivo suficiente para que Google la retire.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Las reseñas también cuentan para posicionar</h2>
+          <h2 id="las-resenas-tambien-cuentan-para-posicionar" className="text-2xl font-bold text-primary-600 scroll-mt-24">Las reseñas también cuentan para posicionar</h2>
           <p>
             Google indica que el número de reseñas y su puntuación influyen en la prominencia de un negocio, uno de los factores de su posicionamiento en los resultados locales. Un flujo constante de reseñas auténticas, respondidas con criterio, es uno de los pilares del <Link href="/google-business-profile/" className="text-accent-500 hover:underline">posicionamiento de tu ficha de Google Business Profile</Link> y de tu <Link href="/reputacion-online/" className="text-accent-500 hover:underline">reputación online</Link>.
           </p>
@@ -272,7 +277,7 @@ export default function ResenasGoogleLegalmentePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -285,7 +290,7 @@ export default function ResenasGoogleLegalmentePage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

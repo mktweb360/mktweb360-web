@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { RelatedArticles } from "@/components/RelatedArticles";
@@ -6,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -108,8 +110,31 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "La plupart des sites web continuent de confier toute leur captation à un formulaire de contact. Ça fonctionne, mais laisse beaucoup de valeur sur la table : il ne répond pas aux questions, ne qualifie pas et n'est pas disponible quand le visiteur a vraiment de l'intérêt. Un chatbot bien pensé couvre précisément ce manque."}
         </p>
 
+        <Image
+          src="/og-chatbot-captacion-cualificacion-leads-guia-practica-v2.jpg"
+          alt={!isEn ? "Entonnoir transparent dans lequel un robot filtre de nombreuses personnes et ne laisse passer que quelques-unes, mises en évidence en orange, vers un dossier" : "Transparent funnel in which a robot filters many people and lets a few through, highlighted in orange, into a folder"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "why-the-chatbot-captures-more-leads-than-the-for", label: isEn
+              ? "Why the chatbot captures more leads than the form"
+              : "Pourquoi le chatbot capte plus de leads que le formulaire" }, { id: "how-to-structure-a-lead-capture-chatbot", label: isEn
+              ? "How to structure a lead capture chatbot"
+              : "Comment structurer un chatbot de captation de leads" }, { id: "which-qualifying-questions-to-include", label: isEn
+              ? "Which qualifying questions to include"
+              : "Quelles questions de qualification inclure" }, { id: "how-to-integrate-the-chatbot-with-the-crm", label: isEn
+              ? "How to integrate the chatbot with the CRM"
+              : "Comment intégrer le chatbot avec le CRM" }, { id: "measuring-the-impact-of-the-chatbot-on-lead-capt", label: isEn
+              ? "Measuring the impact of the chatbot on lead capture"
+              : "Mesurer l'impact du chatbot sur la captation de leads" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="why-the-chatbot-captures-more-leads-than-the-for" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Why the chatbot captures more leads than the form"
               : "Pourquoi le chatbot capte plus de leads que le formulaire"}
@@ -127,7 +152,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-structure-a-lead-capture-chatbot" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How to structure a lead capture chatbot"
               : "Comment structurer un chatbot de captation de leads"}
@@ -145,7 +170,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="which-qualifying-questions-to-include" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Which qualifying questions to include"
               : "Quelles questions de qualification inclure"}
@@ -165,7 +190,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-integrate-the-chatbot-with-the-crm" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How to integrate the chatbot with the CRM"
               : "Comment intégrer le chatbot avec le CRM"}
@@ -183,7 +208,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="measuring-the-impact-of-the-chatbot-on-lead-capt" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "Measuring the impact of the chatbot on lead capture"
               : "Mesurer l'impact du chatbot sur la captation de leads"}
@@ -201,7 +226,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

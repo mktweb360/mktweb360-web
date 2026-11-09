@@ -10,6 +10,7 @@ import { DEMO_BY_ID } from "@/lib/demos";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Web de servicios profesionales: 5 claves",
   description:
@@ -110,6 +111,10 @@ export default function FactoresWebServiciosProfesionalesPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "1-aviso-legal-completo-conforme-a-la-lssi-ce", "label": "1. Aviso legal completo, conforme a la LSSI-CE"}, {"id": "2-politica-de-privacidad-y-cookies-en-regla", "label": "2. Política de privacidad y cookies en regla"}, {"id": "3-solicitud-de-consulta-o-cita-online-sin-llamar", "label": "3. Solicitud de consulta o cita online, sin llamar"}, {"id": "4-consentimiento-expreso-para-comunicaciones-com", "label": "4. Consentimiento expreso para comunicaciones comerciales"}, {"id": "5-transparencia-de-honorarios-y-forma-de-trabajo", "label": "5. Transparencia de honorarios y forma de trabajo"}, {"id": "tu-web-trabaja-aunque-el-despacho-este-con-la-ag", "label": "Tu web trabaja aunque el despacho esté con la agenda llena"}, {"id": "preguntas-frecuentes-sobre-la-web-de-servicios-p", "label": "Preguntas frecuentes sobre la web de servicios profesionales"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Entre el aviso legal obligatorio, la política de privacidad y cookies, y el consentimiento para comunicaciones comerciales, la web de un despacho de servicios profesionales tiene que demostrar cumplimiento antes incluso de hablar de honorarios. Estos son los cinco factores que determinan si esa web genera confianza o riesgo legal.
@@ -117,12 +122,12 @@ export default function FactoresWebServiciosProfesionalesPage() {
 
           <DemoPreviewBanner demo={DEMO_BY_ID.psicologo} />
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Aviso legal completo, conforme a la LSSI-CE</h2>
+          <h2 id="1-aviso-legal-completo-conforme-a-la-lssi-ce" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Aviso legal completo, conforme a la LSSI-CE</h2>
           <p>
             Cualquier web con actividad económica está obligada a incluir un aviso legal visible y accesible con la identidad del titular, NIF, datos de contacto y, cuando aplica, el colegio profesional y número de colegiado. Un despacho de consultoría, ingeniería o auditoría sin esta información básica transmite justo lo contrario de lo que vende: rigor.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. Política de privacidad y cookies en regla</h2>
+          <h2 id="2-politica-de-privacidad-y-cookies-en-regla" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. Política de privacidad y cookies en regla</h2>
           <p>
             La LSSI-CE, junto con la normativa de protección de datos, exige tres documentos legales como mínimo en toda web que trate datos personales: aviso legal, política de privacidad y política de cookies. Las sanciones por incumplimiento pueden alcanzar los 600.000€ en los casos más graves — no es un detalle menor de diseño, es una obligación legal con consecuencias reales.
           </p>
@@ -135,26 +140,26 @@ export default function FactoresWebServiciosProfesionalesPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Solicitud de consulta o cita online, sin llamar</h2>
+          <h2 id="3-solicitud-de-consulta-o-cita-online-sin-llamar" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Solicitud de consulta o cita online, sin llamar</h2>
           <p>
             Buena parte de las decisiones sobre a qué despacho contactar ocurren fuera del horario de atención — comparando webs por la noche o durante un descanso laboral. Un formulario de solicitud de consulta integrado en la web capta a ese cliente potencial en el momento exacto en que decide, sin depender de que alguien conteste el teléfono.
           </p>
 
           <OfferBannerWebSeo />
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Consentimiento expreso para comunicaciones comerciales</h2>
+          <h2 id="4-consentimiento-expreso-para-comunicaciones-com" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Consentimiento expreso para comunicaciones comerciales</h2>
           <p>
             La LSSI-CE exige consentimiento expreso previo antes de enviar comunicaciones comerciales por email u otros canales electrónicos, salvo excepciones muy concretas ligadas a una relación contractual previa. Un formulario de contacto sin una casilla de consentimiento clara no solo incumple la norma — genera fricción con clientes que valoran precisamente el rigor normativo de su asesor.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Transparencia de honorarios y forma de trabajo</h2>
+          <h2 id="5-transparencia-de-honorarios-y-forma-de-trabajo" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Transparencia de honorarios y forma de trabajo</h2>
           <p>
             La opacidad en honorarios es una de las principales barreras de entrada en servicios profesionales. Explicar con claridad el modelo de tarifas —por proyecto, por horas, con un rango orientativo— reduce las consultas de quien solo compara precio y filtra mejor los clientes que sí encajan con el despacho.
           </p>
 
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-2">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-primary-600 mb-3">Tu web trabaja aunque el despacho esté con la agenda llena</h2>
+              <h2 id="tu-web-trabaja-aunque-el-despacho-este-con-la-ag" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">Tu web trabaja aunque el despacho esté con la agenda llena</h2>
               <p className="text-gray-700 leading-relaxed">
                 Mientras atiendes clientes o cierras un proyecto, tu web sigue abierta. Alguien que compara despachos de servicios profesionales por la noche encuentra tu aviso legal en regla, entiende tu forma de trabajar y solicita una consulta — sin que tengas que estar disponible para atenderlo en ese momento.
               </p>
@@ -189,7 +194,7 @@ export default function FactoresWebServiciosProfesionalesPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre la web de servicios profesionales</h2>
+          <h2 id="preguntas-frecuentes-sobre-la-web-de-servicios-p" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre la web de servicios profesionales</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

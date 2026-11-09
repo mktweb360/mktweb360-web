@@ -7,6 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: { absolute: "Auditoría de Google Ads para pymes: qué revisar paso a paso" },
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
       "Cómo saber si estás tirando dinero en Google Ads: conversiones, términos de búsqueda, concordancias, ubicación, presupuesto y landing, paso a paso para pymes.",
     url: "https://www.mktweb360.com/auditoria-google-ads-pymes-que-revisar/",
     type: "article",
-    images: [{ url: "/og-auditoria-google-ads-pymes-que-revisar.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-auditoria-google-ads-pymes-que-revisar-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +33,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
-  image: "https://www.mktweb360.com/og-auditoria-google-ads-pymes-que-revisar.jpg",
+  image: "https://www.mktweb360.com/og-auditoria-google-ads-pymes-que-revisar-v2.jpg",
   url: "https://www.mktweb360.com/auditoria-google-ads-pymes-que-revisar/",
   mainEntityOfPage: "https://www.mktweb360.com/auditoria-google-ads-pymes-que-revisar/",
   inLanguage: "es-ES",
@@ -116,7 +117,7 @@ export default function AuditoriaGoogleAdsPymesPage() {
             Checklist práctico para revisar tu cuenta de Google Ads sin ser técnico: conversiones, búsquedas reales, concordancias, ubicación, presupuesto, estructura y página de destino.
           </p>
           <Image
-            src="/og-auditoria-google-ads-pymes-que-revisar.jpg"
+            src="/og-auditoria-google-ads-pymes-que-revisar-v2.jpg"
             alt="Auditoría de Google Ads para pymes: qué revisar paso a paso"
             width={1200}
             height={630}
@@ -125,12 +126,16 @@ export default function AuditoriaGoogleAdsPymesPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={8} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "1-conversiones-lo-primero-y-lo-mas-importante", "label": "1. Conversiones: lo primero y lo más importante"}, {"id": "2-terminos-de-busqueda-que-escribio-realmente-la", "label": "2. Términos de búsqueda: qué escribió realmente la gente"}, {"id": "3-concordancias-alcance-frente-a-control", "label": "3. Concordancias: alcance frente a control"}, {"id": "4-ubicacion-presencia-o-interes", "label": "4. Ubicación: presencia o interés"}, {"id": "5-redes-y-recomendaciones-automaticas", "label": "5. Redes y recomendaciones automáticas"}, {"id": "6-presupuesto-y-rentabilidad", "label": "6. Presupuesto y rentabilidad"}, {"id": "7-estructura-y-anuncios", "label": "7. Estructura y anuncios"}, {"id": "8-pagina-de-destino", "label": "8. Página de destino"}, {"id": "cada-cuanto-repetir-esta-auditoria", "label": "Cada cuánto repetir esta auditoría"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             Una campaña de Google Ads no se evalúa por los clics ni por las impresiones, sino por las <strong>acciones que valen dinero</strong>: ventas, formularios, llamadas o clientes cualificados. Para saber si estás tirando presupuesto, revisa por este orden: <strong>conversiones, términos de búsqueda, concordancias, ubicación, presupuesto, estructura y página de destino</strong>. Este checklist te permite hacerlo aunque no seas técnico.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <ul className="space-y-3">
             {[
               <>Sin <strong>conversiones fiables</strong> no puedes saber si Ads es rentable, y el algoritmo tampoco puede optimizar.</>,
@@ -147,7 +152,7 @@ export default function AuditoriaGoogleAdsPymesPage() {
             ))}
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">1. Conversiones: lo primero y lo más importante</h2>
+          <h2 id="1-conversiones-lo-primero-y-lo-mas-importante" className="text-2xl font-bold text-primary-600 scroll-mt-24">1. Conversiones: lo primero y lo más importante</h2>
           <p>Entra en <em>Objetivos &gt; Conversiones</em> y comprueba:</p>
           <ul className="space-y-3">
             {[
@@ -166,7 +171,7 @@ export default function AuditoriaGoogleAdsPymesPage() {
             Si tu venta se cierra fuera de la web, por teléfono o con presupuesto, valora <strong>importar conversiones offline</strong>: lead cualificado, presupuesto aceptado o venta cerrada. Es la forma de que Google aprenda qué clics acaban en dinero.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">2. Términos de búsqueda: qué escribió realmente la gente</h2>
+          <h2 id="2-terminos-de-busqueda-que-escribio-realmente-la" className="text-2xl font-bold text-primary-600 scroll-mt-24">2. Términos de búsqueda: qué escribió realmente la gente</h2>
           <p>
             Tus palabras clave no son lo que la gente busca. En <em>Estadísticas e informes &gt; Términos de búsqueda</em> verás las consultas reales que activaron tus anuncios. Ordena por coste y busca:
           </p>
@@ -188,7 +193,7 @@ export default function AuditoriaGoogleAdsPymesPage() {
             Añade las irrelevantes como <strong>palabras clave negativas</strong> y convierte en palabra clave propia las consultas buenas que se repiten.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">3. Concordancias: alcance frente a control</h2>
+          <h2 id="3-concordancias-alcance-frente-a-control" className="text-2xl font-bold text-primary-600 scroll-mt-24">3. Concordancias: alcance frente a control</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
@@ -213,7 +218,7 @@ export default function AuditoriaGoogleAdsPymesPage() {
             La amplia puede funcionar bien cuando el sistema tiene datos de conversión de calidad. Sin ellos, suele gastar en búsquedas poco relacionadas.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">4. Ubicación: presencia o interés</h2>
+          <h2 id="4-ubicacion-presencia-o-interes" className="text-2xl font-bold text-primary-600 scroll-mt-24">4. Ubicación: presencia o interés</h2>
           <p>
             En la configuración de la campaña, revisa las <strong>opciones de ubicación</strong>. Si está marcada la opción que incluye a personas que <strong>muestran interés</strong> por tu zona, tu anuncio puede aparecer a alguien en otra provincia que busca información sobre ella. Para un negocio local, lo normal es segmentar por <strong>presencia</strong>: personas que están o suelen estar en tu zona.
           </p>
@@ -221,7 +226,7 @@ export default function AuditoriaGoogleAdsPymesPage() {
             Consulta también el informe de ubicaciones para ver <strong>dónde se generó el gasto realmente</strong>, excluye las zonas que no atiendes y ajusta la programación a tu horario de atención si trabajas con llamadas.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">5. Redes y recomendaciones automáticas</h2>
+          <h2 id="5-redes-y-recomendaciones-automaticas" className="text-2xl font-bold text-primary-600 scroll-mt-24">5. Redes y recomendaciones automáticas</h2>
           <p>Dos comprobaciones rápidas que ahorran mucho dinero:</p>
           <ul className="space-y-3">
             {[
@@ -237,7 +242,7 @@ export default function AuditoriaGoogleAdsPymesPage() {
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">6. Presupuesto y rentabilidad</h2>
+          <h2 id="6-presupuesto-y-rentabilidad" className="text-2xl font-bold text-primary-600 scroll-mt-24">6. Presupuesto y rentabilidad</h2>
           <p>
             Ordena las campañas por coste y mira cuántas conversiones y cuánto valor generan. El dato clave no es el CPA (coste por adquisición) aislado, sino si es rentable. Un ejemplo:
           </p>
@@ -248,13 +253,13 @@ export default function AuditoriaGoogleAdsPymesPage() {
             Haz tu propia cuenta con tus números reales de margen, tasa de cierre y valor del cliente en el tiempo. Revisa también si alguna campaña está <strong>limitada por presupuesto</strong> mientras otra gasta sin resultados: redistribuir suele ser más rentable que subir la inversión.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">7. Estructura y anuncios</h2>
+          <h2 id="7-estructura-y-anuncios" className="text-2xl font-bold text-primary-600 scroll-mt-24">7. Estructura y anuncios</h2>
           <p>
             Separa en campañas o grupos distintos lo que tiene intenciones distintas: <strong>marca</strong>, cada <strong>servicio</strong>, cada <strong>zona</strong> y cada <strong>objetivo</strong>. Si mezclas reforma de baño y reforma de cocina en el mismo grupo, el anuncio no podrá hablar con precisión de ninguna de las dos.
           </p>
           <p>Cada grupo debe tener anuncios que repitan la intención de la búsqueda y lleven a una página coherente con ella.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">8. Página de destino</h2>
+          <h2 id="8-pagina-de-destino" className="text-2xl font-bold text-primary-600 scroll-mt-24">8. Página de destino</h2>
           <p>El anuncio trae el clic; la landing lo convierte. Comprueba que tu página:</p>
           <ul className="space-y-3">
             {landing.map((item, i) => (
@@ -268,7 +273,7 @@ export default function AuditoriaGoogleAdsPymesPage() {
             Si necesitas mejorarla, esta guía sobre <Link href="/como-crear-landing-page-que-convierte/" className="text-accent-500 hover:underline">cómo crear una landing page que convierte</Link> recoge los elementos clave.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cada cuánto repetir esta auditoría</h2>
+          <h2 id="cada-cuanto-repetir-esta-auditoria" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cada cuánto repetir esta auditoría</h2>
           <p>
             Revisa <strong>términos de búsqueda cada semana</strong> al principio y cada dos semanas cuando la cuenta esté estable. Haz la <strong>auditoría completa cada trimestre</strong> o cuando cambies de servicio, precio o web. Si tienes dudas sobre si te conviene más invertir en anuncios o en posicionamiento, esta comparativa sobre <Link href="/cuando-elegir-seo-vs-google-ads/" className="text-accent-500 hover:underline">cuándo elegir SEO o Google Ads</Link> te ayuda a decidir. Y si trabajas con una agencia, comprueba cómo cobra: una comisión sobre la inversión premia gastar más, no gastar mejor. Lo explicamos en <Link href="/google-ads-sin-comision-agencia-marketing/" className="text-accent-500 hover:underline">Google Ads sin comisión sobre presupuesto</Link>.
           </p>
@@ -281,7 +286,7 @@ export default function AuditoriaGoogleAdsPymesPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -294,7 +299,7 @@ export default function AuditoriaGoogleAdsPymesPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

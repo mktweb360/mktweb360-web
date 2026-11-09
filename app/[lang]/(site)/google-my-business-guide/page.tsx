@@ -7,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -41,8 +42,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Google My Business (now called Google Business Profile) is the most important free tool for local businesses. This complete guide explains how to set it up and optimise it to appear when local customers search." : "Google My Business (maintenant appelé Google Business Profile) est l'outil gratuit le plus important pour les entreprises locales. Ce guide complet explique comment le configurer et l'optimiser pour apparaître quand les clients locaux cherchent."}
         </p>
 
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "what-google-my-business-is-and-why-it-matters", label: isEn ? "What Google My Business is and why it matters" : "Qu'est-ce que Google My Business et pourquoi c'est important" }, { id: "how-to-create-and-verify-your-listing", label: isEn ? "How to create and verify your listing" : "Comment créer et vérifier votre fiche" }, { id: "how-to-optimise-every-field-of-your-profile", label: isEn ? "How to optimise every field of your profile" : "Comment optimiser chaque champ de votre profil" }, { id: "google-posts-how-to-keep-your-listing-active", label: isEn ? "Google posts: how to keep your listing active" : "Google Posts : comment maintenir votre fiche active" }, { id: "reviews-strategy-for-google-my-business", label: isEn ? "Reviews strategy for Google My Business" : "Stratégie d'avis pour Google My Business" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-google-my-business-is-and-why-it-matters" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "What Google My Business is and why it matters" : "Qu'est-ce que Google My Business et pourquoi c'est important"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +59,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-create-and-verify-your-listing" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to create and verify your listing" : "Comment créer et vérifier votre fiche"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +71,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-optimise-every-field-of-your-profile" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "How to optimise every field of your profile" : "Comment optimiser chaque champ de votre profil"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -78,7 +83,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="google-posts-how-to-keep-your-listing-active" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Google posts: how to keep your listing active" : "Google Posts : comment maintenir votre fiche active"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -90,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="reviews-strategy-for-google-my-business" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Reviews strategy for Google My Business" : "Stratégie d'avis pour Google My Business"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

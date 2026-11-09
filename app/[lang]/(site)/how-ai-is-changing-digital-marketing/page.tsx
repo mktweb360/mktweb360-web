@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
@@ -6,6 +7,7 @@ import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -88,7 +90,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "AI & Marketing" : "IA & Marketing"}
         </p>
-        <IntlArticleJsonLd lang={lang} slug="how-ai-is-changing-digital-marketing" headline={isEn ? "How AI is changing digital marketing forever" : "Comment l'IA est en train de transformer le marketing digital pour toujours"} image="/og-chatgpt-para-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="how-ai-is-changing-digital-marketing" headline={isEn ? "How AI is changing digital marketing forever" : "Comment l'IA est en train de transformer le marketing digital pour toujours"} image="/og-chatgpt-para-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "How AI is changing digital marketing forever"
@@ -101,6 +103,31 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "L'IA n'est plus une tendance en marketing : c'est l'infrastructure. Plus de 70 % des interactions de marketing digital seront influencées par l'IA en 2026. Nous analysons ce qui change, ce qui ne change pas et ce que vous devez faire."}
         </p>
 
+        <Image
+          src="/og-como-la-ia-esta-cambiando-el-marketing-digital-para-siempre-v2.jpg"
+          alt={!isEn ? "Commerçant souriant devant sa vitrine, dans une vieille rue à l’aube, avec des fils de lumière bleue qui relient les boutiques" : "Smiling merchant in front of his shop window on an old street at dawn, with threads of blue light connecting the shops"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "the-change-that-already-happened-ai-as-marketing", label: isEn
+              ? "The change that already happened: AI as marketing infrastructure"
+              : "Le changement qui s'est déjà produit : l'IA comme infrastructure marketing" }, { id: "what-ai-does-well-in-marketing-with-real-data", label: isEn
+              ? "What AI does well in marketing with real data"
+              : "Ce que l'IA fait bien en marketing, avec des données réelles" }, { id: "what-ai-still-cannot-do", label: isEn
+              ? "What AI still cannot do"
+              : "Ce que l'IA ne peut pas encore faire" }, { id: "the-new-role-of-the-marketing-professional-in-th", label: isEn
+              ? "The new role of the marketing professional in the AI era"
+              : "Le nouveau rôle du professionnel du marketing à l'ère de l'IA" }, { id: "how-to-prepare-your-company-for-marketing-with-a", label: isEn
+              ? "How to prepare your company for marketing with AI"
+              : "Comment préparer votre entreprise au marketing avec l'IA" }, { id: "the-window-of-opportunity-that-is-closing", label: isEn
+              ? "The window of opportunity that is closing"
+              : "La fenêtre d'opportunité qui se referme" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
         <section className="mb-10">
           <p className="text-gray-600 mb-4 leading-relaxed">
             {isEn
@@ -110,7 +137,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-change-that-already-happened-ai-as-marketing" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The change that already happened: AI as marketing infrastructure"
               : "Le changement qui s'est déjà produit : l'IA comme infrastructure marketing"}
@@ -128,7 +155,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-ai-does-well-in-marketing-with-real-data" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What AI does well in marketing with real data"
               : "Ce que l'IA fait bien en marketing, avec des données réelles"}
@@ -146,7 +173,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-ai-still-cannot-do" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "What AI still cannot do"
               : "Ce que l'IA ne peut pas encore faire"}
@@ -166,7 +193,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <BlogBanner lang={lang} />
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-new-role-of-the-marketing-professional-in-th" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The new role of the marketing professional in the AI era"
               : "Le nouveau rôle du professionnel du marketing à l'ère de l'IA"}
@@ -184,7 +211,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="how-to-prepare-your-company-for-marketing-with-a" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "How to prepare your company for marketing with AI"
               : "Comment préparer votre entreprise au marketing avec l'IA"}
@@ -202,7 +229,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="the-window-of-opportunity-that-is-closing" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn
               ? "The window of opportunity that is closing"
               : "La fenêtre d'opportunité qui se referme"}
@@ -247,7 +274,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </div>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-3">

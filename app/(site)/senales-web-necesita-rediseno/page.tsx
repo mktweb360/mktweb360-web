@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "Señales de que tu web necesita un rediseño",
   description:
@@ -102,6 +103,10 @@ export default function SenalesRedisenoPage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "por-que-muchas-webs-siguen-activas-mas-tiempo-de", "label": "Por qué muchas webs siguen activas más tiempo del que deberían"}, {"id": "senales-que-indican-que-algo-no-funciona", "label": "Señales que indican que algo no funciona"}, {"id": "cuando-tiene-sentido-redisenar-y-cuando-no", "label": "Cuándo tiene sentido rediseñar y cuándo no"}, {"id": "que-debe-resolver-un-buen-rediseno", "label": "Qué debe resolver un buen rediseño"}, {"id": "preguntas-frecuentes-sobre-rediseno-web", "label": "Preguntas frecuentes sobre rediseño web"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             La pregunta correcta no es &ldquo;¿cuántos años tiene mi web?&rdquo; sino &ldquo;¿está haciendo bien su trabajo?&rdquo;. Una web que no genera contactos, que asusta a los visitantes o que no posiciona es una herramienta rota, independientemente de cuándo se hizo.
@@ -110,10 +115,10 @@ export default function SenalesRedisenoPage() {
             Optimizar una web con problemas estructurales es como pintar un coche con el motor averiado. Hay momentos en que la solución más rentable no es parchear sino reconstruir sobre una base sólida.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Por qué muchas webs siguen activas más tiempo del que deberían</h2>
+          <h2 id="por-que-muchas-webs-siguen-activas-mas-tiempo-de" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué muchas webs siguen activas más tiempo del que deberían</h2>
           <p>Una web puede seguir técnicamente operativa durante años mientras acumula problemas silenciosos: mensajes que ya no representan bien al negocio, estructura que no responde a cómo busca el cliente actual, rendimiento que penaliza la experiencia y base SEO que nunca se resolvió bien. El problema es que esos problemas raramente son obvios de golpe; se acumulan despacio hasta que la web se convierte en un freno.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Señales que indican que algo no funciona</h2>
+          <h2 id="senales-que-indican-que-algo-no-funciona" className="text-2xl font-bold text-primary-600 scroll-mt-24">Señales que indican que algo no funciona</h2>
           <p>Hay señales técnicas, comerciales y estratégicas. Las técnicas incluyen lentitud, mala experiencia móvil y problemas de indexación. Las comerciales incluyen tráfico que no convierte, formularios que no generan oportunidades útiles y mensajes que no conectan. Las estratégicas incluyen una arquitectura que ya no refleja el negocio actual, servicios que han cambiado y una imagen que ya no transmite el nivel real de la empresa.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
@@ -124,12 +129,12 @@ export default function SenalesRedisenoPage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Cuándo tiene sentido rediseñar y cuándo no</h2>
+          <h2 id="cuando-tiene-sentido-redisenar-y-cuando-no" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cuándo tiene sentido rediseñar y cuándo no</h2>
           <p>No siempre la respuesta correcta es rehacer desde cero. A veces basta con mejorar la arquitectura, actualizar mensajes, resolver problemas técnicos o añadir páginas bien pensadas. El rediseño completo tiene sentido cuando la base es tan limitante que no permite crecer sin arrastrar esas limitaciones.</p>
 
           <BlogBanner variant="default" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué debe resolver un buen rediseño</h2>
+          <h2 id="que-debe-resolver-un-buen-rediseno" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué debe resolver un buen rediseño</h2>
           <p>Un rediseño bien planteado no solo cambia el aspecto visual. Debe resolver el mensaje, la arquitectura, la experiencia móvil, la base SEO, los CTAs, la medición y la escalabilidad. Si solo se cambia el diseño sin tocar la estrategia, el resultado suele ser una web más bonita con los mismos problemas de fondo.</p>
 
           <p className="text-sm text-gray-500">
@@ -151,7 +156,7 @@ export default function SenalesRedisenoPage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre rediseño web</h2>
+          <h2 id="preguntas-frecuentes-sobre-rediseno-web" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre rediseño web</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

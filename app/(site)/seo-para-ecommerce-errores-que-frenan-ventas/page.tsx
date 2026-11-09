@@ -9,6 +9,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "SEO para ecommerce: errores que frenan ventas",
   description:
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     description: "Descubre los errores SEO más comunes en ecommerce y qué revisar para mejorar visibilidad, tráfico cualificado y ventas.",
     url: "https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/",
     type: "article",
-    images: [{ url: "/og-seo-para-ecommerce-errores-que-frenan-ventas.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-seo-para-ecommerce-errores-que-frenan-ventas-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -35,7 +36,7 @@ const articleSchema = {
   url: "https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/",
   mainEntityOfPage: "https://www.mktweb360.com/seo-para-ecommerce-errores-que-frenan-ventas/",
   inLanguage: "es-ES",
-  image: "https://www.mktweb360.com/og-seo-para-ecommerce-errores-que-frenan-ventas.jpg",
+  image: "https://www.mktweb360.com/og-seo-para-ecommerce-errores-que-frenan-ventas-v2.jpg",
 };
 
 const FAQS = [
@@ -93,7 +94,7 @@ export default function SeoEcommercePage() {
             El SEO para tiendas online es más complejo que el SEO para webs de servicios. La arquitectura, las categorías y las fichas de producto tienen reglas propias — y los errores más frecuentes son también los más costosos.
           </p>
           <Image
-            src="/og-seo-para-ecommerce-errores-que-frenan-ventas.jpg"
+            src="/og-seo-para-ecommerce-errores-que-frenan-ventas-v2.jpg"
             alt="SEO para ecommerce: errores que frenan ventas en tu tienda online"
             width={1200}
             height={630}
@@ -101,6 +102,10 @@ export default function SeoEcommercePage() {
             priority
           />
         </header>
+
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "errores-estructurales-que-mas-frenan", "label": "Errores estructurales que más frenan"}, {"id": "que-paginas-conviene-potenciar-primero", "label": "Qué páginas conviene potenciar primero"}, {"id": "seo-y-cro-no-deberian-separarse", "label": "SEO y CRO no deberían separarse"}, {"id": "que-revisar-antes-de-subir-ads", "label": "Qué revisar antes de subir Ads"}, {"id": "preguntas-frecuentes-sobre-seo-para-ecommerce", "label": "Preguntas frecuentes sobre SEO para ecommerce"}]} />
+        </div>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
@@ -110,7 +115,7 @@ export default function SeoEcommercePage() {
             A diferencia de una web de servicios, en ecommerce el SEO trabaja en varias capas: la arquitectura del sitio, las páginas de categoría, las fichas de producto y el contenido editorial. Cada capa tiene sus propias oportunidades y sus propios errores frecuentes.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Errores estructurales que más frenan</h2>
+          <h2 id="errores-estructurales-que-mas-frenan" className="text-2xl font-bold text-primary-600 scroll-mt-24">Errores estructurales que más frenan</h2>
           <p>Los problemas de arquitectura, la falta de contenido útil en categorías, los textos de proveedor duplicados, la indexación de páginas de filtro sin valor y la lentitud en móvil son los errores que más frenan el rendimiento orgánico de una tienda. La mayoría no se ven a simple vista, pero tienen un impacto directo en qué páginas indexa Google y con qué posiciones las muestra.</p>
           <ul className="space-y-2">
             {["Contenido duplicado en fichas y variantes", "Categorías sin texto útil para SEO", "Filtros que generan miles de URLs sin valor", "Velocidad en móvil que perjudica experiencia y ranking"].map((item) => (
@@ -129,15 +134,15 @@ export default function SeoEcommercePage() {
             </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué páginas conviene potenciar primero</h2>
+          <h2 id="que-paginas-conviene-potenciar-primero" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué páginas conviene potenciar primero</h2>
           <p>Las páginas de categoría suelen ser las que más volumen de búsqueda captan. Una categoría bien construida, con texto útil, buena estructura interna y enlazado correcto, puede traer tráfico cualificado de forma constante. Después vienen las fichas con búsquedas específicas de producto. La home y las páginas de información tienen un papel secundario en la captación orgánica en ecommerce.</p>
 
-          <h2 className="text-2xl font-bold text-primary-600">SEO y CRO no deberían separarse</h2>
+          <h2 id="seo-y-cro-no-deberian-separarse" className="text-2xl font-bold text-primary-600 scroll-mt-24">SEO y CRO no deberían separarse</h2>
           <p>Atraer tráfico es solo la primera parte. Si la ficha de producto no convierte, si el proceso de compra tiene fricciones o si la velocidad penaliza la experiencia, el tráfico orgánico no se traduce en ventas. SEO y optimización de conversión deberían trabajarse juntos, no como proyectos separados. Una tienda que posiciona pero no convierte tiene el mismo problema que una que convierte pero no posiciona.</p>
 
           <BlogBanner variant="ecommerce" />
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué revisar antes de subir Ads</h2>
+          <h2 id="que-revisar-antes-de-subir-ads" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué revisar antes de subir Ads</h2>
           <p>Antes de aumentar presupuesto en campañas, conviene revisar si el SEO base está resuelto, si las páginas de destino convierten bien y si la tienda no tiene problemas técnicos que afecten a la experiencia. Escalar Ads sobre una tienda con errores estructurales multiplica el gasto sin mejorar proporcionalmente los resultados.</p>
 
           <p className="text-sm text-gray-500">
@@ -159,7 +164,7 @@ export default function SeoEcommercePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes sobre SEO para ecommerce</h2>
+          <h2 id="preguntas-frecuentes-sobre-seo-para-ecommerce" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes sobre SEO para ecommerce</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

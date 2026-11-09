@@ -7,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isFr = lang === "fr";
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     openGraph: {
       title: `${isFr ? "Réseaux sociaux pour entreprises B2B en 2026" : "Social Media for B2B Companies in 2026"} | Mkt Web 360`,
       description: isFr ? "Guide pratique des réseaux sociaux B2B en 2026 : quels réseaux prioriser, quel contenu génère des leads et comment mesurer le vrai retour sur investissement." : "Social media for B2B companies in 2026: which networks to prioritise, what content generates leads and how to measure the real return on your investment.",
-      images: [{ url: "https://www.mktweb360.com/og-redes-sociales-para-empresas-b2b-2026.jpg", width: 1200, height: 630 }],
+      images: [{ url: "https://www.mktweb360.com/og-redes-sociales-para-empresas-b2b-2026-v2.jpg", width: 1200, height: 630 }],
       type: "article",
       publishedTime: "2026-08-21T08:00:00Z",
     },
@@ -48,7 +49,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <div className="mt-4 mb-3">
             <span className="bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">{cat}</span>
           </div>
-          <IntlArticleJsonLd lang={lang} slug="social-media-b2b-companies-2026" headline={title} image="/og-redes-sociales-para-empresas-b2b-2026.jpg" />
+          <IntlArticleJsonLd lang={lang} slug="social-media-b2b-companies-2026" headline={title} image="/og-redes-sociales-para-empresas-b2b-2026-v2.jpg" />
           <h1 className="text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">{title}</h1>
           <p className="text-xl text-primary-200">{desc}</p>
           <div className="mt-6 flex flex-wrap gap-4 text-sm text-primary-300">
@@ -59,6 +60,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       </section>
 
       <BlogBanner lang={lang} />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={8} items={[{ id: "frequently-asked-questions", label: isFr ? "Questions fréquentes" : "Frequently Asked Questions" }, { id: "need-help-with-your-digital-strategy", label: isFr ? "Besoin d'aide ?" : "Need help with your digital strategy?" }]} />
+        </div>
 
       <section className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
@@ -76,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">
+          <h2 id="frequently-asked-questions" className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center scroll-mt-24">
             {isFr ? "Questions fréquentes" : "Frequently Asked Questions"}
           </h2>
           {faqs.map(([q, a], i) => (
@@ -90,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-primary-50">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-primary-700 mb-4">
+          <h2 id="need-help-with-your-digital-strategy" className="text-3xl font-bold text-primary-700 mb-4 scroll-mt-24">
             {isFr ? "Besoin d'aide ?" : "Need help with your digital strategy?"}
           </h2>
           <p className="text-gray-600 mb-8">

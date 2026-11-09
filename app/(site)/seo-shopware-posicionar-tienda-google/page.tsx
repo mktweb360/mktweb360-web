@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: "SEO para Shopware: posiciona tu tienda",
   description:
@@ -86,19 +87,23 @@ export default function SeoShopwarePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={5} items={[{"id": "por-que-el-seo-de-shopware-es-distinto", "label": "Por qué el SEO de Shopware es distinto"}, {"id": "urls-y-canonical-el-control-que-da-shopware-6", "label": "URLs y canonical: el control que da Shopware 6"}, {"id": "navegacion-facetada-el-error-que-arruina-tu-craw", "label": "Navegación facetada: el error que arruina tu crawl budget"}, {"id": "schema-de-producto-product-offer-y-aggregaterati", "label": "Schema de producto: Product, Offer y AggregateRating"}, {"id": "core-web-vitals-en-shopware", "label": "Core Web Vitals en Shopware"}, {"id": "fichas-y-categorias-contenido-unico-que-posicion", "label": "Fichas y categorías: contenido único que posiciona"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>Shopware 6 es una de las plataformas de ecommerce con mejor base técnica para SEO, pero esa potencia solo se traduce en ventas si se configura bien. La mayoría de las tiendas Shopware pierden posiciones por los mismos fallos evitables: navegación facetada sin control, fichas sin contenido único y métricas de rendimiento descuidadas. Vamos a verlos uno a uno.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Por qué el SEO de Shopware es distinto</h2>
+          <h2 id="por-que-el-seo-de-shopware-es-distinto" className="text-2xl font-bold text-primary-600 scroll-mt-24">Por qué el SEO de Shopware es distinto</h2>
           <p>A diferencia de un CMS genérico, Shopware está pensado para catálogos: variantes, propiedades, filtros y miles de combinaciones de URL. Esa flexibilidad es una ventaja para vender y un riesgo para el SEO si no se acota. El trabajo técnico consiste en decirle a Google qué páginas valen y cuáles no, para que concentre su rastreo donde hay negocio.</p>
-          <h2 className="text-2xl font-bold text-primary-600">URLs y canonical: el control que da Shopware 6</h2>
+          <h2 id="urls-y-canonical-el-control-que-da-shopware-6" className="text-2xl font-bold text-primary-600 scroll-mt-24">URLs y canonical: el control que da Shopware 6</h2>
           <p>Shopware permite configurar plantillas de URL limpias y descriptivas para productos y categorías, y genera canonical automático para las variantes de un mismo producto. Esto evita que tallas, colores o presentaciones compitan entre sí en Google. Bien configurado, cada producto consolida su autoridad en una sola URL canónica en lugar de dispersarla entre decenas de variantes.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Navegación facetada: el error que arruina tu crawl budget</h2>
+          <h2 id="navegacion-facetada-el-error-que-arruina-tu-craw" className="text-2xl font-bold text-primary-600 scroll-mt-24">Navegación facetada: el error que arruina tu crawl budget</h2>
           <p>Es el problema más frecuente y el más caro. Cada filtro (marca, precio, color, talla) que genera una URL rastreable multiplica las combinaciones: una categoría con cinco filtros puede producir miles de URLs casi idénticas que diluyen autoridad y consumen el crawl budget que Google dedica a tu tienda. La solución pasa por decidir qué facetas se indexan (las que tienen demanda de búsqueda real), bloquear el resto con noindex o reglas de rastreo y mantener el canonical apuntando a la categoría madre.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Schema de producto: Product, Offer y AggregateRating</h2>
+          <h2 id="schema-de-producto-product-offer-y-aggregaterati" className="text-2xl font-bold text-primary-600 scroll-mt-24">Schema de producto: Product, Offer y AggregateRating</h2>
           <p>Los datos estructurados son los que activan los resultados enriquecidos: precio, disponibilidad y estrellas en la propia búsqueda de Google. Para una tienda Shopware, el marcado mínimo es Product con su Offer (precio, moneda y disponibilidad) y, cuando hay reseñas reales, AggregateRating. Ese marcado mejora el CTR sin tocar el posicionamiento, porque tu resultado ocupa más espacio y transmite más confianza.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Core Web Vitals en Shopware</h2>
+          <h2 id="core-web-vitals-en-shopware" className="text-2xl font-bold text-primary-600 scroll-mt-24">Core Web Vitals en Shopware</h2>
           <p>El rendimiento es factor de ranking y de conversión. Los tres fallos típicos en Shopware: LCP alto cuando la imagen hero carga sin prioridad (se corrige marcándola con fetchpriority alta), CLS por imágenes sin dimensiones declaradas que descuadran el layout al cargar, e INP degradado por plugins JavaScript que bloquean la interacción. Auditar y corregir estos tres puntos suele dar el mayor salto de rendimiento.</p>
-          <h2 className="text-2xl font-bold text-primary-600">Fichas y categorías: contenido único que posiciona</h2>
+          <h2 id="fichas-y-categorias-contenido-unico-que-posicion" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fichas y categorías: contenido único que posiciona</h2>
           <p>El catálogo importado de un proveedor trae descripciones duplicadas que Google ignora. Cada ficha de producto necesita un mínimo de contenido único —en torno a 150 palabras reales— que responda a lo que busca el cliente: para qué sirve, en qué se diferencia, qué incluye. Las páginas de categoría, además del listado, deben tener un texto que explique la gama y capte las búsquedas genéricas del sector.</p>
           <p>Sobre plugins SEO: tienen sentido a partir de cierto volumen. Para tiendas con más de 500 productos, un buen plugin automatiza canonical, sitemaps y metadatos a escala; por debajo de esa cifra, la configuración nativa de Shopware bien hecha suele bastar.</p>
 
@@ -125,7 +130,7 @@ export default function SeoShopwarePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">

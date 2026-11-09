@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { openGraphIntl } from "@/lib/og";
 import { ContactForm } from "@/components/ContactForm";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -7,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -41,8 +43,21 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "The Business Model Canvas can be adapted to plan and manage your social media strategy. This guide explains how to use it to create a clearer, more structured content strategy." : "Le Business Model Canvas peut être adapté pour planifier et gérer votre stratégie de réseaux sociaux. Ce guide explique comment l'utiliser pour créer une stratégie de contenu plus claire et structurée."}
         </p>
 
+        <Image
+          src="/og-descubre-el-poder-del-canvas-para-la-gestion-de-tus-redes-sociales-v2.jpg"
+          alt={!isEn ? "Community manager disposant des notes de couleur sur un tableau divisé en blocs, à côté d’un téléphone affichant des cœurs et des commentaires" : "Community manager placing colored notes on a panel divided into blocks, next to a phone showing hearts and comments"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={4} items={[{ id: "what-the-canvas-framework-is-and-how-it-applies", label: isEn ? "What the Canvas framework is and how it applies to social media" : "Qu'est-ce que le Canvas et comment il s'applique aux réseaux sociaux" }, { id: "mapping-your-audience-on-the-canvas", label: isEn ? "Mapping your audience on the Canvas" : "Cartographier votre audience sur le Canvas" }, { id: "value-proposition-for-each-social-platform", label: isEn ? "Value proposition for each social platform" : "Proposition de valeur pour chaque plateforme sociale" }, { id: "content-channels-and-key-activities", label: isEn ? "Content channels and key activities" : "Canaux de contenu et activités clés" }, { id: "measuring-success-with-the-canvas-framework", label: isEn ? "Measuring success with the Canvas framework" : "Mesurer le succès avec le Canvas" }]} />
+        </div>
+
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="what-the-canvas-framework-is-and-how-it-applies" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "What the Canvas framework is and how it applies to social media" : "Qu'est-ce que le Canvas et comment il s'applique aux réseaux sociaux"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -54,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="mapping-your-audience-on-the-canvas" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Mapping your audience on the Canvas" : "Cartographier votre audience sur le Canvas"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -66,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="value-proposition-for-each-social-platform" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Value proposition for each social platform" : "Proposition de valeur pour chaque plateforme sociale"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -78,7 +93,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="content-channels-and-key-activities" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Content channels and key activities" : "Canaux de contenu et activités clés"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">
@@ -97,7 +112,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </section>
 
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-primary-600 mb-4">
+          <h2 id="measuring-success-with-the-canvas-framework" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
             {isEn ? "Measuring success with the Canvas framework" : "Mesurer le succès avec le Canvas"}
           </h2>
           <p className="text-gray-600 mb-4 leading-relaxed">

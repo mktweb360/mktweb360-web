@@ -7,6 +7,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export const metadata: Metadata = {
   title: { absolute: "Ayudas para digitalizar tu pyme en 2026 tras el Kit Digital" },
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
       "El Kit Digital cerró solicitudes en octubre de 2025. Qué ayudas quedan en 2026 para digitalizar tu pyme, qué hace la Orden TDF/39/2026 y cómo prepararte.",
     url: "https://www.mktweb360.com/ayudas-digitalizar-pyme-2026-tras-kit-digital/",
     type: "article",
-    images: [{ url: "/og-ayudas-digitalizar-pyme-2026-tras-kit-digital.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/og-ayudas-digitalizar-pyme-2026-tras-kit-digital-v2.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -32,7 +33,7 @@ const articleSchema = {
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-09-25",
   dateModified: "2026-09-25",
-  image: "https://www.mktweb360.com/og-ayudas-digitalizar-pyme-2026-tras-kit-digital.jpg",
+  image: "https://www.mktweb360.com/og-ayudas-digitalizar-pyme-2026-tras-kit-digital-v2.jpg",
   url: "https://www.mktweb360.com/ayudas-digitalizar-pyme-2026-tras-kit-digital/",
   mainEntityOfPage: "https://www.mktweb360.com/ayudas-digitalizar-pyme-2026-tras-kit-digital/",
   inLanguage: "es-ES",
@@ -131,7 +132,7 @@ export default function AyudasDigitalizarPymePage() {
             El Kit Digital ya no admite solicitudes nuevas. Qué significa la Orden TDF/39/2026, dónde buscar ayudas reales en 2026 y cómo preparar la documentación para no perder una convocatoria.
           </p>
           <Image
-            src="/og-ayudas-digitalizar-pyme-2026-tras-kit-digital.jpg"
+            src="/og-ayudas-digitalizar-pyme-2026-tras-kit-digital-v2.jpg"
             alt="Ayudas para digitalizar tu pyme en 2026 tras el Kit Digital"
             width={1200}
             height={630}
@@ -140,12 +141,16 @@ export default function AyudasDigitalizarPymePage() {
           />
         </header>
 
+        <div className="mb-8">
+          <ArticleIndex lang="es" minutes={8} items={[{"id": "resumen-rapido", "label": "Resumen rápido"}, {"id": "que-paso-con-el-kit-digital", "label": "Qué pasó con el Kit Digital"}, {"id": "que-hace-la-orden-tdf-39-2026-y-que-no-hace", "label": "Qué hace la Orden TDF/39/2026 (y qué no hace)"}, {"id": "donde-buscar-ayudas-reales-en-2026", "label": "Dónde buscar ayudas reales en 2026"}, {"id": "que-gastos-suelen-cubrir-y-cuales-no", "label": "Qué gastos suelen cubrir (y cuáles no)"}, {"id": "como-no-perder-la-proxima-convocatoria", "label": "Cómo no perder la próxima convocatoria"}, {"id": "evita-tener-que-devolver-la-ayuda", "label": "Evita tener que devolver la ayuda"}, {"id": "preguntas-frecuentes", "label": "Preguntas frecuentes"}, {"id": "fuentes", "label": "Fuentes"}]} />
+        </div>
+
         <div className="text-gray-700 space-y-6 leading-relaxed">
           <p>
             El Kit Digital <strong>cerró el plazo de solicitud el 31 de octubre de 2025</strong>, cuando Red.es dio por finalizadas las dos últimas convocatorias abiertas. En 2026 no hay una convocatoria general para empresas que no lo pidieron en su día. Lo que sí existe es una <strong>modificación de las bases</strong> que permite repartir fondos sobrantes, además de programas estatales, de Cámaras de Comercio y autonómicos que conviene vigilar.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Resumen rápido</h2>
+          <h2 id="resumen-rapido" className="text-2xl font-bold text-primary-600 scroll-mt-24">Resumen rápido</h2>
           <ul className="space-y-3">
             {[
               <>Las convocatorias del Kit Digital están <strong>finalizadas</strong> según Acelera pyme.</>,
@@ -162,12 +167,12 @@ export default function AyudasDigitalizarPymePage() {
             ))}
           </ul>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué pasó con el Kit Digital</h2>
+          <h2 id="que-paso-con-el-kit-digital" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué pasó con el Kit Digital</h2>
           <p>
             El Kit Digital subvencionaba soluciones como web, tienda online, redes sociales o ciberseguridad a través de agentes digitalizadores. Red.es anunció el 31 de octubre de 2025 el cierre de las dos últimas convocatorias: la de autónomos y empresas de 0 a menos de 3 empleados, y la de comunidades de bienes, sociedades civiles y explotaciones agrarias. Desde entonces, la web oficial de Acelera pyme indica que <strong>las convocatorias del programa han finalizado</strong>.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué hace la Orden TDF/39/2026 (y qué no hace)</h2>
+          <h2 id="que-hace-la-orden-tdf-39-2026-y-que-no-hace" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué hace la Orden TDF/39/2026 (y qué no hace)</h2>
           <p>La Orden TDF/39/2026, de 26 de enero, modificó las bases reguladoras del programa. En síntesis:</p>
           <ul className="space-y-3">
             {[
@@ -188,7 +193,7 @@ export default function AyudasDigitalizarPymePage() {
             Si no lo pediste, <strong>desconfía de quien te ofrezca “apuntarte a una lista de espera”</strong>. Ninguna lista privada reserva presupuesto público. Cualquier convocatoria real se publica en el BOE y en la sede electrónica de Red.es.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Dónde buscar ayudas reales en 2026</h2>
+          <h2 id="donde-buscar-ayudas-reales-en-2026" className="text-2xl font-bold text-primary-600 scroll-mt-24">Dónde buscar ayudas reales en 2026</h2>
 
           <h3 className="text-xl font-semibold text-gray-800">Programas estatales específicos</h3>
           <p>
@@ -215,7 +220,7 @@ export default function AyudasDigitalizarPymePage() {
             La <strong>Base de Datos Nacional de Subvenciones</strong> (BDNS) publica todas las convocatorias de ayudas públicas de España, estatales, autonómicas y locales. Es la fuente más fiable para comprobar si una ayuda existe de verdad y si su plazo está abierto.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Qué gastos suelen cubrir (y cuáles no)</h2>
+          <h2 id="que-gastos-suelen-cubrir-y-cuales-no" className="text-2xl font-bold text-primary-600 scroll-mt-24">Qué gastos suelen cubrir (y cuáles no)</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
@@ -251,7 +256,7 @@ export default function AyudasDigitalizarPymePage() {
             secondary={{ text: "¿Lo que necesitas es una web? Mira qué incluye", href: "/diseno-de-paginas-web/" }}
           />
 
-          <h2 className="text-2xl font-bold text-primary-600">Cómo no perder la próxima convocatoria</h2>
+          <h2 id="como-no-perder-la-proxima-convocatoria" className="text-2xl font-bold text-primary-600 scroll-mt-24">Cómo no perder la próxima convocatoria</h2>
           <p>Muchas ayudas se conceden por orden de solicitud o tienen plazos cortos. Ten preparado antes de que se publiquen:</p>
           <ul className="space-y-3">
             {preparacion.map((item) => (
@@ -265,7 +270,7 @@ export default function AyudasDigitalizarPymePage() {
             Cuando salga la convocatoria, comprueba beneficiarios, gastos subvencionables, plazo de ejecución y forma de justificación. Presenta con margen y guarda el justificante de registro.
           </p>
 
-          <h2 className="text-2xl font-bold text-primary-600">Evita tener que devolver la ayuda</h2>
+          <h2 id="evita-tener-que-devolver-la-ayuda" className="text-2xl font-bold text-primary-600 scroll-mt-24">Evita tener que devolver la ayuda</h2>
           <p>
             La Ley General de Subvenciones prevé el <strong>reintegro</strong> cuando no se cumplen las condiciones. Los motivos más habituales son:
           </p>
@@ -294,7 +299,7 @@ export default function AyudasDigitalizarPymePage() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Preguntas frecuentes</h2>
+          <h2 id="preguntas-frecuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Preguntas frecuentes</h2>
           <div className="space-y-3">
             {FAQS.map((faq) => (
               <details key={faq.q} className="mw-faq group rounded-2xl bg-gray-50 ring-1 ring-gray-200 transition-all duration-300 open:bg-white open:ring-transparent open:shadow-[0_20px_45px_-25px_rgba(124,58,237,0.45)]">
@@ -307,7 +312,7 @@ export default function AyudasDigitalizarPymePage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-primary-600">Fuentes</h2>
+          <h2 id="fuentes" className="text-2xl font-bold text-primary-600 scroll-mt-24">Fuentes</h2>
           <ol className="space-y-2 list-decimal list-inside text-sm">
             {fuentes.map((f) => (
               <li key={f.url} className="text-gray-600">

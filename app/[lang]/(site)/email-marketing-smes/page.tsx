@@ -1,10 +1,12 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -47,7 +49,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "Email Marketing" : "Email Marketing"}
         </p>
-        <IntlArticleJsonLd lang={lang} slug="email-marketing-smes" headline={isEn ? "Email marketing for SMEs: a first-steps guide to start selling by email" : "Email marketing pour les PME : guide des premiers pas pour commencer à vendre par email"} image="/og-email-marketing-pymes.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="email-marketing-smes" headline={isEn ? "Email marketing for SMEs: a first-steps guide to start selling by email" : "Email marketing pour les PME : guide des premiers pas pour commencer à vendre par email"} image="/og-email-marketing-pymes-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "Email marketing for SMEs: a first-steps guide to start selling by email"
@@ -61,8 +63,27 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </p>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
+        <Image
+          src="/og-email-marketing-pymes-v2.jpg"
+          alt={!isEn ? "Propriétaire de boutique envoyant un grand e-mail à ses clients depuis son téléphone portable" : "Shop owner sending a large email to customers from a mobile phone"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={7} items={[{ id: "why-email-marketing-still-works-in-2026", label: isEn
+                ? "Why email marketing still works in 2026"
+                : "Pourquoi l'email marketing fonctionne encore en 2026" }, { id: "how-to-build-your-subscriber-list-from-scratch", label: isEn
+                ? "How to build your subscriber list from scratch"
+                : "Comment construire votre liste d'abonnés de zéro" }, { id: "email-marketing-tools-for-smes", label: isEn ? "Email marketing tools for SMEs" : "Outils d'email marketing pour les PME" }, { id: "types-of-emails-your-business-should-send", label: isEn ? "Types of emails your business should send" : "Types d'emails que votre entreprise doit envoyer" }, { id: "how-to-write-subject-lines-that-get-opened", label: isEn ? "How to write subject lines that get opened" : "Comment écrire des objets qui font ouvrir l'email" }, { id: "email-marketing-metrics-what-to-measure-and-what", label: isEn
+                ? "Email marketing metrics: what to measure and what to optimise"
+                : "Métriques d'email marketing : que mesurer et qu'optimiser" }]} />
+        </div>
+
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="why-email-marketing-still-works-in-2026" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Why email marketing still works in 2026"
                 : "Pourquoi l'email marketing fonctionne encore en 2026"}
@@ -85,7 +106,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="how-to-build-your-subscriber-list-from-scratch" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "How to build your subscriber list from scratch"
                 : "Comment construire votre liste d'abonnés de zéro"}
@@ -122,7 +143,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="email-marketing-tools-for-smes" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "Email marketing tools for SMEs" : "Outils d'email marketing pour les PME"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -159,7 +180,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <BlogBanner lang={lang} />
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="types-of-emails-your-business-should-send" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "Types of emails your business should send" : "Types d'emails que votre entreprise doit envoyer"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -194,7 +215,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="how-to-write-subject-lines-that-get-opened" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "How to write subject lines that get opened" : "Comment écrire des objets qui font ouvrir l'email"}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -215,7 +236,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="email-marketing-metrics-what-to-measure-and-what" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Email marketing metrics: what to measure and what to optimise"
                 : "Métriques d'email marketing : que mesurer et qu'optimiser"}

@@ -1,10 +1,12 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import Image from "next/image";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -86,7 +88,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <p className="text-sm text-accent-500 font-semibold mb-2">
           {isEn ? "AI & Marketing" : "IA & Marketing"}
         </p>
-        <IntlArticleJsonLd lang={lang} slug="ai-tools-for-digital-marketing-2026" headline={isEn ? "AI tools for digital marketing in 2026: an honest analysis of the ones worth your time" : "Outils d'IA pour le marketing digital en 2026 : analyse honnête de ceux qui valent vraiment la peine"} image="/og-chatgpt-para-marketing-digital.jpg" />
+        <IntlArticleJsonLd lang={lang} slug="ai-tools-for-digital-marketing-2026" headline={isEn ? "AI tools for digital marketing in 2026: an honest analysis of the ones worth your time" : "Outils d'IA pour le marketing digital en 2026 : analyse honnête de ceux qui valent vraiment la peine"} image="/og-chatgpt-para-marketing-digital-v2.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
           {isEn
             ? "AI tools for digital marketing in 2026: an honest analysis of the ones worth your time"
@@ -106,8 +108,35 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               : "Un nouvel outil d'IA promettant de révolutionner votre marketing apparaît chaque semaine. La plupart ne tiennent pas leurs promesses. Le problème n'est pas le manque d'options, mais de savoir lesquels justifient le temps d'apprentissage et l'abonnement. Voici ceux qui, après avoir filtré le bruit, restent vraiment utiles."}
           </p>
 
+        <Image
+          src="/og-herramientas-ia-para-marketing-digital-2026-las-que-realmente-funcionan-v2.jpg"
+          alt={!isEn ? "Boîte à outils en bois ouverte contenant un mégaphone, une loupe, un entonnoir et un crayon, posée sur une table" : "Open wooden toolbox holding a megaphone, a magnifying glass, a funnel and a pencil on a table"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={6} items={[{ id: "why-most-ai-tools-fail-to-deliver-what-they-prom", label: isEn
+                ? "Why most AI tools fail to deliver what they promise"
+                : "Pourquoi la plupart des outils IA ne tiennent pas leurs promesses" }, { id: "chatgpt-and-claude-the-foundation-of-any-ai-stac", label: isEn
+                ? "ChatGPT and Claude: the foundation of any AI stack"
+                : "ChatGPT et Claude : la base de tout stack IA" }, { id: "canva-ai-accessible-design-without-a-designer", label: isEn
+                ? "Canva AI: accessible design without a designer"
+                : "Canva IA : design accessible sans designer" }, { id: "hubspot-breeze-ai-inside-the-crm", label: isEn
+                ? "HubSpot Breeze: AI inside the CRM"
+                : "HubSpot Breeze : l'IA intégrée au CRM" }, { id: "make-and-zapier-no-code-automation", label: isEn
+                ? "Make and Zapier: no-code automation"
+                : "Make et Zapier : automatisation sans code" }, { id: "ai-monitoring-tools-starting-to-matter", label: isEn
+                ? "AI monitoring tools: starting to matter"
+                : "Outils de monitoring IA : ils commencent à compter" }, { id: "the-recommended-stack-for-an-sme-in-2026", label: isEn
+                ? "The recommended stack for an SME in 2026"
+                : "Le stack recommandé pour une PME en 2026" }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="why-most-ai-tools-fail-to-deliver-what-they-prom" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Why most AI tools fail to deliver what they promise"
                 : "Pourquoi la plupart des outils IA ne tiennent pas leurs promesses"}
@@ -125,7 +154,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="chatgpt-and-claude-the-foundation-of-any-ai-stac" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "ChatGPT and Claude: the foundation of any AI stack"
                 : "ChatGPT et Claude : la base de tout stack IA"}
@@ -143,7 +172,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="canva-ai-accessible-design-without-a-designer" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Canva AI: accessible design without a designer"
                 : "Canva IA : design accessible sans designer"}
@@ -161,7 +190,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="hubspot-breeze-ai-inside-the-crm" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "HubSpot Breeze: AI inside the CRM"
                 : "HubSpot Breeze : l'IA intégrée au CRM"}
@@ -181,7 +210,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <BlogBanner lang={lang} />
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="make-and-zapier-no-code-automation" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "Make and Zapier: no-code automation"
                 : "Make et Zapier : automatisation sans code"}
@@ -199,7 +228,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="ai-monitoring-tools-starting-to-matter" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "AI monitoring tools: starting to matter"
                 : "Outils de monitoring IA : ils commencent à compter"}
@@ -217,7 +246,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </section>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="the-recommended-stack-for-an-sme-in-2026" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn
                 ? "The recommended stack for an SME in 2026"
                 : "Le stack recommandé pour une PME en 2026"}
@@ -284,7 +313,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           </div>
 
           <section className="mb-10">
-            <h2 className="text-2xl font-bold text-primary-600 mb-4">
+            <h2 id="frequently-asked-questions" className="text-2xl font-bold text-primary-600 mb-4 scroll-mt-24">
               {isEn ? "Frequently asked questions" : "Questions fréquentes"}
             </h2>
             <div className="space-y-3">

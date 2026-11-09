@@ -1,10 +1,12 @@
 import { BlogBanner } from "@/components/BlogBanner";
+import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 import { openGraphIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isEn = lang === "en";
@@ -245,6 +247,19 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </div>
       </section>
 
+        <Image
+          src="/og-diseno-web-tienda-online-v2.jpg"
+          alt={!isEn ? "Auvent de boutique affiché sur un écran, avec des colis, une camionnette et une tirelire qui reçoit des pièces" : "Shop awning shown on a screen, with parcels, a van and a piggy bank receiving coins"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl mb-6"
+          priority
+        />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={5} items={[{ id: "everything-included-in-your-store", label: isEn ? "Everything included in your store" : "Tout inclus dans votre boutique" }, { id: "title", label: comparison.title }, { id: "title-2", label: features.title }, { id: "title-3", label: steps.title }, { id: "title-4", label: offer.title }, { id: "frequently-asked-questions", label: isEn ? "Frequently asked questions" : "Questions fréquentes" }]} />
+        </div>
+
       <section className="mw-skin-band py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
           {metrics.map((m) => (
@@ -258,7 +273,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">
+          <h2 id="everything-included-in-your-store" className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center scroll-mt-24">
             {isEn ? "Everything included in your store" : "Tout inclus dans votre boutique"}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -277,7 +292,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {intro.paragraphs.map((p) => (
             <p key={p} className="text-gray-700 leading-relaxed mb-4">{p}</p>
           ))}
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mt-10 mb-6">{comparison.title}</h2>
+          <h2 id="title" className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mt-10 mb-6 scroll-mt-24">{comparison.title}</h2>
           {comparison.paragraphs.map((p) => (
             <p key={p} className="text-gray-700 leading-relaxed mb-4">{p}</p>
           ))}
@@ -286,7 +301,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">{features.title}</h2>
+          <h2 id="title-2" className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center scroll-mt-24">{features.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {features.items.map((f) => (
               <div key={f.label} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
@@ -300,7 +315,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">{steps.title}</h2>
+          <h2 id="title-3" className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center scroll-mt-24">{steps.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {steps.steps.map((step) => (
               <div key={step.num} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
@@ -311,7 +326,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             ))}
           </div>
           <div className="bg-gray-50 rounded-2xl p-8 mt-10 text-center border border-gray-100">
-            <h2 className="text-2xl font-bold text-primary-600 mb-3">{offer.title}</h2>
+            <h2 id="title-4" className="text-2xl font-bold text-primary-600 mb-3 scroll-mt-24">{offer.title}</h2>
             <p className="text-gray-700 mb-6">{offer.text}</p>
             <Link
               href={`/${lang}/${langSlug(lang, "online-store-offer")}/`}
@@ -325,7 +340,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center">
+          <h2 id="frequently-asked-questions" className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 text-center scroll-mt-24">
             {isEn ? "Frequently asked questions" : "Questions fréquentes"}
           </h2>
           <div className="space-y-4">

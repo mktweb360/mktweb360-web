@@ -7,6 +7,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 
+import { ArticleIndex } from "@/components/ArticleIndex";
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const isFr = lang === "fr";
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     openGraph: {
       title: `${isFr ? "Google Ads sans commission sur le budget" : "Google Ads with No Commission on Budget"} | Mkt Web 360`,
       description: isFr ? "Google Ads sans commission sur le budget : ce que cela change quand l'agence ne prélève rien sur vos dépenses, ce que vous économisez et comment comparer." : "What it means when an agency charges no commission on your Google Ads spend, how much you save and how to evaluate the management model that suits you best.",
-      images: [{ url: "https://www.mktweb360.com/og-google-ads-sin-comision-agencia-marketing.jpg", width: 1200, height: 630 }],
+      images: [{ url: "https://www.mktweb360.com/og-google-ads-sin-comision-agencia-marketing-v2.jpg", width: 1200, height: 630 }],
       type: "article",
       publishedTime: "2026-08-20T08:00:00Z",
     },
@@ -48,7 +49,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           <div className="mt-4 mb-3">
             <span className="bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">{cat}</span>
           </div>
-          <IntlArticleJsonLd lang={lang} slug="google-ads-no-commission-marketing-agency" headline={title} image="/og-google-ads-sin-comision-agencia-marketing.jpg" />
+          <IntlArticleJsonLd lang={lang} slug="google-ads-no-commission-marketing-agency" headline={title} image="/og-google-ads-sin-comision-agencia-marketing-v2.jpg" />
           <h1 className="text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">{title}</h1>
           <p className="text-xl text-primary-200">{desc}</p>
           <div className="mt-6 flex flex-wrap gap-4 text-sm text-primary-300">
@@ -59,6 +60,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       </section>
 
       <BlogBanner lang={lang} />
+
+        <div className="mb-8">
+          <ArticleIndex lang={lang} minutes={8} items={[{ id: "frequently-asked-questions", label: isFr ? "Questions fréquentes" : "Frequently Asked Questions" }, { id: "need-help-with-your-digital-strategy", label: isFr ? "Besoin d'aide ?" : "Need help with your digital strategy?" }]} />
+        </div>
 
       <section className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
@@ -76,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center">
+          <h2 id="frequently-asked-questions" className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-10 text-center scroll-mt-24">
             {isFr ? "Questions fréquentes" : "Frequently Asked Questions"}
           </h2>
           {faqs.map(([q, a], i) => (
@@ -90,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
       <section className="py-16 px-4 bg-primary-50">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-primary-700 mb-4">
+          <h2 id="need-help-with-your-digital-strategy" className="text-3xl font-bold text-primary-700 mb-4 scroll-mt-24">
             {isFr ? "Besoin d'aide ?" : "Need help with your digital strategy?"}
           </h2>
           <p className="text-gray-600 mb-8">
