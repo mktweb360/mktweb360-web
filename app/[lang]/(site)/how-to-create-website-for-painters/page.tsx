@@ -9,6 +9,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { IntlArticleJsonLd } from "@/components/JsonLd";
 import { PintoresCta } from "@/components/PintoresCta";
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { PintoresDemosBox } from "@/components/PintoresDemosBox";
 import { OfferBannerWebPintores } from "@/components/offers/OfferBannerWebPintores";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
@@ -230,6 +231,8 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             })}
           </p>
         </section>
+
+        <PintoresDemosBox lang={lang} where="articulo" />
 
         <OfferBannerWebPintores lang={lang} />
 

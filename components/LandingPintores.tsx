@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { TrackedLink } from "@/components/TrackedLink";
+import { PintoresDemosBox } from "@/components/PintoresDemosBox";
 import { LANDING, LANDING_SLUG, ruta, type LandingLang } from "@/lib/landing-pintores";
 import { SITE, ORG_ID, webPageSchema } from "@/lib/schema";
 
@@ -170,6 +171,10 @@ export function LandingPintores({ lang }: { lang: LandingLang }) {
             ))}
           </ol>
         </div>
+      </section>
+
+      <section className="px-4 pb-4">
+        <div className="max-w-5xl mx-auto"><PintoresDemosBox lang={lang} where="landing" /></div>
       </section>
 
       <section className="py-16 px-4">

@@ -178,7 +178,7 @@ export default function FactoresWebConstruccionPage() {
           </section>
 
           <p className="text-sm text-gray-500">
-            Ver también: <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">Diseño de páginas web</Link> · <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO Local</Link>
+            Ver también: <Link href="/diseno-de-paginas-web/" className="text-accent-500 hover:underline">Diseño de páginas web</Link> · <Link href="/seo-local/" className="text-accent-500 hover:underline">SEO Local</Link> · <Link href="/paginas-web-para-pintores/" className="text-accent-500 hover:underline">Páginas web para pintores</Link> · <Link href="/demos/" className="text-accent-500 hover:underline">Demos de webs</Link>
           </p>
 
           <div className="mw-skin-cta text-white rounded-3xl p-8 my-2 text-center">

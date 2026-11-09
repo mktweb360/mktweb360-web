@@ -9,6 +9,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 import { PintoresCta } from "@/components/PintoresCta";
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { PintoresDemosBox } from "@/components/PintoresDemosBox";
 import { OfferBannerWebPintores } from "@/components/offers/OfferBannerWebPintores";
 
 export const metadata: Metadata = {
@@ -210,6 +211,8 @@ export default function PaginaWebPintoresPage() {
             <li>La web carga rápido en el móvil y las fotos están optimizadas.</li>
             <li>Mides las llamadas y los formularios para saber qué canal funciona.</li>
           </ul>
+
+          <PintoresDemosBox lang="es" where="articulo" />
 
           <OfferBannerWebPintores lang="es" />
 

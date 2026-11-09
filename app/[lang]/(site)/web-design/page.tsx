@@ -358,6 +358,11 @@ export default async function WebDesignPage({ params }: { params: Promise<{ lang
               );
             })}
           </div>
+          <p className="text-center mt-6">
+            <Link href={`/${lang}/${lang === "fr" ? "demos-sites-web" : "website-demos"}/`} className="text-accent-600 font-semibold hover:underline">
+              {lang === "fr" ? "Voir des démos de sites de différents secteurs →" : "See website demos for different sectors →"}
+            </Link>
+          </p>
         </div>
       </section>
 
