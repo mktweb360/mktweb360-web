@@ -62,7 +62,8 @@ const T: Record<Lang, { audit: string; auditTitle: string; auditDesc: string; de
   fr: { audit: "Demandez votre diagnostic gratuit", auditTitle: "Diagnostic gratuit", auditDesc: "Sans engagement : nous vous disons quoi améliorer sur votre site.", demos: "Voir des démos de sites", demosDesc: "Voyez à quoi pourrait ressembler un site comme le vôtre." },
 };
 
-export function ArticleSidebar({ lang, topic }: { lang: Lang; topic: ArticleTopic }) {
+export function ArticleSidebar({ lang: langIn, topic }: { lang: string; topic: ArticleTopic }) {
+  const lang: Lang = langIn === "en" || langIn === "fr" ? langIn : "es";
   const o = offer(topic, lang);
   const t = T[lang];
   const auditHref = ruta("/auditoria-digital/", lang);
@@ -99,7 +100,7 @@ export function ArticleSidebar({ lang, topic }: { lang: Lang; topic: ArticleTopi
 }
 
 /** Contenedor del artículo con barra lateral: columna de lectura + lateral, al ancho del módulo de relacionados (max-w-5xl). */
-export function ArticleShell({ lang, topic, children }: { lang: Lang; topic: ArticleTopic; children: ReactNode }) {
+export function ArticleShell({ lang, topic, children }: { lang: string; topic: ArticleTopic; children: ReactNode }) {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 lg:grid lg:grid-cols-[minmax(0,1fr)_288px] lg:gap-8 lg:items-start">
       <article className="mw-article min-w-0 w-full max-w-3xl mx-auto lg:mx-0">{children}</article>

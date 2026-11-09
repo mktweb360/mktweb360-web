@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Email marketing para pymes: primeros pasos",
   description: "Guía de email marketing para PYMEs. Cómo empezar, qué herramientas usar, cómo construir tu lista y diseñar campañas que convierten. Resultados reales.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="general">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Email marketing para PYMEs" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Marketing Digital</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Email marketing para PYMEs: guía de primeros pasos para empezar a vender por email</h1>
@@ -98,7 +99,7 @@ export default function Page() {
           <Image src="/og-email-marketing-pymes-v2.jpg" alt="Dueña de una tienda enviando un gran correo a clientes con móvil" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={7} items={[{"id": "por-que-el-email-marketing-sigue-funcionando-en", "label": "Por qué el email marketing sigue funcionando en 2025"}, {"id": "como-construir-tu-lista-de-suscriptores-desde-ce", "label": "Cómo construir tu lista de suscriptores desde cero"}, {"id": "herramientas-de-email-marketing-para-pymes", "label": "Herramientas de email marketing para PYMEs"}, {"id": "tipos-de-emails-que-debe-enviar-tu-empresa", "label": "Tipos de emails que debe enviar tu empresa"}, {"id": "como-escribir-asuntos-que-se-abren", "label": "Cómo escribir asuntos que se abren"}, {"id": "metricas-de-email-marketing-que-medir-y-que-opti", "label": "Métricas de email marketing: qué medir y qué optimizar"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Marketing Digital" />
     </>
   );

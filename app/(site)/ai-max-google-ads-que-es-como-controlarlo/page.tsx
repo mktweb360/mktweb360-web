@@ -9,6 +9,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 // 03/11/2026 — tema 8 de la propuesta de blog del 27/10 (AI Max en Google Ads).
 // Texto, fuentes y verificación: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 ARTÍCULO — AI Max en Google Ads».
 // Fechas de migración comprobadas el 28/10/2026 en la ayuda de Google Ads y en el blog de Google (actualización del 11/06/2026).
@@ -209,7 +210,7 @@ export default function AiMaxGoogleAdsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="general">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "AI Max en Google Ads" }]} />
 
         <header className="mb-8">
@@ -330,7 +331,7 @@ export default function AiMaxGoogleAdsPage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug={SLUG} />
     </>
   );

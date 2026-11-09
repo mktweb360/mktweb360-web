@@ -9,6 +9,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 // 28/10/2026 — tema 5 de la propuesta de blog del 27/10 (estrategia de contenidos y calendario editorial).
 // Texto para revisión y fuentes: OneDrive › mktweb360.com › 02-Contenidos › «2026-10-28 ARTÍCULO — Estrategia de contenidos y calendario editorial».
 // Datos de IAB Spain: nota de prensa oficial del Estudio de Redes Sociales 2026 (iabspain.es), consultada el 28/10/2026.
@@ -218,7 +219,7 @@ export default function EstrategiaContenidosPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="general">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Estrategia de contenidos y calendario editorial" }]} />
 
         <header className="mb-8">
@@ -353,7 +354,7 @@ export default function EstrategiaContenidosPage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug={SLUG} />
     </>
   );

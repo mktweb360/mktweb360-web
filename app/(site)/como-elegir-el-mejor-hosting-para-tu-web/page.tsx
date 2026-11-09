@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Cómo elegir el mejor hosting para tu web",
   description: "Cómo elegir el mejor hosting para tu web: tipos de alojamiento, factores que importan, cómo afecta al SEO y recomendaciones según el tipo de proyecto.",
@@ -42,7 +43,7 @@ export default function MejorHostingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="web">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Cómo Elegir el Mejor Hosting" }]} />
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-4">
@@ -160,7 +161,7 @@ export default function MejorHostingPage() {
         <nav className="mt-12 pt-8 border-t border-gray-200">
           <Link href="/blog/" className="text-accent-500 hover:text-accent-600 font-medium text-sm">← Volver al blog</Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug="como-elegir-el-mejor-hosting-para-tu-web" />
     </>
   );

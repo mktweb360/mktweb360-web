@@ -9,6 +9,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Digitalizar empresas en Castilla-La Mancha",
   description: "Cómo digitalizar tu empresa en Castilla-La Mancha. Ayudas, herramientas y estrategia digital para PYMEs de la región. Guía actualizada 2025.",
@@ -40,7 +41,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="web">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Digitalización en CLM" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Estrategia Digital</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cómo digitalizar tu empresa en Castilla-La Mancha en 2025</h1>
@@ -94,7 +95,7 @@ export default function Page() {
           <Image src="/og-digitalizacion-empresas-castilla-la-mancha-v2.jpg" alt="Artesano manchego con una tableta vendiendo online sus quesos y cerámica con molinos de viento al fondo" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={6} items={[{"id": "estado-de-la-digitalizacion-en-castilla-la-manch", "label": "Estado de la digitalización en Castilla-La Mancha"}, {"id": "por-donde-empezar-los-pilares-de-la-digitalizaci", "label": "Por dónde empezar: los pilares de la digitalización empresarial"}, {"id": "herramientas-digitales-imprescindibles-para-pyme", "label": "Herramientas digitales imprescindibles para PYMEs"}, {"id": "kit-digital-ayudas-para-digitalizar-tu-empresa-e", "label": "Kit Digital: ayudas para digitalizar tu empresa en CLM"}, {"id": "casos-de-exito-empresas-de-clm-que-se-han-digita", "label": "Casos de éxito: empresas de CLM que se han digitalizado"}, {"id": "como-elegir-un-partner-de-digitalizacion-en-tu-r", "label": "Cómo elegir un partner de digitalización en tu región"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Estrategia Digital" />
     </>
   );

@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Link building para pymes sin spam",
   description: "Estrategias de link building para pequeñas empresas sin presupuesto para comprar enlaces. Cómo conseguir backlinks de calidad de forma natural y sostenible.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="seo">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Link building para PYMEs" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">SEO</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Link building para PYMEs: cómo conseguir backlinks de calidad sin presupuesto para spam</h1>
@@ -90,7 +91,7 @@ export default function Page() {
           <Image src="/og-link-building-pymes-v2.jpg" alt="Pequeño taller conectado por puentes de madera a otras islas con casas, como enlaces entre webs" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={7} items={[{"id": "por-que-los-backlinks-siguen-siendo-importantes", "label": "Por qué los backlinks siguen siendo importantes en 2025"}, {"id": "estrategia-1-menciones-locales-y-directorios-de", "label": "Estrategia 1: menciones locales y directorios de calidad"}, {"id": "estrategia-2-prensa-y-medios-locales", "label": "Estrategia 2: prensa y medios locales"}, {"id": "estrategia-3-colaboraciones-y-co-marketing-con-n", "label": "Estrategia 3: colaboraciones y co-marketing con negocios complementarios"}, {"id": "estrategia-4-crear-contenido-que-otros-quieran-e", "label": "Estrategia 4: crear contenido que otros quieran enlazar"}, {"id": "lo-que-debes-evitar-practicas-de-link-building-q", "label": "Lo que debes evitar: prácticas de link building que penalizan"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="SEO" />
     </>
   );

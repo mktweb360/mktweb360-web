@@ -10,6 +10,7 @@ import { BlogBanner } from "@/components/BlogBanner";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 // 02/11/2026 — refuerzo del tema 7 (misma URL, EN y FR en esta carpeta compartida). Versión ES: app/(site)/como-crear-landing-page-que-convierte.
 // Ejemplos de demostración, sin marcas de terceros ni cifras de conversión. Lo de Google Ads, solo lo que dice su ayuda oficial.
 
@@ -606,7 +607,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang={lang} topic="web">
         <Breadcrumbs crumbs={[{ label: c.crumbs[0], href: `/${lang}/` }, { label: "Blog", href: `/${lang}/blog/` }, { label: c.crumbs[1] }]} />
         <AuthorByline lang={lang} block />
 
@@ -723,7 +724,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {c.volver}
           </Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug={ES_SLUG} />
     </>
   );

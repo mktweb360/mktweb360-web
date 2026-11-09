@@ -9,6 +9,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 const SLUG = "seo-social-instagram-tiktok-linkedin-como-buscadores";
 const URL_CANONICAL = `https://www.mktweb360.com/${SLUG}/`;
 
@@ -77,7 +78,7 @@ export default function SeoSocialPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <article className="mw-article max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="seo">
         <Breadcrumbs
           crumbs={[
             { label: "Inicio", href: "/" },
@@ -219,7 +220,7 @@ export default function SeoSocialPage() {
             ← Volver al blog
           </Link>
         </nav>
-      </article>
+      </ArticleShell>
       <RelatedArticles currentSlug={SLUG} />
     </>
   );

@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "Google Shopping para Tiendas Online",
   description: "Guía completa de Google Shopping para ecommerce. Cómo configurar Merchant Center, optimizar el feed de productos y aumentar las ventas con Shopping Ads.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="tienda">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Google Shopping tiendas online" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Ecommerce</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Google Shopping para tiendas online: cómo aparecer en los resultados de compra y aumentar ventas</h1>
@@ -89,7 +90,7 @@ export default function Page() {
           <Image src="/og-google-shopping-tiendas-online-v2.jpg" alt="Móvil con escaparate de productos, carrito y emprendedora empaquetando pedidos" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={8} items={[{"id": "que-es-google-shopping-y-como-funciona", "label": "Qué es Google Shopping y cómo funciona"}, {"id": "configurar-google-merchant-center-paso-a-paso", "label": "Configurar Google Merchant Center: paso a paso"}, {"id": "como-optimizar-el-feed-de-productos-para-google", "label": "Cómo optimizar el feed de productos para Google Shopping"}, {"id": "campanas-de-google-ads-shopping-performance-max", "label": "Campañas de Google Ads Shopping: Performance Max vs Shopping estándar"}, {"id": "metricas-clave-para-medir-el-rendimiento-de-goog", "label": "Métricas clave para medir el rendimiento de Google Shopping"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Ecommerce" />
     </>
   );

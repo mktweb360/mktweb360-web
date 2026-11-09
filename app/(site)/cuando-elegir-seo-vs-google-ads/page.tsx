@@ -10,6 +10,7 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { autorSchema } from "@/lib/autor";
 
 import { ArticleIndex } from "@/components/ArticleIndex";
+import { ArticleShell } from "@/components/offers/ArticleSidebar";
 export const metadata: Metadata = {
   title: "SEO o Google Ads: cuándo elegir cada uno",
   description: "Cómo decidir entre SEO y Google Ads según tu negocio, presupuesto, urgencia y horizonte temporal. Con ejemplos reales y una matriz de decisión práctica.",
@@ -41,7 +42,7 @@ export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <ArticleShell lang="es" topic="seo">
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "SEO vs Google Ads: cuándo elegir cada uno" }]} />
         <p className="text-sm text-accent-500 font-semibold mb-2">Estrategia</p>
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">Cuándo elegir SEO y cuándo Google Ads: guía para tomar la decisión correcta según tu negocio</h1>
@@ -91,7 +92,7 @@ export default function Page() {
           <Image src="/og-cuando-elegir-seo-vs-google-ads-v2.jpg" alt="Empresario ante una bifurcación: árbol con raíces (SEO) frente a cohete y grifo de monedas (Google Ads)" width={1200} height={630} className="w-full rounded-2xl mb-6" priority />
           <ArticleIndex lang="es" minutes={7} items={[{"id": "las-diferencias-fundamentales-entre-seo-y-google", "label": "Las diferencias fundamentales entre SEO y Google Ads"}, {"id": "cuando-google-ads-es-claramente-la-mejor-opcion", "label": "Cuándo Google Ads es claramente la mejor opción"}, {"id": "cuando-seo-es-claramente-la-mejor-inversion", "label": "Cuándo SEO es claramente la mejor inversión"}, {"id": "la-estrategia-combinada-cuando-usar-los-dos-a-la", "label": "La estrategia combinada: cuándo usar los dos a la vez"}, {"id": "matriz-de-decision-cual-elegir-segun-tus-circuns", "label": "Matriz de decisión: cuál elegir según tus circunstancias"}, {"id": "necesitas-ayuda-con-tu-marketing-digital", "label": "¿Necesitas ayuda con tu marketing digital?"}]} />
         </div>
-      </div>
+      </ArticleShell>
       <RelatedArticles category="Estrategia" />
     </>
   );
