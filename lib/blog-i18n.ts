@@ -17,6 +17,36 @@ export type PostI18n = {
 };
 
 export const BLOG_I18N: Record<string, PostI18n> = {
+  "medir-trafico-ia-google-analytics-search-console": {
+    en: {
+      title: "How to measure the traffic you get from AI with Google Analytics 4 and Search Console",
+      excerpt: "How to measure visits from ChatGPT, Gemini, Perplexity and Google AI Mode with Google Analytics 4 and Search Console, step by step.",
+    },
+    fr: {
+      title: "Comment mesurer le trafic issu de l'IA avec Google Analytics 4 et Search Console",
+      excerpt: "Comment mesurer les visites issues de ChatGPT, Gemini, Perplexity et du Mode IA de Google avec Google Analytics 4 et Search Console, étape par étape.",
+    },
+  },
+  "modo-ia-google-que-es-como-aparecer": {
+    en: {
+      title: "Google AI Mode: what it is and how your business can appear in its answers",
+      excerpt: "What Google AI Mode is, what changed in October 2026 and what your business can do to appear in its answers and measure whether it brings you customers.",
+    },
+    fr: {
+      title: "Mode IA de Google : de quoi s'agit-il et comment votre entreprise peut apparaître dans ses réponses",
+      excerpt: "Le Mode IA de Google : ce qui a changé en octobre 2026 et ce que votre entreprise peut faire pour apparaître dans ses réponses et en mesurer l'impact.",
+    },
+  },
+  "black-friday-tienda-online-que-preparar": {
+    en: {
+      title: "Black Friday 2026 for online stores in Spain: what to prepare in the weeks left",
+      excerpt: "Black Friday 2026 is on 27 November. What an online store selling in Spain should prepare: website, Merchant Center, legal previous price, Google profile.",
+    },
+    fr: {
+      title: "Black Friday 2026 pour les boutiques en ligne en Espagne : que préparer dans les semaines qui restent",
+      excerpt: "Black Friday 2026 : le 27 novembre. Que préparer pour une boutique qui vend en Espagne : site, Merchant Center, prix antérieur légal et fiche Google.",
+    },
+  },
   "anuncios-chatgpt-ads-espana": {
     en: {
       title: "ChatGPT Ads in Spain: How Ads in ChatGPT Work and When to Test Them",

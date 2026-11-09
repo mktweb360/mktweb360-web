@@ -1,0 +1,298 @@
+import type { Articulo } from "./tipos";
+
+// Fuentes verificadas el 22/10/2026. Revisar si Google cambia el canal de IA de GA4 o el informe de Search Console.
+const F = {
+  ga4Canales: "https://support.google.com/analytics/answer/9756891",
+  ga4Personalizados: "https://support.google.com/analytics/answer/13051316",
+  openai: "https://help.openai.com/en/articles/12627856-publishers-and-developers-faq",
+  aiFeatures: "https://developers.google.com/search/docs/appearance/ai-features",
+  gscIA: "https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports",
+  googleOct: "https://blog.google/products-and-platforms/products/search/updates-ai-mode-overviews-explore-web/",
+};
+
+const REGEX = "chatgpt|openai|perplexity|gemini\\.google|copilot|claude\\.ai|deepseek";
+
+export const medirTraficoIa: Articulo = {
+  esPath: "/medir-trafico-ia-google-analytics-search-console/",
+  fecha: "2026-11-07",
+  contenido: {
+    es: {
+      title: "Medir el tráfico de la IA en Analytics y Search Console",
+      description: "Cómo medir las visitas que llegan desde ChatGPT, Gemini, Perplexity y el Modo IA de Google con Google Analytics 4 y Search Console, paso a paso.",
+      h1: "Cómo medir el tráfico que te llega desde la IA con Google Analytics 4 y Search Console",
+      entradilla: "Tu web ya puede recibir visitas desde ChatGPT, Gemini o el Modo IA de Google, pero no todas se ven en el mismo sitio. Te explicamos dónde aparece cada una, cómo separarlas y qué conclusiones sacar.",
+      miga: "Medir el tráfico de la IA",
+      categoria: "GEO",
+      respuesta: "Las visitas desde asistentes como ChatGPT, Gemini o Copilot aparecen en Google Analytics 4 en el canal predeterminado de asistentes de IA, y ChatGPT añade utm_source=chatgpt.com a sus enlaces. En cambio, los clics desde el Modo IA y las visiones generales de Google cuentan como búsqueda orgánica y se ven en Search Console.",
+      bloques: [
+        { t: "h2", x: "Por qué medirlo ahora" },
+        { t: "p", x: "Hasta hace poco, el tráfico que llegaba desde herramientas de IA se perdía entre las «referencias» o el tráfico «directo». Eso ha cambiado por tres motivos:" },
+        {
+          t: "ul",
+          items: [
+            "Google Analytics 4 incluye en su [grupo de canales predeterminado](" + F.ga4Canales + ") un canal propio para **asistentes de IA**, que agrupa fuentes como ChatGPT, Gemini, Deepseek, Copilot o Grok.",
+            "OpenAI indica en su [documentación para editores](" + F.openai + ") que ChatGPT añade automáticamente **utm_source=chatgpt.com** a los enlaces que envía a las webs.",
+            "Google anunció en junio de 2026 [informes de IA generativa en Search Console](" + F.gscIA + ") y en octubre [más enlaces dentro del Modo IA y de las visiones generales](" + F.googleOct + "). Si hay más enlaces, hay más visitas que medir.",
+          ],
+        },
+        { t: "p", x: "Medirlo te permite responder a una pregunta muy concreta: ¿el trabajo para aparecer en la IA se traduce en visitas y contactos, o solo en menciones? Si todavía no sabes si la IA te menciona, empieza por la [auditoría GEO para saber si apareces en ChatGPT, Perplexity y la IA de Google](/auditoria-geo-aparecer-chatgpt-gemini-google/)." },
+        { t: "h2", x: "Dónde aparece cada fuente de IA" },
+        { t: "p", x: "Esta es la clave del artículo: no todo el tráfico de IA se mide igual." },
+        {
+          t: "tabla",
+          cab: ["Fuente", "Dónde se ve en Google Analytics 4", "Dónde se ve en Search Console"],
+          filas: [
+            ["ChatGPT", "Canal de asistentes de IA (origen chatgpt.com)", "No aparece: no es Google"],
+            ["Gemini, Copilot, Deepseek, Grok", "Canal de asistentes de IA, según la lista de Google", "No aparece"],
+            ["Perplexity y otros asistentes", "Asistentes de IA si Google los reconoce; si no, Referencia (por ejemplo, perplexity.ai)", "No aparece"],
+            ["Modo IA y visiones generales con IA de Google", "**Búsqueda orgánica** (google / organic), sin separar", "Rendimiento, tipo de búsqueda «Web»; informe de IA generativa si tu propiedad lo tiene"],
+          ],
+        },
+        { t: "nota", x: "**Ojo:** según la ayuda de Google Analytics, el canal de asistentes de IA **no incluye** el Modo IA ni las visiones generales de Google; esas visitas van a Búsqueda orgánica. Si solo miras el canal de IA, infravalorarás lo que te aporta la IA de Google." },
+        { t: "h2", x: "Paso a paso en Google Analytics 4" },
+        {
+          t: "ol",
+          items: [
+            "Entra en **Informes > Adquisición > Adquisición de tráfico** y elige la dimensión «Grupo de canales predeterminado de la sesión».",
+            "Busca la fila del canal de **asistentes de IA**. Si no aparece, es que en el periodo elegido no has recibido visitas clasificadas así: amplía el rango de fechas.",
+            "Añade la dimensión secundaria **«Origen / medio de la sesión»** para ver qué asistente envía cada visita (chatgpt.com, gemini.google.com, etc.).",
+            "Mira la columna de **eventos clave** (formularios, llamadas, compras): ahí está la diferencia entre curiosos y clientes.",
+            "Revisa también el canal **Referencia** filtrando por orígenes como perplexity.ai, por si algún asistente no está en la lista de Google.",
+            "Si quieres una vista fija, crea un [grupo de canales personalizado](" + F.ga4Personalizados + ") con un canal «IA» cuya condición sea que el origen de la sesión coincida con una expresión regular como " + REGEX + ". Colócalo por encima de Referencia para que tenga prioridad.",
+          ],
+        },
+        { t: "p", x: "Una advertencia: algunas visitas desde aplicaciones de IA llegan **sin información de origen** y GA4 las cuenta como tráfico directo. Ninguna herramienta puede atribuirlas con certeza; tenlo en cuenta antes de sacar conclusiones con cifras pequeñas." },
+        { t: "h2", x: "Paso a paso en Search Console" },
+        { t: "p", x: "Para la IA de Google, la fuente es Search Console. Google explica que el tráfico de las [funciones de IA de la Búsqueda](" + F.aiFeatures + ") se incluye en el informe de rendimiento, en el tipo de búsqueda «Web», junto con el resto de resultados. Es decir, ya lo estás viendo, pero mezclado." },
+        {
+          t: "ul",
+          items: [
+            "**Rendimiento > Resultados de búsqueda:** compara periodos y fíjate en consultas largas, con forma de pregunta. Suelen ser las que activan respuestas de IA.",
+            "**Páginas:** identifica qué URLs ganan impresiones con consultas de este tipo. Son tus páginas más «citables».",
+            "**Informe de IA generativa:** Google lo está probando con una parte de las webs. Según el anuncio, muestra impresiones por página, país, dispositivo y fecha en las funciones de IA. Si tu propiedad lo tiene, úsalo para ver qué páginas aparecen en el Modo IA y en las visiones generales.",
+          ],
+        },
+        { t: "h2", x: "Cómo leer los datos sin engañarte" },
+        {
+          t: "ul",
+          items: [
+            "**Pocas visitas no es igual a poca influencia.** Muchas respuestas de IA se leen sin hacer clic; esas menciones no se miden en Analytics. Combina los datos con una revisión manual periódica de lo que dicen los asistentes de tu negocio.",
+            "**Compara calidad, no solo volumen:** tasa de conversión, páginas vistas y tiempo de interacción del tráfico de IA frente al orgánico. Google afirma que los clics desde páginas con visiones generales con IA son de mayor calidad; compruébalo con tus propios datos.",
+            "**Mira tendencias mensuales,** no días sueltos. Las respuestas de IA cambian mucho de una semana a otra.",
+            "**Cruza con tus contactos reales:** pregunta en el formulario o por teléfono cómo te encontraron. Es el dato que mejor completa los huecos de la analítica, como explicamos en la guía de [atribución de marketing](/atribucion-de-marketing-como-medir-impacto-real/).",
+          ],
+        },
+        { t: "h2", x: "Requisito previo: que la IA pueda leer tu web" },
+        { t: "p", x: "Nada de esto sirve si bloqueas a los rastreadores. OpenAI indica que, para aparecer en las respuestas de búsqueda de ChatGPT y medir ese tráfico, hay que permitir el acceso de **OAI-SearchBot**. En el caso de Google, basta con que la página esté indexada y pueda mostrarse con fragmento. Revisa tu robots.txt y las etiquetas de tus páginas clave antes de concluir que «la IA no te trae nada». Te contamos el resto en [qué es el Modo IA de Google y cómo aparecer](/modo-ia-google-que-es-como-aparecer/)." },
+        { t: "h2", x: "Qué hacer con lo que mides" },
+        { t: "p", x: "Con dos o tres meses de datos podrás ver qué páginas reciben visitas de la IA y si convierten. Las que funcionan merecen mejoras (respuestas más directas, datos actualizados, mejor llamada a la acción); las que nunca aparecen pueden necesitar reescribirse o fusionarse. Si quieres que configuremos la medición y lo interpretemos contigo, este es nuestro servicio de [analítica web](/analitica-web/), y para mejorar la visibilidad, el de [posicionamiento en buscadores de IA (GEO)](/geo-posicionamiento-ia/)." },
+      ],
+      faqs: [
+        { q: "¿Google Analytics 4 separa el tráfico que llega desde la IA?", a: "Sí, en parte. El grupo de canales predeterminado de GA4 tiene un canal de asistentes de IA para fuentes como ChatGPT, Gemini, Deepseek, Copilot o Grok. No incluye el Modo IA ni las visiones generales de Google, que cuentan como Búsqueda orgánica." },
+        { q: "¿Cómo sé si una visita viene de ChatGPT?", a: "OpenAI indica que ChatGPT añade automáticamente utm_source=chatgpt.com a los enlaces que envía. En GA4 lo verás como origen chatgpt.com dentro del canal de asistentes de IA." },
+        { q: "¿Dónde veo los clics que vienen del Modo IA de Google?", a: "En Search Console, dentro del informe de rendimiento con el tipo de búsqueda Web, mezclados con el resto de resultados. Google prueba además un informe de IA generativa con una parte de las webs." },
+        { q: "¿Por qué tengo pocas visitas de la IA si me mencionan?", a: "Porque muchas respuestas de IA se leen sin hacer clic y algunas visitas llegan sin información de origen y se cuentan como tráfico directo. Combina la analítica con revisiones manuales y con la pregunta de cómo te encontraron." },
+        { q: "¿Necesito un grupo de canales personalizado?", a: "No es imprescindible, porque GA4 ya tiene un canal de asistentes de IA. Es útil si quieres incluir asistentes que no reconoce o separar cada herramienta en tus informes." },
+      ],
+      fuentes: [
+        { texto: "Ayuda de Google Analytics: grupo de canales predeterminado.", url: F.ga4Canales },
+        { texto: "Ayuda de Google Analytics: grupos de canales personalizados.", url: F.ga4Personalizados },
+        { texto: "OpenAI: Publishers and developers FAQ.", url: F.openai },
+        { texto: "Google Search Central: Funciones de IA y tu sitio web.", url: F.aiFeatures },
+        { texto: "Google Search Central Blog: informes de rendimiento de IA generativa en Search Console (junio de 2026).", url: F.gscIA },
+        { texto: "Google: More ways to connect with the web from Search (15 de octubre de 2026).", url: F.googleOct },
+      ],
+      cta: {
+        titulo: "¿Quieres saber qué te aporta hoy la IA?",
+        texto: "Pide el diagnóstico gratuito de tu web: revisamos tu SEO, tu ficha de Google y tu visibilidad en IA, y te enviamos un plan de mejora en tu correo en un máximo de 24 horas laborables, sin compromiso.",
+        boton: "Quiero mi diagnóstico gratuito",
+      },
+    },
+
+    en: {
+      title: "Measure AI traffic in Google Analytics and Search Console",
+      description: "How to measure visits from ChatGPT, Gemini, Perplexity and Google AI Mode with Google Analytics 4 and Search Console, step by step.",
+      h1: "How to measure the traffic you get from AI with Google Analytics 4 and Search Console",
+      entradilla: "Your website may already be receiving visits from ChatGPT, Gemini or Google AI Mode, but they do not all show up in the same place. Here is where each one appears, how to separate them and what to conclude.",
+      miga: "Measuring AI traffic",
+      categoria: "GEO",
+      respuesta: "Visits from assistants such as ChatGPT, Gemini or Copilot appear in Google Analytics 4 under the default AI assistant channel, and ChatGPT adds utm_source=chatgpt.com to its links. Clicks from Google AI Mode and AI Overviews, however, count as organic search and are visible in Search Console.",
+      bloques: [
+        { t: "h2", x: "Why measure it now" },
+        { t: "p", x: "Until recently, traffic from AI tools got lost among “referrals” or “direct” traffic. That has changed for three reasons:" },
+        {
+          t: "ul",
+          items: [
+            "Google Analytics 4 includes in its [default channel group](" + F.ga4Canales + ") a dedicated channel for **AI assistants**, grouping sources such as ChatGPT, Gemini, Deepseek, Copilot or Grok.",
+            "OpenAI states in its [publisher documentation](" + F.openai + ") that ChatGPT automatically adds **utm_source=chatgpt.com** to the links it sends to websites.",
+            "In June 2026 Google announced [generative AI reports in Search Console](" + F.gscIA + ") and in October [more links inside AI Mode and AI Overviews](" + F.googleOct + "). More links mean more visits to measure.",
+          ],
+        },
+        { t: "p", x: "Measuring it answers a very specific question: does the work to appear in AI turn into visits and enquiries, or only into mentions? If you do not yet know whether AI mentions you, start with the [GEO audit to check whether you appear in ChatGPT, Perplexity and Google's AI](/auditoria-geo-aparecer-chatgpt-gemini-google/) (in Spanish)." },
+        { t: "h2", x: "Where each AI source shows up" },
+        { t: "p", x: "This is the key point of the article: not all AI traffic is measured the same way." },
+        {
+          t: "tabla",
+          cab: ["Source", "Where you see it in Google Analytics 4", "Where you see it in Search Console"],
+          filas: [
+            ["ChatGPT", "AI assistant channel (source chatgpt.com)", "Not shown: it is not Google"],
+            ["Gemini, Copilot, Deepseek, Grok", "AI assistant channel, according to Google's list", "Not shown"],
+            ["Perplexity and other assistants", "AI assistant if Google recognises them; otherwise Referral (for example, perplexity.ai)", "Not shown"],
+            ["Google AI Mode and AI Overviews", "**Organic Search** (google / organic), not separated", "Performance, search type “Web”; generative AI report if your property has it"],
+          ],
+        },
+        { t: "nota", x: "**Watch out:** according to Google Analytics help, the AI assistant channel **does not include** Google AI Mode or AI Overviews; those visits go to Organic Search. If you only look at the AI channel, you will underestimate what Google's AI brings you." },
+        { t: "h2", x: "Step by step in Google Analytics 4" },
+        {
+          t: "ol",
+          items: [
+            "Go to **Reports > Acquisition > Traffic acquisition** and choose the “Session default channel group” dimension.",
+            "Find the row for the **AI assistant** channel. If it is not there, you have had no visits classified that way in the selected period: widen the date range.",
+            "Add the secondary dimension **“Session source / medium”** to see which assistant sends each visit (chatgpt.com, gemini.google.com, etc.).",
+            "Look at the **key events** column (forms, calls, purchases): that is where curious visitors and customers part ways.",
+            "Also check the **Referral** channel, filtering by sources such as perplexity.ai, in case an assistant is not on Google's list.",
+            "If you want a fixed view, create a [custom channel group](" + F.ga4Personalizados + ") with an “AI” channel whose condition is that the session source matches a regular expression such as " + REGEX + ". Place it above Referral so it takes priority.",
+          ],
+        },
+        { t: "p", x: "A warning: some visits from AI apps arrive **without source information** and GA4 counts them as direct traffic. No tool can attribute them with certainty; bear this in mind before drawing conclusions from small numbers." },
+        { t: "h2", x: "Step by step in Search Console" },
+        { t: "p", x: "For Google's AI, the source is Search Console. Google explains that traffic from [AI features in Search](" + F.aiFeatures + ") is included in the performance report, under the “Web” search type, together with all other results. In other words, you are already seeing it, but mixed in." },
+        {
+          t: "ul",
+          items: [
+            "**Performance > Search results:** compare periods and look at long, question-style queries. They are the ones most likely to trigger AI answers.",
+            "**Pages:** identify which URLs gain impressions for this kind of query. They are your most “citable” pages.",
+            "**Generative AI report:** Google is testing it with a subset of websites. According to the announcement, it shows impressions by page, country, device and date in AI features. If your property has it, use it to see which pages appear in AI Mode and AI Overviews.",
+          ],
+        },
+        { t: "h2", x: "How to read the data without fooling yourself" },
+        {
+          t: "ul",
+          items: [
+            "**Few visits does not mean little influence.** Many AI answers are read without a click; those mentions are not measured in Analytics. Combine the data with a regular manual review of what assistants say about your business.",
+            "**Compare quality, not just volume:** conversion rate, pages viewed and engagement time of AI traffic versus organic. Google claims clicks from pages with AI Overviews are higher quality; check it against your own data.",
+            "**Look at monthly trends,** not individual days. AI answers change a lot from one week to the next.",
+            "**Cross-check with real enquiries:** ask in your form or on the phone how people found you. It is the data point that best fills the gaps in analytics, as we explain in our [marketing attribution](/atribucion-de-marketing-como-medir-impacto-real/) guide.",
+          ],
+        },
+        { t: "h2", x: "Prerequisite: AI must be able to read your website" },
+        { t: "p", x: "None of this works if you block crawlers. OpenAI says that to appear in ChatGPT search answers and track that traffic, you need to allow **OAI-SearchBot**. For Google, the page simply needs to be indexed and eligible to be shown with a snippet. Check your robots.txt and the tags on your key pages before concluding that “AI brings you nothing”. We cover the rest in [what Google AI Mode is and how to appear](/modo-ia-google-que-es-como-aparecer/)." },
+        { t: "h2", x: "What to do with what you measure" },
+        { t: "p", x: "With two or three months of data you will see which pages receive AI visits and whether they convert. The ones that work deserve improvements (more direct answers, updated data, a better call to action); the ones that never appear may need rewriting or merging. If you would like us to set up the measurement and interpret it with you, this is our [web analytics](/analitica-web/) service, and to improve visibility, our [generative engine optimisation (GEO)](/geo-posicionamiento-ia/) service." },
+      ],
+      faqs: [
+        { q: "Does Google Analytics 4 separate traffic coming from AI?", a: "Partly, yes. The GA4 default channel group has an AI assistant channel for sources such as ChatGPT, Gemini, Deepseek, Copilot or Grok. It does not include Google AI Mode or AI Overviews, which count as Organic Search." },
+        { q: "How do I know whether a visit comes from ChatGPT?", a: "OpenAI says ChatGPT automatically adds utm_source=chatgpt.com to the links it sends. In GA4 you will see it as source chatgpt.com within the AI assistant channel." },
+        { q: "Where can I see clicks from Google AI Mode?", a: "In Search Console, in the performance report with the Web search type, mixed with the rest of the results. Google is also testing a generative AI report with a subset of websites." },
+        { q: "Why do I get few AI visits if AI mentions me?", a: "Because many AI answers are read without a click, and some visits arrive without source information and are counted as direct traffic. Combine analytics with manual reviews and with asking customers how they found you." },
+        { q: "Do I need a custom channel group?", a: "It is not essential, because GA4 already has an AI assistant channel. It is useful if you want to include assistants it does not recognise or separate each tool in your reports." },
+      ],
+      fuentes: [
+        { texto: "Google Analytics Help: default channel group.", url: F.ga4Canales },
+        { texto: "Google Analytics Help: custom channel groups.", url: F.ga4Personalizados },
+        { texto: "OpenAI: Publishers and developers FAQ.", url: F.openai },
+        { texto: "Google Search Central: AI features and your website.", url: F.aiFeatures },
+        { texto: "Google Search Central Blog: generative AI performance reports in Search Console (June 2026).", url: F.gscIA },
+        { texto: "Google: More ways to connect with the web from Search (15 October 2026).", url: F.googleOct },
+      ],
+      cta: {
+        titulo: "Want to know what AI brings you today?",
+        texto: "Request the free audit of your website: we review your SEO, your Google Business Profile and your AI visibility, and email you an improvement plan within 24 business hours, with no obligation.",
+        boton: "Get my free audit",
+      },
+    },
+
+    fr: {
+      title: "Mesurer le trafic IA dans Google Analytics et Search Console",
+      description: "Comment mesurer les visites issues de ChatGPT, Gemini, Perplexity et du Mode IA de Google avec Google Analytics 4 et Search Console, étape par étape.",
+      h1: "Comment mesurer le trafic issu de l'IA avec Google Analytics 4 et Search Console",
+      entradilla: "Votre site reçoit peut-être déjà des visites depuis ChatGPT, Gemini ou le Mode IA de Google, mais elles n'apparaissent pas toutes au même endroit. Voici où se trouve chacune, comment les isoler et quelles conclusions en tirer.",
+      miga: "Mesurer le trafic IA",
+      categoria: "GEO",
+      respuesta: "Les visites issues d'assistants comme ChatGPT, Gemini ou Copilot apparaissent dans Google Analytics 4 dans le canal par défaut des assistants IA, et ChatGPT ajoute utm_source=chatgpt.com à ses liens. En revanche, les clics issus du Mode IA et des aperçus IA de Google comptent comme recherche organique et se voient dans Search Console.",
+      bloques: [
+        { t: "h2", x: "Pourquoi le mesurer maintenant" },
+        { t: "p", x: "Jusqu'à récemment, le trafic venu des outils d'IA se perdait dans les « sites référents » ou le trafic « direct ». Cela a changé pour trois raisons :" },
+        {
+          t: "ul",
+          items: [
+            "Google Analytics 4 inclut dans son [groupe de canaux par défaut](" + F.ga4Canales + ") un canal dédié aux **assistants IA**, qui regroupe des sources comme ChatGPT, Gemini, Deepseek, Copilot ou Grok.",
+            "OpenAI indique dans sa [documentation pour les éditeurs](" + F.openai + ") que ChatGPT ajoute automatiquement **utm_source=chatgpt.com** aux liens qu'il envoie vers les sites.",
+            "En juin 2026, Google a annoncé [des rapports sur l'IA générative dans Search Console](" + F.gscIA + ") et, en octobre, [davantage de liens dans le Mode IA et les aperçus IA](" + F.googleOct + "). Plus de liens, c'est plus de visites à mesurer.",
+          ],
+        },
+        { t: "p", x: "Le mesurer permet de répondre à une question très concrète : le travail pour apparaître dans l'IA se traduit-il en visites et en demandes, ou seulement en mentions ? Si vous ne savez pas encore si l'IA vous cite, commencez par l'[audit GEO pour savoir si vous apparaissez dans ChatGPT, Perplexity et l'IA de Google](/auditoria-geo-aparecer-chatgpt-gemini-google/) (en espagnol)." },
+        { t: "h2", x: "Où apparaît chaque source d'IA" },
+        { t: "p", x: "C'est le point clé de l'article : tout le trafic IA ne se mesure pas de la même façon." },
+        {
+          t: "tabla",
+          cab: ["Source", "Où la voir dans Google Analytics 4", "Où la voir dans Search Console"],
+          filas: [
+            ["ChatGPT", "Canal des assistants IA (source chatgpt.com)", "Absente : ce n'est pas Google"],
+            ["Gemini, Copilot, Deepseek, Grok", "Canal des assistants IA, selon la liste de Google", "Absente"],
+            ["Perplexity et autres assistants", "Assistants IA si Google les reconnaît ; sinon Site référent (par exemple perplexity.ai)", "Absente"],
+            ["Mode IA et aperçus IA de Google", "**Recherche organique** (google / organic), sans distinction", "Performances, type de recherche « Web » ; rapport IA générative si votre propriété l'a"],
+          ],
+        },
+        { t: "nota", x: "**Attention :** selon l'aide de Google Analytics, le canal des assistants IA **n'inclut pas** le Mode IA ni les aperçus IA de Google ; ces visites vont en recherche organique. Si vous ne regardez que le canal IA, vous sous-estimerez ce que vous apporte l'IA de Google." },
+        { t: "h2", x: "Étape par étape dans Google Analytics 4" },
+        {
+          t: "ol",
+          items: [
+            "Ouvrez **Rapports > Acquisition > Acquisition de trafic** et choisissez la dimension « Groupe de canaux par défaut de la session ».",
+            "Repérez la ligne du canal des **assistants IA**. Si elle n'apparaît pas, vous n'avez reçu aucune visite classée ainsi sur la période : élargissez la plage de dates.",
+            "Ajoutez la dimension secondaire **« Source/support de la session »** pour voir quel assistant envoie chaque visite (chatgpt.com, gemini.google.com, etc.).",
+            "Regardez la colonne des **événements clés** (formulaires, appels, achats) : c'est là que se joue la différence entre curieux et clients.",
+            "Vérifiez aussi le canal **Site référent** en filtrant sur des sources comme perplexity.ai, au cas où un assistant ne figurerait pas dans la liste de Google.",
+            "Pour une vue permanente, créez un [groupe de canaux personnalisé](" + F.ga4Personalizados + ") avec un canal « IA » dont la condition est que la source de la session corresponde à une expression régulière comme " + REGEX + ". Placez-le au-dessus de Site référent pour qu'il soit prioritaire.",
+          ],
+        },
+        { t: "p", x: "Une mise en garde : certaines visites issues d'applications d'IA arrivent **sans information de provenance** et GA4 les compte comme trafic direct. Aucun outil ne peut les attribuer avec certitude ; gardez-le en tête avant de conclure sur de petits volumes." },
+        { t: "h2", x: "Étape par étape dans Search Console" },
+        { t: "p", x: "Pour l'IA de Google, la source est Search Console. Google explique que le trafic des [fonctionnalités d'IA de la recherche](" + F.aiFeatures + ") est inclus dans le rapport sur les performances, type de recherche « Web », avec le reste des résultats. Autrement dit, vous le voyez déjà, mais mélangé." },
+        {
+          t: "ul",
+          items: [
+            "**Performances > Résultats de recherche :** comparez les périodes et observez les requêtes longues, formulées comme des questions. Ce sont celles qui déclenchent le plus souvent des réponses IA.",
+            "**Pages :** identifiez les URL qui gagnent des impressions sur ce type de requêtes. Ce sont vos pages les plus « citables ».",
+            "**Rapport IA générative :** Google le teste auprès d'une partie des sites. Selon l'annonce, il affiche les impressions par page, pays, appareil et date dans les fonctionnalités d'IA. Si votre propriété en dispose, utilisez-le pour voir quelles pages apparaissent dans le Mode IA et les aperçus IA.",
+          ],
+        },
+        { t: "h2", x: "Lire les données sans se tromper" },
+        {
+          t: "ul",
+          items: [
+            "**Peu de visites ne veut pas dire peu d'influence.** Beaucoup de réponses IA sont lues sans clic ; ces mentions ne se mesurent pas dans Analytics. Complétez les données par un contrôle manuel régulier de ce que disent les assistants sur votre entreprise.",
+            "**Comparez la qualité, pas seulement le volume :** taux de conversion, pages vues et durée d'engagement du trafic IA face au trafic organique. Google affirme que les clics depuis les pages avec aperçus IA sont de meilleure qualité ; vérifiez-le avec vos propres données.",
+            "**Regardez les tendances mensuelles,** pas des jours isolés. Les réponses IA varient beaucoup d'une semaine à l'autre.",
+            "**Recoupez avec vos vraies demandes :** demandez dans le formulaire ou au téléphone comment on vous a trouvé. C'est la donnée qui comble le mieux les angles morts de l'analytique, comme nous l'expliquons dans notre guide sur l'[attribution marketing](/atribucion-de-marketing-como-medir-impacto-real/).",
+          ],
+        },
+        { t: "h2", x: "Prérequis : l'IA doit pouvoir lire votre site" },
+        { t: "p", x: "Rien de tout cela ne sert si vous bloquez les robots. OpenAI indique que pour apparaître dans les réponses de recherche de ChatGPT et suivre ce trafic, il faut autoriser **OAI-SearchBot**. Pour Google, il suffit que la page soit indexée et puisse s'afficher avec un extrait. Vérifiez votre robots.txt et les balises de vos pages clés avant de conclure que « l'IA ne vous apporte rien ». Nous détaillons la suite dans [ce qu'est le Mode IA de Google et comment y apparaître](/modo-ia-google-que-es-como-aparecer/)." },
+        { t: "h2", x: "Que faire de ce que vous mesurez" },
+        { t: "p", x: "Avec deux ou trois mois de données, vous verrez quelles pages reçoivent des visites de l'IA et si elles convertissent. Celles qui fonctionnent méritent d'être améliorées (réponses plus directes, données à jour, meilleur appel à l'action) ; celles qui n'apparaissent jamais peuvent devoir être réécrites ou fusionnées. Si vous souhaitez que nous configurions la mesure et l'interprétions avec vous, voici notre service d'[analytique web](/analitica-web/) et, pour améliorer la visibilité, celui d'[optimisation pour les moteurs génératifs (GEO)](/geo-posicionamiento-ia/)." },
+      ],
+      faqs: [
+        { q: "Google Analytics 4 distingue-t-il le trafic issu de l'IA ?", a: "En partie, oui. Le groupe de canaux par défaut de GA4 comprend un canal des assistants IA pour des sources comme ChatGPT, Gemini, Deepseek, Copilot ou Grok. Il n'inclut pas le Mode IA ni les aperçus IA de Google, comptés en recherche organique." },
+        { q: "Comment savoir si une visite vient de ChatGPT ?", a: "OpenAI indique que ChatGPT ajoute automatiquement utm_source=chatgpt.com aux liens qu'il envoie. Dans GA4, vous la verrez avec la source chatgpt.com dans le canal des assistants IA." },
+        { q: "Où voir les clics issus du Mode IA de Google ?", a: "Dans Search Console, dans le rapport sur les performances avec le type de recherche Web, mélangés au reste des résultats. Google teste aussi un rapport IA générative auprès d'une partie des sites." },
+        { q: "Pourquoi ai-je peu de visites de l'IA alors qu'elle me cite ?", a: "Parce que beaucoup de réponses IA sont lues sans clic et que certaines visites arrivent sans information de provenance et sont comptées en trafic direct. Combinez l'analytique avec des contrôles manuels et en demandant à vos clients comment ils vous ont trouvé." },
+        { q: "Ai-je besoin d'un groupe de canaux personnalisé ?", a: "Ce n'est pas indispensable, car GA4 dispose déjà d'un canal des assistants IA. C'est utile pour inclure des assistants qu'il ne reconnaît pas ou pour isoler chaque outil dans vos rapports." },
+      ],
+      fuentes: [
+        { texto: "Aide Google Analytics : groupe de canaux par défaut.", url: F.ga4Canales },
+        { texto: "Aide Google Analytics : groupes de canaux personnalisés.", url: F.ga4Personalizados },
+        { texto: "OpenAI : Publishers and developers FAQ (en anglais).", url: F.openai },
+        { texto: "Google Search Central : Fonctionnalités d'IA et votre site web.", url: F.aiFeatures },
+        { texto: "Blog Google Search Central : rapports de performances de l'IA générative dans Search Console (juin 2026).", url: F.gscIA },
+        { texto: "Google : More ways to connect with the web from Search (15 octobre 2026, en anglais).", url: F.googleOct },
+      ],
+      cta: {
+        titulo: "Vous voulez savoir ce que l'IA vous apporte aujourd'hui ?",
+        texto: "Demandez l'audit gratuit de votre site : nous analysons votre SEO, votre fiche Google et votre visibilité dans l'IA, et vous envoyons un plan d'amélioration par e-mail sous 24 heures ouvrées, sans engagement.",
+        boton: "Je veux mon audit gratuit",
+      },
+    },
+  },
+};
