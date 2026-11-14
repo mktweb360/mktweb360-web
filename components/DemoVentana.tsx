@@ -33,6 +33,7 @@ export function DemoVentana({
 }) {
   const dlg = useRef<HTMLDialogElement>(null);
   const [src, setSrc] = useState<string | null>(null);
+  const irAlFormulario = useRef(false);
 
   const abrir = (e: MouseEvent<HTMLAnchorElement>) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
@@ -51,12 +52,16 @@ export function DemoVentana({
   const alCerrar = () => {
     document.body.style.overflow = "";
     setSrc(null); // descarga la demo
+    if (irAlFormulario.current) {
+      irAlFormulario.current = false;
+      requestAnimationFrame(() => document.getElementById("diagnostico")?.scrollIntoView({ behavior: "auto" }));
+    }
   };
 
   const pedir = () => {
     trackCta({ id: `${ctaId}-pedir`, location: "demos-ventana", type: "contact", text: textos.pedir, destination: "#diagnostico" });
+    irAlFormulario.current = true;
     cerrar();
-    setTimeout(() => document.getElementById("diagnostico")?.scrollIntoView({ behavior: "auto" }), 60);
   };
 
   return (
