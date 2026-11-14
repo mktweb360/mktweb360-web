@@ -37,3 +37,11 @@ export function trackCta(p: { id: string; location: string; type: "audit" | "con
     page_location: window.location.pathname,
   });
 }
+
+/** Reproducción del vídeo de presentación (evento `video_play` en dataLayer). */
+export function trackVideo(p: { id: string; page: string }) {
+  if (typeof window === "undefined") return;
+  const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+  w.dataLayer = w.dataLayer || [];
+  w.dataLayer.push({ event: "video_play", video_id: p.id, page_location: p.page });
+}
