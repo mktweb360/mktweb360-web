@@ -67,6 +67,7 @@ interface Paquete {
 }
 
 export interface ExtraContent {
+  modal: { cerrar: string; nuevaPestana: string; pedir: string; aviso: string };
   demos: { altCaptura: string; otro: { t: string; d: string; cta: string }; title: string; intro: string; ver: string; enPreparacion: string; nota: string; mas: string };
   paquetes: { title: string; intro: string; items: Paquete[]; pie: string };
   promesa: { title: string; intro: string; items: { t: string; d: string }[] };
@@ -87,6 +88,7 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
       checks: ["Pensada para que te pidan presupuesto", "Hecha para el móvil y para Google", "Diagnóstico gratuito, sin compromiso"],
       ilustracion: "Ilustración de una pared recién pintada con una página web encima",
     },
+    modal: { cerrar: "Cerrar", nuevaPestana: "Abrir en pestaña nueva", pedir: "Quiero una web así", aviso: "Es una demo con datos de ejemplo. Si no se ve bien aquí, ábrela en una pestaña nueva." },
     demos: {
       altCaptura: "Portada de la demo {n}, ejemplo de diseño web para pintores",
       otro: { t: "¿Otro estilo?", d: "Una web a medida para tu empresa, única y original.", cta: "Cuéntanos qué quieres" },
@@ -175,6 +177,7 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
       checks: ["Built to bring quote requests", "Made for mobile and for Google", "Free diagnosis, no obligation"],
       ilustracion: "Illustration of a freshly painted wall with a web page on it",
     },
+    modal: { cerrar: "Close", nuevaPestana: "Open in new tab", pedir: "I want a site like this", aviso: "This is a demo with sample data. If it does not display well here, open it in a new tab." },
     demos: {
       altCaptura: "Home page of the {n} demo, example of web design for painters",
       otro: { t: "Another style?", d: "A custom website for your business, unique and original.", cta: "Tell us what you want" },
@@ -263,6 +266,7 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
       checks: ["Conçu pour recevoir des demandes de devis", "Pensé pour le mobile et pour Google", "Diagnostic gratuit, sans engagement"],
       ilustracion: "Illustration d'un mur fraîchement peint avec une page web dessus",
     },
+    modal: { cerrar: "Fermer", nuevaPestana: "Ouvrir dans un nouvel onglet", pedir: "Je veux un site comme ça", aviso: "Ceci est une démo avec des données d'exemple. Si elle ne s'affiche pas bien ici, ouvrez-la dans un nouvel onglet." },
     demos: {
       altCaptura: "Page d'accueil de la démo {n}, exemple de design web pour peintres",
       otro: { t: "Un autre style ?", d: "Un site sur mesure pour votre entreprise, unique et original.", cta: "Dites-nous ce que vous voulez" },

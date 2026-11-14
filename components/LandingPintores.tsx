@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { TrackedLink } from "@/components/TrackedLink";
+import { DemoVentana } from "@/components/DemoVentana";
 import { PintoresVideo } from "@/components/PintoresVideo";
 import { LANDING, LANDING_SLUG, ruta, type LandingLang } from "@/lib/landing-pintores";
 import { DEMOS_PINTORES, EXTRA, VIDEO_PINTORES } from "@/lib/landing-pintores-extra";
@@ -226,9 +227,9 @@ export function LandingPintores({ lang }: { lang: LandingLang }) {
                   <h3 className="font-bold text-primary-700">{d.nombre}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed mt-1 mb-4 grow">{d.estilo[lang]}</p>
                   {d.url ? (
-                    <TrackedLink href={d.url} newTab ctaId={`pintores-demo-${d.id}`} location="demos" type="link" text={`${x.demos.ver} ${d.nombre}`} className="inline-block text-center border-2 border-primary-600 text-primary-700 px-5 py-2.5 rounded-full font-semibold hover:bg-primary-50 transition-colors">
+                    <DemoVentana url={d.url} nombre={d.nombre} ctaId={`pintores-demo-${d.id}`} etiqueta={`${x.demos.ver} ${d.nombre}`} textos={x.modal} className="inline-block text-center border-2 border-primary-600 text-primary-700 px-5 py-2.5 rounded-full font-semibold hover:bg-primary-50 transition-colors">
                       {x.demos.ver} ↗
-                    </TrackedLink>
+                    </DemoVentana>
                   ) : (
                     <span className="inline-block text-center text-sm text-gray-500 border border-dashed border-gray-300 px-5 py-2.5 rounded-full">{x.demos.enPreparacion}</span>
                   )}
