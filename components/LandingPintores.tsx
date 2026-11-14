@@ -125,7 +125,7 @@ export function LandingPintores({ lang }: { lang: LandingLang }) {
         {/* Imagen a la derecha (50 % en escritorio); en móvil, de fondo bajo un velo oscuro */}
         <div className="absolute inset-0 lg:left-[28%]" aria-hidden={VIDEO_PINTORES ? undefined : true}>
           {!VIDEO_PINTORES && HERO_IMG && (
-            <Image src={HERO_IMG} alt="" fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <Image src={HERO_IMG} alt="" fill priority sizes="(min-width: 1024px) 72vw, 100vw" className="object-cover object-[68%_60%]" />
           )}
         </div>
         {/* Degradado en diagonal: gira sobre el centro de la cabecera; cubre más imagen arriba y menos abajo */}
