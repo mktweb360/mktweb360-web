@@ -39,7 +39,7 @@ export const DEMOS_PINTORES: DemoPintor[] = [
   {
     id: "brocha-y-brillo",
     nombre: "Brocha y Brillo",
-    url: null,
+    url: "https://brocha-y-brillo-getafe.lovable.app",
     tono: "calido",
     estilo: {
       es: "Pintor y decorador autónomo. Estilo cálido y minimalista, con galería antes/después deslizable.",
@@ -62,7 +62,7 @@ interface Paquete {
 }
 
 export interface ExtraContent {
-  demos: { title: string; intro: string; ver: string; enPreparacion: string; nota: string; mas: string };
+  demos: { otro: { t: string; d: string; cta: string }; title: string; intro: string; ver: string; enPreparacion: string; nota: string; mas: string };
   paquetes: { title: string; intro: string; items: Paquete[]; pie: string };
   promesa: { title: string; intro: string; items: { t: string; d: string }[] };
   ia: { title: string; texto: string; enlace: string; fuentesLabel: string; fuentes: { t: string; href: string }[] };
@@ -83,6 +83,7 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
       ilustracion: "Ilustración de una pared recién pintada con una página web encima",
     },
     demos: {
+      otro: { t: "¿Otro estilo?", d: "Una web a medida para tu empresa, única y original.", cta: "Cuéntanos qué quieres" },
       title: "Mira cómo puede quedar tu web",
       intro: "Tres propuestas ya diseñadas, para que veas el estilo antes de decidir. Ábrelas, recórrelas en el móvil y quédate con lo que te guste.",
       ver: "Ver demo",
@@ -145,10 +146,11 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
     ia: {
       title: "Google ya busca también con IA",
       texto:
-        "Google ofrece en España el Modo IA, una forma de buscar en la que responde con texto generado por inteligencia artificial y enlaces a webs. Para que tu página pueda aparecer ahí no hay trucos: debe estar indexada, mostrar con claridad qué servicios ofreces y en qué zona trabajas, y responder las dudas reales de tus clientes. Preparamos tu web con esto en mente, sin prometer posiciones.",
+        "Según el INE, el 54,8 % de las personas de 16 a 74 años usó herramientas de IA generativa en los tres últimos meses (encuesta de 2026), y Google ya muestra respuestas generadas con IA en sus resultados. Además ofrece en España el Modo IA, una forma de buscar en la que responde con texto generado por inteligencia artificial y enlaces a webs. Para que tu página pueda aparecer ahí no hay trucos: debe estar indexada, mostrar con claridad qué servicios ofreces y en qué zona trabajas, y responder las dudas reales de tus clientes. Preparamos tu web con esto en mente, sin prometer posiciones.",
       enlace: "Cómo lo trabajamos en SEO + GEO + Google Maps",
       fuentesLabel: "Fuentes",
       fuentes: [
+        { t: "INE: TIC en los hogares 2026", href: "https://www.ine.es/dyngs/Prensa/TICH2026.htm" },
         { t: "Google: el Modo IA llega a España", href: "https://blog.google/intl/es-es/productos/la-busqueda-de-google-el-modo-ia-llega-a-espana/" },
         { t: "Google Search Central: funciones de IA y tu sitio web", href: "https://developers.google.com/search/docs/appearance/ai-features" },
       ],
@@ -168,6 +170,7 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
       ilustracion: "Illustration of a freshly painted wall with a web page on it",
     },
     demos: {
+      otro: { t: "Another style?", d: "A custom website for your business, unique and original.", cta: "Tell us what you want" },
       title: "See how your website could look",
       intro: "Three designs already made, so you can see the style before deciding. Open them, try them on your phone and keep what you like.",
       ver: "View demo",
@@ -230,10 +233,11 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
     ia: {
       title: "Google now also searches with AI",
       texto:
-        "Google offers AI Mode in Spain, a way of searching where it answers with AI-generated text and links to websites. There are no tricks to appear there: your page must be indexed, show clearly which services you offer and where you work, and answer your customers' real questions. We prepare your website with this in mind, without promising rankings.",
+        "According to Spain's INE, 54.8% of people aged 16 to 74 used generative AI tools in the last three months (2026 survey), and Google already shows AI-generated answers in its results. It also offers AI Mode in Spain, a way of searching where it answers with AI-generated text and links to websites. There are no tricks to appear there: your page must be indexed, show clearly which services you offer and where you work, and answer your customers' real questions. We prepare your website with this in mind, without promising rankings.",
       enlace: "How we work on it in SEO + GEO + Google Maps",
       fuentesLabel: "Sources",
       fuentes: [
+        { t: "INE (Spain): ICT in households 2026", href: "https://www.ine.es/dyngs/Prensa/TICH2026.htm" },
         { t: "Google: AI Mode arrives in Spain (in Spanish)", href: "https://blog.google/intl/es-es/productos/la-busqueda-de-google-el-modo-ia-llega-a-espana/" },
         { t: "Google Search Central: AI features and your website", href: "https://developers.google.com/search/docs/appearance/ai-features" },
       ],
@@ -253,6 +257,7 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
       ilustracion: "Illustration d'un mur fraîchement peint avec une page web dessus",
     },
     demos: {
+      otro: { t: "Un autre style ?", d: "Un site sur mesure pour votre entreprise, unique et original.", cta: "Dites-nous ce que vous voulez" },
       title: "Voyez ce que pourrait donner votre site",
       intro: "Trois propositions déjà conçues pour découvrir le style avant de décider. Ouvrez-les, parcourez-les sur mobile et gardez ce qui vous plaît.",
       ver: "Voir la démo",
@@ -315,10 +320,11 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
     ia: {
       title: "Google cherche aussi avec l'IA",
       texto:
-        "Google propose en Espagne le Mode IA, une façon de chercher où il répond avec un texte généré par l'IA et des liens vers des sites. Pour y apparaître, pas de trucs : votre page doit être indexée, montrer clairement vos services et votre zone d'intervention, et répondre aux vraies questions de vos clients. Nous préparons votre site dans cet esprit, sans promettre de positions.",
+        "Selon l'INE (Espagne), 54,8 % des 16-74 ans ont utilisé des outils d'IA générative au cours des trois derniers mois (enquête 2026), et Google affiche déjà des réponses générées par l'IA dans ses résultats. Il propose aussi en Espagne le Mode IA, une façon de chercher où il répond avec un texte généré par l'IA et des liens vers des sites. Pour y apparaître, pas de trucs : votre page doit être indexée, montrer clairement vos services et votre zone d'intervention, et répondre aux vraies questions de vos clients. Nous préparons votre site dans cet esprit, sans promettre de positions.",
       enlace: "Comment nous le travaillons en SEO + GEO + Google Maps",
       fuentesLabel: "Sources",
       fuentes: [
+        { t: "INE (Espagne) : TIC dans les foyers 2026", href: "https://www.ine.es/dyngs/Prensa/TICH2026.htm" },
         { t: "Google : le Mode IA arrive en Espagne (en espagnol)", href: "https://blog.google/intl/es-es/productos/la-busqueda-de-google-el-modo-ia-llega-a-espana/" },
         { t: "Google Search Central : fonctionnalités d'IA et votre site", href: "https://developers.google.com/search/docs/appearance/ai-features" },
       ],

@@ -224,7 +224,7 @@ export function LandingPintores({ lang }: { lang: LandingLang }) {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4 text-center">{x.demos.title}</h2>
           <p className="text-gray-600 text-center max-w-3xl mx-auto mb-10 leading-relaxed">{x.demos.intro}</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {DEMOS_PINTORES.map((d) => (
               <article key={d.id} className="bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden flex flex-col">
                 <DemoMiniatura tono={d.tono} nombre={d.nombre} />
@@ -241,9 +241,15 @@ export function LandingPintores({ lang }: { lang: LandingLang }) {
                 </div>
               </article>
             ))}
+            <article className="rounded-2xl border-2 border-dashed border-primary-200 bg-white p-6 flex flex-col justify-center text-center">
+              <h3 className="font-bold text-primary-700 mb-2">{x.demos.otro.t}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">{x.demos.otro.d}</p>
+              <TrackedLink href="#diagnostico" ctaId="pintores-demos-otro-estilo" location="demos" type="contact" text={x.demos.otro.cta} className={BTN_PRIMARY}>
+                {x.demos.otro.cta}
+              </TrackedLink>
+            </article>
           </div>
           <p className="text-xs text-gray-500 text-center max-w-3xl mx-auto mt-6">{x.demos.nota}</p>
-          <p className="text-center text-primary-700 font-semibold mt-4">{x.demos.mas}</p>
         </div>
       </section>
 
