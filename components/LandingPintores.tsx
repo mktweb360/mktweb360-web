@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -8,6 +10,9 @@ import { PintoresVideo } from "@/components/PintoresVideo";
 import { LANDING, LANDING_SLUG, ruta, type LandingLang } from "@/lib/landing-pintores";
 import { DEMOS_PINTORES, EXTRA, VIDEO_PINTORES } from "@/lib/landing-pintores-extra";
 import { SITE, ORG_ID, webPageSchema } from "@/lib/schema";
+
+/** Foto de cabecera: se usa si existe el archivo en /public (evita una imagen rota). */
+const HERO_IMG = existsSync(join(process.cwd(), "public", "pintores-hero.webp")) ? "/pintores-hero.webp" : null;
 
 const BTN_PRIMARY = "inline-block text-center bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors";
 const BTN_GHOST_DARK = "inline-block text-center border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors";
@@ -48,29 +53,6 @@ function Icono({ i }: { i: number }) {
     <span className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent-500/10 text-accent-600" aria-hidden="true">
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={paths[i % paths.length]} /></svg>
     </span>
-  );
-}
-
-function HeroIlustracion({ label }: { label: string }) {
-  return (
-    <svg viewBox="0 0 480 360" role="img" aria-label={label} className="w-full h-auto rounded-2xl shadow-xl">
-      <rect width="480" height="360" fill="#f5efe6" />
-      <rect x="0" y="0" width="480" height="360" fill="#f3d9b8" opacity="0.5" />
-      <rect x="0" y="300" width="480" height="60" fill="#d8c3a5" />
-      <rect x="60" y="50" width="360" height="230" rx="12" fill="#fff" stroke="#172d4a" strokeWidth="4" />
-      <rect x="60" y="50" width="360" height="30" rx="12" fill="#172d4a" />
-      <circle cx="80" cy="65" r="5" fill="#f97316" /><circle cx="98" cy="65" r="5" fill="#fbbf24" /><circle cx="116" cy="65" r="5" fill="#9ca3af" />
-      <rect x="80" y="100" width="170" height="14" rx="4" fill="#172d4a" />
-      <rect x="80" y="124" width="130" height="8" rx="4" fill="#cbd5e1" />
-      <rect x="80" y="140" width="150" height="8" rx="4" fill="#cbd5e1" />
-      <rect x="80" y="166" width="96" height="30" rx="15" fill="#f97316" />
-      <rect x="280" y="100" width="120" height="100" rx="8" fill="#e2e8f0" />
-      <rect x="280" y="100" width="60" height="100" rx="8" fill="#fbbf24" />
-      <rect x="80" y="220" width="320" height="40" rx="8" fill="#f1f5f9" />
-      <rect x="92" y="236" width="60" height="8" rx="4" fill="#94a3b8" /><rect x="170" y="236" width="60" height="8" rx="4" fill="#94a3b8" /><rect x="248" y="236" width="60" height="8" rx="4" fill="#94a3b8" />
-      <rect x="395" y="150" width="28" height="150" rx="6" fill="#f97316" transform="rotate(18 409 225)" />
-      <rect x="388" y="296" width="42" height="10" rx="3" fill="#172d4a" transform="rotate(18 409 301)" />
-    </svg>
   );
 }
 
@@ -138,8 +120,17 @@ export function LandingPintores({ lang }: { lang: LandingLang }) {
     <>
       <JsonLd data={landingSchemas(lang)} />
 
-      <section className="mw-skin-hero text-white">
-        <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="relative overflow-hidden text-white bg-[#0f1c2e]">
+        {/* Imagen a la derecha (50 % en escritorio); en móvil, de fondo bajo un velo oscuro */}
+        <div className="absolute inset-0 lg:left-[28%]" aria-hidden={VIDEO_PINTORES ? undefined : true}>
+          {!VIDEO_PINTORES && HERO_IMG && (
+            <Image src={HERO_IMG} alt="" fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+          )}
+        </div>
+        {/* Degradado en diagonal: gira sobre el centro de la cabecera; cubre más imagen arriba y menos abajo */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(112deg, #0f1c2e 0%, #0f1c2e 44%, rgba(15,28,46,0.85) 52%, rgba(15,28,46,0.35) 62%, rgba(15,28,46,0) 76%)" }} />
+        <div className="absolute inset-0 pointer-events-none lg:hidden bg-[#0f1c2e]/60" />
+        <div className="relative max-w-6xl mx-auto px-4 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[560px]">
           <div>
             <Breadcrumbs crumbs={[{ label: c.home, href: homeHref }, { label: c.breadcrumb }]} />
             <p className="text-sm font-semibold uppercase tracking-wide text-accent-400 mt-4 mb-3">{c.eyebrow}</p>
@@ -167,10 +158,8 @@ export function LandingPintores({ lang }: { lang: LandingLang }) {
             </p>
           </div>
           <div>
-            {VIDEO_PINTORES ? (
+            {VIDEO_PINTORES && (
               <PintoresVideo src={VIDEO_PINTORES.src} poster={VIDEO_PINTORES.poster} vtt={VIDEO_PINTORES.vtt[lang]} lang={lang} title={x.video.titulo} />
-            ) : (
-              <HeroIlustracion label={x.hero.ilustracion} />
             )}
           </div>
         </div>

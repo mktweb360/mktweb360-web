@@ -18,6 +18,7 @@ export interface DemoPintor {
 export const DEMOS_PINTORES: DemoPintor[] = [
   {
     id: "fachadas-norte",
+    imagen: "/demos-pintores/fachadas-norte.webp",
     nombre: "Fachadas Norte",
     url: "https://fachadas-norte-bilbao.lovable.app",
     tono: "ambar",
@@ -29,6 +30,7 @@ export const DEMOS_PINTORES: DemoPintor[] = [
   },
   {
     id: "pinturas-lumen",
+    imagen: "/demos-pintores/pinturas-lumen.webp",
     nombre: "Pinturas Lumen",
     url: "https://lumen-valencia-color-stories.lovable.app",
     tono: "luz",
@@ -40,6 +42,7 @@ export const DEMOS_PINTORES: DemoPintor[] = [
   },
   {
     id: "brocha-y-brillo",
+    imagen: "/demos-pintores/brocha-y-brillo.webp",
     nombre: "Brocha y Brillo",
     url: "https://brocha-y-brillo-getafe.lovable.app",
     tono: "calido",
