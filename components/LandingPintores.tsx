@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -227,7 +228,11 @@ export function LandingPintores({ lang }: { lang: LandingLang }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {DEMOS_PINTORES.map((d) => (
               <article key={d.id} className="bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden flex flex-col">
-                <DemoMiniatura tono={d.tono} nombre={d.nombre} />
+                {d.imagen ? (
+                  <Image src={d.imagen} alt={x.demos.altCaptura.replace("{n}", d.nombre)} width={1200} height={750} sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw" className="w-full h-auto block" />
+                ) : (
+                  <DemoMiniatura tono={d.tono} nombre={d.nombre} />
+                )}
                 <div className="p-5 flex flex-col grow">
                   <h3 className="font-bold text-primary-700">{d.nombre}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed mt-1 mb-4 grow">{d.estilo[lang]}</p>

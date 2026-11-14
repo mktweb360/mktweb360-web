@@ -10,6 +10,8 @@ export interface DemoPintor {
   nombre: string;
   url: string | null;
   tono: "ambar" | "luz" | "calido";
+  /** Captura real de la portada (1200x750, WebP en /public/demos-pintores/). Sin archivo, la tarjeta usa la miniatura dibujada. */
+  imagen?: string;
   estilo: Record<LandingLang, string>;
 }
 
@@ -62,7 +64,7 @@ interface Paquete {
 }
 
 export interface ExtraContent {
-  demos: { otro: { t: string; d: string; cta: string }; title: string; intro: string; ver: string; enPreparacion: string; nota: string; mas: string };
+  demos: { altCaptura: string; otro: { t: string; d: string; cta: string }; title: string; intro: string; ver: string; enPreparacion: string; nota: string; mas: string };
   paquetes: { title: string; intro: string; items: Paquete[]; pie: string };
   promesa: { title: string; intro: string; items: { t: string; d: string }[] };
   ia: { title: string; texto: string; enlace: string; fuentesLabel: string; fuentes: { t: string; href: string }[] };
@@ -83,6 +85,7 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
       ilustracion: "Ilustración de una pared recién pintada con una página web encima",
     },
     demos: {
+      altCaptura: "Portada de la demo {n}, ejemplo de diseño web para pintores",
       otro: { t: "¿Otro estilo?", d: "Una web a medida para tu empresa, única y original.", cta: "Cuéntanos qué quieres" },
       title: "Mira cómo puede quedar tu web",
       intro: "Tres propuestas ya diseñadas, para que veas el estilo antes de decidir. Ábrelas, recórrelas en el móvil y quédate con lo que te guste.",
@@ -170,6 +173,7 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
       ilustracion: "Illustration of a freshly painted wall with a web page on it",
     },
     demos: {
+      altCaptura: "Home page of the {n} demo, example of web design for painters",
       otro: { t: "Another style?", d: "A custom website for your business, unique and original.", cta: "Tell us what you want" },
       title: "See how your website could look",
       intro: "Three designs already made, so you can see the style before deciding. Open them, try them on your phone and keep what you like.",
@@ -257,6 +261,7 @@ export const EXTRA: Record<LandingLang, ExtraContent> = {
       ilustracion: "Illustration d'un mur fraîchement peint avec une page web dessus",
     },
     demos: {
+      altCaptura: "Page d'accueil de la démo {n}, exemple de design web pour peintres",
       otro: { t: "Un autre style ?", d: "Un site sur mesure pour votre entreprise, unique et original.", cta: "Dites-nous ce que vous voulez" },
       title: "Voyez ce que pourrait donner votre site",
       intro: "Trois propositions déjà conçues pour découvrir le style avant de décider. Ouvrez-les, parcourez-les sur mobile et gardez ce qui vous plaît.",
