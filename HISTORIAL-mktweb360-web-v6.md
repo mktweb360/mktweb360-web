@@ -57,3 +57,17 @@ La PR #55 se quedó atrás respecto a main (Toledo consolidado, ciudades retirad
 - Portada (ES/EN/FR): retirado el testimonio de Miguel Palomino (decisión de José del 29/10: suena a promesa de posición).
 - `check:precios`: nueva regla 4 (precios de planes leídos por código, `preciosPlanesSeo` / `p.precio`, fuera de páginas de oferta) y la cotización de autónomos EN/FR cuenta como cifra de terceros.
 - Barrido del HTML servido (403 URLs del sitemap): «€» solo en ofertas (banners, menú, páginas de oferta) y en cifras de mercado o de terceros (sanciones, cuotas de autónomos, Shopify/Tidio/Zendesk, inversión publicitaria, ROI del email, rangos de mercado etiquetados).
+
+## SESIÓN 15/11/2026: cabecera nueva de GEO publicada y precios Black Friday (rama `feat/precios-black-friday`)
+
+### Cabecera nueva de GEO (ES/EN/FR) — PUBLICADA
+- Fusión a `main` el **15/11/2026 a las 13:06 (hora de España)**, commit `31236de` (rama `feat/geo-hero-corte-diagonal`, commits 61da926 a 18a6100). OK de José a las 12:06 en el chat. Vercel: correcto. Alcance: solo la página de GEO en los tres idiomas; no se extiende a otras páginas sin OK de José.
+- Antes de publicar: tsc, validate-i18n, check:precios, build y `check:seo` (424 URLs, 0 fallos) en verde. Capturas en local a 1440 px y a 390 px en ES, EN y FR, sin desborde horizontal. Los errores de consola vistos en local son de recursos externos bloqueados por el entorno de pruebas.
+- Para medir: cualquier cambio de visitas o conversiones en esa página desde esa hora se mezcla con la campaña Black Friday (arranca el 15/11) y con el piloto de la Fase B: no atribuir resultados a la cabecera sin comparar con Search Console y GA4.
+
+### Precios Black Friday — EN RAMA, SIN PUBLICAR
+- Fuente única de fechas, precios y textos de campaña: `lib/black-friday.ts` (campaña hasta el 30/11/2026, incluido; todo sin permanencia, sin IVA mostrado, sin escasez). `components/CondicionesBlackFriday.tsx` y `components/geo/GeoOfertas.tsx` son nuevos.
+- Presentación decidida por José (15/11): pack SEO + GEO + Maps a 149 €/mes durante 6 meses SIN «precio habitual» ni tachado (el 149 con permanencia ya estaba anunciado en los 30 días previos); SEO Local Esencial 99 (habitual 199) y Crecimiento 413, Ecommerce S 314 y Ecommerce M 553 (habituales 590, 449 y 790, confirmados por José como los más bajos aplicados). GEO solo 99 €/mes permanente, sin etiqueta Black Friday.
+- Retirados: modalidad con permanencia de 6 meses y penalización del 50 % por baja anticipada; la oferta deja de decir «permanente».
+- `scripts/check-precios.mjs`: las páginas de GEO y los dos componentes nuevos pasan a la lista de páginas de oferta (llevan precio y schema Offer). `scripts/check-chatbot.mjs`: ahora el asistente puede citar los importes de campaña y habituales (12 importes); la prueba «199 rechazado» pasa a «299 rechazado». `tsconfig.json`: `allowImportingTsExtensions` (lib/ofertas.ts importa lib/black-friday.ts con extensión para que lo lean las pruebas con node).
+- Pendiente: OK de José para fusionar a `main`; crear en el catálogo de MktOS el plan «GEO solo 99 €/mes» y las promociones (hoy los importes de campaña viven en `lib/black-friday.ts`, no en el catálogo); aviso automático de MktOS un mes antes de que acabe el periodo de cada cliente (tarea de MktOS); retirar todo el 01/12/2026 si no se amplía (skill gestion-campanas-temporales); revisar a mano `public/llms*.txt` y las FAQ de `kb.json` si se amplía.
