@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { GeoHeroChat } from "@/components/geo/GeoHeroChat";
 
 /**
  * Cabecera de la página de GEO con corte recto en forma de rayo (prueba del 15/11/2026).
@@ -17,36 +18,6 @@ import type { ReactNode } from "react";
 
 type Lang = "es" | "en" | "fr";
 
-const TXT: Record<Lang, { ia: string; pregunta: string; antes: string; negocio: string; despues: string; reco: string; ejemplo: string }> = {
-  es: {
-    ia: "Asistente de IA",
-    pregunta: "¿Qué fontanero de confianza me recomiendas en mi zona para una avería urgente?",
-    antes: "Te recomiendo ",
-    negocio: "Fontanería Ejemplo",
-    despues: ": atiende urgencias, tiene reseñas verificadas y trabaja en tu zona.",
-    reco: "Recomendado",
-    ejemplo: "Ejemplo ilustrativo con un negocio ficticio",
-  },
-  en: {
-    ia: "AI assistant",
-    pregunta: "Which trustworthy plumber do you recommend in my area for an urgent leak?",
-    antes: "I recommend ",
-    negocio: "Example Plumbing",
-    despues: ": they handle emergencies, have verified reviews and work in your area.",
-    reco: "Recommended",
-    ejemplo: "Illustrative example with a fictional business",
-  },
-  fr: {
-    ia: "Assistant IA",
-    pregunta: "Quel plombier de confiance me recommandez-vous dans ma zone pour une urgence ?",
-    antes: "Je vous recommande ",
-    negocio: "Plomberie Exemple",
-    despues: " : elle intervient en urgence, a des avis vérifiés et travaille dans votre zone.",
-    reco: "Recommandé",
-    ejemplo: "Exemple illustratif avec une entreprise fictive",
-  },
-};
-
 // Nombres de las IA principales que cita el texto de la página (marcas citadas, sin logotipos).
 const IAS: { t: string; cls: string; d: string; dur: string }[] = [
   { t: "ChatGPT", cls: "left-[50.5%] top-[12%]", d: "0s", dur: "9s" },
@@ -57,7 +28,6 @@ const IAS: { t: string; cls: string; d: string; dur: string }[] = [
 ];
 
 export function GeoHeroCorte({ children, lang = "es" }: { children: ReactNode; lang?: Lang }) {
-  const t = TXT[lang];
   return (
     <section className="mw-hero-corte relative isolate overflow-hidden bg-[#0f1c2e] text-white">
       {/* Auroras suaves que se desplazan (toda la cabecera) */}
@@ -74,29 +44,7 @@ export function GeoHeroCorte({ children, lang = "es" }: { children: ReactNode; l
         <div className="mw-aurora mw-aurora-2 absolute -right-[20%] top-[0%] h-[80%] w-[80%] rounded-full bg-[radial-gradient(circle,rgba(249,115,22,0.32),transparent_65%)] blur-3xl" />
         <div className="mw-aurora absolute left-[20%] -bottom-[25%] h-[70%] w-[70%] rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.45),transparent_65%)] blur-3xl" />
         <div className="absolute inset-0 flex items-center pl-[28%] pr-[5%]">
-          <div className="mw-float w-full" style={{ animationDuration: "13s" }}>
-            <div className="rounded-2xl border border-white/15 bg-white/[0.07] p-5 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)] backdrop-blur-md xl:p-6">
-              <div className="mb-4 flex items-center gap-2 text-xs font-semibold text-white/70">
-                <span className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-[#a78bfa] to-accent-500" />
-                {t.ia}
-              </div>
-              <div className="ml-auto mb-4 max-w-[88%] rounded-2xl rounded-br-sm bg-gradient-to-br from-[#7c3aed] to-[#c026d3] px-4 py-3 text-sm leading-snug text-white xl:text-base">
-                {t.pregunta}
-              </div>
-              <div className="max-w-[94%] rounded-2xl rounded-bl-sm border border-white/10 bg-white/10 px-4 py-3 text-sm leading-snug text-white/90 xl:text-base">
-                {t.antes}
-                <strong className="font-bold text-accent-400">{t.negocio}</strong>
-                {t.despues}
-                <span className="mt-3 flex">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-500/20 px-3 py-1 text-xs font-semibold text-accent-300">
-                    <span className="h-1.5 w-1.5 rounded-full bg-accent-400" />
-                    {t.reco}
-                  </span>
-                </span>
-              </div>
-            </div>
-            <p className="mt-3 text-center text-[11px] uppercase tracking-wider text-white/45">{t.ejemplo}</p>
-          </div>
+          <GeoHeroChat lang={lang} />
         </div>
       </div>
 
