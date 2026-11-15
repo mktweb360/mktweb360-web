@@ -15,7 +15,7 @@ export function GeoHeroCorte({ children }: { children: ReactNode }) {
     <section className="mw-hero-corte relative isolate overflow-hidden bg-[#0f1c2e] text-white">
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 lg:left-[48%] lg:[clip-path:polygon(31%_0,100%_0,100%_100%,0_100%,23%_62%,23%_32%)]"
+        className="absolute inset-0 -z-20 lg:left-[48%] lg:[clip-path:polygon(31.5%_0,100%_0,100%_100%,0_100%,23%_62%,23%_14%)]"
       >
         <Image
           src="/geo-hero.jpg"
