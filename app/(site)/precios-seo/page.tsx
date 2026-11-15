@@ -6,6 +6,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { CalculadoraSeo } from "@/components/CalculadoraSeo";
 import { planesSeo, EXTRAS_SEO, CONDICIONES_COMUNES, precioTexto, type PlanSeo } from "@/lib/planes-seo";
+import { CondicionesBlackFriday } from "@/components/CondicionesBlackFriday";
 
 const URL = "https://www.mktweb360.com/precios-seo/";
 
@@ -128,6 +129,7 @@ export default async function PreciosSeoPage() {
               </div>
             ))}
           </div>
+          <CondicionesBlackFriday className="mt-10" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             <div className="bg-primary-50 border border-primary-100 rounded-2xl p-6">
               <h3 className="font-bold text-primary-700 mb-3">Extras</h3>

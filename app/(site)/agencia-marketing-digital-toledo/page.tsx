@@ -35,7 +35,7 @@ const contenido: LocalServiceContent = {
     { t: "Auditoría gratuita", d: "Un diagnóstico SEO y de visibilidad en IA de tu web en tu correo.", href: "/auditoria-digital/", linkText: "Pedir auditoría gratuita" },
   ],
   precios: [
-    { nombre: "SEO + GEO + Google Business Profile", precio: "Oferta: 349 €/mes + IVA", detalle: "El paquete más completo para pymes con web de hasta 30 páginas.", href: "/oferta-seo-geo-gbp/" },
+    { nombre: "SEO + GEO + Google Business Profile", precio: "Black Friday: 149 €/mes + IVA", detalle: "Durante 6 meses, sin permanencia, contratando hasta el 30/11/2026 (tarifa general: 349 €/mes + IVA). El paquete más completo para pymes con web de hasta 30 páginas.", href: "/oferta-seo-geo-gbp/" },
     { nombre: "Web profesional", precio: "Oferta: desde 249 € + IVA", detalle: "Diseño a medida integrado en WordPress. Hosting, dominio y correo no incluidos.", href: "/oferta-web-seo-organico/" },
     { nombre: "Calcula el tamaño de tu proyecto SEO", precio: "Presupuesto a medida", detalle: "Según el tamaño de tu web, tus sedes y tus idiomas.", href: "/precios-seo/" },
   ],

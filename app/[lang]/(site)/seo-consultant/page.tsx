@@ -8,7 +8,7 @@ import { preciosOfertaSeo } from "@/lib/precios-planes";
 
 // 09/10/2026 — EN/FR de /consultor-seo/. Esta carpeta sirve /en/seo-consultant/;
 // /fr/consultant-seo/ reexporta este módulo.
-// La landing /oferta-seo-geo-gbp/ solo existe en ES: el enlace al paquete de 349 € apunta a la
+// La landing /oferta-seo-geo-gbp/ solo existe en ES: el enlace al paquete (Black Friday 149 € / tarifa general 349 €) apunta a la
 // página de precios del idioma, que muestra ese mismo plan.
 
 const BASE = "https://www.mktweb360.com";
@@ -58,7 +58,7 @@ const C = {
     vsTitle: "Consultancy or an ongoing SEO service",
     vs: "If you have someone to carry out the work, consultancy is the most efficient way to direct SEO. If you prefer us to take care of everything — content, technical changes, monitoring and the Google Business Profile listing — the ongoing service includes month-by-month execution.",
     linkSeo: "SEO service →",
-    linkPack: "Offer: SEO + GEO + Google Business Profile for €349/month + VAT →",
+    linkPack: "Black Friday offer: SEO + GEO + Google Business Profile at €149/month + VAT for 6 months, no minimum term (standard rate: €349/month) →",
     linkAudit: "Free SEO audit →",
     notTitle: "What we don't do",
     not: [
@@ -128,7 +128,7 @@ const C = {
     vsTitle: "Conseil ou service SEO continu",
     vs: "Si vous avez quelqu'un pour exécuter, le conseil est la manière la plus efficace de piloter le SEO. Si vous préférez que nous nous occupions de tout — contenus, modifications techniques, suivi et fiche Google —, le service continu inclut la mise en œuvre mois après mois.",
     linkSeo: "Service de référencement SEO →",
-    linkPack: "Offre : SEO + GEO + Google Business Profile pour 349 €/mois HT →",
+    linkPack: "Offre Black Friday : SEO + GEO + Google Business Profile à 149 €/mois HT pendant 6 mois, sans engagement (tarif général : 349 €/mois) →",
     linkAudit: "Audit SEO gratuit →",
     notTitle: "Ce que nous ne faisons pas",
     not: [

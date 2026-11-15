@@ -4,6 +4,8 @@ import { ogImagesIntl } from "@/lib/og";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
+import { GeoOfertas } from "@/components/geo/GeoOfertas";
+import { PRECIO_GEO_SOLO } from "@/lib/black-friday";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -188,6 +190,14 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       : "Positionnement dans les moteurs de recherche génératifs : ChatGPT, Perplexity, Gemini et Claude. Optimisation du contenu pour les LLMs, implémentation de llms.txt et stratégie d'autorité sémantique.",
     areaServed: isEn ? "Spain" : "Espagne",
     url: `https://www.mktweb360.com/${lang}/geo-generative-engine-optimization/`,
+    offers: {
+      "@type": "Offer",
+      name: isEn ? "GEO on its own" : "GEO seul",
+      price: String(PRECIO_GEO_SOLO),
+      priceCurrency: "EUR",
+      url: `https://www.mktweb360.com/${lang}/geo-generative-engine-optimization/#oferta`,
+      priceSpecification: { "@type": "UnitPriceSpecification", price: String(PRECIO_GEO_SOLO), priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false },
+    },
   };
 
   const faqSchema = {
@@ -553,6 +563,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
         </div>
       </section>
 
+      <GeoOfertas lang={isEn ? "en" : "fr"} verHref={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"} condHref={isEn ? "/en/seo-pricing/#condiciones-black-friday" : "/fr/tarifs-seo/#condiciones-black-friday"} />
       <RelatedArticles category="Marketing Digital" title={isEn ? "More about AI search and GEO" : "Plus sur la recherche IA et le GEO"} />
       <div className="max-w-4xl mx-auto px-4 pb-4">
         <BlogBanner variant="seogeogbp" lang={lang} />

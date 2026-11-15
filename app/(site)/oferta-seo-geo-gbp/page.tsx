@@ -4,8 +4,12 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { preciosOfertaSeo } from "@/lib/precios-planes";
 import { PRECIOS_OFERTA_SEO_RESPALDO, preciosEnTexto } from "@/lib/ofertas";
+import { BF_FIN_ISO, BF_FIN_TEXTO } from "@/lib/black-friday";
 
-// Oferta permanente (sin fecha de fin ni plazas), relanzada el 2-oct-2026.
+// Oferta relanzada el 2-oct-2026. Desde el 15/11/2026: campaña Black Friday (149 €/mes durante 6 meses, SIN permanencia, contratando
+// hasta el 30/11/2026) y tarifa general de 349 €/mes sin permanencia. Fechas, reglas y retirada: lib/black-friday.ts.
+// Eliminada la modalidad con permanencia y la penalización por baja anticipada (decisión de José, 15/11/2026).
+// El 149 NO se presenta como rebaja del 349 (ya estaba anunciado en los 30 días previos): sin tachado ni «antes».
 // Inventario: CAMPAÑA-oferta-seo-geo-gbp-2026-10-02-v2.md y CAMPAÑA-ofertas-web-y-seo-2026-10-20.md (Drive, Sistema Operativo).
 const URL = "https://www.mktweb360.com/oferta-seo-geo-gbp/";
 // Precio vigente: preciosOfertaSeo() (catálogo de MktOS con respaldo en lib/ofertas.ts), la fuente única que usan
@@ -18,20 +22,20 @@ async function vigente() {
   return { p, P: String(p.sinPermanencia), PERM: String(p.permanencia6m), R: (t: string) => preciosEnTexto(t, p) };
 }
 const DESC =
-  "SEO, GEO y ficha de Google Business Profile en un solo servicio: desde 149 €/mes + IVA con 6 meses de permanencia, o 349 €/mes sin permanencia.";
+  "SEO, GEO y Google Business Profile en un servicio: Black Friday, 149 €/mes + IVA durante 6 meses, sin permanencia, hasta el 30/11/2026.";
 
 const METADATA: Metadata = {
-  title: "SEO, GEO y ficha de Google: oferta desde 149 €/mes",
+  title: "SEO, GEO y ficha de Google: Black Friday 149 €/mes",
   description: DESC,
   alternates: { canonical: URL },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "SEO + GEO + Google Business Profile desde 149 €/mes | Mkt Web 360",
+    title: "SEO + GEO + Google Business Profile: Black Friday 149 €/mes | Mkt Web 360",
     description: DESC,
     url: URL,
     images: [
       {
-        url: "/api/og?title=" + encodeURIComponent("SEO + GEO + Google Business Profile desde 149 €/mes") + "&cat=" + encodeURIComponent("Oferta"),
+        url: "/api/og?title=" + encodeURIComponent("SEO + GEO + Google Business Profile: Black Friday 149 €/mes") + "&cat=" + encodeURIComponent("Oferta"),
         width: 1200,
         height: 630,
       },
@@ -87,7 +91,7 @@ const CONDICIONES = [
   { t: "5 contenidos al mes", d: "Páginas optimizadas o contenidos nuevos, entre SEO y GEO, según lo que más rinda cada mes." },
   { t: "Webs de hasta 30 páginas", d: "En un idioma. Si tu web es más grande, tiene tienda con mucho catálogo o varios idiomas, te hacemos un presupuesto a medida." },
   { t: "1 ficha de Google", d: "Si tienes varios locales, cada ficha adicional se presupuesta aparte." },
-  { t: "Dos modalidades", d: "Sin permanencia (baja con 30 días de aviso) o con 6 meses de permanencia a un precio mensual menor. Las condiciones de cada una están más arriba." },
+  { t: "Sin permanencia", d: "Tanto la oferta Black Friday como la tarifa general: puedes darte de baja avisando con 30 días de antelación." },
   { t: "Exclusividad en tu municipio", d: "No trabajamos con otra empresa de tu mismo sector en tu municipio." },
   { t: "Un único responsable", d: "Una persona lleva tu cuenta y te envía el informe cada mes." },
 ];
@@ -103,7 +107,7 @@ const NO_INCLUYE = [
 const FAQS = [
   {
     q: "¿Qué incluye el paquete SEO + GEO + GBP?",
-    a: "Tres servicios en uno por 349 €/mes + IVA: SEO (auditoría técnica, palabras clave, correcciones e informe mensual), GEO (auditoría y seguimiento mensual de 10 preguntas en 4 asistentes de IA, contenido citable, datos estructurados y llms.txt) y GBP (1 ficha de Google Business Profile optimizada, 2 publicaciones al mes, respuesta a hasta 15 reseñas al mes y 5 directorios). Incluye 5 contenidos al mes y vale para webs de hasta 30 páginas en un idioma.",
+    a: "Tres servicios en uno: oferta Black Friday de 149 €/mes + IVA durante 6 meses (contratando hasta el 30 de noviembre de 2026) o tarifa general de 349 €/mes + IVA, ambas sin permanencia. Incluye SEO (auditoría técnica, palabras clave, correcciones e informe mensual), GEO (auditoría y seguimiento mensual de 10 preguntas en 4 asistentes de IA, contenido citable, datos estructurados y llms.txt) y GBP (1 ficha de Google Business Profile optimizada, 2 publicaciones al mes, respuesta a hasta 15 reseñas al mes y 5 directorios). Incluye 5 contenidos al mes y vale para webs de hasta 30 páginas en un idioma.",
   },
   {
     q: "¿Qué es el GEO?",
@@ -119,15 +123,15 @@ const FAQS = [
   },
   {
     q: "¿Hay permanencia?",
-    a: "Depende de la modalidad. Sin permanencia, puedes darte de baja cuando quieras avisando con 30 días de antelación. Con la opción de 6 meses a 149 €/mes + IVA te comprometes durante esos 6 meses; si te das de baja antes, abonas el 50 % de las mensualidades que queden.",
+    a: "No. Ni la oferta Black Friday ni la tarifa general tienen permanencia: puedes darte de baja cuando quieras avisando con 30 días de antelación.",
   },
   {
-    q: "¿Qué pasa cuando terminan los 6 meses?",
-    a: "A partir del séptimo mes se aplica la tarifa vigente sin permanencia (hoy, 349 €/mes + IVA). Si la tarifa cambia, te avisamos antes de aplicarla.",
+    q: "¿Qué pasa cuando terminan los 6 meses de la oferta Black Friday?",
+    a: "No pasas automáticamente a otra tarifa: hablamos contigo antes de que termine el periodo para acordar cómo seguir. La tarifa general del servicio es de 349 €/mes + IVA, sin permanencia.",
   },
   {
-    q: "¿Por qué una opción de 6 meses?",
-    a: "Porque el SEO tarda en dar resultados: los primeros suelen verse entre 3 y 6 meses. La opción de 6 meses te da un precio menor a cambio de darle al trabajo el tiempo mínimo para empezar a rendir. No garantizamos posiciones concretas.",
+    q: "¿Hasta cuándo puedo contratar la oferta Black Friday?",
+    a: "Hasta el 30 de noviembre de 2026, incluido. El precio de 149 €/mes + IVA se mantiene durante los 6 primeros meses desde la contratación. Es una oferta para empresas y profesionales.",
   },
   {
     q: "¿Y si mi web es más grande o tengo varios locales?",
@@ -156,6 +160,7 @@ const schema = {
       url: URL,
       offers: {
         "@type": "Offer",
+        name: "SEO + GEO + Google Business Profile: tarifa general sin permanencia",
         price: PRICE,
         priceCurrency: "EUR",
         availability: "https://schema.org/InStock",
@@ -171,9 +176,10 @@ const schema = {
     },
     {
       "@type": "Offer",
-      name: "SEO + GEO + Google Business Profile con 6 meses de permanencia",
+      name: "SEO + GEO + Google Business Profile: Black Friday, 6 meses sin permanencia",
       price: PRICE_6M,
       priceCurrency: "EUR",
+      priceValidUntil: BF_FIN_ISO,
       availability: "https://schema.org/InStock",
       url: URL,
       priceSpecification: {
@@ -193,9 +199,8 @@ const schema = {
 };
 
 export default async function OfertaSeoGeoGbpPage() {
-  const { p, P, PERM, R } = await vigente();
-  const EJEMPLO = p.permanencia6m * 3 * 0.5; // si quedan 3 meses: 50 % de 3 mensualidades con permanencia
-  const faqs = FAQS.map((f) => ({ q: R(f.q), a: R(f.a) }));
+  const { P, PERM, R } = await vigente();
+    const faqs = FAQS.map((f) => ({ q: R(f.q), a: R(f.a) }));
   const ld = R(JSON.stringify(schema));
   return (
     <>
@@ -218,20 +223,20 @@ export default async function OfertaSeoGeoGbpPage() {
             </p>
             <div className="grid sm:grid-cols-2 gap-4 mb-8 max-w-2xl">
               <div className="bg-white/10 rounded-2xl px-6 py-4">
-                <p className="text-primary-100 text-sm font-semibold uppercase tracking-wide mb-1">Con 6 meses de permanencia</p>
+                <p className="text-primary-100 text-sm font-semibold uppercase tracking-wide mb-1">Black Friday · 6 meses</p>
                 <p className="flex items-baseline gap-3">
                   <span className="text-accent-400 text-4xl font-bold">{PERM} €/mes</span>
                   <span className="text-primary-100 text-sm">+ IVA</span>
                 </p>
-                <p className="text-primary-100 text-xs mt-1">Los 6 primeros meses · después, la tarifa vigente sin permanencia</p>
+                <p className="text-primary-100 text-xs mt-1">Sin permanencia · contratando hasta el {BF_FIN_TEXTO.es}</p>
               </div>
               <div className="bg-white/10 rounded-2xl px-6 py-4">
-                <p className="text-primary-100 text-sm font-semibold uppercase tracking-wide mb-1">Sin permanencia</p>
+                <p className="text-primary-100 text-sm font-semibold uppercase tracking-wide mb-1">Tarifa general</p>
                 <p className="flex items-baseline gap-3">
                   <span className="text-accent-400 text-4xl font-bold">{P} €/mes</span>
                   <span className="text-primary-100 text-sm">+ IVA</span>
                 </p>
-                <p className="text-primary-100 text-xs mt-1">Baja con 30 días de aviso · Webs de hasta 30 páginas</p>
+                <p className="text-primary-100 text-xs mt-1">Sin permanencia · baja con 30 días de aviso · webs de hasta 30 páginas</p>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -277,41 +282,43 @@ export default async function OfertaSeoGeoGbpPage() {
 
       {/* Dos modalidades */}
       <section id="modalidades" className="py-16 px-4">
+        <span id="condiciones-black-friday" />
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3">Dos formas de contratarlo</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">El mismo servicio, con las mismas condiciones de trabajo. Cambia el compromiso y el precio.</p>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3">Oferta Black Friday y tarifa general</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">El mismo servicio y las mismas condiciones de trabajo. Cambia el precio y su duración. Oferta para empresas y profesionales.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="rounded-2xl border-2 border-accent-500 bg-white p-6">
-              <p className="text-accent-700 font-bold text-sm uppercase tracking-wide mb-1">Con permanencia de 6 meses</p>
+              <p className="text-accent-700 font-bold text-sm uppercase tracking-wide mb-1">Black Friday · hasta el {BF_FIN_TEXTO.es}</p>
               <p className="flex items-baseline gap-2 mb-4">
                 <span className="text-4xl font-black text-primary-700">{PERM} €/mes</span>
                 <span className="text-gray-600 text-sm">+ IVA</span>
               </p>
               <ul className="space-y-2 text-sm text-gray-700 leading-relaxed">
-                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>{PERM} €/mes + IVA durante los 6 primeros meses.</span></li>
-                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>A partir del séptimo mes, la tarifa vigente sin permanencia (hoy, {P} €/mes + IVA). Si cambia, te avisamos antes.</span></li>
-                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>Si te das de baja antes de cumplir los 6 meses, abonas el 50 % de las mensualidades que queden. Por ejemplo, con 3 meses por delante: 50 % de 3 × {PERM} € = {EJEMPLO.toFixed(2).replace(".", ",")} € + IVA.</span></li>
+                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>{PERM} €/mes + IVA durante los 6 primeros meses desde la contratación.</span></li>
+                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>Sin permanencia: puedes darte de baja avisando con 30 días de antelación.</span></li>
+                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>Contratando hasta el {BF_FIN_TEXTO.es}, incluido.</span></li>
+                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>Pasados los 6 meses hablamos contigo para acordar cómo seguir: no cambias de tarifa automáticamente. La tarifa general es {P} €/mes + IVA, sin permanencia.</span></li>
               </ul>
               <p className="text-sm text-gray-600 mt-4">
-                Seis meses es el plazo en el que el SEO suele empezar a dar resultados que se traducen en contactos. No garantizamos posiciones concretas: depende del sector, de la competencia y del estado de tu web.
+                Los primeros resultados del SEO suelen verse entre 3 y 6 meses. No garantizamos posiciones concretas: depende del sector, de la competencia y del estado de tu web.
               </p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-6">
-              <p className="text-primary-700 font-bold text-sm uppercase tracking-wide mb-1">Sin permanencia</p>
+              <p className="text-primary-700 font-bold text-sm uppercase tracking-wide mb-1">Tarifa general</p>
               <p className="flex items-baseline gap-2 mb-4">
                 <span className="text-4xl font-black text-primary-700">{P} €/mes</span>
                 <span className="text-gray-600 text-sm">+ IVA</span>
               </p>
               <ul className="space-y-2 text-sm text-gray-700 leading-relaxed">
                 <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>Puedes darte de baja cuando quieras avisando con 30 días de antelación.</span></li>
-                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>Mismo servicio y mismas condiciones que la otra modalidad.</span></li>
+                <li className="flex gap-2"><span aria-hidden="true" className="text-accent-500 font-bold">✓</span><span>Mismo servicio y mismas condiciones de trabajo que la oferta Black Friday.</span></li>
               </ul>
             </div>
           </div>
           <p className="max-w-3xl mx-auto text-xs text-gray-600 leading-relaxed text-center mt-6">
-            Este resumen es orientativo y está escrito para que se entienda a la primera. Las condiciones exactas de la modalidad con permanencia se recogen por escrito en el presupuesto que aceptes. Te recomendamos que tu gestor o asesor lo revise antes de firmar. No es asesoramiento jurídico.
+            Este resumen es orientativo y está escrito para que se entienda a la primera. Las condiciones exactas se recogen por escrito en el presupuesto que aceptes. Te recomendamos que tu gestor o asesor lo revise antes de firmar. No es asesoramiento jurídico.
           </p>
         </div>
       </section>
@@ -321,7 +328,7 @@ export default async function OfertaSeoGeoGbpPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-3">Qué incluye exactamente el precio</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">{P} €/mes + IVA, con estas condiciones claras desde el principio.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">Tarifa general de {P} €/mes + IVA (o {PERM} €/mes + IVA durante 6 meses con la oferta Black Friday), con estas condiciones claras desde el principio.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
             {CONDICIONES.map((c) => (

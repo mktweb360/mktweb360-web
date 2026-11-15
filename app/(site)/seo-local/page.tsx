@@ -8,6 +8,7 @@ import { alternatesFor } from "@/lib/i18n/routes";
 import { planPorId, precioTexto, type PlanSeo } from "@/lib/planes-seo";
 
 import { BlogBanner } from "@/components/BlogBanner";
+import { CondicionesBlackFriday } from "@/components/CondicionesBlackFriday";
 export const metadata: Metadata = {
   title: "SEO Local: Posicionamiento en tu Zona",
   description: "Servicio de SEO local para captar clientes de tu zona: Google Maps, Google Business Profile, reseñas y páginas locales, para negocios con o sin local físico.",
@@ -145,6 +146,7 @@ export default async function SeoLocalPage() {
               </div>
             ))}
           </div>
+          <CondicionesBlackFriday className="mt-8" />
           <p className="text-sm text-gray-500 text-center mt-6">¿Tienes tienda online o una web más grande? <Link href="/precios-seo/" className="text-accent-600 underline">Calcula el tamaño de tu proyecto SEO</Link>.</p>
         </div>
       </section>

@@ -61,7 +61,7 @@ function faqs({ sinPermanencia: P349, permanencia6m: P6 }: PreciosOfertaSeo) {
     },
     {
       q: "¿Cuánto cuesta el SEO para una pyme?",
-      a: `No publicamos tarifas de servicios: preparamos un presupuesto a medida tras un diagnóstico gratuito, según el tamaño de la web, el número de fichas de Google y el contenido mensual. La única cifra publicada es la de la oferta vigente SEO + GEO + Google Business Profile, para webs de hasta 30 páginas: ${P349} €/mes + IVA sin permanencia, o ${P6} €/mes + IVA con 6 meses de permanencia.`,
+      a: `Fuera de las ofertas no publicamos tarifas: preparamos un presupuesto a medida tras un diagnóstico gratuito, según el tamaño de la web, el número de fichas de Google y el contenido mensual. La oferta vigente SEO + GEO + Google Business Profile, para webs de hasta 30 páginas, cuesta ${P6} €/mes + IVA durante 6 meses, sin permanencia, contratando hasta el 30 de noviembre de 2026 (Black Friday); la tarifa general es de ${P349} €/mes + IVA, sin permanencia.`,
     },
     {
       q: "¿Qué diferencia hay entre SEO local y SEO para pymes?",
@@ -192,7 +192,7 @@ export default async function SeoParaPymesPage() {
     <><strong>El punto de partida importa:</strong> según el INE (22/10/2026), solo el 36,2 % de las empresas españolas de menos de 10 empleados tiene web, frente al 82,9 % de las de 10 o más.</>,
     <><strong>Hay tareas que puedes hacer tú,</strong> como dar de alta Search Console, completar la ficha de Google o reescribir tus páginas de servicio.</>,
     <><strong>Conviene delegar</strong> lo técnico, la estrategia de palabras clave y el seguimiento mensual.</>,
-    <><strong>Precio:</strong> presupuesto a medida tras un diagnóstico gratuito, según el tamaño de la web. La oferta SEO + GEO + Google Business Profile tiene precio publicado: {P349} €/mes + IVA sin permanencia, o {P6} €/mes + IVA con 6 meses de permanencia.</>,
+    <><strong>Precio:</strong> presupuesto a medida tras un diagnóstico gratuito, según el tamaño de la web. La oferta SEO + GEO + Google Business Profile tiene precio publicado: {P6} €/mes + IVA durante 6 meses, sin permanencia, contratando hasta el 30 de noviembre de 2026 (Black Friday); tarifa general: {P349} €/mes + IVA, sin permanencia.</>,
     <><strong>Plazos orientativos:</strong> 3-6 meses para los primeros resultados y 6-12 para consolidar. Nadie puede garantizarte un puesto.</>,
   ];
 
