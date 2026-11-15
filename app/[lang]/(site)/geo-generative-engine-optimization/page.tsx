@@ -6,6 +6,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import { GeoOfertas } from "@/components/geo/GeoOfertas";
 import { PRECIO_GEO_SOLO } from "@/lib/black-friday";
+import { GeoHeroCorte } from "@/components/geo/GeoHeroCorte";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -225,17 +226,16 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
-      <section className="mw-skin-hero text-white">
-        <div className="max-w-6xl mx-auto px-4 py-16">
+      <GeoHeroCorte lang={isEn ? "en" : "fr"}>
           <Breadcrumbs crumbs={[
             { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
             { label: "GEO" },
           ]} />
-          <div className="max-w-3xl mt-4">
+          <div className="mt-4">
             <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
               {isEn ? "New service" : "Nouveau service"}
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-[2.75rem] xl:text-5xl font-bold mb-6 leading-tight">
               {isEn
                 ? "Your customers no longer only search on Google."
                 : "Vos clients ne cherchent plus seulement sur Google."}
@@ -260,8 +260,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
               </a>
             </div>
           </div>
-        </div>
-      </section>
+      </GeoHeroCorte>
 
       {/* Trust bar */}
       <section className="mw-skin-band py-6 px-4">
