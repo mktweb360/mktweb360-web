@@ -5,6 +5,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor } from "@/lib/i18n/routes";
 import Image from "next/image";
 import { AnswerIllustration, LayersIllustration } from "@/components/geo/GeoIllustrations";
+import { GeoHeroCorte } from "@/components/geo/GeoHeroCorte";
 
 import { BlogBanner } from "@/components/BlogBanner";
 export const metadata: Metadata = {
@@ -77,37 +78,24 @@ export default function GEOPage() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "GEO — Posicionamiento IA" }]} />
       </div>
 
-      <section className="relative isolate overflow-hidden text-white">
-        <Image
-          src="/geo-hero.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          quality={90}
-          className="object-cover -z-20"
-          style={{ objectPosition: "70% 40%" }}
-        />
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_75%_80%_at_50%_50%,rgba(15,28,46,0.84)_0%,rgba(15,28,46,0.74)_55%,rgba(15,28,46,0.55)_100%)]" />
-        <div className="max-w-4xl mx-auto px-4 py-20 md:py-28 text-center">
-          <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-5 uppercase tracking-wide">
-            GEO · Posicionamiento en IA
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight [text-shadow:0_2px_10px_rgba(15,28,46,0.6)]">
-            <span className="lg:whitespace-nowrap">Agencia GEO: posicionamiento en IA</span>{" "}
-            <span className="block text-[#ff7a00] lg:whitespace-nowrap">para que la IA te recomiende</span>
-          </h1>
-          <p className="text-xl text-primary-100 mb-6 leading-relaxed italic">
-            ¿Apareces cuando tus clientes preguntan a una IA por lo que tú vendes?
-          </p>
-          <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto [text-shadow:0_1px_4px_rgba(15,28,46,0.6)]">
-            El GEO (Generative Engine Optimization) es la disciplina que optimiza tu presencia digital para que los motores de búsqueda por IA te recomienden cuando un usuario pregunta sobre servicios como los tuyos: ChatGPT, Gemini, Copilot, Perplexity, Claude, el modo IA de Google o el asistente que use tu cliente. Es el complemento natural al SEO tradicional en la nueva era de la búsqueda.
-          </p>
-          <a href="#contacto" className="inline-block bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors">
-            Quiero aparecer en la IA
-          </a>
-        </div>
-      </section>
+      <GeoHeroCorte lang="es">
+        <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-5 uppercase tracking-wide">
+          GEO · Posicionamiento en IA
+        </span>
+        <h1 className="text-4xl lg:text-[2.75rem] xl:text-5xl font-bold mb-6 leading-tight">
+          <span>Agencia GEO: posicionamiento en IA</span>{" "}
+          <span className="block text-[#ff7a00]">para que la IA te recomiende</span>
+        </h1>
+        <p className="text-xl text-primary-100 mb-6 leading-relaxed italic">
+          ¿Apareces cuando tus clientes preguntan a una IA por lo que tú vendes?
+        </p>
+        <p className="text-base md:text-lg text-white/90 mb-8 leading-relaxed">
+          El GEO (Generative Engine Optimization) es la disciplina que optimiza tu presencia digital para que los motores de búsqueda por IA te recomienden cuando un usuario pregunta sobre servicios como los tuyos: ChatGPT, Gemini, Copilot, Perplexity, Claude, el modo IA de Google o el asistente que use tu cliente. Es el complemento natural al SEO tradicional en la nueva era de la búsqueda.
+        </p>
+        <a href="#contacto" className="inline-block bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-600 transition-colors">
+          Quiero aparecer en la IA
+        </a>
+      </GeoHeroCorte>
 
       <section className="mw-skin-band py-6 px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
