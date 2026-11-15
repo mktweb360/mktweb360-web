@@ -78,7 +78,7 @@ export default function GEOPage() {
         <Breadcrumbs crumbs={[{ label: "Inicio", href: "/" }, { label: "GEO — Posicionamiento IA" }]} />
       </div>
 
-      <GeoHeroCorte>
+      <GeoHeroCorte lang="es">
         <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-5 uppercase tracking-wide">
           GEO · Posicionamiento en IA
         </span>

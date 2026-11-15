@@ -216,7 +216,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
-      <GeoHeroCorte>
+      <GeoHeroCorte lang={isEn ? "en" : "fr"}>
           <Breadcrumbs crumbs={[
             { label: isEn ? "Home" : "Accueil", href: `/${lang}/` },
             { label: "GEO" },
