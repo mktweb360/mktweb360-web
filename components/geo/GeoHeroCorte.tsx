@@ -3,8 +3,11 @@ import type { ReactNode } from "react";
 
 /**
  * Cabecera de la página de GEO con corte recto en diagonal (prueba del 15/11/2026).
- * Escritorio: texto a la izquierda sobre fondo sólido y foto a la derecha, separados por una
- * línea recta inclinada (clip-path). Móvil: foto de fondo bajo un velo oscuro, texto a ancho completo.
+ * Escritorio: texto a la izquierda sobre fondo sólido (≈60 %) y foto a la derecha (≈40 %), separados
+ * por un corte recto en forma de rayo: arriba el sólido invade un poco la foto (pico pequeño), en el
+ * tramo central el corte es vertical (en el 60 %) y abajo la foto invade más el sólido (pico grande).
+ * Coordenadas del polígono: la caja de la foto empieza en el 48 % de la cabecera, así que 31 % de la
+ * caja = 64 % de la cabecera arriba; 23 % = 60 % en el tramo vertical; 0 % = 48 % abajo. Móvil: foto de fondo bajo un velo oscuro, texto a ancho completo.
  * El contenido (migas, H1, textos, CTA) lo pone cada página: este componente solo da el marco.
  */
 export function GeoHeroCorte({ children }: { children: ReactNode }) {
@@ -12,7 +15,7 @@ export function GeoHeroCorte({ children }: { children: ReactNode }) {
     <section className="mw-hero-corte relative isolate overflow-hidden bg-[#0f1c2e] text-white">
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 lg:left-1/2 lg:[clip-path:polygon(14%_0,100%_0,100%_100%,0_100%)]"
+        className="absolute inset-0 -z-20 lg:left-[48%] lg:[clip-path:polygon(31%_0,100%_0,100%_100%,0_100%,23%_62%,23%_32%)]"
       >
         <Image
           src="/geo-hero.jpg"
