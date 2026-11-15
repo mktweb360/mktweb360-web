@@ -80,11 +80,13 @@ t("no precio: combien de temps", !core.esPreguntaDePrecio("combien de temps pour
 // ── Política de precios (decisión de José, 25/10/2026): solo las ofertas llevan precio ──
 const of = await import("../lib/ofertas.ts");
 const okImp = new Set(of.IMPORTES_OFERTAS);
-t("ofertas: importes 349/149/249/490", [349, 149, 249, 490].every((n) => okImp.has(n)) && okImp.size === 4);
+// Black Friday (15/11/2026): además de 349/149/249/490, los importes de campaña y habituales de lib/black-friday.ts.
+t("ofertas: importes 349/149/249/490", [349, 149, 249, 490].every((n) => okImp.has(n)));
+t("ofertas: importes Black Friday (99, 413, 314, 553 y habituales 199, 590, 449, 790)", [99, 413, 314, 553, 199, 590, 449, 790].every((n) => okImp.has(n)) && okImp.size === 12);
 t("ofertas: solo importes de oferta en las líneas", ["es", "en", "fr"].every((l) => of.lineasOfertas(l).every((x) => core.amounts(x).every((n) => okImp.has(n)))));
 t("ofertas: hay línea por oferta e idioma", ["es", "en", "fr"].every((l) => of.lineasOfertas(l).length === of.OFERTAS_VIGENTES.length));
 t("valida: oferta 349 permitida", core.validateAiReply("La oferta es de 349 € al mes + IVA.", okImp).ok);
-t("valida: SEO Local 199 rechazado", !core.validateAiReply("El SEO Local cuesta 199 € al mes.", okImp).ok);
+t("valida: SEO Local 299 rechazado", !core.validateAiReply("El SEO Local cuesta 299 € al mes.", okImp).ok);
 t("valida: chatbot 299 €/mes rechazado", !core.validateAiReply("Un chatbot cuesta 299 €/mes.", okImp).ok);
 t("kb: ninguna FAQ de servicio cita un precio que no sea de oferta", kb.faqs.filter((f) => f.tipo === "servicio").every((f) => core.amounts(f.a).every((n) => okImp.has(n))));
 t("kb: páginas de servicio sin precio propio en la descripción", kb.paginas.filter((p) => !/oferta|tienda-online|landing|diseno-web-toledo|diseno-web-tienda-online|diseno-de-paginas-web|cuota|metodos-pago|cuanto-cuesta|herramientas|hosting|cost|how-much/.test(p.ruta)).every((p) => core.amounts(p.description || "").every((n) => okImp.has(n))));

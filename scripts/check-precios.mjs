@@ -22,6 +22,8 @@ const OFERTA_FILES = [
   /diseno-web-para-clinicas/, /web-design-clinics/, /corporate-website-design/, /paginas-corporativas/, /web-design-dentists/,
   /seo-pricing/, /precios-seo/, /consultor-seo/, /seo-consultant/, /agencia-marketing-digital-toledo/, /digital-marketing-agency-toledo/,
   /agencia-seo-toledo/, /seo-agency-toledo/, /tiendas-online-toledo/, /auditoria-digital/, /digital-audit/, /llms/,
+  // 15/11/2026: GEO solo 99 €/mes (precio permanente) y campaña Black Friday (lib/black-friday.ts).
+  /geo-posicionamiento-ia/, /geo-generative-engine-optimization/, /components[\\/]geo[\\/]GeoOfertas/, /CondicionesBlackFriday/,
 ];
 // Importes que fueron precios propios de servicios y ya no deben aparecer como tarifa nuestra.
 const PRECIOS_RETIRADOS = [199, 590, 449, 790, 690, 990, 290, 390, 350, 100];

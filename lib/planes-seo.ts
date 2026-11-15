@@ -17,6 +17,7 @@
 
 import { ROUTES, urlFor } from "@/lib/i18n/routes";
 import { PRECIO_SEO_GEO_MAPS_SIN_PERMANENCIA } from "@/lib/ofertas";
+import { PROMOS_BF, lineaBf, type BfPlanId } from "@/lib/black-friday";
 
 export type PlanLang = "es" | "en" | "fr";
 export type PlanId = "local" | "pyme" | "crecimiento" | "ecommerce-s" | "ecommerce-m" | "ecommerce-l";
@@ -327,8 +328,8 @@ export const PLAN_EN_CATALOGO: Record<PlanId, { servicio: string; modalidad: str
 };
 
 // El precio de la oferta SEO + GEO + GBP (sin permanencia y con 6 meses) se lee SIEMPRE con preciosOfertaSeo()
-// (lib/precios-planes.ts): catálogo de MktOS con respaldo en lib/ofertas.ts. Penalización por baja anticipada con
-// permanencia: 50 % de las mensualidades restantes (Manué, 20-oct-2026).
+// (lib/precios-planes.ts): catálogo de MktOS con respaldo en lib/ofertas.ts. La penalización por baja anticipada del 50 %
+// (20-oct-2026) y la permanencia de 6 meses quedaron ELIMINADAS el 15/11/2026 (decisión de José).
 
 export function precioLocal(id: PlanId): number | null {
   return BASE.find((b) => b.id === id)!.precio;
@@ -367,14 +368,17 @@ export function planPorId(id: PlanId, lang: PlanLang = "es", precios?: PreciosPl
   return planesSeo(lang, precios).find((p) => p.id === id)!;
 }
 
-// Texto visible en lugar del precio. NO devuelve cifras: los precios solo se muestran en las ofertas vigentes.
+// Texto visible en lugar del precio. Los precios solo se muestran en las OFERTAS vigentes: desde el 15/11/2026, los planes con
+// promoción Black Friday (lib/black-friday.ts) llevan su línea completa (precio de campaña, duración, precio habitual cuando
+// José confirmó que es el más bajo aplicado, sin permanencia y fecha de fin). El resto: presupuesto a medida.
 export function precioTexto(p: PlanSeo, lang: PlanLang = "es"): string {
   // El plan «pyme» es la oferta SEO + GEO + Maps: su precio está en la página de la oferta.
   if (p.id === "pyme") {
-    if (lang === "en") return "Current offer: price on the offer page";
-    if (lang === "fr") return "Offre en cours : prix sur la page de l'offre";
-    return "Oferta vigente: precio en la página de la oferta";
+    if (lang === "en") return "Black Friday offer: price on the offer page";
+    if (lang === "fr") return "Offre Black Friday : prix sur la page de l'offre";
+    return "Oferta Black Friday: precio en la página de la oferta";
   }
+  if (p.id in PROMOS_BF && p.precio) return lineaBf(p.id as BfPlanId, lang, undefined, p.precio);
   if (lang === "en") return "Custom quote after a free diagnosis";
   if (lang === "fr") return "Devis sur mesure après un diagnostic gratuit";
   return "Presupuesto a medida tras diagnóstico gratuito";
