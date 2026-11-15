@@ -197,6 +197,11 @@ a.bg-accent-500:hover, button.bg-accent-500:hover {
 .mw-skin-hero nav[aria-label="Breadcrumb"] span { color: rgba(255, 255, 255, 0.5); }
 .mw-skin-hero nav[aria-label="Breadcrumb"] li > span:last-child { color: #fff; }
 .mw-skin-hero nav[aria-label="Breadcrumb"] a:hover { color: #fb923c; }
+/* Migas legibles sobre la cabecera con corte diagonal de GEO (fondo sólido oscuro) */
+.mw-hero-corte nav[aria-label="Breadcrumb"] { color: rgba(255, 255, 255, 0.65); }
+.mw-hero-corte nav[aria-label="Breadcrumb"] span { color: rgba(255, 255, 255, 0.5); }
+.mw-hero-corte nav[aria-label="Breadcrumb"] li > span:last-child { color: #fff; }
+.mw-hero-corte nav[aria-label="Breadcrumb"] a:hover { color: #fb923c; }
 
 /* ─── Artículos del blog (.mw-article) ─────────────────────────────────────────────────────
    Barra de progreso de lectura (CSS puro, scroll-driven), titular con más carácter, h2 con
