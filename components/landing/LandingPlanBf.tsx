@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
+import { TrackedLink } from "@/components/TrackedLink";
 import { CondicionesBlackFriday } from "@/components/CondicionesBlackFriday";
 import { PROMOS_BF, lineaBf, despuesBf, etiquetaBf, type BfPlanId } from "@/lib/black-friday";
 import { planPorId, type PlanId } from "@/lib/planes-seo";
@@ -51,15 +52,17 @@ export function LandingPlanBf({ id, formType, titular, entradilla, whatsapp }: P
               <p className="text-sm text-primary-200 mt-1">{lineaBf(id, "es")}</p>
               <p className="text-xs text-primary-300 mt-2">{despuesBf(id, "es")}.</p>
             </div>
-            <a
+            <TrackedLink
               href={wa}
-              target="_blank"
-              rel="noopener"
+              ctaId={`whatsapp-${id}`}
+              location="landing-plan-bf"
+              type="contact"
+              text="Prefiero escribir por WhatsApp"
+              newTab
               className="inline-block border border-white/40 text-white text-sm font-semibold px-5 py-3 rounded-xl hover:bg-white/10 transition-colors"
-              data-cta="whatsapp"
             >
               Prefiero escribir por WhatsApp
-            </a>
+            </TrackedLink>
           </div>
 
           <div className="bg-white text-gray-900 rounded-3xl p-6 shadow-xl" id="contacto">
