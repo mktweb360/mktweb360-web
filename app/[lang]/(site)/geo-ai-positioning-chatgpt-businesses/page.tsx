@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -82,6 +83,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const { lang } = await params;
   const isEn = lang === "en";
   const FAQS = isEn ? FAQS_EN : FAQS_FR;
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
+  const geoHref = `/${lang}/${isEn ? "geo-generative-engine-optimization" : "geo-optimisation-moteurs-generatifs"}/`;
+  const auditHref = `/${lang}/${isEn ? "digital-audit" : "audit-digital"}/`;
 
   return (
     <>
@@ -94,7 +102,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
 
-        <p className="text-sm text-accent-500 font-semibold mb-2">GEO · {isEn ? "AI" : "IA"}</p>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        <div className="flex items-center gap-3 mb-4 flex-wrap">
+          <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">GEO · {isEn ? "AI" : "IA"}</span>
+          <time className="text-sm text-gray-400" dateTime="2026-06-26">{isEn ? "26 June 2026" : "26 juin 2026"}</time>
+          <span className="text-sm text-gray-400">· {isEn ? "Updated on" : "Mis à jour le"} <time dateTime="2026-11-16">{isEn ? "16 November 2026" : "16 novembre 2026"}</time></span>
+        </div>
 
         <IntlArticleJsonLd lang={lang} slug="geo-ai-positioning-chatgpt-businesses" headline={isEn ? "What Is GEO: Appear in ChatGPT for Business" : "GEO : comment apparaître dans ChatGPT"} image="/og-geo-chatgpt-negocios-espana.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
@@ -104,11 +117,25 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </h1>
         <AuthorByline lang={lang} block />
 
-        <p className="text-xl text-gray-500 mb-8 leading-relaxed">
+        <p className="text-xl text-gray-600 leading-relaxed">
           {isEn
             ? "More and more people are not searching on Google — they are asking an AI directly. If ChatGPT or Perplexity does not mention your business when someone asks about your sector, you are losing customers who never even make a traditional search."
             : "De plus en plus de personnes ne cherchent pas sur Google : elles demandent directement à une IA. Si ChatGPT ou Perplexity ne mentionne pas votre entreprise quand quelqu'un pose une question sur votre secteur, vous perdez des clients qui ne font même pas la recherche traditionnelle."}
         </p>
+
+        <Image
+          src="/og-geo-chatgpt-negocios-espana.jpg"
+          alt={isEn ? "What is GEO and how to appear in ChatGPT for your business" : "Qu'est-ce que le GEO et comment apparaître dans ChatGPT pour votre entreprise"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl my-6"
+          priority
+        />
+
+        <div className="rounded-xl border border-primary-100 bg-primary-50 p-5 mb-6">
+          <p className="font-semibold text-primary-700 mb-1">{isEn ? "In short" : "En bref"}</p>
+          <p className="text-gray-700">{FAQS[0].a}</p>
+        </div>
 
         <p className="text-gray-700 leading-relaxed mb-6">
           {isEn
@@ -129,9 +156,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn ? "Why GEO already matters for businesses" : "Pourquoi le GEO compte déjà pour les entreprises"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
-          {isEn
-            ? "This is not a laboratory trend. According to Google Search Central data from April 2026, between 14% and 16% of searches on Google already trigger a generative response. Add to this that, according to Gartner, 41.8% of users already use AI tools regularly. When nearly half your potential customers ask an AI and one in six Google searches is answered with generated text, visibility in those channels is no longer optional."
-            : "Ce n'est pas une tendance de laboratoire. Selon les données de Google Search Central d'avril 2026, entre 14 % et 16 % des recherches sur Google déclenchent déjà une réponse générative. À cela s'ajoute que, selon Gartner, 41,8 % des utilisateurs utilisent déjà des outils IA régulièrement. Quand près de la moitié de vos clients potentiels demandent à une IA et qu'une recherche Google sur six reçoit une réponse en texte généré, la visibilité dans ces canaux n'est plus optionnelle."}
+          {isEn ? (<>This is not a laboratory trend. OpenAI announced in October 2025 that ChatGPT had passed 800 million weekly users (<a href="https://www.cnbc.com/2025/10/06/open-ai-devday-live-updates-altman-jony-ive.html" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">CNBC</a>), and in July 2026 Alphabet reported that Google&apos;s AI Overviews reach 2.5 billion users a month (<a href="https://www.fool.com/investing/2026/08/21/sundar-pichai-alphabets-ai-billion-users/" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">The Motley Fool</a>). These are global figures, not Spain-specific, but they show where search habits are heading: your business should be present in those channels too.</>) : (<>Ce n&apos;est pas une tendance de laboratoire. OpenAI a annoncé en octobre 2025 que ChatGPT dépassait les 800 millions d&apos;utilisateurs hebdomadaires (<a href="https://www.cnbc.com/2025/10/06/open-ai-devday-live-updates-altman-jony-ive.html" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">CNBC</a>), et en juillet 2026 Alphabet a indiqué que les AI Overviews de Google touchent 2,5 milliards d&apos;utilisateurs par mois (<a href="https://www.fool.com/investing/2026/08/21/sundar-pichai-alphabets-ai-billion-users/" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">The Motley Fool</a>). Ce sont des chiffres mondiaux, pas spécifiques à l&apos;Espagne, mais ils montrent où évoluent les habitudes de recherche : votre entreprise doit aussi être présente sur ces canaux.</>)}
         </p>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
@@ -141,6 +166,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           {isEn
             ? "GEO does not replace SEO: it amplifies it. Generative engines feed on well-structured content with topical authority and verifiable data — exactly what a well-executed SEO strategy produces. A technically solid website with correct schemas and content that answers real questions is good for both Google and AI. That is why GEO is built on top of an SEO foundation, not in its place."
             : "Le GEO ne remplace pas le SEO : il l'amplifie. Les moteurs génératifs se nourrissent de contenu bien structuré, avec une autorité thématique et des données vérifiables — exactement ce que produit une stratégie SEO bien exécutée. Un site web techniquement solide, avec des schémas corrects et un contenu qui répond à de vraies questions, est à la fois bon pour Google et pour l'IA. C'est pourquoi le GEO se construit sur une base SEO, pas à sa place."}
+        </p>
+
+        <p className="text-gray-700 leading-relaxed mb-4">
+          {isEn ? "For a closer look, see " : "Pour aller plus loin, consultez "}
+          <Link href={`/${lang}/geo-vs-seo-differences/`} className="text-accent-500 hover:underline">{isEn ? "GEO versus SEO" : "GEO et SEO : les différences"}</Link>
+          {isEn ? " and, if your company is small, the guide to " : " et, si votre entreprise est petite, le guide du "}
+          <Link href={`/${lang}/geo-for-smes-ai-responses/`} className="text-accent-500 hover:underline">{isEn ? "GEO for SMEs" : "GEO pour les PME"}</Link>.
         </p>
 
         <div className="bg-primary-50 rounded-xl p-6 border border-primary-100 my-6">
@@ -160,15 +192,16 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           >
             {isEn ? "GEO service" : "Service GEO"}
           </Link>
+          <Link href={auditHref} className="inline-block ml-3 border-2 border-accent-500 text-accent-600 px-6 py-2 rounded-full font-semibold text-sm hover:bg-accent-50 transition-colors">
+            {isEn ? "Request a free diagnosis" : "Demander un diagnostic gratuit"}
+          </Link>
         </div>
 
         <h2 className="text-2xl font-bold text-primary-600 mt-8 mb-3">
           {isEn ? "How to appear in ChatGPT and Perplexity: concrete steps" : "Comment apparaître dans ChatGPT et Perplexity : étapes concrètes"}
         </h2>
         <p className="text-gray-700 leading-relaxed mb-4">
-          {isEn
-            ? "Appearing in AI responses is not a matter of luck. Research on the behaviour of these engines points to clear patterns. A Princeton study from 2024 showed that including specific inline statistics in content increases the probability of being cited by a generative engine by 41%. And according to Seer Interactive (2025), brands cited in Google's AI Overviews receive 35% more clicks than those that only appear in organic results."
-            : "Apparaître dans les réponses IA n'est pas une question de chance. Les études sur le comportement de ces moteurs pointent vers des modèles clairs. Une recherche de Princeton de 2024 a montré qu'inclure des statistiques concrètes et inline dans le contenu augmente de 41 % la probabilité d'être cité par un moteur génératif. Et selon Seer Interactive (2025), les marques citées dans les AI Overviews de Google reçoivent 35 % de clics en plus que celles qui n'apparaissent que dans les résultats organiques."}
+          {isEn ? (<>Appearing in AI responses is not a matter of luck. Research on the behaviour of these engines points to clear patterns. A study by Princeton researchers on GEO (2024, <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">arXiv</a>) measured visibility improvements of up to 40% in generative engine responses when content was optimised. And according to <a href="https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">Seer Interactive</a> (Q3 2025, 42 organisations and over 3,000 informational searches), brands cited in Google&apos;s AI Overviews got 35% more organic clicks than when they were not cited; the study itself warns that it cannot prove the citation is the cause.</>) : (<>Apparaître dans les réponses IA n&apos;est pas une question de chance. Les études sur le comportement de ces moteurs pointent vers des modèles clairs. Une étude de chercheurs de Princeton sur le GEO (2024, <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">arXiv</a>) a mesuré des gains de visibilité allant jusqu&apos;à 40 % dans les réponses des moteurs génératifs après optimisation du contenu. Et selon <a href="https://www.seerinteractive.com/insights/aio-impact-on-google-ctr-september-2025-update" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">Seer Interactive</a> (T3 2025, 42 organisations et plus de 3 000 recherches informatives), les marques citées dans les AI Overviews de Google ont obtenu 35 % de clics organiques en plus que lorsqu&apos;elles n&apos;étaient pas citées ; l&apos;étude avertit elle-même qu&apos;elle ne peut pas prouver que la citation en soit la cause.</>)}
         </p>
         <ul className="space-y-2 mb-6">
           {(isEn
@@ -227,10 +260,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               {isEn ? "GEO service" : "Service GEO"}
             </Link>
             <Link
-              href={`/${lang}/contact/`}
+              href={auditHref}
               className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
-              {isEn ? "Request AI visibility audit" : "Demander un audit de visibilité IA"}
+              {isEn ? "Request a free diagnosis" : "Demander un diagnostic gratuit"}
             </Link>
           </div>
         </div>
@@ -249,6 +282,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </details>
           ))}
         </div>
+
+        <p className="text-sm text-gray-500 pt-2">
+          {isEn ? "Related services: " : "Services associés : "}
+          <Link href={geoHref} className="text-accent-500 hover:underline">{isEn ? "GEO — AI positioning" : "GEO — positionnement IA"}</Link>
+        </p>
 
         <BlogBanner lang={lang} />
 
