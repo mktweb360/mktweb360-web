@@ -1,3 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
+import { AnswerIllustration, LayersIllustration } from "@/components/geo/GeoIllustrations";
+import { AuthorByline } from "@/components/AuthorByline";
 import { BlogBanner } from "@/components/BlogBanner";
 import { ContactForm } from "@/components/ContactForm";
 import { ogImagesIntl } from "@/lib/og";
@@ -357,8 +361,50 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
         </div>
       </section>
 
+      {/* Why GEO */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 max-w-4xl">
+            {isEn
+              ? "Why GEO is the next major shift in digital acquisition"
+              : "Pourquoi le GEO est le prochain grand changement dans l'acquisition digitale"}
+          </h2>
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_400px] gap-10 items-start">
+            <figure className="lg:order-2 lg:sticky lg:top-28 max-w-md mx-auto lg:max-w-none w-full">
+              <AnswerIllustration className="w-full h-auto" />
+              <figcaption className="text-sm text-gray-500 mt-3 text-center">
+                {isEn
+                  ? "When someone asks a question, the AI answers with the sources it understands and trusts. The goal of GEO is for one of them to be your company."
+                  : "Quand quelqu'un pose une question, l'IA répond avec les sources qu'elle comprend et en lesquelles elle a confiance. L'objectif du GEO est que l'une d'elles soit votre entreprise."}
+              </figcaption>
+            </figure>
+            <div className="lg:order-1">
+              {isEn ? (
+                <>
+                  <p className="text-gray-700 leading-relaxed mb-4">Traditional SEO optimises for appearing on Google. But user behaviour is changing: more and more people search directly in ChatGPT, Gemini, Copilot, Perplexity, Claude or Google&apos;s AI mode, and make decisions based on what these systems answer — without ever visiting Google. If your company does not appear in those answers, you do not exist for that segment of users.</p>
+                  <p className="text-gray-700 leading-relaxed mb-4">GEO — Generative Engine Optimization — is the discipline that optimises your digital presence so that language models recommend you when a user asks about services like yours. It is not about technical tricks or deceiving the AI. It is about making your content clear, structured and authoritative enough for LLMs to consider it a relevant source.</p>
+                  <p className="text-gray-700 leading-relaxed mb-4">At Mkt Web 360 we work on GEO as a structured service, with our own method. We keep llms.txt and llms-full.txt active, optimise content for conversational search intent and monitor brand visibility in the main AI engines every month.</p>
+                  <p className="text-gray-700 leading-relaxed mb-4">The data backs the shift. OpenAI announced in October 2025 that ChatGPT had passed 800 million weekly users (<a href="https://www.cnbc.com/2025/10/06/open-ai-devday-live-updates-altman-jony-ive.html" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">CNBC</a>). In July 2026, Alphabet reported that the Gemini app has 950 million monthly users (<a href="https://www.forbes.com/sites/tylerroush/2026/07/22/950-million-people-now-use-gemini-each-month-as-alphabet-posts-earnings-beat/" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">Forbes</a>) and that Google&apos;s AI Overviews reach 2.5 billion users a month (<a href="https://www.fool.com/investing/2026/08/21/sundar-pichai-alphabets-ai-billion-users/" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">The Motley Fool</a>). This is not a future trend — it is the current behaviour of your potential customers.</p>
+                  <p className="text-gray-700 leading-relaxed">The window of opportunity is narrow. Businesses that build AI authority now will have an accumulated advantage similar to domain authority in SEO: the earlier you start, the greater the advantage. Those that wait will start from zero in an environment where the competition has already built a presence. In SEO we know what it costs to recover lost positions. In GEO, the mechanism is the same.</p>
+                  <p className="text-gray-700 leading-relaxed mt-4">To see what this means for a specific business, read <Link href="/en/geo-ai-positioning-chatgpt-businesses/" className="text-primary-600 underline underline-offset-2">how to appear in ChatGPT if you have a business</Link>.</p>
+                </>
+              ) : (
+                <>
+                  <p className="text-gray-700 leading-relaxed mb-4">Le SEO traditionnel optimise pour apparaître sur Google. Mais le comportement des utilisateurs change : de plus en plus de personnes cherchent directement dans ChatGPT, Gemini, Copilot, Perplexity, Claude ou le mode IA de Google, et prennent des décisions en fonction de ce que ces systèmes répondent — sans jamais visiter Google. Si votre entreprise n&apos;apparaît pas dans ces réponses, vous n&apos;existez pas pour ce segment d&apos;utilisateurs.</p>
+                  <p className="text-gray-700 leading-relaxed mb-4">Le GEO — Generative Engine Optimization — est la discipline qui optimise votre présence digitale pour que les modèles de langage vous recommandent quand un utilisateur pose des questions sur des services comme les vôtres. Il ne s&apos;agit pas de trucs techniques ni de tromper l&apos;IA. Il s&apos;agit de rendre votre contenu suffisamment clair, structuré et faisant autorité pour que les LLMs le considèrent comme une source pertinente.</p>
+                  <p className="text-gray-700 leading-relaxed mb-4">Chez Mkt Web 360, nous travaillons le GEO comme un service structuré, avec une méthode propre. Nous maintenons des fichiers llms.txt et llms-full.txt actifs, optimisons le contenu pour l&apos;intention de recherche conversationnelle et surveillons chaque mois la visibilité de la marque dans les principaux moteurs d&apos;IA.</p>
+                  <p className="text-gray-700 leading-relaxed mb-4">Les données confirment ce changement. OpenAI a annoncé en octobre 2025 que ChatGPT dépassait les 800 millions d&apos;utilisateurs hebdomadaires (<a href="https://www.cnbc.com/2025/10/06/open-ai-devday-live-updates-altman-jony-ive.html" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">CNBC</a>). En juillet 2026, Alphabet a indiqué que l&apos;application Gemini compte 950 millions d&apos;utilisateurs mensuels (<a href="https://www.forbes.com/sites/tylerroush/2026/07/22/950-million-people-now-use-gemini-each-month-as-alphabet-posts-earnings-beat/" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">Forbes</a>) et que les AI Overviews de Google touchent 2,5 milliards d&apos;utilisateurs par mois (<a href="https://www.fool.com/investing/2026/08/21/sundar-pichai-alphabets-ai-billion-users/" target="_blank" rel="noopener" className="text-primary-600 underline underline-offset-2">The Motley Fool</a>). Ce n&apos;est pas une tendance future — c&apos;est le comportement actuel de vos clients potentiels.</p>
+                  <p className="text-gray-700 leading-relaxed">La fenêtre d&apos;opportunité est étroite. Les entreprises qui construisent dès maintenant une autorité dans l&apos;IA auront un avantage cumulé similaire à celui de l&apos;autorité de domaine en SEO : plus tôt vous commencez, plus l&apos;avantage est grand. Celles qui attendent partiront de zéro dans un environnement où la concurrence aura déjà construit sa présence. En SEO, on sait ce que coûte la récupération de positions perdues. En GEO, le mécanisme est le même.</p>
+                  <p className="text-gray-700 leading-relaxed mt-4">Pour voir ce que cela signifie pour une entreprise concrète, lisez <Link href="/fr/geo-ai-positioning-chatgpt-businesses/" className="text-primary-600 underline underline-offset-2">comment apparaître dans ChatGPT quand on a une entreprise</Link>.</p>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* GEO services */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">
@@ -380,62 +426,6 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
                 <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why GEO */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8">
-            {isEn
-              ? "Why GEO is the next major shift in digital acquisition"
-              : "Pourquoi le GEO est le prochain grand changement dans l'acquisition digitale"}
-          </h2>
-          <div className="space-y-4 text-gray-700 leading-relaxed">
-            {isEn ? (
-              <>
-                <p>Traditional SEO optimises your presence to appear on Google. But user behaviour is changing: more and more people search directly on ChatGPT, Perplexity, Claude or Gemini and make decisions based on what these systems respond — without ever reaching Google. If your business does not appear in those responses, you do not exist for that segment of users.</p>
-                <p>GEO — Generative Engine Optimization — is the discipline that optimises your digital presence so that language models recommend you when a user asks about services like yours. It is not about technical tricks or deceiving AI. It is about making your content sufficiently clear, structured and authoritative for LLMs to consider it a relevant source.</p>
-                <p>At Mkt Web 360 we were among the first in Spain to develop a structured GEO service. We maintain active llms.txt and llms-full.txt files, optimise content for conversational search intent and monitor brand visibility in the main AI engines on a monthly basis.</p>
-                <p>The data supports the shift. ChatGPT surpassed 800 million weekly users in 2026. Google AI Overviews already appear in more than 58% of searches. Perplexity processes hundreds of millions of queries per month. 94% of B2B buying groups use generative AI tools before speaking to any supplier. This is not a future trend — it is the current behaviour of your potential customers.</p>
-                <p>The window of opportunity is narrow. Businesses that build AI authority now will have an accumulated advantage similar to domain authority in SEO: the earlier you start, the greater the advantage. Those who wait will start from scratch in an environment where competitors have already built a presence. In SEO, we know how much it costs to recover lost positions. In GEO, the mechanism is the same.</p>
-              </>
-            ) : (
-              <>
-                <p>Le SEO traditionnel optimise votre présence pour apparaître sur Google. Mais le comportement des utilisateurs change : de plus en plus de personnes recherchent directement sur ChatGPT, Perplexity, Claude ou Gemini et prennent des décisions en fonction de ce que ces systèmes répondent — sans jamais atteindre Google. Si votre entreprise n'apparaît pas dans ces réponses, vous n'existez pas pour ce segment d'utilisateurs.</p>
-                <p>Le GEO — Generative Engine Optimization — est la discipline qui optimise votre présence digitale pour que les modèles de langage vous recommandent quand un utilisateur pose des questions sur des services comme les vôtres. Il ne s'agit pas de trucs techniques ni de tromper l'IA. Il s'agit de rendre votre contenu suffisamment clair, structuré et autoritaire pour que les LLMs le considèrent comme une source pertinente.</p>
-                <p>Chez Mkt Web 360, nous avons été parmi les premiers en Espagne à développer un service GEO structuré. Nous maintenons des fichiers llms.txt et llms-full.txt actifs, optimisons le contenu pour l'intention de recherche conversationnelle et surveillons la visibilité de la marque dans les principaux moteurs IA chaque mois.</p>
-                <p>Les données soutiennent ce changement. ChatGPT a dépassé 800 millions d'utilisateurs hebdomadaires en 2026. Google AI Overviews apparaît déjà dans plus de 58% des recherches. Perplexity traite des centaines de millions de requêtes par mois. 94% des groupes d'achat B2B utilisent des outils d'IA générative avant de parler à un fournisseur. Ce n'est pas une tendance future — c'est le comportement actuel de vos clients potentiels.</p>
-                <p>La fenêtre d'opportunité est étroite. Les entreprises qui construisent une autorité IA maintenant auront un avantage cumulé similaire à l'autorité de domaine en SEO : plus tôt vous commencez, plus grand est l'avantage. Celles qui attendent partiront de zéro dans un environnement où la concurrence aura déjà construit une présence. En SEO, nous savons combien il coûte de récupérer des positions perdues. En GEO, le mécanisme est le même.</p>
-              </>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* When does GEO make sense */}
-      <section className="py-12 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
-            {isEn ? "When does it make sense to invest in GEO?" : "Quand est-il judicieux d'investir dans le GEO ?"}
-          </h2>
-          <div className="space-y-4 text-gray-600">
-            {isEn ? (
-              <>
-                <p>GEO is not the right solution for every business at every moment. It makes sense when your sector has conversational search volume — when your potential customers ask AI things like "what marketing agency do you recommend" or "what is the best dental clinic in Toledo". If those questions exist, AI answers them with or without you.</p>
-                <p>It has particular impact in professional services, technology, health, training and digital marketing — sectors where the decision process is long and the customer researches before buying. In these sectors, appearing in ChatGPT's response before the customer reaches Google may be the difference between being evaluated or not existing in the buying process.</p>
-                <p>For local businesses — clinics, offices, workshops, physical shops — local GEO has an enormous and largely untapped opportunity. When someone asks ChatGPT "what reliable plumber do you recommend in Salamanca", the model tries to give a specific answer. A local business with well-structured content about its area, an optimised Google Business Profile, consistent NAP across all directories and reviews that reinforce local authority can appear in that response before larger competitors.</p>
-                <p>GEO does not make sense as a sole channel without an SEO base. A technically deficient site without quality content or domain authority has little to offer language models. The correct sequence is: solid technical SEO first, then GEO on top as an additional visibility layer.</p>
-              </>
-            ) : (
-              <>
-                <p>Le GEO n'est pas la bonne solution pour toutes les entreprises à tout moment. Il a du sens quand votre secteur dispose d'un volume de recherches conversationnelles — quand vos clients potentiels posent à l'IA des questions comme "quelle agence marketing me recommandez-vous" ou "quelle est la meilleure clinique dentaire de Toulouse". Si ces questions existent, l'IA y répond avec ou sans vous.</p>
-                <p>Il a un impact particulier dans les services professionnels, la technologie, la santé, la formation et le marketing digital — secteurs où le processus de décision est long et où le client se renseigne avant d'acheter. Dans ces secteurs, apparaître dans la réponse de ChatGPT avant que le client n'atteigne Google peut faire la différence entre être évalué ou ne pas exister dans le processus d'achat.</p>
-                <p>Pour les entreprises locales — cliniques, cabinets, ateliers, boutiques physiques — le GEO local dispose d'une opportunité énorme et peu exploitée. Quand quelqu'un demande à ChatGPT "quel plombier de confiance me recommandez-vous à Lyon", le modèle essaie de donner une réponse précise. Une entreprise locale avec du contenu bien structuré sur sa zone, un Google Business Profile optimisé, un NAP cohérent dans tous les annuaires et des avis renforçant l'autorité locale peut apparaître dans cette réponse avant des concurrents plus importants.</p>
-                <p>Le GEO n'a pas de sens comme canal unique sans base SEO. Un site techniquement déficient, sans contenu de qualité ou sans autorité de domaine, a peu à offrir aux modèles de langage. La séquence correcte est : SEO technique solide en premier, puis GEO par-dessus comme couche supplémentaire de visibilité.</p>
-              </>
-            )}
           </div>
         </div>
       </section>
@@ -467,15 +457,60 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
         </div>
       </section>
 
+      {/* When does GEO make sense */}
+      <section className="py-12 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6 max-w-4xl">
+            {isEn ? "When does it make sense to invest in GEO?" : "Quand est-il judicieux d'investir dans le GEO ?"}
+          </h2>
+          <div className="grid lg:grid-cols-[400px_minmax(0,1fr)] gap-10 items-start">
+            <figure className="lg:sticky lg:top-28 max-w-md mx-auto lg:max-w-none w-full">
+              <LayersIllustration className="w-full h-auto" />
+              <figcaption className="text-sm text-gray-500 mt-3 text-center">
+                {isEn
+                  ? "First a solid technical SEO base, then content that can be cited and, on top, GEO."
+                  : "D'abord une base de SEO technique solide, puis un contenu citable et, par-dessus, le GEO."}
+              </figcaption>
+            </figure>
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+            {isEn ? (
+              <>
+                <p>GEO is not the right solution for every business at every moment. It makes sense when your sector has conversational search volume — when your potential customers ask AI things like "what marketing agency do you recommend" or "what is the best dental clinic in Toledo". If those questions exist, AI answers them with or without you.</p>
+                <p>It has particular impact in professional services, technology, health, training and digital marketing — sectors where the decision process is long and the customer researches before buying. In these sectors, appearing in ChatGPT's response before the customer reaches Google may be the difference between being evaluated or not existing in the buying process.</p>
+                <p>For local businesses — clinics, offices, workshops, physical shops — local GEO has an enormous and largely untapped opportunity. When someone asks ChatGPT "what reliable plumber do you recommend in Salamanca", the model tries to give a specific answer. A local business with well-structured content about its area, an optimised Google Business Profile, consistent NAP across all directories and reviews that reinforce local authority can appear in that response before larger competitors.</p>
+                <p>GEO does not make sense as a sole channel without an SEO base. A technically deficient site without quality content or domain authority has little to offer language models. The correct sequence is: solid technical SEO first, then GEO on top as an additional visibility layer.</p>
+              </>
+            ) : (
+              <>
+                <p>Le GEO n'est pas la bonne solution pour toutes les entreprises à tout moment. Il a du sens quand votre secteur dispose d'un volume de recherches conversationnelles — quand vos clients potentiels posent à l'IA des questions comme "quelle agence marketing me recommandez-vous" ou "quelle est la meilleure clinique dentaire de Toulouse". Si ces questions existent, l'IA y répond avec ou sans vous.</p>
+                <p>Il a un impact particulier dans les services professionnels, la technologie, la santé, la formation et le marketing digital — secteurs où le processus de décision est long et où le client se renseigne avant d'acheter. Dans ces secteurs, apparaître dans la réponse de ChatGPT avant que le client n'atteigne Google peut faire la différence entre être évalué ou ne pas exister dans le processus d'achat.</p>
+                <p>Pour les entreprises locales — cliniques, cabinets, ateliers, boutiques physiques — le GEO local dispose d'une opportunité énorme et peu exploitée. Quand quelqu'un demande à ChatGPT "quel plombier de confiance me recommandez-vous à Lyon", le modèle essaie de donner une réponse précise. Une entreprise locale avec du contenu bien structuré sur sa zone, un Google Business Profile optimisé, un NAP cohérent dans tous les annuaires et des avis renforçant l'autorité locale peut apparaître dans cette réponse avant des concurrents plus importants.</p>
+                <p>Le GEO n'a pas de sens comme canal unique sans base SEO. Un site techniquement déficient, sans contenu de qualité ou sans autorité de domaine, a peu à offrir aux modèles de langage. La séquence correcte est : SEO technique solide en premier, puis GEO par-dessus comme couche supplémentaire de visibilité.</p>
+              </>
+            )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Local GEO */}
-      <section className="py-12 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6">
+      <section className="py-12 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6 max-w-4xl">
             {isEn
               ? "Local GEO: the opportunity most businesses haven't spotted yet"
               : "GEO local : l'opportunité que la plupart n'a pas encore vue"}
           </h2>
-          <div className="space-y-4 text-gray-600">
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_400px] gap-10 items-start">
+            <figure className="lg:order-2 lg:sticky lg:top-28 max-w-md mx-auto lg:max-w-none w-full">
+              <Image src="/imagen-google-business-profile.jpg" alt={isEn ? "Map of a city with several businesses marked and one highlighted in orange" : "Plan d'une ville avec plusieurs entreprises signalées et une mise en avant en orange"} width={1200} height={900} sizes="(max-width: 1024px) 448px, 400px" className="w-full h-auto rounded-[28px]" />
+              <figcaption className="text-sm text-gray-500 mt-3 text-center">
+                {isEn
+                  ? "For local searches, AI and the map draw on the same data: Google listing, reviews and consistent data across all directories."
+                  : "Pour les recherches locales, l'IA et la carte s'alimentent des mêmes données : fiche Google, avis et données cohérentes dans tous les annuaires."}
+              </figcaption>
+            </figure>
+            <div className="lg:order-1 space-y-4 text-gray-700 leading-relaxed">
             {isEn ? (
               <>
                 <p>Most conversations about GEO focus on national or international brands. But the most immediate opportunity lies with local businesses. AI models receive thousands of daily queries with local intent: "best physiotherapist in Bilbao", "tax adviser for freelancers in Zaragoza", "reliable mechanic in Toledo". And they have to respond with something.</p>
@@ -489,9 +524,12 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
                 <p>Chez Mkt Web 360, nous travaillons le GEO local intégré avec la stratégie de SEO local de nos clients. Ce ne sont pas deux projets séparés — ce sont deux couches du même travail de visibilité digitale : une pour que Google vous trouve, l'autre pour que l'IA vous recommande.</p>
               </>
             )}
+            </div>
           </div>
         </div>
       </section>
+
+      <GeoOfertas lang={isEn ? "en" : "fr"} verHref={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"} condHref={isEn ? "/en/seo-pricing/#condiciones-black-friday" : "/fr/tarifs-seo/#condiciones-black-friday"} />
 
       {/* FAQ */}
       <section className="py-16 px-4 bg-gray-50">
@@ -540,6 +578,10 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
               ? ". We apply to our own website exactly what we offer our clients."
               : ". Nous appliquons sur notre propre site exactement ce que nous proposons à nos clients."}
           </p>
+          <p className="text-sm text-gray-500 mt-4">
+            <AuthorByline /> · {isEn ? "Last updated: " : "Dernière mise à jour : "}
+            <time dateTime="2026-11-16">{isEn ? "16 November 2026" : "16 novembre 2026"}</time>
+          </p>
         </div>
       </section>
 
@@ -562,7 +604,6 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
         </div>
       </section>
 
-      <GeoOfertas lang={isEn ? "en" : "fr"} verHref={isEn ? "/en/digital-audit/" : "/fr/audit-digital/"} condHref={isEn ? "/en/seo-pricing/#condiciones-black-friday" : "/fr/tarifs-seo/#condiciones-black-friday"} />
       <RelatedArticles category="Marketing Digital" title={isEn ? "More about AI search and GEO" : "Plus sur la recherche IA et le GEO"} />
       <div className="max-w-4xl mx-auto px-4 pb-4">
         <BlogBanner variant="seogeogbp" lang={lang} />
