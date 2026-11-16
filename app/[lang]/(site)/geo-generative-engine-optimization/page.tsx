@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnswerIllustration, LayersIllustration } from "@/components/geo/GeoIllustrations";
-import { AuthorByline } from "@/components/AuthorByline";
 import { BlogBanner } from "@/components/BlogBanner";
 import { ContactForm } from "@/components/ContactForm";
 import { ogImagesIntl } from "@/lib/og";
@@ -579,7 +578,7 @@ export default async function GeoPage({ params }: { params: Promise<{ lang: stri
               : ". Nous appliquons sur notre propre site exactement ce que nous proposons à nos clients."}
           </p>
           <p className="text-sm text-gray-500 mt-4">
-            <AuthorByline /> · {isEn ? "Last updated: " : "Dernière mise à jour : "}
+            {isEn ? "Last updated: " : "Dernière mise à jour : "}
             <time dateTime="2026-11-16">{isEn ? "16 November 2026" : "16 novembre 2026"}</time>
           </p>
         </div>

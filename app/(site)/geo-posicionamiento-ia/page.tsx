@@ -1,4 +1,3 @@
-import { AuthorByline } from "@/components/AuthorByline";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -354,7 +353,7 @@ export default function GEOPage() {
             Aplicamos en nuestra propia web exactamente lo que ofrecemos a nuestros clientes.
           </p>
           <p className="text-sm text-gray-500 mt-6">
-            <AuthorByline /> · Última actualización: <time dateTime="2026-11-16">16 de noviembre de 2026</time>
+            Última actualización: <time dateTime="2026-11-16">16 de noviembre de 2026</time>
           </p>
         </div>
       </section>
