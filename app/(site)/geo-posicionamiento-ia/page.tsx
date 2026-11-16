@@ -1,3 +1,5 @@
+import { AuthorByline } from "@/components/AuthorByline";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
@@ -166,28 +168,8 @@ export default function GEOPage() {
         </div>
       </section>
 
-      <section className="py-16 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Qué incluye el servicio GEO</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Un enfoque completo para que los motores de IA te conozcan, te entiendan y te recomienden.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {GEO_SERVICES.map((s) => (
-              <div key={s.title} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center mb-4">
-                  <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
-                </div>
-                <h3 className="font-bold text-primary-600 mb-2">{s.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* POR QUÉ GEO */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-8 max-w-4xl">Por qué el GEO es el próximo gran cambio en captación digital</h2>
           <div className="grid lg:grid-cols-[minmax(0,1fr)_400px] gap-10 items-start">
@@ -211,26 +193,30 @@ export default function GEOPage() {
           <p className="text-gray-700 leading-relaxed">
             La ventana de oportunidad es estrecha. Las empresas que construyan autoridad en la IA ahora tendrán una ventaja acumulada similar a la del dominio authority en SEO: cuanto antes empieces, mayor ventaja. Las que esperen partirán desde cero en un entorno donde la competencia ya habrá construido presencia. En SEO, sabemos lo que cuesta recuperar posiciones perdidas. En GEO, el mecanismo es el mismo.
           </p>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Si quieres ver qué significa esto para un negocio concreto, lee <Link href="/geo-posicionamiento-ia-chatgpt-empresas-espana/" className="text-primary-600 underline underline-offset-2">cómo aparecer en ChatGPT si tienes un negocio</Link>.
+          </p>
           </div>
           </div>
         </div>
       </section>
 
-      {/* CUÁNDO TIENE SENTIDO GEO */}
-      <section className="py-12 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6 max-w-4xl">¿Cuándo tiene sentido contratar GEO?</h2>
-          <div className="grid lg:grid-cols-[400px_minmax(0,1fr)] gap-10 items-start">
-          <figure className="lg:sticky lg:top-28 max-w-md mx-auto lg:max-w-none w-full">
-            <LayersIllustration className="w-full h-auto" />
-            <figcaption className="text-sm text-gray-500 mt-3 text-center">Primero una base de SEO técnico sólida, después contenido que se pueda citar y, encima, el GEO.</figcaption>
-          </figure>
-          <div className="space-y-4 text-gray-700 leading-relaxed">
-            <p>El GEO no es la solución correcta para todos los negocios en todos los momentos. Tiene sentido cuando tu sector tiene volumen de búsquedas conversacionales — cuando tus clientes potenciales preguntan a la IA cosas como "qué agencia de marketing me recomiendas" o "cuál es la mejor clínica dental de Toledo". Si esas preguntas existen, la IA las responde con o sin ti.</p>
-            <p>Tiene especial impacto en servicios profesionales, tecnología, salud, formación y marketing digital — sectores donde el proceso de decisión es largo y el cliente investiga antes de comprar. En estos sectores, aparecer en la respuesta de ChatGPT antes de que el cliente visite Google puede ser la diferencia entre ser evaluado o no existir en el proceso de compra.</p>
-            <p>Para negocios locales — clínicas, despachos, talleres, tiendas físicas — el GEO local tiene una oportunidad enorme y poco explotada. Cuando alguien le pregunta a ChatGPT "qué fontanero de confianza me recomiendas en Salamanca", el modelo intenta dar una respuesta específica. Un negocio local con contenido bien estructurado, NAP coherente en todos sus canales y autoridad local puede aparecer en esa respuesta antes que competidores más grandes.</p>
-            <p>El GEO no tiene sentido como canal único sin base SEO. Un sitio técnicamente deficiente, sin contenido de calidad o sin autoridad de dominio tiene poco que ofrecer a los modelos de IA. La secuencia correcta es: SEO técnico sólido primero, GEO encima como capa adicional de visibilidad.</p>
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-4">Qué incluye el servicio GEO</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">Un enfoque completo para que los motores de IA te conozcan, te entiendan y te recomienden.</p>
           </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {GEO_SERVICES.map((s) => (
+              <div key={s.title} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center mb-4">
+                  <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+                </div>
+                <h3 className="font-bold text-primary-600 mb-2">{s.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -277,8 +263,27 @@ export default function GEOPage() {
         </div>
       </section>
 
-      {/* GEO LOCAL */}
+      {/* CUÁNDO TIENE SENTIDO GEO */}
       <section className="py-12 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6 max-w-4xl">¿Cuándo tiene sentido contratar GEO?</h2>
+          <div className="grid lg:grid-cols-[400px_minmax(0,1fr)] gap-10 items-start">
+          <figure className="lg:sticky lg:top-28 max-w-md mx-auto lg:max-w-none w-full">
+            <LayersIllustration className="w-full h-auto" />
+            <figcaption className="text-sm text-gray-500 mt-3 text-center">Primero una base de SEO técnico sólida, después contenido que se pueda citar y, encima, el GEO.</figcaption>
+          </figure>
+          <div className="space-y-4 text-gray-700 leading-relaxed">
+            <p>El GEO no es la solución correcta para todos los negocios en todos los momentos. Tiene sentido cuando tu sector tiene volumen de búsquedas conversacionales — cuando tus clientes potenciales preguntan a la IA cosas como "qué agencia de marketing me recomiendas" o "cuál es la mejor clínica dental de Toledo". Si esas preguntas existen, la IA las responde con o sin ti.</p>
+            <p>Tiene especial impacto en servicios profesionales, tecnología, salud, formación y marketing digital — sectores donde el proceso de decisión es largo y el cliente investiga antes de comprar. En estos sectores, aparecer en la respuesta de ChatGPT antes de que el cliente visite Google puede ser la diferencia entre ser evaluado o no existir en el proceso de compra.</p>
+            <p>Para negocios locales — clínicas, despachos, talleres, tiendas físicas — el GEO local tiene una oportunidad enorme y poco explotada. Cuando alguien le pregunta a ChatGPT "qué fontanero de confianza me recomiendas en Salamanca", el modelo intenta dar una respuesta específica. Un negocio local con contenido bien estructurado, NAP coherente en todos sus canales y autoridad local puede aparecer en esa respuesta antes que competidores más grandes.</p>
+            <p>El GEO no tiene sentido como canal único sin base SEO. Un sitio técnicamente deficiente, sin contenido de calidad o sin autoridad de dominio tiene poco que ofrecer a los modelos de IA. La secuencia correcta es: SEO técnico sólido primero, GEO encima como capa adicional de visibilidad.</p>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GEO LOCAL */}
+      <section className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-primary-700 mb-6 max-w-4xl">GEO local: la oportunidad que la mayoría todavía no ha visto</h2>
           <div className="grid lg:grid-cols-[minmax(0,1fr)_400px] gap-10 items-start">
@@ -295,6 +300,7 @@ export default function GEOPage() {
         </div>
       </section>
 
+      <GeoOfertas lang="es" />
 
       {/* FAQs GEO */}
       <section className="py-16 px-4 bg-gray-50">
@@ -347,6 +353,9 @@ export default function GEOPage() {
             <a href="/llms-full.txt" className="text-accent-500 hover:underline font-medium">mktweb360.com/llms-full.txt</a>.
             Aplicamos en nuestra propia web exactamente lo que ofrecemos a nuestros clientes.
           </p>
+          <p className="text-sm text-gray-500 mt-6">
+            <AuthorByline /> · Última actualización: <time dateTime="2026-11-16">16 de noviembre de 2026</time>
+          </p>
         </div>
       </section>
 
@@ -362,7 +371,6 @@ export default function GEOPage() {
         </div>
       </section>
 
-      <GeoOfertas lang="es" />
       <RelatedArticles category="Marketing Digital" title="Más sobre búsqueda IA y GEO" />
       <div className="max-w-4xl mx-auto px-4 pb-4">
         <BlogBanner variant="seogeogbp" />
