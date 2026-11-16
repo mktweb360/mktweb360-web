@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ogImagesIntl } from "@/lib/og";
 import { BlogBanner } from "@/components/BlogBanner";
@@ -82,6 +83,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
   const { lang } = await params;
   const isEn = lang === "en";
   const FAQS = isEn ? FAQS_EN : FAQS_FR;
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
+  const geoHref = `/${lang}/${isEn ? "geo-generative-engine-optimization" : "geo-optimisation-moteurs-generatifs"}/`;
+  const auditHref = `/${lang}/${isEn ? "digital-audit" : "audit-digital"}/`;
 
   return (
     <>
@@ -94,7 +102,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
           ]}
         />
 
-        <p className="text-sm text-accent-500 font-semibold mb-2">GEO · {isEn ? "AI" : "IA"}</p>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        <div className="flex items-center gap-3 mb-4 flex-wrap">
+          <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">GEO · {isEn ? "AI" : "IA"}</span>
+          <time className="text-sm text-gray-400" dateTime="2026-06-26">{isEn ? "26 June 2026" : "26 juin 2026"}</time>
+          <span className="text-sm text-gray-400">· {isEn ? "Updated on" : "Mis à jour le"} <time dateTime="2026-11-16">{isEn ? "16 November 2026" : "16 novembre 2026"}</time></span>
+        </div>
 
         <IntlArticleJsonLd lang={lang} slug="geo-ai-positioning-chatgpt-businesses" headline={isEn ? "What Is GEO: Appear in ChatGPT for Business" : "GEO : comment apparaître dans ChatGPT"} image="/og-geo-chatgpt-negocios-espana.jpg" />
         <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
@@ -104,11 +117,25 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         </h1>
         <AuthorByline lang={lang} block />
 
-        <p className="text-xl text-gray-500 mb-8 leading-relaxed">
+        <p className="text-xl text-gray-600 leading-relaxed">
           {isEn
             ? "More and more people are not searching on Google — they are asking an AI directly. If ChatGPT or Perplexity does not mention your business when someone asks about your sector, you are losing customers who never even make a traditional search."
             : "De plus en plus de personnes ne cherchent pas sur Google : elles demandent directement à une IA. Si ChatGPT ou Perplexity ne mentionne pas votre entreprise quand quelqu'un pose une question sur votre secteur, vous perdez des clients qui ne font même pas la recherche traditionnelle."}
         </p>
+
+        <Image
+          src="/og-geo-chatgpt-negocios-espana.jpg"
+          alt={isEn ? "What is GEO and how to appear in ChatGPT for your business" : "Qu'est-ce que le GEO et comment apparaître dans ChatGPT pour votre entreprise"}
+          width={1200}
+          height={630}
+          className="w-full rounded-2xl my-6"
+          priority
+        />
+
+        <div className="rounded-xl border border-primary-100 bg-primary-50 p-5 mb-6">
+          <p className="font-semibold text-primary-700 mb-1">{isEn ? "In short" : "En bref"}</p>
+          <p className="text-gray-700">{FAQS[0].a}</p>
+        </div>
 
         <p className="text-gray-700 leading-relaxed mb-6">
           {isEn
@@ -143,6 +170,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             : "Le GEO ne remplace pas le SEO : il l'amplifie. Les moteurs génératifs se nourrissent de contenu bien structuré, avec une autorité thématique et des données vérifiables — exactement ce que produit une stratégie SEO bien exécutée. Un site web techniquement solide, avec des schémas corrects et un contenu qui répond à de vraies questions, est à la fois bon pour Google et pour l'IA. C'est pourquoi le GEO se construit sur une base SEO, pas à sa place."}
         </p>
 
+        <p className="text-gray-700 leading-relaxed mb-4">
+          {isEn ? "For a closer look, see " : "Pour aller plus loin, consultez "}
+          <Link href={`/${lang}/geo-vs-seo-differences/`} className="text-accent-500 hover:underline">{isEn ? "GEO versus SEO" : "GEO et SEO : les différences"}</Link>
+          {isEn ? " and, if your company is small, the guide to " : " et, si votre entreprise est petite, le guide du "}
+          <Link href={`/${lang}/geo-for-smes-ai-responses/`} className="text-accent-500 hover:underline">{isEn ? "GEO for SMEs" : "GEO pour les PME"}</Link>.
+        </p>
+
         <div className="bg-primary-50 rounded-xl p-6 border border-primary-100 my-6">
           <p className="font-semibold text-primary-700 mb-2">
             {isEn
@@ -159,6 +193,9 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors"
           >
             {isEn ? "GEO service" : "Service GEO"}
+          </Link>
+          <Link href={auditHref} className="inline-block ml-3 border-2 border-accent-500 text-accent-600 px-6 py-2 rounded-full font-semibold text-sm hover:bg-accent-50 transition-colors">
+            {isEn ? "Request a free diagnosis" : "Demander un diagnostic gratuit"}
           </Link>
         </div>
 
@@ -227,10 +264,10 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               {isEn ? "GEO service" : "Service GEO"}
             </Link>
             <Link
-              href={`/${lang}/contact/`}
+              href={auditHref}
               className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
             >
-              {isEn ? "Request AI visibility audit" : "Demander un audit de visibilité IA"}
+              {isEn ? "Request a free diagnosis" : "Demander un diagnostic gratuit"}
             </Link>
           </div>
         </div>
@@ -249,6 +286,11 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             </details>
           ))}
         </div>
+
+        <p className="text-sm text-gray-500 pt-2">
+          {isEn ? "Related services: " : "Services associés : "}
+          <Link href={geoHref} className="text-accent-500 hover:underline">{isEn ? "GEO — AI positioning" : "GEO — positionnement IA"}</Link>
+        </p>
 
         <BlogBanner lang={lang} />
 

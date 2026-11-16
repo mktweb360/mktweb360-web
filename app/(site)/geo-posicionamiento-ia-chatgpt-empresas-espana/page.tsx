@@ -30,7 +30,7 @@ const articleSchema = {
   author: autorSchema(),
   publisher: { "@type": "Organization", "@id": "https://www.mktweb360.com/#organization", name: "Mkt Web 360 SLU", url: "https://www.mktweb360.com" },
   datePublished: "2026-06-26",
-  dateModified: "2026-06-26",
+  dateModified: "2026-11-16",
   url: "https://www.mktweb360.com/geo-posicionamiento-ia-chatgpt-empresas-espana/",
   mainEntityOfPage: "https://www.mktweb360.com/geo-posicionamiento-ia-chatgpt-empresas-espana/",
   inLanguage: "es-ES",
@@ -83,6 +83,7 @@ export default function GeoChatgptEmpresasEspanaPage() {
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-primary-100 text-primary-700 text-xs font-medium px-2.5 py-0.5 rounded-full">GEO · IA</span>
             <time className="text-sm text-gray-400" dateTime="2026-06-26">26 de junio de 2026</time>
+            <span className="text-sm text-gray-400">· Actualizado el <time dateTime="2026-11-16">16 de noviembre de 2026</time></span>
             <AuthorByline />
           </div>
           <h1 className="text-4xl font-bold text-primary-600 mb-4 leading-tight">
@@ -102,6 +103,10 @@ export default function GeoChatgptEmpresasEspanaPage() {
         </header>
 
         <div className="text-gray-700 space-y-6 leading-relaxed">
+          <div className="rounded-xl border border-primary-100 bg-primary-50 p-5">
+            <p className="font-semibold text-primary-700 mb-1">En pocas palabras</p>
+            <p className="text-gray-700">GEO son las siglas de Generative Engine Optimization: el conjunto de técnicas para que tu negocio sea mencionado y citado en las respuestas de motores generativos como ChatGPT, Perplexity, Gemini y los AI Overviews de Google. Donde el SEO busca posiciones en una lista de enlaces, el GEO busca ser la fuente que la IA usa para construir su respuesta.</p>
+          </div>
           <p>
             Durante veinte años, ser visible en internet significaba aparecer en la primera página de Google. Ese juego está cambiando. Hoy, una parte creciente de las consultas termina en una respuesta generada por inteligencia artificial que resume, recomienda y, sobre todo, decide qué marcas menciona y cuáles ignora. El GEO —Generative Engine Optimization— es la disciplina que trabaja para que tu negocio sea una de las marcas mencionadas.
           </p>
@@ -113,13 +118,16 @@ export default function GeoChatgptEmpresasEspanaPage() {
           <p>No es una tendencia de laboratorio. Según datos de Google Search Central de abril de 2026, entre el 14% y el 16% de las búsquedas en google.es ya activan una respuesta generativa. A eso se suma que, según Gartner, el 41,8% de los usuarios en España ya utiliza herramientas de IA de forma habitual. Cuando casi la mitad de tus clientes potenciales pregunta a una IA y una de cada seis búsquedas en Google se responde con texto generado, la visibilidad en esos canales deja de ser opcional.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">SEO y GEO no son lo mismo, pero se necesitan</h2>
-          <p>El GEO no sustituye al SEO: lo amplifica. Los motores generativos se alimentan de contenido bien estructurado, con autoridad temática y datos verificables, exactamente lo que produce una estrategia de <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">posicionamiento SEO</Link> bien ejecutada. Una web técnicamente sólida, con schemas correctos y contenido que responde preguntas reales, es a la vez buena para Google y buena para la IA. Por eso el GEO se construye sobre una base SEO, no en su lugar.</p>
+          <p>El GEO no sustituye al SEO: lo amplifica. Los motores generativos se alimentan de contenido bien estructurado, con autoridad temática y datos verificables, exactamente lo que produce una estrategia de <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">posicionamiento SEO</Link> bien ejecutada. Una web técnicamente sólida, con schemas correctos y contenido que responde preguntas reales, es a la vez buena para Google y buena para la IA. Por eso el GEO se construye sobre una base SEO, no en su lugar. Si quieres ver las diferencias con más detalle, tienes la comparativa <Link href="/geo-vs-seo-diferencias/" className="text-accent-500 hover:underline">GEO frente a SEO</Link>, y si tu empresa es pequeña, la guía de <Link href="/geo-para-pymes-como-aparecer-en-respuestas-ia-sin-ser-una-gran-marca/" className="text-accent-500 hover:underline">GEO para pymes</Link>.</p>
 
           <div className="bg-primary-50 rounded-xl p-6 border border-primary-100">
             <p className="font-semibold text-primary-700 mb-2">¿Tu negocio aparece cuando alguien pregunta por tu sector a ChatGPT?</p>
             <p className="text-gray-600 text-sm mb-4">Hacemos una auditoría de visibilidad en IA y te decimos exactamente dónde estás y qué falta para que la IA te mencione.</p>
             <Link href="/geo-posicionamiento-ia/" className="inline-block bg-accent-500 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition-colors">
               Ver servicio de GEO
+            </Link>
+            <Link href="/auditoria-digital/" className="inline-block ml-3 border-2 border-accent-500 text-accent-600 px-6 py-2 rounded-full font-semibold text-sm hover:bg-accent-50 transition-colors">
+              Pedir diagnóstico gratuito
             </Link>
           </div>
 
@@ -140,7 +148,7 @@ export default function GeoChatgptEmpresasEspanaPage() {
           <p>Cuando la pregunta tiene componente local —"mejor asesoría para autónomos en Toledo"— los motores generativos combinan autoridad temática con señales de proximidad. Ahí, tu <Link href="/google-business-profile/" className="text-accent-500 hover:underline">ficha de Google Business Profile</Link>, tus reseñas y la coherencia de tus datos (nombre, dirección, teléfono y especialidad) se convierten en materia prima para que la IA te recomiende. Un negocio local con la casa digital ordenada parte con ventaja en GEO.</p>
 
           <h2 className="text-2xl font-bold text-primary-600">Cómo empezar sin perder el tiempo</h2>
-          <p>El primer paso es siempre el mismo: preguntar. Plantea a ChatGPT, Perplexity y Gemini las consultas que haría tu cliente ideal y observa si apareces, con qué contexto y frente a qué competidores. Esa auditoría revela tu punto de partida real. A partir de ahí, se prioriza: reforzar el contenido que responde a esas preguntas, mejorar las señales de autoridad y mantener la coherencia de marca. El GEO es un trabajo de medio plazo, pero quien empieza antes consolida una ventaja difícil de recuperar.</p>
+          <p>El primer paso es siempre el mismo: preguntar. Plantea a ChatGPT, Perplexity y Gemini las consultas que haría tu cliente ideal y observa si apareces, con qué contexto y frente a qué competidores. Esa auditoría revela tu punto de partida real, y aquí tienes la <Link href="/auditoria-geo-aparecer-chatgpt-gemini-google/" className="text-accent-500 hover:underline">auditoría GEO paso a paso</Link> para hacerla tú mismo. A partir de ahí, se prioriza: reforzar el contenido que responde a esas preguntas, mejorar las señales de autoridad y mantener la coherencia de marca. El GEO es un trabajo de medio plazo, pero quien empieza antes consolida una ventaja difícil de recuperar.</p>
 
           <p className="text-sm text-gray-500">
             Ver también: <Link href="/ha-muerto-el-seo-con-la-ia/" className="text-accent-500 hover:underline">¿Ha muerto el SEO con la IA?</Link> · <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 hover:underline">SEO Posicionamiento Web</Link>
@@ -155,8 +163,8 @@ export default function GeoChatgptEmpresasEspanaPage() {
               <Link href="/geo-posicionamiento-ia/" className="bg-accent-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-600 transition-colors">
                 Ver servicio de GEO
               </Link>
-              <Link href="/contacto/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                Solicitar auditoría de visibilidad en IA
+              <Link href="/auditoria-digital/" className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
+                Pedir diagnóstico gratuito
               </Link>
             </div>
           </div>
