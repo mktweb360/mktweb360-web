@@ -7,6 +7,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { RelatedArticles } from "@/components/RelatedArticles";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { planPorId, precioTexto } from "@/lib/planes-seo";
+import { CondicionesBlackFriday } from "@/components/CondicionesBlackFriday";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -258,6 +259,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               </div>
             ))}
           </div>
+          <CondicionesBlackFriday lang={isEn ? "en" : "fr"} className="mt-8" />
           <p className="text-sm text-gray-500 text-center mt-6">
             {isEn ? "Do you have an online store or a larger website? " : "Vous avez une boutique en ligne ou un site plus grand ? "}
             <Link href={`/${lang}/${langSlug(lang, "seo-pricing")}/`} className="text-accent-600 underline">{isEn ? "Work out the size of your SEO project" : "Estimez la taille de votre projet SEO"}</Link>.

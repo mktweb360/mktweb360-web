@@ -8,6 +8,8 @@ import { AnswerIllustration, LayersIllustration } from "@/components/geo/GeoIllu
 import { GeoHeroCorte } from "@/components/geo/GeoHeroCorte";
 
 import { BlogBanner } from "@/components/BlogBanner";
+import { GeoOfertas } from "@/components/geo/GeoOfertas";
+import { PRECIO_GEO_SOLO } from "@/lib/black-friday";
 export const metadata: Metadata = {
   title: "Agencia GEO: Posicionamiento en IA y ChatGPT",
   description: "Agencia GEO: posicionamiento en IA para que ChatGPT, Gemini, Copilot y el modo IA de Google puedan citar tu empresa. Auditoría, contenido citable y schema.",
@@ -29,6 +31,14 @@ const serviceSchema = {
   description: "Posicionamiento en motores de búsqueda generativa y asistentes de IA (ChatGPT, Gemini, Copilot, Perplexity, Claude, AI Overviews y modo IA de Google, entre otros). Optimización de contenidos para LLMs, implementación de llms.txt y estrategia de autoridad semántica.",
   areaServed: "España",
   url: "https://www.mktweb360.com/geo-posicionamiento-ia/",
+  offers: {
+    "@type": "Offer",
+    name: "GEO solo",
+    price: String(PRECIO_GEO_SOLO),
+    priceCurrency: "EUR",
+    url: "https://www.mktweb360.com/geo-posicionamiento-ia/#oferta",
+    priceSpecification: { "@type": "UnitPriceSpecification", price: String(PRECIO_GEO_SOLO), priceCurrency: "EUR", unitCode: "MON", valueAddedTaxIncluded: false },
+  },
 };
 const GEO_SERVICES = [
   {
@@ -352,6 +362,7 @@ export default function GEOPage() {
         </div>
       </section>
 
+      <GeoOfertas lang="es" />
       <RelatedArticles category="Marketing Digital" title="Más sobre búsqueda IA y GEO" />
       <div className="max-w-4xl mx-auto px-4 pb-4">
         <BlogBanner variant="seogeogbp" />

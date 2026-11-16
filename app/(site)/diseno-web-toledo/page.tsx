@@ -35,7 +35,7 @@ const contenido: LocalServiceContent = {
   ],
   precios: [
     { nombre: "Web profesional", precio: "Desde 249 € + IVA", detalle: "Diseño a medida integrado en WordPress. Hosting, dominio y correo no incluidos.", href: "/oferta-web-seo-organico/" },
-    { nombre: "SEO + GEO + Google Maps", precio: "Desde 149 €/mes + IVA", detalle: "Con 6 meses de permanencia a 149 €/mes, o 349 €/mes sin permanencia.", href: "/oferta-seo-geo-gbp/" },
+    { nombre: "SEO + GEO + Google Maps", precio: "Black Friday: 149 €/mes + IVA", detalle: "Durante 6 meses, sin permanencia, contratando hasta el 30/11/2026. Tarifa general: 349 €/mes sin permanencia.", href: "/oferta-seo-geo-gbp/" },
     { nombre: "Tienda online", precio: "Desde 490 €", detalle: "Tienda sin comisiones por venta ni licencias mensuales.", href: "/tienda-online/" },
   ],
   contexto: {
@@ -52,7 +52,7 @@ const contenido: LocalServiceContent = {
     { href: "/agencia-marketing-digital-toledo/", text: "Agencia de marketing digital en Toledo" },
   ],
   faqs: [
-    { q: "¿Cuánto cuesta una página web en Toledo?", a: "Nuestros precios son los mismos en toda España: web profesional desde 249 € + IVA, SEO + GEO + Google Maps desde 149 €/mes + IVA (con 6 meses de permanencia) o 349 €/mes sin permanencia, y tienda online desde 490 €. Te enviamos un presupuesto cerrado según lo que necesites." },
+    { q: "¿Cuánto cuesta una página web en Toledo?", a: "Nuestros precios son los mismos en toda España: web profesional desde 249 € + IVA, SEO + GEO + Google Maps a 149 €/mes + IVA durante 6 meses, sin permanencia, con la oferta Black Friday (contratando hasta el 30/11/2026; tarifa general: 349 €/mes sin permanencia), y tienda online desde 490 €. Te enviamos un presupuesto cerrado según lo que necesites." },
     { q: "¿La web incluye hosting y dominio?", a: "El hosting, el dominio y el correo corporativo no van incluidos en el precio de la web: los contratas con el proveedor que prefieras y te orientamos en la elección." },
     { q: "¿Podéis rediseñar mi web sin perder posicionamiento?", a: "Sí. Revisamos qué páginas reciben visitas y desde qué búsquedas, y mantenemos las URLs o creamos redirecciones a la página equivalente para conservar lo ganado." },
     { q: "¿Cuánto se tarda en tener la web publicada?", a: "Depende del tamaño y de que tengamos a tiempo los textos, las fotos y los datos legales del negocio. Al aceptar el presupuesto te damos un calendario con las fechas de revisión y de publicación." },

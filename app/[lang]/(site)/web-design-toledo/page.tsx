@@ -54,7 +54,7 @@ function content(lang: L): LocalServiceContent {
       ],
       precios: [
         { nombre: "Site professionnel", precio: "À partir de 249 € HT", detalle: "Conception et développement du site, sans la formule SEO." },
-        { nombre: "SEO + GEO + Google Maps", precio: "À partir de 149 €/mois HT", detalle: "Avec 6 mois d'engagement à 149 €/mois, ou 349 €/mois sans engagement." },
+        { nombre: "SEO + GEO + Google Maps", precio: "Black Friday : 149 €/mois HT", detalle: "Pendant 6 mois, sans engagement, en souscrivant avant le 30/11/2026. Tarif général : 349 €/mois sans engagement." },
         { nombre: "Boutique en ligne", precio: "À partir de 490 €", detalle: "Boutique sans commission sur les ventes ni licence mensuelle.", href: href(lang, "online-store-offer") },
       ],
       contexto: {
@@ -71,7 +71,7 @@ function content(lang: L): LocalServiceContent {
         { href: href(lang, "digital-marketing-agency-toledo"), text: "Agence de marketing digital à Tolède" },
       ],
       faqs: [
-        { q: "Combien coûte un site web à Tolède ?", a: "Nos prix sont les mêmes dans toute l'Espagne : site professionnel à partir de 249 € HT, SEO + GEO + Google Maps à partir de 149 €/mois HT (avec 6 mois d'engagement) ou 349 €/mois sans engagement, et boutique en ligne à partir de 490 €. Nous vous envoyons un devis ferme selon vos besoins." },
+        { q: "Combien coûte un site web à Tolède ?", a: "Nos prix sont les mêmes dans toute l'Espagne : site professionnel à partir de 249 € HT, SEO + GEO + Google Maps à 149 €/mois HT pendant 6 mois, sans engagement, avec l'offre Black Friday (en souscrivant avant le 30/11/2026 ; tarif général : 349 €/mois sans engagement), et boutique en ligne à partir de 490 €. Nous vous envoyons un devis ferme selon vos besoins." },
         { q: "Le site inclut-il l'hébergement et le nom de domaine ?", a: "L'hébergement, le nom de domaine et la messagerie professionnelle ne sont pas inclus dans le prix du site : vous les souscrivez auprès du prestataire de votre choix et nous vous conseillons." },
         { q: "Pouvez-vous refondre mon site sans perdre mon positionnement ?", a: "Oui. Nous examinons quelles pages reçoivent des visites et depuis quelles recherches, et nous conservons les URL ou créons des redirections vers la page équivalente pour préserver l'acquis." },
         { q: "Combien de temps faut-il pour publier le site ?", a: "Cela dépend de sa taille et de la réception à temps des textes, des photos et des informations légales de l'entreprise. À l'acceptation du devis, nous vous remettons un calendrier avec les dates de validation et de publication." },
@@ -103,7 +103,7 @@ function content(lang: L): LocalServiceContent {
     ],
     precios: [
       { nombre: "Professional website", precio: "From €249 + VAT", detalle: "Website design and development, without the SEO package." },
-      { nombre: "SEO + GEO + Google Maps", precio: "From €149/month + VAT", detalle: "With a 6-month commitment at €149/month, or €349/month with no commitment." },
+      { nombre: "SEO + GEO + Google Maps", precio: "Black Friday: €149/month + VAT", detalle: "For 6 months, no minimum term, when you sign up by 30/11/2026. Standard rate: €349/month, no minimum term." },
       { nombre: "Online store", precio: "From €490", detalle: "A store with no commission per sale and no monthly licences.", href: href(lang, "online-store-offer") },
     ],
     contexto: {
@@ -120,7 +120,7 @@ function content(lang: L): LocalServiceContent {
       { href: href(lang, "digital-marketing-agency-toledo"), text: "Digital marketing agency in Toledo" },
     ],
     faqs: [
-      { q: "How much does a website cost in Toledo?", a: "Our prices are the same throughout Spain: a professional website from €249 + VAT, SEO + GEO + Google Maps from €149/month + VAT (with a 6-month commitment) or €349/month with no commitment, and an online store from €490. We send you a fixed quote based on what you need." },
+      { q: "How much does a website cost in Toledo?", a: "Our prices are the same throughout Spain: a professional website from €249 + VAT, SEO + GEO + Google Maps at €149/month + VAT for 6 months, with no minimum term, with the Black Friday offer (sign up by 30/11/2026; standard rate: €349/month, no minimum term), and an online store from €490. We send you a fixed quote based on what you need." },
       { q: "Does the website include hosting and a domain?", a: "Hosting, domain and business email are not included in the website price: you contract them with the provider of your choice and we advise you." },
       { q: "Can you redesign my website without losing rankings?", a: "Yes. We review which pages receive visits and from which searches, and we keep the URLs or create redirects to the equivalent page to preserve what has been earned." },
       { q: "How long does it take to get the website published?", a: "It depends on the size and on receiving the copy, photos and legal details of the business on time. When you accept the quote, we give you a schedule with the review and publication dates." },

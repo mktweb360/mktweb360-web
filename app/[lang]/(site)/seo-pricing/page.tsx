@@ -5,6 +5,7 @@ import { RelatedArticles } from "@/components/RelatedArticles";
 import { CalculadoraSeo } from "@/components/CalculadoraSeo";
 import { alternatesFor, langSlug } from "@/lib/i18n/routes";
 import { planesSeo, extrasSeo, condicionesComunes, precioTexto } from "@/lib/planes-seo";
+import { CondicionesBlackFriday } from "@/components/CondicionesBlackFriday";
 
 // 09/10/2026 — EN/FR de /precios-seo/. Precios, límites y lógica de la calculadora salen de
 // lib/planes-seo.ts (fuente única); aquí solo van los textos de la página. Sin precios (decisión 25/10/2026).
@@ -231,6 +232,7 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
               </div>
             ))}
           </div>
+          <CondicionesBlackFriday lang={lang} className="mt-10" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             <div className="bg-primary-50 border border-primary-100 rounded-2xl p-6">
               <h3 className="font-bold text-primary-700 mb-3">{t.extrasTitle}</h3>

@@ -82,7 +82,7 @@ const FAQS = [
   },
   {
     q: "¿Y si quiero que además me encuentren en Google?",
-    a: "La web incluye el SEO técnico de base. Para posicionarla de forma continua tenemos el paquete SEO + GEO + Google Maps, con una opción de 6 meses a 149 €/mes y otra sin permanencia a 349 €/mes.",
+    a: "La web incluye el SEO técnico de base. Para posicionarla de forma continua tenemos el paquete SEO + GEO + Google Maps, con la oferta Black Friday de 149 €/mes durante 6 meses (contratando hasta el 30 de noviembre de 2026) o la tarifa general de 349 €/mes, ambas sin permanencia.",
   },
 ];
 
@@ -205,7 +205,7 @@ export default async function OfertaWebCorporativaPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-primary-600 mb-3">¿Quieres que además te encuentren?</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            {R("La web es la base. Para aparecer en Google, en las respuestas de la IA y en el mapa trabajamos el posicionamiento de forma continua, con una opción de 6 meses a 149 €/mes y otra sin permanencia a 349 €/mes.")}
+            {R("La web es la base. Para aparecer en Google, en las respuestas de la IA y en el mapa trabajamos el posicionamiento de forma continua, con la oferta Black Friday de 149 €/mes durante 6 meses (contratando hasta el 30 de noviembre de 2026) o la tarifa general de 349 €/mes, ambas sin permanencia.")}
           </p>
           <Link href="/oferta-seo-geo-gbp/" className="inline-block bg-primary-600 text-white px-7 py-3 rounded-full font-semibold hover:bg-primary-700 transition-colors">
             Ver SEO + GEO + Google Maps

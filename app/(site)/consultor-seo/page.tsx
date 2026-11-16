@@ -171,7 +171,7 @@ export default async function ConsultorSeoPage() {
             </p>
             <div className="flex flex-col gap-3">
               <Link href="/seo-posicionamiento-web-organico/" className="text-accent-500 font-semibold hover:underline">Servicio de posicionamiento SEO →</Link>
-              <Link href="/oferta-seo-geo-gbp/" className="text-accent-500 font-semibold hover:underline">{preciosEnTexto(`Oferta: SEO + GEO + Google Business Profile por ${PRECIOS_OFERTA_SEO_RESPALDO.sinPermanencia} €/mes + IVA →`, po)}</Link>
+              <Link href="/oferta-seo-geo-gbp/" className="text-accent-500 font-semibold hover:underline">{preciosEnTexto(`Oferta Black Friday: SEO + GEO + Google Business Profile a ${PRECIOS_OFERTA_SEO_RESPALDO.permanencia6m} €/mes + IVA durante 6 meses, sin permanencia (tarifa general: ${PRECIOS_OFERTA_SEO_RESPALDO.sinPermanencia} €/mes) →`, po)}</Link>
               <Link href="/auditoria-digital/" className="text-accent-500 font-semibold hover:underline">Auditoría SEO gratuita →</Link>
             </div>
           </div>

@@ -102,9 +102,9 @@ export default async function HomeClient() {
               Tus clientes te buscan en el buscador, en Google Maps y también preguntando a un asistente de IA. Trabajamos los tres frentes en un solo servicio mensual: posicionamiento SEO, GEO para que cualquier IA pueda encontrarte y citarte, y tu ficha de Google Business Profile.
             </p>
             <p className="mb-8 flex flex-wrap items-baseline justify-center lg:justify-start gap-x-3 gap-y-1">
-              <span className="text-[#ff7a00] text-4xl md:text-5xl font-bold whitespace-nowrap [text-shadow:0_2px_10px_rgba(15,28,46,0.6)]">Desde {po.permanencia6m} €/mes</span>
+              <span className="text-[#ff7a00] text-4xl md:text-5xl font-bold whitespace-nowrap [text-shadow:0_2px_10px_rgba(15,28,46,0.6)]">Black Friday: {po.permanencia6m} €/mes</span>
               <span className="text-white/90 text-base whitespace-nowrap">+ IVA</span>
-              <span className="basis-full text-white/90 text-base">Con 6 meses de permanencia · o {po.sinPermanencia} €/mes sin permanencia</span>
+              <span className="basis-full text-white/90 text-base">Durante 6 meses, sin permanencia, contratando hasta el 30 de noviembre de 2026 · tarifa general {po.sinPermanencia} €/mes sin permanencia</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link href="/oferta-seo-geo-gbp/" className="bg-accent-500 text-white px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-accent-600 transition-colors">

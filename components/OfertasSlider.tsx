@@ -28,7 +28,7 @@ const SLIDES_BASE: Slide[] = [
     bg: "/oferta-seo-geo-gbp.jpg",
     overlay: "bg-[radial-gradient(ellipse_75%_70%_at_50%_50%,rgba(15,28,46,0.72)_0%,rgba(15,28,46,0.5)_55%,rgba(15,28,46,0.2)_100%)]",
     bgPosition: "50% 40%",
-    price: { new: "Desde 149 €/mes + IVA", note: "Con 6 meses de permanencia · o 349 €/mes sin permanencia" },
+    price: { new: "Black Friday: 149 €/mes + IVA", note: "Durante 6 meses, sin permanencia, hasta el 30/11/2026 · tarifa general 349 €/mes sin permanencia" },
   },
   {
     badge: "Oferta Web Corporativa",

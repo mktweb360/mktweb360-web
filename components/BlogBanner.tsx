@@ -66,7 +66,7 @@ const BANNERS_ES: BannerVariants = {
     desc: "Posicionamiento SEO, GEO para que cualquier asistente de IA pueda encontrarte y citarte, y tu ficha de Google Business Profile optimizada. Un solo servicio mensual.",
     cta: "Ver qué incluye",
     href: "/oferta-seo-geo-gbp/",
-    price: { new: "Desde 149 €/mes + IVA", note: "Con 6 meses de permanencia · o 349 €/mes sin permanencia" },
+    price: { new: "Black Friday: 149 €/mes + IVA", note: "Durante 6 meses, sin permanencia, hasta el 30/11/2026 · tarifa general 349 €/mes sin permanencia" },
     secondary: { text: "¿Prefieres empezar con un diagnóstico gratuito?", href: "/auditoria-digital/" },
   },
   default: {
@@ -107,7 +107,7 @@ const BANNERS_EN: BannerVariants = {
     desc: "SEO positioning, GEO so that any AI assistant can find and cite you, and your Google Business Profile optimised. One monthly service.",
     cta: "Request free diagnosis",
     href: "/en/digital-audit/",
-    price: { new: "From €149/month + VAT", note: "With a 6-month commitment · or €349/month with no commitment" },
+    price: { new: "Black Friday: €149/month + VAT", note: "For 6 months, no minimum term, until 30/11/2026 · standard rate €349/month, no minimum term" },
   },
   default: {
     badge: "Free, no commitment",
@@ -146,7 +146,7 @@ const BANNERS_FR: BannerVariants = {
     desc: "Référencement SEO, GEO pour que tout assistant d'IA puisse vous trouver et vous citer, et votre fiche Google Business Profile optimisée. Un seul service mensuel.",
     cta: "Demander un diagnostic gratuit",
     href: "/fr/audit-digital/",
-    price: { new: "À partir de 149 €/mois HT", note: "Avec 6 mois d'engagement · ou 349 €/mois sans engagement" },
+    price: { new: "Black Friday : 149 €/mois HT", note: "Pendant 6 mois, sans engagement, jusqu'au 30/11/2026 · tarif général 349 €/mois sans engagement" },
   },
   default: {
     badge: "Gratuit et sans engagement",
