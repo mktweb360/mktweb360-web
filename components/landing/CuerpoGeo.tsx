@@ -108,9 +108,9 @@ export function CuerpoGeo({ whatsapp }: { whatsapp: string }) {
 
       {/* 3 · Qué hacemos */}
       <section className="relative isolate overflow-hidden bg-[#0f1c2e] px-4 py-20 text-white md:min-h-[640px] md:py-28">
-        {/* Foto de fondo (generada con IA, ambientada: persona en el metro consultando a un asistente de IA). Decorativa. */}
-        <Image src="/landing/ia-metro.jpg" alt="" fill sizes="100vw" className="-z-10 object-cover object-[50%_40%]" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0f1c2e]/85 via-[#0f1c2e]/25 to-[#0f1c2e]/90" aria-hidden="true" />
+        {/* Foto de fondo (imagen generada con IA: manos con un móvil y un chat de asistente en el metro). Decorativa. */}
+        <Image src="/landing/ia-metro.jpg" alt="" fill sizes="100vw" className="-z-10 object-cover object-[78%_50%]" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0f1c2e]/80 via-[#0f1c2e]/20 to-[#0f1c2e]/85" aria-hidden="true" />
         <div className="mx-auto flex max-w-5xl flex-col justify-between gap-40 md:gap-72">
           <Cabecera etiqueta="Qué hacemos" claro>Que las IA entiendan tu negocio. <span className="text-accent-400">Y puedan citarlo.</span></Cabecera>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -120,7 +120,7 @@ export function CuerpoGeo({ whatsapp }: { whatsapp: string }) {
               { t: "Datos estructurados", d: "Y llms.txt: tu negocio, legible para las IA.", i: <IcoCodigo /> },
               { t: "Seguimiento mensual", d: "Medimos cómo evoluciona.", i: <IcoGrafico /> },
             ].map((c) => (
-              <div key={c.t} className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm">
+              <div key={c.t} className="rounded-3xl border border-white/10 bg-[#0f1c2e]/60 p-6 backdrop-blur-md">
                 <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#7c3aed] to-accent-500 text-white">{c.i}</span>
                 <h3 className="mb-1 text-lg font-bold">{c.t}</h3>
                 <p className="text-sm leading-relaxed text-primary-200">{c.d}</p>
