@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { TrackedLink } from "@/components/TrackedLink";
 import { PRECIO_TIENDA_ONLINE_DESDE, PRECIO_WEB_PROFESIONAL_DESDE } from "@/lib/ofertas";
@@ -85,20 +86,20 @@ export function CuerpoGeo({ whatsapp }: { whatsapp: string }) {
       </section>
 
       {/* 2 · Pregunta → Respuesta → ¿Estás tú? */}
-      <section className="bg-gray-50 px-4 py-16 md:py-20">
+      <section className="mw-skin-band px-4 py-16 text-white md:py-20">
         <div className="mx-auto max-w-5xl">
-          <Cabecera>Así de simple es lo que pasa</Cabecera>
+          <Cabecera claro>Así de simple es lo que pasa</Cabecera>
           <ol className="grid gap-5 md:grid-cols-3">
             {[
-              { n: "01", t: "Tu cliente pregunta", d: "A ChatGPT, Gemini, Perplexity, Claude o Google con IA.", i: <IcoChat />, c: "bg-white text-primary-700" },
-              { n: "02", t: "La IA responde", d: "Con unos pocos negocios. No con diez enlaces.", i: <IcoSpark />, c: "bg-white text-primary-700" },
+              { n: "01", t: "Tu cliente pregunta", d: "A ChatGPT, Gemini, Perplexity, Claude o Google con IA.", i: <IcoChat />, c: "border border-white/10 bg-white/[0.07] text-white backdrop-blur-sm" },
+              { n: "02", t: "La IA responde", d: "Con unos pocos negocios. No con diez enlaces.", i: <IcoSpark />, c: "border border-white/10 bg-white/[0.07] text-white backdrop-blur-sm" },
               { n: "03", t: "¿Estás tú?", d: "Ahí es donde trabajamos contigo.", i: <IcoLupa />, c: "bg-accent-500 text-white" },
             ].map((p) => (
-              <li key={p.n} className={`relative rounded-3xl p-7 shadow-sm ring-1 ring-black/5 ${p.c}`}>
+              <li key={p.n} className={`relative rounded-3xl p-7 shadow-lg ${p.c}`}>
                 <span className="absolute right-6 top-4 text-5xl font-black opacity-10">{p.n}</span>
-                <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-black/5">{p.i}</span>
+                <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">{p.i}</span>
                 <h3 className="mb-1 text-xl font-bold">{p.t}</h3>
-                <p className={p.c.includes("accent") ? "text-white/90" : "text-gray-600"}>{p.d}</p>
+                <p className={p.c.includes("accent") ? "text-white/90" : "text-primary-200"}>{p.d}</p>
               </li>
             ))}
           </ol>
@@ -106,8 +107,11 @@ export function CuerpoGeo({ whatsapp }: { whatsapp: string }) {
       </section>
 
       {/* 3 · Qué hacemos */}
-      <section className="mw-skin-band px-4 py-16 text-white md:py-20">
-        <div className="mx-auto max-w-5xl">
+      <section className="relative isolate overflow-hidden bg-[#0f1c2e] px-4 py-20 text-white md:min-h-[640px] md:py-28">
+        {/* Foto de fondo (generada con IA, ambientada: persona en el metro consultando a un asistente de IA). Decorativa. */}
+        <Image src="/landing/ia-metro.jpg" alt="" fill sizes="100vw" className="-z-10 object-cover object-[50%_40%]" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0f1c2e]/85 via-[#0f1c2e]/25 to-[#0f1c2e]/90" aria-hidden="true" />
+        <div className="mx-auto flex max-w-5xl flex-col justify-between gap-40 md:gap-72">
           <Cabecera etiqueta="Qué hacemos" claro>Que las IA entiendan tu negocio. <span className="text-accent-400">Y puedan citarlo.</span></Cabecera>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
