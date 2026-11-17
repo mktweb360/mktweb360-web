@@ -142,7 +142,7 @@ const BURBUJA: Record<string, Record<Lang, string[]>> = {
     fr: ["Des clients dès maintenant avec Google Ads ? Je vous explique."],
   },
   ia: {
-    es: ["¿Te interesa la IA para tu negocio? Te cuento cómo la aplicamos.", "¿Sales cuando alguien pregunta a ChatGPT por lo tuyo? Lo vemos."],
+    es: ["¿Te interesa la IA para tu negocio? Te cuento cómo la aplicamos.", "¿Sales cuando alguien pregunta a una IA por lo tuyo? Lo vemos."],
     en: ["Interested in AI for your business? I'll show you how we use it."],
     fr: ["L'IA vous intéresse pour votre entreprise ? Je vous montre comment."],
   },

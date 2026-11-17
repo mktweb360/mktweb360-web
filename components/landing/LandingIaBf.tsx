@@ -2,6 +2,8 @@ import Image from "next/image";
 import { ContactForm } from "@/components/ContactForm";
 import { TrackedLink } from "@/components/TrackedLink";
 import { CondicionesBlackFriday } from "@/components/CondicionesBlackFriday";
+import { MovilIaDemo } from "@/components/landing/MovilIaDemo";
+import { LlamamosCampo } from "@/components/landing/LlamamosCampo";
 import { PRECIO_GEO_SOLO, BF_FIN_TEXTO, etiquetaBf } from "@/lib/black-friday";
 import { planPorId } from "@/lib/planes-seo";
 import { preciosOfertaSeo } from "@/lib/precios-planes";
@@ -28,12 +30,36 @@ interface Props {
   titular: string;
   entradilla: string;
   whatsapp: string;
+  /** Opcionales (solo la landing GEO): texto en mayúsculas sobre el titular, subtítulo, gancho y móvil de ejemplo. */
+  eyebrow?: string;
+  subtitulo?: string;
+  gancho?: string;
+  conMovil?: boolean;
 }
 
-export async function LandingIaBf({ variante, formType, titular, entradilla, whatsapp }: Props) {
+export async function LandingIaBf({ variante, formType, titular, entradilla, whatsapp, eyebrow, subtitulo, gancho, conMovil }: Props) {
   const esPack = variante === "pack";
   const po = esPack ? await preciosOfertaSeo() : null;
   const plan = esPack ? planPorId("pyme", "es") : null;
+  const precioInterior = esPack && po ? (
+    <>
+      <div className="text-3xl font-black text-accent-400">
+        {po.permanencia6m} €/mes <span className="text-base font-semibold text-primary-200">+ IVA</span>
+      </div>
+      <p className="text-sm text-primary-200 mt-1">
+        Black Friday: {po.permanencia6m} €/mes + IVA durante 6 meses · Tarifa general: {po.sinPermanencia} €/mes + IVA · sin permanencia · contratando hasta el{" "}
+        {BF_FIN_TEXTO.es}
+      </p>
+      <p className="text-xs text-primary-300 mt-2">Pasados los 6 meses hablamos contigo para acordar cómo seguir.</p>
+    </>
+  ) : (
+    <>
+      <div className="text-3xl font-black text-accent-400">
+        {PRECIO_GEO_SOLO} €/mes <span className="text-base font-semibold text-primary-200">+ IVA</span>
+      </div>
+      <p className="text-sm text-primary-200 mt-1">Precio permanente · sin permanencia</p>
+    </>
+  );
   const wa = `https://wa.me/34622748987?text=${encodeURIComponent(whatsapp)}`;
   return (
     <main className="min-h-screen bg-white">
@@ -46,51 +72,68 @@ export async function LandingIaBf({ variante, formType, titular, entradilla, wha
         </div>
       </header>
 
-      <section className="mw-skin-hero text-white py-12 md:py-16 px-4">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          <div>
+      <section className="mw-skin-hero text-white py-12 md:py-14 px-4 overflow-x-clip">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 items-start">
+          <div className="md:col-start-1 md:row-start-1">
             {esPack && (
               <span className="inline-block bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-5">
                 {etiquetaBf("es")}
               </span>
             )}
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">{titular}</h1>
-            <p className="text-lg text-primary-200 mb-6 leading-relaxed">{entradilla}</p>
-            <div className="bg-white/10 rounded-2xl px-5 py-4 mb-6">
-              {esPack && po ? (
-                <>
-                  <div className="text-3xl font-black text-accent-400">
-                    {po.permanencia6m} €/mes <span className="text-base font-semibold text-primary-200">+ IVA</span>
+            {eyebrow && (
+              <p className="mb-3 inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-bold uppercase text-white" style={{ letterSpacing: "2px" }}>
+                {eyebrow}
+              </p>
+            )}
+            <h1 className={conMovil ? "text-3xl md:text-4xl font-bold mb-3 leading-tight text-accent-400" : "text-3xl md:text-4xl font-bold mb-4 leading-tight"}>{titular}</h1>
+            {subtitulo && <p className="text-lg font-semibold text-white mb-2 leading-snug">{subtitulo}</p>}
+            <p className={conMovil ? "text-base text-primary-200 mb-4 leading-relaxed" : "text-lg text-primary-200 mb-6 leading-relaxed"}>{entradilla}</p>
+            {conMovil ? (
+              <>
+                <div className="flex flex-col sm:flex-row items-stretch gap-3 mb-4">
+                  <div className="bg-white/10 rounded-2xl px-5 py-3 sm:w-fit sm:whitespace-nowrap">{precioInterior}</div>
+                  <div className="flex flex-row sm:flex-col gap-2 sm:min-w-[190px]">
+                    <TrackedLink
+                      href={wa}
+                      ctaId="whatsapp-ia-geo"
+                      location="landing-ia-bf"
+                      type="contact"
+                      text="Escríbenos"
+                      newTab
+                      className="flex flex-1 items-center justify-center rounded-xl bg-[#178f49] px-5 py-3 sm:py-0 text-base font-bold text-white hover:bg-[#137a3d] transition-colors"
+                    >
+                      Escríbenos
+                    </TrackedLink>
+                    <LlamamosCampo formType={formType} />
                   </div>
-                  <p className="text-sm text-primary-200 mt-1">
-                    Black Friday: {po.permanencia6m} €/mes + IVA durante 6 meses · Tarifa general: {po.sinPermanencia} €/mes + IVA · sin permanencia ·
-                    contratando hasta el {BF_FIN_TEXTO.es}
-                  </p>
-                  <p className="text-xs text-primary-300 mt-2">Pasados los 6 meses hablamos contigo para acordar cómo seguir.</p>
-                </>
-              ) : (
-                <>
-                  <div className="text-3xl font-black text-accent-400">
-                    {PRECIO_GEO_SOLO} €/mes <span className="text-base font-semibold text-primary-200">+ IVA</span>
-                  </div>
-                  <p className="text-sm text-primary-200 mt-1">Precio permanente · sin permanencia</p>
-                </>
-              )}
-            </div>
-            <TrackedLink
-              href={wa}
-              ctaId={esPack ? "whatsapp-ia-pack" : "whatsapp-ia-geo"}
-              location="landing-ia-bf"
-              type="contact"
-              text="Prefiero escribir por WhatsApp"
-              newTab
-              className="inline-block border border-white/40 text-white text-sm font-semibold px-5 py-3 rounded-xl hover:bg-white/10 transition-colors"
-            >
-              Prefiero escribir por WhatsApp
-            </TrackedLink>
+                </div>
+                {gancho && <p className="text-center text-lg font-semibold italic text-white mb-1">🚀 {gancho}</p>}
+              </>
+            ) : (
+              <>
+                <div className="bg-white/10 rounded-2xl px-5 py-4 mb-6">{precioInterior}</div>
+                <TrackedLink
+                  href={wa}
+                  ctaId={esPack ? "whatsapp-ia-pack" : "whatsapp-ia-geo"}
+                  location="landing-ia-bf"
+                  type="contact"
+                  text="Prefiero escribir por WhatsApp"
+                  newTab
+                  className="inline-block border border-white/40 text-white text-sm font-semibold px-5 py-3 rounded-xl hover:bg-white/10 transition-colors"
+                >
+                  Prefiero escribir por WhatsApp
+                </TrackedLink>
+              </>
+            )}
           </div>
 
-          <div className="bg-white text-gray-900 rounded-3xl p-6 shadow-xl" id="contacto">
+          {conMovil && (
+            <div className="md:col-start-1 md:row-start-2 order-last md:order-none">
+              <MovilIaDemo />
+            </div>
+          )}
+
+          <div className={`bg-white text-gray-900 rounded-3xl p-6 shadow-xl ${conMovil ? "md:col-start-2 md:row-start-1 md:row-span-2 md:self-center" : ""}`} id="contacto">
             <h2 className="text-xl font-bold text-primary-700 mb-1">Pide tu diagnóstico gratuito</h2>
             <p className="text-sm text-gray-600 mb-4">Cuéntanos tu caso y te respondemos con una propuesta a medida.</p>
             <ContactForm formType={formType} submitLabel="Pedir diagnóstico gratuito" />

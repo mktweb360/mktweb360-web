@@ -114,8 +114,13 @@
   50% { transform: translateY(-14px); }
 }
 .mw-float { animation: mw-float 10s ease-in-out infinite; }
+/* Nombres de IA de fondo: vaivén lento + parpadeo muy leve, como estrellas (landing GEO) */
+@keyframes mw-twinkle { 0%, 100% { opacity: .42; } 50% { opacity: .95; } }
+@keyframes mw-sway { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(7px); } }
+.mw-estrella { animation: mw-sway 10s ease-in-out infinite, mw-twinkle 6s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
-  .mw-aurora, .mw-grid-floor, .mw-float { animation: none; }
+  .mw-aurora, .mw-grid-floor, .mw-float, .mw-estrella { animation: none; }
+  .mw-estrella { opacity: .8; }
 }
 
 /* Conversación de ejemplo de la cabecera de GEO: cursor parpadeante y puntos de "pensando" */

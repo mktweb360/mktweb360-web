@@ -71,6 +71,35 @@ export async function POST(req: NextRequest) {
   const message: string = typeof body.message === "string" ? body.message : "";
   const messageOptional = form_type === "auditoria";
 
+  // «Te llamamos» (landing GEO): solo teléfono. Por ahora avisa por email a info@; no crea oportunidad en MktOS
+  // porque su webhook exige nombre y email (pendiente de OK de José para aceptar solo teléfono).
+  if (typeof form_type === "string" && form_type.endsWith("-llamada")) {
+    const digitos = (phone.match(/\d/g) ?? []).length;
+    if (!gdpr || digitos < 9 || !/^\+?[\d\s().-]{9,20}$/.test(phone.trim()))
+      return NextResponse.json({ error: "Teléfono o consentimiento no válidos" }, { status: 400 });
+    const idLlamada = randomUUID();
+    const spamLlamada = checkSpam({ honeypot: _hp, startedAt: body._ts, texts: [phone], domains: [] });
+    if (spamLlamada.level === "bot") return NextResponse.json({ ok: true, id: idLlamada });
+    const sospechosoLlamada = spamLlamada.level === "sospechoso";
+    const apiKeyLlamada = process.env.RESEND_API_KEY;
+    if (apiKeyLlamada) {
+      const { Resend } = await import("resend");
+      await new Resend(apiKeyLlamada).emails.send({
+        from: "web@mktweb360.com", to: "info@mktweb360.com",
+        subject: `${sospechosoLlamada ? "[Posible spam] " : ""}LLAMAR · Te llamamos (${esc(form_type)}) · ${phone.replace(/[^\d+ ()-]/g, "")}`,
+        html: `<div style="font-family:-apple-system,sans-serif;max-width:560px;margin:0 auto;padding:24px">
+          <h2 style="color:#0f1c2e;margin:0 0 12px">Piden que les llames</h2>
+          <p style="font-size:22px;margin:0 0 12px"><strong>${esc(phone)}</strong></p>
+          <p style="font-size:14px;color:#374151">Formulario: ${esc(form_type)} · Página: ${esc(page_origin) || "\u2014"} · Fuente: ${esc(utm_source) || "orgánico"} · Campaña: ${esc(utm_campaign) || "\u2014"}</p>
+          <p style="font-size:14px;color:#374151">Comunicaciones comerciales: ${consentComercial ? "sí, consiente" : "no"} · Consentimiento de privacidad: sí (${new Date().toLocaleString("es-ES", { timeZone: "Europe/Madrid" })})</p>
+          ${sospechosoLlamada ? `<p style="color:#b91c1c;font-size:13px">Marcado como posible spam (${esc(spamLlamada.reasons.join("; "))}).</p>` : ""}
+          <p style="color:#9ca3af;font-size:11px">ID: ${idLlamada} · No está en MktOS: dalo de alta a mano si procede.</p>
+        </div>`,
+      }).catch((e: unknown) => console.error("[contact] Resend llamada:", e));
+    } else console.warn("[contact] Llamada sin RESEND_API_KEY: no se ha avisado");
+    return NextResponse.json({ ok: true, id: idLlamada });
+  }
+
   if (!name || !email || (!message && !messageOptional) || !gdpr)
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
 
