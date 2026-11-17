@@ -4,6 +4,7 @@ import { TrackedLink } from "@/components/TrackedLink";
 import { CondicionesBlackFriday } from "@/components/CondicionesBlackFriday";
 import { MovilIaDemo } from "@/components/landing/MovilIaDemo";
 import { LlamamosCampo } from "@/components/landing/LlamamosCampo";
+import { CuerpoGeo } from "@/components/landing/CuerpoGeo";
 import { PRECIO_GEO_SOLO, BF_FIN_TEXTO, etiquetaBf } from "@/lib/black-friday";
 import { planPorId } from "@/lib/planes-seo";
 import { preciosOfertaSeo } from "@/lib/precios-planes";
@@ -66,9 +67,21 @@ export async function LandingIaBf({ variante, formType, titular, entradilla, wha
       <header className="bg-white border-b border-gray-100 py-4 px-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Image src="/logo.png" alt="Mkt Web 360" width={150} height={42} priority />
-          <a href="tel:+34622748987" className="text-primary-700 text-sm font-semibold hover:text-accent-500 transition-colors">
-            622 74 89 87
-          </a>
+          <div className="flex flex-col items-end gap-1 text-sm font-semibold text-primary-700 sm:flex-row sm:items-center sm:gap-5">
+            <a href="tel:+34622748987" className="inline-flex items-center gap-2 hover:text-accent-500 transition-colors">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-accent-500">
+                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+              </svg>
+              622 74 89 87
+            </a>
+            <a href="mailto:info@mktweb360.com" className="inline-flex items-center gap-2 hover:text-accent-500 transition-colors">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-accent-500">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+              info@mktweb360.com
+            </a>
+          </div>
         </div>
       </header>
 
@@ -141,6 +154,7 @@ export async function LandingIaBf({ variante, formType, titular, entradilla, wha
         </div>
       </section>
 
+      {conMovil ? <CuerpoGeo whatsapp={whatsapp} /> : (
       <section className="py-14 px-4">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
           <div>
@@ -176,6 +190,7 @@ export async function LandingIaBf({ variante, formType, titular, entradilla, wha
           </div>
         </div>
       </section>
+      )}
 
       <section className="pb-14 px-4">
         {esPack ? (
