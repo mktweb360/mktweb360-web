@@ -32,6 +32,14 @@ function Cabecera({ etiqueta, children, claro = false }: { etiqueta?: string; ch
   );
 }
 
+// Resultados de ejemplo del buscador «de antes» (negocios ficticios, rotulados como ejemplo).
+const RESULTADOS = [
+  { n: "Pinturas Ejemplo A", url: "pinturas-ejemplo-a.es", d: "Pintores de pisos y locales. Presupuesto sin compromiso.", anuncio: true },
+  { n: "Reformas Ejemplo B", url: "reformas-ejemplo-b.es", d: "Reformas integrales y pintura. Pide tu presupuesto.", anuncio: true },
+  { n: "Los 10 mejores pintores de tu ciudad", url: "directorio-ejemplo.es", d: "Listado con teléfonos y valoraciones de pintores.", anuncio: false },
+  { n: "Pintores Ejemplo C", url: "pintores-ejemplo-c.es", d: "Pintura de interior y exterior. Trabajos garantizados.", anuncio: false },
+];
+
 export function CuerpoGeo({ whatsapp }: { whatsapp: string }) {
   const wa = `https://wa.me/34622748987?text=${encodeURIComponent(whatsapp)}`;
   return (
@@ -45,20 +53,27 @@ export function CuerpoGeo({ whatsapp }: { whatsapp: string }) {
             Ahora reciben <span className="text-accent-500">unos pocos nombres.</span>
           </Cabecera>
           <div className="grid items-stretch gap-6 md:grid-cols-2">
-            <div className="relative rounded-3xl border border-gray-200 bg-gray-50 p-6 opacity-90">
-              <p className="mb-4 text-xs font-bold uppercase text-gray-400" style={{ letterSpacing: "2px" }}>Antes · Buscador</p>
-              <div className="mb-5 flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-500">
+            <div className="relative rounded-3xl border border-gray-200 bg-gray-50 p-6">
+              <p className="mb-4 text-xs font-bold uppercase text-gray-400" style={{ letterSpacing: "2px" }}>Antes · Buscador de siempre</p>
+              <div className="mb-4 flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-600 shadow-sm">
                 <span className="text-gray-400"><svg {...svg} width="16" height="16"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg></span>
                 pintor de confianza cerca de mí
               </div>
-              <div className="space-y-4" aria-hidden="true">
-                {[78, 64, 70, 58, 66, 52].map((w, i) => (
-                  <div key={i}>
-                    <div className="h-3 rounded bg-blue-200/70" style={{ width: `${w}%` }} />
-                    <div className="mt-1.5 h-2 w-[92%] rounded bg-gray-200" />
-                  </div>
+              <ul className="space-y-3.5">
+                {RESULTADOS.map((r) => (
+                  <li key={r.n} className="text-left">
+                    <p className="flex items-center gap-1.5 text-xs text-gray-500">
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gray-200 text-[10px] font-bold text-gray-500">{r.n.charAt(0)}</span>
+                      {r.url}
+                      {r.anuncio && <span className="rounded border border-gray-400 px-1 text-[10px] font-semibold leading-4 text-gray-600">Anuncio</span>}
+                    </p>
+                    <p className="text-[15px] font-medium leading-snug text-blue-700">{r.n}</p>
+                    <p className="text-xs leading-snug text-gray-500">{r.d}</p>
+                  </li>
                 ))}
-              </div>
+              </ul>
+              <p className="mt-4 border-t border-gray-200 pt-3 text-xs font-semibold text-gray-500">… y 6 enlaces más. El cliente compara y elige.</p>
+              <p className="mt-3 text-[11px] text-gray-400"><strong className="text-gray-600">Ejemplo ilustrativo:</strong> negocios ficticios.</p>
             </div>
             <div className="relative rounded-3xl bg-[#0f1c2e] p-6 text-white shadow-2xl ring-1 ring-accent-500/40">
               <p className="mb-4 text-xs font-bold uppercase text-accent-400" style={{ letterSpacing: "2px" }}>Ahora · Asistente de IA</p>
@@ -106,12 +121,16 @@ export function CuerpoGeo({ whatsapp }: { whatsapp: string }) {
         </div>
       </section>
 
-      {/* 3 · Qué hacemos */}
-      <section className="relative isolate overflow-hidden bg-[#0f1c2e] px-4 py-20 text-white md:min-h-[640px] md:py-28">
-        {/* Foto de fondo (imagen generada con IA: manos con un móvil y un chat de asistente en el metro). Decorativa. */}
-        <Image src="/landing/ia-metro.jpg" alt="" fill sizes="100vw" className="-z-10 object-cover object-[78%_50%]" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0f1c2e]/80 via-[#0f1c2e]/20 to-[#0f1c2e]/85" aria-hidden="true" />
-        <div className="mx-auto flex max-w-5xl flex-col justify-between gap-40 md:gap-72">
+      {/* 3 · Qué hacemos (alto = el del contenido; la foto queda fija en la ventana y la fila pasa por encima: parallax) */}
+      <section className="relative isolate overflow-hidden bg-[#0f1c2e] px-4 py-16 text-white [clip-path:inset(0)] md:py-20">
+        {/* Foto de fondo (imagen generada con IA: manos con un móvil y un chat de asistente en el metro). Decorativa.
+            Va fija en la ventana (fixed) y recortada por la fila (clip-path): al hacer scroll se ve el efecto parallax.
+            Con «reducir movimiento» pasa a ser un fondo normal. */}
+        <div className="fixed inset-0 -z-10 motion-reduce:absolute" aria-hidden="true">
+          <Image src="/landing/ia-metro.jpg" alt="" fill sizes="100vw" className="object-cover object-[78%_50%]" />
+        </div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0f1c2e]/75 via-[#0f1c2e]/35 to-[#0f1c2e]/75" aria-hidden="true" />
+        <div className="mx-auto max-w-5xl">
           <Cabecera etiqueta="Qué hacemos" claro>Que las IA entiendan tu negocio. <span className="text-accent-400">Y puedan citarlo.</span></Cabecera>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -131,19 +150,19 @@ export function CuerpoGeo({ whatsapp }: { whatsapp: string }) {
       </section>
 
       {/* 4 · Urgencia + llamada a la acción */}
-      <section className="bg-gradient-to-br from-accent-500 to-[#ea580c] px-4 py-16 text-white md:py-20">
+      <section className="bg-white px-4 py-16 md:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="mb-5 text-3xl font-extrabold leading-tight md:text-5xl">El que antes empiece, parte con ventaja.</h2>
-          <p className="mx-auto mb-3 max-w-2xl rounded-2xl bg-black/15 px-5 py-4 text-base md:text-lg">
+          <h2 className="mb-5 text-3xl font-extrabold leading-tight text-primary-700 md:text-5xl">El que antes empiece, parte con ventaja.</h2>
+          <p className="mx-auto mb-3 max-w-2xl rounded-2xl border border-accent-200 bg-accent-50 px-5 py-4 text-base text-gray-800 md:text-lg">
             📢 ChatGPT ya muestra anuncios en España desde el 24 de agosto de 2026 (versiones gratuita y Go). Las respuestas de las IA se están convirtiendo en un escaparate.
           </p>
-          <p className="mb-8 text-xs text-white/80">
+          <p className="mb-8 text-xs text-gray-500">
             Fuente:{" "}
-            <a href="https://www.xataka.com/robotica-e-ia/oficial-chatgpt-anuncios-llegara-a-espana-proximo-lunes-24-agosto" target="_blank" rel="noopener noreferrer" className="underline">Xataka</a>
+            <a href="https://www.xataka.com/robotica-e-ia/oficial-chatgpt-anuncios-llegara-a-espana-proximo-lunes-24-agosto" target="_blank" rel="noopener noreferrer" className="text-primary-700 underline">Xataka</a>
             . Los primeros cambios pueden notarse entre 2 y 4 meses después de empezar.
           </p>
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <TrackedLink href="#contacto" ctaId="diagnostico-ia-geo" location="landing-ia-bf-cuerpo" type="link" text="Pedir diagnóstico gratuito" className="w-full rounded-full bg-white px-8 py-3.5 text-base font-bold text-accent-600 shadow-lg transition hover:bg-gray-100 sm:w-auto">
+            <TrackedLink href="#contacto" ctaId="diagnostico-ia-geo" location="landing-ia-bf-cuerpo" type="link" text="Pedir diagnóstico gratuito" className="w-full rounded-full bg-accent-500 px-8 py-3.5 text-base font-bold text-white shadow-lg transition hover:bg-accent-600 sm:w-auto">
               Pedir diagnóstico gratuito
             </TrackedLink>
             <TrackedLink href={wa} ctaId="whatsapp-ia-geo" location="landing-ia-bf-cuerpo" type="contact" text="Escríbenos" newTab className="w-full rounded-full bg-[#178f49] px-8 py-3.5 text-base font-bold text-white shadow-lg transition hover:bg-[#137a3d] sm:w-auto">
@@ -154,18 +173,18 @@ export function CuerpoGeo({ whatsapp }: { whatsapp: string }) {
       </section>
 
       {/* 5 · Web y tienda */}
-      <section className="bg-white px-4 py-16 md:py-20">
+      <section className="mw-skin-band px-4 py-16 text-white md:py-20">
         <div className="mx-auto max-w-5xl">
-          <Cabecera etiqueta="Y tu web">
+          <Cabecera etiqueta="Y tu web" claro>
             ¿Está a la altura? <span className="text-accent-500">Si no, la renovamos.</span>
           </Cabecera>
-          <p className="mx-auto -mt-4 mb-10 max-w-2xl text-center text-lg text-gray-600">Una web clara y bien estructurada es la base para que te citen.</p>
+          <p className="mx-auto -mt-4 mb-10 max-w-2xl text-center text-lg text-primary-200">Una web clara y bien estructurada es la base para que te citen.</p>
           <div className="grid gap-6 md:grid-cols-2">
             {[
               { t: "Web profesional", p: `Desde ${PRECIO_WEB_PROFESIONAL_DESDE} € + IVA`, d: "Pago único. Hosting, dominio y correo no incluidos.", href: "/oferta-web-seo-organico/", id: "oferta-web-desde-ia-geo", i: <IcoWeb /> },
               { t: "Tienda online", p: `Desde ${PRECIO_TIENDA_ONLINE_DESDE} € + IVA`, d: "Sin comisiones por venta ni licencias mensuales.", href: "/tienda-online/", id: "oferta-tienda-desde-ia-geo", i: <IcoTienda /> },
             ].map((o) => (
-              <div key={o.t} className="flex flex-col rounded-3xl border border-gray-200 bg-gray-50 p-7 transition hover:-translate-y-1 hover:shadow-xl">
+              <div key={o.t} className="flex flex-col rounded-3xl bg-white p-7 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
                 <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-700 text-white">{o.i}</span>
                 <h3 className="text-xl font-bold text-primary-700">{o.t}</h3>
                 <p className="mt-2 text-3xl font-black text-accent-500">{o.p}</p>

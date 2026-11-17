@@ -16,11 +16,11 @@ const ALTO_PX = 308;
 
 // Nombres de las IA principales (marcas citadas, sin logotipos), repartidos sin alinear.
 const IAS: { t: string; cls: string; d: string; dur: string; tw: string }[] = [
-  { t: "ChatGPT", cls: "right-3 top-[3%]", d: "0s", dur: "10s", tw: "6s" },
-  { t: "Gemini", cls: "right-0 top-[22%]", d: "-2.5s", dur: "12s", tw: "7.5s" },
-  { t: "Copilot", cls: "right-5 top-[41%]", d: "-5s", dur: "11s", tw: "5.5s" },
-  { t: "Perplexity", cls: "right-1 top-[60%]", d: "-1.5s", dur: "13s", tw: "8s" },
-  { t: "Claude", cls: "right-4 top-[79%]", d: "-4s", dur: "10.5s", tw: "6.8s" },
+  { t: "ChatGPT", cls: "left-[2%] top-[4%]", d: "0s", dur: "10s", tw: "6s" },
+  { t: "Gemini", cls: "left-[16%] top-[22%]", d: "-2.5s", dur: "12s", tw: "7.5s" },
+  { t: "Copilot", cls: "left-[0%] top-[41%]", d: "-5s", dur: "11s", tw: "5.5s" },
+  { t: "Perplexity", cls: "left-[10%] top-[60%]", d: "-1.5s", dur: "13s", tw: "8s" },
+  { t: "Claude", cls: "left-[4%] top-[79%]", d: "-4s", dur: "10.5s", tw: "6.8s" },
 ];
 
 type Fase = "completo" | "pregunta" | "pensando" | "respuesta";
@@ -100,9 +100,10 @@ export function MovilIaDemo() {
 
   return (
     <figure ref={raiz} className="mx-auto w-full" aria-label="Ejemplo ilustrativo de una conversación con un asistente de IA">
-      <div className="flex items-end justify-center gap-2">
-      {/* Nombres de las IA principales al fondo, a la izquierda y pegados al móvil, con un parpadeo y un vaivén horizontal muy suaves. Sin logotipos. */}
-      <div aria-hidden="true" className="pointer-events-none relative hidden sm:block w-[120px] shrink-0" style={{ height: ALTO_PX }}>
+      {/* Panel de todo el ancho de la columna (el mismo que el texto de arriba): las IA a la izquierda y el móvil pegado abajo a la derecha. */}
+      <div className="flex items-end justify-center gap-2 rounded-3xl border border-white/10 bg-white/[0.05] px-4 pt-6 sm:justify-between sm:px-6">
+      {/* Nombres de las IA principales, repartidos por el espacio libre, con un parpadeo y un vaivén horizontal muy suaves. Sin logotipos. */}
+      <div aria-hidden="true" className="pointer-events-none relative hidden min-w-0 flex-1 sm:block" style={{ height: ALTO_PX }}>
         {IAS.map((c) => (
           <span
             key={c.t}
@@ -116,7 +117,7 @@ export function MovilIaDemo() {
       </div>
 
       {/* Móvil recortado: solo se ve la zona del texto; si la conversación crece, sube como un chat con scroll. */}
-      <div className="relative w-[280px] shrink-0 overflow-hidden rounded-t-[2.4rem] border-[9px] border-b-0 border-gray-900 bg-gray-900 shadow-2xl" style={{ height: ALTO_PX }}>
+      <div className="relative w-full max-w-[270px] shrink-0 overflow-hidden rounded-t-[2.4rem] border-[9px] border-b-0 border-gray-900 bg-gray-900 shadow-2xl" style={{ height: ALTO_PX }}>
         <div className="relative flex h-full flex-col rounded-t-[1.8rem] bg-gray-50 text-gray-900 overflow-hidden">
           <div className="absolute left-1/2 top-1.5 z-10 -translate-x-1/2 h-4 w-20 rounded-full bg-gray-900" aria-hidden="true" />
           <div className="relative z-[5] pt-7 pb-2 px-4 text-center text-[11px] font-semibold text-gray-500 border-b border-gray-200 bg-white">Asistente de IA</div>
