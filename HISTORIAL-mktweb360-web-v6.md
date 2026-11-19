@@ -71,3 +71,17 @@ La PR #55 se quedó atrás respecto a main (Toledo consolidado, ciudades retirad
 - Retirados: modalidad con permanencia de 6 meses y penalización del 50 % por baja anticipada; la oferta deja de decir «permanente».
 - `scripts/check-precios.mjs`: las páginas de GEO y los dos componentes nuevos pasan a la lista de páginas de oferta (llevan precio y schema Offer). `scripts/check-chatbot.mjs`: ahora el asistente puede citar los importes de campaña y habituales (12 importes); la prueba «199 rechazado» pasa a «299 rechazado». `tsconfig.json`: `allowImportingTsExtensions` (lib/ofertas.ts importa lib/black-friday.ts con extensión para que lo lean las pruebas con node).
 - Pendiente: OK de José para fusionar a `main`; crear en el catálogo de MktOS el plan «GEO solo 99 €/mes» y las promociones (hoy los importes de campaña viven en `lib/black-friday.ts`, no en el catálogo); aviso automático de MktOS un mes antes de que acabe el periodo de cada cliente (tarea de MktOS); retirar todo el 01/12/2026 si no se amplía (skill gestion-campanas-temporales); revisar a mano `public/llms*.txt` y las FAQ de `kb.json` si se amplía.
+
+## SESIÓN 17-19/11/2026: landing GEO de Google Ads publicada y afinada (rama `docs/historial-19nov2026-landing-geo`, solo documentación)
+
+### Landing `/landing/ia-visibilidad/` — PUBLICADA
+- Fusiones a `main` con OK de José; última: commit `3c089f2` (17/11/2026, OK «sí» a las 21:11). Vercel: correcto. Sigue en noindex, solo para la campaña.
+- Cambios de diseño (`components/landing/CuerpoGeo.tsx`, `MovilIaDemo.tsx`): móvil e IA al ancho de la columna; «Antes» como buscador reconocible con negocios ficticios rotulados como ejemplo; «Qué hacemos» con la altura del contenido y parallax sin JavaScript (`fixed` + `clip-path`, con fallback para «reducir movimiento»); fila de urgencia en blanco (el naranja solo en botones) y fila de web/tienda en azul. La variante Pack no se ha tocado.
+- Comprobado: tipos y lint de los archivos tocados; capturas en local a 1440 y 390 px; en producción solo por texto (el entorno de Claude no llega a mktweb360.com; se usa Chrome). Pendiente: captura de producción en móvil y escritorio.
+
+### Campaña de Google Ads (cuenta 646-852-0947)
+- «BF | IA visibilidad GEO» activa (11 €/día); «BF | Pack SEO GEO Maps» en pausa. Cambios del 19/11: titular «Aparece en respuestas de IA», 15 titulares, 2 enlaces de sitio y llamada +34 622 748 987 a nivel campaña. Detalle y lecciones en el proyecto Claude «Mkt Web 360» (`ads/ESTADO-19nov2026-…`, `ads/LECCIONES-19nov2026-…`, `gestion/CIERRE-19nov2026-…`).
+- Retirar la campaña y sus piezas el 01/12/2026 si no se amplía (skill gestion-campanas-temporales).
+
+### Pendiente
+- Método de pago alternativo en Google Ads (lo hace José); landing del Pack con el mismo tratamiento; decidir si «Te llamamos» crea oportunidad en MktOS; incoherencia del eyebrow «GEO + SEO + MAPS» frente a una oferta solo GEO.
